@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Visions Learning</title>
+  <meta name="description" content="Get in touch with Visions Learning. Enroll in a course, book a free counselling session or just ask us anything." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YCV0RRDSZF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YCV0RRDSZF');
+  </script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Visions Classes Logo" class="nav-logo-img" />
+        <div class="logo-text"><span>Visions</span> Classes</div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="online-lectures.html">Online Lectures</a></li>
+        <li><a href="buy-courses.html">Buy Course</a></li>
+        <li><a href="notes.html">Notes</a></li>
+        <li><a href="toppers.html">Toppers 🏆</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="buy-courses.html" class="nav-cta">Enroll Now</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>Have a question or want to enroll? We'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-wrapper">
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <h2>Get In Touch</h2>
+          <p>Whether you want to enroll, book a free counselling session, or just ask a question — our team is here to help you Monday to Saturday, 8AM to 8PM.</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-item-icon">📍</div>
+              <div class="contact-item-text">
+                <h4>Visit Us</h4>
+                <p>Javsai Gaon, Hakre Nagar<br>Ambernath, Maharashtra</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">📞</div>
+              <div class="contact-item-text">
+                <h4>Call Us</h4>
+                <p>+91 87671 44200<br>+91 87671 44200</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">✉️</div>
+              <div class="contact-item-text">
+                <h4>Email Us</h4>
+                <p>info@visionslearning.in<br>admissions@visionslearning.in</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">🕐</div>
+              <div class="contact-item-text">
+                <h4>Working Hours</h4>
+                <p>Monday – Saturday: 8:00 AM – 8:00 PM<br>Sunday: 10:00 AM – 2:00 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-box">
+          <h3>Send us a Message</h3>
+          <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:20px;">We'll reply to your email within 24 hours.</p>
+          <form id="contactForm" action="https://formspree.io/f/xjyborov" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Rahul" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Sharma" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" placeholder="rahul@email.com" required />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 87671 44200" required />
+              </div>
+              <div class="form-group">
+                <label for="course">Interested Course</label>
+                <select id="course" name="course">
+                  <option value="">Select a course</option>
+                  <option>Class 8 — Foundation</option>
+                  <option>Class 9 — Foundation Plus</option>
+                  <option>Class 10 — Board Topper</option>
+                  <option>Class 11 Science</option>
+                  <option>Class 12 Science + Board</option>
+                  <option>Class 11 + 12 Integrated</option>
+                  <option>MHT-CET Complete Course</option>
+                  <option>MHT-CET Crash Course</option>
+                  <option>IIT-JEE Mains & Advanced</option>
+                  <option>NEET UG Preparation</option>
+                  <option>Banking & SSC Exams</option>
+                  <option>UPSC Civil Services</option>
+                  <option>Not Sure — Need Guidance</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" placeholder="Tell us about your goals, current class, or any questions you have..."></textarea>
+            </div>
+            <input type="hidden" name="_subject" value="New Enquiry — Visions Learning Website" />
+            <input type="hidden" name="_replyto" value="visionslearning712@gmail.com" />
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+              Send Message →
+            </button>
+            <div class="form-success" id="formSuccess">
+              ✅ Thank you! We've received your message and will get back to you within 24 hours.
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP PLACEHOLDER -->
+  <section style="background:var(--bg-light);padding:60px 0;">
+    <div class="container">
+      <h2 class="section-title">Find <span>Our Centre</span></h2>
+      <p class="section-subtitle">Conveniently located in the heart of the city with easy access by public transport</p>
+      <iframe
+        class="map-embed"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609823055!2d72.74109995!3d19.08250155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Visions Learning Location"
+      ></iframe>
+      <p style="text-align:center;margin-top:16px;color:var(--text-light);font-size:0.9rem;">
+        📍 Update this map with your exact address — <a href="https://www.google.com/maps" target="_blank" rel="noopener" style="color:var(--primary);font-weight:600;">Get your location link from Google Maps</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- QUICK ENQUIRY FORM -->
+  <section class="enquiry-section">
+    <div class="container">
+      <div class="enquiry-box">
+        <h2>Quick Enquiry</h2>
+        <p class="sub">Fill this form and we'll call you back within 2 hours!</p>
+        <form id="quickEnquiryForm" action="https://formspree.io/f/xjyborov" method="POST">
+          <div class="form-group">
+            <label for="qName">Your Name *</label>
+            <input type="text" id="qName" name="name" placeholder="Enter your full name" required />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="qPhone">Phone Number *</label>
+              <input type="tel" id="qPhone" name="phone" placeholder="+91 87671 44200" required />
+            </div>
+            <div class="form-group">
+              <label for="qClass">Current Class</label>
+              <select id="qClass" name="class">
+                <option value="">Select class</option>
+                <option>Class 8</option>
+                <option>Class 9</option>
+                <option>Class 10</option>
+                <option>Class 11</option>
+                <option>Class 12</option>
+                <option>Dropper / Repeater</option>
+                <option>Graduate</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="qCourse">Interested In *</label>
+            <select id="qCourse" name="course" required>
+              <option value="">Select a course</option>
+              <option>IIT-JEE Mains & Advanced</option>
+              <option>NEET UG Preparation</option>
+              <option>Banking & SSC Exams</option>
+              <option>UPSC Civil Services</option>
+              <option>Foundation (Class 8–10)</option>
+              <option>JEE / NEET Crash Course</option>
+              <option>Not sure — need guidance</option>
+            </select>
+          </div>
+          <input type="hidden" name="_subject" value="New Enquiry from Visions Learning Website" />
+          <input type="hidden" name="_next" value="https://visionslearning.in/contact.html?thanks=1" />
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;">
+            📞 Request a Callback
+          </button>
+          <p style="text-align:center;margin-top:14px;font-size:0.8rem;color:var(--text-light);">
+            Or call us directly: <a href="tel:+918767144200" style="color:var(--primary);font-weight:700;">+91 87671 44200</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+      <p class="section-subtitle">Quick answers to the most common questions</p>
+      <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:16px;" id="faqList">
+
+        <div class="faq-item" style="background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;">
+          <button class="faq-question" style="width:100%;padding:20px 24px;background:none;border:none;text-align:left;font-size:1rem;font-weight:600;color:var(--text-dark);cursor:pointer;display:flex;justify-content:space-between;align-items:center;">
+            When do new batches start? <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 24px;">
+            <p style="padding-bottom:20px;color:var(--text-light);line-height:1.8;">New batches for major programs (JEE, NEET) start in June and December. Banking & SSC batches run on a rolling basis every month. Contact us to check availability for your preferred start date.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" style="background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;">
+          <button class="faq-question" style="width:100%;padding:20px 24px;background:none;border:none;text-align:left;font-size:1rem;font-weight:600;color:var(--text-dark);cursor:pointer;display:flex;justify-content:space-between;align-items:center;">
+            Are online classes available? <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 24px;">
+            <p style="padding-bottom:20px;color:var(--text-light);line-height:1.8;">Yes! All our programs are available in both offline (at our centre) and online (live classes via Zoom/Google Meet) modes. Recordings are also available for all enrolled students.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" style="background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;">
+          <button class="faq-question" style="width:100%;padding:20px 24px;background:none;border:none;text-align:left;font-size:1rem;font-weight:600;color:var(--text-dark);cursor:pointer;display:flex;justify-content:space-between;align-items:center;">
+            Is there an EMI option for course fees? <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 24px;">
+            <p style="padding-bottom:20px;color:var(--text-light);line-height:1.8;">Yes, we offer EMI options for all major programs. You can pay in monthly installments without any extra charge. Our counsellors can help you set up a payment plan that works for you.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" style="background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;">
+          <button class="faq-question" style="width:100%;padding:20px 24px;background:none;border:none;text-align:left;font-size:1rem;font-weight:600;color:var(--text-dark);cursor:pointer;display:flex;justify-content:space-between;align-items:center;">
+            Do you offer scholarships? <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 24px;">
+            <p style="padding-bottom:20px;color:var(--text-light);line-height:1.8;">Yes! We have a scholarship test for meritorious students. Depending on your performance, you can get up to 50% scholarship on course fees. Contact us to know the next scholarship test dates.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo.png" alt="Visions Classes" class="footer-logo-img" />
+          <span class="logo-text"><span>Visions</span> Classes</span>
+          <p>"Learn Today, Lead Tomorrow" — Quality coaching in Ambernath since 2023.</p>
+          <div class="social-links">
+            <a href="#" class="social-link">f</a>
+            <a href="#" class="social-link">in</a>
+            <a href="#" class="social-link">yt</a>
+            <a href="#" class="social-link">tw</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="toppers.html">Toppers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Our Courses</h4>
+          <ul>
+            <li><a href="courses.html">Class 8, 9, 10</a></li>
+            <li><a href="courses.html">Class 11 & 12</a></li>
+            <li><a href="courses.html">MHT-CET</a></li>
+            <li><a href="courses.html">IIT-JEE / NEET</a></li>
+            <li><a href="courses.html">Banking & UPSC</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="https://maps.google.com/?q=Javsai+Gaon+Hakre+Nagar+Ambernath" target="_blank">📍 Javsai Gaon, Hakre Nagar, Ambernath</a></li>
+            <li><a href="tel:+918767144200">📞 +91 87671 44200</a></li>
+            <li><a href="mailto:info@visionslearning.in">✉ info@visionslearning.in</a></li>
+            <li><a href="#">🕐 Mon–Sat: 8AM – 8PM</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Visions Learning. All rights reserved.</p>
+        <div style="display:flex;gap:20px;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CALL NOW BAR (mobile only) -->
+  <div class="call-now-bar">
+    <a href="https://wa.me/918767144200?text=Hello%2C%20I%20want%20to%20know%20more%20about%20Visions%20Learning" target="_blank" class="call-now-btn">
+      💬 WhatsApp
+    </a>
+    <a href="tel:+918767144200" class="call-now-btn call">
+      📞 Call Now
+    </a>
+  </div>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <div class="whatsapp-float">
+    <span class="whatsapp-tooltip">Chat with us!</span>
+    <a href="https://wa.me/918767144200?text=Hello%2C%20I%20am%20interested%20in%20your%20coaching%20courses." target="_blank" rel="noopener" class="whatsapp-btn" aria-label="Chat on WhatsApp">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 0C7.163 0 0 7.163 0 16c0 2.826.737 5.478 2.027 7.782L0 32l8.418-2.007A15.934 15.934 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.267 13.267 0 01-6.754-1.843l-.484-.287-5.001 1.193 1.215-4.867-.317-.5A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.862c-.398-.199-2.354-1.161-2.718-1.293-.365-.133-.63-.199-.896.199-.266.398-1.03 1.293-1.262 1.558-.232.266-.465.299-.863.1-.398-.199-1.681-.619-3.202-1.977-1.183-1.056-1.982-2.36-2.214-2.758-.232-.398-.025-.614.174-.812.179-.178.398-.465.598-.698.199-.232.266-.398.398-.664.133-.266.066-.498-.033-.697-.1-.199-.896-2.161-1.228-2.958-.323-.776-.651-.671-.896-.683l-.764-.013c-.266 0-.697.1-.1062.498-.365.398-1.394 1.361-1.394 3.32 0 1.959 1.427 3.851 1.626 4.117.199.266 2.808 4.287 6.805 6.014.951.411 1.693.656 2.272.840.955.303 1.824.260 2.511.158.766-.114 2.354-.962 2.687-1.891.332-.93.332-1.726.232-1.891-.099-.166-.365-.266-.763-.465z"/>
+      </svg>
+    </a>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
