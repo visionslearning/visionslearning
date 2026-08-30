@@ -317,8 +317,8 @@
 
       </div><!-- end notesChaptersGrid -->
 
-      <!-- CH 10 ELECTROSTATICS NOTES -->
-      <div style="margin-top:40px;">
+      <!-- CH 10 ELECTROSTATICS NOTES — PHYSICS -->
+      <div data-subject="physics" style="margin-top:40px;">
         <h2 class="section-title">Chapter 10 — <span>Electrostatics</span></h2>
         <p class="section-subtitle">SSC Maharashtra Board — Complete Notes with Key Points & Explanations</p>
 
@@ -586,8 +586,8 @@
 
       </div><!-- end ch10 -->
 
-      <!-- CH 11 FULL NOTES WITH EXPLANATIONS -->
-      <div style="margin-top:40px;">
+      <!-- CH 11 FULL NOTES WITH EXPLANATIONS — PHYSICS -->
+      <div data-subject="physics" style="margin-top:40px;">
         <h2 class="section-title">Chapter 11 — <span>Electric Current Through Conductors</span></h2>
         <p class="section-subtitle">SSC Maharashtra Board — Full Notes with Explanations by Shashikant Sir</p>
 
@@ -1051,8 +1051,8 @@
 
       </div>
 
-      <!-- CH 12 MAGNETISM NOTES — moved here from Class 12 -->
-      <div style="margin-top:40px;">
+      <!-- CH 12 MAGNETISM NOTES — PHYSICS -->
+      <div data-subject="physics" style="margin-top:40px;">
         <h2 class="section-title">Chapter 12 — <span>Magnetism</span></h2>
         <p class="section-subtitle">SSC Maharashtra Board — Complete Notes with Key Points & Explanations</p>
 
@@ -1430,6 +1430,7 @@
   <script>
     const filterBtns = document.querySelectorAll('.courses-filter .filter-btn');
     const chapterCards = document.querySelectorAll('#notesChaptersGrid .notes-chapter-card');
+    const subjectSections = document.querySelectorAll('[data-subject]:not(#notesChaptersGrid [data-subject])');
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         filterBtns.forEach(b => b.classList.remove('active'));
@@ -1437,6 +1438,9 @@
         const filter = btn.dataset.filter;
         chapterCards.forEach(card => {
           card.style.display = (filter === 'all' || card.dataset.subject === filter) ? 'block' : 'none';
+        });
+        subjectSections.forEach(section => {
+          section.style.display = (filter === 'all' || section.dataset.subject === filter) ? 'block' : 'none';
         });
       });
     });
