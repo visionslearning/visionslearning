@@ -688,7 +688,7 @@ let currentIdx = 0;
 let isPlaying = true;
 let autoTimer = null;
 let secondsOnSlide = 0;
-const SLIDE_DURATION = 12; // seconds per slide
+const SLIDE_DURATION = 45; // seconds per slide — enough time for full narration
 
 // Build flat list
 LESSONS.forEach((lesson, li) => {
@@ -1165,81 +1165,514 @@ render();
 ══════════════════════════════════════════════════════════════ */
 
 const NARRATION = {
-  /* ─── Arithmetic Progressions ─── */
-  'ap-0': `Welcome to Arithmetic Progressions! An arithmetic progression is a sequence of numbers where the difference between any two consecutive terms is always the same. This constant difference is called the common difference, written as d. For example, in the sequence 2, 5, 8, 11, 14 — the difference between each term is 3. So here, d equals 3, and the first term a equals 2.`,
 
-  'ap-1': `Now let us find any term of an AP without listing all terms. The nth term formula is: a-n equals a plus n minus 1 times d. Here is why — the first term is a. The second term is a plus d. The third term is a plus 2d. So the pattern is clear — to get the nth term, we add d exactly n minus 1 times. This is your key formula for any AP problem.`,
+  /* ════════════════════════════════════════
+     ARITHMETIC PROGRESSIONS — Class 10
+  ════════════════════════════════════════ */
+  'ap-0': `Hello students! Welcome to the chapter on Arithmetic Progressions.
 
-  'ap-2': `Look at this bar chart for the AP with first term 3 and common difference 4. The terms are 3, 7, 11, 15, 19, 23. Each bar is exactly 4 units taller than the previous one. That uniform, steady growth is the visual signature of an arithmetic progression. If the bars were not equal in height difference, it would not be an AP.`,
+Let me start with a very simple question. Look at this sequence — 2, 5, 8, 11, 14. Can you see a pattern here?
 
-  'ap-3': `The sum of n terms formula was discovered using a clever trick. Write S-n forward and then backward. Add both rows — each pair sums to a plus the last term l. So 2 S-n equals n times a plus l. Substitute l equals a plus n minus 1 times d, and divide by 2. The result is S-n equals n over 2 times 2a plus n minus 1 times d. Remember both forms — they are equally useful.`,
+Yes! Every time we move from one number to the next, we are adding 3. The difference between consecutive terms is always the same. This is the fundamental idea of an Arithmetic Progression.
 
-  'ap-4': `Let us solve an example. For the AP 5, 8, 11, 14 — a equals 5 and d equals 8 minus 5 equals 3. To find the 10th term — a-10 equals 5 plus 9 times 3 equals 5 plus 27 equals 32. To find the sum of 10 terms — S-10 equals 10 over 2 times 2 times 5 plus 9 times 3 equals 5 times 37 equals 185. So the 10th term is 32 and the sum is 185. Always identify a and d first — that is the key step.`,
+An Arithmetic Progression, or AP, is a list of numbers where the difference between any two consecutive terms is always constant. This constant difference is called the Common Difference, and we write it as lowercase d.
 
-  /* ─── Quadratic Equations ─── */
-  'quad-0': `Welcome to Quadratic Equations! A quadratic equation is a polynomial equation where the highest power of x is 2. The standard form is ax squared plus bx plus c equals zero, where a is not equal to zero. The values a, b and c are called coefficients. For example, in 2x squared minus 5x plus 3 equals zero, a is 2, b is minus 5, and c is 3. The graph of any quadratic equation is always a parabola.`,
+In our example — 5 minus 2 is 3. 8 minus 5 is 3. 11 minus 8 is 3. So d equals 3.
 
-  'quad-1': `Now let us look at the graph of y equals x squared minus 5x plus 6. This parabola opens upward. Where it crosses the x-axis — those points are called the roots or zeros of the equation. For this equation, the parabola crosses the x-axis at x equals 2 and x equals 3. These are the two solutions. Any quadratic can have 2, 1, or 0 real roots — and the discriminant tells us which case it is.`,
+The very first number in the sequence is called the first term, written as lowercase a. Here, a equals 2.
 
-  'quad-2': `The quadratic formula gives us the roots of any quadratic equation. It is x equals minus b plus or minus square root of b squared minus 4ac, all divided by 2a. The expression under the square root — b squared minus 4ac — is called the discriminant, written as D. If D is greater than zero, there are two distinct real roots. If D equals zero, there are two equal roots. If D is less than zero, there are no real roots.`,
+Now, if d is positive, the AP is increasing — each term is larger than the previous one. If d is negative, the AP is decreasing. And if d is zero, all terms are equal — that is also technically an AP.
 
-  'quad-3': `Let us solve 2x squared minus 7x plus 3 equals zero using the formula. a equals 2, b equals minus 7, c equals 3. The discriminant D equals 49 minus 24 equals 25. Since D is positive, we have two real roots. Applying the formula — x equals 7 plus or minus 5, divided by 4. So x-1 equals 12 over 4 equals 3, and x-2 equals 2 over 4 equals one half. Both roots check out when substituted back.`,
+Remember — the most important thing to identify in any AP problem is the first term a, and the common difference d. Once you know these two values, you can find anything about that AP.`,
 
-  /* ─── Trigonometry ─── */
-  'trig-0': `Welcome to Trigonometry! Trigonometry is the study of relationships between angles and sides in a right triangle. The three basic ratios are sine, cosine and tangent. Remember them with SOH-CAH-TOA. Sine equals Opposite over Hypotenuse. Cosine equals Adjacent over Hypotenuse. Tangent equals Opposite over Adjacent. The other three — cosecant, secant, cotangent — are just reciprocals of these three.`,
+  'ap-1': `Now students, let me teach you the most important formula in this chapter — the nth term formula.
 
-  'trig-1': `The unit circle is a circle with radius 1 centred at the origin. On this circle, for any angle theta, the x-coordinate of the point is cosine theta, and the y-coordinate is sine theta. Watch the point moving around the circle — the horizontal projection is cosine, and the vertical projection is sine. This is why sine squared theta plus cosine squared theta always equals 1 — it is just Pythagoras theorem on the unit circle.`,
+Suppose I give you an AP and ask — what is the 50th term? You cannot list 50 terms manually in an exam. So we need a direct formula.
 
-  'trig-2': `These are the standard angle values you must memorise. At 0 degrees, sine is 0 and cosine is 1. At 30 degrees, sine is one-half and cosine is root 3 over 2. At 45 degrees, both sine and cosine are 1 over root 2. At 60 degrees, sine is root 3 over 2 and cosine is one-half. At 90 degrees, sine is 1 and cosine is 0. Here is a quick trick — for sine, the values are root 0, root 1, root 2, root 3, root 4 — all divided by 2.`,
+Let me derive it step by step. The first term is simply a. The second term is a plus d — we added d once. The third term is a plus 2d — we added d twice. The fourth term is a plus 3d — we added d three times.
 
-  'trig-3': `The most important trigonometric identities are these. The Pythagorean identity: sine squared theta plus cosine squared theta equals 1. Dividing by cosine squared gives 1 plus tangent squared theta equals secant squared theta. Dividing by sine squared gives 1 plus cotangent squared theta equals cosecant squared theta. The complementary angle identities: sine of 90 minus theta equals cosine theta, and tangent of 90 minus theta equals cotangent theta. Learn these — they are used in almost every problem.`,
+Do you see the pattern? To get the nth term, we add d exactly n minus 1 times.
 
-  /* ─── Integration ─── */
-  'integ-0': `Welcome to Integration — one of the most powerful tools in mathematics! Integration is the reverse of differentiation. If differentiation finds the rate of change, integration finds the total accumulation. The indefinite integral of f of x with respect to x equals F of x plus C, where F prime of x equals f of x, and C is the constant of integration. The symbol for integration is an elongated S, standing for Sum, because integration is essentially an infinite sum.`,
+So the nth term formula is — a subscript n equals a plus open bracket n minus 1 close bracket times d.
 
-  'integ-1': `Look at the graph of y equals x squared. The shaded area between x equals 0 and x equals 3 is being filled in. The definite integral of x squared from 0 to 3 equals x cubed over 3, evaluated from 0 to 3 — which equals 27 over 3 minus 0 equals 9. So the area under the parabola from 0 to 3 is exactly 9 square units. This geometric meaning of integration as area is fundamental to understanding calculus.`,
+This is the formula. Memorise it.
 
-  'integ-2': `These are the standard integration formulas you must know. The power rule — integral of x to the n equals x to the n plus 1 over n plus 1 plus C. Integral of e to the x equals e to the x plus C. Integral of 1 over x equals log of x plus C. Integral of sin x equals minus cos x plus C. Integral of cos x equals sin x plus C. Integral of sec squared x equals tan x plus C. These are your building blocks — all other integrals are built from these.`,
+Let me verify with our example. a equals 2, d equals 3. What is the 5th term?
+a5 equals 2 plus 4 times 3 equals 2 plus 12 equals 14. And yes — look at the sequence — 2, 5, 8, 11, 14. The 5th term is indeed 14. The formula works perfectly.
 
-  'integ-3': `Let us evaluate the integral of 3x squared plus 2x plus 5 with respect to x. Step one — split into three separate integrals. Step two — apply the power rule to each. 3 times x cubed over 3 gives x cubed. 2 times x squared over 2 gives x squared. Integral of 5 gives 5x. So the final answer is x cubed plus x squared plus 5x plus C. Always add the constant of integration C for indefinite integrals.`,
+This formula is used in every single AP problem. Learn it, understand it, and never forget it.`,
 
-  /* ─── Motion ─── */
-  'motion-0': `Welcome to the chapter on Motion! An object is in motion when its position changes with time. The key terms are — distance, which is the total path length and is a scalar quantity. Displacement is the shortest straight-line distance from start to finish and is a vector. Speed is distance divided by time — a scalar. Velocity is displacement divided by time — a vector with direction. And acceleration is the change in velocity divided by time.`,
+  'ap-2': `Students, now I want you to visualise what an AP looks like graphically.
 
-  'motion-1': `These are the distance-time and velocity-time graphs. On a distance-time graph, the slope at any point gives the velocity. A straight line means uniform motion — constant velocity. On the velocity-time graph, the slope gives acceleration. A straight line means uniform acceleration. The area under the velocity-time graph gives the displacement. These graphs are extremely important for understanding and solving motion problems.`,
+Look at this bar chart. We have an AP with first term a equals 3 and common difference d equals 4. The terms are — 3, 7, 11, 15, 19, 23.
 
-  'motion-2': `The three equations of motion apply when acceleration is uniform and in a straight line. First equation — v equals u plus at. This relates final velocity, initial velocity, acceleration and time. Second equation — s equals ut plus half at squared. This gives displacement. Third equation — v squared equals u squared plus 2as. This is used when time is not given or not needed. Here, u is initial velocity, v is final velocity, a is acceleration, s is displacement, and t is time.`,
+Notice how each bar is exactly 4 units taller than the one before it. That perfectly uniform, steady, linear growth — that is the visual identity of an Arithmetic Progression.
 
-  'motion-3': `Let us solve a problem. A car starts from rest, so initial velocity u equals zero. Acceleration a equals 4 metres per second squared. Time t equals 5 seconds. Using the first equation — v equals 0 plus 4 times 5 equals 20 metres per second. Using the second equation — s equals 0 times 5 plus half times 4 times 25 equals 50 metres. So after 5 seconds, the car is moving at 20 metres per second and has covered 50 metres. Always write down u, v, a, s, t first — then choose the right equation.`,
+If I were to plot these terms on a graph with term number on the x-axis and term value on the y-axis, I would get a perfectly straight line. This is because the terms increase by a constant amount each time.
 
-  /* ─── Newton's Laws ─── */
-  'newton-0': `Welcome to Newton's Laws of Motion — published in 1687! The first law, also called the Law of Inertia, states that an object at rest stays at rest, and an object in motion continues in motion, unless an external unbalanced force acts on it. The second law states that force equals mass times acceleration — F equals ma. And the third law states that for every action there is an equal and opposite reaction. These three laws form the foundation of all of classical mechanics.`,
+This is also why AP is connected to linear equations. In fact, the nth term formula a plus n minus 1 times d is nothing but a linear equation in n.
 
-  'newton-1': `Watch what happens when the same force acts on a light 2-kilogram ball and a heavy 8-kilogram ball. The light ball accelerates at 5 metres per second squared. The heavy ball accelerates at only 1.25 metres per second squared. Same force, but different accelerations — because a equals F over m. This beautifully demonstrates Newton's second law. Greater mass means less acceleration for the same force.`,
+Compare this with a Geometric Progression, where the bars would grow exponentially — much faster and not uniform. AP is simple, predictable, and linear.
 
-  'newton-2': `Here are real-life examples of Newton's laws. Seatbelts — when a car stops suddenly, your body wants to keep moving forward because of inertia. That is the first law in action, and the seatbelt provides the external force to stop you. Rockets — exhaust gases are pushed backward, and by the third law, the rocket is pushed forward. Walking — you push the ground backward, and the ground pushes you forward. Every action has an equal and opposite reaction.`,
+This visual understanding will help you in data interpretation and real-life problems where quantities grow at a constant rate — like salary increments, saving money every month, or uniform speed problems.`,
 
-  'newton-3': `Let us calculate. A force of 50 newtons acts on a body of mass 10 kilograms with a friction force of 10 newtons. Without friction — a equals F over m equals 50 over 10 equals 5 metres per second squared. With friction — the net force is 50 minus 10 equals 40 newtons. So net acceleration equals 40 over 10 equals 4 metres per second squared. Always calculate net force first by subtracting friction or opposing forces from the applied force.`,
+  'ap-3': `Now let us learn the second key formula — the Sum of n terms.
 
-  /* ─── Electricity ─── */
-  'elec-0': `Welcome to the chapter on Electricity! Electric current is the flow of electric charge through a conductor. Current I equals charge Q divided by time t, measured in Amperes. Voltage V is the electric potential difference between two points, measured in Volts. Resistance R is the opposition to current flow, measured in Ohms. Ohm's Law connects all three — Voltage equals Current times Resistance. This is the single most important formula in electricity.`,
+Suppose you want to add the first 100 natural numbers — 1 plus 2 plus 3 all the way to 100. Doing it one by one would take forever. The great mathematician Gauss found a beautiful shortcut when he was just a child.
 
-  'elec-1': `Watch the blue dots representing electrons flowing through this circuit. The battery provides the electromotive force that drives the current. Electrons actually flow from the negative terminal to the positive terminal. But by convention, we say current flows from positive to negative. The resistor opposes this flow. In this circuit, with a 6 volt battery and a 30 ohm resistor — the current flowing is 0.2 Amperes, calculated using Ohm's Law.`,
+Here is the trick. Write the sum forward — S equals 1 plus 2 plus 3 plus ... plus 100. Now write the same sum backward — S equals 100 plus 99 plus 98 plus ... plus 1. 
 
-  'elec-2': `In a series circuit, all components are connected in a single loop. The same current flows through all of them, and the total resistance is the sum of individual resistances. In a parallel circuit, components have multiple paths. The same voltage appears across each, and the reciprocal of total resistance equals the sum of reciprocals. Parallel circuits are used in home wiring — so that each appliance gets full voltage and can be switched independently. Power P equals V times I, which also equals I squared R, or V squared over R.`,
+Now add both rows together. Each pair adds up to 101. And there are 100 such pairs. So 2S equals 100 times 101. Therefore S equals 50 times 101 equals 5050.
 
-  'elec-3': `Let us solve. Battery voltage V equals 6 volts, resistance R equals 30 ohms. Using Ohm's Law — current I equals V over R equals 6 over 30 equals 0.2 Amperes. Power P equals V times I equals 6 times 0.2 equals 1.2 Watts. We can verify — P also equals I squared times R equals 0.04 times 30 equals 1.2 Watts. Both methods give the same answer. Always verify your answer using a different formula when possible.`,
+We generalise this for any AP. Write Sn forward and backward. Each pair gives a plus l, where l is the last term. And there are n such pairs. So 2Sn equals n times a plus l. Dividing by 2 — Sn equals n over 2 times a plus l.
 
-  /* ─── Optics ─── */
-  'optics-0': `Welcome to Light, Reflection and Refraction! When light hits a surface and bounces back, it is called reflection. The two laws of reflection are — first, the incident ray, the reflected ray, and the normal are all in the same plane. Second, the angle of incidence equals the angle of reflection. The mirror formula is 1 over v plus 1 over u equals 1 over f. And magnification m equals minus v over u. For concave mirrors, the focal length is negative.`,
+Now substitute l equals a plus n minus 1 times d. We get Sn equals n over 2 times 2a plus n minus 1 times d.
 
-  'optics-1': `Watch the ray of light hitting the concave mirror. The incident ray comes in at an angle. It hits the mirror surface, and the reflected ray bounces back following the law of reflection — the angle of reflection equals the angle of incidence. The two reflected rays from parallel incident rays meet at the focal point F. This is why concave mirrors are used in torches, solar heaters and satellite dishes — they converge light to a point.`,
+Remember both forms. Use the first form when you know the last term. Use the second form when you know a and d. Both give the same answer.`,
 
-  'optics-2': `When light travels from one medium to another, it bends — this is called refraction. Snell's Law states — n1 sine theta 1 equals n2 sine theta 2. When light goes from air into a denser medium like glass, it bends towards the normal — theta 2 is smaller than theta 1. The refractive index n equals the speed of light in vacuum divided by the speed in the medium. For glass, n is approximately 1.5, meaning light travels 1.5 times slower in glass than in air.`,
+  'ap-4': `Excellent! Now let us apply everything we have learned to solve a complete problem.
 
-  'optics-3': `Watch light travelling from air into glass. The ray bends towards the normal as it enters the denser medium. This bending is refraction. The lens formula is 1 over v minus 1 over u equals 1 over f. The power of a lens in dioptres equals 1 over focal length in metres. A convex lens has positive power — it converges light. A concave lens has negative power — it diverges light. This is why reading glasses and camera lenses work the way they do.`,
+The AP is 5, 8, 11, 14 — and we need to find the 10th term and the sum of first 10 terms.
 
-  'optics-4': `Let us solve a mirror problem. Object distance u equals minus 20 centimetres. Focal length f equals minus 15 centimetres for a concave mirror. Applying the mirror formula — 1 over v equals 1 over f minus 1 over u equals minus 1 over 15 plus 1 over 20. This gives 1 over v equals minus 1 over 60. So v equals minus 60 centimetres. The negative sign means the image is real and on the same side as the object. Magnification m equals minus v over u equals minus 3 — meaning the image is inverted and 3 times larger.`
+Step 1 — always identify a and d first. First term a equals 5. Common difference d equals 8 minus 5 equals 3.
+
+Step 2 — find the 10th term using the nth term formula. a10 equals a plus 9 times d equals 5 plus 9 times 3 equals 5 plus 27 equals 32. So the 10th term is 32.
+
+Step 3 — find the sum of first 10 terms. S10 equals 10 over 2 times bracket 2 times 5 plus 9 times 3 bracket. Equals 5 times bracket 10 plus 27 bracket. Equals 5 times 37 equals 185.
+
+So the sum of the first 10 terms is 185. Let me verify — if the first term is 5 and the 10th term is 32, then S10 also equals 10 over 2 times 5 plus 32 equals 5 times 37 equals 185. Correct!
+
+Practice tip — in every AP problem, your first two steps should always be — write down a, and calculate d. Everything else follows from these two values.`,
+
+  /* ════════════════════════════════════════
+     QUADRATIC EQUATIONS — Class 10
+  ════════════════════════════════════════ */
+  'quad-0': `Hello students! Today we are going to master Quadratic Equations — one of the most important topics in Class 10 Mathematics.
+
+A quadratic equation is a polynomial equation where the highest power of the variable x is 2. The word quadratic comes from the Latin word for square.
+
+The standard form is ax squared plus bx plus c equals zero, where a, b, and c are real numbers, and most importantly, a cannot be zero. If a were zero, the x squared term would disappear, and it would become a linear equation, not quadratic.
+
+The numbers a, b, and c are called coefficients.
+
+Let me give you some examples. In 2x squared minus 5x plus 3 equals zero — a is 2, b is minus 5, and c is 3. In x squared minus 4 equals zero — a is 1, b is 0, and c is minus 4. In x squared minus 5x plus 6 equals zero — a is 1, b is minus 5, and c is 6.
+
+The solutions of a quadratic equation — the values of x that satisfy it — are called roots or zeros. A quadratic equation has at most 2 roots. And the graph of y equals ax squared plus bx plus c is always a U-shaped curve called a parabola. The roots are exactly where this parabola crosses the x-axis.`,
+
+  'quad-1': `Students, now look at this beautiful graph — the parabola of y equals x squared minus 5x plus 6.
+
+The parabola opens upward because the coefficient of x squared is positive. The curve dips down, touches its lowest point called the vertex, and then rises again on both sides.
+
+See those two points where the parabola crosses the x-axis? Those are the roots of the equation. At those points, y equals zero — meaning x squared minus 5x plus 6 equals zero. The roots here are x equals 2 and x equals 3.
+
+This gives us a beautiful geometric understanding — solving a quadratic equation means finding where its parabola touches the x-axis.
+
+Now here is something very important. What if the parabola crossed the x-axis at two different points? That means two distinct real roots. What if it just touched the x-axis at exactly one point? That means two equal roots — also called a repeated root. And what if the parabola never touches the x-axis at all — it floats entirely above or below it? That means no real roots.
+
+The discriminant — which we will study next — is the mathematical tool that tells us which of these three cases we are in, without even drawing the graph.`,
+
+  'quad-2': `Now I am going to teach you the most powerful formula in this entire chapter — the Quadratic Formula. This formula gives the roots of any quadratic equation, no matter how complicated.
+
+The formula is — x equals minus b, plus or minus the square root of b squared minus 4ac, all divided by 2a.
+
+Let me explain what plus or minus means. The formula gives two values — one using plus, and one using minus. These are the two roots.
+
+The expression inside the square root — b squared minus 4ac — is called the Discriminant. We write it as capital D. The discriminant is the key to understanding the nature of roots without solving the equation.
+
+Case 1 — if D is greater than zero, the square root is a real positive number. So we get two different real roots. The parabola cuts the x-axis at two distinct points.
+
+Case 2 — if D equals zero, the square root is zero. Both roots become minus b over 2a — they are equal. The parabola just touches the x-axis at one point.
+
+Case 3 — if D is less than zero, the square root of a negative number is not real. So there are no real roots. The parabola never crosses the x-axis.
+
+Always check the discriminant first — it tells you what to expect before you even calculate the roots.`,
+
+  'quad-3': `Let us solve a complete problem step by step. The equation is 2x squared minus 7x plus 3 equals zero.
+
+Step 1 — identify the coefficients. a equals 2, b equals minus 7, c equals 3.
+
+Step 2 — calculate the discriminant. D equals b squared minus 4ac equals minus 7 squared minus 4 times 2 times 3 equals 49 minus 24 equals 25.
+
+Since D equals 25 which is greater than zero, we have two distinct real roots. Good.
+
+Step 3 — apply the quadratic formula. x equals minus b plus or minus root D, divided by 2a. Equals 7 plus or minus root 25, divided by 4. Equals 7 plus or minus 5, divided by 4.
+
+Step 4 — find both roots. x1 equals 7 plus 5 over 4 equals 12 over 4 equals 3. x2 equals 7 minus 5 over 4 equals 2 over 4 equals one half.
+
+Verification — put x equals 3 in the original equation. 2 times 9 minus 21 plus 3 equals 18 minus 21 plus 3 equals 0. Correct! Put x equals one half. 2 times one quarter minus 7 over 2 plus 3 equals one half minus three point five plus three equals zero. Correct!
+
+Always verify your roots — it takes 30 seconds and confirms your answer completely.`,
+
+  /* ════════════════════════════════════════
+     TRIGONOMETRY — Class 10
+  ════════════════════════════════════════ */
+  'trig-0': `Welcome students! Today we begin Trigonometry — a subject that has been used for thousands of years by astronomers, architects, engineers and navigators.
+
+Trigonometry is the study of the relationship between the angles and sides of a right-angled triangle.
+
+Consider a right triangle. One angle is 90 degrees. Another angle we call theta. The side opposite to the 90 degree angle — the longest side — is the Hypotenuse. The side opposite to theta is called the Opposite side. And the side adjacent to theta — next to it — is the Adjacent side.
+
+The three basic trigonometric ratios are sine, cosine, and tangent. And the best way to remember them is SOH CAH TOA.
+
+SOH — Sine equals Opposite over Hypotenuse.
+CAH — Cosine equals Adjacent over Hypotenuse.
+TOA — Tangent equals Opposite over Adjacent.
+
+There are three more ratios — cosecant, secant, and cotangent — which are simply the reciprocals. Cosecant equals 1 over sine. Secant equals 1 over cosine. Cotangent equals 1 over tangent.
+
+These six ratios are the foundation of all trigonometry. Once you understand what each ratio means geometrically — as a ratio of two specific sides — everything else in trigonometry becomes clear.`,
+
+  'trig-1': `Now I want to show you the unit circle — the most powerful visualisation tool in trigonometry.
+
+A unit circle is a circle with radius exactly 1, placed at the origin of a coordinate system. Imagine a point moving around this circle. For any position of the point, the angle it makes at the centre with the positive x-axis is theta.
+
+Here is the beautiful fact — the x-coordinate of that point is exactly cosine theta, and the y-coordinate is exactly sine theta.
+
+Watch the animation. As the point moves around the circle, the horizontal distance from the centre is cosine theta — shown in green. The vertical distance from the x-axis is sine theta — shown in orange.
+
+This leads directly to the most fundamental identity in trigonometry. Since the point is on a circle of radius 1, by Pythagoras theorem — x squared plus y squared equals 1. Which means cosine squared theta plus sine squared theta equals 1.
+
+This is the Pythagorean identity, and it is true for every angle theta without exception. This identity is the starting point for proving most other trigonometric identities.
+
+The unit circle also explains why trigonometric functions are periodic — the point keeps going around the circle, so the values of sine and cosine repeat every 360 degrees.`,
+
+  'trig-2': `Students, now you must memorise the values of trigonometric ratios at the five standard angles — 0, 30, 45, 60, and 90 degrees. These values appear in almost every trigonometry problem in your exam.
+
+Let me give you the easiest trick ever for sine values. Write root 0 over 2, root 1 over 2, root 2 over 2, root 3 over 2, root 4 over 2. Simplify each — you get 0, one half, 1 over root 2, root 3 over 2, and 1. These are the sine values at 0, 30, 45, 60, and 90 degrees respectively.
+
+For cosine — just read the sine values in reverse order. Cosine at 0 is 1, at 30 is root 3 over 2, at 45 is 1 over root 2, at 60 is one half, at 90 is 0.
+
+For tangent — divide sine by cosine. Tan 30 equals one half divided by root 3 over 2 equals 1 over root 3. Tan 45 equals 1. Tan 60 equals root 3. Tan 90 is undefined — we say infinity — because cosine 90 is zero, and we cannot divide by zero.
+
+Please write these values on a small card and revise them daily until they are automatic. In exams, these values come up in almost every question.`,
+
+  'trig-3': `Now let us study the trigonometric identities — these are equations that are true for all values of the angle theta.
+
+The three Pythagorean identities are the most important. First — sine squared theta plus cosine squared theta equals 1. This is the original identity from the unit circle.
+
+Second — 1 plus tangent squared theta equals secant squared theta. This is obtained by dividing the first identity by cosine squared theta.
+
+Third — 1 plus cotangent squared theta equals cosecant squared theta. This is obtained by dividing the first identity by sine squared theta.
+
+Then there are the complementary angle identities. Sine of 90 minus theta equals cosine theta. Cosine of 90 minus theta equals sine theta. Tangent of 90 minus theta equals cotangent theta. These make sense because the sine of an angle in a right triangle equals the cosine of the other acute angle — they are complementary.
+
+In exams, identity problems follow a pattern — take the more complex side, substitute the identities, simplify step by step until you reach the simpler side. Never work on both sides simultaneously. Work on one side only and transform it into the other.`,
+
+  /* ════════════════════════════════════════
+     INTEGRATION — Class 12
+  ════════════════════════════════════════ */
+  'integ-0': `Hello students! Welcome to Integration — the second major branch of Calculus, alongside Differentiation.
+
+If differentiation is about finding the rate of change — how fast something is changing — then integration is about finding the total accumulated change. They are two sides of the same coin.
+
+Formally — the integral of a function f of x with respect to x is another function F of x, such that the derivative of F of x is f of x. We write this as the integral of f of x dx equals F of x plus C.
+
+The symbol for integration is an elongated S — it stands for Sum, because integration was originally conceived as the sum of infinitely many infinitely thin rectangles under a curve.
+
+The plus C at the end — called the constant of integration — is extremely important. When we differentiate, constant terms vanish. So when we integrate, we must acknowledge that any constant could have been there. Always write plus C for indefinite integrals or you will lose marks.
+
+The integral without limits — no numbers at the bottom and top of the integration sign — is called an indefinite integral. It gives a family of functions. The integral with limits a and b is called a definite integral, and it gives a specific numerical value — the area under the curve from x equals a to x equals b.`,
+
+  'integ-1': `Now let me show you the geometric meaning of integration — it is the area under a curve.
+
+Look at the graph of y equals x squared. This is a parabola opening upward. We want to find the area of the region bounded by this curve, the x-axis, and the vertical lines x equals 0 and x equals 3.
+
+Visually — watch as the area is filled in from left to right. The region is wider at the top because the parabola rises steeply, and narrower at the bottom near the origin.
+
+Mathematically — the definite integral of x squared from 0 to 3 equals x cubed over 3, evaluated from 0 to 3. At x equals 3 — 27 over 3 equals 9. At x equals 0 — 0 over 3 equals 0. So the area equals 9 minus 0 equals 9 square units.
+
+This is the Fundamental Theorem of Calculus — integration and differentiation are inverse operations. To evaluate a definite integral, find the antiderivative, then substitute the upper limit minus the lower limit.
+
+This geometric interpretation is powerful. It is used to find areas of irregular shapes, volumes of solids, work done by a variable force, distance from velocity, and many more applications in physics and engineering.`,
+
+  'integ-2': `Students, let me give you the standard integration formulas — these are your tools. Just like you need a formula sheet for differentiation, you need these for integration.
+
+The Power Rule — the integral of x to the power n is x to the power n plus 1, divided by n plus 1, plus C. This works for all values of n except n equals minus 1.
+
+Special case for n equals minus 1 — the integral of 1 over x is the natural logarithm of the absolute value of x, plus C.
+
+For exponentials — the integral of e to the x is simply e to the x plus C. The integral of a to the x is a to the x divided by log a, plus C.
+
+For trigonometric functions — the integral of sin x is minus cos x plus C. The integral of cos x is sin x plus C. Remember — integration of sine gives negative cosine, not positive. Many students make this mistake.
+
+The integral of sec squared x is tan x plus C. The integral of cosec squared x is minus cot x plus C.
+
+These formulas come directly from reversing the differentiation formulas you already know. If the derivative of sin x is cos x, then the integral of cos x must be sin x. Use this logic to reconstruct any formula you forget.`,
+
+  'integ-3': `Let us solve a complete integration problem step by step. We need to find the integral of 3x squared plus 2x plus 5 with respect to x.
+
+The key technique here is linearity — we can split the integral of a sum into separate integrals, and pull constants outside the integral sign.
+
+Step 1 — split the integral. It becomes the integral of 3x squared dx, plus the integral of 2x dx, plus the integral of 5 dx.
+
+Step 2 — pull constants out. It becomes 3 times integral of x squared, plus 2 times integral of x, plus 5 times integral of 1.
+
+Step 3 — apply the power rule to each. Integral of x squared is x cubed over 3. Integral of x is x squared over 2. Integral of 1 is x.
+
+Step 4 — multiply back the constants. 3 times x cubed over 3 gives x cubed. 2 times x squared over 2 gives x squared. 5 times x gives 5x.
+
+Final answer — x cubed plus x squared plus 5x plus C.
+
+Verification — differentiate x cubed plus x squared plus 5x. Derivative is 3x squared plus 2x plus 5. That matches our original function. Correct!
+
+Always verify your integration by differentiating the answer and checking it matches the original function.`,
+
+  /* ════════════════════════════════════════
+     MOTION — Class 9 Physics
+  ════════════════════════════════════════ */
+  'motion-0': `Hello students! Welcome to the chapter on Motion in Physics. This chapter is absolutely fundamental — everything in mechanics builds on what we learn here.
+
+Let us start by understanding the difference between some very important terms that are often confused.
+
+Distance is the total length of the path covered by an object, regardless of direction. It is a scalar quantity — it has only magnitude, no direction. If you walk 5 metres forward and 5 metres back, the distance is 10 metres.
+
+Displacement is the shortest straight-line distance from the starting point to the ending point, measured in a specific direction. It is a vector quantity — it has both magnitude and direction. In the same example, if you started and ended at the same point, the displacement is zero.
+
+Speed is distance divided by time. It tells you how fast something is moving, but not in which direction. It is scalar.
+
+Velocity is displacement divided by time. It has both magnitude and direction. It is a vector. This is why in physics we always use velocity in equations, not speed.
+
+Acceleration is the rate of change of velocity. If the velocity increases, acceleration is positive. If velocity decreases, we call it deceleration or retardation, and acceleration is negative. Acceleration is also a vector quantity. The SI unit of acceleration is metres per second squared.`,
+
+  'motion-1': `Now let us understand the two most important graphs in the study of motion — the distance-time graph and the velocity-time graph.
+
+On the distance-time graph, time is plotted on the x-axis and distance on the y-axis. The slope of this graph at any point gives the speed. A straight sloping line means the object is covering equal distances in equal time intervals — this is uniform motion, or constant speed. A horizontal straight line means the object is stationary — distance is not changing. A curve means the speed is changing — non-uniform motion.
+
+On the velocity-time graph, time is on the x-axis and velocity on the y-axis. The slope of this graph gives acceleration. A straight sloping line upward means uniform acceleration — velocity is increasing at a constant rate. A horizontal line means zero acceleration — constant velocity. A downward slope means deceleration.
+
+Very importantly — the area under the velocity-time graph gives the displacement. This is why integration is so powerful in physics — the integral of velocity over time gives displacement.
+
+These graphs are frequently asked in exams. Practice drawing them for different types of motion — uniform, uniformly accelerated, and non-uniform. Understanding graphs is as important as knowing the formulas.`,
+
+  'motion-2': `Now we come to the heart of this chapter — the three equations of motion. These equations apply when an object moves in a straight line with uniform acceleration — meaning the acceleration is constant.
+
+The three equations are —
+First equation — v equals u plus at.
+Second equation — s equals ut plus one half at squared.
+Third equation — v squared equals u squared plus 2as.
+
+Here — u is the initial velocity, meaning the velocity at the start. v is the final velocity after time t. a is the uniform acceleration. s is the displacement. And t is the time elapsed.
+
+The first equation is derived directly from the definition of acceleration — a equals v minus u over t. Rearranging gives v equals u plus at.
+
+The second equation gives displacement in terms of time. It is derived from the area under the velocity-time graph.
+
+The third equation is most useful when time is not given and not required. It eliminates t by combining the first and second equations.
+
+For each problem, first identify which quantities are given and which one you need to find. Then choose the equation that contains exactly those quantities. This systematic approach will solve any motion problem.`,
+
+  'motion-3': `Let us solve a problem to put everything together.
+
+A car starts from rest — which means the initial velocity u equals zero. It accelerates uniformly at 4 metres per second squared. We need to find the velocity after 5 seconds and the distance covered in those 5 seconds.
+
+Given — u equals 0, a equals 4 metres per second squared, t equals 5 seconds. We need to find v and s.
+
+For velocity — use the first equation. v equals u plus at. v equals 0 plus 4 times 5. v equals 20 metres per second.
+
+So after 5 seconds, the car is moving at 20 metres per second. That is 72 kilometres per hour. Quite fast!
+
+For distance — use the second equation. s equals ut plus half at squared. s equals 0 times 5 plus half times 4 times 25. s equals 0 plus 50. s equals 50 metres.
+
+We can also verify using the third equation. v squared equals u squared plus 2as. 400 equals 0 plus 2 times 4 times s. s equals 400 over 8 equals 50 metres. Same answer!
+
+The key step in every motion problem is to make a table — write down what is given and what is unknown — then select the correct equation. Never start substituting without identifying u, v, a, s, and t.`,
+
+  /* ════════════════════════════════════════
+     NEWTON'S LAWS — Class 9 Physics
+  ════════════════════════════════════════ */
+  'newton-0': `Hello students! Today we study the three laws that changed the world — Newton's Laws of Motion, published in 1687 in the famous book Principia Mathematica.
+
+Before Newton, people believed that a force was needed to keep something moving. Newton proved them wrong.
+
+Newton's First Law — also called the Law of Inertia — states that an object at rest remains at rest, and an object moving with constant velocity continues to move with that same constant velocity, unless an external unbalanced force acts on it.
+
+The key concept here is inertia — the tendency of an object to resist any change in its state of motion. Heavier objects have more inertia.
+
+Newton's Second Law — the most mathematical of the three — states that the acceleration of an object is directly proportional to the net force acting on it, and inversely proportional to its mass. This gives us the famous formula F equals ma. Force equals mass times acceleration.
+
+Newton's Third Law — for every action force, there is an equal and opposite reaction force. These action and reaction forces act on different objects, never on the same object.
+
+These three laws completely describe how objects move under forces. Together, they form the foundation of classical mechanics — the physics that governs everything from a rolling ball to a flying rocket.`,
+
+  'newton-1': `Watch this animation carefully — it demonstrates Newton's Second Law beautifully.
+
+We apply the same force of 10 Newtons to two different balls. The green ball has a mass of only 2 kilograms. The red ball is much heavier — 8 kilograms.
+
+Using Newton's second law — F equals ma, which means a equals F divided by m.
+
+For the green ball — a equals 10 divided by 2 equals 5 metres per second squared. It shoots forward quickly!
+
+For the red ball — a equals 10 divided by 8 equals 1.25 metres per second squared. It moves much more slowly.
+
+Watch the animation — the green ball accelerates much faster than the red one, even though the same force is applied to both.
+
+This is the essence of the second law — for a given force, greater mass means less acceleration. If you double the mass, the acceleration becomes half. If you triple the force, the acceleration triples.
+
+This is why trucks need much more powerful engines than motorcycles to achieve the same acceleration. This is why pushing a loaded trolley is harder than pushing an empty one. The second law governs all of these everyday experiences.
+
+In every Force and acceleration problem — always calculate the net force first, then divide by mass to get acceleration.`,
+
+  'newton-2': `Let us look at some real-life applications of Newton's laws — because physics is not just about equations, it is about understanding the world around you.
+
+Seatbelts and Newton's First Law — When a car is moving and suddenly brakes hard, the car decelerates rapidly. But your body wants to keep moving forward at the original speed — that is inertia, the first law. The seatbelt applies an external backward force to your body, stopping you safely. Without it, you would continue moving forward and hit the windshield. This is why seatbelts save lives.
+
+Rockets and Newton's Third Law — A rocket engine burns fuel and expels hot exhaust gases at very high speed in the backward direction. By the third law, the rocket experiences an equal and opposite force in the forward direction. This reaction force is what propels the rocket. There is nothing to push against in space — the rocket pushes against its own exhaust gases.
+
+Walking and Newton's Third Law — When you walk, your foot pushes backward against the ground. By the third law, the ground pushes your foot forward. This forward push from the ground is what moves you. If the ground were perfectly frictionless — like ice — this push would not work, and you would slip.
+
+These examples show that Newton's laws are not abstract equations — they are explanations of everything we experience every day.`,
+
+  'newton-3': `Let us solve a numerical problem involving Newton's second law with friction.
+
+A force of 50 Newtons is applied to a box of mass 10 kilograms. The floor exerts a friction force of 10 Newtons opposing the motion. Find the acceleration of the box.
+
+Step 1 — identify all forces. Applied force F equals 50 Newtons in the forward direction. Friction force f equals 10 Newtons in the backward direction.
+
+Step 2 — calculate the net force. Net force equals applied force minus friction equals 50 minus 10 equals 40 Newtons.
+
+This step is critical. Newton's second law uses the NET force — the resultant of all forces acting on the object, not just the applied force. Many students use only the applied force and get the wrong answer.
+
+Step 3 — apply Newton's second law. a equals net force divided by mass equals 40 divided by 10 equals 4 metres per second squared.
+
+So the box accelerates at 4 metres per second squared.
+
+Without friction, the acceleration would have been 50 over 10 equals 5 metres per second squared. Friction reduced the acceleration from 5 to 4 metres per second squared.
+
+Always draw a free body diagram showing all forces — applied force, friction, normal force, weight — before writing any equation. This prevents mistakes and makes the solution systematic.`,
+
+  /* ════════════════════════════════════════
+     ELECTRICITY — Class 10 Physics
+  ════════════════════════════════════════ */
+  'elec-0': `Hello students! Welcome to the chapter on Electricity — one of the most practical and important chapters in Class 10 Physics.
+
+Let us begin with the fundamental concept — electric current. Everything starts with electric charge. Matter is made of atoms, which contain positively charged protons in the nucleus and negatively charged electrons around it. In a conductor like copper wire, some electrons are free to move.
+
+When we connect a battery to a wire, the battery creates an electric field that pushes these free electrons through the wire. This flow of electric charge is called electric current.
+
+Electric Current I is defined as the charge Q flowing per unit time t. So I equals Q divided by t. The unit of current is the Ampere, named after the French physicist André-Marie Ampère. 1 Ampere means 1 Coulomb of charge flowing per second.
+
+Voltage, also called potential difference, is what drives the current. It is the difference in electric potential energy per unit charge between two points. The unit is the Volt. A battery of 6 Volts means it gives 6 Joules of energy to every Coulomb of charge.
+
+Resistance is the opposition to the flow of current. Different materials resist current flow by different amounts. The unit is the Ohm, represented by the Greek letter Omega.
+
+And the relationship between these three — Voltage equals Current times Resistance — is Ohm's Law. This is the most fundamental equation in all of electricity.`,
+
+  'elec-1': `Now watch this animated circuit carefully. The yellow dots represent conventional current — flowing from the positive terminal of the battery, through the external circuit, to the negative terminal. The blue dots represent the actual electrons — which flow in the opposite direction, from negative to positive.
+
+The battery on the left provides a voltage of 6 Volts. It acts like a pump — it continuously pushes charges around the circuit, maintaining the potential difference.
+
+The resistor at the top — 30 Ohms — opposes the flow. Think of it like a narrow pipe that slows down the flow of water.
+
+Using Ohm's Law — Current equals Voltage divided by Resistance equals 6 divided by 30 equals 0.2 Amperes. So 0.2 Coulombs of charge flows past any point in this circuit every second.
+
+Notice that the current is the same everywhere in this simple circuit — at every point, 0.2 Amperes flows. This is because charge cannot accumulate anywhere — whatever flows in must flow out.
+
+This is called Kirchhoff's Current Law — the sum of currents entering any junction equals the sum of currents leaving it.
+
+The circuit diagram uses symbols — a long and short line for the battery, a zigzag for the resistor, and straight lines for connecting wires with zero resistance.`,
+
+  'elec-2': `Now let us understand two very important circuit configurations — series and parallel.
+
+In a Series Circuit, all components are connected one after another in a single loop — like beads on a string. The same current flows through every component. But the voltage gets distributed — each component takes a share of the total voltage. The total resistance is simply the sum of all individual resistances — R total equals R1 plus R2 plus R3. This means adding more resistors in series increases the total resistance and reduces the current. If one component in a series circuit breaks, the entire circuit stops working — like old Christmas lights.
+
+In a Parallel Circuit, all components are connected across the same two points — each component has its own separate path. The same voltage appears across every component. The current splits — more current flows through paths with lower resistance. The total resistance is found using reciprocals — 1 over R total equals 1 over R1 plus 1 over R2. Adding more resistors in parallel actually decreases the total resistance and increases the total current. This is why household wiring is always parallel — every appliance gets the full supply voltage and can be switched independently.
+
+Electric Power P equals Voltage times Current, which also equals I squared R, which also equals V squared over R. Power is measured in Watts. A 100-Watt bulb converts 100 Joules of electrical energy to light and heat every second.`,
+
+  'elec-3': `Let us solve a complete problem on Ohm's Law and electric power.
+
+A battery of 6 Volts is connected to a resistor of 30 Ohms. Calculate the current through the circuit and the power dissipated by the resistor.
+
+Step 1 — given values. Voltage V equals 6 Volts. Resistance R equals 30 Ohms.
+
+Step 2 — find current using Ohm's Law. I equals V divided by R equals 6 divided by 30 equals 0.2 Amperes.
+
+Step 3 — find power. P equals V times I equals 6 times 0.2 equals 1.2 Watts.
+
+Verification — Power can also be calculated as I squared R. P equals 0.2 squared times 30 equals 0.04 times 30 equals 1.2 Watts. Same answer!
+
+Or as V squared over R. P equals 36 over 30 equals 1.2 Watts. All three formulas give the same answer — as they should.
+
+This power of 1.2 Watts means the resistor converts 1.2 Joules of electrical energy into heat every second.
+
+In exam problems — write down V, I, R, and P at the start. Identify which two are given and which you need to find. Then select the appropriate form of Ohm's Law or the power formula. Never mix up the formulas — write them clearly before substituting.`,
+
+  /* ════════════════════════════════════════
+     OPTICS — Class 10 Physics
+  ════════════════════════════════════════ */
+  'optics-0': `Hello students! Welcome to the fascinating chapter on Light — Reflection and Refraction. Light is one of the most fundamental phenomena in nature, and understanding how it behaves is essential for understanding everything from mirrors and glasses to cameras, telescopes, and optical fibers.
+
+Let us start with Reflection — the bouncing back of light when it hits a surface.
+
+There are two laws of reflection. Law number 1 — the incident ray, the normal to the surface at the point of incidence, and the reflected ray all lie in the same plane. Law number 2 — the angle of incidence equals the angle of reflection. Both angles are measured from the normal — the imaginary line perpendicular to the surface at the point of incidence.
+
+These laws hold for all types of surfaces — plane mirrors, concave mirrors, and convex mirrors.
+
+For curved mirrors, we use the Mirror Formula — 1 over v plus 1 over u equals 1 over f. Here, v is the image distance, u is the object distance, and f is the focal length.
+
+The magnification formula is m equals minus v over u. If m is positive, the image is virtual and erect. If m is negative, the image is real and inverted.
+
+The sign convention — all distances are measured from the pole of the mirror. Distances in the direction of incident light are positive. Distances against the direction are negative. This is the New Cartesian Sign Convention and must be applied consistently.`,
+
+  'optics-1': `Watch this animated ray diagram for a concave mirror. A concave mirror is a mirror whose reflecting surface is curved inward — like the inside of a bowl.
+
+The incident ray comes from the upper left, travelling towards the mirror. Notice the dashed line — that is the normal at the point where the ray hits the mirror. The reflected ray bounces off at the same angle on the other side of the normal.
+
+The key feature of a concave mirror is its focal point F. Rays parallel to the principal axis converge at the focal point after reflection. This is why concave mirrors are called converging mirrors.
+
+Depending on where the object is placed, the image can be real or virtual, erect or inverted, larger or smaller.
+
+If the object is beyond the centre of curvature C — the image is real, inverted, and diminished.
+If the object is at C — the image is real, inverted, and the same size.
+If the object is between F and C — the image is real, inverted, and magnified.
+If the object is at F — the image is at infinity — the reflected rays are parallel.
+If the object is between F and the mirror — the image is virtual, erect, and magnified. This is how a concave mirror works as a shaving mirror or makeup mirror.
+
+Concave mirrors are used in torches, car headlights, solar heaters, and reflecting telescopes — all applications that require converging light.`,
+
+  'optics-2': `Now we move to Refraction — the bending of light when it travels from one transparent medium to another.
+
+Why does light bend? Because light travels at different speeds in different media. In vacuum, light travels at approximately 3 times 10 to the power 8 metres per second. In water, it slows to about three quarters of that. In glass, it slows to about two thirds.
+
+When light enters a denser medium — one where it travels slower — it bends towards the normal. When it enters a less dense medium — it bends away from the normal.
+
+The law of refraction is given by Snell's Law — n1 sine theta 1 equals n2 sine theta 2. Here n1 and n2 are the refractive indices of the two media, and theta 1 and theta 2 are the angles of incidence and refraction, both measured from the normal.
+
+The refractive index n of a medium is defined as the speed of light in vacuum divided by the speed of light in that medium. For glass, n is approximately 1.5. For water, n is approximately 1.33. A higher refractive index means light travels slower in that medium.
+
+Real-life examples of refraction — a straw appears bent in a glass of water. A swimming pool appears shallower than it actually is. Rainbows form because different colors of light refract by different amounts through water droplets.`,
+
+  'optics-3': `Now let us look at refraction through lenses. Watch the animation — the ray travels from air into glass. As it crosses the boundary, it bends towards the normal because glass is denser than air.
+
+A convex lens is thicker in the middle and thinner at the edges. It converges light rays — brings them together. It has a positive focal length and positive power. It is called a converging lens.
+
+A concave lens is thinner in the middle and thicker at the edges. It diverges light rays — spreads them apart. It has a negative focal length and negative power. It is called a diverging lens.
+
+The Lens Formula is — 1 over v minus 1 over u equals 1 over f. Note — for lenses, it is 1 over v MINUS 1 over u. For mirrors, it is 1 over v PLUS 1 over u. Many students confuse these two. Remember — Lens has minus, Mirror has plus.
+
+The Power of a lens is P equals 1 over f, where f is in metres. The unit of power is Dioptre. A convex lens of focal length 25 centimetres — which is 0.25 metres — has power 4 Dioptres. When lenses are combined, their powers simply add up.
+
+This is why doctors prescribe spectacle power in Dioptres — plus for convex lens to correct farsightedness, minus for concave lens to correct nearsightedness.`,
+
+  'optics-4': `Let us solve a complete problem using the mirror formula.
+
+An object is placed 20 centimetres in front of a concave mirror with a focal length of 15 centimetres. Find the image distance and magnification.
+
+Step 1 — apply the sign convention. Object is in front of the mirror — so u equals minus 20 centimetres. Concave mirror — focal length is negative — so f equals minus 15 centimetres.
+
+Step 2 — apply the mirror formula. 1 over v plus 1 over u equals 1 over f. So 1 over v plus 1 over minus 20 equals 1 over minus 15.
+
+Step 3 — solve for v. 1 over v equals 1 over minus 15 minus 1 over minus 20 equals minus 1 over 15 plus 1 over 20.
+
+Finding common denominator — minus 4 over 60 plus 3 over 60 equals minus 1 over 60. So 1 over v equals minus 1 over 60. Therefore v equals minus 60 centimetres.
+
+The negative sign means the image is on the same side as the object — in front of the mirror. So it is a real image.
+
+Step 4 — find magnification. m equals minus v over u equals minus bracket minus 60 bracket divided by bracket minus 20 bracket equals minus 60 over 20 equals minus 3.
+
+The magnitude is 3 — the image is 3 times larger than the object. The negative sign means the image is inverted.
+
+So the image is real, inverted, and 3 times enlarged, formed 60 centimetres in front of the mirror.`
 };
 
 /* ── TTS Engine ── */
@@ -1258,7 +1691,7 @@ function speak(text){
   if(!text) return;
 
   const utter = new SpeechSynthesisUtterance(text);
-  utter.rate  = 0.88;   // slightly slower — teacher pace
+  utter.rate  = 0.85;   // clear teacher pace
   utter.pitch = 1.0;
   utter.volume = 1.0;
 
@@ -1269,6 +1702,13 @@ function speak(text){
     || voices.find(v => /english/i.test(v.name))
     || voices.find(v => /en/i.test(v.lang));
   if(preferred) utter.voice = preferred;
+
+  // Auto-advance ONLY after speech ends (not on timer)
+  utter.onend = () => {
+    if(isPlaying && currentIdx < flatSlides.length - 1){
+      setTimeout(()=> window.navigate(1), 1500); // 1.5s pause between slides
+    }
+  };
 
   currentUtterance = utter;
   synth.speak(utter);
