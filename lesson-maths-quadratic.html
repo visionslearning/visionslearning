@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quadratic Equations – Visions Classes</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0a0a1a; color: #fff; font-family: 'Segoe UI', sans-serif; }
+    .navbar { background: rgba(10,10,26,0.95) !important; }
+
+    .lesson-stage { min-height: 100vh; padding: 80px 0 60px; position: relative; overflow: hidden; }
+    .star { position: absolute; background: #fff; border-radius: 50%; animation: twinkle 3s infinite; }
+    @keyframes twinkle { 0%,100%{opacity:.2;} 50%{opacity:1;} }
+
+    .lesson-header { text-align: center; padding: 40px 20px 20px; position: relative; }
+    .lesson-subject-tag {
+      display: inline-block; background: rgba(16,185,129,.2); border: 1px solid #10b981;
+      color: #6ee7b7; padding: 4px 16px; border-radius: 20px;
+      font-size: .8rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 12px;
+    }
+    .lesson-header h1 {
+      font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 800;
+      background: linear-gradient(135deg,#fff 0%,#6ee7b7 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .lesson-header p { color: #94a3b8; margin-top: 8px; font-size: 1rem; }
+
+    .slides-container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .slide {
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1);
+      border-radius: 20px; padding: 40px; margin-bottom: 24px;
+      opacity: 0; transform: translateY(40px);
+      transition: opacity .6s ease, transform .6s ease; position: relative; overflow: hidden;
+    }
+    .slide.visible { opacity: 1; transform: translateY(0); }
+    .slide::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, #10b981, #06b6d4, #3b82f6);
+    }
+    .slide-num { position: absolute; top: 16px; right: 20px; font-size: .75rem; color: #475569; font-weight: 700; }
+    .slide h2 { font-size: 1.4rem; color: #e2e8f0; margin-bottom: 16px; }
+    .slide p, .slide li { color: #94a3b8; line-height: 1.8; font-size: 1rem; }
+    .slide ul { list-style: none; padding: 0; }
+    .slide ul li { padding: 6px 0 6px 24px; position: relative; }
+    .slide ul li::before { content: '→'; position: absolute; left: 0; color: #10b981; font-weight: 700; }
+
+    .formula-box {
+      background: rgba(16,185,129,.12); border: 1px solid rgba(16,185,129,.4);
+      border-radius: 12px; padding: 20px 28px; margin: 16px 0;
+      font-family: 'Courier New', monospace; font-size: 1.3rem;
+      color: #6ee7b7; text-align: center;
+    }
+    .formula-box .formula-label {
+      font-size: .72rem; text-transform: uppercase; letter-spacing: 1px;
+      color: #10b981; font-family: 'Segoe UI', sans-serif; display: block; margin-bottom: 8px;
+    }
+    .formula-box.highlight {
+      background: rgba(245,158,11,.15); border-color: rgba(245,158,11,.5); color: #fcd34d;
+    }
+
+    /* Parabola canvas */
+    .parabola-wrap { display: flex; justify-content: center; margin: 20px 0; }
+    canvas#parabolaCanvas { border-radius: 12px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); max-width: 100%; }
+
+    /* discriminant visual */
+    .disc-cases {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px; margin: 16px 0;
+    }
+    .disc-case {
+      background: rgba(255,255,255,.04); border-radius: 12px; padding: 20px;
+      text-align: center; border: 1.5px solid rgba(255,255,255,.08);
+      opacity: 0; transform: scale(.9);
+      transition: opacity .5s, transform .5s;
+    }
+    .disc-case.show { opacity: 1; transform: scale(1); }
+    .disc-case .disc-icon { font-size: 2rem; margin-bottom: 8px; }
+    .disc-case h4 { color: #e2e8f0; font-size: .95rem; margin-bottom: 6px; }
+    .disc-case p { color: #64748b; font-size: .82rem; }
+    .disc-case.pos { border-color: #10b981; }
+    .disc-case.zero { border-color: #f59e0b; }
+    .disc-case.neg { border-color: #ef4444; }
+
+    .step-list { counter-reset: step; }
+    .step-item {
+      display: flex; gap: 16px; margin-bottom: 20px;
+      opacity: 0; transform: translateX(-20px);
+      transition: opacity .5s, transform .5s;
+    }
+    .step-item.show { opacity: 1; transform: translateX(0); }
+    .step-num {
+      min-width: 36px; height: 36px;
+      background: linear-gradient(135deg, #10b981, #06b6d4);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: .85rem; font-weight: 800; color: #fff; flex-shrink: 0;
+    }
+    .step-content h4 { color: #e2e8f0; margin-bottom: 4px; font-size: 1rem; }
+    .step-content p { color: #94a3b8; font-size: .9rem; line-height: 1.6; }
+
+    .quiz-box {
+      background: rgba(245,158,11,.08); border: 1px solid rgba(245,158,11,.3);
+      border-radius: 14px; padding: 28px; margin-top: 8px;
+    }
+    .quiz-box h3 { color: #fcd34d; margin-bottom: 16px; font-size: 1.1rem; }
+    .quiz-opt {
+      display: block; width: 100%; background: rgba(255,255,255,.05);
+      border: 1.5px solid rgba(255,255,255,.1); color: #cbd5e1;
+      padding: 12px 20px; border-radius: 10px; cursor: pointer;
+      font-size: .95rem; transition: all .2s; text-align: left; margin-bottom: 10px;
+    }
+    .quiz-opt:hover { border-color: #10b981; background: rgba(16,185,129,.12); }
+    .quiz-opt.correct { border-color: #10b981; background: rgba(16,185,129,.2); color: #6ee7b7; }
+    .quiz-opt.wrong { border-color: #ef4444; background: rgba(239,68,68,.15); color: #fca5a5; }
+    .quiz-feedback { margin-top: 14px; font-size: .95rem; font-weight: 600; display: none; }
+    .quiz-feedback.show { display: block; }
+    .quiz-feedback.correct-msg { color: #10b981; }
+    .quiz-feedback.wrong-msg { color: #ef4444; }
+
+    .progress-bar-wrap { height: 4px; background: rgba(255,255,255,.1); border-radius: 2px; margin: 0 20px 30px; max-width: 900px; margin-left: auto; margin-right: auto; }
+    .progress-bar-fill { height: 100%; background: linear-gradient(90deg,#10b981,#06b6d4); border-radius: 2px; transition: width .4s ease; }
+
+    .nav-btn {
+      padding: 12px 28px; border-radius: 10px; border: none; cursor: pointer;
+      font-size: .95rem; font-weight: 700; transition: all .2s;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .nav-btn.back { background: rgba(255,255,255,.08); color: #94a3b8; }
+    .nav-btn.back:hover { background: rgba(255,255,255,.15); }
+    .nav-btn.next { background: linear-gradient(135deg,#10b981,#06b6d4); color: #fff; box-shadow: 0 4px 20px rgba(16,185,129,.4); }
+    .nav-btn.next:hover { transform: translateY(-2px); }
+    .lesson-nav { display: flex; justify-content: space-between; align-items: center; padding: 20px; max-width: 900px; margin: 0 auto 60px; gap: 12px; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Visions Classes Logo" class="nav-logo-img" />
+        <div class="logo-text"><span>Visions</span> Classes</div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="animated-lessons.html" class="active">Animated Lessons</a></li>
+        <li><a href="buy-courses.html">Buy Course</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <section class="lesson-stage" id="stage">
+    <div class="lesson-header">
+      <div class="lesson-subject-tag">📐 MATHS · CLASS 10</div>
+      <h1>Quadratic Equations</h1>
+      <p>Parabolas, roots and the magical quadratic formula — all animated</p>
+    </div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill" style="width:0%"></div></div>
+
+    <div class="slides-container">
+
+      <!-- SLIDE 1 -->
+      <div class="slide" id="slide-1">
+        <div class="slide-num">1 / 6</div>
+        <h2>📌 What is a Quadratic Equation?</h2>
+        <p>A polynomial equation of <strong style="color:#6ee7b7">degree 2</strong>. The highest power of x is 2.</p>
+        <div class="formula-box">
+          <span class="formula-label">Standard Form</span>
+          ax² + bx + c = 0 &nbsp; (where a ≠ 0)
+        </div>
+        <ul>
+          <li>a, b, c are real numbers — called <strong style="color:#6ee7b7">coefficients</strong></li>
+          <li>Example: 2x² − 5x + 3 = 0 &nbsp;→&nbsp; a=2, b=−5, c=3</li>
+          <li>Example: x² − 4 = 0 &nbsp;→&nbsp; a=1, b=0, c=−4</li>
+          <li>The graph of ax² + bx + c is a <strong style="color:#fcd34d">parabola</strong></li>
+        </ul>
+      </div>
+
+      <!-- SLIDE 2: Parabola visual -->
+      <div class="slide" id="slide-2">
+        <div class="slide-num">2 / 6</div>
+        <h2>📈 The Parabola — Graph of y = x² − 5x + 6</h2>
+        <p>The parabola crosses the x-axis at the <strong style="color:#6ee7b7">roots (zeros)</strong> of the equation. Watch it draw!</p>
+        <div class="parabola-wrap">
+          <canvas id="parabolaCanvas" width="560" height="280"></canvas>
+        </div>
+        <div class="formula-box">Roots (where y = 0): &nbsp; x = <span style="color:#fcd34d">2</span> &nbsp; and &nbsp; x = <span style="color:#fcd34d">3</span></div>
+      </div>
+
+      <!-- SLIDE 3: Methods to solve -->
+      <div class="slide" id="slide-3">
+        <div class="slide-num">3 / 6</div>
+        <h2>🛠️ Methods to Solve Quadratic Equations</h2>
+        <div class="step-list" id="methodSteps">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h4>Factorisation</h4>
+              <p>Split the middle term and factorise. Works when roots are rational numbers.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h4>Completing the Square</h4>
+              <p>Convert to (x + p)² = q form and take square root of both sides.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h4>Quadratic Formula</h4>
+              <p>Works for ALL quadratics — even when factorisation is hard.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 4: Quadratic formula -->
+      <div class="slide" id="slide-4">
+        <div class="slide-num">4 / 6</div>
+        <h2>⭐ The Quadratic Formula</h2>
+        <p>Derived by completing the square on <em>ax² + bx + c = 0</em>:</p>
+        <div class="formula-box highlight" style="font-size:1.5rem;">
+          <span class="formula-label">🌟 Quadratic Formula</span>
+          x = [−b ± √(b² − 4ac)] / 2a
+        </div>
+        <div style="margin-top:20px;">
+          <p><strong style="color:#6ee7b7">Discriminant (D) = b² − 4ac</strong> tells us the nature of roots:</p>
+          <div class="disc-cases" id="discCases">
+            <div class="disc-case pos">
+              <div class="disc-icon">📈📈</div>
+              <h4>D > 0</h4>
+              <p>Two distinct real roots — parabola crosses x-axis at 2 points</p>
+            </div>
+            <div class="disc-case zero">
+              <div class="disc-icon">📍</div>
+              <h4>D = 0</h4>
+              <p>Two equal (repeated) real roots — parabola touches x-axis at 1 point</p>
+            </div>
+            <div class="disc-case neg">
+              <div class="disc-icon">🚫</div>
+              <h4>D &lt; 0</h4>
+              <p>No real roots — parabola doesn't cross the x-axis</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 5: Solved example -->
+      <div class="slide" id="slide-5">
+        <div class="slide-num">5 / 6</div>
+        <h2>✏️ Solved Example</h2>
+        <p style="color:#fcd34d;font-weight:600;margin-bottom:16px;">Q: Solve 2x² − 7x + 3 = 0 using the quadratic formula</p>
+        <div class="step-list" id="exSteps">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h4>Identify a, b, c</h4>
+              <p>a = 2, b = −7, c = 3</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h4>Calculate discriminant D</h4>
+              <p>D = (−7)² − 4×2×3 = 49 − 24 = <strong style="color:#6ee7b7">25</strong></p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h4>Apply formula</h4>
+              <p>x = (7 ± √25) / (2×2) = (7 ± 5) / 4</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h4>Find both roots</h4>
+              <p>x₁ = (7 + 5)/4 = <strong style="color:#fcd34d">3</strong> &nbsp;&nbsp; x₂ = (7 − 5)/4 = <strong style="color:#fcd34d">½</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="formula-box">Roots: x = <span style="color:#fcd34d">3</span> &nbsp; and &nbsp; x = <span style="color:#fcd34d">0.5</span></div>
+      </div>
+
+      <!-- SLIDE 6: Quiz -->
+      <div class="slide" id="slide-6">
+        <div class="slide-num">6 / 6</div>
+        <h2>🧠 Quick Quiz</h2>
+        <div class="quiz-box">
+          <h3>Q: For x² − 5x + 6 = 0, what is the discriminant?</h3>
+          <button class="quiz-opt" data-ans="wrong">a) 1</button>
+          <button class="quiz-opt" data-ans="correct">b) 1 &nbsp;→&nbsp; D = (−5)² − 4×1×6 = 25 − 24 = <strong>1</strong></button>
+          <button class="quiz-opt" data-ans="wrong">c) 25</button>
+          <button class="quiz-opt" data-ans="wrong">d) −1</button>
+          <div class="quiz-feedback" id="quizFeedback"></div>
+        </div>
+        <div style="text-align:center;margin-top:32px;">
+          <p style="color:#64748b;margin-bottom:16px;">Excellent! Quadratic Equations mastered 🎉</p>
+          <a href="animated-lessons.html" class="nav-btn next" style="display:inline-flex;">← Back to All Lessons</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="lesson-nav">
+      <a href="lesson-maths-ap.html" class="nav-btn back">← AP Lesson</a>
+      <a href="lesson-maths-trigonometry.html" class="nav-btn next">Next: Trigonometry →</a>
+    </div>
+  </section>
+
+  <script src="main.js"></script>
+  <script>
+    // Starfield
+    const stage = document.getElementById('stage');
+    for (let i = 0; i < 60; i++) {
+      const s = document.createElement('div'); s.className = 'star';
+      const sz = Math.random()*3+1;
+      s.style.cssText = `width:${sz}px;height:${sz}px;top:${Math.random()*100}%;left:${Math.random()*100}%;animation-delay:${Math.random()*4}s;animation-duration:${2+Math.random()*3}s;`;
+      stage.appendChild(s);
+    }
+
+    const slides = document.querySelectorAll('.slide');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          triggerAnim(e.target);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    slides.forEach(s => obs.observe(s));
+
+    window.addEventListener('scroll', () => {
+      const v = document.querySelectorAll('.slide.visible').length;
+      document.getElementById('progressFill').style.width = (v/slides.length*100)+'%';
+    });
+
+    function triggerAnim(slide) {
+      const id = slide.id;
+      if (id === 'slide-2') setTimeout(drawParabola, 300);
+      if (id === 'slide-3') animateSteps('methodSteps');
+      if (id === 'slide-4') { animateDiscCases(); }
+      if (id === 'slide-5') animateSteps('exSteps');
+    }
+
+    function animateSteps(id) {
+      document.querySelectorAll(`#${id} .step-item`).forEach((s,i) => {
+        setTimeout(() => s.classList.add('show'), i*300);
+      });
+    }
+
+    function animateDiscCases() {
+      document.querySelectorAll('.disc-case').forEach((c,i) => {
+        setTimeout(() => c.classList.add('show'), i*300);
+      });
+    }
+
+    function drawParabola() {
+      const canvas = document.getElementById('parabolaCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const W = canvas.width, H = canvas.height;
+      const ox = W/2, oy = H/2;
+      const scaleX = 60, scaleY = 28;
+
+      ctx.clearRect(0,0,W,H);
+
+      // Axes
+      ctx.strokeStyle = 'rgba(255,255,255,0.2)';
+      ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(0,oy); ctx.lineTo(W,oy); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(ox,0); ctx.lineTo(ox,H); ctx.stroke();
+
+      // Axis labels
+      ctx.fillStyle = 'rgba(255,255,255,0.3)';
+      ctx.font = '11px Segoe UI';
+      for (let x = -4; x <= 4; x++) {
+        if(x===0) continue;
+        ctx.fillText(x, ox + x*scaleX - 4, oy + 15);
+        ctx.beginPath(); ctx.moveTo(ox+x*scaleX, oy-3); ctx.lineTo(ox+x*scaleX, oy+3); ctx.stroke();
+      }
+
+      // Draw parabola y = x²-5x+6 animated
+      let t = 0;
+      const total = 80;
+      function animate() {
+        if (t > total) return;
+        const xStart = -1.5 + (t/total) * 6.5;
+        ctx.beginPath();
+        ctx.strokeStyle = '#10b981';
+        ctx.lineWidth = 3;
+        ctx.shadowColor = '#10b981';
+        ctx.shadowBlur = 8;
+        for (let xi = -1.5; xi <= xStart; xi += 0.05) {
+          const yi = xi*xi - 5*xi + 6;
+          const px = ox + xi*scaleX;
+          const py = oy - yi*scaleY;
+          if (xi === -1.5) ctx.moveTo(px,py); else ctx.lineTo(px,py);
+        }
+        ctx.stroke();
+        t++;
+        requestAnimationFrame(animate);
+      }
+      animate();
+
+      // Root dots after delay
+      setTimeout(() => {
+        [[2,0],[3,0]].forEach(([rx,ry]) => {
+          ctx.beginPath();
+          ctx.arc(ox+rx*scaleX, oy-ry*scaleY, 7, 0, Math.PI*2);
+          ctx.fillStyle = '#fcd34d';
+          ctx.shadowColor = '#fcd34d';
+          ctx.shadowBlur = 12;
+          ctx.fill();
+          ctx.fillStyle = '#fcd34d';
+          ctx.font = 'bold 13px Segoe UI';
+          ctx.fillText('x='+rx, ox+rx*scaleX+10, oy-ry*scaleY-10);
+        });
+      }, 1200);
+    }
+
+    // Quiz
+    document.querySelectorAll('.quiz-opt').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.quiz-opt').forEach(b => b.disabled = true);
+        const fb = document.getElementById('quizFeedback');
+        if (btn.dataset.ans === 'correct') {
+          btn.classList.add('correct');
+          fb.textContent = '✅ Correct! D = 25 − 24 = 1';
+          fb.className = 'quiz-feedback show correct-msg';
+        } else {
+          btn.classList.add('wrong');
+          fb.textContent = '❌ D = b²−4ac = 25 − 24 = 1';
+          fb.className = 'quiz-feedback show wrong-msg';
+          document.querySelectorAll('.quiz-opt').forEach(b => { if(b.dataset.ans==='correct') b.classList.add('correct'); });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

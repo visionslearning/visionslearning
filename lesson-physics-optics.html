@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Light — Reflection & Refraction – Visions Classes</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #050505; color: #fff; font-family: 'Segoe UI', sans-serif; }
+    .navbar { background: rgba(5,5,5,0.95) !important; }
+    .lesson-stage { min-height: 100vh; padding: 80px 0 60px; position: relative; overflow: hidden; }
+    .star { position: absolute; background: #fff; border-radius: 50%; animation: twinkle 3s infinite; }
+    @keyframes twinkle { 0%,100%{opacity:.2;} 50%{opacity:1;} }
+
+    .lesson-header { text-align: center; padding: 40px 20px 20px; }
+    .lesson-subject-tag { display:inline-block;background:rgba(251,191,36,.18);border:1px solid #fbbf24;color:#fde68a;padding:4px 16px;border-radius:20px;font-size:.8rem;font-weight:700;letter-spacing:1px;margin-bottom:12px; }
+    .lesson-header h1 { font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;background:linear-gradient(135deg,#fff 0%,#fde68a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+    .lesson-header p { color:#94a3b8;margin-top:8px;font-size:1rem; }
+
+    .slides-container { max-width:900px;margin:0 auto;padding:20px; }
+    .slide { background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:40px;margin-bottom:24px;opacity:0;transform:translateY(40px);transition:opacity .6s,transform .6s;position:relative;overflow:hidden; }
+    .slide.visible { opacity:1;transform:translateY(0); }
+    .slide::before { content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#fbbf24,#fb923c,#f43f5e); }
+    .slide-num { position:absolute;top:16px;right:20px;font-size:.75rem;color:#475569;font-weight:700; }
+    .slide h2 { font-size:1.4rem;color:#e2e8f0;margin-bottom:16px; }
+    .slide p,.slide li { color:#94a3b8;line-height:1.8;font-size:1rem; }
+    .slide ul { list-style:none;padding:0; }
+    .slide ul li { padding:6px 0 6px 24px;position:relative; }
+    .slide ul li::before { content:'→';position:absolute;left:0;color:#fbbf24;font-weight:700; }
+
+    .formula-box { background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.35);border-radius:12px;padding:20px 28px;margin:16px 0;font-family:'Courier New',monospace;font-size:1.2rem;color:#fde68a;text-align:center; }
+    .formula-box .formula-label { font-size:.72rem;text-transform:uppercase;letter-spacing:1px;color:#fbbf24;font-family:'Segoe UI',sans-serif;display:block;margin-bottom:8px; }
+    .formula-box.highlight { background:rgba(99,102,241,.15);border-color:rgba(99,102,241,.5);color:#a5b4fc; }
+
+    /* Optics canvas */
+    .optics-wrap { display:flex;justify-content:center;margin:20px 0; }
+    canvas#reflectCanvas, canvas#refractCanvas { border-radius:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);max-width:100%; }
+
+    /* Snell's law visual */
+    .laws-grid { display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0; }
+    .law-item { background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.2);border-radius:12px;padding:20px;opacity:0;transform:translateY(12px);transition:opacity .4s,transform .4s; }
+    .law-item.show { opacity:1;transform:translateY(0); }
+    .law-item h4 { color:#fde68a;margin-bottom:8px;font-size:.95rem; }
+    .law-item p { color:#94a3b8;font-size:.85rem;line-height:1.6; }
+    .law-item .lf { font-family:'Courier New',monospace;color:#fcd34d;font-size:.9rem;margin-top:8px; }
+
+    .step-item { display:flex;gap:16px;margin-bottom:20px;opacity:0;transform:translateX(-20px);transition:opacity .5s,transform .5s; }
+    .step-item.show { opacity:1;transform:translateX(0); }
+    .step-num { min-width:36px;height:36px;background:linear-gradient(135deg,#fbbf24,#fb923c);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;color:#000;flex-shrink:0; }
+    .step-content h4 { color:#e2e8f0;margin-bottom:4px;font-size:1rem; }
+    .step-content p { color:#94a3b8;font-size:.9rem;line-height:1.6; }
+
+    .quiz-box { background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.3);border-radius:14px;padding:28px;margin-top:8px; }
+    .quiz-box h3 { color:#fde68a;margin-bottom:16px;font-size:1.1rem; }
+    .quiz-opt { display:block;width:100%;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.1);color:#cbd5e1;padding:12px 20px;border-radius:10px;cursor:pointer;font-size:.95rem;transition:all .2s;text-align:left;margin-bottom:10px; }
+    .quiz-opt:hover { border-color:#fbbf24;background:rgba(251,191,36,.1); }
+    .quiz-opt.correct { border-color:#10b981;background:rgba(16,185,129,.2);color:#6ee7b7; }
+    .quiz-opt.wrong { border-color:#ef4444;background:rgba(239,68,68,.15);color:#fca5a5; }
+    .quiz-feedback { margin-top:14px;font-size:.95rem;font-weight:600;display:none; }
+    .quiz-feedback.show { display:block; }
+    .quiz-feedback.correct-msg { color:#10b981; }
+    .quiz-feedback.wrong-msg { color:#ef4444; }
+
+    .progress-bar-wrap { height:4px;background:rgba(255,255,255,.1);border-radius:2px;margin:0 20px 30px;max-width:900px;margin-left:auto;margin-right:auto; }
+    .progress-bar-fill { height:100%;background:linear-gradient(90deg,#fbbf24,#fb923c);border-radius:2px;transition:width .4s; }
+    .nav-btn { padding:12px 28px;border-radius:10px;border:none;cursor:pointer;font-size:.95rem;font-weight:700;transition:all .2s;text-decoration:none;display:inline-flex;align-items:center;gap:8px; }
+    .nav-btn.back { background:rgba(255,255,255,.08);color:#94a3b8; }
+    .nav-btn.next { background:linear-gradient(135deg,#fbbf24,#fb923c);color:#000;box-shadow:0 4px 20px rgba(251,191,36,.4); }
+    .nav-btn.next:hover { transform:translateY(-2px); }
+    .lesson-nav { display:flex;justify-content:space-between;align-items:center;padding:20px;max-width:900px;margin:0 auto 60px;gap:12px;flex-wrap:wrap; }
+    @media(max-width:500px){.laws-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Visions Classes Logo" class="nav-logo-img" />
+        <div class="logo-text"><span>Visions</span> Classes</div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="animated-lessons.html" class="active">Animated Lessons</a></li>
+        <li><a href="buy-courses.html">Buy Course</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <section class="lesson-stage" id="stage">
+    <div class="lesson-header">
+      <div class="lesson-subject-tag">⚡ PHYSICS · CLASS 10</div>
+      <h1>Light — Reflection & Refraction</h1>
+      <p>Mirror formula, lens formula and Snell's law — animated ray diagrams</p>
+    </div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill" style="width:0%"></div></div>
+
+    <div class="slides-container">
+
+      <!-- SLIDE 1 -->
+      <div class="slide" id="slide-1">
+        <div class="slide-num">1 / 6</div>
+        <h2>🔦 Reflection of Light</h2>
+        <p>When light hits a surface and bounces back, that's <strong style="color:#fde68a">reflection</strong>.</p>
+        <ul>
+          <li><strong style="color:#fde68a">Angle of incidence (i)</strong> — angle between incident ray and normal</li>
+          <li><strong style="color:#fde68a">Angle of reflection (r)</strong> — angle between reflected ray and normal</li>
+          <li><strong style="color:#fde68a">Law 1</strong>: Incident ray, reflected ray and normal are in the same plane</li>
+          <li><strong style="color:#fde68a">Law 2</strong>: Angle of incidence = Angle of reflection (∠i = ∠r)</li>
+        </ul>
+        <div class="formula-box">
+          <span class="formula-label">Mirror Formula</span>
+          1/v + 1/u = 1/f &nbsp;&nbsp; Magnification: m = −v/u
+        </div>
+      </div>
+
+      <!-- SLIDE 2: Reflection animation -->
+      <div class="slide" id="slide-2">
+        <div class="slide-num">2 / 6</div>
+        <h2>🪞 Animated Ray Diagram — Concave Mirror</h2>
+        <p>Watch the incident ray hit the mirror and reflect. The image forms at the intersection of reflected rays!</p>
+        <div class="optics-wrap"><canvas id="reflectCanvas" width="500" height="220"></canvas></div>
+        <div class="formula-box">For concave mirror: f > 0 &nbsp;|&nbsp; For convex mirror: f < 0</div>
+      </div>
+
+      <!-- SLIDE 3: Refraction -->
+      <div class="slide" id="slide-3">
+        <div class="slide-num">3 / 6</div>
+        <h2>💧 Refraction of Light</h2>
+        <p>When light travels from one medium to another, it <strong style="color:#fde68a">bends</strong>. This is refraction.</p>
+        <div class="laws-grid" id="lawsGrid">
+          <div class="law-item">
+            <h4>🔵 Snell's Law</h4>
+            <p>The ratio of sin of angles equals the ratio of refractive indices.</p>
+            <div class="lf">n₁ sin θ₁ = n₂ sin θ₂</div>
+          </div>
+          <div class="law-item">
+            <h4>🔷 Refractive Index</h4>
+            <p>n = speed of light in vacuum / speed in medium</p>
+            <div class="lf">n = c/v</div>
+          </div>
+          <div class="law-item">
+            <h4>🌊 Bending Rule</h4>
+            <p>Light bends towards normal when going into denser medium (water, glass).</p>
+            <div class="lf">n_glass ≈ 1.5</div>
+          </div>
+          <div class="law-item">
+            <h4>🌈 Dispersion</h4>
+            <p>White light splits into colours (VIBGYOR) when passing through a prism.</p>
+            <div class="lf">n_violet > n_red</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 4: Refraction animation -->
+      <div class="slide" id="slide-4">
+        <div class="slide-num">4 / 6</div>
+        <h2>🔦 Animated Refraction at a Surface</h2>
+        <p>Watch light bend as it crosses from air into glass — it slows down and bends towards the normal!</p>
+        <div class="optics-wrap"><canvas id="refractCanvas" width="500" height="220"></canvas></div>
+        <div class="formula-box">Lens Formula: 1/v − 1/u = 1/f &nbsp;&nbsp; Power: P = 1/f (dioptre)</div>
+      </div>
+
+      <!-- SLIDE 5: Solved Example -->
+      <div class="slide" id="slide-5">
+        <div class="slide-num">5 / 6</div>
+        <h2>✏️ Solved Example</h2>
+        <p style="color:#fde68a;font-weight:600;margin-bottom:16px;">Q: An object is placed 20 cm from a concave mirror of focal length 15 cm. Find the image distance and magnification.</p>
+        <div class="step-list" id="exSteps">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-content"><h4>Given</h4><p>u = −20 cm (object in front of mirror), f = −15 cm (concave mirror)</p></div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-content"><h4>Apply mirror formula</h4><p>1/v = 1/f − 1/u = 1/(−15) − 1/(−20) = −1/15 + 1/20</p></div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-content"><h4>Solve for v</h4><p>1/v = (−4 + 3)/60 = −1/60 → v = <strong style="color:#fde68a">−60 cm</strong> (real image, same side)</p></div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">4</div>
+            <div class="step-content"><h4>Magnification</h4><p>m = −v/u = −(−60)/(−20) = <strong style="color:#fcd34d">−3</strong> (inverted, 3× enlarged)</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 6: Quiz -->
+      <div class="slide" id="slide-6">
+        <div class="slide-num">6 / 6</div>
+        <h2>🧠 Quick Quiz</h2>
+        <div class="quiz-box">
+          <h3>Q: A convex lens has focal length 10 cm. What is its power?</h3>
+          <button class="quiz-opt" data-ans="wrong">a) −10 D</button>
+          <button class="quiz-opt" data-ans="wrong">b) 0.1 D</button>
+          <button class="quiz-opt" data-ans="correct">c) +10 D &nbsp;→&nbsp; P = 1/f = 1/0.1m = <strong>+10 dioptre</strong></button>
+          <button class="quiz-opt" data-ans="wrong">d) 100 D</button>
+          <div class="quiz-feedback" id="quizFeedback"></div>
+        </div>
+        <div style="text-align:center;margin-top:32px;">
+          <p style="color:#64748b;margin-bottom:16px;">Optics mastered! All 8 lessons complete! 🎉✨</p>
+          <a href="animated-lessons.html" class="nav-btn next" style="display:inline-flex;">← Back to All Lessons</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="lesson-nav">
+      <a href="lesson-physics-electricity.html" class="nav-btn back">← Electricity</a>
+      <a href="animated-lessons.html" class="nav-btn next">All Lessons →</a>
+    </div>
+  </section>
+
+  <script src="main.js"></script>
+  <script>
+    const stage=document.getElementById('stage');
+    for(let i=0;i<60;i++){const s=document.createElement('div');s.className='star';const sz=Math.random()*3+1;s.style.cssText=`width:${sz}px;height:${sz}px;top:${Math.random()*100}%;left:${Math.random()*100}%;animation-delay:${Math.random()*4}s;animation-duration:${2+Math.random()*3}s;`;stage.appendChild(s);}
+
+    const slides=document.querySelectorAll('.slide');
+    const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');triggerAnim(e.target);obs.unobserve(e.target);}});},{threshold:0.15});
+    slides.forEach(s=>obs.observe(s));
+    window.addEventListener('scroll',()=>{const v=document.querySelectorAll('.slide.visible').length;document.getElementById('progressFill').style.width=(v/slides.length*100)+'%';});
+
+    function triggerAnim(slide){
+      if(slide.id==='slide-2') setTimeout(drawReflection,300);
+      if(slide.id==='slide-3') document.querySelectorAll('.law-item').forEach((c,i)=>setTimeout(()=>c.classList.add('show'),i*250));
+      if(slide.id==='slide-4') setTimeout(drawRefraction,300);
+      if(slide.id==='slide-5') animateSteps('exSteps');
+    }
+    function animateSteps(id){document.querySelectorAll(`#${id} .step-item`).forEach((s,i)=>setTimeout(()=>s.classList.add('show'),i*300));}
+
+    function drawReflection(){
+      const canvas=document.getElementById('reflectCanvas');
+      if(!canvas) return;
+      const ctx=canvas.getContext('2d');
+      const W=500,H=220;
+      ctx.clearRect(0,0,W,H);
+
+      // Mirror (curved line)
+      const mx=300,my=110;
+      ctx.beginPath();
+      for(let y=-80;y<=80;y+=2){
+        const x=mx+y*y*0.012;
+        y===-80?ctx.moveTo(x,my+y):ctx.lineTo(x,my+y);
+      }
+      ctx.strokeStyle='rgba(251,191,36,0.7)';ctx.lineWidth=3;ctx.stroke();
+
+      // Principal axis
+      ctx.strokeStyle='rgba(255,255,255,0.15)';ctx.lineWidth=1;ctx.setLineDash([5,5]);
+      ctx.beginPath();ctx.moveTo(50,my);ctx.lineTo(W-20,my);ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Normal at reflection point
+      const rpy=my-40;
+      const rpx=mx+(rpy-my)*(rpy-my)*0.012;
+      ctx.strokeStyle='rgba(255,255,255,0.2)';ctx.lineWidth=1;ctx.setLineDash([3,3]);
+      ctx.beginPath();ctx.moveTo(rpx,rpy-50);ctx.lineTo(rpx,rpy+50);ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Incident ray (animated)
+      let t=0;
+      function animRay(){
+        ctx.clearRect(0,0,W,H);
+        // Redraw mirror
+        ctx.beginPath();
+        for(let y=-80;y<=80;y+=2){const x=mx+y*y*0.012;y===-80?ctx.moveTo(x,my+y):ctx.lineTo(x,my+y);}
+        ctx.strokeStyle='rgba(251,191,36,0.7)';ctx.lineWidth=3;ctx.stroke();
+        ctx.strokeStyle='rgba(255,255,255,0.15)';ctx.lineWidth=1;ctx.setLineDash([5,5]);
+        ctx.beginPath();ctx.moveTo(50,my);ctx.lineTo(W-20,my);ctx.stroke();ctx.setLineDash([]);
+        ctx.strokeStyle='rgba(255,255,255,0.2)';ctx.lineWidth=1;ctx.setLineDash([3,3]);
+        ctx.beginPath();ctx.moveTo(rpx,rpy-50);ctx.lineTo(rpx,rpy+50);ctx.stroke();ctx.setLineDash([]);
+
+        // Focal point
+        ctx.beginPath();ctx.arc(mx-60,my,5,0,Math.PI*2);
+        ctx.fillStyle='#fcd34d';ctx.fill();
+        ctx.fillStyle='rgba(255,255,255,0.5)';ctx.font='11px Segoe UI';
+        ctx.fillText('F',mx-55,my+18);
+
+        // Incident ray
+        const startX=60,startY=40;
+        const ex=startX+(rpx-startX)*(t/100);
+        const ey=startY+(rpy-startY)*(t/100);
+        ctx.beginPath();ctx.moveTo(startX,startY);ctx.lineTo(ex,ey);
+        ctx.strokeStyle='#fb923c';ctx.lineWidth=2.5;ctx.shadowColor='#fb923c';ctx.shadowBlur=6;ctx.stroke();ctx.shadowBlur=0;
+
+        if(t>100){
+          // Reflected ray
+          const rt=t-100;
+          const ex2=rpx+(mx-80-rpx)*(rt/100);
+          const ey2=rpy+(my-rpy)*(rt/100);
+          ctx.beginPath();ctx.moveTo(rpx,rpy);ctx.lineTo(ex2,ey2);
+          ctx.strokeStyle='#fbbf24';ctx.lineWidth=2.5;ctx.shadowColor='#fbbf24';ctx.shadowBlur=6;ctx.stroke();ctx.shadowBlur=0;
+        }
+
+        // Labels
+        ctx.fillStyle='#fb923c';ctx.font='11px Segoe UI';ctx.fillText('Incident ray',65,35);
+        ctx.fillStyle='#fbbf24';ctx.fillText('Reflected ray',120,my-10);
+
+        t = t<200 ? t+1.5 : 0;
+        requestAnimationFrame(animRay);
+      }
+      animRay();
+    }
+
+    function drawRefraction(){
+      const canvas=document.getElementById('refractCanvas');
+      if(!canvas) return;
+      const ctx=canvas.getContext('2d');
+      const W=500,H=220;
+
+      // Surface
+      const sy=110;
+      ctx.fillStyle='rgba(59,130,246,0.08)';
+      ctx.fillRect(0,sy,W,H-sy);
+      ctx.strokeStyle='rgba(255,255,255,0.15)';ctx.lineWidth=1;
+      ctx.beginPath();ctx.moveTo(0,sy);ctx.lineTo(W,sy);ctx.stroke();
+
+      ctx.fillStyle='rgba(255,255,255,0.25)';ctx.font='11px Segoe UI';
+      ctx.fillText('Air (n=1)',20,sy-15);
+      ctx.fillText('Glass (n=1.5)',20,sy+18);
+
+      // Normal
+      ctx.setLineDash([4,4]);ctx.strokeStyle='rgba(255,255,255,0.2)';ctx.lineWidth=1;
+      ctx.beginPath();ctx.moveTo(W/2,20);ctx.lineTo(W/2,H-10);ctx.stroke();ctx.setLineDash([]);
+
+      // Animated rays
+      let t=0;
+      function anim(){
+        ctx.clearRect(0,0,W,H);
+        ctx.fillStyle='rgba(59,130,246,0.08)';ctx.fillRect(0,sy,W,H-sy);
+        ctx.strokeStyle='rgba(255,255,255,0.15)';ctx.lineWidth=1;
+        ctx.beginPath();ctx.moveTo(0,sy);ctx.lineTo(W,sy);ctx.stroke();
+        ctx.fillStyle='rgba(255,255,255,0.25)';ctx.font='11px Segoe UI';
+        ctx.fillText('Air (n=1)',20,sy-15);ctx.fillText('Glass (n=1.5)',20,sy+18);
+        ctx.setLineDash([4,4]);ctx.strokeStyle='rgba(255,255,255,0.2)';ctx.lineWidth=1;
+        ctx.beginPath();ctx.moveTo(W/2,20);ctx.lineTo(W/2,H-10);ctx.stroke();ctx.setLineDash([]);
+
+        const cx=W/2;
+        // Incident ray (from top-left to centre of surface)
+        const ix1=cx-80, iy1=20;
+        const ex1=cx+(ix1-cx)*(1-Math.min(t,100)/100);
+        const ey1=iy1+(sy-iy1)*(Math.min(t,100)/100);
+        ctx.beginPath();ctx.moveTo(ix1,iy1);ctx.lineTo(ex1,ey1);
+        ctx.strokeStyle='#fbbf24';ctx.lineWidth=2.5;ctx.shadowColor='#fbbf24';ctx.shadowBlur=6;ctx.stroke();ctx.shadowBlur=0;
+
+        if(t>100){
+          // Refracted ray — bends closer to normal (steeper inside glass)
+          const rt=t-100;
+          const ex2=cx+(cx-20-cx)*(rt/100)*0.3; // less bend → closer to normal
+          const ey2=sy+(H-30-sy)*(rt/100);
+          ctx.beginPath();ctx.moveTo(cx,sy);ctx.lineTo(cx+ex2,ey2);
+          ctx.strokeStyle='#60a5fa';ctx.lineWidth=2.5;ctx.shadowColor='#60a5fa';ctx.shadowBlur=6;ctx.stroke();ctx.shadowBlur=0;
+        }
+
+        // Angle labels
+        ctx.fillStyle='#fbbf24';ctx.font='11px Segoe UI';
+        ctx.fillText('θ₁ (incidence)',cx-70,sy-25);
+        if(t>120){ ctx.fillStyle='#60a5fa';ctx.fillText('θ₂ (refraction)',cx+15,sy+35); }
+
+        t = t<200 ? t+1.5 : 0;
+        requestAnimationFrame(anim);
+      }
+      anim();
+    }
+
+    document.querySelectorAll('.quiz-opt').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        document.querySelectorAll('.quiz-opt').forEach(b=>b.disabled=true);
+        const fb=document.getElementById('quizFeedback');
+        if(btn.dataset.ans==='correct'){btn.classList.add('correct');fb.textContent='✅ Correct! f=10cm=0.1m → P=1/0.1=+10D';fb.className='quiz-feedback show correct-msg';}
+        else{btn.classList.add('wrong');fb.textContent='❌ P=1/f(in metres)=1/0.1=+10 dioptre';fb.className='quiz-feedback show wrong-msg';document.querySelectorAll('.quiz-opt').forEach(b=>{if(b.dataset.ans==='correct')b.classList.add('correct');});}
+      });
+    });
+  </script>
+</body>
+</html>

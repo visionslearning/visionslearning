@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animated Lessons – Visions Classes</title>
+  <meta name="description" content="Free animated lessons for Physics and Maths – Class 9 to 12. Learn with interactive animations at Visions Classes, Ambernath." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <style>
+    /* ── Hub page styles ── */
+    .lessons-hero {
+      background: linear-gradient(135deg, #0f0c29 0%, #1a1a2e 50%, #16213e 100%);
+      color: #fff;
+      padding: 100px 0 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .lessons-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 30% 50%, rgba(99,102,241,.18) 0%, transparent 60%),
+                  radial-gradient(circle at 70% 30%, rgba(245,158,11,.12) 0%, transparent 50%);
+    }
+    .lessons-hero .sparkle {
+      position: absolute;
+      width: 4px; height: 4px;
+      background: #fff;
+      border-radius: 50%;
+      animation: twinkle 3s infinite;
+    }
+    @keyframes twinkle {
+      0%,100%{opacity:0;transform:scale(0.5);}
+      50%{opacity:1;transform:scale(1.2);}
+    }
+    .lessons-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      position: relative;
+      margin-bottom: 16px;
+    }
+    .lessons-hero h1 span { color: #f59e0b; }
+    .lessons-hero p {
+      font-size: 1.1rem;
+      opacity: .85;
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+
+    /* subject tabs */
+    .subject-tabs {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 40px 0 20px;
+    }
+    .subject-tab {
+      padding: 10px 28px;
+      border-radius: 50px;
+      border: 2px solid #e2e8f0;
+      background: #fff;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: .95rem;
+      color: #334155;
+      transition: all .25s;
+    }
+    .subject-tab:hover, .subject-tab.active {
+      background: #6366f1;
+      border-color: #6366f1;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(99,102,241,.3);
+    }
+    .subject-tab.active-physics { background:#f59e0b; border-color:#f59e0b; color:#fff; }
+
+    /* class filter */
+    .class-filter {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .class-btn {
+      padding: 6px 20px;
+      border-radius: 20px;
+      border: 1.5px solid #cbd5e1;
+      background: transparent;
+      cursor: pointer;
+      font-size: .88rem;
+      font-weight: 600;
+      color: #64748b;
+      transition: all .2s;
+    }
+    .class-btn:hover, .class-btn.active {
+      background: #1e293b;
+      border-color: #1e293b;
+      color: #fff;
+    }
+
+    /* lesson grid */
+    .lessons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .lesson-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,.08);
+      transition: transform .3s, box-shadow .3s;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+    }
+    .lesson-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(0,0,0,.15);
+    }
+    .lesson-thumb {
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .lesson-thumb .formula-bg {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .75rem;
+      color: rgba(255,255,255,.25);
+      font-family: monospace;
+      padding: 12px;
+      text-align: center;
+      line-height: 1.8;
+      overflow: hidden;
+    }
+    .lesson-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+    .lesson-badge {
+      display: inline-block;
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-size: .75rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+    .badge-maths { background: #e0e7ff; color: #4338ca; }
+    .badge-physics { background: #fef3c7; color: #92400e; }
+    .lesson-body h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 8px;
+    }
+    .lesson-body p {
+      font-size: .88rem;
+      color: #64748b;
+      flex: 1;
+      line-height: 1.5;
+    }
+    .lesson-meta {
+      display: flex;
+      gap: 12px;
+      margin-top: 14px;
+      font-size: .8rem;
+      color: #94a3b8;
+      font-weight: 600;
+    }
+    .lesson-play-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 14px;
+      padding: 8px 20px;
+      background: #6366f1;
+      color: #fff;
+      border-radius: 8px;
+      font-size: .88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background .2s;
+      align-self: flex-start;
+    }
+    .lesson-play-btn:hover { background: #4f46e5; }
+    .lesson-play-btn.physics-btn { background: #f59e0b; }
+    .lesson-play-btn.physics-btn:hover { background: #d97706; }
+
+    .coming-soon-overlay {
+      position: relative;
+    }
+    .coming-soon-overlay::after {
+      content: 'Coming Soon';
+      position: absolute;
+      top: 10px; right: 10px;
+      background: #f59e0b;
+      color: #fff;
+      font-size: .7rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: .5px;
+    }
+
+    /* section divider */
+    .subject-section-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin: 50px 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .subject-section-title::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, #e2e8f0, transparent);
+    }
+
+    /* hidden lesson card */
+    .lesson-card[data-hidden="true"] { display: none; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Visions Classes Logo" class="nav-logo-img" />
+        <div class="logo-text"><span>Visions</span> Classes</div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="animated-lessons.html" class="active">Animated Lessons</a></li>
+        <li><a href="buy-courses.html">Buy Course</a></li>
+        <li><a href="notes.html">Notes</a></li>
+        <li><a href="toppers.html">Toppers 🏆</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="buy-courses.html" class="nav-cta">Enroll Now</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="lessons-hero">
+    <!-- sparkle stars -->
+    <div class="sparkle" style="top:12%;left:8%;animation-delay:0s;"></div>
+    <div class="sparkle" style="top:25%;left:20%;animation-delay:.5s;"></div>
+    <div class="sparkle" style="top:60%;left:5%;animation-delay:1s;"></div>
+    <div class="sparkle" style="top:15%;right:10%;animation-delay:.3s;"></div>
+    <div class="sparkle" style="top:40%;right:18%;animation-delay:.8s;"></div>
+    <div class="sparkle" style="top:70%;right:8%;animation-delay:1.4s;"></div>
+    <div class="sparkle" style="top:80%;left:30%;animation-delay:.6s;"></div>
+    <div class="sparkle" style="top:50%;left:50%;animation-delay:1.2s;"></div>
+    <div class="container" style="position:relative;">
+      <h1>Learn with <span>Animated Lessons</span> ✨</h1>
+      <p>Step-by-step animated explanations of every Physics and Maths topic — Class 9 to 12. Watch formulas come alive!</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="#maths-section" class="btn btn-white">📐 Maths Lessons</a>
+        <a href="#physics-section" class="btn btn-secondary" style="border-color:rgba(255,255,255,.5);color:#fff;">⚡ Physics Lessons</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container" style="padding-top:20px;padding-bottom:60px;">
+
+    <!-- FILTER TABS -->
+    <div class="class-filter" id="classFilter" style="margin-top:40px;">
+      <button class="class-btn active" data-class="all">All Classes</button>
+      <button class="class-btn" data-class="9">Class 9</button>
+      <button class="class-btn" data-class="10">Class 10</button>
+      <button class="class-btn" data-class="11">Class 11</button>
+      <button class="class-btn" data-class="12">Class 12</button>
+    </div>
+
+    <!-- ══════════════════════════════
+         MATHS SECTION
+    ══════════════════════════════ -->
+    <h2 class="subject-section-title" id="maths-section">📐 Mathematics</h2>
+    <div class="lessons-grid" id="lessonsGrid">
+
+      <!-- Class 9 Maths -->
+      <a class="lesson-card" href="lesson-maths-ap.html" data-class="10">
+        <div class="lesson-thumb" style="background:linear-gradient(135deg,#1e1b4b,#312e81);">
+          <div class="formula-bg">aₙ = a + (n-1)d &nbsp; Sₙ = n/2(2a+(n-1)d)</div>
+          <span style="position:relative;font-size:2.5rem;">📈</span>
+        </div>
+        <div class="lesson-body">
+          <span class="lesson-badge badge-maths">Maths · Class 10</span>
+          <h3>Arithmetic Progressions</h3>
+          <p>Understand AP with animated step-by-step derivation of nth term and sum formulas.</p>
+          <div class="lesson-meta"><span>⏱ 8 min</span><span>🎯 Class 10</span></div>
+          <span class="lesson-play-btn">▶ Start Lesson</span>
+        </div>
+      </a>
+
+      <a class="lesson-card" href="lesson-maths-quadratic.html" data-class="10">
+        <div class="lesson-thumb" style="background:linear-gradient(135deg,#1a1a2e,#16213e);">
+          <div class="formula-bg">ax² + bx + c = 0 &nbsp; x = -b ± √(b²-4ac) / 2a</div>
+          <span style="position:relative;font-size:2.5rem;">📊</span>
+        </div>
+        <div class="lesson-body">
+          <span class="lesson-badge badge-maths">Maths · Class 10</span>
+          <h3>Quadratic Equations</h3>
+          <p>From factoring to the quadratic formula — animated parabola, roots and discriminant.</p>
+          <div class="lesson-meta"><span>⏱ 10 min</span><span>🎯 Class 10</span></div>
+          <span class="lesson-play-btn">▶ Start Lesson</span>
+        </div>
+      </a>
+
+      <a class="lesson-card" href="lesson-maths-trigonometry.html" data-class="10">
+        <div class="lesson-thumb" style="background:linear-gradient(135deg,#0d1117,#1c3a5e);">
+          <div class="formula-bg">sin²θ + cos²θ = 1 &nbsp; tan θ = sin θ/cos θ</div>
+          <span style="position:relative;font-size:2.5rem;">📐</span>
+        </div>
+        <div class="lesson-body">
+          <span class="lesson-badge badge-maths">Maths · Class 10</span>
+          <h3>Trigonometry</h3>
+          <p>Animated unit circle, SOH-CAH-TOA, all identities and their visual proofs.</p>
+          <div class="lesson-meta"><span>⏱ 12 min</span><span>🎯 Class 10</span></div>
+          <span class="lesson-play-btn">▶ Start Lesson</span>
+        </div>
+      </a>
+
+      <a class="lesson-card coming-soon-overlay" href="lesson-maths-integration.html" data-class="12">
+        <div class="lesson-thumb" style="background:linear-gradient(135deg,#150050,#3d0066);">
+          <div class="formula-bg">∫xⁿ dx = xⁿ⁺¹/(n+1) + C &nbsp; ∫eˣ dx = eˣ + C</div>
+          <span style="position:relative;font-size:2.5rem;">∫</span>
+        </div>
+        <div class="lesson-body">
+          <span class="lesson-badge badge-maths">Maths · Class 12</span>
+          <h3>Integration</h3>
+          <p>Visual explanation of integrals as area under curve — all standard formulas animated.</p>
+          <div class="lesson-meta"><span>⏱ 15 min</span><span>🎯 Class 12</span></div>
+          <span class="lesson-play-btn">▶ Start Lesson</span>
+        </div>
+      </a>
+
+      <div class="lesson-card coming-soon-overlay" data-class="9">
+        <div class="lesson-thumb" style="background:linear-gradient(135deg,#0f2027,#203a43);">
+          <div class="formula-bg">p(x) = aₙxⁿ + aₙ₋₁xⁿ⁻¹ + … + a₀</div>
+          <span style="position:relative;font-size:2.5rem;">🔢</span>
+        </div>
+        <div class="lesson-body">
+          <span class="lesson-badge badge-maths">Maths · Class 9</span>
+          <h3>Polynomials</h3>
+          <p>Zeros, factor theorem, remainder theorem — all animated with visual examples.</p>
+          <div class="lesson-meta"><span>⏱ 10 min</span><span>🎯 Class 9</span></div>
+          <span class="lesson-play-btn" style="background:#94a3b8;cursor:default;">🔒 Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="lesson-card coming-soon-overlay" data-class="9">
+        <div class="lesson-thumb" style="background:linear-gradient(135deg,#1a1a2e,#0f3460);">
+          <div class="formula-bg">√2, √3, √5 … Irrational Numbers &nbsp; HCF · LCM</div>
+          <span style="position:relative;font-size:2.5rem;">🔣</span>
+        </div>
+        <div class="lesson-body">
+          <span class="lesson-badge badge-maths">Maths · Class 9</span>
+          <h3>Number System</h3>
+          <p>Real numbers, rational, irrational — animated number line and Euclid's division lemma.</p>
+          <div class="lesson-meta"><span>⏱ 8 min</span><span>🎯 Class 9</span></div>
+          <span class="lesson-play-btn" style="background:#94a3b8;cursor:default;">🔒 Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="lesson-card coming-soon-overlay" data-class="10">
+        <div class="lesson-thumb" style="background:linear-gradient(135deg,#0d2137,#1a4a6e);">
+          <div class="formula-bg">Distance = √((x₂-x₁)²+(y₂-y₁)²)</div>
+          <span style="position:relative;font-size:2.5rem;">🗺️</span>
+        </div>
+        <div class="lesson-body">
+          <span class="lesson-badge badge-maths">Maths · Class 10</span>
+          <h3>Coordinate Geometry</h3>
+          <p>Distance, midpoint and section formula — animated on the XY plane.</p>
+          <div class="lesson-meta"><span>⏱ 9 min</span><span>🎯 Class 10</span></div>
+          <span class="lesson-play-btn" style="background:#94a3b8;cursor:default;">🔒 Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="lesson-card coming-soon-overlay" data-class="11">
+        <div class="lesson-thumb" style="background:linear-gradient(135deg,#1b0e3d,#3a1c71);">
+          <div class="formula-bg">ⁿPᵣ = n!/(n-r)! &nbsp; ⁿCᵣ = n!/r!(n-r)!</div>
+          <span style="position:relative;font-size:2.5rem;">🎲</span>
+        </div>
+        <div class="lesson-body">
+          <span class="lesson-badge badge-maths">Maths · Class 11</span>
+          <h3>Permutations & Combinations</h3>
+          <p>Count arrangements visually — animated tree diagrams and formula derivations.</p>
+          <div class="lesson-meta"><span>⏱ 11 min</span><span>🎯 Class 11</span></div>
+          <span class="lesson-play-btn" style="background:#94a3b8;cursor:default;">🔒 Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="lesson-card coming-soon-overlay" data-class="12">
+        <div class="lesson-thumb" style="background:linear-gradient(135deg,#0a0a23,#1a1a3e);">
+          <div class="formula-bg">d/dx(xⁿ) = nxⁿ⁻¹ &nbsp; d/dx(sin x) = cos x</div>
+          <span style="position:relative;font-size:2.5rem;">📉</span>
+        </div>
+        <div class="lesson-body">
+          <span class="lesson-badge badge-maths">Maths · Class 12</span>
+          <h3>Differentiation</h3>
+          <p>Chain rule, product rule, quotient rule — animated tangent lines on curves.</p>
+          <div class="lesson-meta"><span>⏱ 13 min</span><span>🎯 Class 12</span></div>
+          <span class="lesson-play-btn" style="background:#94a3b8;cursor:default;">🔒 Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="lesson-card coming-soon-overlay" data-class="12">
+        <div class="lesson-thumb" style="background:linear-gradient(135deg,#0f2027,#2c5364);">
+          <div class="formula-bg">P(A∩B) = P(A)·P(B|A) &nbsp; Bayes' Theorem</div>
+          <span style="position:relative;font-size:2.5rem;">🎯</span>
+        </div>
+        <div class="lesson-body">
+          <span class="lesson-badge badge-maths">Maths · Class 12</span>
+          <h3>Probability</h3>
+          <p>Conditional probability, Bayes theorem — animated Venn diagrams and event trees.</p>
+          <div class="lesson-meta"><span>⏱ 12 min</span><span>🎯 Class 12</span></div>
+          <span class="lesson-play-btn" style="background:#94a3b8;cursor:default;">🔒 Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="lesson-card coming-soon-overlay" data-class="11">
+        <div class="lesson-thumb" style="background:linear-gradient(135deg,#1a0533,#3b0764);">
+          <div class="formula-bg">(a+b)ⁿ = Σ ⁿCᵣ aⁿ⁻ʳ bʳ</div>
+          <span style="position:relative;font-size:2.5rem;">📦</span>
+        </div>
+        <div class="lesson-body">
+          <span class="lesson-badge badge-maths">Maths · Class 11</span>
+          <h3>Binomial Theorem</h3>
+          <p>Pascal's triangle comes alive — animated expansion and general term derivation.</p>
+          <div class="lesson-meta"><span>⏱ 10 min</span><span>🎯 Class 11</span></div>
+          <span class="lesson-play-btn" style="background:#94a3b8;cursor:default;">🔒 Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="lesson-card coming-soon-overlay" data-class="12">
+        <div class="lesson-thumb" style="background:linear-gradient(135deg,#0d1b2a,#1b4332);">
+          <div class="formula-bg">|A| det &nbsp; A⁻¹ = adj(A)/|A|</div>
+          <span style="position:relative;font-size:2.5rem;">🧮</span>
+        </div>
+        <div class="lesson-body">
+          <span class="lesson-badge badge-maths">Maths · Class 12</span>
+          <h3>Matrices & Determinants</h3>
+          <p>Matrix operations, determinants and inverse — animated row operations visualised.</p>
+          <div class="lesson-meta"><span>⏱ 14 min</span><span>🎯 Class 12</span></div>
+          <span class="lesson-play-btn" style="background:#94a3b8;cursor:default;">🔒 Coming Soon</span>
+        </div>
+      </div>
+
+    </div><!-- /lessonsGrid -->
+
+    <!-- ══════════════════════════════
+         PHYSICS SECTION
+    ══════════════════════════════ -->
+    <h2 class="subject-section-title" id="physics-section" style="margin-top:60px;">⚡ Physics</h2>
+    <div class="lessons-grid" id="physicsGrid">
+
+      <a class="lesson-card" href="lesson-physics-motion.html" data-class="9">
+        <div class="lesson-thumb" style="background:linear-gradient(135deg,#1a0a00,#3d1a00);">
+          <div class="formula-bg">v = u + at &nbsp; s = ut + ½at² &nbsp; v² = u² + 2as</div>
+          <span style="position:relative;font-size:2.5rem;">🚀</span>
+        </div>
+        <div class="lesson-body">
+          <span class="lesson-badge badge-physics">Physics · Class 9</span>
+          <h3>Motion</h3>
+          <p>3 equations of motion animated — see distance, velocity and acceleration come alive.</p>
+          <div class="lesson-meta"><span>⏱ 10 min</span><span>🎯 Class 9</span></div>
+          <span class="lesson-play-btn physics-btn">▶ Start Lesson</span>
+        </div>
+      </a>
+
+      <a class="lesson-card" href="lesson-physics-newtons-laws.html" data-class="9">
+        <div class="lesson-thumb" style="background:linear-gradient(135deg,#0a1a0a,#1a3a1a);">
+          <div class="formula-bg">F = ma &nbsp; Every action has equal & opposite reaction</div>
+          <span style="position:relative;font-size:2.5rem;">🏋️</span>
+        </div>
+        <div class="lesson-body">
+          <span class="lesson-badge badge-physics">Physics · Class 9</span>
+          <h3>Newton's Laws of Motion</h3>
+          <p>All three laws animated with real-world examples — inertia, force and reaction pairs.</p>
+          <div class="lesson-meta"><span>⏱ 11 min</span><span>🎯 Class 9</span></div>
+          <span class="lesson-play-btn physics-btn">▶ Start Lesson</span>
+        </div>
+      </a>
+
+      <a class="lesson-card" href="lesson-physics-electricity.html" data-class="10">
+        <div class="lesson-thumb" style="background:linear-gradient(135deg,#0a0a1a,#1a1a4e);">
+          <div class="formula-bg">V = IR &nbsp; P = VI = I²R &nbsp; 1/R = 1/R₁ + 1/R₂</div>
+          <span style="position:relative;font-size:2.5rem;">⚡</span>
+        </div>
+        <div class="lesson-body">
+          <span class="lesson-badge badge-physics">Physics · Class 10</span>
+          <h3>Electricity</h3>
+          <p>Ohm's Law, series/parallel circuits — animated current flow through circuit diagrams.</p>
+          <div class="lesson-meta"><span>⏱ 12 min</span><span>🎯 Class 10</span></div>
+          <span class="lesson-play-btn physics-btn">▶ Start Lesson</span>
+        </div>
+      </a>
+
+      <a class="lesson-card" href="lesson-physics-optics.html" data-class="10">
+        <div class="lesson-thumb" style="background:linear-gradient(135deg,#0a0a0a,#1a1a1a);">
+          <div class="formula-bg">1/v - 1/u = 1/f &nbsp; m = v/u &nbsp; n = c/v</div>
+          <span style="position:relative;font-size:2.5rem;">🔦</span>
+        </div>
+        <div class="lesson-body">
+          <span class="lesson-badge badge-physics">Physics · Class 10</span>
+          <h3>Light — Reflection & Refraction</h3>
+          <p>Mirror formula, lens formula — animated ray diagrams with real & virtual images.</p>
+          <div class="lesson-meta"><span>⏱ 13 min</span><span>🎯 Class 10</span></div>
+          <span class="lesson-play-btn physics-btn">▶ Start Lesson</span>
+        </div>
+      </a>
+
+      <div class="lesson-card coming-soon-overlay" data-class="9">
+        <div class="lesson-thumb" style="background:linear-gradient(135deg,#0a1a10,#1a4020);">
+          <div class="formula-bg">W = F·d·cos θ &nbsp; KE = ½mv² &nbsp; PE = mgh</div>
+          <span style="position:relative;font-size:2.5rem;">⚙️</span>
+        </div>
+        <div class="lesson-body">
+          <span class="lesson-badge badge-physics">Physics · Class 9</span>
+          <h3>Work, Energy & Power</h3>
+          <p>Energy conservation animated — KE to PE transformations with pendulum visuals.</p>
+          <div class="lesson-meta"><span>⏱ 10 min</span><span>🎯 Class 9</span></div>
+          <span class="lesson-play-btn" style="background:#94a3b8;cursor:default;">🔒 Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="lesson-card coming-soon-overlay" data-class="9">
+        <div class="lesson-thumb" style="background:linear-gradient(135deg,#1a0a20,#3a1a50);">
+          <div class="formula-bg">g = 9.8 m/s² &nbsp; F = GMm/r²</div>
+          <span style="position:relative;font-size:2.5rem;">🌍</span>
+        </div>
+        <div class="lesson-body">
+          <span class="lesson-badge badge-physics">Physics · Class 9</span>
+          <h3>Gravitation</h3>
+          <p>Universal law of gravitation — animated orbits, free fall and projectile motion.</p>
+          <div class="lesson-meta"><span>⏱ 11 min</span><span>🎯 Class 9</span></div>
+          <span class="lesson-play-btn" style="background:#94a3b8;cursor:default;">🔒 Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="lesson-card coming-soon-overlay" data-class="11">
+        <div class="lesson-thumb" style="background:linear-gradient(135deg,#1a1000,#3a2800);">
+          <div class="formula-bg">ΔU = Q - W &nbsp; PV = nRT</div>
+          <span style="position:relative;font-size:2.5rem;">🌡️</span>
+        </div>
+        <div class="lesson-body">
+          <span class="lesson-badge badge-physics">Physics · Class 11</span>
+          <h3>Thermodynamics</h3>
+          <p>Laws of thermodynamics — animated heat engines, PV diagrams and entropy.</p>
+          <div class="lesson-meta"><span>⏱ 14 min</span><span>🎯 Class 11</span></div>
+          <span class="lesson-play-btn" style="background:#94a3b8;cursor:default;">🔒 Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="lesson-card coming-soon-overlay" data-class="12">
+        <div class="lesson-thumb" style="background:linear-gradient(135deg,#00001a,#00003a);">
+          <div class="formula-bg">F = kq₁q₂/r² &nbsp; E = kq/r²</div>
+          <span style="position:relative;font-size:2.5rem;">🔋</span>
+        </div>
+        <div class="lesson-body">
+          <span class="lesson-badge badge-physics">Physics · Class 12</span>
+          <h3>Electrostatics</h3>
+          <p>Coulomb's law, electric field lines — animated charges attracting and repelling.</p>
+          <div class="lesson-meta"><span>⏱ 13 min</span><span>🎯 Class 12</span></div>
+          <span class="lesson-play-btn" style="background:#94a3b8;cursor:default;">🔒 Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="lesson-card coming-soon-overlay" data-class="12">
+        <div class="lesson-thumb" style="background:linear-gradient(135deg,#0a0020,#200040);">
+          <div class="formula-bg">F = qv×B &nbsp; φ = BA cos θ &nbsp; EMF = -dφ/dt</div>
+          <span style="position:relative;font-size:2.5rem;">🧲</span>
+        </div>
+        <div class="lesson-body">
+          <span class="lesson-badge badge-physics">Physics · Class 12</span>
+          <h3>Magnetism & EMI</h3>
+          <p>Magnetic force on charges, Faraday's law — animated field lines and induced current.</p>
+          <div class="lesson-meta"><span>⏱ 14 min</span><span>🎯 Class 12</span></div>
+          <span class="lesson-play-btn" style="background:#94a3b8;cursor:default;">🔒 Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="lesson-card coming-soon-overlay" data-class="12">
+        <div class="lesson-thumb" style="background:linear-gradient(135deg,#001a1a,#003a3a);">
+          <div class="formula-bg">E = hν &nbsp; λ = h/mv &nbsp; ΔE = hν</div>
+          <span style="position:relative;font-size:2.5rem;">⚛️</span>
+        </div>
+        <div class="lesson-body">
+          <span class="lesson-badge badge-physics">Physics · Class 12</span>
+          <h3>Modern Physics</h3>
+          <p>Photoelectric effect, de Broglie waves — animated atomic models and quantum transitions.</p>
+          <div class="lesson-meta"><span>⏱ 15 min</span><span>🎯 Class 12</span></div>
+          <span class="lesson-play-btn" style="background:#94a3b8;cursor:default;">🔒 Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="lesson-card coming-soon-overlay" data-class="11">
+        <div class="lesson-thumb" style="background:linear-gradient(135deg,#1a0510,#3a0a25);">
+          <div class="formula-bg">v = fλ &nbsp; y = A sin(ωt - kx)</div>
+          <span style="position:relative;font-size:2.5rem;">🌊</span>
+        </div>
+        <div class="lesson-body">
+          <span class="lesson-badge badge-physics">Physics · Class 11</span>
+          <h3>Waves & Oscillations</h3>
+          <p>Simple harmonic motion, wave equation — animated oscillating particles and wave fronts.</p>
+          <div class="lesson-meta"><span>⏱ 12 min</span><span>🎯 Class 11</span></div>
+          <span class="lesson-play-btn" style="background:#94a3b8;cursor:default;">🔒 Coming Soon</span>
+        </div>
+      </div>
+
+    </div><!-- /physicsGrid -->
+
+  </div><!-- /container -->
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo.png" alt="Visions Classes" class="footer-logo-img" />
+          <span class="logo-text"><span>Visions</span> Classes</span>
+          <p>"Learn Today, Lead Tomorrow" — Quality coaching in Ambernath since 2023.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="animated-lessons.html">Animated Lessons</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+918767144200">📞 +91 87671 44200</a></li>
+            <li><a href="mailto:info@visionslearning.in">✉ info@visionslearning.in</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Visions Learning. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // Class filter
+    const classBtns = document.querySelectorAll('.class-btn');
+    classBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        classBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.class;
+        document.querySelectorAll('.lesson-card').forEach(card => {
+          if (filter === 'all' || card.dataset.class === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

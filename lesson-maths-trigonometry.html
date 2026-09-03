@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trigonometry – Visions Classes</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #050d1a; color: #fff; font-family: 'Segoe UI', sans-serif; }
+    .navbar { background: rgba(5,13,26,0.95) !important; }
+    .lesson-stage { min-height: 100vh; padding: 80px 0 60px; position: relative; overflow: hidden; }
+    .star { position: absolute; background: #fff; border-radius: 50%; animation: twinkle 3s infinite; }
+    @keyframes twinkle { 0%,100%{opacity:.2;} 50%{opacity:1;} }
+
+    .lesson-header { text-align: center; padding: 40px 20px 20px; position: relative; }
+    .lesson-subject-tag {
+      display: inline-block; background: rgba(59,130,246,.2); border: 1px solid #3b82f6;
+      color: #93c5fd; padding: 4px 16px; border-radius: 20px;
+      font-size: .8rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 12px;
+    }
+    .lesson-header h1 {
+      font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 800;
+      background: linear-gradient(135deg,#fff 0%,#93c5fd 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .lesson-header p { color: #94a3b8; margin-top: 8px; font-size: 1rem; }
+
+    .slides-container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .slide {
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1);
+      border-radius: 20px; padding: 40px; margin-bottom: 24px;
+      opacity: 0; transform: translateY(40px); transition: opacity .6s, transform .6s;
+      position: relative; overflow: hidden;
+    }
+    .slide.visible { opacity: 1; transform: translateY(0); }
+    .slide::before { content:''; position:absolute; top:0;left:0;right:0;height:3px; background:linear-gradient(90deg,#3b82f6,#8b5cf6,#ec4899); }
+    .slide-num { position:absolute; top:16px; right:20px; font-size:.75rem; color:#475569; font-weight:700; }
+    .slide h2 { font-size:1.4rem; color:#e2e8f0; margin-bottom:16px; }
+    .slide p, .slide li { color:#94a3b8; line-height:1.8; font-size:1rem; }
+    .slide ul { list-style:none; padding:0; }
+    .slide ul li { padding:6px 0 6px 24px; position:relative; }
+    .slide ul li::before { content:'→'; position:absolute; left:0; color:#3b82f6; font-weight:700; }
+
+    .formula-box {
+      background: rgba(59,130,246,.12); border: 1px solid rgba(59,130,246,.4);
+      border-radius: 12px; padding: 20px 28px; margin: 16px 0;
+      font-family: 'Courier New', monospace; font-size: 1.2rem; color: #93c5fd; text-align: center;
+    }
+    .formula-box .formula-label { font-size:.72rem; text-transform:uppercase; letter-spacing:1px; color:#3b82f6; font-family:'Segoe UI',sans-serif; display:block; margin-bottom:8px; }
+    .formula-box.highlight { background:rgba(245,158,11,.15); border-color:rgba(245,158,11,.5); color:#fcd34d; }
+
+    /* Unit circle */
+    .circle-wrap { display:flex; justify-content:center; margin:20px 0; }
+    canvas#circleCanvas { border-radius:12px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); max-width:100%; }
+
+    /* Trig table */
+    .trig-table { width:100%; border-collapse: collapse; margin:16px 0; font-size:.9rem; }
+    .trig-table th { background:rgba(59,130,246,.2); color:#93c5fd; padding:10px 12px; text-align:center; font-weight:700; }
+    .trig-table td { padding:10px 12px; text-align:center; border-bottom:1px solid rgba(255,255,255,.06); color:#94a3b8; }
+    .trig-table tr:hover td { background:rgba(59,130,246,.08); color:#e2e8f0; }
+    .trig-table .angle-col { color:#fcd34d; font-weight:700; }
+
+    /* identities grid */
+    .identity-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin:16px 0; }
+    .identity-card {
+      background:rgba(59,130,246,.08); border:1px solid rgba(59,130,246,.25);
+      border-radius:12px; padding:16px 20px;
+      font-family:'Courier New',monospace; font-size:.95rem; color:#93c5fd;
+      text-align:center;
+      opacity:0; transform:scale(.9); transition:opacity .4s,transform .4s;
+    }
+    .identity-card.show { opacity:1; transform:scale(1); }
+    .identity-card span { display:block; font-size:.72rem; color:#3b82f6; font-family:'Segoe UI',sans-serif; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px; }
+
+    .step-item { display:flex; gap:16px; margin-bottom:20px; opacity:0; transform:translateX(-20px); transition:opacity .5s,transform .5s; }
+    .step-item.show { opacity:1; transform:translateX(0); }
+    .step-num { min-width:36px;height:36px; background:linear-gradient(135deg,#3b82f6,#8b5cf6); border-radius:50%; display:flex;align-items:center;justify-content:center; font-size:.85rem;font-weight:800;color:#fff;flex-shrink:0; }
+    .step-content h4 { color:#e2e8f0;margin-bottom:4px;font-size:1rem; }
+    .step-content p { color:#94a3b8;font-size:.9rem;line-height:1.6; }
+
+    .quiz-box { background:rgba(245,158,11,.08); border:1px solid rgba(245,158,11,.3); border-radius:14px; padding:28px; margin-top:8px; }
+    .quiz-box h3 { color:#fcd34d; margin-bottom:16px; font-size:1.1rem; }
+    .quiz-opt { display:block;width:100%; background:rgba(255,255,255,.05); border:1.5px solid rgba(255,255,255,.1); color:#cbd5e1; padding:12px 20px; border-radius:10px; cursor:pointer; font-size:.95rem; transition:all .2s; text-align:left; margin-bottom:10px; }
+    .quiz-opt:hover { border-color:#3b82f6; background:rgba(59,130,246,.12); }
+    .quiz-opt.correct { border-color:#10b981; background:rgba(16,185,129,.2); color:#6ee7b7; }
+    .quiz-opt.wrong { border-color:#ef4444; background:rgba(239,68,68,.15); color:#fca5a5; }
+    .quiz-feedback { margin-top:14px;font-size:.95rem;font-weight:600;display:none; }
+    .quiz-feedback.show { display:block; }
+    .quiz-feedback.correct-msg { color:#10b981; }
+    .quiz-feedback.wrong-msg { color:#ef4444; }
+
+    .progress-bar-wrap { height:4px; background:rgba(255,255,255,.1); border-radius:2px; margin:0 20px 30px; max-width:900px; margin-left:auto; margin-right:auto; }
+    .progress-bar-fill { height:100%; background:linear-gradient(90deg,#3b82f6,#8b5cf6); border-radius:2px; transition:width .4s; }
+    .nav-btn { padding:12px 28px;border-radius:10px;border:none;cursor:pointer;font-size:.95rem;font-weight:700;transition:all .2s;text-decoration:none;display:inline-flex;align-items:center;gap:8px; }
+    .nav-btn.back { background:rgba(255,255,255,.08); color:#94a3b8; }
+    .nav-btn.next { background:linear-gradient(135deg,#3b82f6,#8b5cf6); color:#fff; box-shadow:0 4px 20px rgba(59,130,246,.4); }
+    .nav-btn.next:hover { transform:translateY(-2px); }
+    .lesson-nav { display:flex;justify-content:space-between;align-items:center;padding:20px;max-width:900px;margin:0 auto 60px;gap:12px;flex-wrap:wrap; }
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Visions Classes Logo" class="nav-logo-img" />
+        <div class="logo-text"><span>Visions</span> Classes</div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="animated-lessons.html" class="active">Animated Lessons</a></li>
+        <li><a href="buy-courses.html">Buy Course</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <section class="lesson-stage" id="stage">
+    <div class="lesson-header">
+      <div class="lesson-subject-tag">📐 MATHS · CLASS 10</div>
+      <h1>Trigonometry</h1>
+      <p>SOH-CAH-TOA, the unit circle and all identities — visually explained</p>
+    </div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill" style="width:0%"></div></div>
+
+    <div class="slides-container">
+
+      <!-- SLIDE 1 -->
+      <div class="slide" id="slide-1">
+        <div class="slide-num">1 / 6</div>
+        <h2>📐 The Right Triangle & SOH-CAH-TOA</h2>
+        <p>Trigonometry is the study of <strong style="color:#93c5fd">relationships between angles and sides</strong> in a right triangle.</p>
+        <div class="formula-box">
+          <span class="formula-label">The 3 Basic Ratios</span>
+          sin θ = Opposite / Hypotenuse<br/>
+          cos θ = Adjacent / Hypotenuse<br/>
+          tan θ = Opposite / Adjacent
+        </div>
+        <ul>
+          <li><strong style="color:#93c5fd">SOH</strong>: Sin = Opposite / Hypotenuse</li>
+          <li><strong style="color:#93c5fd">CAH</strong>: Cos = Adjacent / Hypotenuse</li>
+          <li><strong style="color:#93c5fd">TOA</strong>: Tan = Opposite / Adjacent</li>
+          <li>Also: cosec = 1/sin, sec = 1/cos, cot = 1/tan</li>
+        </ul>
+      </div>
+
+      <!-- SLIDE 2: Unit Circle -->
+      <div class="slide" id="slide-2">
+        <div class="slide-num">2 / 6</div>
+        <h2>🔵 The Unit Circle (radius = 1)</h2>
+        <p>On a unit circle, the coordinates of any point are exactly <strong style="color:#93c5fd">(cos θ, sin θ)</strong>. Watch the angle sweep!</p>
+        <div class="circle-wrap">
+          <canvas id="circleCanvas" width="320" height="320"></canvas>
+        </div>
+        <div class="formula-box">Point on unit circle: (cos θ, sin θ) &nbsp; | &nbsp; sin²θ + cos²θ = 1</div>
+      </div>
+
+      <!-- SLIDE 3: Trig table -->
+      <div class="slide" id="slide-3">
+        <div class="slide-num">3 / 6</div>
+        <h2>📋 Values Table — Standard Angles</h2>
+        <p>Memorise these — they appear in almost every trig problem!</p>
+        <table class="trig-table">
+          <thead><tr><th>Angle (°)</th><th>sin</th><th>cos</th><th>tan</th></tr></thead>
+          <tbody>
+            <tr><td class="angle-col">0°</td><td>0</td><td>1</td><td>0</td></tr>
+            <tr><td class="angle-col">30°</td><td>1/2</td><td>√3/2</td><td>1/√3</td></tr>
+            <tr><td class="angle-col">45°</td><td>1/√2</td><td>1/√2</td><td>1</td></tr>
+            <tr><td class="angle-col">60°</td><td>√3/2</td><td>1/2</td><td>√3</td></tr>
+            <tr><td class="angle-col">90°</td><td>1</td><td>0</td><td>∞</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:12px;font-size:.85rem;">💡 Trick for sin: √0/2, √1/2, √2/2, √3/2, √4/2 = 0, ½, 1/√2, √3/2, 1</p>
+      </div>
+
+      <!-- SLIDE 4: Identities -->
+      <div class="slide" id="slide-4">
+        <div class="slide-num">4 / 6</div>
+        <h2>🔑 Key Trigonometric Identities</h2>
+        <p>These identities are tools — learn them, and any trig problem becomes solvable.</p>
+        <div class="identity-grid" id="identGrid">
+          <div class="identity-card"><span>Pythagorean</span>sin²θ + cos²θ = 1</div>
+          <div class="identity-card"><span>Derived</span>1 + tan²θ = sec²θ</div>
+          <div class="identity-card"><span>Derived</span>1 + cot²θ = cosec²θ</div>
+          <div class="identity-card"><span>Ratio</span>tan θ = sin θ / cos θ</div>
+          <div class="identity-card"><span>Complementary</span>sin(90°−θ) = cos θ</div>
+          <div class="identity-card"><span>Complementary</span>tan(90°−θ) = cot θ</div>
+        </div>
+      </div>
+
+      <!-- SLIDE 5: Solved Example -->
+      <div class="slide" id="slide-5">
+        <div class="slide-num">5 / 6</div>
+        <h2>✏️ Solved Example</h2>
+        <p style="color:#fcd34d;font-weight:600;margin-bottom:16px;">Q: Prove that sin²A + cos²A = 1 using a right triangle with hypotenuse c, opposite a, adjacent b.</p>
+        <div class="step-list" id="exSteps">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-content"><h4>Write sin A and cos A</h4><p>sin A = a/c &nbsp;&nbsp; cos A = b/c</p></div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-content"><h4>Square and add</h4><p>sin²A + cos²A = a²/c² + b²/c² = (a² + b²)/c²</p></div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-content"><h4>Apply Pythagoras theorem</h4><p>a² + b² = c² &nbsp; (Pythagoras)</p></div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">4</div>
+            <div class="step-content"><h4>Conclusion</h4><p>sin²A + cos²A = c²/c² = <strong style="color:#93c5fd">1</strong> ✓ Proved!</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 6: Quiz -->
+      <div class="slide" id="slide-6">
+        <div class="slide-num">6 / 6</div>
+        <h2>🧠 Quick Quiz</h2>
+        <div class="quiz-box">
+          <h3>Q: What is the value of sin 30° × cos 60° + cos 30° × sin 60°?</h3>
+          <button class="quiz-opt" data-ans="wrong">a) 0</button>
+          <button class="quiz-opt" data-ans="correct">b) 1 &nbsp;→&nbsp; This equals sin(30°+60°) = sin 90° = <strong>1</strong></button>
+          <button class="quiz-opt" data-ans="wrong">c) √3/2</button>
+          <button class="quiz-opt" data-ans="wrong">d) 1/2</button>
+          <div class="quiz-feedback" id="quizFeedback"></div>
+        </div>
+        <div style="text-align:center;margin-top:32px;">
+          <p style="color:#64748b;margin-bottom:16px;">Trigonometry conquered! 🎉</p>
+          <a href="animated-lessons.html" class="nav-btn next" style="display:inline-flex;">← Back to All Lessons</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="lesson-nav">
+      <a href="lesson-maths-quadratic.html" class="nav-btn back">← Quadratic Equations</a>
+      <a href="lesson-maths-integration.html" class="nav-btn next">Next: Integration →</a>
+    </div>
+  </section>
+
+  <script src="main.js"></script>
+  <script>
+    const stage = document.getElementById('stage');
+    for (let i = 0; i < 60; i++) {
+      const s = document.createElement('div'); s.className = 'star';
+      const sz = Math.random()*3+1;
+      s.style.cssText = `width:${sz}px;height:${sz}px;top:${Math.random()*100}%;left:${Math.random()*100}%;animation-delay:${Math.random()*4}s;animation-duration:${2+Math.random()*3}s;`;
+      stage.appendChild(s);
+    }
+
+    const slides = document.querySelectorAll('.slide');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); triggerAnim(e.target); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    slides.forEach(s => obs.observe(s));
+    window.addEventListener('scroll', () => {
+      const v = document.querySelectorAll('.slide.visible').length;
+      document.getElementById('progressFill').style.width = (v/slides.length*100)+'%';
+    });
+
+    function triggerAnim(slide) {
+      if (slide.id==='slide-2') setTimeout(animateCircle, 300);
+      if (slide.id==='slide-4') animateIdents();
+      if (slide.id==='slide-5') animateSteps('exSteps');
+    }
+
+    function animateSteps(id) {
+      document.querySelectorAll(`#${id} .step-item`).forEach((s,i) => setTimeout(()=>s.classList.add('show'),i*300));
+    }
+
+    function animateIdents() {
+      document.querySelectorAll('.identity-card').forEach((c,i) => setTimeout(()=>c.classList.add('show'),i*150));
+    }
+
+    function animateCircle() {
+      const canvas = document.getElementById('circleCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const cx = 160, cy = 160, r = 120;
+      let angle = 0;
+
+      function draw() {
+        ctx.clearRect(0,0,320,320);
+        // Background circle
+        ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2);
+        ctx.strokeStyle = 'rgba(59,130,246,0.3)'; ctx.lineWidth = 1.5; ctx.stroke();
+
+        // Axes
+        ctx.strokeStyle = 'rgba(255,255,255,0.15)'; ctx.lineWidth=1;
+        ctx.beginPath(); ctx.moveTo(cx-r-20,cy); ctx.lineTo(cx+r+20,cy); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(cx,cy-r-20); ctx.lineTo(cx,cy+r+20); ctx.stroke();
+
+        // Radius line
+        const px = cx + r*Math.cos(angle);
+        const py = cy - r*Math.sin(angle);
+        ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(px,py);
+        ctx.strokeStyle = '#3b82f6'; ctx.lineWidth = 2;
+        ctx.shadowColor = '#3b82f6'; ctx.shadowBlur = 6; ctx.stroke();
+        ctx.shadowBlur = 0;
+
+        // sin line (vertical)
+        ctx.beginPath(); ctx.moveTo(px,py); ctx.lineTo(px,cy);
+        ctx.strokeStyle = '#f59e0b'; ctx.lineWidth = 2;
+        ctx.setLineDash([4,4]); ctx.stroke(); ctx.setLineDash([]);
+
+        // cos line (horizontal)
+        ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(px,cy);
+        ctx.strokeStyle = '#10b981'; ctx.lineWidth = 2;
+        ctx.setLineDash([4,4]); ctx.stroke(); ctx.setLineDash([]);
+
+        // Point
+        ctx.beginPath(); ctx.arc(px,py,6,0,Math.PI*2);
+        ctx.fillStyle = '#fff'; ctx.shadowColor='#fff'; ctx.shadowBlur=8; ctx.fill(); ctx.shadowBlur=0;
+
+        // Labels
+        ctx.fillStyle = '#f59e0b'; ctx.font = 'bold 13px Segoe UI';
+        ctx.fillText('sin θ', px+8, (py+cy)/2);
+        ctx.fillStyle = '#10b981';
+        ctx.fillText('cos θ', (cx+px)/2 - 20, cy+18);
+
+        // Angle arc
+        ctx.beginPath(); ctx.arc(cx,cy,28,0,-angle,angle>0);
+        ctx.strokeStyle='rgba(255,255,255,0.4)'; ctx.lineWidth=1.5; ctx.stroke();
+        ctx.fillStyle='rgba(255,255,255,0.5)'; ctx.font='12px Segoe UI';
+        ctx.fillText('θ', cx+32, cy-8);
+
+        // θ value
+        ctx.fillStyle='rgba(255,255,255,0.3)'; ctx.font='11px Segoe UI';
+        ctx.fillText(Math.round(angle*180/Math.PI)+'°', cx-15, cy+r+18);
+
+        angle += 0.02;
+        if (angle > 2*Math.PI) angle = 0;
+        requestAnimationFrame(draw);
+      }
+      draw();
+    }
+
+    document.querySelectorAll('.quiz-opt').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.quiz-opt').forEach(b=>b.disabled=true);
+        const fb = document.getElementById('quizFeedback');
+        if (btn.dataset.ans==='correct') {
+          btn.classList.add('correct');
+          fb.textContent='✅ Correct! sin(A+B) = sinA cosB + cosA sinB → sin90° = 1';
+          fb.className='quiz-feedback show correct-msg';
+        } else {
+          btn.classList.add('wrong');
+          fb.textContent='❌ Hint: This is sin(30°+60°) = sin 90° = 1';
+          fb.className='quiz-feedback show wrong-msg';
+          document.querySelectorAll('.quiz-opt').forEach(b=>{if(b.dataset.ans==='correct')b.classList.add('correct');});
+        }
+      });
+    });
+  </script>
+</body>
+</html>

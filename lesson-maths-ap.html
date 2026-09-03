@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arithmetic Progressions – Visions Classes</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d0d1a; color: #fff; font-family: 'Segoe UI', sans-serif; }
+
+    /* ── Navbar override for dark page ── */
+    .navbar { background: rgba(13,13,26,0.95) !important; }
+
+    /* ── Lesson canvas area ── */
+    .lesson-stage {
+      min-height: 100vh;
+      padding: 80px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    /* starfield */
+    .star { position: absolute; background: #fff; border-radius: 50%; animation: twinkle 3s infinite; }
+    @keyframes twinkle { 0%,100%{opacity:.2;} 50%{opacity:1;} }
+
+    .lesson-header {
+      text-align: center;
+      padding: 40px 20px 20px;
+      position: relative;
+    }
+    .lesson-subject-tag {
+      display: inline-block;
+      background: rgba(99,102,241,.3);
+      border: 1px solid #6366f1;
+      color: #a5b4fc;
+      padding: 4px 16px;
+      border-radius: 20px;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .lesson-header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .lesson-header p { color: #94a3b8; margin-top: 8px; font-size: 1rem; }
+
+    /* ── Slide container ── */
+    .slides-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .slide {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 24px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity .6s ease, transform .6s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide.visible { opacity: 1; transform: translateY(0); }
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+    }
+
+    .slide-num {
+      position: absolute;
+      top: 16px; right: 20px;
+      font-size: .75rem;
+      color: #475569;
+      font-weight: 700;
+    }
+
+    .slide h2 {
+      font-size: 1.4rem;
+      color: #e2e8f0;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .slide p, .slide li {
+      color: #94a3b8;
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+    .slide ul { list-style: none; padding: 0; }
+    .slide ul li { padding: 6px 0; padding-left: 24px; position: relative; }
+    .slide ul li::before { content: '→'; position: absolute; left: 0; color: #6366f1; font-weight: 700; }
+
+    /* formula box */
+    .formula-box {
+      background: rgba(99,102,241,.15);
+      border: 1px solid rgba(99,102,241,.4);
+      border-radius: 12px;
+      padding: 20px 28px;
+      margin: 16px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 1.3rem;
+      color: #a5b4fc;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .formula-box .formula-label {
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #6366f1;
+      font-family: 'Segoe UI', sans-serif;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .formula-box.highlight {
+      background: rgba(245,158,11,.15);
+      border-color: rgba(245,158,11,.5);
+      color: #fcd34d;
+    }
+
+    /* AP animation canvas */
+    .ap-visual {
+      display: flex;
+      align-items: flex-end;
+      gap: 12px;
+      justify-content: center;
+      padding: 30px 0 10px;
+      flex-wrap: wrap;
+    }
+    .ap-bar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .ap-bar .bar-block {
+      width: 52px;
+      border-radius: 6px 6px 0 0;
+      background: linear-gradient(180deg, #6366f1, #4338ca);
+      transition: height 1s cubic-bezier(.34,1.56,.64,1);
+      position: relative;
+    }
+    .ap-bar .bar-val {
+      color: #a5b4fc;
+      font-size: .85rem;
+      font-weight: 700;
+    }
+    .ap-bar .bar-n {
+      color: #475569;
+      font-size: .75rem;
+    }
+
+    /* sequence display */
+    .seq-display {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 20px 0;
+    }
+    .seq-term {
+      background: rgba(99,102,241,.2);
+      border: 1.5px solid rgba(99,102,241,.5);
+      color: #c7d2fe;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      font-family: 'Courier New', monospace;
+      opacity: 0;
+      transform: scale(.6);
+      transition: opacity .4s, transform .4s;
+    }
+    .seq-term.show { opacity: 1; transform: scale(1); }
+    .seq-term.highlight-term {
+      background: rgba(245,158,11,.25);
+      border-color: #f59e0b;
+      color: #fcd34d;
+    }
+
+    /* step by step */
+    .step-list { counter-reset: step; }
+    .step-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: opacity .5s, transform .5s;
+    }
+    .step-item.show { opacity: 1; transform: translateX(0); }
+    .step-num {
+      min-width: 36px; height: 36px;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .85rem; font-weight: 800; color: #fff;
+      flex-shrink: 0;
+    }
+    .step-content h4 { color: #e2e8f0; margin-bottom: 4px; font-size: 1rem; }
+    .step-content p { color: #94a3b8; font-size: .9rem; line-height: 1.6; }
+
+    /* quiz */
+    .quiz-box {
+      background: rgba(245,158,11,.08);
+      border: 1px solid rgba(245,158,11,.3);
+      border-radius: 14px;
+      padding: 28px;
+      margin-top: 8px;
+    }
+    .quiz-box h3 { color: #fcd34d; margin-bottom: 16px; font-size: 1.1rem; }
+    .quiz-options { display: flex; flex-direction: column; gap: 10px; }
+    .quiz-opt {
+      background: rgba(255,255,255,.05);
+      border: 1.5px solid rgba(255,255,255,.1);
+      color: #cbd5e1;
+      padding: 12px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: .95rem;
+      transition: all .2s;
+      text-align: left;
+    }
+    .quiz-opt:hover { border-color: #6366f1; background: rgba(99,102,241,.15); }
+    .quiz-opt.correct { border-color: #10b981; background: rgba(16,185,129,.2); color: #6ee7b7; }
+    .quiz-opt.wrong { border-color: #ef4444; background: rgba(239,68,68,.15); color: #fca5a5; }
+    .quiz-feedback { margin-top: 14px; font-size: .95rem; font-weight: 600; display: none; }
+    .quiz-feedback.show { display: block; }
+    .quiz-feedback.correct-msg { color: #10b981; }
+    .quiz-feedback.wrong-msg { color: #ef4444; }
+
+    /* nav buttons */
+    .lesson-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto 60px;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .nav-btn {
+      padding: 12px 28px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-size: .95rem;
+      font-weight: 700;
+      transition: all .2s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-btn.back { background: rgba(255,255,255,.08); color: #94a3b8; }
+    .nav-btn.back:hover { background: rgba(255,255,255,.15); }
+    .nav-btn.next { background: linear-gradient(135deg,#6366f1,#8b5cf6); color: #fff; box-shadow: 0 4px 20px rgba(99,102,241,.4); }
+    .nav-btn.next:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,.5); }
+
+    .progress-bar-wrap {
+      height: 4px;
+      background: rgba(255,255,255,.1);
+      border-radius: 2px;
+      margin: 0 20px 30px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg,#6366f1,#a855f7);
+      border-radius: 2px;
+      transition: width .4s ease;
+    }
+
+    @media(max-width:600px) {
+      .slide { padding: 24px 18px; }
+      .formula-box { font-size: 1rem; }
+      .ap-bar .bar-block { width: 36px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Visions Classes Logo" class="nav-logo-img" />
+        <div class="logo-text"><span>Visions</span> Classes</div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="animated-lessons.html" class="active">Animated Lessons</a></li>
+        <li><a href="buy-courses.html">Buy Course</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <section class="lesson-stage" id="stage">
+    <!-- starfield injected by JS -->
+
+    <!-- Header -->
+    <div class="lesson-header">
+      <div class="lesson-subject-tag">📐 MATHS · CLASS 10</div>
+      <h1>Arithmetic Progressions</h1>
+      <p>Watch formulas come alive — step by step, with visuals</p>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill" style="width:0%"></div></div>
+
+    <div class="slides-container">
+
+      <!-- SLIDE 1: What is AP? -->
+      <div class="slide" id="slide-1">
+        <div class="slide-num">1 / 6</div>
+        <h2>🔢 What is an Arithmetic Progression?</h2>
+        <p>A sequence of numbers where the <strong style="color:#a5b4fc">difference between consecutive terms is constant</strong>. That constant difference is called the <strong style="color:#fcd34d">Common Difference (d)</strong>.</p>
+        <div class="seq-display" id="seqBasic">
+          <div class="seq-term">2</div>
+          <div class="seq-term">5</div>
+          <div class="seq-term">8</div>
+          <div class="seq-term">11</div>
+          <div class="seq-term">14</div>
+          <div class="seq-term highlight-term">…</div>
+        </div>
+        <div class="formula-box">
+          <span class="formula-label">Common Difference</span>
+          d = a₂ − a₁ = a₃ − a₂ = … = constant
+        </div>
+        <ul>
+          <li>Here: 5 − 2 = 3, &nbsp; 8 − 5 = 3, &nbsp; 11 − 8 = 3 → <strong style="color:#fcd34d">d = 3</strong></li>
+          <li>First term a = 2, Common difference d = 3</li>
+          <li>If d > 0 → Increasing AP &nbsp; | &nbsp; If d < 0 → Decreasing AP</li>
+        </ul>
+      </div>
+
+      <!-- SLIDE 2: nth term formula -->
+      <div class="slide" id="slide-2">
+        <div class="slide-num">2 / 6</div>
+        <h2>📌 The n<sup>th</sup> Term Formula</h2>
+        <p>To find any term without listing all terms, we use the <strong style="color:#a5b4fc">nth term formula</strong>:</p>
+        <div class="step-list" id="nthSteps">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h4>Start with first term: a₁ = a</h4>
+              <p>The 1st term is just <em>a</em>.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h4>Add d once to get a₂</h4>
+              <p>a₂ = a + d</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h4>Add d twice to get a₃</h4>
+              <p>a₃ = a + 2d</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h4>Pattern: aₙ = a + (n−1)d</h4>
+              <p>For the nth term, we add d exactly (n−1) times.</p>
+            </div>
+          </div>
+        </div>
+        <div class="formula-box highlight">
+          <span class="formula-label">🌟 nth Term Formula</span>
+          aₙ = a + (n − 1) × d
+        </div>
+      </div>
+
+      <!-- SLIDE 3: Visual bar chart -->
+      <div class="slide" id="slide-3">
+        <div class="slide-num">3 / 6</div>
+        <h2>📊 Visualising AP: a=3, d=4</h2>
+        <p>Watch each term grow by a constant amount (d=4). The bars increase uniformly — that's the beauty of AP!</p>
+        <div class="ap-visual" id="apVisual">
+          <div class="ap-bar">
+            <div class="bar-val">3</div>
+            <div class="bar-block" id="b1" style="height:0px"></div>
+            <div class="bar-n">a₁</div>
+          </div>
+          <div class="ap-bar">
+            <div class="bar-val">7</div>
+            <div class="bar-block" id="b2" style="height:0px;background:linear-gradient(180deg,#8b5cf6,#6d28d9)"></div>
+            <div class="bar-n">a₂</div>
+          </div>
+          <div class="ap-bar">
+            <div class="bar-val">11</div>
+            <div class="bar-block" id="b3" style="height:0px;background:linear-gradient(180deg,#a855f7,#7c3aed)"></div>
+            <div class="bar-n">a₃</div>
+          </div>
+          <div class="ap-bar">
+            <div class="bar-val">15</div>
+            <div class="bar-block" id="b4" style="height:0px;background:linear-gradient(180deg,#c084fc,#9333ea)"></div>
+            <div class="bar-n">a₄</div>
+          </div>
+          <div class="ap-bar">
+            <div class="bar-val">19</div>
+            <div class="bar-block" id="b5" style="height:0px;background:linear-gradient(180deg,#e879f9,#a21caf)"></div>
+            <div class="bar-n">a₅</div>
+          </div>
+          <div class="ap-bar">
+            <div class="bar-val">23</div>
+            <div class="bar-block" id="b6" style="height:0px;background:linear-gradient(180deg,#f0abfc,#c026d3)"></div>
+            <div class="bar-n">a₆</div>
+          </div>
+        </div>
+        <div class="formula-box" style="margin-top:8px;">a = 3, &nbsp; d = 4 &nbsp;→&nbsp; 3, 7, 11, 15, 19, 23, …</div>
+      </div>
+
+      <!-- SLIDE 4: Sum formula -->
+      <div class="slide" id="slide-4">
+        <div class="slide-num">4 / 6</div>
+        <h2>➕ Sum of n Terms (Sₙ)</h2>
+        <p>Gauss's trick — pair the first and last terms. Each pair sums to the same value!</p>
+        <div class="step-list" id="sumSteps">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h4>Write Sₙ forward and backward</h4>
+              <p>Sₙ = a + (a+d) + (a+2d) + … + l &nbsp; where l = last term</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h4>Add both rows</h4>
+              <p>2Sₙ = n × (a + l) &nbsp; → &nbsp; each pair sums to (a + l)</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h4>Substitute l = a + (n−1)d</h4>
+              <p>2Sₙ = n × (2a + (n−1)d)</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h4>Divide both sides by 2</h4>
+              <p>Sₙ = n/2 × (2a + (n−1)d) ✓</p>
+            </div>
+          </div>
+        </div>
+        <div class="formula-box highlight">
+          <span class="formula-label">🌟 Sum Formula</span>
+          Sₙ = n/2 × [2a + (n−1)d] &nbsp; OR &nbsp; Sₙ = n/2 × (a + l)
+        </div>
+      </div>
+
+      <!-- SLIDE 5: Solved Example -->
+      <div class="slide" id="slide-5">
+        <div class="slide-num">5 / 6</div>
+        <h2>✏️ Solved Example</h2>
+        <p style="color:#fcd34d;font-weight:600;margin-bottom:16px;">Q: Find the 10th term and sum of first 10 terms of AP: 5, 8, 11, 14, …</p>
+        <div class="step-list" id="exSteps">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h4>Identify a and d</h4>
+              <p>a = 5, &nbsp; d = 8 − 5 = 3</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h4>Find a₁₀ using aₙ = a + (n−1)d</h4>
+              <p>a₁₀ = 5 + (10−1) × 3 = 5 + 27 = <strong style="color:#a5b4fc">32</strong></p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h4>Find S₁₀ using Sₙ = n/2(2a + (n−1)d)</h4>
+              <p>S₁₀ = 10/2 × (2×5 + 9×3) = 5 × (10 + 27) = 5 × 37 = <strong style="color:#fcd34d">185</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="formula-box" style="font-size:1.1rem;">
+          a₁₀ = <span style="color:#a5b4fc">32</span> &nbsp;&nbsp; S₁₀ = <span style="color:#fcd34d">185</span>
+        </div>
+      </div>
+
+      <!-- SLIDE 6: Quiz -->
+      <div class="slide" id="slide-6">
+        <div class="slide-num">6 / 6</div>
+        <h2>🧠 Quick Quiz</h2>
+        <div class="quiz-box">
+          <h3>Q: What is the 7th term of AP: 2, 5, 8, 11, … ?</h3>
+          <div class="quiz-options" id="quizOpts">
+            <button class="quiz-opt" data-ans="wrong">a) 20</button>
+            <button class="quiz-opt" data-ans="correct">b) 20 → aₙ = 2 + (7−1)×3 = 2 + 18 = <strong>20</strong></button>
+            <button class="quiz-opt" data-ans="wrong">c) 23</button>
+            <button class="quiz-opt" data-ans="wrong">d) 17</button>
+          </div>
+          <div class="quiz-feedback" id="quizFeedback"></div>
+        </div>
+        <div style="text-align:center;margin-top:32px;">
+          <p style="color:#64748b;margin-bottom:16px;">Great work! You've completed this lesson 🎉</p>
+          <a href="animated-lessons.html" class="nav-btn next" style="display:inline-flex;">← Back to All Lessons</a>
+        </div>
+      </div>
+
+    </div><!-- /slides-container -->
+
+    <div class="lesson-nav">
+      <a href="animated-lessons.html" class="nav-btn back">← All Lessons</a>
+      <a href="lesson-maths-quadratic.html" class="nav-btn next">Next: Quadratic Equations →</a>
+    </div>
+
+  </section>
+
+  <script src="main.js"></script>
+  <script>
+    // ── Starfield ──
+    const stage = document.getElementById('stage');
+    for (let i = 0; i < 60; i++) {
+      const s = document.createElement('div');
+      s.className = 'star';
+      const size = Math.random() * 3 + 1;
+      s.style.cssText = `width:${size}px;height:${size}px;top:${Math.random()*100}%;left:${Math.random()*100}%;animation-delay:${Math.random()*4}s;animation-duration:${2+Math.random()*3}s;`;
+      stage.appendChild(s);
+    }
+
+    // ── Intersection observer to reveal slides ──
+    const slides = document.querySelectorAll('.slide');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          triggerSlideAnimations(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    slides.forEach(s => observer.observe(s));
+
+    // Update progress bar on scroll
+    window.addEventListener('scroll', () => {
+      const visible = document.querySelectorAll('.slide.visible').length;
+      document.getElementById('progressFill').style.width = (visible / slides.length * 100) + '%';
+    });
+
+    function triggerSlideAnimations(slide) {
+      const id = slide.id;
+      if (id === 'slide-1') animateSeq();
+      if (id === 'slide-2') animateSteps('nthSteps');
+      if (id === 'slide-3') animateBars();
+      if (id === 'slide-4') animateSteps('sumSteps');
+      if (id === 'slide-5') animateSteps('exSteps');
+    }
+
+    function animateSeq() {
+      const terms = document.querySelectorAll('#seqBasic .seq-term');
+      terms.forEach((t, i) => {
+        setTimeout(() => t.classList.add('show'), i * 200);
+      });
+    }
+
+    function animateSteps(id) {
+      const steps = document.querySelectorAll(`#${id} .step-item`);
+      steps.forEach((s, i) => {
+        setTimeout(() => s.classList.add('show'), i * 300);
+      });
+    }
+
+    function animateBars() {
+      const heights = [40, 56, 72, 90, 108, 126];
+      heights.forEach((h, i) => {
+        setTimeout(() => {
+          document.getElementById('b' + (i+1)).style.height = h + 'px';
+        }, i * 180);
+      });
+    }
+
+    // ── Quiz ──
+    document.querySelectorAll('.quiz-opt').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.quiz-opt').forEach(b => b.disabled = true);
+        const fb = document.getElementById('quizFeedback');
+        if (btn.dataset.ans === 'correct') {
+          btn.classList.add('correct');
+          fb.textContent = '✅ Correct! a₇ = 2 + 6×3 = 20';
+          fb.className = 'quiz-feedback show correct-msg';
+        } else {
+          btn.classList.add('wrong');
+          fb.textContent = '❌ Not quite. Use aₙ = a + (n−1)d → a₇ = 2 + 6×3 = 20';
+          fb.className = 'quiz-feedback show wrong-msg';
+          // highlight correct
+          document.querySelectorAll('.quiz-opt').forEach(b => {
+            if(b.dataset.ans === 'correct') b.classList.add('correct');
+          });
+        }
+        fb.classList.add('show');
+      });
+    });
+  </script>
+</body>
+</html>
