@@ -1158,6 +1158,213 @@ document.addEventListener('keydown', e=>{
 
 // Init
 render();
+
+/* ══════════════════════════════════════════════════════════════
+   TEXT-TO-SPEECH NARRATION
+   Full script for every slide — speaks automatically on render
+══════════════════════════════════════════════════════════════ */
+
+const NARRATION = {
+  /* ─── Arithmetic Progressions ─── */
+  'ap-0': `Welcome to Arithmetic Progressions! An arithmetic progression is a sequence of numbers where the difference between any two consecutive terms is always the same. This constant difference is called the common difference, written as d. For example, in the sequence 2, 5, 8, 11, 14 — the difference between each term is 3. So here, d equals 3, and the first term a equals 2.`,
+
+  'ap-1': `Now let us find any term of an AP without listing all terms. The nth term formula is: a-n equals a plus n minus 1 times d. Here is why — the first term is a. The second term is a plus d. The third term is a plus 2d. So the pattern is clear — to get the nth term, we add d exactly n minus 1 times. This is your key formula for any AP problem.`,
+
+  'ap-2': `Look at this bar chart for the AP with first term 3 and common difference 4. The terms are 3, 7, 11, 15, 19, 23. Each bar is exactly 4 units taller than the previous one. That uniform, steady growth is the visual signature of an arithmetic progression. If the bars were not equal in height difference, it would not be an AP.`,
+
+  'ap-3': `The sum of n terms formula was discovered using a clever trick. Write S-n forward and then backward. Add both rows — each pair sums to a plus the last term l. So 2 S-n equals n times a plus l. Substitute l equals a plus n minus 1 times d, and divide by 2. The result is S-n equals n over 2 times 2a plus n minus 1 times d. Remember both forms — they are equally useful.`,
+
+  'ap-4': `Let us solve an example. For the AP 5, 8, 11, 14 — a equals 5 and d equals 8 minus 5 equals 3. To find the 10th term — a-10 equals 5 plus 9 times 3 equals 5 plus 27 equals 32. To find the sum of 10 terms — S-10 equals 10 over 2 times 2 times 5 plus 9 times 3 equals 5 times 37 equals 185. So the 10th term is 32 and the sum is 185. Always identify a and d first — that is the key step.`,
+
+  /* ─── Quadratic Equations ─── */
+  'quad-0': `Welcome to Quadratic Equations! A quadratic equation is a polynomial equation where the highest power of x is 2. The standard form is ax squared plus bx plus c equals zero, where a is not equal to zero. The values a, b and c are called coefficients. For example, in 2x squared minus 5x plus 3 equals zero, a is 2, b is minus 5, and c is 3. The graph of any quadratic equation is always a parabola.`,
+
+  'quad-1': `Now let us look at the graph of y equals x squared minus 5x plus 6. This parabola opens upward. Where it crosses the x-axis — those points are called the roots or zeros of the equation. For this equation, the parabola crosses the x-axis at x equals 2 and x equals 3. These are the two solutions. Any quadratic can have 2, 1, or 0 real roots — and the discriminant tells us which case it is.`,
+
+  'quad-2': `The quadratic formula gives us the roots of any quadratic equation. It is x equals minus b plus or minus square root of b squared minus 4ac, all divided by 2a. The expression under the square root — b squared minus 4ac — is called the discriminant, written as D. If D is greater than zero, there are two distinct real roots. If D equals zero, there are two equal roots. If D is less than zero, there are no real roots.`,
+
+  'quad-3': `Let us solve 2x squared minus 7x plus 3 equals zero using the formula. a equals 2, b equals minus 7, c equals 3. The discriminant D equals 49 minus 24 equals 25. Since D is positive, we have two real roots. Applying the formula — x equals 7 plus or minus 5, divided by 4. So x-1 equals 12 over 4 equals 3, and x-2 equals 2 over 4 equals one half. Both roots check out when substituted back.`,
+
+  /* ─── Trigonometry ─── */
+  'trig-0': `Welcome to Trigonometry! Trigonometry is the study of relationships between angles and sides in a right triangle. The three basic ratios are sine, cosine and tangent. Remember them with SOH-CAH-TOA. Sine equals Opposite over Hypotenuse. Cosine equals Adjacent over Hypotenuse. Tangent equals Opposite over Adjacent. The other three — cosecant, secant, cotangent — are just reciprocals of these three.`,
+
+  'trig-1': `The unit circle is a circle with radius 1 centred at the origin. On this circle, for any angle theta, the x-coordinate of the point is cosine theta, and the y-coordinate is sine theta. Watch the point moving around the circle — the horizontal projection is cosine, and the vertical projection is sine. This is why sine squared theta plus cosine squared theta always equals 1 — it is just Pythagoras theorem on the unit circle.`,
+
+  'trig-2': `These are the standard angle values you must memorise. At 0 degrees, sine is 0 and cosine is 1. At 30 degrees, sine is one-half and cosine is root 3 over 2. At 45 degrees, both sine and cosine are 1 over root 2. At 60 degrees, sine is root 3 over 2 and cosine is one-half. At 90 degrees, sine is 1 and cosine is 0. Here is a quick trick — for sine, the values are root 0, root 1, root 2, root 3, root 4 — all divided by 2.`,
+
+  'trig-3': `The most important trigonometric identities are these. The Pythagorean identity: sine squared theta plus cosine squared theta equals 1. Dividing by cosine squared gives 1 plus tangent squared theta equals secant squared theta. Dividing by sine squared gives 1 plus cotangent squared theta equals cosecant squared theta. The complementary angle identities: sine of 90 minus theta equals cosine theta, and tangent of 90 minus theta equals cotangent theta. Learn these — they are used in almost every problem.`,
+
+  /* ─── Integration ─── */
+  'integ-0': `Welcome to Integration — one of the most powerful tools in mathematics! Integration is the reverse of differentiation. If differentiation finds the rate of change, integration finds the total accumulation. The indefinite integral of f of x with respect to x equals F of x plus C, where F prime of x equals f of x, and C is the constant of integration. The symbol for integration is an elongated S, standing for Sum, because integration is essentially an infinite sum.`,
+
+  'integ-1': `Look at the graph of y equals x squared. The shaded area between x equals 0 and x equals 3 is being filled in. The definite integral of x squared from 0 to 3 equals x cubed over 3, evaluated from 0 to 3 — which equals 27 over 3 minus 0 equals 9. So the area under the parabola from 0 to 3 is exactly 9 square units. This geometric meaning of integration as area is fundamental to understanding calculus.`,
+
+  'integ-2': `These are the standard integration formulas you must know. The power rule — integral of x to the n equals x to the n plus 1 over n plus 1 plus C. Integral of e to the x equals e to the x plus C. Integral of 1 over x equals log of x plus C. Integral of sin x equals minus cos x plus C. Integral of cos x equals sin x plus C. Integral of sec squared x equals tan x plus C. These are your building blocks — all other integrals are built from these.`,
+
+  'integ-3': `Let us evaluate the integral of 3x squared plus 2x plus 5 with respect to x. Step one — split into three separate integrals. Step two — apply the power rule to each. 3 times x cubed over 3 gives x cubed. 2 times x squared over 2 gives x squared. Integral of 5 gives 5x. So the final answer is x cubed plus x squared plus 5x plus C. Always add the constant of integration C for indefinite integrals.`,
+
+  /* ─── Motion ─── */
+  'motion-0': `Welcome to the chapter on Motion! An object is in motion when its position changes with time. The key terms are — distance, which is the total path length and is a scalar quantity. Displacement is the shortest straight-line distance from start to finish and is a vector. Speed is distance divided by time — a scalar. Velocity is displacement divided by time — a vector with direction. And acceleration is the change in velocity divided by time.`,
+
+  'motion-1': `These are the distance-time and velocity-time graphs. On a distance-time graph, the slope at any point gives the velocity. A straight line means uniform motion — constant velocity. On the velocity-time graph, the slope gives acceleration. A straight line means uniform acceleration. The area under the velocity-time graph gives the displacement. These graphs are extremely important for understanding and solving motion problems.`,
+
+  'motion-2': `The three equations of motion apply when acceleration is uniform and in a straight line. First equation — v equals u plus at. This relates final velocity, initial velocity, acceleration and time. Second equation — s equals ut plus half at squared. This gives displacement. Third equation — v squared equals u squared plus 2as. This is used when time is not given or not needed. Here, u is initial velocity, v is final velocity, a is acceleration, s is displacement, and t is time.`,
+
+  'motion-3': `Let us solve a problem. A car starts from rest, so initial velocity u equals zero. Acceleration a equals 4 metres per second squared. Time t equals 5 seconds. Using the first equation — v equals 0 plus 4 times 5 equals 20 metres per second. Using the second equation — s equals 0 times 5 plus half times 4 times 25 equals 50 metres. So after 5 seconds, the car is moving at 20 metres per second and has covered 50 metres. Always write down u, v, a, s, t first — then choose the right equation.`,
+
+  /* ─── Newton's Laws ─── */
+  'newton-0': `Welcome to Newton's Laws of Motion — published in 1687! The first law, also called the Law of Inertia, states that an object at rest stays at rest, and an object in motion continues in motion, unless an external unbalanced force acts on it. The second law states that force equals mass times acceleration — F equals ma. And the third law states that for every action there is an equal and opposite reaction. These three laws form the foundation of all of classical mechanics.`,
+
+  'newton-1': `Watch what happens when the same force acts on a light 2-kilogram ball and a heavy 8-kilogram ball. The light ball accelerates at 5 metres per second squared. The heavy ball accelerates at only 1.25 metres per second squared. Same force, but different accelerations — because a equals F over m. This beautifully demonstrates Newton's second law. Greater mass means less acceleration for the same force.`,
+
+  'newton-2': `Here are real-life examples of Newton's laws. Seatbelts — when a car stops suddenly, your body wants to keep moving forward because of inertia. That is the first law in action, and the seatbelt provides the external force to stop you. Rockets — exhaust gases are pushed backward, and by the third law, the rocket is pushed forward. Walking — you push the ground backward, and the ground pushes you forward. Every action has an equal and opposite reaction.`,
+
+  'newton-3': `Let us calculate. A force of 50 newtons acts on a body of mass 10 kilograms with a friction force of 10 newtons. Without friction — a equals F over m equals 50 over 10 equals 5 metres per second squared. With friction — the net force is 50 minus 10 equals 40 newtons. So net acceleration equals 40 over 10 equals 4 metres per second squared. Always calculate net force first by subtracting friction or opposing forces from the applied force.`,
+
+  /* ─── Electricity ─── */
+  'elec-0': `Welcome to the chapter on Electricity! Electric current is the flow of electric charge through a conductor. Current I equals charge Q divided by time t, measured in Amperes. Voltage V is the electric potential difference between two points, measured in Volts. Resistance R is the opposition to current flow, measured in Ohms. Ohm's Law connects all three — Voltage equals Current times Resistance. This is the single most important formula in electricity.`,
+
+  'elec-1': `Watch the blue dots representing electrons flowing through this circuit. The battery provides the electromotive force that drives the current. Electrons actually flow from the negative terminal to the positive terminal. But by convention, we say current flows from positive to negative. The resistor opposes this flow. In this circuit, with a 6 volt battery and a 30 ohm resistor — the current flowing is 0.2 Amperes, calculated using Ohm's Law.`,
+
+  'elec-2': `In a series circuit, all components are connected in a single loop. The same current flows through all of them, and the total resistance is the sum of individual resistances. In a parallel circuit, components have multiple paths. The same voltage appears across each, and the reciprocal of total resistance equals the sum of reciprocals. Parallel circuits are used in home wiring — so that each appliance gets full voltage and can be switched independently. Power P equals V times I, which also equals I squared R, or V squared over R.`,
+
+  'elec-3': `Let us solve. Battery voltage V equals 6 volts, resistance R equals 30 ohms. Using Ohm's Law — current I equals V over R equals 6 over 30 equals 0.2 Amperes. Power P equals V times I equals 6 times 0.2 equals 1.2 Watts. We can verify — P also equals I squared times R equals 0.04 times 30 equals 1.2 Watts. Both methods give the same answer. Always verify your answer using a different formula when possible.`,
+
+  /* ─── Optics ─── */
+  'optics-0': `Welcome to Light, Reflection and Refraction! When light hits a surface and bounces back, it is called reflection. The two laws of reflection are — first, the incident ray, the reflected ray, and the normal are all in the same plane. Second, the angle of incidence equals the angle of reflection. The mirror formula is 1 over v plus 1 over u equals 1 over f. And magnification m equals minus v over u. For concave mirrors, the focal length is negative.`,
+
+  'optics-1': `Watch the ray of light hitting the concave mirror. The incident ray comes in at an angle. It hits the mirror surface, and the reflected ray bounces back following the law of reflection — the angle of reflection equals the angle of incidence. The two reflected rays from parallel incident rays meet at the focal point F. This is why concave mirrors are used in torches, solar heaters and satellite dishes — they converge light to a point.`,
+
+  'optics-2': `When light travels from one medium to another, it bends — this is called refraction. Snell's Law states — n1 sine theta 1 equals n2 sine theta 2. When light goes from air into a denser medium like glass, it bends towards the normal — theta 2 is smaller than theta 1. The refractive index n equals the speed of light in vacuum divided by the speed in the medium. For glass, n is approximately 1.5, meaning light travels 1.5 times slower in glass than in air.`,
+
+  'optics-3': `Watch light travelling from air into glass. The ray bends towards the normal as it enters the denser medium. This bending is refraction. The lens formula is 1 over v minus 1 over u equals 1 over f. The power of a lens in dioptres equals 1 over focal length in metres. A convex lens has positive power — it converges light. A concave lens has negative power — it diverges light. This is why reading glasses and camera lenses work the way they do.`,
+
+  'optics-4': `Let us solve a mirror problem. Object distance u equals minus 20 centimetres. Focal length f equals minus 15 centimetres for a concave mirror. Applying the mirror formula — 1 over v equals 1 over f minus 1 over u equals minus 1 over 15 plus 1 over 20. This gives 1 over v equals minus 1 over 60. So v equals minus 60 centimetres. The negative sign means the image is real and on the same side as the object. Magnification m equals minus v over u equals minus 3 — meaning the image is inverted and 3 times larger.`
+};
+
+/* ── TTS Engine ── */
+let ttsEnabled = true;
+let currentUtterance = null;
+const synth = window.speechSynthesis;
+
+function getNarrationKey(){
+  const item = flatSlides[currentIdx];
+  return `${item.lesson.id}-${item.slideIdx}`;
+}
+
+function speak(text){
+  if(!ttsEnabled || !synth) return;
+  synth.cancel();
+  if(!text) return;
+
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.rate  = 0.88;   // slightly slower — teacher pace
+  utter.pitch = 1.0;
+  utter.volume = 1.0;
+
+  // Pick best available voice — prefer Indian English
+  const voices = synth.getVoices();
+  const preferred = voices.find(v => /en[-_]IN/i.test(v.lang))
+    || voices.find(v => /en[-_]GB/i.test(v.lang))
+    || voices.find(v => /english/i.test(v.name))
+    || voices.find(v => /en/i.test(v.lang));
+  if(preferred) utter.voice = preferred;
+
+  currentUtterance = utter;
+  synth.speak(utter);
+}
+
+function stopSpeech(){
+  synth && synth.cancel();
+  currentUtterance = null;
+}
+
+function toggleTTS(){
+  ttsEnabled = !ttsEnabled;
+  const btn = document.getElementById('ttsBtn');
+  if(!ttsEnabled){
+    stopSpeech();
+    btn.textContent = '🔇';
+    btn.title = 'Voice OFF — click to enable';
+    btn.style.opacity = '.45';
+  } else {
+    btn.textContent = '🔊';
+    btn.title = 'Voice ON — click to mute';
+    btn.style.opacity = '1';
+    // speak current slide
+    speak(NARRATION[getNarrationKey()]);
+  }
+}
+
+// Hook into render — speak when slide changes
+const _origRender = render;
+window.renderWithTTS = function(){
+  _origRender();
+  // small delay so slide content paints first
+  setTimeout(()=> speak(NARRATION[getNarrationKey()]), 400);
+};
+
+// Override navigate to use renderWithTTS
+const _origNavigate = navigate;
+window.navigate = function(dir){
+  stopSpeech();
+  currentIdx = Math.max(0, Math.min(flatSlides.length-1, currentIdx+dir));
+  window.renderWithTTS();
+  document.getElementById('player').scrollIntoView({behavior:'smooth',block:'start'});
+};
+
+// Override togglePlay to pause/resume speech
+const _origToggle = togglePlay;
+window.togglePlay = function(){
+  isPlaying = !isPlaying;
+  document.getElementById('playBtn').textContent = isPlaying ? '⏸' : '▶';
+  if(!isPlaying) stopSpeech();
+  else speak(NARRATION[getNarrationKey()]);
+};
+
+// Override jumpToLesson
+window.jumpToLesson = function(lessonIdx){
+  const idx = flatSlides.findIndex(f=>f.lessonIdx===lessonIdx);
+  if(idx>=0){ currentIdx=idx; stopSpeech(); window.renderWithTTS(); }
+  document.getElementById('player').scrollIntoView({behavior:'smooth'});
+};
+
+window.jumpToSubject = function(subj){
+  const idx = flatSlides.findIndex(f=>f.lesson.subject===subj);
+  if(idx>=0){ currentIdx=idx; stopSpeech(); window.renderWithTTS(); }
+};
+
+// Re-wire keyboard
+document.addEventListener('keydown', e=>{
+  if(e.key==='ArrowRight'||e.key==='ArrowDown'){ e.preventDefault(); window.navigate(1); }
+  if(e.key==='ArrowLeft'||e.key==='ArrowUp'){ e.preventDefault(); window.navigate(-1); }
+  if(e.key===' '){ e.preventDefault(); window.togglePlay(); }
+  if(e.key==='m'||e.key==='M') toggleTTS();
+});
+
+// Add 🔊 button to controls bar
+(function addTTSButton(){
+  const controls = document.querySelector('.controls');
+  const btn = document.createElement('button');
+  btn.id = 'ttsBtn';
+  btn.className = 'ctrl-btn';
+  btn.textContent = '🔊';
+  btn.title = 'Voice ON — click to mute (M)';
+  btn.style.cssText = 'background:rgba(99,102,241,.25);color:#a5b4fc;font-size:1.1rem;border:1px solid rgba(99,102,241,.5);';
+  btn.onclick = toggleTTS;
+  // insert before chapter-map-btn
+  const mapBtn = controls.querySelector('.chapter-map-btn');
+  controls.insertBefore(btn, mapBtn);
+})();
+
+// Voices may load async — retry
+synth.addEventListener('voiceschanged', ()=>{
+  // re-speak if already on a slide
+  if(ttsEnabled) speak(NARRATION[getNarrationKey()]);
+});
+
+// Speak first slide on load
+setTimeout(()=> window.renderWithTTS(), 800);
 </script>
 </body>
 </html>
