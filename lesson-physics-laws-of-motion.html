@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laws of Motion – Class 11 Physics – Visions Classes</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #020810; color: #fff; font-family: 'Segoe UI', system-ui, sans-serif; overflow-x: hidden; }
+    .navbar { background: rgba(2,8,16,0.96) !important; }
+    #starfield { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+    .page { position: relative; z-index: 1; padding-top: 64px; }
+
+    /* Hero */
+    .lesson-hero { text-align: center; padding: 50px 20px 28px; background: radial-gradient(ellipse at 50% 0%, rgba(139,92,246,.18) 0%, transparent 65%); }
+    .hero-tag { display: inline-block; padding: 5px 18px; border-radius: 20px; background: rgba(139,92,246,.2); border: 1px solid #8b5cf6; color: #c4b5fd; font-size: .78rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
+    .lesson-hero h1 { font-size: clamp(2rem,5vw,3.2rem); font-weight: 900; background: linear-gradient(135deg,#fff 0%,#c4b5fd 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 10px; line-height: 1.2; }
+    .lesson-hero p { color: #64748b; font-size: 1rem; }
+
+    /* Progress */
+    .prog-wrap { height: 5px; background: rgba(255,255,255,.07); max-width: 860px; margin: 20px auto 0; border-radius: 3px; }
+    .prog-fill { height: 100%; background: linear-gradient(90deg,#8b5cf6,#ec4899); border-radius: 3px; transition: width .4s; }
+
+    /* Slides */
+    .slides { max-width: 860px; margin: 0 auto; padding: 24px 20px 120px; }
+    .slide { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 20px; padding: 36px; margin-bottom: 22px; opacity: 0; transform: translateY(36px); transition: opacity .6s, transform .6s; position: relative; overflow: hidden; }
+    .slide.visible { opacity: 1; transform: translateY(0); }
+    .slide::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg,#8b5cf6,#ec4899,#f59e0b); }
+    .slide-num { position: absolute; top: 14px; right: 18px; font-size: .7rem; color: #334155; font-weight: 700; }
+    .slide h2 { font-size: 1.35rem; color: #f1f5f9; margin-bottom: 16px; }
+    .slide p, .slide li { color: #94a3b8; line-height: 1.85; font-size: .96rem; }
+    .slide ul { list-style: none; padding: 0; }
+    .slide li { padding: 5px 0 5px 22px; position: relative; }
+    .slide li::before { content: '→'; position: absolute; left: 0; color: #8b5cf6; font-weight: 700; }
+
+    /* Formula boxes */
+    .fbox { border-radius: 12px; padding: 16px 22px; margin: 12px 0; font-family: 'Courier New', monospace; font-size: 1.1rem; text-align: center; }
+    .fbox-purple { background: rgba(139,92,246,.14); border: 1px solid rgba(139,92,246,.45); color: #c4b5fd; }
+    .fbox-gold   { background: rgba(245,158,11,.13); border: 1px solid rgba(245,158,11,.45); color: #fde68a; }
+    .fbox-green  { background: rgba(34,197,94,.1);   border: 1px solid rgba(34,197,94,.4);  color: #86efac; }
+    .fbox-red    { background: rgba(244,63,94,.12);  border: 1px solid rgba(244,63,94,.4);  color: #fda4af; }
+    .fbox-blue   { background: rgba(59,130,246,.12); border: 1px solid rgba(59,130,246,.4); color: #93c5fd; }
+    .fbox-label  { display: block; font-family: 'Segoe UI',sans-serif; font-size: .68rem; text-transform: uppercase; letter-spacing: 1px; opacity: .65; margin-bottom: 7px; }
+
+    /* Steps */
+    .step { display: flex; gap: 14px; margin-bottom: 16px; opacity: 0; transform: translateX(-18px); transition: opacity .5s, transform .5s; }
+    .step.show { opacity: 1; transform: translateX(0); }
+    .sn { min-width: 33px; height: 33px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .82rem; font-weight: 800; color: #fff; flex-shrink: 0; }
+    .sn-p { background: linear-gradient(135deg,#8b5cf6,#a855f7); }
+    .sn-g { background: linear-gradient(135deg,#22c55e,#16a34a); }
+    .sn-r { background: linear-gradient(135deg,#ef4444,#dc2626); }
+    .sn-y { background: linear-gradient(135deg,#f59e0b,#d97706); }
+    .sn-b { background: linear-gradient(135deg,#3b82f6,#2563eb); }
+    .sb h4 { color: #e2e8f0; margin-bottom: 3px; font-size: .96rem; }
+    .sb p  { color: #94a3b8; font-size: .87rem; line-height: 1.6; }
+
+    /* Canvas */
+    .cv-wrap { display: flex; justify-content: center; margin: 18px 0; }
+    canvas { border-radius: 12px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07); max-width: 100%; }
+
+    /* Law cards */
+    .law-stack { display: flex; flex-direction: column; gap: 16px; margin: 14px 0; }
+    .law-card { border-radius: 14px; padding: 22px; background: rgba(255,255,255,.04); opacity: 0; transform: translateX(-24px); transition: opacity .5s, transform .5s; }
+    .law-card.show { opacity: 1; transform: translateX(0); }
+    .law-1 { border-left: 4px solid #22c55e; }
+    .law-2 { border-left: 4px solid #f59e0b; }
+    .law-3 { border-left: 4px solid #ef4444; }
+    .law-card h3 { margin-bottom: 7px; font-size: 1rem; }
+    .law-card p { color: #94a3b8; font-size: .9rem; line-height: 1.65; }
+    .law-card .lf { font-family: 'Courier New',monospace; color: #fcd34d; font-size: .92rem; margin-top: 8px; display: inline-block; padding: 5px 14px; background: rgba(245,158,11,.1); border-radius: 6px; }
+
+    /* Comparison grid */
+    .cmp { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+    .cmp-c { background: rgba(255,255,255,.04); border-radius: 12px; padding: 18px; border: 1px solid rgba(255,255,255,.08); }
+    .cmp-c h4 { font-size: .95rem; margin-bottom: 7px; }
+    .cmp-c p  { font-size: .82rem; color: #64748b; line-height: 1.55; }
+    .cmp-c .cf { font-family: 'Courier New',monospace; font-size: .88rem; margin-top: 7px; }
+
+    /* Force table */
+    .f-table { width: 100%; border-collapse: collapse; font-size: .85rem; margin: 14px 0; }
+    .f-table th { background: rgba(139,92,246,.2); color: #c4b5fd; padding: 9px 12px; text-align: center; font-weight: 700; }
+    .f-table td { padding: 9px 12px; text-align: center; border-bottom: 1px solid rgba(255,255,255,.05); color: #94a3b8; }
+    .f-table tr:hover td { background: rgba(139,92,246,.07); }
+
+    /* Highlight */
+    .hl  { color: #c4b5fd; font-weight: 700; }
+    .hg  { color: #86efac; font-weight: 700; }
+    .hy  { color: #fde68a; font-weight: 700; }
+    .hr  { color: #fda4af; font-weight: 700; }
+    .hb  { color: #93c5fd; font-weight: 700; }
+
+    /* Nav */
+    .ch-nav { display: flex; justify-content: space-between; max-width: 860px; margin: 0 auto 30px; padding: 0 20px; flex-wrap: wrap; gap: 10px; }
+    .nav-btn { padding: 11px 26px; border-radius: 10px; border: none; cursor: pointer; font-size: .92rem; font-weight: 700; transition: all .2s; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; }
+    .nav-back { background: rgba(255,255,255,.07); color: #94a3b8; }
+    .nav-back:hover { background: rgba(255,255,255,.14); color: #fff; }
+    .nav-next { background: linear-gradient(135deg,#8b5cf6,#ec4899); color: #fff; box-shadow: 0 4px 18px rgba(139,92,246,.4); }
+    .nav-next:hover { transform: translateY(-2px); }
+
+    /* TTS bar */
+    .tts-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; background: rgba(2,8,16,.97); backdrop-filter: blur(16px); border-top: 1px solid rgba(255,255,255,.07); display: flex; align-items: center; gap: 12px; padding: 8px 20px; }
+    .tts-btn { padding: 8px 18px; border-radius: 8px; border: none; cursor: pointer; font-size: .85rem; font-weight: 700; transition: all .2s; }
+    .tts-play { background: linear-gradient(135deg,#8b5cf6,#ec4899); color: #fff; }
+    .tts-mute { background: rgba(255,255,255,.09); color: #94a3b8; }
+    .tts-mute:hover { background: rgba(255,255,255,.16); color: #fff; }
+    .tts-info { flex: 1; font-size: .8rem; color: #475569; }
+    .tts-title { color: #e2e8f0; font-weight: 600; font-size: .85rem; }
+
+    @media(max-width:560px) { .cmp{grid-template-columns:1fr;} .slide{padding:22px 16px;} }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Visions Classes" class="nav-logo-img" />
+      <div class="logo-text"><span>Visions</span> Classes</div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="animated-lessons.html" class="active">Animated Lessons</a></li>
+      <li><a href="buy-courses.html">Buy Course</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<canvas id="starfield"></canvas>
+
+<div class="page">
+
+  <div class="lesson-hero">
+    <div class="hero-tag">⚡ Physics · Class 11 · Chapter 4</div>
+    <h1>Laws of Motion</h1>
+    <p>Newton's 3 Laws · Inertia · Momentum · Work-Energy · Collisions — fully animated</p>
+  </div>
+
+  <div class="prog-wrap"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+
+  <div class="slides" id="slidesWrap">
+
+    <!-- SLIDE 1: Introduction & Aristotle -->
+    <div class="slide" id="s1">
+      <div class="slide-num">1 / 12</div>
+      <h2>🏛️ Introduction & Aristotle's Fallacy</h2>
+      <p><span class="hl">Mechanics</span> deals with motion. It has two branches:</p>
+      <div class="cmp" style="margin-top:12px;">
+        <div class="cmp-c" style="border-color:rgba(139,92,246,.3);">
+          <h4 style="color:#c4b5fd;">Kinematics</h4>
+          <p>Describes motion without discussing its cause. Parameters: distance, velocity, acceleration.</p>
+        </div>
+        <div class="cmp-c" style="border-color:rgba(245,158,11,.3);">
+          <h4 style="color:#fde68a;">Dynamics</h4>
+          <p>Describes motion WITH its cause — force and torque. Parameters: momentum, force, energy.</p>
+        </div>
+      </div>
+      <div class="step" id="ar1"><div class="sn sn-r">❌</div><div class="sb"><h4>Aristotle's Fallacy (384BC)</h4><p>Stated that "an external force is required to keep a body in uniform motion." He was WRONG.</p></div></div>
+      <div class="step" id="ar2"><div class="sn sn-g">✓</div><div class="sb"><h4>Galileo's Correction</h4><p>Objects stop because of opposing forces — friction, air resistance, viscous drag. Without these, motion continues forever!</p></div></div>
+      <div class="fbox fbox-purple"><span class="fbox-label">Correct Principle</span>Motion continues on its own. A force is needed only to START, STOP or CHANGE motion — not to maintain it.</div>
+    </div>
+
+    <!-- SLIDE 2: Newton's Three Laws -->
+    <div class="slide" id="s2">
+      <div class="slide-num">2 / 12</div>
+      <h2>⚖️ Newton's Three Laws of Motion</h2>
+      <div class="law-stack">
+        <div class="law-card law-1" id="l1">
+          <h3 style="color:#86efac;">🟢 First Law — Law of Inertia</h3>
+          <p>Every object continues to be in its state of rest OR uniform unaccelerated motion unless acted upon by an external, unbalanced force.</p>
+          <div class="lf">ΣF = 0 → velocity = constant (may be zero)</div>
+        </div>
+        <div class="law-card law-2" id="l2">
+          <h3 style="color:#fde68a;">🟡 Second Law — Law of Force</h3>
+          <p>Rate of change of linear momentum is directly proportional to applied force and in the direction of force.</p>
+          <div class="lf">F⃗ = dp⃗/dt = ma⃗ (for constant mass)</div>
+        </div>
+        <div class="law-card law-3" id="l3">
+          <h3 style="color:#fda4af;">🔴 Third Law — Action & Reaction</h3>
+          <p>To every action force, there is an equal and opposite reaction force. They act on DIFFERENT objects and NEVER cancel each other.</p>
+          <div class="lf">F⃗_AB = −F⃗_BA</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: Importance of Laws -->
+    <div class="slide" id="s3">
+      <div class="slide-num">3 / 12</div>
+      <h2>💡 Importance of Newton's Laws</h2>
+      <div class="step" id="imp1"><div class="sn sn-g">1st</div><div class="sb"><h4>Defines Inertia</h4><p>Inertia is the fundamental property of every object to resist change in its state of motion. Inertia is measured by <span class="hy">mass</span>. More mass = more inertia.</p></div></div>
+      <div class="step" id="imp2"><div class="sn sn-y">2nd</div><div class="sb"><h4>Defines Force Correctly</h4><p>F = dp/dt — NOT F = ma. F = ma is only valid when mass is constant. For rockets, both mass AND velocity change, so we need the full form.</p></div></div>
+      <div class="step" id="imp3"><div class="sn sn-r">3rd</div><div class="sb"><h4>Forces Need Not Be Contact Forces</h4><p>Gravitational force between Earth and Moon is a non-contact action-reaction pair. Magnetic repulsion between two magnets is also a non-contact pair.</p></div></div>
+      <div class="fbox fbox-gold"><span class="fbox-label">Critical Point — 2nd Law</span>F⃗ = dp⃗/dt = d(mv⃗)/dt = m·(dv⃗/dt) + v⃗·(dm/dt)<br/>For constant mass: dm/dt = 0, so F⃗ = ma⃗</div>
+    </div>
+
+    <!-- SLIDE 4: Inertia Animation -->
+    <div class="slide" id="s4">
+      <div class="slide-num">4 / 12</div>
+      <h2>🚗 Inertia — Animated Demonstration</h2>
+      <p>Watch what happens when the car suddenly brakes. The passenger keeps moving forward — that is <span class="hl">Newton's First Law / Inertia</span> in action!</p>
+      <div class="cv-wrap"><canvas id="inertiaCanvas" width="520" height="200"></canvas></div>
+      <ul>
+        <li>Passenger's body wants to <span class="hy">stay in motion</span> when car stops — inertia</li>
+        <li>Seatbelt provides the external force to stop the passenger</li>
+        <li>Heavier passenger = more inertia = needs more force to stop</li>
+        <li>Same principle — coins on a card flicked from a stack</li>
+      </ul>
+    </div>
+
+    <!-- SLIDE 5: Inertial & Non-Inertial Frames -->
+    <div class="slide" id="s5">
+      <div class="slide-num">5 / 12</div>
+      <h2>🔄 Inertial & Non-Inertial Frames of Reference</h2>
+      <div class="cmp">
+        <div class="cmp-c" style="border-color:rgba(34,197,94,.3);">
+          <h4 style="color:#86efac;">✅ Inertial Frame</h4>
+          <p>A frame where Newton's First Law holds. No net force → no acceleration. Body moves with constant velocity.</p>
+          <div class="cf" style="color:#86efac;">Example: train moving at constant velocity</div>
+        </div>
+        <div class="cmp-c" style="border-color:rgba(244,63,94,.3);">
+          <h4 style="color:#fda4af;">⚠️ Non-Inertial Frame</h4>
+          <p>Accelerating frame. Objects appear to accelerate even with no real force — need to add pseudo force −ma⃗.</p>
+          <div class="cf" style="color:#fda4af;">Example: accelerating or braking bus</div>
+        </div>
+      </div>
+      <div class="step" id="fr1"><div class="sn sn-p">💡</div><div class="sb"><h4>Pseudo Force (−ma⃗)</h4><p>In a non-inertial frame of acceleration a⃗, we add a pseudo force of −ma⃗ to all objects to apply Newton's laws. It is measurable but not a fundamental force.</p></div></div>
+      <div class="fbox fbox-purple"><span class="fbox-label">Lift Example — Apparent Weight</span>Lift going up (accel a): W = m(g + a) → feel heavier<br/>Lift going down (accel a): W = m(g − a) → feel lighter<br/>Free fall (a = g): W = 0 → weightlessness!</div>
+    </div>
+
+    <!-- SLIDE 6: Four Fundamental Forces -->
+    <div class="slide" id="s6">
+      <div class="slide-num">6 / 12</div>
+      <h2>🌌 Four Fundamental Forces in Nature</h2>
+      <div class="cv-wrap"><canvas id="forcesCanvas" width="520" height="180"></canvas></div>
+      <table class="f-table">
+        <thead><tr><th>Force</th><th>Strength</th><th>Range</th><th>Examples</th></tr></thead>
+        <tbody>
+          <tr><td style="color:#fcd34d;">Gravitational</td><td>Weakest</td><td>Infinite</td><td>Weight, planetary orbits</td></tr>
+          <tr><td style="color:#60a5fa;">Electromagnetic</td><td>Strong</td><td>Infinite</td><td>Friction, normal force, tension</td></tr>
+          <tr><td style="color:#f87171;">Strong Nuclear</td><td>Strongest</td><td>&lt; 10⁻¹⁴ m</td><td>Binds nucleons in nucleus</td></tr>
+          <tr><td style="color:#a78bfa;">Weak Nuclear</td><td>Weak</td><td>&lt; 10⁻¹⁶ m</td><td>Radioactive beta decay</td></tr>
+        </tbody>
+      </table>
+      <div class="fbox fbox-blue" style="font-size:.9rem;"><span class="fbox-label">Key Fact</span>Friction, normal reaction, tension, elastic force — all are EM in nature arising from deformation of molecular bonds</div>
+    </div>
+
+    <!-- SLIDE 7: Conservation of Momentum -->
+    <div class="slide" id="s7">
+      <div class="slide-num">7 / 12</div>
+      <h2>🎯 Conservation of Linear Momentum</h2>
+      <p>From Newton's 2nd law: F⃗ = dp⃗/dt. If net external force = 0, then dp⃗/dt = 0, which means <span class="hl">momentum is constant</span>!</p>
+      <div class="cv-wrap"><canvas id="momentumCanvas" width="520" height="180"></canvas></div>
+      <div class="fbox fbox-green"><span class="fbox-label">🌟 Principle of Conservation of Linear Momentum</span>The total momentum of an isolated system is conserved during any interaction (collision or explosion)</div>
+      <ul style="margin-top:12px;">
+        <li><span class="hy">Isolated system</span> = no external force acting on the system</li>
+        <li>During collision — internal forces change individual momenta but total remains same</li>
+        <li>Rocket propulsion — gas expelled backward, rocket moves forward</li>
+        <li>Recoil of gun — bullet goes forward, gun recoils backward</li>
+      </ul>
+    </div>
+
+    <!-- SLIDE 8: Work-Energy Theorem -->
+    <div class="slide" id="s8">
+      <div class="slide-num">8 / 12</div>
+      <h2>⚡ Work-Energy Theorem</h2>
+      <p>Work done by a force equals the change in kinetic energy of the object.</p>
+      <div class="step" id="we1"><div class="sn sn-p">W</div><div class="sb"><h4>Work Done by Constant Force</h4><p>W = F⃗ · s⃗ = F·s·cosθ. For variable force: W = ∫F·ds (area under F-s graph)</p></div></div>
+      <div class="step" id="we2"><div class="sn sn-g">KE</div><div class="sb"><h4>Work-Energy Theorem</h4><p>Work done by net force = Change in KE = ½mv² − ½mu²</p></div></div>
+      <div class="step" id="we3"><div class="sn sn-y">PE</div><div class="sb"><h4>Conservative Forces</h4><p>Work done is independent of path — depends only on start and end points. Gravitational force, spring force are conservative. dU = −F·dx</p></div></div>
+      <div class="step" id="we4"><div class="sn sn-r">NC</div><div class="sb"><h4>Non-Conservative Forces</h4><p>Friction, air drag — work done is path-dependent. Energy appears as heat/sound and is NOT recoverable.</p></div></div>
+      <div class="fbox fbox-gold"><span class="fbox-label">Work-Energy for Non-Conservative Force</span>ΔPE = ΔKE + W_friction &nbsp;&nbsp; (mechanical energy is NOT conserved)</div>
+    </div>
+
+    <!-- SLIDE 9: Elastic vs Inelastic Collisions -->
+    <div class="slide" id="s9">
+      <div class="slide-num">9 / 12</div>
+      <h2>💥 Elastic vs Inelastic Collisions</h2>
+      <p>During ALL collisions, <span class="hl">linear momentum is conserved</span>. But kinetic energy may or may not be conserved.</p>
+      <div class="cv-wrap"><canvas id="collisionCanvas" width="520" height="180"></canvas></div>
+      <div class="cmp">
+        <div class="cmp-c" style="border-color:rgba(34,197,94,.3);">
+          <h4 style="color:#86efac;">✅ Elastic Collision</h4>
+          <p>Both momentum AND kinetic energy are conserved. Coefficient of restitution e = 1.</p>
+          <div class="cf" style="color:#86efac;">KE_initial = KE_final</div>
+        </div>
+        <div class="cmp-c" style="border-color:rgba(244,63,94,.3);">
+          <h4 style="color:#fda4af;">⚠️ Inelastic Collision</h4>
+          <p>Momentum conserved but KE is lost. Perfectly inelastic: objects stick together. e = 0.</p>
+          <div class="cf" style="color:#fda4af;">KE_initial > KE_final</div>
+        </div>
+      </div>
+      <div class="fbox fbox-red"><span class="fbox-label">Coefficient of Restitution e</span>e = relative speed of separation / relative speed of approach<br/>Elastic: e=1 &nbsp;|&nbsp; Perfectly Inelastic: e=0 &nbsp;|&nbsp; All others: 0 &lt; e &lt; 1</div>
+    </div>
+
+    <!-- SLIDE 10: Head-On Elastic Collision Formulas -->
+    <div class="slide" id="s10">
+      <div class="slide-num">10 / 12</div>
+      <h2>📐 Head-On Elastic Collision — Final Velocities</h2>
+      <p>For masses m₁ and m₂ with initial velocities u₁ and u₂ in a head-on elastic collision:</p>
+      <div class="fbox fbox-purple">
+        <span class="fbox-label">🌟 Final Velocity Formulas</span>
+        v₁ = [(m₁−m₂)/(m₁+m₂)]u₁ + [2m₂/(m₁+m₂)]u₂<br/><br/>
+        v₂ = [(m₂−m₁)/(m₁+m₂)]u₂ + [2m₁/(m₁+m₂)]u₁
+      </div>
+      <div class="step" id="ec1"><div class="sn sn-g">Case 1</div><div class="sb"><h4>Equal masses (m₁ = m₂)</h4><p>v₁ = u₂ and v₂ = u₁ — the bodies simply exchange their velocities. Ball A stops, ball B moves with A's original speed.</p></div></div>
+      <div class="step" id="ec2"><div class="sn sn-y">Case 2</div><div class="sb"><h4>Heavy hits stationary light (m₁ >> m₂, u₂=0)</h4><p>v₁ ≈ u₁ (heavy barely slows), v₂ ≈ 2u₁ (light moves at double the heavy body's speed).</p></div></div>
+      <div class="step" id="ec3"><div class="sn sn-r">Case 3</div><div class="sb"><h4>Light hits stationary heavy (m₁ << m₂, u₂=0)</h4><p>v₁ ≈ −u₁ (light rebounds with same speed), v₂ ≈ 0 (heavy barely moves). Like a ball bouncing off a wall.</p></div></div>
+    </div>
+
+    <!-- SLIDE 11: Animated Collision Demo -->
+    <div class="slide" id="s11">
+      <div class="slide-num">11 / 12</div>
+      <h2>🎱 Animated Collision — Equal Mass Exchange</h2>
+      <p>Watch elastic collision between equal masses. Ball A hits stationary Ball B — A stops completely, B moves with A's original velocity. <span class="hl">Velocities are exchanged!</span></p>
+      <div class="cv-wrap"><canvas id="collAnim" width="520" height="200"></canvas></div>
+      <div class="fbox fbox-green"><span class="fbox-label">Newton's Cradle — Same Principle</span>When 1 ball swings and hits 4 stationary balls, exactly 1 ball flies out from the other side — momentum AND energy conserved together</div>
+      <ul style="margin-top:10px;">
+        <li>Before: p = m·u + m·0 = mu → After: p = m·0 + m·u = mu ✓</li>
+        <li>Before: KE = ½mu² + 0 → After: KE = 0 + ½mu² ✓</li>
+      </ul>
+    </div>
+
+    <!-- SLIDE 12: Summary -->
+    <div class="slide" id="s12">
+      <div class="slide-num">12 / 12</div>
+      <h2>🏁 Complete Chapter Summary</h2>
+      <div class="step" id="sm1"><div class="sn sn-r">❌</div><div class="sb"><h4>Aristotle was WRONG</h4><p>Force is NOT needed to maintain motion. Objects stop due to friction and resistance — not because motion "runs out".</p></div></div>
+      <div class="step" id="sm2"><div class="sn sn-g">1st</div><div class="sb"><h4>Newton's 1st Law — Inertia</h4><p>No external force → no change in motion. Inertia ∝ mass. Both rest and uniform motion are "states of motion".</p></div></div>
+      <div class="step" id="sm3"><div class="sn sn-y">2nd</div><div class="sb"><h4>Newton's 2nd Law — F = dp/dt</h4><p>Force = rate of change of momentum. For constant mass: F = ma. For rockets: use full dp/dt form.</p></div></div>
+      <div class="step" id="sm4"><div class="sn sn-p">3rd</div><div class="sb"><h4>Newton's 3rd Law — Action = Reaction</h4><p>Forces come in pairs on DIFFERENT objects. They are equal and opposite. They do NOT cancel each other.</p></div></div>
+      <div class="step" id="sm5"><div class="sn sn-b">p</div><div class="sb"><h4>Conservation of Momentum</h4><p>Total momentum of isolated system = constant. Used for all collision and explosion problems.</p></div></div>
+      <div class="step" id="sm6"><div class="sn sn-r">e</div><div class="sb"><h4>Collisions</h4><p>Elastic (e=1): both p and KE conserved. Perfectly Inelastic (e=0): only p conserved, objects stick. 0&lt;e&lt;1: partially inelastic.</p></div></div>
+      <div style="text-align:center;margin-top:28px;">
+        <a href="animated-lessons.html" class="nav-btn nav-next" style="display:inline-flex;">🎉 All Lessons →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ch-nav">
+    <a href="lesson-physics-motion-plane.html" class="nav-btn nav-back">← Motion in a Plane</a>
+    <a href="animated-lessons.html" class="nav-btn nav-next">All Lessons →</a>
+  </div>
+</div>
+
+<!-- TTS BAR -->
+<div class="tts-bar">
+  <button class="tts-btn tts-play" id="ttsPlayBtn" onclick="toggleTTS()">🔊 Voice ON</button>
+  <div class="tts-info"><div class="tts-title" id="ttsSlideTitle">Laws of Motion</div><div>Auto-narration active</div></div>
+  <button class="tts-btn tts-mute" onclick="stopTTS()">⏹ Stop</button>
+</div>
+
+<script src="main.js"></script>
+<script>
+/* Starfield */
+(function(){
+  const c=document.getElementById('starfield'),ctx=c.getContext('2d');
+  function resize(){c.width=innerWidth;c.height=innerHeight;}
+  resize();window.addEventListener('resize',resize);
+  const stars=Array.from({length:130},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.3,a:Math.random(),da:(Math.random()-.5)*.007}));
+  function draw(){ctx.clearRect(0,0,c.width,c.height);stars.forEach(s=>{s.a=Math.max(.1,Math.min(1,s.a+s.da));if(s.a<=.1||s.a>=1)s.da*=-1;ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle=`rgba(255,255,255,${s.a})`;ctx.fill();});requestAnimationFrame(draw);}
+  draw();
+})();
+
+/* Slide reveal */
+const allSlides=document.querySelectorAll('.slide');
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      triggerAnim(e.target.id);
+      e.target.querySelectorAll('.step').forEach((s,i)=>setTimeout(()=>s.classList.add('show'),i*280));
+      e.target.querySelectorAll('.law-card').forEach((c,i)=>setTimeout(()=>c.classList.add('show'),i*350));
+      updateProg();
+      if(ttsEnabled)speakSlide(e.target.id);
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.15});
+allSlides.forEach(s=>obs.observe(s));
+function updateProg(){const v=document.querySelectorAll('.slide.visible').length;document.getElementById('progFill').style.width=(v/allSlides.length*100)+'%';}
+
+function triggerAnim(id){
+  setTimeout(()=>{
+    if(id==='s4') drawInertia();
+    if(id==='s6') drawForces();
+    if(id==='s7') drawMomentum();
+    if(id==='s9') drawCollisionTypes();
+    if(id==='s11') drawCollAnim();
+  },200);
+}
+
+/* ══ CANVAS ANIMATIONS ══ */
+
+function drawInertia(){
+  const c=document.getElementById('inertiaCanvas');if(!c)return;
+  const ctx=c.getContext('2d'),W=c.width,H=c.height;
+  let carX=60,persX=80,braking=false,frame=0;
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    // Road
+    ctx.fillStyle='rgba(255,255,255,.06)';ctx.fillRect(0,H-35,W,35);
+    ctx.strokeStyle='rgba(255,255,255,.1)';ctx.lineWidth=1;
+    for(let x=0;x<W;x+=40){ctx.beginPath();ctx.moveTo(x,H-20);ctx.lineTo(x+20,H-20);ctx.stroke();}
+
+    // Car body
+    ctx.fillStyle='#6366f1';ctx.shadowColor='#6366f1';ctx.shadowBlur=8;
+    ctx.beginPath();ctx.roundRect(carX,H-90,120,55,8);ctx.fill();ctx.shadowBlur=0;
+    // Wheels
+    [carX+20,carX+90].forEach(wx=>{
+      ctx.beginPath();ctx.arc(wx,H-35,14,0,Math.PI*2);
+      ctx.fillStyle='#1e293b';ctx.fill();
+      ctx.beginPath();ctx.arc(wx,H-35,6,0,Math.PI*2);
+      ctx.fillStyle='#475569';ctx.fill();
+    });
+    // Person
+    const tilt = braking ? Math.min(frame*0.015,0.4) : 0;
+    ctx.save();ctx.translate(persX+10,H-90);ctx.rotate(tilt);
+    ctx.beginPath();ctx.arc(0,-25,10,0,Math.PI*2);ctx.fillStyle='#fbbf24';ctx.shadowColor='#fbbf24';ctx.shadowBlur=6;ctx.fill();ctx.shadowBlur=0;
+    ctx.fillRect(-5,-10,10,30);ctx.restore();
+
+    // Direction arrow / braking indicator
+    if(!braking){
+      ctx.fillStyle='#22c55e';ctx.font='bold 12px Segoe UI';ctx.fillText('→ Moving',carX+140,H-60);
+    } else {
+      ctx.fillStyle='#ef4444';ctx.font='bold 12px Segoe UI';ctx.fillText('🛑 Car brakes!',carX+140,H-70);
+      ctx.fillStyle='#fbbf24';ctx.fillText('Person still moving →',carX+140,H-50);
+      ctx.fillText('Inertia!',carX+140,H-32);
+    }
+
+    if(!braking){carX+=1.5;persX+=1.5;if(carX>W-180){braking=true;frame=0;}}
+    else{carX=Math.min(carX+0.3,W-180);persX+=1.5;frame++;if(persX>W-20){carX=60;persX=80;braking=false;frame=0;}}
+    requestAnimationFrame(draw);
+  }
+  draw();
+}
+
+function drawForces(){
+  const c=document.getElementById('forcesCanvas');if(!c)return;
+  const ctx=c.getContext('2d'),W=c.width,H=c.height;
+  const forces=[
+    {label:'Gravitational',color:'#fcd34d',x:70,r:28,strength:0.15},
+    {label:'Electromagnetic',color:'#60a5fa',x:190,r:40,strength:0.6},
+    {label:'Strong Nuclear',color:'#f87171',x:330,r:52,strength:1.0},
+    {label:'Weak Nuclear',color:'#a78bfa',x:450,r:18,strength:0.3},
+  ];
+  let t=0;
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    forces.forEach(f=>{
+      const pulse=f.r+Math.sin(t*0.06)*3;
+      ctx.beginPath();ctx.arc(f.x,H/2-10,pulse,0,Math.PI*2);
+      ctx.fillStyle=f.color+'33';ctx.strokeStyle=f.color;ctx.lineWidth=2;
+      ctx.shadowColor=f.color;ctx.shadowBlur=10;ctx.fill();ctx.stroke();ctx.shadowBlur=0;
+      ctx.fillStyle=f.color;ctx.font='bold 10px Segoe UI';ctx.textAlign='center';
+      ctx.fillText(f.label,f.x,H/2+f.r+18);
+    });
+    t++;requestAnimationFrame(draw);
+  }
+  draw();
+}
+
+function drawMomentum(){
+  const c=document.getElementById('momentumCanvas');if(!c)return;
+  const ctx=c.getContext('2d'),W=c.width,H=c.height;
+  // Before: ball1 moves right, ball2 stationary
+  // After: ball1 stops, ball2 moves right
+  let phase=0,t=0,b1x=80,b2x=W-120,explodeT=-1;
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    const mid=H/2;
+
+    // Phase labels
+    ctx.fillStyle='rgba(255,255,255,.2)';ctx.font='11px Segoe UI';ctx.textAlign='left';
+    if(phase<2) ctx.fillText('Before Collision',20,20);
+    else ctx.fillText('After Collision',20,20);
+
+    // Ball 1 (blue)
+    ctx.beginPath();ctx.arc(b1x,mid,22,0,Math.PI*2);
+    ctx.fillStyle='#6366f1';ctx.shadowColor='#6366f1';ctx.shadowBlur=10;ctx.fill();ctx.shadowBlur=0;
+    ctx.fillStyle='#fff';ctx.font='bold 11px Segoe UI';ctx.textAlign='center';
+    ctx.fillText('m₁',b1x,mid+4);
+
+    // Ball 2 (orange)
+    ctx.beginPath();ctx.arc(b2x,mid,22,0,Math.PI*2);
+    ctx.fillStyle='#f59e0b';ctx.shadowColor='#f59e0b';ctx.shadowBlur=10;ctx.fill();ctx.shadowBlur=0;
+    ctx.fillStyle='#fff';ctx.fillText('m₂',b2x,mid+4);
+
+    // Arrows
+    if(phase===0){
+      ctx.fillStyle='#6ee7b7';ctx.font='10px Segoe UI';ctx.textAlign='center';
+      ctx.fillText('→ u₁',b1x,mid-32);
+      ctx.fillText('stationary',b2x,mid-32);
+    } else if(phase===2){
+      ctx.fillStyle='#6ee7b7';ctx.fillText('stopped',b1x,mid-32);
+      ctx.fillText('→ v₂',b2x,mid-32);
+    }
+
+    // Momentum labels
+    ctx.fillStyle='#a5b4fc';ctx.font='10px Segoe UI';
+    ctx.fillText('p_total = same before & after!',W/2,H-15);
+
+    if(phase===0){b1x+=2;if(b1x>=b2x-44){phase=1;t=0;}}
+    if(phase===1){t++;if(t>15){phase=2;}}
+    if(phase===2){b2x+=2.5;if(b2x>W-20){phase=0;b1x=80;b2x=W-120;}}
+    requestAnimationFrame(draw);
+  }
+  draw();
+}
+
+function drawCollisionTypes(){
+  const c=document.getElementById('collisionCanvas');if(!c)return;
+  const ctx=c.getContext('2d'),W=c.width,H=c.height;
+  let t=0;
+
+  // Left side: elastic, Right side: inelastic
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    const phase=Math.floor(t/80)%3; // 0=approach, 1=collision, 2=separate
+
+    // Divider
+    ctx.strokeStyle='rgba(255,255,255,.1)';ctx.lineWidth=1;ctx.setLineDash([4,4]);
+    ctx.beginPath();ctx.moveTo(W/2,0);ctx.lineTo(W/2,H);ctx.stroke();ctx.setLineDash([]);
+
+    ctx.fillStyle='rgba(255,255,255,.3)';ctx.font='bold 11px Segoe UI';ctx.textAlign='center';
+    ctx.fillText('ELASTIC (e=1)',W/4,15);
+    ctx.fillText('PERFECTLY INELASTIC (e=0)',3*W/4,15);
+
+    const prog=(t%80)/80;
+
+    // Elastic left
+    const lb1x = phase===0?60+prog*90:(phase===1?150:150-prog*90);
+    const lb2x = phase===0?230-prog*30:(phase===1?200:200+prog*100);
+    const lb1v = phase===2?0:1;
+    const lb2v = phase===2?1:0;
+
+    ctx.beginPath();ctx.arc(lb1x,H/2,18,0,Math.PI*2);
+    ctx.fillStyle='#22c55e';ctx.shadowColor='#22c55e';ctx.shadowBlur=8;ctx.fill();ctx.shadowBlur=0;
+    ctx.beginPath();ctx.arc(lb2x,H/2,18,0,Math.PI*2);
+    ctx.fillStyle='#16a34a';ctx.fill();
+
+    // Inelastic right - they stick
+    const rb1x = phase<2?W/2+40+prog*60:W/2+100+prog*60;
+    const rb2x = phase<2?W-60-prog*40:rb1x+1;
+
+    ctx.beginPath();ctx.arc(rb1x,H/2,18,0,Math.PI*2);
+    ctx.fillStyle='#ef4444';ctx.shadowColor='#ef4444';ctx.shadowBlur=8;ctx.fill();ctx.shadowBlur=0;
+    ctx.beginPath();ctx.arc(rb2x,H/2,18,0,Math.PI*2);
+    ctx.fillStyle='#dc2626';ctx.fill();
+
+    if(phase===2&&t%80>20){
+      ctx.fillStyle='rgba(239,68,68,.3)';
+      ctx.beginPath();ctx.roundRect(rb1x-20,H/2-20,42,40,6);ctx.fill();
+      ctx.fillStyle='#fda4af';ctx.font='9px Segoe UI';ctx.textAlign='center';
+      ctx.fillText('STUCK',rb1x+1,H/2+4);
+    }
+
+    t++;requestAnimationFrame(draw);
+  }
+  draw();
+}
+
+function drawCollAnim(){
+  const c=document.getElementById('collAnim');if(!c)return;
+  const ctx=c.getContext('2d'),W=c.width,H=c.height;
+  let ball1x=80,ball2x=W-100,phase=0,t=0;
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    const mid=H/2;
+    // Track
+    ctx.strokeStyle='rgba(255,255,255,.12)';ctx.lineWidth=2;
+    ctx.beginPath();ctx.moveTo(20,mid+28);ctx.lineTo(W-20,mid+28);ctx.stroke();
+
+    // Ball 1
+    ctx.beginPath();ctx.arc(ball1x,mid,26,0,Math.PI*2);
+    const g1=ctx.createRadialGradient(ball1x-8,mid-8,4,ball1x,mid,26);
+    g1.addColorStop(0,'#818cf8');g1.addColorStop(1,'#4338ca');
+    ctx.fillStyle=g1;ctx.shadowColor='#6366f1';ctx.shadowBlur=12;ctx.fill();ctx.shadowBlur=0;
+    ctx.fillStyle='#fff';ctx.font='bold 12px Segoe UI';ctx.textAlign='center';ctx.fillText('A',ball1x,mid+4);
+
+    // Ball 2
+    ctx.beginPath();ctx.arc(ball2x,mid,26,0,Math.PI*2);
+    const g2=ctx.createRadialGradient(ball2x-8,mid-8,4,ball2x,mid,26);
+    g2.addColorStop(0,'#fcd34d');g2.addColorStop(1,'#d97706');
+    ctx.fillStyle=g2;ctx.shadowColor='#f59e0b';ctx.shadowBlur=12;ctx.fill();ctx.shadowBlur=0;
+    ctx.fillStyle='#fff';ctx.fillText('B',ball2x,mid+4);
+
+    // Velocity labels
+    ctx.font='11px Segoe UI';ctx.fillStyle='#86efac';
+    if(phase===0){ctx.fillText('→ u',ball1x,mid-36);ctx.fillText('stationary',ball2x,mid-36);}
+    else if(phase===2){ctx.fillText('stopped',ball1x,mid-36);ctx.fillText('→ u (same!)',ball2x,mid-36);}
+
+    // Impact flash
+    if(phase===1){
+      ctx.beginPath();ctx.arc((ball1x+ball2x)/2,mid,40,0,Math.PI*2);
+      ctx.fillStyle='rgba(251,191,36,0.25)';ctx.fill();
+      ctx.fillStyle='#fcd34d';ctx.font='bold 14px Segoe UI';ctx.fillText('💥',W/2-8,mid+5);
+    }
+
+    if(phase===0){ball1x+=2.5;if(ball1x>=ball2x-52){phase=1;t=0;}}
+    if(phase===1){t++;if(t>20)phase=2;}
+    if(phase===2){ball2x+=2.5;if(ball2x>W-20){ball1x=80;ball2x=W-100;phase=0;}}
+    requestAnimationFrame(draw);
+  }
+  draw();
+}
+
+/* ══ TTS ══ */
+let ttsEnabled=true;
+const synth=window.speechSynthesis;
+let currentUtt=null;
+
+const NARRATION={
+  's1':`Hello students! Welcome to Chapter 4 — Laws of Motion, one of the most fundamental chapters in Class 11 Physics.
+
+Let me start by clarifying what mechanics is. Mechanics is the branch of Physics that deals with motion. It has two main parts. Kinematics — where we describe motion without worrying about what causes it. And Dynamics — where we study the cause of motion, which is force.
+
+Now, 2400 years ago, Aristotle made a famous claim. He said — a force is required to keep a body in uniform motion. This seems reasonable at first. If you push a book on a table and stop pushing, the book stops moving. So Aristotle concluded that continuous force is needed for continuous motion.
+
+But Aristotle was WRONG. The correct explanation was given by Galileo in the 17th century. Galileo said — objects stop not because motion "runs out", but because of opposing forces like friction and air resistance. If you remove all opposing forces, an object in motion will continue moving forever!
+
+This was the revolutionary insight that Newton later used to formulate his First Law. So whenever you see an object stopping, ask yourself — what force is opposing it? The answer is always friction or some resistive force.`,
+
+  's2':`Now let us study the three most important laws in all of classical physics — Newton's Laws of Motion, published in 1687.
+
+Newton's First Law states: Every object continues to be in its state of rest or of uniform unaccelerated motion unless and until it is acted upon by an external, unbalanced force. This is also called the Law of Inertia.
+
+The key word is UNBALANCED. If two equal and opposite forces act on an object, they cancel out — there is no net force — and the object continues in its current state. Only an unbalanced, net force can change the state.
+
+Newton's Second Law states: The rate of change of linear momentum of a body is directly proportional to the applied force and takes place in the direction of the force. Mathematically, F equals dp over dt. For a body of constant mass, this gives F equals ma.
+
+Newton's Third Law states: To every action force, there is an equal and opposite reaction force. These two forces always act on DIFFERENT objects. This is crucial — they never cancel each other because they act on different bodies.
+
+Remember these three laws because everything else in mechanics — friction, pulleys, collisions, circular motion — is derived from these three fundamental principles.`,
+
+  's3':`Let us now understand WHY these three laws are important beyond their surface statement.
+
+The importance of the First Law is threefold. First, it establishes an equivalence between rest and uniform motion — both are states that require an external force to change. Second, it gives us the concept of INERTIA — the property of matter to resist change in its state of motion. Mass is the measure of inertia. A truck has more inertia than a bicycle — it is harder to start or stop. Third, it defines what a force actually is — something that changes the state of motion.
+
+The importance of the Second Law is also critical. Notice carefully — the correct form is F equals dp over dt, NOT F equals ma. F = ma is a special case valid only when mass is constant. For a rocket, as fuel burns, the mass decreases while velocity increases. Both terms — dm/dt times velocity, and m times dv/dt — contribute to force. Use the full dp/dt form for such situations.
+
+The importance of the Third Law: action and reaction forces always come in pairs. They act on different objects, along the same line, equal in magnitude, opposite in direction. They are NOT necessarily contact forces — gravitational force between Earth and the Sun is also an action-reaction pair, even though they are millions of kilometres apart.`,
+
+  's4':`Now let us visualise Newton's First Law through a very familiar example — sudden braking in a car.
+
+Imagine you are in a moving car. Both you and the car are moving forward at the same speed. When the driver suddenly applies the brakes, the car decelerates rapidly. But what happens to your body?
+
+Your body wants to CONTINUE moving forward at the original speed. This is inertia — the tendency to resist change. The car stops, but your body is still trying to go forward. That is why you lurch forward when a bus brakes suddenly.
+
+The seatbelt applies an external backward force on your body to slow it down along with the car. Without the seatbelt, you would hit the windshield.
+
+Similarly — when a tablecloth is pulled quickly from under dishes, the dishes stay in place because their inertia resists the sudden horizontal force. This is the classic inertia demonstration. When you are standing in a bus and it suddenly starts, you feel pushed backward — again, your body was at rest and wants to stay at rest.
+
+The heavier the object, the greater its inertia, and the harder it is to accelerate or decelerate. A heavy loaded truck takes much longer to stop than an empty one for this very reason.`,
+
+  's5':`Now let us understand frames of reference — a concept that is important for applying Newton's laws correctly.
+
+A frame of reference is simply the point of view from which you observe motion. If you are standing on a railway platform, the train is moving. But if you are a passenger on the train, from your reference, the train is stationary and the platform is moving backward. Motion is relative.
+
+An INERTIAL frame of reference is one where Newton's First Law holds true. If no net force acts on an object, it does not accelerate. Any frame moving with constant velocity relative to another inertial frame is also inertial. The surface of the Earth is approximately inertial for most practical purposes.
+
+A NON-INERTIAL frame is an accelerating frame. If you are in an accelerating bus, you experience a force pushing you backward even though nothing is actually pushing you. This apparent force is called a PSEUDO FORCE.
+
+The pseudo force equals minus m times a, where a is the acceleration of the reference frame. The negative sign means it acts in the direction OPPOSITE to the acceleration of the frame.
+
+The lift example is very important. When the lift accelerates upward, your apparent weight increases to m times g plus a. When it decelerates going up — or accelerates going down — your apparent weight decreases to m times g minus a. In free fall, apparent weight is zero — that is weightlessness!`,
+
+  's6':`Now let us take a broader view and understand the four fundamental forces that govern all of nature.
+
+The first fundamental force is Gravitational Force. This is the attractive force between any two masses. Its formula is F equals G m₁ m₂ over r squared, where G equals 6.67 times 10 to the power minus 11 SI units. Gravity is the WEAKEST fundamental force, but it has infinite range. It is always attractive and governs the large-scale structure of the universe — planets, stars, galaxies.
+
+The second is Electromagnetic Force. This is the force between electrically charged particles. It is much stronger than gravity. Almost ALL forces we encounter in daily life — friction, normal reaction, tension in strings, elastic forces, collision forces — are electromagnetic in nature! When surfaces are in contact, the molecules at the surfaces interact electromagnetically.
+
+The third is Strong Nuclear Force. This is the STRONGEST force in nature. It binds protons and neutrons together inside the nucleus. Despite being the strongest, its range is extremely small — less than 10 to the power minus 14 metres. It does not affect objects at larger scales.
+
+The fourth is Weak Nuclear Force. This governs radioactive beta decay, where a neutron converts to a proton or vice versa. Its range is even smaller — about 10 to the power minus 16 metres. The Sun fuses hydrogen into helium partly due to the weak force.`,
+
+  's7':`Now we come to one of the most powerful principles in all of physics — Conservation of Linear Momentum.
+
+This principle follows directly from Newton's Second Law. If F equals dp over dt, and the net external force F is zero, then dp over dt equals zero, which means the momentum p does not change. It is conserved.
+
+Mathematically, if the total external force on a system is zero, then the total momentum of the system remains constant.
+
+This gives us the Principle of Conservation of Linear Momentum: The total momentum of an isolated system is conserved during any interaction.
+
+An isolated system is one with no external force — like two balls colliding in space with no friction. During their collision, the forces they exert on each other are internal forces. These internal forces are equal and opposite by Newton's Third Law, so they do not change the total momentum.
+
+Applications: When a gun fires a bullet, the gun recoils backward. Before firing, both gun and bullet are at rest — total momentum is zero. After firing, bullet goes forward with momentum mv, so gun must go backward with equal and opposite momentum Mv, where M is the gun's mass. Total momentum remains zero.
+
+Similarly, a rocket in space expels gases backward to create forward thrust. No ground needed — the rocket pushes against its own exhaust.`,
+
+  's8':`Now let us understand the Work-Energy Theorem — the connection between force, displacement and energy.
+
+Work done by a force is defined as F dot s — the dot product of force and displacement. W equals F times s times cosine theta, where theta is the angle between force and displacement.
+
+But this formula only works when force is constant. For a variable force, we must integrate — W equals the integral of F dot ds. Graphically, this is the area under the Force versus displacement curve.
+
+The Work-Energy Theorem states: The work done by the net force on an object equals the change in kinetic energy of that object. Work done equals one half m v squared minus one half m u squared.
+
+Now, forces can be conservative or non-conservative. A conservative force is one where the work done is independent of the path taken — it depends only on the initial and final positions. Gravitational force and spring force are conservative. For conservative forces, we define potential energy U, where dU equals minus F dot dx. This is why gravitational potential energy is mgh — it depends only on height, not on how you got there.
+
+A non-conservative force is path-dependent. Friction is non-conservative. The work done against friction depends on the path length — a longer path means more energy lost. This energy appears as heat and sound and CANNOT be recovered. This is why mechanical energy is not conserved when friction is present.`,
+
+  's9':`Now we come to collisions — a topic where Newton's laws and conservation principles are applied together.
+
+During any collision, there is a brief intense interaction between objects. The key facts are: first, LINEAR MOMENTUM is ALWAYS conserved during a collision, because the collision forces are internal to the system and net external force is zero or negligible during the very short collision time. Second, kinetic energy may or may not be conserved.
+
+Based on kinetic energy conservation, collisions are classified into two types.
+
+Elastic collision — both momentum AND kinetic energy are conserved. The coefficient of restitution e equals 1. This means the relative speed of separation equals the relative speed of approach. In practice, perfectly elastic collisions are rare — they occur approximately between ideal gas molecules and between billiard balls.
+
+Inelastic collision — momentum is conserved but kinetic energy is NOT. Some KE is lost as heat, sound, or deformation energy. The coefficient of restitution e is between 0 and 1.
+
+Perfectly inelastic collision — the most extreme case where e equals 0. The colliding objects stick together and move with a common final velocity. Maximum kinetic energy is lost in this case. Examples: clay hitting a wall and sticking, a bullet embedding in a block.
+
+During an explosion — like a bomb or a rocket stage separation — the initial KE is less than the final KE, because chemical energy is converted to kinetic energy. Momentum is still conserved!`,
+
+  's10':`Now let us derive the final velocities after a head-on elastic collision — one of the most important derivations in this chapter.
+
+Two bodies of masses m₁ and m₂ collide head-on elastically with initial velocities u₁ and u₂ respectively. We want to find their velocities v₁ and v₂ after the collision.
+
+We use two conservation equations. First, conservation of momentum: m₁u₁ plus m₂u₂ equals m₁v₁ plus m₂v₂. Second, conservation of kinetic energy: one half m₁u₁ squared plus one half m₂u₂ squared equals one half m₁v₁ squared plus one half m₂v₂ squared.
+
+Solving these two equations simultaneously gives the final velocity formulas. v₁ equals m₁ minus m₂ over m₁ plus m₂ times u₁, plus 2m₂ over m₁ plus m₂ times u₂. And v₂ equals m₂ minus m₁ over m₁ plus m₂ times u₂, plus 2m₁ over m₁ plus m₂ times u₁.
+
+Now let us check the three special cases. First — equal masses. If m₁ equals m₂, then v₁ equals u₂ and v₂ equals u₁. The bodies simply exchange velocities. If one is at rest, it starts moving with the other's speed, and the first one stops completely.
+
+Second — heavy body hits a light stationary body. The heavy body barely slows down, and the light body moves at approximately twice the heavy body's speed.
+
+Third — light body hits a heavy stationary body. The light body rebounds with approximately the same speed in the opposite direction, while the heavy body barely moves. Like a tennis ball bouncing off a wall.`,
+
+  's11':`Watch this animation of a perfectly elastic head-on collision between two equal-mass balls.
+
+Ball A approaches Ball B, which is stationary. At the moment of collision, a brief impact force acts between them. After the collision — Ball A has stopped completely, and Ball B is now moving with exactly the same velocity that Ball A originally had.
+
+This is the equal-mass elastic collision case — the velocities are simply exchanged. Ball A gives all its momentum and all its kinetic energy to Ball B.
+
+This is exactly how Newton's Cradle works. When you lift one ball and release it, it strikes the row of stationary balls. The impact propagates through the row and exactly one ball flies out from the other end with the same speed. If you lift two balls, two fly out. The number of balls exchanged depends on the conservation of both momentum and kinetic energy simultaneously.
+
+Let us verify: Before collision — momentum equals m times u, KE equals one half m u squared. After collision — momentum equals m times 0 plus m times u equals mu. KE equals 0 plus one half m u squared. Both are conserved! This is a perfectly elastic collision.
+
+In real life, billiard balls approach elastic collisions. Pool players use this principle — when the cue ball hits a stationary ball of equal mass straight on, the cue ball stops and the target ball rolls away at the cue ball's original speed.`,
+
+  's12':`Congratulations students! You have completed Chapter 4 — Laws of Motion. Let us do a complete revision.
+
+First — Aristotle was wrong. Force is NOT needed to maintain motion. Objects stop only due to opposing forces like friction. Without opposing forces, motion continues forever.
+
+Second — Newton's First Law, the Law of Inertia. No net external force means no change in velocity. Inertia is the resistance to change in motion and is measured by mass. Both rest and uniform motion are equivalent states.
+
+Third — Newton's Second Law. The correct form is F equals dp over dt. For constant mass, F equals ma. For variable mass systems like rockets, use the full derivative form.
+
+Fourth — Newton's Third Law. Action and reaction are equal, opposite, and act on DIFFERENT bodies. They never cancel. They need not be contact forces.
+
+Fifth — Conservation of Linear Momentum. When net external force is zero, total momentum of the system is constant. Used for all collision, explosion, and recoil problems. This is your first equation for any collision problem.
+
+Sixth — Collisions. Elastic collisions: both p and KE conserved, e equals 1. Perfectly inelastic: bodies stick, e equals 0, maximum KE loss. Partially inelastic: only momentum conserved, 0 less than e less than 1.
+
+Remember: momentum is ALWAYS conserved in collisions. Kinetic energy is conserved ONLY in elastic collisions. Master these principles and you will solve every dynamics problem with confidence. Best of luck!`
+};
+
+function speak(text){
+  if(!ttsEnabled||!synth)return;
+  synth.cancel();if(!text)return;
+  const u=new SpeechSynthesisUtterance(text);
+  u.rate=0.85;u.pitch=1.0;u.volume=1.0;
+  const voices=synth.getVoices();
+  const v=voices.find(v=>/en[-_]IN/i.test(v.lang))||voices.find(v=>/en[-_]GB/i.test(v.lang))||voices.find(v=>/en/i.test(v.lang));
+  if(v)u.voice=v;
+  currentUtt=u;synth.speak(u);
+}
+function stopTTS(){synth&&synth.cancel();currentUtt=null;}
+function toggleTTS(){
+  ttsEnabled=!ttsEnabled;
+  const btn=document.getElementById('ttsPlayBtn');
+  if(ttsEnabled){btn.textContent='🔊 Voice ON';btn.style.opacity='1';speak(NARRATION['s1']);}
+  else{stopTTS();btn.textContent='🔇 Voice OFF';btn.style.opacity='.5';}
+}
+function speakSlide(id){
+  if(NARRATION[id]){
+    document.getElementById('ttsSlideTitle').textContent=document.querySelector('#'+id+' h2')?.textContent||'';
+    setTimeout(()=>speak(NARRATION[id]),400);
+  }
+}
+
+document.addEventListener('keydown',e=>{if(e.key==='m'||e.key==='M')toggleTTS();});
+document.body.addEventListener('click',()=>{if(ttsEnabled&&!synth.speaking)speak(NARRATION['s1']);},{once:true});
+</script>
+</body>
+</html>
