@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Motion in a Plane – Class 11 Physics – Visions Classes</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #03040f; color: #fff; font-family: 'Segoe UI', system-ui, sans-serif; overflow-x: hidden; }
+    .navbar { background: rgba(3,4,15,0.96) !important; }
+
+    /* ── starfield ── */
+    #starfield { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+
+    /* ── page layout ── */
+    .page { position: relative; z-index: 1; padding-top: 64px; }
+
+    /* ── hero header ── */
+    .lesson-hero {
+      text-align: center; padding: 50px 20px 30px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(251,113,133,.18) 0%, transparent 65%);
+    }
+    .hero-tag {
+      display: inline-block; padding: 5px 18px; border-radius: 20px;
+      background: rgba(251,113,133,.2); border: 1px solid #fb7185;
+      color: #fda4af; font-size: .78rem; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px;
+    }
+    .lesson-hero h1 {
+      font-size: clamp(2rem,5vw,3.2rem); font-weight: 900; line-height: 1.15;
+      background: linear-gradient(135deg,#fff 0%,#fda4af 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 10px;
+    }
+    .lesson-hero p { color: #64748b; font-size: 1rem; }
+
+    /* ── progress bar ── */
+    .prog-wrap { height: 5px; background: rgba(255,255,255,.07); max-width: 860px; margin: 20px auto 0; border-radius: 3px; }
+    .prog-fill { height: 100%; background: linear-gradient(90deg,#f43f5e,#fb923c); border-radius: 3px; transition: width .4s; }
+
+    /* ── slide container ── */
+    .slides { max-width: 860px; margin: 0 auto; padding: 24px 20px 100px; }
+
+    .slide {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 20px; padding: 36px;
+      margin-bottom: 22px;
+      opacity: 0; transform: translateY(36px);
+      transition: opacity .6s ease, transform .6s ease;
+      position: relative; overflow: hidden;
+    }
+    .slide.visible { opacity: 1; transform: translateY(0); }
+    .slide::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg,#f43f5e,#fb923c,#fbbf24);
+    }
+    .slide-num { position: absolute; top: 14px; right: 18px; font-size: .7rem; color: #334155; font-weight: 700; }
+    .slide h2 { font-size: 1.35rem; color: #f1f5f9; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+    .slide p, .slide li { color: #94a3b8; line-height: 1.85; font-size: .96rem; }
+    .slide ul { list-style: none; padding: 0; }
+    .slide li { padding: 5px 0 5px 22px; position: relative; }
+    .slide li::before { content: '→'; position: absolute; left: 0; color: #fb7185; font-weight: 700; }
+
+    /* formula box */
+    .fbox {
+      border-radius: 12px; padding: 18px 24px; margin: 14px 0;
+      font-family: 'Courier New', monospace; font-size: 1.1rem; text-align: center;
+    }
+    .fbox-red   { background: rgba(244,63,94,.12); border: 1px solid rgba(244,63,94,.4); color: #fda4af; }
+    .fbox-gold  { background: rgba(251,191,36,.12); border: 1px solid rgba(251,191,36,.4); color: #fde68a; }
+    .fbox-blue  { background: rgba(59,130,246,.12); border: 1px solid rgba(59,130,246,.4); color: #93c5fd; }
+    .fbox-green { background: rgba(34,197,94,.1);  border: 1px solid rgba(34,197,94,.35); color: #86efac; }
+    .fbox-purple{ background: rgba(168,85,247,.12); border: 1px solid rgba(168,85,247,.4); color: #d8b4fe; }
+    .fbox-label { display: block; font-family: 'Segoe UI',sans-serif; font-size: .68rem; text-transform: uppercase; letter-spacing: 1px; opacity: .65; margin-bottom: 7px; }
+
+    /* step items */
+    .step { display: flex; gap: 14px; margin-bottom: 16px; opacity: 0; transform: translateX(-18px); transition: opacity .5s, transform .5s; }
+    .step.show { opacity: 1; transform: translateX(0); }
+    .sn {
+      min-width: 33px; height: 33px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .82rem; font-weight: 800; color: #fff; flex-shrink: 0;
+    }
+    .sn-red    { background: linear-gradient(135deg,#f43f5e,#fb7185); }
+    .sn-gold   { background: linear-gradient(135deg,#f59e0b,#ef4444); }
+    .sn-blue   { background: linear-gradient(135deg,#3b82f6,#6366f1); }
+    .sn-green  { background: linear-gradient(135deg,#22c55e,#16a34a); }
+    .sn-purple { background: linear-gradient(135deg,#a855f7,#ec4899); }
+    .sb h4 { color: #e2e8f0; margin-bottom: 3px; font-size: .96rem; }
+    .sb p  { color: #94a3b8; font-size: .87rem; line-height: 1.6; }
+
+    /* canvas */
+    .cv-wrap { display: flex; justify-content: center; margin: 18px 0; }
+    canvas { border-radius: 12px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07); max-width: 100%; }
+
+    /* comparison grid */
+    .cmp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+    .cmp-card { background: rgba(255,255,255,.04); border-radius: 12px; padding: 18px; border: 1px solid rgba(255,255,255,.08); }
+    .cmp-card h4 { font-size: .95rem; margin-bottom: 8px; }
+    .cmp-card p  { font-size: .83rem; color: #64748b; line-height: 1.55; }
+    .cmp-card .cf { font-family: 'Courier New',monospace; font-size: .9rem; margin-top: 8px; }
+
+    /* equations row */
+    .eq-row { display: grid; grid-template-columns: repeat(auto-fit,minmax(170px,1fr)); gap: 12px; margin: 14px 0; }
+    .eq-c { background: rgba(251,191,36,.07); border: 1px solid rgba(251,191,36,.25); border-radius: 12px; padding: 16px; text-align: center; }
+    .eq-c .en { font-size: .7rem; text-transform: uppercase; letter-spacing: 1px; color: #f59e0b; margin-bottom: 7px; font-weight: 700; }
+    .eq-c .ef { font-family: 'Courier New',monospace; font-size: 1.05rem; color: #fcd34d; }
+    .eq-c p   { font-size: .78rem; color: #64748b; margin-top: 5px; }
+
+    /* highlight */
+    .hl  { color: #fda4af; font-weight: 700; }
+    .hg  { color: #86efac; font-weight: 700; }
+    .hb  { color: #93c5fd; font-weight: 700; }
+    .hy  { color: #fde68a; font-weight: 700; }
+
+    /* chapter nav */
+    .ch-nav { display: flex; justify-content: space-between; max-width: 860px; margin: 0 auto 30px; padding: 0 20px; flex-wrap: wrap; gap: 10px; }
+    .nav-btn { padding: 11px 26px; border-radius: 10px; border: none; cursor: pointer; font-size: .92rem; font-weight: 700; transition: all .2s; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; }
+    .nav-back { background: rgba(255,255,255,.07); color: #94a3b8; }
+    .nav-back:hover { background: rgba(255,255,255,.14); color: #fff; }
+    .nav-next { background: linear-gradient(135deg,#f43f5e,#fb923c); color: #fff; box-shadow: 0 4px 18px rgba(244,63,94,.4); }
+    .nav-next:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(244,63,94,.5); }
+
+    /* tts bar */
+    .tts-bar {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
+      background: rgba(3,4,15,.97); backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(255,255,255,.07);
+      display: flex; align-items: center; gap: 12px; padding: 8px 20px;
+    }
+    .tts-btn {
+      padding: 8px 18px; border-radius: 8px; border: none; cursor: pointer;
+      font-size: .85rem; font-weight: 700; transition: all .2s;
+    }
+    .tts-play { background: linear-gradient(135deg,#f43f5e,#fb923c); color: #fff; }
+    .tts-mute { background: rgba(255,255,255,.09); color: #94a3b8; }
+    .tts-mute:hover { background: rgba(255,255,255,.16); color: #fff; }
+    .tts-info { flex: 1; font-size: .8rem; color: #475569; }
+    .tts-title { color: #e2e8f0; font-weight: 600; font-size: .85rem; }
+
+    @media(max-width:560px){ .cmp-grid{grid-template-columns:1fr;} .slide{padding:22px 16px;} }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Visions Classes" class="nav-logo-img" />
+      <div class="logo-text"><span>Visions</span> Classes</div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="animated-lessons.html" class="active">Animated Lessons</a></li>
+      <li><a href="buy-courses.html">Buy Course</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<canvas id="starfield"></canvas>
+
+<div class="page">
+  <!-- HERO -->
+  <div class="lesson-hero">
+    <div class="hero-tag">⚡ Physics · Class 11 · Chapter 3</div>
+    <h1>Motion in a Plane</h1>
+    <p>Vectors, projectiles, relative velocity & circular motion — fully animated</p>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="prog-wrap"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+
+  <div class="slides" id="slidesWrap">
+
+    <!-- ══ SLIDE 1: Introduction ══ -->
+    <div class="slide" id="s1">
+      <div class="slide-num">1 / 12</div>
+      <h2>🌍 Introduction — Types of Motion</h2>
+      <p><span class="hl">Motion</span> is a change in position of an object with time. Motion can be of three types:</p>
+      <div class="eq-row" style="margin-top:16px;" id="motTypes">
+        <div class="eq-c"><div class="en">1D Motion</div><div class="ef">Rectilinear</div><p>Along a straight line — toy car pushed forward</p></div>
+        <div class="eq-c"><div class="en">2D Motion</div><div class="ef">In a Plane</div><p>Cricket ball hit for a sixer — projectile</p></div>
+        <div class="eq-c"><div class="en">3D Motion</div><div class="ef">In Space</div><p>Aeroplane flying through the sky</p></div>
+      </div>
+      <ul style="margin-top:14px;">
+        <li>In <span class="hl">rectilinear motion</span> — force and velocity are along the same line</li>
+        <li>For 2D and 3D motion, we use <span class="hb">vector quantities</span> — they make equations elegant</li>
+        <li>This chapter focuses on motion in a plane — especially <span class="hy">projectile motion</span> and <span class="hg">circular motion</span></li>
+      </ul>
+    </div>
+
+    <!-- ══ SLIDE 2: Distance vs Displacement ══ -->
+    <div class="slide" id="s2">
+      <div class="slide-num">2 / 12</div>
+      <h2>📏 Distance vs Displacement</h2>
+      <p>These two are frequently confused — let us understand them clearly with a visual example.</p>
+      <div class="cv-wrap"><canvas id="distCanvas" width="520" height="200"></canvas></div>
+      <div class="cmp-grid">
+        <div class="cmp-card" style="border-color:rgba(251,191,36,.3);">
+          <h4 style="color:#fde68a;">📍 Path Length (Distance)</h4>
+          <p>Total length of path actually travelled. Always positive. Scalar quantity.</p>
+          <div class="cf" style="color:#fcd34d;">d = total path covered</div>
+        </div>
+        <div class="cmp-card" style="border-color:rgba(99,102,241,.3);">
+          <h4 style="color:#a5b4fc;">🎯 Displacement</h4>
+          <p>Shortest straight-line distance from start to end point. Vector quantity — has direction.</p>
+          <div class="cf" style="color:#a5b4fc;">s⃗ = x⃗₂ − x⃗₁</div>
+        </div>
+      </div>
+      <div class="fbox fbox-red"><span class="fbox-label">Key Difference</span>If object reverses direction → distance > |displacement| &nbsp;|&nbsp; displacement can be zero even if distance ≠ 0</div>
+    </div>
+
+    <!-- ══ SLIDE 3: Velocity & Speed ══ -->
+    <div class="slide" id="s3">
+      <div class="slide-num">3 / 12</div>
+      <h2>⚡ Velocity, Speed & Acceleration</h2>
+      <div class="step" id="vs1"><div class="sn sn-red">1</div><div class="sb"><h4>Average Velocity</h4><p>Displacement divided by time interval. Vector — same direction as displacement. v⃗ₐᵥ = Δx⃗ / Δt</p></div></div>
+      <div class="step" id="vs2"><div class="sn sn-gold">2</div><div class="sb"><h4>Average Speed</h4><p>Total path length divided by time. Scalar — always ≥ magnitude of average velocity.</p></div></div>
+      <div class="step" id="vs3"><div class="sn sn-blue">3</div><div class="sb"><h4>Instantaneous Velocity</h4><p>Velocity at a precise moment. Limiting value as Δt→0: v⃗ = dx⃗/dt — the derivative of position.</p></div></div>
+      <div class="step" id="vs4"><div class="sn sn-green">4</div><div class="sb"><h4>Acceleration</h4><p>Rate of change of velocity. a⃗ = dv⃗/dt. Instantaneous acceleration = slope of tangent on v-t graph.</p></div></div>
+      <div class="fbox fbox-blue" style="margin-top:8px;">
+        <span class="fbox-label">Always Remember — Uniform Motion</span>
+        Average velocity = Instantaneous velocity &nbsp;|&nbsp; Speed = |Velocity|
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 4: x-t and v-t Graphs ══ -->
+    <div class="slide" id="s4">
+      <div class="slide-num">4 / 12</div>
+      <h2>📈 Position-Time & Velocity-Time Graphs</h2>
+      <p>Graphs are the most powerful way to understand motion at a glance. Study these five cases carefully:</p>
+      <div class="cv-wrap"><canvas id="graphCanvas" width="520" height="220"></canvas></div>
+      <ul>
+        <li><span class="hy">Horizontal line on x-t</span> → object at rest (zero velocity)</li>
+        <li><span class="hg">Positive slope on x-t</span> → uniform motion in +ve direction</li>
+        <li><span class="hl">Negative slope on x-t</span> → uniform motion in −ve direction</li>
+        <li><span class="hb">Straight slope on v-t</span> → uniform acceleration</li>
+        <li><span class="hl">Area under v-t graph</span> = displacement of the object</li>
+        <li><span class="hy">Slope of v-t graph</span> = acceleration (tangent for non-uniform)</li>
+      </ul>
+    </div>
+
+    <!-- ══ SLIDE 5: Equations of Motion ══ -->
+    <div class="slide" id="s5">
+      <div class="slide-num">5 / 12</div>
+      <h2>🔢 Equations of Motion (Uniform Acceleration)</h2>
+      <p>Derived graphically from the velocity-time graph for uniform acceleration:</p>
+      <div class="eq-row" id="eqCards">
+        <div class="eq-c"><div class="en">1st — from definition of a</div><div class="ef">v = u + at</div><p>velocity and time</p></div>
+        <div class="eq-c"><div class="en">2nd — area under v-t</div><div class="ef">s = ut + ½at²</div><p>displacement and time</p></div>
+        <div class="eq-c"><div class="en">3rd — eliminate t</div><div class="ef">v² = u² + 2as</div><p>no time needed</p></div>
+      </div>
+      <div class="step" id="eq1"><div class="sn sn-red">✦</div><div class="sb"><h4>Free Fall — most common example</h4><p>Body starts from rest (u=0), falls under gravity alone. Acceleration = g = 9.8 m/s² downward. Distance ratio in successive equal intervals = <span class="hy">1 : 3 : 5 : 7 ...</span></p></div></div>
+      <div class="fbox fbox-gold"><span class="fbox-label">Important — Derivation</span>1st eq: a = (v−u)/t → v = u+at &nbsp;| &nbsp;2nd eq: s = area of trapezium OABD = ut + ½at² &nbsp;| &nbsp;3rd eq: eliminate t between 1st and 2nd</div>
+    </div>
+
+    <!-- ══ SLIDE 6: Relative Velocity ══ -->
+    <div class="slide" id="s6">
+      <div class="slide-num">6 / 12</div>
+      <h2>🚂 Relative Velocity</h2>
+      <p>When you are in a moving train and another train overtakes you, it appears to move slowly. That is relative motion!</p>
+      <div class="cv-wrap"><canvas id="relVelCanvas" width="520" height="180"></canvas></div>
+      <div class="fbox fbox-purple">
+        <span class="fbox-label">Relative Velocity Formula</span>
+        v⃗ₐᵦ = v⃗ₐ − v⃗ᵦ &nbsp;&nbsp; (velocity of A with respect to B)<br/>
+        v⃗ᵦₐ = v⃗ᵦ − v⃗ₐ &nbsp;&nbsp; (velocity of B with respect to A)
+      </div>
+      <ul>
+        <li>|v⃗ₐᵦ| = |v⃗ᵦₐ| — magnitudes are equal, directions are opposite</li>
+        <li>Same direction: relative velocity = <span class="hg">difference</span> of speeds</li>
+        <li>Opposite directions: relative velocity = <span class="hl">sum</span> of speeds</li>
+        <li>Example: Plane A at 300 km/hr, Plane B at −350 km/hr → v_AB = 300−(−350) = <span class="hy">650 km/hr</span></li>
+      </ul>
+    </div>
+
+    <!-- ══ SLIDE 7: Motion in 2D — Vectors ══ -->
+    <div class="slide" id="s7">
+      <div class="slide-num">7 / 12</div>
+      <h2>🧭 Motion in Two Dimensions — Vector Form</h2>
+      <p>When motion is in a plane, we use <span class="hb">x and y components</span> separately. Position vector: r⃗ = x î + y ĵ</p>
+      <div class="cv-wrap"><canvas id="vec2dCanvas" width="520" height="210"></canvas></div>
+      <div class="fbox fbox-blue">
+        <span class="fbox-label">Key Equations — 2D Motion</span>
+        v⃗ₐᵥ = Δr⃗/Δt = [(x₂−x₁)î + (y₂−y₁)ĵ] / (t₂−t₁)<br/>
+        <br/>v⃗ = u⃗ + a⃗t &nbsp;&nbsp; s⃗ = u⃗t + ½a⃗t²
+      </div>
+      <div class="fbox fbox-green" style="margin-top:6px;font-size:.95rem;">
+        <span class="fbox-label">🌟 Most Important Principle</span>
+        Motion in 2D = Two independent rectilinear motions along x and y directions
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 8: Projectile Motion ══ -->
+    <div class="slide" id="s8">
+      <div class="slide-num">8 / 12</div>
+      <h2>🎯 Projectile Motion</h2>
+      <p>Any object thrown at an angle under gravity alone is a <span class="hl">projectile</span>. Its path is always a <span class="hy">parabola</span>!</p>
+      <div class="cv-wrap"><canvas id="projCanvas" width="520" height="220"></canvas></div>
+      <div class="cmp-grid" style="margin-top:8px;">
+        <div class="cmp-card" style="border-color:rgba(59,130,246,.3);">
+          <h4 style="color:#93c5fd;">↔ Horizontal (x)</h4>
+          <p>No force → constant velocity</p>
+          <div class="cf" style="color:#93c5fd;">vₓ = u cosθ (constant)<br/>sₓ = u cosθ · t</div>
+        </div>
+        <div class="cmp-card" style="border-color:rgba(244,63,94,.3);">
+          <h4 style="color:#fda4af;">↕ Vertical (y)</h4>
+          <p>Gravity acts → velocity changes</p>
+          <div class="cf" style="color:#fda4af;">vᵧ = u sinθ − gt<br/>sᵧ = u sinθ·t − ½gt²</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 9: Projectile Formulas ══ -->
+    <div class="slide" id="s9">
+      <div class="slide-num">9 / 12</div>
+      <h2>📐 Projectile — Key Formulas</h2>
+      <div class="step" id="pf1"><div class="sn sn-red">T</div><div class="sb"><h4>Time of Flight</h4><p>Total time in air = 2 × time to reach max height. At max height, vᵧ = 0.</p></div></div>
+      <div class="step" id="pf2"><div class="sn sn-gold">R</div><div class="sb"><h4>Horizontal Range</h4><p>Total horizontal distance covered. Maximum when θ = 45°.</p></div></div>
+      <div class="step" id="pf3"><div class="sn sn-blue">H</div><div class="sb"><h4>Maximum Height</h4><p>Highest point reached. Depends on vertical component of initial velocity.</p></div></div>
+      <div class="fbox fbox-red">
+        <span class="fbox-label">🌟 Three Master Formulas</span>
+        T = 2u sinθ / g &nbsp;&nbsp; R = u² sin2θ / g &nbsp;&nbsp; H = u² sin²θ / 2g
+      </div>
+      <div class="fbox fbox-gold" style="margin-top:6px;font-size:.92rem;">
+        <span class="fbox-label">Trajectory Equation — Parabola</span>
+        y = x tanθ − [g / (2u² cos²θ)] x² &nbsp;→&nbsp; form y = Ax + Bx² (parabola!)
+      </div>
+    </div>
+
+    <!-- ══ SLIDE 10: Projectile Example ══ -->
+    <div class="slide" id="s10">
+      <div class="slide-num">10 / 12</div>
+      <h2>✏️ Solved Example — Projectile</h2>
+      <p style="color:#fde68a;font-weight:600;margin-bottom:14px;">Q: A stone is thrown with uₓ = 15 m/s, uᵧ = 20 m/s. Find velocity and position after 3s, max height and horizontal range. (g = 10 m/s²)</p>
+      <div class="step" id="pe1"><div class="sn sn-red">1</div><div class="sb"><h4>After 3 seconds:</h4><p>vₓ = 15 m/s (unchanged) &nbsp;&nbsp; vᵧ = 20 − 10×3 = −10 m/s (downward)</p></div></div>
+      <div class="step" id="pe2"><div class="sn sn-gold">2</div><div class="sb"><h4>Speed = √(15² + 10²) = √325 ≈ 18.03 m/s</h4><p>Direction: tan α = 10/15 → α = 33°41' below horizontal</p></div></div>
+      <div class="step" id="pe3"><div class="sn sn-blue">3</div><div class="sb"><h4>Position: sₓ = 15×3 = 45 m, sᵧ = 20×3 − 5×9 = 15 m</h4></div></div>
+      <div class="step" id="pe4"><div class="sn sn-green">4</div><div class="sb"><h4>Max Height H = uᵧ²/2g = 400/20 = 20 m</h4></div></div>
+      <div class="step" id="pe5"><div class="sn sn-purple">5</div><div class="sb"><h4>Range R = 2·uₓ·uᵧ/g = 2×15×20/10 = 60 m</h4></div></div>
+      <div class="fbox fbox-green">v = 18.03 m/s &nbsp;|&nbsp; H = 20 m &nbsp;|&nbsp; R = 60 m</div>
+    </div>
+
+    <!-- ══ SLIDE 11: Uniform Circular Motion ══ -->
+    <div class="slide" id="s11">
+      <div class="slide-num">11 / 12</div>
+      <h2>🔵 Uniform Circular Motion (UCM)</h2>
+      <p>Object moves with <span class="hg">constant speed</span> along a circular path. Speed is constant but <span class="hl">velocity direction always changes</span> — so there IS acceleration!</p>
+      <div class="cv-wrap"><canvas id="ucmCanvas" width="520" height="210"></canvas></div>
+      <div class="fbox fbox-green">
+        <span class="fbox-label">Key Quantities</span>
+        Angular speed ω = 2π/T = v/r &nbsp;&nbsp; Period T = 2πr/v
+      </div>
+      <div class="fbox fbox-red" style="margin-top:6px;">
+        <span class="fbox-label">🌟 Centripetal Acceleration & Force</span>
+        a = ω²r = v²/r &nbsp;&nbsp; (always directed towards centre)<br/>
+        F = mω²r = mv²/r &nbsp;&nbsp; Centripetal force
+      </div>
+      <ul style="margin-top:10px;">
+        <li>Acceleration is <span class="hl">perpendicular to velocity</span> — that is why speed stays constant</li>
+        <li>Moon orbiting Earth — gravity provides centripetal force</li>
+        <li>Car turning on a road — friction provides centripetal force</li>
+      </ul>
+    </div>
+
+    <!-- ══ SLIDE 12: Summary + Example ══ -->
+    <div class="slide" id="s12">
+      <div class="slide-num">12 / 12</div>
+      <h2>🏁 Chapter Summary & Quick Revision</h2>
+      <div class="step" id="sm1"><div class="sn sn-red">1</div><div class="sb"><h4>Distance vs Displacement</h4><p>Distance = scalar path length. Displacement = vector, shortest path.</p></div></div>
+      <div class="step" id="sm2"><div class="sn sn-gold">2</div><div class="sb"><h4>Equations of Motion</h4><p>v=u+at, s=ut+½at², v²=u²+2as — for uniform acceleration only.</p></div></div>
+      <div class="step" id="sm3"><div class="sn sn-blue">3</div><div class="sb"><h4>Relative Velocity</h4><p>v⃗ₐᵦ = v⃗ₐ − v⃗ᵦ. Opposite directions → add magnitudes.</p></div></div>
+      <div class="step" id="sm4"><div class="sn sn-green">4</div><div class="sb"><h4>Projectile Motion</h4><p>Horizontal: constant velocity. Vertical: uniform acceleration g. Path = parabola. R_max at θ=45°.</p></div></div>
+      <div class="step" id="sm5"><div class="sn sn-purple">5</div><div class="sb"><h4>Uniform Circular Motion</h4><p>Constant speed, changing direction. Centripetal a = v²/r towards centre. F = mv²/r.</p></div></div>
+      <div style="text-align:center;margin-top:28px;">
+        <a href="animated-lessons.html" class="nav-btn nav-next" style="display:inline-flex;">🎉 All Lessons →</a>
+      </div>
+    </div>
+
+  </div><!-- /slides -->
+
+  <div class="ch-nav">
+    <a href="animated-lessons.html" class="nav-btn nav-back">← All Lessons</a>
+    <a href="lesson-physics-newtons-laws.html" class="nav-btn nav-next">Newton's Laws →</a>
+  </div>
+</div><!-- /page -->
+
+<!-- TTS BAR -->
+<div class="tts-bar">
+  <button class="tts-btn tts-play" id="ttsPlayBtn" onclick="toggleTTS()">🔊 Voice ON</button>
+  <div class="tts-info"><div class="tts-title" id="ttsSlideTitle">Motion in a Plane</div><div>Auto-narration active — scroll through slides</div></div>
+  <button class="tts-btn tts-mute" onclick="stopTTS()">⏹ Stop</button>
+</div>
+
+<script src="main.js"></script>
+<script>
+/* ── Starfield ── */
+(function(){
+  const c=document.getElementById('starfield'), ctx=c.getContext('2d');
+  function resize(){ c.width=innerWidth; c.height=innerHeight; }
+  resize(); window.addEventListener('resize',resize);
+  const stars=Array.from({length:130},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.3,a:Math.random(),da:(Math.random()-.5)*.007}));
+  function draw(){
+    ctx.clearRect(0,0,c.width,c.height);
+    stars.forEach(s=>{ s.a=Math.max(.1,Math.min(1,s.a+s.da)); if(s.a<=.1||s.a>=1)s.da*=-1; ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle=`rgba(255,255,255,${s.a})`;ctx.fill(); });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ── Slide reveal + progress ── */
+const allSlides = document.querySelectorAll('.slide');
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      triggerCanvasAnim(e.target.id);
+      triggerStepAnim(e.target);
+      updateProgress();
+      if(ttsEnabled) speakSlide(e.target.id);
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.18});
+allSlides.forEach(s=>obs.observe(s));
+
+function updateProgress(){
+  const v=document.querySelectorAll('.slide.visible').length;
+  document.getElementById('progFill').style.width=(v/allSlides.length*100)+'%';
+}
+
+function triggerStepAnim(slide){
+  slide.querySelectorAll('.step').forEach((s,i)=>setTimeout(()=>s.classList.add('show'),i*280));
+}
+
+/* ══════════════════════════════
+   CANVAS ANIMATIONS
+══════════════════════════════ */
+function triggerCanvasAnim(id){
+  setTimeout(()=>{
+    if(id==='s2') drawDistDisp();
+    if(id==='s4') drawGraphs();
+    if(id==='s6') drawRelVel();
+    if(id==='s7') drawVec2D();
+    if(id==='s8') drawProjectile();
+    if(id==='s11') drawUCM();
+  },200);
+}
+
+/* Distance vs Displacement */
+function drawDistDisp(){
+  const c=document.getElementById('distCanvas');if(!c)return;
+  const ctx=c.getContext('2d'),W=c.width,H=c.height;
+  ctx.clearRect(0,0,W,H);
+
+  // Ground line
+  const y=H/2+20;
+  ctx.strokeStyle='rgba(255,255,255,.15)';ctx.lineWidth=1;
+  ctx.beginPath();ctx.moveTo(30,y);ctx.lineTo(W-30,y);ctx.stroke();
+
+  // Points
+  const pts=[{x:60,label:'Start\n(x=2m)'},{x:220,label:'Q\n(x=5m)'},{x:160,label:'R\n(x=4m)'}];
+  pts.forEach((p,i)=>{
+    ctx.beginPath();ctx.arc(p.x,y,6,0,Math.PI*2);
+    ctx.fillStyle=['#22c55e','#f59e0b','#6366f1'][i];
+    ctx.shadowColor=ctx.fillStyle;ctx.shadowBlur=10;ctx.fill();ctx.shadowBlur=0;
+    ctx.fillStyle='rgba(255,255,255,.55)';ctx.font='10px Segoe UI';ctx.textAlign='center';
+    ctx.fillText(p.label.split('\n')[0],p.x,y-16);
+    ctx.fillText(p.label.split('\n')[1]||'',p.x,y-4);
+  });
+
+  // Path arrow P→Q→R animated
+  let t=0;
+  function anim(){
+    if(t>210) return;
+    const phase1End=100, phase2End=210;
+    ctx.clearRect(0,0,W,H);
+    ctx.strokeStyle='rgba(255,255,255,.15)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(30,y);ctx.lineTo(W-30,y);ctx.stroke();
+    pts.forEach((p,i)=>{
+      ctx.beginPath();ctx.arc(p.x,y,6,0,Math.PI*2);
+      ctx.fillStyle=['#22c55e','#f59e0b','#6366f1'][i];
+      ctx.shadowColor=ctx.fillStyle;ctx.shadowBlur=10;ctx.fill();ctx.shadowBlur=0;
+      ctx.fillStyle='rgba(255,255,255,.55)';ctx.font='10px Segoe UI';ctx.textAlign='center';
+      ctx.fillText(p.label.split('\n')[0],p.x,y-16);
+    });
+    // Phase1: 60→220
+    const ex1=t<phase1End?60+(220-60)*(t/phase1End):220;
+    ctx.beginPath();ctx.moveTo(60,y-8);ctx.lineTo(ex1,y-8);
+    ctx.strokeStyle='#f59e0b';ctx.lineWidth=2.5;ctx.stroke();
+    // Phase2: 220→160
+    if(t>phase1End){
+      const rt=t-phase1End;
+      const ex2=220-(220-160)*(rt/(phase2End-phase1End));
+      ctx.beginPath();ctx.moveTo(220,y-18);ctx.lineTo(ex2,y-18);
+      ctx.strokeStyle='#ef4444';ctx.lineWidth=2.5;ctx.stroke();
+    }
+    // Displacement arrow
+    if(t>180){
+      ctx.beginPath();ctx.moveTo(60,y+12);ctx.lineTo(160,y+12);
+      ctx.strokeStyle='#6366f1';ctx.lineWidth=2.5;ctx.stroke();
+      ctx.fillStyle='#a5b4fc';ctx.font='bold 11px Segoe UI';ctx.textAlign='center';
+      ctx.fillText('Displacement = 2m',110,y+28);
+    }
+    ctx.fillStyle='#fcd34d';ctx.font='bold 11px Segoe UI';ctx.textAlign='left';
+    ctx.fillText('Path length = 3+1 = 4m',55,y-28);
+    t+=2;requestAnimationFrame(anim);
+  }
+  anim();
+}
+
+/* x-t and v-t Graphs */
+function drawGraphs(){
+  const c=document.getElementById('graphCanvas');if(!c)return;
+  const ctx=c.getContext('2d'),W=c.width,H=c.height;
+  ctx.clearRect(0,0,W,H);
+
+  const lx=40,ry=30,rw=200,rh=160;
+  // Left: x-t graph
+  ctx.strokeStyle='rgba(255,255,255,.2)';ctx.lineWidth=1;
+  ctx.beginPath();ctx.moveTo(lx,ry);ctx.lineTo(lx,ry+rh);ctx.lineTo(lx+rw,ry+rh);ctx.stroke();
+  ctx.fillStyle='rgba(255,255,255,.4)';ctx.font='11px Segoe UI';ctx.textAlign='center';
+  ctx.fillText('x-t Graph',lx+rw/2,ry-10);
+  ctx.textAlign='left';
+
+  // Right: v-t graph
+  const rx2=W/2+20;
+  ctx.strokeStyle='rgba(255,255,255,.2)';ctx.lineWidth=1;
+  ctx.beginPath();ctx.moveTo(rx2,ry);ctx.lineTo(rx2,ry+rh);ctx.lineTo(rx2+rw,ry+rh);ctx.stroke();
+  ctx.textAlign='center';ctx.fillText('v-t Graph',rx2+rw/2,ry-10);ctx.textAlign='left';
+
+  let t=0;
+  function anim(){
+    if(t>100)return;
+    // x-t: flat (rest) + slope+ + slope-
+    ctx.clearRect(lx,ry,rw+10,rh+10);
+    ctx.clearRect(rx2,ry,rw+10,rh+10);
+    ctx.strokeStyle='rgba(255,255,255,.2)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(lx,ry);ctx.lineTo(lx,ry+rh);ctx.lineTo(lx+rw,ry+rh);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(rx2,ry);ctx.lineTo(rx2,ry+rh);ctx.lineTo(rx2+rw,ry+rh);ctx.stroke();
+
+    // x-t curves
+    // 1. Rest (flat) - yellow
+    const seg=rw/3;
+    const xe1=lx+Math.min(t/100*rw, seg);
+    ctx.beginPath();ctx.moveTo(lx,ry+rh/2);ctx.lineTo(xe1,ry+rh/2);
+    ctx.strokeStyle='#fbbf24';ctx.lineWidth=2;ctx.stroke();
+    // 2. Uniform +ve slope - green
+    if(t>33){
+      const p=(t-33)/67;
+      ctx.beginPath();ctx.moveTo(lx+seg,ry+rh/2);ctx.lineTo(lx+seg+Math.min(p,0.5)*rw,ry+rh/2-Math.min(p,0.5)*rh*.9);
+      ctx.strokeStyle='#22c55e';ctx.lineWidth=2;ctx.stroke();
+    }
+    // 3. Uniform -ve slope - red
+    if(t>66){
+      const p=(t-66)/34;
+      ctx.beginPath();ctx.moveTo(lx+seg*2,ry+rh/2-0.5*rh*.9);
+      ctx.lineTo(lx+seg*2+p*seg,ry+rh/2-0.5*rh*.9+p*rh*.5);
+      ctx.strokeStyle='#f43f5e';ctx.lineWidth=2;ctx.stroke();
+    }
+
+    // v-t curves
+    // Constant v (horizontal) - blue
+    const ve1=rx2+Math.min(t/100*rw,seg);
+    ctx.beginPath();ctx.moveTo(rx2,ry+rh*0.4);ctx.lineTo(ve1,ry+rh*0.4);
+    ctx.strokeStyle='#3b82f6';ctx.lineWidth=2;ctx.stroke();
+    // Uniform acc (rising) - purple
+    if(t>33){
+      const p=(t-33)/67;
+      ctx.beginPath();ctx.moveTo(rx2+seg,ry+rh*.8);ctx.lineTo(rx2+seg+Math.min(p,0.5)*rw, ry+rh*.8-Math.min(p,0.5)*rh*.7);
+      ctx.strokeStyle='#a855f7';ctx.lineWidth=2;ctx.stroke();
+    }
+    // Deceleration (falling) - orange
+    if(t>66){
+      const p=(t-66)/34;
+      ctx.beginPath();ctx.moveTo(rx2+seg*2,ry+rh*.8-0.5*rh*.7);
+      ctx.lineTo(rx2+seg*2+p*seg,ry+rh*.8-0.5*rh*.7+p*rh*.35);
+      ctx.strokeStyle='#fb923c';ctx.lineWidth=2;ctx.stroke();
+    }
+    t+=1.5;requestAnimationFrame(anim);
+  }
+  anim();
+}
+
+/* Relative Velocity */
+function drawRelVel(){
+  const c=document.getElementById('relVelCanvas');if(!c)return;
+  const ctx=c.getContext('2d'),W=c.width,H=c.height;
+  let ax=60,bx=W-80;
+  ctx.clearRect(0,0,W,H);
+
+  function drawTrain(x,y,col,label,speed){
+    ctx.fillStyle=col;ctx.shadowColor=col;ctx.shadowBlur=8;
+    ctx.beginPath();ctx.roundRect(x,y,70,30,6);ctx.fill();ctx.shadowBlur=0;
+    ctx.fillStyle='#fff';ctx.font='bold 11px Segoe UI';ctx.textAlign='center';
+    ctx.fillText(label,x+35,y+20);
+    ctx.fillStyle='rgba(255,255,255,.4)';ctx.font='10px Segoe UI';
+    ctx.fillText(speed,x+35,y+40);
+  }
+
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+    // Track
+    ctx.strokeStyle='rgba(255,255,255,.12)';ctx.lineWidth=2;
+    ctx.beginPath();ctx.moveTo(0,H/2+25);ctx.lineTo(W,H/2+25);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(0,H/2+30);ctx.lineTo(W,H/2+30);ctx.stroke();
+    for(let x=0;x<W;x+=20){ctx.beginPath();ctx.moveTo(x,H/2+25);ctx.lineTo(x+10,H/2+25);ctx.strokeStyle='rgba(255,255,255,.06)';ctx.stroke();}
+
+    drawTrain(ax,H/2-18,'#22c55e','Train A','300 km/h →');
+    drawTrain(bx-70,H/2-18,'#f43f5e','Train B','← 350 km/h');
+    ax+=1.5; bx-=1.8;
+    if(ax>W||bx<0){ax=60;bx=W-80;}
+    requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* 2D Vector Motion */
+function drawVec2D(){
+  const c=document.getElementById('vec2dCanvas');if(!c)return;
+  const ctx=c.getContext('2d'),W=c.width,H=c.height;
+  ctx.clearRect(0,0,W,H);
+  const ox=50,oy=H-30;
+
+  // Axes
+  ctx.strokeStyle='rgba(255,255,255,.2)';ctx.lineWidth=1;
+  ctx.beginPath();ctx.moveTo(ox,20);ctx.lineTo(ox,oy);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(ox-5,oy);ctx.lineTo(W-20,oy);ctx.stroke();
+  ctx.fillStyle='rgba(255,255,255,.3)';ctx.font='11px Segoe UI';
+  ctx.fillText('y',ox-18,30);ctx.fillText('x',W-15,oy+4);
+
+  // Curved trajectory
+  let t=0;
+  function anim(){
+    if(t>100) return;
+    ctx.clearRect(ox,20,W-ox,oy-20);
+    ctx.strokeStyle='rgba(255,255,255,.2)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(ox,20);ctx.lineTo(ox,oy);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(ox-5,oy);ctx.lineTo(W-20,oy);ctx.stroke();
+
+    const endX = ox + (t/100)*(W-80);
+    const endY = oy - Math.sin((t/100)*Math.PI)*120 - (t/100)*40;
+
+    // Draw path
+    ctx.beginPath();
+    ctx.strokeStyle='rgba(59,130,246,0.5)';ctx.lineWidth=1.5;ctx.setLineDash([4,4]);
+    for(let i=0;i<=t;i++){
+      const px=ox+(i/100)*(W-80);
+      const py=oy-Math.sin((i/100)*Math.PI)*120-(i/100)*40;
+      i===0?ctx.moveTo(px,py):ctx.lineTo(px,py);
+    }
+    ctx.stroke();ctx.setLineDash([]);
+
+    // Position vector
+    ctx.beginPath();ctx.moveTo(ox,oy);ctx.lineTo(endX,endY);
+    ctx.strokeStyle='#6366f1';ctx.lineWidth=2;ctx.stroke();
+
+    // Velocity vector (tangent)
+    const dx=3,dy=-Math.cos((t/100)*Math.PI)*120*Math.PI/100*3-40/100*3;
+    const len=Math.sqrt(dx*dx+dy*dy);
+    ctx.beginPath();ctx.moveTo(endX,endY);ctx.lineTo(endX+dx/len*35,endY+dy/len*35);
+    ctx.strokeStyle='#f43f5e';ctx.lineWidth=2.5;ctx.shadowColor='#f43f5e';ctx.shadowBlur=6;ctx.stroke();ctx.shadowBlur=0;
+
+    // Components
+    ctx.beginPath();ctx.moveTo(endX,endY);ctx.lineTo(endX+dx/len*35,endY);
+    ctx.strokeStyle='#22c55e';ctx.lineWidth=1.5;ctx.setLineDash([3,3]);ctx.stroke();ctx.setLineDash([]);
+    ctx.beginPath();ctx.moveTo(endX,endY);ctx.lineTo(endX,endY+dy/len*35);
+    ctx.strokeStyle='#f59e0b';ctx.lineWidth=1.5;ctx.setLineDash([3,3]);ctx.stroke();ctx.setLineDash([]);
+
+    // Point
+    ctx.beginPath();ctx.arc(endX,endY,5,0,Math.PI*2);
+    ctx.fillStyle='#fff';ctx.shadowColor='#fff';ctx.shadowBlur=8;ctx.fill();ctx.shadowBlur=0;
+
+    // Labels
+    ctx.fillStyle='#fda4af';ctx.font='bold 11px Segoe UI';ctx.textAlign='left';ctx.fillText('v⃗',endX+10,endY-8);
+    ctx.fillStyle='#a5b4fc';ctx.fillText('r⃗',endX/2,endY/2);
+
+    t+=0.7;requestAnimationFrame(anim);
+  }
+  anim();
+}
+
+/* Projectile Motion */
+function drawProjectile(){
+  const c=document.getElementById('projCanvas');if(!c)return;
+  const ctx=c.getContext('2d'),W=c.width,H=c.height;
+  ctx.clearRect(0,0,W,H);
+
+  const ox=40,oy=H-25;
+  const ux=2.2,uy=3.8,g=0.1;
+  let t=0;
+  const trail=[];
+
+  function anim(){
+    ctx.clearRect(0,0,W,H);
+    // Ground
+    ctx.strokeStyle='rgba(255,255,255,.15)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(0,oy);ctx.lineTo(W,oy);ctx.stroke();
+    // Axes
+    ctx.strokeStyle='rgba(255,255,255,.1)';
+    ctx.beginPath();ctx.moveTo(ox,20);ctx.lineTo(ox,oy);ctx.stroke();
+    ctx.fillStyle='rgba(255,255,255,.25)';ctx.font='10px Segoe UI';
+    ctx.fillText('y',ox-14,25);ctx.fillText('x',W-14,oy+4);
+
+    const x=ox+ux*t*20;
+    const y=oy-(uy*t-0.5*g*t*t)*20;
+
+    if(y<=oy && x<W-10){
+      trail.push({x,y});
+      // Trail
+      ctx.beginPath();
+      trail.forEach((p,i)=>{ i===0?ctx.moveTo(p.x,p.y):ctx.lineTo(p.x,p.y); });
+      ctx.strokeStyle='rgba(251,191,36,0.35)';ctx.lineWidth=1.5;ctx.stroke();
+
+      // Ball
+      ctx.beginPath();ctx.arc(x,y,8,0,Math.PI*2);
+      ctx.fillStyle='#fb7185';ctx.shadowColor='#fb7185';ctx.shadowBlur=12;ctx.fill();ctx.shadowBlur=0;
+
+      // Velocity components
+      const vx=ux*20, vy=-(uy-g*t)*20;
+      const len=Math.sqrt(vx*vx+vy*vy);
+      // Horizontal component
+      ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+vx/len*35,y);
+      ctx.strokeStyle='#3b82f6';ctx.lineWidth=2;ctx.stroke();
+      ctx.fillStyle='#93c5fd';ctx.font='10px Segoe UI';ctx.fillText('vₓ',x+vx/len*35+3,y);
+      // Vertical component
+      ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x,y+vy/len*35);
+      ctx.strokeStyle='#22c55e';ctx.lineWidth=2;ctx.stroke();
+      ctx.fillStyle='#86efac';ctx.fillText('vᵧ',x+4,y+vy/len*35);
+
+      // Labels
+      ctx.fillStyle='rgba(255,255,255,.3)';ctx.font='10px Segoe UI';
+      const tx=trail[trail.length-1];
+      if(trail.length===1){ctx.fillStyle='#fcd34d';ctx.font='bold 11px Segoe UI';ctx.fillText('θ',ox+18,oy-8);}
+
+      t+=0.15;
+    } else if(y>oy){
+      // Range label
+      ctx.fillStyle='#fcd34d';ctx.font='bold 12px Segoe UI';ctx.textAlign='center';
+      ctx.fillText('Range R = u²sin2θ/g', ox+(x-ox)/2, oy+16);
+      return;
+    } else {
+      t=0; trail.length=0;
+    }
+    requestAnimationFrame(anim);
+  }
+  anim();
+}
+
+/* UCM Animation */
+function drawUCM(){
+  const c=document.getElementById('ucmCanvas');if(!c)return;
+  const ctx=c.getContext('2d'),W=c.width,H=c.height;
+  const cx=W/2,cy=H/2,r=80;
+  let angle=0;
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    // Circle
+    ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);
+    ctx.strokeStyle='rgba(34,197,94,.3)';ctx.lineWidth=2;ctx.stroke();
+    // Centre dot
+    ctx.beginPath();ctx.arc(cx,cy,4,0,Math.PI*2);
+    ctx.fillStyle='#22c55e';ctx.shadowColor='#22c55e';ctx.shadowBlur=8;ctx.fill();ctx.shadowBlur=0;
+
+    const px=cx+r*Math.cos(angle), py=cy+r*Math.sin(angle);
+
+    // Radius vector
+    ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(px,py);
+    ctx.strokeStyle='rgba(99,102,241,.6)';ctx.lineWidth=1.5;ctx.stroke();
+    ctx.fillStyle='#a5b4fc';ctx.font='10px Segoe UI';ctx.fillText('r',cx+(px-cx)/2-6,cy+(py-cy)/2-4);
+
+    // Centripetal acceleration arrow (towards centre)
+    const acx=(cx-px)*0.4, acy=(cy-py)*0.4;
+    ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(px+acx,py+acy);
+    ctx.strokeStyle='#f43f5e';ctx.lineWidth=2.5;ctx.shadowColor='#f43f5e';ctx.shadowBlur=6;ctx.stroke();ctx.shadowBlur=0;
+    ctx.fillStyle='#fda4af';ctx.font='bold 10px Segoe UI';ctx.fillText('a (centripetal)',px+acx+4,py+acy);
+
+    // Velocity vector (tangential)
+    const vx=-Math.sin(angle)*40, vy=Math.cos(angle)*40;
+    ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(px+vx,py+vy);
+    ctx.strokeStyle='#22c55e';ctx.lineWidth=2.5;ctx.shadowColor='#22c55e';ctx.shadowBlur=6;ctx.stroke();ctx.shadowBlur=0;
+    ctx.fillStyle='#86efac';ctx.font='bold 10px Segoe UI';ctx.fillText('v',px+vx+3,py+vy+3);
+
+    // Ball
+    ctx.beginPath();ctx.arc(px,py,9,0,Math.PI*2);
+    ctx.fillStyle='#fbbf24';ctx.shadowColor='#fbbf24';ctx.shadowBlur=12;ctx.fill();ctx.shadowBlur=0;
+
+    // Formulas
+    ctx.fillStyle='rgba(255,255,255,.3)';ctx.font='11px Segoe UI';ctx.textAlign='left';
+    ctx.fillText('ω = v/r',12,H-60);
+    ctx.fillText('T = 2πr/v',12,H-44);
+    ctx.fillText('a = v²/r',12,H-28);
+
+    angle+=0.025;
+    requestAnimationFrame(draw);
+  }
+  draw();
+}
+
+/* ══════════════════════════════
+   TEXT-TO-SPEECH
+══════════════════════════════ */
+let ttsEnabled=true;
+const synth=window.speechSynthesis;
+let currentUtt=null;
+
+const NARRATION={
+  's1': `Welcome students! Today we begin Chapter 3 — Motion in a Plane, from your Class 11 Physics textbook.
+
+Motion is a change in the position of an object with time. We encounter motion everywhere around us — a toy car moving in a straight line, a cricket ball hit by a batsman for a sixer, or an aeroplane flying from one city to another.
+
+Motion can be classified into three types. First — rectilinear motion, or motion in one dimension along a straight line. Second — motion in a plane, or two-dimensional motion. And third — motion in space, or three-dimensional motion.
+
+In rectilinear motion, the force acting on the object and its velocity are both along the same line. But when an object moves in a plane — like a projectile or a circular path — we need vector quantities to describe the motion properly. Vectors make the equations much more elegant and easier to solve.
+
+In this chapter, we will study rectilinear motion first with vector notation, then extend it to projectile motion in a plane, and finally study uniform circular motion. Let us begin!`,
+
+  's2': `Now let us understand two very important quantities that are often confused — distance and displacement.
+
+Look at this animation. An object starts at position x equals 2 metres. It moves forward to x equals 5 metres — a journey of 3 metres. Then it turns back and goes to x equals 4 metres.
+
+The path length, or distance, is the total route covered — that is 3 plus 1 equals 4 metres. Distance is a scalar quantity — it is always positive and keeps increasing no matter which direction you move.
+
+Displacement, on the other hand, is the shortest straight line from the starting point to the current position. At this moment, displacement equals 4 minus 2 equals 2 metres in the positive x-direction. Displacement is a vector — it has both magnitude and direction.
+
+The crucial difference is this — if you start from your home, go to school, and then come back home, your total distance is the entire journey. But your displacement is zero because you are back where you started. Distance measures the path. Displacement measures the net change in position.
+
+Always remember — when an object reverses direction, the distance will be greater than the magnitude of displacement.`,
+
+  's3': `Now let us study velocity, speed, and acceleration — the three quantities that describe how an object moves.
+
+Average velocity is the displacement divided by the time taken. Since displacement is a vector, velocity is also a vector — it has both magnitude and direction. The direction of average velocity is the same as the direction of displacement.
+
+Average speed is the total path length divided by the time taken. It is a scalar quantity — no direction. If the object moves only in one direction, average speed equals the magnitude of average velocity. But if the object reverses direction, average speed will be greater than the magnitude of average velocity.
+
+Instantaneous velocity is the velocity at a precise instant of time. Mathematically, it is the limiting value of average velocity as the time interval approaches zero. This gives us the derivative — v equals dx over dt. The instantaneous velocity at any point is always along the tangent to the path at that point.
+
+Acceleration is the rate of change of velocity. It is also a vector. Average acceleration equals change in velocity divided by time. Instantaneous acceleration is dv over dt — the derivative of velocity with respect to time.
+
+For uniform motion — constant velocity — the average and instantaneous velocities are equal, and acceleration is zero. For non-uniform motion, they are different.`,
+
+  's4': `Graphs are an extremely powerful tool for studying motion. Let us understand what different graph shapes tell us.
+
+On the position-time graph — the x-t graph — the slope at any point gives the velocity. A horizontal straight line means the object is at rest — its position is not changing, slope is zero, velocity is zero. A straight line with a positive slope means the object is moving with constant velocity in the positive direction. A straight line with a negative slope means constant velocity in the negative direction. A curve means the velocity is changing — non-uniform motion. And the instantaneous velocity at any point on a curve is the slope of the tangent to the curve at that point.
+
+On the velocity-time graph — the v-t graph — the slope gives acceleration. A horizontal line means constant velocity, zero acceleration. A straight rising line means uniform positive acceleration. A straight falling line means uniform deceleration — the object is slowing down. A curve means non-uniform acceleration.
+
+Here is a very important result — the area under the velocity-time graph between two time instants equals the displacement of the object during that time interval. This comes directly from integrating velocity over time. Use this in every problem where you are given a v-t graph and asked to find displacement.`,
+
+  's5': `The three equations of motion are the most used formulas in all of Class 11 Physics. They apply to objects moving in a straight line with uniform — meaning constant — acceleration.
+
+The first equation is v equals u plus at. Here u is the initial velocity, v is the final velocity, a is the constant acceleration, and t is the time. This equation is derived directly from the definition of acceleration — a equals v minus u divided by t. Rearranging gives v equals u plus at.
+
+The second equation is s equals u t plus one half a t squared. This gives the displacement. It is derived from the area under the velocity-time graph — the area of the trapezium is one half times the sum of parallel sides times height.
+
+The third equation is v squared equals u squared plus 2as. This is the most useful when time is not given. It is derived by eliminating t between the first and second equations.
+
+The most important everyday example of uniform acceleration is free fall. When an object falls under gravity alone, with no air resistance, its acceleration is g equals 9.8 metres per second squared downward. A very beautiful result — for an object starting from rest, the distances covered in successive equal time intervals are in the ratio 1 colon 3 colon 5 colon 7 — the odd numbers!`,
+
+  's6': `Relative velocity is a concept that we experience every day without realising it.
+
+Imagine you are sitting in a train moving at 300 kilometres per hour. Another train on the adjacent track, travelling in the same direction at 320 kilometres per hour, overtakes you. From your perspective, the other train seems to move very slowly — at only 20 kilometres per hour. That is relative velocity in action.
+
+The relative velocity of object A with respect to object B is defined as v A B equals v A minus v B. The relative velocity of B with respect to A is v B A equals v B minus v A. Note that these two are equal in magnitude but opposite in direction.
+
+Watch the animation — Train A moves right at 300 and Train B moves left at 350. To someone on Earth, Train B is going at 350. But to someone on Train A, Train B appears to be approaching at 300 plus 350 equals 650 kilometres per hour. This is because they are moving in opposite directions, so we add their speeds.
+
+In the solved example from your book — Aeroplane A travels at 300 kilometres per hour and Aeroplane B travels in the opposite direction at 350 kilometres per hour. The relative velocity of A with respect to B equals 300 minus negative 350 equals 650 kilometres per hour.`,
+
+  's7': `Now we extend our understanding to motion in two dimensions — motion in a plane.
+
+When an object moves in a plane, we need to specify both its x and y coordinates. The position is described by the position vector r arrow equals x i-hat plus y j-hat.
+
+The displacement from position P to position Q is delta r arrow equals r2 arrow minus r1 arrow, which has components along both x and y.
+
+The average velocity vector equals delta r arrow divided by delta t. This gives us x and y components separately. The magnitude of velocity is the square root of vx squared plus vy squared. The direction is the angle whose tangent is vy over vx.
+
+Here is the most powerful principle of this entire chapter — and I want you to remember it clearly. Motion in two dimensions can be completely resolved into two independent rectilinear motions — one along the x-direction and one along the y-direction. This means the x-motion and y-motion are completely independent of each other. Whatever is happening horizontally has no effect on what happens vertically, and vice versa. This principle is the key to solving all projectile problems.
+
+The vector form of the equations of motion are: v equals u plus a times t, and s equals u times t plus one half a times t squared. These are identical in form to the 1D equations, just written as vectors.`,
+
+  's8': `Now we come to the most exciting topic of this chapter — Projectile Motion!
+
+Any object that is thrown with some initial velocity and then moves under the influence of gravity alone — with no other force — is called a projectile. Examples include a cricket ball hit by a batsman, a stone thrown by a child, a bullet fired from a gun, a football kicked towards the goal — all of these are projectiles.
+
+The key to understanding projectile motion is to separate the horizontal and vertical components of motion.
+
+In the horizontal direction, there is absolutely no force acting. So the horizontal component of velocity remains constant throughout the flight. Horizontal velocity vx equals u cosine theta — constant. Horizontal displacement sx equals u cosine theta times t.
+
+In the vertical direction, gravity acts downward with acceleration g. So the vertical velocity keeps changing. Vertical velocity vy equals u sine theta minus g times t. Vertical displacement sy equals u sine theta times t minus one half g times t squared.
+
+Watch the animation carefully. The ball moves in a beautiful curved path. At the highest point, the vertical velocity is zero, but the horizontal velocity is still the same as at launch. The ball then starts falling while continuing to move forward. This combination of constant horizontal motion and uniformly accelerated vertical motion produces the characteristic parabolic path.`,
+
+  's9': `Let us now derive and understand the three most important formulas for projectile motion.
+
+Time of Flight T is the total time the projectile spends in the air. At the highest point, the vertical velocity becomes zero. Using vy equals u sine theta minus g t zero, we set vy to zero and get t zero equals u sine theta over g. Since the trajectory is perfectly symmetrical — the time to go up equals the time to come down — the total time of flight T equals 2 t zero equals 2 u sine theta over g.
+
+Horizontal Range R is the total horizontal distance covered before landing. R equals horizontal velocity times total time equals u cosine theta times 2 u sine theta over g equals u squared times 2 sine theta cosine theta over g equals u squared times sine 2 theta over g.
+
+For maximum range, sine 2 theta must equal 1, which means 2 theta equals 90 degrees, so theta equals 45 degrees. The maximum range is u squared over g, at an angle of 45 degrees. This is why athletes in long jump and javelin throw aim at approximately 45 degrees.
+
+Maximum Height H is the vertical distance at the highest point. Using the third equation of motion with final vertical velocity zero — H equals u squared sine squared theta over 2g.
+
+The trajectory equation — eliminating t between the x and y equations — gives y equals x tangent theta minus g x squared over 2 u squared cosine squared theta. This is of the form y equals Ax plus Bx squared, which is the equation of a parabola. So the path of every projectile is a parabola.`,
+
+  's10': `Let us solve a complete numerical problem on projectile motion step by step.
+
+A stone is thrown with initial velocity components of 20 metres per second along the vertical direction and 15 metres per second along the horizontal direction. We need to find the position and velocity after 3 seconds, the maximum height, and the total horizontal range. Take g equals 10 metres per second squared.
+
+Initial horizontal velocity ux equals 15 metres per second. Initial vertical velocity uy equals 20 metres per second.
+
+Step 1 — After 3 seconds. The horizontal velocity is unchanged — vx equals 15 metres per second. The vertical velocity vy equals 20 minus 10 times 3 equals 20 minus 30 equals minus 10 metres per second. The negative sign tells us the stone is now moving downward.
+
+Step 2 — Resultant speed equals square root of 15 squared plus 10 squared equals square root of 325 equals approximately 18.03 metres per second. The direction is tan alpha equals 10 over 15, giving alpha equals 33 degrees 41 minutes below the horizontal.
+
+Step 3 — Position after 3 seconds. Horizontal displacement sx equals 15 times 3 equals 45 metres. Vertical displacement sy equals 20 times 3 minus 5 times 9 equals 60 minus 45 equals 15 metres above ground.
+
+Step 4 — Maximum height H equals uy squared over 2g equals 400 over 20 equals 20 metres.
+
+Step 5 — Horizontal range R equals 2 times ux times uy over g equals 2 times 15 times 20 over 10 equals 60 metres.
+
+Always write down what is given first — ux, uy, g — and then solve systematically.`,
+
+  's11': `Now we come to the final topic of this chapter — Uniform Circular Motion, or UCM.
+
+An object is said to be in uniform circular motion when it moves along a circular path with a constant speed. The key word is speed — not velocity. The speed remains constant, but the direction of velocity is always changing — it is always tangential to the circle at every point.
+
+Since velocity is changing — even though its magnitude is constant — there must be an acceleration. This acceleration is always directed towards the centre of the circle, and is called centripetal acceleration, from the Latin words meaning centre-seeking.
+
+Watch the animation. The yellow ball moves around the circle. The green arrow shows the velocity — always tangent to the circle. The red arrow shows the centripetal acceleration — always pointing towards the centre. Notice that the velocity and acceleration are always perpendicular to each other. This is why the speed stays constant — the acceleration only changes the direction, not the magnitude.
+
+The time period T is the time for one complete revolution. T equals 2 pi r over v.
+
+Angular speed omega is the angle swept per unit time. Omega equals 2 pi over T equals v over r.
+
+Centripetal acceleration a equals omega squared r equals v squared over r.
+
+Centripetal force F equals m times a equals m omega squared r equals m v squared over r. This force is always directed towards the centre. In the case of the moon orbiting Earth, gravity provides this centripetal force. For a car turning on a road, friction provides it. For a ball on a string, tension provides it.`,
+
+  's12': `Excellent work, students! You have now completed Chapter 3 — Motion in a Plane. Let us do a quick revision of all the key points.
+
+First — Distance versus Displacement. Distance is the total path length — scalar. Displacement is the vector from start to end — can be zero even if distance is not.
+
+Second — Equations of Motion. The three equations v equals u plus at, s equals ut plus half at squared, and v squared equals u squared plus 2as apply to uniform acceleration in a straight line. For free fall, substitute a equals g.
+
+Third — Relative Velocity. The velocity of A with respect to B is v A minus v B. For objects moving in opposite directions, the relative speed is the sum of their speeds.
+
+Fourth — Projectile Motion. Horizontal: constant velocity, no acceleration. Vertical: uniform acceleration g downward. Time of flight T equals 2u sine theta over g. Range R equals u squared sine 2theta over g — maximum at 45 degrees. Height H equals u squared sine squared theta over 2g. Path is a parabola.
+
+Fifth — Uniform Circular Motion. Constant speed but changing direction. Centripetal acceleration a equals v squared over r, directed towards centre. Centripetal force F equals mv squared over r.
+
+Remember — motion in 2D can always be resolved into two independent 1D motions. This principle will serve you throughout your physics journey — in Class 11, Class 12, and competitive examinations like JEE and NEET. Practice the solved examples from your textbook and you will master this chapter completely. Best of luck!`
+};
+
+function speak(text){
+  if(!ttsEnabled||!synth)return;
+  synth.cancel();
+  if(!text)return;
+  const u=new SpeechSynthesisUtterance(text);
+  u.rate=0.85;u.pitch=1.0;u.volume=1.0;
+  const voices=synth.getVoices();
+  const v=voices.find(v=>/en[-_]IN/i.test(v.lang))||voices.find(v=>/en[-_]GB/i.test(v.lang))||voices.find(v=>/en/i.test(v.lang));
+  if(v)u.voice=v;
+  currentUtt=u;synth.speak(u);
+}
+function stopTTS(){synth&&synth.cancel();currentUtt=null;}
+function toggleTTS(){
+  ttsEnabled=!ttsEnabled;
+  const btn=document.getElementById('ttsPlayBtn');
+  if(ttsEnabled){btn.textContent='🔊 Voice ON';btn.style.opacity='1';speak(NARRATION['s1']);}
+  else{stopTTS();btn.textContent='🔇 Voice OFF';btn.style.opacity='.5';}
+}
+function speakSlide(id){
+  if(NARRATION[id]){
+    document.getElementById('ttsSlideTitle').textContent=document.querySelector('#'+id+' h2')?.textContent||'';
+    setTimeout(()=>speak(NARRATION[id]),400);
+  }
+}
+
+// keyboard
+document.addEventListener('keydown',e=>{if(e.key==='m'||e.key==='M')toggleTTS();});
+// Start voice after user interaction
+document.body.addEventListener('click',()=>{if(ttsEnabled&&!synth.speaking)speak(NARRATION['s1']);},{once:true});
+synth.addEventListener('voiceschanged',()=>{});
+</script>
+</body>
+</html>
