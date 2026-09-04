@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Class 12 Physics Revision Notes — Visions Classes</title>
+  <meta name="description" content="Complete Class 12 Physics revision notes — Rotational Dynamics, Thermodynamics, Mechanical Properties of Fluids & Solids. Visions Classes Ambernath."/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="logo.png" type="image/png"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #060810; color: #fff; font-family: 'Segoe UI', system-ui, sans-serif; }
+    .navbar { background: rgba(6,8,16,.96) !important; }
+
+    /* ── Hero ── */
+    .notes-hero {
+      background: linear-gradient(135deg,#05001a 0%,#0d0524 50%,#050010 100%);
+      padding: 96px 0 50px; text-align: center; position: relative; overflow: hidden;
+    }
+    .notes-hero::before {
+      content:''; position:absolute; inset:0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(99,102,241,.16) 0%, transparent 55%),
+                  radial-gradient(ellipse at 70% 30%, rgba(245,158,11,.12) 0%, transparent 50%);
+    }
+    .sparkle { position:absolute; background:#fff; border-radius:50%; animation:twk 3s infinite; }
+    @keyframes twk { 0%,100%{opacity:.1;transform:scale(.5);} 50%{opacity:1;transform:scale(1.4);} }
+    .hero-tag {
+      display:inline-block; padding:5px 18px; border-radius:20px;
+      background:rgba(99,102,241,.2); border:1px solid #6366f1;
+      color:#a5b4fc; font-size:.78rem; font-weight:700; letter-spacing:1px;
+      text-transform:uppercase; margin-bottom:14px; position:relative;
+    }
+    .notes-hero h1 {
+      font-size:clamp(2rem,5vw,3rem); font-weight:900; position:relative;
+      background:linear-gradient(135deg,#fff 0%,#a5b4fc 100%);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+      margin-bottom:10px;
+    }
+    .notes-hero p { color:#64748b; font-size:1rem; position:relative; max-width:620px; margin:0 auto 28px; }
+
+    /* ── Chapter tabs ── */
+    .chapter-tabs {
+      display:flex; gap:8px; justify-content:center; flex-wrap:wrap;
+      background:rgba(255,255,255,.03); border-bottom:1px solid rgba(255,255,255,.07);
+      padding:14px 20px;
+    }
+    .ch-tab {
+      padding:8px 22px; border-radius:50px; border:1.5px solid rgba(255,255,255,.12);
+      background:transparent; cursor:pointer; font-weight:700; font-size:.85rem;
+      color:#64748b; transition:all .22s; text-decoration:none;
+    }
+    .ch-tab:hover { border-color:rgba(99,102,241,.5); color:#a5b4fc; }
+    .ch-tab.rot  { border-color:#6366f1; background:rgba(99,102,241,.2); color:#a5b4fc; }
+    .ch-tab.therm { border-color:#f59e0b; background:rgba(245,158,11,.18); color:#fde047; }
+    .ch-tab.mech  { border-color:#22c55e; background:rgba(34,197,94,.15); color:#86efac; }
+
+    /* ── Page layout ── */
+    .notes-body { max-width:1000px; margin:0 auto; padding:30px 20px 100px; }
+
+    /* ── Chapter header ── */
+    .ch-header {
+      border-radius:18px; padding:28px 32px; margin-bottom:28px;
+      display:flex; align-items:center; gap:18px; position:relative; overflow:hidden;
+    }
+    .ch-header.rot   { background:linear-gradient(135deg,rgba(99,102,241,.18),rgba(139,92,246,.12)); border:1px solid rgba(99,102,241,.3); }
+    .ch-header.therm { background:linear-gradient(135deg,rgba(245,158,11,.16),rgba(239,68,68,.1)); border:1px solid rgba(245,158,11,.3); }
+    .ch-header.mech  { background:linear-gradient(135deg,rgba(34,197,94,.14),rgba(6,182,212,.1)); border:1px solid rgba(34,197,94,.3); }
+    .ch-icon { font-size:2.8rem; flex-shrink:0; }
+    .ch-header h2 { font-size:1.7rem; font-weight:900; }
+    .ch-header p  { color:#94a3b8; font-size:.92rem; margin-top:4px; }
+    .ch-tag {
+      position:absolute; top:14px; right:18px;
+      font-size:.7rem; font-weight:700; padding:3px 10px; border-radius:12px;
+      background:rgba(255,255,255,.08); color:#64748b;
+    }
+
+    /* ── Section card ── */
+    .sec {
+      background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08);
+      border-radius:16px; padding:28px 30px; margin-bottom:20px;
+      opacity:0; transform:translateY(24px);
+      transition:opacity .55s ease, transform .55s ease;
+      position:relative; overflow:hidden;
+    }
+    .sec.visible { opacity:1; transform:translateY(0); }
+    .sec::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; }
+    .sec.rot-sec::before  { background:linear-gradient(90deg,#6366f1,#8b5cf6,#a855f7); }
+    .sec.therm-sec::before { background:linear-gradient(90deg,#f59e0b,#ef4444,#fb923c); }
+    .sec.mech-sec::before  { background:linear-gradient(90deg,#22c55e,#06b6d4,#3b82f6); }
+
+    .sec-title {
+      font-size:1.1rem; font-weight:800; margin-bottom:16px;
+      display:flex; align-items:center; gap:9px;
+    }
+    .sec-title.rot-t   { color:#a5b4fc; }
+    .sec-title.therm-t { color:#fde047; }
+    .sec-title.mech-t  { color:#86efac; }
+
+    /* ── Formula box ── */
+    .fbox {
+      border-radius:11px; padding:16px 22px; margin:12px 0;
+      font-family:'Courier New',monospace; font-size:1rem; text-align:center;
+    }
+    .fbox-purple { background:rgba(99,102,241,.13); border:1px solid rgba(99,102,241,.4); color:#c4b5fd; }
+    .fbox-gold   { background:rgba(245,158,11,.13); border:1px solid rgba(245,158,11,.4); color:#fde068; }
+    .fbox-green  { background:rgba(34,197,94,.1);   border:1px solid rgba(34,197,94,.38); color:#86efac; }
+    .fbox-blue   { background:rgba(59,130,246,.12); border:1px solid rgba(59,130,246,.4); color:#93c5fd; }
+    .fbox-red    { background:rgba(244,63,94,.11);  border:1px solid rgba(244,63,94,.38); color:#fda4af; }
+    .fbox-label  { display:block; font-family:'Segoe UI',sans-serif; font-size:.67rem; text-transform:uppercase; letter-spacing:1px; opacity:.6; margin-bottom:6px; }
+
+    /* ── Table ── */
+    .ntable { width:100%; border-collapse:collapse; margin:12px 0; font-size:.87rem; }
+    .ntable th { padding:9px 12px; text-align:left; font-weight:700; font-size:.82rem; }
+    .ntable td { padding:9px 12px; border-bottom:1px solid rgba(255,255,255,.05); color:#94a3b8; }
+    .ntable tr:hover td { background:rgba(255,255,255,.04); color:#e2e8f0; }
+    .rot-th  { background:rgba(99,102,241,.18); color:#a5b4fc; }
+    .therm-th { background:rgba(245,158,11,.15); color:#fde047; }
+    .mech-th  { background:rgba(34,197,94,.13); color:#86efac; }
+
+    /* ── List ── */
+    .nlist { list-style:none; padding:0; }
+    .nlist li { padding:6px 0 6px 22px; position:relative; color:#94a3b8; font-size:.92rem; line-height:1.7; }
+    .nlist li::before { content:'◆'; position:absolute; left:0; font-size:.55rem; top:10px; }
+    .rot-list li::before   { color:#6366f1; }
+    .therm-list li::before { color:#f59e0b; }
+    .mech-list li::before  { color:#22c55e; }
+
+    /* ── Key point pill ── */
+    .kp-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; margin:12px 0; }
+    .kp {
+      border-radius:11px; padding:14px 16px;
+      opacity:0; transform:scale(.95); transition:opacity .4s, transform .4s;
+    }
+    .kp.show { opacity:1; transform:scale(1); }
+    .kp h4 { font-size:.88rem; margin-bottom:5px; }
+    .kp p  { font-size:.8rem; color:#64748b; line-height:1.5; }
+    .kp .kf { font-family:'Courier New',monospace; font-size:.88rem; margin-top:5px; }
+    .kp-purple { background:rgba(99,102,241,.1); border:1px solid rgba(99,102,241,.25); }
+    .kp-purple h4 { color:#a5b4fc; } .kp-purple .kf { color:#c4b5fd; }
+    .kp-gold { background:rgba(245,158,11,.1); border:1px solid rgba(245,158,11,.25); }
+    .kp-gold h4 { color:#fde047; } .kp-gold .kf { color:#fcd34d; }
+    .kp-green { background:rgba(34,197,94,.08); border:1px solid rgba(34,197,94,.22); }
+    .kp-green h4 { color:#86efac; } .kp-green .kf { color:#6ee7b7; }
+
+    /* ── Highlight spans ── */
+    .hl  { color:#a5b4fc; font-weight:700; }
+    .hy  { color:#fde047; font-weight:700; }
+    .hg  { color:#86efac; font-weight:700; }
+    .hr  { color:#fda4af; font-weight:700; }
+    .hb  { color:#93c5fd; font-weight:700; }
+
+    /* ── Important box ── */
+    .imp {
+      border-radius:11px; padding:14px 18px; margin:12px 0; font-size:.9rem;
+    }
+    .imp-purple { background:rgba(99,102,241,.1); border-left:4px solid #6366f1; color:#c4b5fd; }
+    .imp-gold   { background:rgba(245,158,11,.1); border-left:4px solid #f59e0b; color:#fde068; }
+    .imp-green  { background:rgba(34,197,94,.08); border-left:4px solid #22c55e; color:#86efac; }
+    .imp-red    { background:rgba(244,63,94,.1);  border-left:4px solid #ef4444; color:#fda4af; }
+
+    /* ── Chapter divider ── */
+    .ch-divider { height:2px; margin:40px 0; border:none; border-radius:1px; }
+    .rot-div   { background:linear-gradient(90deg,#6366f1,transparent); }
+    .therm-div { background:linear-gradient(90deg,#f59e0b,transparent); }
+
+    /* ── Print button ── */
+    .print-bar {
+      position:fixed; bottom:0; left:0; right:0; z-index:90;
+      background:rgba(6,8,16,.97); backdrop-filter:blur(16px);
+      border-top:1px solid rgba(255,255,255,.07);
+      display:flex; align-items:center; gap:12px; padding:10px 20px;
+    }
+    .print-btn {
+      padding:9px 22px; border-radius:9px; border:none; cursor:pointer;
+      font-size:.88rem; font-weight:700; transition:all .2s;
+    }
+    .pbtn-rot   { background:linear-gradient(135deg,#6366f1,#8b5cf6); color:#fff; }
+    .pbtn-therm { background:linear-gradient(135deg,#f59e0b,#ef4444); color:#fff; }
+    .pbtn-mech  { background:linear-gradient(135deg,#22c55e,#06b6d4); color:#000; }
+    .pbtn-print { background:rgba(255,255,255,.09); color:#94a3b8; }
+    .pbtn-print:hover { background:rgba(255,255,255,.18); color:#fff; }
+    .bar-label { color:#475569; font-size:.82rem; flex:1; }
+
+    @media print {
+      .navbar, .print-bar, .chapter-tabs, .notes-hero { display:none !important; }
+      body { background:#fff !important; color:#000 !important; }
+      .sec { opacity:1 !important; transform:none !important; page-break-inside:avoid; }
+    }
+    @media(max-width:560px) { .kp-grid{grid-template-columns:1fr;} .sec{padding:20px 16px;} }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Visions Classes" class="nav-logo-img"/>
+      <div class="logo-text"><span>Visions</span> Classes</div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="notes-physics-12.html" class="active">Class 12 Notes</a></li>
+      <li><a href="animated-lessons.html">Animated Lessons</a></li>
+      <li><a href="hindi-grammar.html">हिंदी व्याकरण</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="notes-hero">
+  <div class="sparkle" style="top:12%;left:6%;animation-delay:0s;width:4px;height:4px;"></div>
+  <div class="sparkle" style="top:28%;left:18%;animation-delay:.6s;width:3px;height:3px;"></div>
+  <div class="sparkle" style="top:55%;left:4%;animation-delay:1.1s;width:4px;height:4px;"></div>
+  <div class="sparkle" style="top:18%;right:9%;animation-delay:.4s;width:3px;height:3px;"></div>
+  <div class="sparkle" style="top:42%;right:14%;animation-delay:.9s;width:4px;height:4px;"></div>
+  <div class="sparkle" style="top:72%;right:6%;animation-delay:1.5s;width:3px;height:3px;"></div>
+  <div class="container" style="position:relative;">
+    <div class="hero-tag">📚 Class 12 Physics — Full Revision Notes</div>
+    <h1>Quick Revision Notes</h1>
+    <p>Rotational Dynamics · Thermodynamics · Mechanical Properties of Solids & Fluids<br/>All formulas, definitions, laws and exam tips in one place</p>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+      <a href="#rotational" class="btn btn-white">🔄 Rotational Dynamics</a>
+      <a href="#thermodynamics" class="btn btn-secondary" style="border-color:rgba(245,158,11,.6);color:#fde047;">🌡️ Thermodynamics</a>
+      <a href="#mechanical" class="btn btn-secondary" style="border-color:rgba(34,197,94,.5);color:#86efac;">⚙️ Mechanical Properties</a>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER TABS -->
+<div class="chapter-tabs">
+  <a class="ch-tab rot"   href="#rotational">🔄 Rotational Dynamics</a>
+  <a class="ch-tab therm" href="#thermodynamics">🌡️ Thermodynamics</a>
+  <a class="ch-tab mech"  href="#mechanical">⚙️ Mechanical Properties</a>
+</div>
+
+<div class="notes-body">
+
+<!-- ═══════════════════════════════════════════════
+     CHAPTER 1: ROTATIONAL DYNAMICS
+═══════════════════════════════════════════════ -->
+<div id="rotational">
+
+  <div class="ch-header rot">
+    <div class="ch-icon">🔄</div>
+    <div>
+      <h2 style="color:#a5b4fc;">Rotational Dynamics</h2>
+      <p>Moment of Inertia · Torque · Angular Momentum · Rolling Motion · Theorems</p>
+    </div>
+    <span class="ch-tag">Chapter 1</span>
+  </div>
+
+  <!-- 1.1 Basic Quantities -->
+  <div class="sec rot-sec" id="rot-basics">
+    <div class="sec-title rot-t">📌 1.1 Basic Rotational Quantities</div>
+    <div class="kp-grid">
+      <div class="kp kp-purple"><h4>Angular Displacement (θ)</h4><p>Angle swept by radius vector. Unit: radian.</p><div class="kf">θ = arc / radius = s/r</div></div>
+      <div class="kp kp-purple"><h4>Angular Velocity (ω)</h4><p>Rate of change of angular displacement.</p><div class="kf">ω = dθ/dt = v/r &nbsp; (rad/s)</div></div>
+      <div class="kp kp-purple"><h4>Angular Acceleration (α)</h4><p>Rate of change of angular velocity.</p><div class="kf">α = dω/dt = a/r &nbsp; (rad/s²)</div></div>
+      <div class="kp kp-purple"><h4>Period & Frequency</h4><p>Time for one revolution.</p><div class="kf">T = 2π/ω &nbsp; n = 1/T = ω/2π</div></div>
+    </div>
+    <div class="fbox fbox-purple">
+      <span class="fbox-label">Analogies: Linear ↔ Rotational</span>
+      s ↔ θ &nbsp;|&nbsp; v ↔ ω &nbsp;|&nbsp; a ↔ α &nbsp;|&nbsp; m ↔ I &nbsp;|&nbsp; F ↔ τ &nbsp;|&nbsp; p ↔ L &nbsp;|&nbsp; KE = ½mv² ↔ ½Iω²
+    </div>
+  </div>
+
+  <!-- 1.2 Equations of Motion -->
+  <div class="sec rot-sec">
+    <div class="sec-title rot-t">📐 1.2 Equations of Rotational Motion</div>
+    <p style="color:#94a3b8;margin-bottom:14px;">For <span class="hl">uniform angular acceleration</span> (α = constant):</p>
+    <div class="kp-grid">
+      <div class="kp kp-purple"><h4>1st Equation</h4><div class="kf">ω = ω₀ + αt</div></div>
+      <div class="kp kp-purple"><h4>2nd Equation</h4><div class="kf">θ = ω₀t + ½αt²</div></div>
+      <div class="kp kp-purple"><h4>3rd Equation</h4><div class="kf">ω² = ω₀² + 2αθ</div></div>
+      <div class="kp kp-purple"><h4>Average ω</h4><div class="kf">ω_av = (ω₀ + ω) / 2</div></div>
+    </div>
+    <div class="imp imp-purple">⭐ These are exactly analogous to v = u+at, s = ut+½at², v² = u²+2as. Replace v→ω, u→ω₀, a→α, s→θ.</div>
+  </div>
+
+  <!-- 1.3 Torque -->
+  <div class="sec rot-sec">
+    <div class="sec-title rot-t">⚡ 1.3 Torque (Moment of Force)</div>
+    <div class="fbox fbox-purple">
+      <span class="fbox-label">Torque Formula</span>
+      τ⃗ = r⃗ × F⃗ &nbsp;&nbsp; |τ| = r·F·sinθ &nbsp;&nbsp; Unit: N·m
+    </div>
+    <ul class="nlist rot-list" style="margin:12px 0;">
+      <li>Torque is the rotational equivalent of force</li>
+      <li>τ = r × F × sinθ where θ is angle between r⃗ and F⃗</li>
+      <li>Torque is maximum when F ⊥ r (θ = 90°) → τ = rF</li>
+      <li>Torque is zero when F ∥ r (θ = 0°)</li>
+      <li>τ = I × α (analogous to F = ma)</li>
+    </ul>
+    <div class="fbox fbox-purple">
+      <span class="fbox-label">Newton's 2nd Law — Rotational Form</span>
+      τ_net = I · α &nbsp;&nbsp; (analogous to F_net = m·a)
+    </div>
+    <div class="imp imp-purple">⭐ <strong>Couple:</strong> Two equal and opposite parallel forces acting on a body constitute a couple. Torque of couple = F × d (d = perpendicular distance between forces). Net force of couple = 0, but torque ≠ 0.</div>
+  </div>
+
+  <!-- 1.4 Moment of Inertia -->
+  <div class="sec rot-sec">
+    <div class="sec-title rot-t">🔩 1.4 Moment of Inertia (I)</div>
+    <div class="fbox fbox-purple">
+      <span class="fbox-label">Definition</span>
+      I = Σmᵢrᵢ² = ∫r² dm &nbsp;&nbsp; Unit: kg·m²
+    </div>
+    <p style="color:#94a3b8;margin:10px 0 6px;">I is the rotational equivalent of mass. It depends on mass, shape and <span class="hl">axis of rotation</span>.</p>
+    <table class="ntable">
+      <thead><tr class="rot-th"><th>Body</th><th>Axis</th><th>Moment of Inertia I</th></tr></thead>
+      <tbody>
+        <tr><td class="hl">Thin rod (length L)</td><td>Through centre ⊥ length</td><td>I = ML²/12</td></tr>
+        <tr><td class="hl">Thin rod (length L)</td><td>Through one end ⊥ length</td><td>I = ML²/3</td></tr>
+        <tr><td class="hl">Solid cylinder / disc (radius R)</td><td>Through centre (axis)</td><td>I = MR²/2</td></tr>
+        <tr><td class="hl">Hollow cylinder (radius R)</td><td>Through centre (axis)</td><td>I = MR²</td></tr>
+        <tr><td class="hl">Solid sphere (radius R)</td><td>Through diameter</td><td>I = 2MR²/5</td></tr>
+        <tr><td class="hl">Hollow sphere (radius R)</td><td>Through diameter</td><td>I = 2MR²/3</td></tr>
+        <tr><td class="hl">Thin ring / hoop (radius R)</td><td>Through centre ⊥ plane</td><td>I = MR²</td></tr>
+        <tr><td class="hl">Thin ring (radius R)</td><td>Through diameter</td><td>I = MR²/2</td></tr>
+        <tr><td class="hl">Rectangular plate (a×b)</td><td>Through centre</td><td>I = M(a²+b²)/12</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 1.5 Theorems -->
+  <div class="sec rot-sec">
+    <div class="sec-title rot-t">📏 1.5 Theorems on Moment of Inertia</div>
+    <div class="kp-grid">
+      <div class="kp kp-purple">
+        <h4>Parallel Axis Theorem</h4>
+        <p>I about any axis = I_cm + Md²</p>
+        <p style="font-size:.78rem;color:#64748b;margin-top:4px;">where d = distance between the two parallel axes. One axis must pass through CM.</p>
+        <div class="kf">I = I_cm + Md²</div>
+      </div>
+      <div class="kp kp-purple">
+        <h4>Perpendicular Axis Theorem</h4>
+        <p>For flat lamina only: I_z = I_x + I_y</p>
+        <p style="font-size:.78rem;color:#64748b;margin-top:4px;">z-axis ⊥ to plane of lamina. x and y in the plane of lamina.</p>
+        <div class="kf">I_z = I_x + I_y</div>
+      </div>
+    </div>
+    <div class="imp imp-purple">⭐ <strong>Example:</strong> I of disc about diameter = MR²/4 (using perp. axis: I_z = MR²/2 = I_x + I_y = 2I_diam → I_diam = MR²/4)</div>
+  </div>
+
+  <!-- 1.6 Angular Momentum -->
+  <div class="sec rot-sec">
+    <div class="sec-title rot-t">🌀 1.6 Angular Momentum (L)</div>
+    <div class="fbox fbox-purple">
+      <span class="fbox-label">Angular Momentum</span>
+      L⃗ = r⃗ × p⃗ = I·ω⃗ &nbsp;&nbsp; |L| = Iω = mvr·sinθ &nbsp;&nbsp; Unit: kg·m²/s
+    </div>
+    <div class="kp-grid">
+      <div class="kp kp-purple"><h4>Newton's 2nd Law</h4><p>Torque = rate of change of angular momentum</p><div class="kf">τ = dL/dt</div></div>
+      <div class="kp kp-purple"><h4>Conservation of L</h4><p>If τ_net = 0, then L = constant</p><div class="kf">I₁ω₁ = I₂ω₂</div></div>
+    </div>
+    <div class="imp imp-purple">⭐ <strong>Conservation of Angular Momentum Examples:</strong><br/>
+    1. Ice skater pulls arms in → I decreases → ω increases (spin faster)<br/>
+    2. Diver tucks → I decreases → ω increases → more rotations<br/>
+    3. Earth's revolution: at perihelion (closer to Sun) it moves faster — L conserved</div>
+  </div>
+
+  <!-- 1.7 Rolling Motion -->
+  <div class="sec rot-sec">
+    <div class="sec-title rot-t">🎱 1.7 Rolling Motion (Without Slipping)</div>
+    <div class="fbox fbox-purple">
+      <span class="fbox-label">Condition for Rolling Without Slipping</span>
+      v_cm = R·ω &nbsp;&nbsp; a_cm = R·α
+    </div>
+    <div class="kp-grid">
+      <div class="kp kp-purple"><h4>Total KE (Rolling)</h4><div class="kf">KE = ½Mv² + ½Iω²<br/>= ½Mv²(1 + I/MR²)</div></div>
+      <div class="kp kp-purple"><h4>For Solid Sphere</h4><div class="kf">KE = ½Mv²(1 + 2/5) = 7/10 Mv²</div></div>
+      <div class="kp kp-purple"><h4>For Disc/Cylinder</h4><div class="kf">KE = ½Mv²(1 + 1/2) = 3/4 Mv²</div></div>
+      <div class="kp kp-purple"><h4>For Ring/Hoop</h4><div class="kf">KE = ½Mv²(1 + 1) = Mv²</div></div>
+    </div>
+    <table class="ntable" style="margin-top:12px;">
+      <thead><tr class="rot-th"><th>Body</th><th>I/MR²</th><th>v at bottom of incline</th><th>Reaches bottom</th></tr></thead>
+      <tbody>
+        <tr><td class="hl">Solid sphere</td><td>2/5</td><td>v = √(10gh/7)</td><td>First (fastest)</td></tr>
+        <tr><td class="hl">Solid cylinder</td><td>1/2</td><td>v = √(4gh/3)</td><td>Second</td></tr>
+        <tr><td class="hl">Hollow sphere</td><td>2/3</td><td>v = √(6gh/5)</td><td>Third</td></tr>
+        <tr><td class="hl">Ring / Hoop</td><td>1</td><td>v = √(gh)</td><td>Last (slowest)</td></tr>
+      </tbody>
+    </table>
+    <div class="imp imp-purple">⭐ <strong>Key principle:</strong> Body with smaller I/MR² reaches the bottom first. Solid sphere always wins in a rolling race.</div>
+  </div>
+
+  <!-- 1.8 Equilibrium -->
+  <div class="sec rot-sec">
+    <div class="sec-title rot-t">⚖️ 1.8 Conditions for Equilibrium</div>
+    <div class="kp-grid">
+      <div class="kp kp-purple"><h4>Translational Equilibrium</h4><p>Vector sum of all forces = 0</p><div class="kf">ΣF⃗ = 0 (ΣFx=0, ΣFy=0)</div></div>
+      <div class="kp kp-purple"><h4>Rotational Equilibrium</h4><p>Vector sum of all torques = 0</p><div class="kf">Στ = 0</div></div>
+    </div>
+    <div class="imp imp-purple">⭐ <strong>Principle of Moments:</strong> For a body in equilibrium, sum of clockwise moments = sum of anticlockwise moments about any point.</div>
+  </div>
+
+  <!-- 1.9 Power & Work -->
+  <div class="sec rot-sec">
+    <div class="sec-title rot-t">⚡ 1.9 Work, Power & Energy — Rotation</div>
+    <div class="kp-grid">
+      <div class="kp kp-purple"><h4>Work done by Torque</h4><div class="kf">W = τ·θ &nbsp; (for const. torque)<br/>W = ∫τ dθ (variable)</div></div>
+      <div class="kp kp-purple"><h4>Power</h4><div class="kf">P = τ·ω</div></div>
+      <div class="kp kp-purple"><h4>Rotational KE</h4><div class="kf">KE_rot = ½Iω²</div></div>
+      <div class="kp kp-purple"><h4>Work-Energy Theorem</h4><div class="kf">W_net = ΔKE_rot = ½I(ω²−ω₀²)</div></div>
+    </div>
+  </div>
+
+</div><!-- /rotational -->
+
+<hr class="ch-divider rot-div"/>
+
+<!-- ═══════════════════════════════════════════════
+     CHAPTER 2: THERMODYNAMICS
+═══════════════════════════════════════════════ -->
+<div id="thermodynamics" style="margin-top:20px;">
+
+  <div class="ch-header therm">
+    <div class="ch-icon">🌡️</div>
+    <div>
+      <h2 style="color:#fde047;">Thermodynamics</h2>
+      <p>Laws of Thermodynamics · Heat Engines · Entropy · Carnot Cycle · Specific Heat</p>
+    </div>
+    <span class="ch-tag">Chapter 2</span>
+  </div>
+
+  <!-- 2.1 Basic Concepts -->
+  <div class="sec therm-sec">
+    <div class="sec-title therm-t">🌡️ 2.1 Basic Thermodynamic Concepts</div>
+    <div class="kp-grid">
+      <div class="kp kp-gold"><h4>System & Surroundings</h4><p>System = object under study. Surroundings = everything else. Boundary separates them.</p></div>
+      <div class="kp kp-gold"><h4>Thermodynamic State</h4><p>Described by state variables: P, V, T, n. State functions depend only on current state, not on path.</p></div>
+      <div class="kp kp-gold"><h4>Internal Energy (U)</h4><p>Total KE + PE of all molecules. State function. For ideal gas: depends only on T.</p></div>
+      <div class="kp kp-gold"><h4>Thermal Equilibrium</h4><p>No net heat flow between two bodies in contact. Zeroth Law basis.</p></div>
+    </div>
+    <div class="fbox fbox-gold">
+      <span class="fbox-label">Sign Convention</span>
+      Q > 0 → heat absorbed by system &nbsp;|&nbsp; Q < 0 → heat released by system<br/>
+      W > 0 → work done BY system &nbsp;|&nbsp; W < 0 → work done ON system
+    </div>
+  </div>
+
+  <!-- 2.2 Zeroth Law -->
+  <div class="sec therm-sec">
+    <div class="sec-title therm-t">0️⃣ 2.2 Zeroth Law of Thermodynamics</div>
+    <div class="fbox fbox-gold">
+      <span class="fbox-label">Zeroth Law</span>
+      If body A is in thermal equilibrium with body B, and B is in equilibrium with body C,<br/>then A and C are also in thermal equilibrium with each other.
+    </div>
+    <div class="imp imp-gold">This law defines the concept of <strong>temperature</strong>. It is the basis for all thermometers — a thermometer measures temperature by reaching thermal equilibrium with the body.</div>
+  </div>
+
+  <!-- 2.3 First Law -->
+  <div class="sec therm-sec">
+    <div class="sec-title therm-t">1️⃣ 2.3 First Law of Thermodynamics</div>
+    <div class="fbox fbox-gold">
+      <span class="fbox-label">🌟 First Law (Conservation of Energy)</span>
+      ΔU = Q − W &nbsp;&nbsp; OR &nbsp;&nbsp; Q = ΔU + W<br/>
+      dU = dQ − dW &nbsp;&nbsp; dW = P dV
+    </div>
+    <p style="color:#94a3b8;margin:10px 0 6px;"><span class="hy">Work done BY gas during expansion:</span></p>
+    <div class="fbox fbox-gold">W = ∫P dV = Area under P-V diagram</div>
+    <table class="ntable" style="margin-top:14px;">
+      <thead><tr class="therm-th"><th>Process</th><th>Condition</th><th>W</th><th>ΔU</th><th>Q</th></tr></thead>
+      <tbody>
+        <tr><td class="hy">Isothermal</td><td>T = const (ΔT=0)</td><td>nRT ln(V₂/V₁)</td><td>0</td><td>Q = W</td></tr>
+        <tr><td class="hy">Isochoric</td><td>V = const (ΔV=0)</td><td>0</td><td>nCvΔT</td><td>Q = ΔU = nCvΔT</td></tr>
+        <tr><td class="hy">Isobaric</td><td>P = const (ΔP=0)</td><td>PΔV = nRΔT</td><td>nCvΔT</td><td>nCpΔT</td></tr>
+        <tr><td class="hy">Adiabatic</td><td>Q = 0 (no heat)</td><td>−ΔU = nCvΔT</td><td>−W = nCvΔT</td><td>0</td></tr>
+      </tbody>
+    </table>
+    <div class="imp imp-gold">⭐ <strong>Adiabatic process equations:</strong> PV^γ = const &nbsp;|&nbsp; TV^(γ-1) = const &nbsp;|&nbsp; T^γ P^(1-γ) = const</div>
+  </div>
+
+  <!-- 2.4 Specific Heat -->
+  <div class="sec therm-sec">
+    <div class="sec-title therm-t">🔥 2.4 Specific Heat Capacities of Gases</div>
+    <div class="kp-grid">
+      <div class="kp kp-gold"><h4>Cv (constant volume)</h4><p>Heat needed per mole per degree K at constant volume.</p><div class="kf">Cv = ΔU/nΔT</div></div>
+      <div class="kp kp-gold"><h4>Cp (constant pressure)</h4><p>Heat needed per mole per degree K at constant pressure.</p><div class="kf">Cp = ΔQ/nΔT</div></div>
+      <div class="kp kp-gold"><h4>Mayer's Relation</h4><p>Cp is always greater than Cv by R.</p><div class="kf">Cp − Cv = R</div></div>
+      <div class="kp kp-gold"><h4>Ratio γ</h4><p>Adiabatic index (Heat capacity ratio)</p><div class="kf">γ = Cp/Cv<br/>Mono: 5/3, Di: 7/5</div></div>
+    </div>
+    <table class="ntable" style="margin-top:12px;">
+      <thead><tr class="therm-th"><th>Type of Gas</th><th>Degrees of Freedom (f)</th><th>Cv</th><th>Cp</th><th>γ</th></tr></thead>
+      <tbody>
+        <tr><td class="hy">Monatomic (He, Ar)</td><td>3</td><td>3R/2</td><td>5R/2</td><td>5/3 ≈ 1.67</td></tr>
+        <tr><td class="hy">Diatomic (N₂, O₂, H₂)</td><td>5</td><td>5R/2</td><td>7R/2</td><td>7/5 = 1.4</td></tr>
+        <tr><td class="hy">Polyatomic (CO₂)</td><td>6</td><td>3R</td><td>4R</td><td>4/3 ≈ 1.33</td></tr>
+      </tbody>
+    </table>
+    <div class="imp imp-gold">⭐ <strong>Equipartition of Energy:</strong> Each degree of freedom contributes ½kT to the average energy. Total internal energy U = f/2 · nRT</div>
+  </div>
+
+  <!-- 2.5 Second Law -->
+  <div class="sec therm-sec">
+    <div class="sec-title therm-t">2️⃣ 2.5 Second Law of Thermodynamics</div>
+    <div class="kp-grid">
+      <div class="kp kp-gold">
+        <h4>Kelvin-Planck Statement</h4>
+        <p>It is impossible to construct a heat engine that absorbs heat from a single reservoir and converts it completely into work with no other effect.</p>
+      </div>
+      <div class="kp kp-gold">
+        <h4>Clausius Statement</h4>
+        <p>Heat cannot spontaneously flow from a colder body to a hotter body without external work being done on the system.</p>
+      </div>
+    </div>
+    <div class="fbox fbox-gold">
+      <span class="fbox-label">Entropy (S)</span>
+      dS = dQ_rev / T &nbsp;&nbsp; ΔS ≥ 0 (for isolated system)<br/>
+      Entropy of universe always increases for irreversible processes.
+    </div>
+    <div class="imp imp-gold">⭐ The Second Law means: Perfect heat engine (100% efficiency) is impossible. Natural processes are irreversible. Entropy defines the direction of natural processes.</div>
+  </div>
+
+  <!-- 2.6 Heat Engines -->
+  <div class="sec therm-sec">
+    <div class="sec-title therm-t">⚙️ 2.6 Heat Engines & Efficiency</div>
+    <div class="fbox fbox-gold">
+      <span class="fbox-label">Heat Engine</span>
+      Q₁ = heat absorbed (from hot reservoir) &nbsp;|&nbsp; Q₂ = heat rejected (to cold reservoir)<br/>
+      W = Q₁ − Q₂ &nbsp;|&nbsp; η = W/Q₁ = 1 − Q₂/Q₁ = 1 − T₂/T₁ (Carnot)
+    </div>
+    <div class="kp-grid">
+      <div class="kp kp-gold">
+        <h4>Carnot Engine</h4>
+        <p>Most efficient engine between two temperatures. Consists of 2 isothermal + 2 adiabatic processes.</p>
+        <div class="kf">η_Carnot = 1 − T₂/T₁</div>
+      </div>
+      <div class="kp kp-gold">
+        <h4>Refrigerator (COP)</h4>
+        <p>Coefficient of Performance = heat removed / work input</p>
+        <div class="kf">COP = Q₂/W = T₂/(T₁−T₂)</div>
+      </div>
+      <div class="kp kp-gold">
+        <h4>Heat Pump (COP)</h4>
+        <p>COP of heat pump = heat delivered to hot reservoir / work input</p>
+        <div class="kf">COP_hp = Q₁/W = T₁/(T₁−T₂)</div>
+      </div>
+      <div class="kp kp-gold">
+        <h4>Carnot Theorem</h4>
+        <p>No engine operating between two reservoirs can be more efficient than the Carnot engine.</p>
+        <div class="kf">η_any ≤ η_Carnot</div>
+      </div>
+    </div>
+    <div class="imp imp-gold">⭐ <strong>Carnot Cycle (4 steps):</strong><br/>
+    1. Isothermal expansion at T₁ (absorbs Q₁) → 2. Adiabatic expansion (T₁→T₂) → 3. Isothermal compression at T₂ (rejects Q₂) → 4. Adiabatic compression (T₂→T₁)</div>
+  </div>
+
+  <!-- 2.7 Thermodynamic Processes on PV Diagram -->
+  <div class="sec therm-sec">
+    <div class="sec-title therm-t">📊 2.7 PV Diagrams — Quick Reference</div>
+    <table class="ntable">
+      <thead><tr class="therm-th"><th>Process</th><th>PV Diagram Shape</th><th>Slope</th></tr></thead>
+      <tbody>
+        <tr><td class="hy">Isothermal</td><td>Rectangular hyperbola (PV = const)</td><td>Slope = −P/V</td></tr>
+        <tr><td class="hy">Adiabatic</td><td>Steeper hyperbola (PV^γ = const)</td><td>Slope = −γP/V</td></tr>
+        <tr><td class="hy">Isochoric</td><td>Vertical straight line (V = const)</td><td>Infinite (vertical)</td></tr>
+        <tr><td class="hy">Isobaric</td><td>Horizontal straight line (P = const)</td><td>Zero (horizontal)</td></tr>
+      </tbody>
+    </table>
+    <div class="imp imp-gold">⭐ Adiabatic curve is always steeper than isothermal curve at the same point. Area under PV curve = Work done by/on gas.</div>
+  </div>
+
+</div><!-- /thermodynamics -->
+
+<hr class="ch-divider therm-div"/>
+
+<!-- ═══════════════════════════════════════════════
+     CHAPTER 3: MECHANICAL PROPERTIES
+═══════════════════════════════════════════════ -->
+<div id="mechanical" style="margin-top:20px;">
+
+  <div class="ch-header mech">
+    <div class="ch-icon">⚙️</div>
+    <div>
+      <h2 style="color:#86efac;">Mechanical Properties of Solids & Fluids</h2>
+      <p>Elasticity · Stress & Strain · Viscosity · Surface Tension · Bernoulli's Theorem</p>
+    </div>
+    <span class="ch-tag">Chapter 3</span>
+  </div>
+
+  <!-- 3.1 Elasticity -->
+  <div class="sec mech-sec">
+    <div class="sec-title mech-t">🔩 3.1 Elasticity — Stress & Strain</div>
+    <div class="kp-grid">
+      <div class="kp kp-green"><h4>Stress</h4><p>Restoring force per unit area. Unit: N/m² = Pascal (Pa)</p><div class="kf">Stress = F/A</div></div>
+      <div class="kp kp-green"><h4>Strain</h4><p>Fractional change in dimension. Dimensionless.</p><div class="kf">Strain = ΔL/L (or ΔV/V or Δx/L)</div></div>
+      <div class="kp kp-green"><h4>Hooke's Law</h4><p>Within elastic limit, stress ∝ strain</p><div class="kf">Stress / Strain = Modulus (constant)</div></div>
+      <div class="kp kp-green"><h4>Elastic Limit</h4><p>Maximum stress beyond which material does not return to original shape.</p></div>
+    </div>
+    <table class="ntable" style="margin-top:12px;">
+      <thead><tr class="mech-th"><th>Type of Stress</th><th>Type of Strain</th><th>Modulus</th><th>Formula</th></tr></thead>
+      <tbody>
+        <tr><td class="hg">Longitudinal (Tensile)</td><td>Longitudinal (ΔL/L)</td><td>Young's Modulus (Y)</td><td>Y = (F/A)/(ΔL/L) = FLₒ/AΔL</td></tr>
+        <tr><td class="hg">Tangential (Shear)</td><td>Shear (Δx/L = tanφ)</td><td>Modulus of Rigidity (η or G)</td><td>η = (F/A)/(Δx/L)</td></tr>
+        <tr><td class="hg">Volume (Hydraulic)</td><td>Volumetric (ΔV/V)</td><td>Bulk Modulus (K or B)</td><td>K = −P/(ΔV/V)</td></tr>
+      </tbody>
+    </table>
+    <div class="fbox fbox-green">
+      <span class="fbox-label">Compressibility</span>
+      Compressibility = 1/K = −(1/V)(dV/dP) &nbsp;&nbsp; Unit: Pa⁻¹
+    </div>
+    <div class="imp imp-green">⭐ <strong>Poisson's Ratio (σ):</strong> σ = −(lateral strain) / (longitudinal strain) = −(ΔD/D) / (ΔL/L). Range: −1 ≤ σ ≤ 0.5. For most materials σ ≈ 0.25–0.35.</div>
+  </div>
+
+  <!-- 3.2 Stress-Strain Curve -->
+  <div class="sec mech-sec">
+    <div class="sec-title mech-t">📈 3.2 Stress-Strain Curve</div>
+    <ul class="nlist mech-list">
+      <li><span class="hg">O to A (Proportional Limit):</span> Stress ∝ Strain — Hooke's Law valid, perfectly elastic</li>
+      <li><span class="hg">A to B (Elastic Limit):</span> No longer proportional, but still elastic (returns to original)</li>
+      <li><span class="hg">B (Yield Point):</span> Permanent deformation begins — material becomes plastic</li>
+      <li><span class="hg">B to D (Plastic Region):</span> Large deformation for small stress increase</li>
+      <li><span class="hg">D (Ultimate Tensile Strength):</span> Maximum stress the material can withstand</li>
+      <li><span class="hg">D to E (Fracture Point):</span> Material necks down and breaks</li>
+    </ul>
+    <div class="kp-grid" style="margin-top:12px;">
+      <div class="kp kp-green"><h4>Ductile Materials</h4><p>Large plastic region before fracture. Can be drawn into wires. e.g. copper, steel, gold</p></div>
+      <div class="kp kp-green"><h4>Brittle Materials</h4><p>Very small plastic region — break suddenly. e.g. glass, cast iron, ceramics</p></div>
+      <div class="kp kp-green"><h4>Elastomers</h4><p>Very large elastic range, low Young's modulus. e.g. rubber</p></div>
+    </div>
+    <div class="imp imp-green">⭐ <strong>Elastic Potential Energy:</strong> U = ½ × stress × strain × volume = ½ × (F/A) × (ΔL/L) × AL = F·ΔL/2. Energy density = ½ × Y × (strain)²</div>
+  </div>
+
+  <!-- 3.3 Pressure in Fluids -->
+  <div class="sec mech-sec">
+    <div class="sec-title mech-t">💧 3.3 Mechanical Properties of Fluids — Pressure</div>
+    <div class="fbox fbox-green">
+      <span class="fbox-label">Fluid Pressure</span>
+      P = F/A &nbsp;&nbsp; P = P₀ + ρgh &nbsp;&nbsp; (gauge pressure = ρgh)
+    </div>
+    <div class="kp-grid">
+      <div class="kp kp-green"><h4>Pascal's Law</h4><p>Pressure applied to an enclosed fluid is transmitted equally in all directions.</p><div class="kf">P₁ = P₂ (hydraulic press)</div></div>
+      <div class="kp kp-green"><h4>Archimedes' Principle</h4><p>Buoyant force = weight of fluid displaced.</p><div class="kf">F_b = ρ_fluid × V_submerged × g</div></div>
+      <div class="kp kp-green"><h4>Condition for Floating</h4><p>Object floats when buoyant force = weight.</p><div class="kf">ρ_object ≤ ρ_fluid</div></div>
+      <div class="kp kp-green"><h4>Atmospheric Pressure</h4><p>Standard: 1 atm = 101325 Pa = 760 mm Hg</p><div class="kf">1 atm = 1.013 × 10⁵ Pa</div></div>
+    </div>
+  </div>
+
+  <!-- 3.4 Continuity & Bernoulli -->
+  <div class="sec mech-sec">
+    <div class="sec-title mech-t">🌊 3.4 Fluid Dynamics — Bernoulli's Theorem</div>
+    <div class="fbox fbox-green">
+      <span class="fbox-label">Equation of Continuity</span>
+      A₁v₁ = A₂v₂ &nbsp;&nbsp; (for incompressible fluid)
+    </div>
+    <div class="fbox fbox-green">
+      <span class="fbox-label">🌟 Bernoulli's Equation</span>
+      P + ½ρv² + ρgh = constant (along a streamline)<br/>
+      P₁ + ½ρv₁² + ρgh₁ = P₂ + ½ρv₂² + ρgh₂
+    </div>
+    <p style="color:#94a3b8;margin:10px 0 6px;"><span class="hg">Applications of Bernoulli's Theorem:</span></p>
+    <ul class="nlist mech-list">
+      <li><span class="hg">Venturimeter:</span> Measures flow speed using pressure difference at narrowing. v = A₂√[2(P₁-P₂)/ρ(A₁²-A₂²)]</li>
+      <li><span class="hg">Torricelli's Theorem:</span> Speed of efflux from a hole = √(2gh). v = √(2gh)</li>
+      <li><span class="hg">Aerofoil/Wing lift:</span> Air moves faster over curved top → less pressure above → lift</li>
+      <li><span class="hg">Atomiser/Sprayer:</span> Fast air stream above liquid → reduced pressure → liquid rises</li>
+      <li><span class="hg">Magnus Effect:</span> Spinning ball curves in flight due to pressure difference</li>
+    </ul>
+    <div class="imp imp-green">⭐ Bernoulli's equation is essentially the energy conservation equation for flowing fluids. It applies to non-viscous, incompressible, irrotational, steady flow.</div>
+  </div>
+
+  <!-- 3.5 Viscosity -->
+  <div class="sec mech-sec">
+    <div class="sec-title mech-t">🫧 3.5 Viscosity</div>
+    <div class="fbox fbox-green">
+      <span class="fbox-label">Newton's Law of Viscosity</span>
+      F = η · A · (dv/dy) &nbsp;&nbsp; η = viscosity coefficient, Unit: Pa·s (or Poise)
+    </div>
+    <div class="kp-grid">
+      <div class="kp kp-green"><h4>Stokes' Law</h4><p>Drag on sphere moving through viscous fluid</p><div class="kf">F = 6πηrv</div></div>
+      <div class="kp kp-green"><h4>Terminal Velocity</h4><p>When drag + buoyancy = weight. Sphere falls at constant speed.</p><div class="kf">v_t = 2r²(ρ-ρ₀)g / 9η</div></div>
+      <div class="kp kp-green"><h4>Reynolds Number (Re)</h4><p>Ratio of inertial to viscous forces. Predicts flow type.</p><div class="kf">Re = ρvD/η</div></div>
+      <div class="kp kp-green"><h4>Flow Types</h4><p>Re &lt; 1000 → Laminar. Re &gt; 2000 → Turbulent. 1000–2000 → Transitional.</p></div>
+    </div>
+    <div class="fbox fbox-green">
+      <span class="fbox-label">Poiseuille's Formula — Flow through pipe</span>
+      Q = πPr⁴ / 8ηl &nbsp;&nbsp; (volume flow rate, P = pressure difference)
+    </div>
+    <div class="imp imp-green">⭐ Viscosity of liquids DECREASES with temperature. Viscosity of gases INCREASES with temperature.</div>
+  </div>
+
+  <!-- 3.6 Surface Tension -->
+  <div class="sec mech-sec">
+    <div class="sec-title mech-t">🫧 3.6 Surface Tension</div>
+    <div class="fbox fbox-green">
+      <span class="fbox-label">Surface Tension (T or S)</span>
+      T = F/l = Surface energy per unit area &nbsp;&nbsp; Unit: N/m or J/m²
+    </div>
+    <div class="kp-grid">
+      <div class="kp kp-green"><h4>Excess Pressure in Bubble</h4><p>Soap bubble has 2 surfaces (inner + outer).</p><div class="kf">ΔP_soap = 4T/R<br/>ΔP_liquid drop = 2T/R</div></div>
+      <div class="kp kp-green"><h4>Capillary Rise</h4><p>Height liquid rises in capillary tube.</p><div class="kf">h = 2T cosθ / (ρgr)</div></div>
+      <div class="kp kp-green"><h4>Angle of Contact (θ)</h4><p>θ &lt; 90° → liquid wets surface (water-glass)<br/>θ &gt; 90° → liquid doesn't wet (mercury-glass)</p></div>
+      <div class="kp kp-green"><h4>Surface Energy</h4><p>Work done in increasing surface area.</p><div class="kf">W = T × ΔA</div></div>
+    </div>
+    <div class="imp imp-green">⭐ <strong>Capillary action:</strong> Water rises in plant stems, ink spreads in paper, water absorbed by towel — all due to surface tension and capillarity.</div>
+    <div class="imp imp-green">⭐ <strong>Effect of temperature:</strong> Surface tension DECREASES with increase in temperature. At critical temperature, surface tension = 0.</div>
+  </div>
+
+  <!-- 3.7 Formulae Summary -->
+  <div class="sec mech-sec">
+    <div class="sec-title mech-t">📋 3.7 Mechanical Properties — Complete Formula Sheet</div>
+    <table class="ntable">
+      <thead><tr class="mech-th"><th>Quantity</th><th>Formula</th><th>Unit</th></tr></thead>
+      <tbody>
+        <tr><td class="hg">Young's Modulus Y</td><td>Y = (F × L₀) / (A × ΔL)</td><td>N/m² (Pa)</td></tr>
+        <tr><td class="hg">Bulk Modulus K</td><td>K = −P / (ΔV/V)</td><td>N/m² (Pa)</td></tr>
+        <tr><td class="hg">Modulus of Rigidity η</td><td>η = (F/A) / (Δx/L)</td><td>N/m² (Pa)</td></tr>
+        <tr><td class="hg">Pressure P</td><td>P = P₀ + ρgh</td><td>Pa</td></tr>
+        <tr><td class="hg">Buoyant Force</td><td>F_b = ρ_f V_s g</td><td>N</td></tr>
+        <tr><td class="hg">Bernoulli</td><td>P + ½ρv² + ρgh = const</td><td>—</td></tr>
+        <tr><td class="hg">Continuity</td><td>A₁v₁ = A₂v₂</td><td>—</td></tr>
+        <tr><td class="hg">Terminal velocity</td><td>v_t = 2r²(ρ-ρ₀)g / 9η</td><td>m/s</td></tr>
+        <tr><td class="hg">Capillary rise</td><td>h = 2T cosθ / (ρgr)</td><td>m</td></tr>
+        <tr><td class="hg">Excess pressure (soap)</td><td>ΔP = 4T/R</td><td>Pa</td></tr>
+        <tr><td class="hg">Excess pressure (drop)</td><td>ΔP = 2T/R</td><td>Pa</td></tr>
+        <tr><td class="hg">Stokes drag</td><td>F = 6πηrv</td><td>N</td></tr>
+        <tr><td class="hg">Efflux speed</td><td>v = √(2gh)</td><td>m/s</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div><!-- /mechanical -->
+
+<!-- ═══════════════════════════════════════════════
+     EXAM TIPS
+═══════════════════════════════════════════════ -->
+<div style="margin-top:40px;">
+  <div class="ch-header" style="background:linear-gradient(135deg,rgba(244,63,94,.14),rgba(245,158,11,.1));border:1px solid rgba(244,63,94,.3);">
+    <div class="ch-icon">🎯</div>
+    <div>
+      <h2 style="color:#fda4af;">Exam Tips & Common Mistakes</h2>
+      <p>High-weightage topics and frequent error points</p>
+    </div>
+  </div>
+
+  <div class="sec" style="border-color:rgba(244,63,94,.2);">
+    <div class="sec::before" style="background:linear-gradient(90deg,#ef4444,#f59e0b);"></div>
+    <div class="kp-grid">
+      <div class="kp" style="background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.25);">
+        <h4 style="color:#a5b4fc;">🔄 Rotational — Must Know</h4>
+        <ul class="nlist rot-list" style="margin-top:6px;">
+          <li>All MI formulae from the table</li>
+          <li>Parallel + Perpendicular axis theorems</li>
+          <li>Rolling race — solid sphere wins</li>
+          <li>L = Iω and its conservation</li>
+          <li>τ = Iα = dL/dt</li>
+          <li>Work done = τθ, Power = τω</li>
+        </ul>
+      </div>
+      <div class="kp" style="background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);">
+        <h4 style="color:#fde047;">🌡️ Thermodynamics — Must Know</h4>
+        <ul class="nlist therm-list" style="margin-top:6px;">
+          <li>All 4 process formulas (W, ΔU, Q)</li>
+          <li>Carnot efficiency = 1 − T₂/T₁</li>
+          <li>Cp − Cv = R (Mayer's relation)</li>
+          <li>γ values for mono, di, polyatomic</li>
+          <li>Adiabatic: PV^γ = const</li>
+          <li>Entropy: ΔS ≥ 0</li>
+        </ul>
+      </div>
+      <div class="kp" style="background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.22);">
+        <h4 style="color:#86efac;">⚙️ Mechanical Props — Must Know</h4>
+        <ul class="nlist mech-list" style="margin-top:6px;">
+          <li>Y, K, η definitions and units</li>
+          <li>Bernoulli's equation application</li>
+          <li>Excess pressure: 4T/R vs 2T/R</li>
+          <li>Terminal velocity formula</li>
+          <li>Capillary rise formula</li>
+          <li>Viscosity ↓ with temp (liquids)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="imp imp-red" style="margin-top:16px;">
+      ⚠️ <strong>Common Mistakes:</strong><br/>
+      1. Forgetting <strong>factor of 2</strong> in soap bubble (2 surfaces → 4T/R not 2T/R)<br/>
+      2. Using wrong MI formula — axis matters! Rod through centre vs end gives different I<br/>
+      3. In adiabatic: Q = 0, NOT ΔU = 0. Isothermal: ΔU = 0, NOT Q = 0<br/>
+      4. Carnot efficiency formula needs <strong>absolute temperature (Kelvin)</strong>, not Celsius<br/>
+      5. In rolling: Total KE = Translational KE + Rotational KE — don't forget rotational part<br/>
+      6. Angular momentum L = Iω, NOT L = mvr (that's for a particle, use L = mvr sinθ)
+    </div>
+  </div>
+</div>
+
+</div><!-- /notes-body -->
+
+<!-- PRINT/NAV BAR -->
+<div class="print-bar">
+  <span class="bar-label">📚 Class 12 Physics Revision Notes</span>
+  <a href="#rotational" class="print-btn pbtn-rot">🔄 Rotation</a>
+  <a href="#thermodynamics" class="print-btn pbtn-therm">🌡️ Thermo</a>
+  <a href="#mechanical" class="print-btn pbtn-mech">⚙️ Mechanical</a>
+  <button class="print-btn pbtn-print" onclick="window.print()">🖨️ Print</button>
+</div>
+
+<script src="main.js"></script>
+<script>
+  // Scroll reveal
+  const secs = document.querySelectorAll('.sec');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        e.target.querySelectorAll('.kp').forEach((k, i) => {
+          setTimeout(() => k.classList.add('show'), i * 100);
+        });
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  secs.forEach(s => obs.observe(s));
+</script>
+</body>
+</html>
