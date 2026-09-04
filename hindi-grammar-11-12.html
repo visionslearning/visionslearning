@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>हिंदी व्याकरण – कक्षा 11 & 12 – Visions Classes</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="logo.png" type="image/png"/>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{background:#07080f;color:#fff;font-family:'Segoe UI',system-ui,sans-serif;}
+    .navbar{background:rgba(7,8,15,.96)!important;}
+    .pg-hero{background:linear-gradient(135deg,#0a0010,#150020,#080010);padding:90px 0 40px;text-align:center;position:relative;overflow:hidden;}
+    .pg-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(168,85,247,.18) 0%,transparent 60%);}
+    .pg-hero .tag{display:inline-block;padding:4px 16px;border-radius:20px;background:rgba(168,85,247,.2);border:1px solid #a855f7;color:#d8b4fe;font-size:.76rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;position:relative;}
+    .pg-hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;background:linear-gradient(135deg,#fff,#d8b4fe);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative;}
+    .pg-hero p{color:#64748b;margin-top:8px;font-size:.95rem;position:relative;}
+    .prog-bar{height:4px;background:rgba(255,255,255,.07);max-width:900px;margin:16px auto 0;border-radius:2px;}
+    .prog-fill{height:100%;background:linear-gradient(90deg,#a855f7,#ec4899);border-radius:2px;transition:width .4s;}
+    .slides{max-width:900px;margin:0 auto;padding:24px 20px 100px;}
+    .slide{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:36px;margin-bottom:22px;opacity:0;transform:translateY(30px);transition:opacity .6s,transform .6s;position:relative;overflow:hidden;}
+    .slide.visible{opacity:1;transform:translateY(0);}
+    .slide::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#a855f7,#ec4899,#f59e0b);}
+    .slide-num{position:absolute;top:14px;right:18px;font-size:.7rem;color:#334155;font-weight:700;}
+    .slide h2{font-size:1.35rem;color:#f1f5f9;margin-bottom:16px;}
+    .slide p,.slide li{color:#94a3b8;line-height:1.85;font-size:.95rem;}
+    .slide ul{list-style:none;padding:0;}
+    .slide li{padding:5px 0 5px 22px;position:relative;}
+    .slide li::before{content:'→';position:absolute;left:0;color:#a855f7;font-weight:700;}
+    .defbox{background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.35);border-radius:12px;padding:16px 22px;margin:12px 0;font-size:.95rem;color:#d8b4fe;}
+    .defbox .dl{font-size:.68rem;text-transform:uppercase;letter-spacing:1px;color:#a855f7;display:block;margin-bottom:5px;}
+    .exbox{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px 18px;margin:10px 0;font-size:.9rem;color:#e2e8f0;}
+    .exbox .el{font-size:.68rem;text-transform:uppercase;letter-spacing:1px;color:#06b6d4;display:block;margin-bottom:5px;}
+    .type-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:12px 0;}
+    .type-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:16px;opacity:0;transform:scale(.95);transition:opacity .4s,transform .4s;}
+    .type-card.show{opacity:1;transform:scale(1);}
+    .type-card h4{color:#d8b4fe;margin-bottom:6px;font-size:.92rem;}
+    .type-card p{font-size:.82rem;color:#64748b;line-height:1.5;}
+    .type-card .eg{font-size:.82rem;color:#fde047;margin-top:5px;}
+    .gram-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.87rem;}
+    .gram-table th{background:rgba(168,85,247,.15);color:#d8b4fe;padding:9px 12px;text-align:left;font-weight:700;}
+    .gram-table td{padding:9px 12px;border-bottom:1px solid rgba(255,255,255,.05);color:#94a3b8;}
+    .gram-table tr:hover td{background:rgba(168,85,247,.06);color:#e2e8f0;}
+    .step{display:flex;gap:12px;margin-bottom:14px;opacity:0;transform:translateX(-16px);transition:opacity .5s,transform .5s;}
+    .step.show{opacity:1;transform:translateX(0);}
+    .snum{min-width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#a855f7,#ec4899);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:800;color:#fff;flex-shrink:0;}
+    .sbody h4{color:#e2e8f0;margin-bottom:3px;font-size:.94rem;}
+    .sbody p{color:#94a3b8;font-size:.86rem;line-height:1.6;}
+    .hl{color:#d8b4fe;font-weight:700;} .hg{color:#86efac;font-weight:700;} .hy{color:#fde047;font-weight:700;} .hr{color:#fda4af;font-weight:700;}
+    /* Ras cards */
+    .ras-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:12px 0;}
+    .ras-c{border-radius:12px;padding:14px;text-align:center;opacity:0;transform:scale(.9);transition:opacity .4s,transform .4s;}
+    .ras-c.show{opacity:1;transform:scale(1);}
+    .ras-c .ri{font-size:1.6rem;margin-bottom:6px;}
+    .ras-c h4{font-size:.88rem;margin-bottom:4px;}
+    .ras-c p{font-size:.75rem;color:#64748b;line-height:1.4;}
+    .lesson-nav{display:flex;justify-content:space-between;max-width:900px;margin:0 auto 50px;padding:0 20px;flex-wrap:wrap;gap:10px;}
+    .nav-btn{padding:10px 24px;border-radius:10px;border:none;cursor:pointer;font-size:.9rem;font-weight:700;transition:all .2s;text-decoration:none;display:inline-flex;align-items:center;gap:7px;}
+    .nav-back{background:rgba(255,255,255,.07);color:#94a3b8;}
+    .nav-next{background:linear-gradient(135deg,#a855f7,#ec4899);color:#fff;}
+    .nav-next:hover{transform:translateY(-2px);}
+    .tts-bar{position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(7,8,15,.97);backdrop-filter:blur(16px);border-top:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:10px;padding:8px 20px;}
+    .tts-btn{padding:7px 16px;border-radius:8px;border:none;cursor:pointer;font-size:.83rem;font-weight:700;}
+    .tts-on{background:linear-gradient(135deg,#a855f7,#ec4899);color:#fff;}
+    .tts-off{background:rgba(255,255,255,.08);color:#94a3b8;}
+    .tts-info{flex:1;font-size:.78rem;color:#475569;}
+    .tts-title{color:#e2e8f0;font-weight:600;font-size:.83rem;}
+  </style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="" class="nav-logo-img"/><div class="logo-text"><span>Visions</span> Classes</div></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="hindi-grammar.html" class="active">हिंदी व्याकरण</a></li>
+      <li><a href="animated-lessons.html">Animated Lessons</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<section class="pg-hero">
+  <div class="tag">📙 हिंदी व्याकरण · कक्षा 11 & 12</div>
+  <h1>कक्षा 11 और 12 — हिंदी व्याकरण</h1>
+  <p>रस, छंद, अलंकार, शब्द-शक्ति, साहित्य का इतिहास, काव्य-शास्त्र — उच्च स्तरीय हिंदी</p>
+</section>
+<div class="prog-bar"><div class="prog-fill" id="pf" style="width:0%"></div></div>
+
+<div class="slides">
+
+  <!-- 1. शब्द-शक्ति -->
+  <div class="slide" id="shabd-shakti">
+    <div class="slide-num">1</div>
+    <h2>✨ शब्द-शक्ति (Word Power)</h2>
+    <div class="defbox"><span class="dl">परिभाषा</span>शब्द में अर्थ प्रकट करने की जो शक्ति होती है उसे <span class="hl">शब्द-शक्ति</span> कहते हैं। तीन प्रकार होते हैं।</div>
+    <div class="type-grid">
+      <div class="type-card">
+        <h4>अभिधा</h4>
+        <p>शब्द का <span class="hy">मुख्य / साक्षात्</span> अर्थ जो सबसे पहले और सीधे मन में आए।</p>
+        <div class="eg">पानी लाओ → यहाँ 'पानी' का सीधा अर्थ 'जल' है।</div>
+      </div>
+      <div class="type-card">
+        <h4>लक्षणा</h4>
+        <p>मुख्य अर्थ में बाधा आने पर <span class="hy">लक्ष्य अर्थ</span> ग्रहण किया जाए।</p>
+        <div class="eg">"वह लड़की पत्थर है" → पत्थर का अर्थ 'निर्दयी/कठोर'।</div>
+      </div>
+      <div class="type-card">
+        <h4>व्यंजना</h4>
+        <p>जब अभिधा और लक्षणा दोनों से अर्थ स्पष्ट न हो और <span class="hy">व्यंग्य अर्थ</span> निकले।</p>
+        <div class="eg">"सूरज डूब गया" → रात होने का, थके होने का व्यंग्यार्थ।</div>
+      </div>
+    </div>
+    <div class="exbox"><span class="el">परीक्षा टिप</span><strong>अभिधा:</strong> सीधा-सरल अर्थ &nbsp;|&nbsp; <strong>लक्षणा:</strong> लाक्षणिक अर्थ (मुहावरे जैसा) &nbsp;|&nbsp; <strong>व्यंजना:</strong> व्यंग्यार्थ, काव्य की गूढ़ अर्थ-शक्ति। परीक्षा में उदाहरण देकर तीनों में अंतर पूछा जाता है।</div>
+  </div>
+
+  <!-- 2. रस -->
+  <div class="slide" id="ras">
+    <div class="slide-num">2</div>
+    <h2>❤️ रस (Rasa — Aesthetic Experience)</h2>
+    <div class="defbox"><span class="dl">परिभाषा</span>काव्य पढ़ने या सुनने से पाठक को जो <span class="hl">आनंद</span> प्राप्त होता है वह <span class="hl">रस</span> कहलाता है। भरतमुनि ने कहा — "रस्यते इति रसः"।</div>
+    <p style="margin-bottom:12px;"><span class="hl">रस के चार अंग:</span> स्थायीभाव + विभाव + अनुभाव + संचारीभाव (व्यभिचारीभाव)</p>
+    <div class="ras-grid" id="rasGrid">
+      <div class="ras-c" style="background:rgba(244,63,94,.12);border:1px solid rgba(244,63,94,.3);"><div class="ri">❤️</div><h4 style="color:#fda4af;">श्रृंगार</h4><p>रति | संयोग व वियोग</p></div>
+      <div class="ras-c" style="background:rgba(234,179,8,.1);border:1px solid rgba(234,179,8,.3);"><div class="ri">😄</div><h4 style="color:#fde047;">हास्य</h4><p>हास | विनोद, हँसी</p></div>
+      <div class="ras-c" style="background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.3);"><div class="ri">😢</div><h4 style="color:#a5b4fc;">करुण</h4><p>शोक | विरह, वेदना</p></div>
+      <div class="ras-c" style="background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.3);"><div class="ri">😡</div><h4 style="color:#fca5a5;">रौद्र</h4><p>क्रोध | युद्ध, प्रतिशोध</p></div>
+      <div class="ras-c" style="background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);"><div class="ri">⚔️</div><h4 style="color:#86efac;">वीर</h4><p>उत्साह | युद्ध, साहस</p></div>
+      <div class="ras-c" style="background:rgba(107,114,128,.12);border:1px solid rgba(107,114,128,.3);"><div class="ri">😨</div><h4 style="color:#d1d5db;">भयानक</h4><p>भय | डर, आतंक</p></div>
+      <div class="ras-c" style="background:rgba(22,163,74,.1);border:1px solid rgba(22,163,74,.3);"><div class="ri">🤢</div><h4 style="color:#86efac;">वीभत्स</h4><p>जुगुप्सा | घृणा</p></div>
+      <div class="ras-c" style="background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.3);"><div class="ri">😲</div><h4 style="color:#93c5fd;">अद्भुत</h4><p>विस्मय | आश्चर्य</p></div>
+      <div class="ras-c" style="background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.3);"><div class="ri">🕊️</div><h4 style="color:#d8b4fe;">शांत</h4><p>निर्वेद | वैराग्य</p></div>
+    </div>
+    <div class="exbox"><span class="el">रस के अंग — विस्तार</span>
+      <strong>स्थायीभाव:</strong> हृदय में स्थायी रूप से रहने वाला भाव (जैसे श्रृंगार का स्थायीभाव = रति) |
+      <strong>विभाव:</strong> जो रस उत्पन्न करे — आलंबन + उद्दीपन |
+      <strong>अनुभाव:</strong> भाव की बाहरी अभिव्यक्ति — रोना, हँसना |
+      <strong>संचारीभाव:</strong> अस्थायी भाव जो रस को पुष्ट करें (33 प्रकार)
+    </div>
+  </div>
+
+  <!-- 3. छंद -->
+  <div class="slide" id="chhand">
+    <div class="slide-num">3</div>
+    <h2>🎵 छंद (Metre / Verse)</h2>
+    <div class="defbox"><span class="dl">परिभाषा</span>वर्णों या मात्राओं की निश्चित संख्या और क्रम से युक्त पद-रचना को <span class="hl">छंद</span> कहते हैं।</div>
+    <p style="margin:10px 0 6px;"><span class="hl">छंद के भेद:</span> मात्रिक छंद (मात्राओं पर आधारित) और वर्णिक छंद (वर्णों पर आधारित)</p>
+    <table class="gram-table">
+      <thead><tr><th>छंद</th><th>मात्राएँ/वर्ण</th><th>विशेषता</th><th>उदाहरण</th></tr></thead>
+      <tbody>
+        <tr><td class="hl">दोहा</td><td>अर्धाली — 13+11</td><td>पहला विषम चरण 13 मात्रा, दूसरा 11। सम चरणों में तुक।</td><td>कबीर के दोहे</td></tr>
+        <tr><td class="hl">चौपाई</td><td>16-16 मात्राएँ</td><td>चार चरण, प्रत्येक 16 मात्रा। दो-दो चरणों में तुक।</td><td>रामचरितमानस</td></tr>
+        <tr><td class="hl">सोरठा</td><td>11+13 मात्राएँ</td><td>दोहे का उल्टा — विषम चरण 11, सम 13।</td><td>—</td></tr>
+        <tr><td class="hl">रोला</td><td>11+13 मात्राएँ</td><td>चार चरण, 24-24 मात्राएँ।</td><td>—</td></tr>
+        <tr><td class="hl">कुंडलिया</td><td>दोहा+रोला</td><td>छह चरण, प्रथम शब्द = अंतिम शब्द।</td><td>गिरिधर की कुंडलियाँ</td></tr>
+        <tr><td class="hl">सवैया</td><td>22-26 वर्ण</td><td>वर्णिक छंद, चार चरण। अनेक प्रकार।</td><td>भूषण, देव</td></tr>
+      </tbody>
+    </table>
+    <div class="exbox"><span class="el">मात्रा गणना</span>
+      <strong>लघु मात्रा (1):</strong> अ, इ, उ, ऋ और इनकी मात्राएँ (ि, ु, ृ) |
+      <strong>दीर्घ मात्रा (2):</strong> आ, ई, ऊ, ए, ऐ, ओ, औ और इनकी मात्राएँ |
+      <strong>संयुक्त व्यंजन की मात्रा:</strong> पूर्ण व्यंजन पर लघु, बद्ध व्यंजन से पूर्व के वर्ण पर दीर्घ गणना।
+    </div>
+  </div>
+
+  <!-- 4. अलंकार -->
+  <div class="slide" id="alankar">
+    <div class="slide-num">4</div>
+    <h2>🌸 अलंकार (Figures of Speech)</h2>
+    <div class="defbox"><span class="dl">परिभाषा</span>काव्य की शोभा बढ़ाने वाले तत्वों को <span class="hl">अलंकार</span> कहते हैं। दो प्रमुख भेद — <span class="hl">शब्दालंकार</span> और <span class="hl">अर्थालंकार</span>।</div>
+    <p style="margin:10px 0 6px;color:#d8b4fe;font-weight:700;">📝 शब्दालंकार (Sound-based):</p>
+    <table class="gram-table">
+      <thead><tr><th>अलंकार</th><th>परिभाषा</th><th>उदाहरण</th></tr></thead>
+      <tbody>
+        <tr><td class="hl">अनुप्रास</td><td>एक ही वर्ण की आवृत्ति</td><td>चारु चंद्र की चंचल किरणें</td></tr>
+        <tr><td class="hl">यमक</td><td>एक शब्द अनेक अर्थों में</td><td>कनक-कनक ते सौगुनी (कनक=धतूरा/सोना)</td></tr>
+        <tr><td class="hl">श्लेष</td><td>एक शब्द में एक साथ अनेक अर्थ</td><td>रहिमन पानी राखिए (पानी=जल/प्रतिष्ठा/चमक)</td></tr>
+      </tbody>
+    </table>
+    <p style="margin:14px 0 6px;color:#d8b4fe;font-weight:700;">🎨 अर्थालंकार (Meaning-based):</p>
+    <table class="gram-table">
+      <thead><tr><th>अलंकार</th><th>परिभाषा</th><th>उदाहरण</th></tr></thead>
+      <tbody>
+        <tr><td class="hl">उपमा</td><td>दो वस्तुओं में समानता — सा, सी, सम, ज्यों</td><td>वह फूल-सी कोमल है।</td></tr>
+        <tr><td class="hl">रूपक</td><td>उपमेय में उपमान का आरोप — जैसे अभेद</td><td>मुख चंद्रमा है।</td></tr>
+        <tr><td class="hl">उत्प्रेक्षा</td><td>उपमेय में उपमान की संभावना — मानो, जनु, मनु</td><td>मानो फूलों की वर्षा हो रही है।</td></tr>
+        <tr><td class="hl">मानवीकरण</td><td>निर्जीव में चेतन का आरोप</td><td>बादल गरज रहे हैं मानो रो रहे हों।</td></tr>
+        <tr><td class="hl">अतिशयोक्ति</td><td>अत्यंत बढ़ा-चढ़ाकर कहना</td><td>हनुमान की पूँछ में लगाई न सकी आग।</td></tr>
+        <tr><td class="hl">विरोधाभास</td><td>विरोधी शब्द पर आधारित</td><td>बिन पानी सब सून।</td></tr>
+      </tbody>
+    </table>
+    <div class="exbox"><span class="el">उपमा vs रूपक vs उत्प्रेक्षा — अंतर</span>
+      <strong>उपमा:</strong> तुलना की जाती है — सा/सी/सम से | <strong>रूपक:</strong> एकता बताई जाती है — चंद्रमुखी (चंद्र=मुख) | <strong>उत्प्रेक्षा:</strong> संभावना — मानो, जनु
+    </div>
+  </div>
+
+  <!-- 5. हिंदी साहित्य का इतिहास -->
+  <div class="slide" id="hindi-sahitya-itihas">
+    <div class="slide-num">5</div>
+    <h2>🏛️ हिंदी साहित्य का इतिहास</h2>
+    <div class="defbox"><span class="dl">काल-विभाजन — आचार्य रामचंद्र शुक्ल के अनुसार</span>हिंदी साहित्य के इतिहास को चार कालों में बाँटा गया है।</div>
+    <table class="gram-table">
+      <thead><tr><th>काल</th><th>समय</th><th>अन्य नाम</th><th>प्रमुख कवि</th></tr></thead>
+      <tbody>
+        <tr><td class="hl">आदिकाल</td><td>1050–1375 ई॰</td><td>वीरगाथा काल (शुक्ल), सिद्ध-सामंत काल</td><td>चंदबरदाई, विद्यापति, अमीर खुसरो</td></tr>
+        <tr><td class="hl">भक्तिकाल</td><td>1375–1700 ई॰</td><td>हिंदी साहित्य का स्वर्णयुग</td><td>कबीर, तुलसी, सूर, मीरा, जायसी</td></tr>
+        <tr><td class="hl">रीतिकाल</td><td>1700–1900 ई॰</td><td>श्रृंगार काल, रीतिबद्ध/रीतिसिद्ध/रीतिमुक्त</td><td>केशव, बिहारी, भूषण, घनानंद</td></tr>
+        <tr><td class="hl">आधुनिककाल</td><td>1900–अब तक</td><td>पुनर्जागरण काल, नवजागरण</td><td>भारतेंदु, निराला, महादेवी, पंत, प्रसाद, दिनकर</td></tr>
+      </tbody>
+    </table>
+    <div class="exbox"><span class="el">भक्तिकाल के दो मुख्य धाराएँ</span>
+      <strong>निर्गुण धारा:</strong> ज्ञानाश्रयी शाखा (कबीर, दादू) + प्रेमाश्रयी शाखा (जायसी, मंझन) |
+      <strong>सगुण धारा:</strong> रामाश्रयी शाखा (तुलसी, अग्रदास) + कृष्णाश्रयी शाखा (सूरदास, मीराबाई)
+    </div>
+    <table class="gram-table" style="margin-top:12px;">
+      <thead><tr><th>कवि</th><th>काल</th><th>प्रमुख रचना</th><th>विशेषता</th></tr></thead>
+      <tbody>
+        <tr><td class="hl">तुलसीदास</td><td>भक्तिकाल</td><td>रामचरितमानस</td><td>समन्वयवादी, अवधी भाषा</td></tr>
+        <tr><td class="hl">सूरदास</td><td>भक्तिकाल</td><td>सूरसागर</td><td>वात्सल्य रस, ब्रजभाषा</td></tr>
+        <tr><td class="hl">कबीरदास</td><td>भक्तिकाल</td><td>बीजक</td><td>सामाजिक सुधार, सधुक्कड़ी भाषा</td></tr>
+        <tr><td class="hl">जयशंकर प्रसाद</td><td>आधुनिक (छायावाद)</td><td>कामायनी, आँसू</td><td>छायावाद, महाकाव्य</td></tr>
+        <tr><td class="hl">सूर्यकांत त्रिपाठी 'निराला'</td><td>आधुनिक (छायावाद)</td><td>अनामिका, परिमल</td><td>मुक्त छंद, विद्रोही स्वर</td></tr>
+        <tr><td class="hl">महादेवी वर्मा</td><td>आधुनिक (छायावाद)</td><td>यामा, नीहार</td><td>वेदना, रहस्यवाद, आधुनिक मीरा</td></tr>
+        <tr><td class="hl">रामधारीसिंह 'दिनकर'</td><td>आधुनिक (राष्ट्रीय)</td><td>रश्मिरथी, कुरुक्षेत्र</td><td>वीर रस, राष्ट्रीय चेतना</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 6. गद्य-विधाएँ -->
+  <div class="slide" id="nibandh-sahitya">
+    <div class="slide-num">6</div>
+    <h2>🖊️ गद्य-विधाएँ (Prose Forms — Class 12)</h2>
+    <div class="defbox"><span class="dl">महत्वपूर्ण</span>कक्षा 11-12 में <span class="hl">कहानी, उपन्यास, नाटक, एकांकी, निबंध, रेखाचित्र, संस्मरण, आत्मकथा, जीवनी</span> — इन गद्य विधाओं की विशेषताएँ पूछी जाती हैं।</div>
+    <table class="gram-table">
+      <thead><tr><th>विधा</th><th>विशेषताएँ</th><th>प्रमुख लेखक</th></tr></thead>
+      <tbody>
+        <tr><td class="hl">कहानी</td><td>एकता, चरमोत्कर्ष, संक्षिप्तता, एक केंद्रीय उद्देश्य</td><td>प्रेमचंद, जयशंकर प्रसाद, मोहन राकेश</td></tr>
+        <tr><td class="hl">उपन्यास</td><td>विस्तृत कथानक, अनेक पात्र, जीवन का समग्र चित्रण</td><td>प्रेमचंद (गोदान, गबन), फणीश्वरनाथ रेणु</td></tr>
+        <tr><td class="hl">नाटक</td><td>अभिनेयता, संवाद, अंक-दृश्य विभाजन, रंगमंच</td><td>भारतेंदु, जयशंकर प्रसाद, मोहन राकेश</td></tr>
+        <tr><td class="hl">एकांकी</td><td>एक अंक, एक घटना, संक्षिप्तता, तनाव</td><td>रामकुमार वर्मा, उदयशंकर भट्ट</td></tr>
+        <tr><td class="hl">निबंध</td><td>विचारात्मकता, व्यक्तित्व की छाप, भावनात्मकता</td><td>आचार्य रामचंद्र शुक्ल, हज़ारीप्रसाद द्विवेदी</td></tr>
+        <tr><td class="hl">आत्मकथा</td><td>लेखक स्वयं अपनी जीवन-कथा कहता है — मैं शैली</td><td>जवाहरलाल नेहरू (मेरी कहानी)</td></tr>
+        <tr><td class="hl">जीवनी</td><td>किसी महान व्यक्ति की जीवन-कथा दूसरे द्वारा</td><td>—</td></tr>
+        <tr><td class="hl">रेखाचित्र</td><td>व्यक्तित्व का जीवंत शब्द-चित्रण, संक्षिप्त</td><td>महादेवी वर्मा (अतीत के चलचित्र)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 7. काव्य-सौंदर्य -->
+  <div class="slide" id="kavya">
+    <div class="slide-num">7</div>
+    <h2>🎨 काव्य-सौंदर्य (Poetic Beauty)</h2>
+    <div class="defbox"><span class="dl">परिभाषा</span>काव्य की व्याख्या में <span class="hl">भाव-सौंदर्य</span> और <span class="hl">शिल्प-सौंदर्य</span> दोनों का उल्लेख अनिवार्य है।</div>
+    <div class="step"><div class="snum">1</div><div class="sbody"><h4>भाव-सौंदर्य</h4><p>काव्यांश का मुख्य विचार, भाव, संदेश, कवि का उद्देश्य, सामाजिक महत्व।</p></div></div>
+    <div class="step"><div class="snum">2</div><div class="sbody"><h4>शिल्प-सौंदर्य</h4><p>भाषा, शैली, अलंकार, छंद, बिम्ब, प्रतीक, शब्द-योजना, तुकबंदी।</p></div></div>
+    <div class="step"><div class="snum">3</div><div class="sbody"><h4>बिम्ब (Image)</h4><p>काव्य में इंद्रियों के माध्यम से चित्र उत्पन्न करने वाले शब्द। दृश्य-बिम्ब, श्रव्य-बिम्ब, स्पर्श-बिम्ब आदि।</p></div></div>
+    <div class="step"><div class="snum">4</div><div class="sbody"><h4>प्रतीक (Symbol)</h4><p>किसी विचार या भाव का प्रतिनिधित्व करने वाला शब्द या चित्र। जैसे — कमल = पवित्रता, सूर्य = ज्ञान।</p></div></div>
+    <div class="exbox"><span class="el">काव्यांश की व्याख्या — परीक्षा प्रारूप</span>
+      <strong>संदर्भ:</strong> कवि का नाम, काव्य-संग्रह का नाम, संदर्भ प्रसंग |
+      <strong>प्रसंग:</strong> 1-2 पंक्तियों में पृष्ठभूमि |
+      <strong>व्याख्या:</strong> पंक्ति-दर-पंक्ति सरल अर्थ |
+      <strong>काव्य-सौंदर्य:</strong> भाषा, अलंकार, छंद, रस |
+      <strong>विशेष:</strong> कठिन शब्दों के अर्थ
+    </div>
+  </div>
+
+  <!-- 8. प्रतिवेदन-रिपोर्ट लेखन -->
+  <div class="slide" id="report">
+    <div class="slide-num">8</div>
+    <h2>📰 प्रतिवेदन / रिपोर्ट लेखन</h2>
+    <div class="defbox"><span class="dl">परिभाषा</span>किसी घटना, कार्यक्रम या विषय का <span class="hl">तथ्यात्मक, क्रमबद्ध और निष्पक्ष</span> विवरण <span class="hl">प्रतिवेदन</span> कहलाता है।</div>
+    <div class="step"><div class="snum">1</div><div class="sbody"><h4>शीर्षक (Headline)</h4><p>आकर्षक और संक्षिप्त — विषय का सार एक पंक्ति में।</p></div></div>
+    <div class="step"><div class="snum">2</div><div class="sbody"><h4>स्थान, दिनांक, संवाददाता</h4><p>कब, कहाँ, किसने लिखा — पहली पंक्ति में।</p></div></div>
+    <div class="step"><div class="snum">3</div><div class="sbody"><h4>मुख्य समाचार (Lead)</h4><p>5W+1H — कौन, क्या, कब, कहाँ, क्यों और कैसे।</p></div></div>
+    <div class="step"><div class="snum">4</div><div class="sbody"><h4>विस्तार (Body)</h4><p>घटना का क्रमबद्ध विवरण, तथ्य, आँकड़े।</p></div></div>
+    <div class="step"><div class="snum">5</div><div class="sbody"><h4>निष्कर्ष (Conclusion)</h4><p>घटना का प्रभाव, भविष्य की संभावनाएँ या सुझाव।</p></div></div>
+    <div class="exbox"><span class="el">परीक्षा उपयोगी रिपोर्ट विषय</span>
+      विद्यालय में वार्षिक उत्सव | पर्यावरण दिवस का आयोजन | खेलकूद प्रतियोगिता | राष्ट्रीय पर्व समारोह | किसी प्राकृतिक आपदा पर रिपोर्ट | विज्ञान प्रदर्शनी
+    </div>
+  </div>
+
+  <!-- 9. कहानी-लेखन -->
+  <div class="slide" id="kahani">
+    <div class="slide-num">9</div>
+    <h2>📖 कहानी-लेखन (Story Writing)</h2>
+    <div class="defbox"><span class="dl">परिभाषा</span>कहानी गद्य की वह विधा है जिसमें मानव जीवन की किसी एक घटना का <span class="hl">कलात्मक चित्रण</span> होता है। अच्छी कहानी में <span class="hl">6 तत्व</span> होते हैं।</div>
+    <div class="type-grid">
+      <div class="type-card"><h4>कथानक (Plot)</h4><p>घटनाओं का क्रम। आरंभ → विकास → चरमोत्कर्ष → अंत।</p></div>
+      <div class="type-card"><h4>पात्र (Characters)</h4><p>नायक, सहायक पात्र। स्वाभाविक और विश्वसनीय।</p></div>
+      <div class="type-card"><h4>संवाद (Dialogue)</h4><p>संक्षिप्त, स्वाभाविक, पात्रानुकूल संवाद।</p></div>
+      <div class="type-card"><h4>देशकाल (Setting)</h4><p>समय और स्थान का वर्णन — वातावरण निर्माण।</p></div>
+      <div class="type-card"><h4>भाषा-शैली</h4><p>सरल, प्रवाहमय, पठनीय। विषयानुकूल भाषा।</p></div>
+      <div class="type-card"><h4>उद्देश्य (Theme)</h4><p>कहानी का संदेश/शिक्षा — स्पष्ट और प्रेरणादायक।</p></div>
+    </div>
+    <div class="exbox"><span class="el">कहानी-लेखन टिप्स</span>
+      ✦ रूपरेखा दी हो तो उसका पालन करें | ✦ शीर्षक आकर्षक और अर्थपूर्ण हो | ✦ कहानी का अंत प्रभावशाली हो | ✦ शिक्षा / नैतिक संदेश अवश्य दें | ✦ 200-250 शब्दों में समेटें
+    </div>
+  </div>
+
+  <!-- 10. मुहावरे-लोकोक्तियाँ -->
+  <div class="slide" id="muhavare">
+    <div class="slide-num">10</div>
+    <h2>🎯 मुहावरे और लोकोक्तियाँ (Class 11-12)</h2>
+    <div class="defbox"><span class="dl">अंतर</span><span class="hl">मुहावरा</span> — वाक्यांश, पूर्ण अर्थ के लिए क्रिया के साथ प्रयोग। &nbsp;|&nbsp; <span class="hl">लोकोक्ति</span> — पूर्ण वाक्य, अपने आप में अर्थपूर्ण।</div>
+    <table class="gram-table">
+      <thead><tr><th>मुहावरा</th><th>अर्थ</th><th>वाक्य में प्रयोग</th></tr></thead>
+      <tbody>
+        <tr><td class="hl">अँगूठा दिखाना</td><td>इनकार करना</td><td>जब मदद माँगी तो उसने अँगूठा दिखा दिया।</td></tr>
+        <tr><td class="hl">आस्तीन का साँप</td><td>विश्वासघाती</td><td>वह मित्र नहीं, आस्तीन का साँप निकला।</td></tr>
+        <tr><td class="hl">दूध का दूध पानी का पानी</td><td>न्याय करना</td><td>न्यायाधीश ने दूध का दूध पानी का पानी कर दिया।</td></tr>
+        <tr><td class="hl">खून-पसीना एक करना</td><td>कड़ी मेहनत</td><td>उसने खून-पसीना एक करके सफलता पाई।</td></tr>
+        <tr><td class="hl">नौ-दो ग्यारह होना</td><td>भाग जाना</td><td>चोर पुलिस देखते ही नौ-दो ग्यारह हो गया।</td></tr>
+      </tbody>
+    </table>
+    <table class="gram-table" style="margin-top:12px;">
+      <thead><tr><th>लोकोक्ति</th><th>अर्थ</th></tr></thead>
+      <tbody>
+        <tr><td class="hl">अब पछताए होत क्या जब चिड़ियाँ चुग गई खेत।</td><td>अवसर निकल जाने पर पछताना व्यर्थ है।</td></tr>
+        <tr><td class="hl">नाच न जाने आँगन टेढ़ा।</td><td>काम न आए तो बहाने बनाना।</td></tr>
+        <tr><td class="hl">जैसी करनी वैसी भरनी।</td><td>कर्म का फल मिलता है।</td></tr>
+        <tr><td class="hl">एक पंथ दो काज।</td><td>एक काम से दो उद्देश्य पूरे होना।</td></tr>
+        <tr><td class="hl">थोथा चना बाजे घना।</td><td>गुणहीन व्यक्ति अधिक दिखावा करता है।</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="lesson-nav">
+  <a href="hindi-grammar-10.html" class="nav-btn nav-back">← कक्षा 10</a>
+  <a href="hindi-grammar.html" class="nav-btn nav-next">सभी विषय →</a>
+</div>
+
+<div class="tts-bar">
+  <button class="tts-btn tts-on" id="ttsBtn" onclick="toggleTTS()">🔊 आवाज़ चालू</button>
+  <div class="tts-info"><div class="tts-title" id="ttsTitle">कक्षा 11-12 व्याकरण</div><div>स्वचालित पठन सक्रिय है</div></div>
+  <button class="tts-btn tts-off" onclick="stopTTS()">⏹ रोकें</button>
+</div>
+
+<script src="main.js"></script>
+<script>
+const slides=document.querySelectorAll('.slide');
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');e.target.querySelectorAll('.type-card,.step,.ras-c').forEach((c,i)=>setTimeout(()=>c.classList.add('show'),i*150));updateProg();if(ttsEnabled)speakSlide(e.target.id);obs.unobserve(e.target);}});},{threshold:0.12});
+slides.forEach(s=>obs.observe(s));
+function updateProg(){const v=document.querySelectorAll('.slide.visible').length;document.getElementById('pf').style.width=(v/slides.length*100)+'%';}
+let ttsEnabled=true;const synth=window.speechSynthesis;
+const NARRATION={
+  'shabd-shakti':'शब्द-शक्ति — शब्द में अर्थ प्रकट करने की शक्ति को शब्द-शक्ति कहते हैं। तीन प्रकार हैं। अभिधा — शब्द का सीधा मुख्य अर्थ। लक्षणा — जब मुख्य अर्थ में बाधा आए तो लाक्षणिक अर्थ। व्यंजना — जब अभिधा और लक्षणा दोनों से काम न चले तो व्यंग्यार्थ। उदाहरण — पानी लाओ में अभिधा है। वह पत्थर है में लक्षणा है। काव्य की गहराई व्यंजना से आती है।',
+  'ras':'रस — काव्य पढ़ने से मिलने वाले आनंद को रस कहते हैं। नौ रस होते हैं। श्रृंगार रस का स्थायीभाव रति है। हास्य रस का हास। करुण रस का शोक। रौद्र रस का क्रोध। वीर रस का उत्साह। भयानक का भय। वीभत्स का जुगुप्सा। अद्भुत का विस्मय। शांत का निर्वेद। रस के चार अंग हैं — स्थायीभाव, विभाव, अनुभाव और संचारीभाव।',
+  'chhand':'छंद — वर्णों या मात्राओं की निश्चित संख्या से युक्त पद-रचना को छंद कहते हैं। दोहा में अर्धाली 13 और 11 मात्राएँ होती हैं। चौपाई में चार चरण और प्रत्येक में 16 मात्राएँ। सोरठा दोहे का उल्टा है। कुंडलिया दोहा और रोला का मेल है। लघु मात्रा एक होती है और दीर्घ मात्रा दो।',
+  'alankar':'अलंकार — काव्य की शोभा बढ़ाने वाले तत्व अलंकार हैं। दो भेद हैं — शब्दालंकार और अर्थालंकार। शब्दालंकार में अनुप्रास — एक वर्ण की आवृत्ति। यमक — एक शब्द अनेक अर्थों में। श्लेष — एक शब्द में एक साथ अनेक अर्थ। अर्थालंकार में उपमा — सा सी सम से तुलना। रूपक — एकता का आरोप। उत्प्रेक्षा — मानो जनु से संभावना। मानवीकरण — निर्जीव में चेतन का आरोप।',
+  'hindi-sahitya-itihas':'हिंदी साहित्य का इतिहास चार कालों में बँटा है। आदिकाल 1050 से 1375 ईसवी। भक्तिकाल 1375 से 1700 — यह हिंदी साहित्य का स्वर्णयुग है। रीतिकाल 1700 से 1900। आधुनिककाल 1900 से अब तक। भक्तिकाल में निर्गुण और सगुण दो धाराएँ थीं। कबीर, तुलसी, सूरदास, मीरा इस काल के प्रमुख कवि हैं।',
+};
+function speak(text){if(!ttsEnabled||!synth)return;synth.cancel();if(!text)return;const u=new SpeechSynthesisUtterance(text);u.lang='hi-IN';u.rate=0.85;const voices=synth.getVoices();const v=voices.find(v=>/hi/i.test(v.lang));if(v)u.voice=v;synth.speak(u);}
+function stopTTS(){synth&&synth.cancel();}
+function toggleTTS(){ttsEnabled=!ttsEnabled;const btn=document.getElementById('ttsBtn');if(ttsEnabled){btn.textContent='🔊 आवाज़ चालू';btn.style.opacity='1';}else{stopTTS();btn.textContent='🔇 आवाज़ बंद';btn.style.opacity='.5';}}
+function speakSlide(id){if(NARRATION[id]){document.getElementById('ttsTitle').textContent=document.querySelector('#'+id+' h2')?.textContent||'';setTimeout(()=>speak(NARRATION[id]),500);}}
+</script>
+</body>
+</html>

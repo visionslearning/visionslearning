@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>हिंदी व्याकरण – कक्षा 8 & 9 – Visions Classes</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="logo.png" type="image/png"/>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{background:#07080f;color:#fff;font-family:'Segoe UI',system-ui,sans-serif;}
+    .navbar{background:rgba(7,8,15,.96)!important;}
+    /* Hero */
+    .pg-hero{background:linear-gradient(135deg,#0a0f00,#111a00,#0a0f00);padding:90px 0 40px;text-align:center;position:relative;overflow:hidden;}
+    .pg-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(132,204,22,.15) 0%,transparent 60%);}
+    .pg-hero .tag{display:inline-block;padding:4px 16px;border-radius:20px;background:rgba(132,204,22,.2);border:1px solid #84cc16;color:#bef264;font-size:.76rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;position:relative;}
+    .pg-hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;background:linear-gradient(135deg,#fff,#bef264);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative;}
+    .pg-hero p{color:#64748b;margin-top:8px;font-size:.95rem;position:relative;}
+    /* Progress */
+    .prog-bar{height:4px;background:rgba(255,255,255,.07);max-width:900px;margin:16px auto 0;border-radius:2px;}
+    .prog-fill{height:100%;background:linear-gradient(90deg,#84cc16,#22c55e);border-radius:2px;transition:width .4s;}
+    /* Slides */
+    .slides{max-width:900px;margin:0 auto;padding:24px 20px 100px;}
+    .slide{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:36px;margin-bottom:22px;opacity:0;transform:translateY(30px);transition:opacity .6s,transform .6s;position:relative;overflow:hidden;}
+    .slide.visible{opacity:1;transform:translateY(0);}
+    .slide::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#84cc16,#22c55e,#06b6d4);}
+    .slide-num{position:absolute;top:14px;right:18px;font-size:.7rem;color:#334155;font-weight:700;}
+    .slide h2{font-size:1.35rem;color:#f1f5f9;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+    .slide p,.slide li{color:#94a3b8;line-height:1.85;font-size:.95rem;}
+    .slide ul{list-style:none;padding:0;}
+    .slide li{padding:5px 0 5px 22px;position:relative;}
+    .slide li::before{content:'→';position:absolute;left:0;color:#84cc16;font-weight:700;}
+    /* Definition box */
+    .defbox{background:rgba(132,204,22,.1);border:1px solid rgba(132,204,22,.35);border-radius:12px;padding:16px 22px;margin:12px 0;font-size:.95rem;color:#bef264;}
+    .defbox .dl{font-size:.68rem;text-transform:uppercase;letter-spacing:1px;color:#84cc16;display:block;margin-bottom:5px;}
+    /* Example box */
+    .exbox{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px 18px;margin:10px 0;font-size:.9rem;color:#e2e8f0;}
+    .exbox .el{font-size:.68rem;text-transform:uppercase;letter-spacing:1px;color:#06b6d4;display:block;margin-bottom:5px;}
+    /* Type grid */
+    .type-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:12px 0;}
+    .type-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:16px;opacity:0;transform:scale(.95);transition:opacity .4s,transform .4s;}
+    .type-card.show{opacity:1;transform:scale(1);}
+    .type-card h4{color:#bef264;margin-bottom:6px;font-size:.92rem;}
+    .type-card p{font-size:.82rem;color:#64748b;line-height:1.5;}
+    .type-card .eg{font-size:.82rem;color:#fde047;margin-top:5px;}
+    /* Table */
+    .gram-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.87rem;}
+    .gram-table th{background:rgba(132,204,22,.15);color:#bef264;padding:9px 12px;text-align:left;font-weight:700;}
+    .gram-table td{padding:9px 12px;border-bottom:1px solid rgba(255,255,255,.05);color:#94a3b8;}
+    .gram-table tr:hover td{background:rgba(132,204,22,.06);color:#e2e8f0;}
+    /* Step */
+    .step{display:flex;gap:12px;margin-bottom:14px;opacity:0;transform:translateX(-16px);transition:opacity .5s,transform .5s;}
+    .step.show{opacity:1;transform:translateX(0);}
+    .snum{min-width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#84cc16,#22c55e);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:800;color:#000;flex-shrink:0;}
+    .sbody h4{color:#e2e8f0;margin-bottom:3px;font-size:.94rem;}
+    .sbody p{color:#94a3b8;font-size:.86rem;line-height:1.6;}
+    /* highlight */
+    .hl{color:#bef264;font-weight:700;}
+    .hy{color:#fde047;font-weight:700;}
+    .hb{color:#93c5fd;font-weight:700;}
+    /* nav */
+    .lesson-nav{display:flex;justify-content:space-between;max-width:900px;margin:0 auto 50px;padding:0 20px;flex-wrap:wrap;gap:10px;}
+    .nav-btn{padding:10px 24px;border-radius:10px;border:none;cursor:pointer;font-size:.9rem;font-weight:700;transition:all .2s;text-decoration:none;display:inline-flex;align-items:center;gap:7px;}
+    .nav-back{background:rgba(255,255,255,.07);color:#94a3b8;}
+    .nav-next{background:linear-gradient(135deg,#84cc16,#22c55e);color:#000;}
+    .nav-next:hover{transform:translateY(-2px);}
+    /* TTS */
+    .tts-bar{position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(7,8,15,.97);backdrop-filter:blur(16px);border-top:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:10px;padding:8px 20px;}
+    .tts-btn{padding:7px 16px;border-radius:8px;border:none;cursor:pointer;font-size:.83rem;font-weight:700;}
+    .tts-on{background:linear-gradient(135deg,#84cc16,#22c55e);color:#000;}
+    .tts-off{background:rgba(255,255,255,.08);color:#94a3b8;}
+    .tts-info{flex:1;font-size:.78rem;color:#475569;}
+    .tts-title{color:#e2e8f0;font-weight:600;font-size:.83rem;}
+  </style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="" class="nav-logo-img"/><div class="logo-text"><span>Visions</span> Classes</div></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="hindi-grammar.html" class="active">हिंदी व्याकरण</a></li>
+      <li><a href="animated-lessons.html">Animated Lessons</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<section class="pg-hero">
+  <div class="tag">📗 हिंदी व्याकरण · कक्षा 8 & 9</div>
+  <h1>कक्षा 8 और 9 — हिंदी व्याकरण</h1>
+  <p>संज्ञा, सर्वनाम, विशेषण, क्रिया, काल, कारक, पत्र-लेखन — सम्पूर्ण व्याकरण</p>
+</section>
+<div class="prog-bar"><div class="prog-fill" id="pf" style="width:0%"></div></div>
+
+<div class="slides">
+
+  <!-- 1. संज्ञा -->
+  <div class="slide" id="sangya">
+    <div class="slide-num">1</div>
+    <h2>🏷️ संज्ञा (Noun)</h2>
+    <div class="defbox"><span class="dl">परिभाषा</span>किसी व्यक्ति, स्थान, वस्तु, भाव या गुण के नाम को <span class="hl">संज्ञा</span> कहते हैं।</div>
+    <p><strong style="color:#bef264">संज्ञा के 5 भेद:</strong></p>
+    <div class="type-grid">
+      <div class="type-card"><h4>व्यक्तिवाचक</h4><p>किसी एक विशेष व्यक्ति, स्थान या वस्तु का नाम।</p><div class="eg">उदा॰ राम, दिल्ली, गंगा, ताजमहल</div></div>
+      <div class="type-card"><h4>जातिवाचक</h4><p>एक जाति के सभी प्राणियों या वस्तुओं का नाम।</p><div class="eg">उदा॰ लड़का, नदी, पशु, पहाड़</div></div>
+      <div class="type-card"><h4>भाववाचक</h4><p>किसी भाव, गुण, दशा या अवस्था का नाम।</p><div class="eg">उदा॰ सुंदरता, बुढ़ापा, ईमानदारी</div></div>
+      <div class="type-card"><h4>द्रव्यवाचक</h4><p>किसी द्रव्य या पदार्थ का नाम।</p><div class="eg">उदा॰ सोना, पानी, लकड़ी, दूध</div></div>
+      <div class="type-card"><h4>समूहवाचक</h4><p>किसी समूह या झुंड का नाम।</p><div class="eg">उदा॰ सेना, कक्षा, भीड़, झुंड</div></div>
+    </div>
+    <div class="exbox"><span class="el">महत्वपूर्ण नोट</span><strong>भाववाचक संज्ञा बनाना:</strong> जातिवाचक से — लड़का→लड़कपन | विशेषण से — सुंदर→सुंदरता | क्रिया से — पढ़ना→पढ़ाई | सर्वनाम से — अपना→अपनापन</div>
+  </div>
+
+  <!-- 2. सर्वनाम -->
+  <div class="slide" id="sarvnam">
+    <div class="slide-num">2</div>
+    <h2>👤 सर्वनाम (Pronoun)</h2>
+    <div class="defbox"><span class="dl">परिभाषा</span>संज्ञा के स्थान पर प्रयुक्त होने वाले शब्दों को <span class="hl">सर्वनाम</span> कहते हैं।</div>
+    <table class="gram-table">
+      <thead><tr><th>प्रकार</th><th>परिभाषा</th><th>उदाहरण</th></tr></thead>
+      <tbody>
+        <tr><td class="hl">पुरुषवाचक</td><td>व्यक्ति के लिए प्रयुक्त</td><td>मैं, तुम, वह, हम, आप, ये, वे</td></tr>
+        <tr><td class="hl">निश्चयवाचक</td><td>निश्चित व्यक्ति/वस्तु के लिए</td><td>यह, वह, ये, वे</td></tr>
+        <tr><td class="hl">अनिश्चयवाचक</td><td>अनिश्चित के लिए</td><td>कोई, कुछ, किसी</td></tr>
+        <tr><td class="hl">प्रश्नवाचक</td><td>प्रश्न के लिए</td><td>कौन, क्या, किसे, किसका</td></tr>
+        <tr><td class="hl">संबंधवाचक</td><td>संबंध दर्शाने के लिए</td><td>जो, सो, जिसे, तिसे</td></tr>
+        <tr><td class="hl">निजवाचक</td><td>स्वयं के लिए</td><td>आप, अपने आप, स्वयं, खुद</td></tr>
+      </tbody>
+    </table>
+    <div class="exbox"><span class="el">परीक्षा टिप</span><strong>पुरुषवाचक के 3 प्रकार:</strong> उत्तम पुरुष (मैं, हम), मध्यम पुरुष (तुम, आप), अन्य पुरुष (वह, वे, यह)</div>
+  </div>
+
+  <!-- 3. विशेषण -->
+  <div class="slide" id="visheshan">
+    <div class="slide-num">3</div>
+    <h2>🌈 विशेषण (Adjective)</h2>
+    <div class="defbox"><span class="dl">परिभाषा</span>संज्ञा या सर्वनाम की विशेषता बताने वाले शब्दों को <span class="hl">विशेषण</span> कहते हैं। जिसकी विशेषता बताई जाए उसे <span class="hy">विशेष्य</span> कहते हैं।</div>
+    <div class="type-grid">
+      <div class="type-card"><h4>गुणवाचक</h4><p>गुण, दोष, रंग, आकार, स्वभाव बताए।</p><div class="eg">अच्छा लड़का, काली गाय, गोल रोटी</div></div>
+      <div class="type-card"><h4>परिमाणवाचक</h4><p>माप-तौल या मात्रा बताए।</p><div class="eg">थोड़ा पानी, बहुत दूध, दस किलो</div></div>
+      <div class="type-card"><h4>संख्यावाचक</h4><p>गिनती बताए।</p><div class="eg">तीन लड़के, पहला नंबर, दोनों भाई</div></div>
+      <div class="type-card"><h4>सार्वनामिक</h4><p>सर्वनाम से बना, संज्ञा की विशेषता बताए।</p><div class="eg">यह किताब, वह आदमी, कोई बच्चा</div></div>
+    </div>
+    <div class="exbox"><span class="el">तुलना (Degrees)</span>
+      <strong>मूलावस्था:</strong> सुंदर, अच्छा &nbsp;|&nbsp;
+      <strong>उत्तरावस्था:</strong> अधिक सुंदर, अधिक अच्छा &nbsp;|&nbsp;
+      <strong>उत्तमावस्था:</strong> सबसे सुंदर, सर्वोत्तम
+    </div>
+  </div>
+
+  <!-- 4. क्रिया -->
+  <div class="slide" id="kriya">
+    <div class="slide-num">4</div>
+    <h2>⚡ क्रिया (Verb)</h2>
+    <div class="defbox"><span class="dl">परिभाषा</span>जिस शब्द से किसी कार्य का करना या होना पाया जाए उसे <span class="hl">क्रिया</span> कहते हैं।</div>
+    <div class="step"><div class="snum">1</div><div class="sbody"><h4>सकर्मक क्रिया (Transitive)</h4><p>जिस क्रिया का फल कर्म पर पड़े। उदा॰ — राम ने सेब <span class="hy">खाया</span>। (कर्म = सेब)</p></div></div>
+    <div class="step"><div class="snum">2</div><div class="sbody"><h4>अकर्मक क्रिया (Intransitive)</h4><p>जिस क्रिया का फल कर्ता पर ही पड़े। उदा॰ — बच्चा <span class="hy">रोता है</span>। (कर्म नहीं)</p></div></div>
+    <div class="step"><div class="snum">3</div><div class="sbody"><h4>प्रेरणार्थक क्रिया</h4><p>जब कर्ता स्वयं काम न करके दूसरे से कराए। उदा॰ — माँ ने बच्चे को दूध <span class="hy">पिलाया</span>।</p></div></div>
+    <div class="step"><div class="snum">4</div><div class="sbody"><h4>संयुक्त क्रिया</h4><p>दो क्रियाओं से मिलकर बनी क्रिया। उदा॰ — वह <span class="hy">खा चुका है</span>। / वह <span class="hy">पढ़ सकता है</span>।</p></div></div>
+    <div class="exbox"><span class="el">धातु व क्रिया</span>क्रिया का मूल रूप <span class="hl">धातु</span> कहलाता है। जैसे — खा, पी, पढ़, लिख, जा। धातु में <strong>ना</strong> लगाने से सामान्य क्रिया बनती है।</div>
+  </div>
+
+  <!-- 5. काल -->
+  <div class="slide" id="kaal">
+    <div class="slide-num">5</div>
+    <h2>⏰ काल (Tense)</h2>
+    <div class="defbox"><span class="dl">परिभाषा</span>क्रिया के होने के समय को <span class="hl">काल</span> कहते हैं। काल तीन प्रकार के होते हैं।</div>
+    <table class="gram-table">
+      <thead><tr><th>काल</th><th>पहचान</th><th>उदाहरण</th></tr></thead>
+      <tbody>
+        <tr><td class="hl">भूतकाल (Past)</td><td>बीते समय की क्रिया — था, थी, थे, चुका, चुकी</td><td>राम गया था। / मैंने खाया।</td></tr>
+        <tr><td class="hl">वर्तमानकाल (Present)</td><td>अभी हो रही क्रिया — है, हैं, रहा है, रही है</td><td>वह पढ़ रहा है। / मैं जाता हूँ।</td></tr>
+        <tr><td class="hl">भविष्यकाल (Future)</td><td>आगे होने वाली क्रिया — गा, गी, गे</td><td>वह आएगा। / मैं पढ़ूँगी।</td></tr>
+      </tbody>
+    </table>
+    <div class="exbox"><span class="el">भूतकाल के भेद (6)</span>
+      <strong>सामान्य भूत:</strong> गया &nbsp;|&nbsp; <strong>आसन्न भूत:</strong> गया है &nbsp;|&nbsp; <strong>पूर्ण भूत:</strong> गया था &nbsp;|&nbsp;
+      <strong>अपूर्ण भूत:</strong> जा रहा था &nbsp;|&nbsp; <strong>संदिग्ध भूत:</strong> गया होगा &nbsp;|&nbsp; <strong>हेतुहेतुमद् भूत:</strong> जाता तो पाता
+    </div>
+    <div class="exbox"><span class="el">वर्तमानकाल के भेद (3)</span>
+      <strong>सामान्य:</strong> वह पढ़ता है &nbsp;|&nbsp; <strong>अपूर्ण:</strong> वह पढ़ रहा है &nbsp;|&nbsp; <strong>संदिग्ध:</strong> वह पढ़ता होगा
+    </div>
+  </div>
+
+  <!-- 6. कारक -->
+  <div class="slide" id="karak">
+    <div class="slide-num">6</div>
+    <h2>🔗 कारक (Case)</h2>
+    <div class="defbox"><span class="dl">परिभाषा</span>संज्ञा या सर्वनाम का क्रिया के साथ संबंध बताने वाले रूप को <span class="hl">कारक</span> कहते हैं। कारक 8 होते हैं।</div>
+    <table class="gram-table">
+      <thead><tr><th>कारक</th><th>विभक्ति / चिह्न</th><th>प्रश्न</th><th>उदाहरण</th></tr></thead>
+      <tbody>
+        <tr><td class="hl">कर्ता</td><td>ने</td><td>किसने?</td><td>राम ने खाया।</td></tr>
+        <tr><td class="hl">कर्म</td><td>को</td><td>किसको?</td><td>राम ने सेब को खाया।</td></tr>
+        <tr><td class="hl">करण</td><td>से, द्वारा</td><td>किससे?</td><td>राम ने चाकू से काटा।</td></tr>
+        <tr><td class="hl">संप्रदान</td><td>को, के लिए</td><td>किसके लिए?</td><td>गरीबों के लिए दान दो।</td></tr>
+        <tr><td class="hl">अपादान</td><td>से (अलग)</td><td>किससे अलग?</td><td>पेड़ से पत्ता गिरा।</td></tr>
+        <tr><td class="hl">संबंध</td><td>का, के, की</td><td>किसका?</td><td>यह राम का घर है।</td></tr>
+        <tr><td class="hl">अधिकरण</td><td>में, पर</td><td>कहाँ/कब?</td><td>मेज पर किताब है।</td></tr>
+        <tr><td class="hl">संबोधन</td><td>हे!, अरे!</td><td>पुकारना</td><td>हे राम! अरे भाई!</td></tr>
+      </tbody>
+    </table>
+    <div class="exbox"><span class="el">याद रखने की ट्रिक</span>कर-कर-कर-सं-अप-सं-अधि-सं (क-क-क-सं-अ-सं-अ-सं) — <strong>क</strong>र्ता, <strong>क</strong>र्म, <strong>क</strong>रण, <strong>सं</strong>प्रदान, <strong>अ</strong>पादान, <strong>सं</strong>बंध, <strong>अ</strong>धिकरण, <strong>सं</strong>बोधन</div>
+  </div>
+
+  <!-- 7. वचन और लिंग -->
+  <div class="slide" id="vachan-ling">
+    <div class="slide-num">7</div>
+    <h2>🔢 वचन (Number) और लिंग (Gender)</h2>
+    <p style="margin-bottom:12px;"><span class="hl">वचन</span> — संज्ञा के एक या अनेक होने का बोध। <span class="hl">लिंग</span> — स्त्री या पुरुष का बोध।</p>
+    <table class="gram-table">
+      <thead><tr><th>एकवचन</th><th>बहुवचन</th><th>नियम</th></tr></thead>
+      <tbody>
+        <tr><td>लड़का</td><td>लड़के</td><td>आकारान्त पुल्लिंग → ए</td></tr>
+        <tr><td>लड़की</td><td>लड़कियाँ</td><td>इकारान्त → इयाँ</td></tr>
+        <tr><td>माता</td><td>माताएँ</td><td>आकारान्त स्त्रीलिंग → एँ</td></tr>
+        <tr><td>पुस्तक</td><td>पुस्तकें</td><td>अकारान्त स्त्रीलिंग → ें</td></tr>
+        <tr><td>नेता, पिता</td><td>नेता, पिता</td><td>कुछ शब्द दोनों वचन में समान</td></tr>
+      </tbody>
+    </table>
+    <div class="exbox"><span class="el">लिंग परिवर्तन — महत्वपूर्ण</span>
+      राजा→रानी | शेर→शेरनी | नेता→नेत्री | अभिनेता→अभिनेत्री | विद्वान→विदुषी | महान→महती | वर→वधू | बाप→माँ
+    </div>
+  </div>
+
+  <!-- 8. पत्र-लेखन -->
+  <div class="slide" id="patra">
+    <div class="slide-num">8</div>
+    <h2>✉️ पत्र-लेखन (Letter Writing)</h2>
+    <div class="defbox"><span class="dl">पत्र के प्रकार</span><span class="hl">औपचारिक पत्र</span> — सरकारी, व्यावसायिक, प्रार्थना-पत्र। &nbsp;|&nbsp; <span class="hy">अनौपचारिक पत्र</span> — मित्र, परिवार को।</div>
+    <div class="step"><div class="snum">A</div><div class="sbody"><h4>औपचारिक पत्र का प्रारूप</h4><p>1. दिनांक &nbsp; 2. प्रेषक का पता &nbsp; 3. सेवा में (पदनाम) &nbsp; 4. विषय &nbsp; 5. संबोधन (महोदय/महोदया) &nbsp; 6. मुख्य विषय &nbsp; 7. धन्यवाद &nbsp; 8. भवदीय/भवदीया + हस्ताक्षर</p></div></div>
+    <div class="step"><div class="snum">B</div><div class="sbody"><h4>अनौपचारिक पत्र का प्रारूप</h4><p>1. स्थान व दिनांक &nbsp; 2. संबोधन (प्रिय मित्र / पूज्य पिताजी) &nbsp; 3. मुख्य विषय &nbsp; 4. समाप्ति (तुम्हारा/आपका प्रिय) &nbsp; 5. नाम</p></div></div>
+    <div class="exbox"><span class="el">परीक्षा उपयोगी विषय</span>
+      ✦ प्रधानाचार्य को छुट्टी के लिए प्रार्थना-पत्र &nbsp;|&nbsp; ✦ मित्र को परीक्षा की तैयारी के बारे में पत्र &nbsp;|&nbsp; ✦ पिता को फीस के लिए पत्र &nbsp;|&nbsp; ✦ पुस्तकालय में पुस्तक मंगाने के लिए पत्र
+    </div>
+  </div>
+
+  <!-- 9. निबंध-लेखन -->
+  <div class="slide" id="nibandh">
+    <div class="slide-num">9</div>
+    <h2>📝 निबंध-लेखन (Essay Writing)</h2>
+    <div class="defbox"><span class="dl">परिभाषा</span>किसी विषय पर क्रमबद्ध, सुसंगठित और भावपूर्ण रचना को <span class="hl">निबंध</span> कहते हैं।</div>
+    <div class="step"><div class="snum">1</div><div class="sbody"><h4>प्रस्तावना (Introduction)</h4><p>विषय का परिचय, रोचक आरंभ — किसी उद्धरण, प्रश्न या कथन से शुरू करें।</p></div></div>
+    <div class="step"><div class="snum">2</div><div class="sbody"><h4>विस्तार (Body)</h4><p>विषय के सभी पहलुओं पर विचार, उदाहरण, तथ्य, अनुच्छेदों में विभाजन।</p></div></div>
+    <div class="step"><div class="snum">3</div><div class="sbody"><h4>उपसंहार (Conclusion)</h4><p>निष्कर्ष, अपना मत, भविष्य की संभावनाएँ या सुझाव।</p></div></div>
+    <div class="exbox"><span class="el">परीक्षा उपयोगी निबंध विषय</span>
+      मेरा प्रिय त्योहार | होली / दीपावली | पर्यावरण प्रदूषण | मेरा प्रिय नेता | विज्ञान के लाभ और हानि | मेरा विद्यालय | बेटी बचाओ बेटी पढ़ाओ | आदर्श विद्यार्थी
+    </div>
+  </div>
+
+  <!-- 10. गद्य-पद्य बोध -->
+  <div class="slide" id="gadya">
+    <div class="slide-num">10</div>
+    <h2>📄 गद्य-बोध और पद्य-बोध</h2>
+    <div class="defbox"><span class="dl">गद्यांश हल करने की विधि</span>पहले गद्यांश को <span class="hl">दो बार</span> पढ़ें → प्रश्न पढ़ें → गद्यांश में उत्तर खोजें → अपने शब्दों में लिखें।</div>
+    <div class="step"><div class="snum">1</div><div class="sbody"><h4>शीर्षक</h4><p>गद्यांश का मुख्य विचार पकड़कर 3-5 शब्दों में शीर्षक दें।</p></div></div>
+    <div class="step"><div class="snum">2</div><div class="sbody"><h4>सारांश / भावार्थ</h4><p>गद्यांश का मुख्य भाव अपने शब्दों में, मूल से आधे शब्दों में लिखें।</p></div></div>
+    <div class="step"><div class="snum">3</div><div class="sbody"><h4>पद्यांश की व्याख्या</h4><p>कवि का नाम, काव्य-संग्रह, भाव, शिल्प-सौंदर्य, कठिन शब्दों के अर्थ।</p></div></div>
+    <div class="exbox"><span class="el">परीक्षा टिप</span>व्याख्या में <strong>भाव-सौंदर्य</strong> (विचार, संदेश) और <strong>शिल्प-सौंदर्य</strong> (भाषा, अलंकार, छंद) दोनों लिखें। अलंकार पहचानना न भूलें।</div>
+  </div>
+
+</div>
+
+<div class="lesson-nav">
+  <a href="hindi-grammar.html" class="nav-btn nav-back">← वापस जाएँ</a>
+  <a href="hindi-grammar-10.html" class="nav-btn nav-next">कक्षा 10 →</a>
+</div>
+
+<!-- TTS BAR -->
+<div class="tts-bar">
+  <button class="tts-btn tts-on" id="ttsBtn" onclick="toggleTTS()">🔊 आवाज़ चालू</button>
+  <div class="tts-info"><div class="tts-title" id="ttsTitle">कक्षा 8-9 व्याकरण</div><div>स्वचालित पठन सक्रिय है</div></div>
+  <button class="tts-btn tts-off" onclick="stopTTS()">⏹ रोकें</button>
+</div>
+
+<script src="main.js"></script>
+<script>
+const slides=document.querySelectorAll('.slide');
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      e.target.querySelectorAll('.type-card,.step').forEach((c,i)=>setTimeout(()=>c.classList.add('show'),i*180));
+      updateProg();
+      if(ttsEnabled) speakSlide(e.target.id);
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.15});
+slides.forEach(s=>obs.observe(s));
+function updateProg(){const v=document.querySelectorAll('.slide.visible').length;document.getElementById('pf').style.width=(v/slides.length*100)+'%';}
+
+let ttsEnabled=true;
+const synth=window.speechSynthesis;
+
+const NARRATION={
+  'sangya':'संज्ञा — जिस शब्द से किसी व्यक्ति, स्थान, वस्तु, भाव या गुण का बोध हो उसे संज्ञा कहते हैं। संज्ञा के पाँच भेद होते हैं। एक — व्यक्तिवाचक संज्ञा, जैसे राम, दिल्ली, गंगा। दो — जातिवाचक संज्ञा, जैसे लड़का, नदी, पशु। तीन — भाववाचक संज्ञा, जैसे सुंदरता, बुढ़ापा। चार — द्रव्यवाचक, जैसे सोना, पानी। पाँच — समूहवाचक, जैसे सेना, कक्षा। भाववाचक संज्ञा बनाना परीक्षा में अक्सर पूछा जाता है। विशेषण में ता, त्व, पन, ई जोड़कर भाववाचक बनते हैं।',
+  'sarvnam':'सर्वनाम — संज्ञा के स्थान पर प्रयुक्त होने वाले शब्दों को सर्वनाम कहते हैं। सर्वनाम के छह भेद हैं। पुरुषवाचक — मैं, तुम, वह। निश्चयवाचक — यह, वह। अनिश्चयवाचक — कोई, कुछ। प्रश्नवाचक — कौन, क्या। संबंधवाचक — जो, सो। निजवाचक — आप, खुद, स्वयं। पुरुषवाचक सर्वनाम तीन पुरुषों में बँटे हैं — उत्तम पुरुष अर्थात मैं हम, मध्यम पुरुष अर्थात तुम आप, और अन्य पुरुष अर्थात वह वे।',
+  'visheshan':'विशेषण — संज्ञा या सर्वनाम की विशेषता बताने वाले शब्दों को विशेषण कहते हैं। जिसकी विशेषता बताई जाए उसे विशेष्य कहते हैं। चार प्रकार के विशेषण होते हैं। गुणवाचक — जैसे अच्छा, काला, गोल। परिमाणवाचक — जैसे थोड़ा, बहुत। संख्यावाचक — जैसे तीन, पहला, दोनों। सार्वनामिक — जैसे यह, वह, कोई। विशेषण की तीन अवस्थाएँ होती हैं — मूलावस्था, उत्तरावस्था और उत्तमावस्था।',
+  'kriya':'क्रिया — जिस शब्द से किसी कार्य का करना या होना पाया जाए उसे क्रिया कहते हैं। सकर्मक क्रिया वह है जिसका फल कर्म पर पड़े। जैसे राम ने सेब खाया — यहाँ सेब कर्म है। अकर्मक क्रिया वह है जिसका फल कर्ता पर पड़े। जैसे बच्चा रोता है। प्रेरणार्थक क्रिया में कर्ता दूसरे से काम कराता है। संयुक्त क्रिया दो क्रियाओं से मिलकर बनती है। क्रिया का मूल रूप धातु कहलाता है।',
+  'kaal':'काल — क्रिया के होने के समय को काल कहते हैं। तीन प्रकार के काल होते हैं। भूतकाल — बीते समय की क्रिया, जैसे राम गया था। वर्तमानकाल — अभी हो रही क्रिया, जैसे वह पढ़ रहा है। भविष्यकाल — आगे होने वाली क्रिया, जैसे वह आएगा। भूतकाल के छह भेद हैं और वर्तमानकाल के तीन भेद हैं। काल पहचानना परीक्षा में महत्वपूर्ण है।',
+  'karak':'कारक — संज्ञा या सर्वनाम का क्रिया के साथ संबंध बताने वाले रूप को कारक कहते हैं। कारक आठ होते हैं। कर्ता — ने चिह्न से, कर्म — को से, करण — से द्वारा से, संप्रदान — के लिए से, अपादान — से अलग होना, संबंध — का के की से, अधिकरण — में पर से, संबोधन — हे अरे से। इन्हें याद करने की ट्रिक है — क-क-क-सं-अ-सं-अ-सं।',
+  'patra':'पत्र-लेखन — परीक्षा में पाँच से दस अंकों का पत्र आता है। दो प्रकार के पत्र होते हैं। औपचारिक पत्र में दिनांक, पदनाम, विषय, महोदय, मुख्य विषय, धन्यवाद और भवदीय लिखना जरूरी है। अनौपचारिक पत्र में प्रिय मित्र या पूज्य से शुरू करके तुम्हारा या आपका से समाप्त करें। भाषा सरल, स्पष्ट और विनम्र होनी चाहिए।',
+  'nibandh':'निबंध-लेखन — किसी विषय पर क्रमबद्ध रचना को निबंध कहते हैं। तीन भाग होते हैं — प्रस्तावना, विस्तार और उपसंहार। प्रस्तावना रोचक होनी चाहिए। किसी उद्धरण या प्रश्न से शुरू करें। विस्तार में अनुच्छेदों में विभाजन करें। उपसंहार में निष्कर्ष लिखें। भाषा सरल और प्रवाहमय होनी चाहिए।',
+};
+
+function speak(text){
+  if(!ttsEnabled||!synth)return;
+  synth.cancel();if(!text)return;
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang='hi-IN';u.rate=0.85;u.pitch=1;u.volume=1;
+  const voices=synth.getVoices();
+  const v=voices.find(v=>/hi[-_]IN/i.test(v.lang))||voices.find(v=>/hi/i.test(v.lang));
+  if(v)u.voice=v;
+  synth.speak(u);
+}
+function stopTTS(){synth&&synth.cancel();}
+function toggleTTS(){
+  ttsEnabled=!ttsEnabled;
+  const btn=document.getElementById('ttsBtn');
+  if(ttsEnabled){btn.textContent='🔊 आवाज़ चालू';btn.style.opacity='1';speak(NARRATION['sangya']);}
+  else{stopTTS();btn.textContent='🔇 आवाज़ बंद';btn.style.opacity='.5';}
+}
+function speakSlide(id){if(NARRATION[id]){document.getElementById('ttsTitle').textContent=document.querySelector('#'+id+' h2')?.textContent||'';setTimeout(()=>speak(NARRATION[id]),500);}}
+document.body.addEventListener('click',()=>{if(ttsEnabled&&!synth.speaking)speak(NARRATION['sangya']);},{once:true});
+</script>
+</body>
+</html>

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>हिंदी व्याकरण – Visions Classes</title>
+  <meta name="description" content="Complete Hindi Grammar for Class 8, 9, 10, 11, 12 — Visions Classes Ambernath. Vyakaran, Rachna, Sahitya all covered." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <style>
+    /* ── Hero ── */
+    .hg-hero {
+      background: linear-gradient(135deg, #0f0a1e 0%, #1a0a2e 50%, #0a1020 100%);
+      color: #fff; padding: 100px 0 60px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .hg-hero::before {
+      content: '';position:absolute;inset:0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(234,179,8,.14) 0%, transparent 55%),
+                  radial-gradient(ellipse at 70% 30%, rgba(168,85,247,.12) 0%, transparent 50%);
+    }
+    .sparkle {position:absolute;background:#fff;border-radius:50%;animation:twk 3s infinite;}
+    @keyframes twk{0%,100%{opacity:.1;transform:scale(.5);}50%{opacity:1;transform:scale(1.3);}}
+    .hg-hero .tag {
+      display:inline-block;padding:5px 18px;border-radius:20px;
+      background:rgba(234,179,8,.2);border:1px solid #eab308;
+      color:#fde047;font-size:.78rem;font-weight:700;letter-spacing:1px;
+      text-transform:uppercase;margin-bottom:14px;position:relative;
+    }
+    .hg-hero h1 {
+      font-size:clamp(2rem,5vw,3.2rem);font-weight:900;position:relative;
+      background:linear-gradient(135deg,#fff 0%,#fde047 100%);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+      margin-bottom:10px;
+    }
+    .hg-hero p {color:#94a3b8;font-size:1rem;position:relative;max-width:600px;margin:0 auto 28px;}
+
+    /* ── Class Tabs ── */
+    .class-tabs {
+      display:flex;gap:10px;justify-content:center;flex-wrap:wrap;
+      padding:32px 20px 0;
+    }
+    .ctab {
+      padding:9px 26px;border-radius:50px;border:2px solid rgba(255,255,255,.15);
+      background:rgba(255,255,255,.04);cursor:pointer;font-weight:700;font-size:.9rem;
+      color:#94a3b8;transition:all .25s;text-decoration:none;
+    }
+    .ctab:hover,.ctab.active {
+      background:#eab308;border-color:#eab308;color:#000;
+      transform:translateY(-2px);box-shadow:0 4px 18px rgba(234,179,8,.35);
+    }
+
+    /* ── Section heading ── */
+    .sec-title {
+      font-size:1.5rem;font-weight:800;color:#f1f5f9;
+      margin:50px 0 24px;display:flex;align-items:center;gap:12px;
+    }
+    .sec-title::after {
+      content:'';flex:1;height:2px;
+      background:linear-gradient(90deg,rgba(234,179,8,.4),transparent);
+    }
+
+    /* ── Topic Grid ── */
+    .topic-grid {
+      display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;
+    }
+    .topic-card {
+      background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+      border-radius:16px;padding:24px;cursor:pointer;transition:all .3s;
+      text-decoration:none;color:inherit;display:block;position:relative;overflow:hidden;
+    }
+    .topic-card:hover {
+      transform:translateY(-5px);border-color:rgba(234,179,8,.4);
+      box-shadow:0 12px 32px rgba(234,179,8,.12);
+    }
+    .topic-card::before {
+      content:'';position:absolute;top:0;left:0;right:0;height:3px;
+      background:linear-gradient(90deg,#eab308,#f59e0b);opacity:0;transition:opacity .3s;
+    }
+    .topic-card:hover::before {opacity:1;}
+    .topic-icon {font-size:2rem;margin-bottom:12px;}
+    .topic-badge {
+      display:inline-block;padding:3px 10px;border-radius:12px;
+      font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;
+    }
+    .badge-8 {background:rgba(34,197,94,.18);color:#86efac;}
+    .badge-9 {background:rgba(59,130,246,.18);color:#93c5fd;}
+    .badge-10 {background:rgba(234,179,8,.18);color:#fde047;}
+    .badge-11 {background:rgba(168,85,247,.18);color:#d8b4fe;}
+    .badge-12 {background:rgba(244,63,94,.18);color:#fda4af;}
+    .badge-all {background:rgba(255,255,255,.1);color:#cbd5e1;}
+    .topic-card h3 {font-size:1.05rem;color:#f1f5f9;margin-bottom:6px;}
+    .topic-card p {font-size:.83rem;color:#64748b;line-height:1.5;}
+    .topic-card .go-btn {
+      display:inline-flex;align-items:center;gap:5px;margin-top:12px;
+      padding:6px 16px;background:rgba(234,179,8,.15);border:1px solid rgba(234,179,8,.3);
+      border-radius:8px;font-size:.82rem;font-weight:700;color:#fde047;transition:all .2s;
+    }
+    .topic-card:hover .go-btn {background:rgba(234,179,8,.3);}
+
+    /* ── Quick Reference Table ── */
+    .qr-table {width:100%;border-collapse:collapse;margin:14px 0;font-size:.88rem;}
+    .qr-table th {background:rgba(234,179,8,.15);color:#fde047;padding:10px 14px;text-align:left;font-weight:700;}
+    .qr-table td {padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.05);color:#94a3b8;}
+    .qr-table tr:hover td {background:rgba(234,179,8,.06);color:#e2e8f0;}
+
+    /* ── Class selector hidden panels ── */
+    .class-panel {display:none;}
+    .class-panel.active {display:block;}
+
+    /* Base dark page */
+    body {background:#070711;color:#fff;font-family:'Segoe UI',system-ui,sans-serif;}
+    .container {max-width:1100px;margin:0 auto;padding:0 20px;}
+    .page-body {padding:20px 0 80px;}
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Visions Classes" class="nav-logo-img"/>
+        <div class="logo-text"><span>Visions</span> Classes</div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="animated-lessons.html">Animated Lessons</a></li>
+        <li><a href="hindi-grammar.html" class="active">हिंदी व्याकरण</a></li>
+        <li><a href="buy-courses.html">Buy Course</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hg-hero">
+    <div class="sparkle" style="top:10%;left:5%;animation-delay:0s;width:4px;height:4px;"></div>
+    <div class="sparkle" style="top:25%;left:15%;animation-delay:.5s;width:3px;height:3px;"></div>
+    <div class="sparkle" style="top:60%;left:3%;animation-delay:1s;width:4px;height:4px;"></div>
+    <div class="sparkle" style="top:15%;right:8%;animation-delay:.3s;width:3px;height:3px;"></div>
+    <div class="sparkle" style="top:45%;right:12%;animation-delay:.8s;width:4px;height:4px;"></div>
+    <div class="sparkle" style="top:70%;right:5%;animation-delay:1.4s;width:3px;height:3px;"></div>
+    <div class="container">
+      <div class="tag">📚 हिंदी · कक्षा 8 से 12</div>
+      <h1>हिंदी व्याकरण</h1>
+      <p>कक्षा 8, 9, 10, 11 और 12 के लिए सम्पूर्ण हिंदी व्याकरण — संज्ञा से लेकर काव्य-शास्त्र तक</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;">
+        <a href="#vyakaran" class="btn btn-white">📝 व्याकरण</a>
+        <a href="#rachna" class="btn btn-secondary" style="border-color:rgba(255,255,255,.5);color:#fff;">✍️ रचना</a>
+        <a href="#sahitya" class="btn btn-secondary" style="border-color:rgba(255,255,255,.5);color:#fff;">📖 साहित्य</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLASS TABS -->
+  <div style="background:rgba(255,255,255,.03);border-bottom:1px solid rgba(255,255,255,.07);padding:0 20px;">
+    <div class="class-tabs">
+      <a class="ctab active" onclick="showClass('all')" href="#">सभी कक्षाएँ</a>
+      <a class="ctab" onclick="showClass('8')" href="#">कक्षा 8</a>
+      <a class="ctab" onclick="showClass('9')" href="#">कक्षा 9</a>
+      <a class="ctab" onclick="showClass('10')" href="#">कक्षा 10</a>
+      <a class="ctab" onclick="showClass('11')" href="#">कक्षा 11</a>
+      <a class="ctab" onclick="showClass('12')" href="#">कक्षा 12</a>
+    </div>
+  </div>
+
+  <div class="page-body">
+    <div class="container">
+
+      <!-- ════════════════════════════════════
+           SECTION: व्याकरण (Grammar)
+      ════════════════════════════════════ -->
+      <h2 class="sec-title" id="vyakaran">📝 व्याकरण (Grammar)</h2>
+      <div class="topic-grid">
+
+        <a class="topic-card" href="hindi-grammar-8-9.html#sangya" data-class="8 9">
+          <div class="topic-icon">🏷️</div>
+          <span class="topic-badge badge-8">कक्षा 8-9</span>
+          <h3>संज्ञा (Noun)</h3>
+          <p>व्यक्तिवाचक, जातिवाचक, भाववाचक, द्रव्यवाचक, समूहवाचक — सभी प्रकार उदाहरण सहित।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-8-9.html#sarvnam" data-class="8 9">
+          <div class="topic-icon">👤</div>
+          <span class="topic-badge badge-8">कक्षा 8-9</span>
+          <h3>सर्वनाम (Pronoun)</h3>
+          <p>पुरुषवाचक, निश्चयवाचक, अनिश्चयवाचक, प्रश्नवाचक, संबंधवाचक, निजवाचक।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-8-9.html#visheshan" data-class="8 9">
+          <div class="topic-icon">🌈</div>
+          <span class="topic-badge badge-8">कक्षा 8-9</span>
+          <h3>विशेषण (Adjective)</h3>
+          <p>गुणवाचक, परिमाणवाचक, संख्यावाचक, सार्वनामिक — विशेष्य और विशेषण का संबंध।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-8-9.html#kriya" data-class="8 9">
+          <div class="topic-icon">⚡</div>
+          <span class="topic-badge badge-9">कक्षा 8-9</span>
+          <h3>क्रिया (Verb)</h3>
+          <p>सकर्मक, अकर्मक, प्रेरणार्थक, संयुक्त क्रिया — काल और वाच्य सहित।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-8-9.html#kaal" data-class="8 9">
+          <div class="topic-icon">⏰</div>
+          <span class="topic-badge badge-9">कक्षा 8-9</span>
+          <h3>काल (Tense)</h3>
+          <p>भूतकाल, वर्तमानकाल, भविष्यकाल — सभी भेद, उदाहरण और वाक्य रूपांतरण।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-8-9.html#karak" data-class="8 9">
+          <div class="topic-icon">🔗</div>
+          <span class="topic-badge badge-9">कक्षा 8-9</span>
+          <h3>कारक (Case)</h3>
+          <p>कर्ता, कर्म, करण, संप्रदान, अपादान, संबंध, अधिकरण, संबोधन — आठों कारक विभक्ति सहित।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-10.html#sandhi" data-class="9 10">
+          <div class="topic-icon">🔀</div>
+          <span class="topic-badge badge-10">कक्षा 9-10</span>
+          <h3>संधि (Joining of Sounds)</h3>
+          <p>स्वर संधि, व्यंजन संधि, विसर्ग संधि — नियम और उदाहरण। संधि विच्छेद।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-10.html#samas" data-class="9 10">
+          <div class="topic-icon">🧩</div>
+          <span class="topic-badge badge-10">कक्षा 9-10</span>
+          <h3>समास (Compound Words)</h3>
+          <p>अव्ययीभाव, तत्पुरुष, कर्मधारय, द्विगु, द्वंद्व, बहुव्रीहि — समास विग्रह।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-10.html#upsarg-pratyay" data-class="9 10">
+          <div class="topic-icon">🔤</div>
+          <span class="topic-badge badge-10">कक्षा 9-10</span>
+          <h3>उपसर्ग और प्रत्यय</h3>
+          <p>हिंदी, संस्कृत, उर्दू उपसर्ग; कृत् और तद्धित प्रत्यय — शब्द निर्माण।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-10.html#vakya" data-class="10">
+          <div class="topic-icon">📐</div>
+          <span class="topic-badge badge-10">कक्षा 10</span>
+          <h3>वाक्य (Sentence)</h3>
+          <p>साधारण, संयुक्त, मिश्र वाक्य; वाक्य-परिवर्तन, वाक्य शुद्धि।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-10.html#vachya" data-class="10">
+          <div class="topic-icon">🎙️</div>
+          <span class="topic-badge badge-10">कक्षा 10</span>
+          <h3>वाच्य (Voice)</h3>
+          <p>कर्तृवाच्य, कर्मवाच्य, भाववाच्य — परिवर्तन के नियम और उदाहरण।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-10.html#alankar-shbd" data-class="10">
+          <div class="topic-icon">💎</div>
+          <span class="topic-badge badge-10">कक्षा 10</span>
+          <h3>शब्द-भंडार</h3>
+          <p>पर्यायवाची, विलोम, अनेकार्थी, शब्द-युग्म, मुहावरे और लोकोक्तियाँ।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-11-12.html#shabd-shakti" data-class="11 12">
+          <div class="topic-icon">✨</div>
+          <span class="topic-badge badge-11">कक्षा 11-12</span>
+          <h3>शब्द-शक्ति (Word Power)</h3>
+          <p>अभिधा, लक्षणा, व्यंजना — परिभाषा, उदाहरण, अंतर और काव्य में प्रयोग।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-11-12.html#ras" data-class="11 12">
+          <div class="topic-icon">❤️</div>
+          <span class="topic-badge badge-11">कक्षा 11-12</span>
+          <h3>रस (Rasa)</h3>
+          <p>नौ रस — श्रृंगार, हास्य, करुण, रौद्र, वीर, भयानक, वीभत्स, अद्भुत, शांत। स्थायीभाव, विभाव, अनुभाव, संचारीभाव।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-11-12.html#chhand" data-class="11 12">
+          <div class="topic-icon">🎵</div>
+          <span class="topic-badge badge-11">कक्षा 11-12</span>
+          <h3>छंद (Metre)</h3>
+          <p>दोहा, चौपाई, सोरठा, रोला, कुंडलिया, सवैया, घनाक्षरी — मात्रा गणना सहित।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-11-12.html#alankar" data-class="11 12">
+          <div class="topic-icon">🌸</div>
+          <span class="topic-badge badge-12">कक्षा 11-12</span>
+          <h3>अलंकार (Figures of Speech)</h3>
+          <p>शब्दालंकार: अनुप्रास, यमक, श्लेष। अर्थालंकार: उपमा, रूपक, उत्प्रेक्षा, मानवीकरण, अतिशयोक्ति, विरोधाभास।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+      </div>
+
+      <!-- ════════════════════════════════════
+           SECTION: रचना (Writing)
+      ════════════════════════════════════ -->
+      <h2 class="sec-title" id="rachna">✍️ रचना (Writing Skills)</h2>
+      <div class="topic-grid">
+
+        <a class="topic-card" href="hindi-grammar-8-9.html#patra" data-class="8 9">
+          <div class="topic-icon">✉️</div>
+          <span class="topic-badge badge-8">कक्षा 8-9</span>
+          <h3>पत्र-लेखन (Letter Writing)</h3>
+          <p>औपचारिक पत्र: प्रधानाचार्य, सरकारी अधिकारी। अनौपचारिक: मित्र, परिवार। प्रारूप और भाषा।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-8-9.html#nibandh" data-class="8 9 10">
+          <div class="topic-icon">📝</div>
+          <span class="topic-badge badge-9">कक्षा 8-10</span>
+          <h3>निबंध-लेखन (Essay Writing)</h3>
+          <p>वर्णनात्मक, विचारात्मक, विवरणात्मक निबंध — प्रस्तावना, विस्तार, उपसंहार।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-10.html#anuched" data-class="10">
+          <div class="topic-icon">🗒️</div>
+          <span class="topic-badge badge-10">कक्षा 10</span>
+          <h3>अनुच्छेद-लेखन (Paragraph)</h3>
+          <p>एकता, क्रमबद्धता, सार्थकता — 80-100 शब्दों में प्रभावी अनुच्छेद लिखना।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-10.html#samvad" data-class="10">
+          <div class="topic-icon">💬</div>
+          <span class="topic-badge badge-10">कक्षा 10</span>
+          <h3>संवाद-लेखन (Dialogue)</h3>
+          <p>दो व्यक्तियों के बीच प्राकृतिक, उद्देश्यपूर्ण संवाद — परीक्षा उपयोगी प्रारूप।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-10.html#suchna" data-class="10">
+          <div class="topic-icon">📢</div>
+          <span class="topic-badge badge-10">कक्षा 10</span>
+          <h3>सूचना व विज्ञापन</h3>
+          <p>सूचना-लेखन और विज्ञापन-लेखन — प्रारूप, भाषा और परीक्षोपयोगी उदाहरण।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-11-12.html#report" data-class="11 12">
+          <div class="topic-icon">📰</div>
+          <span class="topic-badge badge-11">कक्षा 11-12</span>
+          <h3>प्रतिवेदन / रिपोर्ट लेखन</h3>
+          <p>समाचार रिपोर्ट, घटना विवरण — औपचारिक प्रतिवेदन का प्रारूप और भाषा।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-11-12.html#kahani" data-class="11 12">
+          <div class="topic-icon">📖</div>
+          <span class="topic-badge badge-12">कक्षा 11-12</span>
+          <h3>कहानी-लेखन (Story Writing)</h3>
+          <p>रूपरेखा के आधार पर कहानी — चरित्र, कथानक, संवाद, शीर्षक, शिक्षा।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-11-12.html#kavya" data-class="11 12">
+          <div class="topic-icon">🎨</div>
+          <span class="topic-badge badge-12">कक्षा 11-12</span>
+          <h3>काव्य-सौंदर्य (Poetic Beauty)</h3>
+          <p>भाव-सौंदर्य, शिल्प-सौंदर्य, बिम्ब, प्रतीक — काव्यांश की व्याख्या कैसे करें।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+      </div>
+
+      <!-- ════════════════════════════════════
+           SECTION: साहित्य-बोध
+      ════════════════════════════════════ -->
+      <h2 class="sec-title" id="sahitya">📖 साहित्य-बोध (Literature)</h2>
+      <div class="topic-grid">
+
+        <a class="topic-card" href="hindi-grammar-8-9.html#gadya" data-class="8 9">
+          <div class="topic-icon">📄</div>
+          <span class="topic-badge badge-8">कक्षा 8-9</span>
+          <h3>गद्य-बोध (Prose)</h3>
+          <p>गद्यांश पढ़ना, प्रश्नोत्तर, लेखक परिचय, सारांश लेखन।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-8-9.html#padya" data-class="8 9">
+          <div class="topic-icon">🎶</div>
+          <span class="topic-badge badge-9">कक्षा 8-9</span>
+          <h3>पद्य-बोध (Poetry)</h3>
+          <p>पद्यांश की व्याख्या, कवि परिचय, भाव-सौंदर्य।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-10.html#gadya-sahitya" data-class="10">
+          <div class="topic-icon">📚</div>
+          <span class="topic-badge badge-10">कक्षा 10</span>
+          <h3>गद्य-साहित्य (Class 10)</h3>
+          <p>कहानी, संस्मरण, यात्रा वृत्तांत — मुख्य पात्र, विषय-वस्तु, लेखक की दृष्टि।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-10.html#kavya-10" data-class="10">
+          <div class="topic-icon">🌹</div>
+          <span class="topic-badge badge-10">कक्षा 10</span>
+          <h3>काव्य-खंड (Class 10)</h3>
+          <p>पद, दोहे, कविताओं की व्याख्या — कबीर, मीरा, तुलसी, आधुनिक कवि।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-11-12.html#hindi-sahitya-itihas" data-class="11 12">
+          <div class="topic-icon">🏛️</div>
+          <span class="topic-badge badge-11">कक्षा 11-12</span>
+          <h3>हिंदी साहित्य का इतिहास</h3>
+          <p>आदिकाल, भक्तिकाल, रीतिकाल, आधुनिककाल — काल विभाजन, प्रमुख रचनाकार।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+        <a class="topic-card" href="hindi-grammar-11-12.html#nibandh-sahitya" data-class="11 12">
+          <div class="topic-icon">🖊️</div>
+          <span class="topic-badge badge-12">कक्षा 11-12</span>
+          <h3>गद्य-विधाएँ (Class 12)</h3>
+          <p>कहानी, उपन्यास, नाटक, एकांकी, निबंध — विशेषताएँ और प्रमुख लेखक।</p>
+          <span class="go-btn">अभी पढ़ें →</span>
+        </a>
+
+      </div>
+
+      <!-- ══ Quick Reference Table ══ -->
+      <h2 class="sec-title" style="margin-top:60px;">📋 कक्षावार पाठ्यक्रम सारांश</h2>
+      <table class="qr-table">
+        <thead>
+          <tr><th>कक्षा</th><th>व्याकरण</th><th>रचना</th><th>साहित्य</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="color:#86efac;font-weight:700;">कक्षा 8</td>
+            <td>संज्ञा, सर्वनाम, विशेषण, क्रिया, काल, वचन, लिंग</td>
+            <td>पत्र-लेखन, निबंध, अनुच्छेद</td>
+            <td>गद्यांश, पद्यांश, सारांश</td>
+          </tr>
+          <tr>
+            <td style="color:#93c5fd;font-weight:700;">कक्षा 9</td>
+            <td>कारक, उपसर्ग, प्रत्यय, शब्द-भेद, मुहावरे</td>
+            <td>औपचारिक पत्र, विज्ञापन, निबंध</td>
+            <td>गद्य-पद्य व्याख्या, कवि परिचय</td>
+          </tr>
+          <tr>
+            <td style="color:#fde047;font-weight:700;">कक्षा 10</td>
+            <td>संधि, समास, वाच्य, वाक्य-भेद, अनेकार्थी</td>
+            <td>सूचना, संवाद, अनुच्छेद, रिपोर्ट</td>
+            <td>कबीर, मीरा, तुलसी, आधुनिक काव्य</td>
+          </tr>
+          <tr>
+            <td style="color:#d8b4fe;font-weight:700;">कक्षा 11</td>
+            <td>शब्द-शक्ति, छंद, अलंकार, रस</td>
+            <td>प्रतिवेदन, कहानी-लेखन, भाषण</td>
+            <td>आदिकाल, भक्तिकाल, रीतिकाल</td>
+          </tr>
+          <tr>
+            <td style="color:#fda4af;font-weight:700;">कक्षा 12</td>
+            <td>काव्य-शास्त्र, काव्यांग, भाव-शिल्प</td>
+            <td>काव्य-सौंदर्य, गद्य-विधाएँ</td>
+            <td>आधुनिककाल, प्रमुख रचनाएँ</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo.png" alt="Visions Classes" class="footer-logo-img"/>
+          <span class="logo-text"><span>Visions</span> Classes</span>
+          <p>"Learn Today, Lead Tomorrow" — Ambernath since 2023.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="hindi-grammar.html">हिंदी व्याकरण</a></li>
+            <li><a href="animated-lessons.html">Animated Lessons</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+918767144200">📞 +91 87671 44200</a></li>
+            <li><a href="mailto:info@visionslearning.in">✉ info@visionslearning.in</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Visions Learning. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    function showClass(cls) {
+      document.querySelectorAll('.ctab').forEach(t=>t.classList.remove('active'));
+      event.target.classList.add('active');
+      document.querySelectorAll('.topic-card').forEach(card=>{
+        if(cls==='all') { card.style.display='block'; return; }
+        const classes = card.getAttribute('data-class')||'';
+        card.style.display = classes.includes(cls) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>हिंदी व्याकरण – कक्षा 10 – Visions Classes</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="logo.png" type="image/png"/>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{background:#07080f;color:#fff;font-family:'Segoe UI',system-ui,sans-serif;}
+    .navbar{background:rgba(7,8,15,.96)!important;}
+    .pg-hero{background:linear-gradient(135deg,#0a0505,#1a0a00,#050a10);padding:90px 0 40px;text-align:center;position:relative;overflow:hidden;}
+    .pg-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(234,179,8,.18) 0%,transparent 60%);}
+    .pg-hero .tag{display:inline-block;padding:4px 16px;border-radius:20px;background:rgba(234,179,8,.2);border:1px solid #eab308;color:#fde047;font-size:.76rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;position:relative;}
+    .pg-hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;background:linear-gradient(135deg,#fff,#fde047);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative;}
+    .pg-hero p{color:#64748b;margin-top:8px;font-size:.95rem;position:relative;}
+    .prog-bar{height:4px;background:rgba(255,255,255,.07);max-width:900px;margin:16px auto 0;border-radius:2px;}
+    .prog-fill{height:100%;background:linear-gradient(90deg,#eab308,#f59e0b);border-radius:2px;transition:width .4s;}
+    .slides{max-width:900px;margin:0 auto;padding:24px 20px 100px;}
+    .slide{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:36px;margin-bottom:22px;opacity:0;transform:translateY(30px);transition:opacity .6s,transform .6s;position:relative;overflow:hidden;}
+    .slide.visible{opacity:1;transform:translateY(0);}
+    .slide::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#eab308,#f59e0b,#ef4444);}
+    .slide-num{position:absolute;top:14px;right:18px;font-size:.7rem;color:#334155;font-weight:700;}
+    .slide h2{font-size:1.35rem;color:#f1f5f9;margin-bottom:16px;}
+    .slide p,.slide li{color:#94a3b8;line-height:1.85;font-size:.95rem;}
+    .slide ul{list-style:none;padding:0;}
+    .slide li{padding:5px 0 5px 22px;position:relative;}
+    .slide li::before{content:'→';position:absolute;left:0;color:#eab308;font-weight:700;}
+    .defbox{background:rgba(234,179,8,.1);border:1px solid rgba(234,179,8,.35);border-radius:12px;padding:16px 22px;margin:12px 0;font-size:.95rem;color:#fde047;}
+    .defbox .dl{font-size:.68rem;text-transform:uppercase;letter-spacing:1px;color:#eab308;display:block;margin-bottom:5px;}
+    .exbox{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px 18px;margin:10px 0;font-size:.9rem;color:#e2e8f0;}
+    .exbox .el{font-size:.68rem;text-transform:uppercase;letter-spacing:1px;color:#06b6d4;display:block;margin-bottom:5px;}
+    .type-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:12px 0;}
+    .type-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:16px;opacity:0;transform:scale(.95);transition:opacity .4s,transform .4s;}
+    .type-card.show{opacity:1;transform:scale(1);}
+    .type-card h4{color:#fde047;margin-bottom:6px;font-size:.92rem;}
+    .type-card p{font-size:.82rem;color:#64748b;line-height:1.5;}
+    .type-card .eg{font-size:.82rem;color:#bef264;margin-top:5px;}
+    .gram-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.87rem;}
+    .gram-table th{background:rgba(234,179,8,.15);color:#fde047;padding:9px 12px;text-align:left;font-weight:700;}
+    .gram-table td{padding:9px 12px;border-bottom:1px solid rgba(255,255,255,.05);color:#94a3b8;}
+    .gram-table tr:hover td{background:rgba(234,179,8,.06);color:#e2e8f0;}
+    .step{display:flex;gap:12px;margin-bottom:14px;opacity:0;transform:translateX(-16px);transition:opacity .5s,transform .5s;}
+    .step.show{opacity:1;transform:translateX(0);}
+    .snum{min-width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#eab308,#f59e0b);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:800;color:#000;flex-shrink:0;}
+    .sbody h4{color:#e2e8f0;margin-bottom:3px;font-size:.94rem;}
+    .sbody p{color:#94a3b8;font-size:.86rem;line-height:1.6;}
+    .hl{color:#fde047;font-weight:700;} .hg{color:#86efac;font-weight:700;} .hb{color:#93c5fd;font-weight:700;} .hr{color:#fda4af;font-weight:700;}
+    .lesson-nav{display:flex;justify-content:space-between;max-width:900px;margin:0 auto 50px;padding:0 20px;flex-wrap:wrap;gap:10px;}
+    .nav-btn{padding:10px 24px;border-radius:10px;border:none;cursor:pointer;font-size:.9rem;font-weight:700;transition:all .2s;text-decoration:none;display:inline-flex;align-items:center;gap:7px;}
+    .nav-back{background:rgba(255,255,255,.07);color:#94a3b8;}
+    .nav-next{background:linear-gradient(135deg,#eab308,#f59e0b);color:#000;}
+    .nav-next:hover{transform:translateY(-2px);}
+    .tts-bar{position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(7,8,15,.97);backdrop-filter:blur(16px);border-top:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:10px;padding:8px 20px;}
+    .tts-btn{padding:7px 16px;border-radius:8px;border:none;cursor:pointer;font-size:.83rem;font-weight:700;}
+    .tts-on{background:linear-gradient(135deg,#eab308,#f59e0b);color:#000;}
+    .tts-off{background:rgba(255,255,255,.08);color:#94a3b8;}
+    .tts-info{flex:1;font-size:.78rem;color:#475569;}
+    .tts-title{color:#e2e8f0;font-weight:600;font-size:.83rem;}
+  </style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="" class="nav-logo-img"/><div class="logo-text"><span>Visions</span> Classes</div></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="hindi-grammar.html" class="active">हिंदी व्याकरण</a></li>
+      <li><a href="animated-lessons.html">Animated Lessons</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<section class="pg-hero">
+  <div class="tag">📘 हिंदी व्याकरण · कक्षा 10</div>
+  <h1>कक्षा 10 — हिंदी व्याकरण</h1>
+  <p>संधि, समास, वाच्य, वाक्य-भेद, उपसर्ग-प्रत्यय, अलंकार — बोर्ड परीक्षा के लिए सम्पूर्ण</p>
+</section>
+<div class="prog-bar"><div class="prog-fill" id="pf" style="width:0%"></div></div>
+
+<div class="slides">
+
+  <!-- 1. संधि -->
+  <div class="slide" id="sandhi">
+    <div class="slide-num">1</div>
+    <h2>🔀 संधि (Joining of Sounds)</h2>
+    <div class="defbox"><span class="dl">परिभाषा</span>दो वर्णों के निकट आने पर उनमें जो विकार होता है उसे <span class="hl">संधि</span> कहते हैं। संधि तोड़ना = <span class="hl">संधि विच्छेद</span>।</div>
+    <div class="type-grid">
+      <div class="type-card">
+        <h4>स्वर संधि</h4>
+        <p>दो स्वरों के मिलने से। 5 प्रकार: दीर्घ, गुण, वृद्धि, यण, अयादि।</p>
+        <div class="eg">देव + आलय = देवालय (दीर्घ)<br/>सुर + ईश = सुरेश (गुण)</div>
+      </div>
+      <div class="type-card">
+        <h4>व्यंजन संधि</h4>
+        <p>व्यंजन के बाद स्वर या व्यंजन आने पर।</p>
+        <div class="eg">सत् + जन = सज्जन<br/>उत् + लास = उल्लास<br/>दिक् + गज = दिग्गज</div>
+      </div>
+      <div class="type-card">
+        <h4>विसर्ग संधि</h4>
+        <p>विसर्ग (:) के बाद स्वर या व्यंजन आने पर।</p>
+        <div class="eg">मन: + रथ = मनोरथ<br/>नि: + संदेह = निस्संदेह</div>
+      </div>
+    </div>
+    <table class="gram-table">
+      <thead><tr><th>संधि के उदाहरण</th><th>विच्छेद</th><th>प्रकार</th></tr></thead>
+      <tbody>
+        <tr><td>विद्यालय</td><td>विद्या + आलय</td><td>दीर्घ स्वर</td></tr>
+        <tr><td>महेश</td><td>महा + ईश</td><td>गुण स्वर</td></tr>
+        <tr><td>महौषध</td><td>महा + औषध</td><td>वृद्धि स्वर</td></tr>
+        <tr><td>अत्यधिक</td><td>अति + अधिक</td><td>यण स्वर</td></tr>
+        <tr><td>सच्चरित्र</td><td>सत् + चरित्र</td><td>व्यंजन</td></tr>
+        <tr><td>दुराचार</td><td>दु: + आचार</td><td>विसर्ग</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 2. समास -->
+  <div class="slide" id="samas">
+    <div class="slide-num">2</div>
+    <h2>🧩 समास (Compound Words)</h2>
+    <div class="defbox"><span class="dl">परिभाषा</span>दो या दो से अधिक शब्दों का संक्षेप में मेल <span class="hl">समास</span> कहलाता है। समास खोलना = <span class="hl">समास विग्रह</span>।</div>
+    <table class="gram-table">
+      <thead><tr><th>समास</th><th>पहचान</th><th>उदाहरण</th><th>विग्रह</th></tr></thead>
+      <tbody>
+        <tr><td class="hl">अव्ययीभाव</td><td>पूर्वपद प्रधान, अव्यय से शुरू</td><td>यथाशक्ति</td><td>शक्ति के अनुसार</td></tr>
+        <tr><td class="hl">तत्पुरुष</td><td>उत्तरपद प्रधान, कारक चिह्न लुप्त</td><td>राजपुत्र</td><td>राजा का पुत्र</td></tr>
+        <tr><td class="hl">कर्मधारय</td><td>दोनों पद एक ही विभक्ति, उपमा या विशेषण</td><td>नीलकमल</td><td>नीला है जो कमल</td></tr>
+        <tr><td class="hl">द्विगु</td><td>पूर्वपद संख्यावाची</td><td>त्रिभुज</td><td>तीन भुजाओं का समूह</td></tr>
+        <tr><td class="hl">द्वंद्व</td><td>दोनों पद प्रधान, और/या से जुड़ते</td><td>माता-पिता</td><td>माता और पिता</td></tr>
+        <tr><td class="hl">बहुव्रीहि</td><td>दोनों पद मिलकर तीसरे का बोध</td><td>नीलकंठ</td><td>नीला है कंठ जिसका (शिव)</td></tr>
+      </tbody>
+    </table>
+    <div class="exbox"><span class="el">परीक्षा टिप — कर्मधारय vs बहुव्रीहि</span><strong>कर्मधारय:</strong> नीलकमल = नीला कमल (विशेषण-विशेष्य या उपमान-उपमेय) | <strong>बहुव्रीहि:</strong> नीलकंठ = नीला है कंठ जिसका — यानी शिव (तीसरे का बोध)। <em>बहुव्रीहि में 'जिसका, जिसे, जिसने' आता है।</em></div>
+  </div>
+
+  <!-- 3. उपसर्ग-प्रत्यय -->
+  <div class="slide" id="upsarg-pratyay">
+    <div class="slide-num">3</div>
+    <h2>🔤 उपसर्ग और प्रत्यय</h2>
+    <div class="defbox"><span class="dl">उपसर्ग</span>शब्द के <span class="hl">आगे</span> लगकर नया शब्द बनाने वाले अव्यय। &nbsp;|&nbsp; <span class="hl">प्रत्यय</span> — शब्द के <span class="hl">पीछे</span> लगता है।</div>
+    <table class="gram-table">
+      <thead><tr><th>उपसर्ग</th><th>अर्थ</th><th>उदाहरण</th></tr></thead>
+      <tbody>
+        <tr><td class="hl">अ / अन्</td><td>नहीं</td><td>अधर्म, अनपढ़, अनजान</td></tr>
+        <tr><td class="hl">वि</td><td>विशेष / अभाव</td><td>विकास, विदेश, विशेष</td></tr>
+        <tr><td class="hl">सु</td><td>अच्छा</td><td>सुविधा, सुरक्षा, सुपुत्र</td></tr>
+        <tr><td class="hl">दुर् / दुस्</td><td>बुरा/कठिन</td><td>दुर्भाग्य, दुराचार, दुस्साहस</td></tr>
+        <tr><td class="hl">प्र</td><td>आगे/अधिक</td><td>प्रकाश, प्रचार, प्रगति</td></tr>
+        <tr><td class="hl">परि</td><td>चारों ओर</td><td>परिवार, परिचय, परिणाम</td></tr>
+        <tr><td class="hl">बे (उर्दू)</td><td>बिना</td><td>बेकार, बेईमान, बेकाबू</td></tr>
+        <tr><td class="hl">ना (उर्दू)</td><td>नहीं</td><td>नालायक, नापसंद, नाकाम</td></tr>
+      </tbody>
+    </table>
+    <div class="exbox"><span class="el">महत्वपूर्ण प्रत्यय</span>
+      <strong>कृत् प्रत्यय (क्रिया से):</strong> पढ़+आई=पढ़ाई | लिख+आवट=लिखावट | बोल+ना=बोलना<br/>
+      <strong>तद्धित प्रत्यय (संज्ञा/विशेषण से):</strong> दिल्ली+वाला=दिल्लीवाला | मीठा+पन=मिठास | भारत+ईय=भारतीय
+    </div>
+  </div>
+
+  <!-- 4. वाच्य -->
+  <div class="slide" id="vachya">
+    <div class="slide-num">4</div>
+    <h2>🎙️ वाच्य (Voice)</h2>
+    <div class="defbox"><span class="dl">परिभाषा</span>क्रिया के जिस रूप से यह पता चले कि वाक्य में कर्ता, कर्म या भाव प्रधान है, उसे <span class="hl">वाच्य</span> कहते हैं।</div>
+    <table class="gram-table">
+      <thead><tr><th>वाच्य</th><th>प्रधानता</th><th>उदाहरण</th></tr></thead>
+      <tbody>
+        <tr><td class="hl">कर्तृवाच्य (Active)</td><td>कर्ता प्रधान</td><td>राम खाना खाता है।</td></tr>
+        <tr><td class="hl">कर्मवाच्य (Passive)</td><td>कर्म प्रधान</td><td>राम द्वारा खाना खाया जाता है।</td></tr>
+        <tr><td class="hl">भाववाच्य</td><td>भाव प्रधान, क्रिया अकर्मक</td><td>राम से बैठा नहीं जाता।</td></tr>
+      </tbody>
+    </table>
+    <div class="exbox"><span class="el">वाच्य परिवर्तन नियम</span>
+      <strong>कर्तृ → कर्म:</strong> कर्ता के साथ 'द्वारा/से' लगाएँ, कर्म को कर्ता बनाएँ, क्रिया 'जाना' क्रिया से बदलें।<br/><br/>
+      राम पत्र लिखता है → राम द्वारा पत्र लिखा जाता है।<br/>
+      माँ खाना बनाती है → माँ द्वारा खाना बनाया जाता है।<br/><br/>
+      <strong>भाववाच्य:</strong> केवल अकर्मक क्रिया, कर्ता के साथ 'से', क्रिया एकवचन पुल्लिंग।<br/>
+      वह नहीं चलता → उससे चला नहीं जाता।
+    </div>
+  </div>
+
+  <!-- 5. वाक्य-भेद -->
+  <div class="slide" id="vakya">
+    <div class="slide-num">5</div>
+    <h2>📐 वाक्य-भेद (Sentence Types)</h2>
+    <div class="defbox"><span class="dl">परिभाषा</span>सार्थक शब्दों के व्यवस्थित समूह से जब पूरा अर्थ निकले तो उसे <span class="hl">वाक्य</span> कहते हैं।</div>
+    <p style="margin:12px 0 8px;"><span class="hl">रचना के आधार पर:</span></p>
+    <div class="type-grid">
+      <div class="type-card"><h4>साधारण वाक्य</h4><p>एक उद्देश्य, एक विधेय।</p><div class="eg">राम खाना खाता है।</div></div>
+      <div class="type-card"><h4>संयुक्त वाक्य</h4><p>दो साधारण वाक्य 'और, किंतु, परंतु, इसलिए' से जुड़े।</p><div class="eg">वह आया और चला गया।</div></div>
+      <div class="type-card"><h4>मिश्र वाक्य</h4><p>एक प्रधान + एक आश्रित उपवाक्य।</p><div class="eg">जो परिश्रम करता है वह सफल होता है।</div></div>
+    </div>
+    <p style="margin:14px 0 8px;"><span class="hl">अर्थ के आधार पर (8 प्रकार):</span></p>
+    <div class="exbox"><span class="el">8 प्रकार</span>
+      <strong>1. विधानवाचक:</strong> राम पढ़ता है। &nbsp;|&nbsp;
+      <strong>2. निषेधवाचक:</strong> राम नहीं पढ़ता। &nbsp;|&nbsp;
+      <strong>3. प्रश्नवाचक:</strong> क्या राम पढ़ता है? &nbsp;|&nbsp;
+      <strong>4. आज्ञावाचक:</strong> पढ़ो! &nbsp;|&nbsp;
+      <strong>5. विस्मयादिवाचक:</strong> वाह! क्या सुंदर फूल है! &nbsp;|&nbsp;
+      <strong>6. इच्छावाचक:</strong> ईश्वर तुम्हें दीर्घायु करे। &nbsp;|&nbsp;
+      <strong>7. संदेहवाचक:</strong> शायद वह आए। &nbsp;|&nbsp;
+      <strong>8. संकेतवाचक:</strong> यदि पढ़ोगे तो पास होगे।
+    </div>
+  </div>
+
+  <!-- 6. शब्द-भंडार -->
+  <div class="slide" id="alankar-shbd">
+    <div class="slide-num">6</div>
+    <h2>💎 शब्द-भंडार (Vocabulary)</h2>
+    <div class="defbox"><span class="dl">महत्वपूर्ण</span>बोर्ड परीक्षा में <span class="hl">पर्यायवाची, विलोम, अनेकार्थी, मुहावरे और लोकोक्तियाँ</span> प्रतिवर्ष पूछे जाते हैं।</div>
+    <table class="gram-table">
+      <thead><tr><th>शब्द</th><th>पर्यायवाची</th></tr></thead>
+      <tbody>
+        <tr><td class="hl">आकाश</td><td>गगन, अंबर, नभ, व्योम, आसमान</td></tr>
+        <tr><td class="hl">पानी</td><td>जल, नीर, वारि, तोय, अंबु</td></tr>
+        <tr><td class="hl">सूर्य</td><td>रवि, दिनकर, भानु, आदित्य, दिवाकर</td></tr>
+        <tr><td class="hl">रात</td><td>रजनी, निशा, यामिनी, शर्वरी</td></tr>
+        <tr><td class="hl">फूल</td><td>पुष्प, कुसुम, सुमन, प्रसून</td></tr>
+        <tr><td class="hl">मित्र</td><td>दोस्त, सखा, सहचर, संगी</td></tr>
+      </tbody>
+    </table>
+    <table class="gram-table" style="margin-top:14px;">
+      <thead><tr><th>शब्द</th><th>विलोम</th><th>शब्द</th><th>विलोम</th></tr></thead>
+      <tbody>
+        <tr><td class="hl">आदि</td><td>अंत</td><td class="hl">आशा</td><td>निराशा</td></tr>
+        <tr><td class="hl">उचित</td><td>अनुचित</td><td class="hl">एकता</td><td>अनेकता</td></tr>
+        <tr><td class="hl">उत्कर्ष</td><td>अपकर्ष</td><td class="hl">कल्याण</td><td>अकल्याण</td></tr>
+        <tr><td class="hl">ज्ञान</td><td>अज्ञान</td><td class="hl">दिन</td><td>रात</td></tr>
+      </tbody>
+    </table>
+    <div class="exbox"><span class="el">परीक्षा उपयोगी मुहावरे</span>
+      <strong>आँखें चुराना</strong> — सामने न आना &nbsp;|&nbsp;
+      <strong>कान भरना</strong> — चुगली करना &nbsp;|&nbsp;
+      <strong>घाव पर नमक छिड़कना</strong> — दुखी को और दुखाना &nbsp;|&nbsp;
+      <strong>नमक-मिर्च लगाना</strong> — बढ़ा-चढ़ाकर बताना &nbsp;|&nbsp;
+      <strong>हाथ-पाँव मारना</strong> — कठिन प्रयास करना &nbsp;|&nbsp;
+      <strong>दाँत खट्टे करना</strong> — हराना
+    </div>
+  </div>
+
+  <!-- 7. अनुच्छेद-लेखन -->
+  <div class="slide" id="anuched">
+    <div class="slide-num">7</div>
+    <h2>🗒️ अनुच्छेद-लेखन (Paragraph Writing)</h2>
+    <div class="defbox"><span class="dl">परिभाषा</span>किसी एक विचार या विषय पर क्रमबद्ध रूप से लिखे गए <span class="hl">80–100 शब्दों</span> के सुसंगठित वाक्यों को अनुच्छेद कहते हैं।</div>
+    <div class="step"><div class="snum">1</div><div class="sbody"><h4>आरंभिक वाक्य (Topic Sentence)</h4><p>अनुच्छेद का मुख्य विचार पहले वाक्य में स्पष्ट करें।</p></div></div>
+    <div class="step"><div class="snum">2</div><div class="sbody"><h4>विकास (Development)</h4><p>मुख्य विचार को उदाहरण, तथ्य, तर्क से विस्तार दें।</p></div></div>
+    <div class="step"><div class="snum">3</div><div class="sbody"><h4>समापन वाक्य (Concluding Line)</h4><p>विचार को संक्षिप्त और प्रभावी रूप से समेटें।</p></div></div>
+    <div class="exbox"><span class="el">परीक्षा उपयोगी अनुच्छेद विषय</span>
+      डिजिटल इंडिया | मेरा सपना | पर्यावरण और हम | स्वास्थ्य ही धन है | समय का महत्व | मोबाइल — वरदान या अभिशाप | भ्रष्टाचार एक समस्या | महिला सशक्तिकरण
+    </div>
+  </div>
+
+  <!-- 8. संवाद-लेखन -->
+  <div class="slide" id="samvad">
+    <div class="slide-num">8</div>
+    <h2>💬 संवाद-लेखन (Dialogue Writing)</h2>
+    <div class="defbox"><span class="dl">परिभाषा</span>दो या दो से अधिक व्यक्तियों के बीच हुई बातचीत को <span class="hl">संवाद</span> कहते हैं।</div>
+    <ul>
+      <li>प्रत्येक वक्ता का नाम लिखकर उसके संवाद अलग-अलग लिखें</li>
+      <li>भाषा सरल, स्वाभाविक और विषयानुकूल होनी चाहिए</li>
+      <li>संवाद का एक उद्देश्य होना चाहिए</li>
+      <li>5–6 संवाद (8–10 पंक्तियाँ) पर्याप्त हैं</li>
+    </ul>
+    <div class="exbox"><span class="el">नमूना संवाद — दो मित्रों के बीच परीक्षा की चर्चा</span>
+      <strong>रवि:</strong> अरे सोहन! कल से परीक्षाएँ शुरू हो रही हैं, क्या तुमने तैयारी कर ली?<br/>
+      <strong>सोहन:</strong> हाँ रवि, मैंने सभी विषयों का अभ्यास कर लिया है। तुमने क्या किया?<br/>
+      <strong>रवि:</strong> मैंने गणित और विज्ञान तो कर लिए, लेकिन हिंदी में संधि-समास अभी भी कमज़ोर है।<br/>
+      <strong>सोहन:</strong> चिंता मत करो, मैं तुम्हें समझाता हूँ। आओ साथ में दोहराते हैं।<br/>
+      <strong>रवि:</strong> धन्यवाद सोहन! सच्चे मित्र का यही धर्म है।
+    </div>
+  </div>
+
+  <!-- 9. सूचना-विज्ञापन -->
+  <div class="slide" id="suchna">
+    <div class="slide-num">9</div>
+    <h2>📢 सूचना-लेखन और विज्ञापन-लेखन</h2>
+    <p style="margin-bottom:12px;"><span class="hl">सूचना</span> — किसी घटना, कार्यक्रम या जानकारी को आधिकारिक रूप से बताना।</p>
+    <div class="step"><div class="snum">S</div><div class="sbody"><h4>सूचना-लेखन प्रारूप</h4><p>विद्यालय/संस्था का नाम | सूचना (शीर्षक) | दिनांक | मुख्य विषय (कब, कहाँ, क्या) | हस्ताक्षर + पदनाम</p></div></div>
+    <div class="exbox"><span class="el">सूचना का नमूना</span>
+      <strong>DAV विद्यालय, अंबरनाथ</strong><br/>
+      <strong>सूचना</strong><br/>
+      दिनांक: 15 जनवरी 2026<br/>
+      सभी विद्यार्थियों को सूचित किया जाता है कि 20 जनवरी को विद्यालय में वार्षिक पुरस्कार-वितरण समारोह आयोजित होगा। सभी विद्यार्थी श्वेत वर्दी में उपस्थित रहें।<br/>
+      — प्रधानाचार्य
+    </div>
+    <p style="margin:14px 0 8px;"><span class="hl">विज्ञापन-लेखन</span> — किसी वस्तु, सेवा या संस्था का प्रचार।</p>
+    <div class="exbox"><span class="el">विज्ञापन के अंग</span>
+      <strong>1. आकर्षक शीर्षक</strong> — पाठक का ध्यान खींचे |
+      <strong>2. मुख्य संदेश</strong> — उत्पाद की विशेषता |
+      <strong>3. चित्र/रेखांकन</strong> (यदि हो) |
+      <strong>4. संपर्क विवरण</strong> — पता, फोन |
+      <strong>5. नारा (Slogan)</strong> — यादगार पंक्ति
+    </div>
+  </div>
+
+  <!-- 10. काव्य-खंड Class 10 -->
+  <div class="slide" id="kavya-10">
+    <div class="slide-num">10</div>
+    <h2>🌹 काव्य-खंड — कक्षा 10</h2>
+    <div class="defbox"><span class="dl">परीक्षा पैटर्न</span>बोर्ड परीक्षा में <span class="hl">काव्यांश की व्याख्या</span>, <span class="hl">भाव-सौंदर्य</span>, <span class="hl">अलंकार पहचान</span> और <span class="hl">कवि परिचय</span> पूछा जाता है।</div>
+    <table class="gram-table">
+      <thead><tr><th>कवि</th><th>काल</th><th>प्रमुख रचनाएँ</th><th>विशेषता</th></tr></thead>
+      <tbody>
+        <tr><td class="hl">कबीरदास</td><td>भक्तिकाल (निर्गुण)</td><td>बीजक, साखी, सबद, रमैनी</td><td>सामाजिक सुधार, आडम्बर विरोध</td></tr>
+        <tr><td class="hl">मीराबाई</td><td>भक्तिकाल (सगुण)</td><td>मीरा-पदावली</td><td>कृष्णभक्ति, विरह-भावना</td></tr>
+        <tr><td class="hl">तुलसीदास</td><td>भक्तिकाल</td><td>रामचरितमानस, विनय पत्रिका</td><td>राम-भक्ति, समन्वय</td></tr>
+        <tr><td class="hl">सूरदास</td><td>भक्तिकाल</td><td>सूरसागर, सूर-सारावली</td><td>वात्सल्य और शृंगार</td></tr>
+      </tbody>
+    </table>
+    <div class="exbox"><span class="el">काव्यांश व्याख्या कैसे लिखें</span>
+      <strong>1. संदर्भ:</strong> कवि का नाम, काव्य-संग्रह, प्रसंग<br/>
+      <strong>2. प्रसंग:</strong> 1-2 पंक्तियों में पृष्ठभूमि<br/>
+      <strong>3. व्याख्या:</strong> पंक्तियों का सरल अर्थ<br/>
+      <strong>4. विशेष:</strong> अलंकार, भाषा, छंद, रस<br/>
+      <strong>5. भाव:</strong> कवि का मुख्य संदेश
+    </div>
+  </div>
+
+  <!-- 11. गद्य-साहित्य -->
+  <div class="slide" id="gadya-sahitya">
+    <div class="slide-num">11</div>
+    <h2>📚 गद्य-साहित्य — कक्षा 10</h2>
+    <div class="defbox"><span class="dl">गद्य-विधाएँ</span>कक्षा 10 में <span class="hl">कहानी, संस्मरण, यात्रा-वृत्तांत</span> और <span class="hl">रेखाचित्र</span> मुख्यतः पढ़े जाते हैं।</div>
+    <table class="gram-table">
+      <thead><tr><th>विधा</th><th>परिभाषा</th><th>विशेषताएँ</th></tr></thead>
+      <tbody>
+        <tr><td class="hl">कहानी</td><td>काल्पनिक या यथार्थ घटनाओं का वर्णन</td><td>पात्र, कथानक, संवाद, चरमोत्कर्ष, शिक्षा</td></tr>
+        <tr><td class="hl">संस्मरण</td><td>बीती यादों का लेखन</td><td>व्यक्तिगत अनुभव, भावुकता, आत्मीयता</td></tr>
+        <tr><td class="hl">यात्रा-वृत्तांत</td><td>यात्रा का विवरण</td><td>स्थान-वर्णन, रोचकता, जानकारी</td></tr>
+        <tr><td class="hl">रेखाचित्र</td><td>किसी व्यक्ति का चित्रण शब्दों में</td><td>व्यक्तित्व, भाव-चित्रण, जीवंतता</td></tr>
+      </tbody>
+    </table>
+    <div class="exbox"><span class="el">परीक्षा टिप</span>गद्यांश पढ़ते समय <strong>मुख्य विचार, कठिन शब्द और शीर्षक</strong> पहले ढूँढें। उत्तर हमेशा अपने शब्दों में लिखें। प्रश्न में जितने अंक, उतने बिंदु लिखें।</div>
+  </div>
+
+</div>
+
+<div class="lesson-nav">
+  <a href="hindi-grammar-8-9.html" class="nav-btn nav-back">← कक्षा 8-9</a>
+  <a href="hindi-grammar-11-12.html" class="nav-btn nav-next">कक्षा 11-12 →</a>
+</div>
+
+<div class="tts-bar">
+  <button class="tts-btn tts-on" id="ttsBtn" onclick="toggleTTS()">🔊 आवाज़ चालू</button>
+  <div class="tts-info"><div class="tts-title" id="ttsTitle">कक्षा 10 व्याकरण</div><div>स्वचालित पठन सक्रिय है</div></div>
+  <button class="tts-btn tts-off" onclick="stopTTS()">⏹ रोकें</button>
+</div>
+
+<script src="main.js"></script>
+<script>
+const slides=document.querySelectorAll('.slide');
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');e.target.querySelectorAll('.type-card,.step').forEach((c,i)=>setTimeout(()=>c.classList.add('show'),i*180));updateProg();if(ttsEnabled)speakSlide(e.target.id);obs.unobserve(e.target);}});},{threshold:0.15});
+slides.forEach(s=>obs.observe(s));
+function updateProg(){const v=document.querySelectorAll('.slide.visible').length;document.getElementById('pf').style.width=(v/slides.length*100)+'%';}
+let ttsEnabled=true;const synth=window.speechSynthesis;
+const NARRATION={
+  'sandhi':'संधि का अर्थ है मेल। दो वर्णों के पास आने से जो परिवर्तन होता है उसे संधि कहते हैं। तीन प्रकार हैं — स्वर संधि, व्यंजन संधि और विसर्ग संधि। स्वर संधि के पाँच भेद हैं — दीर्घ, गुण, वृद्धि, यण और अयादि। परीक्षा में संधि और संधि विच्छेद दोनों पूछे जाते हैं।',
+  'samas':'समास में दो शब्दों का मेल होता है। छह प्रकार हैं — अव्ययीभाव, तत्पुरुष, कर्मधारय, द्विगु, द्वंद्व और बहुव्रीहि। कर्मधारय में विशेषण-विशेष्य का संबंध होता है जैसे नीलकमल। बहुव्रीहि में दोनों पद मिलकर तीसरे का बोध देते हैं जैसे नीलकंठ अर्थात शिव। यह अंतर परीक्षा में बहुत महत्वपूर्ण है।',
+  'vachya':'वाच्य के तीन प्रकार हैं। कर्तृवाच्य में कर्ता प्रधान होता है — राम खाना खाता है। कर्मवाच्य में कर्म प्रधान — राम द्वारा खाना खाया जाता है। भाववाच्य में भाव प्रधान, अकर्मक क्रिया — राम से बैठा नहीं जाता। परिवर्तन में कर्ता के साथ द्वारा लगाएँ और क्रिया बदलें।',
+  'vakya':'वाक्य-भेद रचना के आधार पर तीन प्रकार हैं — साधारण, संयुक्त और मिश्र। अर्थ के आधार पर आठ प्रकार हैं। विधानवाचक में सामान्य कथन होता है। निषेधवाचक में नकारात्मक। प्रश्नवाचक में प्रश्न। आज्ञावाचक में आदेश। विस्मयादिवाचक में आश्चर्य। इच्छावाचक में इच्छा। संदेहवाचक में शक। संकेतवाचक में शर्त।',
+};
+function speak(text){if(!ttsEnabled||!synth)return;synth.cancel();if(!text)return;const u=new SpeechSynthesisUtterance(text);u.lang='hi-IN';u.rate=0.85;const voices=synth.getVoices();const v=voices.find(v=>/hi/i.test(v.lang));if(v)u.voice=v;synth.speak(u);}
+function stopTTS(){synth&&synth.cancel();}
+function toggleTTS(){ttsEnabled=!ttsEnabled;const btn=document.getElementById('ttsBtn');if(ttsEnabled){btn.textContent='🔊 आवाज़ चालू';btn.style.opacity='1';}else{stopTTS();btn.textContent='🔇 आवाज़ बंद';btn.style.opacity='.5';}}
+function speakSlide(id){if(NARRATION[id]){document.getElementById('ttsTitle').textContent=document.querySelector('#'+id+' h2')?.textContent||'';setTimeout(()=>speak(NARRATION[id]),500);}}
+</script>
+</body>
+</html>
