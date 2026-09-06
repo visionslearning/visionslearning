@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Class 11 Physics Notes — Visions Classes</title>
+  <meta name="description" content="Complete Class 11 Physics revision notes with keypoints, all formulas and exam important questions. Visions Classes Ambernath."/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="logo.png" type="image/png"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #f8fafc; color: #1e293b; font-family: 'Segoe UI', system-ui, sans-serif; }
+
+    /* ── Navbar override for light page ── */
+    .navbar { background: #1e293b !important; }
+
+    /* ── Hero ── */
+    .notes-hero {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      color: #fff; padding: 90px 0 48px; text-align: center;
+    }
+    .hero-badge {
+      display: inline-block; padding: 5px 18px; border-radius: 20px;
+      background: rgba(99,102,241,.25); border: 1px solid #6366f1;
+      color: #a5b4fc; font-size: .78rem; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px;
+    }
+    .notes-hero h1 {
+      font-size: clamp(1.9rem, 4vw, 2.9rem); font-weight: 900;
+      background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; margin-bottom: 10px;
+    }
+    .notes-hero p { color: #94a3b8; font-size: .97rem; max-width: 620px; margin: 0 auto 24px; }
+    .hero-stats {
+      display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-top: 18px;
+    }
+    .hstat { text-align: center; }
+    .hstat .num { font-size: 1.6rem; font-weight: 800; color: #a5b4fc; }
+    .hstat .lbl { font-size: .75rem; color: #64748b; }
+
+    /* ── Chapter tab bar ── */
+    .tab-bar {
+      background: #fff; border-bottom: 2px solid #e2e8f0;
+      display: flex; gap: 0; overflow-x: auto; position: sticky; top: 60px; z-index: 80;
+    }
+    .tab-bar::-webkit-scrollbar { height: 0; }
+    .tab-btn {
+      padding: 12px 20px; border: none; background: transparent;
+      font-size: .82rem; font-weight: 700; color: #64748b;
+      cursor: pointer; white-space: nowrap; border-bottom: 3px solid transparent;
+      transition: all .2s; text-decoration: none; display: inline-block;
+    }
+    .tab-btn:hover { color: #6366f1; background: #f1f5f9; }
+    .tab-btn.active { color: #6366f1; border-bottom-color: #6366f1; background: #f8f7ff; }
+
+    /* ── Page body ── */
+    .notes-body { max-width: 980px; margin: 0 auto; padding: 32px 20px 80px; }
+
+    /* ── Chapter header ── */
+    .ch-head {
+      border-radius: 14px; padding: 22px 28px; margin: 36px 0 22px;
+      display: flex; align-items: center; gap: 16px;
+      border-left: 6px solid; position: relative;
+    }
+    .ch-head.c1  { background: #f0f4ff; border-color: #6366f1; }
+    .ch-head.c2  { background: #fff7ed; border-color: #f59e0b; }
+    .ch-head.c3  { background: #f0fdf4; border-color: #22c55e; }
+    .ch-head.c4  { background: #fff1f2; border-color: #ef4444; }
+    .ch-head.c5  { background: #f0f9ff; border-color: #0ea5e9; }
+    .ch-head.c6  { background: #fdf4ff; border-color: #a855f7; }
+    .ch-head.c7  { background: #fff8f0; border-color: #fb923c; }
+    .ch-head.c8  { background: #f0fffe; border-color: #14b8a6; }
+    .ch-head .ch-icon { font-size: 2.4rem; flex-shrink: 0; }
+    .ch-head h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 3px; }
+    .ch-head p  { font-size: .83rem; color: #64748b; }
+    .ch-num {
+      position: absolute; top: 14px; right: 18px;
+      font-size: .7rem; font-weight: 700; color: #94a3b8;
+      background: rgba(0,0,0,.06); padding: 3px 10px; border-radius: 10px;
+    }
+
+    /* ── Section card ── */
+    .sec {
+      background: #fff; border: 1px solid #e2e8f0; border-radius: 14px;
+      padding: 26px 28px; margin-bottom: 18px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.04);
+    }
+    .sec-title {
+      font-size: 1rem; font-weight: 800; margin-bottom: 14px;
+      display: flex; align-items: center; gap: 8px; padding-bottom: 10px;
+      border-bottom: 2px solid #f1f5f9;
+    }
+
+    /* ── Definition box ── */
+    .def {
+      background: #f8f9ff; border: 1px solid #c7d2fe;
+      border-radius: 9px; padding: 13px 18px; margin: 10px 0;
+      font-size: .9rem; color: #3730a3; line-height: 1.6;
+    }
+    .def .dl {
+      font-size: .67rem; text-transform: uppercase; letter-spacing: 1px;
+      color: #6366f1; font-weight: 700; display: block; margin-bottom: 4px;
+    }
+
+    /* ── Formula box ── */
+    .fml {
+      background: #fafafa; border: 1.5px solid #cbd5e1;
+      border-radius: 9px; padding: 13px 18px; margin: 10px 0;
+      font-family: 'Courier New', monospace; font-size: .92rem;
+      color: #1e293b; text-align: center;
+    }
+    .fml .fl {
+      font-family: 'Segoe UI', sans-serif; font-size: .67rem;
+      text-transform: uppercase; letter-spacing: 1px; color: #6366f1;
+      font-weight: 700; display: block; margin-bottom: 5px;
+    }
+    .fml.imp-f { background: #fffbeb; border-color: #fcd34d; }
+    .fml.grn-f { background: #f0fdf4; border-color: #86efac; }
+    .fml.red-f { background: #fff1f2; border-color: #fca5a5; }
+
+    /* ── Key points list ── */
+    .kp-list { list-style: none; padding: 0; margin: 10px 0; }
+    .kp-list li {
+      padding: 7px 0 7px 24px; position: relative;
+      font-size: .9rem; color: #334155; line-height: 1.65;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .kp-list li:last-child { border-bottom: none; }
+    .kp-list li::before {
+      content: '▶'; position: absolute; left: 0;
+      font-size: .55rem; top: 11px; color: #6366f1;
+    }
+
+    /* ── Formula grid ── */
+    .fml-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px; margin: 12px 0;
+    }
+    .fg {
+      background: #f8f9ff; border: 1px solid #c7d2fe;
+      border-radius: 9px; padding: 13px 16px;
+    }
+    .fg h4 { font-size: .82rem; color: #4f46e5; margin-bottom: 5px; font-weight: 700; }
+    .fg p  { font-family: 'Courier New', monospace; font-size: .9rem; color: #1e293b; }
+    .fg small { display: block; font-size: .75rem; color: #94a3b8; margin-top: 3px; }
+    .fg.gold-g { background: #fffbeb; border-color: #fcd34d; }
+    .fg.gold-g h4 { color: #92400e; }
+    .fg.grn-g { background: #f0fdf4; border-color: #86efac; }
+    .fg.grn-g h4 { color: #15803d; }
+    .fg.red-g { background: #fff1f2; border-color: #fca5a5; }
+    .fg.red-g h4 { color: #dc2626; }
+
+    /* ── Table ── */
+    .ntable { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .86rem; }
+    .ntable th { background: #f1f5f9; color: #334155; padding: 9px 12px; text-align: left; font-weight: 700; border: 1px solid #e2e8f0; }
+    .ntable td { padding: 9px 12px; border: 1px solid #e2e8f0; color: #475569; }
+    .ntable tr:nth-child(even) td { background: #fafafa; }
+    .ntable tr:hover td { background: #f0f4ff; }
+
+    /* ── Important note ── */
+    .note {
+      border-radius: 9px; padding: 12px 16px; margin: 10px 0;
+      font-size: .88rem; line-height: 1.6;
+    }
+    .note-blue { background: #eff6ff; border-left: 4px solid #3b82f6; color: #1e40af; }
+    .note-yellow { background: #fffbeb; border-left: 4px solid #f59e0b; color: #78350f; }
+    .note-green { background: #f0fdf4; border-left: 4px solid #22c55e; color: #15803d; }
+    .note-red   { background: #fff1f2; border-left: 4px solid #ef4444; color: #991b1b; }
+    .note-purple { background: #f5f3ff; border-left: 4px solid #8b5cf6; color: #4c1d95; }
+
+    /* ── EXAM QUESTIONS ── */
+    .eq-section {
+      background: #1e293b; border-radius: 14px; padding: 24px 28px; margin-top: 12px;
+    }
+    .eq-title {
+      font-size: .95rem; font-weight: 800; color: #fde047; margin-bottom: 16px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .q-list { list-style: none; padding: 0; counter-reset: qnum; }
+    .q-list li {
+      counter-increment: qnum; padding: 10px 12px 10px 44px; position: relative;
+      font-size: .88rem; color: #cbd5e1; line-height: 1.65;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .q-list li:last-child { border-bottom: none; }
+    .q-list li::before {
+      content: 'Q' counter(qnum);
+      position: absolute; left: 0;
+      background: #6366f1; color: #fff;
+      font-size: .7rem; font-weight: 800;
+      padding: 2px 7px; border-radius: 6px; top: 11px;
+    }
+    .q-list li .marks {
+      display: inline-block; padding: 1px 8px; border-radius: 10px;
+      font-size: .68rem; font-weight: 700; margin-left: 8px; vertical-align: middle;
+    }
+    .m1 { background: rgba(34,197,94,.2); color: #86efac; }
+    .m2 { background: rgba(245,158,11,.2); color: #fde047; }
+    .m3 { background: rgba(99,102,241,.25); color: #a5b4fc; }
+    .m4 { background: rgba(239,68,68,.2); color: #fca5a5; }
+    .m5 { background: rgba(168,85,247,.22); color: #d8b4fe; }
+
+    /* ── Print ── */
+    .print-bar {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 99;
+      background: #1e293b; border-top: 2px solid #334155;
+      display: flex; align-items: center; gap: 10px; padding: 10px 20px;
+      flex-wrap: wrap;
+    }
+    .pb-label { color: #94a3b8; font-size: .82rem; flex: 1; }
+    .pb-btn {
+      padding: 7px 16px; border-radius: 8px; border: none; cursor: pointer;
+      font-size: .82rem; font-weight: 700; transition: all .2s; text-decoration: none;
+      display: inline-block;
+    }
+    .pb-print { background: #6366f1; color: #fff; }
+    .pb-print:hover { background: #4f46e5; }
+    .pb-home { background: rgba(255,255,255,.1); color: #94a3b8; }
+    .pb-home:hover { background: rgba(255,255,255,.2); color: #fff; }
+
+    /* ── Highlights ── */
+    strong.hi { color: #4f46e5; }
+    strong.hg { color: #15803d; }
+    strong.hy { color: #92400e; }
+    strong.hr { color: #dc2626; }
+
+    @media print {
+      .navbar, .tab-bar, .print-bar { display: none !important; }
+      body { background: #fff !important; }
+      .sec { box-shadow: none !important; border: 1px solid #ccc !important; page-break-inside: avoid; }
+      .eq-section { background: #f1f5f9 !important; }
+      .q-list li { color: #1e293b !important; }
+      .eq-title { color: #1e293b !important; }
+    }
+    @media(max-width: 560px) {
+      .fml-grid { grid-template-columns: 1fr; }
+      .sec { padding: 18px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Visions Classes" class="nav-logo-img"/>
+      <div class="logo-text"><span>Visions</span> Classes</div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="notes-physics-11.html" class="active">Class 11 Notes</a></li>
+      <li><a href="notes-physics-12.html">Class 12 Notes</a></li>
+      <li><a href="animated-lessons.html">Animated Lessons</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="notes-hero">
+  <div class="hero-badge">📚 Class 11 Physics — Complete Notes</div>
+  <h1>Class 11 Physics Revision Notes</h1>
+  <p>All chapters · Keypoints · Important Formulas · Exam Important Questions<br/>Clean, no-animation format — perfect for last-minute revision</p>
+  <div class="hero-stats">
+    <div class="hstat"><div class="num">10</div><div class="lbl">Chapters</div></div>
+    <div class="hstat"><div class="num">150+</div><div class="lbl">Key Formulas</div></div>
+    <div class="hstat"><div class="num">80+</div><div class="lbl">Exam Questions</div></div>
+    <div class="hstat"><div class="num">🖨️</div><div class="lbl">Printable</div></div>
+  </div>
+</section>
+
+<!-- CHAPTER TAB BAR -->
+<div class="tab-bar" id="tabBar">
+  <a class="tab-btn active" href="#ch1">Ch1: Units</a>
+  <a class="tab-btn" href="#ch2">Ch2: Motion 1D</a>
+  <a class="tab-btn" href="#ch3">Ch3: Motion Plane</a>
+  <a class="tab-btn" href="#ch4">Ch4: Laws of Motion</a>
+  <a class="tab-btn" href="#ch5">Ch5: Work & Energy</a>
+  <a class="tab-btn" href="#ch6">Ch6: System of Particles</a>
+  <a class="tab-btn" href="#ch7">Ch7: Gravitation</a>
+  <a class="tab-btn" href="#ch8">Ch8: Mechanical Properties</a>
+  <a class="tab-btn" href="#ch9">Ch9: Thermodynamics</a>
+  <a class="tab-btn" href="#ch10">Ch10: Waves</a>
+</div>
+
+<div class="notes-body">
+
+<!-- ══════════════════════════════════════════
+     CHAPTER 1: UNITS & MEASUREMENTS
+══════════════════════════════════════════ -->
+<div id="ch1">
+  <div class="ch-head c1">
+    <div class="ch-icon">📏</div>
+    <div>
+      <h2 style="color:#4338ca;">Chapter 1: Units & Measurements</h2>
+      <p>Physical quantities · SI units · Dimensional analysis · Errors · Significant figures</p>
+    </div>
+    <span class="ch-num">Chapter 1</span>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title" style="color:#4338ca;">🔑 Key Points</div>
+    <ul class="kp-list">
+      <li><strong class="hi">Physical quantity</strong> = something that can be measured. Two types: Fundamental (7) and Derived.</li>
+      <li><strong class="hi">7 Fundamental quantities:</strong> Length (m), Mass (kg), Time (s), Temperature (K), Electric current (A), Luminous intensity (cd), Amount of substance (mol).</li>
+      <li><strong class="hi">Dimensional formula</strong> — expressed in terms of M, L, T, I, θ, J, N. Used to check equation correctness.</li>
+      <li><strong class="hi">Principle of homogeneity:</strong> Both sides of any valid physical equation must have the same dimensions.</li>
+      <li><strong class="hi">Absolute error</strong> = |true value − measured value|. <strong class="hi">Relative error</strong> = absolute error / true value. <strong class="hi">Percentage error</strong> = relative error × 100.</li>
+      <li>When quantities are <strong class="hi">added or subtracted</strong> — add absolute errors. When <strong class="hi">multiplied or divided</strong> — add relative errors.</li>
+      <li><strong class="hi">Significant figures</strong> — all certain digits plus one uncertain. Rules: all non-zero digits significant, zeros between non-zero significant, trailing zeros after decimal significant.</li>
+      <li>Order of magnitude — power of 10 nearest to the number.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title" style="color:#4338ca;">📐 Important Dimensional Formulas</div>
+    <div class="fml-grid">
+      <div class="fg"><h4>Force</h4><p>[MLT⁻²]</p></div>
+      <div class="fg"><h4>Energy / Work</h4><p>[ML²T⁻²]</p></div>
+      <div class="fg"><h4>Power</h4><p>[ML²T⁻³]</p></div>
+      <div class="fg"><h4>Pressure / Stress</h4><p>[ML⁻¹T⁻²]</p></div>
+      <div class="fg"><h4>Velocity</h4><p>[LT⁻¹]</p></div>
+      <div class="fg"><h4>Acceleration</h4><p>[LT⁻²]</p></div>
+      <div class="fg"><h4>Momentum</h4><p>[MLT⁻¹]</p></div>
+      <div class="fg"><h4>Angular momentum</h4><p>[ML²T⁻¹]</p></div>
+      <div class="fg"><h4>Torque</h4><p>[ML²T⁻²]</p></div>
+      <div class="fg"><h4>Surface tension</h4><p>[MT⁻²]</p></div>
+      <div class="fg"><h4>Viscosity</h4><p>[ML⁻¹T⁻¹]</p></div>
+      <div class="fg"><h4>Gravitational const G</h4><p>[M⁻¹L³T⁻²]</p></div>
+    </div>
+  </div>
+
+  <div class="eq-section">
+    <div class="eq-title">🎯 Exam Important Questions — Ch 1</div>
+    <ol class="q-list">
+      <li>State the principle of homogeneity of dimensions. Using dimensional analysis, derive the formula for time period of a simple pendulum. <span class="marks m3">3 marks</span></li>
+      <li>Check by dimensional method whether the equation v² = u² + 2as is dimensionally correct. <span class="marks m2">2 marks</span></li>
+      <li>The period of oscillation of a simple pendulum depends on length L, mass m and acceleration due to gravity g. Derive an expression for time period using dimensional analysis. <span class="marks m4">4 marks</span></li>
+      <li>Define absolute error, relative error and percentage error with examples. <span class="marks m3">3 marks</span></li>
+      <li>Add 1.234 m and 2.3 m and express result with correct significant figures. <span class="marks m1">1 mark</span></li>
+      <li>Name any 4 pairs of physical quantities that have the same dimensional formula. <span class="marks m2">2 marks</span></li>
+      <li>The resistance R = V/I where V = (100 ± 2)V, I = (10 ± 0.2)A. Find percentage error in R. <span class="marks m3">3 marks</span></li>
+      <li>Convert 1 joule into ergs using dimensional analysis. <span class="marks m2">2 marks</span></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     CHAPTER 2: MOTION IN A STRAIGHT LINE
+══════════════════════════════════════════ -->
+<div id="ch2">
+  <div class="ch-head c2">
+    <div class="ch-icon">🚀</div>
+    <div>
+      <h2 style="color:#92400e;">Chapter 2: Motion in a Straight Line</h2>
+      <p>Distance · Displacement · Velocity · Acceleration · Equations of motion · Graphs</p>
+    </div>
+    <span class="ch-num">Chapter 2</span>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title" style="color:#92400e;">🔑 Key Points</div>
+    <ul class="kp-list">
+      <li><strong class="hy">Distance</strong> — total path length. Scalar. Always positive. <strong class="hy">Displacement</strong> — shortest distance from start to end. Vector. Can be negative or zero.</li>
+      <li><strong class="hy">Average velocity</strong> = total displacement / total time. <strong class="hy">Average speed</strong> = total distance / total time. Average speed ≥ |average velocity|.</li>
+      <li><strong class="hy">Instantaneous velocity</strong> = dx/dt = slope of position-time (x-t) graph at that instant.</li>
+      <li><strong class="hy">Instantaneous acceleration</strong> = dv/dt = d²x/dt² = slope of v-t graph.</li>
+      <li><strong class="hy">Area under v-t graph</strong> = displacement. <strong class="hy">Area under a-t graph</strong> = change in velocity.</li>
+      <li>Equations of motion are valid only for <strong class="hy">uniform acceleration</strong> in a straight line.</li>
+      <li>For <strong class="hy">free fall</strong>: u = 0 (dropped from rest), a = g = 9.8 m/s² (downward). Time to reach ground from height h: t = √(2h/g). Velocity at ground: v = √(2gh).</li>
+      <li>If object thrown upward with velocity u: max height H = u²/2g, time to top = u/g, total time of flight = 2u/g.</li>
+      <li>Distance in nth second: s_n = u + a(2n−1)/2</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title" style="color:#92400e;">📐 Equations of Motion</div>
+    <div class="fml-grid">
+      <div class="fg gold-g"><h4>1st Equation</h4><p>v = u + at</p><small>No displacement</small></div>
+      <div class="fg gold-g"><h4>2nd Equation</h4><p>s = ut + ½at²</p><small>No final velocity</small></div>
+      <div class="fg gold-g"><h4>3rd Equation</h4><p>v² = u² + 2as</p><small>No time</small></div>
+      <div class="fg gold-g"><h4>nth Second</h4><p>sₙ = u + a(2n−1)/2</p><small>Distance in nth sec</small></div>
+    </div>
+    <div class="note note-yellow">⭐ <strong>Free Fall:</strong> Replace a = g, u = 0 (if dropped). Taking downward as +ve: v = gt, h = ½gt², v² = 2gh, t = √(2h/g)</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title" style="color:#92400e;">📊 Graph Summary</div>
+    <table class="ntable">
+      <thead><tr><th>Graph</th><th>Uniform Motion</th><th>Uniform Acceleration</th><th>Key Relation</th></tr></thead>
+      <tbody>
+        <tr><td><strong>x-t graph</strong></td><td>Straight line (slope = const v)</td><td>Parabola (increasing slope)</td><td>Slope = velocity</td></tr>
+        <tr><td><strong>v-t graph</strong></td><td>Horizontal line (a = 0)</td><td>Straight line (slope = a)</td><td>Area = displacement</td></tr>
+        <tr><td><strong>a-t graph</strong></td><td>Line on x-axis (a = 0)</td><td>Horizontal line (const a)</td><td>Area = Δv</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="eq-section">
+    <div class="eq-title">🎯 Exam Important Questions — Ch 2</div>
+    <ol class="q-list">
+      <li>Distinguish between distance and displacement with examples. When is displacement equal to distance? <span class="marks m2">2 marks</span></li>
+      <li>A car starts from rest and accelerates uniformly at 4 m/s². Find (i) velocity after 5s (ii) distance covered in 5s (iii) distance covered in 3rd second. <span class="marks m3">3 marks</span></li>
+      <li>Draw velocity-time graphs for (i) uniform motion (ii) uniform acceleration (iii) uniformly retarded motion. <span class="marks m3">3 marks</span></li>
+      <li>A ball is thrown vertically upward with velocity 20 m/s. Find (i) maximum height (ii) time to reach top (iii) total time of flight. (g = 10 m/s²) <span class="marks m3">3 marks</span></li>
+      <li>Derive the third equation of motion v² = u² + 2as graphically. <span class="marks m4">4 marks</span></li>
+      <li>A stone is dropped from a height of 80 m. Find time to reach the ground and velocity just before hitting the ground. (g = 10 m/s²) <span class="marks m2">2 marks</span></li>
+      <li>Show that distance travelled in nth second by uniformly accelerated body is sₙ = u + a(2n−1)/2. <span class="marks m3">3 marks</span></li>
+      <li>Two cars A and B are at the same point. A moves with constant velocity 30 m/s and B starts from rest with acceleration 3 m/s². When and where will B catch A? <span class="marks m4">4 marks</span></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     CHAPTER 3: MOTION IN A PLANE
+══════════════════════════════════════════ -->
+<div id="ch3">
+  <div class="ch-head c3">
+    <div class="ch-icon">✈️</div>
+    <div>
+      <h2 style="color:#15803d;">Chapter 3: Motion in a Plane</h2>
+      <p>Vectors · Projectile motion · Relative velocity · Circular motion</p>
+    </div>
+    <span class="ch-num">Chapter 3</span>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title" style="color:#15803d;">🔑 Key Points — Vectors</div>
+    <ul class="kp-list">
+      <li><strong class="hg">Scalar</strong> — magnitude only (mass, speed, energy). <strong class="hg">Vector</strong> — magnitude + direction (force, velocity, displacement).</li>
+      <li>Triangle law: If two vectors are represented by two sides of a triangle (head to tail), the third side (closing side) represents their resultant.</li>
+      <li>Parallelogram law: R = √(A² + B² + 2AB cosθ). Direction: tanα = B sinθ / (A + B cosθ).</li>
+      <li><strong class="hg">Dot product</strong> A·B = AB cosθ — scalar. Used for work done, power.</li>
+      <li><strong class="hg">Cross product</strong> |A×B| = AB sinθ — vector, direction by right-hand rule. Used for torque, angular momentum.</li>
+      <li>Unit vectors: î, ĵ, k̂ along x, y, z axes. |î| = |ĵ| = |k̂| = 1.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title" style="color:#15803d;">🎯 Projectile Motion — Key Formulas</div>
+    <div class="note note-green">A projectile is launched with speed u at angle θ with horizontal. Horizontal: no force (constant vx). Vertical: gravity acts (vy changes).</div>
+    <div class="fml-grid">
+      <div class="fg grn-g"><h4>Horizontal velocity</h4><p>vₓ = u cosθ (constant)</p></div>
+      <div class="fg grn-g"><h4>Vertical velocity</h4><p>vᵧ = u sinθ − gt</p></div>
+      <div class="fg grn-g"><h4>Time of Flight</h4><p>T = 2u sinθ / g</p></div>
+      <div class="fg grn-g"><h4>Max Height</h4><p>H = u² sin²θ / 2g</p></div>
+      <div class="fg grn-g"><h4>Horizontal Range</h4><p>R = u² sin2θ / g</p></div>
+      <div class="fg grn-g"><h4>Max Range</h4><p>R_max = u²/g at θ = 45°</p></div>
+      <div class="fg grn-g"><h4>Trajectory (Path)</h4><p>y = x tanθ − gx²/2u²cos²θ</p><small>Parabola</small></div>
+      <div class="fg grn-g"><h4>Velocity at time t</h4><p>v = √(vₓ² + vᵧ²)</p></div>
+    </div>
+    <div class="note note-green">⭐ <strong>Same range for complementary angles:</strong> R is same for θ and (90°−θ). e.g. 30° and 60° give same range. Maximum range at 45°.</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title" style="color:#15803d;">🔵 Uniform Circular Motion</div>
+    <div class="fml-grid">
+      <div class="fg grn-g"><h4>Centripetal Acceleration</h4><p>a = v²/r = ω²r</p></div>
+      <div class="fg grn-g"><h4>Centripetal Force</h4><p>F = mv²/r = mω²r</p></div>
+      <div class="fg grn-g"><h4>Angular velocity</h4><p>ω = 2π/T = 2πn = v/r</p></div>
+      <div class="fg grn-g"><h4>Relative velocity</h4><p>v⃗_AB = v⃗_A − v⃗_B</p></div>
+    </div>
+    <ul class="kp-list">
+      <li>In UCM: speed is constant, but velocity direction changes continuously — so there IS acceleration.</li>
+      <li>Centripetal acceleration is always directed <strong class="hg">towards the centre</strong>. It is perpendicular to velocity.</li>
+      <li><strong class="hg">Centrifugal force</strong> is a pseudo force (felt in rotating frame) — equal and opposite to centripetal force.</li>
+    </ul>
+  </div>
+
+  <div class="eq-section">
+    <div class="eq-title">🎯 Exam Important Questions — Ch 3</div>
+    <ol class="q-list">
+      <li>State and prove the parallelogram law of vector addition. Derive expression for magnitude and direction of resultant. <span class="marks m5">5 marks</span></li>
+      <li>Prove that the trajectory of a projectile is a parabola. <span class="marks m4">4 marks</span></li>
+      <li>Derive expressions for (i) time of flight (ii) max height (iii) horizontal range of a projectile. <span class="marks m5">5 marks</span></li>
+      <li>A ball is projected with 20 m/s at 30° above horizontal. Find range, max height, time of flight. (g = 10 m/s²) <span class="marks m3">3 marks</span></li>
+      <li>Define centripetal acceleration. Derive its expression. Why is it called centripetal? <span class="marks m3">3 marks</span></li>
+      <li>Distinguish between dot product and cross product of two vectors with examples. <span class="marks m2">2 marks</span></li>
+      <li>Show that two projections at complementary angles give the same range. <span class="marks m3">3 marks</span></li>
+      <li>A car is moving at 20 m/s on a circular track of radius 400 m. Find centripetal acceleration. <span class="marks m2">2 marks</span></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     CHAPTER 4: LAWS OF MOTION
+══════════════════════════════════════════ -->
+<div id="ch4">
+  <div class="ch-head c4">
+    <div class="ch-icon">⚖️</div>
+    <div>
+      <h2 style="color:#b91c1c;">Chapter 4: Laws of Motion</h2>
+      <p>Newton's 3 Laws · Friction · Tension · Free body diagrams · Conservation of momentum</p>
+    </div>
+    <span class="ch-num">Chapter 4</span>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title" style="color:#b91c1c;">🔑 Key Points</div>
+    <ul class="kp-list">
+      <li><strong class="hr">Newton's 1st Law (Inertia):</strong> A body at rest stays at rest; a body in motion stays in uniform motion, unless an external unbalanced force acts. Defines inertia and force.</li>
+      <li><strong class="hr">Newton's 2nd Law:</strong> F⃗ = dp⃗/dt = ma⃗ (for constant mass). Force ∝ rate of change of momentum. 1 Newton = force that gives 1 kg mass an acceleration of 1 m/s².</li>
+      <li><strong class="hr">Newton's 3rd Law:</strong> Every action has equal and opposite reaction. Forces act on DIFFERENT bodies — they don't cancel.</li>
+      <li><strong class="hr">Inertia ∝ mass.</strong> More mass = more inertia = harder to accelerate or stop.</li>
+      <li><strong class="hr">Friction:</strong> Force opposing relative motion. Static friction ≤ μₛN. Kinetic friction = μₖN. μₛ > μₖ always. Rolling friction < kinetic friction.</li>
+      <li>Limiting friction = maximum static friction = μₛN. Once in motion, kinetic friction applies.</li>
+      <li><strong class="hr">Free body diagram (FBD)</strong> — shows all forces on a single body. Newton's 2nd law applied to each body separately.</li>
+      <li><strong class="hr">Conservation of momentum:</strong> If net external force = 0, total momentum = constant. Collision, explosion — use this principle.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title" style="color:#b91c1c;">📐 Important Formulas</div>
+    <div class="fml-grid">
+      <div class="fg red-g"><h4>Newton's 2nd Law</h4><p>F = ma, F = Δp/Δt</p></div>
+      <div class="fg red-g"><h4>Impulse</h4><p>J = F·Δt = Δp = m(v−u)</p></div>
+      <div class="fg red-g"><h4>Static friction</h4><p>f_s ≤ μₛN</p></div>
+      <div class="fg red-g"><h4>Kinetic friction</h4><p>f_k = μₖN</p></div>
+      <div class="fg red-g"><h4>Angle of friction (λ)</h4><p>tan λ = μ</p></div>
+      <div class="fg red-g"><h4>Atwood machine</h4><p>a = (m₂−m₁)g/(m₁+m₂)<br/>T = 2m₁m₂g/(m₁+m₂)</p></div>
+      <div class="fg red-g"><h4>Body on incline</h4><p>a = g(sinθ − μcosθ)<br/>N = mg cosθ</p></div>
+      <div class="fg red-g"><h4>Momentum conservation</h4><p>m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂</p></div>
+    </div>
+    <div class="note note-red">⭐ <strong>Pseudo force:</strong> In a non-inertial (accelerating) frame, a pseudo force = −ma acts on every object. E.g. lift accelerating upward — apparent weight = m(g+a). Lift falling freely — apparent weight = 0 (weightlessness).</div>
+  </div>
+
+  <div class="eq-section">
+    <div class="eq-title">🎯 Exam Important Questions — Ch 4</div>
+    <ol class="q-list">
+      <li>State and explain Newton's three laws of motion with one example each. <span class="marks m5">5 marks</span></li>
+      <li>Define impulse. Show that impulse = change in momentum. A bat exerts 500 N force on a cricket ball for 0.01 s. Find impulse and change in momentum. <span class="marks m3">3 marks</span></li>
+      <li>Explain the concept of friction. Distinguish between static, kinetic and rolling friction. <span class="marks m3">3 marks</span></li>
+      <li>Two masses 3 kg and 5 kg are connected by a string over a frictionless pulley (Atwood machine). Find acceleration and tension. <span class="marks m4">4 marks</span></li>
+      <li>A 10 kg block is placed on a surface with μ = 0.3. Find force needed to move it and acceleration when 40 N is applied. (g = 10 m/s²) <span class="marks m3">3 marks</span></li>
+      <li>Why does a gun recoil when fired? Explain using conservation of momentum. <span class="marks m2">2 marks</span></li>
+      <li>A person stands on a weighing machine in a lift. What will the scale read when lift (i) moves up with uniform velocity (ii) accelerates up at 2 m/s² (iii) is in free fall? (m = 50 kg, g = 10 m/s²) <span class="marks m3">3 marks</span></li>
+      <li>Derive the expression for acceleration of masses on a smooth inclined plane. <span class="marks m4">4 marks</span></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     CHAPTER 5: WORK, ENERGY & POWER
+══════════════════════════════════════════ -->
+<div id="ch5">
+  <div class="ch-head c5">
+    <div class="ch-icon">⚡</div>
+    <div>
+      <h2 style="color:#0369a1;">Chapter 5: Work, Energy & Power</h2>
+      <p>Work · Kinetic & Potential energy · Conservation of energy · Collisions · Power</p>
+    </div>
+    <span class="ch-num">Chapter 5</span>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title" style="color:#0369a1;">🔑 Key Points</div>
+    <ul class="kp-list">
+      <li><strong class="hb">Work</strong> = F·s·cosθ. Work is zero if F⊥s (θ=90°). Work can be negative (opposing force). Unit: Joule = N·m.</li>
+      <li><strong class="hb">Work-Energy Theorem:</strong> Net work done on body = change in KE. W_net = ½mv² − ½mu².</li>
+      <li><strong class="hb">Conservative force</strong> — work done is path independent (gravity, spring force). <strong class="hb">Non-conservative</strong> — path dependent (friction) — energy lost as heat.</li>
+      <li><strong class="hb">Potential energy</strong> — stored energy due to position. Gravitational PE = mgh. Spring PE = ½kx².</li>
+      <li><strong class="hb">Conservation of energy:</strong> Total mechanical energy (KE + PE) is conserved in the absence of non-conservative forces.</li>
+      <li><strong class="hb">Power</strong> = Work/time = F·v·cosθ. Unit: Watt (W) = J/s. 1 hp = 746 W.</li>
+      <li><strong class="hb">Elastic collision:</strong> Both momentum AND KE conserved. <strong class="hb">Inelastic:</strong> Only momentum conserved. <strong class="hb">Perfectly inelastic:</strong> Bodies stick together (max KE loss).</li>
+      <li>For elastic collision (equal masses, one at rest): striking ball stops, struck ball moves with striking ball's original velocity.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title" style="color:#0369a1;">📐 Key Formulas</div>
+    <div class="fml-grid">
+      <div class="fg"><h4>Work done</h4><p>W = F·s·cosθ = F⃗·s⃗</p></div>
+      <div class="fg"><h4>Kinetic Energy</h4><p>KE = ½mv²</p></div>
+      <div class="fg"><h4>Gravitational PE</h4><p>PE = mgh</p></div>
+      <div class="fg"><h4>Spring PE</h4><p>PE = ½kx²</p></div>
+      <div class="fg"><h4>Work-Energy Theorem</h4><p>W = ΔKE = ½mv² − ½mu²</p></div>
+      <div class="fg"><h4>Power</h4><p>P = W/t = Fv cosθ</p></div>
+      <div class="fg"><h4>Elastic collision v₁</h4><p>v₁ = (m₁−m₂)u₁/(m₁+m₂)</p></div>
+      <div class="fg"><h4>Elastic collision v₂</h4><p>v₂ = 2m₁u₁/(m₁+m₂)</p></div>
+    </div>
+    <div class="note note-blue">⭐ <strong>Variable force:</strong> W = ∫F·ds = area under F-x graph. For spring: W = ½kx² (work done in stretching spring by x from natural length).</div>
+    <div class="note note-blue">⭐ <strong>Coefficient of Restitution e:</strong> e = relative speed of separation / relative speed of approach. Elastic: e=1. Perfectly inelastic: e=0. Any collision: 0 ≤ e ≤ 1.</div>
+  </div>
+
+  <div class="eq-section">
+    <div class="eq-title">🎯 Exam Important Questions — Ch 5</div>
+    <ol class="q-list">
+      <li>State and prove the work-energy theorem. <span class="marks m4">4 marks</span></li>
+      <li>Distinguish between conservative and non-conservative forces with two examples each. <span class="marks m2">2 marks</span></li>
+      <li>A 2 kg body falls freely from height 20 m. Find KE and PE at h = 10 m and h = 0. Verify conservation of energy. (g = 10 m/s²) <span class="marks m4">4 marks</span></li>
+      <li>Derive expressions for final velocities after a head-on elastic collision between two balls. State the special cases. <span class="marks m5">5 marks</span></li>
+      <li>Define power. A machine does 6000 J of work in 2 minutes. Find power in watts and horsepower. <span class="marks m2">2 marks</span></li>
+      <li>A spring of spring constant 200 N/m is compressed by 10 cm. Find elastic PE stored. How much KE does a 0.5 kg mass acquire if released? <span class="marks m3">3 marks</span></li>
+      <li>Show that in a perfectly inelastic collision between two equal masses, KE loss = half the initial KE. <span class="marks m3">3 marks</span></li>
+      <li>What is work done by a porter carrying a load on his head while walking on a horizontal floor? Explain. <span class="marks m2">2 marks</span></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     CHAPTER 6: SYSTEM OF PARTICLES & ROTATIONAL MOTION
+══════════════════════════════════════════ -->
+<div id="ch6">
+  <div class="ch-head c6">
+    <div class="ch-icon">🔄</div>
+    <div>
+      <h2 style="color:#6d28d9;">Chapter 6: System of Particles & Rotational Motion</h2>
+      <p>Centre of mass · Torque · MI · Angular momentum · Rolling motion</p>
+    </div>
+    <span class="ch-num">Chapter 6</span>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title" style="color:#6d28d9;">🔑 Key Points</div>
+    <ul class="kp-list">
+      <li><strong class="hi">Centre of mass (CM)</strong> — the point where entire mass of system can be assumed concentrated. For uniform bodies, CM = geometric centre.</li>
+      <li>CM of two-body system: x_cm = (m₁x₁ + m₂x₂)/(m₁+m₂). CM of system moves as if all external force acts on it.</li>
+      <li><strong class="hi">Torque τ</strong> = r × F = rF sinθ. Rotational equivalent of force. τ = Iα.</li>
+      <li><strong class="hi">Moment of Inertia I</strong> = Σmᵢrᵢ² — resistance to rotational motion. Depends on axis and mass distribution.</li>
+      <li><strong class="hi">Parallel axis theorem:</strong> I = I_cm + Md²</li>
+      <li><strong class="hi">Perpendicular axis theorem</strong> (lamina only): I_z = I_x + I_y</li>
+      <li><strong class="hi">Angular momentum L</strong> = Iω = r × p. τ = dL/dt. If τ = 0, L = constant (conservation).</li>
+      <li><strong class="hi">Rolling (no slip):</strong> v_cm = Rω. Total KE = ½mv² + ½Iω² = ½mv²(1 + I/mR²)</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title" style="color:#6d28d9;">📐 MI Table — Most Important</div>
+    <table class="ntable">
+      <thead><tr><th>Body</th><th>Axis</th><th>I</th></tr></thead>
+      <tbody>
+        <tr><td>Thin rod (L)</td><td>Centre ⊥ length</td><td>ML²/12</td></tr>
+        <tr><td>Thin rod (L)</td><td>End ⊥ length</td><td>ML²/3</td></tr>
+        <tr><td>Disc / Solid cylinder (R)</td><td>Central axis</td><td>MR²/2</td></tr>
+        <tr><td>Disc (R)</td><td>Diameter</td><td>MR²/4</td></tr>
+        <tr><td>Ring / Hoop (R)</td><td>Central axis ⊥ plane</td><td>MR²</td></tr>
+        <tr><td>Ring (R)</td><td>Diameter</td><td>MR²/2</td></tr>
+        <tr><td>Solid sphere (R)</td><td>Diameter</td><td>2MR²/5</td></tr>
+        <tr><td>Hollow sphere (R)</td><td>Diameter</td><td>2MR²/3</td></tr>
+      </tbody>
+    </table>
+    <div class="note note-purple">⭐ <strong>Rolling race on incline:</strong> Body with smallest I/MR² reaches bottom first. Order: Solid sphere (2/5) → Solid cylinder (1/2) → Hollow sphere (2/3) → Ring (1)</div>
+  </div>
+
+  <div class="eq-section">
+    <div class="eq-title">🎯 Exam Important Questions — Ch 6</div>
+    <ol class="q-list">
+      <li>Define moment of inertia. State its physical significance and write its SI unit and dimensional formula. <span class="marks m2">2 marks</span></li>
+      <li>State and prove the theorem of parallel axes. <span class="marks m4">4 marks</span></li>
+      <li>State and prove the theorem of perpendicular axes. Where is it applicable? <span class="marks m3">3 marks</span></li>
+      <li>Derive an expression for KE of a body rolling without slipping. Show that for a solid sphere KE = 7/10 mv². <span class="marks m4">4 marks</span></li>
+      <li>An ice skater pulls her arms in during a spin. Using conservation of angular momentum, explain why her rotation speeds up. <span class="marks m3">3 marks</span></li>
+      <li>Define centre of mass. Derive its position for a two-particle system. <span class="marks m3">3 marks</span></li>
+      <li>Find the MI of a disc about an axis passing through its diameter using the perpendicular axis theorem. <span class="marks m3">3 marks</span></li>
+      <li>A disc of mass 2 kg and radius 0.5 m rotates at 10 rad/s. Find angular momentum and KE of rotation. <span class="marks m3">3 marks</span></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     CHAPTER 7: GRAVITATION
+══════════════════════════════════════════ -->
+<div id="ch7">
+  <div class="ch-head c7">
+    <div class="ch-icon">🌍</div>
+    <div>
+      <h2 style="color:#c2410c;">Chapter 7: Gravitation</h2>
+      <p>Newton's law · g · Orbital velocity · Escape velocity · Kepler's laws · Satellites</p>
+    </div>
+    <span class="ch-num">Chapter 7</span>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title" style="color:#c2410c;">🔑 Key Points</div>
+    <ul class="kp-list">
+      <li><strong>Newton's Law of Gravitation:</strong> F = Gm₁m₂/r². G = 6.67×10⁻¹¹ N·m²/kg². Always attractive. Obeys inverse square law.</li>
+      <li><strong>g at surface:</strong> g = GM/R² = 9.8 m/s². <strong>g at height h:</strong> g' = g(1 − 2h/R) for h << R. Exact: g' = gR²/(R+h)².</li>
+      <li><strong>g decreases</strong> with height above surface AND with depth below surface. At centre, g = 0.</li>
+      <li><strong>g at depth d:</strong> g' = g(1 − d/R). At centre (d=R): g = 0.</li>
+      <li><strong>Orbital velocity</strong> of satellite at height h: v_o = √[GM/(R+h)] = √[g'(R+h)]. For close orbit (h≈0): v_o = √(gR) ≈ 7.9 km/s.</li>
+      <li><strong>Escape velocity:</strong> v_e = √(2GM/R) = √(2gR) = √2 × v_o ≈ 11.2 km/s. Does not depend on mass of object.</li>
+      <li><strong>Time period of satellite:</strong> T = 2π(R+h)/v_o = 2π√[(R+h)³/GM].</li>
+      <li><strong>Geostationary satellite:</strong> T = 24 h, altitude ≈ 36,000 km, moves in equatorial plane from west to east.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title" style="color:#c2410c;">📐 Kepler's Laws + Formulas</div>
+    <div class="note note-yellow">
+      <strong>Kepler's 3 Laws:</strong><br/>
+      1. <strong>Law of Orbits:</strong> All planets move in elliptical orbits with Sun at one focus.<br/>
+      2. <strong>Law of Areas:</strong> The line joining planet to Sun sweeps equal areas in equal time intervals (areal velocity = constant → L = constant).<br/>
+      3. <strong>Law of Periods:</strong> T² ∝ a³ (a = semi-major axis). T²/a³ = constant for all planets around Sun.
+    </div>
+    <div class="fml-grid">
+      <div class="fg gold-g"><h4>Gravitational force</h4><p>F = Gm₁m₂/r²</p></div>
+      <div class="fg gold-g"><h4>g at surface</h4><p>g = GM/R²</p></div>
+      <div class="fg gold-g"><h4>Orbital velocity</h4><p>v_o = √(GM/r)</p></div>
+      <div class="fg gold-g"><h4>Escape velocity</h4><p>v_e = √(2gR) = √2 v_o</p></div>
+      <div class="fg gold-g"><h4>Satellite period</h4><p>T = 2π√(r³/GM)</p></div>
+      <div class="fg gold-g"><h4>Gravitational PE</h4><p>U = −GMm/r</p></div>
+      <div class="fg gold-g"><h4>Binding energy</h4><p>BE = GMm/2r</p></div>
+      <div class="fg gold-g"><h4>Kepler's 3rd Law</h4><p>T² = (4π²/GM) × r³</p></div>
+    </div>
+  </div>
+
+  <div class="eq-section">
+    <div class="eq-title">🎯 Exam Important Questions — Ch 7</div>
+    <ol class="q-list">
+      <li>State Newton's law of universal gravitation. Derive expression for acceleration due to gravity g on the surface of Earth. <span class="marks m4">4 marks</span></li>
+      <li>Show that g decreases with altitude. Derive g' = g(1 − 2h/R) for h << R. <span class="marks m3">3 marks</span></li>
+      <li>Show that g decreases with depth. What is g at the centre of Earth? <span class="marks m3">3 marks</span></li>
+      <li>Derive expression for orbital velocity and time period of a satellite. <span class="marks m4">4 marks</span></li>
+      <li>Derive expression for escape velocity from Earth. Why does it not depend on the mass of the projected body? <span class="marks m3">3 marks</span></li>
+      <li>State Kepler's three laws of planetary motion. Derive the third law from Newton's law of gravitation. <span class="marks m5">5 marks</span></li>
+      <li>What is a geostationary satellite? State its four characteristics. Give two applications. <span class="marks m3">3 marks</span></li>
+      <li>The mass of Earth is 6×10²⁴ kg, radius 6400 km. Find (i) g at surface (ii) orbital speed of close satellite (iii) escape speed. (G = 6.67×10⁻¹¹) <span class="marks m4">4 marks</span></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     CHAPTER 8: MECHANICAL PROPERTIES OF SOLIDS & FLUIDS
+══════════════════════════════════════════ -->
+<div id="ch8">
+  <div class="ch-head c8">
+    <div class="ch-icon">⚙️</div>
+    <div>
+      <h2 style="color:#0f766e;">Chapter 8: Mechanical Properties of Solids & Fluids</h2>
+      <p>Stress · Strain · Elastic moduli · Pressure · Bernoulli · Viscosity · Surface tension</p>
+    </div>
+    <span class="ch-num">Chapter 8</span>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title" style="color:#0f766e;">🔑 Key Points — Solids</div>
+    <ul class="kp-list">
+      <li><strong class="hg">Stress</strong> = Restoring force / Area = F/A. Unit: N/m² (Pa). <strong class="hg">Strain</strong> = Change in dimension / Original dimension. Dimensionless.</li>
+      <li><strong class="hg">Hooke's Law:</strong> Within elastic limit, stress ∝ strain. Stress/Strain = elastic modulus (constant).</li>
+      <li><strong class="hg">Young's modulus Y</strong> = (F/A)/(ΔL/L) = FL/AΔL. For wires under tension/compression.</li>
+      <li><strong class="hg">Bulk modulus K</strong> = −P/(ΔV/V). For fluids and all states. Compressibility = 1/K.</li>
+      <li><strong class="hg">Rigidity modulus η</strong> = (F/A)/(Δx/L). For shear — changes shape not volume.</li>
+      <li>Elastic PE stored in wire = ½ × stress × strain × volume = ½ × Y × (strain)² × volume.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title" style="color:#0f766e;">🔑 Key Points — Fluids</div>
+    <ul class="kp-list">
+      <li><strong class="hg">Pressure</strong> = F/A. Fluid pressure at depth h: P = P₀ + ρgh. SI unit: Pascal (Pa).</li>
+      <li><strong class="hg">Pascal's Law:</strong> Pressure applied to enclosed fluid transmits equally in all directions → Hydraulic press: F₂/F₁ = A₂/A₁.</li>
+      <li><strong class="hg">Archimedes' Principle:</strong> Buoyant force = weight of fluid displaced = ρ_fluid × V_submerged × g.</li>
+      <li><strong class="hg">Bernoulli's Theorem:</strong> P + ½ρv² + ρgh = constant. Applies to ideal (non-viscous, incompressible) steady flow.</li>
+      <li><strong class="hg">Equation of continuity:</strong> A₁v₁ = A₂v₂ (for incompressible fluid). Narrower pipe → faster flow.</li>
+      <li><strong class="hg">Torricelli's theorem:</strong> Speed of efflux from hole at depth h: v = √(2gh).</li>
+      <li><strong class="hg">Viscosity η:</strong> F = ηA(dv/dy). Viscosity of liquid decreases with temp. Viscosity of gas increases with temp.</li>
+      <li><strong class="hg">Stokes' Law:</strong> F = 6πηrv. Terminal velocity: v_t = 2r²(ρ−ρ₀)g/9η.</li>
+      <li><strong class="hg">Surface Tension T:</strong> T = F/l. Excess pressure in soap bubble = 4T/R. In liquid drop = 2T/R. Capillary rise h = 2T cosθ/ρgr.</li>
+    </ul>
+  </div>
+
+  <div class="eq-section">
+    <div class="eq-title">🎯 Exam Important Questions — Ch 8</div>
+    <ol class="q-list">
+      <li>Define stress and strain. State Hooke's Law. Draw and explain the stress-strain curve for a metallic wire. <span class="marks m5">5 marks</span></li>
+      <li>Define Young's modulus, Bulk modulus, and Modulus of Rigidity with formulae and SI units. <span class="marks m3">3 marks</span></li>
+      <li>State and prove Bernoulli's theorem. Mention any two applications. <span class="marks m5">5 marks</span></li>
+      <li>Explain Torricelli's theorem. Derive expression for velocity of efflux. <span class="marks m3">3 marks</span></li>
+      <li>Define terminal velocity. Derive its expression using Stokes' Law. <span class="marks m4">4 marks</span></li>
+      <li>What is surface tension? Derive expression for excess pressure inside a soap bubble and a liquid drop. <span class="marks m4">4 marks</span></li>
+      <li>Derive expression for capillary rise. Why does mercury show capillary depression? <span class="marks m3">3 marks</span></li>
+      <li>A wire of length 2 m and cross-section area 10⁻⁶ m² is stretched by 1 mm. If Y = 2×10¹¹ Pa, find force applied and elastic PE stored. <span class="marks m3">3 marks</span></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     CHAPTER 9: THERMODYNAMICS (CLASS 11)
+══════════════════════════════════════════ -->
+<div id="ch9">
+  <div class="ch-head c1">
+    <div class="ch-icon">🌡️</div>
+    <div>
+      <h2 style="color:#1d4ed8;">Chapter 9: Thermodynamics</h2>
+      <p>Laws of thermodynamics · Heat engines · Specific heat · Thermodynamic processes</p>
+    </div>
+    <span class="ch-num">Chapter 9</span>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title" style="color:#1d4ed8;">🔑 Key Points</div>
+    <ul class="kp-list">
+      <li><strong class="hi">Zeroth Law:</strong> If A is in thermal equilibrium with B, and B with C, then A is in equilibrium with C. Defines temperature.</li>
+      <li><strong class="hi">First Law (Energy conservation):</strong> ΔU = Q − W. Q = heat absorbed, W = work done BY system, ΔU = change in internal energy.</li>
+      <li><strong class="hi">Isothermal:</strong> T = const → ΔU = 0 → Q = W. PV = const. W = nRT ln(V₂/V₁).</li>
+      <li><strong class="hi">Isochoric (Isovolumic):</strong> V = const → W = 0 → Q = ΔU = nCvΔT.</li>
+      <li><strong class="hi">Isobaric:</strong> P = const → W = PΔV = nRΔT → Q = nCpΔT.</li>
+      <li><strong class="hi">Adiabatic:</strong> Q = 0 → ΔU = −W. PV^γ = const. TV^(γ−1) = const.</li>
+      <li><strong class="hi">Second Law:</strong> Heat cannot flow spontaneously from cold to hot. No engine can be 100% efficient. Entropy of universe always increases.</li>
+      <li><strong class="hi">Carnot efficiency:</strong> η = 1 − T₂/T₁ (in Kelvin). This is the maximum possible efficiency.</li>
+      <li><strong class="hi">Cp − Cv = R</strong> (Mayer's relation). γ = Cp/Cv. Monatomic γ = 5/3, Diatomic γ = 7/5.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title" style="color:#1d4ed8;">📐 Process Summary Table</div>
+    <table class="ntable">
+      <thead><tr><th>Process</th><th>Condition</th><th>W</th><th>Q</th><th>ΔU</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Isothermal</strong></td><td>ΔT = 0</td><td>nRT ln(V₂/V₁)</td><td>= W</td><td>0</td></tr>
+        <tr><td><strong>Isochoric</strong></td><td>ΔV = 0</td><td>0</td><td>nCvΔT</td><td>= Q</td></tr>
+        <tr><td><strong>Isobaric</strong></td><td>ΔP = 0</td><td>nRΔT</td><td>nCpΔT</td><td>nCvΔT</td></tr>
+        <tr><td><strong>Adiabatic</strong></td><td>Q = 0</td><td>−nCvΔT</td><td>0</td><td>nCvΔT</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="eq-section">
+    <div class="eq-title">🎯 Exam Important Questions — Ch 9</div>
+    <ol class="q-list">
+      <li>State the first law of thermodynamics. Apply it to (i) isothermal (ii) adiabatic processes. <span class="marks m4">4 marks</span></li>
+      <li>State the second law of thermodynamics (both statements). Explain why no heat engine can be 100% efficient. <span class="marks m3">3 marks</span></li>
+      <li>Describe the Carnot cycle with a PV diagram. Derive expression for efficiency of Carnot engine. <span class="marks m5">5 marks</span></li>
+      <li>Derive Mayer's relation Cp − Cv = R. <span class="marks m3">3 marks</span></li>
+      <li>A Carnot engine works between 500 K and 300 K. Find (i) efficiency (ii) heat rejected if heat absorbed is 1000 J. <span class="marks m3">3 marks</span></li>
+      <li>Explain isothermal and adiabatic processes. Compare their PV curves. Which is steeper and why? <span class="marks m3">3 marks</span></li>
+      <li>What is heat engine? Define its efficiency. What does it mean if efficiency = 40%? <span class="marks m2">2 marks</span></li>
+      <li>Calculate work done by 2 moles of ideal gas at 300 K expanding isothermally to double its volume. (R = 8.3 J/mol·K) <span class="marks m3">3 marks</span></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     CHAPTER 10: WAVES
+══════════════════════════════════════════ -->
+<div id="ch10">
+  <div class="ch-head c2">
+    <div class="ch-icon">🌊</div>
+    <div>
+      <h2 style="color:#92400e;">Chapter 10: Oscillations & Waves</h2>
+      <p>SHM · Simple pendulum · Speed of sound · Standing waves · Beats · Doppler effect</p>
+    </div>
+    <span class="ch-num">Chapter 10</span>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title" style="color:#92400e;">🔑 Key Points — SHM & Waves</div>
+    <ul class="kp-list">
+      <li><strong class="hy">SHM:</strong> Motion where restoring force ∝ displacement and directed towards equilibrium. F = −kx. a = −ω²x.</li>
+      <li>Displacement in SHM: x = A sin(ωt + φ). Velocity: v = Aω cos(ωt + φ). Max velocity = Aω at x = 0.</li>
+      <li>Max acceleration = Aω² at extreme positions (x = ±A). Acceleration = 0 at x = 0.</li>
+      <li><strong class="hy">Energy in SHM:</strong> KE = ½mω²(A²−x²). PE = ½mω²x². Total E = ½mω²A² = constant.</li>
+      <li><strong class="hy">Simple pendulum:</strong> T = 2π√(L/g). Does not depend on mass or amplitude (for small angles).</li>
+      <li><strong class="hy">Spring-mass system:</strong> T = 2π√(m/k). ω = √(k/m).</li>
+      <li><strong class="hy">Wave equation:</strong> y = A sin(kx − ωt). Wave speed v = ω/k = λ/T = λf. k = 2π/λ (wave number).</li>
+      <li><strong class="hy">Speed of sound:</strong> v = √(B/ρ) (Newton). Laplace correction: v = √(γP/ρ). In air at 0°C: v = 332 m/s. v_t = v₀ + 0.6t.</li>
+      <li><strong class="hy">Standing waves:</strong> y = 2A cos(kx) sin(ωt). Nodes at kx = nπ (spacing λ/2). Antinodes at kx = (2n+1)π/2.</li>
+      <li><strong class="hy">Beats:</strong> n_beats = |n₁ − n₂|. Heard when two close frequencies superpose.</li>
+      <li><strong class="hy">Doppler effect:</strong> Apparent frequency changes when source or observer moves.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title" style="color:#92400e;">📐 Key Formulas</div>
+    <div class="fml-grid">
+      <div class="fg gold-g"><h4>SHM period</h4><p>T = 2π/ω = 2π√(m/k)</p></div>
+      <div class="fg gold-g"><h4>Pendulum period</h4><p>T = 2π√(L/g)</p></div>
+      <div class="fg gold-g"><h4>Max velocity</h4><p>v_max = Aω</p></div>
+      <div class="fg gold-g"><h4>Total energy SHM</h4><p>E = ½mω²A² = ½kA²</p></div>
+      <div class="fg gold-g"><h4>Wave speed</h4><p>v = fλ = ω/k</p></div>
+      <div class="fg gold-g"><h4>Speed of sound</h4><p>v = √(γP/ρ) = √(γRT/M)</p></div>
+      <div class="fg gold-g"><h4>Beats</h4><p>n_b = |n₁ − n₂|</p></div>
+      <div class="fg gold-g"><h4>Doppler (source moving)</h4><p>n' = n(v ± v_o)/(v ∓ v_s)</p></div>
+    </div>
+    <div class="note note-yellow">⭐ <strong>Organ pipe:</strong> Open pipe — L = nλ/2, harmonics n = 1,2,3... Closed pipe — L = (2n−1)λ/4, only ODD harmonics.</div>
+    <div class="note note-yellow">⭐ <strong>Doppler sign convention:</strong> Numerator: + if observer moves towards source, − if away. Denominator: − if source moves towards observer, + if away.</div>
+  </div>
+
+  <div class="eq-section">
+    <div class="eq-title">🎯 Exam Important Questions — Ch 10</div>
+    <ol class="q-list">
+      <li>Define SHM. Show that the motion of a particle attached to a spring is SHM. Derive expression for time period. <span class="marks m5">5 marks</span></li>
+      <li>Derive expression for time period of a simple pendulum. Why does it not depend on mass or amplitude? <span class="marks m4">4 marks</span></li>
+      <li>Show that total energy in SHM is constant. Draw graphs of KE, PE and total energy vs displacement. <span class="marks m4">4 marks</span></li>
+      <li>Explain the formation of standing waves. Differentiate between nodes and antinodes. <span class="marks m3">3 marks</span></li>
+      <li>Derive an expression for speed of sound in a gas. What is Laplace's correction and why is it needed? <span class="marks m4">4 marks</span></li>
+      <li>What are beats? How are they produced? Give one practical application. <span class="marks m2">2 marks</span></li>
+      <li>State and explain Doppler effect. Derive expression for apparent frequency when source moves towards stationary observer. <span class="marks m4">4 marks</span></li>
+      <li>A tuning fork of 256 Hz produces 4 beats/s with a wire. The wire is tightened and beats drop to 2/s. Find original frequency of wire. <span class="marks m3">3 marks</span></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     QUICK FORMULA SHEET — ALL CHAPTERS
+══════════════════════════════════════════ -->
+<div style="margin-top:40px;">
+  <div class="ch-head" style="background:#f1f5f9;border-left:6px solid #6366f1;">
+    <div class="ch-icon">📋</div>
+    <div>
+      <h2 style="color:#4338ca;">Master Formula Sheet — Class 11 Physics</h2>
+      <p>All important formulas at a glance — for last-minute revision</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title" style="color:#4338ca;">⭐ Must-Know Formulas (Exam Focused)</div>
+    <table class="ntable">
+      <thead><tr><th>Topic</th><th>Formula</th><th>Symbol meaning</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Equations of Motion</strong></td><td>v=u+at, s=ut+½at², v²=u²+2as, sₙ=u+a(2n−1)/2</td><td>u=initial, v=final, a=acceleration</td></tr>
+        <tr><td><strong>Projectile Range</strong></td><td>R = u²sin2θ/g, H = u²sin²θ/2g, T = 2usinθ/g</td><td>u=speed, θ=angle, g=gravity</td></tr>
+        <tr><td><strong>Newton's 2nd Law</strong></td><td>F = ma = Δp/Δt</td><td>p = momentum = mv</td></tr>
+        <tr><td><strong>Friction</strong></td><td>f_s ≤ μₛN, f_k = μₖN</td><td>N = normal force</td></tr>
+        <tr><td><strong>Work-Energy</strong></td><td>W = Fscosθ, W = ΔKE = ½mv² − ½mu²</td><td>—</td></tr>
+        <tr><td><strong>Power</strong></td><td>P = W/t = Fvcosθ</td><td>—</td></tr>
+        <tr><td><strong>Torque & MI</strong></td><td>τ = rFsinθ = Iα, L = Iω, τ = dL/dt</td><td>I = moment of inertia</td></tr>
+        <tr><td><strong>Gravitation</strong></td><td>F = Gm₁m₂/r², g = GM/R², v_e = √(2gR)</td><td>G = 6.67×10⁻¹¹</td></tr>
+        <tr><td><strong>Orbital velocity</strong></td><td>v_o = √(GM/r), T = 2π√(r³/GM)</td><td>r = orbital radius</td></tr>
+        <tr><td><strong>Young's Modulus</strong></td><td>Y = FL/AΔL</td><td>ΔL = elongation</td></tr>
+        <tr><td><strong>Bernoulli's</strong></td><td>P + ½ρv² + ρgh = const</td><td>ρ = density</td></tr>
+        <tr><td><strong>Carnot Efficiency</strong></td><td>η = 1 − T₂/T₁</td><td>T in Kelvin</td></tr>
+        <tr><td><strong>First Law Thermo</strong></td><td>ΔU = Q − W</td><td>Q absorbed, W by system</td></tr>
+        <tr><td><strong>SHM</strong></td><td>T = 2π√(m/k), T = 2π√(L/g), E = ½kA²</td><td>k = spring constant</td></tr>
+        <tr><td><strong>Wave speed</strong></td><td>v = fλ = √(γP/ρ)</td><td>λ = wavelength</td></tr>
+        <tr><td><strong>Surface Tension</strong></td><td>ΔP_bubble = 4T/R, ΔP_drop = 2T/R, h = 2Tcosθ/ρgr</td><td>T = surface tension</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title" style="color:#dc2626;">⚠️ Common Mistakes to Avoid</div>
+    <ul class="kp-list">
+      <li><strong class="hr">Equations of motion</strong> — Valid ONLY for uniform acceleration. Don't apply if acceleration changes.</li>
+      <li><strong class="hr">Projectile</strong> — Horizontal velocity is CONSTANT. Only vertical component changes. At top, vy = 0 but vx ≠ 0.</li>
+      <li><strong class="hr">Newton's 3rd Law</strong> — Action and reaction act on DIFFERENT bodies. They CANNOT cancel each other.</li>
+      <li><strong class="hr">Carnot efficiency</strong> — Use KELVIN temperature, NOT Celsius.</li>
+      <li><strong class="hr">Isothermal vs Adiabatic</strong> — Isothermal: ΔU = 0 (NOT Q = 0). Adiabatic: Q = 0 (NOT ΔU = 0).</li>
+      <li><strong class="hr">Soap bubble vs drop</strong> — Bubble has 2 surfaces: 4T/R. Drop has 1 surface: 2T/R.</li>
+      <li><strong class="hr">MI</strong> — Parallel axis theorem: I = I_cm + Md² (d from CM, NOT from any axis). Perpendicular axis theorem only for FLAT LAMINA.</li>
+      <li><strong class="hr">Escape velocity</strong> — Does NOT depend on mass of the projected object. v_e = √2 × v_o.</li>
+      <li><strong class="hr">Work done by friction</strong> — Always negative (opposes motion). Not zero on horizontal surface.</li>
+      <li><strong class="hr">g at depth d</strong> — g' = g(1 − d/R). At centre g = 0. Don't use g' = gR²/(R+d) for depth.</li>
+    </ul>
+  </div>
+</div>
+
+</div><!-- /notes-body -->
+
+<!-- PRINT BAR -->
+<div class="print-bar">
+  <span class="pb-label">📚 Class 11 Physics — Complete Revision Notes | Visions Classes</span>
+  <a href="notes-physics-12.html" class="pb-btn pb-home">Class 12 Notes</a>
+  <a href="animated-lessons.html" class="pb-btn pb-home">Animated Lessons</a>
+  <button class="pb-btn pb-print" onclick="window.print()">🖨️ Print / Save PDF</button>
+</div>
+
+<script src="main.js"></script>
+<script>
+  // Tab highlight on scroll
+  const tabs = document.querySelectorAll('.tab-btn');
+  const sections = ['ch1','ch2','ch3','ch4','ch5','ch6','ch7','ch8','ch9','ch10'];
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top < 140) current = id;
+    });
+    tabs.forEach(t => {
+      t.classList.toggle('active', t.getAttribute('href') === '#' + current);
+    });
+  });
+</script>
+</body>
+</html>
