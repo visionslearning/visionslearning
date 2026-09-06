@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ch 3: Motion in a Plane — Class 11 Physics — Visions Classes</title>
+  <meta name="description" content="Class 11 Physics Chapter 3 Motion in a Plane — Vectors, Projectile Motion, Relative Velocity, Circular Motion. Complete notes with exam questions. Visions Classes Ambernath."/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="logo.png" type="image/png"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #f0fdf4; color: #1e293b; font-family: 'Segoe UI', system-ui, sans-serif; }
+    .navbar { background: #14532d !important; }
+
+    /* Hero */
+    .ch-hero {
+      background: linear-gradient(135deg, #14532d 0%, #166534 50%, #15803d 100%);
+      color: #fff; padding: 90px 0 44px; text-align: center; position: relative; overflow: hidden;
+    }
+    .ch-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(134,239,172,.18) 0%, transparent 60%);
+    }
+    .ch-hero .badge {
+      display: inline-block; padding: 5px 18px; border-radius: 20px;
+      background: rgba(134,239,172,.2); border: 1px solid #86efac;
+      color: #bbf7d0; font-size: .78rem; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; position: relative;
+    }
+    .ch-hero h1 {
+      font-size: clamp(1.9rem,4.5vw,3rem); font-weight: 900; position: relative;
+      background: linear-gradient(135deg, #fff 0%, #86efac 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 8px;
+    }
+    .ch-hero p { color: #bbf7d0; font-size: .97rem; position: relative; max-width: 620px; margin: 0 auto 20px; }
+    .hero-topics {
+      display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
+      position: relative; margin-top: 16px;
+    }
+    .htopic {
+      padding: 5px 14px; border-radius: 20px;
+      background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
+      color: #fff; font-size: .78rem; font-weight: 600;
+    }
+
+    /* Progress bar */
+    .prog-bar { height: 4px; background: rgba(21,128,61,.15); }
+    .prog-fill { height: 100%; background: linear-gradient(90deg,#15803d,#22c55e); width: 0; transition: width .4s; }
+
+    /* Quick nav */
+    .quick-nav {
+      background: #fff; border-bottom: 2px solid #dcfce7;
+      display: flex; gap: 0; overflow-x: auto; position: sticky; top: 60px; z-index: 80;
+    }
+    .quick-nav::-webkit-scrollbar { height: 0; }
+    .qn-btn {
+      padding: 11px 18px; border: none; background: transparent;
+      font-size: .8rem; font-weight: 700; color: #64748b;
+      cursor: pointer; white-space: nowrap;
+      border-bottom: 3px solid transparent; transition: all .2s;
+      text-decoration: none; display: inline-block;
+    }
+    .qn-btn:hover { color: #15803d; background: #f0fdf4; }
+    .qn-btn.active { color: #15803d; border-bottom-color: #15803d; background: #f0fdf4; }
+
+    /* Body */
+    .notes-body { max-width: 960px; margin: 0 auto; padding: 28px 20px 90px; }
+
+    /* Section card */
+    .sec {
+      background: #fff; border: 1px solid #d1fae5; border-radius: 14px;
+      padding: 26px 28px; margin-bottom: 18px;
+      box-shadow: 0 2px 10px rgba(21,128,61,.06);
+    }
+    .sec-title {
+      font-size: 1.05rem; font-weight: 800; color: #15803d;
+      margin-bottom: 14px; display: flex; align-items: center; gap: 8px;
+      padding-bottom: 10px; border-bottom: 2px solid #dcfce7;
+    }
+
+    /* Definition */
+    .def {
+      background: #f0fdf4; border: 1px solid #86efac;
+      border-radius: 9px; padding: 13px 18px; margin: 10px 0;
+      font-size: .9rem; color: #14532d; line-height: 1.65;
+    }
+    .def .dl {
+      font-size: .67rem; text-transform: uppercase; letter-spacing: 1px;
+      color: #15803d; font-weight: 700; display: block; margin-bottom: 5px;
+    }
+
+    /* Formula */
+    .fml {
+      background: #fefce8; border: 1.5px solid #fde047;
+      border-radius: 9px; padding: 13px 18px; margin: 10px 0;
+      font-family: 'Courier New', monospace; font-size: .95rem;
+      color: #1e293b; text-align: center; line-height: 1.8;
+    }
+    .fml .fl {
+      font-family: 'Segoe UI', sans-serif; font-size: .67rem;
+      text-transform: uppercase; letter-spacing: 1px; color: #ca8a04;
+      font-weight: 700; display: block; margin-bottom: 5px;
+    }
+
+    /* Key points list */
+    .kp { list-style: none; padding: 0; margin: 10px 0; }
+    .kp li {
+      padding: 6px 0 6px 22px; position: relative;
+      font-size: .9rem; color: #334155; line-height: 1.7;
+      border-bottom: 1px solid #f0fdf4;
+    }
+    .kp li:last-child { border: none; }
+    .kp li::before { content: '▶'; position: absolute; left: 0; color: #15803d; font-size: .55rem; top: 11px; }
+
+    /* Formula grid */
+    .fg-wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); gap: 10px; margin: 12px 0; }
+    .fg {
+      background: #f0fdf4; border: 1px solid #86efac;
+      border-radius: 9px; padding: 13px 15px;
+    }
+    .fg h4 { font-size: .82rem; color: #14532d; margin-bottom: 5px; font-weight: 700; }
+    .fg p  { font-family: 'Courier New', monospace; font-size: .9rem; color: #1e293b; }
+    .fg small { display: block; font-size: .73rem; color: #64748b; margin-top: 3px; }
+
+    /* Table */
+    .ntable { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .86rem; }
+    .ntable th { background: #dcfce7; color: #14532d; padding: 9px 12px; text-align: left; font-weight: 700; border: 1px solid #86efac; }
+    .ntable td { padding: 9px 12px; border: 1px solid #d1fae5; color: #475569; }
+    .ntable tr:nth-child(even) td { background: #f0fdf4; }
+    .ntable tr:hover td { background: #dcfce7; color: #1e293b; }
+
+    /* Note */
+    .note {
+      border-radius: 9px; padding: 11px 16px; margin: 10px 0;
+      font-size: .88rem; line-height: 1.65;
+    }
+    .n-grn  { background: #f0fdf4; border-left: 4px solid #22c55e; color: #14532d; }
+    .n-yel  { background: #fefce8; border-left: 4px solid #ca8a04; color: #713f12; }
+    .n-red  { background: #fff1f2; border-left: 4px solid #ef4444; color: #991b1b; }
+    .n-blue { background: #eff6ff; border-left: 4px solid #3b82f6; color: #1e40af; }
+
+    /* Exam questions */
+    .eq-box { background: #1e293b; border-radius: 14px; padding: 24px 28px; margin-top: 14px; }
+    .eq-title { font-size: .95rem; font-weight: 800; color: #86efac; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .q-list { list-style: none; padding: 0; counter-reset: qnum; }
+    .q-list li {
+      counter-increment: qnum; padding: 10px 12px 10px 46px; position: relative;
+      font-size: .87rem; color: #cbd5e1; line-height: 1.65;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .q-list li:last-child { border: none; }
+    .q-list li::before {
+      content: 'Q' counter(qnum); position: absolute; left: 0;
+      background: #15803d; color: #fff; font-size: .68rem; font-weight: 800;
+      padding: 2px 7px; border-radius: 6px; top: 11px;
+    }
+    .mk { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: .67rem; font-weight: 700; margin-left: 8px; vertical-align: middle; }
+    .m1 { background: rgba(34,197,94,.2); color: #86efac; }
+    .m2 { background: rgba(245,158,11,.2); color: #fde047; }
+    .m3 { background: rgba(99,102,241,.25); color: #a5b4fc; }
+    .m4 { background: rgba(239,68,68,.2); color: #fca5a5; }
+    .m5 { background: rgba(168,85,247,.22); color: #d8b4fe; }
+
+    /* Highlight */
+    strong.hg { color: #15803d; }
+    strong.hy { color: #ca8a04; }
+    strong.hr { color: #dc2626; }
+    strong.hb { color: #1d4ed8; }
+
+    /* Bottom nav */
+    .bottom-nav {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 99;
+      background: #14532d; border-top: 2px solid #166534;
+      display: flex; align-items: center; gap: 10px; padding: 10px 20px; flex-wrap: wrap;
+    }
+    .bn-label { color: #86efac; font-size: .82rem; flex: 1; }
+    .bn-btn {
+      padding: 8px 18px; border-radius: 8px; border: none; cursor: pointer;
+      font-size: .82rem; font-weight: 700; text-decoration: none; display: inline-block;
+    }
+    .bn-all   { background: #22c55e; color: #000; }
+    .bn-prev  { background: rgba(255,255,255,.12); color: #fff; }
+    .bn-next  { background: rgba(255,255,255,.12); color: #fff; }
+    .bn-print { background: rgba(255,255,255,.18); color: #fff; }
+
+    @media print {
+      .navbar, .quick-nav, .bottom-nav, .ch-hero { display: none !important; }
+      body { background: #fff !important; }
+      .sec { page-break-inside: avoid; box-shadow: none !important; }
+      .eq-box { background: #f1f5f9 !important; }
+      .q-list li { color: #1e293b !important; }
+    }
+    @media(max-width:560px) { .fg-wrap { grid-template-columns: 1fr; } .sec { padding: 18px 14px; } }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Visions Classes" class="nav-logo-img"/>
+      <div class="logo-text"><span>Visions</span> Classes</div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="notes-physics-11.html">Class 11 Physics</a></li>
+      <li><a href="notes.html">All Notes</a></li>
+      <li><a href="animated-lessons.html">Animated Lessons</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="ch-hero">
+  <div class="container" style="position:relative;">
+    <div class="badge">⚡ Class 11 Physics · Chapter 3</div>
+    <h1>Motion in a Plane</h1>
+    <p>Vectors · Projectile Motion · Relative Velocity · Uniform Circular Motion</p>
+    <div class="hero-topics">
+      <span class="htopic">Scalars & Vectors</span>
+      <span class="htopic">Parallelogram Law</span>
+      <span class="htopic">Dot & Cross Product</span>
+      <span class="htopic">Projectile Motion</span>
+      <span class="htopic">Relative Velocity</span>
+      <span class="htopic">Circular Motion</span>
+      <span class="htopic">Banking of Roads</span>
+    </div>
+  </div>
+</section>
+
+<div class="prog-bar"><div class="prog-fill" id="pf"></div></div>
+
+<!-- QUICK NAV -->
+<div class="quick-nav">
+  <a class="qn-btn active" href="#s1">3.1 Scalars & Vectors</a>
+  <a class="qn-btn" href="#s2">3.2 Addition</a>
+  <a class="qn-btn" href="#s3">3.3 Resolution</a>
+  <a class="qn-btn" href="#s4">3.4 Dot & Cross</a>
+  <a class="qn-btn" href="#s5">3.5 2D Motion</a>
+  <a class="qn-btn" href="#s6">3.6 Projectile</a>
+  <a class="qn-btn" href="#s7">3.7 Relative Velocity</a>
+  <a class="qn-btn" href="#s8">3.8 Circular Motion</a>
+  <a class="qn-btn" href="#s9">📋 Formulas</a>
+  <a class="qn-btn" href="#s10">🎯 Exam Qs</a>
+</div>
+
+<div class="notes-body">
+
+  <!-- ── 3.1 Scalars & Vectors ── -->
+  <div class="sec" id="s1">
+    <div class="sec-title">📌 3.1 Scalars and Vectors</div>
+    <div class="def">
+      <span class="dl">Scalar Quantity</span>
+      Has only <strong>magnitude</strong>. No direction.<br/>
+      Examples: mass, speed, time, temperature, energy, distance, work, power, pressure.
+    </div>
+    <div class="def">
+      <span class="dl">Vector Quantity</span>
+      Has both <strong>magnitude and direction</strong>. Follows laws of vector addition.<br/>
+      Examples: displacement, velocity, acceleration, force, momentum, torque, weight.
+    </div>
+    <ul class="kp">
+      <li><strong class="hg">Equal vectors</strong> — same magnitude AND same direction.</li>
+      <li><strong class="hg">Negative vector</strong> — same magnitude, opposite direction. −A⃗</li>
+      <li><strong class="hg">Zero (null) vector</strong> — magnitude = 0. e.g. A⃗ − A⃗ = 0⃗</li>
+      <li><strong class="hg">Unit vector</strong> — magnitude = 1. Used only to show direction. â = A⃗ / |A⃗|</li>
+      <li>Standard unit vectors: <strong class="hg">î</strong> (x-axis), <strong class="hg">ĵ</strong> (y-axis), <strong class="hg">k̂</strong> (z-axis). Each has magnitude 1.</li>
+      <li><strong class="hg">Position vector r⃗</strong> — gives position of a point from origin. r⃗ = xî + yĵ + zk̂</li>
+      <li>Vectors are written as bold letters (A) or with arrow (A⃗). Magnitude = |A⃗| = A</li>
+      <li>A vector can be moved parallel to itself without changing it — called <strong class="hg">free vector</strong>.</li>
+    </ul>
+    <div class="note n-yel">⭐ <strong>Important:</strong> Distance is scalar but displacement is vector. Speed is scalar but velocity is vector. Temperature is scalar but temperature gradient is vector.</div>
+  </div>
+
+  <!-- ── 3.2 Addition of Vectors ── -->
+  <div class="sec" id="s2">
+    <div class="sec-title">➕ 3.2 Addition of Vectors — Laws</div>
+    <div class="def">
+      <span class="dl">Triangle Law of Vector Addition</span>
+      If two vectors A⃗ and B⃗ are placed head to tail (in order), the third side of the triangle drawn from the tail of A⃗ to the head of B⃗ gives the resultant R⃗ = A⃗ + B⃗.
+    </div>
+    <div class="def">
+      <span class="dl">Parallelogram Law of Vector Addition</span>
+      If two vectors A⃗ and B⃗ act simultaneously at a point, represented as two adjacent sides of a parallelogram drawn from that point, then the diagonal of the parallelogram from that same point represents their resultant R⃗.
+    </div>
+    <div class="fml">
+      <span class="fl">🌟 Magnitude of Resultant</span>
+      R = √(A² + B² + 2AB cosθ)<br/>
+      <span style="font-size:.85rem;">θ = angle between A⃗ and B⃗</span>
+    </div>
+    <div class="fml">
+      <span class="fl">Direction of Resultant (α = angle with A⃗)</span>
+      tan α = B sinθ / (A + B cosθ)
+    </div>
+    <table class="ntable">
+      <thead><tr><th>θ (angle between vectors)</th><th>Resultant R</th><th>Remarks</th></tr></thead>
+      <tbody>
+        <tr><td><strong>θ = 0°</strong> (same direction)</td><td>R = A + B</td><td>Maximum resultant</td></tr>
+        <tr><td><strong>θ = 180°</strong> (opposite)</td><td>R = |A − B|</td><td>Minimum resultant</td></tr>
+        <tr><td><strong>θ = 90°</strong> (perpendicular)</td><td>R = √(A² + B²)</td><td>Pythagoras theorem</td></tr>
+        <tr><td><strong>A = B, θ = 60°</strong></td><td>R = A√3</td><td>Equilateral triangle case</td></tr>
+        <tr><td><strong>A = B, θ = 120°</strong></td><td>R = A</td><td>R = each vector</td></tr>
+        <tr><td><strong>A = B, θ = 90°</strong></td><td>R = A√2</td><td>Direction at 45° with each</td></tr>
+      </tbody>
+    </table>
+    <ul class="kp">
+      <li><strong class="hg">Commutative law:</strong> A⃗ + B⃗ = B⃗ + A⃗ (order doesn't matter)</li>
+      <li><strong class="hg">Associative law:</strong> (A⃗ + B⃗) + C⃗ = A⃗ + (B⃗ + C⃗)</li>
+      <li>To subtract: A⃗ − B⃗ = A⃗ + (−B⃗). Add negative of B⃗ to A⃗.</li>
+    </ul>
+    <div class="note n-grn">⭐ The range of resultant: |A−B| ≤ R ≤ (A+B). Resultant can never be greater than sum or less than difference of magnitudes.</div>
+  </div>
+
+  <!-- ── 3.3 Resolution ── -->
+  <div class="sec" id="s3">
+    <div class="sec-title">🔀 3.3 Resolution of Vectors into Components</div>
+    <div class="def">
+      <span class="dl">Resolution</span>
+      Splitting a single vector into two or more component vectors. The original vector is the resultant of its components. This is the reverse of addition.
+    </div>
+    <div class="fml">
+      <span class="fl">Components of A⃗ at angle θ with x-axis</span>
+      Aₓ = A cosθ &nbsp;&nbsp; (x-component, horizontal)<br/>
+      Aᵧ = A sinθ &nbsp;&nbsp; (y-component, vertical)<br/>
+      A⃗ = Aₓ î + Aᵧ ĵ
+    </div>
+    <div class="fg-wrap">
+      <div class="fg"><h4>Magnitude from components</h4><p>|A⃗| = √(Aₓ² + Aᵧ²)</p></div>
+      <div class="fg"><h4>Direction from components</h4><p>θ = tan⁻¹(Aᵧ / Aₓ)</p></div>
+      <div class="fg"><h4>Adding vectors analytically</h4><p>Rₓ = Aₓ + Bₓ<br/>Rᵧ = Aᵧ + Bᵧ</p></div>
+      <div class="fg"><h4>Resultant magnitude & direction</h4><p>R = √(Rₓ²+Rᵧ²)<br/>θ = tan⁻¹(Rᵧ/Rₓ)</p></div>
+    </div>
+    <ul class="kp">
+      <li>In 3D: A⃗ = Aₓî + Aᵧĵ + Aᵤk̂ and |A⃗| = √(Aₓ² + Aᵧ² + Aᵤ²)</li>
+      <li>Component method is more accurate than graphical method for adding vectors</li>
+      <li>A vector along x-axis has only x-component. A vector along y-axis has only y-component.</li>
+    </ul>
+  </div>
+
+  <!-- ── 3.4 Dot & Cross Product ── -->
+  <div class="sec" id="s4">
+    <div class="sec-title">✖️ 3.4 Dot Product and Cross Product</div>
+    <div class="fml">
+      <span class="fl">Dot Product (Scalar Product)</span>
+      A⃗ · B⃗ = AB cosθ &nbsp;&nbsp; → result is a <strong>SCALAR</strong><br/>
+      In components: A⃗·B⃗ = AₓBₓ + AᵧBᵧ + AᵤBᵤ
+    </div>
+    <div class="fml">
+      <span class="fl">Cross Product (Vector Product)</span>
+      |A⃗ × B⃗| = AB sinθ &nbsp;&nbsp; → result is a <strong>VECTOR</strong><br/>
+      Direction: Right-hand rule (fingers curl from A⃗ to B⃗, thumb points in direction of A⃗×B⃗)
+    </div>
+    <table class="ntable">
+      <thead><tr><th>Property</th><th>Dot Product A⃗·B⃗</th><th>Cross Product A⃗×B⃗</th></tr></thead>
+      <tbody>
+        <tr><td>Nature of result</td><td>Scalar (number)</td><td>Vector</td></tr>
+        <tr><td>Formula</td><td>AB cosθ</td><td>AB sinθ (magnitude)</td></tr>
+        <tr><td>If θ = 0° (parallel)</td><td>A⃗·B⃗ = AB (maximum)</td><td>|A⃗×B⃗| = 0</td></tr>
+        <tr><td>If θ = 90° (perpendicular)</td><td>A⃗·B⃗ = 0</td><td>|A⃗×B⃗| = AB (maximum)</td></tr>
+        <tr><td>Commutative?</td><td>A⃗·B⃗ = B⃗·A⃗ ✅ YES</td><td>A⃗×B⃗ = −B⃗×A⃗ ❌ NO</td></tr>
+        <tr><td>A⃗·A⃗</td><td>A² (= |A|²)</td><td>0⃗ (zero vector)</td></tr>
+        <tr><td>î·î = ĵ·ĵ = k̂·k̂</td><td>= 1</td><td>= 0⃗</td></tr>
+        <tr><td>î·ĵ = ĵ·k̂ = k̂·î</td><td>= 0</td><td>î×ĵ=k̂, ĵ×k̂=î, k̂×î=ĵ</td></tr>
+        <tr><td>Physical examples</td><td>Work W = F⃗·d⃗<br/>Power P = F⃗·v⃗</td><td>Torque τ⃗ = r⃗×F⃗<br/>Angular momentum L⃗ = r⃗×p⃗</td></tr>
+      </tbody>
+    </table>
+    <div class="note n-yel">⭐ <strong>How to find angle between two vectors:</strong> cosθ = (A⃗·B⃗)/(AB). If A⃗·B⃗ = 0 and neither is zero vector → vectors are perpendicular.</div>
+  </div>
+
+  <!-- ── 3.5 2D Motion ── -->
+  <div class="sec" id="s5">
+    <div class="sec-title">🗺️ 3.5 Motion in a Plane — 2D Kinematics</div>
+    <div class="def">
+      <span class="dl">Key Principle — MOST IMPORTANT</span>
+      Motion in a plane (2D) can be resolved into two completely <strong>independent</strong> rectilinear motions — one along X-axis and one along Y-axis. They do not affect each other.
+    </div>
+    <div class="fg-wrap">
+      <div class="fg"><h4>Position vector</h4><p>r⃗ = xî + yĵ</p></div>
+      <div class="fg"><h4>Displacement</h4><p>Δr⃗ = r⃗₂ − r⃗₁</p></div>
+      <div class="fg"><h4>Average velocity</h4><p>v⃗_av = Δr⃗/Δt</p></div>
+      <div class="fg"><h4>Instantaneous velocity</h4><p>v⃗ = dr⃗/dt</p></div>
+      <div class="fg"><h4>Acceleration</h4><p>a⃗ = dv⃗/dt = d²r⃗/dt²</p></div>
+      <div class="fg"><h4>Speed</h4><p>|v⃗| = √(vₓ²+vᵧ²)</p></div>
+    </div>
+    <div class="fml">
+      <span class="fl">Equations of Motion in 2D (Uniform Acceleration)</span>
+      v⃗ = u⃗ + a⃗t &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s⃗ = u⃗t + ½a⃗t²<br/><br/>
+      X-direction: &nbsp; vₓ = uₓ + aₓt &nbsp;&nbsp; sₓ = uₓt + ½aₓt²<br/>
+      Y-direction: &nbsp; vᵧ = uᵧ + aᵧt &nbsp;&nbsp; sᵧ = uᵧt + ½aᵧt²
+    </div>
+  </div>
+
+  <!-- ── 3.6 Projectile Motion ── -->
+  <div class="sec" id="s6">
+    <div class="sec-title">🎯 3.6 Projectile Motion — Complete Notes</div>
+    <div class="def">
+      <span class="dl">Definition</span>
+      A <strong>projectile</strong> is any object thrown with an initial velocity that then moves under the influence of gravity alone (no air resistance, no other force). The path of a projectile is called its <strong>trajectory — always a parabola</strong>.
+    </div>
+    <ul class="kp">
+      <li>Initial speed u at angle θ with horizontal → uₓ = u cosθ, uᵧ = u sinθ</li>
+      <li><strong class="hg">Horizontal (X):</strong> No force → aₓ = 0 → vₓ = u cosθ = constant always</li>
+      <li><strong class="hg">Vertical (Y):</strong> Gravity acts → aᵧ = −g → vᵧ changes every second</li>
+      <li>At highest point: vᵧ = 0, velocity = u cosθ (purely horizontal)</li>
+      <li>Trajectory is symmetric about the highest point — equal time going up and coming down</li>
+      <li>Horizontal distance covered = Range R. Vertical maximum height = H</li>
+    </ul>
+
+    <div class="fml">
+      <span class="fl">🌟 All Projectile Formulas — Memorise These</span>
+      Velocity at time t: &nbsp; vₓ = u cosθ, &nbsp; vᵧ = u sinθ − gt<br/>
+      Position at time t: &nbsp; x = u cosθ · t, &nbsp; y = u sinθ · t − ½gt²<br/><br/>
+      Time of Flight: &nbsp; T = 2u sinθ / g<br/>
+      Maximum Height: &nbsp; H = u² sin²θ / 2g<br/>
+      Horizontal Range: &nbsp; R = u² sin2θ / g<br/>
+      Maximum Range: &nbsp; R_max = u²/g &nbsp;&nbsp; (at θ = 45°)<br/>
+      Speed at any time: &nbsp; v = √(vₓ² + vᵧ²)
+    </div>
+
+    <div class="def">
+      <span class="dl">Proof: Trajectory is a Parabola</span>
+      From horizontal: x = u cosθ · t → t = x / (u cosθ)<br/>
+      Substitute in vertical: y = u sinθ · [x/(u cosθ)] − ½g · [x/(u cosθ)]²<br/>
+      <strong>y = x tanθ − gx² / (2u²cos²θ)</strong><br/>
+      This is of the form y = Ax + Bx² → This is a <strong>PARABOLA ✓</strong>
+    </div>
+
+    <table class="ntable">
+      <thead><tr><th>Launch Angle θ</th><th>Time of Flight T</th><th>Max Height H</th><th>Range R</th></tr></thead>
+      <tbody>
+        <tr><td><strong>0°</strong> (horizontal throw)</td><td>√(2H₀/g) (H₀ = launch height)</td><td>0</td><td>u√(2H₀/g)</td></tr>
+        <tr><td><strong>30°</strong></td><td>u/g</td><td>u²/8g</td><td>u²√3/2g</td></tr>
+        <tr><td><strong>45°</strong></td><td>u√2/g</td><td>u²/4g</td><td><strong>u²/g (MAXIMUM)</strong></td></tr>
+        <tr><td><strong>60°</strong></td><td>u√3/g</td><td>3u²/8g</td><td>u²√3/2g (same as 30°)</td></tr>
+        <tr><td><strong>90°</strong> (vertically up)</td><td>2u/g</td><td><strong>u²/2g (max height)</strong></td><td>0</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note n-grn">⭐ <strong>Complementary Angles — Same Range:</strong> θ and (90°−θ) give the same range because sin2θ = sin(180°−2θ). e.g. 30° and 60°, 20° and 70°, 15° and 75° all give the same R.</div>
+    <div class="note n-grn">⭐ <strong>Relation:</strong> H_max = R_max/4 (at θ=45°). Also: R = 4H/tanθ for any angle.</div>
+    <div class="note n-yel">⭐ <strong>Horizontal Projectile (thrown horizontally from height h):</strong><br/>
+    Time to fall: t = √(2h/g) &nbsp;|&nbsp; Horizontal range: R = u√(2h/g) &nbsp;|&nbsp; Final velocity: v = √(u²+2gh)</div>
+    <div class="note n-red">⚠️ <strong>Common Mistake:</strong> At the highest point, velocity is NOT zero. Only the vertical component vᵧ = 0. The horizontal component vₓ = u cosθ is still there.</div>
+  </div>
+
+  <!-- ── 3.7 Relative Velocity ── -->
+  <div class="sec" id="s7">
+    <div class="sec-title">🚂 3.7 Relative Velocity in 2D</div>
+    <div class="def">
+      <span class="dl">Definition</span>
+      The velocity of object A as observed by object B is called the velocity of A relative to B (v⃗_AB). Motion is always relative — it depends on the observer's frame.
+    </div>
+    <div class="fml">
+      <span class="fl">Relative Velocity Formulas</span>
+      v⃗_AB = v⃗_A − v⃗_B &nbsp;&nbsp; (A relative to B)<br/>
+      v⃗_BA = v⃗_B − v⃗_A &nbsp;&nbsp; (B relative to A)<br/>
+      |v⃗_AB| = |v⃗_BA| but directions are opposite
+    </div>
+    <table class="ntable">
+      <thead><tr><th>Situation</th><th>Relative Speed</th></tr></thead>
+      <tbody>
+        <tr><td>Moving in SAME direction (speeds v₁, v₂)</td><td>|v₁ − v₂|</td></tr>
+        <tr><td>Moving in OPPOSITE directions (speeds v₁, v₂)</td><td>v₁ + v₂</td></tr>
+        <tr><td>Moving at angle θ to each other</td><td>√(v₁² + v₂² − 2v₁v₂cosθ)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note n-grn">⭐ <strong>Rain-Man Problem:</strong> A man walks at speed v_m. Rain falls vertically at speed v_r. Relative velocity of rain w.r.t. man = v⃗_rain − v⃗_man. To avoid rain, tilt umbrella at angle α = tan⁻¹(v_m / v_r) towards direction of walking.</div>
+    <div class="note n-grn">⭐ <strong>River-Boat Problem:</strong><br/>
+    River width = d, Boat speed = v_b (⊥ to bank), River current = v_r<br/>
+    Time to cross = d/v_b (independent of river current!)<br/>
+    Drift (downstream) = v_r × (d/v_b)<br/>
+    To reach directly opposite: aim upstream at angle α = sin⁻¹(v_r/v_b)</div>
+  </div>
+
+  <!-- ── 3.8 UCM ── -->
+  <div class="sec" id="s8">
+    <div class="sec-title">🔵 3.8 Uniform Circular Motion (UCM)</div>
+    <div class="def">
+      <span class="dl">Definition</span>
+      Motion of a body along a circular path with <strong>constant speed</strong>. Speed is constant but velocity direction changes continuously → body is always accelerating → net force acts on it.
+    </div>
+    <div class="fg-wrap">
+      <div class="fg"><h4>Angular displacement (θ)</h4><p>θ = s/r</p><small>s = arc length, r = radius. Unit: radian</small></div>
+      <div class="fg"><h4>Angular velocity (ω)</h4><p>ω = dθ/dt = v/r<br/>ω = 2π/T = 2πn</p><small>Unit: rad/s</small></div>
+      <div class="fg"><h4>Linear speed (v)</h4><p>v = rω = 2πr/T = 2πrn</p><small>Tangential direction</small></div>
+      <div class="fg"><h4>Time period (T)</h4><p>T = 2πr/v = 2π/ω</p><small>Time for 1 full revolution</small></div>
+      <div class="fg"><h4>Frequency (n)</h4><p>n = 1/T = ω/2π</p><small>Revolutions per second (Hz)</small></div>
+      <div class="fg"><h4>Centripetal acceleration</h4><p>a_c = v²/r = ω²r = vω</p><small>Direction: towards centre</small></div>
+      <div class="fg"><h4>Centripetal force</h4><p>F_c = mv²/r = mω²r</p><small>Direction: towards centre</small></div>
+      <div class="fg"><h4>Angular acceleration (α)</h4><p>α = dω/dt = a_t/r</p><small>For non-uniform circular motion</small></div>
+    </div>
+    <ul class="kp">
+      <li>In UCM, speed is constant but velocity direction changes → acceleration exists → it is NOT equilibrium.</li>
+      <li>Centripetal acceleration is always <strong class="hg">perpendicular to velocity</strong> and directed <strong class="hg">towards the centre</strong>.</li>
+      <li><strong class="hg">Centripetal force</strong> is not a new type of force — it is provided by existing forces (gravity, tension, friction, normal reaction).</li>
+      <li><strong class="hg">Centrifugal force</strong> — appears only in rotating (non-inertial) frame. It is a pseudo force, equal and opposite to centripetal force. NOT a real force.</li>
+    </ul>
+
+    <table class="ntable">
+      <thead><tr><th>Example of Circular Motion</th><th>Force providing centripetal force</th></tr></thead>
+      <tbody>
+        <tr><td>Stone tied to string, whirled in circle</td><td>Tension T in string</td></tr>
+        <tr><td>Planet orbiting the Sun</td><td>Gravitational force (Sun's gravity)</td></tr>
+        <tr><td>Car on flat circular road</td><td>Friction between tyre and road</td></tr>
+        <tr><td>Car on banked circular road</td><td>Component of normal force (N sinθ)</td></tr>
+        <tr><td>Electron orbiting nucleus (Bohr model)</td><td>Electrostatic (Coulomb) force</td></tr>
+        <tr><td>Satellite in orbit</td><td>Gravitational force of Earth</td></tr>
+        <tr><td>Rider on banked curve</td><td>Normal force component</td></tr>
+      </tbody>
+    </table>
+
+    <div class="sec-title" style="margin-top:20px;">🛣️ Banking of Roads & Conical Pendulum</div>
+    <div class="fg-wrap">
+      <div class="fg"><h4>Max speed — flat road (with friction)</h4><p>v_max = √(μrg)</p><small>μ = coeff. of friction, r = radius</small></div>
+      <div class="fg"><h4>Optimum speed — banked road (no friction)</h4><p>v = √(rg tanθ)</p><small>θ = banking angle</small></div>
+      <div class="fg"><h4>Max speed — banked road (with friction)</h4><p>v_max = √[rg(tanθ+μ)/(1−μtanθ)]</p></div>
+      <div class="fg"><h4>Banking angle</h4><p>tan θ = v²/rg</p><small>θ = angle of banking</small></div>
+      <div class="fg"><h4>Conical pendulum period</h4><p>T = 2π√(L cosθ/g)</p><small>L = string length, θ with vertical</small></div>
+      <div class="fg"><h4>Conical pendulum ω</h4><p>ω = √(g/L cosθ)</p><small>angular velocity</small></div>
+    </div>
+    <div class="note n-grn">⭐ <strong>Why are roads banked?</strong> On a banked road, the component of the normal force (N sinθ) provides the centripetal force. This reduces the dependence on friction and allows vehicles to safely take turns at higher speeds.</div>
+    <div class="note n-yel">⭐ <strong>Death well / Circus bike:</strong> On vertical wall, friction acts upward = weight, Normal force inward = centripetal. Condition: μ ≥ g·r/v² = μ_min.</div>
+  </div>
+
+  <!-- ── Formula Sheet ── -->
+  <div class="sec" id="s9">
+    <div class="sec-title">📋 Complete Formula Quick Reference — Chapter 3</div>
+    <table class="ntable">
+      <thead><tr><th>Quantity</th><th>Formula</th><th>Unit</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Resultant of vectors</strong></td><td>R = √(A²+B²+2AB cosθ)</td><td>Same as A, B</td></tr>
+        <tr><td><strong>Direction of resultant</strong></td><td>tan α = B sinθ / (A + B cosθ)</td><td>degrees / radian</td></tr>
+        <tr><td><strong>Components</strong></td><td>Aₓ = A cosθ, Aᵧ = A sinθ</td><td>—</td></tr>
+        <tr><td><strong>Unit vector</strong></td><td>â = A⃗ / |A⃗|</td><td>dimensionless</td></tr>
+        <tr><td><strong>Dot product</strong></td><td>A⃗·B⃗ = AB cosθ = AₓBₓ+AᵧBᵧ</td><td>scalar</td></tr>
+        <tr><td><strong>Cross product (magnitude)</strong></td><td>|A⃗×B⃗| = AB sinθ</td><td>vector</td></tr>
+        <tr><td><strong>Time of Flight</strong></td><td>T = 2u sinθ / g</td><td>second (s)</td></tr>
+        <tr><td><strong>Maximum Height</strong></td><td>H = u² sin²θ / 2g</td><td>metre (m)</td></tr>
+        <tr><td><strong>Horizontal Range</strong></td><td>R = u² sin2θ / g</td><td>metre (m)</td></tr>
+        <tr><td><strong>Max Range (θ=45°)</strong></td><td>R_max = u²/g</td><td>metre (m)</td></tr>
+        <tr><td><strong>Trajectory (parabola)</strong></td><td>y = x tanθ − gx²/2u²cos²θ</td><td>—</td></tr>
+        <tr><td><strong>Horizontal projectile range</strong></td><td>R = u√(2h/g)</td><td>metre (m)</td></tr>
+        <tr><td><strong>Relative velocity</strong></td><td>v⃗_AB = v⃗_A − v⃗_B</td><td>m/s</td></tr>
+        <tr><td><strong>Angular velocity</strong></td><td>ω = v/r = 2π/T = 2πn</td><td>rad/s</td></tr>
+        <tr><td><strong>Centripetal acceleration</strong></td><td>a_c = v²/r = ω²r</td><td>m/s²</td></tr>
+        <tr><td><strong>Centripetal force</strong></td><td>F = mv²/r = mω²r</td><td>Newton (N)</td></tr>
+        <tr><td><strong>Max speed on flat road</strong></td><td>v_max = √(μrg)</td><td>m/s</td></tr>
+        <tr><td><strong>Banking angle</strong></td><td>tan θ = v²/rg</td><td>degrees</td></tr>
+        <tr><td><strong>Conical pendulum T</strong></td><td>T = 2π√(L cosθ/g)</td><td>second (s)</td></tr>
+      </tbody>
+    </table>
+    <div class="note n-red">⚠️ <strong>Common Mistakes — Avoid These in Exam:</strong><br/>
+    1. At highest point of projectile — velocity ≠ 0. Only vᵧ = 0. vₓ = u cosθ still exists.<br/>
+    2. Range formula uses sin2θ — not sinθ or sin²θ.<br/>
+    3. Centripetal force is NOT a new force. It is provided by existing forces.<br/>
+    4. Centrifugal force is a pseudo force — it does NOT exist in inertial frames.<br/>
+    5. Complementary angles 30° &amp; 60° give same RANGE but different HEIGHT and TIME OF FLIGHT.<br/>
+    6. For river-boat problem: time to cross = d/v_b (not affected by river current v_r).</div>
+  </div>
+
+  <!-- ── Exam Questions ── -->
+  <div class="sec" id="s10">
+    <div class="eq-box">
+      <div class="eq-title">🎯 Exam Important Questions — Chapter 3: Motion in a Plane</div>
+      <ol class="q-list">
+        <li>Define scalar and vector quantities. Give 4 examples of each. What are unit vectors? <span class="mk m2">2 marks</span></li>
+        <li>State and prove the parallelogram law of vector addition. Derive expression for magnitude and direction of resultant. <span class="mk m5">5 marks</span></li>
+        <li>State the triangle law of vector addition. How does it differ from parallelogram law? <span class="mk m2">2 marks</span></li>
+        <li>Distinguish between dot product and cross product of two vectors. Give two physical examples of each. <span class="mk m3">3 marks</span></li>
+        <li>If A⃗ = 3î + 4ĵ and B⃗ = 4î − 3ĵ. Find (i) A⃗+B⃗ (ii) A⃗−B⃗ (iii) |A⃗| (iv) A⃗·B⃗ (v) angle between them. <span class="mk m4">4 marks</span></li>
+        <li>What is a projectile? Show that the path of a projectile is a parabola. <span class="mk m4">4 marks</span></li>
+        <li>Derive expressions for (i) Time of flight (ii) Maximum height (iii) Horizontal range of a projectile launched at angle θ. <span class="mk m5">5 marks</span></li>
+        <li>Show that the horizontal range of a projectile is maximum when the angle of projection is 45°. <span class="mk m3">3 marks</span></li>
+        <li>Show that the range is the same for angles θ and (90°−θ) of projection. <span class="mk m3">3 marks</span></li>
+        <li>A ball is projected at 40 m/s at 30° above horizontal. Find: (i) time of flight (ii) maximum height (iii) horizontal range. (g = 10 m/s²) <span class="mk m4">4 marks</span></li>
+        <li>A stone is thrown horizontally from the top of a cliff 80 m high with velocity 20 m/s. Find (i) time to reach ground (ii) horizontal range (iii) velocity on hitting ground. (g = 10 m/s²) <span class="mk m4">4 marks</span></li>
+        <li>Define uniform circular motion. Prove that centripetal acceleration = v²/r. Why is it directed towards the centre? <span class="mk m4">4 marks</span></li>
+        <li>What is centripetal force? Give 4 examples identifying the force that provides centripetal force. <span class="mk m3">3 marks</span></li>
+        <li>Distinguish between centripetal force and centrifugal force. Why is centrifugal force called a pseudo force? <span class="mk m2">2 marks</span></li>
+        <li>Derive the expression for maximum safe speed of a car on a flat circular road. What is the role of friction? <span class="mk m3">3 marks</span></li>
+        <li>Explain why roads are banked at curves. Derive expression for optimum speed on a banked road (frictionless). <span class="mk m4">4 marks</span></li>
+        <li>Define relative velocity. A train A moves north at 72 km/h and train B moves south at 54 km/h. Find velocity of B relative to A. <span class="mk m2">2 marks</span></li>
+        <li>Explain the river-boat problem. A boat can row at 5 m/s in still water. River flows at 3 m/s. Find (i) time to cross 100 m wide river (ii) drift. <span class="mk m3">3 marks</span></li>
+        <li>A particle moves in a circle of radius 0.5 m at 3 rev/s. Find: (i) angular velocity (ii) linear speed (iii) centripetal acceleration. <span class="mk m3">3 marks</span></li>
+        <li>What is a conical pendulum? Derive expression for its time period. <span class="mk m4">4 marks</span></li>
+      </ol>
+    </div>
+  </div>
+
+</div><!-- /notes-body -->
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <span class="bn-label">📗 Class 11 Physics · Chapter 3: Motion in a Plane</span>
+  <a href="notes-11-physics-ch2.html" class="bn-btn bn-prev">← Ch 2</a>
+  <a href="notes-physics-11.html" class="bn-btn bn-all">All Chapters</a>
+  <a href="notes-11-physics-ch4.html" class="bn-btn bn-next">Ch 4 →</a>
+  <button class="bn-btn bn-print" onclick="window.print()">🖨️ Print</button>
+</div>
+
+<script src="main.js"></script>
+<script>
+  // progress bar on scroll
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    document.getElementById('pf').style.width = pct + '%';
+  });
+  // quick nav highlight
+  const sections = ['s1','s2','s3','s4','s5','s6','s7','s8','s9','s10'];
+  const btns = document.querySelectorAll('.qn-btn');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top < 150) cur = id;
+    });
+    btns.forEach(b => b.classList.toggle('active', b.getAttribute('href') === '#' + cur));
+  });
+</script>
+</body>
+</html>
