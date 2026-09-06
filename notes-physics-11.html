@@ -422,65 +422,305 @@
     <div class="ch-icon">✈️</div>
     <div>
       <h2 style="color:#15803d;">Chapter 3: Motion in a Plane</h2>
-      <p>Vectors · Projectile motion · Relative velocity · Circular motion</p>
+      <p>Scalars & Vectors · Vector Operations · Projectile Motion · Relative Velocity · Circular Motion</p>
     </div>
     <span class="ch-num">Chapter 3</span>
   </div>
 
+  <!-- 3.1 Scalars & Vectors -->
   <div class="sec">
-    <div class="sec-title" style="color:#15803d;">🔑 Key Points — Vectors</div>
+    <div class="sec-title" style="color:#15803d;">📌 3.1 Scalars and Vectors</div>
+    <div class="def"><span class="dl">Definition</span>
+      <strong>Scalar quantity</strong> — has only magnitude. e.g. mass, speed, time, temperature, energy, distance.<br/>
+      <strong>Vector quantity</strong> — has both magnitude and direction. e.g. displacement, velocity, acceleration, force, momentum.
+    </div>
     <ul class="kp-list">
-      <li><strong class="hg">Scalar</strong> — magnitude only (mass, speed, energy). <strong class="hg">Vector</strong> — magnitude + direction (force, velocity, displacement).</li>
-      <li>Triangle law: If two vectors are represented by two sides of a triangle (head to tail), the third side (closing side) represents their resultant.</li>
-      <li>Parallelogram law: R = √(A² + B² + 2AB cosθ). Direction: tanα = B sinθ / (A + B cosθ).</li>
-      <li><strong class="hg">Dot product</strong> A·B = AB cosθ — scalar. Used for work done, power.</li>
-      <li><strong class="hg">Cross product</strong> |A×B| = AB sinθ — vector, direction by right-hand rule. Used for torque, angular momentum.</li>
-      <li>Unit vectors: î, ĵ, k̂ along x, y, z axes. |î| = |ĵ| = |k̂| = 1.</li>
+      <li>Vectors are represented by bold letters or letters with arrow on top: <strong>A⃗</strong> or <strong>A</strong></li>
+      <li><strong class="hg">Equal vectors</strong> — same magnitude and same direction.</li>
+      <li><strong class="hg">Negative vector</strong> — same magnitude, opposite direction. −A⃗</li>
+      <li><strong class="hg">Zero (null) vector</strong> — magnitude = 0, no specific direction.</li>
+      <li><strong class="hg">Unit vector</strong> — magnitude = 1, used to indicate direction. â = A⃗/|A⃗|</li>
+      <li>Unit vectors along x, y, z axes: <strong>î, ĵ, k̂</strong>. |î| = |ĵ| = |k̂| = 1.</li>
+      <li><strong class="hg">Position vector</strong> r⃗ = xî + yĵ + zk̂ — specifies position of a point from origin.</li>
+      <li>Vectors can be added geometrically (Triangle/Parallelogram law) or analytically (component method).</li>
     </ul>
   </div>
 
+  <!-- 3.2 Addition of Vectors -->
   <div class="sec">
-    <div class="sec-title" style="color:#15803d;">🎯 Projectile Motion — Key Formulas</div>
-    <div class="note note-green">A projectile is launched with speed u at angle θ with horizontal. Horizontal: no force (constant vx). Vertical: gravity acts (vy changes).</div>
-    <div class="fml-grid">
-      <div class="fg grn-g"><h4>Horizontal velocity</h4><p>vₓ = u cosθ (constant)</p></div>
-      <div class="fg grn-g"><h4>Vertical velocity</h4><p>vᵧ = u sinθ − gt</p></div>
-      <div class="fg grn-g"><h4>Time of Flight</h4><p>T = 2u sinθ / g</p></div>
-      <div class="fg grn-g"><h4>Max Height</h4><p>H = u² sin²θ / 2g</p></div>
-      <div class="fg grn-g"><h4>Horizontal Range</h4><p>R = u² sin2θ / g</p></div>
-      <div class="fg grn-g"><h4>Max Range</h4><p>R_max = u²/g at θ = 45°</p></div>
-      <div class="fg grn-g"><h4>Trajectory (Path)</h4><p>y = x tanθ − gx²/2u²cos²θ</p><small>Parabola</small></div>
-      <div class="fg grn-g"><h4>Velocity at time t</h4><p>v = √(vₓ² + vᵧ²)</p></div>
+    <div class="sec-title" style="color:#15803d;">➕ 3.2 Addition of Vectors</div>
+    <div class="def"><span class="dl">Triangle Law of Vector Addition</span>
+      If two vectors A⃗ and B⃗ are represented by two sides of a triangle taken in order (head to tail), then the third side (closing side, taken in opposite order) represents their resultant R⃗ = A⃗ + B⃗.
     </div>
-    <div class="note note-green">⭐ <strong>Same range for complementary angles:</strong> R is same for θ and (90°−θ). e.g. 30° and 60° give same range. Maximum range at 45°.</div>
+    <div class="def"><span class="dl">Parallelogram Law of Vector Addition</span>
+      If two vectors A⃗ and B⃗ are represented by two adjacent sides of a parallelogram drawn from a common point, then the diagonal of the parallelogram drawn from that point represents their resultant.
+    </div>
+    <div class="fml imp-f">
+      <span class="fl">Magnitude of Resultant</span>
+      R = √(A² + B² + 2AB cosθ)<br/>
+      <span style="font-size:.85rem;">where θ = angle between A⃗ and B⃗</span>
+    </div>
+    <div class="fml imp-f">
+      <span class="fl">Direction of Resultant</span>
+      tan α = B sinθ / (A + B cosθ)<br/>
+      <span style="font-size:.85rem;">α = angle of R⃗ with A⃗</span>
+    </div>
+    <table class="ntable">
+      <thead><tr><th>Angle θ between A⃗ & B⃗</th><th>Resultant R</th><th>Special Case</th></tr></thead>
+      <tbody>
+        <tr><td>θ = 0° (same direction)</td><td>R = A + B</td><td>Maximum resultant</td></tr>
+        <tr><td>θ = 180° (opposite direction)</td><td>R = |A − B|</td><td>Minimum resultant</td></tr>
+        <tr><td>θ = 90° (perpendicular)</td><td>R = √(A² + B²)</td><td>Pythagoras case</td></tr>
+        <tr><td>A = B, θ = 60°</td><td>R = A√3</td><td>Equilateral triangle case</td></tr>
+        <tr><td>A = B, θ = 120°</td><td>R = A</td><td>R equals each vector</td></tr>
+      </tbody>
+    </table>
+    <div class="note note-green">⭐ <strong>Properties of Vector Addition:</strong> Commutative — A⃗ + B⃗ = B⃗ + A⃗. Associative — (A⃗ + B⃗) + C⃗ = A⃗ + (B⃗ + C⃗).</div>
   </div>
 
+  <!-- 3.3 Resolution of Vectors -->
   <div class="sec">
-    <div class="sec-title" style="color:#15803d;">🔵 Uniform Circular Motion</div>
-    <div class="fml-grid">
-      <div class="fg grn-g"><h4>Centripetal Acceleration</h4><p>a = v²/r = ω²r</p></div>
-      <div class="fg grn-g"><h4>Centripetal Force</h4><p>F = mv²/r = mω²r</p></div>
-      <div class="fg grn-g"><h4>Angular velocity</h4><p>ω = 2π/T = 2πn = v/r</p></div>
-      <div class="fg grn-g"><h4>Relative velocity</h4><p>v⃗_AB = v⃗_A − v⃗_B</p></div>
+    <div class="sec-title" style="color:#15803d;">🔀 3.3 Resolution of Vectors (Components)</div>
+    <div class="def"><span class="dl">Resolution</span>
+      Breaking a vector into two or more component vectors along chosen directions. The components are its projections along the axes.
+    </div>
+    <div class="fml imp-f">
+      <span class="fl">Components of a vector A⃗ making angle θ with x-axis</span>
+      Aₓ = A cosθ (x-component) &nbsp;&nbsp; Aᵧ = A sinθ (y-component)<br/>
+      A⃗ = Aₓî + Aᵧĵ &nbsp;&nbsp; |A⃗| = √(Aₓ² + Aᵧ²) &nbsp;&nbsp; θ = tan⁻¹(Aᵧ/Aₓ)
     </div>
     <ul class="kp-list">
-      <li>In UCM: speed is constant, but velocity direction changes continuously — so there IS acceleration.</li>
-      <li>Centripetal acceleration is always directed <strong class="hg">towards the centre</strong>. It is perpendicular to velocity.</li>
-      <li><strong class="hg">Centrifugal force</strong> is a pseudo force (felt in rotating frame) — equal and opposite to centripetal force.</li>
+      <li>To add vectors analytically: Add x-components separately, y-components separately.</li>
+      <li>R⃗ = A⃗ + B⃗ → Rₓ = Aₓ + Bₓ, Rᵧ = Aᵧ + Bᵧ</li>
+      <li>R = √(Rₓ² + Rᵧ²), direction: θ = tan⁻¹(Rᵧ/Rₓ)</li>
+      <li>In 3D: A⃗ = Aₓî + Aᵧĵ + Aᵤk̂, |A⃗| = √(Aₓ² + Aᵧ² + Aᵤ²)</li>
     </ul>
   </div>
 
+  <!-- 3.4 Multiplication of Vectors -->
+  <div class="sec">
+    <div class="sec-title" style="color:#15803d;">✖️ 3.4 Dot Product & Cross Product</div>
+    <div class="fml-grid">
+      <div class="fg grn-g">
+        <h4>Dot Product (Scalar Product)</h4>
+        <p>A⃗ · B⃗ = AB cosθ</p>
+        <small>Result is a SCALAR. θ = angle between them.</small>
+      </div>
+      <div class="fg grn-g">
+        <h4>Cross Product (Vector Product)</h4>
+        <p>|A⃗ × B⃗| = AB sinθ</p>
+        <small>Result is a VECTOR. Direction by right-hand rule.</small>
+      </div>
+      <div class="fg grn-g">
+        <h4>Dot Product in components</h4>
+        <p>A⃗·B⃗ = AₓBₓ + AᵧBᵧ + AᵤBᵤ</p>
+        <small>î·î = ĵ·ĵ = k̂·k̂ = 1, î·ĵ = 0</small>
+      </div>
+      <div class="fg grn-g">
+        <h4>Cross Product — unit vectors</h4>
+        <p>î×ĵ = k̂, ĵ×k̂ = î, k̂×î = ĵ</p>
+        <small>î×î = ĵ×ĵ = k̂×k̂ = 0</small>
+      </div>
+    </div>
+    <table class="ntable">
+      <thead><tr><th>Property</th><th>Dot Product A⃗·B⃗</th><th>Cross Product A⃗×B⃗</th></tr></thead>
+      <tbody>
+        <tr><td>Result</td><td>Scalar</td><td>Vector</td></tr>
+        <tr><td>Formula</td><td>AB cosθ</td><td>AB sinθ (magnitude)</td></tr>
+        <tr><td>Commutative</td><td>A⃗·B⃗ = B⃗·A⃗ ✓</td><td>A⃗×B⃗ = −B⃗×A⃗ ✗</td></tr>
+        <tr><td>If A⃗ ⊥ B⃗ (θ=90°)</td><td>A⃗·B⃗ = 0</td><td>|A⃗×B⃗| = AB (max)</td></tr>
+        <tr><td>If A⃗ ∥ B⃗ (θ=0°)</td><td>A⃗·B⃗ = AB (max)</td><td>|A⃗×B⃗| = 0</td></tr>
+        <tr><td>Physical use</td><td>Work = F⃗·d⃗, Power = F⃗·v⃗</td><td>Torque τ⃗ = r⃗×F⃗, L⃗ = r⃗×p⃗</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 3.5 Motion in a Plane -->
+  <div class="sec">
+    <div class="sec-title" style="color:#15803d;">🗺️ 3.5 Motion in a Plane — 2D Kinematics</div>
+    <div class="def"><span class="dl">Key Principle</span>
+      Motion in 2D can be resolved into two independent 1D motions along x and y axes. x and y motions are completely independent of each other.
+    </div>
+    <div class="fml-grid">
+      <div class="fg grn-g"><h4>Position vector</h4><p>r⃗ = xî + yĵ</p></div>
+      <div class="fg grn-g"><h4>Velocity vector</h4><p>v⃗ = vₓî + vᵧĵ = dr⃗/dt</p></div>
+      <div class="fg grn-g"><h4>Acceleration vector</h4><p>a⃗ = aₓî + aᵧĵ = dv⃗/dt</p></div>
+      <div class="fg grn-g"><h4>Average velocity</h4><p>v⃗_av = Δr⃗/Δt</p></div>
+    </div>
+    <div class="fml imp-f">
+      <span class="fl">Equations of Motion in 2D (vector form)</span>
+      v⃗ = u⃗ + a⃗t &nbsp;&nbsp;&nbsp; s⃗ = u⃗t + ½a⃗t²<br/>
+      x-direction: vₓ = uₓ + aₓt &nbsp;&nbsp; sₓ = uₓt + ½aₓt²<br/>
+      y-direction: vᵧ = uᵧ + aᵧt &nbsp;&nbsp; sᵧ = uᵧt + ½aᵧt²
+    </div>
+  </div>
+
+  <!-- 3.6 Projectile Motion -->
+  <div class="sec">
+    <div class="sec-title" style="color:#15803d;">🎯 3.6 Projectile Motion — Complete Notes</div>
+    <div class="def"><span class="dl">Definition</span>
+      A projectile is any object thrown (projected) with an initial velocity and then moving under the influence of gravity alone (no air resistance). Its path is called trajectory — always a PARABOLA.
+    </div>
+    <ul class="kp-list">
+      <li>Initial velocity u at angle θ with horizontal → uₓ = u cosθ (horizontal), uᵧ = u sinθ (vertical)</li>
+      <li><strong class="hg">Horizontal:</strong> No force acts → aₓ = 0 → vₓ = u cosθ = constant throughout</li>
+      <li><strong class="hg">Vertical:</strong> Gravity acts downward → aᵧ = −g → vᵧ changes with time</li>
+      <li>At highest point: vᵧ = 0, only vₓ remains → velocity = u cosθ (horizontal only)</li>
+      <li>Trajectory equation: y = x tanθ − gx²/(2u²cos²θ) — form y = Ax + Bx² → parabola</li>
+    </ul>
+    <div class="fml imp-f">
+      <span class="fl">🌟 All Projectile Formulas — Must Memorise</span>
+      Time of Flight: T = 2u sinθ / g<br/>
+      Maximum Height: H = u² sin²θ / 2g<br/>
+      Horizontal Range: R = u² sin2θ / g = u² × 2sinθcosθ / g<br/>
+      Maximum Range: R_max = u²/g &nbsp; (at θ = 45°)<br/>
+      Velocity at time t: vₓ = u cosθ, vᵧ = u sinθ − gt, |v| = √(vₓ² + vᵧ²)
+    </div>
+    <table class="ntable">
+      <thead><tr><th>Angle θ</th><th>Time of Flight T</th><th>Max Height H</th><th>Range R</th></tr></thead>
+      <tbody>
+        <tr><td><strong>30°</strong></td><td>u/g</td><td>u²/8g</td><td>u²√3/2g</td></tr>
+        <tr><td><strong>45°</strong></td><td>u√2/g</td><td>u²/4g</td><td>u²/g (maximum)</td></tr>
+        <tr><td><strong>60°</strong></td><td>u√3/g</td><td>3u²/8g</td><td>u²√3/2g</td></tr>
+        <tr><td><strong>90°</strong></td><td>2u/g</td><td>u²/2g</td><td>0 (straight up)</td></tr>
+      </tbody>
+    </table>
+    <div class="note note-green">⭐ <strong>Same range for complementary angles:</strong> θ and (90°−θ) give the same range. e.g. 30° and 60° → same R. This is because sin2θ = sin2(90°−θ).</div>
+    <div class="note note-green">⭐ <strong>Relation between H and R:</strong> R = 4H/tanθ → at θ=45°, R = 4H. Also H_max = R_max/4 (at 45°).</div>
+
+    <div class="sec-title" style="color:#15803d;margin-top:20px;">📝 Proof: Trajectory is a Parabola</div>
+    <div class="def"><span class="dl">Derivation</span>
+      Horizontal: x = uₓt = u cosθ · t → t = x/(u cosθ)<br/>
+      Vertical: y = uᵧt − ½gt² = u sinθ · t − ½gt²<br/>
+      Substitute t: y = u sinθ · [x/(u cosθ)] − ½g · [x/(u cosθ)]²<br/>
+      y = x tanθ − gx²/(2u²cos²θ)<br/>
+      This is of the form y = Ax + Bx² → <strong>equation of a parabola ✓</strong>
+    </div>
+  </div>
+
+  <!-- 3.7 Relative Velocity -->
+  <div class="sec">
+    <div class="sec-title" style="color:#15803d;">🚂 3.7 Relative Velocity in 2D</div>
+    <div class="def"><span class="dl">Definition</span>
+      The velocity of object A as observed from object B is called the velocity of A relative to B.
+    </div>
+    <div class="fml imp-f">
+      <span class="fl">Relative Velocity Formula</span>
+      v⃗_AB = v⃗_A − v⃗_B &nbsp; (velocity of A w.r.t. B)<br/>
+      v⃗_BA = v⃗_B − v⃗_A &nbsp; (velocity of B w.r.t. A)<br/>
+      |v⃗_AB| = |v⃗_BA| but directions are opposite
+    </div>
+    <table class="ntable">
+      <thead><tr><th>Situation</th><th>Relative Speed</th></tr></thead>
+      <tbody>
+        <tr><td>Both moving in same direction with speeds v₁, v₂</td><td>|v₁ − v₂|</td></tr>
+        <tr><td>Moving in opposite directions with speeds v₁, v₂</td><td>v₁ + v₂</td></tr>
+        <tr><td>Moving at angle θ to each other</td><td>√(v₁² + v₂² − 2v₁v₂cosθ)</td></tr>
+      </tbody>
+    </table>
+    <div class="note note-green">⭐ <strong>Rain-Man Problem:</strong> To protect from rain, umbrella must be tilted at angle α = tan⁻¹(v_man/v_rain) in the direction of walking. The effective relative velocity of rain w.r.t. man determines the angle.</div>
+    <div class="note note-green">⭐ <strong>River-Boat Problem:</strong> To cross river of width d, boat speed v_b, river current v_r. Time to cross = d/v_b (independent of current). To cross in minimum time, point boat perpendicular to river bank.</div>
+  </div>
+
+  <!-- 3.8 Uniform Circular Motion -->
+  <div class="sec">
+    <div class="sec-title" style="color:#15803d;">🔵 3.8 Uniform Circular Motion (UCM)</div>
+    <div class="def"><span class="dl">Definition</span>
+      Motion of an object along a circular path with constant speed is called Uniform Circular Motion. Speed is constant but velocity direction changes continuously → acceleration exists.
+    </div>
+    <div class="fml-grid">
+      <div class="fg grn-g"><h4>Angular displacement θ</h4><p>θ = arc/radius = s/r</p><small>Unit: radian</small></div>
+      <div class="fg grn-g"><h4>Angular velocity ω</h4><p>ω = dθ/dt = v/r = 2π/T = 2πn</p><small>Unit: rad/s</small></div>
+      <div class="fg grn-g"><h4>Linear velocity v</h4><p>v = rω = 2πr/T = 2πrn</p><small>Tangential direction</small></div>
+      <div class="fg grn-g"><h4>Time period T</h4><p>T = 2πr/v = 2π/ω</p><small>Time for 1 revolution</small></div>
+      <div class="fg grn-g"><h4>Centripetal acceleration</h4><p>a_c = v²/r = ω²r = vω</p><small>Towards centre</small></div>
+      <div class="fg grn-g"><h4>Centripetal force</h4><p>F_c = mv²/r = mω²r</p><small>Towards centre</small></div>
+    </div>
+    <ul class="kp-list">
+      <li>In UCM: <strong class="hg">speed is constant</strong> but velocity direction changes → NOT in equilibrium → net force acts (centripetal).</li>
+      <li>Centripetal acceleration is always directed <strong class="hg">towards the centre</strong>, perpendicular to velocity.</li>
+      <li>Centripetal force is not a new type of force — it is provided by existing forces (tension, gravity, friction, normal reaction depending on situation).</li>
+      <li><strong class="hg">Centrifugal force</strong> — pseudo force in rotating (non-inertial) frame. Equal in magnitude, opposite in direction to centripetal force. It is NOT a real force.</li>
+    </ul>
+    <table class="ntable">
+      <thead><tr><th>Situation</th><th>Centripetal Force provided by</th></tr></thead>
+      <tbody>
+        <tr><td>Stone on a string (horizontal circle)</td><td>Tension T in string</td></tr>
+        <tr><td>Planet orbiting Sun</td><td>Gravitational force F = GMm/r²</td></tr>
+        <tr><td>Car on circular road (flat)</td><td>Friction between tyre and road</td></tr>
+        <tr><td>Car on banked road</td><td>Component of Normal force N sinθ</td></tr>
+        <tr><td>Electron orbiting nucleus</td><td>Electrostatic attraction (Coulomb force)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="sec-title" style="color:#15803d;margin-top:20px;">📐 Conical Pendulum & Banking of Roads</div>
+    <div class="fml-grid">
+      <div class="fg grn-g">
+        <h4>Conical Pendulum</h4>
+        <p>T = 2π√(L cosθ/g)</p>
+        <small>L = string length, θ = half-angle with vertical</small>
+      </div>
+      <div class="fg grn-g">
+        <h4>Banking of Road (no friction)</h4>
+        <p>tan θ = v²/rg<br/>v = √(rg tanθ)</p>
+        <small>θ = banking angle, v = optimum speed</small>
+      </div>
+      <div class="fg grn-g">
+        <h4>Max speed on flat road</h4>
+        <p>v_max = √(μrg)</p>
+        <small>μ = coefficient of friction</small>
+      </div>
+      <div class="fg grn-g">
+        <h4>Max speed on banked road</h4>
+        <p>v_max = √[rg(tanθ+μ)/(1−μtanθ)]</p>
+        <small>With friction on banked road</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary Table -->
+  <div class="sec">
+    <div class="sec-title" style="color:#15803d;">📋 Chapter 3 — Complete Formula Quick Reference</div>
+    <table class="ntable">
+      <thead><tr><th>Quantity</th><th>Formula</th><th>Unit</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Resultant of two vectors</strong></td><td>R = √(A²+B²+2AB cosθ)</td><td>same as A, B</td></tr>
+        <tr><td><strong>Direction of resultant</strong></td><td>tan α = B sinθ/(A+B cosθ)</td><td>degree/radian</td></tr>
+        <tr><td><strong>Dot product</strong></td><td>A⃗·B⃗ = AB cosθ</td><td>scalar</td></tr>
+        <tr><td><strong>Cross product</strong></td><td>|A⃗×B⃗| = AB sinθ</td><td>vector</td></tr>
+        <tr><td><strong>Time of flight</strong></td><td>T = 2u sinθ/g</td><td>second (s)</td></tr>
+        <tr><td><strong>Maximum height</strong></td><td>H = u²sin²θ/2g</td><td>metre (m)</td></tr>
+        <tr><td><strong>Horizontal range</strong></td><td>R = u²sin2θ/g</td><td>metre (m)</td></tr>
+        <tr><td><strong>Maximum range</strong></td><td>R_max = u²/g at θ=45°</td><td>metre (m)</td></tr>
+        <tr><td><strong>Trajectory equation</strong></td><td>y = x tanθ − gx²/2u²cos²θ</td><td>—</td></tr>
+        <tr><td><strong>Angular velocity</strong></td><td>ω = v/r = 2π/T = 2πn</td><td>rad/s</td></tr>
+        <tr><td><strong>Centripetal acceleration</strong></td><td>a = v²/r = ω²r</td><td>m/s²</td></tr>
+        <tr><td><strong>Centripetal force</strong></td><td>F = mv²/r = mω²r</td><td>Newton (N)</td></tr>
+        <tr><td><strong>Relative velocity</strong></td><td>v⃗_AB = v⃗_A − v⃗_B</td><td>m/s</td></tr>
+        <tr><td><strong>Banking angle</strong></td><td>tan θ = v²/rg</td><td>degree</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Exam Questions -->
   <div class="eq-section">
-    <div class="eq-title">🎯 Exam Important Questions — Ch 3</div>
+    <div class="eq-title">🎯 Exam Important Questions — Chapter 3: Motion in a Plane</div>
     <ol class="q-list">
-      <li>State and prove the parallelogram law of vector addition. Derive expression for magnitude and direction of resultant. <span class="marks m5">5 marks</span></li>
-      <li>Prove that the trajectory of a projectile is a parabola. <span class="marks m4">4 marks</span></li>
-      <li>Derive expressions for (i) time of flight (ii) max height (iii) horizontal range of a projectile. <span class="marks m5">5 marks</span></li>
-      <li>A ball is projected with 20 m/s at 30° above horizontal. Find range, max height, time of flight. (g = 10 m/s²) <span class="marks m3">3 marks</span></li>
-      <li>Define centripetal acceleration. Derive its expression. Why is it called centripetal? <span class="marks m3">3 marks</span></li>
-      <li>Distinguish between dot product and cross product of two vectors with examples. <span class="marks m2">2 marks</span></li>
-      <li>Show that two projections at complementary angles give the same range. <span class="marks m3">3 marks</span></li>
-      <li>A car is moving at 20 m/s on a circular track of radius 400 m. Find centripetal acceleration. <span class="marks m2">2 marks</span></li>
+      <li>State and prove the parallelogram law of vector addition. Derive expression for magnitude and direction of resultant vector. <span class="marks m5">5 marks</span></li>
+      <li>Define scalar and vector quantities. Give 4 examples of each. What are unit vectors? <span class="marks m2">2 marks</span></li>
+      <li>Distinguish between dot product and cross product of two vectors with two examples each. <span class="marks m3">3 marks</span></li>
+      <li>What is a projectile? Prove that the trajectory of a projectile is a parabola. <span class="marks m4">4 marks</span></li>
+      <li>Derive expressions for (i) Time of flight (ii) Maximum height (iii) Horizontal range of a projectile thrown at angle θ with horizontal. <span class="marks m5">5 marks</span></li>
+      <li>Show that the horizontal range is maximum at 45°. Also show that two angles of projection θ and (90°−θ) give the same range. <span class="marks m3">3 marks</span></li>
+      <li>A ball is projected with 40 m/s at 30° above horizontal. Find: (i) time of flight (ii) maximum height (iii) horizontal range. (g = 10 m/s²) <span class="marks m4">4 marks</span></li>
+      <li>Define uniform circular motion. Show that a body in UCM has centripetal acceleration directed towards the centre. Derive a = v²/r. <span class="marks m4">4 marks</span></li>
+      <li>What is centripetal force? Give 3 examples of circular motion and identify the force providing centripetal force in each. <span class="marks m3">3 marks</span></li>
+      <li>Derive the expression for maximum safe speed of a car on a flat circular road. What is the effect of increasing the radius of the road? <span class="marks m3">3 marks</span></li>
+      <li>Explain banking of roads. Derive expression for optimum speed on a banked road (without friction). <span class="marks m4">4 marks</span></li>
+      <li>Define relative velocity. Two trains A and B move at 60 km/h and 80 km/h in the same direction. Find velocity of B relative to A and A relative to B. <span class="marks m2">2 marks</span></li>
+      <li>A particle moves in a circle of radius 2 m with speed 4 m/s. Find (i) angular velocity (ii) time period (iii) centripetal acceleration. <span class="marks m3">3 marks</span></li>
+      <li>A stone is tied to a string of length 1 m and whirled in a horizontal circle at 2 rev/s. Find linear speed, angular velocity and centripetal force if mass = 0.5 kg. <span class="marks m3">3 marks</span></li>
+      <li>Distinguish between centripetal force and centrifugal force. Why is centrifugal force called a pseudo force? <span class="marks m2">2 marks</span></li>
     </ol>
   </div>
 </div>
