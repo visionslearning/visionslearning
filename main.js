@@ -29,6 +29,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Notes dropdown — tap toggle on mobile
+  const dropdownToggle = document.querySelector('.nav-dropdown-toggle');
+  const submenu = document.getElementById('notesSubmenu');
+  if (dropdownToggle && submenu) {
+    dropdownToggle.addEventListener('click', (e) => {
+      if (window.innerWidth <= 900) {
+        e.preventDefault();
+        submenu.classList.toggle('open');
+      }
+    });
+  }
+
   /* ---- Animated counter for stats ---- */
   const counterEls = document.querySelectorAll('.num[data-target]');
   if (counterEls.length > 0) {

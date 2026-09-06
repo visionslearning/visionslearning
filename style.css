@@ -167,6 +167,51 @@ img {
   width: 100%;
 }
 
+/* ── Notes Dropdown ── */
+.nav-dropdown { position: relative; }
+.nav-dropdown-toggle { cursor: pointer; }
+.nav-submenu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.12);
+  min-width: 200px;
+  list-style: none;
+  padding: 8px 0;
+  z-index: 200;
+}
+.nav-submenu li a {
+  display: block;
+  padding: 10px 18px;
+  font-size: .88rem;
+  color: #334155 !important;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background .15s;
+}
+.nav-submenu li a::after { display: none !important; }
+.nav-submenu li a:hover { background: #f0f4ff; color: #1a73e8 !important; }
+.nav-dropdown:hover .nav-submenu { display: block; }
+
+/* mobile — show submenu as flat list */
+@media (max-width: 900px) {
+  .nav-submenu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    background: #f8f9fa;
+    padding: 0;
+    display: none;
+  }
+  .nav-submenu.open { display: block; }
+  .nav-submenu li a { padding: 10px 36px; font-size: .88rem; }
+}
+
 .nav-cta {
   background: var(--primary);
   color: var(--white) !important;
