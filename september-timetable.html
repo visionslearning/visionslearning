@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>September Study Timetable</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4ff;
+      color: #1a1a2e;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 28px 20px 16px;
+      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+      border-radius: 16px;
+      color: white;
+      margin-bottom: 28px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+    header h1 { font-size: 1.9rem; letter-spacing: 1px; }
+    header p  { margin-top: 6px; font-size: 0.95rem; opacity: 0.8; }
+
+    /* COUNTDOWN */
+    .countdown {
+      text-align: center;
+      background: #fff3cd;
+      border: 2px solid #f0c040;
+      border-radius: 12px;
+      padding: 14px 20px;
+      margin-bottom: 24px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #856404;
+    }
+
+    /* LEGEND */
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+    }
+    .dot { width: 13px; height: 13px; border-radius: 50%; flex-shrink: 0; }
+    .dot-sci1  { background: #e74c3c; }
+    .dot-sci2  { background: #9b59b6; }
+    .dot-math1 { background: #2980b9; }
+    .dot-math2 { background: #27ae60; }
+    .dot-rev   { background: #f39c12; }
+    .dot-test  { background: #1a1a2e; }
+
+    /* SYLLABUS OVERVIEW */
+    .syllabus {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+    .syl-card {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+    }
+    .syl-card h4 {
+      font-size: 0.85rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 3px solid;
+    }
+    .syl-card.sci1 h4  { color: #e74c3c; border-color: #e74c3c; }
+    .syl-card.sci2 h4  { color: #9b59b6; border-color: #9b59b6; }
+    .syl-card.math1 h4 { color: #2980b9; border-color: #2980b9; }
+    .syl-card.math2 h4 { color: #27ae60; border-color: #27ae60; }
+    .syl-card ol { padding-left: 18px; }
+    .syl-card li { font-size: 0.8rem; color: #444; padding: 3px 0; }
+
+    /* SECTION TITLE */
+    h2.section-title {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+      color: #1a1a2e;
+    }
+
+    /* SCHEDULE TABLE */
+    .table-wrap { overflow-x: auto; margin-bottom: 36px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      min-width: 700px;
+    }
+    thead tr {
+      background: linear-gradient(135deg, #1a1a2e, #0f3460);
+      color: white;
+    }
+    th { padding: 12px 14px; text-align: left; font-size: 0.82rem; }
+    tbody tr { border-bottom: 1px solid #f0f0f0; transition: background 0.15s; }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: #f8f9ff; }
+    tbody tr.today-row { background: #fff8e1 !important; }
+    td { padding: 11px 14px; font-size: 0.82rem; vertical-align: middle; }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 9px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: white;
+      margin-right: 3px;
+    }
+    .badge.sci1  { background: #e74c3c; }
+    .badge.sci2  { background: #9b59b6; }
+    .badge.math1 { background: #2980b9; }
+    .badge.math2 { background: #27ae60; }
+    .badge.rev   { background: #f39c12; color: #1a1a2e; }
+    .badge.test  { background: #1a1a2e; }
+
+    .day-label { font-weight: 700; font-size: 0.85rem; white-space: nowrap; }
+    .start-badge {
+      display: inline-block;
+      background: #e74c3c;
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 10px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    .check-col { text-align: center; }
+    input[type="checkbox"] {
+      width: 19px; height: 19px;
+      cursor: pointer;
+      accent-color: #27ae60;
+    }
+
+    /* TIPS */
+    .tips {
+      background: white;
+      border-radius: 14px;
+      padding: 20px 24px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+      margin-bottom: 20px;
+    }
+    .tips h3 { margin-bottom: 12px; font-size: 1rem; }
+    .tips ul  { list-style: none; }
+    .tips li  { padding: 5px 0; font-size: 0.83rem; color: #444; display: flex; gap: 8px; }
+    .tips li::before { content: "💡"; flex-shrink: 0; }
+
+    footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #999;
+      padding: 10px 0 4px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📅 Study Timetable — Sep 11 to Sep 30</h1>
+  <p>Class 10 · Science &amp; Maths · Starting Tomorrow · 20 Days · 18 Chapters</p>
+</header>
+
+<div class="countdown">
+  🚀 Starting Tomorrow: <strong>Friday, 11 September 2026</strong> &nbsp;|&nbsp;
+  20 days remaining &nbsp;|&nbsp; 18 chapters to cover
+</div>
+
+<!-- LEGEND -->
+<div class="legend">
+  <div class="legend-item"><div class="dot dot-sci1"></div> Science 1</div>
+  <div class="legend-item"><div class="dot dot-sci2"></div> Science 2</div>
+  <div class="legend-item"><div class="dot dot-math1"></div> Maths 1</div>
+  <div class="legend-item"><div class="dot dot-math2"></div> Maths 2</div>
+  <div class="legend-item"><div class="dot dot-rev"></div> Revision</div>
+  <div class="legend-item"><div class="dot dot-test"></div> Practice Test</div>
+</div>
+
+<!-- SYLLABUS OVERVIEW -->
+<h2 class="section-title">📚 Your Full Syllabus</h2>
+<div class="syllabus">
+  <div class="syl-card sci1">
+    <h4>🔴 Science 1 (7 chapters)</h4>
+    <ol>
+      <li>Gravitation</li>
+      <li>Periodic Classification of Elements</li>
+      <li>Chemical Reactions &amp; Equations</li>
+      <li>Effects of Electric Current</li>
+      <li>Heat</li>
+      <li>Refraction of Light</li>
+      <li>Lenses</li>
+    </ol>
+  </div>
+  <div class="syl-card sci2">
+    <h4>🟣 Science 2 (4 chapters)</h4>
+    <ol>
+      <li>Heredity &amp; Evolution</li>
+      <li>Life Processes in Living Organisms Part 1</li>
+      <li>Life Processes in Living Organisms Part 2</li>
+      <li>Environmental Management</li>
+    </ol>
+  </div>
+  <div class="syl-card math1">
+    <h4>🔵 Maths 1 (4 chapters)</h4>
+    <ol>
+      <li>Linear Equations in Two Variables</li>
+      <li>Quadratic Equations</li>
+      <li>Arithmetic Progression</li>
+      <li>Probability</li>
+    </ol>
+  </div>
+  <div class="syl-card math2">
+    <h4>🟢 Maths 2 (3 chapters)</h4>
+    <ol>
+      <li>Similarity</li>
+      <li>Pythagoras Theorem</li>
+      <li>Circle</li>
+    </ol>
+  </div>
+</div>
+
+<!-- SCHEDULE TABLE -->
+<h2 class="section-title">🗓️ Day-by-Day Schedule (Sep 11 – Sep 30)</h2>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Day</th>
+        <th>Date</th>
+        <th>Morning Session (1.5 hrs)</th>
+        <th>Evening Session (1.5 hrs)</th>
+        <th>Focus</th>
+        <th>✓ Done</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- DAY 1 -->
+      <tr>
+        <td><div class="day-label">Day 1 <span class="start-badge">START</span></div></td>
+        <td>Fri, 11 Sep</td>
+        <td>Gravitation – laws, free fall, numericals</td>
+        <td>Linear Equations in Two Variables – methods &amp; graphs</td>
+        <td><span class="badge sci1">S1</span><span class="badge math1">M1</span></td>
+        <td class="check-col"><input type="checkbox"></td>
+      </tr>
+
+      <!-- DAY 2 -->
+      <tr>
+        <td><div class="day-label">Day 2</div></td>
+        <td>Sat, 12 Sep</td>
+        <td>Periodic Classification – Mendeleev &amp; Modern Periodic Table</td>
+        <td>Quadratic Equations – factorisation &amp; formula</td>
+        <td><span class="badge sci1">S1</span><span class="badge math1">M1</span></td>
+        <td class="check-col"><input type="checkbox"></td>
+      </tr>
+
+      <!-- DAY 3 -->
+      <tr>
+        <td><div class="day-label">Day 3</div></td>
+        <td>Sun, 13 Sep</td>
+        <td>Heredity &amp; Evolution – Mendel's laws, natural selection</td>
+        <td>Quadratic Equations – word problems &amp; practice</td>
+        <td><span class="badge sci2">S2</span><span class="badge math1">M1</span></td>
+        <td class="check-col"><input type="checkbox"></td>
+      </tr>
+
+      <!-- DAY 4 -->
+      <tr>
+        <td><div class="day-label">Day 4</div></td>
+        <td>Mon, 14 Sep</td>
+        <td>Chemical Reactions &amp; Equations – types, balancing equations</td>
+        <td>Similarity – AA, SAS, SSS criteria &amp; problems</td>
+        <td><span class="badge sci1">S1</span><span class="badge math2">M2</span></td>
+        <td class="check-col"><input type="checkbox"></td>
+      </tr>
+
+      <!-- DAY 5 -->
+      <tr>
+        <td><div class="day-label">Day 5</div></td>
+        <td>Tue, 15 Sep</td>
+        <td>Life Processes Part 1 – nutrition, respiration, transportation</td>
+        <td>Arithmetic Progression – nth term, sum formula</td>
+        <td><span class="badge sci2">S2</span><span class="badge math1">M1</span></td>
+        <td class="check-col"><input type="checkbox"></td>
+      </tr>
+
+      <!-- DAY 6 -->
+      <tr>
+        <td><div class="day-label">Day 6</div></td>
+        <td>Wed, 16 Sep</td>
+        <td>Effects of Electric Current – Ohm's law, heating effect, magnetic effect</td>
+        <td>Pythagoras Theorem – proof, converse &amp; applications</td>
+        <td><span class="badge sci1">S1</span><span class="badge math2">M2</span></td>
+        <td class="check-col"><input type="checkbox"></td>
+      </tr>
+
+      <!-- DAY 7 - REVISION + TEST -->
+      <tr style="background:#fff0f0;">
+        <td><div class="day-label">Day 7</div></td>
+        <td>Thu, 17 Sep</td>
+        <td>🔁 Revise: Gravitation + Periodic Classification + Chemical Reactions</td>
+        <td>📝 Practice Test 1 – Science 1 (Ch 1–3) · Time: 1 hr</td>
+        <td><span class="badge rev">REV</span><span class="badge test">TEST</span></td>
+        <td class="check-col"><input type="checkbox"></td>
+      </tr>
+
+      <!-- DAY 8 -->
+      <tr>
+        <td><div class="day-label">Day 8</div></td>
+        <td>Fri, 18 Sep</td>
+        <td>Heat – conduction, convection, radiation, specific heat numericals</td>
+        <td>Arithmetic Progression – word problems &amp; practice</td>
+        <td><span class="badge sci1">S1</span><span class="badge math1">M1</span></td>
+        <td class="check-col"><input type="checkbox"></td>
+      </tr>
+
+      <!-- DAY 9 -->
+      <tr>
+        <td><div class="day-label">Day 9</div></td>
+        <td>Sat, 19 Sep</td>
+        <td>Life Processes Part 2 – control &amp; coordination, reproduction</td>
+        <td>Probability – basic concepts, coins, cards, dice problems</td>
+        <td><span class="badge sci2">S2</span><span class="badge math1">M1</span></td>
+        <td class="check-col"><input type="checkbox"></td>
+      </tr>
+
+      <!-- DAY 10 -->
+      <tr>
+        <td><div class="day-label">Day 10</div></td>
+        <td>Sun, 20 Sep</td>
+        <td>Refraction of Light – laws, refractive index, total internal reflection</td>
+        <td>Circle – tangents, chords, arcs, basic theorems</td>
+        <td><span class="badge sci1">S1</span><span class="badge math2">M2</span></td>
+        <td class="check-col"><input type="checkbox"></td>
+      </tr>
+
+      <!-- MIDPOINT MARKER -->
+
+      <!-- DAY 11 -->
+      <tr>
+        <td><div class="day-label">Day 11</div></td>
+        <td>Mon, 21 Sep</td>
+        <td>Lenses – ray diagrams, lens formula, power, magnification</td>
+        <td>Circle – theorems &amp; proof-based problems</td>
+        <td><span class="badge sci1">S1</span><span class="badge math2">M2</span></td>
+        <td class="check-col"><input type="checkbox"></td>
+      </tr>
+
+      <!-- DAY 12 -->
+      <tr>
+        <td><div class="day-label">Day 12</div></td>
+        <td>Tue, 22 Sep</td>
+        <td>Environmental Management – ecosystem, pollution, conservation</td>
+        <td>🔁 Revise: Linear Equations + Quadratic Equations</td>
+        <td><span class="badge sci2">S2</span><span class="badge rev">REV</span></td>
+        <td class="check-col"><input type="checkbox"></td>
+      </tr>
+
+      <!-- DAY 13 - REVISION + TEST -->
+      <tr style="background:#fff0f0;">
+        <td><div class="day-label">Day 13</div></td>
+        <td>Wed, 23 Sep</td>
+        <td>🔁 Revise: Heredity + Life Processes 1 &amp; 2 + Env. Management</td>
+        <td>📝 Practice Test 2 – Science 2 (all 4 chapters) · Time: 1 hr</td>
+        <td><span class="badge rev">REV</span><span class="badge test">TEST</span></td>
+        <td class="check-col"><input type="checkbox"></td>
+      </tr>
+
+      <!-- DAY 14 -->
+      <tr>
+        <td><div class="day-label">Day 14</div></td>
+        <td>Thu, 24 Sep</td>
+        <td>🔁 Revise: Effects of Electric Current + Heat</td>
+        <td>📝 Practice Test 3 – Science 1 (Ch 4–7) · Time: 1 hr</td>
+        <td><span class="badge rev">REV</span><span class="badge test">TEST</span></td>
+        <td class="check-col"><input type="checkbox"></td>
+      </tr>
+
+      <!-- DAY 15 -->
+      <tr>
+        <td><div class="day-label">Day 15</div></td>
+        <td>Fri, 25 Sep</td>
+        <td>🔁 Revise: Refraction of Light + Lenses</td>
+        <td>🔁 Revise: Similarity + Pythagoras Theorem</td>
+        <td><span class="badge rev">REV</span></td>
+        <td class="check-col"><input type="checkbox"></td>
+      </tr>
+
+      <!-- DAY 16 -->
+      <tr style="background:#fff0f0;">
+        <td><div class="day-label">Day 16</div></td>
+        <td>Sat, 26 Sep</td>
+        <td>🔁 Revise: AP + Probability + Circle</td>
+        <td>📝 Practice Test 4 – Maths 2 (Similarity, Pythagoras, Circle) · Time: 1 hr</td>
+        <td><span class="badge rev">REV</span><span class="badge test">TEST</span></td>
+        <td class="check-col"><input type="checkbox"></td>
+      </tr>
+
+      <!-- DAY 17 -->
+      <tr style="background:#fff0f0;">
+        <td><div class="day-label">Day 17</div></td>
+        <td>Sun, 27 Sep</td>
+        <td>🔁 Revise: Linear Eq. + Quadratic Eq. + AP + Probability</td>
+        <td>📝 Practice Test 5 – Maths 1 (all 4 chapters) · Time: 1 hr</td>
+        <td><span class="badge rev">REV</span><span class="badge test">TEST</span></td>
+        <td class="check-col"><input type="checkbox"></td>
+      </tr>
+
+      <!-- DAY 18 -->
+      <tr>
+        <td><div class="day-label">Day 18</div></td>
+        <td>Mon, 28 Sep</td>
+        <td>Full Revision – Science 1 Part A (Gravitation → Chemical Reactions)</td>
+        <td>Full Revision – Science 1 Part B (Electric → Lenses)</td>
+        <td><span class="badge rev">REV</span></td>
+        <td class="check-col"><input type="checkbox"></td>
+      </tr>
+
+      <!-- DAY 19 -->
+      <tr>
+        <td><div class="day-label">Day 19</div></td>
+        <td>Tue, 29 Sep</td>
+        <td>Full Revision – Science 2 (all 4 chapters)</td>
+        <td>Full Revision – Maths 1 &amp; Maths 2 (key formulas &amp; theorems)</td>
+        <td><span class="badge rev">REV</span></td>
+        <td class="check-col"><input type="checkbox"></td>
+      </tr>
+
+      <!-- DAY 20 - FINAL -->
+      <tr style="background:#e8f8e8;">
+        <td><div class="day-label">Day 20 🏆</div></td>
+        <td>Wed, 30 Sep</td>
+        <td>Quick notes scan – all formulas, diagrams &amp; key definitions</td>
+        <td>🏆 FINAL MOCK TEST – Full Syllabus (Science + Maths) · Time: 2 hrs</td>
+        <td><span class="badge rev">REV</span><span class="badge test">TEST</span></td>
+        <td class="check-col"><input type="checkbox"></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<!-- TIPS -->
+<div class="tips">
+  <h3>✅ Tips to Follow This Plan</h3>
+  <ul>
+    <li>Morning session: 7–8:30 AM &nbsp;|&nbsp; Evening session: 6–7:30 PM — pick times that work for you.</li>
+    <li>After each chapter, solve at least 5–10 practice questions from textbook exercises.</li>
+    <li>Keep a single formula sheet — update it after every chapter you finish.</li>
+    <li>Use the checkboxes to tick off each day as you complete it — it feels great!</li>
+    <li>Test days (highlighted in pink): attempt under real exam conditions — timed, no book.</li>
+    <li>Day 20 (green): light revision only in morning. Save your energy for the final mock test!</li>
+    <li>If you fall behind on a day, use Sunday (Day 3, 10, 17) to catch up — they are lighter days.</li>
+  </ul>
+</div>
+
+<footer>
+  Visions Learning · Study Plan: Sep 11 – Sep 30, 2026 · 18 Chapters · 20 Days 🎯
+</footer>
+
+</body>
+</html>

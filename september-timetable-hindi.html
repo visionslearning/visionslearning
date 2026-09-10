@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>सितंबर अध्ययन समय-सारणी | Visions Learning</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans Devanagari', 'Mangal', 'Kokila', 'Segoe UI', sans-serif;
+      background: #f0f4ff;
+      color: #1a1a2e;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 28px 20px 16px;
+      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+      border-radius: 16px;
+      color: white;
+      margin-bottom: 28px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+    header h1 { font-size: 1.9rem; letter-spacing: 1px; }
+    header p  { margin-top: 6px; font-size: 0.95rem; opacity: 0.8; }
+
+    /* COUNTDOWN */
+    .countdown {
+      text-align: center;
+      background: #fff3cd;
+      border: 2px solid #f0c040;
+      border-radius: 12px;
+      padding: 14px 20px;
+      margin-bottom: 24px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #856404;
+    }
+
+    /* LEGEND */
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+    }
+    .dot { width: 13px; height: 13px; border-radius: 50%; flex-shrink: 0; }
+    .dot-sci1  { background: #e74c3c; }
+    .dot-sci2  { background: #9b59b6; }
+    .dot-math1 { background: #2980b9; }
+    .dot-math2 { background: #27ae60; }
+    .dot-rev   { background: #f39c12; }
+    .dot-test  { background: #1a1a2e; }
+
+    /* SYLLABUS OVERVIEW */
+    .syllabus {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+    .syl-card {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+    }
+    .syl-card h4 {
+      font-size: 0.88rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 3px solid;
+    }
+    .syl-card.sci1 h4  { color: #e74c3c; border-color: #e74c3c; }
+    .syl-card.sci2 h4  { color: #9b59b6; border-color: #9b59b6; }
+    .syl-card.math1 h4 { color: #2980b9; border-color: #2980b9; }
+    .syl-card.math2 h4 { color: #27ae60; border-color: #27ae60; }
+    .syl-card ol { padding-left: 18px; }
+    .syl-card li { font-size: 0.82rem; color: #444; padding: 3px 0; }
+
+    /* SECTION TITLE */
+    h2.section-title {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+      color: #1a1a2e;
+    }
+
+    /* SCHEDULE TABLE */
+    .table-wrap { overflow-x: auto; margin-bottom: 36px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      min-width: 720px;
+    }
+    thead tr {
+      background: linear-gradient(135deg, #1a1a2e, #0f3460);
+      color: white;
+    }
+    th { padding: 12px 14px; text-align: left; font-size: 0.85rem; }
+    tbody tr { border-bottom: 1px solid #f0f0f0; transition: background 0.15s; }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: #f8f9ff; }
+    td { padding: 11px 14px; font-size: 0.82rem; vertical-align: middle; }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 9px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: white;
+      margin-right: 3px;
+    }
+    .badge.sci1  { background: #e74c3c; }
+    .badge.sci2  { background: #9b59b6; }
+    .badge.math1 { background: #2980b9; }
+    .badge.math2 { background: #27ae60; }
+    .badge.rev   { background: #f39c12; color: #1a1a2e; }
+    .badge.test  { background: #1a1a2e; }
+
+    .day-label { font-weight: 700; font-size: 0.88rem; white-space: nowrap; }
+    .start-badge {
+      display: inline-block;
+      background: #e74c3c;
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 10px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    .check-col { text-align: center; }
+    input[type="checkbox"] {
+      width: 19px; height: 19px;
+      cursor: pointer;
+      accent-color: #27ae60;
+    }
+
+    /* PROGRESS BAR */
+    .progress-section {
+      background: white;
+      border-radius: 14px;
+      padding: 18px 22px;
+      margin-bottom: 26px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+    }
+    .progress-section h3 { font-size: 0.95rem; margin-bottom: 12px; }
+    .progress-bar-bg {
+      background: #e8e8e8;
+      border-radius: 20px;
+      height: 18px;
+      overflow: hidden;
+      margin-bottom: 6px;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #27ae60, #2ecc71);
+      border-radius: 20px;
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+    .progress-label {
+      font-size: 0.78rem;
+      color: #555;
+      text-align: right;
+    }
+
+    /* TIPS */
+    .tips {
+      background: white;
+      border-radius: 14px;
+      padding: 20px 24px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+      margin-bottom: 20px;
+    }
+    .tips h3 { margin-bottom: 12px; font-size: 1rem; }
+    .tips ul  { list-style: none; }
+    .tips li  { padding: 5px 0; font-size: 0.85rem; color: #444; display: flex; gap: 8px; }
+    .tips li::before { content: "💡"; flex-shrink: 0; }
+
+    footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: #999;
+      padding: 10px 0 4px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📅 अध्ययन समय-सारणी — 11 से 30 सितंबर</h1>
+  <p>कक्षा 10 · विज्ञान &amp; गणित · कल से शुरू · 20 दिन · 18 अध्याय</p>
+</header>
+
+<div class="countdown">
+  🚀 कल से शुरू: <strong>शुक्रवार, 11 सितंबर 2026</strong> &nbsp;|&nbsp;
+  20 दिन शेष &nbsp;|&nbsp; 18 अध्याय पूरे करने हैं
+</div>
+
+<!-- LEGEND -->
+<div class="legend">
+  <div class="legend-item"><div class="dot dot-sci1"></div> विज्ञान 1</div>
+  <div class="legend-item"><div class="dot dot-sci2"></div> विज्ञान 2</div>
+  <div class="legend-item"><div class="dot dot-math1"></div> गणित 1</div>
+  <div class="legend-item"><div class="dot dot-math2"></div> गणित 2</div>
+  <div class="legend-item"><div class="dot dot-rev"></div> पुनरावृत्ति</div>
+  <div class="legend-item"><div class="dot dot-test"></div> अभ्यास परीक्षा</div>
+</div>
+
+<!-- PROGRESS -->
+<div class="progress-section">
+  <h3>📊 आपकी प्रगति</h3>
+  <div class="progress-bar-bg">
+    <div class="progress-bar-fill" id="progressFill"></div>
+  </div>
+  <div class="progress-label" id="progressLabel">0 / 20 दिन पूर्ण (0%)</div>
+</div>
+
+<!-- SYLLABUS OVERVIEW -->
+<h2 class="section-title">📚 आपका पूरा पाठ्यक्रम</h2>
+<div class="syllabus">
+  <div class="syl-card sci1">
+    <h4>🔴 विज्ञान 1 (7 अध्याय)</h4>
+    <ol>
+      <li>गुरुत्वाकर्षण</li>
+      <li>तत्वों का आवर्ती वर्गीकरण</li>
+      <li>रासायनिक अभिक्रियाएँ एवं समीकरण</li>
+      <li>विद्युत धारा के प्रभाव</li>
+      <li>ऊष्मा</li>
+      <li>प्रकाश का अपवर्तन</li>
+      <li>लेंस</li>
+    </ol>
+  </div>
+  <div class="syl-card sci2">
+    <h4>🟣 विज्ञान 2 (4 अध्याय)</h4>
+    <ol>
+      <li>आनुवंशिकता एवं विकास</li>
+      <li>जीवों में जीवन प्रक्रियाएँ भाग 1</li>
+      <li>जीवों में जीवन प्रक्रियाएँ भाग 2</li>
+      <li>पर्यावरण प्रबंधन</li>
+    </ol>
+  </div>
+  <div class="syl-card math1">
+    <h4>🔵 गणित 1 (4 अध्याय)</h4>
+    <ol>
+      <li>दो चरों में रैखिक समीकरण</li>
+      <li>द्विघात समीकरण</li>
+      <li>समांतर श्रेणी</li>
+      <li>प्रायिकता</li>
+    </ol>
+  </div>
+  <div class="syl-card math2">
+    <h4>🟢 गणित 2 (3 अध्याय)</h4>
+    <ol>
+      <li>समरूपता</li>
+      <li>पाइथागोरस प्रमेय</li>
+      <li>वृत्त</li>
+    </ol>
+  </div>
+</div>
+
+<!-- SCHEDULE TABLE -->
+<h2 class="section-title">🗓️ दिन-दर-दिन कार्यक्रम (11 – 30 सितंबर)</h2>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>दिन</th>
+        <th>तारीख</th>
+        <th>सुबह का सत्र (1.5 घंटे)</th>
+        <th>शाम का सत्र (1.5 घंटे)</th>
+        <th>विषय</th>
+        <th>✓ पूर्ण</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- DAY 1 -->
+      <tr>
+        <td><div class="day-label">दिन 1 <span class="start-badge">शुरू</span></div></td>
+        <td>शुक्र, 11 सित</td>
+        <td>गुरुत्वाकर्षण – नियम, मुक्त पतन, संख्यात्मक प्रश्न</td>
+        <td>दो चरों में रैखिक समीकरण – विधियाँ एवं ग्राफ</td>
+        <td><span class="badge sci1">वि1</span><span class="badge math1">ग1</span></td>
+        <td class="check-col"><input type="checkbox" class="day-check"></td>
+      </tr>
+
+      <!-- DAY 2 -->
+      <tr>
+        <td><div class="day-label">दिन 2</div></td>
+        <td>शनि, 12 सित</td>
+        <td>आवर्ती वर्गीकरण – मेंडलीव एवं आधुनिक आवर्त सारणी</td>
+        <td>द्विघात समीकरण – गुणनखंड एवं सूत्र विधि</td>
+        <td><span class="badge sci1">वि1</span><span class="badge math1">ग1</span></td>
+        <td class="check-col"><input type="checkbox" class="day-check"></td>
+      </tr>
+
+      <!-- DAY 3 -->
+      <tr>
+        <td><div class="day-label">दिन 3</div></td>
+        <td>रवि, 13 सित</td>
+        <td>आनुवंशिकता एवं विकास – मेंडल के नियम, प्राकृतिक चयन</td>
+        <td>द्विघात समीकरण – शाब्दिक प्रश्न एवं अभ्यास</td>
+        <td><span class="badge sci2">वि2</span><span class="badge math1">ग1</span></td>
+        <td class="check-col"><input type="checkbox" class="day-check"></td>
+      </tr>
+
+      <!-- DAY 4 -->
+      <tr>
+        <td><div class="day-label">दिन 4</div></td>
+        <td>सोम, 14 सित</td>
+        <td>रासायनिक अभिक्रियाएँ – प्रकार, समीकरण संतुलन</td>
+        <td>समरूपता – AA, SAS, SSS कसौटी एवं प्रश्न</td>
+        <td><span class="badge sci1">वि1</span><span class="badge math2">ग2</span></td>
+        <td class="check-col"><input type="checkbox" class="day-check"></td>
+      </tr>
+
+      <!-- DAY 5 -->
+      <tr>
+        <td><div class="day-label">दिन 5</div></td>
+        <td>मंगल, 15 सित</td>
+        <td>जीवन प्रक्रियाएँ भाग 1 – पोषण, श्वसन, परिवहन</td>
+        <td>समांतर श्रेणी – nवाँ पद, योग का सूत्र</td>
+        <td><span class="badge sci2">वि2</span><span class="badge math1">ग1</span></td>
+        <td class="check-col"><input type="checkbox" class="day-check"></td>
+      </tr>
+
+      <!-- DAY 6 -->
+      <tr>
+        <td><div class="day-label">दिन 6</div></td>
+        <td>बुध, 16 सित</td>
+        <td>विद्युत धारा के प्रभाव – ओम का नियम, ऊष्मीय एवं चुम्बकीय प्रभाव</td>
+        <td>पाइथागोरस प्रमेय – प्रमाण, विलोम एवं अनुप्रयोग</td>
+        <td><span class="badge sci1">वि1</span><span class="badge math2">ग2</span></td>
+        <td class="check-col"><input type="checkbox" class="day-check"></td>
+      </tr>
+
+      <!-- DAY 7 - REVISION + TEST -->
+      <tr style="background:#fff0f0;">
+        <td><div class="day-label">दिन 7</div></td>
+        <td>गुरु, 17 सित</td>
+        <td>🔁 पुनरावृत्ति: गुरुत्वाकर्षण + आवर्ती वर्गीकरण + रासायनिक अभिक्रियाएँ</td>
+        <td>📝 अभ्यास परीक्षा 1 – विज्ञान 1 (अध्याय 1–3) · समय: 1 घंटा</td>
+        <td><span class="badge rev">पुन</span><span class="badge test">परी</span></td>
+        <td class="check-col"><input type="checkbox" class="day-check"></td>
+      </tr>
+
+      <!-- DAY 8 -->
+      <tr>
+        <td><div class="day-label">दिन 8</div></td>
+        <td>शुक्र, 18 सित</td>
+        <td>ऊष्मा – चालन, संवहन, विकिरण, विशिष्ट ऊष्मा के संख्यात्मक प्रश्न</td>
+        <td>समांतर श्रेणी – शाब्दिक प्रश्न एवं अभ्यास</td>
+        <td><span class="badge sci1">वि1</span><span class="badge math1">ग1</span></td>
+        <td class="check-col"><input type="checkbox" class="day-check"></td>
+      </tr>
+
+      <!-- DAY 9 -->
+      <tr>
+        <td><div class="day-label">दिन 9</div></td>
+        <td>शनि, 19 सित</td>
+        <td>जीवन प्रक्रियाएँ भाग 2 – नियंत्रण एवं समन्वय, जनन</td>
+        <td>प्रायिकता – मूल अवधारणाएँ, सिक्का, ताश, पासे के प्रश्न</td>
+        <td><span class="badge sci2">वि2</span><span class="badge math1">ग1</span></td>
+        <td class="check-col"><input type="checkbox" class="day-check"></td>
+      </tr>
+
+      <!-- DAY 10 -->
+      <tr>
+        <td><div class="day-label">दिन 10</div></td>
+        <td>रवि, 20 सित</td>
+        <td>प्रकाश का अपवर्तन – नियम, अपवर्तनांक, पूर्ण आंतरिक परावर्तन</td>
+        <td>वृत्त – स्पर्शरेखा, जीवा, चाप, मूल प्रमेय</td>
+        <td><span class="badge sci1">वि1</span><span class="badge math2">ग2</span></td>
+        <td class="check-col"><input type="checkbox" class="day-check"></td>
+      </tr>
+
+      <!-- DAY 11 -->
+      <tr>
+        <td><div class="day-label">दिन 11</div></td>
+        <td>सोम, 21 सित</td>
+        <td>लेंस – किरण आरेख, लेंस सूत्र, क्षमता, आवर्धन</td>
+        <td>वृत्त – प्रमेय एवं प्रमाण आधारित प्रश्न</td>
+        <td><span class="badge sci1">वि1</span><span class="badge math2">ग2</span></td>
+        <td class="check-col"><input type="checkbox" class="day-check"></td>
+      </tr>
+
+      <!-- DAY 12 -->
+      <tr>
+        <td><div class="day-label">दिन 12</div></td>
+        <td>मंगल, 22 सित</td>
+        <td>पर्यावरण प्रबंधन – पारितंत्र, प्रदूषण, संरक्षण</td>
+        <td>🔁 पुनरावृत्ति: रैखिक समीकरण + द्विघात समीकरण</td>
+        <td><span class="badge sci2">वि2</span><span class="badge rev">पुन</span></td>
+        <td class="check-col"><input type="checkbox" class="day-check"></td>
+      </tr>
+
+      <!-- DAY 13 - REVISION + TEST -->
+      <tr style="background:#fff0f0;">
+        <td><div class="day-label">दिन 13</div></td>
+        <td>बुध, 23 सित</td>
+        <td>🔁 पुनरावृत्ति: आनुवंशिकता + जीवन प्रक्रियाएँ 1 &amp; 2 + पर्यावरण प्रबंधन</td>
+        <td>📝 अभ्यास परीक्षा 2 – विज्ञान 2 (सभी 4 अध्याय) · समय: 1 घंटा</td>
+        <td><span class="badge rev">पुन</span><span class="badge test">परी</span></td>
+        <td class="check-col"><input type="checkbox" class="day-check"></td>
+      </tr>
+
+      <!-- DAY 14 -->
+      <tr style="background:#fff0f0;">
+        <td><div class="day-label">दिन 14</div></td>
+        <td>गुरु, 24 सित</td>
+        <td>🔁 पुनरावृत्ति: विद्युत धारा के प्रभाव + ऊष्मा</td>
+        <td>📝 अभ्यास परीक्षा 3 – विज्ञान 1 (अध्याय 4–7) · समय: 1 घंटा</td>
+        <td><span class="badge rev">पुन</span><span class="badge test">परी</span></td>
+        <td class="check-col"><input type="checkbox" class="day-check"></td>
+      </tr>
+
+      <!-- DAY 15 -->
+      <tr>
+        <td><div class="day-label">दिन 15</div></td>
+        <td>शुक्र, 25 सित</td>
+        <td>🔁 पुनरावृत्ति: प्रकाश का अपवर्तन + लेंस</td>
+        <td>🔁 पुनरावृत्ति: समरूपता + पाइथागोरस प्रमेय</td>
+        <td><span class="badge rev">पुन</span></td>
+        <td class="check-col"><input type="checkbox" class="day-check"></td>
+      </tr>
+
+      <!-- DAY 16 -->
+      <tr style="background:#fff0f0;">
+        <td><div class="day-label">दिन 16</div></td>
+        <td>शनि, 26 सित</td>
+        <td>🔁 पुनरावृत्ति: समांतर श्रेणी + प्रायिकता + वृत्त</td>
+        <td>📝 अभ्यास परीक्षा 4 – गणित 2 (समरूपता, पाइथागोरस, वृत्त) · समय: 1 घंटा</td>
+        <td><span class="badge rev">पुन</span><span class="badge test">परी</span></td>
+        <td class="check-col"><input type="checkbox" class="day-check"></td>
+      </tr>
+
+      <!-- DAY 17 -->
+      <tr style="background:#fff0f0;">
+        <td><div class="day-label">दिन 17</div></td>
+        <td>रवि, 27 सित</td>
+        <td>🔁 पुनरावृत्ति: रैखिक सम. + द्विघात सम. + समांतर श्रेणी + प्रायिकता</td>
+        <td>📝 अभ्यास परीक्षा 5 – गणित 1 (सभी 4 अध्याय) · समय: 1 घंटा</td>
+        <td><span class="badge rev">पुन</span><span class="badge test">परी</span></td>
+        <td class="check-col"><input type="checkbox" class="day-check"></td>
+      </tr>
+
+      <!-- DAY 18 -->
+      <tr>
+        <td><div class="day-label">दिन 18</div></td>
+        <td>सोम, 28 सित</td>
+        <td>पूर्ण पुनरावृत्ति – विज्ञान 1 भाग अ (गुरुत्वाकर्षण → रासायनिक अभिक्रियाएँ)</td>
+        <td>पूर्ण पुनरावृत्ति – विज्ञान 1 भाग ब (विद्युत → लेंस)</td>
+        <td><span class="badge rev">पुन</span></td>
+        <td class="check-col"><input type="checkbox" class="day-check"></td>
+      </tr>
+
+      <!-- DAY 19 -->
+      <tr>
+        <td><div class="day-label">दिन 19</div></td>
+        <td>मंगल, 29 सित</td>
+        <td>पूर्ण पुनरावृत्ति – विज्ञान 2 (सभी 4 अध्याय)</td>
+        <td>पूर्ण पुनरावृत्ति – गणित 1 &amp; गणित 2 (मुख्य सूत्र एवं प्रमेय)</td>
+        <td><span class="badge rev">पुन</span></td>
+        <td class="check-col"><input type="checkbox" class="day-check"></td>
+      </tr>
+
+      <!-- DAY 20 - FINAL -->
+      <tr style="background:#e8f8e8;">
+        <td><div class="day-label">दिन 20 🏆</div></td>
+        <td>बुध, 30 सित</td>
+        <td>त्वरित नोट्स – सभी सूत्र, आरेख एवं मुख्य परिभाषाएँ देखें</td>
+        <td>🏆 अंतिम मॉक टेस्ट – पूरा पाठ्यक्रम (विज्ञान + गणित) · समय: 2 घंटे</td>
+        <td><span class="badge rev">पुन</span><span class="badge test">परी</span></td>
+        <td class="check-col"><input type="checkbox" class="day-check"></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<!-- TIPS -->
+<div class="tips">
+  <h3>✅ इस योजना को सफलतापूर्वक अपनाने के सुझाव</h3>
+  <ul>
+    <li>सुबह का सत्र: सुबह 7–8:30 बजे | शाम का सत्र: शाम 6–7:30 बजे — अपने अनुसार समय चुनें।</li>
+    <li>हर अध्याय के बाद पाठ्यपुस्तक के अभ्यास से कम से कम 5–10 प्रश्न हल करें।</li>
+    <li>एक फॉर्मूला शीट बनाएँ — हर अध्याय पूरा करने के बाद उसे अपडेट करते रहें।</li>
+    <li>हर दिन पूरा होने पर चेकबॉक्स टिक करें — यह बहुत अच्छा अनुभव देता है!</li>
+    <li>परीक्षा वाले दिन (गुलाबी रंग): असली परीक्षा की तरह — समय सीमा में, बिना किताब खोले।</li>
+    <li>दिन 20 (हरा रंग): सुबह केवल हल्का दोहराएँ। अंतिम मॉक टेस्ट के लिए ऊर्जा बचाएँ!</li>
+    <li>यदि किसी दिन पिछड़ जाएँ, तो रविवार (दिन 3, 10, 17) का उपयोग करें — ये हल्के दिन हैं।</li>
+  </ul>
+</div>
+
+<footer>
+  Visions Learning · अध्ययन योजना: 11 – 30 सितंबर 2026 · 18 अध्याय · 20 दिन 🎯
+</footer>
+
+<script>
+  const checkboxes = document.querySelectorAll('.day-check');
+  const fill = document.getElementById('progressFill');
+  const label = document.getElementById('progressLabel');
+  const total = checkboxes.length;
+
+  // Load saved state
+  checkboxes.forEach((cb, i) => {
+    const saved = localStorage.getItem('hindi-tt-day-' + i);
+    if (saved === 'true') cb.checked = true;
+  });
+  updateProgress();
+
+  checkboxes.forEach((cb, i) => {
+    cb.addEventListener('change', () => {
+      localStorage.setItem('hindi-tt-day-' + i, cb.checked);
+      updateProgress();
+    });
+  });
+
+  function updateProgress() {
+    const done = Array.from(checkboxes).filter(c => c.checked).length;
+    const pct = Math.round((done / total) * 100);
+    fill.style.width = pct + '%';
+    label.textContent = done + ' / ' + total + ' दिन पूर्ण (' + pct + '%)';
+  }
+</script>
+
+</body>
+</html>

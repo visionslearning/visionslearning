@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class 11 Chemistry — Ch 4 Structure of Atom | Visions Classes</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <style>
+    .ch4-hero {
+      background: linear-gradient(135deg, #1a237e, #1565c0, #0288d1);
+      color: white;
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+    .ch4-hero h1 { font-size: 2rem; margin-bottom: 10px; }
+    .ch4-hero p  { font-size: 1rem; opacity: 0.85; }
+
+    .ch4-wrap { max-width: 900px; margin: 0 auto; padding: 30px 16px 60px; }
+
+    /* section card */
+    .sec-card {
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.08);
+      margin-bottom: 28px;
+      overflow: hidden;
+    }
+    .sec-card-header {
+      background: linear-gradient(135deg, #1565c0, #0288d1);
+      color: white;
+      padding: 14px 20px;
+      font-size: 1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .sec-card-body { padding: 18px 20px; }
+
+    /* key points list */
+    .kp-list { list-style: none; padding: 0; margin: 0; }
+    .kp-list li {
+      padding: 7px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 0.9rem;
+      color: #2c2c2c;
+      line-height: 1.6;
+    }
+    .kp-list li:last-child { border-bottom: none; }
+    .kp-list li::before { content: "🔹 "; }
+    .kp-list li strong { color: #1565c0; }
+
+    /* formula box */
+    .formula-box {
+      background: #e8f4fd;
+      border-left: 4px solid #0288d1;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin: 10px 0;
+      font-size: 0.88rem;
+      font-family: 'Courier New', monospace;
+      color: #1a237e;
+      font-weight: 600;
+    }
+
+    /* Q&A */
+    .qa-block { margin-bottom: 18px; }
+    .qa-q {
+      background: #fff3e0;
+      border-left: 4px solid #f57c00;
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #e65100;
+      margin-bottom: 6px;
+    }
+    .qa-a {
+      background: #f1f8e9;
+      border-left: 4px solid #558b2f;
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 0.87rem;
+      color: #2e3d1a;
+      line-height: 1.7;
+    }
+
+    /* table */
+    .chem-table { width: 100%; border-collapse: collapse; font-size: 0.83rem; margin: 12px 0; }
+    .chem-table th { background: #1565c0; color: white; padding: 9px 12px; text-align: left; }
+    .chem-table td { padding: 8px 12px; border-bottom: 1px solid #e8e8e8; }
+    .chem-table tr:nth-child(even) { background: #f5f9ff; }
+
+    /* highlight badge */
+    .badge-imp {
+      display: inline-block;
+      background: #e53935;
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 10px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    /* quick ref */
+    .qr-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .qr-card {
+      background: linear-gradient(135deg, #e3f2fd, #f8fbff);
+      border: 1px solid #90caf9;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 0.82rem;
+    }
+    .qr-card strong { color: #1565c0; display: block; margin-bottom: 4px; }
+
+    /* back btn */
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1565c0;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 24px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .back-btn:hover { background: #0d47a1; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Visions Classes Logo" class="nav-logo-img" />
+        <div class="logo-text"><span>Visions</span> Classes</div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="online-lectures.html">Online Lectures</a></li>
+        <li><a href="buy-courses.html">Buy Course</a></li>
+        <li><a href="notes.html" class="active">Notes</a></li>
+        <li><a href="toppers.html">Toppers 🏆</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="buy-courses.html" class="nav-cta">Enroll Now</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <div class="ch4-hero">
+    <h1>⚛️ Chapter 4 — Structure of Atom</h1>
+    <p>Class 11 · Chemistry · Complete Notes, Key Points & Q&amp;A</p>
+  </div>
+
+  <div class="ch4-wrap">
+    <a href="notes-class11.html" class="back-btn">← Back to Class 11 Notes</a>
+
+    <!-- ══════════════════════════════════
+         SECTION 1 — SUBATOMIC PARTICLES
+    ═══════════════════════════════════ -->
+    <div class="sec-card">
+      <div class="sec-card-header">⚡ 4.1 Subatomic Particles</div>
+      <div class="sec-card-body">
+        <p style="font-size:0.88rem;color:#444;margin-bottom:12px;">
+          <strong>Dalton's atomic theory</strong> explained laws of chemical combination but failed to explain why substances like glass, when rubbed with silk, generate electricity. Discovery of subatomic particles in the late 19th and early 20th century broke this model.
+        </p>
+        <table class="chem-table">
+          <thead>
+            <tr><th>Particle</th><th>Symbol</th><th>Charge</th><th>Mass (kg)</th><th>Mass (u)</th><th>Discoverer</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Electron</td><td>e⁻</td><td>−1 (−1.6022×10⁻¹⁹ C)</td><td>9.109×10⁻³¹</td><td>≈ 0 u</td><td>J. J. Thomson (1897)</td></tr>
+            <tr><td>Proton</td><td>p</td><td>+1 (+1.6022×10⁻¹⁹ C)</td><td>1.672×10⁻²⁷</td><td>1 u</td><td>Rutherford (1919)</td></tr>
+            <tr><td>Neutron</td><td>n</td><td>0</td><td>1.674×10⁻²⁷</td><td>1 u</td><td>James Chadwick (1932)</td></tr>
+          </tbody>
+        </table>
+        <ul class="kp-list">
+          <li><strong>Proton + Neutron</strong> are collectively called <strong>nucleons</strong> — present in the nucleus.</li>
+          <li><strong>Electrons</strong> are present in the extranuclear (outer) region of the atom.</li>
+          <li>Cathode ray tube (CRT) experiment by J. J. Thomson identified electrons — particles 1837 times lighter than hydrogen.</li>
+          <li>Rutherford's α-particle scattering experiment (gold foil) proved the existence of a dense, positively charged nucleus.</li>
+          <li>Chadwick identified neutrons by bombarding beryllium with α-particles from polonium.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         SECTION 2 — ATOMIC & MASS NUMBER
+    ═══════════════════════════════════ -->
+    <div class="sec-card">
+      <div class="sec-card-header">🔢 4.2 Atomic Number &amp; Mass Number</div>
+      <div class="sec-card-body">
+        <ul class="kp-list">
+          <li><strong>Atomic Number (Z)</strong> = Number of protons = Number of electrons (in neutral atom)</li>
+          <li><strong>Mass Number (A)</strong> = Number of protons (Z) + Number of neutrons (N)</li>
+          <li>∴ <strong>N = A − Z</strong></li>
+          <li>Representation of a nuclide: <strong>ᴬ_Z X</strong> (A = mass number on top-left, Z = atomic number on bottom-left)</li>
+        </ul>
+        <div class="formula-box">
+          A = Z + N &nbsp;|&nbsp; N = A − Z &nbsp;|&nbsp; Z = Number of protons = Number of electrons
+        </div>
+        <div class="qa-block">
+          <div class="qa-q">🔸 Solved Example: Find protons, electrons and neutrons in ⁴⁰₁₈Ar</div>
+          <div class="qa-a">
+            A = 40, Z = 18<br>
+            Protons = 18 &nbsp;|&nbsp; Electrons = 18 &nbsp;|&nbsp; Neutrons = A − Z = 40 − 18 = <strong>22</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         SECTION 3 — ISOTOPES, ISOBARS, ISOTONES
+    ═══════════════════════════════════ -->
+    <div class="sec-card">
+      <div class="sec-card-header">⚗️ 4.3 Isotopes, Isobars &amp; Isotones <span class="badge-imp">IMP</span></div>
+      <div class="sec-card-body">
+        <ul class="kp-list">
+          <li><strong>Isotopes</strong>: Same atomic number (Z), different mass number (A). Same chemical properties, different physical properties. Example: ¹²C, ¹³C, ¹⁴C (all have Z = 6)</li>
+          <li><strong>Isobars</strong>: Same mass number (A), different atomic number (Z). Different elements, different chemical properties. Example: ¹⁴C (Z=6) and ¹⁴N (Z=7)</li>
+          <li><strong>Isotones</strong>: Same number of neutrons (N), different atomic number. Example: ¹¹B (N=6) and ¹²C (N=6)</li>
+        </ul>
+        <table class="chem-table">
+          <thead><tr><th>Type</th><th>Same</th><th>Different</th><th>Example</th></tr></thead>
+          <tbody>
+            <tr><td>Isotopes</td><td>Z (protons)</td><td>A, N (neutrons)</td><td>¹H, ²H, ³H</td></tr>
+            <tr><td>Isobars</td><td>A (mass number)</td><td>Z, N</td><td>¹⁴C and ¹⁴N</td></tr>
+            <tr><td>Isotones</td><td>N (neutrons)</td><td>Z, A</td><td>¹¹B and ¹²C</td></tr>
+          </tbody>
+        </table>
+        <div class="qa-block">
+          <div class="qa-q">🔸 Solved: Two isotopes of Cl — ³⁵Cl and ³⁷Cl exist in 3:1 ratio. Find average atomic mass.</div>
+          <div class="qa-a">
+            Average mass = (3×35 + 1×37) / 4 = (105 + 37) / 4 = 142/4 = <strong>35.5 u</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         SECTION 4 — RUTHERFORD'S MODEL
+    ═══════════════════════════════════ -->
+    <div class="sec-card">
+      <div class="sec-card-header">🏛️ 4.4 Drawbacks of Rutherford's Model</div>
+      <div class="sec-card-body">
+        <ul class="kp-list">
+          <li>Rutherford's nuclear model is like a miniature solar system — nucleus is the sun, electrons are planets.</li>
+          <li><strong>Drawback 1 (Instability)</strong>: According to Maxwell's electromagnetic theory, revolving charged particles (electrons) must continuously emit radiation, lose energy, spiral inward, and collapse into the nucleus. But real atoms are stable — contradiction!</li>
+          <li><strong>Drawback 2 (No electron distribution)</strong>: Rutherford's model did not describe where exactly electrons are and what their energies are.</li>
+          <li>These drawbacks were overcome by <strong>Bohr's atomic model</strong>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         SECTION 5 — WAVE-PARTICLE DUALITY & SPECTRUM
+    ═══════════════════════════════════ -->
+    <div class="sec-card">
+      <div class="sec-card-header">🌊 4.5 Wave-Particle Duality of EM Radiation &amp; Hydrogen Spectrum</div>
+      <div class="sec-card-body">
+        <ul class="kp-list">
+          <li><strong>Wave nature</strong> explains diffraction and interference of light.</li>
+          <li><strong>Particle nature</strong> explains blackbody radiation and photoelectric effect.</li>
+          <li>Resolution: light has <strong>dual behaviour</strong> — wave when propagating, particle (photon) when interacting with matter.</li>
+        </ul>
+        <p style="font-size:0.88rem;font-weight:700;color:#1565c0;margin:10px 0 4px;">EM Wave Parameters:</p>
+        <ul class="kp-list">
+          <li><strong>Wavelength (λ)</strong>: distance between two consecutive crests/troughs. SI unit: metre (m).</li>
+          <li><strong>Frequency (ν)</strong>: number of waves passing a point per second. SI unit: Hertz (Hz or s⁻¹).</li>
+          <li><strong>Wavenumber (ν̄)</strong>: number of wavelengths per unit length. Unit: cm⁻¹. ν̄ = 1/λ</li>
+          <li><strong>Amplitude (A)</strong>: height of the crest. A² = intensity of radiation.</li>
+          <li><strong>Speed of light (c)</strong> = 3.0 × 10⁸ m/s (in vacuum, same for all EM radiation)</li>
+        </ul>
+        <div class="formula-box">c = νλ &nbsp;|&nbsp; ν̄ = 1/λ &nbsp;|&nbsp; E = hν &nbsp;(Planck's equation)</div>
+        <ul class="kp-list" style="margin-top:10px;">
+          <li><strong>Planck's quantum theory (1900)</strong>: Energy of EM radiation depends on frequency, not amplitude. Smallest energy unit = quantum. E = hν where h = 6.626 × 10⁻³⁴ J·s (Planck's constant).</li>
+          <li><strong>Photoelectric effect (Einstein, 1905)</strong>: EM radiation is a stream of photons, each of energy hν. A photon has zero rest mass.</li>
+        </ul>
+        <p style="font-size:0.88rem;font-weight:700;color:#1565c0;margin:12px 0 4px;">Hydrogen Emission Spectrum — Series of Lines: <span class="badge-imp">IMP</span></p>
+        <table class="chem-table">
+          <thead><tr><th>Series</th><th>n₁</th><th>n₂</th><th>Spectral Region</th></tr></thead>
+          <tbody>
+            <tr><td>Lyman</td><td>1</td><td>2, 3, …</td><td>Ultraviolet</td></tr>
+            <tr><td>Balmer</td><td>2</td><td>3, 4, …</td><td>Visible</td></tr>
+            <tr><td>Paschen</td><td>3</td><td>4, 5, …</td><td>Infrared</td></tr>
+            <tr><td>Brackett</td><td>4</td><td>5, 6, …</td><td>Infrared</td></tr>
+            <tr><td>Pfund</td><td>5</td><td>6, 7, …</td><td>Infrared</td></tr>
+          </tbody>
+        </table>
+        <div class="formula-box">Rydberg Equation: ν̄ = 109677 [ 1/n₁² − 1/n₂² ] cm⁻¹ &nbsp;(Rydberg constant R_H = 109677 cm⁻¹)</div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         SECTION 6 — BOHR'S MODEL
+    ═══════════════════════════════════ -->
+    <div class="sec-card">
+      <div class="sec-card-header">🔵 4.6 Bohr's Model for Hydrogen Atom <span class="badge-imp">IMP</span></div>
+      <div class="sec-card-body">
+        <p style="font-size:0.88rem;font-weight:700;color:#1565c0;margin-bottom:8px;">Postulates of Bohr's Theory:</p>
+        <ul class="kp-list">
+          <li><strong>Postulate 1</strong>: Electron revolves around nucleus in certain fixed circular paths (orbits) of fixed radius and energy — called <em>stationary states</em> or <em>allowed energy states</em>.</li>
+          <li><strong>Postulate 2</strong>: Energy of electron in an orbit does not change with time. Electron jumps from lower to higher orbit by absorbing energy; emits radiation while moving from higher to lower orbit.</li>
+          <li><strong>Postulate 3 (Bohr's Frequency Rule)</strong>: Frequency of radiation absorbed/emitted = ΔE/h where ΔE = E₂ − E₁.</li>
+          <li><strong>Postulate 4</strong>: Angular momentum of electron is quantized: mvr = n(h/2π), where n = 1, 2, 3…</li>
+        </ul>
+        <p style="font-size:0.88rem;font-weight:700;color:#1565c0;margin:12px 0 4px;">Results of Bohr's Theory:</p>
+        <div class="formula-box">
+          Radius of nth orbit: rₙ = n²a₀ &nbsp;(a₀ = 52.9 pm, Bohr radius)<br>
+          Energy of nth orbit: Eₙ = −R_H (1/n²) where R_H = 2.18 × 10⁻¹⁸ J<br>
+          For hydrogen-like species: Eₙ = −2.18×10⁻¹⁸ (Z²/n²) J &nbsp;|&nbsp; rₙ = 52.9(n²/Z) pm<br>
+          Angular momentum: mvr = n × h/2π
+        </div>
+        <ul class="kp-list">
+          <li>Ground state (n=1): E₁ = −2.18 × 10⁻¹⁸ J (lowest energy, most stable)</li>
+          <li>Negative energy sign means electron energy in atom is lower than a free electron at rest (E = 0).</li>
+          <li>Bohr's theory applies to <strong>hydrogen and hydrogen-like species</strong> (one extranuclear electron): H, He⁺, Li²⁺, Be³⁺</li>
+        </ul>
+        <div class="qa-block">
+          <div class="qa-q">🔸 Solved: Wavelength of photon emitted during transition from n=5 to n=2 in H-atom?</div>
+          <div class="qa-a">
+            ν̄ = 109677 [1/2² − 1/5²] = 109677 [1/4 − 1/25] = 109677 × 21/100 = 23032.17 cm⁻¹<br>
+            λ = 1/ν̄ = 4.34 × 10⁻⁵ cm = <strong>434 nm</strong> (Balmer series, visible blue-violet light)
+          </div>
+        </div>
+        <p style="font-size:0.88rem;font-weight:700;color:#e53935;margin:12px 0 4px;">Limitations of Bohr's Model:</p>
+        <ul class="kp-list">
+          <li>Could not explain finer details (fine structure) of hydrogen spectrum.</li>
+          <li>Could not explain spectra of multi-electron atoms.</li>
+          <li>Could not explain Zeeman effect (magnetic field) and Stark effect (electric field).</li>
+          <li>Could not explain ability of atoms to form chemical bonds.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         SECTION 7 — QUANTUM MECHANICAL MODEL
+    ═══════════════════════════════════ -->
+    <div class="sec-card">
+      <div class="sec-card-header">🔬 4.7 Quantum Mechanical Model of Atom <span class="badge-imp">IMP</span></div>
+      <div class="sec-card-body">
+        <p style="font-size:0.88rem;font-weight:700;color:#1565c0;margin-bottom:8px;">Two developments that led to this model:</p>
+        <ul class="kp-list">
+          <li><strong>de Broglie's dual behaviour of matter (1924)</strong>: Matter (electrons) should exhibit both particle and wave properties. de Broglie relation: λ = h/mv = h/p</li>
+          <li><strong>Heisenberg's Uncertainty Principle (1927)</strong>: "It is impossible to simultaneously determine the exact position and exact momentum of an electron." Mathematically: Δx × Δpₓ ≥ h/4π</li>
+        </ul>
+        <div class="formula-box">
+          de Broglie: λ = h/mv = h/p<br>
+          Heisenberg: Δx × Δpₓ ≥ h/4π &nbsp;(Δx = uncertainty in position, Δpₓ = uncertainty in momentum)
+        </div>
+        <ul class="kp-list" style="margin-top:10px;">
+          <li><strong>Quantum Mechanics (1926)</strong>: developed by Werner Heisenberg and Erwin Schrödinger.</li>
+          <li><strong>Schrödinger Wave Equation</strong>: Ĥψ = Eψ, where Ĥ = Hamiltonian operator, ψ = wave function, E = total energy.</li>
+          <li>ψ itself has no physical meaning. <strong>ψ²</strong> = probability density of finding electron at a point.</li>
+        </ul>
+
+        <p style="font-size:0.88rem;font-weight:700;color:#1565c0;margin:12px 0 4px;">Four Quantum Numbers: <span class="badge-imp">IMP</span></p>
+        <table class="chem-table">
+          <thead><tr><th>Quantum Number</th><th>Symbol</th><th>Values</th><th>Describes</th></tr></thead>
+          <tbody>
+            <tr><td>Principal</td><td>n</td><td>1, 2, 3, 4 …</td><td>Shell / size / energy of orbit</td></tr>
+            <tr><td>Azimuthal</td><td>l</td><td>0 to (n−1)</td><td>Subshell / shape of orbital</td></tr>
+            <tr><td>Magnetic</td><td>m_l</td><td>−l to +l</td><td>Orientation of orbital in space</td></tr>
+            <tr><td>Spin</td><td>m_s</td><td>+½ or −½</td><td>Spin of electron (↑ or ↓)</td></tr>
+          </tbody>
+        </table>
+
+        <p style="font-size:0.88rem;font-weight:700;color:#1565c0;margin:12px 0 4px;">Subshells and Orbital Shapes:</p>
+        <ul class="kp-list">
+          <li>l = 0 → <strong>s subshell</strong> (1 orbital) — <strong>spherical shape</strong></li>
+          <li>l = 1 → <strong>p subshell</strong> (3 orbitals: p_x, p_y, p_z) — <strong>dumbbell shape</strong></li>
+          <li>l = 2 → <strong>d subshell</strong> (5 orbitals: d_xy, d_yz, d_xz, d_x²-y², d_z²) — <strong>double dumbbell / cloverleaf</strong></li>
+          <li>l = 3 → <strong>f subshell</strong> (7 orbitals) — <strong>complex shape</strong></li>
+          <li>Number of orbitals in shell n = n²; maximum electrons in shell = 2n²</li>
+        </ul>
+
+        <p style="font-size:0.88rem;font-weight:700;color:#1565c0;margin:12px 0 4px;">Aufbau Principle — Rules for filling electrons:</p>
+        <ul class="kp-list">
+          <li><strong>Increasing energy order (n+l rule)</strong>: Lower (n+l) = lower energy. If same (n+l), lower n has lower energy. Order: 1s &lt; 2s &lt; 2p &lt; 3s &lt; 3p &lt; 4s &lt; 3d &lt; 4p &lt; 5s &lt; 4d &lt; 5p …</li>
+          <li><strong>Pauli's Exclusion Principle</strong>: No two electrons in an atom can have the same set of all four quantum numbers. Maximum 2 electrons per orbital with opposite spins.</li>
+          <li><strong>Hund's Rule of Maximum Multiplicity</strong>: Electrons fill each orbital of a subshell singly first (each with same spin), then pairing begins. Half-filled and fully-filled sets of degenerate orbitals have extra stability.</li>
+        </ul>
+
+        <p style="font-size:0.88rem;font-weight:700;color:#1565c0;margin:12px 0 4px;">Special Cases — Cr and Cu:</p>
+        <ul class="kp-list">
+          <li><strong>Chromium (Z=24)</strong>: Expected [Ar] 4s² 3d⁴ → Actual <strong>[Ar] 4s¹ 3d⁵</strong> (half-filled 3d has extra stability)</li>
+          <li><strong>Copper (Z=29)</strong>: Expected [Ar] 4s² 3d⁹ → Actual <strong>[Ar] 4s¹ 3d¹⁰</strong> (fully-filled 3d has extra stability)</li>
+        </ul>
+
+        <p style="font-size:0.88rem;font-weight:700;color:#1565c0;margin:12px 0 4px;">Isoelectronic Species:</p>
+        <ul class="kp-list">
+          <li>Atoms/ions with same number of electrons are called isoelectronic.</li>
+          <li>Example: Na⁺, Mg²⁺, Al³⁺, Ne, F⁻, O²⁻ — all have 10 electrons, config: 1s² 2s² 2p⁶</li>
+          <li>K⁺, Ar, Ca²⁺, Cl⁻ — all have 18 electrons, config: 1s² 2s² 2p⁶ 3s² 3p⁶</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         QUICK REFERENCE TABLE
+    ═══════════════════════════════════ -->
+    <div class="sec-card">
+      <div class="sec-card-header">📋 Quick Reference — All Key Formulas</div>
+      <div class="sec-card-body">
+        <div class="qr-grid">
+          <div class="qr-card"><strong>Mass Number</strong>A = Z + N</div>
+          <div class="qr-card"><strong>Speed of Light</strong>c = νλ = 3×10⁸ m/s</div>
+          <div class="qr-card"><strong>Planck's Energy</strong>E = hν; h = 6.626×10⁻³⁴ J·s</div>
+          <div class="qr-card"><strong>Rydberg Equation</strong>ν̄ = 109677[1/n₁²−1/n₂²] cm⁻¹</div>
+          <div class="qr-card"><strong>Bohr Radius</strong>rₙ = n² × 52.9 pm</div>
+          <div class="qr-card"><strong>Bohr Energy</strong>Eₙ = −2.18×10⁻¹⁸/n² J</div>
+          <div class="qr-card"><strong>Angular Momentum</strong>mvr = nh/2π</div>
+          <div class="qr-card"><strong>de Broglie</strong>λ = h/mv = h/p</div>
+          <div class="qr-card"><strong>Heisenberg</strong>Δx·Δp ≥ h/4π</div>
+          <div class="qr-card"><strong>Max e⁻ in shell</strong>2n² (K=2, L=8, M=18, N=32)</div>
+          <div class="qr-card"><strong>Orbitals in shell</strong>n² (K=1, L=4, M=9, N=16)</div>
+          <div class="qr-card"><strong>Orbitals in subshell</strong>2l+1 (s=1, p=3, d=5, f=7)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         2-MARK Q&A
+    ═══════════════════════════════════ -->
+    <div class="sec-card">
+      <div class="sec-card-header">✅ Important 2-Mark Questions &amp; Answers</div>
+      <div class="sec-card-body">
+
+        <div class="qa-block">
+          <div class="qa-q">Q1. What are isotopes? Give two examples.</div>
+          <div class="qa-a">Atoms of the same element having the same atomic number (Z) but different mass numbers (A) are called isotopes. They have the same chemical properties but different physical properties.<br>Examples: (1) ¹²C and ¹⁴C (both Z=6) (2) ¹H (protium) and ²H (deuterium) (both Z=1)</div>
+        </div>
+
+        <div class="qa-block">
+          <div class="qa-q">Q2. Define isobars and give one example.</div>
+          <div class="qa-a">Atoms of different elements having the same mass number (A) but different atomic numbers (Z) are called isobars. They are different elements with different chemical properties.<br>Example: ¹⁴C (Z=6) and ¹⁴N (Z=7) — both have A=14.</div>
+        </div>
+
+        <div class="qa-block">
+          <div class="qa-q">Q3. State Heisenberg's Uncertainty Principle.</div>
+          <div class="qa-a">It is impossible to determine simultaneously the exact position and the exact momentum (or velocity) of an electron. Mathematically: Δx × Δpₓ ≥ h/4π, where Δx = uncertainty in position and Δpₓ = uncertainty in momentum.</div>
+        </div>
+
+        <div class="qa-block">
+          <div class="qa-q">Q4. What is the significance of ψ² in quantum mechanics?</div>
+          <div class="qa-a">ψ (wave function) itself has no physical meaning. ψ² at any point in an atom represents the probability density of finding the electron at that point. Higher the ψ², higher the probability of finding the electron there.</div>
+        </div>
+
+        <div class="qa-block">
+          <div class="qa-q">Q5. State Pauli's exclusion principle.</div>
+          <div class="qa-a">No two electrons in the same atom can have the same set of all four quantum numbers (n, l, m_l, m_s). This means an orbital can accommodate at most two electrons, and they must have opposite spins (+½ and −½).</div>
+        </div>
+
+        <div class="qa-block">
+          <div class="qa-q">Q6. What is de Broglie's relation? What does it mean?</div>
+          <div class="qa-a">de Broglie proposed that matter, like light, exhibits dual behaviour. The wavelength of a material particle is: λ = h/mv = h/p. This means electrons (and all matter) have both particle properties (momentum) and wave properties (wavelength).</div>
+        </div>
+
+        <div class="qa-block">
+          <div class="qa-q">Q7. Name the four quantum numbers and what each describes.</div>
+          <div class="qa-a">(1) <strong>Principal quantum number (n)</strong>: identifies shell, size and energy. (2) <strong>Azimuthal quantum number (l)</strong>: identifies subshell and shape of orbital. (3) <strong>Magnetic quantum number (m_l)</strong>: identifies orientation of orbital. (4) <strong>Spin quantum number (m_s)</strong>: identifies spin state of electron (+½ or −½).</div>
+        </div>
+
+        <div class="qa-block">
+          <div class="qa-q">Q8. Give two drawbacks of Rutherford's atomic model.</div>
+          <div class="qa-a">(1) <strong>Instability</strong>: According to Maxwell's theory, revolving electrons should radiate energy continuously, slow down, spiral into the nucleus and the atom should collapse. But real atoms are stable. (2) <strong>No electron distribution</strong>: The model did not describe how electrons are distributed around the nucleus or their energies.</div>
+        </div>
+
+        <div class="qa-block">
+          <div class="qa-q">Q9. What is Hund's rule of maximum multiplicity?</div>
+          <div class="qa-a">Pairing of electrons in orbitals belonging to the same subshell (degenerate orbitals) does not occur unless each orbital has got one electron. Electrons enter each orbital singly with the same spin before any pairing takes place. Half-filled and fully-filled subshells have extra stability.</div>
+        </div>
+
+        <div class="qa-block">
+          <div class="qa-q">Q10. What are isoelectronic species? Give an example.</div>
+          <div class="qa-a">Atoms and ions having the same number of electrons are called isoelectronic species. They have the same electronic configuration.<br>Example: Na⁺ (10 e⁻), Mg²⁺ (10 e⁻), Al³⁺ (10 e⁻), Ne (10 e⁻), O²⁻ (10 e⁻) — all isoelectronic with configuration 1s² 2s² 2p⁶.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         3-MARK Q&A
+    ═══════════════════════════════════ -->
+    <div class="sec-card">
+      <div class="sec-card-header">✅ Important 3-Mark Questions &amp; Answers</div>
+      <div class="sec-card-body">
+
+        <div class="qa-block">
+          <div class="qa-q">Q1. State the four postulates of Bohr's atomic model.</div>
+          <div class="qa-a">
+            (1) Electrons revolve around the nucleus in fixed circular paths of fixed radius and energy called stationary states or allowed energy states, arranged concentrically in increasing order of energy.<br>
+            (2) Energy of an electron in an orbit does not change with time. It absorbs energy to jump to a higher orbit and emits radiation when it falls to a lower orbit. Energy change is not continuous.<br>
+            (3) <em>Bohr's Frequency Rule</em>: Frequency of radiation absorbed/emitted = ΔE/h = (E₂ − E₁)/h.<br>
+            (4) Angular momentum of electron is quantized: mvr = n × h/2π, where n = 1, 2, 3...
+          </div>
+        </div>
+
+        <div class="qa-block">
+          <div class="qa-q">Q2. Explain the Aufbau principle with its three bases.</div>
+          <div class="qa-a">
+            Aufbau (German for "building up") principle states that electrons are filled in orbitals in the ground state of an atom in increasing order of energy. It is based on:<br>
+            (i) <strong>Increasing order of orbital energies</strong> (decided by n+l rule): 1s &lt; 2s &lt; 2p &lt; 3s &lt; 3p &lt; 4s &lt; 3d &lt; 4p …<br>
+            (ii) <strong>Pauli's exclusion principle</strong>: maximum 2 electrons per orbital, with opposite spins.<br>
+            (iii) <strong>Hund's rule</strong>: electrons fill each orbital of a subshell singly before pairing.
+          </div>
+        </div>
+
+        <div class="qa-block">
+          <div class="qa-q">Q3. Explain anomalous electronic configurations of Cr and Cu.</div>
+          <div class="qa-a">
+            <strong>Chromium (Z=24)</strong>: Expected config: [Ar] 4s² 3d⁴. But 3d is not half-filled in this case. Due to interelectronic repulsion, one 4s electron shifts to 3d, making both half-filled: Actual config = <strong>[Ar] 4s¹ 3d⁵</strong>. Half-filled orbitals have extra stability due to symmetrical distribution and maximum exchange energy.<br><br>
+            <strong>Copper (Z=29)</strong>: Expected config: [Ar] 4s² 3d⁹. Neither half-filled nor fully-filled 3d. Due to repulsion, one 4s electron shifts to 3d, making it fully-filled: Actual config = <strong>[Ar] 4s¹ 3d¹⁰</strong>. Fully-filled 3d has extra stability.
+          </div>
+        </div>
+
+        <div class="qa-block">
+          <div class="qa-q">Q4. Explain wave-particle duality of electromagnetic radiation with examples.</div>
+          <div class="qa-a">
+            Electromagnetic radiation exhibits two types of behaviour depending on the context:<br>
+            <strong>Wave nature</strong>: Explains phenomena like diffraction and interference of light. Parameters: wavelength (λ), frequency (ν), amplitude (A). Relation: c = νλ.<br>
+            <strong>Particle nature</strong>: Explains blackbody radiation and photoelectric effect. Light is considered a stream of particles called photons, each having energy E = hν (Planck). Einstein used this to explain photoelectric effect.<br>
+            Since both natures are needed to explain all observations, light has <strong>dual behaviour</strong>. It behaves as a wave when propagating and as a particle when interacting with matter.
+          </div>
+        </div>
+
+        <div class="qa-block">
+          <div class="qa-q">Q5. Write the electronic configuration of Fe, Fe²⁺, Fe³⁺.</div>
+          <div class="qa-a">
+            <strong>Fe (Z=26)</strong>: 1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁶ 4s² or [Ar] 4s² 3d⁶<br>
+            <strong>Fe²⁺</strong> (removes 2 electrons from 4s first): [Ar] 3d⁶<br>
+            <strong>Fe³⁺</strong> (removes 3 electrons — 2 from 4s, 1 from 3d): [Ar] 3d⁵<br>
+            Note: Fe³⁺ has extra stability due to half-filled 3d⁵ configuration.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:10px;">
+      <a href="notes-class11.html" class="back-btn">← Back to All Class 11 Notes</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Visions Learning. Class 11 Chemistry — Chapter 4: Structure of Atom.</p>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  </script>
+</body>
+</html>
