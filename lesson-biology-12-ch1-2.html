@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Class 12 Biology – Ch 1 & 2 Reproduction – Visions Classes</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="logo.png" type="image/png"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #020d05; color: #fff; font-family: 'Segoe UI', system-ui, sans-serif; overflow-x: hidden; }
+    .navbar { background: rgba(2,13,5,.96) !important; }
+    #starfield { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+    .page { position: relative; z-index: 1; padding-top: 64px; }
+
+    /* Hero */
+    .lesson-hero {
+      text-align: center; padding: 50px 20px 30px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(34,197,94,.18) 0%, transparent 65%);
+    }
+    .hero-tag { display:inline-block; padding:5px 18px; border-radius:20px; background:rgba(34,197,94,.2); border:1px solid #22c55e; color:#86efac; font-size:.78rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:14px; }
+    .lesson-hero h1 { font-size:clamp(1.9rem,5vw,3.1rem); font-weight:900; background:linear-gradient(135deg,#fff 0%,#86efac 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:10px; line-height:1.2; }
+    .lesson-hero p { color:#64748b; font-size:1rem; max-width:600px; margin:0 auto; }
+
+    /* Progress */
+    .prog-wrap { height:5px; background:rgba(255,255,255,.07); max-width:860px; margin:18px auto 0; border-radius:3px; }
+    .prog-fill { height:100%; background:linear-gradient(90deg,#22c55e,#06b6d4); border-radius:3px; transition:width .4s; }
+
+    /* Chapter tabs */
+    .ch-tabs { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; padding:20px 20px 0; }
+    .ch-tab { padding:8px 22px; border-radius:50px; border:1.5px solid rgba(34,197,94,.35); background:rgba(34,197,94,.08); color:#86efac; cursor:pointer; font-weight:700; font-size:.85rem; text-decoration:none; transition:all .2s; }
+    .ch-tab:hover, .ch-tab.active { background:#22c55e; border-color:#22c55e; color:#000; }
+
+    /* Slides */
+    .slides { max-width:860px; margin:0 auto; padding:24px 20px 120px; }
+    .slide { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:34px; margin-bottom:22px; opacity:0; transform:translateY(30px); transition:opacity .6s,transform .6s; position:relative; overflow:hidden; }
+    .slide.visible { opacity:1; transform:translateY(0); }
+    .slide::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#22c55e,#06b6d4,#a855f7); }
+    .slide-num { position:absolute; top:14px; right:18px; font-size:.7rem; color:#334155; font-weight:700; }
+    .slide h2 { font-size:1.3rem; color:#f1f5f9; margin-bottom:14px; }
+    .slide p, .slide li { color:#94a3b8; line-height:1.85; font-size:.95rem; }
+    .slide ul { list-style:none; padding:0; }
+    .slide li { padding:5px 0 5px 22px; position:relative; }
+    .slide li::before { content:'→'; position:absolute; left:0; color:#22c55e; font-weight:700; }
+
+    /* Boxes */
+    .defbox { background:rgba(34,197,94,.1); border:1px solid rgba(34,197,94,.35); border-radius:11px; padding:14px 20px; margin:10px 0; font-size:.93rem; color:#86efac; line-height:1.65; }
+    .defbox .dl { font-size:.67rem; text-transform:uppercase; letter-spacing:1px; color:#22c55e; font-weight:700; display:block; margin-bottom:5px; }
+    .fbox { background:rgba(6,182,212,.1); border:1px solid rgba(6,182,212,.35); border-radius:11px; padding:14px 20px; margin:10px 0; font-family:'Courier New',monospace; font-size:.95rem; color:#67e8f9; text-align:center; }
+    .fbox .fl { font-size:.67rem; text-transform:uppercase; letter-spacing:1px; color:#0891b2; font-family:'Segoe UI',sans-serif; font-weight:700; display:block; margin-bottom:5px; }
+    .note-grn { background:rgba(34,197,94,.08); border-left:4px solid #22c55e; border-radius:8px; padding:11px 16px; margin:10px 0; font-size:.88rem; color:#86efac; line-height:1.6; }
+    .note-yel { background:rgba(245,158,11,.1); border-left:4px solid #f59e0b; border-radius:8px; padding:11px 16px; margin:10px 0; font-size:.88rem; color:#fde68a; line-height:1.6; }
+    .note-red { background:rgba(244,63,94,.1); border-left:4px solid #ef4444; border-radius:8px; padding:11px 16px; margin:10px 0; font-size:.88rem; color:#fda4af; line-height:1.6; }
+
+    /* Grid */
+    .kp-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px; margin:12px 0; }
+    .kp { background:rgba(34,197,94,.07); border:1px solid rgba(34,197,94,.22); border-radius:11px; padding:14px 16px; opacity:0; transform:scale(.94); transition:opacity .4s,transform .4s; }
+    .kp.show { opacity:1; transform:scale(1); }
+    .kp h4 { color:#86efac; font-size:.88rem; margin-bottom:5px; }
+    .kp p  { color:#64748b; font-size:.8rem; line-height:1.5; }
+
+    /* Steps */
+    .step { display:flex; gap:13px; margin-bottom:14px; opacity:0; transform:translateX(-16px); transition:opacity .5s,transform .5s; }
+    .step.show { opacity:1; transform:translateX(0); }
+    .sn { min-width:32px; height:32px; border-radius:50%; background:linear-gradient(135deg,#22c55e,#06b6d4); display:flex; align-items:center; justify-content:center; font-size:.8rem; font-weight:800; color:#000; flex-shrink:0; }
+    .sb h4 { color:#e2e8f0; font-size:.94rem; margin-bottom:3px; }
+    .sb p  { color:#64748b; font-size:.86rem; line-height:1.6; }
+
+    /* Table */
+    .ntable { width:100%; border-collapse:collapse; margin:12px 0; font-size:.85rem; }
+    .ntable th { background:rgba(34,197,94,.18); color:#86efac; padding:9px 12px; text-align:left; font-weight:700; border:1px solid rgba(34,197,94,.25); }
+    .ntable td { padding:9px 12px; border:1px solid rgba(255,255,255,.06); color:#94a3b8; }
+    .ntable tr:hover td { background:rgba(34,197,94,.06); color:#e2e8f0; }
+
+    /* Canvas */
+    .cv-wrap { display:flex; justify-content:center; margin:16px 0; }
+    canvas { border-radius:12px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.07); max-width:100%; }
+
+    /* Exam Qs */
+    .eq-box { background:#0a1f0d; border:1px solid rgba(34,197,94,.25); border-radius:14px; padding:24px; margin-top:12px; }
+    .eq-title { font-size:.95rem; font-weight:800; color:#86efac; margin-bottom:16px; display:flex; align-items:center; gap:8px; }
+    .q-list { list-style:none; padding:0; counter-reset:qn; }
+    .q-list li { counter-increment:qn; padding:10px 12px 10px 46px; position:relative; font-size:.87rem; color:#94a3b8; line-height:1.65; border-bottom:1px solid rgba(255,255,255,.05); }
+    .q-list li:last-child { border:none; }
+    .q-list li::before { content:'Q'counter(qn); position:absolute; left:0; background:#22c55e; color:#000; font-size:.68rem; font-weight:800; padding:2px 7px; border-radius:6px; top:11px; }
+    .mk { display:inline-block; padding:1px 8px; border-radius:10px; font-size:.67rem; font-weight:700; margin-left:8px; vertical-align:middle; }
+    .m1 { background:rgba(34,197,94,.2); color:#86efac; }
+    .m2 { background:rgba(245,158,11,.2); color:#fde047; }
+    .m3 { background:rgba(99,102,241,.25); color:#a5b4fc; }
+    .m4 { background:rgba(239,68,68,.2); color:#fca5a5; }
+    .m5 { background:rgba(168,85,247,.22); color:#d8b4fe; }
+
+    /* Highlights */
+    .hg { color:#86efac; font-weight:700; }
+    .hy { color:#fde047; font-weight:700; }
+    .hb { color:#67e8f9; font-weight:700; }
+    .hr { color:#fda4af; font-weight:700; }
+
+    /* Bottom bar */
+    .bottom-bar { position:fixed; bottom:0; left:0; right:0; z-index:90; background:rgba(2,13,5,.97); backdrop-filter:blur(16px); border-top:1px solid rgba(34,197,94,.2); display:flex; align-items:center; gap:10px; padding:10px 20px; }
+    .bb-label { color:#4ade80; font-size:.82rem; flex:1; }
+    .bb-btn { padding:8px 18px; border-radius:8px; border:none; cursor:pointer; font-size:.82rem; font-weight:700; text-decoration:none; display:inline-block; transition:all .2s; }
+    .bb-grn  { background:#22c55e; color:#000; }
+    .bb-grn:hover { background:#16a34a; }
+    .bb-mute { background:rgba(255,255,255,.09); color:#86efac; }
+    .bb-mute:hover { background:rgba(255,255,255,.18); }
+
+    @media(max-width:560px){ .kp-grid{grid-template-columns:1fr;} .slide{padding:20px 15px;} }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Visions Classes" class="nav-logo-img"/>
+      <div class="logo-text"><span>Visions</span> Classes</div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="animated-lessons.html" class="active">Animated Lessons</a></li>
+      <li><a href="notes.html">Notes</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<canvas id="starfield"></canvas>
+
+<div class="page">
+  <div class="lesson-hero">
+    <div class="hero-tag">🌱 Biology · Class 12 · Chapter 1 & 2</div>
+    <h1>Reproduction in Plants & Animals</h1>
+    <p>Sexual & Asexual Reproduction · Pollination · Fertilisation · Embryo Development · Human Reproduction</p>
+  </div>
+  <div class="prog-wrap"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+
+  <div class="ch-tabs">
+    <a class="ch-tab active" href="#ch1">🌸 Chapter 1: Plants</a>
+    <a class="ch-tab" href="#ch2">🧬 Chapter 2: Animals</a>
+  </div>
+
+  <div class="slides">
+
+    <!-- ═══════════════════ CHAPTER 1 ═══════════════════ -->
+    <div class="slide" id="ch1">
+      <div class="slide-num">1</div>
+      <h2>🌱 Chapter 1 Introduction — Reproduction in Plants</h2>
+      <div class="defbox"><span class="dl">Definition</span>Reproduction is the biological process by which living organisms produce offspring of their own kind. It ensures <span class="hg">continuity of species</span> and transfer of genetic material from one generation to the next.</div>
+      <ul>
+        <li><span class="hg">Asexual reproduction</span> — single parent, no gametes, offspring genetically identical (clones)</li>
+        <li><span class="hg">Sexual reproduction</span> — two parents, involves gametes (male + female), genetic variation in offspring</li>
+        <li>Plants show both types — lower plants mainly asexual, higher plants mainly sexual</li>
+        <li>Reproduction involves <span class="hy">juvenile → reproductive phase → senescence</span></li>
+      </ul>
+    </div>
+
+    <!-- Asexual Reproduction -->
+    <div class="slide" id="s2">
+      <div class="slide-num">2</div>
+      <h2>🔄 Asexual Reproduction in Plants</h2>
+      <div class="defbox"><span class="dl">Definition</span>Reproduction without formation of gametes or fusion. Offspring are genetically identical to parent — called <span class="hg">clones</span>.</div>
+      <div class="kp-grid" id="asexGrid">
+        <div class="kp"><h4>Fission</h4><p>Single cell divides into two equal cells. e.g. Amoeba, Chlamydomonas</p></div>
+        <div class="kp"><h4>Budding</h4><p>Small outgrowth (bud) forms and detaches. e.g. Yeast, Hydra</p></div>
+        <div class="kp"><h4>Fragmentation</h4><p>Body breaks into fragments, each grows into new organism. e.g. Spirogyra</p></div>
+        <div class="kp"><h4>Spore Formation</h4><p>Spores (zoospores/conidia) produced, germinate to form new plant. e.g. Rhizopus, Fern</p></div>
+        <div class="kp"><h4>Vegetative Propagation</h4><p>New plant from vegetative parts — root, stem, leaf. e.g. Potato, Ginger</p></div>
+        <div class="kp"><h4>Regeneration</h4><p>From body fragments. e.g. Planaria, Bryophyllum leaves</p></div>
+      </div>
+      <div class="note-grn">⭐ <strong>Vegetative propagation types:</strong> Natural (runners, rhizomes, bulbs, tubers) | Artificial (cutting, grafting, layering, tissue culture)</div>
+    </div>
+
+    <!-- Flower structure -->
+    <div class="slide" id="s3">
+      <div class="slide-num">3</div>
+      <h2>🌸 Structure of a Flower — Reproductive Organ</h2>
+      <p style="margin-bottom:12px;">Flower is the <span class="hg">reproductive organ</span> of angiosperms. A complete flower has 4 whorls:</p>
+      <div class="cv-wrap"><canvas id="flowerCanvas" width="500" height="220"></canvas></div>
+      <div class="kp-grid" id="flowerGrid">
+        <div class="kp"><h4>🟢 Calyx (Sepals)</h4><p>Outermost whorl. Protects flower bud. Usually green.</p></div>
+        <div class="kp"><h4>🌸 Corolla (Petals)</h4><p>Colourful to attract pollinators. Inside calyx.</p></div>
+        <div class="kp"><h4>🟡 Androecium (Stamens)</h4><p>Male reproductive organ. Filament + Anther. Produces pollen.</p></div>
+        <div class="kp"><h4>🟤 Gynoecium (Pistil)</h4><p>Female reproductive organ. Stigma + Style + Ovary. Contains ovules.</p></div>
+      </div>
+      <div class="note-grn">⭐ <strong>Bisexual flower</strong> = has both androecium and gynoecium (e.g. rose, mustard). <strong>Unisexual</strong> = only one (e.g. papaya, maize).</div>
+    </div>
+
+    <!-- Pollen -->
+    <div class="slide" id="s4">
+      <div class="slide-num">4</div>
+      <h2>🟡 Microsporogenesis — Formation of Pollen Grains</h2>
+      <div class="defbox"><span class="dl">Microsporogenesis</span>Process of formation of microspores (pollen grains) from microspore mother cells (MMC) in the anther by meiosis.</div>
+      <div class="step"><div class="sn">1</div><div class="sb"><h4>Anther has 4 microsporangia (pollen sacs)</h4><p>Each microsporangium is surrounded by: Epidermis → Endothecium → Middle layer → Tapetum (innermost, nourishes pollen)</p></div></div>
+      <div class="step"><div class="sn">2</div><div class="sb"><h4>MMC undergoes Meiosis</h4><p>2n Microspore Mother Cell → (meiosis) → 4 haploid microspores (tetrad)</p></div></div>
+      <div class="step"><div class="sn">3</div><div class="sb"><h4>Microspores separate → Pollen grains</h4><p>Each pollen grain has 2 layers: Exine (outer, sporopollenin — very resistant) and Intine (inner, cellulose + pectin)</p></div></div>
+      <div class="step"><div class="sn">4</div><div class="sb"><h4>Pollen grain is mature male gametophyte</h4><p>Has 2 cells: Vegetative cell (large) + Generative cell (small). Generative cell divides to form 2 male gametes.</p></div></div>
+      <div class="note-yel">⭐ <strong>Sporopollenin</strong> — most resistant organic material known. Pollen grains preserved as fossils for millions of years. Not degraded by enzymes.</div>
+    </div>
+
+    <!-- Pistil & Ovule -->
+    <div class="slide" id="s5">
+      <div class="slide-num">5</div>
+      <h2>🌿 Megasporogenesis — Formation of Embryo Sac</h2>
+      <div class="defbox"><span class="dl">Megasporogenesis</span>Formation of megaspores from Megaspore Mother Cell (MMC) in the ovule by meiosis. One megaspore develops into embryo sac (female gametophyte).</div>
+      <div class="step"><div class="sn">1</div><div class="sb"><h4>Ovule structure</h4><p>Funicle → Hilum → Integuments (1 or 2) → Nucellus → Embryo sac. Entry point = Micropyle. Opposite end = Chalaza.</p></div></div>
+      <div class="step"><div class="sn">2</div><div class="sb"><h4>MMC (2n) → 4 megaspores by meiosis</h4><p>3 degenerate. 1 functional megaspore (chalazal end) survives.</p></div></div>
+      <div class="step"><div class="sn">3</div><div class="sb"><h4>Functional megaspore → Embryo sac (3 mitotic divisions)</h4><p>Results in 7-celled, 8-nucleate embryo sac (Polygonum type — most common)</p></div></div>
+      <div class="step"><div class="sn">4</div><div class="sb"><h4>7-celled embryo sac composition</h4><p>3 Antipodal cells (chalazal end) + 2 Synergids + 1 Egg cell (micropylar end) + 1 Central cell (2 polar nuclei)</p></div></div>
+      <div class="fbox"><span class="fl">Embryo Sac — 8 nuclei, 7 cells</span>3 Antipodals + 2 Synergids + 1 Egg cell + 1 Central cell (2 polar nuclei)</div>
+    </div>
+
+    <!-- Pollination -->
+    <div class="slide" id="s6">
+      <div class="slide-num">6</div>
+      <h2>🌬️ Pollination</h2>
+      <div class="defbox"><span class="dl">Definition</span>Transfer of pollen grains from anther to stigma of a flower. Precondition for fertilisation.</div>
+      <div class="cv-wrap"><canvas id="pollinCanvas" width="500" height="200"></canvas></div>
+      <table class="ntable">
+        <thead><tr><th>Type</th><th>Definition</th><th>Agent</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td class="hg">Autogamy</td><td>Pollen → same flower's stigma</td><td>Self</td><td>Wheat, Rice, Pea</td></tr>
+          <tr><td class="hg">Geitonogamy</td><td>Pollen → different flower on same plant</td><td>Self (genetically)</td><td>Maize</td></tr>
+          <tr><td class="hg">Xenogamy</td><td>Pollen → flower of different plant</td><td>Cross pollination</td><td>Papaya, Vallisneria</td></tr>
+        </tbody>
+      </table>
+      <div class="kp-grid" style="margin-top:10px;" id="agentGrid">
+        <div class="kp"><h4>💨 Anemophily (Wind)</h4><p>Light, non-sticky pollen. Long filaments. e.g. Maize, Wheat</p></div>
+        <div class="kp"><h4>🐝 Entomophily (Insects)</h4><p>Sticky/scented pollen. Colourful petals. e.g. Rose, Sunflower</p></div>
+        <div class="kp"><h4>💧 Hydrophily (Water)</h4><p>Aquatic plants. Pollen on water surface. e.g. Vallisneria</p></div>
+        <div class="kp"><h4>🦅 Ornithophily (Birds)</h4><td>Nectar-rich. Red/orange flowers. e.g. Bignonia</td></div>
+      </div>
+    </div>
+
+    <!-- Double Fertilisation -->
+    <div class="slide" id="s7">
+      <div class="slide-num">7</div>
+      <h2>⚡ Double Fertilisation — Unique to Angiosperms</h2>
+      <div class="defbox"><span class="dl">Double Fertilisation</span>Fusion of one male gamete with egg cell (syngamy) AND fusion of second male gamete with central cell (polar nuclei) — triple fusion. Only in angiosperms.</div>
+      <div class="step"><div class="sn">1</div><div class="sb"><h4>Pollen tube formation</h4><p>Pollen germinates on stigma → pollen tube grows through style → reaches ovule through micropyle</p></div></div>
+      <div class="step"><div class="sn">2</div><div class="sb"><h4>Syngamy (True fertilisation)</h4><p>1 male gamete (n) + Egg cell (n) → Zygote (2n) → develops into Embryo</p></div></div>
+      <div class="step"><div class="sn">3</div><div class="sb"><h4>Triple Fusion</h4><p>1 male gamete (n) + 2 Polar nuclei (n+n) → Primary Endosperm Nucleus (3n) → develops into Endosperm (nutritive tissue)</p></div></div>
+      <div class="step"><div class="sn">4</div><div class="sb"><h4>After fertilisation</h4><p>Ovary → Fruit | Ovule → Seed | Zygote → Embryo | PEN → Endosperm | Integuments → Seed coat (testa + tegmen)</p></div></div>
+      <div class="fbox"><span class="fl">🌟 Double Fertilisation Summary</span>Syngamy: ♂ gamete + Egg → Zygote (2n) → Embryo<br/>Triple fusion: ♂ gamete + Polar nuclei → PEN (3n) → Endosperm</div>
+    </div>
+
+    <!-- Embryo Development -->
+    <div class="slide" id="s8">
+      <div class="slide-num">8</div>
+      <h2>🌱 Embryo Development & Seed Formation</h2>
+      <div class="step"><div class="sn">1</div><div class="sb"><h4>Zygote → Proembryo</h4><p>Zygote divides → suspensor (pushes embryo into endosperm) + embryo proper</p></div></div>
+      <div class="step"><div class="sn">2</div><div class="sb"><h4>Globular → Heart → Torpedo stage</h4><p>Embryo develops cotyledons (seed leaves), plumule (shoot tip), radicle (root tip)</p></div></div>
+      <div class="step"><div class="sn">3</div><div class="sb"><h4>Dicot seed structure</h4><p>Seed coat (testa + tegmen) + 2 Cotyledons + Embryonal axis (plumule + radicle) + Endosperm (in endospermic seeds)</p></div></div>
+      <div class="step"><div class="sn">4</div><div class="sb"><h4>Monocot seed structure</h4><p>1 Cotyledon (scutellum) + Coleoptile (covers plumule) + Coleorhiza (covers radicle) + Large endosperm</p></div></div>
+      <table class="ntable" style="margin-top:12px;">
+        <thead><tr><th>Feature</th><th>Dicot seed</th><th>Monocot seed</th></tr></thead>
+        <tbody>
+          <tr><td>Cotyledons</td><td>2</td><td>1 (scutellum)</td></tr>
+          <tr><td>Endosperm</td><td>Present (castor) or absent (pea)</td><td>Always present and large</td></tr>
+          <tr><td>Plumule cover</td><td>Absent</td><td>Coleoptile</td></tr>
+          <tr><td>Radicle cover</td><td>Absent</td><td>Coleorhiza</td></tr>
+          <tr><td>Example</td><td>Pea, Bean, Castor</td><td>Maize, Wheat, Rice</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ═══════════════════ CHAPTER 2 ═══════════════════ -->
+    <div class="slide" id="ch2">
+      <div class="slide-num">9</div>
+      <h2>🧬 Chapter 2 — Reproduction in Animals</h2>
+      <div class="defbox"><span class="dl">Introduction</span>Animals reproduce both sexually and asexually. Higher animals (including humans) reproduce sexually. The chapter covers <span class="hg">human reproduction</span> — male and female reproductive systems, gametogenesis, fertilisation and development.</div>
+      <div class="kp-grid" id="animalGrid">
+        <div class="kp"><h4>Asexual in Animals</h4><p>Fission (Amoeba), Budding (Hydra), Regeneration (Planaria), Parthenogenesis (bees, ants)</p></div>
+        <div class="kp"><h4>Sexual Reproduction</h4><p>Involves male & female gametes. Fertilisation forms zygote. Used by most higher animals.</p></div>
+        <div class="kp"><h4>Oviparous</h4><p>Lay eggs externally — fish, frogs, birds, reptiles. Embryo develops outside mother's body.</p></div>
+        <div class="kp"><h4>Viviparous</h4><p>Give birth to young ones — mammals including humans. Internal development.</p></div>
+      </div>
+    </div>
+
+    <!-- Male Reproductive System -->
+    <div class="slide" id="s10">
+      <div class="slide-num">10</div>
+      <h2>♂ Male Reproductive System</h2>
+      <div class="step"><div class="sn">1</div><div class="sb"><h4>Testes (2)</h4><p>Located in scrotum (outside body — lower temperature needed for sperm). Produce sperms (spermatogenesis) and testosterone hormone. Each testis has 250+ testicular lobules containing seminiferous tubules.</p></div></div>
+      <div class="step"><div class="sn">2</div><div class="sb"><h4>Accessory ducts</h4><p>Rete testis → Vasa efferentia → Epididymis (sperm maturation & storage) → Vas deferens → Ejaculatory duct → Urethra</p></div></div>
+      <div class="step"><div class="sn">3</div><div class="sb"><h4>Accessory glands</h4><p>Seminal vesicles (60% semen), Prostate gland (30%, activates sperm), Bulbourethral (Cowper's) glands (lubrication)</p></div></div>
+      <div class="step"><div class="sn">4</div><div class="sb"><h4>Semen</h4><p>Sperm + secretions of accessory glands. ~200–300 million sperms/ejaculate. pH slightly alkaline (7.2–7.6).</p></div></div>
+      <div class="note-yel">⭐ <strong>Seminiferous tubules</strong> lined by: Spermatogonia (sperm-producing cells) + Sertoli cells (nourish developing sperms) + Leydig cells (interstitial cells, produce testosterone).</div>
+    </div>
+
+    <!-- Spermatogenesis -->
+    <div class="slide" id="s11">
+      <div class="slide-num">11</div>
+      <h2>🔬 Spermatogenesis — Formation of Sperms</h2>
+      <div class="defbox"><span class="dl">Spermatogenesis</span>Process of formation of spermatids (then spermatozoa) from spermatogonia in the seminiferous tubules. Begins at puberty.</div>
+      <div class="fbox"><span class="fl">Spermatogenesis Steps</span>Spermatogonia (2n) → [Mitosis] → Primary spermatocyte (2n) → [Meiosis I] → 2 Secondary spermatocytes (n) → [Meiosis II] → 4 Spermatids (n) → [Spermiogenesis] → 4 Spermatozoa (n)</div>
+      <div class="step"><div class="sn">📌</div><div class="sb"><h4>Sperm structure (Head → Middle piece → Tail)</h4><p><strong>Head:</strong> Nucleus (haploid DNA) + Acrosome (lysosomal enzymes to penetrate egg)<br/><strong>Middle piece:</strong> Mitochondria (energy for movement — ATP)<br/><strong>Tail:</strong> Flagellum for motility</p></div></div>
+      <div class="note-grn">⭐ <strong>Spermiation</strong> = release of sperms from Sertoli cells into the lumen. <strong>Spermiogenesis</strong> = transformation of spermatids into spermatozoa.</div>
+      <div class="note-yel">⭐ Normal sperm count = 200–300 million/ejaculate. Less than 20 million/mL = oligospermia. Zero sperm = azoospermia.</div>
+    </div>
+
+    <!-- Female Reproductive System -->
+    <div class="slide" id="s12">
+      <div class="slide-num">12</div>
+      <h2>♀ Female Reproductive System</h2>
+      <div class="step"><div class="sn">1</div><div class="sb"><h4>Ovaries (2)</h4><p>Primary sex organs. Located in pelvic cavity. Produce ova (oogenesis) and female hormones (estrogen, progesterone). Each ovary has ovarian follicles at different stages.</p></div></div>
+      <div class="step"><div class="sn">2</div><div class="sb"><h4>Fallopian tubes (Oviducts)</h4><p>Infundibulum (funnel, has fimbriae to collect egg) → Ampulla (widest, fertilisation occurs here) → Isthmus (joins uterus)</p></div></div>
+      <div class="step"><div class="sn">3</div><div class="sb"><h4>Uterus (Womb)</h4><p>Pear-shaped. 3 layers: Perimetrium (outer) → Myometrium (muscular, middle) → Endometrium (inner, site of implantation). Cervix connects to vagina.</p></div></div>
+      <div class="step"><div class="sn">4</div><div class="sb"><h4>External genitalia</h4><p>Mons pubis, Labia majora, Labia minora, Clitoris, Hymen, Bartholin's glands (lubrication)</p></div></div>
+      <div class="note-grn">⭐ <strong>Fertilisation site</strong> = Ampulla of fallopian tube. <strong>Implantation site</strong> = Endometrium of uterus.</div>
+    </div>
+
+    <!-- Oogenesis -->
+    <div class="slide" id="s13">
+      <div class="slide-num">13</div>
+      <h2>🔬 Oogenesis — Formation of Ovum</h2>
+      <div class="defbox"><span class="dl">Oogenesis</span>Process of formation of a mature ovum (egg) from oogonia in the ovary. Begins before birth, completes after fertilisation.</div>
+      <div class="fbox"><span class="fl">Oogenesis Steps</span>Oogonia (2n) → [Mitosis] → Primary oocyte (2n) → [Meiosis I] → Secondary oocyte (n) + 1st polar body → [Meiosis II, if fertilised] → Ovum (n) + 2nd polar body</div>
+      <table class="ntable">
+        <thead><tr><th>Feature</th><th>Spermatogenesis</th><th>Oogenesis</th></tr></thead>
+        <tbody>
+          <tr><td>Site</td><td>Seminiferous tubules (testis)</td><td>Ovarian follicles (ovary)</td></tr>
+          <tr><td>Start</td><td>Puberty onwards</td><td>Before birth (foetal life)</td></tr>
+          <tr><td>Products</td><td>4 functional sperms</td><td>1 ovum + 3 polar bodies</td></tr>
+          <tr><td>Size of gamete</td><td>Small, motile</td><td>Large, non-motile</td></tr>
+          <tr><td>Meiosis II completion</td><td>Before release</td><td>After fertilisation</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Menstrual Cycle -->
+    <div class="slide" id="s14">
+      <div class="slide-num">14</div>
+      <h2>📅 Menstrual Cycle</h2>
+      <div class="defbox"><span class="dl">Menstrual Cycle</span>Cyclic changes in the female reproductive system occurring approximately every 28 days. Controlled by hormones — GnRH, FSH, LH, Estrogen, Progesterone.</div>
+      <div class="cv-wrap"><canvas id="cycleCanvas" width="520" height="180"></canvas></div>
+      <table class="ntable">
+        <thead><tr><th>Phase</th><th>Days</th><th>Events</th><th>Hormones</th></tr></thead>
+        <tbody>
+          <tr><td class="hg">Menstrual</td><td>1–5</td><td>Shedding of endometrium (bleeding)</td><td>Estrogen & Progesterone fall</td></tr>
+          <tr><td class="hg">Follicular</td><td>6–13</td><td>Follicle matures, endometrium thickens</td><td>FSH → Estrogen rises</td></tr>
+          <tr><td class="hg">Ovulation</td><td>14</td><td>LH surge → egg released from ovary</td><td>LH peak</td></tr>
+          <tr><td class="hg">Luteal</td><td>15–28</td><td>Corpus luteum forms, endometrium prepares for implantation</td><td>Progesterone dominant</td></tr>
+        </tbody>
+      </table>
+      <div class="note-yel">⭐ If fertilisation occurs → corpus luteum persists → progesterone maintains pregnancy → no menstruation (amenorrhoea). If no fertilisation → corpus luteum degenerates → menstruation occurs.</div>
+    </div>
+
+    <!-- Fertilisation & Implantation -->
+    <div class="slide" id="s15">
+      <div class="slide-num">15</div>
+      <h2>⚡ Fertilisation & Implantation in Humans</h2>
+      <div class="step"><div class="sn">1</div><div class="sb"><h4>Fertilisation (in ampulla)</h4><p>Sperm reaches egg. Acrosome reaction releases enzymes to penetrate zona pellucida. Cortical reaction prevents polyspermy. Sperm nucleus + egg nucleus → zygote (2n)</p></div></div>
+      <div class="step"><div class="sn">2</div><div class="sb"><h4>Cleavage (rapid mitosis)</h4><p>Zygote → 2 cells (blastomeres) → 4 → 8 → morula (16+ cells, solid ball) → all while moving through fallopian tube</p></div></div>
+      <div class="step"><div class="sn">3</div><div class="sb"><h4>Blastocyst formation</h4><p>Morula → Blastocyst (hollow ball): Trophoblast (outer layer) + Inner Cell Mass (embryoblast, becomes embryo) + Blastocoel (fluid-filled cavity)</p></div></div>
+      <div class="step"><div class="sn">4</div><div class="sb"><h4>Implantation (day 6–7)</h4><p>Blastocyst attaches to endometrium (uterine wall). Trophoblast invades endometrium. Marks beginning of pregnancy.</p></div></div>
+      <div class="fbox"><span class="fl">Timeline</span>Fertilisation (Day 0) → Morula (Day 3) → Blastocyst (Day 5) → Implantation (Day 6–7) → Gastrulation → Organogenesis → Birth (Day ~280)</div>
+    </div>
+
+    <!-- Pregnancy & Placenta -->
+    <div class="slide" id="s16">
+      <div class="slide-num">16</div>
+      <h2>🤰 Pregnancy, Placenta & Parturition</h2>
+      <div class="step"><div class="sn">1</div><div class="sb"><h4>Gastrulation</h4><p>ICM → 3 germ layers: Ectoderm (skin, nervous system) + Mesoderm (muscles, bones, blood) + Endoderm (gut, lungs, liver)</p></div></div>
+      <div class="step"><div class="sn">2</div><div class="sb"><h4>Placenta</h4><p>Disc-shaped organ formed by trophoblast + uterine tissue. Functions: nutrition, respiration, excretion, hormone secretion (hCG, estrogen, progesterone). Connected to foetus by umbilical cord.</p></div></div>
+      <div class="step"><div class="sn">3</div><div class="sb"><h4>Gestation period</h4><p>9 months (280 days / 40 weeks) in humans. 1st trimester (1–3 months): organogenesis. 2nd (4–6): rapid growth. 3rd (7–9): full development.</p></div></div>
+      <div class="step"><div class="sn">4</div><div class="sb"><h4>Parturition (Childbirth)</h4><p>Triggered by oxytocin (from posterior pituitary). Uterine contractions increase. Foetus expelled. Placenta expelled as afterbirth.</p></div></div>
+      <div class="note-yel">⭐ <strong>hCG (human Chorionic Gonadotropin)</strong> — secreted by trophoblast → maintains corpus luteum → pregnancy test detects hCG in urine.</div>
+    </div>
+
+    <!-- Exam Questions -->
+    <div class="slide" id="s17">
+      <div class="slide-num">17</div>
+      <div class="eq-box">
+        <div class="eq-title">🎯 Exam Important Questions — Ch 1 & 2 Biology</div>
+        <ol class="q-list">
+          <li>What is double fertilisation? Why is it unique to angiosperms? Explain its significance. <span class="mk m3">3 marks</span></li>
+          <li>Draw a labelled diagram of a mature angiosperm embryo sac and describe its formation. <span class="mk m5">5 marks</span></li>
+          <li>Explain the structure of a pollen grain. What is sporopollenin and why is it significant? <span class="mk m3">3 marks</span></li>
+          <li>Distinguish between autogamy, geitonogamy and xenogamy with examples. <span class="mk m3">3 marks</span></li>
+          <li>Describe the process of microsporogenesis with a labelled diagram of T.S. of anther. <span class="mk m5">5 marks</span></li>
+          <li>Compare dicot and monocot seeds with labelled diagrams. <span class="mk m4">4 marks</span></li>
+          <li>Describe spermatogenesis. Draw a labelled diagram of human sperm and explain its structure. <span class="mk m5">5 marks</span></li>
+          <li>Describe oogenesis. How does it differ from spermatogenesis? <span class="mk m4">4 marks</span></li>
+          <li>Explain the female reproductive system with a labelled diagram. <span class="mk m5">5 marks</span></li>
+          <li>Describe the menstrual cycle with reference to hormonal regulation. <span class="mk m4">4 marks</span></li>
+          <li>Explain the process of fertilisation in humans. How is polyspermy prevented? <span class="mk m3">3 marks</span></li>
+          <li>What is implantation? Describe blastocyst formation and implantation process. <span class="mk m3">3 marks</span></li>
+          <li>Write the functions of placenta. What is hCG and what is its role? <span class="mk m3">3 marks</span></li>
+          <li>What is parturition? What role does oxytocin play? <span class="mk m2">2 marks</span></li>
+          <li>Define: (i) Sporopollenin (ii) Tapetum (iii) Corpus luteum (iv) Acrosome (v) Coleorhiza <span class="mk m5">5 marks</span></li>
+        </ol>
+      </div>
+    </div>
+
+  </div><!-- /slides -->
+</div><!-- /page -->
+
+<!-- BOTTOM BAR -->
+<div class="bottom-bar">
+  <span class="bb-label">🌱 Class 12 Biology · Ch 1 & 2: Reproduction in Plants & Animals</span>
+  <button class="bb-btn bb-grn" id="ttsBtn" onclick="toggleTTS()">🔊 Voice ON</button>
+  <button class="bb-btn bb-mute" onclick="stopTTS()">⏹ Stop</button>
+  <a href="animated-lessons.html" class="bb-btn bb-mute">← All Lessons</a>
+  <button class="bb-btn bb-mute" onclick="window.print()">🖨️ Print</button>
+</div>
+
+<script src="main.js"></script>
+<script>
+/* Starfield */
+(function(){
+  const c=document.getElementById('starfield'),ctx=c.getContext('2d');
+  function resize(){c.width=innerWidth;c.height=innerHeight;}
+  resize();window.addEventListener('resize',resize);
+  const stars=Array.from({length:100},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.6+.3,a:Math.random(),da:(Math.random()-.5)*.007}));
+  function draw(){ctx.clearRect(0,0,c.width,c.height);stars.forEach(s=>{s.a=Math.max(.1,Math.min(1,s.a+s.da));if(s.a<=.1||s.a>=1)s.da*=-1;ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle=`rgba(134,239,172,${s.a*0.6})`;ctx.fill();});requestAnimationFrame(draw);}
+  draw();
+})();
+
+/* Slide reveal */
+const slides=document.querySelectorAll('.slide');
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      e.target.querySelectorAll('.kp,.step').forEach((el,i)=>setTimeout(()=>el.classList.add('show'),i*160));
+      updateProg();
+      triggerCanvas(e.target.id);
+      if(ttsEnabled) speakSlide(e.target.id);
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.12});
+slides.forEach(s=>obs.observe(s));
+function updateProg(){const v=document.querySelectorAll('.slide.visible').length;document.getElementById('progFill').style.width=(v/slides.length*100)+'%';}
+
+/* Canvas animations */
+function triggerCanvas(id){
+  setTimeout(()=>{
+    if(id==='s3') drawFlower();
+    if(id==='s6') drawPollination();
+    if(id==='s14') drawCycle();
+  },300);
+}
+
+function drawFlower(){
+  const c=document.getElementById('flowerCanvas');if(!c)return;
+  const ctx=c.getContext('2d'),W=c.width,H=c.height,cx=W/2,cy=H/2;
+  // Receptacle
+  ctx.fillStyle='#4a3728';ctx.beginPath();ctx.roundRect(cx-5,cy+50,10,30,3);ctx.fill();
+  // Sepals
+  ctx.fillStyle='#16a34a';
+  for(let i=0;i<5;i++){ctx.save();ctx.translate(cx,cy+50);ctx.rotate(i*Math.PI*2/5);ctx.beginPath();ctx.ellipse(0,-22,8,20,0,0,Math.PI*2);ctx.fill();ctx.restore();}
+  // Petals
+  const pColors=['#f43f5e','#fb923c','#fcd34d','#a855f7','#3b82f6'];
+  for(let i=0;i<5;i++){ctx.save();ctx.translate(cx,cy+10);ctx.rotate(i*Math.PI*2/5);ctx.fillStyle=pColors[i];ctx.shadowColor=pColors[i];ctx.shadowBlur=8;ctx.beginPath();ctx.ellipse(0,-32,12,30,0,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;ctx.restore();}
+  // Pistil
+  ctx.fillStyle='#ca8a04';ctx.shadowColor='#fcd34d';ctx.shadowBlur=6;ctx.beginPath();ctx.arc(cx,cy-5,8,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;
+  ctx.fillStyle='#92400e';ctx.fillRect(cx-2,cy,4,30);
+  ctx.fillStyle='#fcd34d';ctx.beginPath();ctx.arc(cx,cy+32,7,0,Math.PI*2);ctx.fill();
+  // Stamens
+  for(let i=0;i<6;i++){ctx.save();ctx.translate(cx,cy+5);ctx.rotate(i*Math.PI*2/6);ctx.fillStyle='#eab308';ctx.fillRect(-1,-22,2,22);ctx.beginPath();ctx.arc(0,-24,4,0,Math.PI*2);ctx.fillStyle='#fbbf24';ctx.fill();ctx.restore();}
+  // Labels
+  ctx.fillStyle='rgba(255,255,255,.7)';ctx.font='11px Segoe UI';ctx.textAlign='left';
+  ctx.fillText('Petals (Corolla)',cx+70,cy-30);
+  ctx.fillText('Sepals (Calyx)',cx+70,cy+50);
+  ctx.fillText('Pistil',cx+22,cy-5);
+  ctx.fillText('Stamens',cx-85,cy-20);
+}
+
+function drawPollination(){
+  const c=document.getElementById('pollinCanvas');if(!c)return;
+  const ctx=c.getContext('2d'),W=c.width,H=c.height;
+  // Two flowers
+  [[100,H/2+20,'#f43f5e'],[380,H/2+20,'#a855f7']].forEach(([x,y,col])=>{
+    ctx.fillStyle='#15803d';ctx.fillRect(x-3,y,6,40);
+    ctx.fillStyle=col;ctx.shadowColor=col;ctx.shadowBlur=10;
+    for(let i=0;i<5;i++){ctx.save();ctx.translate(x,y);ctx.rotate(i*Math.PI*2/5);ctx.beginPath();ctx.ellipse(0,-20,8,18,0,0,Math.PI*2);ctx.fill();ctx.restore();}
+    ctx.shadowBlur=0;
+    ctx.fillStyle='#fbbf24';ctx.beginPath();ctx.arc(x,y-5,6,0,Math.PI*2);ctx.fill();
+  });
+  // Pollen dots travelling
+  let t=0;
+  function anim(){
+    ctx.clearRect(140,0,200,H);
+    const px=100+t*(380-100)/100,py=H/2+20-Math.sin(t/100*Math.PI)*60;
+    ctx.beginPath();ctx.arc(px,py,5,0,Math.PI*2);
+    ctx.fillStyle='#fbbf24';ctx.shadowColor='#fcd34d';ctx.shadowBlur=8;ctx.fill();ctx.shadowBlur=0;
+    ctx.fillStyle='rgba(255,255,255,.5)';ctx.font='11px Segoe UI';ctx.textAlign='center';
+    ctx.fillText('Pollen',px,py-12);
+    if(t<100){t+=1.2;requestAnimationFrame(anim);}
+    else{
+      ctx.fillStyle='#22c55e';ctx.font='bold 12px Segoe UI';ctx.textAlign='center';
+      ctx.fillText('✓ Pollination',W/2,30);
+      setTimeout(()=>{t=0;requestAnimationFrame(anim);},1500);
+    }
+  }
+  anim();
+  ctx.fillStyle='rgba(255,255,255,.4)';ctx.font='11px Segoe UI';ctx.textAlign='center';
+  ctx.fillText('Flower 1 (Donor)',100,H-10);ctx.fillText('Flower 2 (Recipient)',380,H-10);
+}
+
+function drawCycle(){
+  const c=document.getElementById('cycleCanvas');if(!c)return;
+  const ctx=c.getContext('2d'),W=c.width,H=c.height;
+  const phases=[
+    {label:'Menstrual\n(1-5)',color:'#ef4444',x:60},
+    {label:'Follicular\n(6-13)',color:'#f59e0b',x:185},
+    {label:'Ovulation\n(14)',color:'#22c55e',x:300},
+    {label:'Luteal\n(15-28)',color:'#6366f1',x:410},
+  ];
+  const heights=[40,80,110,90];
+  phases.forEach((p,i)=>{
+    setTimeout(()=>{
+      ctx.fillStyle=p.color+'44';ctx.strokeStyle=p.color;ctx.lineWidth=2;
+      const w=90,x=p.x-45,y=H-30-heights[i];
+      ctx.beginPath();ctx.roundRect(x,y,w,heights[i],6);ctx.fill();ctx.stroke();
+      ctx.fillStyle=p.color;ctx.font='bold 10px Segoe UI';ctx.textAlign='center';
+      p.label.split('\n').forEach((ln,li)=>ctx.fillText(ln,p.x,H-20+li*12-heights[i]-8));
+    },i*300);
+  });
+  // Labels
+  ctx.fillStyle='rgba(255,255,255,.3)';ctx.font='10px Segoe UI';ctx.textAlign='left';
+  ctx.fillText('Day 1',10,H-25);ctx.fillText('Day 28',W-40,H-25);
+  ctx.fillStyle='rgba(255,255,255,.15)';ctx.fillRect(10,H-30,W-20,2);
+}
+
+/* TTS */
+let ttsEnabled=false;
+const synth=window.speechSynthesis;
+const NARRATION={
+  'ch1':'Welcome to Class 12 Biology Chapter 1 — Reproduction in Plants. Reproduction is the biological process by which living organisms produce offspring. It ensures continuity of species. Plants show both asexual and sexual reproduction. Asexual reproduction involves a single parent and produces genetically identical offspring called clones. Sexual reproduction involves two parents, gametes, and produces genetic variation in offspring.',
+  's2':'Asexual reproduction in plants occurs in several ways. Fission is the division of a single cell into two, as seen in Amoeba and Chlamydomonas. Budding involves formation of a small outgrowth, as in yeast and Hydra. Fragmentation is seen in Spirogyra where the body breaks into pieces. Spore formation produces spores like zoospores and conidia as in Rhizopus. Vegetative propagation uses root, stem or leaf parts. Vegetative propagation can be natural through runners, rhizomes, and bulbs, or artificial through cutting, grafting and tissue culture.',
+  's3':'The flower is the reproductive organ of angiosperms. A complete flower has four whorls. The outermost is the calyx made of sepals which protects the bud. Inside is the corolla made of colourful petals to attract pollinators. The androecium consists of stamens — the male reproductive organs — with a filament and anther that produces pollen. The gynoecium or pistil is the female reproductive organ, consisting of stigma, style and ovary containing ovules.',
+  's4':'Microsporogenesis is the process of formation of pollen grains from microspore mother cells in the anther by meiosis. The anther has four microsporangia or pollen sacs. Each is surrounded by epidermis, endothecium, middle layer, and tapetum — the innermost layer that nourishes developing pollen. Each 2n Microspore Mother Cell undergoes meiosis to form 4 haploid microspores in a tetrad. Each pollen grain has two layers — the outer exine made of sporopollenin, which is the most resistant organic material known, and the inner intine made of cellulose.',
+  's5':'Megasporogenesis is the formation of megaspores in the ovule. The ovule has a funicle, integuments, nucellus, and embryo sac inside. The entry point is the micropyle and the opposite end is the chalaza. The 2n Megaspore Mother Cell undergoes meiosis to form 4 megaspores. Three degenerate and one functional megaspore at the chalazal end survives. This undergoes 3 mitotic divisions to form the 7-celled, 8-nucleate embryo sac. It contains 3 antipodal cells, 2 synergids, 1 egg cell, and 1 central cell with 2 polar nuclei.',
+  's6':'Pollination is the transfer of pollen from anther to stigma — the precondition for fertilisation. Autogamy is transfer within the same flower. Geitonogamy is transfer to a different flower on the same plant. Xenogamy is cross-pollination to a flower of a different plant. Pollination can be carried by wind — called anemophily — as in maize and wheat. Insect-pollinated plants are called entomophilous, like rose and sunflower. Water-pollinated plants are hydrophilous, like Vallisneria.',
+  's7':'Double fertilisation is unique to angiosperms. After the pollen tube reaches the ovule, two male gametes are released. One male gamete fuses with the egg cell in syngamy to form a 2n zygote which develops into the embryo. The second male gamete fuses with the two polar nuclei of the central cell — this is called triple fusion — forming the 3n Primary Endosperm Nucleus which develops into the endosperm, the nutritive tissue for the embryo.',
+  's8':'After fertilisation, the ovary becomes the fruit, the ovule becomes the seed, the zygote develops into the embryo, and the integuments form the seed coat. In dicot seeds, there are two cotyledons, while monocot seeds like maize have one cotyledon called the scutellum. Monocots have a large endosperm and special protective sheaths — coleoptile over plumule and coleorhiza over radicle.',
+  'ch2':'Chapter 2 covers reproduction in animals, with focus on human reproduction. Animals show asexual reproduction in lower forms — fission in amoeba, budding in hydra, regeneration in planaria. Higher animals including humans reproduce sexually. Oviparous animals like fish and frogs lay eggs externally. Viviparous animals like mammals give birth to young ones after internal development.',
+  's10':'The male reproductive system consists of testes located in the scrotum at a lower temperature than body for sperm production. Each testis has seminiferous tubules lined by spermatogonia and Sertoli cells which nourish sperms, and Leydig cells which produce testosterone. Accessory ducts include epididymis for sperm maturation and storage, vas deferens, and urethra. Accessory glands — seminal vesicles, prostate gland, and bulbourethral glands — contribute to semen.',
+  's11':'Spermatogenesis is the formation of spermatozoa from spermatogonia. Spermatogonia undergo mitosis to form primary spermatocytes. Meiosis I produces secondary spermatocytes. Meiosis II produces spermatids. Spermiogenesis transforms spermatids into spermatozoa. Each sperm has a head with nucleus and acrosome containing enzymes, a middle piece rich in mitochondria for energy, and a tail or flagellum for motility.',
+  's12':'The female reproductive system includes two ovaries which produce ova and hormones. The fallopian tubes carry the egg — the ampulla is where fertilisation occurs. The uterus has three layers — perimetrium, myometrium, and endometrium which is the site of implantation. The endometrium is shed during menstruation.',
+  's13':'Oogenesis is the formation of mature ovum from oogonia. It starts before birth in foetal life. Primary oocyte undergoes meiosis one to form secondary oocyte and first polar body. Meiosis two is completed only after fertilisation, forming the ovum and second polar body. Unlike spermatogenesis which produces 4 functional sperms, oogenesis produces only 1 functional ovum and 3 polar bodies.',
+  's14':'The menstrual cycle is approximately 28 days long. The menstrual phase from day 1 to 5 involves shedding of the endometrium. The follicular phase from day 6 to 13 involves FSH stimulating follicle maturation and estrogen rise. Ovulation occurs on day 14 due to LH surge. The luteal phase from day 15 to 28 involves corpus luteum forming and secreting progesterone to prepare the endometrium.',
+  's15':'Fertilisation in humans occurs in the ampulla of the fallopian tube. The sperm undergoes the acrosome reaction releasing enzymes to penetrate the zona pellucida. The cortical reaction prevents polyspermy. The zygote undergoes cleavage forming blastomeres, then morula, then blastocyst. The blastocyst has a trophoblast outer layer and inner cell mass. Implantation occurs in the endometrium on day 6 to 7 after fertilisation.',
+  's16':'The placenta forms from trophoblast and uterine tissue. It provides nutrition, oxygen and removes waste from the foetus. It secretes hCG which maintains the corpus luteum in early pregnancy. hCG is detected in urine and forms the basis of pregnancy tests. Gestation period in humans is 280 days. Parturition or childbirth is triggered by oxytocin causing uterine contractions.',
+};
+function speak(text){if(!ttsEnabled||!synth)return;synth.cancel();const u=new SpeechSynthesisUtterance(text);u.rate=0.85;u.pitch=1;u.volume=1;const voices=synth.getVoices();const v=voices.find(v=>/en[-_]IN/i.test(v.lang))||voices.find(v=>/en/i.test(v.lang));if(v)u.voice=v;synth.speak(u);}
+function stopTTS(){synth&&synth.cancel();}
+function toggleTTS(){ttsEnabled=!ttsEnabled;const btn=document.getElementById('ttsBtn');if(ttsEnabled){btn.textContent='🔊 Voice ON';btn.style.opacity='1';speak(NARRATION['ch1']);}else{stopTTS();btn.textContent='🔇 Voice OFF';btn.style.opacity='.55';}}
+function speakSlide(id){if(NARRATION[id]){setTimeout(()=>speak(NARRATION[id]),400);}}
+</script>
+</body>
+</html>
