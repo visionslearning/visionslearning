@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Class 11 Maths – Chapter 1: Angle & Measurement</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',sans-serif;background:#fafafa;color:#1a1a2e;line-height:1.75;}
+
+    /* Header */
+    header{background:linear-gradient(135deg,#1a237e,#283593,#3949ab);color:#fff;text-align:center;padding:36px 20px 26px;}
+    header h1{font-size:1.9rem;}
+    header p{font-size:0.92rem;opacity:0.85;margin-top:5px;}
+    .badge-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:12px;}
+    .hbadge{background:rgba(255,255,255,0.18);border-radius:20px;padding:4px 14px;font-size:0.8rem;}
+
+    /* Sticky nav */
+    nav{position:sticky;top:0;z-index:100;background:#1a237e;display:flex;justify-content:center;flex-wrap:wrap;gap:6px;padding:10px 16px;border-bottom:2px solid #3949ab;}
+    nav a{color:#c5cae9;text-decoration:none;font-size:0.8rem;padding:4px 12px;border-radius:16px;border:1px solid rgba(255,255,255,0.2);white-space:nowrap;transition:all 0.2s;}
+    nav a:hover,nav a.active{background:#3949ab;color:#fff;}
+
+    .container{max-width:960px;margin:0 auto;padding:24px 18px 80px;}
+
+    /* Section headings */
+    .sec-title{background:linear-gradient(135deg,#1a237e,#3949ab);color:#fff;padding:14px 22px;border-radius:10px;margin:36px 0 16px;font-size:1.15rem;font-weight:700;display:flex;align-items:center;gap:8px;}
+    .subsec{background:#e8eaf6;color:#1a237e;padding:9px 18px;border-radius:7px;margin:20px 0 10px;font-size:1rem;font-weight:600;border-left:5px solid #3949ab;}
+
+    /* Formula card */
+    .fcard{background:#fff;border-radius:10px;padding:18px 22px;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,0.08);border-left:4px solid #3949ab;}
+    .fcard h4{color:#1a237e;font-size:0.98rem;margin-bottom:8px;}
+    .fcard p,.fcard li{font-size:0.91rem;color:#374151;}
+    .fcard ul{padding-left:18px;margin-top:6px;}
+    .fcard ul li{margin-bottom:3px;}
+
+    .formula{background:#fff8e1;border:1px solid #f59e0b;border-radius:7px;padding:10px 16px;margin:8px 0;font-family:'Courier New',monospace;font-size:0.93rem;color:#5d4037;}
+    .tip{background:#e8f5e9;border-left:4px solid #43a047;border-radius:6px;padding:9px 14px;margin:8px 0;font-size:0.88rem;color:#1b5e20;}
+    .warn{background:#fff3e0;border-left:4px solid #fb8c00;border-radius:6px;padding:9px 14px;margin:8px 0;font-size:0.88rem;color:#e65100;}
+
+    /* Table */
+    table{width:100%;border-collapse:collapse;margin:10px 0;font-size:0.88rem;}
+    th{background:#1a237e;color:#fff;padding:9px 12px;text-align:center;}
+    td{padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:center;}
+    tr:nth-child(even) td{background:#f3f4f6;}
+
+    /* ── Solved Question Card ── */
+    .q-card{background:#fff;border-radius:12px;margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,0.09);overflow:hidden;}
+    .q-head{background:#1a237e;color:#fff;padding:12px 18px;font-size:0.93rem;font-weight:600;display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
+    .q-head .qnum{background:rgba(255,255,255,0.2);border-radius:20px;padding:2px 10px;font-size:0.78rem;white-space:nowrap;}
+    .q-body{padding:16px 20px;}
+    .q-body .given{font-size:0.91rem;color:#374151;margin-bottom:10px;}
+    .steps{counter-reset:step;}
+    .step{display:flex;gap:10px;margin-bottom:8px;font-size:0.9rem;color:#374151;}
+    .step::before{counter-increment:step;content:counter(step);min-width:22px;height:22px;background:#3949ab;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:700;flex-shrink:0;margin-top:2px;}
+    .ans-box{background:#e8f5e9;border:1px solid #43a047;border-radius:7px;padding:10px 16px;margin-top:10px;font-weight:600;color:#1b5e20;font-size:0.93rem;}
+    .method{font-size:0.8rem;background:#e8eaf6;color:#1a237e;border-radius:20px;padding:2px 10px;font-weight:600;}
+
+    /* Grid for exercises */
+    .ex-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+    @media(max-width:640px){.ex-grid{grid-template-columns:1fr;}}
+
+    /* Important tag */
+    .imp{display:inline-block;background:#e53935;color:#fff;font-size:0.68rem;padding:2px 7px;border-radius:10px;margin-left:6px;vertical-align:middle;font-weight:700;}
+    .imp2{background:#fb8c00;}
+
+    /* MCQ options */
+    .mcq-opts{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0;}
+    .opt{background:#f3f4f6;border-radius:6px;padding:5px 14px;font-size:0.88rem;border:1px solid #d1d5db;}
+    .opt.correct{background:#e8f5e9;border-color:#43a047;color:#1b5e20;font-weight:700;}
+
+    footer{text-align:center;padding:22px;color:#6b7280;font-size:0.83rem;border-top:1px solid #e5e7eb;margin-top:40px;}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📐 Class 11 Maths – Chapter 1</h1>
+  <p>Angle and Its Measurement | Maharashtra Board</p>
+  <div class="badge-row">
+    <span class="hbadge">📖 Complete Notes</span>
+    <span class="hbadge">✏️ Exercise 1.1 Solved</span>
+    <span class="hbadge">✏️ Exercise 1.2 Solved</span>
+    <span class="hbadge">🏆 Miscellaneous Solved</span>
+  </div>
+</header>
+
+<nav>
+  <a href="#theory">Theory</a>
+  <a href="#formulas">Formulas</a>
+  <a href="#ex11">Exercise 1.1</a>
+  <a href="#ex12">Exercise 1.2</a>
+  <a href="#misc">Misc Exercise</a>
+  <a href="#impq">Imp. Questions</a>
+</nav>
+
+<div class="container">
+
+<!-- ══════════════════════════════════════ -->
+<!--            THEORY NOTES               -->
+<!-- ══════════════════════════════════════ -->
+<div class="sec-title" id="theory">📚 Chapter Notes – Key Concepts</div>
+
+<div class="subsec">1. Types of Angles</div>
+<div class="fcard">
+  <h4>Angle Measurement Systems</h4>
+  <ul>
+    <li><strong>Degree system:</strong> One full rotation = 360°; 1° = 60′ (minutes); 1′ = 60″ (seconds)</li>
+    <li><strong>Radian system:</strong> Angle subtended at centre by arc = radius → 1 radian (1c)</li>
+    <li><strong>Relation:</strong> π radians = 180°</li>
+  </ul>
+  <div class="formula">
+    Degrees → Radians: multiply by π/180<br>
+    Radians → Degrees: multiply by 180/π<br>
+    1° = (π/180)c = 0.01745c<br>
+    1c = (180/π)° = 57°17′48″
+  </div>
+</div>
+
+<div class="fcard">
+  <h4>Standard Angle Table</h4>
+  <table>
+    <tr><th>Degrees</th><th>0°</th><th>30°</th><th>45°</th><th>60°</th><th>90°</th><th>120°</th><th>180°</th><th>270°</th><th>360°</th></tr>
+    <tr><td><strong>Radians</strong></td><td>0</td><td>π/6</td><td>π/4</td><td>π/3</td><td>π/2</td><td>2π/3</td><td>π</td><td>3π/2</td><td>2π</td></tr>
+  </table>
+</div>
+
+<div class="subsec">2. Co-terminal Angles</div>
+<div class="fcard">
+  <h4>Definition &amp; Test</h4>
+  <p>Two angles are <strong>co-terminal</strong> if they have the same initial and terminal sides (differ by a full rotation).</p>
+  <div class="formula">
+    α and β are co-terminal ⟺ (α − β) is a multiple of 360°<br>
+    i.e., α − β = 360°n, where n is an integer
+  </div>
+  <div class="tip">💡 Quick test: subtract the two angles. If divisible by 360 → co-terminal.</div>
+</div>
+
+<div class="subsec">3. Quadrants</div>
+<div class="fcard">
+  <h4>Angle → Quadrant Rule</h4>
+  <p>For any angle, keep adding or subtracting 360° until the angle is between 0° and 360°, then:</p>
+  <table>
+    <tr><th>Range</th><th>Quadrant</th></tr>
+    <tr><td>0° to 90°</td><td>I</td></tr>
+    <tr><td>90° to 180°</td><td>II</td></tr>
+    <tr><td>180° to 270°</td><td>III</td></tr>
+    <tr><td>270° to 360°</td><td>IV</td></tr>
+  </table>
+  <div class="tip">💡 Negative angles: go clockwise. −140° → 360° − 140° = 220° → Quadrant III</div>
+</div>
+
+<div class="subsec">4. Arc Length &amp; Sector Area</div>
+<div class="fcard">
+  <h4>Key Formulas (θ must be in RADIANS)</h4>
+  <div class="formula">
+    Arc length:  s = r × θ<br>
+    Area of sector: A = ½ × r² × θ<br>
+    Perimeter of sector: P = 2r + s = 2r + rθ<br><br>
+    where r = radius, θ = angle in radians
+  </div>
+  <div class="warn">⚠️ Always convert θ to radians before using s = rθ and A = ½r²θ!</div>
+</div>
+
+<div class="subsec">5. Clock Problems</div>
+<div class="fcard">
+  <h4>Clock Angle Rules</h4>
+  <ul>
+    <li>In <strong>1 hour</strong>: Hour hand moves <strong>30°</strong>, Minute hand moves <strong>360°</strong></li>
+    <li>In <strong>1 minute</strong>: Hour hand moves <strong>½°</strong>, Minute hand moves <strong>6°</strong></li>
+    <li>At H:M time → Minute hand position = 6M degrees from 12</li>
+    <li>Hour hand position = 30H + ½M degrees from 12</li>
+    <li>Angle between hands = |30H − 5.5M| degrees</li>
+  </ul>
+  <div class="formula">
+    Angle between hands at H hours M minutes:<br>
+    θ = |30H − 5.5M|°<br>
+    (If answer &gt; 180°, subtract from 360°)
+  </div>
+</div>
+
+<div class="subsec">6. Regular Polygon</div>
+<div class="fcard">
+  <h4>Interior &amp; Exterior Angles</h4>
+  <div class="formula">
+    Exterior angle = 360°/n<br>
+    Interior angle = 180° − (360°/n) = (n−2)×180°/n<br><br>
+    Given interior angle → n = 360° / (180° − interior angle)
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!--       FORMULA QUICK REFERENCE         -->
+<!-- ══════════════════════════════════════ -->
+<div class="sec-title" id="formulas">⚡ Let's Remember – All Formulas</div>
+<div class="fcard">
+  <table>
+    <tr><th>Formula</th><th>Expression</th><th>Condition</th></tr>
+    <tr><td>Degree ↔ Radian</td><td>r/π = θ/180°</td><td>—</td></tr>
+    <tr><td>Arc Length</td><td>s = rθ</td><td>θ in radians</td></tr>
+    <tr><td>Sector Area</td><td>A = ½r²θ</td><td>θ in radians</td></tr>
+    <tr><td>Perimeter of sector</td><td>P = 2r + rθ</td><td>θ in radians</td></tr>
+    <tr><td>Co-terminal</td><td>α − β = 360n</td><td>n ∈ Z</td></tr>
+    <tr><td>Exterior angle</td><td>360°/n</td><td>n = no. of sides</td></tr>
+    <tr><td>Clock (1 hr)</td><td>Hour = 30°, Min = 360°</td><td>—</td></tr>
+    <tr><td>Clock (1 min)</td><td>Hour = ½°, Min = 6°</td><td>—</td></tr>
+    <tr><td>1° in radians</td><td>0.01745c</td><td>—</td></tr>
+    <tr><td>1 radian in degrees</td><td>57°17′48″</td><td>—</td></tr>
+  </table>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!--          EXERCISE 1.1 SOLVED          -->
+<!-- ══════════════════════════════════════ -->
+<div class="sec-title" id="ex11">✏️ Exercise 1.1 – Solved</div>
+
+<div class="subsec">Q.1 (A) – Co-terminal Angles</div>
+
+<div class="ex-grid">
+
+  <div class="q-card">
+    <div class="q-head">i) 210°, −150° <span class="qnum">Q.1A(i)</span></div>
+    <div class="q-body">
+      <div class="steps">
+        <div class="step">Difference = 210° − (−150°) = 210° + 150° = 360°</div>
+        <div class="step">360° = 1 × 360 → multiple of 360°</div>
+      </div>
+      <div class="ans-box">✅ Co-terminal angles</div>
+    </div>
+  </div>
+
+  <div class="q-card">
+    <div class="q-head">ii) 360°, −30° <span class="qnum">Q.1A(ii)</span></div>
+    <div class="q-body">
+      <div class="steps">
+        <div class="step">Difference = 360° − (−30°) = 390°</div>
+        <div class="step">390° ÷ 360 = 1.083… → NOT a multiple of 360°</div>
+      </div>
+      <div class="ans-box">❌ NOT co-terminal angles</div>
+    </div>
+  </div>
+
+  <div class="q-card">
+    <div class="q-head">iii) −180°, 540° <span class="qnum">Q.1A(iii)</span></div>
+    <div class="q-body">
+      <div class="steps">
+        <div class="step">Difference = −180° − 540° = −720°</div>
+        <div class="step">|−720°| = 720° = 2 × 360° ✓</div>
+      </div>
+      <div class="ans-box">✅ Co-terminal angles</div>
+    </div>
+  </div>
+
+  <div class="q-card">
+    <div class="q-head">iv) −405°, 675° <span class="qnum">Q.1A(iv)</span></div>
+    <div class="q-body">
+      <div class="steps">
+        <div class="step">Difference = −405° − 675° = −1080°</div>
+        <div class="step">|−1080°| = 1080° = 3 × 360° ✓</div>
+      </div>
+      <div class="ans-box">✅ Co-terminal angles</div>
+    </div>
+  </div>
+
+  <div class="q-card">
+    <div class="q-head">v) 860°, 580° <span class="qnum">Q.1A(v)</span></div>
+    <div class="q-body">
+      <div class="steps">
+        <div class="step">Difference = 860° − 580° = 280°</div>
+        <div class="step">280° is NOT a multiple of 360°</div>
+      </div>
+      <div class="ans-box">❌ NOT co-terminal angles</div>
+    </div>
+  </div>
+
+  <div class="q-card">
+    <div class="q-head">vi) 900°, −900° <span class="qnum">Q.1A(vi)</span></div>
+    <div class="q-body">
+      <div class="steps">
+        <div class="step">Difference = 900° − (−900°) = 1800°</div>
+        <div class="step">1800° = 5 × 360° ✓</div>
+      </div>
+      <div class="ans-box">✅ Co-terminal angles</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="subsec">Q.1 (B) – Quadrant Determination</div>
+<div class="fcard">
+  <h4>Method: Add/subtract 360° until angle is in [0°, 360°), then check range</h4>
+  <table>
+    <tr><th>Angle</th><th>Equivalent (0–360°)</th><th>Range</th><th>Quadrant</th></tr>
+    <tr><td>−140°</td><td>−140° + 360° = 220°</td><td>180°–270°</td><td><strong>III</strong></td></tr>
+    <tr><td>250°</td><td>250°</td><td>180°–270°</td><td><strong>III</strong></td></tr>
+    <tr><td>420°</td><td>420° − 360° = 60°</td><td>0°–90°</td><td><strong>I</strong></td></tr>
+    <tr><td>750°</td><td>750° − 2×360° = 30°</td><td>0°–90°</td><td><strong>I</strong></td></tr>
+    <tr><td>945°</td><td>945° − 2×360° = 225°</td><td>180°–270°</td><td><strong>III</strong></td></tr>
+    <tr><td>1120°</td><td>1120° − 3×360° = 40°</td><td>0°–90°</td><td><strong>I</strong></td></tr>
+    <tr><td>−80°</td><td>−80° + 360° = 280°</td><td>270°–360°</td><td><strong>IV</strong></td></tr>
+    <tr><td>−330°</td><td>−330° + 360° = 30°</td><td>0°–90°</td><td><strong>I</strong></td></tr>
+    <tr><td>−500°</td><td>−500° + 2×360° = 220°</td><td>180°–270°</td><td><strong>III</strong></td></tr>
+    <tr><td>−820°</td><td>−820° + 3×360° = 260°</td><td>180°–270°</td><td><strong>III</strong></td></tr>
+  </table>
+</div>
+
+<div class="subsec">Q.2 – Convert Degrees to Radians</div>
+<div class="fcard">
+  <h4>Formula: Radians = Degrees × (π/180)</h4>
+  <table>
+    <tr><th>Angle</th><th>Working</th><th>Answer</th></tr>
+    <tr><td>85°</td><td>85 × π/180 = 17π/36</td><td><strong>17π/36 c</strong></td></tr>
+    <tr><td>250°</td><td>250 × π/180 = 25π/18</td><td><strong>25π/18 c</strong></td></tr>
+    <tr><td>−132°</td><td>−132 × π/180 = −11π/15</td><td><strong>−11π/15 c</strong></td></tr>
+    <tr><td>65°30′</td><td>65.5° × π/180 = 131π/360</td><td><strong>131π/360 c</strong></td></tr>
+    <tr><td>75°30′</td><td>75.5° × π/180 = 151π/360</td><td><strong>151π/360 c</strong></td></tr>
+    <tr><td>40°48′</td><td>40° + 48′ = 40 + 48/60 = 40.8° → 40.8 × π/180 = 34π/150 = 17π/75</td><td><strong>17π/75 c</strong></td></tr>
+  </table>
+  <div class="tip">💡 For degrees + minutes: convert minutes → degrees first. M minutes = M/60 degrees</div>
+</div>
+
+<div class="subsec">Q.3 – Convert Radians to Degrees</div>
+<div class="fcard">
+  <h4>Formula: Degrees = Radians × (180/π)</h4>
+  <table>
+    <tr><th>Angle</th><th>Working</th><th>Answer</th></tr>
+    <tr><td>7π/12</td><td>7π/12 × 180/π = 7×15 = 105</td><td><strong>105°</strong></td></tr>
+    <tr><td>−5π/3</td><td>−5π/3 × 180/π = −5×60 = −300</td><td><strong>−300°</strong></td></tr>
+    <tr><td>5c (5 radians)</td><td>5 × 180/π = 900/π ≈ 900/3.1416 ≈ 286.48</td><td><strong>≈ 286°29′</strong></td></tr>
+    <tr><td>11π/18</td><td>11π/18 × 180/π = 11×10 = 110</td><td><strong>110°</strong></td></tr>
+    <tr><td>−1/4 c</td><td>−1/4 × 180/π = −45/π ≈ −14.32°</td><td><strong>≈ −14°19′</strong></td></tr>
+  </table>
+</div>
+
+<div class="subsec">Q.4 – Express in Degrees, Minutes, Seconds</div>
+
+<div class="q-card">
+  <div class="q-head">i) (183.7)° → Degrees, Minutes, Seconds <span class="qnum">Q.4(i)</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">Degrees = 183°</div>
+      <div class="step">0.7° × 60 = 42′ (minutes)</div>
+      <div class="step">0 remaining seconds</div>
+    </div>
+    <div class="ans-box">183° 42′ 0″</div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head">ii) (245.33)° → Degrees, Minutes, Seconds <span class="qnum">Q.4(ii)</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">Degrees = 245°</div>
+      <div class="step">0.33° × 60 = 19.8′ → minutes = 19′</div>
+      <div class="step">0.8′ × 60 = 48″</div>
+    </div>
+    <div class="ans-box">245° 19′ 48″</div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head">iii) (1/5)c → Degrees, Minutes, Seconds <span class="qnum">Q.4(iii)</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">1/5 radians = 0.2 radians</div>
+      <div class="step">0.2 × (180/π) = 0.2 × 57.3248° = 11.4650°</div>
+      <div class="step">11° remaining; 0.4650° × 60 = 27.9′ → 27′</div>
+      <div class="step">0.9′ × 60 ≈ 54″</div>
+    </div>
+    <div class="ans-box">11° 27′ 54″</div>
+  </div>
+</div>
+
+<div class="subsec">Q.5 – Triangle Angle: Find ∠C <span class="imp">IMP</span></div>
+<div class="q-card">
+  <div class="q-head">In △ABC: ∠A = 7π/36c, ∠B = 120°. Find ∠C. <span class="qnum">Q.5</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">Convert ∠A to degrees: 7π/36 × 180/π = 7×5 = 35°</div>
+      <div class="step">∠A + ∠B + ∠C = 180° (angle sum of triangle)</div>
+      <div class="step">35° + 120° + ∠C = 180°</div>
+      <div class="step">∠C = 180° − 155° = 25°</div>
+      <div class="step">Convert to radians: 25° × π/180 = 5π/36</div>
+    </div>
+    <div class="ans-box">∠C = 25° = 5π/36 c</div>
+  </div>
+</div>
+
+<div class="subsec">Q.6 – Third Angle of Triangle <span class="imp">IMP</span></div>
+<div class="q-card">
+  <div class="q-head">Two angles: 5π/9c and 5π/18c. Find third angle. <span class="qnum">Q.6</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">Sum of all angles = π radians (= 180°)</div>
+      <div class="step">5π/9 + 5π/18 + x = π</div>
+      <div class="step">LCM of 9 and 18 = 18 → 10π/18 + 5π/18 + x = 18π/18</div>
+      <div class="step">x = 18π/18 − 15π/18 = 3π/18 = π/6</div>
+      <div class="step">π/6 in degrees = 180°/6 = 30°</div>
+    </div>
+    <div class="ans-box">Third angle = π/6 c = 30°</div>
+  </div>
+</div>
+
+<div class="subsec">Q.7 – Right Triangle, Ratio 4:5 <span class="imp">IMP</span></div>
+<div class="q-card">
+  <div class="q-head">Right-angled triangle, acute angles in ratio 4:5. Find all angles. <span class="qnum">Q.7</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">Let the two acute angles be 4k and 5k</div>
+      <div class="step">Sum of all angles = 180°; right angle = 90°</div>
+      <div class="step">4k + 5k + 90° = 180° → 9k = 90° → k = 10°</div>
+      <div class="step">Angles = 40°, 50°, 90°</div>
+      <div class="step">In radians: 40° = 2π/9, 50° = 5π/18, 90° = π/2</div>
+    </div>
+    <div class="ans-box">Angles: 40° (2π/9c), 50° (5π/18c), 90° (π/2c)</div>
+  </div>
+</div>
+
+<div class="subsec">Q.8 – Sum and Difference of Two Angles <span class="imp">IMP</span></div>
+<div class="q-card">
+  <div class="q-head">Sum = 5πc, Difference = 60°. Find both angles in degrees. <span class="qnum">Q.8</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">Convert sum to degrees: 5π × (180/π) = 900°</div>
+      <div class="step">Let angles be A and B: A + B = 900°, A − B = 60°</div>
+      <div class="step">Adding: 2A = 960° → A = 480°</div>
+      <div class="step">B = 900° − 480° = 420°</div>
+    </div>
+    <div class="ans-box">Angles = 480° and 420°</div>
+  </div>
+</div>
+
+<div class="subsec">Q.9 – Ratio of Triangle Angles 3:7:8 <span class="imp">IMP</span></div>
+<div class="q-card">
+  <div class="q-head">Angles of triangle in ratio 3:7:8. Find in degree and radian. <span class="qnum">Q.9</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">Let angles = 3k, 7k, 8k</div>
+      <div class="step">3k + 7k + 8k = 180° → 18k = 180° → k = 10°</div>
+      <div class="step">Angles = 30°, 70°, 80°</div>
+      <div class="step">In radians: 30° = π/6, 70° = 7π/18, 80° = 4π/9</div>
+    </div>
+    <div class="ans-box">30° (π/6c), 70° (7π/18c), 80° (4π/9c)</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!--          EXERCISE 1.2 SOLVED          -->
+<!-- ══════════════════════════════════════ -->
+<div class="sec-title" id="ex12">✏️ Exercise 1.2 – Arc Length &amp; Sector Area</div>
+
+<div class="q-card">
+  <div class="q-head">Q.1 – Arc length, r = 15 cm, θ = 108° <span class="qnum">Ex 1.2 Q1</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">Convert θ: 108° × π/180 = 3π/5 radians</div>
+      <div class="step">s = rθ = 15 × 3π/5 = 9π cm</div>
+    </div>
+    <div class="ans-box">Arc length = 9π cm ≈ 28.27 cm</div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head">Q.2 – Arc cutting chord = radius, r = 9 cm <span class="qnum">Ex 1.2 Q2</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">Chord = radius means the triangle formed is equilateral</div>
+      <div class="step">∴ the central angle θ = 60° = π/3 radians</div>
+      <div class="step">s = rθ = 9 × π/3 = 3π cm</div>
+    </div>
+    <div class="ans-box">Arc length = 3π cm ≈ 9.42 cm</div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head">Q.3 – Find angle: arc = 15 cm, r = 25 cm <span class="qnum">Ex 1.2 Q3</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">θ = s/r = 15/25 = 3/5 radians</div>
+      <div class="step">Convert to degrees: (3/5) × (180/π) = 108/π ≈ 34.38°</div>
+    </div>
+    <div class="ans-box">θ = 3/5 radians ≈ 34°22′ 48″</div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head">Q.4 – Pendulum: l = 14 cm, θ = 18° <span class="qnum">Ex 1.2 Q4</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">Convert θ: 18° × π/180 = π/10 radians</div>
+      <div class="step">Path length = rθ = 14 × π/10 = 14π/10 = 7π/5 cm</div>
+    </div>
+    <div class="ans-box">Path length = 7π/5 cm = 1.4π cm ≈ 4.4 cm</div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head">Q.5 – Two arcs, same length, θ₁ = 60°, θ₂ = 75°. Find r₁:r₂ <span class="qnum">Ex 1.2 Q5</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">Since arc lengths are equal: r₁θ₁ = r₂θ₂</div>
+      <div class="step">θ₁ = 60° = π/3, θ₂ = 75° = 5π/12</div>
+      <div class="step">r₁ × π/3 = r₂ × 5π/12</div>
+      <div class="step">r₁/r₂ = (5π/12) ÷ (π/3) = (5π/12) × (3/π) = 15/12 = 5/4</div>
+    </div>
+    <div class="ans-box">r₁ : r₂ = 5 : 4</div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head">Q.6 – Area = 25π, arc for θ = 144°; also find sector area <span class="qnum">Ex 1.2 Q6</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">Area of circle = πr² = 25π → r² = 25 → r = 5 cm</div>
+      <div class="step">Convert θ: 144° × π/180 = 4π/5 radians</div>
+      <div class="step">Arc length s = rθ = 5 × 4π/5 = 4π cm</div>
+      <div class="step">Area of sector = ½r²θ = ½ × 25 × 4π/5 = 10π sq.cm</div>
+    </div>
+    <div class="ans-box">Arc length = 4π cm; Sector area = 10π sq.cm</div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head">Q.7 – Sector OAB, r = 12 cm, ∠AOB = 45°. Sector area − Triangle area <span class="qnum">Ex 1.2 Q7</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">Convert θ: 45° = π/4 radians</div>
+      <div class="step">Area of sector OAB = ½r²θ = ½ × 144 × π/4 = 18π sq.cm</div>
+      <div class="step">Area of triangle OAB = ½r²sinθ = ½ × 144 × sin45° = 72 × (√2/2) = 36√2 sq.cm</div>
+      <div class="step">Difference = 18π − 36√2</div>
+    </div>
+    <div class="ans-box">Difference = (18π − 36√2) sq.cm ≈ 56.55 − 50.91 ≈ 5.64 sq.cm</div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head">Q.8 – Sector OPQ, r = 15 cm, ∠POQ = 30°. Area enclosed by arc PQ and chord PQ <span class="qnum">Ex 1.2 Q8</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">Area enclosed = Area of sector − Area of triangle OPQ</div>
+      <div class="step">θ = 30° = π/6 radians</div>
+      <div class="step">Sector area = ½r²θ = ½ × 225 × π/6 = 225π/12 = 75π/4 sq.cm</div>
+      <div class="step">Triangle area = ½r²sinθ = ½ × 225 × sin30° = ½ × 225 × ½ = 225/4 sq.cm</div>
+      <div class="step">Area = 75π/4 − 225/4 = (75π − 225)/4 = 75(π−3)/4 sq.cm</div>
+    </div>
+    <div class="ans-box">Area = 75(π − 3)/4 sq.cm ≈ 18.73 sq.cm</div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head">Q.9 – Sector: circle area = 25π, perimeter = 20. Find sector area <span class="qnum">Ex 1.2 Q9</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">πr² = 25π → r = 5 cm</div>
+      <div class="step">Perimeter of sector = 2r + s = 20 → 10 + s = 20 → s = 10 cm</div>
+      <div class="step">θ = s/r = 10/5 = 2 radians</div>
+      <div class="step">Area of sector = ½r²θ = ½ × 25 × 2 = 25 sq.cm</div>
+    </div>
+    <div class="ans-box">Area of sector = 25 sq.cm</div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head">Q.10 – Sector: circle area = 64π, perimeter = 56. Find sector area <span class="qnum">Ex 1.2 Q10</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">πr² = 64π → r = 8 cm</div>
+      <div class="step">Perimeter = 2r + s = 56 → 16 + s = 56 → s = 40 cm</div>
+      <div class="step">θ = s/r = 40/8 = 5 radians</div>
+      <div class="step">Area of sector = ½r²θ = ½ × 64 × 5 = 160 sq.cm</div>
+    </div>
+    <div class="ans-box">Area of sector = 160 sq.cm</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!--       MISCELLANEOUS EXERCISE          -->
+<!-- ══════════════════════════════════════ -->
+<div class="sec-title" id="misc">🏆 Miscellaneous Exercise – Part I (MCQ) &amp; Part II Solved</div>
+
+<div class="subsec">Part I – MCQ with Answers</div>
+
+<div class="q-card">
+  <div class="q-head">MCQ 1 – (22π/15)c is equal to? <span class="qnum">Misc MCQ 1</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">22π/15 × (180/π) = 22 × 12 = 264°</div>
+    </div>
+    <div class="mcq-opts">
+      <span class="opt">A) 246°</span>
+      <span class="opt correct">B) 264° ✓</span>
+      <span class="opt">C) 224°</span>
+      <span class="opt">D) 426°</span>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head">MCQ 2 – 156° is equal to? <span class="qnum">Misc MCQ 2</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">156° × π/180 = 156π/180 = 13π/15</div>
+    </div>
+    <div class="mcq-opts">
+      <span class="opt">A) 17π/15</span>
+      <span class="opt correct">B) 13π/15 ✓</span>
+      <span class="opt">C) 11π/15</span>
+      <span class="opt">D) 7π/15</span>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head">MCQ 3 – Horse moves 88m at 72°. Length of rope? <span class="qnum">Misc MCQ 3</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">θ = 72° = 2π/5 radians</div>
+      <div class="step">s = rθ → 88 = r × 2π/5</div>
+      <div class="step">r = 88 × 5/(2π) = 440/(2π) = 220/π ≈ 220/3.14 ≈ 70 m</div>
+    </div>
+    <div class="mcq-opts">
+      <span class="opt correct">A) 70 m ✓</span>
+      <span class="opt">B) 55 m</span>
+      <span class="opt">C) 40 m</span>
+      <span class="opt">D) 35 m</span>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head">MCQ 4 – Pendulum 14 cm, θ = 12°. Path length? <span class="qnum">Misc MCQ 4</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">θ = 12° × π/180 = π/15 radians</div>
+      <div class="step">Path = rθ = 14 × π/15 = 14π/15</div>
+    </div>
+    <div class="mcq-opts">
+      <span class="opt correct">A) 14π/15 ✓</span>
+      <span class="opt">B) 14π/13</span>
+      <span class="opt">C) 15π/14</span>
+      <span class="opt">D) 14π/15</span>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head">MCQ 5 – Angle between hands at 9:45 <span class="qnum">Misc MCQ 5</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">H = 9, M = 45</div>
+      <div class="step">θ = |30×9 − 5.5×45| = |270 − 247.5| = 22.5°</div>
+    </div>
+    <div class="mcq-opts">
+      <span class="opt">A) 7.5°</span>
+      <span class="opt">B) 12.5°</span>
+      <span class="opt">C) 17.5°</span>
+      <span class="opt correct">D) 22.5° ✓</span>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head">MCQ 6 – 20m wire, circular sector r = 5m. Max area? <span class="qnum">Misc MCQ 6</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">Perimeter of sector = 2r + s = 20 → 10 + s = 20 → s = 10 m</div>
+      <div class="step">θ = s/r = 10/5 = 2 radians</div>
+      <div class="step">Area = ½r²θ = ½ × 25 × 2 = 25 sq.m</div>
+    </div>
+    <div class="mcq-opts">
+      <span class="opt">A) 15</span>
+      <span class="opt">B) 20</span>
+      <span class="opt correct">C) 25 ✓</span>
+      <span class="opt">D) 30</span>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head">MCQ 7 – Triangle angles ratio 1:2:3. Smallest in radians? <span class="qnum">Misc MCQ 7</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">k + 2k + 3k = 180° → k = 30°</div>
+      <div class="step">Smallest = 30° = π/6 radians</div>
+    </div>
+    <div class="mcq-opts">
+      <span class="opt">A) π/3</span>
+      <span class="opt correct">B) π/6 ✓</span>
+      <span class="opt">C) π/2</span>
+      <span class="opt">D) π/9</span>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head">MCQ 8 – Semicircle sectors in ratio 4:5. Find area ratio? <span class="qnum">Misc MCQ 8</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">Semicircle total = π radians. Angles: 4k + 5k = π → k = π/9</div>
+      <div class="step">Angles: 4π/9 and 5π/9</div>
+      <div class="step">Area = ½r²θ; ratio = θ₁/θ₂ = (4π/9)/(5π/9) = 4/5</div>
+    </div>
+    <div class="mcq-opts">
+      <span class="opt">A) 5:1</span>
+      <span class="opt correct">B) 4:5 ✓</span>
+      <span class="opt">C) 5:4</span>
+      <span class="opt">D) 3:4</span>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head">MCQ 9 – Angle between hands at 2:20 <span class="qnum">Misc MCQ 9</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">H = 2, M = 20</div>
+      <div class="step">θ = |30×2 − 5.5×20| = |60 − 110| = 50°</div>
+    </div>
+    <div class="mcq-opts">
+      <span class="opt correct">A) 50° ✓</span>
+      <span class="opt">B) 60°</span>
+      <span class="opt">C) 54°</span>
+      <span class="opt">D) 65°</span>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head">MCQ 10 – Sector: area = 9π, central angle = 60°. Find perimeter. <span class="qnum">Misc MCQ 10</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">Circle area = πr² = 9π → r = 3 cm</div>
+      <div class="step">θ = 60° = π/3 radians</div>
+      <div class="step">s = rθ = 3 × π/3 = π cm</div>
+      <div class="step">Perimeter = 2r + s = 6 + π</div>
+    </div>
+    <div class="mcq-opts">
+      <span class="opt">A) π</span>
+      <span class="opt">B) 3+π</span>
+      <span class="opt correct">C) 6+π ✓</span>
+      <span class="opt">D) 6</span>
+    </div>
+  </div>
+</div>
+
+<div class="subsec">Part II – Answer the Following</div>
+
+<div class="q-card">
+  <div class="q-head">II.1 – Regular polygon, interior angle = 3π/4. Find no. of sides. <span class="qnum">Misc II.1</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">Interior angle = 3π/4 radians = 3π/4 × 180/π = 135°</div>
+      <div class="step">Exterior angle = 180° − 135° = 45°</div>
+      <div class="step">No. of sides n = 360°/exterior angle = 360°/45° = 8</div>
+    </div>
+    <div class="ans-box">n = 8 sides (Regular Octagon)</div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head">II.2 – Two circles r = 7 cm, centres distance = 7√2. Area common to both. <span class="qnum">Misc II.2</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">r = 7, d = 7√2. Check: d = r√2 → isoceles right triangle formed</div>
+      <div class="step">In triangle OAO': OA = O'A = 7, OO' = 7√2 → right angle at A (since 7² + 7² = 98 = (7√2)²)</div>
+      <div class="step">Each circle contributes a sector of 90° = π/2 radians</div>
+      <div class="step">Area of each sector = ½r²θ = ½ × 49 × π/2 = 49π/4</div>
+      <div class="step">Area of common chord triangle = ½ × 7 × 7 = 49/2 (right triangle with two sides = 7)</div>
+      <div class="step">Common area = 2 × (sector area − triangle area) = 2 × (49π/4 − 49/2) = 49π/2 − 49 = 49(π/2 − 1)</div>
+    </div>
+    <div class="ans-box">Common area = 49(π/2 − 1) sq.cm ≈ 49 × 0.5708 ≈ 27.97 sq.cm</div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head">II.3 – Equilateral △PQR side 18 cm, circle on QR as diameter. Arc within triangle. <span class="qnum">Misc II.3</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">Circle has QR as diameter → radius = 9 cm</div>
+      <div class="step">In equilateral triangle, each angle = 60°</div>
+      <div class="step">The arc within the triangle subtends angle ∠QPR = 60° at P on the circle... but the arc is inside the triangle so angle subtended at Q and R.</div>
+      <div class="step">The arc within triangle subtends angle 60° at centre (since ∠QPR = 60° and ∠QOR = 2×60° by inscribed angle... wait — QR is diameter, so inscribed angle = 90°... Here ∠P subtended by QR = 90° as angle in semicircle)</div>
+      <div class="step">Angle at centre for arc within triangle: ∠QOR = 180° − 2×(90°−60°) = 180° − 60° = 120° = 2π/3 radians</div>
+      <div class="step">Arc length = rθ = 9 × 2π/3 = 6π cm</div>
+    </div>
+    <div class="ans-box">Length of arc within triangle = 6π cm ≈ 18.85 cm</div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head">II.4 – Find radius: central angle 60°, arc = 37.4 cm <span class="qnum">Misc II.4</span></div>
+  <div class="q-body">
+    <div class="steps">
+      <div class="step">θ = 60° = π/3 radians</div>
+      <div class="step">s = rθ → 37.4 = r × π/3</div>
+      <div class="step">r = 37.4 × 3/π = 112.2/π ≈ 112.2/3.1416 ≈ 35.7 cm</div>
+    </div>
+    <div class="ans-box">r ≈ 35.7 cm</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!--      IMPORTANT QUESTIONS SUMMARY      -->
+<!-- ══════════════════════════════════════ -->
+<div class="sec-title" id="impq">⭐ Most Important Questions for Exam</div>
+
+<div class="fcard">
+  <h4>🔴 Must Practice (High Probability in Exam)</h4>
+  <table>
+    <tr><th>#</th><th>Question</th><th>Marks</th><th>Type</th></tr>
+    <tr><td>1</td><td>Convert 65°30′ and 40°48′ to radians</td><td>2</td><td>Conversion</td></tr>
+    <tr><td>2</td><td>In △ABC, ∠A = 7π/36, ∠B = 120°, find ∠C in degrees and radians</td><td>3</td><td>Triangle</td></tr>
+    <tr><td>3</td><td>Two angles of triangle are 5π/9 and 5π/18 — find third angle</td><td>3</td><td>Triangle</td></tr>
+    <tr><td>4</td><td>Right triangle with acute angles 4:5 — find all angles in degrees and radians</td><td>3</td><td>Ratio</td></tr>
+    <tr><td>5</td><td>Sum = 5πc, Difference = 60° — find angles in degrees</td><td>3</td><td>Algebra</td></tr>
+    <tr><td>6</td><td>Triangle angles in ratio 3:7:8 — find in degrees and radians</td><td>3</td><td>Ratio</td></tr>
+    <tr><td>7</td><td>Arc length when r = 15 cm, θ = 108°</td><td>2</td><td>Arc</td></tr>
+    <tr><td>8</td><td>Two arcs, same length, angles 60° and 75° — find r₁:r₂</td><td>3</td><td>Ratio</td></tr>
+    <tr><td>9</td><td>Sector perimeter = 20, circle area = 25π — find sector area</td><td>4</td><td>Sector</td></tr>
+    <tr><td>10</td><td>OAB sector, r=12, ∠AOB=45° — difference between sector and triangle area</td><td>4</td><td>Sector</td></tr>
+    <tr><td>11</td><td>Clock: find angle at 9:45 and 2:20</td><td>2</td><td>Clock</td></tr>
+    <tr><td>12</td><td>Regular polygon with interior angle 3π/4 — find no. of sides</td><td>3</td><td>Polygon</td></tr>
+    <tr><td>13</td><td>Horse moves 88m at 72° — find rope length</td><td>3</td><td>Arc</td></tr>
+    <tr><td>14</td><td>Area of circle = 25π, arc for 144° — find arc length and sector area</td><td>4</td><td>Sector</td></tr>
+  </table>
+</div>
+
+<div class="fcard" style="border-left-color:#e53935; margin-top:16px;">
+  <h4 style="color:#e53935;">📌 Memory Tips for Exam</h4>
+  <ul>
+    <li><strong>Co-terminal check:</strong> Difference ÷ 360 → must be whole number</li>
+    <li><strong>θ in radians ALWAYS</strong> before using s = rθ or A = ½r²θ</li>
+    <li><strong>Clock formula:</strong> |30H − 5.5M| (quick and reliable)</li>
+    <li><strong>Triangle: angles sum = 180° = π radians</strong></li>
+    <li><strong>Sector perimeter = 2r + arc</strong> (not just arc!)</li>
+    <li><strong>Chord = radius → equilateral triangle → θ = 60°</strong></li>
+    <li><strong>1° = (π/180)c ; 1c = (180/π)°</strong> — memorise this!</li>
+  </ul>
+</div>
+
+</div><!-- end container -->
+
+<footer>
+  📐 Class 11 Maths | Chapter 1 – Angle &amp; Measurement | Maharashtra Board | All exercises solved ✅
+</footer>
+
+</body>
+</html>
