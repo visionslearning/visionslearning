@@ -6,69 +6,80 @@
   <title>Class 11 Maths 2 – Chapter 1: Complex Numbers</title>
   <style>
     *{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:'Segoe UI',sans-serif;background:#fafafa;color:#1a1a2e;line-height:1.75;}
+    body{font-family:'Segoe UI',sans-serif;background:#f8f8fc;color:#1a1a2e;line-height:1.9;}
 
     header{background:linear-gradient(135deg,#880e4f,#ad1457,#c2185b);color:#fff;text-align:center;padding:36px 20px 26px;}
-    header h1{font-size:1.9rem;}
-    header p{font-size:0.92rem;opacity:0.85;margin-top:5px;}
-    .badge-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:12px;}
-    .hbadge{background:rgba(255,255,255,0.18);border-radius:20px;padding:4px 14px;font-size:0.8rem;}
+    header h1{font-size:1.85rem;letter-spacing:.5px;}
+    header p{font-size:0.9rem;opacity:.85;margin-top:5px;}
+    .badge-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:12px;}
+    .hbadge{background:rgba(255,255,255,.18);border-radius:20px;padding:4px 13px;font-size:.78rem;}
 
-    nav{position:sticky;top:0;z-index:100;background:#880e4f;display:flex;justify-content:center;flex-wrap:wrap;gap:6px;padding:10px 16px;border-bottom:2px solid #c2185b;}
-    nav a{color:#fce4ec;text-decoration:none;font-size:0.8rem;padding:4px 12px;border-radius:16px;border:1px solid rgba(255,255,255,0.2);white-space:nowrap;transition:all 0.2s;}
+    nav{position:sticky;top:0;z-index:100;background:#880e4f;display:flex;justify-content:center;flex-wrap:wrap;gap:5px;padding:9px 14px;}
+    nav a{color:#fce4ec;text-decoration:none;font-size:.78rem;padding:4px 11px;border-radius:14px;border:1px solid rgba(255,255,255,.2);white-space:nowrap;}
     nav a:hover{background:#c2185b;color:#fff;}
 
-    .container{max-width:960px;margin:0 auto;padding:24px 18px 80px;}
+    .wrap{max-width:900px;margin:0 auto;padding:24px 16px 80px;}
 
-    .sec-title{background:linear-gradient(135deg,#880e4f,#c2185b);color:#fff;padding:14px 22px;border-radius:10px;margin:36px 0 16px;font-size:1.15rem;font-weight:700;}
-    .subsec{background:#fce4ec;color:#880e4f;padding:9px 18px;border-radius:7px;margin:20px 0 10px;font-size:1rem;font-weight:600;border-left:5px solid #c2185b;}
+    /* ── Section heading ── */
+    .sec{background:linear-gradient(135deg,#880e4f,#c2185b);color:#fff;padding:12px 20px;border-radius:9px;margin:34px 0 14px;font-size:1.1rem;font-weight:700;}
+    .sub{background:#fce4ec;color:#880e4f;padding:8px 16px;border-radius:7px;margin:18px 0 10px;font-size:.97rem;font-weight:700;border-left:5px solid #c2185b;}
 
-    .fcard{background:#fff;border-radius:10px;padding:18px 22px;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,0.08);border-left:4px solid #c2185b;}
-    .fcard h4{color:#880e4f;font-size:0.98rem;margin-bottom:8px;}
-    .fcard p,.fcard li{font-size:0.91rem;color:#374151;}
-    .fcard ul{padding-left:18px;margin-top:6px;}
-    .fcard ul li{margin-bottom:4px;}
+    /* ── Theory card ── */
+    .tcard{background:#fff;border-radius:10px;padding:17px 20px;margin-bottom:13px;box-shadow:0 2px 8px rgba(0,0,0,.07);border-left:4px solid #c2185b;}
+    .tcard h4{color:#880e4f;font-size:.95rem;margin-bottom:7px;}
+    .tcard ul{padding-left:18px;}
+    .tcard li,.tcard p{font-size:.9rem;color:#374151;}
+    .tcard li{margin-bottom:3px;}
+    .box{background:#fff8e1;border:1px solid #f59e0b;border-radius:6px;padding:9px 14px;margin:8px 0;font-family:'Courier New',monospace;font-size:.91rem;color:#5d4037;}
+    .tip{background:#fce4ec;border-left:4px solid #e91e63;border-radius:5px;padding:8px 13px;margin:8px 0;font-size:.85rem;color:#880e4f;}
 
-    .formula{background:#fff8e1;border:1px solid #f59e0b;border-radius:7px;padding:10px 16px;margin:8px 0;font-family:'Courier New',monospace;font-size:0.93rem;color:#5d4037;}
-    .tip{background:#fce4ec;border-left:4px solid #e91e63;border-radius:6px;padding:9px 14px;margin:8px 0;font-size:0.88rem;color:#880e4f;}
-    .warn{background:#fff3e0;border-left:4px solid #fb8c00;border-radius:6px;padding:9px 14px;margin:8px 0;font-size:0.88rem;color:#e65100;}
+    /* ── Question Block ── */
+    .qb{background:#fff;border-radius:10px;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,.08);overflow:hidden;}
 
-    table{width:100%;border-collapse:collapse;margin:10px 0;font-size:0.88rem;}
-    th{background:#880e4f;color:#fff;padding:9px 12px;text-align:center;}
-    td{padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:center;}
-    tr:nth-child(even) td{background:#fdf0f5;}
+    /* Question heading */
+    .qh{background:#880e4f;color:#fff;padding:10px 16px;font-size:.91rem;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:6px;}
+    .qh .qtag{background:rgba(255,255,255,.2);border-radius:14px;padding:2px 9px;font-size:.72rem;white-space:nowrap;}
 
-    /* Solved Example Card */
-    .ex-card{background:#fff;border-radius:12px;margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,0.09);overflow:hidden;}
-    .ex-head{background:#880e4f;color:#fff;padding:12px 18px;font-size:0.93rem;font-weight:600;display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
-    .ex-head .enum{background:rgba(255,255,255,0.2);border-radius:20px;padding:2px 10px;font-size:0.78rem;white-space:nowrap;}
-    .ex-body{padding:16px 20px;}
-    .step{display:flex;gap:10px;margin-bottom:8px;font-size:0.9rem;color:#374151;}
-    .step-num{min-width:24px;height:24px;background:#c2185b;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:700;flex-shrink:0;margin-top:2px;}
-    .ans-box{background:#e8f5e9;border:1px solid #43a047;border-radius:7px;padding:10px 16px;margin-top:10px;font-weight:600;color:#1b5e20;font-size:0.93rem;}
+    /* Solution body */
+    .qbody{padding:0;}
 
-    /* Exercise Q card */
-    .q-block{background:#fff8f9;border-radius:8px;padding:13px 16px;margin-bottom:10px;border-left:4px solid #e91e63;}
-    .q-label{font-weight:700;color:#880e4f;font-size:0.9rem;margin-bottom:6px;}
-    .q-sol{font-size:0.89rem;color:#374151;margin-top:6px;}
-    .q-ans{background:#e8f5e9;border-radius:5px;padding:7px 12px;margin-top:7px;font-weight:700;color:#1b5e20;font-size:0.89rem;}
+    /* Vertical solution line — each row */
+    .sol-row{display:flex;align-items:flex-start;padding:7px 16px;border-bottom:1px solid #fce4ec;font-size:.89rem;color:#374151;gap:10px;}
+    .sol-row:last-child{border-bottom:none;}
+    .sol-row.step-line{background:#fff;}
+    .sol-row.eq-line{background:#fff9fb;}
 
-    .badge-imp{display:inline-block;background:#e53935;color:#fff;font-size:0.68rem;padding:2px 7px;border-radius:10px;margin-left:6px;font-weight:700;}
+    /* Prefix label */
+    .pre{min-width:100px;font-weight:600;color:#880e4f;flex-shrink:0;padding-top:1px;}
+    .pre.given{color:#1565c0;}
+    .pre.step{color:#880e4f;}
+    .pre.eqn{color:#2e7d32;}
+    .pre.ans{color:#1b5e20;font-size:.88rem;}
+    .pre.note{color:#e65100;}
 
-    footer{text-align:center;padding:22px;color:#6b7280;font-size:0.83rem;border-top:1px solid #e5e7eb;margin-top:40px;}
+    /* Answer highlight */
+    .ans-row{background:#e8f5e9;border-top:2px solid #43a047;padding:9px 16px;font-weight:700;color:#1b5e20;font-size:.9rem;}
+
+    /* Table */
+    table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.85rem;}
+    th{background:#880e4f;color:#fff;padding:8px 10px;text-align:center;}
+    td{padding:7px 10px;border-bottom:1px solid #f0c0d0;text-align:center;}
+    tr:nth-child(even) td{background:#fdf5f8;}
+
+    .badge{display:inline-block;background:#e53935;color:#fff;font-size:.67rem;padding:2px 6px;border-radius:9px;margin-left:5px;font-weight:700;vertical-align:middle;}
+    footer{text-align:center;padding:20px;color:#777;font-size:.82rem;border-top:1px solid #eee;margin-top:40px;}
   </style>
 </head>
 <body>
 
 <header>
   <h1>🔢 Class 11 Maths Paper 2 – Chapter 1</h1>
-  <p>Complex Numbers | Maharashtra Board | Complete Notes + All Exercises Solved</p>
+  <p>Complex Numbers | Maharashtra Board | Complete Notes + All Exercises</p>
   <div class="badge-row">
-    <span class="hbadge">📖 Theory Notes</span>
-    <span class="hbadge">✏️ Exercise 1.1 Solved</span>
-    <span class="hbadge">✏️ Exercise 1.2 Solved</span>
-    <span class="hbadge">✏️ Exercise 1.3 Solved</span>
-    <span class="hbadge">🏆 Solved Examples</span>
+    <span class="hbadge">📖 Theory</span>
+    <span class="hbadge">✏️ Exercise 1.1</span>
+    <span class="hbadge">✏️ Exercise 1.2</span>
+    <span class="hbadge">✏️ Exercise 1.3</span>
   </div>
 </header>
 
@@ -77,844 +88,816 @@
   <a href="#powers">Powers of i</a>
   <a href="#ops">Operations</a>
   <a href="#sqroot">Square Root</a>
-  <a href="#quadratic">Quadratic</a>
-  <a href="#argand">Argand/Polar</a>
+  <a href="#quad">Quadratic</a>
+  <a href="#argand">Modulus/Arg</a>
   <a href="#ex11">Exercise 1.1</a>
   <a href="#ex12">Exercise 1.2</a>
   <a href="#ex13">Exercise 1.3</a>
 </nav>
 
-<div class="container">
+<div class="wrap">
 
-<!-- ══════════════════════════════════════════ -->
-<!--              THEORY NOTES                  -->
-<!-- ══════════════════════════════════════════ -->
-<div class="sec-title" id="theory">📚 Chapter 1 – Complex Numbers: Theory Notes</div>
+<!-- ═══════════════════════════════ THEORY ═══════════════════════════════ -->
+<div class="sec" id="theory">📚 Theory – Key Concepts &amp; Formulas</div>
 
-<div class="subsec">1.1 Introduction to Complex Numbers</div>
-<div class="fcard">
-  <h4>What is a Complex Number?</h4>
-  <p>A complex number is a number of the form <strong>z = a + ib</strong>, where:</p>
-  <ul>
-    <li><strong>a</strong> = Real part = Re(z)</li>
-    <li><strong>b</strong> = Imaginary part = Im(z)</li>
-    <li><strong>i = √−1</strong> (iota), so i² = −1</li>
-  </ul>
-  <div class="formula">
-    i = √−1 &nbsp;|&nbsp; i² = −1 &nbsp;|&nbsp; i³ = −i &nbsp;|&nbsp; i⁴ = 1<br>
-    Pattern repeats every 4: i⁵=i, i⁶=−1, i⁷=−i, i⁸=1 ...
+<div class="sub" id="powers">Powers of i</div>
+<div class="tcard">
+  <h4>Cycle of Powers of i</h4>
+  <div class="box">
+    i¹ = i &nbsp;&nbsp; i² = −1 &nbsp;&nbsp; i³ = −i &nbsp;&nbsp; i⁴ = 1<br>
+    i⁵ = i &nbsp;&nbsp; i⁶ = −1 &nbsp;&nbsp; i⁷ = −i &nbsp;&nbsp; i⁸ = 1 ...(repeats every 4)
   </div>
-  <div class="tip">💡 For any √(−n): √(−n) = √n × √(−1) = √n × i &nbsp; e.g. √(−16) = 4i</div>
-</div>
-
-<div class="subsec" id="powers">1.2 Powers of i</div>
-<div class="fcard">
-  <h4>Finding iⁿ for Large Powers</h4>
-  <p>Divide the power by 4 and check the remainder:</p>
+  <h4 style="margin-top:10px;">Shortcut for iⁿ</h4>
   <table>
-    <tr><th>Remainder when n÷4</th><th>0</th><th>1</th><th>2</th><th>3</th></tr>
-    <tr><td><strong>iⁿ =</strong></td><td>1</td><td>i</td><td>−1</td><td>−i</td></tr>
+    <tr><th>Divide n by 4 — Remainder</th><th>0</th><th>1</th><th>2</th><th>3</th></tr>
+    <tr><td><b>iⁿ =</b></td><td>1</td><td>i</td><td>−1</td><td>−i</td></tr>
   </table>
-  <div class="formula">
-    iⁿ: divide n by 4 → use remainder<br>
-    e.g. i³⁵: 35 ÷ 4 = 8 rem 3 → i³⁵ = i³ = −i<br>
-    e.g. i⁸⁸⁸: 888 ÷ 4 = 222 rem 0 → i⁸⁸⁸ = 1
-  </div>
-  <div class="tip">💡 For negative powers: i⁻ⁿ = 1/iⁿ. Multiply top and bottom by iⁿ to simplify.</div>
+  <div class="tip">💡 For negative power: i⁻ⁿ = 1/iⁿ = conjugate method</div>
 </div>
 
-<div class="subsec" id="ops">1.3 Operations on Complex Numbers</div>
-<div class="fcard">
-  <h4>Equality, Addition, Subtraction, Multiplication</h4>
+<div class="sub" id="ops">Operations on Complex Numbers</div>
+<div class="tcard">
+  <h4>Basic Rules</h4>
   <ul>
-    <li><strong>Equality:</strong> a+ib = c+id ⟺ a=c AND b=d</li>
-    <li><strong>Addition:</strong> (a+ib)+(c+id) = (a+c)+i(b+d)</li>
-    <li><strong>Subtraction:</strong> (a+ib)−(c+id) = (a−c)+i(b−d)</li>
-    <li><strong>Multiplication:</strong> (a+ib)(c+id) = (ac−bd)+i(ad+bc)</li>
+    <li><b>Equality:</b> a+ib = c+id ⟺ a=c and b=d</li>
+    <li><b>Addition:</b> (a+ib)+(c+id) = (a+c) + i(b+d)</li>
+    <li><b>Multiplication:</b> (a+ib)(c+id) = (ac−bd) + i(ad+bc)</li>
+    <li><b>Conjugate:</b> If z=a+ib, then z̄ = a−ib</li>
   </ul>
-</div>
-
-<div class="fcard">
-  <h4>Division — Rationalising the Denominator</h4>
-  <p>Multiply numerator and denominator by the <strong>conjugate</strong> of the denominator:</p>
-  <div class="formula">
-    (a+ib)/(c+id) = [(a+ib)(c−id)] / [(c+id)(c−id)]<br>
-    = [(ac+bd) + i(bc−ad)] / (c²+d²)
-  </div>
-  <div class="tip">💡 Conjugate of (c+id) = (c−id). Product of conjugates = c²+d² (always real!)</div>
-</div>
-
-<div class="fcard">
-  <h4>Conjugate of a Complex Number</h4>
-  <div class="formula">
-    If z = a+ib, then conjugate z̄ = a−ib<br>
-    z + z̄ = 2a (real) &nbsp;|&nbsp; z − z̄ = 2ib (imaginary)<br>
-    z × z̄ = a²+b² = |z|²
+  <h4 style="margin-top:10px;">Division (Rationalising)</h4>
+  <div class="box">
+    a+ib / c+id = (a+ib)(c−id) / (c²+d²)<br>
+    Multiply numerator &amp; denominator by conjugate of denominator
   </div>
 </div>
 
-<div class="subsec" id="sqroot">1.4 Square Root of a Complex Number</div>
-<div class="fcard">
-  <h4>Method to Find √(x+iy)</h4>
-  <p>Let √(x+iy) = a+ib. Square both sides:</p>
-  <div class="formula">
-    x+iy = (a+ib)² = (a²−b²) + 2abi<br>
-    Equate real parts: x = a²−b²<br>
-    Equate imaginary parts: y = 2ab<br><br>
-    Use: (a²+b²)² = (a²−b²)² + (2ab)² = x² + y²<br>
-    ∴ a²+b² = √(x²+y²)<br><br>
-    Then solve: a²+b² = √(x²+y²) and a²−b² = x
+<div class="sub" id="sqroot">Square Root of Complex Number</div>
+<div class="tcard">
+  <h4>Method</h4>
+  <div class="box">
+    Let √(x+iy) = a+ib<br>
+    Square both sides: x+iy = (a²−b²) + 2abi<br>
+    Equate real: x = a²−b²<br>
+    Equate imaginary: y = 2ab<br>
+    Use: a²+b² = √(x²+y²)<br>
+    Then solve for a and b
   </div>
 </div>
 
-<div class="subsec" id="quadratic">1.5 Quadratic Equations in Complex Numbers</div>
-<div class="fcard">
-  <h4>Quadratic Formula</h4>
-  <div class="formula">
-    For ax² + bx + c = 0:<br>
-    x = [−b ± √(b²−4ac)] / 2a<br><br>
-    Discriminant D = b²−4ac<br>
-    If D &lt; 0 → roots are complex (conjugate pairs)
+<div class="sub" id="quad">Quadratic Equations</div>
+<div class="tcard">
+  <h4>Formula</h4>
+  <div class="box">
+    ax²+bx+c = 0 &nbsp;→ &nbsp;x = [−b ± √(b²−4ac)] / 2a<br>
+    D = b²−4ac &nbsp;|&nbsp; If D &lt; 0 → complex roots (conjugate pairs)
   </div>
-  <div class="tip">💡 If p+iq is a root with a,b,c ∈ R, then p−iq is also a root. Complex roots come in conjugate pairs!</div>
+  <div class="tip">💡 If a,b,c ∈ R and p+iq is a root, then p−iq is also a root</div>
 </div>
 
-<div class="subsec" id="argand">1.6 Argand Diagram, Modulus &amp; Argument</div>
-<div class="fcard">
-  <h4>Argand Diagram</h4>
-  <p>z = a+ib is represented as point P(a,b) in a plane:</p>
-  <ul>
-    <li>X-axis = Real axis</li>
-    <li>Y-axis = Imaginary axis</li>
-    <li><strong>Modulus |z| = r = √(a²+b²)</strong> = distance from origin to P</li>
-    <li><strong>Argument (arg z) = θ</strong> = angle OP makes with positive X-axis</li>
-  </ul>
-  <div class="formula">
-    |z| = √(a²+b²)<br>
-    arg z = θ = tan⁻¹(b/a) &nbsp; [adjust for quadrant!]
-  </div>
-</div>
-
-<div class="fcard">
-  <h4>Argument in Different Quadrants</h4>
-  <table>
-    <tr><th>Condition</th><th>Quadrant</th><th>arg(z) = θ</th></tr>
-    <tr><td>a&gt;0, b=0</td><td>+X axis</td><td>0</td></tr>
-    <tr><td>a&gt;0, b&gt;0</td><td>I</td><td>tan⁻¹(b/a)</td></tr>
-    <tr><td>a=0, b&gt;0</td><td>+Y axis</td><td>π/2</td></tr>
-    <tr><td>a&lt;0, b&gt;0</td><td>II</td><td>tan⁻¹(b/a) + π</td></tr>
-    <tr><td>a&lt;0, b=0</td><td>−X axis</td><td>π</td></tr>
-    <tr><td>a&lt;0, b&lt;0</td><td>III</td><td>tan⁻¹(b/a) + π</td></tr>
-    <tr><td>a=0, b&lt;0</td><td>−Y axis</td><td>3π/2</td></tr>
-    <tr><td>a&gt;0, b&lt;0</td><td>IV</td><td>tan⁻¹(b/a) + 2π</td></tr>
-  </table>
-</div>
-
-<div class="fcard">
-  <h4>Polar Form &amp; Exponential Form</h4>
-  <div class="formula">
+<div class="sub" id="argand">Modulus, Argument &amp; Polar Form</div>
+<div class="tcard">
+  <h4>Formulas</h4>
+  <div class="box">
+    Modulus: |z| = r = √(a²+b²)<br>
+    Argument: θ = tan⁻¹(b/a)  [adjust for quadrant]<br>
     Polar form: z = r(cosθ + i sinθ)<br>
-    Exponential form: z = r·e^(iθ)<br>
-    where r = |z| and θ = arg(z)<br><br>
-    Euler's formula: e^(iθ) = cosθ + i sinθ
+    Exponential form: z = r·e^(iθ)
   </div>
-</div>
-
-<!-- ══════════════════════════════════════════ -->
-<!--          SOLVED EXAMPLES                    -->
-<!-- ══════════════════════════════════════════ -->
-<div class="sec-title">🏆 Solved Examples (From Textbook)</div>
-
-<div class="ex-card">
-  <div class="ex-head">Ex.1 — Write (1+2i)(1+3i)(2+i)⁻¹ in the form a+ib <span class="enum">Solved Ex. 1</span></div>
-  <div class="ex-body">
-    <div class="step"><span class="step-num">1</span><span>Write (2+i)⁻¹ = 1/(2+i). First multiply (1+2i)(1+3i):<br>= 1+3i+2i+6i² = 1+5i+6(−1) = 1+5i−6 = −5+5i</span></div>
-    <div class="step"><span class="step-num">2</span><span>Now divide: (−5+5i)/(2+i). Multiply by conjugate (2−i)/(2−i):<br>= (−5+5i)(2−i) / (4−i²) = (−10+5i+10i−5i²) / (4+1)</span></div>
-    <div class="step"><span class="step-num">3</span><span>= (−10+15i−5(−1)) / 5 = (−10+5+15i) / 5 = (−5+15i) / 5</span></div>
-    <div class="step"><span class="step-num">4</span><span>= −5/5 + 15i/5 = −1 + 3i</span></div>
-    <div class="ans-box">Answer: a = −1, b = 3 &nbsp;→ &nbsp;z = −1 + 3i</div>
-  </div>
-</div>
-
-<div class="ex-card">
-  <div class="ex-head">Ex.3 — If a, b real and (i⁴+3i)a + (i−1)b + 5i³ = 0, find a and b <span class="enum">Solved Ex. 3</span></div>
-  <div class="ex-body">
-    <div class="step"><span class="step-num">1</span><span>Simplify powers: i⁴ = 1, i³ = −i<br>→ (1+3i)a + (i−1)b − 5i = 0+0i</span></div>
-    <div class="step"><span class="step-num">2</span><span>Expand: a+3ai+bi−b−5i = 0+0i<br>→ (a−b) + (3a+b−5)i = 0+0i</span></div>
-    <div class="step"><span class="step-num">3</span><span>Equate real parts: a−b = 0 → a = b<br>Equate imaginary parts: 3a+b−5 = 0</span></div>
-    <div class="step"><span class="step-num">4</span><span>Substitute a = b: 3a+a = 5 → 4a = 5 → a = 5/4</span></div>
-    <div class="ans-box">Answer: a = b = 5/4</div>
-  </div>
-</div>
-
-<div class="ex-card">
-  <div class="ex-head">Ex.4 — x+2i+15i⁶y = 7x+i³(y+4). Find x+y, x,y ∈ R <span class="enum">Solved Ex. 4</span></div>
-  <div class="ex-body">
-    <div class="step"><span class="step-num">1</span><span>Simplify: i⁶ = −1, i³ = −i<br>→ x+2i−15y = 7x−(y+4)i</span></div>
-    <div class="step"><span class="step-num">2</span><span>Rearrange: (x−15y) + 2i = 7x − (y+4)i</span></div>
-    <div class="step"><span class="step-num">3</span><span>Equate real parts: x−15y = 7x → −6x−15y = 0 → −x−15y... → wait: x−15y = 7x → −6x = 15y → divide both by −1 → 6x+15y = 0 ... (i)</span></div>
-    <div class="step"><span class="step-num">4</span><span>Equate imaginary parts: 2 = −(y+4) → 2 = −y−4 → y = −6</span></div>
-    <div class="step"><span class="step-num">5</span><span>From (i): −6x−15(−6) = 0 → −6x+90 = 0 → x = 15</span></div>
-    <div class="ans-box">x = 15, y = −6 &nbsp;→ &nbsp;x + y = 15 + (−6) = 9</div>
-  </div>
-</div>
-
-<div class="ex-card">
-  <div class="ex-head">Ex.5 — Show that (√3/2 + i/2)³ = i <span class="enum">Solved Ex. 5</span></div>
-  <div class="ex-body">
-    <div class="step"><span class="step-num">1</span><span>Use (a+b)³ = a³+3a²b+3ab²+b³ with a=√3/2, b=i/2</span></div>
-    <div class="step"><span class="step-num">2</span><span>= (√3)³/8 + 3(√3)²(i)/8·2 + ... = (3√3 + 9i + 3√3i² + i³) / 8</span></div>
-    <div class="step"><span class="step-num">3</span><span>= (3√3 + 9i − 3√3 − i) / 8 &nbsp; [since i²=−1, i³=−i]</span></div>
-    <div class="step"><span class="step-num">4</span><span>= (3√3−3√3) + (9i−i) / 8 = 0 + 8i/8 = i = R.H.S. ✓</span></div>
-    <div class="ans-box">∴ L.H.S. = i = R.H.S. &nbsp; Proved ✓</div>
-  </div>
-</div>
-
-<!-- Square Root Examples -->
-<div class="ex-card">
-  <div class="ex-head">Ex.1 (§1.3) — Find √(6+8i) <span class="enum">Square Root Ex. 1</span></div>
-  <div class="ex-body">
-    <div class="step"><span class="step-num">1</span><span>Let √(6+8i) = a+ib. Square: 6+8i = (a²−b²) + 2abi</span></div>
-    <div class="step"><span class="step-num">2</span><span>Equate: a²−b² = 6 ...(1) and 2ab = 8 → ab = 4 → a = 4/b</span></div>
-    <div class="step"><span class="step-num">3</span><span>Substitute in (1): (4/b)²−b² = 6 → 16/b²−b² = 6 → b⁴+6b²−16 = 0</span></div>
-    <div class="step"><span class="step-num">4</span><span>Put m = b²: m²+6m−16 = 0 → (m+8)(m−2) = 0 → m = −8 or m = 2</span></div>
-    <div class="step"><span class="step-num">5</span><span>Since b is real, b² ≠ −8. So b² = 2 → b = ±√2</span></div>
-    <div class="step"><span class="step-num">6</span><span>For b = √2: a = 4/√2 = 2√2 &nbsp;|&nbsp; For b = −√2: a = −2√2</span></div>
-    <div class="ans-box">√(6+8i) = ±√2(2+i) = 2√2+√2·i or −2√2−√2·i</div>
-  </div>
-</div>
-
-<div class="ex-card">
-  <div class="ex-head">Ex.2 (§1.3) — Find √(3−4i) <span class="enum">Square Root Ex. 2</span></div>
-  <div class="ex-body">
-    <div class="step"><span class="step-num">1</span><span>Let √(3−4i) = a+ib. Squaring: a²−b² = 3, 2ab = −4 → ab = −2</span></div>
-    <div class="step"><span class="step-num">2</span><span>(a²+b²)² = (a²−b²)² + (2ab)² = 9+16 = 25 → a²+b² = 5</span></div>
-    <div class="step"><span class="step-num">3</span><span>Solving a²+b²=5 and a²−b²=3: 2a² = 8 → a² = 4 → a = ±2</span></div>
-    <div class="step"><span class="step-num">4</span><span>For a=2: b = −4/(2×2) = −1 &nbsp;|&nbsp; For a=−2: b = −4/(2×−2) = 1</span></div>
-    <div class="ans-box">√(3−4i) = 2−i or −2+i &nbsp; i.e. ±(2−i)</div>
-  </div>
-</div>
-
-<!-- Quadratic Examples -->
-<div class="ex-card">
-  <div class="ex-head">Ex.1 (§1.4) — Solve x²+x+1 = 0 <span class="enum">Quadratic Ex. 1</span></div>
-  <div class="ex-body">
-    <div class="step"><span class="step-num">1</span><span>a=1, b=1, c=1. Using x = [−b ± √(b²−4ac)] / 2a</span></div>
-    <div class="step"><span class="step-num">2</span><span>D = 1−4 = −3 &lt; 0 → complex roots</span></div>
-    <div class="step"><span class="step-num">3</span><span>x = [−1 ± √(−3)] / 2 = [−1 ± √3·i] / 2</span></div>
-    <div class="ans-box">Roots: x = (−1+√3·i)/2 and x = (−1−√3·i)/2</div>
-  </div>
-</div>
-
-<div class="ex-card">
-  <div class="ex-head">Ex.3 (§1.4) — Find x³−x²+2x+10 when x = 1+√3·i <span class="enum">Polynomial Value</span></div>
-  <div class="ex-body">
-    <div class="step"><span class="step-num">1</span><span>x = 1+√3·i → x−1 = √3·i → (x−1)² = (√3·i)² = 3i² = −3</span></div>
-    <div class="step"><span class="step-num">2</span><span>So x²−2x+1 = −3 → x²−2x = −4 ...(I)</span></div>
-    <div class="step"><span class="step-num">3</span><span>x³−x²+2x+10 = x³−(x²−2x)−10... wait: = x³−(x²−2x)+10 = x³−(−4)+10 = x³+14</span></div>
-    <div class="step"><span class="step-num">4</span><span>x³ = (1+√3·i)³ = 1+3√3·i+3(√3·i)²+(√3·i)³ = 1+3√3·i−9−3√3·i = −8</span></div>
-    <div class="step"><span class="step-num">5</span><span>Answer = −8+14 = 6</span></div>
-    <div class="ans-box">Value = 6</div>
-  </div>
-</div>
-
-<!-- Modulus/Argument Examples -->
-<div class="ex-card">
-  <div class="ex-head">Ex.1 (§1.5) — Modulus and Amplitude of z = 1+3i <span class="enum">Modulus/Arg Ex. 1</span></div>
-  <div class="ex-body">
-    <div class="step"><span class="step-num">1</span><span>a = 1, b = 3 (both positive → Quadrant I)</span></div>
-    <div class="step"><span class="step-num">2</span><span>|z| = √(1²+3²) = √(1+9) = √10</span></div>
-    <div class="step"><span class="step-num">3</span><span>arg(z) = tan⁻¹(b/a) = tan⁻¹(3/1) = tan⁻¹(3)</span></div>
-    <div class="ans-box">|z| = √10 &nbsp;|&nbsp; amp(z) = tan⁻¹(3)</div>
-  </div>
-</div>
-
-<div class="ex-card">
-  <div class="ex-head">Ex.2 (§1.5) — Polar and Exponential form of 4+4√3·i, −2, 3i, −√3+i <span class="enum">Polar Form Ex. 2</span></div>
-  <div class="ex-body">
-    <div class="step"><span class="step-num">1</span><span><strong>i) z = 4+4√3·i:</strong> r = √(16+48) = √64 = 8. Q-I → θ = tan⁻¹(4√3/4) = tan⁻¹(√3) = π/3<br>Polar: z = 8(cos π/3 + i sin π/3). Exponential: z = 8e^(iπ/3)</span></div>
-    <div class="step"><span class="step-num">2</span><span><strong>ii) z = −2:</strong> a=−2, b=0. On −X axis → r = 2, θ = π<br>Polar: z = 2(cos π + i sin π). Exponential: z = 2e^(iπ)</span></div>
-    <div class="step"><span class="step-num">3</span><span><strong>iii) z = 3i:</strong> a=0, b=3. On +Y axis → r = 3, θ = π/2<br>Polar: z = 3(cos π/2 + i sin π/2). Exponential: z = 3e^(iπ/2)</span></div>
-    <div class="step"><span class="step-num">4</span><span><strong>iv) z = −√3+i:</strong> a=−√3, b=1. Q-II → r = √(3+1) = 2<br>θ = tan⁻¹(1/−√3)+π = −π/6+π = 5π/6<br>Polar: z = 2(cos 5π/6 + i sin 5π/6). Exponential: z = 2e^(i5π/6)</span></div>
-    <div class="ans-box">All four forms derived above ✓</div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════ -->
-<!--          EXERCISE 1.1 SOLVED              -->
-<!-- ══════════════════════════════════════════ -->
-<div class="sec-title" id="ex11">✏️ Exercise 1.1 – Complete Solutions</div>
-
-<div class="subsec">Q.1 – Simplify</div>
-<div class="q-block">
-  <div class="q-label">i) √(−16) + 3√(−25) + √(−36) − √(−625)</div>
-  <div class="q-sol">
-    = 4i + 3(5i) + 6i − 25i<br>
-    = 4i + 15i + 6i − 25i<br>
-    = (4+15+6−25)i
-  </div>
-  <div class="q-ans">Answer: 0·i = 0</div>
-</div>
-<div class="q-block">
-  <div class="q-label">ii) 4√(−4) + 5√(−9) − 3√(−16)</div>
-  <div class="q-sol">
-    = 4(2i) + 5(3i) − 3(4i)<br>
-    = 8i + 15i − 12i = 11i
-  </div>
-  <div class="q-ans">Answer: 11i &nbsp;(a=0, b=11)</div>
-</div>
-
-<div class="subsec">Q.2 – Write Conjugates</div>
-<div class="fcard">
+  <h4 style="margin-top:10px;">Argument by Quadrant</h4>
   <table>
-    <tr><th>z</th><th>z̄ (Conjugate)</th><th>z</th><th>z̄ (Conjugate)</th></tr>
-    <tr><td>3+i</td><td>3−i</td><td>3−</td><td>3+</td></tr>
-    <tr><td>−√5−√7i</td><td>−√5+√7i</td><td>−√(−5)</td><td>+√5·i</td></tr>
-    <tr><td>5i</td><td>−5i</td><td>√5−i</td><td>√5+i</td></tr>
-    <tr><td>√2+√3·i</td><td>√2−√3·i</td><td>cosθ+i sinθ</td><td>cosθ−i sinθ</td></tr>
-  </table>
-  <div class="tip">💡 Rule: Conjugate = change sign of imaginary part only.</div>
-</div>
-
-<div class="subsec">Q.3 – Find a and b</div>
-
-<div class="q-block">
-  <div class="q-label">i) a + 2b + 2ai = 4 + 6i</div>
-  <div class="q-sol">
-    Equate real: a+2b = 4 ...(1)<br>
-    Equate imaginary: 2a = 6 → a = 3<br>
-    From (1): 3+2b = 4 → b = 1/2
-  </div>
-  <div class="q-ans">a = 3, b = 1/2</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">ii) (a−b) + (a+b)i = a + 5i</div>
-  <div class="q-sol">
-    Real: a−b = a → −b = 0 → b = 0<br>
-    Imaginary: a+b = 5 → a+0 = 5 → a = 5
-  </div>
-  <div class="q-ans">a = 5, b = 0</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">iii) (a+b)(2+i) = b+1 + (10+2a)i</div>
-  <div class="q-sol">
-    Expand LHS: 2(a+b) + (a+b)i<br>
-    Real: 2(a+b) = b+1 → 2a+2b = b+1 → 2a+b = 1 ...(1)<br>
-    Imaginary: a+b = 10+2a → b = 10+a ...(2)<br>
-    Sub (2) in (1): 2a+(10+a) = 1 → 3a = −9 → a = −3<br>
-    b = 10+(−3) = 7
-  </div>
-  <div class="q-ans">a = −3, b = 7</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">iv) abi = 3a − b + 12i</div>
-  <div class="q-sol">
-    LHS = abi (purely imaginary), RHS = (3a−b) + 12i<br>
-    Equate real: 0 = 3a−b → b = 3a ...(1)<br>
-    Equate imaginary: ab = 12 ...(2)<br>
-    Sub (1): a(3a) = 12 → 3a² = 12 → a² = 4 → a = ±2<br>
-    For a=2: b=6 &nbsp;|&nbsp; For a=−2: b=−6
-  </div>
-  <div class="q-ans">a=2, b=6 &nbsp;OR&nbsp; a=−2, b=−6</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">v) 1/(a+ib) = 3−2i</div>
-  <div class="q-sol">
-    a+ib = 1/(3−2i) = (3+2i)/[(3−2i)(3+2i)] = (3+2i)/(9+4) = (3+2i)/13<br>
-    = 3/13 + (2/13)i
-  </div>
-  <div class="q-ans">a = 3/13, b = 2/13</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">vi) (a+ib)(1+i) = 2+i</div>
-  <div class="q-sol">
-    a+ib = (2+i)/(1+i) = (2+i)(1−i)/[(1+i)(1−i)] = (2−2i+i−i²)/(1+1) = (2−i+1)/2 = (3−i)/2<br>
-    = 3/2 − i/2
-  </div>
-  <div class="q-ans">a = 3/2, b = −1/2</div>
-</div>
-
-<div class="subsec">Q.4 – Express in form a+ib <span class="badge-imp">IMP</span></div>
-
-<div class="q-block">
-  <div class="q-label">i) (1+2i)(−2i)</div>
-  <div class="q-sol">= −2i − 4i² = −2i − 4(−1) = 4 − 2i</div>
-  <div class="q-ans">4 − 2i &nbsp;(a=4, b=−2)</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">ii) (1+i)(1−i)⁻¹</div>
-  <div class="q-sol">
-    = (1+i)/(1−i) × (1+i)/(1+i) = (1+i)²/(1+1) = (1+2i+i²)/2 = (1+2i−1)/2 = 2i/2 = i
-  </div>
-  <div class="q-ans">0 + i &nbsp;(a=0, b=1)</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">iii) −i(4+3i)/(1−i)</div>
-  <div class="q-sol">
-    Numerator: −i(4+3i) = −4i−3i² = −4i+3 = 3−4i<br>
-    (3−4i)/(1−i) × (1+i)/(1+i) = (3+3i−4i−4i²)/(1+1) = (3−i+4)/2 = (7−i)/2 = 7/2 − i/2
-  </div>
-  <div class="q-ans">7/2 − i/2 &nbsp;(a=7/2, b=−1/2)</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">iv) (2+i)/[(3−i)(1+2i)]</div>
-  <div class="q-sol">
-    Denominator: (3−i)(1+2i) = 3+6i−i−2i² = 3+5i+2 = 5+5i<br>
-    = (2+i)/(5+5i) × (5−5i)/(5−5i) = (10−10i+5i−5i²)/(25+25) = (10−5i+5)/50 = (15−5i)/50 = 3/10 − i/10
-  </div>
-  <div class="q-ans">3/10 − i/10</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">v) [(1+i)/(1−i)]²</div>
-  <div class="q-sol">
-    First: (1+i)/(1−i) = (1+i)²/2 = 2i/2 = i<br>
-    So [(1+i)/(1−i)]² = i² = −1
-  </div>
-  <div class="q-ans">−1 + 0i &nbsp;(a=−1, b=0)</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">vi) (3+2i)/(2−5i) + (−2i)/(2+5i)</div>
-  <div class="q-sol">
-    Part 1: (3+2i)(2+5i)/[(2−5i)(2+5i)] = (6+15i+4i+10i²)/(4+25) = (6+19i−10)/29 = (−4+19i)/29<br>
-    Part 2: (−2i)(2−5i)/[(2+5i)(2−5i)] = (−4i+10i²)/29 = (−10−4i)/29<br>
-    Sum: (−4+19i−10−4i)/29 = (−14+15i)/29
-  </div>
-  <div class="q-ans">−14/29 + 15i/29</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">vii) (1+i)⁻³</div>
-  <div class="q-sol">
-    (1+i)² = 1+2i+i² = 2i<br>
-    (1+i)³ = (1+i)(1+i)² = (1+i)(2i) = 2i+2i² = −2+2i<br>
-    (1+i)⁻³ = 1/(−2+2i) × (−2−2i)/(−2−2i) = (−2−2i)/(4+4) = (−2−2i)/8 = −1/4 − i/4
-  </div>
-  <div class="q-ans">−1/4 − i/4</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">x) (2+3i)(2−3i)</div>
-  <div class="q-sol">
-    = 4 − 6i + 6i − 9i² = 4 − 9(−1) = 4 + 9 = 13
-  </div>
-  <div class="q-ans">13 + 0i &nbsp;(a=13, b=0)</div>
-</div>
-
-<div class="subsec">Q.7 – Evaluate Powers of i <span class="badge-imp">IMP</span></div>
-<div class="fcard">
-  <p><strong>Rule:</strong> Divide power by 4. Remainder 0→1, 1→i, 2→−1, 3→−i</p>
-  <table>
-    <tr><th>i^n</th><th>n ÷ 4 rem</th><th>Answer</th></tr>
-    <tr><td>i³⁵</td><td>35÷4 = 8 rem 3</td><td>−i</td></tr>
-    <tr><td>i⁸⁸⁸</td><td>888÷4 = 222 rem 0</td><td>1</td></tr>
-    <tr><td>i⁹³</td><td>93÷4 = 23 rem 1</td><td>i</td></tr>
-    <tr><td>i¹¹⁶</td><td>116÷4 = 29 rem 0</td><td>1</td></tr>
-    <tr><td>i⁴⁰³</td><td>403÷4 = 100 rem 3</td><td>−i</td></tr>
-    <tr><td>1/i⁵⁸</td><td>58÷4 = 14 rem 2 → i⁵⁸=−1</td><td>1/(−1) = −1</td></tr>
-    <tr><td>i⁻⁸⁸⁸</td><td>888 rem 0 → i⁸⁸⁸=1</td><td>1/1 = 1</td></tr>
-    <tr><td>i³⁰+i⁴⁰+i⁵⁰+i⁶⁰</td><td>rem 2,0,2,0 → −1+1+(−1)+1</td><td>0</td></tr>
+    <tr><th>Condition</th><th>Quadrant/Axis</th><th>arg(z)</th></tr>
+    <tr><td>a&gt;0, b=0</td><td>+X axis</td><td>0</td></tr>
+    <tr><td>a&gt;0, b&gt;0</td><td>Q I</td><td>tan⁻¹(b/a)</td></tr>
+    <tr><td>a=0, b&gt;0</td><td>+Y axis</td><td>π/2</td></tr>
+    <tr><td>a&lt;0, b&gt;0</td><td>Q II</td><td>tan⁻¹(b/a) + π</td></tr>
+    <tr><td>a&lt;0, b=0</td><td>−X axis</td><td>π</td></tr>
+    <tr><td>a&lt;0, b&lt;0</td><td>Q III</td><td>tan⁻¹(b/a) + π</td></tr>
+    <tr><td>a=0, b&lt;0</td><td>−Y axis</td><td>3π/2</td></tr>
+    <tr><td>a&gt;0, b&lt;0</td><td>Q IV</td><td>tan⁻¹(b/a) + 2π</td></tr>
   </table>
 </div>
 
-<div class="subsec">Q.9 – Find values of iⁿ combinations <span class="badge-imp">IMP</span></div>
-<div class="q-block">
-  <div class="q-label">i) i⁴⁹ + i⁶⁸ + i⁸⁹ + i¹¹⁰</div>
-  <div class="q-sol">
-    i⁴⁹: 49÷4=12 rem 1 → i<br>
-    i⁶⁸: 68÷4=17 rem 0 → 1<br>
-    i⁸⁹: 89÷4=22 rem 1 → i<br>
-    i¹¹⁰: 110÷4=27 rem 2 → −1<br>
-    Sum = i + 1 + i + (−1) = 2i
-  </div>
-  <div class="q-ans">2i</div>
-</div>
-<div class="q-block">
-  <div class="q-label">ii) i + i² + i³ + i⁴</div>
-  <div class="q-sol">= i + (−1) + (−i) + 1 = 0</div>
-  <div class="q-ans">0</div>
-</div>
+<!-- ═══════════════════════════ SOLVED EXAMPLES ═══════════════════════════ -->
+<div class="sec">🏆 Solved Examples (Textbook)</div>
 
-<div class="subsec">Q.10 – Simplify (i⁵⁹²+i⁵⁹⁰+i⁵⁸⁸+i⁵⁸⁶+i⁵⁸⁴) / (i⁵⁸²+i⁵⁸⁰+i⁵⁷⁸+i⁵⁷⁶+i⁵⁷⁴)</div>
-<div class="q-block">
-  <div class="q-sol">
-    Take out i⁵⁸⁴ from numerator and i⁵⁷⁴ from denominator:<br>
-    = i⁵⁸⁴(i⁸+i⁶+i⁴+i²+1) / i⁵⁷⁴(i⁸+i⁶+i⁴+i²+1)<br>
-    = i⁵⁸⁴/i⁵⁷⁴ = i¹⁰<br>
-    i¹⁰: 10÷4 = 2 rem 2 → i¹⁰ = −1
-  </div>
-  <div class="q-ans">−1</div>
-</div>
-
-<div class="subsec">Q.11 – Find 1+i²+i⁴+i⁶+i⁸+...+i²⁰</div>
-<div class="q-block">
-  <div class="q-sol">
-    i⁰=1, i²=−1, i⁴=1, i⁶=−1, i⁸=1, ..., i²⁰=1<br>
-    Pattern: 1,−1,1,−1,1,−1,1,−1,1,−1,1<br>
-    That's 11 terms (powers 0,2,4,...,20). Pairs: (1−1)×5 = 0, plus last term i²⁰=1
-  </div>
-  <div class="q-ans">1</div>
-</div>
-
-<div class="subsec">Q.14 – Evaluate (i³⁷ + 1/i⁶⁷) <span class="badge-imp">IMP</span></div>
-<div class="q-block">
-  <div class="q-sol">
-    i³⁷: 37÷4=9 rem 1 → i³⁷ = i<br>
-    i⁶⁷: 67÷4=16 rem 3 → i⁶⁷ = −i → 1/i⁶⁷ = 1/(−i) = i/1 [mult by i/i] = i/(−i²) = i/1 = i<br>
-    (Alternatively: 1/(−i) × (i/i) = i/(−i²) = i/1 = i)<br>
-    Sum = i + i = 2i
-  </div>
-  <div class="q-ans">2i</div>
-</div>
-
-<div class="subsec">Q.16 – Find (i⁶+i⁷+i⁸+i⁹) / (i²+i³)</div>
-<div class="q-block">
-  <div class="q-sol">
-    Numerator: i⁶+i⁷+i⁸+i⁹ = −1+(−i)+1+i = 0<br>
-    Denominator: i²+i³ = −1+(−i) = −1−i<br>
-    = 0/(−1−i) = 0
-  </div>
-  <div class="q-ans">0</div>
-</div>
-
-<div class="subsec">Q.24 – Find x and y (x,y ∈ R) <span class="badge-imp">IMP</span></div>
-
-<div class="q-block">
-  <div class="q-label">i) (x+2y) + (2x−y)i + 4i = 5</div>
-  <div class="q-sol">
-    RHS = 5+0i<br>
-    Real: x+2y = 5 ...(1)<br>
-    Imaginary: 2x−y+4 = 0 → 2x−y = −4 ...(2)<br>
-    From (2): y = 2x+4. Sub in (1): x+2(2x+4) = 5 → 5x = −3 → x = −3/5<br>
-    y = 2(−3/5)+4 = −6/5+20/5 = 14/5
-  </div>
-  <div class="q-ans">x = −3/5, y = 14/5</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">iv) If x(1+3i) + y(2−i) − 5 + i³ = 0, find x+y</div>
-  <div class="q-sol">
-    i³ = −i → x+3xi+2y−yi−5−i = 0+0i<br>
-    Real: x+2y−5 = 0 → x+2y = 5 ...(1)<br>
-    Imaginary: 3x−y−1 = 0 → 3x−y = 1 ...(2)<br>
-    From (1): x = 5−2y. Sub: 3(5−2y)−y = 1 → 15−7y = 1 → y = 2, x = 1
-  </div>
-  <div class="q-ans">x = 1, y = 2 &nbsp;→ &nbsp;x+y = 3</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">v) If x+2i+15i⁶y = 7x+i³(y+4), find x+y</div>
-  <div class="q-sol">
-    i⁶ = −1, i³ = −i → x+2i−15y = 7x−(y+4)i<br>
-    Real: x−15y = 7x → −6x = 15y → dividing: ... also −6x−15y=0 → 6x+15y=0...<br>
-    Wait: x−15y = 7x → x−7x = 15y → −6x = 15y ...(1)<br>
-    Imaginary: 2 = −(y+4) → y = −6<br>
-    From (1): −6x = 15(−6) = −90 → x = 15
-  </div>
-  <div class="q-ans">x = 15, y = −6 &nbsp;→ &nbsp;x+y = 9</div>
-</div>
-
-<!-- ══════════════════════════════════════════ -->
-<!--          EXERCISE 1.2 SOLVED              -->
-<!-- ══════════════════════════════════════════ -->
-<div class="sec-title" id="ex12">✏️ Exercise 1.2 – Square Roots &amp; Quadratic Equations</div>
-
-<div class="subsec">Q.1 – Find Square Roots <span class="badge-imp">IMP</span></div>
-
-<div class="q-block">
-  <div class="q-label">i) √(−8−6i)</div>
-  <div class="q-sol">
-    Let √(−8−6i) = a+ib → a²−b² = −8, 2ab = −6 → ab = −3<br>
-    (a²+b²)² = 64+36 = 100 → a²+b² = 10<br>
-    Solving: 2a² = 2 → a = ±1<br>
-    For a=1: b = −3/1 = −3 &nbsp;|&nbsp; For a=−1: b = 3
-  </div>
-  <div class="q-ans">√(−8−6i) = 1−3i or −1+3i &nbsp;= ±(1−3i)</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">ii) √(7+24i)</div>
-  <div class="q-sol">
-    a²−b² = 7, 2ab = 24 → ab = 12<br>
-    (a²+b²)² = 49+576 = 625 → a²+b² = 25<br>
-    2a² = 32 → a² = 16 → a = ±4<br>
-    For a=4: b=3 &nbsp;|&nbsp; For a=−4: b=−3
-  </div>
-  <div class="q-ans">√(7+24i) = 4+3i or −4−3i &nbsp;= ±(4+3i)</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">iii) √(1+4√3·i)</div>
-  <div class="q-sol">
-    a²−b² = 1, 2ab = 4√3 → ab = 2√3<br>
-    (a²+b²)² = 1+48 = 49 → a²+b² = 7<br>
-    2a² = 8 → a = ±2<br>
-    For a=2: b = 2√3/2 = √3 &nbsp;|&nbsp; For a=−2: b=−√3
-  </div>
-  <div class="q-ans">√(1+4√3·i) = 2+√3·i or −2−√3·i &nbsp;= ±(2+√3·i)</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">iv) √(3+2√10·i)</div>
-  <div class="q-sol">
-    a²−b² = 3, 2ab = 2√10 → ab = √10<br>
-    (a²+b²)² = 9+40 = 49 → a²+b² = 7<br>
-    2a² = 10 → a = ±√5<br>
-    For a=√5: b=√10/√5 = √2 &nbsp;|&nbsp; For a=−√5: b=−√2
-  </div>
-  <div class="q-ans">±(√5+√2·i)</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">v) √[2(1−√3·i)]</div>
-  <div class="q-sol">
-    = √(2−2√3·i)<br>
-    a²−b² = 2, 2ab = −2√3 → ab = −√3<br>
-    (a²+b²)² = 4+12 = 16 → a²+b² = 4<br>
-    2a² = 6 → a = ±√3<br>
-    For a=√3: b=−1 &nbsp;|&nbsp; For a=−√3: b=1
-  </div>
-  <div class="q-ans">±(√3−i)</div>
-</div>
-
-<div class="subsec">Q.2 – Solve Quadratic Equations (Real Coefficients)</div>
-
-<div class="q-block">
-  <div class="q-label">i) 8x²+2x+1=0</div>
-  <div class="q-sol">a=8, b=2, c=1. D = 4−32 = −28 &lt; 0<br>x = (−2 ± √(−28))/16 = (−2 ± 2√7·i)/16 = (−1 ± √7·i)/8</div>
-  <div class="q-ans">x = (−1+√7·i)/8 and (−1−√7·i)/8</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">ii) 2x²−√3·x+1=0</div>
-  <div class="q-sol">D = 3−8 = −5. x = (√3 ± √(−5))/4 = (√3 ± √5·i)/4</div>
-  <div class="q-ans">x = (√3+√5·i)/4 and (√3−√5·i)/4</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">iii) 3x²−7x+5=0</div>
-  <div class="q-sol">D = 49−60 = −11. x = (7 ± √(−11))/6 = (7 ± √11·i)/6</div>
-  <div class="q-ans">x = (7+√11·i)/6 and (7−√11·i)/6</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">iv) x²−4x+13=0</div>
-  <div class="q-sol">D = 16−52 = −36. x = (4 ± √(−36))/2 = (4 ± 6i)/2 = 2±3i</div>
-  <div class="q-ans">x = 2+3i and 2−3i</div>
-</div>
-
-<div class="subsec">Q.3 – Solve Quadratic Equations (Complex Coefficients)</div>
-
-<div class="q-block">
-  <div class="q-label">i) x²+3ix+10=0</div>
-  <div class="q-sol">
-    D = (3i)²−4(10) = −9−40 = −49. √(−49) = 7i<br>
-    x = (−3i ± 7i)/2 = 4i/2 or −10i/2 = 2i or −5i
-  </div>
-  <div class="q-ans">x = 2i and −5i</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">ii) 2x²+3ix+2=0</div>
-  <div class="q-sol">
-    D = (3i)²−4(2)(2) = −9−16 = −25. √(−25) = 5i<br>
-    x = (−3i ± 5i)/4 = 2i/4 or −8i/4 = i/2 or −2i
-  </div>
-  <div class="q-ans">x = i/2 and −2i</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">iii) x²+4ix−4=0</div>
-  <div class="q-sol">
-    D = (4i)²−4(1)(−4) = −16+16 = 0. √0 = 0<br>
-    x = −4i/2 = −2i (repeated root)
-  </div>
-  <div class="q-ans">x = −2i (repeated)</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">iv) ix²−4x−4i=0</div>
-  <div class="q-sol">
-    Multiply by i: i²x²−4ix−4i² = 0 → −x²−4ix+4 = 0 → x²+4ix−4 = 0<br>
-    D = (4i)²+16 = −16+16 = 0 → x = −4i/2 = −2i
-  </div>
-  <div class="q-ans">x = −2i (repeated)</div>
-</div>
-
-<div class="subsec">Q.4 – Solve (Mixed Complex Coefficients)</div>
-
-<div class="q-block">
-  <div class="q-label">i) x²−(2+i)x−(1−7i)=0</div>
-  <div class="q-sol">
-    D = (2+i)²+4(1−7i) = (4+4i−1)+4−28i = 3+4i+4−28i = 7−24i<br>
-    √(7−24i): a²−b²=7, 2ab=−24 → ab=−12. (a²+b²)²=49+576=625 → a²+b²=25<br>
-    2a²=32 → a=±4. For a=4: b=−3. √(7−24i) = 4−3i<br>
-    x = [(2+i) ± (4−3i)]/2 = (6−2i)/2 or (−2+4i)/2 = 3−i or −1+2i
-  </div>
-  <div class="q-ans">x = 3−i and −1+2i</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">iii) x²−(5−i)x+(18+i)=0</div>
-  <div class="q-sol">
-    D = (5−i)²−4(18+i) = 25−10i−1−72−4i = −48−14i<br>
-    √(−48−14i): a²−b²=−48, 2ab=−14 → ab=−7. (a²+b²)²=2304+196=2500 → a²+b²=50<br>
-    2a²=2 → a=1 or −1. For a=1: b=−7. √(−48−14i)=1−7i<br>
-    x = [(5−i) ± (1−7i)]/2 = (6−8i)/2 or (4+6i)/2 = 3−4i or 2+3i
-  </div>
-  <div class="q-ans">x = 3−4i and 2+3i</div>
-</div>
-
-<div class="subsec">Q.5 – Find Value of Polynomial <span class="badge-imp">IMP</span></div>
-
-<div class="q-block">
-  <div class="q-label">iii) x³−x²+x+46 when x = 2+3i</div>
-  <div class="q-sol">
-    x = 2+3i → x−2 = 3i → (x−2)² = −9 → x²−4x+4 = −9 → x²−4x = −13 ...(I)<br>
-    x³−x²+x+46 = x(x²−4x) + 3x²−x+46 ... use shortcut:<br>
-    x² = 4x−13. x³ = x·x² = x(4x−13) = 4x²−13x = 4(4x−13)−13x = 16x−52−13x = 3x−52<br>
-    Value = (3x−52)−(4x−13)+(2+3i)+46 = 3(2+3i)−52−4(2+3i)+13+(2+3i)+46<br>
-    = (3−4+1)(2+3i) + (−52+13+46) = 0(2+3i)+7 = 7
-  </div>
-  <div class="q-ans">Value = 0</div>
-</div>
-
-<!-- ══════════════════════════════════════════ -->
-<!--          EXERCISE 1.3 SOLVED              -->
-<!-- ══════════════════════════════════════════ -->
-<div class="sec-title" id="ex13">✏️ Exercise 1.3 – Modulus, Argument, Polar Form</div>
-
-<div class="subsec">Q.1 – Find Modulus and Amplitude <span class="badge-imp">IMP</span></div>
-<div class="fcard">
-  <table>
-    <tr><th>z</th><th>a, b</th><th>|z| = √(a²+b²)</th><th>Quadrant</th><th>arg(z)</th></tr>
-    <tr><td>7−5i</td><td>7,−5</td><td>√74</td><td>IV</td><td>tan⁻¹(−5/7)+2π</td></tr>
-    <tr><td>√3+√2·i</td><td>√3,√2</td><td>√5</td><td>I</td><td>tan⁻¹(√2/√3)</td></tr>
-    <tr><td>−8+15i</td><td>−8,15</td><td>√(64+225)=17</td><td>II</td><td>tan⁻¹(15/−8)+π</td></tr>
-    <tr><td>−3(1−i)</td><td>−3,3</td><td>3√2</td><td>II</td><td>3π/4</td></tr>
-    <tr><td>−4−4i</td><td>−4,−4</td><td>4√2</td><td>III</td><td>5π/4</td></tr>
-    <tr><td>√3−i</td><td>√3,−1</td><td>2</td><td>IV</td><td>−π/6 or 11π/6</td></tr>
-    <tr><td>3</td><td>3,0</td><td>3</td><td>+X axis</td><td>0</td></tr>
-    <tr><td>1+i</td><td>1,1</td><td>√2</td><td>I</td><td>π/4</td></tr>
-    <tr><td>1+i√3</td><td>1,√3</td><td>2</td><td>I</td><td>π/3</td></tr>
-  </table>
-</div>
-
-<div class="subsec">Q.4 – Express in Polar and Exponential Form <span class="badge-imp">IMP</span></div>
-
-<div class="q-block">
-  <div class="q-label">i) −1+√3·i</div>
-  <div class="q-sol">
-    a=−1, b=√3. Q-II → r = √(1+3) = 2<br>
-    θ = tan⁻¹(√3/−1)+π = −π/3+π = 2π/3<br>
-    Polar: z = 2(cos 2π/3 + i sin 2π/3)<br>
-    Exponential: z = 2e^(2πi/3)
-  </div>
-  <div class="q-ans">2(cos 2π/3 + i sin 2π/3) &nbsp;|&nbsp; 2e^(i·2π/3)</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">ii) −i</div>
-  <div class="q-sol">
-    a=0, b=−1. On −Y axis → r=1, θ = 3π/2<br>
-    Polar: z = 1(cos 3π/2 + i sin 3π/2)<br>
-    Exponential: z = e^(3πi/2)
-  </div>
-  <div class="q-ans">cos 3π/2 + i sin 3π/2 &nbsp;|&nbsp; e^(i·3π/2)</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">iii) −1</div>
-  <div class="q-sol">
-    a=−1, b=0. On −X axis → r=1, θ = π<br>
-    Polar: z = cos π + i sin π<br>
-    Exponential: z = e^(iπ)
-  </div>
-  <div class="q-ans">cos π + i sin π &nbsp;|&nbsp; e^(iπ)</div>
-</div>
-
-<div class="q-block">
-  <div class="q-label">iv) 1/(1+i)</div>
-  <div class="q-sol">
-    Rationalise: (1−i)/[(1+i)(1−i)] = (1−i)/2 = 1/2 − i/2<br>
-    r = √(1/4+1/4) = √(1/2) = 1/√2, θ = tan⁻¹(−1/2 ÷ 1/2) + 2π = −π/4+2π = 7π/4<br>
-    Polar: (1/√2)(cos 7π/4 + i sin 7π/4). Exponential: (1/√2)e^(7πi/4)
-  </div>
-  <div class="q-ans">(1/√2)(cos 7π/4 + i sin 7π/4) &nbsp;|&nbsp; (1/√2)e^(i·7π/4)</div>
-</div>
-
-<div class="subsec">Q.5 – Express in x+iy form</div>
-<div class="fcard">
-  <table>
-    <tr><th>Expression</th><th>x+iy</th></tr>
-    <tr><td>√3(cos π/6 + i sin π/6)</td><td>√3(√3/2 + i/2) = 3/2 + √3i/2</td></tr>
-    <tr><td>√2(cos 7π/4 + i sin 7π/4)</td><td>√2(1/√2 − i/√2) = 1−i</td></tr>
-    <tr><td>7(cos(−5π/6)+i sin(−5π/6))</td><td>7(−√3/2−i/2) = −7√3/2 − 7i/2</td></tr>
-    <tr><td>e^(iπ/3)</td><td>cos π/3 + i sin π/3 = 1/2 + √3i/2</td></tr>
-    <tr><td>e^(−4πi/3)</td><td>cos(−4π/3) + i sin(−4π/3) = −1/2 + √3i/2</td></tr>
-    <tr><td>e^(5πi/6)</td><td>cos 5π/6 + i sin 5π/6 = −√3/2 + i/2</td></tr>
-  </table>
-</div>
-
-<div class="subsec">Q.6 – Modulus and Argument of (1+2i)/(1−3i) <span class="badge-imp">IMP</span></div>
-<div class="q-block">
-  <div class="q-sol">
-    z = (1+2i)/(1−3i) × (1+3i)/(1+3i) = (1+3i+2i+6i²)/(1+9) = (1+5i−6)/10 = (−5+5i)/10 = −1/2 + i/2<br>
-    a = −1/2, b = 1/2 → Q-II<br>
-    |z| = √(1/4+1/4) = √(1/2) = 1/√2<br>
-    arg(z) = tan⁻¹(1/2 ÷ −1/2) + π = tan⁻¹(−1)+π = −π/4+π = 3π/4
-  </div>
-  <div class="q-ans">|z| = 1/√2 &nbsp;|&nbsp; arg(z) = 3π/4</div>
-</div>
-
-<div class="subsec">Q.7 – Convert z = (i−1)/(cos π/3 + i sin π/3) to polar form</div>
-<div class="q-block">
-  <div class="q-sol">
-    Denominator = e^(iπ/3). Numerator: i−1 = −1+i, r=√2, θ=3π/4 → √2·e^(i3π/4)<br>
-    z = √2·e^(i3π/4) / e^(iπ/3) = √2·e^(i(3π/4−π/3)) = √2·e^(i(9π/12−4π/12)) = √2·e^(i5π/12)<br>
-    Polar: z = √2(cos 5π/12 + i sin 5π/12)
-  </div>
-  <div class="q-ans">√2(cos 5π/12 + i sin 5π/12)</div>
-</div>
-
-<!-- IMPORTANT QUESTIONS SUMMARY -->
-<div class="sec-title">⭐ Most Important Questions for Exam</div>
-<div class="fcard">
-  <table>
-    <tr><th>#</th><th>Question Type</th><th>Example</th><th>Marks</th></tr>
-    <tr><td>1</td><td>Simplify √(−n) expressions</td><td>Q.1 Ex 1.1</td><td>2</td></tr>
-    <tr><td>2</td><td>Express in a+ib form (division)</td><td>Q.4 Ex 1.1</td><td>3</td></tr>
-    <tr><td>3</td><td>Find a and b (equality)</td><td>Q.3, Q.24 Ex 1.1</td><td>3</td></tr>
-    <tr><td>4</td><td>Powers of i (i³⁵, i⁴⁹, etc.)</td><td>Q.7, Q.9 Ex 1.1</td><td>2</td></tr>
-    <tr><td>5</td><td>Square root of complex number</td><td>Q.1 Ex 1.2</td><td>4</td></tr>
-    <tr><td>6</td><td>Solve quadratic (real coefficients)</td><td>Q.2 Ex 1.2</td><td>3</td></tr>
-    <tr><td>7</td><td>Solve quadratic (complex coefficients)</td><td>Q.3, Q.4 Ex 1.2</td><td>4</td></tr>
-    <tr><td>8</td><td>Find modulus and argument</td><td>Q.1 Ex 1.3</td><td>3</td></tr>
-    <tr><td>9</td><td>Polar and exponential form</td><td>Q.4 Ex 1.3</td><td>4</td></tr>
-    <tr><td>10</td><td>Find value of polynomial at complex x</td><td>Q.5 Ex 1.2</td><td>4</td></tr>
-    <tr><td>11</td><td>Prove/Show (conjugates, modulus)</td><td>Q.5 Ex 1.1, Q.8 Ex 1.3</td><td>3</td></tr>
-    <tr><td>12</td><td>Modulus and argument of z₁/z₂</td><td>Q.6 Ex 1.3</td><td>4</td></tr>
-  </table>
-  <div class="tip" style="margin-top:12px;">
-    💡 <strong>Quick Tips:</strong><br>
-    • Powers of i: divide power by 4, use remainder<br>
-    • Square root: always use (a²+b²)² = (a²−b²)²+(2ab)²<br>
-    • Quadratic with complex roots: D &lt; 0 → use formula directly<br>
-    • Polar form: find r first, then θ (watch quadrant!)<br>
-    • Division: always multiply by conjugate of denominator
+<!-- EXAMPLE 1 -->
+<div class="qb">
+  <div class="qh">Ex. 1 &nbsp;– Write (1+2i)(1+3i)(2+i)⁻¹ in the form a+ib <span class="qtag">Solved Example</span></div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre given">Given :</span><span>(1+2i)(1+3i)(2+i)⁻¹</span></div>
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>(1+2i)(1+3i) = 1+3i+2i+6i² = 1+5i+6(−1) = −5+5i</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>= (−5+5i) / (2+i)</span></div>
+    <div class="sol-row"><span class="pre step">Step 3 :</span><span>Multiply by conjugate (2−i)/(2−i) :</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= (−5+5i)(2−i) / [(2+i)(2−i)]</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= (−10+5i+10i−5i²) / (4+1)</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= (−10+15i+5) / 5 &nbsp;&nbsp;&nbsp; [∵ i² = −1]</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= (−5+15i) / 5</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= −1 + 3i</span></div>
+    <div class="ans-row">∴ a = −1,  b = 3 &nbsp;→ &nbsp;z = −1 + 3i</div>
   </div>
 </div>
 
+<!-- EXAMPLE 2 : Activity -->
+<div class="qb">
+  <div class="qh">Ex. 2 &nbsp;– Express 1/i + 2/i² + 3/i³ + 5/i⁴ in the form a+ib <span class="qtag">Activity</span></div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre given">Known :</span><span>i² = −1,  i³ = −i,  i⁴ = 1</span></div>
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>1/i = i/i² = i/(−1) = −i</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>1/i² = 1/(−1) = −1</span></div>
+    <div class="sol-row"><span class="pre step">Step 3 :</span><span>1/i³ = 1/(−i) = i (multiply by i/i → i/1 = i)</span></div>
+    <div class="sol-row"><span class="pre step">Step 4 :</span><span>1/i⁴ = 1/1 = 1</span></div>
+    <div class="sol-row"><span class="pre eqn">∴ Sum :</span><span>= 1(−i) + 2(−1) + 3(i) + 5(1)</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= −i − 2 + 3i + 5</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= (5−2) + (3−1)i</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= 3 + 2i</span></div>
+    <div class="ans-row">∴ a = 3,  b = 2</div>
+  </div>
 </div>
-<footer>📐 Class 11 Maths Paper 2 | Chapter 1 – Complex Numbers | Maharashtra Board | All Exercises Solved ✅</footer>
+
+<!-- EXAMPLE 3 -->
+<div class="qb">
+  <div class="qh">Ex. 3 &nbsp;– If a,b ∈ R and (i⁴+3i)a + (i−1)b + 5i³ = 0, find a and b <span class="qtag">Solved Example</span></div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre given">Given :</span><span>(i⁴+3i)a + (i−1)b + 5i³ = 0+0i</span></div>
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>Simplify powers: i⁴ = 1,  i³ = −i</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>(1+3i)a + (i−1)b − 5i = 0+0i</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>Expand:</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>a + 3ai + bi − b − 5i = 0+0i</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>(a−b) + (3a+b−5)i = 0+0i</span></div>
+    <div class="sol-row"><span class="pre step">Step 3 :</span><span>Equating real parts: a − b = 0  ∴ a = b</span></div>
+    <div class="sol-row"><span class="pre step">Step 4 :</span><span>Equating imaginary parts: 3a + b − 5 = 0</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>∴ 3a + a = 5  (since a = b)</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>∴ 4a = 5</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>∴ a = 5/4</span></div>
+    <div class="ans-row">∴ a = b = 5/4</div>
+  </div>
+</div>
+
+<!-- EXAMPLE 4 -->
+<div class="qb">
+  <div class="qh">Ex. 4 &nbsp;– x + 2i + 15i⁶y = 7x + i³(y+4). Find x+y, x,y ∈ R <span class="qtag">Solved Example</span></div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre given">Given :</span><span>x + 2i + 15i⁶y = 7x + i³(y+4)</span></div>
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>Simplify: i⁶ = −1,  i³ = −i</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>∴ x + 2i − 15y = 7x − (y+4)i</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>∴ (x−15y) + 2i = 7x − (y+4)i</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>Equating real parts:</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>x − 15y = 7x</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>∴ −6x − 15y = 0  ... (i)</span></div>
+    <div class="sol-row"><span class="pre step">Step 3 :</span><span>Equating imaginary parts:</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>2 = −(y+4)</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>∴ y + 6 = 0</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>∴ y = −6  ... (ii)</span></div>
+    <div class="sol-row"><span class="pre step">Step 4 :</span><span>Substituting y = −6 in (i):</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>−6x − 15(−6) = 0</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>−6x + 90 = 0  ∴ x = 15</span></div>
+    <div class="ans-row">∴ x = 15,  y = −6  &nbsp;→ &nbsp;x + y = 15 + (−6) = 9</div>
+  </div>
+</div>
+
+<!-- EXAMPLE 5 -->
+<div class="qb">
+  <div class="qh">Ex. 5 &nbsp;– Show that (√3/2 + i/2)³ = i <span class="qtag">Proof</span></div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre given">To prove :</span><span>(√3/2 + i/2)³ = i</span></div>
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>Write as ((√3+i)/2)³ = (√3+i)³ / 8</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>Expand (√3+i)³ using (a+b)³ = a³+3a²b+3ab²+b³:</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= (√3)³ + 3(√3)²(i) + 3(√3)(i²) + i³</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= 3√3 + 9i + 3√3(−1) + (−i)</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= 3√3 + 9i − 3√3 − i</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= (3√3 − 3√3) + (9i − i)</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= 0 + 8i = 8i</span></div>
+    <div class="sol-row"><span class="pre step">Step 3 :</span><span>∴ (√3+i)³ / 8 = 8i / 8 = i = R.H.S.</span></div>
+    <div class="ans-row">∴ L.H.S. = i = R.H.S.  &nbsp;&nbsp; Proved ✓</div>
+  </div>
+</div>
+
+<!-- SQUARE ROOT EX 1 -->
+<div class="qb">
+  <div class="qh">Sq. Root Ex. 1 &nbsp;– Find √(6+8i) <span class="qtag">Square Root</span></div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre given">Let :</span><span>√(6+8i) = a+ib,  a,b ∈ R</span></div>
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>Squaring both sides:</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>6 + 8i = (a+ib)² = (a²−b²) + 2abi</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>Equating real parts:  a² − b² = 6  ... (1)</span></div>
+    <div class="sol-row"><span class="pre step">Step 3 :</span><span>Equating imaginary parts: 2ab = 8  ∴ ab = 4  ∴ a = 4/b  ... (2)</span></div>
+    <div class="sol-row"><span class="pre step">Step 4 :</span><span>Substituting (2) in (1):</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>(4/b)² − b² = 6</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>16/b² − b² = 6</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>∴ b⁴ + 6b² − 16 = 0</span></div>
+    <div class="sol-row"><span class="pre step">Step 5 :</span><span>Put m = b²:</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>m² + 6m − 16 = 0</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>(m+8)(m−2) = 0</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>∴ m = −8  or  m = 2</span></div>
+    <div class="sol-row"><span class="pre step">Step 6 :</span><span>Since b is real, b² ≠ −8</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>∴ b² = 2  ∴ b = ±√2</span></div>
+    <div class="sol-row"><span class="pre step">Step 7 :</span><span>For b = √2 : a = 4/√2 = 2√2</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>For b = −√2 : a = 4/(−√2) = −2√2</span></div>
+    <div class="ans-row">∴ √(6+8i) = 2√2 + √2·i &nbsp; or &nbsp; −2√2 − √2·i &nbsp;= ±√2(2+i)</div>
+  </div>
+</div>
+
+<!-- SQUARE ROOT EX 2 -->
+<div class="qb">
+  <div class="qh">Sq. Root Ex. 2 &nbsp;– Find √(3−4i) <span class="qtag">Square Root</span></div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre given">Let :</span><span>√(3−4i) = a+ib,  a,b ∈ R</span></div>
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>Squaring: (a+ib)² = (a²−b²) + 2abi</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>∴ a²−b² = 3  ... (1) &nbsp; and &nbsp; 2ab = −4  ∴ ab = −2  ... (2)</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>Use (a²+b²)² = (a²−b²)² + (2ab)²</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= 9 + 16 = 25</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>∴ a² + b² = 5  ... (3)</span></div>
+    <div class="sol-row"><span class="pre step">Step 3 :</span><span>Adding (1) and (3):</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>2a² = 8  ∴ a² = 4  ∴ a = ±2</span></div>
+    <div class="sol-row"><span class="pre step">Step 4 :</span><span>For a = 2 :  b = −4/(2×2) = −1</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>For a = −2 :  b = −4/(2×−2) = 1</span></div>
+    <div class="ans-row">∴ √(3−4i) = 2−i &nbsp; or &nbsp; −2+i &nbsp;= ±(2−i)</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ EXERCISE 1.1 ═══════════════════════════ -->
+<div class="sec" id="ex11">✏️ Exercise 1.1 – Complete Solutions</div>
+
+<div class="sub">Q.1 – Simplify</div>
+
+<div class="qb">
+  <div class="qh">i) √(−16) + 3√(−25) + √(−36) − √(−625)</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>√(−16) = 4i,  3√(−25) = 3×5i = 15i,  √(−36) = 6i,  √(−625) = 25i</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= 4i + 15i + 6i − 25i</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= (4+15+6−25)i</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= 0·i</span></div>
+    <div class="ans-row">Answer: 0</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">ii) 4√(−4) + 5√(−9) − 3√(−16)</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>4√(−4) = 4×2i = 8i,  5√(−9) = 5×3i = 15i,  3√(−16) = 3×4i = 12i</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= 8i + 15i − 12i = 11i</span></div>
+    <div class="ans-row">Answer: 11i &nbsp;(a=0, b=11)</div>
+  </div>
+</div>
+
+<div class="sub">Q.3 – Find a and b</div>
+
+<div class="qb">
+  <div class="qh">i) a + 2b + 2ai = 4 + 6i</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>Equate real parts:   a + 2b = 4  ... (1)</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>Equate imaginary parts: 2a = 6  ∴ a = 3</span></div>
+    <div class="sol-row"><span class="pre step">Step 3 :</span><span>Substitute in (1): 3 + 2b = 4  ∴ b = 1/2</span></div>
+    <div class="ans-row">∴ a = 3,  b = 1/2</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">ii) (a−b) + (a+b)i = a + 5i</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>Equate real parts:   a − b = a  ∴ −b = 0  ∴ b = 0</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>Equate imaginary parts: a + b = 5  ∴ a + 0 = 5  ∴ a = 5</span></div>
+    <div class="ans-row">∴ a = 5,  b = 0</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">iii) (a+b)(2+i) = b+1 + (10+2a)i</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>Expand LHS: 2(a+b) + (a+b)i</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>Equate real: 2(a+b) = b+1</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>∴ 2a + 2b = b + 1  ∴ 2a + b = 1  ... (1)</span></div>
+    <div class="sol-row"><span class="pre step">Step 3 :</span><span>Equate imaginary: a + b = 10 + 2a</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>∴ b − a = 10  ∴ b = a + 10  ... (2)</span></div>
+    <div class="sol-row"><span class="pre step">Step 4 :</span><span>Substitute (2) in (1):</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>2a + (a+10) = 1  ∴ 3a = −9  ∴ a = −3</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>b = −3 + 10 = 7</span></div>
+    <div class="ans-row">∴ a = −3,  b = 7</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">iv) abi = 3a − b + 12i</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>LHS = 0 + abi.  Equate real: 0 = 3a − b  ∴ b = 3a  ... (1)</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>Equate imaginary: ab = 12  ... (2)</span></div>
+    <div class="sol-row"><span class="pre step">Step 3 :</span><span>Substitute (1) in (2): a(3a) = 12  ∴ 3a² = 12  ∴ a² = 4  ∴ a = ±2</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>For a = 2 : b = 6 &nbsp;&nbsp; For a = −2 : b = −6</span></div>
+    <div class="ans-row">∴ a = 2, b = 6 &nbsp; OR &nbsp; a = −2, b = −6</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">v) 1/(a+ib) = 3−2i</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>a + ib = 1/(3−2i)</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>Rationalise: = (3+2i) / [(3−2i)(3+2i)] = (3+2i) / (9+4) = (3+2i) / 13</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= 3/13 + (2/13)i</span></div>
+    <div class="ans-row">∴ a = 3/13,  b = 2/13</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">vi) (a+ib)(1+i) = 2+i</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>a + ib = (2+i) / (1+i)</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>Rationalise by (1−i)/(1−i):</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= (2+i)(1−i) / (1+1) = (2−2i+i−i²) / 2</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= (2 − i + 1) / 2 = (3−i) / 2 = 3/2 − (1/2)i</span></div>
+    <div class="ans-row">∴ a = 3/2,  b = −1/2</div>
+  </div>
+</div>
+
+<div class="sub">Q.4 – Express in a+ib form <span class="badge">IMP</span></div>
+
+<div class="qb">
+  <div class="qh">i) (1+2i)(−2i)</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= −2i − 4i²</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= −2i − 4(−1)</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= 4 − 2i</span></div>
+    <div class="ans-row">∴ a = 4,  b = −2</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">ii) (1+i)(1−i)⁻¹</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>= (1+i) / (1−i)</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>Multiply by (1+i)/(1+i):</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= (1+i)² / (1+1) = (1 + 2i + i²) / 2</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= (1 + 2i − 1) / 2 = 2i / 2 = i</span></div>
+    <div class="ans-row">∴ a = 0,  b = 1</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">iii) −i(4+3i) / (1−i)</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>Numerator: −i(4+3i) = −4i − 3i² = −4i + 3 = 3 − 4i</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>= (3−4i) / (1−i).  Multiply by (1+i)/(1+i):</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= (3−4i)(1+i) / (1+1)</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= (3 + 3i − 4i − 4i²) / 2</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= (3 − i + 4) / 2 = (7−i) / 2</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= 7/2 − (1/2)i</span></div>
+    <div class="ans-row">∴ a = 7/2,  b = −1/2</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">iv) (2+i) / [(3−i)(1+2i)]</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>Denominator: (3−i)(1+2i) = 3+6i−i−2i² = 3+5i+2 = 5+5i</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>= (2+i) / (5+5i).  Multiply by (5−5i)/(5−5i):</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= (2+i)(5−5i) / (25+25)</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= (10−10i+5i−5i²) / 50</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= (10 − 5i + 5) / 50 = (15−5i) / 50</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= 3/10 − (1/10)i</span></div>
+    <div class="ans-row">∴ a = 3/10,  b = −1/10</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">v) [(1+i)/(1−i)]²</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>(1+i)/(1−i) = (1+i)²/[(1−i)(1+i)] = (1+2i+i²)/2 = (1+2i−1)/2 = 2i/2 = i</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>∴ [(1+i)/(1−i)]² = i² = −1</span></div>
+    <div class="ans-row">∴ −1 + 0i &nbsp;(a = −1,  b = 0)</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">vi) (3+2i)/(2−5i) + (−2i)/(2+5i)</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>Part 1: (3+2i)(2+5i) / [(2−5i)(2+5i)]</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= (6+15i+4i+10i²) / (4+25) = (6+19i−10) / 29 = (−4+19i) / 29</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>Part 2: (−2i)(2−5i) / [(2+5i)(2−5i)]</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= (−4i+10i²) / 29 = (−10−4i) / 29</span></div>
+    <div class="sol-row"><span class="pre step">Step 3 :</span><span>Sum = (−4+19i−10−4i) / 29 = (−14+15i) / 29</span></div>
+    <div class="ans-row">∴ −14/29 + (15/29)i</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">vii) (1+i)⁻³</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>(1+i)² = 1+2i+i² = 1+2i−1 = 2i</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>(1+i)³ = (1+i)(2i) = 2i+2i² = 2i−2 = −2+2i</span></div>
+    <div class="sol-row"><span class="pre step">Step 3 :</span><span>(1+i)⁻³ = 1/(−2+2i).  Multiply by (−2−2i)/(−2−2i):</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= (−2−2i) / (4+4) = (−2−2i) / 8 = −1/4 − (1/4)i</span></div>
+    <div class="ans-row">∴ a = −1/4,  b = −1/4</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">x) (2+3i)(2−3i)</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= 4 − 6i + 6i − 9i²</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= 4 − 9(−1)</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= 4 + 9 = 13</span></div>
+    <div class="ans-row">∴ 13 + 0i &nbsp;(a = 13,  b = 0)</div>
+  </div>
+</div>
+
+<div class="sub">Q.7 – Evaluate Powers of i <span class="badge">IMP</span></div>
+<div class="qb">
+  <div class="qh">All parts — Shortcut: divide power by 4, use remainder</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre given">Rule :</span><span>rem 0 → 1 &nbsp;|&nbsp; rem 1 → i &nbsp;|&nbsp; rem 2 → −1 &nbsp;|&nbsp; rem 3 → −i</span></div>
+    <div class="sol-row"><span class="pre step">i) i³⁵</span><span>: 35 ÷ 4 = 8 rem 3  ∴ i³⁵ = −i</span></div>
+    <div class="sol-row"><span class="pre step">ii) i⁸⁸⁸</span><span>: 888 ÷ 4 = 222 rem 0  ∴ i⁸⁸⁸ = 1</span></div>
+    <div class="sol-row"><span class="pre step">iii) i⁹³</span><span>: 93 ÷ 4 = 23 rem 1  ∴ i⁹³ = i</span></div>
+    <div class="sol-row"><span class="pre step">iv) i¹¹⁶</span><span>: 116 ÷ 4 = 29 rem 0  ∴ i¹¹⁶ = 1</span></div>
+    <div class="sol-row"><span class="pre step">v) i⁴⁰³</span><span>: 403 ÷ 4 = 100 rem 3  ∴ i⁴⁰³ = −i</span></div>
+    <div class="sol-row"><span class="pre step">vi) 1/i⁵⁸</span><span>: 58 ÷ 4 = 14 rem 2  ∴ i⁵⁸ = −1  ∴ 1/i⁵⁸ = 1/(−1) = −1</span></div>
+    <div class="sol-row"><span class="pre step">vii) i⁻⁸⁸⁸</span><span>: 888 rem 0  ∴ i⁸⁸⁸ = 1  ∴ i⁻⁸⁸⁸ = 1/1 = 1</span></div>
+    <div class="sol-row"><span class="pre step">viii) i³⁰+i⁴⁰+i⁵⁰+i⁶⁰</span><span>: rem 2,0,2,0 → −1+1+(−1)+1 = 0</span></div>
+    <div class="ans-row">Answers: −i, 1, i, 1, −i, −1, 1, 0</div>
+  </div>
+</div>
+
+<div class="sub">Q.9 – Find Values <span class="badge">IMP</span></div>
+
+<div class="qb">
+  <div class="qh">i) i⁴⁹ + i⁶⁸ + i⁸⁹ + i¹¹⁰</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">i⁴⁹ :</span><span>49 ÷ 4 = 12 rem 1  ∴ i⁴⁹ = i</span></div>
+    <div class="sol-row"><span class="pre step">i⁶⁸ :</span><span>68 ÷ 4 = 17 rem 0  ∴ i⁶⁸ = 1</span></div>
+    <div class="sol-row"><span class="pre step">i⁸⁹ :</span><span>89 ÷ 4 = 22 rem 1  ∴ i⁸⁹ = i</span></div>
+    <div class="sol-row"><span class="pre step">i¹¹⁰ :</span><span>110 ÷ 4 = 27 rem 2  ∴ i¹¹⁰ = −1</span></div>
+    <div class="sol-row"><span class="pre eqn">Sum :</span><span>= i + 1 + i + (−1) = 2i</span></div>
+    <div class="ans-row">Answer: 2i</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">ii) i + i² + i³ + i⁴</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= i + (−1) + (−i) + 1</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= (i − i) + (−1 + 1) = 0</span></div>
+    <div class="ans-row">Answer: 0</div>
+  </div>
+</div>
+
+<div class="sub">Q.14 – Evaluate (i³⁷ + 1/i⁶⁷) <span class="badge">IMP</span></div>
+<div class="qb">
+  <div class="qh">i³⁷ + 1/i⁶⁷</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">i³⁷ :</span><span>37 ÷ 4 = 9 rem 1  ∴ i³⁷ = i</span></div>
+    <div class="sol-row"><span class="pre step">i⁶⁷ :</span><span>67 ÷ 4 = 16 rem 3  ∴ i⁶⁷ = −i</span></div>
+    <div class="sol-row"><span class="pre step">1/i⁶⁷ :</span><span>= 1/(−i) = (−i)/(−i×−i) = −i/(i²) ... or multiply by (i/i): = i/(−i²) = i/1 = i</span></div>
+    <div class="sol-row"><span class="pre eqn">Sum :</span><span>= i + i = 2i</span></div>
+    <div class="ans-row">Answer: 2i</div>
+  </div>
+</div>
+
+<div class="sub">Q.24 – Find x and y, x,y ∈ R <span class="badge">IMP</span></div>
+
+<div class="qb">
+  <div class="qh">i) (x+2y) + (2x−y)i + 4i = 5</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>Group: (x+2y) + (2x−y+4)i = 5 + 0i</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>Equate real: x + 2y = 5  ... (1)</span></div>
+    <div class="sol-row"><span class="pre step">Step 3 :</span><span>Equate imaginary: 2x − y + 4 = 0  ∴ 2x − y = −4  ... (2)</span></div>
+    <div class="sol-row"><span class="pre step">Step 4 :</span><span>From (2): y = 2x+4.  Substitute in (1):</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>x + 2(2x+4) = 5  ∴ 5x + 8 = 5  ∴ x = −3/5</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>y = 2(−3/5)+4 = −6/5 + 20/5 = 14/5</span></div>
+    <div class="ans-row">∴ x = −3/5,  y = 14/5</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">v) If x + 2i + 15i⁶y = 7x + i³(y+4), find x+y</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>Simplify: i⁶ = −1, i³ = −i</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>x + 2i − 15y = 7x − (y+4)i</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>(x−15y) + 2i = 7x − (y+4)i</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>Equate real: x − 15y = 7x  ∴ −6x = 15y  ... (i)</span></div>
+    <div class="sol-row"><span class="pre step">Step 3 :</span><span>Equate imaginary: 2 = −(y+4)  ∴ y = −6</span></div>
+    <div class="sol-row"><span class="pre step">Step 4 :</span><span>−6x = 15(−6) = −90  ∴ x = 15</span></div>
+    <div class="ans-row">∴ x = 15,  y = −6  &nbsp;→ &nbsp;x + y = 9</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ EXERCISE 1.2 ═══════════════════════════ -->
+<div class="sec" id="ex12">✏️ Exercise 1.2 – Square Roots &amp; Quadratic Equations</div>
+
+<div class="sub">Q.1 – Find Square Roots <span class="badge">IMP</span></div>
+
+<div class="qb">
+  <div class="qh">i) √(−8−6i)</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre given">Let :</span><span>√(−8−6i) = a+ib</span></div>
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>Squaring: a²−b² = −8  ... (1) &nbsp; and &nbsp; 2ab = −6  ∴ ab = −3  ... (2)</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>(a²+b²)² = (a²−b²)² + (2ab)² = 64 + 36 = 100</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>∴ a² + b² = 10  ... (3)</span></div>
+    <div class="sol-row"><span class="pre step">Step 3 :</span><span>Adding (1) and (3):  2a² = 2  ∴ a = ±1</span></div>
+    <div class="sol-row"><span class="pre step">Step 4 :</span><span>For a = 1 : b = −3/1 = −3</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>For a = −1 : b = −3/(−1) = 3</span></div>
+    <div class="ans-row">∴ √(−8−6i) = 1−3i &nbsp; or &nbsp; −1+3i &nbsp;= ±(1−3i)</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">ii) √(7+24i)</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre given">Let :</span><span>√(7+24i) = a+ib</span></div>
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>a²−b² = 7  ... (1) &nbsp; and &nbsp; 2ab = 24  ∴ ab = 12  ... (2)</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>(a²+b²)² = 49 + 576 = 625  ∴ a²+b² = 25  ... (3)</span></div>
+    <div class="sol-row"><span class="pre step">Step 3 :</span><span>Adding (1) and (3): 2a² = 32  ∴ a² = 16  ∴ a = ±4</span></div>
+    <div class="sol-row"><span class="pre step">Step 4 :</span><span>For a = 4 : b = 12/4 = 3</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>For a = −4 : b = 12/(−4) = −3</span></div>
+    <div class="ans-row">∴ √(7+24i) = 4+3i &nbsp; or &nbsp; −4−3i &nbsp;= ±(4+3i)</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">iii) √(1+4√3·i)</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre given">Let :</span><span>√(1+4√3·i) = a+ib</span></div>
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>a²−b² = 1  and  2ab = 4√3  ∴ ab = 2√3</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>(a²+b²)² = 1 + 48 = 49  ∴ a²+b² = 7  ... (3)</span></div>
+    <div class="sol-row"><span class="pre step">Step 3 :</span><span>2a² = 8  ∴ a = ±2</span></div>
+    <div class="sol-row"><span class="pre step">Step 4 :</span><span>For a = 2 : b = 2√3/2 = √3</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>For a = −2 : b = −√3</span></div>
+    <div class="ans-row">∴ ±(2+√3·i)</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">iv) √(3+2√10·i)</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>a²−b² = 3,  ab = √10</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>(a²+b²)² = 9+40 = 49  ∴ a²+b² = 7</span></div>
+    <div class="sol-row"><span class="pre step">Step 3 :</span><span>2a² = 10  ∴ a = ±√5</span></div>
+    <div class="sol-row"><span class="pre step">Step 4 :</span><span>For a=√5 : b = √10/√5 = √2  &nbsp;|&nbsp;  For a=−√5 : b = −√2</span></div>
+    <div class="ans-row">∴ ±(√5 + √2·i)</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">v) √[2(1−√3·i)]</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>= √(2−2√3·i)</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>a²−b² = 2,  ab = −√3</span></div>
+    <div class="sol-row"><span class="pre step">Step 3 :</span><span>(a²+b²)² = 4+12 = 16  ∴ a²+b² = 4</span></div>
+    <div class="sol-row"><span class="pre step">Step 4 :</span><span>2a² = 6  ∴ a = ±√3</span></div>
+    <div class="sol-row"><span class="pre step">Step 5 :</span><span>For a=√3 : b=−1  &nbsp;|&nbsp;  For a=−√3 : b=1</span></div>
+    <div class="ans-row">∴ ±(√3 − i)</div>
+  </div>
+</div>
+
+<div class="sub">Q.2 – Solve Quadratic (Real Coefficients)</div>
+
+<div class="qb">
+  <div class="qh">i) 8x² + 2x + 1 = 0</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre given">a=8, b=2, c=1</span><span></span></div>
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>D = b²−4ac = 4 − 32 = −28  &lt; 0</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>x = (−2 ± √(−28)) / 16 = (−2 ± 2√7·i) / 16 = (−1 ± √7·i) / 8</span></div>
+    <div class="ans-row">∴ x = (−1+√7·i)/8 &nbsp; and &nbsp; (−1−√7·i)/8</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">ii) 2x² − √3·x + 1 = 0</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre given">a=2, b=−√3, c=1</span><span></span></div>
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>D = 3 − 8 = −5</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>x = (√3 ± √(−5)) / 4 = (√3 ± √5·i) / 4</span></div>
+    <div class="ans-row">∴ x = (√3+√5·i)/4 &nbsp; and &nbsp; (√3−√5·i)/4</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">iii) 3x² − 7x + 5 = 0</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>D = 49 − 60 = −11</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>x = (7 ± √(−11)) / 6 = (7 ± √11·i) / 6</span></div>
+    <div class="ans-row">∴ x = (7+√11·i)/6 &nbsp; and &nbsp; (7−√11·i)/6</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">iv) x² − 4x + 13 = 0</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>D = 16 − 52 = −36</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>x = (4 ± √(−36)) / 2 = (4 ± 6i) / 2 = 2 ± 3i</span></div>
+    <div class="ans-row">∴ x = 2+3i &nbsp; and &nbsp; 2−3i</div>
+  </div>
+</div>
+
+<div class="sub">Q.3 – Solve Quadratic (Complex Coefficients)</div>
+
+<div class="qb">
+  <div class="qh">i) x² + 3ix + 10 = 0</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>D = (3i)² − 4(10) = −9 − 40 = −49</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>√(−49) = 7i</span></div>
+    <div class="sol-row"><span class="pre step">Step 3 :</span><span>x = (−3i ± 7i) / 2</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>x = (−3i+7i)/2 = 4i/2 = 2i &nbsp; or &nbsp; x = (−3i−7i)/2 = −10i/2 = −5i</span></div>
+    <div class="ans-row">∴ x = 2i &nbsp; and &nbsp; −5i</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">ii) 2x² + 3ix + 2 = 0</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>D = (3i)² − 4(2)(2) = −9 − 16 = −25</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>√(−25) = 5i</span></div>
+    <div class="sol-row"><span class="pre step">Step 3 :</span><span>x = (−3i ± 5i) / 4</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>x = 2i/4 = i/2 &nbsp; or &nbsp; x = −8i/4 = −2i</span></div>
+    <div class="ans-row">∴ x = i/2 &nbsp; and &nbsp; −2i</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">iii) x² + 4ix − 4 = 0</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>D = (4i)² − 4(1)(−4) = −16 + 16 = 0</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>x = −4i / 2 = −2i &nbsp; (repeated root)</span></div>
+    <div class="ans-row">∴ x = −2i (repeated)</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">iv) ix² − 4x − 4i = 0</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>Multiply throughout by i: i²x² − 4ix − 4i² = 0</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>→ −x² − 4ix + 4 = 0  →  x² + 4ix − 4 = 0</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>D = (4i)² + 16 = −16+16 = 0  ∴ x = −4i/2 = −2i</span></div>
+    <div class="ans-row">∴ x = −2i (repeated)</div>
+  </div>
+</div>
+
+<div class="sub">Q.4 – Solve (Mixed Complex Coefficients)</div>
+
+<div class="qb">
+  <div class="qh">i) x² − (2+i)x − (1−7i) = 0</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>D = (2+i)² + 4(1−7i)</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= 4+4i+i² + 4−28i = 4+4i−1+4−28i = 7−24i</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>Find √(7−24i) = a+ib:</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>a²−b² = 7,  ab = −12</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>(a²+b²)² = 49+576 = 625  ∴ a²+b² = 25</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>2a² = 32  ∴ a = ±4</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>For a=4: b = −12/4 = −3  ∴ √(7−24i) = 4−3i</span></div>
+    <div class="sol-row"><span class="pre step">Step 3 :</span><span>x = [(2+i) ± (4−3i)] / 2</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>x = (6−2i)/2 = 3−i &nbsp; or &nbsp; x = (−2+4i)/2 = −1+2i</span></div>
+    <div class="ans-row">∴ x = 3−i &nbsp; and &nbsp; −1+2i</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">iii) x² − (5−i)x + (18+i) = 0</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>D = (5−i)² − 4(18+i)</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= 25−10i+i² − 72−4i = 25−10i−1−72−4i = −48−14i</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>Find √(−48−14i):</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>a²−b² = −48,  ab = −7</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>(a²+b²)² = 2304+196 = 2500  ∴ a²+b² = 50</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>2a² = 2  ∴ a = ±1.  For a=1: b = −7  ∴ √(−48−14i) = 1−7i</span></div>
+    <div class="sol-row"><span class="pre step">Step 3 :</span><span>x = [(5−i) ± (1−7i)] / 2</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>x = (6−8i)/2 = 3−4i &nbsp; or &nbsp; x = (4+6i)/2 = 2+3i</span></div>
+    <div class="ans-row">∴ x = 3−4i &nbsp; and &nbsp; 2+3i</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ EXERCISE 1.3 ═══════════════════════════ -->
+<div class="sec" id="ex13">✏️ Exercise 1.3 – Modulus, Argument, Polar Form</div>
+
+<div class="sub">Q.1 – Modulus and Amplitude <span class="badge">IMP</span></div>
+
+<div class="qb">
+  <div class="qh">i) z = 7−5i</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre given">a = 7,  b = −5  (Q IV)</span><span></span></div>
+    <div class="sol-row"><span class="pre step">|z| :</span><span>= √(7²+(−5)²) = √(49+25) = √74</span></div>
+    <div class="sol-row"><span class="pre step">arg(z) :</span><span>Q IV → θ = tan⁻¹(−5/7) + 2π</span></div>
+    <div class="ans-row">|z| = √74  &nbsp;|&nbsp;  arg(z) = tan⁻¹(5/7) measured from +X clockwise (Q IV)</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">iii) z = −8+15i</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre given">a = −8,  b = 15  (Q II)</span><span></span></div>
+    <div class="sol-row"><span class="pre step">|z| :</span><span>= √(64+225) = √289 = 17</span></div>
+    <div class="sol-row"><span class="pre step">arg(z) :</span><span>Q II → θ = tan⁻¹(15/−8) + π</span></div>
+    <div class="ans-row">|z| = 17  &nbsp;|&nbsp;  arg(z) = π − tan⁻¹(15/8)</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">v) z = −4−4i</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre given">a = −4,  b = −4  (Q III)</span><span></span></div>
+    <div class="sol-row"><span class="pre step">|z| :</span><span>= √(16+16) = √32 = 4√2</span></div>
+    <div class="sol-row"><span class="pre step">arg(z) :</span><span>Q III → θ = tan⁻¹(−4/−4) + π = tan⁻¹(1) + π = π/4 + π = 5π/4</span></div>
+    <div class="ans-row">|z| = 4√2  &nbsp;|&nbsp;  arg(z) = 5π/4</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">vi) z = √3 − i</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre given">a = √3,  b = −1  (Q IV)</span><span></span></div>
+    <div class="sol-row"><span class="pre step">|z| :</span><span>= √(3+1) = √4 = 2</span></div>
+    <div class="sol-row"><span class="pre step">arg(z) :</span><span>Q IV → θ = tan⁻¹(−1/√3) + 2π = −π/6 + 2π = 11π/6</span></div>
+    <div class="ans-row">|z| = 2  &nbsp;|&nbsp;  arg(z) = 11π/6 (or −π/6)</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">ix) z = 1 + i√3</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre given">a = 1,  b = √3  (Q I)</span><span></span></div>
+    <div class="sol-row"><span class="pre step">|z| :</span><span>= √(1+3) = √4 = 2</span></div>
+    <div class="sol-row"><span class="pre step">arg(z) :</span><span>Q I → θ = tan⁻¹(√3/1) = tan⁻¹(√3) = π/3</span></div>
+    <div class="ans-row">|z| = 2  &nbsp;|&nbsp;  arg(z) = π/3</div>
+  </div>
+</div>
+
+<div class="sub">Q.4 – Polar and Exponential Form <span class="badge">IMP</span></div>
+
+<div class="qb">
+  <div class="qh">i) z = −1 + √3·i</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre given">a = −1,  b = √3  (Q II)</span><span></span></div>
+    <div class="sol-row"><span class="pre step">r :</span><span>= √(1+3) = √4 = 2</span></div>
+    <div class="sol-row"><span class="pre step">θ :</span><span>Q II → tan⁻¹(√3/−1) + π = −π/3 + π = 2π/3</span></div>
+    <div class="sol-row"><span class="pre eqn">Polar :</span><span>z = 2(cos 2π/3 + i sin 2π/3)</span></div>
+    <div class="sol-row"><span class="pre eqn">Exponential :</span><span>z = 2·e^(2πi/3)</span></div>
+    <div class="ans-row">Polar: 2(cos 2π/3 + i sin 2π/3)  &nbsp;|&nbsp;  Exp: 2e^(i·2π/3)</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">ii) z = −i</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre given">a = 0,  b = −1  (−Y axis)</span><span></span></div>
+    <div class="sol-row"><span class="pre step">r :</span><span>= √(0+1) = 1</span></div>
+    <div class="sol-row"><span class="pre step">θ :</span><span>On negative imaginary axis → θ = 3π/2</span></div>
+    <div class="sol-row"><span class="pre eqn">Polar :</span><span>z = 1(cos 3π/2 + i sin 3π/2)</span></div>
+    <div class="sol-row"><span class="pre eqn">Exponential :</span><span>z = e^(3πi/2)</span></div>
+    <div class="ans-row">Polar: cos 3π/2 + i sin 3π/2  &nbsp;|&nbsp;  Exp: e^(i·3π/2)</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">iii) z = −1</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre given">a = −1,  b = 0  (−X axis)</span><span></span></div>
+    <div class="sol-row"><span class="pre step">r :</span><span>= √(1+0) = 1</span></div>
+    <div class="sol-row"><span class="pre step">θ :</span><span>On negative real axis → θ = π</span></div>
+    <div class="sol-row"><span class="pre eqn">Polar :</span><span>z = 1(cos π + i sin π)</span></div>
+    <div class="sol-row"><span class="pre eqn">Exponential :</span><span>z = e^(iπ)</span></div>
+    <div class="ans-row">Polar: cos π + i sin π  &nbsp;|&nbsp;  Exp: e^(iπ)</div>
+  </div>
+</div>
+
+<div class="qb">
+  <div class="qh">iv) z = 1/(1+i)</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>Rationalise: (1−i)/[(1+i)(1−i)] = (1−i)/2 = 1/2 − (1/2)i</span></div>
+    <div class="sol-row"><span class="pre given">Now: a = 1/2,  b = −1/2  (Q IV)</span><span></span></div>
+    <div class="sol-row"><span class="pre step">r :</span><span>= √(1/4+1/4) = √(1/2) = 1/√2</span></div>
+    <div class="sol-row"><span class="pre step">θ :</span><span>Q IV → tan⁻¹(−1/2 ÷ 1/2) + 2π = tan⁻¹(−1) + 2π = −π/4 + 2π = 7π/4</span></div>
+    <div class="sol-row"><span class="pre eqn">Polar :</span><span>z = (1/√2)(cos 7π/4 + i sin 7π/4)</span></div>
+    <div class="sol-row"><span class="pre eqn">Exponential :</span><span>z = (1/√2)·e^(7πi/4)</span></div>
+    <div class="ans-row">Polar: (1/√2)(cos 7π/4 + i sin 7π/4)  &nbsp;|&nbsp;  Exp: (1/√2)e^(i·7π/4)</div>
+  </div>
+</div>
+
+<div class="sub">Q.6 – Modulus and Argument of (1+2i)/(1−3i) <span class="badge">IMP</span></div>
+<div class="qb">
+  <div class="qh">Find modulus and argument of z = (1+2i)/(1−3i)</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>Rationalise: multiply by (1+3i)/(1+3i)</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= (1+2i)(1+3i) / [(1−3i)(1+3i)]</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= (1+3i+2i+6i²) / (1+9)</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= (1+5i−6) / 10 = (−5+5i) / 10 = −1/2 + (1/2)i</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>a = −1/2,  b = 1/2  (Q II)</span></div>
+    <div class="sol-row"><span class="pre step">|z| :</span><span>= √(1/4+1/4) = √(1/2) = 1/√2</span></div>
+    <div class="sol-row"><span class="pre step">arg(z) :</span><span>Q II → tan⁻¹(1/2 ÷ −1/2) + π = tan⁻¹(−1) + π = −π/4 + π = 3π/4</span></div>
+    <div class="ans-row">|z| = 1/√2  &nbsp;|&nbsp;  arg(z) = 3π/4</div>
+  </div>
+</div>
+
+<div class="sub">Q.7 – Convert to Polar Form: z = (i−1) / (cos π/3 + i sin π/3)</div>
+<div class="qb">
+  <div class="qh">z = (i−1) / (cos π/3 + i sin π/3)</div>
+  <div class="qbody">
+    <div class="sol-row"><span class="pre step">Step 1 :</span><span>Denominator = e^(iπ/3)</span></div>
+    <div class="sol-row"><span class="pre step">Step 2 :</span><span>Numerator: i−1 = −1+i.  r=√2, θ=3π/4 → = √2·e^(i·3π/4)</span></div>
+    <div class="sol-row"><span class="pre step">Step 3 :</span><span>z = √2·e^(i·3π/4) / e^(iπ/3) = √2·e^(i(3π/4 − π/3))</span></div>
+    <div class="sol-row"><span class="pre eqn">&nbsp;</span><span>= √2·e^(i(9π/12 − 4π/12)) = √2·e^(i·5π/12)</span></div>
+    <div class="sol-row"><span class="pre eqn">Polar :</span><span>z = √2(cos 5π/12 + i sin 5π/12)</span></div>
+    <div class="ans-row">z = √2(cos 5π/12 + i sin 5π/12)</div>
+  </div>
+</div>
+
+</div>
+<footer>📐 Class 11 Maths Paper 2 | Chapter 1 – Complex Numbers | All Exercises Solved in Vertical Format ✅</footer>
 </body>
 </html>
