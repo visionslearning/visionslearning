@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Class 11 Physics | Chapter 5: Gravitation — Notes & Important Q&A</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;font-size:13.5px;color:#1a1a2e;background:#f0f2f8;padding:18px}
+
+@media print{
+  body{background:#fff;padding:0;font-size:11px}
+  .page{box-shadow:none;margin:0;padding:14mm 13mm;border-radius:0}
+  .no-print{display:none}
+  .pb{page-break-before:always}
+  .card{page-break-inside:avoid}
+}
+
+.page{max-width:940px;margin:0 auto 26px;background:#fff;border-radius:12px;
+      box-shadow:0 4px 20px rgba(0,0,0,.10);padding:34px 42px}
+
+/* cover */
+.cover{background:linear-gradient(135deg,#1565c0,#0d47a1);color:#fff;
+       border-radius:10px;padding:22px 30px;margin-bottom:28px;text-align:center}
+.cover .lbl{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.8}
+.cover h1{font-size:24px;font-weight:900;margin:7px 0 5px}
+.cover .sub{font-size:13px;opacity:.9}
+
+/* section headers */
+.sec{background:linear-gradient(135deg,#1565c0,#1976d2);color:#fff;
+     padding:10px 18px;border-radius:8px;margin:24px 0 12px;font-size:14px;font-weight:700}
+.sec2{background:linear-gradient(135deg,#1b5e20,#2e7d32);color:#fff;
+      padding:10px 18px;border-radius:8px;margin:24px 0 12px;font-size:14px;font-weight:700}
+.sec3{background:linear-gradient(135deg,#4a148c,#6a1b9a);color:#fff;
+      padding:10px 18px;border-radius:8px;margin:24px 0 12px;font-size:14px;font-weight:700}
+.sec4{background:linear-gradient(135deg,#e65100,#f57c00);color:#fff;
+      padding:10px 18px;border-radius:8px;margin:24px 0 12px;font-size:14px;font-weight:700}
+
+/* key note boxes */
+.kb{border-radius:8px;padding:13px 16px;margin:10px 0;font-size:13px;line-height:1.8}
+.kb-blue  {background:#e3f2fd;border-left:5px solid #1565c0}
+.kb-green {background:#e8f5e9;border-left:5px solid #388e3c}
+.kb-orange{background:#fff3e0;border-left:5px solid #f57c00}
+.kb-purple{background:#f3e5f5;border-left:5px solid #7b1fa2}
+.kb-red   {background:#fce4ec;border-left:5px solid #c62828}
+.kb-yellow{background:#fffde7;border-left:5px solid #f9a825}
+.kb-teal  {background:#e0f2f1;border-left:5px solid #00796b}
+
+.kb-lbl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:5px}
+
+/* formula strip */
+.formula{background:#1a237e;color:#fff;border-radius:8px;padding:12px 18px;
+         margin:10px 0;font-size:12.5px;font-family:'Courier New',monospace;line-height:2}
+.formula span{color:#ffd54f;font-weight:700}
+
+/* table */
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:10px 0}
+th{background:#1565c0;color:#fff;padding:8px 10px;text-align:left;font-size:12px}
+td{padding:7px 10px;border-bottom:1px solid #e3f2fd;vertical-align:top}
+tr:nth-child(even) td{background:#f5f9ff}
+table.green th{background:#2e7d32}
+table.green td{border-bottom:1px solid #e8f5e9}
+table.green tr:nth-child(even) td{background:#f1f8e9}
+
+/* Q&A */
+.qa{border:1.5px solid #e0e0e0;border-radius:8px;margin:10px 0;overflow:hidden}
+.qa-q{background:#f5f5f5;padding:9px 14px;font-weight:700;font-size:13px;
+      border-bottom:1px solid #e0e0e0;color:#1a1a2e}
+.qa-q .qn{color:#1565c0;margin-right:6px}
+.qa-a{padding:10px 14px;font-size:13px;line-height:1.75;background:#fff}
+.qa-a .al{font-size:10px;font-weight:800;color:#2e7d32;text-transform:uppercase;margin-right:6px;letter-spacing:1px}
+
+/* marks badge */
+.mk{display:inline-block;background:#c62828;color:#fff;font-size:10px;
+    font-weight:700;padding:1px 8px;border-radius:8px;margin-left:8px}
+.mk2{background:#f57c00}
+.mk3{background:#1565c0}
+
+/* highlight */
+.hl{color:#c62828;font-weight:700}
+.hlb{color:#1565c0;font-weight:700}
+.hlg{color:#1b5e20;font-weight:700}
+
+ul.bl{margin:6px 0 6px 18px} ul.bl li{margin:4px 0;line-height:1.75}
+ol.nl{margin:6px 0 6px 18px} ol.nl li{margin:4px 0;line-height:1.75}
+hr.d{border:none;border-top:2px solid #f0f0f0;margin:20px 0}
+
+/* quick ref grid */
+.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.qcard{background:#e8eaf6;border-radius:8px;padding:12px 14px;font-size:12.5px;line-height:1.7}
+.qcard .qt{font-weight:800;color:#1a237e;font-size:11px;text-transform:uppercase;
+           letter-spacing:.8px;margin-bottom:5px}
+
+.print-btn{display:block;width:fit-content;margin:0 auto 16px;padding:9px 28px;
+           background:#1565c0;color:#fff;border:none;border-radius:8px;
+           font-size:13px;font-weight:600;cursor:pointer}
+</style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+<!-- ══════ PAGE 1 — INTRO + KEPLER'S LAWS ══════ -->
+<div class="page">
+  <div class="cover">
+    <div class="lbl">Class 11 · Physics · Chapter 5</div>
+    <h1>⚡ Gravitation</h1>
+    <div class="sub">Complete Notes · Key Formulas · Important Q&A for Board Exam</div>
+  </div>
+
+  <!-- Topics index -->
+  <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:22px">
+    <span style="background:#e3f2fd;color:#0d47a1;padding:4px 12px;border-radius:12px;font-size:11.5px;font-weight:700">5.1 Introduction</span>
+    <span style="background:#e3f2fd;color:#0d47a1;padding:4px 12px;border-radius:12px;font-size:11.5px;font-weight:700">5.2 Kepler's Laws</span>
+    <span style="background:#e8f5e9;color:#1b5e20;padding:4px 12px;border-radius:12px;font-size:11.5px;font-weight:700">5.3 Universal Law of Gravitation</span>
+    <span style="background:#e8f5e9;color:#1b5e20;padding:4px 12px;border-radius:12px;font-size:11.5px;font-weight:700">5.4 Cavendish Balance</span>
+    <span style="background:#f3e5f5;color:#4a148c;padding:4px 12px;border-radius:12px;font-size:11.5px;font-weight:700">5.5 Acceleration due to Gravity</span>
+    <span style="background:#f3e5f5;color:#4a148c;padding:4px 12px;border-radius:12px;font-size:11.5px;font-weight:700">5.6 Variation of g</span>
+    <span style="background:#fff3e0;color:#e65100;padding:4px 12px;border-radius:12px;font-size:11.5px;font-weight:700">5.7 Potential Energy & Escape Velocity</span>
+    <span style="background:#fff3e0;color:#e65100;padding:4px 12px;border-radius:12px;font-size:11.5px;font-weight:700">5.8 Earth Satellites</span>
+  </div>
+
+  <!-- 5.1 Introduction -->
+  <div class="sec">📖 5.1 Introduction</div>
+  <div class="kb kb-blue">
+    <div class="kb-lbl">★ Key Facts</div>
+    <ul class="bl">
+      <li><span class="hlb">Gravitation</span>: Force of mutual attraction between any two objects by virtue of their masses.</li>
+      <li>It is always an <span class="hlb">attractive force</span> with <span class="hlb">infinite range</span>.</li>
+      <li>Does not depend on the intervening medium.</li>
+      <li>Gravitational force is <span class="hl">10⁻³⁹ times weaker</span> than strong nuclear force — weakest fundamental force.</li>
+      <li><span class="hlb">Galileo</span> demonstrated all bodies fall with the same acceleration (Leaning Tower of Pisa experiment).</li>
+      <li><span class="hlb">Aryabhatta (476–550 AD)</span>: Earth revolves on its own axis and moves around the Sun in circular orbit.</li>
+      <li><span class="hlb">Kepler (1571–1630)</span>: Established 3 laws of planetary motion from Tycho Brahe's data.</li>
+      <li><span class="hlb">Newton</span>: Explained gravitation as the reason planets obey Kepler's laws.</li>
+    </ul>
+  </div>
+
+  <!-- 5.2 Kepler's Laws -->
+  <div class="sec">🪐 5.2 Kepler's Laws of Planetary Motion</div>
+
+  <div class="kb kb-green">
+    <div class="kb-lbl">Law 1 — Law of Orbit</div>
+    <b>All planets move in elliptical orbits around the Sun, with the Sun at one of the foci of the ellipse.</b>
+    <ul class="bl" style="margin-top:6px">
+      <li><span class="hlg">Perihelion (P)</span>: closest point of orbit from Sun</li>
+      <li><span class="hlg">Aphelion (A)</span>: farthest point of orbit from Sun</li>
+      <li>Major axis = <b>2a</b> (PA) &nbsp;|&nbsp; Semi-major axis = <b>a</b></li>
+      <li>Minor axis = <b>2b</b> (MN) &nbsp;|&nbsp; Semi-minor axis = <b>b</b></li>
+    </ul>
+  </div>
+
+  <div class="kb kb-green">
+    <div class="kb-lbl">Law 2 — Law of Areas</div>
+    <b>The line joining a planet and the Sun sweeps equal areas in equal intervals of time.</b>
+    <ul class="bl" style="margin-top:6px">
+      <li>Planets move <span class="hlg">faster when nearer to Sun</span> (at perihelion) and <span class="hlg">slower when farther</span> (at aphelion).</li>
+      <li>This law is a consequence of <span class="hlg">conservation of angular momentum</span>.</li>
+      <li>Valid for any <b>central force</b> (force always directed towards a fixed centre).</li>
+      <li>ΔA/Δt = L/2m = constant &nbsp;&nbsp; (L = angular momentum)</li>
+    </ul>
+  </div>
+
+  <div class="kb kb-green">
+    <div class="kb-lbl">Law 3 — Law of Periods</div>
+    <b>The square of the time period of revolution of a planet is proportional to the cube of the semi-major axis of its elliptical orbit.</b>
+  </div>
+  <div class="formula">
+    <span>T² ∝ r³</span> &nbsp; or &nbsp; <span>T²/r³ = constant</span>
+    <br/>T = time period, r = semi-major axis (length)
+  </div>
+
+  <table>
+    <tr><th>Planet</th><th>Semi-major axis (×10¹⁰ m)</th><th>Period (years)</th><th>T²/r³ (×10⁻³⁴ y²m⁻³)</th></tr>
+    <tr><td>Mercury</td><td>5.79</td><td>0.24</td><td>2.95</td></tr>
+    <tr><td>Venus</td><td>10.8</td><td>0.615</td><td>3.00</td></tr>
+    <tr><td>Earth</td><td>15.0</td><td>1</td><td>2.96</td></tr>
+    <tr><td>Mars</td><td>22.8</td><td>1.88</td><td>2.98</td></tr>
+    <tr><td>Jupiter</td><td>77.8</td><td>11.9</td><td>3.01</td></tr>
+    <tr><td>Saturn</td><td>143</td><td>29.5</td><td>2.98</td></tr>
+  </table>
+  <div class="kb kb-yellow" style="margin-top:8px">
+    <div class="kb-lbl">⭐ Board tip</div>
+    T²/r³ is nearly <b>constant for all planets</b> — this confirms Kepler's third law experimentally.
+  </div>
+</div>
+
+
+<!-- ══════ PAGE 2 — UNIVERSAL LAW + g ══════ -->
+<div class="page pb">
+  <!-- 5.3 Universal Law -->
+  <div class="sec">⚖️ 5.3 Newton's Universal Law of Gravitation</div>
+
+  <div class="kb kb-blue">
+    <div class="kb-lbl">★ Statement</div>
+    <b>Every particle of matter attracts every other particle of matter with a force which is directly proportional to the product of their masses and inversely proportional to the square of the distance between them.</b>
+  </div>
+
+  <div class="formula">
+    <span>F = G m₁m₂ / r²</span>
+    <br/>
+    G = Universal Gravitational Constant = <span>6.67 × 10⁻¹¹ N m² kg⁻²</span>
+    <br/>
+    Dimensions of G = [L³ M⁻¹ T⁻²]
+  </div>
+
+  <div class="kb kb-orange">
+    <div class="kb-lbl">★ Properties of Gravitational Force</div>
+    <ul class="bl">
+      <li>Always <b>attractive</b> — never repulsive.</li>
+      <li>Acts along the <b>line joining the two bodies</b>.</li>
+      <li>Forces form an <b>action-reaction pair</b> (equal magnitude, opposite directions): F⃗₁₂ = −F⃗₂₁</li>
+      <li><b>Independent of intervening medium</b>.</li>
+      <li><b>Infinite range</b> — acts even at very large distances.</li>
+      <li>For a hollow thin spherical shell: Force on a point mass <b>inside</b> = <b>zero</b>.</li>
+      <li>For a uniform sphere/shell and a point mass <b>outside</b>: Force acts as if all mass is at the <b>centre</b>.</li>
+    </ul>
+  </div>
+
+  <!-- 5.4 Cavendish Balance -->
+  <div class="sec">⚗️ 5.4 Measurement of G — Cavendish Balance</div>
+  <div class="kb kb-teal">
+    <div class="kb-lbl">★ Method</div>
+    <ul class="bl">
+      <li>Two small lead spheres (s₁, s₂) of mass <b>m</b> are mounted at ends of a light rod suspended by a fine vertical metallic fibre (~100 cm).</li>
+      <li>A small mirror M is attached to the fibre to measure angle of twist.</li>
+      <li>Two large lead spheres (L₁, L₂) of mass <b>M</b> are brought close — they attract the small spheres.</li>
+      <li>A <b>torque</b> is generated: τ = F × L = G(mM/r²) × L</li>
+      <li>At equilibrium: <b>G(mM/r²)L = Kθ</b> where K = restoring torque per unit angle, θ = angle of twist.</li>
+      <li>Measuring θ and knowing m, M, r, L → <b>G = 6.67 × 10⁻¹¹ N m² kg⁻²</b></li>
+    </ul>
+  </div>
+
+  <!-- 5.5 Acceleration due to Gravity -->
+  <div class="sec">🌍 5.5 Acceleration due to Gravity (g)</div>
+  <div class="formula">
+    g = GM/r² &nbsp;&nbsp; (general)
+    <br/>
+    <span>g (surface) = GM/R²</span> &nbsp;&nbsp; (r = R, radius of Earth)
+    <br/>
+    g = 9.8 m/s²  (at Earth's surface)
+  </div>
+  <div class="kb kb-blue">
+    <div class="kb-lbl">★ Key Points</div>
+    <ul class="bl">
+      <li><b>g depends only on the Earth's mass and radius</b> — NOT on the mass of the falling object.</li>
+      <li>This explains Galileo's finding: all objects fall with the same acceleration.</li>
+      <li>Mass of Earth: M = gR²/G = <b>5.97 × 10²⁴ kg</b></li>
+    </ul>
+  </div>
+
+  <!-- 5.6 Variation of g -->
+  <div class="sec">📉 5.6 Variation of g with Altitude, Depth, Latitude & Shape</div>
+
+  <div class="qgrid">
+    <div class="qcard">
+      <div class="qt">(A) With Altitude (h)</div>
+      <b>gₕ = g R²/(R+h)²</b><br/>
+      For small h (h &lt;&lt; R):<br/>
+      <b>gₕ ≈ g(1 − 2h/R)</b><br/>
+      → g <b>decreases</b> with altitude.
+    </div>
+    <div class="qcard">
+      <div class="qt">(B) With Depth (d)</div>
+      <b>g_d = g(1 − d/R)</b><br/>
+      → g <b>decreases linearly</b> with depth.<br/>
+      At centre (d = R): <b>g = 0</b><br/>
+      → g is maximum at Earth's surface.
+    </div>
+    <div class="qcard">
+      <div class="qt">(C) With Latitude (θ)</div>
+      <b>g' = g − Rω²cos²θ</b><br/>
+      At equator (θ=0°): g' = g − Rω² → <b>minimum</b><br/>
+      At poles (θ=90°): g' = g → <b>maximum</b><br/>
+      Reduction at equator: Rω² = 0.034 m/s²
+    </div>
+    <div class="qcard">
+      <div class="qt">(D) With Shape of Earth</div>
+      Earth is an <b>oblate spheroid</b> — bulged at equator.<br/>
+      Equatorial radius (6378 km) &gt; Polar radius (6356 km).<br/>
+      ∴ g at equator = 9.7804 m/s² (less)<br/>
+      g at poles = 9.8322 m/s² (more)
+    </div>
+  </div>
+
+  <div class="kb kb-yellow">
+    <div class="kb-lbl">⭐ Summary — where g is max/min</div>
+    <b>Maximum g</b>: At the poles (least radius + no rotation effect)<br/>
+    <b>Minimum g</b>: At the equator (greatest radius + maximum rotation effect)<br/>
+    <b>Zero g</b>: At the centre of the Earth
+  </div>
+
+  <table style="margin-top:8px">
+    <tr><th>Location</th><th>Formula</th><th>Effect on g</th></tr>
+    <tr><td>Surface</td><td>g = GM/R²</td><td>Standard value 9.8 m/s²</td></tr>
+    <tr><td>Height h above</td><td>gₕ = g(R/R+h)²</td><td>Decreases (inverse square)</td></tr>
+    <tr><td>Depth d below</td><td>g_d = g(1−d/R)</td><td>Decreases linearly</td></tr>
+    <tr><td>Latitude θ</td><td>g' = g − Rω²cos²θ</td><td>Increases from equator→pole</td></tr>
+    <tr><td>Centre of Earth</td><td>g_d = 0 (d=R)</td><td>Zero</td></tr>
+  </table>
+</div>
+
+
+<!-- ══════ PAGE 3 — POTENTIAL ENERGY + SATELLITES ══════ -->
+<div class="page pb">
+  <div class="sec3">⚡ 5.7 Gravitational Potential Energy & Escape Velocity</div>
+
+  <!-- Potential Energy -->
+  <div class="kb kb-purple">
+    <div class="kb-lbl">★ Gravitational Potential Energy</div>
+    <b>Definition:</b> Work done against gravitational force in bringing a mass from infinity to a point r from the centre of the Earth.
+  </div>
+  <div class="formula">
+    <span>U = −GMm/r</span>
+    <br/>(Negative sign: system is bound; reference at r = ∞ where U = 0)
+    <br/><br/>
+    Change in PE when lifting mass m from r_i to r_f:
+    <span>ΔU = GMm (1/r_i − 1/r_f)</span>
+    <br/><br/>
+    For small height h (&lt;&lt; R):
+    <span>ΔU = mgh</span>  (familiar formula)
+  </div>
+
+  <!-- Gravitational Potential -->
+  <div class="kb kb-purple">
+    <div class="kb-lbl">★ Gravitational Potential (V)</div>
+    V = Gravitational PE per unit mass = U/m = <b>−GM/r</b><br/>
+    Gravitational PE = V × m<br/>
+    Potential difference: V₂ − V₁ = (U₂ − U₁)/m = Work done per unit mass
+  </div>
+
+  <!-- Escape Velocity -->
+  <div class="kb kb-red">
+    <div class="kb-lbl">★ Escape Velocity</div>
+    <b>Definition:</b> The minimum velocity with which a body must be projected vertically upward from the surface of the Earth so that it escapes the Earth's gravitational field (reaches infinity).
+  </div>
+  <div class="formula">
+    At surface: Total energy = ½mv_e² − GMm/R
+    <br/>At infinity: Total energy = 0
+    <br/>Energy conservation: ½mv_e² − GMm/R = 0
+    <br/><span>v_e = √(2GM/R) = √(2gR)</span>
+    <br/>
+    v_e = <span>11.2 km/s</span> (for Earth)
+  </div>
+  <div class="kb kb-yellow">
+    <div class="kb-lbl">★ Key Points — Escape Velocity</div>
+    <ul class="bl">
+      <li>v_e = √(2gR) — depends on <b>mass and radius of Earth</b> only.</li>
+      <li><b>Independent of mass of the projected body.</b></li>
+      <li>v_e = √2 × v_c (escape velocity = √2 × critical/orbital velocity)</li>
+    </ul>
+  </div>
+
+  <!-- Earth Satellites -->
+  <div class="sec4">🛰️ 5.8 Earth Satellites</div>
+
+  <div class="kb kb-orange">
+    <div class="kb-lbl">★ Critical / Orbital Velocity (v_c)</div>
+    <b>Definition:</b> The exact horizontal velocity given to a satellite at height h so that it revolves in a circular orbit around the Earth.
+  </div>
+  <div class="formula">
+    Centripetal force = Gravitational force
+    <br/>mv_c²/r = GMm/r²
+    <br/><span>v_c = √(GM/r) = √(GM/(R+h)) = √(gₕ(R+h))</span>
+    <br/><br/>
+    For satellite close to surface (h ≈ 0):
+    <span>v_c = √(gR) = 7.92 km/s</span>
+  </div>
+
+  <div class="kb kb-yellow">
+    <div class="kb-lbl">★ v_c Key Points</div>
+    <ul class="bl">
+      <li>v_c is <b>independent of mass of satellite</b>.</li>
+      <li>v_c <b>decreases with increase in height</b> of orbit.</li>
+      <li>Maximum v_c (7.92 km/s) is when h ≈ 0 (close to surface).</li>
+    </ul>
+  </div>
+
+  <!-- Possible Orbits -->
+  <div class="kb kb-teal">
+    <div class="kb-lbl">★ Possible Orbits Based on Horizontal Velocity (v_h)</div>
+    <table class="green" style="margin-top:6px">
+      <tr><th>Condition</th><th>Path of Satellite</th></tr>
+      <tr><td>v_h &lt; v_c</td><td>Ellipse — point of projection is <b>apogee</b> (farthest). Falls to Earth if it passes through atmosphere.</td></tr>
+      <tr><td>v_h = v_c</td><td><b>Stable circular orbit</b> around Earth.</td></tr>
+      <tr><td>v_c &lt; v_h &lt; v_e</td><td>Ellipse — point of projection is <b>perigee</b> (closest).</td></tr>
+      <tr><td>v_h = v_e</td><td><b>Parabolic path</b> — escapes, speed = 0 at infinity.</td></tr>
+      <tr><td>v_h &gt; v_e</td><td><b>Hyperbolic path</b> — escapes from Earth's gravity completely.</td></tr>
+    </table>
+  </div>
+
+  <!-- Time Period -->
+  <div class="kb kb-orange">
+    <div class="kb-lbl">★ Time Period of Satellite</div>
+  </div>
+  <div class="formula">
+    <span>T = 2π√(r³/GM) = 2π√((R+h)³/GM)</span>
+    <br/>
+    Also: <span>T = 2π√((R+h)/gₕ) = 2π√(r/gₕ)</span>
+    <br/><br/>
+    For satellite close to surface (h ≈ 0):
+    <span>T_min = 2π√(R/g) ≈ 85 minutes</span>
+    <br/><br/>
+    T² ∝ r³ — verifies Kepler's Third Law for satellites.
+  </div>
+
+  <!-- Geostationary vs Polar -->
+  <table style="margin-top:10px">
+    <tr><th>Property</th><th>Geostationary (Communication) Satellite</th><th>Polar Satellite</th></tr>
+    <tr><td>Orbit</td><td>Equatorial plane</td><td>Polar orbit (N-S direction)</td></tr>
+    <tr><td>Altitude</td><td>~36,000 km</td><td>500–800 km</td></tr>
+    <tr><td>Time Period</td><td>24 hours (same as Earth)</td><td>~85 minutes</td></tr>
+    <tr><td>Appears from Earth</td><td>Stationary</td><td>Moves across sky</td></tr>
+    <tr><td>Use</td><td>Communication, TV, telephone, radio signals (INSAT)</td><td>Weather forecasting, astronomy, solar radiation study</td></tr>
+    <tr><td>Orbits/day</td><td>1</td><td>~16 times</td></tr>
+  </table>
+
+  <!-- Binding Energy -->
+  <div class="kb kb-purple" style="margin-top:12px">
+    <div class="kb-lbl">★ Binding Energy of an Orbiting Satellite</div>
+    <b>Definition:</b> Minimum energy required by a satellite to escape from Earth's gravitational influence.
+  </div>
+  <div class="formula">
+    KE = ½mv_c² = GMm/2r
+    <br/>PE = −GMm/r
+    <br/><span>Total Energy (TE) = KE + PE = −GMm/2r</span>
+    <br/>(Negative → satellite is bound to Earth)
+    <br/><br/>
+    <span>Binding Energy = +GMm/2r</span>
+    <br/>(Energy needed to make TE = 0, i.e., unbind the satellite)
+    <br/><br/>
+    Note: KE = −TE = BE &nbsp;&nbsp;|&nbsp;&nbsp; |PE| = 2 × KE = 2 × BE
+  </div>
+
+  <!-- Weightlessness -->
+  <div class="kb kb-red">
+    <div class="kb-lbl">★ Weightlessness in a Satellite</div>
+    <ul class="bl">
+      <li>A satellite in circular orbit is in a state of <b>free fall</b> — centripetal acceleration = gravitational acceleration g at that height.</li>
+      <li>Normal reaction N = mg − ma_d = mg − mg = <b>0</b></li>
+      <li>∴ Apparent weight = 0 → <b>total weightlessness</b></li>
+      <li>Astronauts float inside the satellite because both satellite and astronaut have the same centripetal acceleration.</li>
+      <li>The satellite doesn't fall on Earth because its horizontal tangential velocity keeps it in circular orbit.</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- ══════ PAGE 4 — IMPORTANT Q&A ══════ -->
+<div class="page pb">
+  <div class="cover" style="background:linear-gradient(135deg,#b71c1c,#c62828)">
+    <div class="lbl">Board Exam Preparation</div>
+    <h1>❓ Important Questions & Answers</h1>
+    <div class="sub">Chapter 5 — Gravitation | Class 11 Physics</div>
+  </div>
+
+  <div class="sec">📝 1-Mark Questions (Define / State)</div>
+
+  <div class="qa">
+    <div class="qa-q"><span class="qn">Q1.</span> State Kepler's Law of Areas. <span class="mk">1 Mark</span></div>
+    <div class="qa-a"><span class="al">Ans:</span> The line joining a planet and the Sun sweeps <b>equal areas in equal intervals of time</b>. This is a consequence of conservation of angular momentum, as gravitational force is a central force.</div>
+  </div>
+  <div class="qa">
+    <div class="qa-q"><span class="qn">Q2.</span> State Kepler's Law of Periods. <span class="mk">1 Mark</span></div>
+    <div class="qa-a"><span class="al">Ans:</span> The square of the time period of revolution of a planet around the Sun is proportional to the cube of the semi-major axis of the ellipse traced by it. T² ∝ r³ or T²/r³ = constant.</div>
+  </div>
+  <div class="qa">
+    <div class="qa-q"><span class="qn">Q3.</span> State Newton's Universal Law of Gravitation. <span class="mk">1 Mark</span></div>
+    <div class="qa-a"><span class="al">Ans:</span> Every particle of matter attracts every other particle with a force <b>directly proportional to the product of their masses</b> and <b>inversely proportional to the square of the distance</b> between them. F = Gm₁m₂/r²</div>
+  </div>
+  <div class="qa">
+    <div class="qa-q"><span class="qn">Q4.</span> Define escape velocity. <span class="mk">1 Mark</span></div>
+    <div class="qa-a"><span class="al">Ans:</span> The minimum velocity with which a body must be projected vertically upward from the Earth's surface so that it escapes the Earth's gravitational field and never returns. v_e = √(2GM/R) = 11.2 km/s for Earth.</div>
+  </div>
+  <div class="qa">
+    <div class="qa-q"><span class="qn">Q5.</span> Define binding energy of a satellite. <span class="mk">1 Mark</span></div>
+    <div class="qa-a"><span class="al">Ans:</span> The minimum energy required by a satellite to escape from the Earth's gravitational influence is called its binding energy. BE = GMm/2r (for a satellite in circular orbit at radius r).</div>
+  </div>
+  <div class="qa">
+    <div class="qa-q"><span class="qn">Q6.</span> What is a geostationary satellite? <span class="mk">1 Mark</span></div>
+    <div class="qa-a"><span class="al">Ans:</span> A satellite that revolves around Earth in the equatorial plane with the <b>same period of rotation as the Earth (24 hours)</b> and in the same direction (west to east), so it appears stationary from the Earth's surface. Used for communication, TV, telephone (e.g., INSAT).</div>
+  </div>
+  <div class="qa">
+    <div class="qa-q"><span class="qn">Q7.</span> What are the dimensions and SI units of G? <span class="mk">1 Mark</span></div>
+    <div class="qa-a"><span class="al">Ans:</span> SI unit of G: <b>N m² kg⁻²</b>. Dimensions: <b>[L³ M⁻¹ T⁻²]</b>. Value: G = 6.67 × 10⁻¹¹ N m² kg⁻².</div>
+  </div>
+
+  <div class="sec">📝 2-Mark Questions</div>
+
+  <div class="qa">
+    <div class="qa-q"><span class="qn">Q8.</span> Why do astronauts in an orbiting satellite feel weightless? <span class="mk2">2 Marks</span></div>
+    <div class="qa-a"><span class="al">Ans:</span> In a revolving satellite, the centripetal acceleration = gravitational acceleration (g at that height). This means the satellite is in a state of <b>free fall</b>. The normal reaction N = mg − mad = mg − mg = <b>0</b>. Since we feel weight only through normal reaction, apparent weight = 0 → total weightlessness. Astronauts float because both they and the satellite have the same downward acceleration (free fall together).</div>
+  </div>
+  <div class="qa">
+    <div class="qa-q"><span class="qn">Q9.</span> How does acceleration due to gravity vary with (i) altitude and (ii) depth? <span class="mk2">2 Marks</span></div>
+    <div class="qa-a"><span class="al">Ans:</span>
+      <b>(i) With altitude h:</b> gₕ = gR²/(R+h)² ≈ g(1 − 2h/R) for h &lt;&lt; R. g <b>decreases with altitude</b> (inversely proportional to square of distance from centre).<br/>
+      <b>(ii) With depth d:</b> g_d = g(1 − d/R). g <b>decreases linearly with depth</b>. At centre (d = R), g = 0. Thus g is maximum at Earth's surface.
+    </div>
+  </div>
+  <div class="qa">
+    <div class="qa-q"><span class="qn">Q10.</span> Why is g minimum at equator and maximum at poles? <span class="mk2">2 Marks</span></div>
+    <div class="qa-a"><span class="al">Ans:</span> <b>Two reasons:</b><br/>
+      1. <b>Rotation of Earth</b>: g' = g − Rω²cos²θ. At equator (θ=0°), cos²θ = 1 → maximum reduction. At poles (θ=90°), cos²θ = 0 → no reduction.<br/>
+      2. <b>Shape of Earth</b>: Earth is oblate spheroid — equatorial radius (6378 km) &gt; polar radius (6356 km). Since g = GM/R², larger R at equator → smaller g. Combined effect: g at equator = 9.7804 m/s², at poles = 9.8322 m/s².
+    </div>
+  </div>
+  <div class="qa">
+    <div class="qa-q"><span class="qn">Q11.</span> State conditions for various orbits of a satellite depending on horizontal projection speed v_h. <span class="mk2">2 Marks</span></div>
+    <div class="qa-a"><span class="al">Ans:</span>
+      • v_h &lt; v_c → Elliptical orbit, projection point is <b>apogee</b> (falls to Earth if it enters atmosphere).<br/>
+      • v_h = v_c → <b>Stable circular orbit</b>.<br/>
+      • v_c &lt; v_h &lt; v_e → Elliptical orbit, projection point is <b>perigee</b>.<br/>
+      • v_h = v_e → <b>Parabolic path</b> (escapes, speed = 0 at ∞).<br/>
+      • v_h &gt; v_e → <b>Hyperbolic path</b> (escapes with non-zero speed at ∞).
+    </div>
+  </div>
+
+  <div class="sec">📝 3-Mark / Derivation Questions</div>
+
+  <div class="qa">
+    <div class="qa-q"><span class="qn">Q12.</span> Derive the expression for escape velocity. <span class="mk3">3 Marks</span></div>
+    <div class="qa-a"><span class="al">Ans:</span>
+      Let a body of mass m be projected with escape velocity v_e from Earth's surface (mass M, radius R).<br/>
+      <b>On surface:</b> KE = ½mv_e², PE = −GMm/R &nbsp;→&nbsp; Total energy = ½mv_e² − GMm/R<br/>
+      <b>At infinity:</b> KE = 0, PE = 0 &nbsp;→&nbsp; Total energy = 0<br/>
+      By conservation of energy: ½mv_e² − GMm/R = 0<br/>
+      ∴ <b>v_e = √(2GM/R)</b><br/>
+      Since GM = gR²: <b>v_e = √(2gR) = 11.2 km/s</b><br/>
+      Note: v_e is <b>independent of mass of projected body</b>.
+    </div>
+  </div>
+  <div class="qa">
+    <div class="qa-q"><span class="qn">Q13.</span> Derive the expression for critical (orbital) velocity of a satellite at height h. <span class="mk3">3 Marks</span></div>
+    <div class="qa-a"><span class="al">Ans:</span>
+      Let satellite of mass m revolve in circular orbit of radius r = (R+h) at height h.<br/>
+      Centripetal force = Gravitational force<br/>
+      mv_c²/r = GMm/r²<br/>
+      v_c² = GM/r<br/>
+      <b>v_c = √(GM/r) = √(GM/(R+h)) = √(gₕ(R+h))</b><br/>
+      For satellite close to surface (h ≈ 0, r ≈ R):<br/>
+      v_c = √(GM/R) = √(gR) = <b>7.92 km/s</b><br/>
+      v_c is independent of satellite's mass; decreases with increase in h.
+    </div>
+  </div>
+  <div class="qa">
+    <div class="qa-q"><span class="qn">Q14.</span> Derive the expression for the time period of a satellite. <span class="mk3">3 Marks</span></div>
+    <div class="qa-a"><span class="al">Ans:</span>
+      Critical speed = Circumference of orbit / Time period<br/>
+      v_c = 2πr/T &nbsp; and &nbsp; v_c = √(GM/r)<br/>
+      ∴ √(GM/r) = 2πr/T<br/>
+      T = 2πr/v_c = 2πr × √(r/GM) = 2π√(r³/GM)<br/>
+      <b>T = 2π√((R+h)³/GM)</b><br/>
+      Also: T = 2π√((R+h)/gₕ)<br/>
+      For h ≈ 0: T_min = 2π√(R/g) ≈ <b>85 minutes</b><br/>
+      Since T² = 4π²r³/GM → T² ∝ r³ → <b>verifies Kepler's Third Law</b>.
+    </div>
+  </div>
+  <div class="qa">
+    <div class="qa-q"><span class="qn">Q15.</span> Obtain expression for binding energy of a satellite revolving in circular orbit. <span class="mk3">3 Marks</span></div>
+    <div class="qa-a"><span class="al">Ans:</span>
+      For satellite of mass m at orbital radius r = (R+h):<br/>
+      KE = ½mv_c² = ½m(GM/r) = <b>GMm/2r</b><br/>
+      PE = −GMm/r<br/>
+      Total Energy = KE + PE = GMm/2r − GMm/r = <b>−GMm/2r</b><br/>
+      Negative sign → satellite is bound to Earth.<br/>
+      For satellite to escape, TE must become ≥ 0.<br/>
+      ∴ Minimum energy to be supplied = +GMm/2r<br/>
+      <b>Binding Energy = GMm/2r</b><br/>
+      Note: BE = KE = −TE &nbsp;and&nbsp; |PE| = 2 × BE.
+    </div>
+  </div>
+  <div class="qa">
+    <div class="qa-q"><span class="qn">Q16.</span> Show that g at height h above Earth's surface = g(R/R+h)². <span class="mk3">3 Marks</span></div>
+    <div class="qa-a"><span class="al">Ans:</span>
+      g at surface = GM/R² &nbsp; ...(1)<br/>
+      g at height h: gₕ = GM/(R+h)² &nbsp; ...(2)<br/>
+      Dividing (2) by (1): gₕ/g = R²/(R+h)²<br/>
+      <b>∴ gₕ = g [R/(R+h)]²</b><br/>
+      For small h: gₕ ≈ g(1 + h/R)⁻² ≈ <b>g(1 − 2h/R)</b> (using binomial approximation)
+    </div>
+  </div>
+  <div class="qa">
+    <div class="qa-q"><span class="qn">Q17.</span> Obtain formula for g at depth d below Earth's surface. <span class="mk3">3 Marks</span></div>
+    <div class="qa-a"><span class="al">Ans:</span>
+      Density ρ = M/V = M/(4πR³/3) → M = (4/3)πR³ρ<br/>
+      g at surface = G(4/3)πRρ &nbsp; ...(1)<br/>
+      At depth d, inner sphere radius = (R−d), mass M' = (4/3)π(R−d)³ρ<br/>
+      g_d = GM'/(R−d)² = G(4/3)π(R−d)ρ &nbsp; ...(2)<br/>
+      Dividing (2) by (1): g_d/g = (R−d)/R<br/>
+      <b>∴ g_d = g(1 − d/R)</b><br/>
+      At centre (d=R): g_d = 0.
+    </div>
+  </div>
+
+  <div class="sec">📝 Numericals (Important Examples)</div>
+
+  <div class="qa">
+    <div class="qa-q"><span class="qn">N1.</span> At what height above Earth does g decrease by 10%? R = 6400 km. <span class="mk2">2 Marks</span></div>
+    <div class="qa-a"><span class="al">Ans:</span>
+      gₕ = 90% of g → gₕ/g = 0.9<br/>
+      Using gₕ ≈ g(1 − 2h/R):<br/>
+      0.9 = 1 − 2h/R → 2h/R = 0.1 → h = R/20 = 6400/20 = <b>320 km</b>
+    </div>
+  </div>
+  <div class="qa">
+    <div class="qa-q"><span class="qn">N2.</span> Gravitational force between two bodies is 1 N. Distance is doubled. Find new force. <span class="mk2">2 Marks</span></div>
+    <div class="qa-a"><span class="al">Ans:</span>
+      F₁ = Gm₁m₂/r² = 1 N<br/>
+      F₂ = Gm₁m₂/(2r)² = Gm₁m₂/4r² = F₁/4<br/>
+      <b>F₂ = 1/4 = 0.25 N</b><br/>
+      Force becomes one-fourth when distance is doubled.
+    </div>
+  </div>
+  <div class="qa">
+    <div class="qa-q"><span class="qn">N3.</span> Calculate g on Moon's surface if mass of Moon = M/80 and radius = R/4 (g = 9.8 m/s²). <span class="mk3">3 Marks</span></div>
+    <div class="qa-a"><span class="al">Ans:</span>
+      g_moon/g = (M_moon/M) × (R/R_moon)²<br/>
+      = (1/80) × (4/1)² = (1/80) × 16 = 16/80 = 1/5<br/>
+      g_moon = g/5 = 9.8/5 = <b>1.96 m/s²</b>
+    </div>
+  </div>
+  <div class="qa">
+    <div class="qa-q"><span class="qn">N4.</span> Calculate period of revolution of a polar satellite orbiting close to Earth. R = 6400 km, g = 9.8 m/s². <span class="mk3">3 Marks</span></div>
+    <div class="qa-a"><span class="al">Ans:</span>
+      h ≈ 0, so R+h ≈ R, gₕ ≈ g<br/>
+      T = 2π√(R/g) = 2 × 3.14 × √(6.4×10⁶/9.8)<br/>
+      = 2 × 3.14 × √(653061) = 2 × 3.14 × 808<br/>
+      = 5075 seconds ≈ <b>85 minutes</b>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════ PAGE 5 — FORMULA SHEET ══════ -->
+<div class="page pb">
+  <div class="cover" style="background:linear-gradient(135deg,#1b5e20,#2e7d32)">
+    <div class="lbl">Quick Revision</div>
+    <h1>📐 Formula Sheet + Memory Tips</h1>
+    <div class="sub">Chapter 5 — Gravitation | Class 11 Physics</div>
+  </div>
+
+  <div class="sec2">📐 All Formulas at a Glance</div>
+  <table class="green">
+    <tr><th>Topic</th><th>Formula</th><th>Key Note</th></tr>
+    <tr><td><b>Newton's Law</b></td><td>F = Gm₁m₂/r²</td><td>G = 6.67×10⁻¹¹ N m² kg⁻²</td></tr>
+    <tr><td><b>Kepler's 3rd Law</b></td><td>T² ∝ r³ or T²/r³ = const</td><td>r = semi-major axis</td></tr>
+    <tr><td><b>g at surface</b></td><td>g = GM/R²</td><td>g = 9.8 m/s²</td></tr>
+    <tr><td><b>g at height h</b></td><td>gₕ = g[R/(R+h)]² ≈ g(1−2h/R)</td><td>Decreases with altitude</td></tr>
+    <tr><td><b>g at depth d</b></td><td>g_d = g(1−d/R)</td><td>Zero at centre</td></tr>
+    <tr><td><b>g with latitude</b></td><td>g' = g − Rω²cos²θ</td><td>Max at poles, min at equator</td></tr>
+    <tr><td><b>Escape velocity</b></td><td>v_e = √(2GM/R) = √(2gR)</td><td>11.2 km/s; indep. of mass</td></tr>
+    <tr><td><b>Critical velocity</b></td><td>v_c = √(GM/r) = √(gₕ·r)</td><td>7.92 km/s at surface</td></tr>
+    <tr><td><b>v_e vs v_c</b></td><td>v_e = √2 × v_c</td><td>Important relation</td></tr>
+    <tr><td><b>Time period</b></td><td>T = 2π√(r³/GM) = 2π√(r/gₕ)</td><td>T_min ≈ 85 min</td></tr>
+    <tr><td><b>Gravitational PE</b></td><td>U = −GMm/r</td><td>Negative; zero at ∞</td></tr>
+    <tr><td><b>Gravitational Potential</b></td><td>V = −GM/r = U/m</td><td>PE per unit mass</td></tr>
+    <tr><td><b>ΔU (small h)</b></td><td>ΔU = mgh</td><td>Valid only when h &lt;&lt; R</td></tr>
+    <tr><td><b>KE of satellite</b></td><td>KE = GMm/2r</td><td>Always positive</td></tr>
+    <tr><td><b>PE of satellite</b></td><td>PE = −GMm/r</td><td>Always negative</td></tr>
+    <tr><td><b>Total energy</b></td><td>TE = −GMm/2r</td><td>Always negative (bound)</td></tr>
+    <tr><td><b>Binding energy</b></td><td>BE = +GMm/2r = −TE</td><td>BE = KE</td></tr>
+    <tr><td><b>Critical speed (surface)</b></td><td>v_c = √(gR)</td><td>7.92 km/s</td></tr>
+    <tr><td><b>Cavendish torque</b></td><td>G·mM·L/r² = Kθ</td><td>Used to find G</td></tr>
+  </table>
+
+  <div class="sec2" style="margin-top:20px">🧠 Memory Tips & Tricks</div>
+  <div class="kb kb-green">
+    <ul class="bl">
+      <li><b>Kepler's Laws order:</b> "O-A-P" → Orbit (ellipse), Areas (equal), Periods (T²∝r³)</li>
+      <li><b>g max/min:</b> <span class="hlg">POlar = POsitive (max g)</span>; Equator = minimum g</li>
+      <li><b>At centre of Earth:</b> g = 0 (complete symmetry, all forces cancel)</li>
+      <li><b>Escape vs Critical:</b> v_e = √2 × v_c — escape is √2 times orbital speed</li>
+      <li><b>TE is always negative</b> for an orbiting satellite = bound system</li>
+      <li><b>BE = KE</b> for orbiting satellite — easy memory trick</li>
+      <li><b>|PE| = 2 × KE = 2 × BE</b> for circular orbit — golden relation</li>
+      <li><b>Weightlessness</b>: Not because gravity is zero — it's because satellite is in free fall (gravity provides centripetal force)</li>
+      <li><b>Geostationary altitude</b> ≈ 36,000 km above equator; T = 24 hours</li>
+      <li><b>Polar satellite period</b> ≈ 85 minutes; altitude 500–800 km</li>
+      <li><b>G value:</b> 6.67 × 10⁻¹¹ — remember: "6.67, negative 11"</li>
+      <li><b>Earth's mass:</b> M = gR²/G ≈ 6 × 10²⁴ kg</li>
+    </ul>
+  </div>
+
+  <div class="sec2">⚡ MCQ Answers — Exercises</div>
+  <div class="kb kb-yellow">
+    <ul class="bl">
+      <li><b>i)</b> g is maximum at → <span class="hl">(C) the pole of the Earth</span></li>
+      <li><b>ii)</b> Weight at centre of Earth → <span class="hl">(B) zero</span> (g = 0 at centre, W = mg = 0)</li>
+      <li><b>iii)</b> Gravitational potential is minimum at → <span class="hl">(A) the centre of the Earth</span> (V = −GM/r, r smallest → V most negative → minimum)</li>
+      <li><b>iv)</b> If BE = 3×10⁹ J, KE = ? → <span class="hl">(D) 3×10⁹ J</span> (since KE = BE for circular orbit)</li>
+    </ul>
+  </div>
+
+  <!-- Footer -->
+  <div style="text-align:center;margin-top:26px;font-size:11px;color:#aaa;border-top:1px solid #eee;padding-top:12px">
+    Visions Learning · Class 11 Physics · Chapter 5: Gravitation · Complete Notes & Q&A
+  </div>
+</div>
+
+</body>
+</html>
