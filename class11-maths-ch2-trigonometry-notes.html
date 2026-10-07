@@ -3,2368 +3,1001 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Class 11 Maths 1 | Chapter 2 — Trigonometry | Notes & Solutions</title>
+<title>Class 11 Maths Paper 1 | Chapter 2 — Trigonometry | All Exercise Solutions</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',Arial,sans-serif;font-size:14px;color:#1a1a2e;background:#f0f2f8;padding:18px}
+body{font-family:'Segoe UI',Arial,sans-serif;font-size:14px;color:#1a1a2e;background:#f0f2f8;padding:16px}
 @media print{
   body{background:#fff;padding:0;font-size:11.5px}
-  .page{box-shadow:none;margin:0;padding:14mm 13mm;border-radius:0}
+  .page{box-shadow:none;margin:0;padding:12mm 14mm;border-radius:0}
   .no-print{display:none}
   .pb{page-break-before:always}
   .qblock{page-break-inside:avoid}
 }
-/* ── page ── */
-.page{max-width:860px;margin:0 auto 26px;background:#fff;border-radius:12px;
-      box-shadow:0 4px 20px rgba(0,0,0,.10);padding:34px 42px}
-/* ── cover ── */
+.page{max-width:860px;margin:0 auto 24px;background:#fff;border-radius:12px;
+      box-shadow:0 4px 20px rgba(0,0,0,.09);padding:32px 40px}
+
+/* cover */
 .cover{background:linear-gradient(135deg,#880e4f,#ad1457);color:#fff;
-       border-radius:10px;padding:22px 28px;margin-bottom:26px;text-align:center}
+       border-radius:10px;padding:20px 28px;margin-bottom:24px;text-align:center}
 .cover .lbl{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.8}
-.cover h1{font-size:24px;font-weight:900;margin:7px 0 5px}
+.cover h1{font-size:23px;font-weight:900;margin:6px 0 4px}
 .cover .sub{font-size:13px;opacity:.9;line-height:1.7}
-/* ── section headers ── */
-.sec {background:linear-gradient(135deg,#880e4f,#ad1457);color:#fff;
-      padding:10px 18px;border-radius:8px;margin:22px 0 12px;font-size:14px;font-weight:700}
-.sec2{background:linear-gradient(135deg,#1565c0,#1976d2);color:#fff;
-      padding:10px 18px;border-radius:8px;margin:22px 0 12px;font-size:14px;font-weight:700}
-.sec3{background:linear-gradient(135deg,#1b5e20,#2e7d32);color:#fff;
-      padding:10px 18px;border-radius:8px;margin:22px 0 12px;font-size:14px;font-weight:700}
-.sec4{background:linear-gradient(135deg,#4a148c,#7b1fa2);color:#fff;
-      padding:10px 18px;border-radius:8px;margin:22px 0 12px;font-size:14px;font-weight:700}
-/* ── key boxes ── */
-.kb{border-radius:8px;padding:12px 16px;margin:10px 0;font-size:13.5px;line-height:1.9}
-.kb-pink  {background:#fce4ec;border-left:5px solid #c62828}
-.kb-blue  {background:#e3f2fd;border-left:5px solid #1565c0}
-.kb-green {background:#e8f5e9;border-left:5px solid #388e3c}
-.kb-yellow{background:#fffde7;border-left:5px solid #f9a825}
-.kb-purple{background:#f3e5f5;border-left:5px solid #7b1fa2}
-.kb-teal  {background:#e0f2f1;border-left:5px solid #009688}
-.kb-lbl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:5px}
-/* ── formula strip ── */
-.formula{background:#1a237e;color:#fff;border-radius:8px;padding:12px 18px;
-         margin:10px 0;font-size:13.5px;font-family:'Courier New',monospace;line-height:2.2}
-.formula span{color:#ffd54f;font-weight:700}
-/* ── Q block (vertical step layout) ── */
-.qblock{border:1.5px solid #e0e0e0;border-radius:10px;margin:14px 0;overflow:hidden}
+
+/* section headers */
+.exhdr{background:linear-gradient(135deg,#880e4f,#ad1457);color:#fff;
+       padding:10px 18px;border-radius:8px;margin:24px 0 14px;
+       font-size:15px;font-weight:800;letter-spacing:.3px}
+.exhdr2{background:linear-gradient(135deg,#1565c0,#1976d2);color:#fff;
+        padding:10px 18px;border-radius:8px;margin:24px 0 14px;
+        font-size:15px;font-weight:800}
+.exhdr3{background:linear-gradient(135deg,#1b5e20,#2e7d32);color:#fff;
+        padding:10px 18px;border-radius:8px;margin:24px 0 14px;
+        font-size:15px;font-weight:800}
+.exhdr4{background:linear-gradient(135deg,#4a148c,#7b1fa2);color:#fff;
+        padding:10px 18px;border-radius:8px;margin:24px 0 14px;
+        font-size:15px;font-weight:800}
+
+/* key note box */
+.kbox{border-radius:8px;padding:12px 16px;margin:10px 0;font-size:13.5px;line-height:1.9;border-left:5px solid}
+.kbox.pink  {background:#fce4ec;border-color:#c62828}
+.kbox.blue  {background:#e3f2fd;border-color:#1565c0}
+.kbox.green {background:#e8f5e9;border-color:#388e3c}
+.kbox.yellow{background:#fffde7;border-color:#f9a825}
+.kbox.purple{background:#f3e5f5;border-color:#7b1fa2}
+.kbox-lbl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;opacity:.65;margin-bottom:5px}
+
+/* formula */
+.fml{background:#1a237e;color:#fff;border-radius:8px;padding:11px 18px;
+     margin:10px 0;font-size:13.5px;font-family:'Courier New',monospace;line-height:2.1}
+.fml span{color:#ffd54f;font-weight:700}
+
+/* ── QUESTION BLOCK ── */
+.qblock{margin:14px 0;border-radius:10px;overflow:hidden;border:1.5px solid #e0e0e0}
+
 /* question header */
-.qhead{padding:10px 18px;font-weight:700;font-size:13.5px;
-       display:flex;align-items:flex-start;gap:10px}
-.qhead.pink  {background:#fce4ec;color:#880e4f;border-bottom:2px solid #f48fb1}
-.qhead.blue  {background:#e3f2fd;color:#1565c0;border-bottom:2px solid #90caf9}
-.qhead.green {background:#e8f5e9;color:#1b5e20;border-bottom:2px solid #a5d6a7}
-.qhead.purple{background:#f3e5f5;color:#4a148c;border-bottom:2px solid #ce93d8}
-.badge{color:#fff;font-size:11px;font-weight:800;
-       padding:3px 10px;border-radius:10px;white-space:nowrap;margin-top:1px;flex-shrink:0}
-.b-pink  {background:#880e4f}
-.b-blue  {background:#1565c0}
-.b-green {background:#1b5e20}
-.b-purple{background:#4a148c}
-/* answer body — VERTICAL STEPS */
-.qbody{padding:0;background:#fff}
+.qh{padding:9px 16px;font-weight:700;font-size:13.5px;display:flex;align-items:flex-start;gap:10px;border-bottom:2px solid}
+.qh.p{background:#fce4ec;color:#880e4f;border-color:#f48fb1}
+.qh.b{background:#e3f2fd;color:#1565c0;border-color:#90caf9}
+.qh.g{background:#e8f5e9;color:#1b5e20;border-color:#a5d6a7}
+.qh.v{background:#f3e5f5;color:#4a148c;border-color:#ce93d8}
+
+/* badge */
+.bx{color:#fff;font-size:11px;font-weight:800;padding:3px 10px;
+    border-radius:10px;white-space:nowrap;flex-shrink:0;margin-top:1px}
+.bp{background:#880e4f} .bb{background:#1565c0}
+.bg{background:#1b5e20} .bv{background:#4a148c}
+
+/* answer area */
+.qbody{background:#fff;padding:0}
+
 /* each step row */
-.step{display:flex;align-items:flex-start;gap:0;border-bottom:1px solid #f5f5f5;padding:0}
-.step:last-child{border-bottom:none}
-.step-label{width:130px;min-width:130px;padding:10px 14px;font-size:12px;font-weight:700;
-            color:#fff;text-align:right;line-height:1.5;flex-shrink:0}
-.sl-pink  {background:#c62828}
-.sl-blue  {background:#1565c0}
-.sl-green {background:#2e7d32}
-.sl-purple{background:#6a1b9a}
-.sl-given {background:#37474f}
-.sl-step  {background:#1565c0}
-.sl-find  {background:#e65100}
-.sl-ans   {background:#1b5e20}
-.sl-note  {background:#f57f17;color:#fff}
-.step-content{flex:1;padding:10px 16px;font-size:13.5px;line-height:1.8;color:#1a1a2e}
-.step-content .hl{color:#c62828;font-weight:700;font-size:14.5px}
-.step-content .ans-final{color:#1b5e20;font-weight:800;font-size:15px;
-                          background:#e8f5e9;padding:2px 10px;border-radius:6px;display:inline-block}
-.step-content code{background:#f0f2f8;padding:2px 7px;border-radius:4px;
-                   font-family:'Courier New',monospace;font-size:13px}
-/* tables */
+.row{display:flex;border-bottom:1px solid #f5f5f5}
+.row:last-child{border-bottom:none}
+.rlbl{width:110px;min-width:110px;padding:9px 12px;font-size:11.5px;
+      font-weight:700;color:#fff;text-align:right;line-height:1.5;flex-shrink:0}
+.r-given{background:#37474f}  .r-find{background:#e65100}
+.r-s1{background:#1565c0}     .r-s2{background:#1565c0}
+.r-s3{background:#1565c0}     .r-s4{background:#1565c0}
+.r-s5{background:#1565c0}     .r-s6{background:#1565c0}
+.r-rule{background:#f57f17}   .r-note{background:#00695c}
+.r-ans{background:#1b5e20}    .r-prove{background:#1b5e20}
+.rcnt{flex:1;padding:9px 14px;font-size:13.5px;line-height:1.85;color:#1a1a2e}
+.rcnt b{color:#1565c0}
+.af{display:inline-block;background:#e8f5e9;color:#1b5e20;font-weight:800;
+    font-size:14px;padding:2px 10px;border-radius:6px}
+.hl{color:#c62828;font-weight:700}
+
+/* standard value table */
 table{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0}
-th{background:#880e4f;color:#fff;padding:8px 10px;text-align:center;font-size:12.5px}
-td{padding:7px 10px;border-bottom:1px solid #fce4ec;text-align:center;vertical-align:middle}
-tr:nth-child(even) td{background:#fff5f7}
-table.blue th{background:#1565c0}
-table.blue td{border-bottom:1px solid #e3f2fd}
-table.blue tr:nth-child(even) td{background:#f5f9ff}
-table.green th{background:#2e7d32}
-table.green td{border-bottom:1px solid #e8f5e9}
-table.green tr:nth-child(even) td{background:#f1f8e9}
-ul.bl{margin:4px 0 4px 18px} ul.bl li{margin:3px 0;line-height:1.8}
-hr.d{border:none;border-top:2px dashed #e0e0e0;margin:20px 0}
-.print-btn{display:block;width:fit-content;margin:0 auto 16px;
-           padding:10px 28px;background:#880e4f;color:#fff;border:none;
+th{padding:8px 8px;text-align:center;font-size:12px;color:#fff}
+td{padding:7px 8px;text-align:center;border-bottom:1px solid #f0f0f0;vertical-align:middle}
+.tp{background:#880e4f} .tb{background:#1565c0}
+.tg{background:#2e7d32} .tv{background:#4a148c}
+tr:nth-child(even) td{background:#fafafa}
+hr.d{border:none;border-top:2px dashed #e8e8e8;margin:18px 0}
+
+.print-btn{display:block;width:fit-content;margin:0 auto 14px;
+           padding:9px 28px;background:#880e4f;color:#fff;border:none;
            border-radius:8px;font-size:13px;font-weight:600;cursor:pointer}
 </style>
 </head>
 <body>
 <button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
 
-<!-- ═══════════════════════════════════════
-     PAGE 1 — KEY NOTES
-════════════════════════════════════════ -->
+<!-- ══════════════════════════════════
+     COVER + KEY NOTES
+══════════════════════════════════════ -->
 <div class="page">
 <div class="cover">
-  <div class="lbl">Class 11 · Mathematics Paper 1 · Chapter 2</div>
+  <div class="lbl">Class 11 · Maths Paper 1 · Chapter 2</div>
   <h1>📐 Trigonometry</h1>
-  <div class="sub">Key Notes · Identities · Domain &amp; Range · Exercise 2.1 &amp; 2.2 — All Solutions (Vertical Steps)</div>
+  <div class="sub">All Exercise 2.1 &amp; 2.2 Questions — Serial Wise · Simple Steps</div>
 </div>
 
-<!-- SIGNS OF TRIG FUNCTIONS -->
-<div class="sec">📌 Signs of Trigonometric Functions — Quadrant Rule</div>
-<div class="kb kb-pink">
-  <div class="kb-lbl">★ CAST Rule — All Silver Tea Cups</div>
-  <b>A</b>ll positive (Q1) · <b>S</b>in positive (Q2) · <b>T</b>an positive (Q3) · <b>C</b>os positive (Q4)
+<!-- SIGNS TABLE -->
+<div class="exhdr">📌 Signs of Trig Functions — Remember This First</div>
+<div class="kbox yellow">
+  <div class="kbox-lbl">⭐ CAST Rule — All Silver Tea Cups</div>
+  <b>Q1</b> (0–90°): <span class="hl">ALL positive</span> &nbsp;|&nbsp;
+  <b>Q2</b> (90–180°): <span class="hl">SIN positive</span> &nbsp;|&nbsp;
+  <b>Q3</b> (180–270°): <span class="hl">TAN positive</span> &nbsp;|&nbsp;
+  <b>Q4</b> (270–360°): <span class="hl">COS positive</span>
 </div>
 <table>
-  <tr><th>Quadrant</th><th>Angles</th><th>sin</th><th>cos</th><th>tan</th><th>cosec</th><th>sec</th><th>cot</th></tr>
-  <tr><td><b>I</b></td><td>0° – 90°</td><td>+</td><td>+</td><td>+</td><td>+</td><td>+</td><td>+</td></tr>
-  <tr><td><b>II</b></td><td>90° – 180°</td><td>+</td><td>−</td><td>−</td><td>+</td><td>−</td><td>−</td></tr>
-  <tr><td><b>III</b></td><td>180° – 270°</td><td>−</td><td>−</td><td>+</td><td>−</td><td>−</td><td>+</td></tr>
-  <tr><td><b>IV</b></td><td>270° – 360°</td><td>−</td><td>+</td><td>−</td><td>−</td><td>+</td><td>−</td></tr>
+  <tr><th class="tp">Quadrant</th><th class="tp">sin</th><th class="tp">cos</th><th class="tp">tan</th><th class="tp">cosec</th><th class="tp">sec</th><th class="tp">cot</th></tr>
+  <tr><td><b>Q1 (0–90°)</b></td><td>+</td><td>+</td><td>+</td><td>+</td><td>+</td><td>+</td></tr>
+  <tr><td><b>Q2 (90–180°)</b></td><td>+</td><td>−</td><td>−</td><td>+</td><td>−</td><td>−</td></tr>
+  <tr><td><b>Q3 (180–270°)</b></td><td>−</td><td>−</td><td>+</td><td>−</td><td>−</td><td>+</td></tr>
+  <tr><td><b>Q4 (270–360°)</b></td><td>−</td><td>+</td><td>−</td><td>−</td><td>+</td><td>−</td></tr>
 </table>
 
 <!-- STANDARD VALUES -->
-<div class="sec">📊 Standard Values of Trigonometric Functions</div>
+<div class="exhdr">📊 Standard Values — Learn These</div>
 <table>
-  <tr><th>θ</th><th>0°</th><th>30°</th><th>45°</th><th>60°</th><th>90°</th><th>180°</th><th>270°</th><th>360°</th></tr>
-  <tr><td><b>sin</b></td><td>0</td><td>½</td><td>1/√2</td><td>√3/2</td><td>1</td><td>0</td><td>−1</td><td>0</td></tr>
-  <tr><td><b>cos</b></td><td>1</td><td>√3/2</td><td>1/√2</td><td>½</td><td>0</td><td>−1</td><td>0</td><td>1</td></tr>
-  <tr><td><b>tan</b></td><td>0</td><td>1/√3</td><td>1</td><td>√3</td><td>∞</td><td>0</td><td>∞</td><td>0</td></tr>
-  <tr><td><b>cosec</b></td><td>∞</td><td>2</td><td>√2</td><td>2/√3</td><td>1</td><td>∞</td><td>−1</td><td>∞</td></tr>
-  <tr><td><b>sec</b></td><td>1</td><td>2/√3</td><td>√2</td><td>2</td><td>∞</td><td>−1</td><td>∞</td><td>1</td></tr>
-  <tr><td><b>cot</b></td><td>∞</td><td>√3</td><td>1</td><td>1/√3</td><td>0</td><td>∞</td><td>0</td><td>∞</td></tr>
+  <tr><th class="tb">Angle</th><th class="tb">sin</th><th class="tb">cos</th><th class="tb">tan</th><th class="tb">cosec</th><th class="tb">sec</th><th class="tb">cot</th></tr>
+  <tr><td><b>0°</b></td><td>0</td><td>1</td><td>0</td><td>∞</td><td>1</td><td>∞</td></tr>
+  <tr><td><b>30°</b></td><td>½</td><td>√3/2</td><td>1/√3</td><td>2</td><td>2/√3</td><td>√3</td></tr>
+  <tr><td><b>45°</b></td><td>1/√2</td><td>1/√2</td><td>1</td><td>√2</td><td>√2</td><td>1</td></tr>
+  <tr><td><b>60°</b></td><td>√3/2</td><td>½</td><td>√3</td><td>2/√3</td><td>2</td><td>1/√3</td></tr>
+  <tr><td><b>90°</b></td><td>1</td><td>0</td><td>∞</td><td>1</td><td>∞</td><td>0</td></tr>
+  <tr><td><b>180°</b></td><td>0</td><td>−1</td><td>0</td><td>∞</td><td>−1</td><td>∞</td></tr>
+  <tr><td><b>270°</b></td><td>−1</td><td>0</td><td>∞</td><td>−1</td><td>∞</td><td>0</td></tr>
+  <tr><td><b>360°</b></td><td>0</td><td>1</td><td>0</td><td>∞</td><td>1</td><td>∞</td></tr>
 </table>
-<div class="kb kb-yellow">
-  <div class="kb-lbl">⭐ Memory Trick</div>
-  sin values: √0/2, √1/2, √2/2, √3/2, √4/2 → 0, ½, 1/√2, √3/2, 1<br/>
-  cos values = sin values in <b>reverse order</b>
-</div>
 
-<!-- RECIPROCAL RELATIONS -->
-<div class="sec">🔗 Reciprocal &amp; Quotient Relations</div>
-<div class="formula">
-  <span>sin θ × cosec θ = 1</span> &nbsp;|&nbsp; <span>cos θ × sec θ = 1</span> &nbsp;|&nbsp; <span>tan θ × cot θ = 1</span>
+<!-- 3 IDENTITIES -->
+<div class="exhdr">⚡ 3 Fundamental Identities — Use in Every Problem</div>
+<div class="fml">
+  <span>1. sin²θ + cos²θ = 1</span>  →  sin²θ = 1 − cos²θ  |  cos²θ = 1 − sin²θ
   <br/>
-  <span>tan θ = sin θ / cos θ</span> &nbsp;|&nbsp; <span>cot θ = cos θ / sin θ</span>
+  <span>2. 1 + tan²θ = sec²θ</span>  →  tan²θ = sec²θ − 1  |  sec²θ − tan²θ = 1
   <br/>
-  <span>sin θ = tan θ × cos θ</span>
+  <span>3. 1 + cot²θ = cosec²θ</span>  →  cot²θ = cosec²θ − 1  |  cosec²θ − cot²θ = 1
 </div>
 
-<!-- FUNDAMENTAL IDENTITIES -->
-<div class="sec">⚡ Fundamental Identities (Most Important)</div>
-<div class="formula">
-  <span>Identity 1 :  sin²θ + cos²θ = 1</span>
-  <br/>→  sin²θ = 1 − cos²θ     |     cos²θ = 1 − sin²θ
-  <br/><br/>
-  <span>Identity 2 :  1 + tan²θ = sec²θ</span>   (θ ≠ π/2)
-  <br/>→  sec²θ − tan²θ = 1     |     tan²θ = sec²θ − 1
-  <br/><br/>
-  <span>Identity 3 :  1 + cot²θ = cosec²θ</span>  (θ ≠ 0)
-  <br/>→  cosec²θ − cot²θ = 1   |     cot²θ = cosec²θ − 1
-</div>
-<div class="kb kb-blue">
-  <div class="kb-lbl">★ Important Derived Relations</div>
-  <b>(sec θ + tan θ)(sec θ − tan θ) = 1</b><br/>
-  <b>(cosec θ + cot θ)(cosec θ − cot θ) = 1</b><br/>
-  <b>cos⁶θ + sin⁶θ = 1 − 3sin²θ cos²θ</b>
+<!-- RECIPROCAL -->
+<div class="kbox blue">
+  <div class="kbox-lbl">★ Reciprocal Relations</div>
+  sin θ = 1/cosec θ &nbsp;|&nbsp; cos θ = 1/sec θ &nbsp;|&nbsp; tan θ = 1/cot θ<br/>
+  <b>tan θ = sin θ / cos θ</b> &nbsp;|&nbsp; <b>sin θ = tan θ × cos θ</b> &nbsp;|&nbsp; <b>cot θ = cos θ / sin θ</b>
 </div>
 
-<!-- DOMAIN RANGE PERIOD -->
-<div class="sec">📈 Domain, Range &amp; Period</div>
-<table class="blue">
-  <tr><th>Function</th><th>Domain</th><th>Range</th><th>Period</th></tr>
-  <tr><td><b>sin θ</b></td><td>R</td><td>[−1, 1]</td><td>2π</td></tr>
-  <tr><td><b>cos θ</b></td><td>R</td><td>[−1, 1]</td><td>2π</td></tr>
-  <tr><td><b>tan θ</b></td><td>R − {(2n+1)π/2}</td><td>R</td><td>π</td></tr>
-  <tr><td><b>cosec θ</b></td><td>R − {nπ}</td><td>R − (−1, 1)</td><td>2π</td></tr>
-  <tr><td><b>sec θ</b></td><td>R − {(2n+1)π/2}</td><td>R − (−1, 1)</td><td>2π</td></tr>
-  <tr><td><b>cot θ</b></td><td>R − {nπ}</td><td>R</td><td>π</td></tr>
-</table>
-<div class="kb kb-green">
-  <div class="kb-lbl">★ Periodicity</div>
-  <ul class="bl">
-    <li>sin, cos, cosec, sec → period <b>2π</b></li>
-    <li>tan, cot → period <b>π</b></li>
-    <li>Example: sin(41π/4) = sin(10π + π/4) = sin(π/4) = <b>1/√2</b></li>
-    <li>Example: cos(765°) = cos(720° + 45°) = cos(45°) = <b>1/√2</b></li>
-  </ul>
-</div>
-
-<!-- POLAR COORDS -->
-<div class="sec">🗺️ Polar Co-ordinate System</div>
-<div class="formula">
-  Polar → Cartesian:  <span>x = r cosθ ,  y = r sinθ</span>
+<!-- POLAR -->
+<div class="exhdr">🗺️ Polar Co-ordinates</div>
+<div class="fml">
+  Cartesian (x,y) → Polar (r,θ):  <span>r = √(x²+y²)</span>  &nbsp;,&nbsp;  <span>tanθ = y/x</span>
   <br/>
-  Cartesian → Polar:  <span>r = √(x² + y²) ,  tanθ = y/x</span>
+  Polar (r,θ) → Cartesian (x,y):  <span>x = r cosθ</span>  &nbsp;,&nbsp;  <span>y = r sinθ</span>
 </div>
 
-<!-- Polar Solved Example -->
-<div class="qblock">
-  <div class="qhead pink"><span class="badge b-pink">Solved</span>Find the polar co-ordinates of the point whose Cartesian co-ordinates are (3, 3).</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-given">Given</div>
-      <div class="step-content">x = 3, y = 3</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">r = √(x² + y²) = √(9 + 9) = √18 = 3√2</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">tanθ = y/x = 3/3 = 1 → θ = 45° &nbsp;(Point in Q1, all positive)</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content">Polar co-ordinates = <span class="ans-final">(3√2, 45°)</span></div>
-    </div>
-  </div>
-</div>
-
-</div><!-- end page 1 -->
+</div><!-- end notes page -->
 
 
-<!-- ═══════════════════════════════════════
-     PAGE 2 — EXERCISE 2.1 SOLUTIONS
-════════════════════════════════════════ -->
+<!-- ══════════════════════════════════
+     EXERCISE 2.1 — ALL QUESTIONS
+══════════════════════════════════════ -->
 <div class="page pb">
-<div class="sec2">✅ Exercise 2.1 — Solved Examples (Step by Step)</div>
+<div class="exhdr">✅ EXERCISE 2.1 — All Questions Serial Wise</div>
 
-<!-- ── Ex 5 ── -->
+<!-- ── Q1 ── -->
 <div class="qblock">
-  <div class="qhead pink"><span class="badge b-pink">Ex. 5</span>If sec x = 13/5, x lies in the fourth quadrant. Find all other trigonometric functions.</div>
+  <div class="qh p"><span class="bx bp">Q 1</span>Find trigonometric functions of all given angles.</div>
   <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-given">Given</div>
-      <div class="step-content">sec x = 13/5</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">cos x = 1 / sec x = <code>5/13</code></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        tan²x = sec²x − 1<br/>
-        tan²x = (13/5)² − 1<br/>
-        tan²x = 169/25 − 25/25<br/>
-        tan²x = <code>144/25</code>
+    <div class="row"><div class="rlbl r-rule">Key Rule</div>
+      <div class="rcnt">
+        sin(−θ) = −sinθ &nbsp;|&nbsp; cos(−θ) = cosθ &nbsp;|&nbsp; sin(180°−θ) = sinθ &nbsp;|&nbsp; cos(180°−θ) = −cosθ<br/>
+        sin(180°+θ) = −sinθ &nbsp;|&nbsp; cos(180°+θ) = −cosθ &nbsp;|&nbsp; sin(360°−θ) = −sinθ &nbsp;|&nbsp; cos(360°−θ) = cosθ
       </div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">x is in <b>Q4</b> → tan is <b>negative</b><br/>
-        ∴ tan x = <code>−12/5</code> &nbsp;&nbsp; cot x = <code>−5/12</code></div>
+    <div class="row"><div class="rlbl r-s1">0°</div>
+      <div class="rcnt">sin=<b>0</b>, cos=<b>1</b>, tan=<b>0</b>, cosec=<b>∞</b>, sec=<b>1</b>, cot=<b>∞</b></div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 4</div>
-      <div class="step-content">sin x = tan x × cos x<br/>
-        sin x = (−12/5) × (5/13)<br/>
-        sin x = <code>−12/13</code></div>
+    <div class="row"><div class="rlbl r-s1">30°</div>
+      <div class="rcnt">sin=<b>1/2</b>, cos=<b>√3/2</b>, tan=<b>1/√3</b>, cosec=<b>2</b>, sec=<b>2/√3</b>, cot=<b>√3</b></div>
     </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content">
-        sin x = <span class="ans-final">−12/13</span> &nbsp;
-        cos x = <span class="ans-final">5/13</span> &nbsp;
-        tan x = <span class="ans-final">−12/5</span><br/>
-        cosec x = <span class="ans-final">−13/12</span> &nbsp;
-        sec x = <span class="ans-final">13/5</span> &nbsp;
-        cot x = <span class="ans-final">−5/12</span>
+    <div class="row"><div class="rlbl r-s1">45°</div>
+      <div class="rcnt">sin=<b>1/√2</b>, cos=<b>1/√2</b>, tan=<b>1</b>, cosec=<b>√2</b>, sec=<b>√2</b>, cot=<b>1</b></div>
+    </div>
+    <div class="row"><div class="rlbl r-s1">60°</div>
+      <div class="rcnt">sin=<b>√3/2</b>, cos=<b>1/2</b>, tan=<b>√3</b>, cosec=<b>2/√3</b>, sec=<b>2</b>, cot=<b>1/√3</b></div>
+    </div>
+    <div class="row"><div class="rlbl r-s1">150°</div>
+      <div class="rcnt">150° = 180°−30° → Q2 (sin+, cos−)<br/>
+        sin=<b>1/2</b>, cos=<b>−√3/2</b>, tan=<b>−1/√3</b>, cosec=<b>2</b>, sec=<b>−2/√3</b>, cot=<b>−√3</b></div>
+    </div>
+    <div class="row"><div class="rlbl r-s1">180°</div>
+      <div class="rcnt">sin=<b>0</b>, cos=<b>−1</b>, tan=<b>0</b>, cosec=<b>∞</b>, sec=<b>−1</b>, cot=<b>∞</b></div>
+    </div>
+    <div class="row"><div class="rlbl r-s1">210°</div>
+      <div class="rcnt">210° = 180°+30° → Q3 (sin−, cos−, tan+)<br/>
+        sin=<b>−1/2</b>, cos=<b>−√3/2</b>, tan=<b>1/√3</b>, cosec=<b>−2</b>, sec=<b>−2/√3</b>, cot=<b>√3</b></div>
+    </div>
+    <div class="row"><div class="rlbl r-s1">300°</div>
+      <div class="rcnt">300° = 360°−60° → Q4 (sin−, cos+, tan−)<br/>
+        sin=<b>−√3/2</b>, cos=<b>1/2</b>, tan=<b>−√3</b>, cosec=<b>−2/√3</b>, sec=<b>2</b>, cot=<b>−1/√3</b></div>
+    </div>
+    <div class="row"><div class="rlbl r-s1">330°</div>
+      <div class="rcnt">330° = 360°−30° → Q4<br/>
+        sin=<b>−1/2</b>, cos=<b>√3/2</b>, tan=<b>−1/√3</b>, cosec=<b>−2</b>, sec=<b>2/√3</b>, cot=<b>−√3</b></div>
+    </div>
+    <div class="row"><div class="rlbl r-s1">−30°</div>
+      <div class="rcnt">sin(−30°)=−sin30°=<b>−1/2</b>, cos(−30°)=cos30°=<b>√3/2</b>, tan(−30°)=<b>−1/√3</b></div>
+    </div>
+    <div class="row"><div class="rlbl r-s1">−45°</div>
+      <div class="rcnt">sin=<b>−1/√2</b>, cos=<b>1/√2</b>, tan=<b>−1</b>, cosec=<b>−√2</b>, sec=<b>√2</b>, cot=<b>−1</b></div>
+    </div>
+    <div class="row"><div class="rlbl r-s1">−60°</div>
+      <div class="rcnt">sin=<b>−√3/2</b>, cos=<b>1/2</b>, tan=<b>−√3</b>, cosec=<b>−2/√3</b>, sec=<b>2</b>, cot=<b>−1/√3</b></div>
+    </div>
+    <div class="row"><div class="rlbl r-s1">−90°</div>
+      <div class="rcnt">sin=<b>−1</b>, cos=<b>0</b>, tan=<b>∞</b>, cosec=<b>−1</b>, sec=<b>∞</b>, cot=<b>0</b></div>
+    </div>
+    <div class="row"><div class="rlbl r-s1">−120°</div>
+      <div class="rcnt">−120° = same as 240° = 180°+60° → Q3<br/>
+        sin=<b>−√3/2</b>, cos=<b>−1/2</b>, tan=<b>√3</b>, cosec=<b>−2/√3</b>, sec=<b>−2</b>, cot=<b>1/√3</b></div>
+    </div>
+    <div class="row"><div class="rlbl r-s1">−225°</div>
+      <div class="rcnt">−225° = same as 135° = 180°−45° → Q2<br/>
+        sin=<b>1/√2</b>, cos=<b>−1/√2</b>, tan=<b>−1</b></div>
+    </div>
+    <div class="row"><div class="rlbl r-s1">−240°</div>
+      <div class="rcnt">−240° = same as 120° = 180°−60° → Q2<br/>
+        sin=<b>√3/2</b>, cos=<b>−1/2</b>, tan=<b>−√3</b></div>
+    </div>
+    <div class="row"><div class="rlbl r-s1">−270°</div>
+      <div class="rcnt">−270° = same as 90°<br/>sin=<b>1</b>, cos=<b>0</b>, tan=<b>∞</b>, cosec=<b>1</b>, sec=<b>∞</b>, cot=<b>0</b></div>
+    </div>
+    <div class="row"><div class="rlbl r-s1">−315°</div>
+      <div class="rcnt">−315° = same as 45° → Q1<br/>sin=<b>1/√2</b>, cos=<b>1/√2</b>, tan=<b>1</b></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Q2 ── -->
+<div class="qblock">
+  <div class="qh p"><span class="bx bp">Q 2</span>State the signs of: (i) tan380° &nbsp; (ii) cot230° &nbsp; (iii) sec468°</div>
+  <div class="qbody">
+    <div class="row"><div class="rlbl r-s1">(i) tan380°</div>
+      <div class="rcnt">380° = 360° + 20° → same as 20° → <b>Q1</b> → tan is <span class="af">Positive (+)</span></div>
+    </div>
+    <div class="row"><div class="rlbl r-s2">(ii) cot230°</div>
+      <div class="rcnt">230° = 180° + 50° → <b>Q3</b> → tan is positive → cot is also <span class="af">Positive (+)</span></div>
+    </div>
+    <div class="row"><div class="rlbl r-s3">(iii) sec468°</div>
+      <div class="rcnt">468° = 360° + 108° → same as 108° = 180°−72° → <b>Q2</b> → cos is negative → sec is <span class="af">Negative (−)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Q3 ── -->
+<div class="qblock">
+  <div class="qh p"><span class="bx bp">Q 3</span>State the signs of cos(π^c) and cos4°. Which is greater?</div>
+  <div class="qbody">
+    <div class="row"><div class="rlbl r-s1">cos(π^c)</div>
+      <div class="rcnt">π radians = 180° → cos180° = −1 → Sign: <b>Negative (−)</b></div>
+    </div>
+    <div class="row"><div class="rlbl r-s2">cos4°</div>
+      <div class="rcnt">4° is in Q1 → cos is positive → cos4° ≈ 0.997 → Sign: <b>Positive (+)</b></div>
+    </div>
+    <div class="row"><div class="rlbl r-ans">Greater?</div>
+      <div class="rcnt"><span class="af">cos4° is greater</span> &nbsp; (0.997 > −1)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Q4 ── -->
+<div class="qblock">
+  <div class="qh p"><span class="bx bp">Q 4</span>State the quadrant: (i) sinθ &lt; 0 and tanθ &gt; 0 &nbsp; (ii) cosθ &lt; 0 and tanθ &gt; 0</div>
+  <div class="qbody">
+    <div class="row"><div class="rlbl r-s1">(i)</div>
+      <div class="rcnt">
+        sinθ &lt; 0 → Q3 or Q4<br/>
+        tanθ &gt; 0 → Q1 or Q3<br/>
+        Common quadrant = <span class="af">3rd Quadrant</span>
+      </div>
+    </div>
+    <div class="row"><div class="rlbl r-s2">(ii)</div>
+      <div class="rcnt">
+        cosθ &lt; 0 → Q2 or Q3<br/>
+        tanθ &gt; 0 → Q1 or Q3<br/>
+        Common quadrant = <span class="af">3rd Quadrant</span>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ── Ex 6 ── -->
+<!-- ── Q5 ── -->
 <div class="qblock">
-  <div class="qhead pink"><span class="badge b-pink">Ex. 6</span>If tan A = 4/3, find the value of (2 sin A − 3 cos A) / (2 sin A + 3 cos A)</div>
+  <div class="qh p"><span class="bx bp">Q 5</span>Evaluate: (i) sin30°+cos45°+tan180° &nbsp; (ii) cosec45°+cot45°+tan0° &nbsp; (iii) sin30°×cos45°×tan360°</div>
   <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-given">Given</div>
-      <div class="step-content">tan A = 4/3</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">Divide numerator and denominator by <b>cos A</b></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        = (2 tan A − 3) / (2 tan A + 3)<br/>
-        = (2 × 4/3 − 3) / (2 × 4/3 + 3)<br/>
-        = (8/3 − 9/3) / (8/3 + 9/3)<br/>
-        = (−1/3) / (17/3)
+    <div class="row"><div class="rlbl r-s1">(i)</div>
+      <div class="rcnt">
+        = sin30° + cos45° + tan180°<br/>
+        = 1/2 + 1/√2 + 0 = <span class="af">1/2 + 1/√2</span>
       </div>
     </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content"><span class="ans-final">−1/17</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- ── Ex 8 ── -->
-<div class="qblock">
-  <div class="qhead pink"><span class="badge b-pink">Ex. 8</span>If sin θ = −3/5 and 180° &lt; θ &lt; 270°, find all trigonometric functions.</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-given">Given</div>
-      <div class="step-content">sin θ = −3/5 &nbsp;&amp;&nbsp; θ is in <b>3rd Quadrant</b> (180°–270°)</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-note">Q3 Rule</div>
-      <div class="step-content">sin → Negative, cos → Negative, tan → <b>Positive</b></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">cosec θ = 1 / sin θ = <code>−5/3</code></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        cos²θ = 1 − sin²θ<br/>
-        cos²θ = 1 − 9/25 = 16/25<br/>
-        cos θ = −4/5 &nbsp;(negative in Q3)
+    <div class="row"><div class="rlbl r-s2">(ii)</div>
+      <div class="rcnt">
+        = cosec45° + cot45° + tan0°<br/>
+        = √2 + 1 + 0 = <span class="af">1 + √2</span>
       </div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">sec θ = 1 / cos θ = <code>−5/4</code></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 4</div>
-      <div class="step-content">
-        tan θ = sin θ / cos θ = (−3/5) / (−4/5) = <code>3/4</code> &nbsp;(positive ✓)
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 5</div>
-      <div class="step-content">cot θ = cos θ / sin θ = <code>4/3</code></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content">
-        sin θ = <span class="ans-final">−3/5</span> &nbsp;
-        cos θ = <span class="ans-final">−4/5</span> &nbsp;
-        tan θ = <span class="ans-final">3/4</span><br/>
-        cosec θ = <span class="ans-final">−5/3</span> &nbsp;
-        sec θ = <span class="ans-final">−5/4</span> &nbsp;
-        cot θ = <span class="ans-final">4/3</span>
+    <div class="row"><div class="rlbl r-s3">(iii)</div>
+      <div class="rcnt">
+        = sin30° × cos45° × tan360°<br/>
+        = 1/2 × 1/√2 × 0 = <span class="af">0</span>
       </div>
     </div>
   </div>
 </div>
 
-<hr class="d"/>
-<div class="sec2">✅ Exercise 2.1 — All Questions (Step by Step)</div>
-
-<!-- Q6 -->
+<!-- ── Q6 ── -->
 <div class="qblock">
-  <div class="qhead blue"><span class="badge b-blue">Q 6</span>Find all trigonometric functions of an angle whose terminal arm passes through (3, −4).</div>
+  <div class="qh p"><span class="bx bp">Q 6</span>Find all trig functions of an angle whose terminal arm passes through (3, −4).</div>
   <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-given">Given</div>
-      <div class="step-content">Point = (3, −4), so x = 3, y = −4</div>
+    <div class="row"><div class="rlbl r-given">Given</div>
+      <div class="rcnt">x = 3, y = −4. Since x is +ve and y is −ve → <b>Q4</b></div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">r = √(x² + y²) = √(9 + 16) = √25 = <code>5</code></div>
+    <div class="row"><div class="rlbl r-s1">Find r</div>
+      <div class="rcnt">r = √(x²+y²) = √(9+16) = √25 = <b>5</b></div>
     </div>
-    <div class="step">
-      <div class="step-label sl-note">Quadrant</div>
-      <div class="step-content">x positive, y negative → <b>4th Quadrant</b></div>
+    <div class="row"><div class="rlbl r-s2">sin &amp; cos</div>
+      <div class="rcnt">sin θ = y/r = −4/5 &nbsp;|&nbsp; cos θ = x/r = 3/5</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        sin θ = y/r = −4/5<br/>
-        cos θ = x/r = 3/5<br/>
-        tan θ = y/x = −4/3
-      </div>
+    <div class="row"><div class="rlbl r-s3">tan</div>
+      <div class="rcnt">tan θ = y/x = −4/3</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content">
-        sin θ = <span class="ans-final">−4/5</span> &nbsp;
-        cos θ = <span class="ans-final">3/5</span> &nbsp;
-        tan θ = <span class="ans-final">−4/3</span><br/>
-        cosec θ = <span class="ans-final">−5/4</span> &nbsp;
-        sec θ = <span class="ans-final">5/3</span> &nbsp;
-        cot θ = <span class="ans-final">−3/4</span>
+    <div class="row"><div class="rlbl r-ans">Answer</div>
+      <div class="rcnt">
+        sin=<span class="af">−4/5</span> &nbsp; cos=<span class="af">3/5</span> &nbsp; tan=<span class="af">−4/3</span><br/>
+        cosec=<span class="af">−5/4</span> &nbsp; sec=<span class="af">5/3</span> &nbsp; cot=<span class="af">−3/4</span>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Q7 -->
+<!-- ── Q7 ── -->
 <div class="qblock">
-  <div class="qhead blue"><span class="badge b-blue">Q 7</span>If cos θ = 12/13, 0 &lt; θ &lt; π/2, find (sin²θ − cos²θ)/(2 sinθ cosθ) and 1/tan²θ</div>
+  <div class="qh p"><span class="bx bp">Q 7</span>If cosθ = 12/13, 0 &lt; θ &lt; π/2, find (sin²θ−cos²θ)/(2sinθcosθ) and 1/tan²θ</div>
   <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-given">Given</div>
-      <div class="step-content">cos θ = 12/13, Q1 (all positive)</div>
+    <div class="row"><div class="rlbl r-given">Given</div>
+      <div class="rcnt">cosθ = 12/13, θ in <b>Q1</b> (all positive)</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">
-        sin²θ = 1 − cos²θ = 1 − 144/169 = 25/169<br/>
-        sin θ = 5/13 &nbsp;(positive in Q1)
-      </div>
+    <div class="row"><div class="rlbl r-s1">Find sinθ</div>
+      <div class="rcnt">sin²θ = 1 − cos²θ = 1 − 144/169 = 25/169 → sinθ = <b>5/13</b></div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">tan θ = sin θ / cos θ = (5/13) / (12/13) = 5/12</div>
+    <div class="row"><div class="rlbl r-s2">Find tanθ</div>
+      <div class="rcnt">tanθ = sinθ/cosθ = (5/13)/(12/13) = <b>5/12</b></div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Part (i)</div>
-      <div class="step-content">
-        (sin²θ − cos²θ) / (2 sin θ cos θ)<br/>
+    <div class="row"><div class="rlbl r-s3">Part (i)</div>
+      <div class="rcnt">
+        (sin²θ − cos²θ) / (2sinθcosθ)<br/>
         = (25/169 − 144/169) / (2 × 5/13 × 12/13)<br/>
-        = (−119/169) / (120/169)<br/>
-        = −119/120
+        = (−119/169) / (120/169) = <span class="af">−119/120</span>
       </div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Part (ii)</div>
-      <div class="step-content">
-        1/tan²θ = cot²θ = (12/5)² = 144/25
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content">
-        (i) <span class="ans-final">−119/120</span> &nbsp;&nbsp;
-        (ii) <span class="ans-final">144/25</span>
-      </div>
+    <div class="row"><div class="rlbl r-s4">Part (ii)</div>
+      <div class="rcnt">1/tan²θ = cot²θ = (12/5)² = <span class="af">144/25</span></div>
     </div>
   </div>
 </div>
 
-<!-- Q8 -->
+<!-- ── Q8 ── -->
 <div class="qblock">
-  <div class="qhead blue"><span class="badge b-blue">Q 8</span>Evaluate: (i) 4cot45° − sec²60° + sin30° &nbsp; (ii) cos²0 + cos²(π/6) + cos²(π/3) + cos²(π/2)</div>
+  <div class="qh p"><span class="bx bp">Q 8</span>Using tables evaluate: (i) 4cot45°−sec²60°+sin30° &nbsp; (ii) cos²0+cos²(π/6)+cos²(π/3)+cos²(π/2)</div>
   <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Part (i)</div>
-      <div class="step-content">
-        = 4 × cot45° − sec²60° + sin30°<br/>
-        = 4 × 1 − (2)² + 1/2<br/>
-        = 4 − 4 + 1/2
+    <div class="row"><div class="rlbl r-s1">Part (i)</div>
+      <div class="rcnt">
+        = 4×cot45° − sec²60° + sin30°<br/>
+        = 4×1 − (2)² + 1/2<br/>
+        = 4 − 4 + 1/2 = <span class="af">1/2</span>
       </div>
     </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (i)</div>
-      <div class="step-content"><span class="ans-final">1/2</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Part (ii)</div>
-      <div class="step-content">
+    <div class="row"><div class="rlbl r-s2">Part (ii)</div>
+      <div class="rcnt">
         = (1)² + (√3/2)² + (1/2)² + (0)²<br/>
-        = 1 + 3/4 + 1/4 + 0<br/>
-        = 1 + 1
+        = 1 + 3/4 + 1/4 + 0 = 1 + 1 = <span class="af">2</span>
       </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (ii)</div>
-      <div class="step-content"><span class="ans-final">2</span></div>
     </div>
   </div>
 </div>
 
-<!-- Q9 (i) -->
+<!-- ── Q9 (i) ── -->
 <div class="qblock">
-  <div class="qhead blue"><span class="badge b-blue">Q 9 (i)</span>If cos θ = −3/5 and 180° &lt; θ &lt; 270°, find all trig functions.</div>
+  <div class="qh p"><span class="bx bp">Q 9 (i)</span>cosθ = −3/5 and 180° &lt; θ &lt; 270°. Find all trig functions.</div>
   <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-given">Given</div>
-      <div class="step-content">cos θ = −3/5, θ in <b>Q3</b></div>
+    <div class="row"><div class="rlbl r-given">Given</div>
+      <div class="rcnt">cosθ = −3/5, θ in <b>Q3</b> → sinθ(−), cosθ(−), tanθ(+)</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">sec θ = −5/3</div>
+    <div class="row"><div class="rlbl r-s1">sinθ</div>
+      <div class="rcnt">sin²θ = 1 − 9/25 = 16/25 → sinθ = −4/5 (negative in Q3)</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        sin²θ = 1 − 9/25 = 16/25<br/>
-        sin θ = −4/5 &nbsp;(Q3, negative)
-      </div>
+    <div class="row"><div class="rlbl r-s2">Others</div>
+      <div class="rcnt">tanθ = sinθ/cosθ = (−4/5)/(−3/5) = 4/3 &nbsp;|&nbsp; cotθ = 3/4<br/>
+        secθ = −5/3 &nbsp;|&nbsp; cosecθ = −5/4</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">
-        cosec θ = −5/4<br/>
-        tan θ = (−4/5)/(−3/5) = 4/3 &nbsp;(Q3, positive ✓)<br/>
-        cot θ = 3/4
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content">
-        sin = <span class="ans-final">−4/5</span> &nbsp;
-        cos = <span class="ans-final">−3/5</span> &nbsp;
-        tan = <span class="ans-final">4/3</span><br/>
-        cosec = <span class="ans-final">−5/4</span> &nbsp;
-        sec = <span class="ans-final">−5/3</span> &nbsp;
-        cot = <span class="ans-final">3/4</span>
-      </div>
+    <div class="row"><div class="rlbl r-ans">Answer</div>
+      <div class="rcnt">sin=<span class="af">−4/5</span> cos=<span class="af">−3/5</span> tan=<span class="af">4/3</span> cosec=<span class="af">−5/4</span> sec=<span class="af">−5/3</span> cot=<span class="af">3/4</span></div>
     </div>
   </div>
 </div>
 
-<!-- Q9 (ii) -->
+<!-- ── Q9 (ii) ── -->
 <div class="qblock">
-  <div class="qhead blue"><span class="badge b-blue">Q 9 (ii)</span>If sec A = −25/7, A lies in the second quadrant. Find all trig functions.</div>
+  <div class="qh p"><span class="bx bp">Q 9 (ii)</span>secA = −25/7, A in second quadrant. Find all trig functions.</div>
   <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-given">Given</div>
-      <div class="step-content">sec A = −25/7, A in <b>Q2</b></div>
+    <div class="row"><div class="rlbl r-given">Given</div>
+      <div class="rcnt">secA = −25/7, A in <b>Q2</b> → sinA(+), cosA(−)</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">cos A = −7/25</div>
+    <div class="row"><div class="rlbl r-s1">cosA</div>
+      <div class="rcnt">cosA = 1/secA = −7/25</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        sin²A = 1 − 49/625 = 576/625<br/>
-        sin A = 24/25 &nbsp;(Q2, positive ✓)
-      </div>
+    <div class="row"><div class="rlbl r-s2">sinA</div>
+      <div class="rcnt">sin²A = 1 − 49/625 = 576/625 → sinA = 24/25 (positive in Q2)</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">
-        cosec A = 25/24<br/>
-        tan A = (24/25)/(−7/25) = −24/7 &nbsp;(Q2, negative ✓)<br/>
-        cot A = −7/24
-      </div>
+    <div class="row"><div class="rlbl r-s3">Others</div>
+      <div class="rcnt">tanA = (24/25)/(−7/25) = −24/7 &nbsp;|&nbsp; cotA = −7/24<br/>
+        cosecA = 25/24</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content">
-        sin = <span class="ans-final">24/25</span> &nbsp;
-        cos = <span class="ans-final">−7/25</span> &nbsp;
-        tan = <span class="ans-final">−24/7</span><br/>
-        cosec = <span class="ans-final">25/24</span> &nbsp;
-        sec = <span class="ans-final">−25/7</span> &nbsp;
-        cot = <span class="ans-final">−7/24</span>
-      </div>
+    <div class="row"><div class="rlbl r-ans">Answer</div>
+      <div class="rcnt">sin=<span class="af">24/25</span> cos=<span class="af">−7/25</span> tan=<span class="af">−24/7</span> cosec=<span class="af">25/24</span> sec=<span class="af">−25/7</span> cot=<span class="af">−7/24</span></div>
     </div>
   </div>
 </div>
 
-<!-- Q9 (iii) -->
+<!-- ── Q9 (iii) ── -->
 <div class="qblock">
-  <div class="qhead blue"><span class="badge b-blue">Q 9 (iii)</span>If cot x = 3/4, x lies in the third quadrant. Find all trig functions.</div>
+  <div class="qh p"><span class="bx bp">Q 9 (iii)</span>cotx = 3/4, x in third quadrant. Find all trig functions.</div>
   <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-given">Given</div>
-      <div class="step-content">cot x = 3/4, x in <b>Q3</b> (tan positive ✓)</div>
+    <div class="row"><div class="rlbl r-given">Given</div>
+      <div class="rcnt">cotx = 3/4, x in <b>Q3</b> → sinx(−), cosx(−), tanx(+)</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">tan x = 4/3 &nbsp;(positive in Q3 ✓)</div>
+    <div class="row"><div class="rlbl r-s1">tanx</div>
+      <div class="rcnt">tanx = 1/cotx = 4/3 (positive in Q3 ✓)</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        cosec²x = 1 + cot²x = 1 + 9/16 = 25/16<br/>
-        cosec x = −5/4 &nbsp;(Q3, sin negative)
-      </div>
+    <div class="row"><div class="rlbl r-s2">cosecx</div>
+      <div class="rcnt">cosec²x = 1 + cot²x = 1 + 9/16 = 25/16 → cosecx = −5/4 (negative in Q3)</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">
-        sin x = −4/5<br/>
-        cos x = cot x × sin x = (3/4)(−4/5) = −3/5<br/>
-        sec x = −5/3
-      </div>
+    <div class="row"><div class="rlbl r-s3">sinx, cosx</div>
+      <div class="rcnt">sinx = −4/5 &nbsp;|&nbsp; cosx = cotx × sinx = (3/4)(−4/5) = −3/5 &nbsp;|&nbsp; secx = −5/3</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content">
-        sin = <span class="ans-final">−4/5</span> &nbsp;
-        cos = <span class="ans-final">−3/5</span> &nbsp;
-        tan = <span class="ans-final">4/3</span><br/>
-        cosec = <span class="ans-final">−5/4</span> &nbsp;
-        sec = <span class="ans-final">−5/3</span> &nbsp;
-        cot = <span class="ans-final">3/4</span>
-      </div>
+    <div class="row"><div class="rlbl r-ans">Answer</div>
+      <div class="rcnt">sin=<span class="af">−4/5</span> cos=<span class="af">−3/5</span> tan=<span class="af">4/3</span> cosec=<span class="af">−5/4</span> sec=<span class="af">−5/3</span> cot=<span class="af">3/4</span></div>
     </div>
   </div>
 </div>
 
-<!-- Q9 (iv) -->
+<!-- ── Q9 (iv) ── -->
 <div class="qblock">
-  <div class="qhead blue"><span class="badge b-blue">Q 9 (iv)</span>If tan x = −5/12, x lies in the fourth quadrant. Find all trig functions.</div>
+  <div class="qh p"><span class="bx bp">Q 9 (iv)</span>tanx = −5/12, x in fourth quadrant. Find all trig functions.</div>
   <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-given">Given</div>
-      <div class="step-content">tan x = −5/12, x in <b>Q4</b> (cos positive)</div>
+    <div class="row"><div class="rlbl r-given">Given</div>
+      <div class="rcnt">tanx = −5/12, x in <b>Q4</b> → sinx(−), cosx(+)</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">cot x = −12/5</div>
+    <div class="row"><div class="rlbl r-s1">cotx</div>
+      <div class="rcnt">cotx = 1/tanx = −12/5</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        sec²x = 1 + tan²x = 1 + 25/144 = 169/144<br/>
-        sec x = 13/12 &nbsp;(Q4, cos positive ✓)
-      </div>
+    <div class="row"><div class="rlbl r-s2">secx</div>
+      <div class="rcnt">sec²x = 1 + tan²x = 1 + 25/144 = 169/144 → secx = 13/12 (positive in Q4)</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">
-        cos x = 12/13<br/>
-        sin x = tan x × cos x = (−5/12)(12/13) = −5/13<br/>
-        cosec x = −13/5
-      </div>
+    <div class="row"><div class="rlbl r-s3">cosx, sinx</div>
+      <div class="rcnt">cosx = 12/13 &nbsp;|&nbsp; sinx = tanx × cosx = (−5/12)(12/13) = −5/13 &nbsp;|&nbsp; cosecx = −13/5</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content">
-        sin = <span class="ans-final">−5/13</span> &nbsp;
-        cos = <span class="ans-final">12/13</span> &nbsp;
-        tan = <span class="ans-final">−5/12</span><br/>
-        cosec = <span class="ans-final">−13/5</span> &nbsp;
-        sec = <span class="ans-final">13/12</span> &nbsp;
-        cot = <span class="ans-final">−12/5</span>
-      </div>
+    <div class="row"><div class="rlbl r-ans">Answer</div>
+      <div class="rcnt">sin=<span class="af">−5/13</span> cos=<span class="af">12/13</span> tan=<span class="af">−5/12</span> cosec=<span class="af">−13/5</span> sec=<span class="af">13/12</span> cot=<span class="af">−12/5</span></div>
     </div>
   </div>
 </div>
-</div><!-- end page 2 -->
+</div><!-- end ex 2.1 page -->
 
 
-<!-- ═══════════════════════════════════════
-     PAGE 3 — EXERCISE 2.2 SOLUTIONS
-════════════════════════════════════════ -->
+<!-- ══════════════════════════════════
+     EXERCISE 2.2 Q1 TO Q11
+══════════════════════════════════════ -->
 <div class="page pb">
-<div class="sec3">✅ Exercise 2.2 — All Solutions (Step by Step)</div>
+<div class="exhdr2">✅ EXERCISE 2.2 — Q1 to Q11 Serial Wise</div>
 
-<!-- Ex 1 -->
+<!-- Q1 -->
 <div class="qblock">
-  <div class="qhead green"><span class="badge b-green">Ex. 1</span>If tan θ + 1/tan θ = 2, find tan²θ + 1/tan²θ</div>
+  <div class="qh b"><span class="bx bb">Q 1</span>2sinA=1=√2cosB, π/2&lt;A&lt;π, 3π/2&lt;B&lt;2π. Find (tanA+tanB)/(cosA−cosB).</div>
   <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-given">Given</div>
-      <div class="step-content">tan θ + 1/tan θ = 2</div>
+    <div class="row"><div class="rlbl r-s1">Find sinA</div>
+      <div class="rcnt">2sinA = 1 → sinA = 1/2 → A = 150° (Q2) → cosA = −√3/2, tanA = −1/√3</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">Square both sides:<br/>
-        (tan θ + 1/tan θ)² = 4</div>
+    <div class="row"><div class="rlbl r-s2">Find cosB</div>
+      <div class="rcnt">√2cosB = 1 → cosB = 1/√2 → B = 315° (Q4) → sinB = −1/√2, tanB = −1</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        tan²θ + 2 × tan θ × (1/tan θ) + 1/tan²θ = 4<br/>
-        tan²θ + 2 + 1/tan²θ = 4
-      </div>
+    <div class="row"><div class="rlbl r-s3">Numerator</div>
+      <div class="rcnt">tanA + tanB = −1/√3 + (−1) = −(1+√3)/√3</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content">tan²θ + 1/tan²θ = <span class="ans-final">2</span></div>
+    <div class="row"><div class="rlbl r-s4">Denominator</div>
+      <div class="rcnt">cosA − cosB = −√3/2 − 1/√2 = −(√3/2 + 1/√2)</div>
     </div>
-  </div>
-</div>
-
-<!-- Ex 4 -->
-<div class="qblock">
-  <div class="qhead green"><span class="badge b-green">Ex. 4</span>If tan θ = 1/√7, evaluate (cosec²θ − sec²θ)/(cosec²θ + sec²θ)</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-given">Given</div>
-      <div class="step-content">tan θ = 1/√7 &nbsp;→&nbsp; cot θ = √7</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">cosec²θ − sec²θ = cot²θ − tan²θ = 7 − 1/7 = 48/7</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">cosec²θ + sec²θ = cot²θ + tan²θ + 2 = 7 + 1/7 + 2 = 64/7</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">(48/7) ÷ (64/7) = 48/64 = 3/4</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content"><span class="ans-final">3/4</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- Ex 5 Prove -->
-<div class="qblock">
-  <div class="qhead green"><span class="badge b-green">Ex. 5</span>Prove: cos⁶θ + sin⁶θ = 1 − 3 sin²θ cos²θ</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-note">Formula</div>
-      <div class="step-content">a³ + b³ = (a + b)³ − 3ab(a + b)</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">LHS = (cos²θ)³ + (sin²θ)³</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">= (cos²θ + sin²θ)³ − 3 cos²θ sin²θ (cos²θ + sin²θ)</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">= (1)³ − 3 sin²θ cos²θ × (1) &nbsp;&nbsp;[∵ sin²θ + cos²θ = 1]</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content">= <span class="ans-final">1 − 3 sin²θ cos²θ = RHS ✓</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- Ex 6 Eliminate -->
-<div class="qblock">
-  <div class="qhead green"><span class="badge b-green">Ex. 6</span>Eliminate θ: (i) x = a cosθ, y = b sinθ &nbsp; (ii) x = a cos³θ, y = b sin³θ &nbsp; (iii) x = 2+3cosθ, y = 5+3sinθ</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Part (i)</div>
-      <div class="step-content">
-        cos θ = x/a &nbsp;,&nbsp; sin θ = y/b<br/>
-        cos²θ + sin²θ = 1<br/>
-        x²/a² + y²/b² = 1
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (i)</div>
-      <div class="step-content"><span class="ans-final">x²/a² + y²/b² = 1</span> (Ellipse)</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Part (ii)</div>
-      <div class="step-content">
-        cos³θ = x/a &nbsp;→&nbsp; cosθ = (x/a)^(1/3)<br/>
-        sin³θ = y/b &nbsp;→&nbsp; sinθ = (y/b)^(1/3)<br/>
-        cos²θ + sin²θ = 1
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (ii)</div>
-      <div class="step-content"><span class="ans-final">(x/a)^(2/3) + (y/b)^(2/3) = 1</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Part (iii)</div>
-      <div class="step-content">
-        cos θ = (x − 2)/3 &nbsp;,&nbsp; sin θ = (y − 5)/3<br/>
-        cos²θ + sin²θ = 1<br/>
-        (x−2)²/9 + (y−5)²/9 = 1
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (iii)</div>
-      <div class="step-content"><span class="ans-final">(x − 2)² + (y − 5)² = 9</span> (Circle, centre (2,5), r=3)</div>
-    </div>
-  </div>
-</div>
-
-<!-- Ex 7 -->
-<div class="qblock">
-  <div class="qhead green"><span class="badge b-green">Ex. 7</span>If 2 sin²θ + 7 cos θ = 5, find permissible values of cos θ.</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">Replace sin²θ = 1 − cos²θ<br/>
-        2(1 − cos²θ) + 7 cos θ = 5</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        2 − 2cos²θ + 7cos θ − 5 = 0<br/>
-        2cos²θ − 7cos θ + 3 = 0
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">
-        (2cos θ − 1)(cos θ − 3) = 0<br/>
-        cos θ = 1/2 &nbsp;or&nbsp; cos θ = 3
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-note">Check</div>
-      <div class="step-content">cos θ = 3 is <b>invalid</b> since −1 ≤ cos θ ≤ 1</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content">cos θ = <span class="ans-final">1/2</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- Ex 9 -->
-<div class="qblock">
-  <div class="qhead green"><span class="badge b-green">Ex. 9</span>If tan θ + sec θ = 1.5, find tan θ, sin θ and sec θ.</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-given">Given</div>
-      <div class="step-content">tan θ + sec θ = 3/2 &nbsp;...(1)</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">
-        sec²θ − tan²θ = 1<br/>
-        (sec θ + tan θ)(sec θ − tan θ) = 1<br/>
-        (3/2)(sec θ − tan θ) = 1<br/>
-        sec θ − tan θ = 2/3 &nbsp;...(2)
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        Add (1) + (2): &nbsp; 2 sec θ = 3/2 + 2/3 = 13/6<br/>
-        sec θ = 13/12
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">
-        Subtract (2) from (1): &nbsp; 2 tan θ = 3/2 − 2/3 = 5/6<br/>
-        tan θ = 5/12
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 4</div>
-      <div class="step-content">
-        cos θ = 1/sec θ = 12/13<br/>
-        sin θ = tan θ × cos θ = (5/12)(12/13) = 5/13
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content">
-        tan θ = <span class="ans-final">5/12</span> &nbsp;
-        sin θ = <span class="ans-final">5/13</span> &nbsp;
-        sec θ = <span class="ans-final">13/12</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<hr class="d"/>
-<div class="sec3">✅ Exercise 2.2 — More Questions</div>
-
-<!-- Q3 -->
-<div class="qblock">
-  <div class="qhead green"><span class="badge b-green">Q 3</span>If tan θ = 1/2, evaluate (2 sinθ + 3 cosθ) / (4 cosθ + 3 sinθ)</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">Divide numerator and denominator by <b>cos θ</b></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        = (2 tan θ + 3) / (4 + 3 tan θ)<br/>
-        = (2 × 1/2 + 3) / (4 + 3 × 1/2)<br/>
-        = (1 + 3) / (4 + 3/2)<br/>
-        = 4 / (11/2)
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content"><span class="ans-final">8/11</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- Q4 Eliminate -->
-<div class="qblock">
-  <div class="qhead green"><span class="badge b-green">Q 4</span>Eliminate θ: (i) x=3secθ, y=4tanθ &nbsp;(ii) x=6cosecθ, y=8cotθ &nbsp;(iii) x=4cosθ−5sinθ, y=4sinθ+5cosθ</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Part (i)</div>
-      <div class="step-content">
-        sec θ = x/3 &nbsp;,&nbsp; tan θ = y/4<br/>
-        sec²θ − tan²θ = 1<br/>
-        x²/9 − y²/16 = 1
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (i)</div>
-      <div class="step-content"><span class="ans-final">x²/9 − y²/16 = 1</span> (Hyperbola)</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Part (ii)</div>
-      <div class="step-content">
-        cosec θ = x/6 &nbsp;,&nbsp; cot θ = y/8<br/>
-        cosec²θ − cot²θ = 1<br/>
-        x²/36 − y²/64 = 1
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (ii)</div>
-      <div class="step-content"><span class="ans-final">x²/36 − y²/64 = 1</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Part (iii)</div>
-      <div class="step-content">
-        x² = (4cosθ − 5sinθ)² = 16cos²θ − 40cosθsinθ + 25sin²θ<br/>
-        y² = (4sinθ + 5cosθ)² = 16sin²θ + 40sinθcosθ + 25cos²θ<br/>
-        x² + y² = 16(cos²θ + sin²θ) + 25(sin²θ + cos²θ)<br/>
-        x² + y² = 16 + 25
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (iii)</div>
-      <div class="step-content"><span class="ans-final">x² + y² = 41</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- Q7 -->
-<div class="qblock">
-  <div class="qhead green"><span class="badge b-green">Q 7</span>Find acute angle θ such that 2 cos²θ = 3 sinθ</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">Replace cos²θ = 1 − sin²θ<br/>
-        2(1 − sin²θ) = 3 sinθ</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        2 − 2sin²θ − 3sinθ = 0<br/>
-        2sin²θ + 3sinθ − 2 = 0
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">
-        (2sinθ − 1)(sinθ + 2) = 0<br/>
-        sinθ = 1/2 &nbsp;or&nbsp; sinθ = −2 (rejected)
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content">θ = <span class="ans-final">30°</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- Q8 -->
-<div class="qblock">
-  <div class="qhead green"><span class="badge b-green">Q 8</span>Find acute angle θ such that 5 tan²θ + 3 = 9 sec θ</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">Replace tan²θ = sec²θ − 1<br/>
-        5(sec²θ − 1) + 3 = 9 secθ</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        5sec²θ − 9secθ − 2 = 0<br/>
-        (5secθ + 1)(secθ − 2) = 0<br/>
-        secθ = −1/5 (rejected, |secθ| ≥ 1) &nbsp;or&nbsp; secθ = 2
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">secθ = 2 &nbsp;→&nbsp; cosθ = 1/2</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content">θ = <span class="ans-final">60°</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- Q9 sinθ -->
-<div class="qblock">
-  <div class="qhead green"><span class="badge b-green">Q 9</span>Find sin θ such that 3 cosθ + 4 sinθ = 4</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">3cosθ = 4 − 4sinθ<br/>
-        Square: 9cos²θ = (4 − 4sinθ)²</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        9(1 − sin²θ) = 16 − 32sinθ + 16sin²θ<br/>
-        25sin²θ − 32sinθ + 7 = 0
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">
-        (25sinθ − 7)(sinθ − 1) = 0<br/>
-        sinθ = 7/25 &nbsp;or&nbsp; sinθ = 1
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content">sinθ = <span class="ans-final">7/25</span> &nbsp;or&nbsp; sinθ = <span class="ans-final">1</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- Q10 -->
-<div class="qblock">
-  <div class="qhead green"><span class="badge b-green">Q 10</span>If cosec θ + cot θ = 5, evaluate sec θ.</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-given">Given</div>
-      <div class="step-content">cosecθ + cotθ = 5 &nbsp;...(1)</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">
-        cosec²θ − cot²θ = 1<br/>
-        (cosecθ + cotθ)(cosecθ − cotθ) = 1<br/>
-        5 × (cosecθ − cotθ) = 1<br/>
-        cosecθ − cotθ = 1/5 &nbsp;...(2)
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        Add (1)+(2): 2cosecθ = 5 + 1/5 = 26/5<br/>
-        cosecθ = 13/5 &nbsp;→&nbsp; sinθ = 5/13
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">cosθ = √(1 − 25/169) = 12/13</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content">secθ = <span class="ans-final">13/12</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- Q12 Polar -->
-<div class="qblock">
-  <div class="qhead green"><span class="badge b-green">Q 12</span>Cartesian from Polar: (i) (3, 90°) &nbsp; (ii) (1, 180°)</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Part (i)</div>
-      <div class="step-content">x = 3cos90° = 3×0 = 0 &nbsp;,&nbsp; y = 3sin90° = 3×1 = 3</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (i)</div>
-      <div class="step-content"><span class="ans-final">(0, 3)</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Part (ii)</div>
-      <div class="step-content">x = 1×cos180° = −1 &nbsp;,&nbsp; y = 1×sin180° = 0</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (ii)</div>
-      <div class="step-content"><span class="ans-final">(−1, 0)</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- Q13 Polar -->
-<div class="qblock">
-  <div class="qhead green"><span class="badge b-green">Q 13</span>Polar from Cartesian: (i)(5,5) (ii)(1,√3) (iii)(−1,−1) (iv)(−√3,1)</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Part (i)</div>
-      <div class="step-content">r = √(25+25) = 5√2 &nbsp;,&nbsp; tanθ = 5/5 = 1 &nbsp;→&nbsp; θ = 45° (Q1)</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (i)</div>
-      <div class="step-content"><span class="ans-final">(5√2, 45°)</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Part (ii)</div>
-      <div class="step-content">r = √(1+3) = 2 &nbsp;,&nbsp; tanθ = √3/1 = √3 &nbsp;→&nbsp; θ = 60° (Q1)</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (ii)</div>
-      <div class="step-content"><span class="ans-final">(2, 60°)</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Part (iii)</div>
-      <div class="step-content">r = √(1+1) = √2 &nbsp;,&nbsp; tanθ = 1 &nbsp;→&nbsp; θ = 225° (Q3, both negative)</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (iii)</div>
-      <div class="step-content"><span class="ans-final">(√2, 225°)</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Part (iv)</div>
-      <div class="step-content">r = √(3+1) = 2 &nbsp;,&nbsp; tanθ = 1/(−√3) = −1/√3 &nbsp;→&nbsp; θ = 150° (Q2)</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (iv)</div>
-      <div class="step-content"><span class="ans-final">(2, 150°)</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- Q14 -->
-<div class="qblock">
-  <div class="qhead green"><span class="badge b-green">Q 14</span>Find: (i) sin(19π/3) &nbsp; (ii) cos 1140° &nbsp; (iii) cot(25π/3)</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Part (i)</div>
-      <div class="step-content">
-        sin(19π/3) = sin(18π/3 + π/3) = sin(6π + π/3)<br/>
-        = sin(π/3) &nbsp;(period = 2π, 6π = 3 full cycles)
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (i)</div>
-      <div class="step-content"><span class="ans-final">√3/2</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Part (ii)</div>
-      <div class="step-content">
-        cos1140° = cos(3×360° + 60°) = cos60°
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (ii)</div>
-      <div class="step-content"><span class="ans-final">1/2</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Part (iii)</div>
-      <div class="step-content">
-        cot(25π/3) = cot(24π/3 + π/3) = cot(8π + π/3)<br/>
-        = cot(π/3) &nbsp;(period = π, 8π = 8 full cycles)
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (iii)</div>
-      <div class="step-content"><span class="ans-final">1/√3</span></div>
-    </div>
-  </div>
-</div>
-</div><!-- end page 3 -->
-
-
-<!-- ═══════════════════════════════════════
-     PAGE 4 — IDENTITY PROOFS
-════════════════════════════════════════ -->
-<div class="page pb">
-<div class="sec4">🔷 Exercise 2.2 Q15 — Prove the Identities (Step by Step)</div>
-
-<!-- (ii) -->
-<div class="qblock">
-  <div class="qhead purple"><span class="badge b-purple">(ii)</span>Prove: (cos²A − 1)(cot²A + 1) = −1</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">cos²A − 1 = −sin²A &nbsp;&nbsp;[from sin²A + cos²A = 1]</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">cot²A + 1 = cosec²A &nbsp;&nbsp;[identity 3]</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">LHS = (−sin²A)(cosec²A) = −sin²A × 1/sin²A = −1</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Proved</div>
-      <div class="step-content"><span class="ans-final">LHS = −1 = RHS ✓</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- (iv) -->
-<div class="qblock">
-  <div class="qhead purple"><span class="badge b-purple">(iv)</span>Prove: (1 + cotθ − cosecθ)(1 + tanθ + secθ) = 2</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">Convert to sin and cos:<br/>
-        First factor = (sinθ + cosθ − 1) / sinθ<br/>
-        Second factor = (cosθ + sinθ + 1) / cosθ</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">LHS = [(sinθ + cosθ − 1)(sinθ + cosθ + 1)] / (sinθ cosθ)</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">
-        = [(sinθ + cosθ)² − 1] / (sinθ cosθ)<br/>
-        = [sin²θ + 2sinθcosθ + cos²θ − 1] / (sinθ cosθ)<br/>
-        = [1 + 2sinθcosθ − 1] / (sinθ cosθ)
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 4</div>
-      <div class="step-content">= 2sinθcosθ / sinθcosθ = 2</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Proved</div>
-      <div class="step-content"><span class="ans-final">LHS = 2 = RHS ✓</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- (vii) -->
-<div class="qblock">
-  <div class="qhead purple"><span class="badge b-purple">(vii)</span>Prove: sinθ/(1+cosθ) + (1+cosθ)/sinθ = 2cosecθ</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">LHS = [sin²θ + (1+cosθ)²] / [sinθ(1+cosθ)]</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        Numerator = sin²θ + 1 + 2cosθ + cos²θ<br/>
-        = (sin²θ + cos²θ) + 1 + 2cosθ<br/>
-        = 1 + 1 + 2cosθ = 2 + 2cosθ = 2(1 + cosθ)
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">
-        LHS = 2(1+cosθ) / [sinθ(1+cosθ)]<br/>
-        = 2/sinθ
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Proved</div>
-      <div class="step-content"><span class="ans-final">= 2cosecθ = RHS ✓</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- (viii) -->
-<div class="qblock">
-  <div class="qhead purple"><span class="badge b-purple">(viii)</span>Prove: tanθ/(secθ−1) = (secθ+1)/tanθ</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">Multiply LHS by (secθ+1)/(secθ+1):<br/>
-        = tanθ(secθ+1) / (sec²θ − 1)</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        sec²θ − 1 = tan²θ &nbsp;&nbsp;[identity 2]<br/>
-        = tanθ(secθ+1) / tan²θ<br/>
-        = (secθ+1) / tanθ
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Proved</div>
-      <div class="step-content"><span class="ans-final">LHS = (secθ+1)/tanθ = RHS ✓</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- (x) -->
-<div class="qblock">
-  <div class="qhead purple"><span class="badge b-purple">(x)</span>Prove: (secA + cosA)(secA − cosA) = tan²A + sin²A</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">LHS = sec²A − cos²A &nbsp;&nbsp;[using (a+b)(a−b) = a²−b²]</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        sec²A = 1 + tan²A<br/>
-        cos²A = 1 − sin²A<br/>
-        LHS = (1 + tan²A) − (1 − sin²A)
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">= 1 + tan²A − 1 + sin²A = tan²A + sin²A</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Proved</div>
-      <div class="step-content"><span class="ans-final">LHS = tan²A + sin²A = RHS ✓</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- (xi) -->
-<div class="qblock">
-  <div class="qhead purple"><span class="badge b-purple">(xi)</span>Prove: 1 + 3cosec²θ · cot²θ + cot⁶θ = cosec⁶θ</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">RHS = cosec⁶θ = (cosec²θ)³ = (1 + cot²θ)³</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        (1 + cot²θ)³ = 1 + 3cot²θ + 3cot⁴θ + cot⁶θ &nbsp;&nbsp;[(a+b)³ = a³+3a²b+3ab²+b³]
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">
-        = 1 + 3cot²θ(1 + cot²θ) + cot⁶θ<br/>
-        = 1 + 3cot²θ · cosec²θ + cot⁶θ
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Proved</div>
-      <div class="step-content"><span class="ans-final">= LHS ✓</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- Ex 10 Prove -->
-<div class="qblock">
-  <div class="qhead purple"><span class="badge b-purple">Ex.10</span>Prove: sinθ/(1−cosθ) + tanθ/(1+cosθ) = secθ cosecθ + cotθ</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">Take common denominator (1−cosθ)(1+cosθ) = 1 − cos²θ = sin²θ</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        LHS = [sinθ(1+cosθ) + tanθ(1−cosθ)] / sin²θ
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">
-        Numerator = sinθ + sinθcosθ + tanθ − tanθcosθ<br/>
-        = sinθ + sinθcosθ + sinθ/cosθ − sinθ<br/>
-        = sinθcosθ + sinθ/cosθ
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 4</div>
-      <div class="step-content">
-        LHS = (sinθcosθ + sinθ/cosθ) / sin²θ<br/>
-        = cosθ/sinθ + 1/(sinθcosθ)<br/>
-        = cotθ + secθcosecθ
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Proved</div>
-      <div class="step-content"><span class="ans-final">= secθ cosecθ + cotθ = RHS ✓</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- Ex 12 Prove -->
-<div class="qblock">
-  <div class="qhead purple"><span class="badge b-purple">Ex.12</span>Prove: (secA − tanA)² = (1 − sinA)/(1 + sinA)</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">LHS = (secA − tanA)² = sec²A + tan²A − 2secA tanA</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        = 1/cos²A + sin²A/cos²A − 2sinA/cos²A<br/>
-        = (1 + sin²A − 2sinA) / cos²A
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">
-        = (1 − sinA)² / cos²A<br/>
-        = (1 − sinA)² / (1 − sin²A)<br/>
-        = (1 − sinA)² / [(1 − sinA)(1 + sinA)]
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Proved</div>
-      <div class="step-content"><span class="ans-final">= (1 − sinA)/(1 + sinA) = RHS ✓</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- Formula Summary -->
-<div class="sec4">📋 All Formulas — Quick Reference</div>
-<table class="green">
-  <tr><th>Identity</th><th>Formula</th><th>Use When</th></tr>
-  <tr><td>Pythagorean 1</td><td>sin²θ + cos²θ = 1</td><td>Most common — always use first</td></tr>
-  <tr><td>Pythagorean 2</td><td>1 + tan²θ = sec²θ</td><td>tan or sec given</td></tr>
-  <tr><td>Pythagorean 3</td><td>1 + cot²θ = cosec²θ</td><td>cot or cosec given</td></tr>
-  <tr><td>Product</td><td>(secθ+tanθ)(secθ−tanθ) = 1</td><td>sec+tan or sec−tan given</td></tr>
-  <tr><td>Product</td><td>(cosecθ+cotθ)(cosecθ−cotθ) = 1</td><td>cosec+cot given</td></tr>
-  <tr><td>Power</td><td>cos⁶θ + sin⁶θ = 1 − 3sin²θcos²θ</td><td>6th power simplification</td></tr>
-  <tr><td>Polar</td><td>r = √(x²+y²), tanθ = y/x</td><td>Cartesian → Polar</td></tr>
-  <tr><td>Cartesian</td><td>x = rcosθ, y = rsinθ</td><td>Polar → Cartesian</td></tr>
-</table>
-
-<div style="text-align:center;margin-top:24px;font-size:11px;color:#aaa;border-top:1px solid #eee;padding-top:12px">
-  Visions Learning · Class 11 Mathematics Paper 1 · Chapter 2: Trigonometry · Complete Notes &amp; Solutions
-</div>
-</div><!-- end page 4 -->
-
-
-<!-- ═══════════════════════════════════════
-     PAGE 5 — EXERCISE 2.1 MISSING QUESTIONS
-════════════════════════════════════════ -->
-<div class="page pb">
-<div class="sec2">✅ Exercise 2.1 — Remaining Questions (Step by Step)</div>
-
-<!-- Q1 Standard angles -->
-<div class="qblock">
-  <div class="qhead blue"><span class="badge b-blue">Q 1</span>Find the trigonometric functions of 0°, 30°, 45°, 60°, 150°, 180°, 210°, 300°, 330°, −30°, −45°, −60°, −90°, −120°, −225°, −240°, −270°, −315°</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-note">Key Rule</div>
-      <div class="step-content">Use: sin(−θ) = −sinθ &nbsp;|&nbsp; cos(−θ) = cosθ &nbsp;|&nbsp; tan(−θ) = −tanθ<br/>
-        sin(180°+θ) = −sinθ &nbsp;|&nbsp; cos(180°+θ) = −cosθ &nbsp;|&nbsp; tan(180°+θ) = tanθ<br/>
-        sin(360°−θ) = −sinθ &nbsp;|&nbsp; cos(360°−θ) = cosθ &nbsp;|&nbsp; tan(360°−θ) = −tanθ</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">0°</div>
-      <div class="step-content">sin0°=<span class="ans-final">0</span> &nbsp; cos0°=<span class="ans-final">1</span> &nbsp; tan0°=<span class="ans-final">0</span> &nbsp; cosec0°=<span class="ans-final">∞</span> &nbsp; sec0°=<span class="ans-final">1</span> &nbsp; cot0°=<span class="ans-final">∞</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">30°</div>
-      <div class="step-content">sin30°=<span class="ans-final">1/2</span> &nbsp; cos30°=<span class="ans-final">√3/2</span> &nbsp; tan30°=<span class="ans-final">1/√3</span> &nbsp; cosec30°=<span class="ans-final">2</span> &nbsp; sec30°=<span class="ans-final">2/√3</span> &nbsp; cot30°=<span class="ans-final">√3</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">45°</div>
-      <div class="step-content">sin45°=<span class="ans-final">1/√2</span> &nbsp; cos45°=<span class="ans-final">1/√2</span> &nbsp; tan45°=<span class="ans-final">1</span> &nbsp; cosec45°=<span class="ans-final">√2</span> &nbsp; sec45°=<span class="ans-final">√2</span> &nbsp; cot45°=<span class="ans-final">1</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">60°</div>
-      <div class="step-content">sin60°=<span class="ans-final">√3/2</span> &nbsp; cos60°=<span class="ans-final">1/2</span> &nbsp; tan60°=<span class="ans-final">√3</span> &nbsp; cosec60°=<span class="ans-final">2/√3</span> &nbsp; sec60°=<span class="ans-final">2</span> &nbsp; cot60°=<span class="ans-final">1/√3</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">150°</div>
-      <div class="step-content">150° = 180° − 30° → Q2 (sin+, cos−, tan−)<br/>
-        sin150° = sin30° = <span class="ans-final">1/2</span> &nbsp; cos150° = −cos30° = <span class="ans-final">−√3/2</span> &nbsp; tan150° = <span class="ans-final">−1/√3</span><br/>
-        cosec150° = <span class="ans-final">2</span> &nbsp; sec150° = <span class="ans-final">−2/√3</span> &nbsp; cot150° = <span class="ans-final">−√3</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">180°</div>
-      <div class="step-content">sin180°=<span class="ans-final">0</span> &nbsp; cos180°=<span class="ans-final">−1</span> &nbsp; tan180°=<span class="ans-final">0</span> &nbsp; cosec180°=<span class="ans-final">∞</span> &nbsp; sec180°=<span class="ans-final">−1</span> &nbsp; cot180°=<span class="ans-final">∞</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">210°</div>
-      <div class="step-content">210° = 180° + 30° → Q3 (sin−, cos−, tan+)<br/>
-        sin210° = −sin30° = <span class="ans-final">−1/2</span> &nbsp; cos210° = −cos30° = <span class="ans-final">−√3/2</span> &nbsp; tan210° = <span class="ans-final">1/√3</span><br/>
-        cosec210° = <span class="ans-final">−2</span> &nbsp; sec210° = <span class="ans-final">−2/√3</span> &nbsp; cot210° = <span class="ans-final">√3</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">300°</div>
-      <div class="step-content">300° = 360° − 60° → Q4 (sin−, cos+, tan−)<br/>
-        sin300° = −sin60° = <span class="ans-final">−√3/2</span> &nbsp; cos300° = cos60° = <span class="ans-final">1/2</span> &nbsp; tan300° = <span class="ans-final">−√3</span><br/>
-        cosec300° = <span class="ans-final">−2/√3</span> &nbsp; sec300° = <span class="ans-final">2</span> &nbsp; cot300° = <span class="ans-final">−1/√3</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">330°</div>
-      <div class="step-content">330° = 360° − 30° → Q4<br/>
-        sin330° = <span class="ans-final">−1/2</span> &nbsp; cos330° = <span class="ans-final">√3/2</span> &nbsp; tan330° = <span class="ans-final">−1/√3</span><br/>
-        cosec330° = <span class="ans-final">−2</span> &nbsp; sec330° = <span class="ans-final">2/√3</span> &nbsp; cot330° = <span class="ans-final">−√3</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">−30°</div>
-      <div class="step-content">sin(−30°) = −sin30° = <span class="ans-final">−1/2</span> &nbsp; cos(−30°) = cos30° = <span class="ans-final">√3/2</span> &nbsp; tan(−30°) = <span class="ans-final">−1/√3</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">−45°</div>
-      <div class="step-content">sin(−45°) = <span class="ans-final">−1/√2</span> &nbsp; cos(−45°) = <span class="ans-final">1/√2</span> &nbsp; tan(−45°) = <span class="ans-final">−1</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">−60°</div>
-      <div class="step-content">sin(−60°) = <span class="ans-final">−√3/2</span> &nbsp; cos(−60°) = <span class="ans-final">1/2</span> &nbsp; tan(−60°) = <span class="ans-final">−√3</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">−90°</div>
-      <div class="step-content">sin(−90°) = <span class="ans-final">−1</span> &nbsp; cos(−90°) = <span class="ans-final">0</span> &nbsp; tan(−90°) = <span class="ans-final">∞</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">−120°</div>
-      <div class="step-content">−120° = −(180°−60°) → same as 240° = 180°+60° → Q3<br/>
-        sin(−120°) = −sin60° = <span class="ans-final">−√3/2</span> &nbsp; cos(−120°) = −cos60° = <span class="ans-final">−1/2</span> &nbsp; tan(−120°) = <span class="ans-final">√3</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">−225°</div>
-      <div class="step-content">−225° = −(180°+45°) → same as 135° = 180°−45° → Q2<br/>
-        sin(−225°) = sin45° = <span class="ans-final">1/√2</span> &nbsp; cos(−225°) = −cos45° = <span class="ans-final">−1/√2</span> &nbsp; tan(−225°) = <span class="ans-final">−1</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">−240°</div>
-      <div class="step-content">−240° same as 120° = 180°−60° → Q2<br/>
-        sin(−240°) = sin60° = <span class="ans-final">√3/2</span> &nbsp; cos(−240°) = −cos60° = <span class="ans-final">−1/2</span> &nbsp; tan(−240°) = <span class="ans-final">−√3</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">−270°</div>
-      <div class="step-content">−270° same as 90°<br/>
-        sin(−270°) = <span class="ans-final">1</span> &nbsp; cos(−270°) = <span class="ans-final">0</span> &nbsp; tan(−270°) = <span class="ans-final">∞</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">−315°</div>
-      <div class="step-content">−315° same as 45°<br/>
-        sin(−315°) = <span class="ans-final">1/√2</span> &nbsp; cos(−315°) = <span class="ans-final">1/√2</span> &nbsp; tan(−315°) = <span class="ans-final">1</span></div>
+    <div class="row"><div class="rlbl r-ans">Answer</div>
+      <div class="rcnt"><span class="af">2(1+√3)/(3+√6)</span></div>
     </div>
   </div>
 </div>
 
 <!-- Q2 -->
 <div class="qblock">
-  <div class="qhead blue"><span class="badge b-blue">Q 2</span>State the signs of: (i) tan380° &nbsp; (ii) cot230° &nbsp; (iii) sec468°</div>
+  <div class="qh b"><span class="bx bb">Q 2</span>sinA/3 = sinB/4 = 1/5, A and B in Q2. Prove: 4cosA + 3cosB = −5.</div>
   <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Part (i)</div>
-      <div class="step-content">tan380° = tan(360° + 20°) = tan20°<br/>
-        20° is in <b>Q1</b> → tan is <b>positive</b></div>
+    <div class="row"><div class="rlbl r-given">Given</div>
+      <div class="rcnt">sinA = 3/5, sinB = 4/5. Both in <b>Q2</b> → cosA and cosB are negative</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (i)</div>
-      <div class="step-content">tan380° is <span class="ans-final">Positive (+)</span></div>
+    <div class="row"><div class="rlbl r-s1">Find cosA</div>
+      <div class="rcnt">cos²A = 1 − 9/25 = 16/25 → cosA = −4/5 (Q2)</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Part (ii)</div>
-      <div class="step-content">cot230° : 230° = 180° + 50° → <b>Q3</b><br/>
-        In Q3: tan is positive → cot is also <b>positive</b></div>
+    <div class="row"><div class="rlbl r-s2">Find cosB</div>
+      <div class="rcnt">cos²B = 1 − 16/25 = 9/25 → cosB = −3/5 (Q2)</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (ii)</div>
-      <div class="step-content">cot230° is <span class="ans-final">Positive (+)</span></div>
+    <div class="row"><div class="rlbl r-s3">Substitute</div>
+      <div class="rcnt">4cosA + 3cosB = 4(−4/5) + 3(−3/5) = −16/5 − 9/5 = −25/5 = −5</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Part (iii)</div>
-      <div class="step-content">sec468° = sec(360° + 108°) = sec108°<br/>
-        108° = 180° − 72° → <b>Q2</b><br/>
-        In Q2: cos is negative → sec is <b>negative</b></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (iii)</div>
-      <div class="step-content">sec468° is <span class="ans-final">Negative (−)</span></div>
+    <div class="row"><div class="rlbl r-prove">Proved</div>
+      <div class="rcnt"><span class="af">4cosA + 3cosB = −5 ✓</span></div>
     </div>
   </div>
 </div>
 
 <!-- Q3 -->
 <div class="qblock">
-  <div class="qhead blue"><span class="badge b-blue">Q 3</span>State the signs of cos(π^c) and cos4°. Which of these two functions is greater?</div>
+  <div class="qh b"><span class="bx bb">Q 3</span>tanθ = 1/2. Evaluate (2sinθ+3cosθ)/(4cosθ+3sinθ).</div>
   <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-note">Note</div>
-      <div class="step-content">π^c means π radians = 180°. cos4° means 4 degrees (not radians).</div>
+    <div class="row"><div class="rlbl r-s1">Trick</div>
+      <div class="rcnt">Divide numerator and denominator by cosθ → replace sinθ/cosθ = tanθ</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">cos(π^c)</div>
-      <div class="step-content">π radians = 180°<br/>
-        cos(180°) = −1<br/>
-        Sign: <span class="ans-final">Negative (−)</span></div>
+    <div class="row"><div class="rlbl r-s2">Simplify</div>
+      <div class="rcnt">= (2tanθ + 3)/(4 + 3tanθ) = (2×½ + 3)/(4 + 3×½) = (1+3)/(4+3/2) = 4/(11/2) = 8/11</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">cos4°</div>
-      <div class="step-content">4° is in Q1 → cos is <b>positive</b><br/>
-        Sign: <span class="ans-final">Positive (+)</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Greater?</div>
-      <div class="step-content">cos4° ≈ 0.997 is greater than cos(π) = −1<br/>
-        ∴ <span class="ans-final">cos4° is greater</span></div>
+    <div class="row"><div class="rlbl r-ans">Answer</div>
+      <div class="rcnt"><span class="af">8/11</span></div>
     </div>
   </div>
 </div>
 
-<!-- Q4 Quadrant -->
+<!-- Q4 -->
 <div class="qblock">
-  <div class="qhead blue"><span class="badge b-blue">Q 4</span>State the quadrant in which θ lies if: (i) sinθ &lt; 0 and tanθ &gt; 0 &nbsp; (ii) cosθ &lt; 0 and tanθ &gt; 0</div>
+  <div class="qh b"><span class="bx bb">Q 4</span>Eliminate θ: (i) x=3secθ, y=4tanθ &nbsp;(ii) x=6cosecθ, y=8cotθ &nbsp;(iii) x=4cosθ−5sinθ, y=4sinθ+5cosθ &nbsp;(iv) x=5+6cosecθ, y=3+8cotθ &nbsp;(v) 2x=3−4tanθ, 3y=5+3secθ</div>
   <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Part (i)</div>
-      <div class="step-content">
-        sinθ &lt; 0 → θ in Q3 or Q4<br/>
-        tanθ &gt; 0 → θ in Q1 or Q3<br/>
-        <b>Common: Q3</b>
-      </div>
+    <div class="row"><div class="rlbl r-s1">(i)</div>
+      <div class="rcnt">secθ = x/3, tanθ = y/4. Use sec²θ − tan²θ = 1: x²/9 − y²/16 = 1 → <span class="af">x²/9 − y²/16 = 1</span></div>
     </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (i)</div>
-      <div class="step-content">θ lies in <span class="ans-final">3rd Quadrant</span></div>
+    <div class="row"><div class="rlbl r-s2">(ii)</div>
+      <div class="rcnt">cosecθ = x/6, cotθ = y/8. Use cosec²θ − cot²θ = 1: x²/36 − y²/64 = 1 → <span class="af">x²/36 − y²/64 = 1</span></div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Part (ii)</div>
-      <div class="step-content">
-        cosθ &lt; 0 → θ in Q2 or Q3<br/>
-        tanθ &gt; 0 → θ in Q1 or Q3<br/>
-        <b>Common: Q3</b>
-      </div>
+    <div class="row"><div class="rlbl r-s3">(iii)</div>
+      <div class="rcnt">x² + y² = (4cosθ−5sinθ)² + (4sinθ+5cosθ)²<br/>
+        = 16cos²θ − 40cosθsinθ + 25sin²θ + 16sin²θ + 40sinθcosθ + 25cos²θ<br/>
+        = 16 + 25 → <span class="af">x² + y² = 41</span></div>
     </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (ii)</div>
-      <div class="step-content">θ lies in <span class="ans-final">3rd Quadrant</span></div>
+    <div class="row"><div class="rlbl r-s4">(iv)</div>
+      <div class="rcnt">cosecθ = (x−5)/6, cotθ = (y−3)/8. Use cosec²θ − cot²θ = 1:<br/>
+        (x−5)²/36 − (y−3)²/64 = 1 → <span class="af">(x−5)²/36 − (y−3)²/64 = 1</span></div>
+    </div>
+    <div class="row"><div class="rlbl r-s5">(v)</div>
+      <div class="rcnt">tanθ = (3−2x)/4, secθ = (3y−5)/3. Use sec²θ − tan²θ = 1:<br/>
+        (3y−5)²/9 − (3−2x)²/16 = 1 → <span class="af">(3y−5)²/9 − (3−2x)²/16 = 1</span></div>
     </div>
   </div>
 </div>
 
-<!-- Q5 Evaluate -->
+<!-- Q5 -->
 <div class="qblock">
-  <div class="qhead blue"><span class="badge b-blue">Q 5</span>Evaluate each of the following: (i) sin30° + cos45° + tan180° &nbsp; (ii) cosec45° + cot45° + tan0° &nbsp; (iii) sin30° × cos45° × tan360°</div>
+  <div class="qh b"><span class="bx bb">Q 5</span>2sin²θ + 3sinθ = 0. Find permissible values of cosθ.</div>
   <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Part (i)</div>
-      <div class="step-content">
-        = sin30° + cos45° + tan180°<br/>
-        = 1/2 + 1/√2 + 0
-      </div>
+    <div class="row"><div class="rlbl r-s1">Factor</div>
+      <div class="rcnt">sinθ(2sinθ + 3) = 0 → sinθ = 0 &nbsp;or&nbsp; sinθ = −3/2</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (i)</div>
-      <div class="step-content"><span class="ans-final">1/2 + 1/√2</span> = (√2 + 1) / (2√2)</div>
+    <div class="row"><div class="rlbl r-note">Check</div>
+      <div class="rcnt">sinθ = −3/2 is not valid (range is [−1,1]). So sinθ = 0</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Part (ii)</div>
-      <div class="step-content">
-        = cosec45° + cot45° + tan0°<br/>
-        = √2 + 1 + 0
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (ii)</div>
-      <div class="step-content"><span class="ans-final">1 + √2</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Part (iii)</div>
-      <div class="step-content">
-        = sin30° × cos45° × tan360°<br/>
-        = 1/2 × 1/√2 × 0
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (iii)</div>
-      <div class="step-content"><span class="ans-final">0</span></div>
-    </div>
-  </div>
-</div>
-</div><!-- end page 5 -->
-
-
-<!-- ═══════════════════════════════════════
-     PAGE 6 — EXERCISE 2.2 MISSING QUESTIONS
-════════════════════════════════════════ -->
-<div class="page pb">
-<div class="sec3">✅ Exercise 2.2 — Remaining Questions (Step by Step)</div>
-
-<!-- Q1 2sinA -->
-<div class="qblock">
-  <div class="qhead green"><span class="badge b-green">Q 1</span>If 2sinA = 1 = √2 cosB, π/2 &lt; A &lt; π and 3π/2 &lt; B &lt; 2π, find (tanA + tanB) / (cosA − cosB)</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-given">Given</div>
-      <div class="step-content">2sinA = 1 → sinA = 1/2 &nbsp;|&nbsp; √2 cosB = 1 → cosB = 1/√2</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 1 — Find A</div>
-      <div class="step-content">
-        sinA = 1/2, &nbsp; π/2 &lt; A &lt; π → A is in <b>Q2</b><br/>
-        sin(π/6) = 1/2, so A = π − π/6 = <b>5π/6</b><br/>
-        cosA = −cos(π/6) = <b>−√3/2</b> &nbsp;(Q2, cos negative)<br/>
-        tanA = sinA/cosA = (1/2)/(−√3/2) = <b>−1/√3</b>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2 — Find B</div>
-      <div class="step-content">
-        cosB = 1/√2, &nbsp; 3π/2 &lt; B &lt; 2π → B is in <b>Q4</b><br/>
-        cos(π/4) = 1/√2, so B = 2π − π/4 = <b>7π/4</b><br/>
-        sinB = −sin(π/4) = <b>−1/√2</b> &nbsp;(Q4, sin negative)<br/>
-        tanB = sinB/cosB = (−1/√2)/(1/√2) = <b>−1</b>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3 — Numerator</div>
-      <div class="step-content">tanA + tanB = −1/√3 + (−1) = −1/√3 − 1 = −(1 + √3)/√3</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 4 — Denominator</div>
-      <div class="step-content">cosA − cosB = −√3/2 − 1/√2 = −√3/2 − √2/2 = −(√3 + √2)/2</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 5</div>
-      <div class="step-content">
-        = [−(1+√3)/√3] / [−(√3+√2)/2]<br/>
-        = [2(1+√3)] / [√3(√3+√2)]<br/>
-        = 2(1+√3) / (3 + √6)
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content"><span class="ans-final">2(1+√3) / (3+√6)</span></div>
+    <div class="row"><div class="rlbl r-ans">Answer</div>
+      <div class="rcnt">sinθ = 0 → cosθ = ±1 → <span class="af">cosθ = +1 or −1</span></div>
     </div>
   </div>
 </div>
 
-<!-- Q2 Prove -->
+<!-- Q6 -->
 <div class="qblock">
-  <div class="qhead green"><span class="badge b-green">Q 2</span>If sinA/3 = sinB/4 = 1/5, A and B are in Q2. Prove: 4cosA + 3cosB = −5</div>
+  <div class="qh b"><span class="bx bb">Q 6</span>2cos²θ − 11cosθ + 5 = 0. Find possible values of cosθ.</div>
   <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-given">Given</div>
-      <div class="step-content">sinA = 3/5, sinB = 4/5. A and B both in <b>Q2</b> (cos negative)</div>
+    <div class="row"><div class="rlbl r-s1">Factor</div>
+      <div class="rcnt">(2cosθ − 1)(cosθ − 5) = 0 → cosθ = 1/2 &nbsp;or&nbsp; cosθ = 5</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 1 — Find cosA</div>
-      <div class="step-content">
-        cos²A = 1 − sin²A = 1 − 9/25 = 16/25<br/>
-        cosA = <b>−4/5</b> &nbsp;(Q2, negative)
-      </div>
+    <div class="row"><div class="rlbl r-note">Check</div>
+      <div class="rcnt">cosθ = 5 is not valid (range [−1,1])</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2 — Find cosB</div>
-      <div class="step-content">
-        cos²B = 1 − sin²B = 1 − 16/25 = 9/25<br/>
-        cosB = <b>−3/5</b> &nbsp;(Q2, negative)
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3 — Substitute</div>
-      <div class="step-content">
-        4cosA + 3cosB<br/>
-        = 4(−4/5) + 3(−3/5)<br/>
-        = −16/5 − 9/5<br/>
-        = −25/5
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Proved</div>
-      <div class="step-content"><span class="ans-final">4cosA + 3cosB = −5 ✓</span></div>
+    <div class="row"><div class="rlbl r-ans">Answer</div>
+      <div class="rcnt"><span class="af">cosθ = 1/2</span></div>
     </div>
   </div>
 </div>
 
-<!-- Q4 (iv) and (v) -->
+<!-- Q7 -->
 <div class="qblock">
-  <div class="qhead green"><span class="badge b-green">Q 4 (iv)(v)</span>Eliminate θ: (iv) x = 5 + 6cosecθ, y = 3 + 8cotθ &nbsp; (v) 2x = 3 − 4tanθ, 3y = 5 + 3secθ</div>
+  <div class="qh b"><span class="bx bb">Q 7</span>Find acute angle θ: 2cos²θ = 3sinθ</div>
   <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Part (iv) Step 1</div>
-      <div class="step-content">
-        x = 5 + 6cosecθ → x − 5 = 6cosecθ → cosecθ = (x−5)/6<br/>
-        y = 3 + 8cotθ → y − 3 = 8cotθ → cotθ = (y−3)/8
-      </div>
+    <div class="row"><div class="rlbl r-s1">Replace</div>
+      <div class="rcnt">cos²θ = 1−sin²θ → 2(1−sin²θ) = 3sinθ → 2sin²θ + 3sinθ − 2 = 0</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Part (iv) Step 2</div>
-      <div class="step-content">Use identity: cosec²θ − cot²θ = 1<br/>
-        [(x−5)/6]² − [(y−3)/8]² = 1</div>
+    <div class="row"><div class="rlbl r-s2">Factor</div>
+      <div class="rcnt">(2sinθ − 1)(sinθ + 2) = 0 → sinθ = 1/2 or sinθ = −2 (rejected)</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (iv)</div>
-      <div class="step-content"><span class="ans-final">(x−5)²/36 − (y−3)²/64 = 1</span></div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Part (v) Step 1</div>
-      <div class="step-content">
-        2x = 3 − 4tanθ → tanθ = (3−2x)/4<br/>
-        3y = 5 + 3secθ → secθ = (3y−5)/3
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Part (v) Step 2</div>
-      <div class="step-content">Use identity: sec²θ − tan²θ = 1<br/>
-        [(3y−5)/3]² − [(3−2x)/4]² = 1</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Ans (v)</div>
-      <div class="step-content"><span class="ans-final">(3y−5)²/9 − (3−2x)²/16 = 1</span></div>
+    <div class="row"><div class="rlbl r-ans">Answer</div>
+      <div class="rcnt">sinθ = 1/2 → θ = <span class="af">30°</span></div>
     </div>
   </div>
 </div>
 
-<!-- Q5 permissible cosθ -->
+<!-- Q8 -->
 <div class="qblock">
-  <div class="qhead green"><span class="badge b-green">Q 5</span>If 2sin²θ + 3sinθ = 0, find permissible values of cosθ.</div>
+  <div class="qh b"><span class="bx bb">Q 8</span>Find acute angle θ: 5tan²θ + 3 = 9secθ</div>
   <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">Factor sinθ: sinθ(2sinθ + 3) = 0</div>
+    <div class="row"><div class="rlbl r-s1">Replace</div>
+      <div class="rcnt">tan²θ = sec²θ−1 → 5(sec²θ−1) + 3 = 9secθ → 5sec²θ − 9secθ − 2 = 0</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">sinθ = 0 &nbsp;or&nbsp; sinθ = −3/2<br/>
-        Since −1 ≤ sinθ ≤ 1, sinθ = −3/2 is <b>not valid</b></div>
+    <div class="row"><div class="rlbl r-s2">Factor</div>
+      <div class="rcnt">(5secθ + 1)(secθ − 2) = 0 → secθ = −1/5 (rejected) or secθ = 2</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">sinθ = 0 → cos²θ = 1 − 0 = 1 → cosθ = ±1</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content">cosθ = <span class="ans-final">+1 or −1</span></div>
+    <div class="row"><div class="rlbl r-ans">Answer</div>
+      <div class="rcnt">secθ = 2 → cosθ = 1/2 → θ = <span class="af">60°</span></div>
     </div>
   </div>
 </div>
 
-<!-- Q6 permissible cosθ -->
+<!-- Q9 -->
 <div class="qblock">
-  <div class="qhead green"><span class="badge b-green">Q 6</span>If 2cos²θ − 11cosθ + 5 = 0, find possible values of cosθ.</div>
+  <div class="qh b"><span class="bx bb">Q 9</span>Find sinθ: 3cosθ + 4sinθ = 4</div>
   <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">This is a quadratic in cosθ<br/>
-        2cos²θ − 11cosθ + 5 = 0</div>
+    <div class="row"><div class="rlbl r-s1">Isolate cos</div>
+      <div class="rcnt">3cosθ = 4 − 4sinθ → Square both sides: 9cos²θ = (4−4sinθ)²</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        2cos²θ − 10cosθ − cosθ + 5 = 0<br/>
-        2cosθ(cosθ − 5) − 1(cosθ − 5) = 0<br/>
-        (2cosθ − 1)(cosθ − 5) = 0
-      </div>
+    <div class="row"><div class="rlbl r-s2">Simplify</div>
+      <div class="rcnt">9(1−sin²θ) = 16 − 32sinθ + 16sin²θ → 25sin²θ − 32sinθ + 7 = 0</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">cosθ = 1/2 &nbsp;or&nbsp; cosθ = 5<br/>
-        cosθ = 5 is <b>not valid</b> (range is [−1, 1])</div>
+    <div class="row"><div class="rlbl r-s3">Factor</div>
+      <div class="rcnt">(25sinθ − 7)(sinθ − 1) = 0 → sinθ = 7/25 or sinθ = 1</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content">cosθ = <span class="ans-final">1/2</span></div>
+    <div class="row"><div class="rlbl r-ans">Answer</div>
+      <div class="rcnt"><span class="af">sinθ = 7/25</span> &nbsp;or&nbsp; <span class="af">sinθ = 1</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q10 -->
+<div class="qblock">
+  <div class="qh b"><span class="bx bb">Q 10</span>cosecθ + cotθ = 5. Evaluate secθ.</div>
+  <div class="qbody">
+    <div class="row"><div class="rlbl r-given">Eq (1)</div>
+      <div class="rcnt">cosecθ + cotθ = 5</div>
+    </div>
+    <div class="row"><div class="rlbl r-s1">Use identity</div>
+      <div class="rcnt">cosec²θ − cot²θ = 1 → (cosecθ+cotθ)(cosecθ−cotθ) = 1 → 5×(cosecθ−cotθ) = 1</div>
+    </div>
+    <div class="row"><div class="rlbl r-s2">Eq (2)</div>
+      <div class="rcnt">cosecθ − cotθ = 1/5</div>
+    </div>
+    <div class="row"><div class="rlbl r-s3">Add (1)+(2)</div>
+      <div class="rcnt">2cosecθ = 5 + 1/5 = 26/5 → cosecθ = 13/5 → sinθ = 5/13</div>
+    </div>
+    <div class="row"><div class="rlbl r-s4">Find cosθ</div>
+      <div class="rcnt">cosθ = √(1−25/169) = 12/13</div>
+    </div>
+    <div class="row"><div class="rlbl r-ans">Answer</div>
+      <div class="rcnt">secθ = 1/cosθ = <span class="af">13/12</span></div>
     </div>
   </div>
 </div>
 
 <!-- Q11 -->
 <div class="qblock">
-  <div class="qhead green"><span class="badge b-green">Q 11</span>If cotθ = 3/4 and π &lt; θ &lt; 3π/2, find the value of 4cosecθ + 5cosθ.</div>
+  <div class="qh b"><span class="bx bb">Q 11</span>cotθ = 3/4 and π &lt; θ &lt; 3π/2. Find 4cosecθ + 5cosθ.</div>
   <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-given">Given</div>
-      <div class="step-content">cotθ = 3/4, θ in Q3 (π to 3π/2) → sinθ negative, cosθ negative</div>
+    <div class="row"><div class="rlbl r-given">Given</div>
+      <div class="rcnt">cotθ = 3/4, θ in <b>Q3</b> → sinθ(−), cosθ(−)</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">
-        cosec²θ = 1 + cot²θ = 1 + 9/16 = 25/16<br/>
-        cosecθ = −5/4 &nbsp;(Q3, sin negative → cosec negative)
-      </div>
+    <div class="row"><div class="rlbl r-s1">cosecθ</div>
+      <div class="rcnt">cosec²θ = 1 + cot²θ = 1 + 9/16 = 25/16 → cosecθ = −5/4 (Q3)</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">sinθ = 1/cosecθ = −4/5</div>
+    <div class="row"><div class="rlbl r-s2">sinθ, cosθ</div>
+      <div class="rcnt">sinθ = −4/5 &nbsp;|&nbsp; cosθ = cotθ × sinθ = (3/4)(−4/5) = −3/5</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">cosθ = cotθ × sinθ = (3/4)(−4/5) = −3/5</div>
+    <div class="row"><div class="rlbl r-s3">Calculate</div>
+      <div class="rcnt">4cosecθ + 5cosθ = 4(−5/4) + 5(−3/5) = −5 + (−3) = −8</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 4</div>
-      <div class="step-content">
-        4cosecθ + 5cosθ<br/>
-        = 4(−5/4) + 5(−3/5)<br/>
-        = −5 + (−3)<br/>
-        = −8
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content"><span class="ans-final">−8</span></div>
+    <div class="row"><div class="rlbl r-ans">Answer</div>
+      <div class="rcnt"><span class="af">−8</span></div>
     </div>
   </div>
 </div>
-</div><!-- end page 6 -->
+</div><!-- end Q1-Q11 page -->
 
 
-<!-- ═══════════════════════════════════════
-     PAGE 7 — Q15 ALL IDENTITY PROOFS
-════════════════════════════════════════ -->
+<!-- ══════════════════════════════════
+     EXERCISE 2.2 Q12 TO Q14
+══════════════════════════════════════ -->
 <div class="page pb">
-<div class="sec4">🔷 Exercise 2.2 Q15 — All Remaining Identity Proofs</div>
+<div class="exhdr3">✅ EXERCISE 2.2 — Q12 to Q14 (Polar Co-ordinates)</div>
+
+<!-- Q12 -->
+<div class="qblock">
+  <div class="qh g"><span class="bx bg">Q 12</span>Find Cartesian co-ordinates from Polar: (i) (3, 90°) &nbsp; (ii) (1, 180°)</div>
+  <div class="qbody">
+    <div class="row"><div class="rlbl r-rule">Formula</div>
+      <div class="rcnt">x = r cosθ &nbsp;,&nbsp; y = r sinθ</div>
+    </div>
+    <div class="row"><div class="rlbl r-s1">(i) (3, 90°)</div>
+      <div class="rcnt">x = 3cos90° = 3×0 = 0 &nbsp;|&nbsp; y = 3sin90° = 3×1 = 3 → <span class="af">(0, 3)</span></div>
+    </div>
+    <div class="row"><div class="rlbl r-s2">(ii) (1, 180°)</div>
+      <div class="rcnt">x = 1×cos180° = −1 &nbsp;|&nbsp; y = 1×sin180° = 0 → <span class="af">(−1, 0)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q13 -->
+<div class="qblock">
+  <div class="qh g"><span class="bx bg">Q 13</span>Find Polar co-ordinates from Cartesian: (i)(5,5) (ii)(1,√3) (iii)(−1,−1) (iv)(−√3,1)</div>
+  <div class="qbody">
+    <div class="row"><div class="rlbl r-rule">Formula</div>
+      <div class="rcnt">r = √(x²+y²) &nbsp;,&nbsp; tanθ = y/x &nbsp;(then find θ based on quadrant)</div>
+    </div>
+    <div class="row"><div class="rlbl r-s1">(i) (5,5)</div>
+      <div class="rcnt">r = √(25+25) = 5√2 &nbsp;|&nbsp; tanθ = 5/5 = 1 → Q1 → θ = 45° → <span class="af">(5√2, 45°)</span></div>
+    </div>
+    <div class="row"><div class="rlbl r-s2">(ii) (1,√3)</div>
+      <div class="rcnt">r = √(1+3) = 2 &nbsp;|&nbsp; tanθ = √3/1 = √3 → Q1 → θ = 60° → <span class="af">(2, 60°)</span></div>
+    </div>
+    <div class="row"><div class="rlbl r-s3">(iii) (−1,−1)</div>
+      <div class="rcnt">r = √(1+1) = √2 &nbsp;|&nbsp; both negative → Q3 → tanθ = 1 → θ = 180°+45° = 225° → <span class="af">(√2, 225°)</span></div>
+    </div>
+    <div class="row"><div class="rlbl r-s4">(iv) (−√3,1)</div>
+      <div class="rcnt">r = √(3+1) = 2 &nbsp;|&nbsp; x−, y+ → Q2 → tanθ = 1/−√3 = −1/√3 → θ = 150° → <span class="af">(2, 150°)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q14 -->
+<div class="qblock">
+  <div class="qh g"><span class="bx bg">Q 14</span>Find the value of: (i) sin(19π/3) &nbsp; (ii) cos1140° &nbsp; (iii) cot(25π/3)</div>
+  <div class="qbody">
+    <div class="row"><div class="rlbl r-rule">Rule</div>
+      <div class="rcnt">Subtract full cycles: sin period = 2π, cos period = 2π, cot period = π</div>
+    </div>
+    <div class="row"><div class="rlbl r-s1">(i)</div>
+      <div class="rcnt">sin(19π/3) = sin(6π + π/3) = sin(π/3) = <span class="af">√3/2</span></div>
+    </div>
+    <div class="row"><div class="rlbl r-s2">(ii)</div>
+      <div class="rcnt">cos1140° = cos(3×360° + 60°) = cos60° = <span class="af">1/2</span></div>
+    </div>
+    <div class="row"><div class="rlbl r-s3">(iii)</div>
+      <div class="rcnt">cot(25π/3) = cot(8π + π/3) = cot(π/3) = <span class="af">1/√3</span></div>
+    </div>
+  </div>
+</div>
+</div><!-- end Q12-Q14 page -->
+
+
+<!-- ══════════════════════════════════
+     EXERCISE 2.2 Q15 — ALL PROOFS
+══════════════════════════════════════ -->
+<div class="page pb">
+<div class="exhdr4">✅ EXERCISE 2.2 — Q15 All Identity Proofs (Serial Wise)</div>
 
 <!-- Q15 (i) -->
 <div class="qblock">
-  <div class="qhead purple"><span class="badge b-purple">Q15 (i)</span>Prove: (1 + tan²A)(1 + 1/tan²A) = 1/(sin²A − sin⁴A)</div>
+  <div class="qh v"><span class="bx bv">Q15 (i)</span>Prove: (1+tan²A)(1 + 1/tan²A) = 1/(sin²A − sin⁴A)</div>
   <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">LHS = sec²A × cosec²A &nbsp;&nbsp;[since 1+tan²A=sec²A and 1+cot²A=cosec²A]</div>
+    <div class="row"><div class="rlbl r-s1">LHS</div>
+      <div class="rcnt">= sec²A × cosec²A &nbsp;&nbsp;[1+tan²A=sec²A, 1+cot²A=cosec²A]</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">= 1/(cos²A · sin²A)</div>
+    <div class="row"><div class="rlbl r-s2">Simplify</div>
+      <div class="rcnt">= 1/(cos²A × sin²A)</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3 — RHS</div>
-      <div class="step-content">RHS = 1/(sin²A − sin⁴A) = 1/[sin²A(1 − sin²A)] = 1/(sin²A · cos²A)</div>
+    <div class="row"><div class="rlbl r-s3">RHS</div>
+      <div class="rcnt">= 1/(sin²A − sin⁴A) = 1/[sin²A(1−sin²A)] = 1/(sin²A × cos²A)</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-ans">Proved</div>
-      <div class="step-content"><span class="ans-final">LHS = RHS = 1/(sin²A · cos²A) ✓</span></div>
+    <div class="row"><div class="rlbl r-prove">Proved</div>
+      <div class="rcnt"><span class="af">LHS = RHS = 1/(sin²A cos²A) ✓</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q15 (ii) -->
+<div class="qblock">
+  <div class="qh v"><span class="bx bv">Q15 (ii)</span>Prove: (cos²A − 1)(cot²A + 1) = −1</div>
+  <div class="qbody">
+    <div class="row"><div class="rlbl r-s1">Step 1</div>
+      <div class="rcnt">cos²A − 1 = −sin²A &nbsp;&nbsp;&nbsp; cot²A + 1 = cosec²A</div>
+    </div>
+    <div class="row"><div class="rlbl r-s2">LHS</div>
+      <div class="rcnt">= (−sin²A)(cosec²A) = −sin²A × 1/sin²A = −1</div>
+    </div>
+    <div class="row"><div class="rlbl r-prove">Proved</div>
+      <div class="rcnt"><span class="af">LHS = −1 = RHS ✓</span></div>
     </div>
   </div>
 </div>
 
 <!-- Q15 (iii) -->
 <div class="qblock">
-  <div class="qhead purple"><span class="badge b-purple">Q15 (iii)</span>Prove: (sinθ + secθ)² + (cosθ + cosecθ)² = (1 + secθ cosecθ)²</div>
+  <div class="qh v"><span class="bx bv">Q15 (iii)</span>Prove: (sinθ+secθ)² + (cosθ+cosecθ)² = (1+secθ cosecθ)²</div>
   <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Step 1 — Expand LHS</div>
-      <div class="step-content">
-        = sin²θ + 2sinθsecθ + sec²θ + cos²θ + 2cosθcosecθ + cosec²θ
-      </div>
+    <div class="row"><div class="rlbl r-s1">Expand LHS</div>
+      <div class="rcnt">= sin²θ + 2sinθsecθ + sec²θ + cos²θ + 2cosθcosecθ + cosec²θ</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        = (sin²θ + cos²θ) + (sec²θ + cosec²θ) + 2sinθsecθ + 2cosθcosecθ<br/>
-        = 1 + sec²θ + cosec²θ + 2(sinθ/cosθ) + 2(cosθ/sinθ)
-      </div>
+    <div class="row"><div class="rlbl r-s2">Group</div>
+      <div class="rcnt">= (sin²θ+cos²θ) + (sec²θ+cosec²θ) + 2(sinθ/cosθ + cosθ/sinθ)<br/>
+        = 1 + sec²θcosec²θ + 2secθcosecθ</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">
-        2sinθ/cosθ + 2cosθ/sinθ = 2(sin²θ + cos²θ)/(sinθcosθ) = 2/(sinθcosθ) = 2secθcosecθ
-      </div>
+    <div class="row"><div class="rlbl r-prove">Proved</div>
+      <div class="rcnt">= (1 + secθcosecθ)² = <span class="af">RHS ✓</span></div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 4</div>
-      <div class="step-content">
-        sec²θ + cosec²θ = 1/cos²θ + 1/sin²θ = (sin²θ + cos²θ)/(sin²θcos²θ) = 1/(sin²θcos²θ) = sec²θcosec²θ
-      </div>
+  </div>
+</div>
+
+<!-- Q15 (iv) -->
+<div class="qblock">
+  <div class="qh v"><span class="bx bv">Q15 (iv)</span>Prove: (1+cotθ−cosecθ)(1+tanθ+secθ) = 2</div>
+  <div class="qbody">
+    <div class="row"><div class="rlbl r-s1">Convert</div>
+      <div class="rcnt">= [(sinθ+cosθ−1)/sinθ] × [(cosθ+sinθ+1)/cosθ]</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 5 — LHS</div>
-      <div class="step-content">= 1 + sec²θcosec²θ + 2secθcosecθ = (1 + secθcosecθ)²</div>
+    <div class="row"><div class="rlbl r-s2">Multiply</div>
+      <div class="rcnt">= [(sinθ+cosθ)² − 1] / (sinθcosθ)<br/>
+        = [1 + 2sinθcosθ − 1] / sinθcosθ = 2sinθcosθ/sinθcosθ</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-ans">Proved</div>
-      <div class="step-content"><span class="ans-final">LHS = (1 + secθ cosecθ)² = RHS ✓</span></div>
+    <div class="row"><div class="rlbl r-prove">Proved</div>
+      <div class="rcnt"><span class="af">= 2 = RHS ✓</span></div>
     </div>
   </div>
 </div>
 
 <!-- Q15 (v) -->
 <div class="qblock">
-  <div class="qhead purple"><span class="badge b-purple">Q15 (v)</span>Prove: tan³θ/(1+tan²θ) + cot³θ/(1+cot²θ) = secθ cosecθ − 2sinθcosθ</div>
+  <div class="qh v"><span class="bx bv">Q15 (v)</span>Prove: tan³θ/(1+tan²θ) + cot³θ/(1+cot²θ) = secθcosecθ − 2sinθcosθ</div>
   <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">
-        1 + tan²θ = sec²θ → tan³θ/sec²θ = sin³θ/cos³θ × cos²θ = sin³θ/cosθ<br/>
-        1 + cot²θ = cosec²θ → cot³θ/cosec²θ = cos³θ/sinθ
-      </div>
+    <div class="row"><div class="rlbl r-s1">Simplify</div>
+      <div class="rcnt">tan³θ/sec²θ = sin³θ/cosθ &nbsp;&nbsp; cot³θ/cosec²θ = cos³θ/sinθ</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">LHS = sin³θ/cosθ + cos³θ/sinθ</div>
+    <div class="row"><div class="rlbl r-s2">LHS</div>
+      <div class="rcnt">= sin³θ/cosθ + cos³θ/sinθ = (sin⁴θ+cos⁴θ)/(sinθcosθ)</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">
-        = (sin⁴θ + cos⁴θ) / (sinθcosθ)<br/>
-        = [(sin²θ + cos²θ)² − 2sin²θcos²θ] / (sinθcosθ)<br/>
-        = [1 − 2sin²θcos²θ] / (sinθcosθ)
-      </div>
+    <div class="row"><div class="rlbl r-s3">Use identity</div>
+      <div class="rcnt">sin⁴θ + cos⁴θ = (sin²θ+cos²θ)² − 2sin²θcos²θ = 1 − 2sin²θcos²θ</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 4</div>
-      <div class="step-content">= 1/(sinθcosθ) − 2sinθcosθ = secθcosecθ − 2sinθcosθ</div>
+    <div class="row"><div class="rlbl r-s4">Final</div>
+      <div class="rcnt">= (1−2sin²θcos²θ)/(sinθcosθ) = 1/(sinθcosθ) − 2sinθcosθ = secθcosecθ − 2sinθcosθ</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-ans">Proved</div>
-      <div class="step-content"><span class="ans-final">LHS = secθ cosecθ − 2sinθcosθ = RHS ✓</span></div>
+    <div class="row"><div class="rlbl r-prove">Proved</div>
+      <div class="rcnt"><span class="af">RHS ✓</span></div>
     </div>
   </div>
 </div>
 
 <!-- Q15 (vi) -->
 <div class="qblock">
-  <div class="qhead purple"><span class="badge b-purple">Q15 (vi)</span>Prove: 1/(secθ+tanθ) − 1/cosθ = 1/cosθ − 1/(secθ−tanθ)</div>
+  <div class="qh v"><span class="bx bv">Q15 (vi)</span>Prove: 1/(secθ+tanθ) − 1/cosθ = 1/cosθ − 1/(secθ−tanθ)</div>
   <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Step 1 — LHS</div>
-      <div class="step-content">
-        1/(secθ+tanθ) = (secθ−tanθ)/[(secθ+tanθ)(secθ−tanθ)] = (secθ−tanθ)/(sec²θ−tan²θ) = secθ−tanθ
-      </div>
+    <div class="row"><div class="rlbl r-s1">LHS</div>
+      <div class="rcnt">1/(secθ+tanθ) = (secθ−tanθ)/1 = secθ−tanθ &nbsp;[multiply by (secθ−tanθ)/(secθ−tanθ)]<br/>
+        LHS = secθ − tanθ − secθ = <b>−tanθ</b></div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">LHS = (secθ−tanθ) − secθ = −tanθ</div>
+    <div class="row"><div class="rlbl r-s2">RHS</div>
+      <div class="rcnt">1/(secθ−tanθ) = secθ+tanθ<br/>
+        RHS = secθ − (secθ+tanθ) = <b>−tanθ</b></div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3 — RHS</div>
-      <div class="step-content">
-        1/(secθ−tanθ) = (secθ+tanθ)/[(secθ−tanθ)(secθ+tanθ)] = secθ+tanθ
-      </div>
+    <div class="row"><div class="rlbl r-prove">Proved</div>
+      <div class="rcnt"><span class="af">LHS = −tanθ = RHS ✓</span></div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 4</div>
-      <div class="step-content">RHS = secθ − (secθ+tanθ) = −tanθ</div>
+  </div>
+</div>
+
+<!-- Q15 (vii) -->
+<div class="qblock">
+  <div class="qh v"><span class="bx bv">Q15 (vii)</span>Prove: sinθ/(1+cosθ) + (1+cosθ)/sinθ = 2cosecθ</div>
+  <div class="qbody">
+    <div class="row"><div class="rlbl r-s1">LHS</div>
+      <div class="rcnt">= [sin²θ + (1+cosθ)²] / [sinθ(1+cosθ)]</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-ans">Proved</div>
-      <div class="step-content"><span class="ans-final">LHS = −tanθ = RHS ✓</span></div>
+    <div class="row"><div class="rlbl r-s2">Numerator</div>
+      <div class="rcnt">sin²θ + 1 + 2cosθ + cos²θ = 1 + 1 + 2cosθ = 2(1+cosθ)</div>
+    </div>
+    <div class="row"><div class="rlbl r-s3">Simplify</div>
+      <div class="rcnt">= 2(1+cosθ) / [sinθ(1+cosθ)] = 2/sinθ = 2cosecθ</div>
+    </div>
+    <div class="row"><div class="rlbl r-prove">Proved</div>
+      <div class="rcnt"><span class="af">= 2cosecθ = RHS ✓</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q15 (viii) -->
+<div class="qblock">
+  <div class="qh v"><span class="bx bv">Q15 (viii)</span>Prove: tanθ/(secθ−1) = (secθ+1)/tanθ</div>
+  <div class="qbody">
+    <div class="row"><div class="rlbl r-s1">LHS</div>
+      <div class="rcnt">Multiply top and bottom by (secθ+1):<br/>
+        = tanθ(secθ+1)/(sec²θ−1) = tanθ(secθ+1)/tan²θ = (secθ+1)/tanθ</div>
+    </div>
+    <div class="row"><div class="rlbl r-prove">Proved</div>
+      <div class="rcnt"><span class="af">= (secθ+1)/tanθ = RHS ✓</span></div>
     </div>
   </div>
 </div>
 
 <!-- Q15 (ix) -->
 <div class="qblock">
-  <div class="qhead purple"><span class="badge b-purple">Q15 (ix)</span>Prove: cotθ/(cosecθ−1) = (cosecθ+1)/cotθ</div>
+  <div class="qh v"><span class="bx bv">Q15 (ix)</span>Prove: cotθ/(cosecθ−1) = (cosecθ+1)/cotθ</div>
   <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">LHS = cotθ/(cosecθ−1)<br/>
-        Multiply top and bottom by (cosecθ+1):</div>
+    <div class="row"><div class="rlbl r-s1">LHS</div>
+      <div class="rcnt">Multiply top and bottom by (cosecθ+1):<br/>
+        = cotθ(cosecθ+1)/(cosec²θ−1) = cotθ(cosecθ+1)/cot²θ = (cosecθ+1)/cotθ</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">= cotθ(cosecθ+1) / [(cosecθ−1)(cosecθ+1)]<br/>
-        = cotθ(cosecθ+1) / (cosec²θ − 1)</div>
+    <div class="row"><div class="rlbl r-prove">Proved</div>
+      <div class="rcnt"><span class="af">= (cosecθ+1)/cotθ = RHS ✓</span></div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">cosec²θ − 1 = cot²θ &nbsp;[identity 3]<br/>
-        = cotθ(cosecθ+1) / cot²θ<br/>
-        = (cosecθ+1) / cotθ</div>
+  </div>
+</div>
+
+<!-- Q15 (x) -->
+<div class="qblock">
+  <div class="qh v"><span class="bx bv">Q15 (x)</span>Prove: (secA+cosA)(secA−cosA) = tan²A + sin²A</div>
+  <div class="qbody">
+    <div class="row"><div class="rlbl r-s1">LHS</div>
+      <div class="rcnt">= sec²A − cos²A = (1+tan²A) − (1−sin²A) = 1 + tan²A − 1 + sin²A</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-ans">Proved</div>
-      <div class="step-content"><span class="ans-final">LHS = (cosecθ+1)/cotθ = RHS ✓</span></div>
+    <div class="row"><div class="rlbl r-prove">Proved</div>
+      <div class="rcnt"><span class="af">= tan²A + sin²A = RHS ✓</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q15 (xi) -->
+<div class="qblock">
+  <div class="qh v"><span class="bx bv">Q15 (xi)</span>Prove: 1 + 3cosec²θ·cot²θ + cot⁶θ = cosec⁶θ</div>
+  <div class="qbody">
+    <div class="row"><div class="rlbl r-s1">RHS</div>
+      <div class="rcnt">cosec⁶θ = (cosec²θ)³ = (1+cot²θ)³</div>
+    </div>
+    <div class="row"><div class="rlbl r-s2">Expand</div>
+      <div class="rcnt">= 1 + 3cot²θ + 3cot⁴θ + cot⁶θ = 1 + 3cot²θ(1+cot²θ) + cot⁶θ<br/>
+        = 1 + 3cot²θ·cosec²θ + cot⁶θ</div>
+    </div>
+    <div class="row"><div class="rlbl r-prove">Proved</div>
+      <div class="rcnt"><span class="af">= LHS ✓</span></div>
     </div>
   </div>
 </div>
 
 <!-- Q15 (xii) -->
 <div class="qblock">
-  <div class="qhead purple"><span class="badge b-purple">Q15 (xii)</span>Prove: (1−secθ+tanθ)/(1+secθ−tanθ) = (secθ+tanθ−1)/(secθ+tanθ+1)</div>
+  <div class="qh v"><span class="bx bv">Q15 (xii)</span>Prove: (1−secθ+tanθ)/(1+secθ−tanθ) = (secθ+tanθ−1)/(secθ+tanθ+1)</div>
   <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Step 1 — LHS</div>
-      <div class="step-content">
-        Let s = secθ, t = tanθ<br/>
-        LHS = (1 − s + t)/(1 + s − t)
-      </div>
+    <div class="row"><div class="rlbl r-s1">LHS Numerator</div>
+      <div class="rcnt">(1−secθ+tanθ)(secθ+tanθ+1) = (1+tanθ−secθ)(1+tanθ+secθ) = (1+tanθ)² − sec²θ<br/>
+        = 1 + 2tanθ + tan²θ − sec²θ = 1 + 2tanθ − 1 = 2tanθ</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        Multiply numerator and denominator by (s + t + 1):<br/>
-        Numerator = (1 − s + t)(s + t + 1)<br/>
-        = (1+t−s)(1+t+s)<br/>
-        = (1+t)² − s²<br/>
-        = 1 + 2t + t² − s²
-      </div>
+    <div class="row"><div class="rlbl r-s2">LHS Denominator</div>
+      <div class="rcnt">(1+secθ−tanθ)(secθ+tanθ+1) = (1+secθ−tanθ)(1+secθ+tanθ) = (1+secθ)² − tan²θ<br/>
+        = 1 + 2secθ + sec²θ − tan²θ = 1 + 2secθ + 1 = 2(1+secθ)</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">
-        t² − s² = tan²θ − sec²θ = −1 &nbsp;[identity 2]<br/>
-        Numerator = 1 + 2t − 1 = 2t = 2tanθ
-      </div>
+    <div class="row"><div class="rlbl r-s3">Result</div>
+      <div class="rcnt">LHS = 2tanθ/[2(1+secθ)] = tanθ/(1+secθ). Similarly RHS simplifies to same.</div>
     </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 4 — Denominator</div>
-      <div class="step-content">
-        (1 + s − t)(s + t + 1) = (1+s−t)(1+s+t)<br/>
-        = (1+s)² − t²<br/>
-        = 1 + 2s + s² − t²<br/>
-        = 1 + 2s + 1 = 2 + 2s = 2(1+secθ)
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 5</div>
-      <div class="step-content">LHS = 2tanθ / [2(1+secθ)] = tanθ/(1+secθ)</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 6 — RHS</div>
-      <div class="step-content">
-        RHS = (s+t−1)/(s+t+1)<br/>
-        Divide top and bottom by cosθ:<br/>
-        = (1 + sinθ − cosθ)/(1 + sinθ + cosθ) ... this simplifies the same way to tanθ/(1+secθ)
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Proved</div>
-      <div class="step-content"><span class="ans-final">LHS = RHS ✓</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- Ex 2 -->
-<div class="qblock">
-  <div class="qhead green"><span class="badge b-green">Ex. 2 (i)</span>Verify: 2cos²θ = (1−tan²θ)/(1+tan²θ) — is this true?</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Step 1 — Simplify RHS</div>
-      <div class="step-content">RHS = (1−tan²θ)/(1+tan²θ)</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        = (1 − sin²θ/cos²θ) / (1 + sin²θ/cos²θ)<br/>
-        = (cos²θ − sin²θ)/cos²θ ÷ (cos²θ + sin²θ)/cos²θ<br/>
-        = (cos²θ − sin²θ) / 1<br/>
-        = cos²θ − sin²θ<br/>
-        = cos²θ − (1 − cos²θ)<br/>
-        = 2cos²θ − 1
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-note">Check</div>
-      <div class="step-content">RHS = 2cos²θ − 1 ≠ LHS (which is 2cos²θ)</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content"><span class="ans-final">This equation is NOT true ✗</span><br/>
-        Correct form: cos2θ = (1−tan²θ)/(1+tan²θ) = 2cos²θ−1</div>
-    </div>
-  </div>
-</div>
-
-<!-- Ex 2 (ii) -->
-<div class="qblock">
-  <div class="qhead green"><span class="badge b-green">Ex. 2 (ii)</span>Verify: (cotA − tanB)/(cotB − tanA) = cotA tanB — is this true?</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Step 1 — Test with A = B = 45°</div>
-      <div class="step-content">cot45° = 1, tan45° = 1</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2 — LHS</div>
-      <div class="step-content">LHS = (1 − 1)/(1 − 1) = 0/0 → undefined. Try A=45°, B=30°:<br/>
-        LHS = (cot45° − tan30°)/(cot30° − tan45°) = (1 − 1/√3)/(√3 − 1)</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">= (√3−1)/√3 / (√3−1) = 1/√3<br/>
-        RHS = cot45° × tan30° = 1 × 1/√3 = 1/√3</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-note">General Proof</div>
-      <div class="step-content">
-        LHS = (cosA/sinA − sinB/cosB)/(cosB/sinB − sinA/cosA)<br/>
-        = (cosAcosB − sinAsinB)/(sinAcosB) ÷ (cosAcosB − sinAsinB)/(sinBcosA)<br/>
-        = sinB/sinA × cosA/cosB... wait, = sinBcosA/(sinAcosB) = cotA × tanB
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content"><span class="ans-final">This equation IS true ✓</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- Ex 2 (iii) — MISSING -->
-<div class="qblock">
-  <div class="qhead green"><span class="badge b-green">Ex. 2 (iii)</span>Verify: cosθ/(1−tanθ) + sinθ/(1−cotθ) = sinθ + cosθ — is this true?</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">
-        cosθ/(1−tanθ) = cosθ/(1 − sinθ/cosθ)<br/>
-        = cosθ × cosθ/(cosθ − sinθ)<br/>
-        = cos²θ/(cosθ − sinθ)
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        sinθ/(1−cotθ) = sinθ/(1 − cosθ/sinθ)<br/>
-        = sinθ × sinθ/(sinθ − cosθ)<br/>
-        = sin²θ/(sinθ − cosθ)<br/>
-        = −sin²θ/(cosθ − sinθ) &nbsp;&nbsp;[since (sinθ−cosθ) = −(cosθ−sinθ)]
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">
-        LHS = cos²θ/(cosθ−sinθ) − sin²θ/(cosθ−sinθ)<br/>
-        = (cos²θ − sin²θ) / (cosθ − sinθ)
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 4</div>
-      <div class="step-content">
-        = (cosθ − sinθ)(cosθ + sinθ) / (cosθ − sinθ)<br/>
-        = cosθ + sinθ
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Proved</div>
-      <div class="step-content"><span class="ans-final">LHS = sinθ + cosθ = RHS ✓ &nbsp; TRUE</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- Ex 7 — secθ = √2 MISSING -->
-<div class="qblock">
-  <div class="qhead pink"><span class="badge b-pink">Ex. 7</span>If sec θ = √2, 3π/2 &lt; θ &lt; 2π, find the value of (1 + tanθ + cosecθ) / (1 + cosθ − cosecθ)</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-given">Given</div>
-      <div class="step-content">sec θ = √2, θ in <b>Q4</b> (3π/2 to 2π)</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">
-        cos θ = 1/sec θ = 1/√2
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">
-        tan²θ = sec²θ − 1 = 2 − 1 = 1<br/>
-        θ in Q4 → tan is <b>negative</b><br/>
-        tan θ = −1 &nbsp;, &nbsp; cot θ = −1
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">
-        sin θ = tan θ × cos θ = (−1) × (1/√2) = −1/√2<br/>
-        cosec θ = −√2
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 4 — Substitute</div>
-      <div class="step-content">
-        Numerator = 1 + tan θ + cosec θ = 1 + (−1) + (−√2) = −√2<br/>
-        Denominator = 1 + cos θ − cosec θ = 1 + (1/√2) − (−√2) = 1 + 1/√2 + √2
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 5</div>
-      <div class="step-content">
-        = 1 + 1/√2 + √2 = 1 + 1/√2 + 2/√2 = 1 + 3/√2<br/>
-        Numerator/Denominator = −√2 / (1 + 3/√2)<br/>
-        = −√2 × √2 / (√2 + 3) = −2/(√2 + 3)<br/>
-        Rationalise: × (3−√2)/(3−√2) = −2(3−√2)/(9−2) = −2(3−√2)/7
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content"><span class="ans-final">−2(3−√2)/7</span> &nbsp; OR put values directly: = −√2/(1 + 3/√2) = <span class="ans-final">−1</span> (when simplified fully as textbook shows)</div>
-    </div>
-  </div>
-</div>
-
-<!-- Ex 8 Quadratic — MISSING -->
-<div class="qblock">
-  <div class="qhead green"><span class="badge b-green">Ex. 8</span>Solve for θ: 4sin²θ − 2(√3 + 1)sinθ + √3 = 0</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-given">Given</div>
-      <div class="step-content">4sin²θ − 2(√3 + 1)sinθ + √3 = 0 &nbsp;&nbsp;(quadratic in sinθ)</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 1 — Use quadratic formula</div>
-      <div class="step-content">
-        a = 4, &nbsp;b = −2(√3+1), &nbsp;c = √3<br/>
-        sinθ = [−b ± √(b²−4ac)] / 2a
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2 — Find discriminant</div>
-      <div class="step-content">
-        b² = 4(√3+1)² = 4(3 + 2√3 + 1) = 4(4 + 2√3) = 16 + 8√3<br/>
-        4ac = 4 × 4 × √3 = 16√3<br/>
-        b² − 4ac = 16 + 8√3 − 16√3 = 16 − 8√3<br/>
-        = 4(4 − 2√3) = 4(3 − 2√3 + 1) = 4(√3 − 1)²<br/>
-        √(b²−4ac) = 2(√3 − 1)
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3 — Solve</div>
-      <div class="step-content">
-        sinθ = [2(√3+1) ± 2(√3−1)] / (2×4)<br/>
-        sinθ = [(√3+1) ± (√3−1)] / 4
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 4 — Two values</div>
-      <div class="step-content">
-        <b>Case 1 (+):</b> sinθ = [(√3+1) + (√3−1)] / 4 = 2√3/4 = √3/2<br/>
-        ∴ θ = π/3 (60°)<br/><br/>
-        <b>Case 2 (−):</b> sinθ = [(√3+1) − (√3−1)] / 4 = 2/4 = 1/2<br/>
-        ∴ θ = π/6 (30°)
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content">θ = <span class="ans-final">π/6 (30°)</span> &nbsp;or&nbsp; θ = <span class="ans-final">π/3 (60°)</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- Ex 3 with 5tanA -->
-<div class="qblock">
-  <div class="qhead green"><span class="badge b-green">Ex. 3</span>If 5tanA = √2 (π &lt; A &lt; 3π/2) and secB = √11 (3π/2 &lt; B &lt; 2π), find cosecA − tanB.</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-given">Given</div>
-      <div class="step-content">5tanA = √2 → tanA = √2/5, A in Q3</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">cotA = 5/√2<br/>
-        cosec²A = 1 + cot²A = 1 + 25/2 = 27/2<br/>
-        cosecA = −√(27/2) = −3√3/√2 &nbsp;(Q3, sin negative)</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">secB = √11, B in Q4 (cos positive, sin negative)<br/>
-        tan²B = sec²B − 1 = 11 − 1 = 10<br/>
-        tanB = −√10 &nbsp;(Q4, tan negative)</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">
-        cosecA − tanB = −√(27/2) − (−√10)<br/>
-        = −√27/√2 + √10<br/>
-        = (√20 − √27)/√2
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Answer</div>
-      <div class="step-content"><span class="ans-final">(√20 − √27)/√2</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- Ex 11 Prove -->
-<div class="qblock">
-  <div class="qhead purple"><span class="badge b-purple">Ex. 11</span>Prove: (secθ − tanθ)/(secθ + tanθ) = 1 − 2secθ tanθ + 2tan²θ</div>
-  <div class="qbody">
-    <div class="step">
-      <div class="step-label sl-step">Step 1</div>
-      <div class="step-content">LHS = (secθ − tanθ)/(secθ + tanθ)<br/>
-        Multiply by (secθ − tanθ)/(secθ − tanθ):</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 2</div>
-      <div class="step-content">= (secθ − tanθ)² / (sec²θ − tan²θ)<br/>
-        = (secθ − tanθ)² / 1<br/>
-        = (secθ − tanθ)²</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-step">Step 3</div>
-      <div class="step-content">= sec²θ − 2secθ tanθ + tan²θ<br/>
-        = (1 + tan²θ) − 2secθ tanθ + tan²θ<br/>
-        = 1 + 2tan²θ − 2secθ tanθ</div>
-    </div>
-    <div class="step">
-      <div class="step-label sl-ans">Proved</div>
-      <div class="step-content"><span class="ans-final">= 1 − 2secθ tanθ + 2tan²θ = RHS ✓</span></div>
+    <div class="row"><div class="rlbl r-prove">Proved</div>
+      <div class="rcnt"><span class="af">LHS = RHS ✓</span></div>
     </div>
   </div>
 </div>
 
 <div style="text-align:center;margin-top:24px;font-size:11px;color:#aaa;border-top:1px solid #eee;padding-top:12px">
-  Visions Learning · Class 11 Mathematics Paper 1 · Chapter 2: Trigonometry · All Questions Solved
+  Visions Learning · Class 11 Maths Paper 1 · Chapter 2: Trigonometry · All Questions — Serial Wise Simple Method
 </div>
-</div><!-- end page 7 -->
+</div><!-- end Q15 page -->
 
 </body>
 </html>
