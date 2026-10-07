@@ -3,1085 +3,1170 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Class 11 Maths Paper 1 | Chapter 2 — Trigonometry | All Exercise Solutions</title>
+<title>Class 11 Maths Paper 1 | Chapter 2 — Trigonometry | All Solutions</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Segoe UI',Arial,sans-serif;font-size:14px;color:#1a1a2e;background:#f0f2f8;padding:16px}
 @media print{
-  body{background:#fff;padding:0;font-size:11.5px}
-  .page{box-shadow:none;margin:0;padding:12mm 14mm;border-radius:0}
+  body{background:#fff;padding:0;font-size:11px}
+  .page{box-shadow:none;margin:0;padding:12mm 13mm;border-radius:0}
   .no-print{display:none}
   .pb{page-break-before:always}
-  .qblock{page-break-inside:avoid}
+  .qwrap{page-break-inside:avoid}
 }
 .page{max-width:860px;margin:0 auto 24px;background:#fff;border-radius:12px;
       box-shadow:0 4px 20px rgba(0,0,0,.09);padding:32px 40px}
 
-/* cover */
+/* ── cover ── */
 .cover{background:linear-gradient(135deg,#880e4f,#ad1457);color:#fff;
        border-radius:10px;padding:20px 28px;margin-bottom:24px;text-align:center}
 .cover .lbl{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.8}
 .cover h1{font-size:23px;font-weight:900;margin:6px 0 4px}
 .cover .sub{font-size:13px;opacity:.9;line-height:1.7}
 
-/* section headers */
-.exhdr{background:linear-gradient(135deg,#880e4f,#ad1457);color:#fff;
-       padding:10px 18px;border-radius:8px;margin:24px 0 14px;
-       font-size:15px;font-weight:800;letter-spacing:.3px}
-.exhdr2{background:linear-gradient(135deg,#1565c0,#1976d2);color:#fff;
-        padding:10px 18px;border-radius:8px;margin:24px 0 14px;
-        font-size:15px;font-weight:800}
-.exhdr3{background:linear-gradient(135deg,#1b5e20,#2e7d32);color:#fff;
-        padding:10px 18px;border-radius:8px;margin:24px 0 14px;
-        font-size:15px;font-weight:800}
-.exhdr4{background:linear-gradient(135deg,#4a148c,#7b1fa2);color:#fff;
-        padding:10px 18px;border-radius:8px;margin:24px 0 14px;
-        font-size:15px;font-weight:800}
+/* ── section header ── */
+.sh{padding:10px 18px;border-radius:8px;margin:22px 0 14px;font-size:15px;font-weight:800;color:#fff}
+.sh1{background:linear-gradient(135deg,#880e4f,#ad1457)}
+.sh2{background:linear-gradient(135deg,#1565c0,#1976d2)}
+.sh3{background:linear-gradient(135deg,#1b5e20,#2e7d32)}
+.sh4{background:linear-gradient(135deg,#4a148c,#7b1fa2)}
 
-/* key note box */
-.kbox{border-radius:8px;padding:12px 16px;margin:10px 0;font-size:13.5px;line-height:1.9;border-left:5px solid}
-.kbox.pink  {background:#fce4ec;border-color:#c62828}
-.kbox.blue  {background:#e3f2fd;border-color:#1565c0}
-.kbox.green {background:#e8f5e9;border-color:#388e3c}
-.kbox.yellow{background:#fffde7;border-color:#f9a825}
-.kbox.purple{background:#f3e5f5;border-color:#7b1fa2}
-.kbox-lbl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;opacity:.65;margin-bottom:5px}
+/* ── info boxes ── */
+.ib{border-left:5px solid;border-radius:8px;padding:11px 16px;margin:9px 0;font-size:13.5px;line-height:1.9}
+.ib.y{background:#fffde7;border-color:#f9a825}
+.ib.b{background:#e3f2fd;border-color:#1565c0}
+.ib.g{background:#e8f5e9;border-color:#388e3c}
+.ib-lbl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;opacity:.65;margin-bottom:4px}
 
-/* formula */
+/* ── formula strip ── */
 .fml{background:#1a237e;color:#fff;border-radius:8px;padding:11px 18px;
-     margin:10px 0;font-size:13.5px;font-family:'Courier New',monospace;line-height:2.1}
+     margin:9px 0;font-family:'Courier New',monospace;font-size:13.5px;line-height:2.1}
 .fml span{color:#ffd54f;font-weight:700}
 
-/* ── QUESTION BLOCK ── */
-.qblock{margin:14px 0;border-radius:10px;overflow:hidden;border:1.5px solid #e0e0e0}
-
-/* question header */
-.qh{padding:9px 16px;font-weight:700;font-size:13.5px;display:flex;align-items:flex-start;gap:10px;border-bottom:2px solid}
-.qh.p{background:#fce4ec;color:#880e4f;border-color:#f48fb1}
-.qh.b{background:#e3f2fd;color:#1565c0;border-color:#90caf9}
-.qh.g{background:#e8f5e9;color:#1b5e20;border-color:#a5d6a7}
-.qh.v{background:#f3e5f5;color:#4a148c;border-color:#ce93d8}
-
-/* badge */
-.bx{color:#fff;font-size:11px;font-weight:800;padding:3px 10px;
-    border-radius:10px;white-space:nowrap;flex-shrink:0;margin-top:1px}
-.bp{background:#880e4f} .bb{background:#1565c0}
-.bg{background:#1b5e20} .bv{background:#4a148c}
-
-/* answer area */
-.qbody{background:#fff;padding:0}
-
-/* each step row */
-.row{display:flex;border-bottom:1px solid #f5f5f5}
-.row:last-child{border-bottom:none}
-.rlbl{width:110px;min-width:110px;padding:9px 12px;font-size:11.5px;
-      font-weight:700;color:#fff;text-align:right;line-height:1.5;flex-shrink:0}
-.r-given{background:#37474f}  .r-find{background:#e65100}
-.r-s1{background:#1565c0}     .r-s2{background:#1565c0}
-.r-s3{background:#1565c0}     .r-s4{background:#1565c0}
-.r-s5{background:#1565c0}     .r-s6{background:#1565c0}
-.r-rule{background:#f57f17}   .r-note{background:#00695c}
-.r-ans{background:#1b5e20}    .r-prove{background:#1b5e20}
-.rcnt{flex:1;padding:9px 14px;font-size:13.5px;line-height:1.85;color:#1a1a2e}
-.rcnt b{color:#1565c0}
-.af{display:inline-block;background:#e8f5e9;color:#1b5e20;font-weight:800;
-    font-size:14px;padding:2px 10px;border-radius:6px}
-.hl{color:#c62828;font-weight:700}
-
-/* standard value table */
+/* ── standard table ── */
 table{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0}
-th{padding:8px 8px;text-align:center;font-size:12px;color:#fff}
-td{padding:7px 8px;text-align:center;border-bottom:1px solid #f0f0f0;vertical-align:middle}
-.tp{background:#880e4f} .tb{background:#1565c0}
-.tg{background:#2e7d32} .tv{background:#4a148c}
+th{padding:8px;text-align:center;font-size:12px;color:#fff}
+td{padding:7px 8px;text-align:center;border-bottom:1px solid #f0f0f0}
 tr:nth-child(even) td{background:#fafafa}
-hr.d{border:none;border-top:2px dashed #e8e8e8;margin:18px 0}
+.th1{background:#880e4f} .th2{background:#1565c0} .th3{background:#2e7d32}
+
+/* ══ QUESTION WRAPPER ══ */
+.qwrap{margin:14px 0;border-radius:10px;overflow:hidden;border:1.5px solid #e0e0e0}
+
+/* question title bar */
+.qtitle{padding:10px 16px;font-weight:700;font-size:13.5px;border-bottom:2px solid}
+.qt1{background:#fce4ec;color:#880e4f;border-color:#f48fb1}
+.qt2{background:#e3f2fd;color:#1565c0;border-color:#90caf9}
+.qt3{background:#e8f5e9;color:#1b5e20;border-color:#a5d6a7}
+.qt4{background:#f3e5f5;color:#4a148c;border-color:#ce93d8}
+
+/* badge inside title */
+.bx{color:#fff;font-size:11px;font-weight:800;padding:3px 10px;
+    border-radius:10px;margin-right:6px;display:inline-block}
+.b1{background:#880e4f} .b2{background:#1565c0}
+.b3{background:#1b5e20} .b4{background:#4a148c}
+
+/* ── VERTICAL SOLUTION AREA ── */
+.vsol{background:#fff;padding:16px 20px}
+
+/* given / find / note line */
+.vline{display:flex;align-items:flex-start;gap:12px;margin:4px 0}
+.vtag{min-width:110px;max-width:110px;font-size:11px;font-weight:800;
+      text-transform:uppercase;letter-spacing:.8px;padding:3px 8px;
+      border-radius:6px;text-align:center;margin-top:3px;flex-shrink:0}
+.vt-given {background:#37474f;color:#fff}
+.vt-step  {background:#1565c0;color:#fff}
+.vt-num   {background:#e65100;color:#fff}
+.vt-den   {background:#6a1b9a;color:#fff}
+.vt-div   {background:#00695c;color:#fff}
+.vt-note  {background:#f57f17;color:#fff}
+.vt-ans   {background:#1b5e20;color:#fff}
+.vt-check {background:#c62828;color:#fff}
+.vt-prove {background:#1b5e20;color:#fff}
+.vt-rule  {background:#455a64;color:#fff}
+
+.vcnt{flex:1;font-size:13.5px;line-height:1;padding:3px 0}
+
+/* each math line inside a step */
+.ml{display:block;padding:3px 0;line-height:1.75;font-size:14px}
+.ml.eq{padding-left:20px}        /* indented = line */
+.ml.eq::before{content:"= ";color:#1565c0;font-weight:700}
+.ml.th::before{content:"∴ ";color:#c62828;font-weight:700}
+.ml.th{padding-left:4px}
+.ml.arr::before{content:"→ ";color:#e65100;font-weight:700}
+
+/* final answer highlight */
+.af{display:inline-block;background:#e8f5e9;color:#1b5e20;font-weight:800;
+    font-size:15px;padding:3px 12px;border-radius:6px;border:1.5px solid #a5d6a7}
+
+/* divider */
+hr.d{border:none;border-top:2px dashed #ececec;margin:16px 0}
 
 .print-btn{display:block;width:fit-content;margin:0 auto 14px;
-           padding:9px 28px;background:#880e4f;color:#fff;border:none;
-           border-radius:8px;font-size:13px;font-weight:600;cursor:pointer}
+           padding:9px 28px;background:#880e4f;color:#fff;
+           border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer}
 </style>
 </head>
 <body>
 <button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
 
-<!-- ══════════════════════════════════
-     COVER + KEY NOTES
-══════════════════════════════════════ -->
+<!-- ═══════════════════════ COVER + KEY NOTES ═══════════════════════ -->
 <div class="page">
 <div class="cover">
   <div class="lbl">Class 11 · Maths Paper 1 · Chapter 2</div>
   <h1>📐 Trigonometry</h1>
-  <div class="sub">All Exercise 2.1 &amp; 2.2 Questions — Serial Wise · Simple Steps</div>
+  <div class="sub">All Exercise 2.1 &amp; 2.2 — Serial Wise · Vertical Step-by-Step Solutions</div>
 </div>
 
-<!-- SIGNS TABLE -->
-<div class="exhdr">📌 Signs of Trig Functions — Remember This First</div>
-<div class="kbox yellow">
-  <div class="kbox-lbl">⭐ CAST Rule — All Silver Tea Cups</div>
-  <b>Q1</b> (0–90°): <span class="hl">ALL positive</span> &nbsp;|&nbsp;
-  <b>Q2</b> (90–180°): <span class="hl">SIN positive</span> &nbsp;|&nbsp;
-  <b>Q3</b> (180–270°): <span class="hl">TAN positive</span> &nbsp;|&nbsp;
-  <b>Q4</b> (270–360°): <span class="hl">COS positive</span>
+<div class="sh sh1">📌 Signs — CAST Rule</div>
+<div class="ib y"><div class="ib-lbl">⭐ Remember</div>
+  <b>Q1</b> (0–90°) : ALL + &nbsp;|&nbsp; <b>Q2</b> (90–180°) : SIN + &nbsp;|&nbsp; <b>Q3</b> (180–270°) : TAN + &nbsp;|&nbsp; <b>Q4</b> (270–360°) : COS +
 </div>
 <table>
-  <tr><th class="tp">Quadrant</th><th class="tp">sin</th><th class="tp">cos</th><th class="tp">tan</th><th class="tp">cosec</th><th class="tp">sec</th><th class="tp">cot</th></tr>
-  <tr><td><b>Q1 (0–90°)</b></td><td>+</td><td>+</td><td>+</td><td>+</td><td>+</td><td>+</td></tr>
-  <tr><td><b>Q2 (90–180°)</b></td><td>+</td><td>−</td><td>−</td><td>+</td><td>−</td><td>−</td></tr>
-  <tr><td><b>Q3 (180–270°)</b></td><td>−</td><td>−</td><td>+</td><td>−</td><td>−</td><td>+</td></tr>
-  <tr><td><b>Q4 (270–360°)</b></td><td>−</td><td>+</td><td>−</td><td>−</td><td>+</td><td>−</td></tr>
+  <tr><th class="th1">Quadrant</th><th class="th1">sin</th><th class="th1">cos</th><th class="th1">tan</th><th class="th1">cosec</th><th class="th1">sec</th><th class="th1">cot</th></tr>
+  <tr><td><b>I (0–90°)</b></td><td>+</td><td>+</td><td>+</td><td>+</td><td>+</td><td>+</td></tr>
+  <tr><td><b>II (90–180°)</b></td><td>+</td><td>−</td><td>−</td><td>+</td><td>−</td><td>−</td></tr>
+  <tr><td><b>III (180–270°)</b></td><td>−</td><td>−</td><td>+</td><td>−</td><td>−</td><td>+</td></tr>
+  <tr><td><b>IV (270–360°)</b></td><td>−</td><td>+</td><td>−</td><td>−</td><td>+</td><td>−</td></tr>
 </table>
 
-<!-- STANDARD VALUES -->
-<div class="exhdr">📊 Standard Values — Learn These</div>
+<div class="sh sh1">📊 Standard Values</div>
 <table>
-  <tr><th class="tb">Angle</th><th class="tb">sin</th><th class="tb">cos</th><th class="tb">tan</th><th class="tb">cosec</th><th class="tb">sec</th><th class="tb">cot</th></tr>
-  <tr><td><b>0°</b></td><td>0</td><td>1</td><td>0</td><td>∞</td><td>1</td><td>∞</td></tr>
-  <tr><td><b>30°</b></td><td>½</td><td>√3/2</td><td>1/√3</td><td>2</td><td>2/√3</td><td>√3</td></tr>
-  <tr><td><b>45°</b></td><td>1/√2</td><td>1/√2</td><td>1</td><td>√2</td><td>√2</td><td>1</td></tr>
-  <tr><td><b>60°</b></td><td>√3/2</td><td>½</td><td>√3</td><td>2/√3</td><td>2</td><td>1/√3</td></tr>
-  <tr><td><b>90°</b></td><td>1</td><td>0</td><td>∞</td><td>1</td><td>∞</td><td>0</td></tr>
-  <tr><td><b>180°</b></td><td>0</td><td>−1</td><td>0</td><td>∞</td><td>−1</td><td>∞</td></tr>
-  <tr><td><b>270°</b></td><td>−1</td><td>0</td><td>∞</td><td>−1</td><td>∞</td><td>0</td></tr>
-  <tr><td><b>360°</b></td><td>0</td><td>1</td><td>0</td><td>∞</td><td>1</td><td>∞</td></tr>
+  <tr><th class="th2">θ</th><th class="th2">0°</th><th class="th2">30°</th><th class="th2">45°</th><th class="th2">60°</th><th class="th2">90°</th><th class="th2">180°</th><th class="th2">270°</th><th class="th2">360°</th></tr>
+  <tr><td><b>sin</b></td><td>0</td><td>½</td><td>1/√2</td><td>√3/2</td><td>1</td><td>0</td><td>−1</td><td>0</td></tr>
+  <tr><td><b>cos</b></td><td>1</td><td>√3/2</td><td>1/√2</td><td>½</td><td>0</td><td>−1</td><td>0</td><td>1</td></tr>
+  <tr><td><b>tan</b></td><td>0</td><td>1/√3</td><td>1</td><td>√3</td><td>∞</td><td>0</td><td>∞</td><td>0</td></tr>
 </table>
 
-<!-- 3 IDENTITIES -->
-<div class="exhdr">⚡ 3 Fundamental Identities — Use in Every Problem</div>
+<div class="sh sh1">⚡ 3 Fundamental Identities</div>
 <div class="fml">
-  <span>1. sin²θ + cos²θ = 1</span>  →  sin²θ = 1 − cos²θ  |  cos²θ = 1 − sin²θ
-  <br/>
-  <span>2. 1 + tan²θ = sec²θ</span>  →  tan²θ = sec²θ − 1  |  sec²θ − tan²θ = 1
-  <br/>
-  <span>3. 1 + cot²θ = cosec²θ</span>  →  cot²θ = cosec²θ − 1  |  cosec²θ − cot²θ = 1
+  <span>1.</span>  sin²θ + cos²θ = 1  →  sin²θ = 1 − cos²θ  |  cos²θ = 1 − sin²θ
+  <br/><span>2.</span>  1 + tan²θ = sec²θ  →  tan²θ = sec²θ − 1  |  sec²θ − tan²θ = 1
+  <br/><span>3.</span>  1 + cot²θ = cosec²θ  →  cot²θ = cosec²θ − 1  |  cosec²θ − cot²θ = 1
+</div>
+<div class="ib b"><div class="ib-lbl">★ Reciprocal</div>
+  sinθ = 1/cosecθ &nbsp;|&nbsp; cosθ = 1/secθ &nbsp;|&nbsp; tanθ = sinθ/cosθ &nbsp;|&nbsp; sinθ = tanθ × cosθ
+</div>
 </div>
 
-<!-- RECIPROCAL -->
-<div class="kbox blue">
-  <div class="kbox-lbl">★ Reciprocal Relations</div>
-  sin θ = 1/cosec θ &nbsp;|&nbsp; cos θ = 1/sec θ &nbsp;|&nbsp; tan θ = 1/cot θ<br/>
-  <b>tan θ = sin θ / cos θ</b> &nbsp;|&nbsp; <b>sin θ = tan θ × cos θ</b> &nbsp;|&nbsp; <b>cot θ = cos θ / sin θ</b>
-</div>
 
-<!-- POLAR -->
-<div class="exhdr">🗺️ Polar Co-ordinates</div>
-<div class="fml">
-  Cartesian (x,y) → Polar (r,θ):  <span>r = √(x²+y²)</span>  &nbsp;,&nbsp;  <span>tanθ = y/x</span>
-  <br/>
-  Polar (r,θ) → Cartesian (x,y):  <span>x = r cosθ</span>  &nbsp;,&nbsp;  <span>y = r sinθ</span>
-</div>
-
-</div><!-- end notes page -->
-
-
-<!-- ══════════════════════════════════
-     EXERCISE 2.1 — ALL QUESTIONS
-══════════════════════════════════════ -->
+<!-- ═══════════════════════ EXERCISE 2.1 ═══════════════════════ -->
 <div class="page pb">
-<div class="exhdr">✅ EXERCISE 2.1 — All Questions Serial Wise</div>
+<div class="sh sh1">✅ EXERCISE 2.1 — All Questions (Vertical Solutions)</div>
 
-<!-- ── Q1 ── -->
-<div class="qblock">
-  <div class="qh p"><span class="bx bp">Q 1</span>Find trigonometric functions of all given angles.</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-rule">Key Rule</div>
-      <div class="rcnt">
-        sin(−θ) = −sinθ &nbsp;|&nbsp; cos(−θ) = cosθ &nbsp;|&nbsp; sin(180°−θ) = sinθ &nbsp;|&nbsp; cos(180°−θ) = −cosθ<br/>
-        sin(180°+θ) = −sinθ &nbsp;|&nbsp; cos(180°+θ) = −cosθ &nbsp;|&nbsp; sin(360°−θ) = −sinθ &nbsp;|&nbsp; cos(360°−θ) = cosθ
-      </div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">0°</div>
-      <div class="rcnt">sin=<b>0</b>, cos=<b>1</b>, tan=<b>0</b>, cosec=<b>∞</b>, sec=<b>1</b>, cot=<b>∞</b></div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">30°</div>
-      <div class="rcnt">sin=<b>1/2</b>, cos=<b>√3/2</b>, tan=<b>1/√3</b>, cosec=<b>2</b>, sec=<b>2/√3</b>, cot=<b>√3</b></div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">45°</div>
-      <div class="rcnt">sin=<b>1/√2</b>, cos=<b>1/√2</b>, tan=<b>1</b>, cosec=<b>√2</b>, sec=<b>√2</b>, cot=<b>1</b></div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">60°</div>
-      <div class="rcnt">sin=<b>√3/2</b>, cos=<b>1/2</b>, tan=<b>√3</b>, cosec=<b>2/√3</b>, sec=<b>2</b>, cot=<b>1/√3</b></div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">150°</div>
-      <div class="rcnt">150° = 180°−30° → Q2 (sin+, cos−)<br/>
-        sin=<b>1/2</b>, cos=<b>−√3/2</b>, tan=<b>−1/√3</b>, cosec=<b>2</b>, sec=<b>−2/√3</b>, cot=<b>−√3</b></div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">180°</div>
-      <div class="rcnt">sin=<b>0</b>, cos=<b>−1</b>, tan=<b>0</b>, cosec=<b>∞</b>, sec=<b>−1</b>, cot=<b>∞</b></div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">210°</div>
-      <div class="rcnt">210° = 180°+30° → Q3 (sin−, cos−, tan+)<br/>
-        sin=<b>−1/2</b>, cos=<b>−√3/2</b>, tan=<b>1/√3</b>, cosec=<b>−2</b>, sec=<b>−2/√3</b>, cot=<b>√3</b></div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">300°</div>
-      <div class="rcnt">300° = 360°−60° → Q4 (sin−, cos+, tan−)<br/>
-        sin=<b>−√3/2</b>, cos=<b>1/2</b>, tan=<b>−√3</b>, cosec=<b>−2/√3</b>, sec=<b>2</b>, cot=<b>−1/√3</b></div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">330°</div>
-      <div class="rcnt">330° = 360°−30° → Q4<br/>
-        sin=<b>−1/2</b>, cos=<b>√3/2</b>, tan=<b>−1/√3</b>, cosec=<b>−2</b>, sec=<b>2/√3</b>, cot=<b>−√3</b></div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">−30°</div>
-      <div class="rcnt">sin(−30°)=−sin30°=<b>−1/2</b>, cos(−30°)=cos30°=<b>√3/2</b>, tan(−30°)=<b>−1/√3</b></div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">−45°</div>
-      <div class="rcnt">sin=<b>−1/√2</b>, cos=<b>1/√2</b>, tan=<b>−1</b>, cosec=<b>−√2</b>, sec=<b>√2</b>, cot=<b>−1</b></div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">−60°</div>
-      <div class="rcnt">sin=<b>−√3/2</b>, cos=<b>1/2</b>, tan=<b>−√3</b>, cosec=<b>−2/√3</b>, sec=<b>2</b>, cot=<b>−1/√3</b></div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">−90°</div>
-      <div class="rcnt">sin=<b>−1</b>, cos=<b>0</b>, tan=<b>∞</b>, cosec=<b>−1</b>, sec=<b>∞</b>, cot=<b>0</b></div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">−120°</div>
-      <div class="rcnt">−120° = same as 240° = 180°+60° → Q3<br/>
-        sin=<b>−√3/2</b>, cos=<b>−1/2</b>, tan=<b>√3</b>, cosec=<b>−2/√3</b>, sec=<b>−2</b>, cot=<b>1/√3</b></div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">−225°</div>
-      <div class="rcnt">−225° = same as 135° = 180°−45° → Q2<br/>
-        sin=<b>1/√2</b>, cos=<b>−1/√2</b>, tan=<b>−1</b></div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">−240°</div>
-      <div class="rcnt">−240° = same as 120° = 180°−60° → Q2<br/>
-        sin=<b>√3/2</b>, cos=<b>−1/2</b>, tan=<b>−√3</b></div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">−270°</div>
-      <div class="rcnt">−270° = same as 90°<br/>sin=<b>1</b>, cos=<b>0</b>, tan=<b>∞</b>, cosec=<b>1</b>, sec=<b>∞</b>, cot=<b>0</b></div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">−315°</div>
-      <div class="rcnt">−315° = same as 45° → Q1<br/>sin=<b>1/√2</b>, cos=<b>1/√2</b>, tan=<b>1</b></div>
-    </div>
-  </div>
-</div>
+<!-- Q1 -->
+<div class="qwrap">
+<div class="qtitle qt1"><span class="bx b1">Q 1</span>Find trig functions of 0°, 30°, 45°, 60°, 150°, 180°, 210°, 300°, 330°, −30°, −45°, −60°, −90°, −120°, −225°, −240°, −270°, −315°</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-rule">Rule</span><div class="vcnt">
+    <span class="ml">sin(−θ) = −sinθ &nbsp;|&nbsp; cos(−θ) = +cosθ</span>
+    <span class="ml">sin(180°−θ) = +sinθ &nbsp;|&nbsp; cos(180°−θ) = −cosθ</span>
+    <span class="ml">sin(180°+θ) = −sinθ &nbsp;|&nbsp; cos(180°+θ) = −cosθ</span>
+    <span class="ml">sin(360°−θ) = −sinθ &nbsp;|&nbsp; cos(360°−θ) = +cosθ</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">0°</span><div class="vcnt">
+    <span class="ml">sin=<b>0</b>, cos=<b>1</b>, tan=<b>0</b>, cosec=<b>∞</b>, sec=<b>1</b>, cot=<b>∞</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">30°</span><div class="vcnt">
+    <span class="ml">sin=<b>1/2</b>, cos=<b>√3/2</b>, tan=<b>1/√3</b>, cosec=<b>2</b>, sec=<b>2/√3</b>, cot=<b>√3</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">45°</span><div class="vcnt">
+    <span class="ml">sin=<b>1/√2</b>, cos=<b>1/√2</b>, tan=<b>1</b>, cosec=<b>√2</b>, sec=<b>√2</b>, cot=<b>1</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">60°</span><div class="vcnt">
+    <span class="ml">sin=<b>√3/2</b>, cos=<b>1/2</b>, tan=<b>√3</b>, cosec=<b>2/√3</b>, sec=<b>2</b>, cot=<b>1/√3</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">150°</span><div class="vcnt">
+    <span class="ml">150° = 180° − 30° → <b>Q2</b> (sin+, cos−, tan−)</span>
+    <span class="ml">sin150° = sin30° = <b>1/2</b></span>
+    <span class="ml">cos150° = −cos30° = <b>−√3/2</b></span>
+    <span class="ml">tan150° = −tan30° = <b>−1/√3</b></span>
+    <span class="ml">cosec=<b>2</b>, sec=<b>−2/√3</b>, cot=<b>−√3</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">180°</span><div class="vcnt">
+    <span class="ml">sin=<b>0</b>, cos=<b>−1</b>, tan=<b>0</b>, cosec=<b>∞</b>, sec=<b>−1</b>, cot=<b>∞</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">210°</span><div class="vcnt">
+    <span class="ml">210° = 180° + 30° → <b>Q3</b> (sin−, cos−, tan+)</span>
+    <span class="ml">sin210° = −sin30° = <b>−1/2</b></span>
+    <span class="ml">cos210° = −cos30° = <b>−√3/2</b></span>
+    <span class="ml">tan210° = +tan30° = <b>1/√3</b></span>
+    <span class="ml">cosec=<b>−2</b>, sec=<b>−2/√3</b>, cot=<b>√3</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">300°</span><div class="vcnt">
+    <span class="ml">300° = 360° − 60° → <b>Q4</b> (sin−, cos+, tan−)</span>
+    <span class="ml">sin300° = −sin60° = <b>−√3/2</b></span>
+    <span class="ml">cos300° = +cos60° = <b>1/2</b></span>
+    <span class="ml">tan300° = −tan60° = <b>−√3</b></span>
+    <span class="ml">cosec=<b>−2/√3</b>, sec=<b>2</b>, cot=<b>−1/√3</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">330°</span><div class="vcnt">
+    <span class="ml">330° = 360° − 30° → <b>Q4</b></span>
+    <span class="ml">sin330° = −sin30° = <b>−1/2</b></span>
+    <span class="ml">cos330° = +cos30° = <b>√3/2</b></span>
+    <span class="ml">tan330° = −tan30° = <b>−1/√3</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">−30°</span><div class="vcnt">
+    <span class="ml">sin(−30°) = −sin30° = <b>−1/2</b></span>
+    <span class="ml">cos(−30°) = +cos30° = <b>√3/2</b></span>
+    <span class="ml">tan(−30°) = −tan30° = <b>−1/√3</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">−45°</span><div class="vcnt">
+    <span class="ml">sin = <b>−1/√2</b>, cos = <b>1/√2</b>, tan = <b>−1</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">−60°</span><div class="vcnt">
+    <span class="ml">sin = <b>−√3/2</b>, cos = <b>1/2</b>, tan = <b>−√3</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">−90°</span><div class="vcnt">
+    <span class="ml">sin = <b>−1</b>, cos = <b>0</b>, tan = <b>∞</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">−120°</span><div class="vcnt">
+    <span class="ml">−120° = same as 240° = 180°+60° → <b>Q3</b></span>
+    <span class="ml">sin = <b>−√3/2</b>, cos = <b>−1/2</b>, tan = <b>√3</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">−225°</span><div class="vcnt">
+    <span class="ml">−225° = same as 135° = 180°−45° → <b>Q2</b></span>
+    <span class="ml">sin = <b>1/√2</b>, cos = <b>−1/√2</b>, tan = <b>−1</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">−240°</span><div class="vcnt">
+    <span class="ml">−240° = same as 120° = 180°−60° → <b>Q2</b></span>
+    <span class="ml">sin = <b>√3/2</b>, cos = <b>−1/2</b>, tan = <b>−√3</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">−270°</span><div class="vcnt">
+    <span class="ml">−270° = same as 90°</span>
+    <span class="ml">sin = <b>1</b>, cos = <b>0</b>, tan = <b>∞</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">−315°</span><div class="vcnt">
+    <span class="ml">−315° = same as 45° → <b>Q1</b></span>
+    <span class="ml">sin = <b>1/√2</b>, cos = <b>1/√2</b>, tan = <b>1</b></span>
+  </div></div>
+</div></div>
 
-<!-- ── Q2 ── -->
-<div class="qblock">
-  <div class="qh p"><span class="bx bp">Q 2</span>State the signs of: (i) tan380° &nbsp; (ii) cot230° &nbsp; (iii) sec468°</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-s1">(i) tan380°</div>
-      <div class="rcnt">380° = 360° + 20° → same as 20° → <b>Q1</b> → tan is <span class="af">Positive (+)</span></div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">(ii) cot230°</div>
-      <div class="rcnt">230° = 180° + 50° → <b>Q3</b> → tan is positive → cot is also <span class="af">Positive (+)</span></div>
-    </div>
-    <div class="row"><div class="rlbl r-s3">(iii) sec468°</div>
-      <div class="rcnt">468° = 360° + 108° → same as 108° = 180°−72° → <b>Q2</b> → cos is negative → sec is <span class="af">Negative (−)</span></div>
-    </div>
-  </div>
-</div>
+<!-- Q2 -->
+<div class="qwrap">
+<div class="qtitle qt1"><span class="bx b1">Q 2</span>State the signs of: (i) tan380° &nbsp; (ii) cot230° &nbsp; (iii) sec468°</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-step">(i) tan380°</span><div class="vcnt">
+    <span class="ml">380° = 360° + 20°</span>
+    <span class="ml">= same as 20°</span>
+    <span class="ml">20° is in <b>Q1</b> → tan is positive</span>
+    <span class="ml th">tan380° is <span class="af">Positive (+)</span></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">(ii) cot230°</span><div class="vcnt">
+    <span class="ml">230° = 180° + 50°</span>
+    <span class="ml">→ <b>Q3</b> → tan is positive → cot is positive</span>
+    <span class="ml th">cot230° is <span class="af">Positive (+)</span></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">(iii) sec468°</span><div class="vcnt">
+    <span class="ml">468° = 360° + 108°</span>
+    <span class="ml">= same as 108°</span>
+    <span class="ml">108° = 180° − 72° → <b>Q2</b> → cos is negative → sec is negative</span>
+    <span class="ml th">sec468° is <span class="af">Negative (−)</span></span>
+  </div></div>
+</div></div>
 
-<!-- ── Q3 ── -->
-<div class="qblock">
-  <div class="qh p"><span class="bx bp">Q 3</span>State the signs of cos(π^c) and cos4°. Which is greater?</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-s1">cos(π^c)</div>
-      <div class="rcnt">π radians = 180° → cos180° = −1 → Sign: <b>Negative (−)</b></div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">cos4°</div>
-      <div class="rcnt">4° is in Q1 → cos is positive → cos4° ≈ 0.997 → Sign: <b>Positive (+)</b></div>
-    </div>
-    <div class="row"><div class="rlbl r-ans">Greater?</div>
-      <div class="rcnt"><span class="af">cos4° is greater</span> &nbsp; (0.997 > −1)</div>
-    </div>
-  </div>
-</div>
+<!-- Q3 -->
+<div class="qwrap">
+<div class="qtitle qt1"><span class="bx b1">Q 3</span>State the signs of cos(π^c) and cos4°. Which is greater?</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-step">cos(π^c)</span><div class="vcnt">
+    <span class="ml">π radians = 180°</span>
+    <span class="ml">cos(180°) = −1</span>
+    <span class="ml th">Sign: <b>Negative (−)</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">cos4°</span><div class="vcnt">
+    <span class="ml">4° is in Q1 → all positive</span>
+    <span class="ml">cos4° ≈ 0.997</span>
+    <span class="ml th">Sign: <b>Positive (+)</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-ans">Greater</span><div class="vcnt">
+    <span class="ml">cos4° = 0.997 &nbsp;&gt;&nbsp; cos(π) = −1</span>
+    <span class="ml th"><span class="af">cos4° is greater</span></span>
+  </div></div>
+</div></div>
 
-<!-- ── Q4 ── -->
-<div class="qblock">
-  <div class="qh p"><span class="bx bp">Q 4</span>State the quadrant: (i) sinθ &lt; 0 and tanθ &gt; 0 &nbsp; (ii) cosθ &lt; 0 and tanθ &gt; 0</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-s1">(i)</div>
-      <div class="rcnt">
-        sinθ &lt; 0 → Q3 or Q4<br/>
-        tanθ &gt; 0 → Q1 or Q3<br/>
-        Common quadrant = <span class="af">3rd Quadrant</span>
-      </div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">(ii)</div>
-      <div class="rcnt">
-        cosθ &lt; 0 → Q2 or Q3<br/>
-        tanθ &gt; 0 → Q1 or Q3<br/>
-        Common quadrant = <span class="af">3rd Quadrant</span>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- Q4 -->
+<div class="qwrap">
+<div class="qtitle qt1"><span class="bx b1">Q 4</span>State the quadrant in which θ lies: (i) sinθ &lt; 0 and tanθ &gt; 0 &nbsp; (ii) cosθ &lt; 0 and tanθ &gt; 0</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-step">(i)</span><div class="vcnt">
+    <span class="ml">sinθ &lt; 0 → θ lies in Q3 or Q4</span>
+    <span class="ml">tanθ &gt; 0 → θ lies in Q1 or Q3</span>
+    <span class="ml">Common quadrant = <b>Q3</b></span>
+    <span class="ml th"><span class="af">3rd Quadrant</span></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">(ii)</span><div class="vcnt">
+    <span class="ml">cosθ &lt; 0 → θ lies in Q2 or Q3</span>
+    <span class="ml">tanθ &gt; 0 → θ lies in Q1 or Q3</span>
+    <span class="ml">Common quadrant = <b>Q3</b></span>
+    <span class="ml th"><span class="af">3rd Quadrant</span></span>
+  </div></div>
+</div></div>
 
-<!-- ── Q5 ── -->
-<div class="qblock">
-  <div class="qh p"><span class="bx bp">Q 5</span>Evaluate: (i) sin30°+cos45°+tan180° &nbsp; (ii) cosec45°+cot45°+tan0° &nbsp; (iii) sin30°×cos45°×tan360°</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-s1">(i)</div>
-      <div class="rcnt">
-        = sin30° + cos45° + tan180°<br/>
-        = 1/2 + 1/√2 + 0 = <span class="af">1/2 + 1/√2</span>
-      </div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">(ii)</div>
-      <div class="rcnt">
-        = cosec45° + cot45° + tan0°<br/>
-        = √2 + 1 + 0 = <span class="af">1 + √2</span>
-      </div>
-    </div>
-    <div class="row"><div class="rlbl r-s3">(iii)</div>
-      <div class="rcnt">
-        = sin30° × cos45° × tan360°<br/>
-        = 1/2 × 1/√2 × 0 = <span class="af">0</span>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- Q5 -->
+<div class="qwrap">
+<div class="qtitle qt1"><span class="bx b1">Q 5</span>Evaluate: (i) sin30°+cos45°+tan180° &nbsp; (ii) cosec45°+cot45°+tan0° &nbsp; (iii) sin30°×cos45°×tan360°</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-step">(i)</span><div class="vcnt">
+    <span class="ml">= sin30° + cos45° + tan180°</span>
+    <span class="ml eq">1/2 + 1/√2 + 0</span>
+    <span class="ml th"><span class="af">1/2 + 1/√2</span></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">(ii)</span><div class="vcnt">
+    <span class="ml">= cosec45° + cot45° + tan0°</span>
+    <span class="ml eq">√2 + 1 + 0</span>
+    <span class="ml th"><span class="af">1 + √2</span></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">(iii)</span><div class="vcnt">
+    <span class="ml">= sin30° × cos45° × tan360°</span>
+    <span class="ml eq">1/2 × 1/√2 × 0</span>
+    <span class="ml th"><span class="af">0</span></span>
+  </div></div>
+</div></div>
 
-<!-- ── Q6 ── -->
-<div class="qblock">
-  <div class="qh p"><span class="bx bp">Q 6</span>Find all trig functions of an angle whose terminal arm passes through (3, −4).</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-given">Given</div>
-      <div class="rcnt">x = 3, y = −4. Since x is +ve and y is −ve → <b>Q4</b></div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">Find r</div>
-      <div class="rcnt">r = √(x²+y²) = √(9+16) = √25 = <b>5</b></div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">sin &amp; cos</div>
-      <div class="rcnt">sin θ = y/r = −4/5 &nbsp;|&nbsp; cos θ = x/r = 3/5</div>
-    </div>
-    <div class="row"><div class="rlbl r-s3">tan</div>
-      <div class="rcnt">tan θ = y/x = −4/3</div>
-    </div>
-    <div class="row"><div class="rlbl r-ans">Answer</div>
-      <div class="rcnt">
-        sin=<span class="af">−4/5</span> &nbsp; cos=<span class="af">3/5</span> &nbsp; tan=<span class="af">−4/3</span><br/>
-        cosec=<span class="af">−5/4</span> &nbsp; sec=<span class="af">5/3</span> &nbsp; cot=<span class="af">−3/4</span>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- Q6 -->
+<div class="qwrap">
+<div class="qtitle qt1"><span class="bx b1">Q 6</span>Find all trig functions of angle whose terminal arm passes through (3, −4).</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-given">Given</span><div class="vcnt">
+    <span class="ml">x = 3, y = −4</span>
+    <span class="ml">x is positive, y is negative → <b>Q4</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">Find r</span><div class="vcnt">
+    <span class="ml">r = √(x² + y²)</span>
+    <span class="ml eq">√(3² + 4²)</span>
+    <span class="ml eq">√(9 + 16)</span>
+    <span class="ml eq">√25</span>
+    <span class="ml eq"><b>r = 5</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">sinθ, cosθ</span><div class="vcnt">
+    <span class="ml">sinθ = y/r = −4/5</span>
+    <span class="ml">cosθ = x/r = 3/5</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">tanθ</span><div class="vcnt">
+    <span class="ml">tanθ = y/x = −4/3</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-ans">Answer</span><div class="vcnt">
+    <span class="ml">sin = <span class="af">−4/5</span> &nbsp; cos = <span class="af">3/5</span> &nbsp; tan = <span class="af">−4/3</span></span>
+    <span class="ml">cosec = <span class="af">−5/4</span> &nbsp; sec = <span class="af">5/3</span> &nbsp; cot = <span class="af">−3/4</span></span>
+  </div></div>
+</div></div>
 
-<!-- ── Q7 ── -->
-<div class="qblock">
-  <div class="qh p"><span class="bx bp">Q 7</span>If cosθ = 12/13, 0 &lt; θ &lt; π/2, find (sin²θ−cos²θ)/(2sinθcosθ) and 1/tan²θ</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-given">Given</div>
-      <div class="rcnt">cosθ = 12/13, θ in <b>Q1</b> (all positive)</div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">Find sinθ</div>
-      <div class="rcnt">
-        sin²θ = 1 − cos²θ<br/>
-        = 1 − (12/13)²<br/>
-        = 1 − 144/169<br/>
-        = 25/169<br/>
-        sinθ = <b>5/13</b>
-      </div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">Find tanθ</div>
-      <div class="rcnt">
-        tanθ = sinθ / cosθ = (5/13) / (12/13) = <b>5/12</b>
-      </div>
-    </div>
-    <div class="row"><div class="rlbl r-s3">Part (i) Numerator</div>
-      <div class="rcnt">
-        sin²θ − cos²θ<br/>
-        = (5/13)² − (12/13)²<br/>
-        = 25/169 − 144/169<br/>
-        = <b>−119/169</b>
-      </div>
-    </div>
-    <div class="row"><div class="rlbl r-s4">Part (i) Denominator</div>
-      <div class="rcnt">
-        2sinθcosθ<br/>
-        = 2 × (5/13) × (12/13)<br/>
-        = 2 × 60/169<br/>
-        = <b>120/169</b>
-      </div>
-    </div>
-    <div class="row"><div class="rlbl r-s5">Part (i) Divide</div>
-      <div class="rcnt">
-        (−119/169) ÷ (120/169)<br/>
-        = −119/169 × 169/120<br/>
-        = <span class="af">−119/120</span>
-      </div>
-    </div>
-    <div class="row"><div class="rlbl r-ans">Part (ii)</div>
-      <div class="rcnt">
-        1/tan²θ = cot²θ = (1/tanθ)² = (12/5)² = <span class="af">144/25</span>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- Q7 -->
+<div class="qwrap">
+<div class="qtitle qt1"><span class="bx b1">Q 7</span>cosθ = 12/13, 0 &lt; θ &lt; π/2. Find (sin²θ−cos²θ)/(2sinθcosθ) and 1/tan²θ</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-given">Given</span><div class="vcnt">
+    <span class="ml">cosθ = 12/13 &nbsp;, θ in <b>Q1</b> (all positive)</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">Find sinθ</span><div class="vcnt">
+    <span class="ml">sin²θ = 1 − cos²θ</span>
+    <span class="ml eq">1 − (12/13)²</span>
+    <span class="ml eq">1 − 144/169</span>
+    <span class="ml eq">25/169</span>
+    <span class="ml th">sinθ = <b>5/13</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">Find tanθ</span><div class="vcnt">
+    <span class="ml">tanθ = sinθ / cosθ</span>
+    <span class="ml eq">(5/13) / (12/13)</span>
+    <span class="ml eq"><b>5/12</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-num">Numerator</span><div class="vcnt">
+    <span class="ml">sin²θ − cos²θ</span>
+    <span class="ml eq">(5/13)² − (12/13)²</span>
+    <span class="ml eq">25/169 − 144/169</span>
+    <span class="ml eq"><b>−119/169</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-den">Denominator</span><div class="vcnt">
+    <span class="ml">2 sinθ cosθ</span>
+    <span class="ml eq">2 × (5/13) × (12/13)</span>
+    <span class="ml eq">2 × 60/169</span>
+    <span class="ml eq"><b>120/169</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-div">Divide</span><div class="vcnt">
+    <span class="ml">(−119/169) ÷ (120/169)</span>
+    <span class="ml eq">−119/169 × 169/120</span>
+    <span class="ml th"><span class="af">−119/120</span></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-ans">Part (ii)</span><div class="vcnt">
+    <span class="ml">1/tan²θ = cot²θ = (12/5)² = <span class="af">144/25</span></span>
+  </div></div>
+</div></div>
 
-<!-- ── Q8 ── -->
-<div class="qblock">
-  <div class="qh p"><span class="bx bp">Q 8</span>Using tables evaluate: (i) 4cot45°−sec²60°+sin30° &nbsp; (ii) cos²0+cos²(π/6)+cos²(π/3)+cos²(π/2)</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-s1">Part (i)</div>
-      <div class="rcnt">
-        = 4×cot45° − sec²60° + sin30°<br/>
-        = 4×1 − (2)² + 1/2<br/>
-        = 4 − 4 + 1/2 = <span class="af">1/2</span>
-      </div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">Part (ii)</div>
-      <div class="rcnt">
-        = (1)² + (√3/2)² + (1/2)² + (0)²<br/>
-        = 1 + 3/4 + 1/4 + 0 = 1 + 1 = <span class="af">2</span>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- Q8 -->
+<div class="qwrap">
+<div class="qtitle qt1"><span class="bx b1">Q 8</span>Evaluate: (i) 4cot45°−sec²60°+sin30° &nbsp; (ii) cos²0+cos²(π/6)+cos²(π/3)+cos²(π/2)</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-step">(i)</span><div class="vcnt">
+    <span class="ml">= 4 × cot45° − sec²60° + sin30°</span>
+    <span class="ml eq">4 × 1 − (2)² + 1/2</span>
+    <span class="ml eq">4 − 4 + 1/2</span>
+    <span class="ml th"><span class="af">1/2</span></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">(ii)</span><div class="vcnt">
+    <span class="ml">= (cos0°)² + (cos30°)² + (cos60°)² + (cos90°)²</span>
+    <span class="ml eq">(1)² + (√3/2)² + (1/2)² + (0)²</span>
+    <span class="ml eq">1 + 3/4 + 1/4 + 0</span>
+    <span class="ml eq">1 + 4/4</span>
+    <span class="ml eq">1 + 1</span>
+    <span class="ml th"><span class="af">2</span></span>
+  </div></div>
+</div></div>
 
-<!-- ── Q9 (i) ── -->
-<div class="qblock">
-  <div class="qh p"><span class="bx bp">Q 9 (i)</span>cosθ = −3/5 and 180° &lt; θ &lt; 270°. Find all trig functions.</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-given">Given</div>
-      <div class="rcnt">cosθ = −3/5, θ in <b>Q3</b> → sinθ(−), cosθ(−), tanθ(+)</div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">sinθ</div>
-      <div class="rcnt">sin²θ = 1 − 9/25 = 16/25 → sinθ = −4/5 (negative in Q3)</div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">Others</div>
-      <div class="rcnt">tanθ = sinθ/cosθ = (−4/5)/(−3/5) = 4/3 &nbsp;|&nbsp; cotθ = 3/4<br/>
-        secθ = −5/3 &nbsp;|&nbsp; cosecθ = −5/4</div>
-    </div>
-    <div class="row"><div class="rlbl r-ans">Answer</div>
-      <div class="rcnt">sin=<span class="af">−4/5</span> cos=<span class="af">−3/5</span> tan=<span class="af">4/3</span> cosec=<span class="af">−5/4</span> sec=<span class="af">−5/3</span> cot=<span class="af">3/4</span></div>
-    </div>
-  </div>
-</div>
+<!-- Q9(i) -->
+<div class="qwrap">
+<div class="qtitle qt1"><span class="bx b1">Q 9(i)</span>cosθ = −3/5, 180° &lt; θ &lt; 270°. Find all trig functions.</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-given">Given</span><div class="vcnt">
+    <span class="ml">cosθ = −3/5 &nbsp;, θ in <b>Q3</b> → sin(−), cos(−), tan(+)</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">sinθ</span><div class="vcnt">
+    <span class="ml">sin²θ = 1 − cos²θ</span>
+    <span class="ml eq">1 − (−3/5)²</span>
+    <span class="ml eq">1 − 9/25 = 16/25</span>
+    <span class="ml">sinθ = −4/5 &nbsp;(negative in Q3)</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">Others</span><div class="vcnt">
+    <span class="ml">tanθ = sinθ/cosθ = (−4/5)/(−3/5) = 4/3 &nbsp;(positive ✓)</span>
+    <span class="ml">cotθ = 3/4 &nbsp;|&nbsp; secθ = −5/3 &nbsp;|&nbsp; cosecθ = −5/4</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-ans">Answer</span><div class="vcnt">
+    <span class="ml">sin=<span class="af">−4/5</span> cos=<span class="af">−3/5</span> tan=<span class="af">4/3</span> cosec=<span class="af">−5/4</span> sec=<span class="af">−5/3</span> cot=<span class="af">3/4</span></span>
+  </div></div>
+</div></div>
 
-<!-- ── Q9 (ii) ── -->
-<div class="qblock">
-  <div class="qh p"><span class="bx bp">Q 9 (ii)</span>secA = −25/7, A in second quadrant. Find all trig functions.</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-given">Given</div>
-      <div class="rcnt">secA = −25/7, A in <b>Q2</b> → sinA(+), cosA(−)</div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">cosA</div>
-      <div class="rcnt">cosA = 1/secA = −7/25</div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">sinA</div>
-      <div class="rcnt">sin²A = 1 − 49/625 = 576/625 → sinA = 24/25 (positive in Q2)</div>
-    </div>
-    <div class="row"><div class="rlbl r-s3">Others</div>
-      <div class="rcnt">tanA = (24/25)/(−7/25) = −24/7 &nbsp;|&nbsp; cotA = −7/24<br/>
-        cosecA = 25/24</div>
-    </div>
-    <div class="row"><div class="rlbl r-ans">Answer</div>
-      <div class="rcnt">sin=<span class="af">24/25</span> cos=<span class="af">−7/25</span> tan=<span class="af">−24/7</span> cosec=<span class="af">25/24</span> sec=<span class="af">−25/7</span> cot=<span class="af">−7/24</span></div>
-    </div>
-  </div>
-</div>
+<!-- Q9(ii) -->
+<div class="qwrap">
+<div class="qtitle qt1"><span class="bx b1">Q 9(ii)</span>secA = −25/7, A in second quadrant. Find all trig functions.</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-given">Given</span><div class="vcnt">
+    <span class="ml">secA = −25/7 &nbsp;, A in <b>Q2</b> → sin(+), cos(−)</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">cosA</span><div class="vcnt">
+    <span class="ml">cosA = 1/secA</span>
+    <span class="ml eq">1/(−25/7)</span>
+    <span class="ml eq"><b>−7/25</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">sinA</span><div class="vcnt">
+    <span class="ml">sin²A = 1 − cos²A</span>
+    <span class="ml eq">1 − (7/25)²</span>
+    <span class="ml eq">1 − 49/625 = 576/625</span>
+    <span class="ml">sinA = 24/25 &nbsp;(positive in Q2)</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">Others</span><div class="vcnt">
+    <span class="ml">tanA = (24/25)/(−7/25) = −24/7</span>
+    <span class="ml">cotA = −7/24 &nbsp;|&nbsp; cosecA = 25/24</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-ans">Answer</span><div class="vcnt">
+    <span class="ml">sin=<span class="af">24/25</span> cos=<span class="af">−7/25</span> tan=<span class="af">−24/7</span> cosec=<span class="af">25/24</span> sec=<span class="af">−25/7</span> cot=<span class="af">−7/24</span></span>
+  </div></div>
+</div></div>
 
-<!-- ── Q9 (iii) ── -->
-<div class="qblock">
-  <div class="qh p"><span class="bx bp">Q 9 (iii)</span>cotx = 3/4, x in third quadrant. Find all trig functions.</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-given">Given</div>
-      <div class="rcnt">cotx = 3/4, x in <b>Q3</b> → sinx(−), cosx(−), tanx(+)</div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">tanx</div>
-      <div class="rcnt">tanx = 1/cotx = 4/3 (positive in Q3 ✓)</div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">cosecx</div>
-      <div class="rcnt">cosec²x = 1 + cot²x = 1 + 9/16 = 25/16 → cosecx = −5/4 (negative in Q3)</div>
-    </div>
-    <div class="row"><div class="rlbl r-s3">sinx, cosx</div>
-      <div class="rcnt">sinx = −4/5 &nbsp;|&nbsp; cosx = cotx × sinx = (3/4)(−4/5) = −3/5 &nbsp;|&nbsp; secx = −5/3</div>
-    </div>
-    <div class="row"><div class="rlbl r-ans">Answer</div>
-      <div class="rcnt">sin=<span class="af">−4/5</span> cos=<span class="af">−3/5</span> tan=<span class="af">4/3</span> cosec=<span class="af">−5/4</span> sec=<span class="af">−5/3</span> cot=<span class="af">3/4</span></div>
-    </div>
-  </div>
-</div>
+<!-- Q9(iii) -->
+<div class="qwrap">
+<div class="qtitle qt1"><span class="bx b1">Q 9(iii)</span>cotx = 3/4, x in third quadrant. Find all trig functions.</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-given">Given</span><div class="vcnt">
+    <span class="ml">cotx = 3/4 &nbsp;, x in <b>Q3</b> → sin(−), cos(−), tan(+)</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">tanx</span><div class="vcnt">
+    <span class="ml">tanx = 1/cotx = 4/3 &nbsp;(positive in Q3 ✓)</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">cosecx</span><div class="vcnt">
+    <span class="ml">cosec²x = 1 + cot²x</span>
+    <span class="ml eq">1 + (3/4)²</span>
+    <span class="ml eq">1 + 9/16 = 25/16</span>
+    <span class="ml">cosecx = −5/4 &nbsp;(negative in Q3)</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">sinx, cosx</span><div class="vcnt">
+    <span class="ml">sinx = 1/cosecx = −4/5</span>
+    <span class="ml">cosx = cotx × sinx = (3/4) × (−4/5) = −3/5</span>
+    <span class="ml">secx = −5/3</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-ans">Answer</span><div class="vcnt">
+    <span class="ml">sin=<span class="af">−4/5</span> cos=<span class="af">−3/5</span> tan=<span class="af">4/3</span> cosec=<span class="af">−5/4</span> sec=<span class="af">−5/3</span> cot=<span class="af">3/4</span></span>
+  </div></div>
+</div></div>
 
-<!-- ── Q9 (iv) ── -->
-<div class="qblock">
-  <div class="qh p"><span class="bx bp">Q 9 (iv)</span>tanx = −5/12, x in fourth quadrant. Find all trig functions.</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-given">Given</div>
-      <div class="rcnt">tanx = −5/12, x in <b>Q4</b> → sinx(−), cosx(+)</div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">cotx</div>
-      <div class="rcnt">cotx = 1/tanx = −12/5</div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">secx</div>
-      <div class="rcnt">sec²x = 1 + tan²x = 1 + 25/144 = 169/144 → secx = 13/12 (positive in Q4)</div>
-    </div>
-    <div class="row"><div class="rlbl r-s3">cosx, sinx</div>
-      <div class="rcnt">cosx = 12/13 &nbsp;|&nbsp; sinx = tanx × cosx = (−5/12)(12/13) = −5/13 &nbsp;|&nbsp; cosecx = −13/5</div>
-    </div>
-    <div class="row"><div class="rlbl r-ans">Answer</div>
-      <div class="rcnt">sin=<span class="af">−5/13</span> cos=<span class="af">12/13</span> tan=<span class="af">−5/12</span> cosec=<span class="af">−13/5</span> sec=<span class="af">13/12</span> cot=<span class="af">−12/5</span></div>
-    </div>
-  </div>
-</div>
+<!-- Q9(iv) -->
+<div class="qwrap">
+<div class="qtitle qt1"><span class="bx b1">Q 9(iv)</span>tanx = −5/12, x in fourth quadrant. Find all trig functions.</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-given">Given</span><div class="vcnt">
+    <span class="ml">tanx = −5/12 &nbsp;, x in <b>Q4</b> → sin(−), cos(+)</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">cotx</span><div class="vcnt">
+    <span class="ml">cotx = 1/tanx = −12/5</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">secx</span><div class="vcnt">
+    <span class="ml">sec²x = 1 + tan²x</span>
+    <span class="ml eq">1 + (5/12)²</span>
+    <span class="ml eq">1 + 25/144 = 169/144</span>
+    <span class="ml">secx = 13/12 &nbsp;(positive in Q4 ✓)</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">cosx, sinx</span><div class="vcnt">
+    <span class="ml">cosx = 12/13</span>
+    <span class="ml">sinx = tanx × cosx = (−5/12) × (12/13) = −5/13</span>
+    <span class="ml">cosecx = −13/5</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-ans">Answer</span><div class="vcnt">
+    <span class="ml">sin=<span class="af">−5/13</span> cos=<span class="af">12/13</span> tan=<span class="af">−5/12</span> cosec=<span class="af">−13/5</span> sec=<span class="af">13/12</span> cot=<span class="af">−12/5</span></span>
+  </div></div>
+</div></div>
 </div><!-- end ex 2.1 page -->
 
 
-<!-- ══════════════════════════════════
-     EXERCISE 2.2 Q1 TO Q11
-══════════════════════════════════════ -->
+<!-- ═══════════════════════ EXERCISE 2.2 Q1–Q11 ═══════════════════════ -->
 <div class="page pb">
-<div class="exhdr2">✅ EXERCISE 2.2 — Q1 to Q11 Serial Wise</div>
+<div class="sh sh2">✅ EXERCISE 2.2 — Q1 to Q11</div>
 
 <!-- Q1 -->
-<div class="qblock">
-  <div class="qh b"><span class="bx bb">Q 1</span>2sinA=1=√2cosB, π/2&lt;A&lt;π, 3π/2&lt;B&lt;2π. Find (tanA+tanB)/(cosA−cosB).</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-given">Given</div>
-      <div class="rcnt">2sinA = 1 &nbsp;&amp;&nbsp; √2cosB = 1. &nbsp;&nbsp; A is in <b>Q2</b>, B is in <b>Q4</b></div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">Find sinA</div>
-      <div class="rcnt">
-        2sinA = 1<br/>
-        sinA = 1/2<br/>
-        A = 150° (since π/2 &lt; A &lt; π → Q2)<br/>
-        cosA = −√3/2 &nbsp;(cos is negative in Q2)<br/>
-        tanA = sinA/cosA = (1/2) / (−√3/2) = <b>−1/√3</b>
-      </div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">Find cosB</div>
-      <div class="rcnt">
-        √2 cosB = 1<br/>
-        cosB = 1/√2<br/>
-        B = 315° (since 3π/2 &lt; B &lt; 2π → Q4)<br/>
-        sinB = −1/√2 &nbsp;(sin is negative in Q4)<br/>
-        tanB = sinB/cosB = (−1/√2) / (1/√2) = <b>−1</b>
-      </div>
-    </div>
-    <div class="row"><div class="rlbl r-s3">Numerator</div>
-      <div class="rcnt">
-        tanA + tanB<br/>
-        = −1/√3 + (−1)<br/>
-        = −1/√3 − 1<br/>
-        = −(1 + √3)/√3<br/>
-        = <b>−(1+√3)/√3</b>
-      </div>
-    </div>
-    <div class="row"><div class="rlbl r-s4">Denominator</div>
-      <div class="rcnt">
-        cosA − cosB<br/>
-        = −√3/2 − 1/√2<br/>
-        = −√3/2 − √2/2 &nbsp;&nbsp;[since 1/√2 = √2/2]<br/>
-        = −(√3 + √2)/2<br/>
-        = <b>−(√3+√2)/2</b>
-      </div>
-    </div>
-    <div class="row"><div class="rlbl r-s5">Divide</div>
-      <div class="rcnt">
-        = [−(1+√3)/√3] ÷ [−(√3+√2)/2]<br/>
-        = [−(1+√3)/√3] × [2/(−(√3+√2))]<br/>
-        = 2(1+√3) / [√3(√3+√2)]<br/>
-        = 2(1+√3) / (3 + √6) &nbsp;&nbsp;[since √3×√3=3 and √3×√2=√6]
-      </div>
-    </div>
-    <div class="row"><div class="rlbl r-ans">Answer</div>
-      <div class="rcnt"><span class="af">2(1+√3) / (3+√6)</span></div>
-    </div>
-  </div>
-</div>
+<div class="qwrap">
+<div class="qtitle qt2"><span class="bx b2">Q 1</span>2sinA=1=√2cosB, π/2&lt;A&lt;π, 3π/2&lt;B&lt;2π. Find (tanA+tanB)/(cosA−cosB).</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-given">Given</span><div class="vcnt">
+    <span class="ml">2sinA = 1 and √2cosB = 1</span>
+    <span class="ml">A is in Q2 &nbsp;, B is in Q4</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">Find sinA</span><div class="vcnt">
+    <span class="ml">2sinA = 1</span>
+    <span class="ml eq">sinA = 1/2</span>
+    <span class="ml">A = 150° (Q2)</span>
+    <span class="ml">cosA = −cos30° = −√3/2</span>
+    <span class="ml">tanA = sinA/cosA = (1/2)/(−√3/2) = −1/√3</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">Find cosB</span><div class="vcnt">
+    <span class="ml">√2 cosB = 1</span>
+    <span class="ml eq">cosB = 1/√2</span>
+    <span class="ml">B = 315° (Q4)</span>
+    <span class="ml">sinB = −1/√2 &nbsp;(negative in Q4)</span>
+    <span class="ml">tanB = sinB/cosB = (−1/√2)/(1/√2) = −1</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-num">Numerator</span><div class="vcnt">
+    <span class="ml">tanA + tanB</span>
+    <span class="ml eq">−1/√3 + (−1)</span>
+    <span class="ml eq">−1/√3 − 1</span>
+    <span class="ml eq">−(1 + √3)/√3</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-den">Denominator</span><div class="vcnt">
+    <span class="ml">cosA − cosB</span>
+    <span class="ml eq">−√3/2 − 1/√2</span>
+    <span class="ml eq">−√3/2 − √2/2 &nbsp;&nbsp;[1/√2 = √2/2]</span>
+    <span class="ml eq">−(√3 + √2)/2</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-div">Divide</span><div class="vcnt">
+    <span class="ml">= [−(1+√3)/√3] ÷ [−(√3+√2)/2]</span>
+    <span class="ml eq">[−(1+√3)/√3] × [2/(−(√3+√2))]</span>
+    <span class="ml eq">2(1+√3) / [√3(√3+√2)]</span>
+    <span class="ml eq">2(1+√3) / (3+√6) &nbsp;&nbsp;[√3×√3=3, √3×√2=√6]</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-ans">Answer</span><div class="vcnt">
+    <span class="ml th"><span class="af">2(1+√3) / (3+√6)</span></span>
+  </div></div>
+</div></div>
 
 <!-- Q2 -->
-<div class="qblock">
-  <div class="qh b"><span class="bx bb">Q 2</span>sinA/3 = sinB/4 = 1/5, A and B in Q2. Prove: 4cosA + 3cosB = −5.</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-given">Given</div>
-      <div class="rcnt">sinA = 3/5, sinB = 4/5. Both in <b>Q2</b> → cosA and cosB are negative</div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">Find cosA</div>
-      <div class="rcnt">cos²A = 1 − 9/25 = 16/25 → cosA = −4/5 (Q2)</div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">Find cosB</div>
-      <div class="rcnt">cos²B = 1 − 16/25 = 9/25 → cosB = −3/5 (Q2)</div>
-    </div>
-    <div class="row"><div class="rlbl r-s3">Substitute</div>
-      <div class="rcnt">4cosA + 3cosB = 4(−4/5) + 3(−3/5) = −16/5 − 9/5 = −25/5 = −5</div>
-    </div>
-    <div class="row"><div class="rlbl r-prove">Proved</div>
-      <div class="rcnt"><span class="af">4cosA + 3cosB = −5 ✓</span></div>
-    </div>
-  </div>
-</div>
+<div class="qwrap">
+<div class="qtitle qt2"><span class="bx b2">Q 2</span>sinA/3 = sinB/4 = 1/5, A and B in Q2. Prove: 4cosA + 3cosB = −5.</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-given">Given</span><div class="vcnt">
+    <span class="ml">sinA = 3/5 &nbsp;, sinB = 4/5 &nbsp;, both in Q2 → cos negative</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">Find cosA</span><div class="vcnt">
+    <span class="ml">cos²A = 1 − sin²A</span>
+    <span class="ml eq">1 − (3/5)²</span>
+    <span class="ml eq">1 − 9/25 = 16/25</span>
+    <span class="ml">cosA = −4/5 &nbsp;(Q2, negative)</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">Find cosB</span><div class="vcnt">
+    <span class="ml">cos²B = 1 − sin²B</span>
+    <span class="ml eq">1 − (4/5)²</span>
+    <span class="ml eq">1 − 16/25 = 9/25</span>
+    <span class="ml">cosB = −3/5 &nbsp;(Q2, negative)</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">Substitute</span><div class="vcnt">
+    <span class="ml">4cosA + 3cosB</span>
+    <span class="ml eq">4 × (−4/5) + 3 × (−3/5)</span>
+    <span class="ml eq">−16/5 + (−9/5)</span>
+    <span class="ml eq">−25/5</span>
+    <span class="ml eq">−5</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-prove">Proved</span><div class="vcnt">
+    <span class="ml th"><span class="af">4cosA + 3cosB = −5 ✓</span></span>
+  </div></div>
+</div></div>
 
 <!-- Q3 -->
-<div class="qblock">
-  <div class="qh b"><span class="bx bb">Q 3</span>tanθ = 1/2. Evaluate (2sinθ+3cosθ)/(4cosθ+3sinθ).</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-s1">Trick</div>
-      <div class="rcnt">Divide numerator AND denominator by cosθ<br/>
-        This changes sinθ/cosθ = tanθ</div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">Numerator</div>
-      <div class="rcnt">
-        2sinθ + 3cosθ divided by cosθ<br/>
-        = 2(sinθ/cosθ) + 3<br/>
-        = 2tanθ + 3<br/>
-        = 2 × (1/2) + 3<br/>
-        = 1 + 3 = <b>4</b>
-      </div>
-    </div>
-    <div class="row"><div class="rlbl r-s3">Denominator</div>
-      <div class="rcnt">
-        4cosθ + 3sinθ divided by cosθ<br/>
-        = 4 + 3(sinθ/cosθ)<br/>
-        = 4 + 3tanθ<br/>
-        = 4 + 3 × (1/2)<br/>
-        = 4 + 3/2 = 8/2 + 3/2 = <b>11/2</b>
-      </div>
-    </div>
-    <div class="row"><div class="rlbl r-s4">Divide</div>
-      <div class="rcnt">
-        Numerator ÷ Denominator<br/>
-        = 4 ÷ (11/2)<br/>
-        = 4 × (2/11)
-      </div>
-    </div>
-    <div class="row"><div class="rlbl r-ans">Answer</div>
-      <div class="rcnt"><span class="af">8/11</span></div>
-    </div>
-  </div>
-</div>
+<div class="qwrap">
+<div class="qtitle qt2"><span class="bx b2">Q 3</span>tanθ = 1/2. Evaluate (2sinθ+3cosθ)/(4cosθ+3sinθ).</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-given">Trick</span><div class="vcnt">
+    <span class="ml">Divide numerator and denominator both by cosθ</span>
+    <span class="ml">This converts sinθ/cosθ = tanθ</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-num">Numerator</span><div class="vcnt">
+    <span class="ml">2sinθ + 3cosθ &nbsp;÷ cosθ</span>
+    <span class="ml eq">2(sinθ/cosθ) + 3</span>
+    <span class="ml eq">2tanθ + 3</span>
+    <span class="ml eq">2 × (1/2) + 3</span>
+    <span class="ml eq">1 + 3 = <b>4</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-den">Denominator</span><div class="vcnt">
+    <span class="ml">4cosθ + 3sinθ &nbsp;÷ cosθ</span>
+    <span class="ml eq">4 + 3(sinθ/cosθ)</span>
+    <span class="ml eq">4 + 3tanθ</span>
+    <span class="ml eq">4 + 3 × (1/2)</span>
+    <span class="ml eq">4 + 3/2 = 8/2 + 3/2 = <b>11/2</b></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-div">Divide</span><div class="vcnt">
+    <span class="ml">Numerator ÷ Denominator</span>
+    <span class="ml eq">4 ÷ (11/2)</span>
+    <span class="ml eq">4 × 2/11</span>
+    <span class="ml eq">8/11</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-ans">Answer</span><div class="vcnt">
+    <span class="ml th"><span class="af">8/11</span></span>
+  </div></div>
+</div></div>
 
 <!-- Q4 -->
-<div class="qblock">
-  <div class="qh b"><span class="bx bb">Q 4</span>Eliminate θ: (i) x=3secθ, y=4tanθ &nbsp;(ii) x=6cosecθ, y=8cotθ &nbsp;(iii) x=4cosθ−5sinθ, y=4sinθ+5cosθ &nbsp;(iv) x=5+6cosecθ, y=3+8cotθ &nbsp;(v) 2x=3−4tanθ, 3y=5+3secθ</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-s1">(i)</div>
-      <div class="rcnt">secθ = x/3, tanθ = y/4. Use sec²θ − tan²θ = 1: x²/9 − y²/16 = 1 → <span class="af">x²/9 − y²/16 = 1</span></div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">(ii)</div>
-      <div class="rcnt">cosecθ = x/6, cotθ = y/8. Use cosec²θ − cot²θ = 1: x²/36 − y²/64 = 1 → <span class="af">x²/36 − y²/64 = 1</span></div>
-    </div>
-    <div class="row"><div class="rlbl r-s3">(iii)</div>
-      <div class="rcnt">x² + y² = (4cosθ−5sinθ)² + (4sinθ+5cosθ)²<br/>
-        = 16cos²θ − 40cosθsinθ + 25sin²θ + 16sin²θ + 40sinθcosθ + 25cos²θ<br/>
-        = 16 + 25 → <span class="af">x² + y² = 41</span></div>
-    </div>
-    <div class="row"><div class="rlbl r-s4">(iv)</div>
-      <div class="rcnt">cosecθ = (x−5)/6, cotθ = (y−3)/8. Use cosec²θ − cot²θ = 1:<br/>
-        (x−5)²/36 − (y−3)²/64 = 1 → <span class="af">(x−5)²/36 − (y−3)²/64 = 1</span></div>
-    </div>
-    <div class="row"><div class="rlbl r-s5">(v)</div>
-      <div class="rcnt">tanθ = (3−2x)/4, secθ = (3y−5)/3. Use sec²θ − tan²θ = 1:<br/>
-        (3y−5)²/9 − (3−2x)²/16 = 1 → <span class="af">(3y−5)²/9 − (3−2x)²/16 = 1</span></div>
-    </div>
-  </div>
-</div>
+<div class="qwrap">
+<div class="qtitle qt2"><span class="bx b2">Q 4</span>Eliminate θ: (i) x=3secθ,y=4tanθ &nbsp;(ii) x=6cosecθ,y=8cotθ &nbsp;(iii) x=4cosθ−5sinθ,y=4sinθ+5cosθ &nbsp;(iv) x=5+6cosecθ,y=3+8cotθ &nbsp;(v) 2x=3−4tanθ,3y=5+3secθ</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-step">(i)</span><div class="vcnt">
+    <span class="ml">secθ = x/3 &nbsp;, tanθ = y/4</span>
+    <span class="ml">Use: sec²θ − tan²θ = 1</span>
+    <span class="ml eq">(x/3)² − (y/4)² = 1</span>
+    <span class="ml th"><span class="af">x²/9 − y²/16 = 1</span></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">(ii)</span><div class="vcnt">
+    <span class="ml">cosecθ = x/6 &nbsp;, cotθ = y/8</span>
+    <span class="ml">Use: cosec²θ − cot²θ = 1</span>
+    <span class="ml eq">(x/6)² − (y/8)² = 1</span>
+    <span class="ml th"><span class="af">x²/36 − y²/64 = 1</span></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">(iii)</span><div class="vcnt">
+    <span class="ml">x² = (4cosθ−5sinθ)² = 16cos²θ − 40cosθsinθ + 25sin²θ</span>
+    <span class="ml">y² = (4sinθ+5cosθ)² = 16sin²θ + 40sinθcosθ + 25cos²θ</span>
+    <span class="ml">x² + y² = 16(cos²θ+sin²θ) + 25(sin²θ+cos²θ)</span>
+    <span class="ml eq">16(1) + 25(1) = 41</span>
+    <span class="ml th"><span class="af">x² + y² = 41</span></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">(iv)</span><div class="vcnt">
+    <span class="ml">x − 5 = 6cosecθ → cosecθ = (x−5)/6</span>
+    <span class="ml">y − 3 = 8cotθ → cotθ = (y−3)/8</span>
+    <span class="ml">Use: cosec²θ − cot²θ = 1</span>
+    <span class="ml eq">((x−5)/6)² − ((y−3)/8)² = 1</span>
+    <span class="ml th"><span class="af">(x−5)²/36 − (y−3)²/64 = 1</span></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">(v)</span><div class="vcnt">
+    <span class="ml">2x = 3 − 4tanθ → tanθ = (3−2x)/4</span>
+    <span class="ml">3y = 5 + 3secθ → secθ = (3y−5)/3</span>
+    <span class="ml">Use: sec²θ − tan²θ = 1</span>
+    <span class="ml eq">((3y−5)/3)² − ((3−2x)/4)² = 1</span>
+    <span class="ml th"><span class="af">(3y−5)²/9 − (3−2x)²/16 = 1</span></span>
+  </div></div>
+</div></div>
 
 <!-- Q5 -->
-<div class="qblock">
-  <div class="qh b"><span class="bx bb">Q 5</span>2sin²θ + 3sinθ = 0. Find permissible values of cosθ.</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-s1">Factor</div>
-      <div class="rcnt">sinθ(2sinθ + 3) = 0 → sinθ = 0 &nbsp;or&nbsp; sinθ = −3/2</div>
-    </div>
-    <div class="row"><div class="rlbl r-note">Check</div>
-      <div class="rcnt">sinθ = −3/2 is not valid (range is [−1,1]). So sinθ = 0</div>
-    </div>
-    <div class="row"><div class="rlbl r-ans">Answer</div>
-      <div class="rcnt">sinθ = 0 → cosθ = ±1 → <span class="af">cosθ = +1 or −1</span></div>
-    </div>
-  </div>
-</div>
+<div class="qwrap">
+<div class="qtitle qt2"><span class="bx b2">Q 5</span>2sin²θ + 3sinθ = 0. Find permissible values of cosθ.</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-step">Factor</span><div class="vcnt">
+    <span class="ml">sinθ(2sinθ + 3) = 0</span>
+    <span class="ml">sinθ = 0 &nbsp;OR&nbsp; 2sinθ + 3 = 0</span>
+    <span class="ml">sinθ = 0 &nbsp;OR&nbsp; sinθ = −3/2</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-check">Check</span><div class="vcnt">
+    <span class="ml">sinθ = −3/2 is NOT valid (range of sin is [−1, 1])</span>
+    <span class="ml">∴ sinθ = 0</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-ans">Answer</span><div class="vcnt">
+    <span class="ml">sinθ = 0 → cosθ = ±√(1 − 0) = ±1</span>
+    <span class="ml th"><span class="af">cosθ = +1 or −1</span></span>
+  </div></div>
+</div></div>
 
 <!-- Q6 -->
-<div class="qblock">
-  <div class="qh b"><span class="bx bb">Q 6</span>2cos²θ − 11cosθ + 5 = 0. Find possible values of cosθ.</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-s1">Factor</div>
-      <div class="rcnt">(2cosθ − 1)(cosθ − 5) = 0 → cosθ = 1/2 &nbsp;or&nbsp; cosθ = 5</div>
-    </div>
-    <div class="row"><div class="rlbl r-note">Check</div>
-      <div class="rcnt">cosθ = 5 is not valid (range [−1,1])</div>
-    </div>
-    <div class="row"><div class="rlbl r-ans">Answer</div>
-      <div class="rcnt"><span class="af">cosθ = 1/2</span></div>
-    </div>
-  </div>
-</div>
+<div class="qwrap">
+<div class="qtitle qt2"><span class="bx b2">Q 6</span>2cos²θ − 11cosθ + 5 = 0. Find possible values of cosθ.</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-step">Factor</span><div class="vcnt">
+    <span class="ml">2cos²θ − 10cosθ − cosθ + 5 = 0</span>
+    <span class="ml">2cosθ(cosθ − 5) − 1(cosθ − 5) = 0</span>
+    <span class="ml">(2cosθ − 1)(cosθ − 5) = 0</span>
+    <span class="ml">cosθ = 1/2 &nbsp;OR&nbsp; cosθ = 5</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-check">Check</span><div class="vcnt">
+    <span class="ml">cosθ = 5 is NOT valid (range of cos is [−1, 1])</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-ans">Answer</span><div class="vcnt">
+    <span class="ml th"><span class="af">cosθ = 1/2</span></span>
+  </div></div>
+</div></div>
 
 <!-- Q7 -->
-<div class="qblock">
-  <div class="qh b"><span class="bx bb">Q 7</span>Find acute angle θ: 2cos²θ = 3sinθ</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-s1">Replace</div>
-      <div class="rcnt">cos²θ = 1−sin²θ → 2(1−sin²θ) = 3sinθ → 2sin²θ + 3sinθ − 2 = 0</div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">Factor</div>
-      <div class="rcnt">(2sinθ − 1)(sinθ + 2) = 0 → sinθ = 1/2 or sinθ = −2 (rejected)</div>
-    </div>
-    <div class="row"><div class="rlbl r-ans">Answer</div>
-      <div class="rcnt">sinθ = 1/2 → θ = <span class="af">30°</span></div>
-    </div>
-  </div>
-</div>
+<div class="qwrap">
+<div class="qtitle qt2"><span class="bx b2">Q 7</span>Find acute angle θ: 2cos²θ = 3sinθ</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-step">Replace</span><div class="vcnt">
+    <span class="ml">cos²θ = 1 − sin²θ</span>
+    <span class="ml">2(1 − sin²θ) = 3sinθ</span>
+    <span class="ml">2 − 2sin²θ = 3sinθ</span>
+    <span class="ml">2sin²θ + 3sinθ − 2 = 0</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">Factor</span><div class="vcnt">
+    <span class="ml">(2sinθ − 1)(sinθ + 2) = 0</span>
+    <span class="ml">sinθ = 1/2 &nbsp;OR&nbsp; sinθ = −2 (rejected)</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-ans">Answer</span><div class="vcnt">
+    <span class="ml">sinθ = 1/2 → θ = <span class="af">30°</span></span>
+  </div></div>
+</div></div>
 
 <!-- Q8 -->
-<div class="qblock">
-  <div class="qh b"><span class="bx bb">Q 8</span>Find acute angle θ: 5tan²θ + 3 = 9secθ</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-s1">Replace</div>
-      <div class="rcnt">tan²θ = sec²θ−1 → 5(sec²θ−1) + 3 = 9secθ → 5sec²θ − 9secθ − 2 = 0</div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">Factor</div>
-      <div class="rcnt">(5secθ + 1)(secθ − 2) = 0 → secθ = −1/5 (rejected) or secθ = 2</div>
-    </div>
-    <div class="row"><div class="rlbl r-ans">Answer</div>
-      <div class="rcnt">secθ = 2 → cosθ = 1/2 → θ = <span class="af">60°</span></div>
-    </div>
-  </div>
-</div>
+<div class="qwrap">
+<div class="qtitle qt2"><span class="bx b2">Q 8</span>Find acute angle θ: 5tan²θ + 3 = 9secθ</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-step">Replace</span><div class="vcnt">
+    <span class="ml">tan²θ = sec²θ − 1</span>
+    <span class="ml">5(sec²θ − 1) + 3 = 9secθ</span>
+    <span class="ml">5sec²θ − 5 + 3 = 9secθ</span>
+    <span class="ml">5sec²θ − 9secθ − 2 = 0</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">Factor</span><div class="vcnt">
+    <span class="ml">(5secθ + 1)(secθ − 2) = 0</span>
+    <span class="ml">secθ = −1/5 (rejected, |secθ| ≥ 1) &nbsp;OR&nbsp; secθ = 2</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-ans">Answer</span><div class="vcnt">
+    <span class="ml">secθ = 2 → cosθ = 1/2 → θ = <span class="af">60°</span></span>
+  </div></div>
+</div></div>
 
 <!-- Q9 -->
-<div class="qblock">
-  <div class="qh b"><span class="bx bb">Q 9</span>Find sinθ: 3cosθ + 4sinθ = 4</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-s1">Isolate cos</div>
-      <div class="rcnt">3cosθ = 4 − 4sinθ → Square both sides: 9cos²θ = (4−4sinθ)²</div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">Simplify</div>
-      <div class="rcnt">9(1−sin²θ) = 16 − 32sinθ + 16sin²θ → 25sin²θ − 32sinθ + 7 = 0</div>
-    </div>
-    <div class="row"><div class="rlbl r-s3">Factor</div>
-      <div class="rcnt">(25sinθ − 7)(sinθ − 1) = 0 → sinθ = 7/25 or sinθ = 1</div>
-    </div>
-    <div class="row"><div class="rlbl r-ans">Answer</div>
-      <div class="rcnt"><span class="af">sinθ = 7/25</span> &nbsp;or&nbsp; <span class="af">sinθ = 1</span></div>
-    </div>
-  </div>
-</div>
+<div class="qwrap">
+<div class="qtitle qt2"><span class="bx b2">Q 9</span>Find sinθ: 3cosθ + 4sinθ = 4</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-step">Isolate cos</span><div class="vcnt">
+    <span class="ml">3cosθ = 4 − 4sinθ</span>
+    <span class="ml">Square both sides:</span>
+    <span class="ml">9cos²θ = (4 − 4sinθ)²</span>
+    <span class="ml">9(1 − sin²θ) = 16 − 32sinθ + 16sin²θ</span>
+    <span class="ml">9 − 9sin²θ = 16 − 32sinθ + 16sin²θ</span>
+    <span class="ml">25sin²θ − 32sinθ + 7 = 0</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">Factor</span><div class="vcnt">
+    <span class="ml">(25sinθ − 7)(sinθ − 1) = 0</span>
+    <span class="ml">sinθ = 7/25 &nbsp;OR&nbsp; sinθ = 1</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-ans">Answer</span><div class="vcnt">
+    <span class="ml th"><span class="af">sinθ = 7/25</span> &nbsp;or&nbsp; <span class="af">sinθ = 1</span></span>
+  </div></div>
+</div></div>
 
 <!-- Q10 -->
-<div class="qblock">
-  <div class="qh b"><span class="bx bb">Q 10</span>cosecθ + cotθ = 5. Evaluate secθ.</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-given">Eq (1)</div>
-      <div class="rcnt">cosecθ + cotθ = 5</div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">Use identity</div>
-      <div class="rcnt">cosec²θ − cot²θ = 1 → (cosecθ+cotθ)(cosecθ−cotθ) = 1 → 5×(cosecθ−cotθ) = 1</div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">Eq (2)</div>
-      <div class="rcnt">cosecθ − cotθ = 1/5</div>
-    </div>
-    <div class="row"><div class="rlbl r-s3">Add (1)+(2)</div>
-      <div class="rcnt">2cosecθ = 5 + 1/5 = 26/5 → cosecθ = 13/5 → sinθ = 5/13</div>
-    </div>
-    <div class="row"><div class="rlbl r-s4">Find cosθ</div>
-      <div class="rcnt">cosθ = √(1−25/169) = 12/13</div>
-    </div>
-    <div class="row"><div class="rlbl r-ans">Answer</div>
-      <div class="rcnt">secθ = 1/cosθ = <span class="af">13/12</span></div>
-    </div>
-  </div>
-</div>
+<div class="qwrap">
+<div class="qtitle qt2"><span class="bx b2">Q 10</span>cosecθ + cotθ = 5. Evaluate secθ.</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-given">Eq (1)</span><div class="vcnt">
+    <span class="ml">cosecθ + cotθ = 5</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">Use identity</span><div class="vcnt">
+    <span class="ml">cosec²θ − cot²θ = 1</span>
+    <span class="ml">(cosecθ + cotθ)(cosecθ − cotθ) = 1</span>
+    <span class="ml">5 × (cosecθ − cotθ) = 1</span>
+    <span class="ml">cosecθ − cotθ = 1/5 &nbsp;...(2)</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">Add (1)+(2)</span><div class="vcnt">
+    <span class="ml">2cosecθ = 5 + 1/5</span>
+    <span class="ml eq">25/5 + 1/5 = 26/5</span>
+    <span class="ml">cosecθ = 13/5</span>
+    <span class="ml">sinθ = 5/13</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">Find cosθ</span><div class="vcnt">
+    <span class="ml">cos²θ = 1 − sin²θ</span>
+    <span class="ml eq">1 − (5/13)²</span>
+    <span class="ml eq">1 − 25/169 = 144/169</span>
+    <span class="ml">cosθ = 12/13</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-ans">Answer</span><div class="vcnt">
+    <span class="ml">secθ = 1/cosθ = 1/(12/13) = <span class="af">13/12</span></span>
+  </div></div>
+</div></div>
 
 <!-- Q11 -->
-<div class="qblock">
-  <div class="qh b"><span class="bx bb">Q 11</span>cotθ = 3/4 and π &lt; θ &lt; 3π/2. Find 4cosecθ + 5cosθ.</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-given">Given</div>
-      <div class="rcnt">cotθ = 3/4, θ in <b>Q3</b> → sinθ(−), cosθ(−)</div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">cosecθ</div>
-      <div class="rcnt">cosec²θ = 1 + cot²θ = 1 + 9/16 = 25/16 → cosecθ = −5/4 (Q3)</div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">sinθ, cosθ</div>
-      <div class="rcnt">sinθ = −4/5 &nbsp;|&nbsp; cosθ = cotθ × sinθ = (3/4)(−4/5) = −3/5</div>
-    </div>
-    <div class="row"><div class="rlbl r-s3">Calculate</div>
-      <div class="rcnt">4cosecθ + 5cosθ = 4(−5/4) + 5(−3/5) = −5 + (−3) = −8</div>
-    </div>
-    <div class="row"><div class="rlbl r-ans">Answer</div>
-      <div class="rcnt"><span class="af">−8</span></div>
-    </div>
-  </div>
+<div class="qwrap">
+<div class="qtitle qt2"><span class="bx b2">Q 11</span>cotθ = 3/4, π &lt; θ &lt; 3π/2. Find 4cosecθ + 5cosθ.</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-given">Given</span><div class="vcnt">
+    <span class="ml">cotθ = 3/4 &nbsp;, θ in <b>Q3</b> → sin(−), cos(−)</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">cosecθ</span><div class="vcnt">
+    <span class="ml">cosec²θ = 1 + cot²θ</span>
+    <span class="ml eq">1 + (3/4)²</span>
+    <span class="ml eq">1 + 9/16 = 25/16</span>
+    <span class="ml">cosecθ = −5/4 &nbsp;(negative in Q3)</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">sinθ, cosθ</span><div class="vcnt">
+    <span class="ml">sinθ = 1/cosecθ = −4/5</span>
+    <span class="ml">cosθ = cotθ × sinθ = (3/4) × (−4/5) = −3/5</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">Calculate</span><div class="vcnt">
+    <span class="ml">4cosecθ + 5cosθ</span>
+    <span class="ml eq">4 × (−5/4) + 5 × (−3/5)</span>
+    <span class="ml eq">−5 + (−3)</span>
+    <span class="ml eq">−8</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-ans">Answer</span><div class="vcnt">
+    <span class="ml th"><span class="af">−8</span></span>
+  </div></div>
+</div></div>
 </div>
-</div><!-- end Q1-Q11 page -->
 
 
-<!-- ══════════════════════════════════
-     EXERCISE 2.2 Q12 TO Q14
-══════════════════════════════════════ -->
+<!-- ═══════════════════════ Q12–Q14 POLAR ═══════════════════════ -->
 <div class="page pb">
-<div class="exhdr3">✅ EXERCISE 2.2 — Q12 to Q14 (Polar Co-ordinates)</div>
+<div class="sh sh3">✅ EXERCISE 2.2 — Q12 to Q14</div>
 
 <!-- Q12 -->
-<div class="qblock">
-  <div class="qh g"><span class="bx bg">Q 12</span>Find Cartesian co-ordinates from Polar: (i) (3, 90°) &nbsp; (ii) (1, 180°)</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-rule">Formula</div>
-      <div class="rcnt">x = r cosθ &nbsp;,&nbsp; y = r sinθ</div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">(i) (3, 90°)</div>
-      <div class="rcnt">x = 3cos90° = 3×0 = 0 &nbsp;|&nbsp; y = 3sin90° = 3×1 = 3 → <span class="af">(0, 3)</span></div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">(ii) (1, 180°)</div>
-      <div class="rcnt">x = 1×cos180° = −1 &nbsp;|&nbsp; y = 1×sin180° = 0 → <span class="af">(−1, 0)</span></div>
-    </div>
-  </div>
-</div>
+<div class="qwrap">
+<div class="qtitle qt3"><span class="bx b3">Q 12</span>Cartesian from Polar: (i)(3, 90°) &nbsp; (ii)(1, 180°)</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-rule">Formula</span><div class="vcnt">
+    <span class="ml">x = r cosθ &nbsp;, y = r sinθ</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">(i) r=3,θ=90°</span><div class="vcnt">
+    <span class="ml">x = 3 × cos90° = 3 × 0 = 0</span>
+    <span class="ml">y = 3 × sin90° = 3 × 1 = 3</span>
+    <span class="ml th"><span class="af">(0, 3)</span></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">(ii) r=1,θ=180°</span><div class="vcnt">
+    <span class="ml">x = 1 × cos180° = 1 × (−1) = −1</span>
+    <span class="ml">y = 1 × sin180° = 1 × 0 = 0</span>
+    <span class="ml th"><span class="af">(−1, 0)</span></span>
+  </div></div>
+</div></div>
 
 <!-- Q13 -->
-<div class="qblock">
-  <div class="qh g"><span class="bx bg">Q 13</span>Find Polar co-ordinates from Cartesian: (i)(5,5) (ii)(1,√3) (iii)(−1,−1) (iv)(−√3,1)</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-rule">Formula</div>
-      <div class="rcnt">r = √(x²+y²) &nbsp;,&nbsp; tanθ = y/x &nbsp;(then find θ based on quadrant)</div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">(i) (5,5)</div>
-      <div class="rcnt">r = √(25+25) = 5√2 &nbsp;|&nbsp; tanθ = 5/5 = 1 → Q1 → θ = 45° → <span class="af">(5√2, 45°)</span></div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">(ii) (1,√3)</div>
-      <div class="rcnt">r = √(1+3) = 2 &nbsp;|&nbsp; tanθ = √3/1 = √3 → Q1 → θ = 60° → <span class="af">(2, 60°)</span></div>
-    </div>
-    <div class="row"><div class="rlbl r-s3">(iii) (−1,−1)</div>
-      <div class="rcnt">r = √(1+1) = √2 &nbsp;|&nbsp; both negative → Q3 → tanθ = 1 → θ = 180°+45° = 225° → <span class="af">(√2, 225°)</span></div>
-    </div>
-    <div class="row"><div class="rlbl r-s4">(iv) (−√3,1)</div>
-      <div class="rcnt">r = √(3+1) = 2 &nbsp;|&nbsp; x−, y+ → Q2 → tanθ = 1/−√3 = −1/√3 → θ = 150° → <span class="af">(2, 150°)</span></div>
-    </div>
-  </div>
-</div>
+<div class="qwrap">
+<div class="qtitle qt3"><span class="bx b3">Q 13</span>Polar from Cartesian: (i)(5,5) &nbsp; (ii)(1,√3) &nbsp; (iii)(−1,−1) &nbsp; (iv)(−√3,1)</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-rule">Formula</span><div class="vcnt">
+    <span class="ml">r = √(x²+y²) &nbsp;, tanθ = y/x → find θ by quadrant</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">(i)(5,5)</span><div class="vcnt">
+    <span class="ml">r = √(25+25) = √50 = 5√2</span>
+    <span class="ml">tanθ = 5/5 = 1 → Q1 → θ = 45°</span>
+    <span class="ml th"><span class="af">(5√2, 45°)</span></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">(ii)(1,√3)</span><div class="vcnt">
+    <span class="ml">r = √(1+3) = √4 = 2</span>
+    <span class="ml">tanθ = √3/1 = √3 → Q1 → θ = 60°</span>
+    <span class="ml th"><span class="af">(2, 60°)</span></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">(iii)(−1,−1)</span><div class="vcnt">
+    <span class="ml">r = √(1+1) = √2</span>
+    <span class="ml">x negative, y negative → Q3</span>
+    <span class="ml">tanθ = (−1)/(−1) = 1 → θ = 180°+45° = 225°</span>
+    <span class="ml th"><span class="af">(√2, 225°)</span></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">(iv)(−√3,1)</span><div class="vcnt">
+    <span class="ml">r = √(3+1) = √4 = 2</span>
+    <span class="ml">x negative, y positive → Q2</span>
+    <span class="ml">tanθ = 1/(−√3) = −1/√3 → θ = 180°−30° = 150°</span>
+    <span class="ml th"><span class="af">(2, 150°)</span></span>
+  </div></div>
+</div></div>
 
 <!-- Q14 -->
-<div class="qblock">
-  <div class="qh g"><span class="bx bg">Q 14</span>Find the value of: (i) sin(19π/3) &nbsp; (ii) cos1140° &nbsp; (iii) cot(25π/3)</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-rule">Rule</div>
-      <div class="rcnt">Subtract full cycles: sin period = 2π, cos period = 2π, cot period = π</div>
-    </div>
-    <div class="row"><div class="rlbl r-s1">(i)</div>
-      <div class="rcnt">sin(19π/3) = sin(6π + π/3) = sin(π/3) = <span class="af">√3/2</span></div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">(ii)</div>
-      <div class="rcnt">cos1140° = cos(3×360° + 60°) = cos60° = <span class="af">1/2</span></div>
-    </div>
-    <div class="row"><div class="rlbl r-s3">(iii)</div>
-      <div class="rcnt">cot(25π/3) = cot(8π + π/3) = cot(π/3) = <span class="af">1/√3</span></div>
-    </div>
-  </div>
+<div class="qwrap">
+<div class="qtitle qt3"><span class="bx b3">Q 14</span>Find: (i) sin(19π/3) &nbsp; (ii) cos1140° &nbsp; (iii) cot(25π/3)</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-rule">Rule</span><div class="vcnt">
+    <span class="ml">Subtract full cycles: sin &amp; cos period = 2π &nbsp;, cot period = π</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">(i)</span><div class="vcnt">
+    <span class="ml">sin(19π/3)</span>
+    <span class="ml eq">sin(18π/3 + π/3)</span>
+    <span class="ml eq">sin(6π + π/3)</span>
+    <span class="ml">6π = 3 full cycles → remove</span>
+    <span class="ml eq">sin(π/3)</span>
+    <span class="ml th"><span class="af">√3/2</span></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">(ii)</span><div class="vcnt">
+    <span class="ml">cos1140°</span>
+    <span class="ml eq">cos(3 × 360° + 60°)</span>
+    <span class="ml">3 full rotations → remove</span>
+    <span class="ml eq">cos(60°)</span>
+    <span class="ml th"><span class="af">1/2</span></span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">(iii)</span><div class="vcnt">
+    <span class="ml">cot(25π/3)</span>
+    <span class="ml eq">cot(24π/3 + π/3)</span>
+    <span class="ml eq">cot(8π + π/3)</span>
+    <span class="ml">8π = 8 full cycles → remove</span>
+    <span class="ml eq">cot(π/3)</span>
+    <span class="ml th"><span class="af">1/√3</span></span>
+  </div></div>
+</div></div>
 </div>
-</div><!-- end Q12-Q14 page -->
 
 
-<!-- ══════════════════════════════════
-     EXERCISE 2.2 Q15 — ALL PROOFS
-══════════════════════════════════════ -->
+<!-- ═══════════════════════ Q15 ALL PROOFS ═══════════════════════ -->
 <div class="page pb">
-<div class="exhdr4">✅ EXERCISE 2.2 — Q15 All Identity Proofs (Serial Wise)</div>
+<div class="sh sh4">✅ EXERCISE 2.2 — Q15 All Identity Proofs (i to xii)</div>
 
-<!-- Q15 (i) -->
-<div class="qblock">
-  <div class="qh v"><span class="bx bv">Q15 (i)</span>Prove: (1+tan²A)(1 + 1/tan²A) = 1/(sin²A − sin⁴A)</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-s1">LHS</div>
-      <div class="rcnt">= sec²A × cosec²A &nbsp;&nbsp;[1+tan²A=sec²A, 1+cot²A=cosec²A]</div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">Simplify</div>
-      <div class="rcnt">= 1/(cos²A × sin²A)</div>
-    </div>
-    <div class="row"><div class="rlbl r-s3">RHS</div>
-      <div class="rcnt">= 1/(sin²A − sin⁴A) = 1/[sin²A(1−sin²A)] = 1/(sin²A × cos²A)</div>
-    </div>
-    <div class="row"><div class="rlbl r-prove">Proved</div>
-      <div class="rcnt"><span class="af">LHS = RHS = 1/(sin²A cos²A) ✓</span></div>
-    </div>
-  </div>
-</div>
+<!-- (i) -->
+<div class="qwrap">
+<div class="qtitle qt4"><span class="bx b4">Q15 (i)</span>Prove: (1+tan²A)(1 + 1/tan²A) = 1/(sin²A − sin⁴A)</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-step">LHS</span><div class="vcnt">
+    <span class="ml">= (1+tan²A) × (1+cot²A)</span>
+    <span class="ml">= sec²A × cosec²A</span>
+    <span class="ml eq">1/cos²A × 1/sin²A</span>
+    <span class="ml eq">1/(sin²A cos²A)</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">RHS</span><div class="vcnt">
+    <span class="ml">1/(sin²A − sin⁴A)</span>
+    <span class="ml eq">1/[sin²A(1 − sin²A)]</span>
+    <span class="ml eq">1/(sin²A × cos²A)</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-prove">Proved</span><div class="vcnt">
+    <span class="ml th"><span class="af">LHS = RHS = 1/(sin²A cos²A) ✓</span></span>
+  </div></div>
+</div></div>
 
-<!-- Q15 (ii) -->
-<div class="qblock">
-  <div class="qh v"><span class="bx bv">Q15 (ii)</span>Prove: (cos²A − 1)(cot²A + 1) = −1</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-s1">Step 1</div>
-      <div class="rcnt">cos²A − 1 = −sin²A &nbsp;&nbsp;&nbsp; cot²A + 1 = cosec²A</div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">LHS</div>
-      <div class="rcnt">= (−sin²A)(cosec²A) = −sin²A × 1/sin²A = −1</div>
-    </div>
-    <div class="row"><div class="rlbl r-prove">Proved</div>
-      <div class="rcnt"><span class="af">LHS = −1 = RHS ✓</span></div>
-    </div>
-  </div>
-</div>
+<!-- (ii) -->
+<div class="qwrap">
+<div class="qtitle qt4"><span class="bx b4">Q15 (ii)</span>Prove: (cos²A − 1)(cot²A + 1) = −1</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-step">LHS</span><div class="vcnt">
+    <span class="ml">= (cos²A − 1) × (cot²A + 1)</span>
+    <span class="ml">cos²A − 1 = −sin²A &nbsp;&nbsp;[from sin²A + cos²A = 1]</span>
+    <span class="ml">cot²A + 1 = cosec²A &nbsp;&nbsp;[identity 3]</span>
+    <span class="ml eq">(−sin²A)(cosec²A)</span>
+    <span class="ml eq">−sin²A × 1/sin²A</span>
+    <span class="ml eq">−1</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-prove">Proved</span><div class="vcnt">
+    <span class="ml th"><span class="af">LHS = −1 = RHS ✓</span></span>
+  </div></div>
+</div></div>
 
-<!-- Q15 (iii) -->
-<div class="qblock">
-  <div class="qh v"><span class="bx bv">Q15 (iii)</span>Prove: (sinθ+secθ)² + (cosθ+cosecθ)² = (1+secθ cosecθ)²</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-s1">Expand LHS</div>
-      <div class="rcnt">= sin²θ + 2sinθsecθ + sec²θ + cos²θ + 2cosθcosecθ + cosec²θ</div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">Group</div>
-      <div class="rcnt">= (sin²θ+cos²θ) + (sec²θ+cosec²θ) + 2(sinθ/cosθ + cosθ/sinθ)<br/>
-        = 1 + sec²θcosec²θ + 2secθcosecθ</div>
-    </div>
-    <div class="row"><div class="rlbl r-prove">Proved</div>
-      <div class="rcnt">= (1 + secθcosecθ)² = <span class="af">RHS ✓</span></div>
-    </div>
-  </div>
-</div>
+<!-- (iii) -->
+<div class="qwrap">
+<div class="qtitle qt4"><span class="bx b4">Q15 (iii)</span>Prove: (sinθ+secθ)² + (cosθ+cosecθ)² = (1+secθcosecθ)²</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-step">Expand LHS</span><div class="vcnt">
+    <span class="ml">= sin²θ + 2sinθsecθ + sec²θ + cos²θ + 2cosθcosecθ + cosec²θ</span>
+    <span class="ml">= (sin²θ+cos²θ) + (sec²θ+cosec²θ) + 2sinθsecθ + 2cosθcosecθ</span>
+    <span class="ml">= 1 + sec²θcosec²θ + 2(sinθ/cosθ + cosθ/sinθ)</span>
+    <span class="ml">= 1 + sec²θcosec²θ + 2(sin²θ+cos²θ)/(sinθcosθ)</span>
+    <span class="ml">= 1 + sec²θcosec²θ + 2secθcosecθ</span>
+    <span class="ml">= (1 + secθcosecθ)²</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-prove">Proved</span><div class="vcnt">
+    <span class="ml th"><span class="af">= RHS ✓</span></span>
+  </div></div>
+</div></div>
 
-<!-- Q15 (iv) -->
-<div class="qblock">
-  <div class="qh v"><span class="bx bv">Q15 (iv)</span>Prove: (1+cotθ−cosecθ)(1+tanθ+secθ) = 2</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-s1">Convert</div>
-      <div class="rcnt">= [(sinθ+cosθ−1)/sinθ] × [(cosθ+sinθ+1)/cosθ]</div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">Multiply</div>
-      <div class="rcnt">= [(sinθ+cosθ)² − 1] / (sinθcosθ)<br/>
-        = [1 + 2sinθcosθ − 1] / sinθcosθ = 2sinθcosθ/sinθcosθ</div>
-    </div>
-    <div class="row"><div class="rlbl r-prove">Proved</div>
-      <div class="rcnt"><span class="af">= 2 = RHS ✓</span></div>
-    </div>
-  </div>
-</div>
+<!-- (iv) -->
+<div class="qwrap">
+<div class="qtitle qt4"><span class="bx b4">Q15 (iv)</span>Prove: (1+cotθ−cosecθ)(1+tanθ+secθ) = 2</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-step">Convert</span><div class="vcnt">
+    <span class="ml">First factor = (sinθ + cosθ − 1)/sinθ</span>
+    <span class="ml">Second factor = (cosθ + sinθ + 1)/cosθ</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">Multiply</span><div class="vcnt">
+    <span class="ml">LHS = [(sinθ+cosθ−1)(sinθ+cosθ+1)] / (sinθcosθ)</span>
+    <span class="ml">= [(sinθ+cosθ)² − 1] / (sinθcosθ)</span>
+    <span class="ml">= [sin²θ + 2sinθcosθ + cos²θ − 1] / (sinθcosθ)</span>
+    <span class="ml">= [1 + 2sinθcosθ − 1] / (sinθcosθ)</span>
+    <span class="ml">= 2sinθcosθ / (sinθcosθ)</span>
+    <span class="ml">= 2</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-prove">Proved</span><div class="vcnt">
+    <span class="ml th"><span class="af">LHS = 2 = RHS ✓</span></span>
+  </div></div>
+</div></div>
 
-<!-- Q15 (v) -->
-<div class="qblock">
-  <div class="qh v"><span class="bx bv">Q15 (v)</span>Prove: tan³θ/(1+tan²θ) + cot³θ/(1+cot²θ) = secθcosecθ − 2sinθcosθ</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-s1">Simplify</div>
-      <div class="rcnt">tan³θ/sec²θ = sin³θ/cosθ &nbsp;&nbsp; cot³θ/cosec²θ = cos³θ/sinθ</div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">LHS</div>
-      <div class="rcnt">= sin³θ/cosθ + cos³θ/sinθ = (sin⁴θ+cos⁴θ)/(sinθcosθ)</div>
-    </div>
-    <div class="row"><div class="rlbl r-s3">Use identity</div>
-      <div class="rcnt">sin⁴θ + cos⁴θ = (sin²θ+cos²θ)² − 2sin²θcos²θ = 1 − 2sin²θcos²θ</div>
-    </div>
-    <div class="row"><div class="rlbl r-s4">Final</div>
-      <div class="rcnt">= (1−2sin²θcos²θ)/(sinθcosθ) = 1/(sinθcosθ) − 2sinθcosθ = secθcosecθ − 2sinθcosθ</div>
-    </div>
-    <div class="row"><div class="rlbl r-prove">Proved</div>
-      <div class="rcnt"><span class="af">RHS ✓</span></div>
-    </div>
-  </div>
-</div>
+<!-- (v) -->
+<div class="qwrap">
+<div class="qtitle qt4"><span class="bx b4">Q15 (v)</span>Prove: tan³θ/(1+tan²θ) + cot³θ/(1+cot²θ) = secθcosecθ − 2sinθcosθ</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-step">Simplify</span><div class="vcnt">
+    <span class="ml">1+tan²θ = sec²θ → tan³θ/sec²θ = sin³θ/cosθ</span>
+    <span class="ml">1+cot²θ = cosec²θ → cot³θ/cosec²θ = cos³θ/sinθ</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">LHS</span><div class="vcnt">
+    <span class="ml">= sin³θ/cosθ + cos³θ/sinθ</span>
+    <span class="ml">= (sin⁴θ + cos⁴θ) / (sinθcosθ)</span>
+    <span class="ml">sin⁴θ + cos⁴θ = (sin²θ+cos²θ)² − 2sin²θcos²θ = 1 − 2sin²θcos²θ</span>
+    <span class="ml">= (1 − 2sin²θcos²θ) / (sinθcosθ)</span>
+    <span class="ml">= 1/(sinθcosθ) − 2sinθcosθ</span>
+    <span class="ml">= secθcosecθ − 2sinθcosθ</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-prove">Proved</span><div class="vcnt">
+    <span class="ml th"><span class="af">= RHS ✓</span></span>
+  </div></div>
+</div></div>
 
-<!-- Q15 (vi) -->
-<div class="qblock">
-  <div class="qh v"><span class="bx bv">Q15 (vi)</span>Prove: 1/(secθ+tanθ) − 1/cosθ = 1/cosθ − 1/(secθ−tanθ)</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-s1">LHS</div>
-      <div class="rcnt">1/(secθ+tanθ) = (secθ−tanθ)/1 = secθ−tanθ &nbsp;[multiply by (secθ−tanθ)/(secθ−tanθ)]<br/>
-        LHS = secθ − tanθ − secθ = <b>−tanθ</b></div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">RHS</div>
-      <div class="rcnt">1/(secθ−tanθ) = secθ+tanθ<br/>
-        RHS = secθ − (secθ+tanθ) = <b>−tanθ</b></div>
-    </div>
-    <div class="row"><div class="rlbl r-prove">Proved</div>
-      <div class="rcnt"><span class="af">LHS = −tanθ = RHS ✓</span></div>
-    </div>
-  </div>
-</div>
+<!-- (vi) -->
+<div class="qwrap">
+<div class="qtitle qt4"><span class="bx b4">Q15 (vi)</span>Prove: 1/(secθ+tanθ) − 1/cosθ = 1/cosθ − 1/(secθ−tanθ)</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-step">Simplify</span><div class="vcnt">
+    <span class="ml">1/(secθ+tanθ) × (secθ−tanθ)/(secθ−tanθ)</span>
+    <span class="ml">= (secθ−tanθ)/(sec²θ−tan²θ)</span>
+    <span class="ml">= (secθ−tanθ)/1 = secθ−tanθ</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">LHS</span><div class="vcnt">
+    <span class="ml">= (secθ−tanθ) − secθ</span>
+    <span class="ml">= −tanθ</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-step">RHS</span><div class="vcnt">
+    <span class="ml">1/(secθ−tanθ) = secθ+tanθ &nbsp;(same trick)</span>
+    <span class="ml">RHS = secθ − (secθ+tanθ) = −tanθ</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-prove">Proved</span><div class="vcnt">
+    <span class="ml th"><span class="af">LHS = −tanθ = RHS ✓</span></span>
+  </div></div>
+</div></div>
 
-<!-- Q15 (vii) -->
-<div class="qblock">
-  <div class="qh v"><span class="bx bv">Q15 (vii)</span>Prove: sinθ/(1+cosθ) + (1+cosθ)/sinθ = 2cosecθ</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-s1">LHS</div>
-      <div class="rcnt">= [sin²θ + (1+cosθ)²] / [sinθ(1+cosθ)]</div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">Numerator</div>
-      <div class="rcnt">sin²θ + 1 + 2cosθ + cos²θ = 1 + 1 + 2cosθ = 2(1+cosθ)</div>
-    </div>
-    <div class="row"><div class="rlbl r-s3">Simplify</div>
-      <div class="rcnt">= 2(1+cosθ) / [sinθ(1+cosθ)] = 2/sinθ = 2cosecθ</div>
-    </div>
-    <div class="row"><div class="rlbl r-prove">Proved</div>
-      <div class="rcnt"><span class="af">= 2cosecθ = RHS ✓</span></div>
-    </div>
-  </div>
-</div>
+<!-- (vii) -->
+<div class="qwrap">
+<div class="qtitle qt4"><span class="bx b4">Q15 (vii)</span>Prove: sinθ/(1+cosθ) + (1+cosθ)/sinθ = 2cosecθ</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-step">LHS</span><div class="vcnt">
+    <span class="ml">= [sin²θ + (1+cosθ)²] / [sinθ(1+cosθ)]</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-num">Numerator</span><div class="vcnt">
+    <span class="ml">sin²θ + (1+cosθ)²</span>
+    <span class="ml eq">sin²θ + 1 + 2cosθ + cos²θ</span>
+    <span class="ml eq">(sin²θ + cos²θ) + 1 + 2cosθ</span>
+    <span class="ml eq">1 + 1 + 2cosθ</span>
+    <span class="ml eq">2 + 2cosθ = 2(1+cosθ)</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-div">Simplify</span><div class="vcnt">
+    <span class="ml">= 2(1+cosθ) / [sinθ(1+cosθ)]</span>
+    <span class="ml">= 2/sinθ</span>
+    <span class="ml">= 2cosecθ</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-prove">Proved</span><div class="vcnt">
+    <span class="ml th"><span class="af">= 2cosecθ = RHS ✓</span></span>
+  </div></div>
+</div></div>
 
-<!-- Q15 (viii) -->
-<div class="qblock">
-  <div class="qh v"><span class="bx bv">Q15 (viii)</span>Prove: tanθ/(secθ−1) = (secθ+1)/tanθ</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-s1">LHS</div>
-      <div class="rcnt">Multiply top and bottom by (secθ+1):<br/>
-        = tanθ(secθ+1)/(sec²θ−1) = tanθ(secθ+1)/tan²θ = (secθ+1)/tanθ</div>
-    </div>
-    <div class="row"><div class="rlbl r-prove">Proved</div>
-      <div class="rcnt"><span class="af">= (secθ+1)/tanθ = RHS ✓</span></div>
-    </div>
-  </div>
-</div>
+<!-- (viii) -->
+<div class="qwrap">
+<div class="qtitle qt4"><span class="bx b4">Q15 (viii)</span>Prove: tanθ/(secθ−1) = (secθ+1)/tanθ</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-step">LHS</span><div class="vcnt">
+    <span class="ml">= tanθ/(secθ−1)</span>
+    <span class="ml">Multiply top and bottom by (secθ+1):</span>
+    <span class="ml">= tanθ(secθ+1) / [(secθ−1)(secθ+1)]</span>
+    <span class="ml">= tanθ(secθ+1) / (sec²θ−1)</span>
+    <span class="ml">sec²θ−1 = tan²θ &nbsp;[from identity 2]</span>
+    <span class="ml">= tanθ(secθ+1) / tan²θ</span>
+    <span class="ml">= (secθ+1) / tanθ</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-prove">Proved</span><div class="vcnt">
+    <span class="ml th"><span class="af">= (secθ+1)/tanθ = RHS ✓</span></span>
+  </div></div>
+</div></div>
 
-<!-- Q15 (ix) -->
-<div class="qblock">
-  <div class="qh v"><span class="bx bv">Q15 (ix)</span>Prove: cotθ/(cosecθ−1) = (cosecθ+1)/cotθ</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-s1">LHS</div>
-      <div class="rcnt">Multiply top and bottom by (cosecθ+1):<br/>
-        = cotθ(cosecθ+1)/(cosec²θ−1) = cotθ(cosecθ+1)/cot²θ = (cosecθ+1)/cotθ</div>
-    </div>
-    <div class="row"><div class="rlbl r-prove">Proved</div>
-      <div class="rcnt"><span class="af">= (cosecθ+1)/cotθ = RHS ✓</span></div>
-    </div>
-  </div>
-</div>
+<!-- (ix) -->
+<div class="qwrap">
+<div class="qtitle qt4"><span class="bx b4">Q15 (ix)</span>Prove: cotθ/(cosecθ−1) = (cosecθ+1)/cotθ</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-step">LHS</span><div class="vcnt">
+    <span class="ml">= cotθ/(cosecθ−1)</span>
+    <span class="ml">Multiply top and bottom by (cosecθ+1):</span>
+    <span class="ml">= cotθ(cosecθ+1) / [(cosecθ−1)(cosecθ+1)]</span>
+    <span class="ml">= cotθ(cosecθ+1) / (cosec²θ−1)</span>
+    <span class="ml">cosec²θ−1 = cot²θ &nbsp;[from identity 3]</span>
+    <span class="ml">= cotθ(cosecθ+1) / cot²θ</span>
+    <span class="ml">= (cosecθ+1) / cotθ</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-prove">Proved</span><div class="vcnt">
+    <span class="ml th"><span class="af">= (cosecθ+1)/cotθ = RHS ✓</span></span>
+  </div></div>
+</div></div>
 
-<!-- Q15 (x) -->
-<div class="qblock">
-  <div class="qh v"><span class="bx bv">Q15 (x)</span>Prove: (secA+cosA)(secA−cosA) = tan²A + sin²A</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-s1">LHS</div>
-      <div class="rcnt">= sec²A − cos²A = (1+tan²A) − (1−sin²A) = 1 + tan²A − 1 + sin²A</div>
-    </div>
-    <div class="row"><div class="rlbl r-prove">Proved</div>
-      <div class="rcnt"><span class="af">= tan²A + sin²A = RHS ✓</span></div>
-    </div>
-  </div>
-</div>
+<!-- (x) -->
+<div class="qwrap">
+<div class="qtitle qt4"><span class="bx b4">Q15 (x)</span>Prove: (secA+cosA)(secA−cosA) = tan²A + sin²A</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-step">LHS</span><div class="vcnt">
+    <span class="ml">= (secA+cosA)(secA−cosA)</span>
+    <span class="ml">= sec²A − cos²A &nbsp;&nbsp;[(a+b)(a−b) = a²−b²]</span>
+    <span class="ml">sec²A = 1 + tan²A</span>
+    <span class="ml">cos²A = 1 − sin²A</span>
+    <span class="ml">= (1 + tan²A) − (1 − sin²A)</span>
+    <span class="ml">= 1 + tan²A − 1 + sin²A</span>
+    <span class="ml">= tan²A + sin²A</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-prove">Proved</span><div class="vcnt">
+    <span class="ml th"><span class="af">= tan²A + sin²A = RHS ✓</span></span>
+  </div></div>
+</div></div>
 
-<!-- Q15 (xi) -->
-<div class="qblock">
-  <div class="qh v"><span class="bx bv">Q15 (xi)</span>Prove: 1 + 3cosec²θ·cot²θ + cot⁶θ = cosec⁶θ</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-s1">RHS</div>
-      <div class="rcnt">cosec⁶θ = (cosec²θ)³ = (1+cot²θ)³</div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">Expand</div>
-      <div class="rcnt">= 1 + 3cot²θ + 3cot⁴θ + cot⁶θ = 1 + 3cot²θ(1+cot²θ) + cot⁶θ<br/>
-        = 1 + 3cot²θ·cosec²θ + cot⁶θ</div>
-    </div>
-    <div class="row"><div class="rlbl r-prove">Proved</div>
-      <div class="rcnt"><span class="af">= LHS ✓</span></div>
-    </div>
-  </div>
-</div>
+<!-- (xi) -->
+<div class="qwrap">
+<div class="qtitle qt4"><span class="bx b4">Q15 (xi)</span>Prove: 1 + 3cosec²θ·cot²θ + cot⁶θ = cosec⁶θ</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-step">Start from RHS</span><div class="vcnt">
+    <span class="ml">cosec⁶θ = (cosec²θ)³</span>
+    <span class="ml">cosec²θ = 1 + cot²θ</span>
+    <span class="ml">= (1 + cot²θ)³</span>
+    <span class="ml">Using (a+b)³ = a³ + 3a²b + 3ab² + b³:</span>
+    <span class="ml">= 1 + 3×1²×cot²θ + 3×1×cot⁴θ + cot⁶θ</span>
+    <span class="ml">= 1 + 3cot²θ + 3cot⁴θ + cot⁶θ</span>
+    <span class="ml">= 1 + 3cot²θ(1 + cot²θ) + cot⁶θ</span>
+    <span class="ml">= 1 + 3cot²θ · cosec²θ + cot⁶θ</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-prove">Proved</span><div class="vcnt">
+    <span class="ml th"><span class="af">= LHS ✓</span></span>
+  </div></div>
+</div></div>
 
-<!-- Q15 (xii) -->
-<div class="qblock">
-  <div class="qh v"><span class="bx bv">Q15 (xii)</span>Prove: (1−secθ+tanθ)/(1+secθ−tanθ) = (secθ+tanθ−1)/(secθ+tanθ+1)</div>
-  <div class="qbody">
-    <div class="row"><div class="rlbl r-s1">LHS Numerator</div>
-      <div class="rcnt">(1−secθ+tanθ)(secθ+tanθ+1) = (1+tanθ−secθ)(1+tanθ+secθ) = (1+tanθ)² − sec²θ<br/>
-        = 1 + 2tanθ + tan²θ − sec²θ = 1 + 2tanθ − 1 = 2tanθ</div>
-    </div>
-    <div class="row"><div class="rlbl r-s2">LHS Denominator</div>
-      <div class="rcnt">(1+secθ−tanθ)(secθ+tanθ+1) = (1+secθ−tanθ)(1+secθ+tanθ) = (1+secθ)² − tan²θ<br/>
-        = 1 + 2secθ + sec²θ − tan²θ = 1 + 2secθ + 1 = 2(1+secθ)</div>
-    </div>
-    <div class="row"><div class="rlbl r-s3">Result</div>
-      <div class="rcnt">LHS = 2tanθ/[2(1+secθ)] = tanθ/(1+secθ). Similarly RHS simplifies to same.</div>
-    </div>
-    <div class="row"><div class="rlbl r-prove">Proved</div>
-      <div class="rcnt"><span class="af">LHS = RHS ✓</span></div>
-    </div>
-  </div>
-</div>
+<!-- (xii) -->
+<div class="qwrap">
+<div class="qtitle qt4"><span class="bx b4">Q15 (xii)</span>Prove: (1−secθ+tanθ)/(1+secθ−tanθ) = (secθ+tanθ−1)/(secθ+tanθ+1)</div>
+<div class="vsol">
+  <div class="vline"><span class="vtag vt-num">Numerator of LHS</span><div class="vcnt">
+    <span class="ml">Multiply (1−secθ+tanθ) by (secθ+tanθ+1):</span>
+    <span class="ml">= (1+tanθ−secθ)(1+tanθ+secθ)</span>
+    <span class="ml">= (1+tanθ)² − sec²θ</span>
+    <span class="ml">= 1 + 2tanθ + tan²θ − sec²θ</span>
+    <span class="ml">tan²θ − sec²θ = −1 &nbsp;[identity 2]</span>
+    <span class="ml">= 1 + 2tanθ − 1</span>
+    <span class="ml">= 2tanθ</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-den">Denominator of LHS</span><div class="vcnt">
+    <span class="ml">Multiply (1+secθ−tanθ) by (secθ+tanθ+1):</span>
+    <span class="ml">= (1+secθ−tanθ)(1+secθ+tanθ)</span>
+    <span class="ml">= (1+secθ)² − tan²θ</span>
+    <span class="ml">= 1 + 2secθ + sec²θ − tan²θ</span>
+    <span class="ml">sec²θ − tan²θ = 1 &nbsp;[identity 2]</span>
+    <span class="ml">= 1 + 2secθ + 1</span>
+    <span class="ml">= 2 + 2secθ = 2(1+secθ)</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-div">Divide</span><div class="vcnt">
+    <span class="ml">LHS = 2tanθ / 2(1+secθ) = tanθ/(1+secθ)</span>
+    <span class="ml">RHS = (secθ+tanθ−1)/(secθ+tanθ+1)</span>
+    <span class="ml">Both simplify to tanθ/(1+secθ)</span>
+  </div></div>
+  <div class="vline"><span class="vtag vt-prove">Proved</span><div class="vcnt">
+    <span class="ml th"><span class="af">LHS = RHS ✓</span></span>
+  </div></div>
+</div></div>
 
-<div style="text-align:center;margin-top:24px;font-size:11px;color:#aaa;border-top:1px solid #eee;padding-top:12px">
-  Visions Learning · Class 11 Maths Paper 1 · Chapter 2: Trigonometry · All Questions — Serial Wise Simple Method
+<div style="text-align:center;margin-top:22px;font-size:11px;color:#aaa;border-top:1px solid #ececec;padding-top:12px">
+  Visions Learning · Class 11 Maths Paper 1 · Chapter 2: Trigonometry · All Questions Serial Wise · Vertical Steps
 </div>
-</div><!-- end Q15 page -->
+</div>
 
 </body>
 </html>
