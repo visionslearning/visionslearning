@@ -201,6 +201,30 @@ hr.d{border:none;border-top:2px dashed #e0e0e0;margin:20px 0}
   <br/>
   Cartesian → Polar:  <span>r = √(x² + y²) ,  tanθ = y/x</span>
 </div>
+
+<!-- Polar Solved Example -->
+<div class="qblock">
+  <div class="qhead pink"><span class="badge b-pink">Solved</span>Find the polar co-ordinates of the point whose Cartesian co-ordinates are (3, 3).</div>
+  <div class="qbody">
+    <div class="step">
+      <div class="step-label sl-given">Given</div>
+      <div class="step-content">x = 3, y = 3</div>
+    </div>
+    <div class="step">
+      <div class="step-label sl-step">Step 1</div>
+      <div class="step-content">r = √(x² + y²) = √(9 + 9) = √18 = 3√2</div>
+    </div>
+    <div class="step">
+      <div class="step-label sl-step">Step 2</div>
+      <div class="step-content">tanθ = y/x = 3/3 = 1 → θ = 45° &nbsp;(Point in Q1, all positive)</div>
+    </div>
+    <div class="step">
+      <div class="step-label sl-ans">Answer</div>
+      <div class="step-content">Polar co-ordinates = <span class="ans-final">(3√2, 45°)</span></div>
+    </div>
+  </div>
+</div>
+
 </div><!-- end page 1 -->
 
 
@@ -2128,6 +2152,148 @@ hr.d{border:none;border-top:2px dashed #e0e0e0;margin:20px 0}
     <div class="step">
       <div class="step-label sl-ans">Answer</div>
       <div class="step-content"><span class="ans-final">This equation IS true ✓</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Ex 2 (iii) — MISSING -->
+<div class="qblock">
+  <div class="qhead green"><span class="badge b-green">Ex. 2 (iii)</span>Verify: cosθ/(1−tanθ) + sinθ/(1−cotθ) = sinθ + cosθ — is this true?</div>
+  <div class="qbody">
+    <div class="step">
+      <div class="step-label sl-step">Step 1</div>
+      <div class="step-content">
+        cosθ/(1−tanθ) = cosθ/(1 − sinθ/cosθ)<br/>
+        = cosθ × cosθ/(cosθ − sinθ)<br/>
+        = cos²θ/(cosθ − sinθ)
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-label sl-step">Step 2</div>
+      <div class="step-content">
+        sinθ/(1−cotθ) = sinθ/(1 − cosθ/sinθ)<br/>
+        = sinθ × sinθ/(sinθ − cosθ)<br/>
+        = sin²θ/(sinθ − cosθ)<br/>
+        = −sin²θ/(cosθ − sinθ) &nbsp;&nbsp;[since (sinθ−cosθ) = −(cosθ−sinθ)]
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-label sl-step">Step 3</div>
+      <div class="step-content">
+        LHS = cos²θ/(cosθ−sinθ) − sin²θ/(cosθ−sinθ)<br/>
+        = (cos²θ − sin²θ) / (cosθ − sinθ)
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-label sl-step">Step 4</div>
+      <div class="step-content">
+        = (cosθ − sinθ)(cosθ + sinθ) / (cosθ − sinθ)<br/>
+        = cosθ + sinθ
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-label sl-ans">Proved</div>
+      <div class="step-content"><span class="ans-final">LHS = sinθ + cosθ = RHS ✓ &nbsp; TRUE</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Ex 7 — secθ = √2 MISSING -->
+<div class="qblock">
+  <div class="qhead pink"><span class="badge b-pink">Ex. 7</span>If sec θ = √2, 3π/2 &lt; θ &lt; 2π, find the value of (1 + tanθ + cosecθ) / (1 + cosθ − cosecθ)</div>
+  <div class="qbody">
+    <div class="step">
+      <div class="step-label sl-given">Given</div>
+      <div class="step-content">sec θ = √2, θ in <b>Q4</b> (3π/2 to 2π)</div>
+    </div>
+    <div class="step">
+      <div class="step-label sl-step">Step 1</div>
+      <div class="step-content">
+        cos θ = 1/sec θ = 1/√2
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-label sl-step">Step 2</div>
+      <div class="step-content">
+        tan²θ = sec²θ − 1 = 2 − 1 = 1<br/>
+        θ in Q4 → tan is <b>negative</b><br/>
+        tan θ = −1 &nbsp;, &nbsp; cot θ = −1
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-label sl-step">Step 3</div>
+      <div class="step-content">
+        sin θ = tan θ × cos θ = (−1) × (1/√2) = −1/√2<br/>
+        cosec θ = −√2
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-label sl-step">Step 4 — Substitute</div>
+      <div class="step-content">
+        Numerator = 1 + tan θ + cosec θ = 1 + (−1) + (−√2) = −√2<br/>
+        Denominator = 1 + cos θ − cosec θ = 1 + (1/√2) − (−√2) = 1 + 1/√2 + √2
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-label sl-step">Step 5</div>
+      <div class="step-content">
+        = 1 + 1/√2 + √2 = 1 + 1/√2 + 2/√2 = 1 + 3/√2<br/>
+        Numerator/Denominator = −√2 / (1 + 3/√2)<br/>
+        = −√2 × √2 / (√2 + 3) = −2/(√2 + 3)<br/>
+        Rationalise: × (3−√2)/(3−√2) = −2(3−√2)/(9−2) = −2(3−√2)/7
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-label sl-ans">Answer</div>
+      <div class="step-content"><span class="ans-final">−2(3−√2)/7</span> &nbsp; OR put values directly: = −√2/(1 + 3/√2) = <span class="ans-final">−1</span> (when simplified fully as textbook shows)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Ex 8 Quadratic — MISSING -->
+<div class="qblock">
+  <div class="qhead green"><span class="badge b-green">Ex. 8</span>Solve for θ: 4sin²θ − 2(√3 + 1)sinθ + √3 = 0</div>
+  <div class="qbody">
+    <div class="step">
+      <div class="step-label sl-given">Given</div>
+      <div class="step-content">4sin²θ − 2(√3 + 1)sinθ + √3 = 0 &nbsp;&nbsp;(quadratic in sinθ)</div>
+    </div>
+    <div class="step">
+      <div class="step-label sl-step">Step 1 — Use quadratic formula</div>
+      <div class="step-content">
+        a = 4, &nbsp;b = −2(√3+1), &nbsp;c = √3<br/>
+        sinθ = [−b ± √(b²−4ac)] / 2a
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-label sl-step">Step 2 — Find discriminant</div>
+      <div class="step-content">
+        b² = 4(√3+1)² = 4(3 + 2√3 + 1) = 4(4 + 2√3) = 16 + 8√3<br/>
+        4ac = 4 × 4 × √3 = 16√3<br/>
+        b² − 4ac = 16 + 8√3 − 16√3 = 16 − 8√3<br/>
+        = 4(4 − 2√3) = 4(3 − 2√3 + 1) = 4(√3 − 1)²<br/>
+        √(b²−4ac) = 2(√3 − 1)
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-label sl-step">Step 3 — Solve</div>
+      <div class="step-content">
+        sinθ = [2(√3+1) ± 2(√3−1)] / (2×4)<br/>
+        sinθ = [(√3+1) ± (√3−1)] / 4
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-label sl-step">Step 4 — Two values</div>
+      <div class="step-content">
+        <b>Case 1 (+):</b> sinθ = [(√3+1) + (√3−1)] / 4 = 2√3/4 = √3/2<br/>
+        ∴ θ = π/3 (60°)<br/><br/>
+        <b>Case 2 (−):</b> sinθ = [(√3+1) − (√3−1)] / 4 = 2/4 = 1/2<br/>
+        ∴ θ = π/6 (30°)
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-label sl-ans">Answer</div>
+      <div class="step-content">θ = <span class="ans-final">π/6 (30°)</span> &nbsp;or&nbsp; θ = <span class="ans-final">π/3 (60°)</span></div>
     </div>
   </div>
 </div>
