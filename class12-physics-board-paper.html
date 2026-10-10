@@ -1,186 +1,654 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Class 12 Physics — Board Exam Paper | Visions Classes</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Arial',sans-serif;background:#f0f0f0;padding:30px 10px;color:#111}
-.page{background:#fff;max-width:820px;margin:0 auto;padding:36px 50px;
-      border:2px solid #333;box-shadow:0 4px 20px rgba(0,0,0,.15)}
-@media print{body{background:#fff;padding:0}.page{box-shadow:none;border:none;padding:16mm 18mm}.no-print{display:none}}
-/* header */
-.vh{text-align:center;padding-bottom:12px;border-bottom:4px double #1a1a2e;margin-bottom:14px}
-.vh .iname{font-size:30px;font-weight:bold;letter-spacing:4px;text-transform:uppercase;color:#1a1a2e}
-.vh .iname span{color:#c0392b}
-.vh .tag{font-size:12px;font-style:italic;letter-spacing:2px;color:#555;margin-top:3px}
-.ph{text-align:center;border-bottom:2px solid #333;padding-bottom:12px;margin-bottom:14px}
-.ph .board{font-size:12px;color:#555;margin-bottom:4px}
-.ph h1{font-size:19px;font-weight:bold;margin:4px 0 2px}
-.ph h2{font-size:15px;font-weight:normal;color:#333;margin-bottom:4px}
-.ph .subject{font-size:16px;font-weight:bold;color:#1a1a2e;margin-top:4px}
-/* meta */
-.meta{display:flex;justify-content:space-between;font-size:13.5px;padding:9px 0;
-      border-bottom:1px solid #aaa;margin-bottom:14px}
-.meta span{font-weight:bold}
-/* instructions */
-.inst{background:#fafafa;border:1px solid #ccc;padding:10px 16px;margin-bottom:20px;font-size:13px}
-.inst p{font-weight:bold;margin-bottom:5px;font-size:13.5px}
-.inst ol{padding-left:20px} .inst ol li{margin-bottom:3px;line-height:1.8}
-/* section */
-.sec{background:#1a1a2e;color:#fff;padding:7px 14px;font-size:14px;font-weight:bold;
-     margin:22px 0 12px;display:flex;justify-content:space-between;align-items:center}
-.sec .mk{background:#fff;color:#1a1a2e;padding:2px 10px;border-radius:10px;font-size:12px;font-weight:bold}
-/* question */
-.q{margin-bottom:15px;font-size:14px;line-height:1.9}
-.q .qn{font-weight:bold;margin-right:4px}
-.q .qm{float:right;font-size:12.5px;color:#555;font-style:italic}
-.opts{display:grid;grid-template-columns:1fr 1fr;gap:4px 28px;margin:7px 0 7px 24px;font-size:13.5px}
-.slist{list-style:none;padding-left:22px;margin:4px 0}
-.slist li{margin-bottom:5px;font-size:13.5px;line-height:1.8}
-.blank{display:inline-block;border-bottom:1.5px solid #333;width:80px;margin:0 4px}
-.fig-box{border:1px dashed #888;padding:10px 14px;margin:7px 0 10px;font-size:13px;
-          line-height:2.5;background:#fdfdfd;text-align:center;color:#888}
-hr.d{border:none;border-top:1px solid #ddd;margin:10px 0}
-.print-btn{display:block;width:fit-content;margin:0 auto 16px;padding:9px 28px;
-           background:#1a1a2e;color:#fff;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Class 12 Physics – Maharashtra HSC Board Paper 2024-25 | Visions Classes</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f0f0f0;
+      padding: 30px 10px;
+      color: #111;
+    }
+
+    .page {
+      background: #fff;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 36px 50px;
+      border: 2px solid #333;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    /* ── VISIONS HEADER ── */
+    .visions-header {
+      text-align: center;
+      padding-bottom: 12px;
+      border-bottom: 4px double #1a1a2e;
+      margin-bottom: 14px;
+    }
+    .visions-header .inst-name {
+      font-size: 32px;
+      font-weight: bold;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #1a1a2e;
+    }
+    .visions-header .inst-name span { color: #c0392b; }
+    .visions-header .tagline {
+      font-size: 13px;
+      font-style: italic;
+      letter-spacing: 2px;
+      color: #555;
+      margin-top: 4px;
+    }
+
+    /* ── PAPER HEADER ── */
+    .header {
+      text-align: center;
+      border-bottom: 2px solid #333;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+    }
+    .header .board {
+      font-size: 12.5px;
+      color: #555;
+      margin-bottom: 4px;
+      letter-spacing: 0.5px;
+    }
+    .header h1 {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 5px 0 2px;
+      letter-spacing: 0.5px;
+    }
+    .header h2 {
+      font-size: 15.5px;
+      font-weight: bold;
+      color: #1a1a2e;
+      margin-bottom: 4px;
+    }
+    .header .subject-code {
+      font-size: 13px;
+      color: #444;
+      font-style: italic;
+    }
+
+    /* ── META ROW ── */
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13.5px;
+      padding: 9px 0;
+      border-bottom: 1px solid #aaa;
+      margin-bottom: 14px;
+    }
+    .meta span { font-weight: bold; }
+
+    /* ── INSTRUCTIONS ── */
+    .instructions {
+      background: #fafafa;
+      border: 1px solid #ccc;
+      padding: 10px 16px;
+      margin-bottom: 20px;
+      font-size: 13.5px;
+    }
+    .instructions p { font-weight: bold; margin-bottom: 6px; font-size: 14px; }
+    .instructions ol { padding-left: 20px; }
+    .instructions ol li { margin-bottom: 4px; line-height: 1.8; }
+
+    /* ── SECTION TITLE ── */
+    .section-title {
+      background: #1a1a2e;
+      color: #fff;
+      padding: 7px 14px;
+      font-size: 14px;
+      font-weight: bold;
+      margin: 22px 0 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .section-title .marks {
+      background: #fff;
+      color: #1a1a2e;
+      padding: 2px 10px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    /* ── QUESTION ── */
+    .question {
+      margin-bottom: 16px;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+    .question .qnum { font-weight: bold; margin-right: 4px; }
+    .question .qmarks {
+      float: right;
+      font-size: 12.5px;
+      color: #555;
+      font-style: italic;
+    }
+
+    /* ── MCQ OPTIONS ── */
+    .options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px 30px;
+      margin: 8px 0 8px 26px;
+      font-size: 13.5px;
+    }
+
+    /* ── SUB LIST ── */
+    .sub-list {
+      list-style: none;
+      padding-left: 22px;
+      margin: 5px 0;
+    }
+    .sub-list li { margin-bottom: 8px; font-size: 13.5px; line-height: 1.8; }
+
+    /* ── YEAR BADGE ── */
+    .year-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: bold;
+      padding: 1px 6px;
+      border-radius: 8px;
+      margin-left: 6px;
+      vertical-align: middle;
+      letter-spacing: 0.5px;
+    }
+    .y2022 { background: #d5e8d4; color: #2d6a2d; border: 1px solid #82b366; }
+    .y2023 { background: #dae8fc; color: #1a4a8a; border: 1px solid #6a9fd8; }
+    .y2024 { background: #fff2cc; color: #7a5c00; border: 1px solid #d6b656; }
+
+    /* ── ANS BADGE ── */
+    .ans-badge {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: bold;
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+      padding: 1px 7px;
+      border-radius: 8px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    /* ── DIVIDER ── */
+    hr.divider {
+      border: none;
+      border-top: 1px dashed #bbb;
+      margin: 16px 0;
+    }
+
+    /* ── NOTE ── */
+    .note {
+      font-size: 12.5px;
+      font-style: italic;
+      color: #666;
+      margin: 3px 0 6px 22px;
+    }
+
+    /* ── MARKS TABLE ── */
+    .marks-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 13px;
+    }
+    .marks-table th {
+      background: #1a1a2e;
+      color: #fff;
+      padding: 7px 10px;
+      text-align: left;
+    }
+    .marks-table td { padding: 6px 10px; border-bottom: 1px solid #ddd; }
+    .marks-table tr:nth-child(even) td { background: #f9f9f9; }
+    .marks-table .total td {
+      font-weight: bold;
+      background: #eef;
+      border-top: 2px solid #333;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      text-align: center;
+      margin-top: 28px;
+      font-size: 12.5px;
+      color: #555;
+      border-top: 2px double #333;
+      padding-top: 10px;
+      line-height: 1.8;
+    }
+
+    /* ── PRINT BUTTON ── */
+    .print-btn {
+      display: block;
+      margin: 22px auto 0;
+      padding: 10px 38px;
+      background: #1a1a2e;
+      color: #fff;
+      border: none;
+      font-size: 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      letter-spacing: 1px;
+    }
+    .print-btn:hover { background: #333; }
+
+    @media print {
+      body { background: #fff; padding: 0; }
+      .page { box-shadow: none; border: none; padding: 20px 30px; }
+      .no-print { display: none; }
+    }
+  </style>
 </head>
 <body>
-<button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
 <div class="page">
 
-<!-- HEADER -->
-<div class="vh">
-  <div class="iname"><span>Visions</span> Classes</div>
-  <div class="tag">"Learn Today, Lead Tomorrow" — Ambernath</div>
+  <!-- VISIONS CLASSES HEADING -->
+  <div class="visions-header">
+    <div class="inst-name">Visions <span>Classes</span></div>
+    <div class="tagline">✦ &nbsp; Learn Today, Lead Tomorrow &nbsp; ✦</div>
+  </div>
+
+  <!-- PAPER HEADER -->
+  <div class="header">
+    <div class="board">Maharashtra State Board of Secondary &amp; Higher Secondary Education, Pune</div>
+    <h1>HIGHER SECONDARY CERTIFICATE EXAMINATION 2024-25</h1>
+    <h2>PHYSICS</h2>
+    <div class="subject-code">Subject Code : 54 &nbsp;|&nbsp; Class XII &nbsp;|&nbsp; Science</div>
+  </div>
+
+  <!-- META -->
+  <div class="meta">
+    <div>Max. Marks : <span>70</span></div>
+    <div>Time : <span>3 Hours</span></div>
+  </div>
+
+  <!-- INSTRUCTIONS -->
+  <div class="instructions">
+    <p>General Instructions :</p>
+    <ol>
+      <li><strong>Q.1</strong> contains 10 Multiple Choice Questions of <strong>1 mark each</strong>. All are compulsory.</li>
+      <li><strong>Q.2 to Q.4</strong> — Attempt any <strong>8 out of 12</strong> questions (1 mark each = <strong>8 marks</strong>).</li>
+      <li><strong>Q.5 to Q.7</strong> — Attempt any <strong>8 out of 12</strong> questions (2 marks each = <strong>16 marks</strong>).</li>
+      <li><strong>Q.8 to Q.10</strong> — Attempt any <strong>6 out of 9</strong> questions (3 marks each = <strong>18 marks</strong>).</li>
+      <li><strong>Q.11 to Q.13</strong> — Attempt any <strong>4 out of 6</strong> questions (4 marks each = <strong>16 marks</strong>).</li>
+      <li>Use of <strong>log table is allowed</strong>. Use of <strong>calculator is NOT allowed</strong>.</li>
+      <li>Draw neat labelled diagrams wherever necessary.</li>
+      <li>Figures to the right indicate full marks for each question.</li>
+    </ol>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SECTION A — Q.1  MCQs  10 × 1 = 10 marks
+  ══════════════════════════════════════════ -->
+  <div class="section-title">
+    SECTION A &nbsp;— Q.1 &nbsp; Select and write the most appropriate answer from the given alternatives
+    <span class="marks">10 × 1 = 10 Marks</span>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(i)</span>
+    The SI unit of electric flux is —
+    <span class="ans-badge">Ans: A</span>
+    <span class="year-badge y2023">2023</span>
+    <div class="options">
+      <div>(A) &nbsp; N·m²/C</div>
+      <div>(B) &nbsp; N/C</div>
+      <div>(C) &nbsp; V/m</div>
+      <div>(D) &nbsp; C/N·m²</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(ii)</span>
+    The work done in rotating an electric dipole by 180° in a uniform electric field is —
+    <span class="ans-badge">Ans: B</span>
+    <span class="year-badge y2022">2022</span>
+    <div class="options">
+      <div>(A) &nbsp; pE</div>
+      <div>(B) &nbsp; 2pE</div>
+      <div>(C) &nbsp; zero</div>
+      <div>(D) &nbsp; −pE</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(iii)</span>
+    Which of the following is an example of a diamagnetic material? —
+    <span class="ans-badge">Ans: C</span>
+    <span class="year-badge y2023">2023</span>
+    <div class="options">
+      <div>(A) &nbsp; Iron</div>
+      <div>(B) &nbsp; Nickel</div>
+      <div>(C) &nbsp; Bismuth</div>
+      <div>(D) &nbsp; Aluminium</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(iv)</span>
+    In a transformer, if the number of turns in the primary is doubled and secondary remains same, the output voltage —
+    <span class="ans-badge">Ans: B</span>
+    <span class="year-badge y2022">2022</span>
+    <div class="options">
+      <div>(A) &nbsp; doubles</div>
+      <div>(B) &nbsp; halves</div>
+      <div>(C) &nbsp; remains same</div>
+      <div>(D) &nbsp; becomes four times</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(v)</span>
+    The de Broglie wavelength of a particle is inversely proportional to its —
+    <span class="ans-badge">Ans: C</span>
+    <span class="year-badge y2024">2024</span>
+    <div class="options">
+      <div>(A) &nbsp; velocity</div>
+      <div>(B) &nbsp; charge</div>
+      <div>(C) &nbsp; momentum</div>
+      <div>(D) &nbsp; energy</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(vi)</span>
+    The stopping potential in photoelectric effect depends on —
+    <span class="ans-badge">Ans: B</span>
+    <span class="year-badge y2023">2023</span>
+    <div class="options">
+      <div>(A) &nbsp; intensity of light</div>
+      <div>(B) &nbsp; frequency of incident light</div>
+      <div>(C) &nbsp; area of the cathode</div>
+      <div>(D) &nbsp; nature of the anode</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(vii)</span>
+    In hydrogen atom, the radius of n<sup>th</sup> Bohr orbit is proportional to —
+    <span class="ans-badge">Ans: C</span>
+    <span class="year-badge y2022">2022</span>
+    <div class="options">
+      <div>(A) &nbsp; n</div>
+      <div>(B) &nbsp; 1/n</div>
+      <div>(C) &nbsp; n²</div>
+      <div>(D) &nbsp; 1/n²</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(viii)</span>
+    The half-life of a radioactive sample is 10 years. After 40 years the fraction remaining is —
+    <span class="ans-badge">Ans: B</span>
+    <span class="year-badge y2024">2024</span>
+    <div class="options">
+      <div>(A) &nbsp; 1/8</div>
+      <div>(B) &nbsp; 1/16</div>
+      <div>(C) &nbsp; 1/32</div>
+      <div>(D) &nbsp; 1/4</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(ix)</span>
+    The output of a NAND gate is 0 only when —
+    <span class="ans-badge">Ans: B</span>
+    <span class="year-badge y2023">2023</span>
+    <div class="options">
+      <div>(A) &nbsp; both inputs are 0</div>
+      <div>(B) &nbsp; both inputs are 1</div>
+      <div>(C) &nbsp; one input is 0</div>
+      <div>(D) &nbsp; one input is 1</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(x)</span>
+    Which type of biasing is used in a p-n junction diode to act as a rectifier? —
+    <span class="ans-badge">Ans: D</span>
+    <span class="year-badge y2022">2022</span>
+    <div class="options">
+      <div>(A) &nbsp; zero bias</div>
+      <div>(B) &nbsp; reverse bias</div>
+      <div>(C) &nbsp; forward bias</div>
+      <div>(D) &nbsp; both forward and reverse</div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- ══════════════════════════════════════════
+       SECTION B — Q.2  Very Short Answers  1 mark each
+  ══════════════════════════════════════════ -->
+  <div class="section-title">
+    SECTION B &nbsp;— Q.2 &nbsp; Attempt any EIGHT of the following (Answer in 1–2 lines)
+    <span class="marks">8 × 1 = 8 Marks</span>
+  </div>
+
+  <ul class="sub-list">
+    <li><span class="qnum">(i)</span> Define electric flux. State its SI unit. <span class="year-badge y2023">2023</span></li>
+    <li><span class="qnum">(ii)</span> State Gauss's law in electrostatics. <span class="year-badge y2022">2022</span></li>
+    <li><span class="qnum">(iii)</span> What is drift velocity of electrons? <span class="year-badge y2024">2024</span></li>
+    <li><span class="qnum">(iv)</span> Define magnetic susceptibility. <span class="year-badge y2022">2022</span></li>
+    <li><span class="qnum">(v)</span> State Faraday's laws of electromagnetic induction. <span class="year-badge y2023">2023</span></li>
+    <li><span class="qnum">(vi)</span> What is resonance in an LCR circuit? <span class="year-badge y2024">2024</span></li>
+    <li><span class="qnum">(vii)</span> Define critical angle for total internal reflection. <span class="year-badge y2022">2022</span></li>
+    <li><span class="qnum">(viii)</span> What is photoelectric effect? Who discovered it? <span class="year-badge y2023">2023</span></li>
+    <li><span class="qnum">(ix)</span> State Bohr's second postulate for hydrogen atom. <span class="year-badge y2022">2022</span></li>
+    <li><span class="qnum">(x)</span> Define half-life of a radioactive element. Give its formula. <span class="year-badge y2024">2024</span></li>
+    <li><span class="qnum">(xi)</span> What is p-type semiconductor? <span class="year-badge y2023">2023</span></li>
+    <li><span class="qnum">(xii)</span> State De Morgan's theorem (any one). <span class="year-badge y2022">2022</span></li>
+  </ul>
+
+  <hr class="divider"/>
+
+  <!-- ══════════════════════════════════════════
+       SECTION C — Q.3  Short Answers I  2 marks each
+  ══════════════════════════════════════════ -->
+  <div class="section-title">
+    SECTION C &nbsp;— Q.3 &nbsp; Attempt any EIGHT of the following
+    <span class="marks">8 × 2 = 16 Marks</span>
+  </div>
+
+  <ul class="sub-list">
+    <li><span class="qnum">(i)</span> State and explain Coulomb's law. Write its vector form. <span class="year-badge y2023">2023</span></li>
+    <li><span class="qnum">(ii)</span> Derive the relation between electric field E and potential V. <span class="year-badge y2022">2022</span></li>
+    <li><span class="qnum">(iii)</span> Explain the principle of a potentiometer. Draw its circuit diagram. <span class="year-badge y2024">2024</span></li>
+    <li><span class="qnum">(iv)</span> Explain Biot-Savart law. State its mathematical form. <span class="year-badge y2023">2023</span></li>
+    <li><span class="qnum">(v)</span> A coil of 100 turns and area 0.01 m² is placed in a magnetic field of 0.5 T. Find the maximum EMF if it rotates at 50 Hz. <span class="year-badge y2022">2022</span></li>
+    <li><span class="qnum">(vi)</span> Explain the working of a transformer. Derive the turns ratio equation. <span class="year-badge y2023">2023</span></li>
+    <li><span class="qnum">(vii)</span> Draw a neat labelled ray diagram for refraction through a convex lens. <span class="year-badge y2022">2022</span></li>
+    <li><span class="qnum">(viii)</span> State Huygen's principle. Explain refraction of a plane wavefront at a plane surface. <span class="year-badge y2024">2024</span></li>
+    <li><span class="qnum">(ix)</span> Derive Einstein's photoelectric equation. <span class="year-badge y2023">2023</span></li>
+    <li><span class="qnum">(x)</span> Explain the construction and working of a cyclotron. <span class="year-badge y2022">2022</span></li>
+    <li><span class="qnum">(xi)</span> What is nuclear binding energy? Define packing fraction. <span class="year-badge y2024">2024</span></li>
+    <li><span class="qnum">(xii)</span> Draw and explain a half-wave rectifier circuit with waveforms. <span class="year-badge y2023">2023</span></li>
+  </ul>
+
+  <hr class="divider"/>
+
+  <!-- ══════════════════════════════════════════
+       SECTION D — Q.4  Short Answers II  3 marks each
+  ══════════════════════════════════════════ -->
+  <div class="section-title">
+    SECTION D &nbsp;— Q.4 &nbsp; Attempt any SIX of the following
+    <span class="marks">6 × 3 = 18 Marks</span>
+  </div>
+
+  <ul class="sub-list">
+    <li><span class="qnum">(i)</span> State and prove Gauss's law. Find the electric field due to an infinitely long straight uniformly charged wire. <span class="year-badge y2023">2023</span></li>
+    <li><span class="qnum">(ii)</span> Derive an expression for the energy stored in a capacitor. <span class="year-badge y2022">2022</span></li>
+    <li><span class="qnum">(iii)</span> State Kirchhoff's laws. Using them find the current distribution in a network (Wheatstone bridge). <span class="year-badge y2023">2023</span></li>
+    <li><span class="qnum">(iv)</span> Derive an expression for the force between two parallel current-carrying conductors. Define 1 ampere from it. <span class="year-badge y2022">2022</span></li>
+    <li><span class="qnum">(v)</span> What is electromagnetic induction? Derive an expression for the induced EMF in a rotating coil in a uniform magnetic field. <span class="year-badge y2024">2024</span></li>
+    <li><span class="qnum">(vi)</span> Explain with a circuit diagram the working of a full-wave rectifier. Draw input and output waveforms. <span class="year-badge y2023">2023</span></li>
+    <li><span class="qnum">(vii)</span> State Bohr's postulates. Derive the expression for radius and energy of n<sup>th</sup> orbit in hydrogen atom. <span class="year-badge y2022">2022</span></li>
+    <li><span class="qnum">(viii)</span> Derive an expression for the de Broglie wavelength of a particle. State its significance. <span class="year-badge y2024">2024</span></li>
+    <li><span class="qnum">(ix)</span> Explain fission and fusion reactions with examples. State the condition for each. <span class="year-badge y2023">2023</span></li>
+    <li><span class="qnum">(x)</span> Explain the construction and working of a transistor as an amplifier in CE configuration with a circuit diagram. <span class="year-badge y2022">2022</span></li>
+  </ul>
+
+  <hr class="divider"/>
+
+  <!-- ══════════════════════════════════════════
+       SECTION E — Q.5  Long Answers  4 marks each
+  ══════════════════════════════════════════ -->
+  <div class="section-title">
+    SECTION E &nbsp;— Q.5 &nbsp; Attempt any FOUR of the following
+    <span class="marks">4 × 4 = 16 Marks</span>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(i)</span>
+    <span class="year-badge y2023">2023</span>
+    <span class="qmarks">[4 Marks]</span>
+    <br/>
+    <strong>(a)</strong> Derive the expression for the electric field due to a uniformly charged solid sphere at a point outside, inside and on its surface using Gauss's law.
+    <br/>
+    <strong>(b)</strong> A sphere of radius 5 cm carries a charge of 10 μC uniformly distributed. Find E at (1) r = 10 cm (2) r = 5 cm.
+    <br/>
+    <span class="note">(Given: K = 9 × 10⁹ N·m²/C²)</span>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(ii)</span>
+    <span class="year-badge y2022">2022</span>
+    <span class="qmarks">[4 Marks]</span>
+    <br/>
+    <strong>(a)</strong> Explain magnetization and magnetic intensity. Derive the relation B = μ₀(H + M).
+    <br/>
+    <strong>(b)</strong> A solenoid of length 2 m with 1000 turns carries a current of 2 A. Find the magnetic field inside.
+    <br/>
+    <span class="note">(Given: μ₀ = 4π × 10⁻⁷ T·m/A)</span>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(iii)</span>
+    <span class="year-badge y2024">2024</span>
+    <span class="qmarks">[4 Marks]</span>
+    <br/>
+    <strong>(a)</strong> Derive the mirror formula: 1/v + 1/u = 1/f for a concave mirror.
+    <br/>
+    <strong>(b)</strong> An object is placed 20 cm in front of a concave mirror of focal length 15 cm. Find the image position and magnification.
+  </div>
+
+  <div class="question">
+    <span class="qnum">(iv)</span>
+    <span class="year-badge y2023">2023</span>
+    <span class="qmarks">[4 Marks]</span>
+    <br/>
+    <strong>(a)</strong> Explain interference of light. State conditions for constructive and destructive interference.
+    <br/>
+    <strong>(b)</strong> In Young's double slit experiment: slit separation = 0.3 mm, screen distance = 1.5 m, fringe width = 3 mm. Find the wavelength of light used.
+  </div>
+
+  <div class="question">
+    <span class="qnum">(v)</span>
+    <span class="year-badge y2022">2022</span>
+    <span class="qmarks">[4 Marks]</span>
+    <br/>
+    <strong>(a)</strong> State and explain the photoelectric effect. Draw a graph of stopping potential vs frequency.
+    <br/>
+    <strong>(b)</strong> Light of frequency 7 × 10¹⁴ Hz falls on a surface of work function 2.5 eV. Find the maximum KE of emitted electrons.
+    <br/>
+    <span class="note">(Given: h = 6.63 × 10⁻³⁴ J·s, 1 eV = 1.6 × 10⁻¹⁹ J)</span>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(vi)</span>
+    <span class="year-badge y2024">2024</span>
+    <span class="qmarks">[4 Marks]</span>
+    <br/>
+    <strong>(a)</strong> Draw the energy band diagram of (1) conductor (2) semiconductor (3) insulator and compare them.
+    <br/>
+    <strong>(b)</strong> Explain the working of a Zener diode as a voltage regulator with a circuit diagram.
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- MARKS DISTRIBUTION TABLE -->
+  <div class="section-title">
+    Marks Distribution at a Glance
+    <span class="marks">For Reference</span>
+  </div>
+
+  <table class="marks-table">
+    <thead>
+      <tr>
+        <th>Section</th>
+        <th>Question</th>
+        <th>Type</th>
+        <th>Attempt</th>
+        <th>Marks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>A</td>
+        <td>Q.1</td>
+        <td>MCQ (10 × 1)</td>
+        <td>All 10 (compulsory)</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>B</td>
+        <td>Q.2</td>
+        <td>Very Short Answer (1 mark each)</td>
+        <td>Any 8 of 12</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td>C</td>
+        <td>Q.3</td>
+        <td>Short Answer I (2 marks each)</td>
+        <td>Any 8 of 12</td>
+        <td>16</td>
+      </tr>
+      <tr>
+        <td>D</td>
+        <td>Q.4</td>
+        <td>Short Answer II (3 marks each)</td>
+        <td>Any 6 of 10</td>
+        <td>18</td>
+      </tr>
+      <tr>
+        <td>E</td>
+        <td>Q.5</td>
+        <td>Long Answer (4 marks each)</td>
+        <td>Any 4 of 6</td>
+        <td>16</td>
+      </tr>
+      <tr class="total">
+        <td colspan="4">Total</td>
+        <td>70</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    Past Year Questions marked with year (2022 / 2023 / 2024) &nbsp;|&nbsp; Visions Classes, Ambernath &nbsp;|&nbsp; All the Best!
+    <br/>
+    <small>Visions Classes &nbsp;|&nbsp; Learn Today, Lead Tomorrow &nbsp;|&nbsp; Class XII Physics — Maharashtra HSC Board 2024-25</small>
+  </div>
+
 </div>
-<div class="ph">
-  <div class="board">Maharashtra State Board of Secondary & Higher Secondary Education, Pune</div>
-  <h1>HIGHER SECONDARY CERTIFICATE EXAMINATION</h1>
-  <h2>Standard XII — 2025–26</h2>
-  <div class="subject">PHYSICS (Subject Code: 54)</div>
-</div>
-<div class="meta">
-  <span>Time: 3 Hours</span>
-  <span>Total Marks: 70</span>
-</div>
 
-<!-- INSTRUCTIONS -->
-<div class="inst">
-  <p>General Instructions:</p>
-  <ol>
-    <li>All questions are compulsory.</li>
-    <li>Use of a simple calculator is allowed.</li>
-    <li>Draw neat, labelled diagrams wherever necessary.</li>
-    <li>Figures to the right indicate full marks.</li>
-    <li>For numerical problems, show all working steps clearly.</li>
-    <li>Physical constants: g = 10 m/s², h = 6.63×10⁻³⁴ J·s, c = 3×10⁸ m/s, e = 1.6×10⁻¹⁹ C</li>
-  </ol>
-</div>
+<!-- PRINT BUTTON -->
+<button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
 
-<!-- SECTION A: MCQ -->
-<div class="sec">Section A — Multiple Choice Questions <span class="mk">1 Mark Each</span></div>
-
-<div class="q"><span class="qn">1.</span><span class="qm">[1]</span>
-The SI unit of electric field intensity is:
-<div class="opts"><span>(A) N/C</span><span>(B) V·m</span><span>(C) C/N</span><span>(D) J/C</span></div></div>
-
-<div class="q"><span class="qn">2.</span><span class="qm">[1]</span>
-The capacitance of a parallel plate capacitor increases when:
-<div class="opts"><span>(A) distance between plates increases</span><span>(B) area of plates decreases</span><span>(C) a dielectric is inserted</span><span>(D) charge is reduced</span></div></div>
-
-<div class="q"><span class="qn">3.</span><span class="qm">[1]</span>
-The resistance of a conductor at absolute zero temperature is:
-<div class="opts"><span>(A) Zero</span><span>(B) Infinite</span><span>(C) Very high</span><span>(D) Same as at room temperature</span></div></div>
-
-<div class="q"><span class="qn">4.</span><span class="qm">[1]</span>
-The unit of magnetic flux is:
-<div class="opts"><span>(A) Tesla</span><span>(B) Weber</span><span>(C) Henry</span><span>(D) Farad</span></div></div>
-
-<div class="q"><span class="qn">5.</span><span class="qm">[1]</span>
-In a photoelectric effect, the stopping potential depends on:
-<div class="opts"><span>(A) intensity of light</span><span>(B) frequency of light</span><span>(C) area of cathode</span><span>(D) nature of anode</span></div></div>
-
-<div class="q"><span class="qn">6.</span><span class="qm">[1]</span>
-The de Broglie wavelength of a particle is inversely proportional to its:
-<div class="opts"><span>(A) charge</span><span>(B) momentum</span><span>(C) energy</span><span>(D) temperature</span></div></div>
-
-<div class="q"><span class="qn">7.</span><span class="qm">[1]</span>
-The half-life of a radioactive element is 5 years. After 20 years, the fraction remaining is:
-<div class="opts"><span>(A) 1/4</span><span>(B) 1/8</span><span>(C) 1/16</span><span>(D) 1/32</span></div></div>
-
-<!-- SECTION B: Very Short -->
-<div class="sec">Section B — Very Short Answer Questions <span class="mk">2 Marks Each</span></div>
-
-<div class="q"><span class="qn">8.</span><span class="qm">[2]</span>
-State Gauss's theorem in electrostatics. Write its mathematical form.</div>
-
-<div class="q"><span class="qn">9.</span><span class="qm">[2]</span>
-Define the term 'drift velocity' of electrons. How is it related to current?</div>
-
-<div class="q"><span class="qn">10.</span><span class="qm">[2]</span>
-State Faraday's laws of electromagnetic induction.</div>
-
-<div class="q"><span class="qn">11.</span><span class="qm">[2]</span>
-What is meant by 'critical angle' in optics? State the condition for total internal reflection.</div>
-
-<div class="q"><span class="qn">12.</span><span class="qm">[2]</span>
-Define the work function of a metal. State its unit.</div>
-
-<div class="q"><span class="qn">13.</span><span class="qm">[2]</span>
-What is radioactivity? Name the three types of radiations emitted.</div>
-
-<!-- SECTION C: Short Answer -->
-<div class="sec">Section C — Short Answer Questions <span class="mk">3 Marks Each</span></div>
-
-<div class="q"><span class="qn">14.</span><span class="qm">[3]</span>
-State and prove Coulomb's law of electrostatics in vector form.</div>
-
-<div class="q"><span class="qn">15.</span><span class="qm">[3]</span>
-Derive an expression for the electric field due to an infinitely long straight charged wire using Gauss's law.</div>
-
-<div class="q"><span class="qn">16.</span><span class="qm">[3]</span>
-Explain with a circuit diagram the working of a Wheatstone bridge. When is it said to be balanced?</div>
-
-<div class="q"><span class="qn">17.</span><span class="qm">[3]</span>
-A coil of 200 turns, area 0.05 m² is placed in a uniform magnetic field of 0.2 T. Calculate the maximum EMF induced when the coil rotates at 50 rev/s.</div>
-
-<div class="q"><span class="qn">18.</span><span class="qm">[3]</span>
-Draw a labelled diagram of a compound microscope and explain its working. Write the formula for its magnifying power.</div>
-
-<div class="q"><span class="qn">19.</span><span class="qm">[3]</span>
-What is Compton effect? Explain it with the help of quantum theory of radiation.</div>
-
-<div class="q"><span class="qn">20.</span><span class="qm">[3]</span>
-Explain the construction and working of a nuclear reactor. Name the components and their functions.</div>
-
-<!-- SECTION D: Long Answer -->
-<div class="sec">Section D — Long Answer Questions <span class="mk">4 Marks Each</span></div>
-
-<div class="q"><span class="qn">21.</span><span class="qm">[4]</span>
-(a) Derive an expression for the electric potential at a point due to a point charge. <br/>
-(b) The electric potential at a distance of 0.3 m from a charge is 600 V. Find the magnitude of the charge. (K = 9×10⁹ N·m²/C²)</div>
-
-<div class="q"><span class="qn">22.</span><span class="qm">[4]</span>
-(a) State Kirchhoff's laws of current and voltage. Apply them to derive the condition for a balanced Wheatstone bridge. <br/>
-(b) Three resistors of 4 Ω, 6 Ω and 12 Ω are connected in parallel. Find the equivalent resistance.</div>
-
-<div class="q"><span class="qn">23.</span><span class="qm">[4]</span>
-(a) Explain interference of light. State the conditions for constructive and destructive interference. <br/>
-(b) In Young's double slit experiment, the slit separation is 0.5 mm and the screen is 1.5 m away. If the fringe width is 1.8 mm, find the wavelength of light used.</div>
-
-<div class="q"><span class="qn">24.</span><span class="qm">[4]</span>
-(a) Derive Einstein's photoelectric equation. Define threshold frequency and stopping potential. <br/>
-(b) Light of frequency 6×10¹⁴ Hz falls on a metal of work function 2.0 eV. Calculate the maximum kinetic energy of emitted photoelectrons. (h = 6.63×10⁻³⁴ J·s, 1 eV = 1.6×10⁻¹⁹ J)</div>
-
-<div class="q"><span class="qn">25.</span><span class="qm">[4]</span>
-(a) State Bohr's postulates for hydrogen atom. Derive the formula for the radius of nth orbit. <br/>
-(b) Calculate the energy of an electron in the second orbit of hydrogen atom. (E₁ = −13.6 eV)</div>
-
-<hr class="d"/>
-<p style="text-align:center;font-size:12px;color:#888;margin-top:10px">— All the Best — Visions Classes, Ambernath</p>
-</div>
 </body>
 </html>
