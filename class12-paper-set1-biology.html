@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Class 12 Biology — Set 1 | Questions + Solutions | Visions Classes</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Arial',sans-serif;background:#f0f0f0;padding:30px 10px;color:#111}
+  .page{background:#fff;max-width:820px;margin:0 auto 30px;padding:36px 50px;border:2px solid #333;box-shadow:0 4px 20px rgba(0,0,0,.15)}
+  @media print{body{background:#fff;padding:0}.page{box-shadow:none;border:none;padding:16mm 18mm}.no-print{display:none}.pb{page-break-before:always}}
+  .visions-header{text-align:center;padding-bottom:12px;border-bottom:4px double #2e7d32;margin-bottom:14px}
+  .visions-header .inst-name{font-size:30px;font-weight:bold;letter-spacing:4px;text-transform:uppercase;color:#2e7d32}
+  .visions-header .inst-name span{color:#c0392b}
+  .visions-header .tagline{font-size:13px;font-style:italic;letter-spacing:2px;color:#555;margin-top:4px}
+  .header{text-align:center;border:2px solid #333;border-radius:4px;padding:14px 10px 12px;margin-bottom:14px;position:relative}
+  .header::before{content:'';position:absolute;inset:4px;border:1px solid #aaa;border-radius:2px;pointer-events:none}
+  .header .board{font-size:12px;color:#555;margin-bottom:4px}
+  .header h1{font-size:18px;font-weight:bold;margin:5px 0 3px}
+  .header h2{font-size:15px;font-weight:bold;color:#2e7d32;margin-bottom:4px}
+  .header .subject-code{font-size:13px;color:#444;font-style:italic}
+  .meta{display:flex;justify-content:space-between;font-size:13.5px;padding:9px 0;border-bottom:1px solid #aaa;border-top:1px solid #aaa;margin-bottom:14px}
+  .meta span{font-weight:bold}
+  .instructions{background:#fafafa;border:1px solid #ccc;padding:10px 16px;margin-bottom:20px;font-size:13px}
+  .instructions p{font-weight:bold;margin-bottom:5px;font-size:13.5px}
+  .instructions ol{padding-left:20px}.instructions ol li{margin-bottom:3px;line-height:1.8}
+  .section-title{background:#2e7d32;color:#fff;padding:7px 14px;font-size:14px;font-weight:bold;margin:22px 0 12px;display:flex;justify-content:space-between;align-items:center}
+  .section-title .marks{background:#fff;color:#2e7d32;padding:2px 10px;border-radius:10px;font-size:12px;font-weight:bold;white-space:nowrap}
+  .question{margin-bottom:15px;font-size:14px;line-height:1.9}
+  .question .qnum{font-weight:bold;margin-right:4px}
+  .question .qmarks{float:right;font-size:12.5px;color:#555;font-style:italic}
+  .options{display:grid;grid-template-columns:1fr 1fr;gap:5px 30px;margin:7px 0 7px 24px;font-size:13.5px}
+  .sub-list{list-style:none;padding-left:22px;margin:5px 0}
+  .sub-list li{margin-bottom:7px;font-size:13.5px;line-height:1.8}
+  hr.divider{border:none;border-top:1px dashed #bbb;margin:16px 0}
+  .yb{display:inline-block;font-size:10px;font-weight:bold;padding:1px 6px;border-radius:8px;margin-left:6px;vertical-align:middle}
+  .y22{background:#d5e8d4;color:#2d6a2d;border:1px solid #82b366}
+  .y23{background:#dae8fc;color:#1a4a8a;border:1px solid #6a9fd8}
+  .y24{background:#fff2cc;color:#7a5c00;border:1px solid #d6b656}
+  .ak-divider{background:linear-gradient(135deg,#2e7d32,#388e3c);color:#fff;text-align:center;padding:14px;margin:30px 0;border-radius:8px;font-size:16px;font-weight:800;letter-spacing:1px}
+  .sol-block{margin:14px 0;border:1.5px solid #e0e0e0;border-radius:8px;overflow:hidden}
+  .sol-q{background:#f1f8e9;padding:9px 14px;font-weight:700;font-size:13.5px;color:#2e7d32;border-bottom:1.5px solid #c8e6c9;display:flex;align-items:flex-start;gap:10px}
+  .sol-qn{background:#2e7d32;color:#fff;font-size:11px;font-weight:800;padding:3px 10px;border-radius:10px;white-space:nowrap;flex-shrink:0;margin-top:1px}
+  .sol-a{padding:13px 16px;font-size:14px;line-height:1.85;background:#fff}
+  .ln{display:block;margin:3px 0;line-height:1.8;font-size:14px}
+  .ln.given{font-weight:600;margin-bottom:6px}
+  .ln.eq{padding-left:22px}.ln.eq::before{content:"= ";font-weight:600;color:#1565c0}
+  .ln.tf::before{content:"∴ ";font-weight:700;color:#c62828}.ln.tf{padding-left:4px}
+  .ln.step{padding-left:0}.ln.gap{margin-top:8px;display:block}
+  .ln.note{color:#555;font-size:13px;font-style:italic}
+  .af{display:inline-block;background:#e8f5e9;color:#1b5e20;font-weight:800;font-size:14.5px;padding:3px 12px;border-radius:6px;border:1.5px solid #a5d6a7}
+  .mcq-box{background:#e8f5e9;border-left:4px solid #2e7d32;padding:7px 14px;border-radius:0 6px 6px 0;font-size:14px;font-weight:700;color:#2e7d32;margin:4px 0}
+  .footer{text-align:center;margin-top:28px;font-size:12.5px;color:#555;border-top:2px double #333;padding-top:10px;line-height:1.8}
+  .print-btn{display:block;margin:20px auto 0;padding:10px 38px;background:#2e7d32;color:#fff;border:none;font-size:15px;border-radius:5px;cursor:pointer}
+  .print-btn:hover{background:#388e3c}
+</style>
+</head>
+<body>
+<button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+<!-- ══════════ QUESTION PAPER ══════════ -->
+<div class="page">
+<div class="visions-header">
+  <div class="inst-name">Visions <span>Classes</span></div>
+  <div class="tagline">✦ Learn Today, Lead Tomorrow — Ambernath ✦</div>
+</div>
+<div class="header">
+  <div class="board">Maharashtra State Board of Secondary &amp; Higher Secondary Education, Pune</div>
+  <h1>HIGHER SECONDARY CERTIFICATE EXAMINATION — SET 1</h1>
+  <h2>BIOLOGY</h2>
+  <div class="subject-code">Subject Code : 70 &nbsp;|&nbsp; Class XII &nbsp;|&nbsp; Science</div>
+</div>
+<div class="meta"><div>Max. Marks : <span>70</span></div><div>Time : <span>3 Hours</span></div></div>
+<div class="instructions">
+  <p>General Instructions :</p>
+  <ol>
+    <li>Q.1 — 10 MCQs, 1 mark each. All compulsory.</li>
+    <li>Q.2 to Q.4 — Attempt any 8 of 12 (1 mark each = 8 marks).</li>
+    <li>Q.5 to Q.7 — Attempt any 8 of 12 (2 marks each = 16 marks).</li>
+    <li>Q.8 to Q.10 — Attempt any 6 of 10 (3 marks each = 18 marks).</li>
+    <li>Q.11 to Q.13 — Attempt any 4 of 6 (4 marks each = 16 marks).</li>
+    <li>Draw neat labelled diagrams wherever necessary. Diagrams carry marks.</li>
+  </ol>
+</div>
+
+<!-- MCQ -->
+<div class="section-title">SECTION A — Q.1 MCQ <span class="marks">10 × 1 = 10 Marks</span></div>
+
+<div class="question"><span class="qnum">(i)</span> The process of releasing sperm from the seminiferous tubules is called — <span class="yb y23">2023</span>
+<div class="options"><div>(A) Ovulation</div><div>(B) Spermiation</div><div>(C) Spermatogenesis</div><div>(D) Capacitation</div></div></div>
+
+<div class="question"><span class="qnum">(ii)</span> Mendel's law of segregation is also known as — <span class="yb y22">2022</span>
+<div class="options"><div>(A) Law of dominance</div><div>(B) Law of purity of gametes</div><div>(C) Law of inheritance</div><div>(D) Law of variation</div></div></div>
+
+<div class="question"><span class="qnum">(iii)</span> The coding strand of DNA is also called — <span class="yb y24">2024</span>
+<div class="options"><div>(A) Template strand</div><div>(B) Antisense strand</div><div>(C) Sense strand</div><div>(D) Lagging strand</div></div></div>
+
+<div class="question"><span class="qnum">(iv)</span> The enzyme that joins Okazaki fragments during DNA replication is — <span class="yb y23">2023</span>
+<div class="options"><div>(A) Helicase</div><div>(B) Primase</div><div>(C) DNA ligase</div><div>(D) Topoisomerase</div></div></div>
+
+<div class="question"><span class="qnum">(v)</span> The first stable product of the Calvin cycle (C₃ pathway) is — <span class="yb y22">2022</span>
+<div class="options"><div>(A) G3P</div><div>(B) OAA</div><div>(C) RuBP</div><div>(D) 3-phosphoglycerate (3-PGA)</div></div></div>
+
+<div class="question"><span class="qnum">(vi)</span> Nitrification is carried out by — <span class="yb y24">2024</span>
+<div class="options"><div>(A) Azotobacter</div><div>(B) Nitrosomonas</div><div>(C) Rhizobium</div><div>(D) Pseudomonas</div></div></div>
+
+<div class="question"><span class="qnum">(vii)</span> 'Bt' in Bt-cotton stands for — <span class="yb y23">2023</span>
+<div class="options"><div>(A) Biotechnology</div><div>(B) Bacillus thuringiensis</div><div>(C) Botulinum toxin</div><div>(D) Biotech trait</div></div></div>
+
+<div class="question"><span class="qnum">(viii)</span> The term 'biodiversity' was coined by — <span class="yb y22">2022</span>
+<div class="options"><div>(A) Alexander von Humboldt</div><div>(B) Robert May</div><div>(C) E.O. Wilson</div><div>(D) Norman Myers</div></div></div>
+
+<div class="question"><span class="qnum">(ix)</span> Which type of RNA acts as an adapter molecule during translation? — <span class="yb y24">2024</span>
+<div class="options"><div>(A) mRNA</div><div>(B) rRNA</div><div>(C) tRNA</div><div>(D) hnRNA</div></div></div>
+
+<div class="question"><span class="qnum">(x)</span> The Meselson-Stahl experiment proved that DNA replication is — <span class="yb y23">2023</span>
+<div class="options"><div>(A) Conservative</div><div>(B) Dispersive</div><div>(C) Semi-conservative</div><div>(D) Reverse</div></div></div>
+
+<!-- Section B -->
+<div class="section-title">SECTION B — Q.2 to Q.4 — Attempt any EIGHT <span class="marks">8 × 1 = 8 Marks</span></div>
+<ul class="sub-list">
+  <li><span class="qnum">(i)</span> What is spermatogenesis? <span class="yb y23">2023</span></li>
+  <li><span class="qnum">(ii)</span> Define test cross. <span class="yb y22">2022</span></li>
+  <li><span class="qnum">(iii)</span> What is a codon? Give one example. <span class="yb y24">2024</span></li>
+  <li><span class="qnum">(iv)</span> Define replication fork. <span class="yb y23">2023</span></li>
+  <li><span class="qnum">(v)</span> What is photophosphorylation? <span class="yb y22">2022</span></li>
+  <li><span class="qnum">(vi)</span> Define nitrogen fixation. Give one example organism. <span class="yb y24">2024</span></li>
+  <li><span class="qnum">(vii)</span> What is a vector in recombinant DNA technology? <span class="yb y23">2023</span></li>
+  <li><span class="qnum">(viii)</span> Define species diversity. <span class="yb y22">2022</span></li>
+  <li><span class="qnum">(ix)</span> What are secondary metabolites? Give two examples. <span class="yb y24">2024</span></li>
+  <li><span class="qnum">(x)</span> Define translation. <span class="yb y23">2023</span></li>
+  <li><span class="qnum">(xi)</span> What is lac operon? <span class="yb y22">2022</span></li>
+  <li><span class="qnum">(xii)</span> What is in situ conservation? Give one example. <span class="yb y24">2024</span></li>
+</ul>
+
+<!-- Section C -->
+<div class="section-title">SECTION C — Q.5 to Q.7 — Attempt any EIGHT <span class="marks">8 × 2 = 16 Marks</span></div>
+<ul class="sub-list">
+  <li><span class="qnum">(i)</span> Describe the structure of a human sperm with a labelled diagram. <span class="yb y23">2023</span></li>
+  <li><span class="qnum">(ii)</span> Explain Mendel's law of dominance with a suitable example. <span class="yb y22">2022</span></li>
+  <li><span class="qnum">(iii)</span> Distinguish between DNA replication and transcription (any 4 points). <span class="yb y24">2024</span></li>
+  <li><span class="qnum">(iv)</span> Explain the lac operon model — what is the role of the inducer? <span class="yb y23">2023</span></li>
+  <li><span class="qnum">(v)</span> What is C₄ pathway? Name two C₄ plants. State its advantage over C₃. <span class="yb y22">2022</span></li>
+  <li><span class="qnum">(vi)</span> Explain ammonification and nitrification with chemical equations. <span class="yb y24">2024</span></li>
+  <li><span class="qnum">(vii)</span> Write a short note on Bt toxin and its mode of action in pest control. <span class="yb y23">2023</span></li>
+  <li><span class="qnum">(viii)</span> Explain the concept of ecological succession with an example. <span class="yb y22">2022</span></li>
+  <li><span class="qnum">(ix)</span> What are restriction enzymes? How do they create sticky ends? <span class="yb y24">2024</span></li>
+  <li><span class="qnum">(x)</span> Distinguish between innate and adaptive immunity (4 points). <span class="yb y23">2023</span></li>
+  <li><span class="qnum">(xi)</span> Explain the Meselson-Stahl experiment and what it proved. <span class="yb y22">2022</span></li>
+  <li><span class="qnum">(xii)</span> What is apiculture? State two economic benefits. <span class="yb y24">2024</span></li>
+</ul>
+
+<!-- Section D -->
+<div class="section-title">SECTION D — Q.8 to Q.10 — Attempt any SIX <span class="marks">6 × 3 = 18 Marks</span></div>
+<ul class="sub-list">
+  <li><span class="qnum">(i)</span> Describe the menstrual cycle with a diagram showing hormone levels. <span class="yb y23">2023</span></li>
+  <li><span class="qnum">(ii)</span> Explain Mendel's dihybrid cross. Show F₁ and F₂ with Punnett square and give the ratio. <span class="yb y22">2022</span></li>
+  <li><span class="qnum">(iii)</span> Explain transcription in prokaryotes — initiation, elongation, termination. <span class="yb y24">2024</span></li>
+  <li><span class="qnum">(iv)</span> Describe the light reactions of photosynthesis — photosystems, ETC, ATP synthesis. <span class="yb y23">2023</span></li>
+  <li><span class="qnum">(v)</span> Explain the nitrogen cycle with a neat labelled diagram. <span class="yb y22">2022</span></li>
+  <li><span class="qnum">(vi)</span> Describe the steps of recombinant DNA technology from gene isolation to protein. <span class="yb y24">2024</span></li>
+  <li><span class="qnum">(vii)</span> Explain biomagnification with DDT as example. Show increase at each trophic level. <span class="yb y23">2023</span></li>
+  <li><span class="qnum">(viii)</span> Describe oogenesis with a neat labelled flowchart from oogonium to ovum. <span class="yb y22">2022</span></li>
+  <li><span class="qnum">(ix)</span> Explain cancer — types, causes, and methods of detection. <span class="yb y24">2024</span></li>
+  <li><span class="qnum">(x)</span> Write notes on: (a) IVF (b) GIFT (c) Surrogacy. <span class="yb y23">2023</span></li>
+</ul>
+
+<!-- Section E -->
+<div class="section-title">SECTION E — Q.11 to Q.13 — Attempt any FOUR <span class="marks">4 × 4 = 16 Marks</span></div>
+<div class="question"><span class="qnum">(i)</span><span class="qmarks">[4]</span> (a) Draw and label the male reproductive system. (b) Explain hormonal control of male reproduction — roles of FSH, LH, testosterone. <span class="yb y23">2023</span></div>
+<div class="question"><span class="qnum">(ii)</span><span class="qmarks">[4]</span> (a) Explain Mendel's laws using monohybrid cross TT × tt. (b) Explain incomplete dominance with example (Snapdragon flower). <span class="yb y22">2022</span></div>
+<div class="question"><span class="qnum">(iii)</span><span class="qmarks">[4]</span> (a) Explain the structure of DNA and semi-conservative replication. (b) What is a mutation? Name two types with one example each. <span class="yb y24">2024</span></div>
+<div class="question"><span class="qnum">(iv)</span><span class="qmarks">[4]</span> (a) Describe Calvin cycle (C₃ pathway) — carboxylation, reduction, regeneration stages. (b) Compare C₃ and C₄ plants — any 4 differences. <span class="yb y23">2023</span></div>
+<div class="question"><span class="qnum">(v)</span><span class="qmarks">[4]</span> (a) Explain recombinant DNA technology and how human insulin is produced by rDNA. (b) What is PCR? Explain its three steps — denaturation, annealing, extension. <span class="yb y22">2022</span></div>
+<div class="question"><span class="qnum">(vi)</span><span class="qmarks">[4]</span> (a) Define ecosystem. Explain energy flow through a food chain using the 10% law. (b) Explain in situ and ex situ conservation with 2 examples each. <span class="yb y24">2024</span></div>
+
+<div class="footer">Visions Classes, Ambernath &nbsp;·&nbsp; Biology — Set 1 &nbsp;·&nbsp; Class XII &nbsp;·&nbsp; All the Best! 🌟</div>
+</div>
+
+
+<!-- ══════════ ANSWER KEY ══════════ -->
+<div class="page pb">
+<div class="ak-divider">📖 ANSWER KEY — Complete Step-by-Step Solutions</div>
+<div class="visions-header" style="border-bottom-color:#2e7d32">
+  <div class="inst-name">Visions <span>Classes</span></div>
+  <div class="tagline">Biology — Set 1 — Solutions</div>
+</div>
+
+<div class="section-title">SECTION A — MCQ Answers <span class="marks">10 × 1</span></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(i–x)</span> MCQ Answers with reasoning</div>
+<div class="sol-a">
+<span class="ln step">(i) <span class="af">(B) Spermiation</span> — Release of sperms from Sertoli cells into the lumen of seminiferous tubules is called spermiation.</span>
+<span class="ln gap"></span>
+<span class="ln step">(ii) <span class="af">(B) Law of purity of gametes</span> — Each gamete carries only one allele for a trait; the paired alleles separate at meiosis — hence "purity of gametes".</span>
+<span class="ln gap"></span>
+<span class="ln step">(iii) <span class="af">(C) Sense strand</span> — The coding strand has the same sequence as the mRNA (except T→U). Also called sense strand or non-template strand.</span>
+<span class="ln gap"></span>
+<span class="ln step">(iv) <span class="af">(C) DNA ligase</span> — DNA ligase joins Okazaki fragments on the lagging strand by forming phosphodiester bonds.</span>
+<span class="ln gap"></span>
+<span class="ln step">(v) <span class="af">(D) 3-phosphoglycerate (3-PGA)</span> — CO₂ + RuBP → 2 molecules of 3-PGA. This is the first stable product of the Calvin cycle.</span>
+<span class="ln gap"></span>
+<span class="ln step">(vi) <span class="af">(B) Nitrosomonas</span> — Nitrosomonas converts NH₄⁺ → NO₂⁻ (first step of nitrification). Nitrobacter converts NO₂⁻ → NO₃⁻.</span>
+<span class="ln gap"></span>
+<span class="ln step">(vii) <span class="af">(B) Bacillus thuringiensis</span> — Bt toxin gene from this bacterium is inserted into cotton to make it pest-resistant.</span>
+<span class="ln gap"></span>
+<span class="ln step">(viii) <span class="af">(C) E.O. Wilson</span> — coined the term 'biodiversity' in 1986.</span>
+<span class="ln gap"></span>
+<span class="ln step">(ix) <span class="af">(C) tRNA</span> — Transfer RNA (tRNA) carries amino acids to the ribosome and reads the codon — acts as adapter molecule.</span>
+<span class="ln gap"></span>
+<span class="ln step">(x) <span class="af">(C) Semi-conservative</span> — Meselson and Stahl (1958) showed each new DNA has one old strand + one new strand.</span>
+</div></div>
+
+<div class="section-title">SECTION B — Very Short Answers <span class="marks">1 mark each</span></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(i)</span> Spermatogenesis</div>
+<div class="sol-a">
+<span class="ln given">Spermatogenesis is the process of formation of spermatozoa (sperm cells) from spermatogonia in the seminiferous tubules of the testis.</span>
+<span class="ln step">Path: Spermatogonium → Primary spermatocyte → Secondary spermatocyte → Spermatid → Spermatozoon</span>
+</div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(ii)</span> Test cross</div>
+<div class="sol-a">
+<span class="ln given">A test cross is the crossing of an organism with an unknown genotype (possibly dominant phenotype) with a homozygous recessive individual to determine the genotype of the unknown.</span>
+<span class="ln step">If all offspring show dominant phenotype → parent was homozygous dominant (TT)</span>
+<span class="ln step">If half show recessive → parent was heterozygous (Tt)</span>
+</div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(iii)</span> Codon</div>
+<div class="sol-a">
+<span class="ln given">A codon is a sequence of three consecutive nucleotides (triplet) on mRNA that codes for a specific amino acid or signals start/stop of translation.</span>
+<span class="ln step">Example: <span class="af">AUG</span> = Methionine (start codon); UGA = Stop codon</span>
+<span class="ln step">Total codons = 4³ = 64; 61 code for amino acids, 3 are stop codons</span>
+</div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(iv)</span> Replication fork</div>
+<div class="sol-a">
+<span class="ln given">The replication fork is the Y-shaped region formed when the DNA double helix unwinds and separates at the point of active replication. DNA polymerase adds nucleotides at this site.</span>
+<span class="ln step">In eukaryotes, multiple replication forks form simultaneously (bidirectional replication).</span>
+</div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(v)</span> Photophosphorylation</div>
+<div class="sol-a">
+<span class="ln given">Photophosphorylation is the synthesis of ATP from ADP + Pi using light energy in the chloroplast thylakoid membrane during the light reactions of photosynthesis.</span>
+<span class="ln step">Types: <span class="af">Cyclic</span> (only PS I involved, only ATP produced) and <span class="af">Non-cyclic</span> (PS I + PS II, produces ATP + NADPH + O₂)</span>
+</div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(vi)</span> Nitrogen fixation</div>
+<div class="sol-a">
+<span class="ln given">Nitrogen fixation is the conversion of atmospheric nitrogen (N₂) to ammonia (NH₃) or nitrates, making it available to plants.</span>
+<span class="ln step">N₂ + 8H⁺ + 8e⁻ + 16ATP → 2NH₃ + H₂ + 16ADP + 16Pi (enzyme: nitrogenase)</span>
+<span class="ln step">Examples: <span class="af">Rhizobium</span> (symbiotic), Azotobacter (free-living)</span>
+</div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(vii)</span> Vector in rDNA technology</div>
+<div class="sol-a">
+<span class="ln given">A vector is a DNA molecule (usually a plasmid or bacteriophage) used to carry and introduce foreign DNA into a host cell for cloning and expression.</span>
+<span class="ln step">Properties: ability to replicate independently, must have restriction sites, selectable marker, origin of replication.</span>
+</div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(ix)</span> Secondary metabolites</div>
+<div class="sol-a">
+<span class="ln given">Secondary metabolites are organic compounds produced by plants that are not directly involved in primary metabolic processes (growth, reproduction) but help in defence, pollination and competition.</span>
+<span class="ln step">Examples: <span class="af">Alkaloids</span> (morphine, caffeine), <span class="af">Terpenes</span> (rubber, camphor), <span class="af">Phenolics</span> (tannins), Resins</span>
+</div></div>
+</div><!-- end answer page 1 -->
+
+
+<div class="page pb">
+<div class="section-title">SECTION C — Short Answer Solutions <span class="marks">2 marks each</span></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(ii)</span> Mendel's law of dominance</div>
+<div class="sol-a">
+<span class="ln given">Law of Dominance: When parents differing in a pair of contrasting characters are crossed, only one character (dominant) appears in F₁. The other character (recessive) is suppressed but not lost.</span>
+<span class="ln gap"></span>
+<span class="ln step">Example: Tall (TT) × Dwarf (tt) → F₁: All Tall (Tt)</span>
+<span class="ln step">Tallness (T) is dominant over dwarfness (t)</span>
+<span class="ln step">The recessive 't' allele is present but not expressed in F₁</span>
+<span class="ln step">It reappears in F₂ in 1/4 proportion (tt)</span>
+</div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(iii)</span> DNA replication vs Transcription (4 differences)</div>
+<div class="sol-a">
+<table style="width:100%;border-collapse:collapse;font-size:13px;margin:6px 0">
+<tr style="background:#2e7d32;color:#fff"><th style="padding:6px 10px;text-align:left">DNA Replication</th><th style="padding:6px 10px;text-align:left">Transcription</th></tr>
+<tr><td style="padding:5px 10px;border-bottom:1px solid #e8f5e9">Produces DNA copy</td><td style="padding:5px 10px;border-bottom:1px solid #e8f5e9">Produces RNA copy</td></tr>
+<tr style="background:#f1f8e9"><td style="padding:5px 10px;border-bottom:1px solid #e8f5e9">Both strands serve as templates</td><td style="padding:5px 10px;border-bottom:1px solid #e8f5e9">Only one strand (template) used</td></tr>
+<tr><td style="padding:5px 10px;border-bottom:1px solid #e8f5e9">Enzyme: DNA polymerase</td><td style="padding:5px 10px;border-bottom:1px solid #e8f5e9">Enzyme: RNA polymerase</td></tr>
+<tr style="background:#f1f8e9"><td style="padding:5px 10px">Uses deoxyribonucleotides</td><td style="padding:5px 10px">Uses ribonucleotides</td></tr>
+</table>
+</div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(v)</span> C₄ pathway — 2 plants, advantage</div>
+<div class="sol-a">
+<span class="ln given">C₄ pathway (Hatch-Slack pathway): A modified form of photosynthesis where CO₂ is first fixed in mesophyll cells to form 4-carbon compounds (OAA, malate) before entering the Calvin cycle in bundle sheath cells.</span>
+<span class="ln step">C₄ plants: <span class="af">Maize (Zea mays), Sugarcane (Saccharum)</span>, sorghum, Amaranthus</span>
+<span class="ln step">Advantage: <span class="af">No photorespiration</span> — CO₂ is concentrated in bundle sheath (high CO₂/O₂ ratio), so RuBisCO acts only as carboxylase. Highly efficient in hot, dry, high-light conditions.</span>
+</div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(vi)</span> Ammonification and nitrification</div>
+<div class="sol-a">
+<span class="ln given">Ammonification: Decomposition of organic nitrogen (proteins, urea) in dead organisms and waste → NH₄⁺ (ammonium).</span>
+<span class="ln step">Organic N → NH₄⁺ (by bacteria like Bacillus, Clostridium)</span>
+<span class="ln gap"></span>
+<span class="ln given">Nitrification: Oxidation of ammonium to nitrites and nitrates by chemolithotrophic bacteria (two steps).</span>
+<span class="ln step">Step 1: NH₄⁺ + 1½O₂ → NO₂⁻ + H₂O + 2H⁺ (by Nitrosomonas)</span>
+<span class="ln step">Step 2: NO₂⁻ + ½O₂ → NO₃⁻ (by Nitrobacter)</span>
+<span class="ln tf">Final product: <span class="af">Nitrates (NO₃⁻)</span> — absorbed by plants</span>
+</div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(vii)</span> Bt toxin and mode of action</div>
+<div class="sol-a">
+<span class="ln given">Bt toxin is a protein (Cry protein) produced by the soil bacterium Bacillus thuringiensis. The cry gene encoding this toxin has been inserted into crop plants (Bt-cotton, Bt-brinjal) to confer pest resistance.</span>
+<span class="ln gap"></span>
+<span class="ln step">Mode of action:</span>
+<span class="ln step">1. Bt toxin is produced as an inactive protoxin (pro-Cry protein) in the transgenic plant.</span>
+<span class="ln step">2. When an insect pest (cotton bollworm, Helicoverpa) eats the plant, the alkaline gut dissolves the toxin crystal.</span>
+<span class="ln step">3. The activated toxin binds to specific receptors on the midgut epithelial cells.</span>
+<span class="ln step">4. This creates pores → cells swell and lyse → insect dies.</span>
+<span class="ln tf"><span class="af">Harmless to mammals</span> (no activation in acidic stomach)</span>
+</div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(ix)</span> Restriction enzymes and sticky ends</div>
+<div class="sol-a">
+<span class="ln given">Restriction enzymes (restriction endonucleases) are enzymes that cut DNA at specific palindromic sequences (restriction sites). They are called "molecular scissors" of genetic engineering.</span>
+<span class="ln gap"></span>
+<span class="ln given">How they create sticky ends:</span>
+<span class="ln step">Example: EcoRI recognises 5'−GAATTC−3' and cuts between G and A</span>
+<span class="ln step">5'—G↓AATTC—3' → 5'—G + AATTC—3'</span>
+<span class="ln step">3'—CTTAA↑G—5' → 3'—CTTAA + G—5'</span>
+<span class="ln step">This creates single-stranded overhangs called <span class="af">"sticky ends"</span> (cohesive ends)</span>
+<span class="ln step">These sticky ends allow complementary foreign DNA to join using DNA ligase</span>
+</div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(x)</span> Innate vs Adaptive immunity (4 points)</div>
+<div class="sol-a">
+<table style="width:100%;border-collapse:collapse;font-size:13px;margin:6px 0">
+<tr style="background:#2e7d32;color:#fff"><th style="padding:6px 10px;text-align:left">Innate Immunity</th><th style="padding:6px 10px;text-align:left">Adaptive Immunity</th></tr>
+<tr><td style="padding:5px 10px;border-bottom:1px solid #e8f5e9">Present from birth; non-specific</td><td style="padding:5px 10px;border-bottom:1px solid #e8f5e9">Develops after exposure; highly specific</td></tr>
+<tr style="background:#f1f8e9"><td style="padding:5px 10px;border-bottom:1px solid #e8f5e9">No immunological memory</td><td style="padding:5px 10px;border-bottom:1px solid #e8f5e9">Has memory cells; faster 2nd response</td></tr>
+<tr><td style="padding:5px 10px;border-bottom:1px solid #e8f5e9">Components: skin, mucus, phagocytes</td><td style="padding:5px 10px;border-bottom:1px solid #e8f5e9">Components: B cells (antibodies), T cells</td></tr>
+<tr style="background:#f1f8e9"><td style="padding:5px 10px">Same response to all pathogens</td><td style="padding:5px 10px">Specific antibody for each antigen</td></tr>
+</table>
+</div></div>
+
+<div class="section-title">SECTION D — Short Answer II Solutions <span class="marks">3 marks each</span></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(ii)</span> Dihybrid cross YYRR × yyrr</div>
+<div class="sol-a">
+<span class="ln given">Parents: Yellow Round (YYRR) × Green Wrinkled (yyrr)</span>
+<span class="ln step">F₁: All Yellow Round (YyRr) — by law of dominance</span>
+<span class="ln gap"></span>
+<span class="ln step">F₂ (YyRr × YyRr): Each parent produces 4 gametes: YR, Yr, yR, yr</span>
+<span class="ln step">F₂ phenotypic ratio: <span class="af">9 Yellow Round : 3 Yellow Wrinkled : 3 Green Round : 1 Green Wrinkled</span></span>
+<span class="ln step">Genotypic classes: 9 Y_R_ : 3 Y_rr : 3 yyR_ : 1 yyrr</span>
+<span class="ln tf">This confirms Mendel's Law of Independent Assortment — Y and R genes assort independently.</span>
+</div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(iii)</span> Transcription in prokaryotes</div>
+<div class="sol-a">
+<span class="ln given">Transcription: Synthesis of RNA from DNA template using RNA polymerase. In prokaryotes, it occurs in the cytoplasm.</span>
+<span class="ln gap"></span>
+<span class="ln step"><b>Initiation:</b> RNA polymerase (holoenzyme with σ factor) binds to the promoter region upstream of the gene. The σ factor recognises the −10 (Pribnow box) and −35 sequences. DNA strands separate to form transcription bubble.</span>
+<span class="ln gap"></span>
+<span class="ln step"><b>Elongation:</b> RNA polymerase moves 3'→5' along template strand, synthesising RNA 5'→3'. Complementary ribonucleotides are added (A pairs with U, T pairs with A, G pairs with C). Core enzyme (without σ) is sufficient.</span>
+<span class="ln gap"></span>
+<span class="ln step"><b>Termination:</b> RNA polymerase reaches a terminator sequence. Two types: (1) Rho-independent — RNA forms hairpin loop → polymerase detaches. (2) Rho-dependent — Rho protein unwinds RNA-DNA hybrid.</span>
+<span class="ln step">Product = primary transcript (mRNA in prokaryotes, directly used for translation).</span>
+</div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(vi)</span> Recombinant DNA technology — steps</div>
+<div class="sol-a">
+<span class="ln step"><b>Step 1 — Gene isolation:</b> The gene of interest (e.g., human insulin gene) is isolated using restriction enzymes that cut at specific sequences, creating sticky ends.</span>
+<span class="ln step"><b>Step 2 — Cloning vector preparation:</b> A plasmid vector is cut with the same restriction enzyme, creating compatible sticky ends.</span>
+<span class="ln step"><b>Step 3 — Recombination:</b> Foreign gene is inserted into the vector; DNA ligase seals the nicks → recombinant DNA (rDNA).</span>
+<span class="ln step"><b>Step 4 — Transformation:</b> Recombinant plasmid is introduced into host cell (E. coli) by heat shock or electroporation.</span>
+<span class="ln step"><b>Step 5 — Selection:</b> Transformed colonies identified using antibiotic resistance or blue-white screening.</span>
+<span class="ln step"><b>Step 6 — Expression:</b> Host cells multiply; the inserted gene is expressed → desired protein produced at large scale.</span>
+<span class="ln tf">Example: <span class="af">Human insulin (Humulin)</span> — produced in E. coli, purified and used to treat diabetes.</span>
+</div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(vii)</span> Biomagnification with DDT</div>
+<div class="sol-a">
+<span class="ln given">Biomagnification: Progressive increase in concentration of non-biodegradable toxic substance at each successive trophic level of a food chain.</span>
+<span class="ln gap"></span>
+<span class="ln step">DDT (dichlorodiphenyltrichloroethane) — persistent organochlorine pesticide that accumulates in fatty tissues.</span>
+<span class="ln gap"></span>
+<span class="ln step">DDT concentration through food chain:</span>
+<span class="ln step">Water: 0.003 ppm</span>
+<span class="ln step">Phytoplankton (producers): 0.04 ppm (×13)</span>
+<span class="ln step">Zooplankton (1° consumers): 0.5 ppm (×12)</span>
+<span class="ln step">Small fish (2° consumers): 2 ppm (×4)</span>
+<span class="ln step">Large fish (3° consumers): 25 ppm (×12)</span>
+<span class="ln step">Fish-eating birds (top): 75 ppm (×3)</span>
+<span class="ln tf">Effect: <span class="af">Eggshell thinning in birds</span> (osprey, eagle) → reproductive failure. Now banned in most countries.</span>
+</div></div>
+
+<div class="section-title">SECTION E — Long Answer Solutions <span class="marks">4 marks each</span></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(ii)</span> Mendel's monohybrid cross + incomplete dominance</div>
+<div class="sol-a">
+<span class="ln given">Monohybrid cross: TT (Tall) × tt (Dwarf)</span>
+<span class="ln step">F₁: All Tt (Tall) — only dominant trait expressed (Law of Dominance)</span>
+<span class="ln step">F₁ × F₁: Tt × Tt → F₂ ratio: 1TT : 2Tt : 1tt</span>
+<span class="ln step">F₂ phenotypic ratio: <span class="af">3 Tall : 1 Dwarf</span></span>
+<span class="ln step">This proves: (1) Law of Segregation — alleles separate in F₁. (2) Recessive trait reappears in F₂.</span>
+<span class="ln gap"></span>
+<span class="ln given">Incomplete Dominance (Codominance of neither allele):</span>
+<span class="ln step">In Snapdragon (Antirrhinum): Red (RR) × White (rr) → F₁: All Pink (Rr)</span>
+<span class="ln step">Neither red nor white is completely dominant; heterozygote shows intermediate phenotype = <span class="af">Pink</span></span>
+<span class="ln step">F₂ (Rr × Rr): 1 RR (Red) : 2 Rr (Pink) : 1 rr (White) → ratio 1:2:1</span>
+<span class="ln tf">Genotypic ratio = Phenotypic ratio = <span class="af">1:2:1</span></span>
+</div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(iii)</span> DNA structure + semi-conservative replication + mutation</div>
+<div class="sol-a">
+<span class="ln given">DNA Structure (Watson-Crick, 1953):</span>
+<span class="ln step">• Two polynucleotide chains wound around each other in antiparallel double helix</span>
+<span class="ln step">• Sugar-phosphate backbone on outside; bases face inward</span>
+<span class="ln step">• Base pairing: A=T (2H bonds), G≡C (3H bonds) — Chargaff's rules</span>
+<span class="ln step">• Diameter: 2 nm; pitch: 3.4 nm; 10 bp per turn</span>
+<span class="ln gap"></span>
+<span class="ln given">Semi-conservative replication:</span>
+<span class="ln step">1. Helicase unwinds and separates the two strands at origin</span>
+<span class="ln step">2. Primase adds RNA primer; DNA polymerase III adds complementary nucleotides (5'→3')</span>
+<span class="ln step">3. Leading strand synthesised continuously; lagging strand in Okazaki fragments</span>
+<span class="ln step">4. Primers removed; gaps filled by DNA Pol I; ligase joins fragments</span>
+<span class="ln step">Result: 2 identical DNA molecules, each with 1 old + 1 new strand</span>
+<span class="ln step">Proved by: <span class="af">Meselson-Stahl experiment (1958)</span> using ¹⁵N/¹⁴N density gradient</span>
+<span class="ln gap"></span>
+<span class="ln given">Mutation: A sudden, heritable change in DNA sequence.</span>
+<span class="ln step">1. <span class="af">Point mutation</span>: Change in single nucleotide. Example: Sickle cell anaemia (A→T substitution, codon GAG→GTG; Glu→Val in haemoglobin)</span>
+<span class="ln step">2. <span class="af">Chromosomal mutation</span>: Change in chromosome structure or number. Example: Down syndrome (trisomy 21 — 3 copies of chromosome 21)</span>
+</div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(v)</span> Recombinant DNA technology for insulin + PCR</div>
+<div class="sol-a">
+<span class="ln given">Production of human insulin by rDNA:</span>
+<span class="ln step">1. The human insulin gene (two chains A and B) was synthesised chemically.</span>
+<span class="ln step">2. Inserted separately into plasmid vectors using restriction enzymes and ligase.</span>
+<span class="ln step">3. Recombinant plasmids introduced into E. coli.</span>
+<span class="ln step">4. E. coli expressed both chains → chains extracted and combined using disulfide bonds → active insulin.</span>
+<span class="ln step">5. Purified and marketed as <span class="af">Humulin</span> (Eli Lilly, 1982) — first commercial rDNA product.</span>
+<span class="ln gap"></span>
+<span class="ln given">PCR (Polymerase Chain Reaction) — invented by Kary Mullis (Nobel Prize 1993):</span>
+<span class="ln step">Used to amplify a specific DNA sequence in vitro exponentially.</span>
+<span class="ln gap"></span>
+<span class="ln step">Three steps (one cycle, ~30 cycles total):</span>
+<span class="ln step">1. <span class="af">Denaturation</span> (94°C): DNA double helix is heated → two strands separate</span>
+<span class="ln step">2. <span class="af">Annealing</span> (50–65°C): Primers (short synthetic DNA) bind to complementary sequences on each strand</span>
+<span class="ln step">3. <span class="af">Extension</span> (72°C): Taq polymerase (heat-stable) synthesises new DNA from each primer using dNTPs</span>
+<span class="ln step">After n cycles: 2ⁿ copies of target DNA (30 cycles → ~10⁹ copies)</span>
+<span class="ln step">Uses: DNA fingerprinting, diagnosis of genetic diseases, forensics, COVID testing.</span>
+</div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(vi)</span> Ecosystem energy flow + conservation</div>
+<div class="sol-a">
+<span class="ln given">Ecosystem: A structural and functional unit of nature where biotic and abiotic components interact.</span>
+<span class="ln gap"></span>
+<span class="ln given">Energy flow through food chain (10% law — Lindeman, 1942):</span>
+<span class="ln step">Producers (10,000 J) → Primary consumers (1,000 J) → Secondary consumers (100 J) → Tertiary consumers (10 J)</span>
+<span class="ln step">Only 10% of energy is transferred at each trophic level; 90% is lost as heat, respiration and excretion.</span>
+<span class="ln step">Energy flow is <span class="af">unidirectional</span> — not cyclic (unlike nutrients).</span>
+<span class="ln gap"></span>
+<span class="ln given">In situ conservation (conservation in natural habitat):</span>
+<span class="ln step">1. <span class="af">Wildlife sanctuaries</span> — Bharatpur Bird Sanctuary, Kaziranga (one-horned rhino)</span>
+<span class="ln step">2. <span class="af">National Parks</span> — Jim Corbett (tigers), Gir National Park (Asiatic lions)</span>
+<span class="ln gap"></span>
+<span class="ln given">Ex situ conservation (outside natural habitat):</span>
+<span class="ln step">1. <span class="af">Zoological parks</span> — captive breeding, Delhi Zoo, Mysore Zoo</span>
+<span class="ln step">2. <span class="af">Seed banks</span> — NBPGR (New Delhi), Svalbard Global Seed Vault — store seeds at −196°C</span>
+</div></div>
+
+<div class="footer">Visions Classes, Ambernath · Biology — Set 1 — Answer Key · Class XII · All the Best!</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Class 12 Physics – HSC Set 1 | Visions Classes</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Arial',sans-serif;background:#f0f0f0;padding:30px 10px;color:#111;}
+    .page{background:#fff;max-width:820px;margin:0 auto;padding:36px 50px;border:2px solid #333;box-shadow:0 4px 20px rgba(0,0,0,0.15);}
+    .visions-header{text-align:center;padding-bottom:12px;border-bottom:4px double #1a1a2e;margin-bottom:14px;}
+    .visions-header .inst-name{font-size:32px;font-weight:bold;letter-spacing:4px;text-transform:uppercase;color:#1a1a2e;}
+    .visions-header .inst-name span{color:#c0392b;}
+    .visions-header .tagline{font-size:13px;font-style:italic;letter-spacing:2px;color:#555;margin-top:4px;}
+    .header{text-align:center;border-bottom:2px solid #333;padding-bottom:12px;margin-bottom:14px;}
+    .header .board{font-size:12.5px;color:#555;margin-bottom:4px;}
+    .header h1{font-size:18px;font-weight:bold;margin:5px 0 2px;}
+    .header h2{font-size:15px;font-weight:normal;color:#333;margin-bottom:4px;}
+    .meta{display:flex;justify-content:space-between;font-size:13.5px;padding:9px 0;border-bottom:1px solid #aaa;margin-bottom:14px;}
+    .meta span{font-weight:bold;}
+    .instructions{background:#fafafa;border:1px solid #ccc;padding:10px 16px;margin-bottom:20px;font-size:13.5px;}
+    .instructions p{font-weight:bold;margin-bottom:6px;font-size:14px;}
+    .instructions ol{padding-left:20px;}
+    .instructions ol li{margin-bottom:4px;line-height:1.8;}
+    .section-title{background:#1a1a2e;color:#fff;padding:7px 14px;font-size:14px;font-weight:bold;margin:22px 0 12px;display:flex;justify-content:space-between;align-items:center;}
+    .section-title .marks{background:#fff;color:#1a1a2e;padding:2px 10px;border-radius:10px;font-size:12px;font-weight:bold;}
+    .question{margin-bottom:14px;font-size:14px;line-height:1.9;}
+    .question .qnum{font-weight:bold;margin-right:4px;}
+    .options{display:grid;grid-template-columns:1fr 1fr;gap:5px 30px;margin:8px 0 8px 26px;font-size:13.5px;}
+    .sub-list{list-style:none;padding-left:22px;margin:5px 0;}
+    .sub-list li{margin-bottom:6px;font-size:13.5px;line-height:1.8;}
+    hr.divider{border:none;border-top:1px dashed #bbb;margin:16px 0;}
+    .note{font-size:12.5px;font-style:italic;color:#666;margin:3px 0 6px 22px;}
+    .footer{text-align:center;margin-top:28px;font-size:12.5px;color:#555;border-top:2px double #333;padding-top:10px;}
+    .print-btn{display:block;margin:22px auto 0;padding:10px 38px;background:#1a1a2e;color:#fff;border:none;font-size:15px;border-radius:5px;cursor:pointer;letter-spacing:1px;}
+    .print-btn:hover{background:#333;}
+
+    /* ANSWER KEY STYLES */
+    .answer-divider{border-top:3px double #333;margin:36px 0 10px;text-align:center;padding-top:14px;font-size:18px;font-weight:bold;letter-spacing:2px;color:#1a1a2e;}
+    .sol-section{margin-bottom:22px;}
+    .sol-title{background:#2c3e50;color:#fff;padding:6px 14px;font-size:13.5px;font-weight:bold;margin:18px 0 10px;}
+    .sol-block{margin:10px 0 16px 10px;font-size:13.5px;line-height:2;}
+    .sol-block .ans-badge{display:inline-block;background:#27ae60;color:#fff;padding:1px 10px;border-radius:8px;font-size:12px;font-weight:bold;margin-left:8px;}
+    .sol-step{display:block;margin-left:20px;}
+    .sol-step.conclude{color:#c0392b;font-weight:bold;}
+    .final-ans{display:inline-block;background:#d5f5e3;border:1px solid #27ae60;padding:3px 14px;border-radius:4px;font-weight:bold;color:#145a32;margin-top:4px;}
+    .given-box{background:#eaf4fb;border-left:3px solid #2980b9;padding:6px 12px;margin:6px 0 8px 18px;font-size:13px;}
+
+    @media print{
+      body{background:#fff;padding:0;}
+      .page{box-shadow:none;border:none;padding:20px 30px;}
+      .no-print{display:none;}
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="visions-header">
+    <div class="inst-name">Visions <span>Classes</span></div>
+    <div class="tagline">✦ &nbsp; Learn Today, Lead Tomorrow &nbsp; ✦</div>
+  </div>
+
+  <div class="header">
+    <div class="board">Maharashtra State Board of Secondary &amp; Higher Secondary Education, Pune</div>
+    <h1>HIGHER SECONDARY CERTIFICATE (HSC) EXAMINATION 2024–25</h1>
+    <h2>PHYSICS &nbsp;(54) &nbsp;|&nbsp; Class XII &nbsp;|&nbsp; SET 1</h2>
+  </div>
+
+  <div class="meta">
+    <div>Time : <span>3 Hours</span></div>
+    <div>Max. Marks : <span>70</span></div>
+  </div>
+
+  <div class="instructions">
+    <p>General Instructions :</p>
+    <ol>
+      <li>All questions are <strong>compulsory</strong> unless stated otherwise.</li>
+      <li>Use of logarithm tables and calculators is <strong>not</strong> allowed.</li>
+      <li>Neat diagrams must be drawn wherever necessary. Figures to the right indicate full marks.</li>
+      <li>For numerical problems, write Given → Formula → Substitution → Calculation → Result.</li>
+      <li>Symbols carry their usual meanings; g = 9.8 m/s² unless stated.</li>
+    </ol>
+  </div>
+
+  <!-- ══════════════════════════
+       SECTION A – MCQ
+  ══════════════════════════ -->
+  <div class="section-title">
+    Q.1 &nbsp; Select the correct alternative (MCQ)
+    <span class="marks">10 × 1 = 10 Marks</span>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(i)</span>
+    The electric potential at a point is 100 V and the electric field is 50 N/C. The distance of the point from the charge is —
+    <div class="options">
+      <div>(A) &nbsp;0.5 m</div>
+      <div>(B) &nbsp;2 m</div>
+      <div>(C) &nbsp;5 m</div>
+      <div>(D) &nbsp;50 m</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(ii)</span>
+    In a parallel plate capacitor, if the distance between the plates is doubled, the capacitance —
+    <div class="options">
+      <div>(A) &nbsp;doubles</div>
+      <div>(B) &nbsp;halves</div>
+      <div>(C) &nbsp;remains same</div>
+      <div>(D) &nbsp;becomes four times</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(iii)</span>
+    The SI unit of self-inductance is —
+    <div class="options">
+      <div>(A) &nbsp;Weber</div>
+      <div>(B) &nbsp;Tesla</div>
+      <div>(C) &nbsp;Henry</div>
+      <div>(D) &nbsp;Farad</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(iv)</span>
+    When a ray of light travels from glass to air, it bends —
+    <div class="options">
+      <div>(A) &nbsp;towards normal</div>
+      <div>(B) &nbsp;away from normal</div>
+      <div>(C) &nbsp;does not bend</div>
+      <div>(D) &nbsp;is totally reflected</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(v)</span>
+    The energy of a photon of frequency ν is —
+    <div class="options">
+      <div>(A) &nbsp;hν²</div>
+      <div>(B) &nbsp;hν</div>
+      <div>(C) &nbsp;h/ν</div>
+      <div>(D) &nbsp;ν/h</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(vi)</span>
+    In a nuclear fission reaction, the total mass of products is —
+    <div class="options">
+      <div>(A) &nbsp;equal to reactants</div>
+      <div>(B) &nbsp;greater than reactants</div>
+      <div>(C) &nbsp;less than reactants</div>
+      <div>(D) &nbsp;none of these</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(vii)</span>
+    The threshold frequency of a metal is ν₀. If light of frequency ν &gt; ν₀ falls on it, the stopping potential V₀ is related to ν by —
+    <div class="options">
+      <div>(A) &nbsp;V₀ ∝ ν</div>
+      <div>(B) &nbsp;V₀ ∝ ν²</div>
+      <div>(C) &nbsp;V₀ ∝ (ν − ν₀)</div>
+      <div>(D) &nbsp;V₀ = hν</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(viii)</span>
+    In a common emitter transistor, β = 100 and I<sub>b</sub> = 20 μA. The collector current I<sub>c</sub> is —
+    <div class="options">
+      <div>(A) &nbsp;0.2 mA</div>
+      <div>(B) &nbsp;2 mA</div>
+      <div>(C) &nbsp;20 mA</div>
+      <div>(D) &nbsp;200 mA</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(ix)</span>
+    In Young's double slit experiment, if the slit separation is halved, the fringe width —
+    <div class="options">
+      <div>(A) &nbsp;halves</div>
+      <div>(B) &nbsp;doubles</div>
+      <div>(C) &nbsp;remains same</div>
+      <div>(D) &nbsp;becomes four times</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(x)</span>
+    Lenz's law is a consequence of the conservation of —
+    <div class="options">
+      <div>(A) &nbsp;charge</div>
+      <div>(B) &nbsp;energy</div>
+      <div>(C) &nbsp;momentum</div>
+      <div>(D) &nbsp;mass</div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════
+       SECTION B – 1 mark each
+  ══════════════════════════ -->
+  <div class="section-title">
+    Q.2 &nbsp; Answer any EIGHT of the following (1 mark each)
+    <span class="marks">8 × 1 = 8 Marks</span>
+  </div>
+  <ul class="sub-list">
+    <li>(i) Define electric potential.</li>
+    <li>(ii) State Ohm's law.</li>
+    <li>(iii) What is magnetic flux? Give its SI unit.</li>
+    <li>(iv) Define power factor of an AC circuit.</li>
+    <li>(v) What is total internal reflection?</li>
+    <li>(vi) Define work function. State its unit.</li>
+    <li>(vii) What is a rectifier?</li>
+    <li>(viii) State De Morgan's second theorem.</li>
+    <li>(ix) What is nuclear binding energy?</li>
+    <li>(x) Define the term 'critical angle'.</li>
+    <li>(xi) What is a photon?</li>
+    <li>(xii) State Coulomb's law.</li>
+  </ul>
+
+  <!-- ══════════════════════════
+       SECTION C – 2 marks each
+  ══════════════════════════ -->
+  <div class="section-title">
+    Q.3 &nbsp; Attempt any EIGHT of the following (2 marks each)
+    <span class="marks">8 × 2 = 16 Marks</span>
+  </div>
+  <ul class="sub-list">
+    <li>(i) Derive the expression for energy stored in a capacitor.</li>
+    <li>(ii) State and explain Kirchhoff's Current Law (KCL).</li>
+    <li>(iii) A coil of 50 turns, area 0.02 m² is placed in a magnetic field of 0.4 T. Find the maximum EMF induced at 60 Hz.</li>
+    <li>(iv) Draw a neat labelled diagram of a step-up transformer.</li>
+    <li>(v) Explain Huygens' principle with a diagram.</li>
+    <li>(vi) State the laws of photoelectric effect.</li>
+    <li>(vii) Derive the expression for the radius of the n<sup>th</sup> Bohr orbit.</li>
+    <li>(viii) Draw the circuit diagram and explain the working of a half-wave rectifier.</li>
+    <li>(ix) Find the fringe width in YDSE: slit separation = 0.5 mm, screen distance = 1 m, λ = 500 nm.</li>
+    <li>(x) What is the Compton effect? State its significance.</li>
+    <li>(xi) Differentiate between nuclear fission and nuclear fusion (any 4 points).</li>
+    <li>(xii) Explain the magnetisation curve (B–H curve) for a ferromagnetic material.</li>
+  </ul>
+
+  <!-- ══════════════════════════
+       SECTION D – 3 marks each
+  ══════════════════════════ -->
+  <div class="section-title">
+    Q.4 &nbsp; Attempt any SIX of the following (3 marks each)
+    <span class="marks">6 × 3 = 18 Marks</span>
+  </div>
+  <ul class="sub-list">
+    <li>(i) Derive the expression for the electric field due to a uniformly charged ring at a point on its axis.</li>
+    <li>(ii) Derive the mirror formula.</li>
+    <li>(iii) State Bohr's postulates and derive the energy of the electron in the n<sup>th</sup> orbit.</li>
+    <li>(iv) Explain the construction and working of a moving coil galvanometer.</li>
+    <li>(v) Derive the expression for torque on a magnetic dipole in a uniform magnetic field.</li>
+    <li>(vi) Explain the principle of superposition and derive the expression for intensity in interference.</li>
+    <li>(vii) A parallel plate capacitor has plates of area 100 cm², separation 5 mm, dielectric constant K = 4. Find its capacitance. (ε₀ = 8.85 × 10⁻¹² F/m)</li>
+    <li>(viii) A proton moves with velocity 2 × 10⁶ m/s perpendicular to a magnetic field of 0.5 T. Find the radius of its circular path. (m<sub>p</sub> = 1.67 × 10⁻²⁷ kg, e = 1.6 × 10⁻¹⁹ C)</li>
+  </ul>
+
+  <!-- ══════════════════════════
+       SECTION E – 4 marks each
+  ══════════════════════════ -->
+  <div class="section-title">
+    Q.5 &nbsp; Attempt any FOUR of the following (4 marks each)
+    <span class="marks">4 × 4 = 16 Marks</span>
+  </div>
+  <ul class="sub-list">
+    <li>(i)(a) State and prove Gauss's law. &nbsp;(b) Using Gauss's law, find the electric field due to an infinite plane sheet of charge.</li>
+    <li>(ii)(a) Derive the lens maker's formula. &nbsp;(b) An object is placed 30 cm from a convex lens of focal length 20 cm. Find the image position.</li>
+    <li>(iii)(a) Explain interference of light; give the conditions for constructive and destructive interference. &nbsp;(b) In YDSE: d = 0.3 mm, D = 1.5 m, β = 3 mm. Find the wavelength λ.</li>
+    <li>(iv)(a) State Einstein's photoelectric equation and explain all terms. &nbsp;(b) Light of frequency 8 × 10¹⁴ Hz falls on a metal with work function 3 eV. Find max KE of photoelectrons. (h = 6.63 × 10⁻³⁴ J·s, 1 eV = 1.6 × 10⁻¹⁹ J)</li>
+    <li>(v)(a) Derive the expression for the time period of a satellite: T = 2π√(r³/GM). &nbsp;(b) Explain the concept and uses of a geostationary satellite.</li>
+  </ul>
+
+  <div class="footer">
+    *** Best of Luck *** &nbsp;|&nbsp; Be Honest, Work Hard
+    <br/><small>Visions Classes &nbsp;|&nbsp; Learn Today, Lead Tomorrow &nbsp;|&nbsp; Class XII Physics – HSC SET 1</small>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       ANSWER KEY — COMPLETE SOLUTIONS
+  ══════════════════════════════════════════════════ -->
+  <div class="answer-divider">— — — &nbsp; ANSWER KEY &nbsp;— Complete Solutions — — —</div>
+
+  <!-- SOL: SECTION A MCQ -->
+  <div class="sol-title">SECTION A – MCQ Solutions</div>
+
+  <div class="sol-block">
+    <strong>(i)</strong> Correct Answer: <span class="ans-badge">(B) 2 m</span><br/>
+    <span class="sol-step">Relation: E = V/r &nbsp;⟹&nbsp; r = V/E</span>
+    <span class="sol-step">= 100 / 50</span>
+    <span class="sol-step"><span class="final-ans">r = 2 m</span></span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(ii)</strong> Correct Answer: <span class="ans-badge">(B) halves</span><br/>
+    <span class="sol-step">C = ε₀A/d &nbsp;⟹&nbsp; if d doubles, C = ε₀A/(2d) = C₀/2</span>
+    <span class="sol-step"><span class="final-ans">Capacitance becomes half.</span></span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(iii)</strong> Correct Answer: <span class="ans-badge">(C) Henry</span><br/>
+    <span class="sol-step">Self-inductance L is defined by e = −L(dI/dt). Unit is Henry (H).</span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(iv)</strong> Correct Answer: <span class="ans-badge">(B) away from normal</span><br/>
+    <span class="sol-step">Glass is denser (μ &gt; 1) than air. On going from denser to rarer medium, the refracted ray bends away from the normal.</span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(v)</strong> Correct Answer: <span class="ans-badge">(B) hν</span><br/>
+    <span class="sol-step">Planck's quantum theory: E = hν, where h = Planck's constant.</span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(vi)</strong> Correct Answer: <span class="ans-badge">(C) less than reactants</span><br/>
+    <span class="sol-step">In fission, mass defect Δm = m(reactants) − m(products) &gt; 0.</span>
+    <span class="sol-step">The lost mass converts to energy: E = Δmc².</span>
+    <span class="sol-step"><span class="final-ans">Mass of products &lt; mass of reactants.</span></span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(vii)</strong> Correct Answer: <span class="ans-badge">(C) V₀ ∝ (ν − ν₀)</span><br/>
+    <span class="sol-step">Einstein's equation: eV₀ = h(ν − ν₀)</span>
+    <span class="sol-step">∴ V₀ = (h/e)(ν − ν₀) &nbsp;⟹&nbsp; V₀ ∝ (ν − ν₀)</span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(viii)</strong> Correct Answer: <span class="ans-badge">(B) 2 mA</span><br/>
+    <span class="sol-step">I<sub>c</sub> = β × I<sub>b</sub> = 100 × 20 × 10⁻⁶</span>
+    <span class="sol-step">= 2000 × 10⁻⁶ A</span>
+    <span class="sol-step"><span class="final-ans">I<sub>c</sub> = 2 mA</span></span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(ix)</strong> Correct Answer: <span class="ans-badge">(B) doubles</span><br/>
+    <span class="sol-step">Fringe width β = λD/d &nbsp;⟹&nbsp; if d → d/2, then β → 2λD/d = 2β</span>
+    <span class="sol-step"><span class="final-ans">Fringe width doubles.</span></span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(x)</strong> Correct Answer: <span class="ans-badge">(B) energy</span><br/>
+    <span class="sol-step">Lenz's law states induced EMF opposes the change causing it — this is a statement of conservation of energy (work must be done against induced force).</span>
+  </div>
+
+  <!-- SOL: SECTION B -->
+  <div class="sol-title">SECTION B – Short Definitions (1 mark each)</div>
+
+  <div class="sol-block">
+    <strong>(i) Electric Potential:</strong><br/>
+    <span class="sol-step">Electric potential at a point is the work done per unit positive charge in bringing a test charge from infinity to that point.</span>
+    <span class="sol-step">V = W/q &nbsp;; &nbsp;SI unit: Volt (V) = J/C</span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(ii) Ohm's Law:</strong><br/>
+    <span class="sol-step">At constant temperature, the current flowing through a conductor is directly proportional to the potential difference across it.</span>
+    <span class="sol-step">V = IR, where R is the resistance (constant).</span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(iii) Magnetic Flux:</strong><br/>
+    <span class="sol-step">Magnetic flux through a surface is the total number of magnetic field lines passing perpendicularly through that surface.</span>
+    <span class="sol-step">Φ = B·A·cosθ &nbsp;; &nbsp;SI unit: Weber (Wb)</span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(iv) Power Factor:</strong><br/>
+    <span class="sol-step">Power factor = cosφ = R/Z, where φ is the phase angle between voltage and current.</span>
+    <span class="sol-step">It is the ratio of true power to apparent power in an AC circuit.</span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(v) Total Internal Reflection:</strong><br/>
+    <span class="sol-step">When light travels from a denser to a rarer medium, and the angle of incidence exceeds the critical angle, all the light is reflected back into the denser medium. This is called total internal reflection.</span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(vi) Work Function:</strong><br/>
+    <span class="sol-step">The minimum energy required to remove one electron from the surface of a metal is called the work function (φ₀).</span>
+    <span class="sol-step">Unit: electronvolt (eV) or Joule (J).</span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(vii) Rectifier:</strong><br/>
+    <span class="sol-step">A rectifier is an electronic device that converts alternating current (AC) into direct current (DC).</span>
+    <span class="sol-step">It uses one or more p-n junction diodes.</span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(viii) De Morgan's Second Theorem:</strong><br/>
+    <span class="sol-step">The complement of a product of variables equals the sum of their complements.</span>
+    <span class="sol-step">Mathematically: <strong>$\overline{A \cdot B} = \bar{A} + \bar{B}$</strong></span>
+    <span class="sol-step">(i.e., NAND gate output = complement of AND = OR of complements)</span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(ix) Nuclear Binding Energy:</strong><br/>
+    <span class="sol-step">The energy required to completely separate all the nucleons (protons and neutrons) of a nucleus from each other is called binding energy.</span>
+    <span class="sol-step">BE = Δm × c² = [Z·m<sub>p</sub> + N·m<sub>n</sub> − M]c²</span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(x) Critical Angle:</strong><br/>
+    <span class="sol-step">Critical angle is the angle of incidence in the denser medium for which the angle of refraction in the rarer medium is 90°.</span>
+    <span class="sol-step">sinC = 1/μ, where μ is the refractive index of the denser medium.</span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(xi) Photon:</strong><br/>
+    <span class="sol-step">A photon is a discrete packet (quantum) of electromagnetic energy.</span>
+    <span class="sol-step">Energy E = hν; it has zero rest mass and travels at speed of light.</span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(xii) Coulomb's Law:</strong><br/>
+    <span class="sol-step">The force of attraction or repulsion between two point charges is directly proportional to the product of the charges and inversely proportional to the square of the distance between them.</span>
+    <span class="sol-step">F = k·q₁·q₂/r² &nbsp;; &nbsp;k = 9 × 10⁹ N·m²/C²</span>
+  </div>
+
+  <!-- SOL: SECTION C -->
+  <div class="sol-title">SECTION C – 2-Mark Solutions</div>
+
+  <div class="sol-block">
+    <strong>(i) Energy stored in a capacitor:</strong><br/>
+    <span class="sol-step">When charge dq is added at potential V = q/C, work done: dW = V·dq = (q/C)dq</span>
+    <span class="sol-step">Total energy: U = ∫₀^Q (q/C) dq = Q²/(2C)</span>
+    <span class="sol-step">Using Q = CV:</span>
+    <span class="sol-step"><span class="final-ans">U = ½CV² = Q²/2C = QV/2</span></span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(ii) Kirchhoff's Current Law (KCL):</strong><br/>
+    <span class="sol-step">Statement: The algebraic sum of all currents meeting at a junction is zero.</span>
+    <span class="sol-step">∑I = 0 at any node.</span>
+    <span class="sol-step">Explanation: Current entering = Current leaving. Based on conservation of charge.</span>
+    <span class="sol-step">Example: If I₁ and I₂ enter a node and I₃ leaves: I₁ + I₂ = I₃</span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(iii) Maximum EMF of rotating coil:</strong><br/>
+    <div class="given-box">Given: N = 50, A = 0.02 m², B = 0.4 T, f = 60 Hz</div>
+    <span class="sol-step">Formula: e<sub>max</sub> = NBAω = NBA(2πf)</span>
+    <span class="sol-step">= 50 × 0.4 × 0.02 × 2π × 60</span>
+    <span class="sol-step">= 50 × 0.4 × 0.02 × 376.8</span>
+    <span class="sol-step">= 0.4 × 376.8</span>
+    <span class="sol-step"><span class="final-ans">e<sub>max</sub> ≈ 150.72 V</span></span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(iv) Step-up Transformer (diagram description):</strong><br/>
+    <span class="sol-step">Primary coil (N<sub>P</sub> turns) — Core (laminated iron) — Secondary coil (N<sub>S</sub> &gt; N<sub>P</sub> turns)</span>
+    <span class="sol-step">Input AC → Primary → Varying flux in core → Induced EMF in secondary</span>
+    <span class="sol-step">V<sub>S</sub>/V<sub>P</sub> = N<sub>S</sub>/N<sub>P</sub> &gt; 1 &nbsp;(voltage stepped up)</span>
+    <span class="sol-step">[Draw: rectangular laminated core, primary coil on left, secondary on right, label N<sub>P</sub>, N<sub>S</sub>, V<sub>P</sub>, V<sub>S</sub>]</span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(v) Huygens' Principle:</strong><br/>
+    <span class="sol-step">1. Every point on a wavefront acts as a source of secondary wavelets.</span>
+    <span class="sol-step">2. These secondary wavelets spread out in all directions with the speed of the wave.</span>
+    <span class="sol-step">3. The new wavefront is the envelope (tangent surface) of all the secondary wavelets.</span>
+    <span class="sol-step">[Diagram: plane wavefront → secondary wavelets → new plane wavefront]</span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(vi) Laws of Photoelectric Effect:</strong><br/>
+    <span class="sol-step">1. Photoelectric emission occurs only if frequency of incident light ≥ threshold frequency (ν ≥ ν₀).</span>
+    <span class="sol-step">2. Max KE of photoelectrons depends on frequency, NOT on intensity.</span>
+    <span class="sol-step">3. Number of photoelectrons emitted per second is proportional to the intensity of light.</span>
+    <span class="sol-step">4. The process is instantaneous (no time lag).</span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(vii) Radius of n<sup>th</sup> Bohr orbit:</strong><br/>
+    <span class="sol-step">Centripetal force = Electrostatic force:</span>
+    <span class="sol-step">mv²/r = ke²/r² &nbsp;⟹&nbsp; mv²r = ke² &nbsp;...(1)</span>
+    <span class="sol-step">Bohr's quantisation: mvr = nh/2π &nbsp;...(2)</span>
+    <span class="sol-step">From (2): v = nh/(2πmr)</span>
+    <span class="sol-step">Substituting in (1): m(n²h²/4π²m²r²)r = ke²</span>
+    <span class="sol-step">⟹ r = n²h²/(4π²mke²)</span>
+    <span class="sol-step"><span class="final-ans">r<sub>n</sub> = n² × a₀, where a₀ = 0.529 Å (Bohr radius)</span></span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(viii) Half-wave Rectifier:</strong><br/>
+    <span class="sol-step">Circuit: AC input → Diode (D) in series → Load resistance R<sub>L</sub>.</span>
+    <span class="sol-step">Working: During +ve half cycle → diode forward biased → current flows through R<sub>L</sub>.</span>
+    <span class="sol-step">During −ve half cycle → diode reverse biased → no current flows.</span>
+    <span class="sol-step">Output: Pulsating DC (only positive half cycles appear across R<sub>L</sub>).</span>
+    <span class="sol-step">Efficiency ≈ 40.6%.</span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(ix) Fringe Width (YDSE):</strong><br/>
+    <div class="given-box">Given: d = 0.5 mm = 5×10⁻⁴ m, D = 1 m, λ = 500 nm = 5×10⁻⁷ m</div>
+    <span class="sol-step">Formula: β = λD/d</span>
+    <span class="sol-step">= (5×10⁻⁷ × 1) / (5×10⁻⁴)</span>
+    <span class="sol-step">= 10⁻³ m</span>
+    <span class="sol-step"><span class="final-ans">β = 1 mm</span></span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(x) Compton Effect:</strong><br/>
+    <span class="sol-step">When X-rays are scattered by free electrons, the scattered radiation has longer wavelength than incident radiation.</span>
+    <span class="sol-step">Δλ = (h/m<sub>e</sub>c)(1 − cosφ) &nbsp; (Compton shift formula)</span>
+    <span class="sol-step">Significance: Proves photons have momentum; confirms particle nature of radiation.</span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(xi) Fission vs Fusion (4 points):</strong><br/>
+    <span class="sol-step">1. Fission: Heavy nucleus splits; Fusion: Light nuclei combine.</span>
+    <span class="sol-step">2. Fission: Triggered by slow neutrons; Fusion: Requires very high temperature (10⁷–10⁸ K).</span>
+    <span class="sol-step">3. Fission: Used in nuclear reactors; Fusion: Occurs in stars (Sun).</span>
+    <span class="sol-step">4. Fusion releases more energy per unit mass than fission.</span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(xii) B–H Curve (Magnetisation curve):</strong><br/>
+    <span class="sol-step">Initially B increases slowly with H (domain alignment begins).</span>
+    <span class="sol-step">Then rapid increase (most domains aligned).</span>
+    <span class="sol-step">Saturation: B becomes constant even as H increases.</span>
+    <span class="sol-step">On reducing H: B remains non-zero at H=0 → Retentivity (B<sub>r</sub>).</span>
+    <span class="sol-step">Reverse H needed to demagnetise → Coercivity (H<sub>c</sub>).</span>
+    <span class="sol-step">Complete cycle forms a hysteresis loop; area = energy loss per cycle.</span>
+  </div>
+
+  <!-- SOL: SECTION D -->
+  <div class="sol-title">SECTION D – 3-Mark Solutions</div>
+
+  <div class="sol-block">
+    <strong>(i) Electric field due to uniformly charged ring at axial point:</strong><br/>
+    <span class="sol-step">Consider a ring of radius R, total charge Q, point P at distance x from centre on axis.</span>
+    <span class="sol-step">Each element dq is at distance r = √(R²+x²) from P.</span>
+    <span class="sol-step">dE = k·dq/(R²+x²); component along axis: dE<sub>x</sub> = dE·cosθ = dE·x/r</span>
+    <span class="sol-step">By symmetry, transverse components cancel.</span>
+    <span class="sol-step">E = ∫dE<sub>x</sub> = kQx/(R²+x²)<sup>3/2</sup></span>
+    <span class="sol-step"><span class="final-ans">E = kQx / (R² + x²)^(3/2)</span></span>
+    <span class="sol-step">Maximum E at x = R/√2.</span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(ii) Mirror Formula Derivation:</strong><br/>
+    <span class="sol-step">Consider a concave mirror with pole P, focus F, centre C.</span>
+    <span class="sol-step">For object at distance u and image at distance v (using sign convention):</span>
+    <span class="sol-step">Triangles ABF and PQF are similar: AB/PQ = BF/FP &nbsp;...(1)</span>
+    <span class="sol-step">Triangles ABC and PQC are similar: AB/PQ = BC/CP &nbsp;...(2)</span>
+    <span class="sol-step">From (1) and (2): BF/FP = BC/CP</span>
+    <span class="sol-step">(v−f)/f = v/u &nbsp;⟹&nbsp; v−f = vf/u</span>
+    <span class="sol-step">Dividing through by uvf:</span>
+    <span class="sol-step"><span class="final-ans">1/v + 1/u = 1/f (Mirror Formula)</span></span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(iii) Bohr's postulates and energy of electron in n<sup>th</sup> orbit:</strong><br/>
+    <span class="sol-step">Postulates: (1) Electrons revolve in certain stable circular orbits without radiating energy.</span>
+    <span class="sol-step">(2) Electrons can only move in orbits where angular momentum L = nh/2π (n = 1,2,3...).</span>
+    <span class="sol-step">(3) Radiation is emitted/absorbed when electron jumps between orbits: hν = E₂ − E₁.</span>
+    <span class="sol-step">Energy derivation: KE = ke²/(2r<sub>n</sub>), PE = −ke²/r<sub>n</sub></span>
+    <span class="sol-step">Total E<sub>n</sub> = KE + PE = −ke²/(2r<sub>n</sub>)</span>
+    <span class="sol-step">Substituting r<sub>n</sub> = n²a₀:</span>
+    <span class="sol-step"><span class="final-ans">E<sub>n</sub> = −13.6/n² eV</span></span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(iv) Moving Coil Galvanometer:</strong><br/>
+    <span class="sol-step">Construction: Rectangular coil (N turns) suspended between poles of permanent magnet; soft iron core inside coil; hair springs provide restoring torque.</span>
+    <span class="sol-step">Working: Current I → Torque τ = NBIA</span>
+    <span class="sol-step">Restoring torque by spring: τ' = kθ</span>
+    <span class="sol-step">At equilibrium: NBIA = kθ</span>
+    <span class="sol-step">⟹ θ = (NBA/k)I &nbsp;⟹&nbsp; deflection ∝ current</span>
+    <span class="sol-step">Current sensitivity = NBA/k (radians per ampere).</span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(v) Torque on magnetic dipole in uniform field:</strong><br/>
+    <span class="sol-step">Consider dipole (bar magnet) with poles ±m separated by 2l, placed at angle θ in field B.</span>
+    <span class="sol-step">Force on N-pole: F = mB (along B); on S-pole: F = mB (opposite to B).</span>
+    <span class="sol-step">These forces form a couple. Perpendicular distance = 2l·sinθ</span>
+    <span class="sol-step">Torque τ = F × perpendicular distance = mB × 2l sinθ</span>
+    <span class="sol-step">Magnetic moment M = m × 2l:</span>
+    <span class="sol-step"><span class="final-ans">τ = MB sinθ &nbsp; (or τ⃗ = M⃗ × B⃗ )</span></span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(vi) Superposition principle and intensity in interference:</strong><br/>
+    <span class="sol-step">Principle: The resultant displacement at any point = algebraic sum of displacements due to individual waves.</span>
+    <span class="sol-step">Let y₁ = a sinωt and y₂ = a sin(ωt+φ)</span>
+    <span class="sol-step">y = y₁+y₂ = 2a cos(φ/2) · sin(ωt + φ/2)</span>
+    <span class="sol-step">Amplitude A = 2a cos(φ/2) &nbsp;⟹&nbsp; I ∝ A² = 4a²cos²(φ/2)</span>
+    <span class="sol-step">Constructive: φ = 2nπ &nbsp;⟹&nbsp; I<sub>max</sub> = 4I₀</span>
+    <span class="sol-step"><span class="final-ans">Destructive: φ = (2n−1)π &nbsp;⟹&nbsp; I<sub>min</sub> = 0</span></span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(vii) Capacitance with dielectric:</strong><br/>
+    <div class="given-box">Given: A = 100 cm² = 10⁻² m², d = 5 mm = 5×10⁻³ m, K = 4, ε₀ = 8.85×10⁻¹² F/m</div>
+    <span class="sol-step">Formula: C = Kε₀A/d</span>
+    <span class="sol-step">= 4 × 8.85×10⁻¹² × 10⁻² / 5×10⁻³</span>
+    <span class="sol-step">= (4 × 8.85 × 10⁻¹⁴) / 5×10⁻³</span>
+    <span class="sol-step">= (35.4 × 10⁻¹⁴) / 5×10⁻³</span>
+    <span class="sol-step">= 7.08 × 10⁻¹²  F</span>
+    <span class="sol-step"><span class="final-ans">C ≈ 7.08 pF</span></span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(viii) Radius of proton's circular path:</strong><br/>
+    <div class="given-box">Given: v = 2×10⁶ m/s, B = 0.5 T, m = 1.67×10⁻²⁷ kg, e = 1.6×10⁻¹⁹ C</div>
+    <span class="sol-step">Centripetal force = Magnetic force:</span>
+    <span class="sol-step">mv²/r = evB &nbsp;⟹&nbsp; r = mv/(eB)</span>
+    <span class="sol-step">= (1.67×10⁻²⁷ × 2×10⁶) / (1.6×10⁻¹⁹ × 0.5)</span>
+    <span class="sol-step">= (3.34×10⁻²¹) / (8×10⁻²⁰)</span>
+    <span class="sol-step">= 0.04175 m</span>
+    <span class="sol-step"><span class="final-ans">r ≈ 4.18 cm</span></span>
+  </div>
+
+  <!-- SOL: SECTION E -->
+  <div class="sol-title">SECTION E – 4-Mark Solutions</div>
+
+  <div class="sol-block">
+    <strong>(i)(a) Gauss's Law — Statement and Proof:</strong><br/>
+    <span class="sol-step">Statement: The total electric flux through any closed surface is equal to (1/ε₀) times the total charge enclosed.</span>
+    <span class="sol-step">∮ E⃗·dA⃗ = Q<sub>enc</sub>/ε₀</span>
+    <span class="sol-step">Proof (using Coulomb's law): For a point charge Q, draw a spherical Gaussian surface of radius r.</span>
+    <span class="sol-step">E = kQ/r² (radially outward), and dA = dA r̂</span>
+    <span class="sol-step">Flux = ∮ E·dA = E·4πr² = (kQ/r²)·4πr² = Q·4πk = Q/ε₀</span>
+    <span class="sol-step"><span class="final-ans">∴ ∮ E⃗·dA⃗ = Q/ε₀ (proved)</span></span>
+    <br/>
+    <strong>(i)(b) E due to infinite plane sheet of charge:</strong><br/>
+    <span class="sol-step">Surface charge density σ; Gaussian surface = cylinder of cross-section A, axis ⊥ sheet.</span>
+    <span class="sol-step">Flux through flat ends: 2EA; through curved surface: 0.</span>
+    <span class="sol-step">Charge enclosed: Q = σA</span>
+    <span class="sol-step">By Gauss: 2EA = σA/ε₀</span>
+    <span class="sol-step"><span class="final-ans">E = σ/(2ε₀), directed away from the sheet.</span></span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(ii)(a) Lens Maker's Formula:</strong><br/>
+    <span class="sol-step">Using refraction at two spherical surfaces (radii R₁, R₂) for lens of refractive index μ:</span>
+    <span class="sol-step">Surface 1: μ/v₁ − 1/u = (μ−1)/R₁ &nbsp;...(1)</span>
+    <span class="sol-step">Surface 2 (image of surface 1 is object): 1/v − μ/v₁ = (1−μ)/R₂ &nbsp;...(2)</span>
+    <span class="sol-step">Adding (1)+(2): 1/v − 1/u = (μ−1)(1/R₁ − 1/R₂)</span>
+    <span class="sol-step"><span class="final-ans">1/f = (μ−1)(1/R₁ − 1/R₂) — Lens Maker's Formula</span></span>
+    <br/>
+    <strong>(ii)(b) Image position:</strong><br/>
+    <div class="given-box">u = −30 cm, f = +20 cm</div>
+    <span class="sol-step">1/v − 1/u = 1/f</span>
+    <span class="sol-step">1/v − 1/(−30) = 1/20</span>
+    <span class="sol-step">1/v = 1/20 − 1/30 = 3/60 − 2/60 = 1/60</span>
+    <span class="sol-step"><span class="final-ans">v = +60 cm (real, inverted image on other side)</span></span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(iii)(a) Interference of Light — Conditions:</strong><br/>
+    <span class="sol-step">Constructive interference: Path difference = nλ (n=0,1,2,...) → Bright fringe</span>
+    <span class="sol-step">Destructive interference: Path difference = (2n−1)λ/2 → Dark fringe</span>
+    <span class="sol-step">Conditions for sustained interference: (1) Coherent sources (constant phase difference), (2) Same frequency, (3) Same amplitude (for perfect dark fringes), (4) Small path difference.</span>
+    <br/>
+    <strong>(iii)(b) Finding λ:</strong><br/>
+    <div class="given-box">d = 0.3 mm = 3×10⁻⁴ m, D = 1.5 m, β = 3 mm = 3×10⁻³ m</div>
+    <span class="sol-step">β = λD/d &nbsp;⟹&nbsp; λ = βd/D</span>
+    <span class="sol-step">= (3×10⁻³ × 3×10⁻⁴) / 1.5</span>
+    <span class="sol-step">= 9×10⁻⁷ / 1.5</span>
+    <span class="sol-step"><span class="final-ans">λ = 6×10⁻⁷ m = 600 nm</span></span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(iv)(a) Einstein's Photoelectric Equation:</strong><br/>
+    <span class="sol-step">hν = φ₀ + KE<sub>max</sub></span>
+    <span class="sol-step">hν = energy of incident photon; φ₀ = work function (min. energy to escape); KE<sub>max</sub> = ½mv²<sub>max</sub> = maximum KE of emitted photoelectron.</span>
+    <span class="sol-step">Also: KE<sub>max</sub> = eV₀ where V₀ is stopping potential.</span>
+    <br/>
+    <strong>(iv)(b) Max KE calculation:</strong><br/>
+    <div class="given-box">ν = 8×10¹⁴ Hz, φ₀ = 3 eV = 3×1.6×10⁻¹⁹ J = 4.8×10⁻¹⁹ J</div>
+    <span class="sol-step">E<sub>photon</sub> = hν = 6.63×10⁻³⁴ × 8×10¹⁴</span>
+    <span class="sol-step">= 53.04×10⁻²⁰ = 5.304×10⁻¹⁹ J</span>
+    <span class="sol-step">KE<sub>max</sub> = hν − φ₀ = 5.304×10⁻¹⁹ − 4.8×10⁻¹⁹</span>
+    <span class="sol-step">= 0.504×10⁻¹⁹ J</span>
+    <span class="sol-step"><span class="final-ans">KE<sub>max</sub> ≈ 0.315 eV ≈ 5.04×10⁻²⁰ J</span></span>
+  </div>
+
+  <div class="sol-block">
+    <strong>(v)(a) Time period of satellite derivation:</strong><br/>
+    <span class="sol-step">For circular orbit of radius r, gravitational force provides centripetal force:</span>
+    <span class="sol-step">GMm/r² = mv²/r &nbsp;⟹&nbsp; v = √(GM/r)</span>
+    <span class="sol-step">Time period T = circumference/speed = 2πr/v</span>
+    <span class="sol-step">= 2πr / √(GM/r) = 2πr × √(r/GM)</span>
+    <span class="sol-step"><span class="final-ans">T = 2π√(r³/GM)</span></span>
+    <br/>
+    <strong>(v)(b) Geostationary Satellite:</strong><br/>
+    <span class="sol-step">Definition: A satellite that revolves in the equatorial plane of Earth with a time period of exactly 24 hours, appearing stationary to an observer on Earth.</span>
+    <span class="sol-step">Height ≈ 36,000 km above Earth's surface.</span>
+    <span class="sol-step">Uses: Weather forecasting, live TV broadcast, GPS navigation, telecommunication.</span>
+    <span class="sol-step">Conditions: Orbit must be equatorial, circular, with T = 24 h (same as Earth's rotation).</span>
+  </div>
+
+  <div class="footer">
+    *** End of Solutions *** &nbsp;|&nbsp; Visions Classes &nbsp;|&nbsp; Class XII Physics SET 1
+    <br/><small>All solutions are written in textbook style for maximum board marks.</small>
+  </div>
+
+</div>
+<button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+</body>
+</html>

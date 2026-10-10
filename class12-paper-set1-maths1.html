@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Class 12 Maths Paper 1 — Set 1 | Questions + Solutions | Visions Classes</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Arial',sans-serif;background:#f0f0f0;padding:30px 10px;color:#111}
+  .page{background:#fff;max-width:820px;margin:0 auto 30px;padding:36px 50px;border:2px solid #333;box-shadow:0 4px 20px rgba(0,0,0,.15)}
+  @media print{body{background:#fff;padding:0}.page{box-shadow:none;border:none;padding:16mm 18mm}.no-print{display:none}.pb{page-break-before:always}}
+  /* Visions Header */
+  .visions-header{text-align:center;padding-bottom:12px;border-bottom:4px double #880e4f;margin-bottom:14px}
+  .visions-header .inst-name{font-size:30px;font-weight:bold;letter-spacing:4px;text-transform:uppercase;color:#880e4f}
+  .visions-header .inst-name span{color:#c0392b}
+  .visions-header .tagline{font-size:13px;font-style:italic;letter-spacing:2px;color:#555;margin-top:4px}
+  /* Paper Header */
+  .header{text-align:center;border:2px solid #333;border-radius:4px;padding:14px 10px 12px;margin-bottom:14px;position:relative}
+  .header::before{content:'';position:absolute;inset:4px;border:1px solid #aaa;border-radius:2px;pointer-events:none}
+  .header .board{font-size:12px;color:#555;margin-bottom:4px}
+  .header h1{font-size:18px;font-weight:bold;margin:5px 0 3px}
+  .header h2{font-size:15px;font-weight:bold;color:#880e4f;margin-bottom:4px}
+  .header .subject-code{font-size:13px;color:#444;font-style:italic}
+  .meta{display:flex;justify-content:space-between;font-size:13.5px;padding:9px 0;border-bottom:1px solid #aaa;border-top:1px solid #aaa;margin-bottom:14px}
+  .meta span{font-weight:bold}
+  .instructions{background:#fafafa;border:1px solid #ccc;padding:10px 16px;margin-bottom:20px;font-size:13px}
+  .instructions p{font-weight:bold;margin-bottom:5px;font-size:13.5px}
+  .instructions ol{padding-left:20px}.instructions ol li{margin-bottom:3px;line-height:1.8}
+  /* Section Title */
+  .section-title{background:#880e4f;color:#fff;padding:7px 14px;font-size:14px;font-weight:bold;margin:22px 0 12px;display:flex;justify-content:space-between;align-items:center}
+  .section-title .marks{background:#fff;color:#880e4f;padding:2px 10px;border-radius:10px;font-size:12px;font-weight:bold;white-space:nowrap}
+  /* Questions */
+  .question{margin-bottom:15px;font-size:14px;line-height:1.9}
+  .question .qnum{font-weight:bold;margin-right:4px}
+  .question .qmarks{float:right;font-size:12.5px;color:#555;font-style:italic}
+  .options{display:grid;grid-template-columns:1fr 1fr;gap:5px 30px;margin:7px 0 7px 24px;font-size:13.5px}
+  .sub-list{list-style:none;padding-left:22px;margin:5px 0}
+  .sub-list li{margin-bottom:7px;font-size:13.5px;line-height:1.8}
+  hr.divider{border:none;border-top:1px dashed #bbb;margin:16px 0}
+  .note{font-size:12.5px;font-style:italic;color:#666;margin:3px 0 6px 22px}
+  /* Year badges */
+  .yb{display:inline-block;font-size:10px;font-weight:bold;padding:1px 6px;border-radius:8px;margin-left:6px;vertical-align:middle}
+  .y22{background:#d5e8d4;color:#2d6a2d;border:1px solid #82b366}
+  .y23{background:#dae8fc;color:#1a4a8a;border:1px solid #6a9fd8}
+  .y24{background:#fff2cc;color:#7a5c00;border:1px solid #d6b656}
+  /* Answer Key Divider */
+  .ak-divider{background:linear-gradient(135deg,#880e4f,#ad1457);color:#fff;text-align:center;padding:14px;margin:30px 0;border-radius:8px;font-size:16px;font-weight:800;letter-spacing:1px}
+  /* Solution blocks */
+  .sol-block{margin:14px 0;border:1.5px solid #e0e0e0;border-radius:8px;overflow:hidden}
+  .sol-q{background:#fff5f7;padding:9px 14px;font-weight:700;font-size:13.5px;color:#880e4f;border-bottom:1.5px solid #f8bbd0;display:flex;align-items:flex-start;gap:10px}
+  .sol-qn{background:#880e4f;color:#fff;font-size:11px;font-weight:800;padding:3px 10px;border-radius:10px;white-space:nowrap;flex-shrink:0;margin-top:1px}
+  .sol-a{padding:13px 16px;font-size:14px;line-height:1.85;background:#fff}
+  .ln{display:block;margin:3px 0;line-height:1.8;font-size:14px}
+  .ln.given{font-weight:600;margin-bottom:6px}
+  .ln.eq{padding-left:22px}.ln.eq::before{content:"= ";font-weight:600;color:#1565c0}
+  .ln.tf::before{content:"∴ ";font-weight:700;color:#c62828}.ln.tf{padding-left:4px}
+  .ln.step{padding-left:0}.ln.gap{margin-top:8px;display:block}
+  .ln.note{color:#555;font-size:13px;font-style:italic}
+  .af{display:inline-block;background:#e8f5e9;color:#1b5e20;font-weight:800;font-size:14.5px;padding:3px 12px;border-radius:6px;border:1.5px solid #a5d6a7}
+  .mcq-box{background:#fce4ec;border-left:4px solid #880e4f;padding:7px 14px;border-radius:0 6px 6px 0;font-size:14px;font-weight:700;color:#880e4f;margin:4px 0}
+  .footer{text-align:center;margin-top:28px;font-size:12.5px;color:#555;border-top:2px double #333;padding-top:10px;line-height:1.8}
+  .print-btn{display:block;margin:20px auto 0;padding:10px 38px;background:#880e4f;color:#fff;border:none;font-size:15px;border-radius:5px;cursor:pointer}
+  .print-btn:hover{background:#ad1457}
+</style>
+</head>
+<body>
+<button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+<!-- ══════════ QUESTION PAPER ══════════ -->
+<div class="page">
+<div class="visions-header">
+  <div class="inst-name">Visions <span>Classes</span></div>
+  <div class="tagline">✦ Learn Today, Lead Tomorrow — Ambernath ✦</div>
+</div>
+<div class="header">
+  <div class="board">Maharashtra State Board of Secondary &amp; Higher Secondary Education, Pune</div>
+  <h1>HIGHER SECONDARY CERTIFICATE EXAMINATION — SET 1</h1>
+  <h2>MATHEMATICS AND STATISTICS — PAPER I</h2>
+  <div class="subject-code">Subject Code : 40 &nbsp;|&nbsp; Class XII &nbsp;|&nbsp; Arts &amp; Science</div>
+</div>
+<div class="meta"><div>Max. Marks : <span>80</span></div><div>Time : <span>3 Hours</span></div></div>
+<div class="instructions">
+  <p>General Instructions :</p>
+  <ol>
+    <li>Q.1 contains 8 MCQs of 1 mark each. All compulsory.</li>
+    <li>Q.2 &amp; Q.3 — Attempt any 8 of 12 (2 marks each = 16).</li>
+    <li>Q.4, Q.5 &amp; Q.6 — Attempt any 8 of 12 (3 marks each = 24).</li>
+    <li>Q.7 &amp; Q.8 — Attempt any 5 of 8 (4 marks each = 20).</li>
+    <li>Log tables allowed. Calculator NOT allowed. Draw diagrams where required.</li>
+  </ol>
+</div>
+
+<!-- MCQ -->
+<div class="section-title">SECTION A — Q.1 MCQ <span class="marks">8 × 1 = 8 Marks</span></div>
+
+<div class="question"><span class="qnum">(i)</span> If A = [[1,2],[0,1]], then A² = <span class="yb y23">2023</span>
+<div class="options"><div>(A) [[1,4],[0,1]]</div><div>(B) [[1,2],[0,1]]</div><div>(C) [[2,4],[0,2]]</div><div>(D) [[1,0],[0,1]]</div></div></div>
+
+<div class="question"><span class="qnum">(ii)</span> tan⁻¹(√3) + cot⁻¹(√3) = <span class="yb y22">2022</span>
+<div class="options"><div>(A) π/3</div><div>(B) π/2</div><div>(C) π</div><div>(D) 2π/3</div></div></div>
+
+<div class="question"><span class="qnum">(iii)</span> The slope of line perpendicular to 3x − 4y + 7 = 0 is <span class="yb y24">2024</span>
+<div class="options"><div>(A) 3/4</div><div>(B) −4/3</div><div>(C) 4/3</div><div>(D) −3/4</div></div></div>
+
+<div class="question"><span class="qnum">(iv)</span> d/dx (sin²x) = <span class="yb y23">2023</span>
+<div class="options"><div>(A) 2sinx</div><div>(B) 2cosx</div><div>(C) sin2x</div><div>(D) cos2x</div></div></div>
+
+<div class="question"><span class="qnum">(v)</span> ∫ cos²x dx = <span class="yb y22">2022</span>
+<div class="options"><div>(A) (x + sin2x/2)/2 + c</div><div>(B) sinx cosx + c</div><div>(C) x/2 + sin2x/4 + c</div><div>(D) cos2x/2 + c</div></div></div>
+
+<div class="question"><span class="qnum">(vi)</span> The order of the D.E. (d²y/dx²)³ + dy/dx = x is <span class="yb y24">2024</span>
+<div class="options"><div>(A) 1</div><div>(B) 2</div><div>(C) 3</div><div>(D) 6</div></div></div>
+
+<div class="question"><span class="qnum">(vii)</span> If a⃗ = 3î + 4ĵ, then |a⃗| = <span class="yb y23">2023</span>
+<div class="options"><div>(A) 5</div><div>(B) 7</div><div>(C) 12</div><div>(D) 25</div></div></div>
+
+<div class="question"><span class="qnum">(viii)</span> The direction cosines of the Y-axis are <span class="yb y22">2022</span>
+<div class="options"><div>(A) (1, 0, 0)</div><div>(B) (0, 1, 0)</div><div>(C) (0, 0, 1)</div><div>(D) (1, 1, 1)</div></div></div>
+
+<!-- SECTION B -->
+<div class="section-title">SECTION B — Q.2 &amp; Q.3 — Attempt any EIGHT <span class="marks">8 × 2 = 16 Marks</span></div>
+<ul class="sub-list">
+  <li><span class="qnum">(i)</span> If A = [[2,3],[1,4]], B = [[1,−1],[2,0]], find 2A − B. <span class="yb y23">2023</span></li>
+  <li><span class="qnum">(ii)</span> Prove: 2tan⁻¹(1/3) + tan⁻¹(1/7) = π/4. <span class="yb y22">2022</span></li>
+  <li><span class="qnum">(iii)</span> Find the equation of the line with slope −2 and y-intercept 5. <span class="yb y24">2024</span></li>
+  <li><span class="qnum">(iv)</span> Differentiate y = x³ · eˣ using the product rule. <span class="yb y23">2023</span></li>
+  <li><span class="qnum">(v)</span> Evaluate ∫ (3x² + 2x + 1) dx. <span class="yb y22">2022</span></li>
+  <li><span class="qnum">(vi)</span> Find dy/dx if x² + y² = 25. <span class="yb y24">2024</span></li>
+  <li><span class="qnum">(vii)</span> Evaluate ∫₀^(π/2) cos x dx. <span class="yb y23">2023</span></li>
+  <li><span class="qnum">(viii)</span> Find the area of the region bounded by y = 2x, the x-axis, x = 0 to x = 3. <span class="yb y22">2022</span></li>
+  <li><span class="qnum">(ix)</span> Solve the differential equation: dy/dx = (x + 1)/(y + 1). <span class="yb y24">2024</span></li>
+  <li><span class="qnum">(x)</span> If a⃗ = î + 2ĵ − k̂ and b⃗ = 2î − ĵ + 3k̂, find a⃗ + b⃗ and |a⃗ + b⃗|. <span class="yb y23">2023</span></li>
+  <li><span class="qnum">(xi)</span> Find the angle between lines with slopes m₁ = 1 and m₂ = −1. <span class="yb y22">2022</span></li>
+  <li><span class="qnum">(xii)</span> Verify Rolle's theorem for f(x) = x² − 5x + 4 on [1, 4]. <span class="yb y24">2024</span></li>
+</ul>
+
+<!-- SECTION C -->
+<div class="section-title">SECTION C — Q.4, Q.5 &amp; Q.6 — Attempt any EIGHT <span class="marks">8 × 3 = 24 Marks</span></div>
+<ul class="sub-list">
+  <li><span class="qnum">(i)</span> Solve by matrix method: 2x + y = 5, &nbsp; x + 3y = 10. <span class="yb y23">2023</span></li>
+  <li><span class="qnum">(ii)</span> Using determinant, find the area of the triangle with vertices (1,2), (3,4), (5,0). <span class="yb y22">2022</span></li>
+  <li><span class="qnum">(iii)</span> Prove: tan⁻¹(x) + tan⁻¹(1/x) = π/2 for x &gt; 0. <span class="yb y24">2024</span></li>
+  <li><span class="qnum">(iv)</span> Find the equation of the circle with centre (3, −4) and radius 5. <span class="yb y23">2023</span></li>
+  <li><span class="qnum">(v)</span> If y = √(sinx + √(sinx + √sinx ··· ∞)), find dy/dx. <span class="yb y22">2022</span></li>
+  <li><span class="qnum">(vi)</span> Find dy/dx if y = x^(log x). <span class="yb y24">2024</span></li>
+  <li><span class="qnum">(vii)</span> Find the approximate value of √26 using differentials. <span class="yb y23">2023</span></li>
+  <li><span class="qnum">(viii)</span> Evaluate ∫ (2x + 1)/(x² + x + 1) dx. <span class="yb y22">2022</span></li>
+  <li><span class="qnum">(ix)</span> Evaluate ∫ x²eˣ dx using integration by parts. <span class="yb y24">2024</span></li>
+  <li><span class="qnum">(x)</span> Find the area between the curves y = x² and y = x. <span class="yb y23">2023</span></li>
+  <li><span class="qnum">(xi)</span> Solve: (x + y) dy/dx = 1. <span class="yb y22">2022</span></li>
+  <li><span class="qnum">(xii)</span> Find the shortest distance between the lines r⃗ = î + λ(2î − ĵ + k̂) and r⃗ = 2î − ĵ + μ(3î − 5ĵ + 2k̂). <span class="yb y24">2024</span></li>
+</ul>
+
+<!-- SECTION D -->
+<div class="section-title">SECTION D — Q.7 &amp; Q.8 — Attempt any FIVE <span class="marks">5 × 4 = 20 Marks</span></div>
+
+<div class="question"><span class="qnum">(i)</span><span class="qmarks">[4]</span> Solve using Cramer's Rule: x − y + z = 4, &nbsp; x + y + z = 2, &nbsp; 2x + y − 3z = 0. <span class="yb y23">2023</span></div>
+<div class="question"><span class="qnum">(ii)</span><span class="qmarks">[4]</span> (a) If y = a cos(log x) + b sin(log x), prove x²y₂ + xy₁ + y = 0. &nbsp; (b) Find dy/dx for x = a(t − sin t), y = a(1 − cos t). <span class="yb y22">2022</span></div>
+<div class="question"><span class="qnum">(iii)</span><span class="qmarks">[4]</span> Evaluate: ∫₀^π x/(1 + sin x) dx. <span class="yb y24">2024</span></div>
+<div class="question"><span class="qnum">(iv)</span><span class="qmarks">[4]</span> Find the area enclosed between y = x² − 4 and y = 2 − x. <span class="yb y23">2023</span></div>
+<div class="question"><span class="qnum">(v)</span><span class="qmarks">[4]</span> Solve the linear differential equation: (x² + 1) dy/dx + 2xy = x/(x² + 1). <span class="yb y22">2022</span></div>
+<div class="question"><span class="qnum">(vi)</span><span class="qmarks">[4]</span> Find the equation of the plane through the points (1,2,3), (2,3,1) and (3,1,2). <span class="yb y24">2024</span></div>
+<div class="question"><span class="qnum">(vii)</span><span class="qmarks">[4]</span> A window is a rectangle surmounted by a semicircle. Perimeter = 30 m. Find dimensions for maximum area. <span class="yb y23">2023</span></div>
+<div class="question"><span class="qnum">(viii)</span><span class="qmarks">[4]</span> Show that the lines (x−1)/2 = (y−2)/3 = (z−3)/4 and (x−4)/5 = (y−5)/2 = (z−6)/1 are coplanar. Find the equation of the plane containing them. <span class="yb y22">2022</span></div>
+
+<div class="footer">Visions Classes, Ambernath &nbsp;·&nbsp; Mathematics Paper I — Set 1 &nbsp;·&nbsp; Class XII &nbsp;·&nbsp; All the Best! 🌟</div>
+</div>
+
+
+<!-- ══════════ ANSWER KEY ══════════ -->
+<div class="page pb">
+<div class="ak-divider">📖 ANSWER KEY — Complete Step-by-Step Solutions</div>
+<div class="visions-header" style="border-bottom-color:#880e4f">
+  <div class="inst-name">Visions <span>Classes</span></div>
+  <div class="tagline">Mathematics Paper I — Set 1 — Solutions</div>
+</div>
+
+<!-- MCQ Solutions -->
+<div class="section-title">SECTION A — MCQ Solutions <span class="marks">8 × 1 = 8</span></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(i)</span> A² where A = [[1,2],[0,1]]</div>
+<div class="sol-a"><div class="mcq-box">Answer: (A) [[1,4],[0,1]]</div>
+<span class="ln step">A² = A × A = [[1,2],[0,1]] × [[1,2],[0,1]]</span>
+<span class="ln step">Row 1 × Col 1: 1×1 + 2×0 = 1</span>
+<span class="ln step">Row 1 × Col 2: 1×2 + 2×1 = 4</span>
+<span class="ln step">Row 2 × Col 1: 0×1 + 1×0 = 0</span>
+<span class="ln step">Row 2 × Col 2: 0×2 + 1×1 = 1</span>
+<span class="ln tf">A² = <span class="af">[[1, 4], [0, 1]]</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(ii)</span> tan⁻¹(√3) + cot⁻¹(√3)</div>
+<div class="sol-a"><div class="mcq-box">Answer: (B) π/2</div>
+<span class="ln step">tan⁻¹(x) + cot⁻¹(x) = π/2 for all x > 0 (standard identity)</span>
+<span class="ln step">Here x = √3: tan⁻¹(√3) + cot⁻¹(√3) = <span class="af">π/2</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(iii)</span> Slope perpendicular to 3x − 4y + 7 = 0</div>
+<div class="sol-a"><div class="mcq-box">Answer: (B) −4/3</div>
+<span class="ln step">Given line: 3x − 4y + 7 = 0 → y = (3/4)x + 7/4</span>
+<span class="ln step">Slope of given line m₁ = 3/4</span>
+<span class="ln step">Slope of perpendicular line m₂ = −1/m₁ = −4/3</span>
+<span class="ln tf">m₂ = <span class="af">−4/3</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(iv)</span> d/dx(sin²x)</div>
+<div class="sol-a"><div class="mcq-box">Answer: (C) sin2x</div>
+<span class="ln step">Let y = sin²x. Using chain rule:</span>
+<span class="ln step">dy/dx = 2sinx · cosx = sin2x</span>
+<span class="ln tf">d/dx(sin²x) = <span class="af">sin 2x</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(v)</span> ∫ cos²x dx</div>
+<div class="sol-a"><div class="mcq-box">Answer: (C) x/2 + sin2x/4 + c</div>
+<span class="ln step">cos²x = (1 + cos2x)/2</span>
+<span class="ln step">∫ cos²x dx = ∫ (1 + cos2x)/2 dx</span>
+<span class="ln eq">x/2 + sin2x/4 + c</span>
+<span class="ln tf"><span class="af">x/2 + sin2x/4 + c</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(vi)</span> Order of (d²y/dx²)³ + dy/dx = x</div>
+<div class="sol-a"><div class="mcq-box">Answer: (B) 2</div>
+<span class="ln step">Order = highest order derivative present = d²y/dx² → order = <span class="af">2</span></span>
+<span class="ln note">The cube applies to the derivative, not the order. Degree = 3 but order = 2.</span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(vii)</span> |a⃗| where a⃗ = 3î + 4ĵ</div>
+<div class="sol-a"><div class="mcq-box">Answer: (A) 5</div>
+<span class="ln step">|a⃗| = √(3² + 4²) = √(9 + 16) = √25 = <span class="af">5</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(viii)</span> Direction cosines of Y-axis</div>
+<div class="sol-a"><div class="mcq-box">Answer: (B) (0, 1, 0)</div>
+<span class="ln step">Y-axis makes: α = 90° with X-axis, β = 0° with Y-axis, γ = 90° with Z-axis</span>
+<span class="ln step">l = cos90° = 0, m = cos0° = 1, n = cos90° = 0</span>
+<span class="ln tf">Direction cosines = <span class="af">(0, 1, 0)</span></span></div></div>
+
+<!-- Section B Solutions -->
+<div class="section-title">SECTION B — Solutions (2 marks each) <span class="marks">Any 8</span></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(i)</span> Find 2A − B where A = [[2,3],[1,4]], B = [[1,−1],[2,0]]</div>
+<div class="sol-a">
+<span class="ln step">2A = [[4,6],[2,8]]</span>
+<span class="ln step">2A − B = [[4−1, 6−(−1)],[2−2, 8−0]]</span>
+<span class="ln tf">2A − B = <span class="af">[[3, 7],[0, 8]]</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(ii)</span> Prove: 2tan⁻¹(1/3) + tan⁻¹(1/7) = π/4</div>
+<div class="sol-a">
+<span class="ln step">First: 2tan⁻¹(1/3) = tan⁻¹(2×(1/3)/(1−(1/3)²)) = tan⁻¹(2/3 ÷ 8/9) = tan⁻¹(3/4)</span>
+<span class="ln step">Now: tan⁻¹(3/4) + tan⁻¹(1/7) = tan⁻¹((3/4 + 1/7)/(1 − 3/28))</span>
+<span class="ln eq">tan⁻¹((21/28 + 4/28)/(28/28 − 3/28)) = tan⁻¹(25/28 ÷ 25/28)</span>
+<span class="ln eq">tan⁻¹(1) = π/4</span>
+<span class="ln tf"><span class="af">2tan⁻¹(1/3) + tan⁻¹(1/7) = π/4 ✓</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(iii)</span> Equation of line: slope = −2, y-intercept = 5</div>
+<div class="sol-a">
+<span class="ln step">Using slope-intercept form: y = mx + c</span>
+<span class="ln step">y = −2x + 5</span>
+<span class="ln tf"><span class="af">y = −2x + 5</span> or <span class="af">2x + y − 5 = 0</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(iv)</span> Differentiate y = x³·eˣ</div>
+<div class="sol-a">
+<span class="ln step">Product rule: d(uv)/dx = u·dv/dx + v·du/dx</span>
+<span class="ln step">u = x³, du/dx = 3x²; &nbsp; v = eˣ, dv/dx = eˣ</span>
+<span class="ln step">dy/dx = x³·eˣ + eˣ·3x²</span>
+<span class="ln tf">dy/dx = <span class="af">eˣ(x³ + 3x²) = x²eˣ(x + 3)</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(v)</span> Evaluate ∫(3x² + 2x + 1) dx</div>
+<div class="sol-a">
+<span class="ln step">= ∫3x² dx + ∫2x dx + ∫1 dx</span>
+<span class="ln eq">3x³/3 + 2x²/2 + x + c</span>
+<span class="ln tf">= <span class="af">x³ + x² + x + c</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(vi)</span> dy/dx when x² + y² = 25</div>
+<div class="sol-a">
+<span class="ln step">Differentiating implicitly with respect to x:</span>
+<span class="ln step">2x + 2y·(dy/dx) = 0</span>
+<span class="ln step">2y·(dy/dx) = −2x</span>
+<span class="ln tf">dy/dx = <span class="af">−x/y</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(vii)</span> Evaluate ∫₀^(π/2) cosx dx</div>
+<div class="sol-a">
+<span class="ln step">∫₀^(π/2) cosx dx = [sinx]₀^(π/2)</span>
+<span class="ln eq">sin(π/2) − sin(0) = 1 − 0</span>
+<span class="ln tf">= <span class="af">1</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(viii)</span> Area bounded by y = 2x, x-axis, x = 0 to x = 3</div>
+<div class="sol-a">
+<span class="ln step">Area = ∫₀³ 2x dx</span>
+<span class="ln eq">[x²]₀³ = 9 − 0 = 9</span>
+<span class="ln tf">Area = <span class="af">9 sq. units</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(ix)</span> Solve: dy/dx = (x+1)/(y+1)</div>
+<div class="sol-a">
+<span class="ln step">Separating variables: (y+1)dy = (x+1)dx</span>
+<span class="ln step">Integrating: ∫(y+1)dy = ∫(x+1)dx</span>
+<span class="ln eq">y²/2 + y = x²/2 + x + c</span>
+<span class="ln tf"><span class="af">y² + 2y = x² + 2x + C</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(x)</span> a⃗ + b⃗ and |a⃗ + b⃗|</div>
+<div class="sol-a">
+<span class="ln step">a⃗ + b⃗ = (1+2)î + (2−1)ĵ + (−1+3)k̂ = 3î + ĵ + 2k̂</span>
+<span class="ln step">|a⃗ + b⃗| = √(9 + 1 + 4) = √14</span>
+<span class="ln tf">a⃗ + b⃗ = <span class="af">3î + ĵ + 2k̂</span>, |a⃗ + b⃗| = <span class="af">√14</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(xi)</span> Angle between lines with slopes 1 and −1</div>
+<div class="sol-a">
+<span class="ln step">tanθ = |(m₁ − m₂)/(1 + m₁m₂)| = |(1 − (−1))/(1 + (1)(−1))| = |2/0|</span>
+<span class="ln step">This is undefined → tanθ → ∞ → θ = 90°</span>
+<span class="ln tf">Angle = <span class="af">90°</span> (lines are perpendicular)</span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(xii)</span> Rolle's theorem for f(x) = x² − 5x + 4 on [1,4]</div>
+<div class="sol-a">
+<span class="ln step">f(x) = x² − 5x + 4 is a polynomial → continuous on [1,4] and differentiable on (1,4) ✓</span>
+<span class="ln step">f(1) = 1 − 5 + 4 = 0; f(4) = 16 − 20 + 4 = 0; f(1) = f(4) = 0 ✓</span>
+<span class="ln step">All three conditions satisfied. ∃ c ∈ (1,4) such that f'(c) = 0</span>
+<span class="ln step">f'(x) = 2x − 5 = 0 → x = 5/2 = 2.5 ∈ (1,4) ✓</span>
+<span class="ln tf">c = <span class="af">5/2</span> — Rolle's theorem verified ✓</span></div></div>
+</div><!-- end answer page 1 -->
+
+
+<div class="page pb">
+<!-- Section C Solutions -->
+<div class="section-title">SECTION C — Solutions (3 marks each) <span class="marks">Any 8</span></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(i)</span> Matrix method: 2x + y = 5, x + 3y = 10</div>
+<div class="sol-a">
+<span class="ln step">Matrix form: AX = B where A = [[2,1],[1,3]], X = [[x],[y]], B = [[5],[10]]</span>
+<span class="ln step">|A| = 6 − 1 = 5 ≠ 0 → unique solution exists</span>
+<span class="ln step">A⁻¹ = (1/5)[[3,−1],[−1,2]]</span>
+<span class="ln step">X = A⁻¹B = (1/5)[[3,−1],[−1,2]] × [[5],[10]] = (1/5)[[15−10],[−5+20]] = (1/5)[[5],[15]]</span>
+<span class="ln tf">x = <span class="af">1</span>, y = <span class="af">3</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(ii)</span> Area of triangle with vertices (1,2), (3,4), (5,0)</div>
+<div class="sol-a">
+<span class="ln step">Area = (1/2)|x₁(y₂−y₃) + x₂(y₃−y₁) + x₃(y₁−y₂)|</span>
+<span class="ln step">= (1/2)|1(4−0) + 3(0−2) + 5(2−4)|</span>
+<span class="ln eq">(1/2)|4 − 6 − 10| = (1/2)|−12| = 6</span>
+<span class="ln tf">Area = <span class="af">6 sq. units</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(iii)</span> Prove: tan⁻¹x + tan⁻¹(1/x) = π/2 for x > 0</div>
+<div class="sol-a">
+<span class="ln step">Let tan⁻¹x = θ → tanθ = x (x > 0, so θ ∈ (0, π/2))</span>
+<span class="ln step">Then tan⁻¹(1/x) = tan⁻¹(1/tanθ) = tan⁻¹(cotθ)</span>
+<span class="ln step">= tan⁻¹(tan(π/2 − θ)) = π/2 − θ</span>
+<span class="ln step">∴ tan⁻¹x + tan⁻¹(1/x) = θ + (π/2 − θ)</span>
+<span class="ln tf">= <span class="af">π/2 ✓</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(iv)</span> Circle with centre (3,−4), radius 5</div>
+<div class="sol-a">
+<span class="ln step">Equation: (x − h)² + (y − k)² = r²</span>
+<span class="ln step">(x − 3)² + (y − (−4))² = 5²</span>
+<span class="ln step">(x − 3)² + (y + 4)² = 25</span>
+<span class="ln step">Expanding: x² − 6x + 9 + y² + 8y + 16 = 25</span>
+<span class="ln tf">x² + y² − 6x + 8y = 0 &nbsp; or &nbsp; <span class="af">(x−3)² + (y+4)² = 25</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(v)</span> y = √(sinx + √(sinx + ... ∞)), find dy/dx</div>
+<div class="sol-a">
+<span class="ln step">Since the expression is infinite: y = √(sinx + y)</span>
+<span class="ln step">Squaring: y² = sinx + y</span>
+<span class="ln step">Differentiating: 2y·(dy/dx) = cosx + dy/dx</span>
+<span class="ln step">(2y − 1)·dy/dx = cosx</span>
+<span class="ln tf">dy/dx = <span class="af">cosx/(2y − 1)</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(vi)</span> dy/dx if y = x^(log x)</div>
+<div class="sol-a">
+<span class="ln step">Take log: log y = log x · log x = (log x)²</span>
+<span class="ln step">Differentiate: (1/y)(dy/dx) = 2 log x · (1/x)</span>
+<span class="ln step">dy/dx = y · (2 log x / x)</span>
+<span class="ln tf">dy/dx = <span class="af">x^(logx) · (2 log x / x)</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(vii)</span> Approximate value of √26 using differentials</div>
+<div class="sol-a">
+<span class="ln step">Let f(x) = √x, x = 25, Δx = 1</span>
+<span class="ln step">f'(x) = 1/(2√x) → f'(25) = 1/10</span>
+<span class="ln step">Δf ≈ f'(x)·Δx = (1/10)×1 = 0.1</span>
+<span class="ln step">√26 ≈ f(25) + Δf = 5 + 0.1</span>
+<span class="ln tf">√26 ≈ <span class="af">5.1</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(viii)</span> ∫ (2x+1)/(x²+x+1) dx</div>
+<div class="sol-a">
+<span class="ln step">Note: d/dx(x²+x+1) = 2x+1 — the numerator is the derivative of denominator!</span>
+<span class="ln step">∫ (2x+1)/(x²+x+1) dx = log|x²+x+1| + c</span>
+<span class="ln tf">= <span class="af">log|x² + x + 1| + c</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(ix)</span> ∫ x²eˣ dx (integration by parts twice)</div>
+<div class="sol-a">
+<span class="ln step">First IBP: u = x², dv = eˣdx → du = 2x dx, v = eˣ</span>
+<span class="ln eq">x²eˣ − ∫ 2xeˣ dx</span>
+<span class="ln step">Second IBP: ∫ 2xeˣ dx: u=2x, dv=eˣdx → 2xeˣ − ∫ 2eˣ dx = 2xeˣ − 2eˣ</span>
+<span class="ln step">∫ x²eˣ dx = x²eˣ − (2xeˣ − 2eˣ) + c</span>
+<span class="ln tf">= <span class="af">eˣ(x² − 2x + 2) + c</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(x)</span> Area between y = x² and y = x</div>
+<div class="sol-a">
+<span class="ln step">Intersections: x² = x → x(x−1) = 0 → x = 0, x = 1</span>
+<span class="ln step">On [0,1]: y = x is above y = x²</span>
+<span class="ln step">Area = ∫₀¹ (x − x²) dx = [x²/2 − x³/3]₀¹</span>
+<span class="ln eq">1/2 − 1/3 = 1/6</span>
+<span class="ln tf">Area = <span class="af">1/6 sq. units</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(xi)</span> Solve: (x + y) dy/dx = 1</div>
+<div class="sol-a">
+<span class="ln step">Rewrite: dx/dy = x + y</span>
+<span class="ln step">dx/dy − x = y — this is linear in x with P = −1, Q = y</span>
+<span class="ln step">IF = e^(∫−1 dy) = e⁻ʸ</span>
+<span class="ln step">x·e⁻ʸ = ∫y·e⁻ʸ dy = −ye⁻ʸ − e⁻ʸ + c (IBP)</span>
+<span class="ln step">x = −y − 1 + ceʸ</span>
+<span class="ln tf"><span class="af">x + y + 1 = ceʸ</span></span></div></div>
+
+<!-- Section D Solutions -->
+<div class="section-title">SECTION D — Solutions (4 marks each) <span class="marks">Any 5</span></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(i)</span> Cramer's Rule: x−y+z=4, x+y+z=2, 2x+y−3z=0</div>
+<div class="sol-a">
+<span class="ln step">D = |[1,−1,1],[1,1,1],[2,1,−3]|</span>
+<span class="ln step">= 1(1×(−3)−1×1) − (−1)(1×(−3)−1×2) + 1(1×1−1×2)</span>
+<span class="ln eq">1(−4) + 1(−5) + 1(−1) = −4−5−1 = −10</span>
+<span class="ln gap"></span>
+<span class="ln step">Dx = |[4,−1,1],[2,1,1],[0,1,−3]|</span>
+<span class="ln eq">4(−3−1)−(−1)(−6−0)+1(2−0) = 4(−4)+1(−6)+2 = −16−6+2 = −20</span>
+<span class="ln gap"></span>
+<span class="ln step">Dy = |[1,4,1],[1,2,1],[2,0,−3]|</span>
+<span class="ln eq">1(−6−0)−4(−3−2)+1(0−4) = −6+20−4 = 10</span>
+<span class="ln gap"></span>
+<span class="ln step">Dz = |[1,−1,4],[1,1,2],[2,1,0]|</span>
+<span class="ln eq">1(0−2)−(−1)(0−4)+4(1−2) = −2−4−4 = −10</span>
+<span class="ln gap"></span>
+<span class="ln step">x = Dx/D = −20/−10 = 2; y = Dy/D = 10/−10 = −1; z = Dz/D = −10/−10 = 1</span>
+<span class="ln tf">x = <span class="af">2</span>, y = <span class="af">−1</span>, z = <span class="af">1</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(iii)</span> Evaluate ∫₀^π x/(1 + sinx) dx</div>
+<div class="sol-a">
+<span class="ln step">Let I = ∫₀^π x/(1+sinx) dx</span>
+<span class="ln step">Using property ∫₀^a f(x)dx = ∫₀^a f(a−x)dx with a = π:</span>
+<span class="ln step">I = ∫₀^π (π−x)/(1+sin(π−x)) dx = ∫₀^π (π−x)/(1+sinx) dx</span>
+<span class="ln step">Adding: 2I = π ∫₀^π 1/(1+sinx) dx</span>
+<span class="ln step">Multiply by (1−sinx)/(1−sinx): ∫ (1−sinx)/cos²x dx = ∫(sec²x − secx·tanx) dx</span>
+<span class="ln eq">[tanx − secx]₀^π = (0−(−1)) − (0−1) = 1+1 = 2</span>
+<span class="ln step">2I = π×2 = 2π → I = π</span>
+<span class="ln tf">I = <span class="af">π</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(iv)</span> Area between y = x²−4 and y = 2−x</div>
+<div class="sol-a">
+<span class="ln step">Intersections: x²−4 = 2−x → x²+x−6 = 0 → (x+3)(x−2) = 0 → x = −3, x = 2</span>
+<span class="ln step">On [−3,2]: y = 2−x is above y = x²−4</span>
+<span class="ln step">Area = ∫₋₃² [(2−x) − (x²−4)] dx = ∫₋₃² (6−x−x²) dx</span>
+<span class="ln eq">[6x − x²/2 − x³/3]₋₃²</span>
+<span class="ln eq">(12 − 2 − 8/3) − (−18 − 9/2 + 9) = 22/3 − (−27/2)</span>
+<span class="ln eq">22/3 + 27/2 = 44/6 + 81/6 = 125/6</span>
+<span class="ln tf">Area = <span class="af">125/6 sq. units</span></span></div></div>
+
+<div class="sol-block"><div class="sol-q"><span class="sol-qn">(vii)</span> Window optimization: rectangle + semicircle, perimeter = 30 m</div>
+<div class="sol-a">
+<span class="ln step">Let width = 2r (so radius of semicircle = r), height of rectangle = h</span>
+<span class="ln step">Perimeter = 2h + 2r + πr = 30 (bottom 2r, two sides 2h, semicircle πr)</span>
+<span class="ln step">→ h = (30 − 2r − πr)/2 = 15 − r − πr/2</span>
+<span class="ln gap"></span>
+<span class="ln step">Area = 2rh + πr²/2</span>
+<span class="ln eq">2r(15 − r − πr/2) + πr²/2</span>
+<span class="ln eq">30r − 2r² − πr² + πr²/2 = 30r − 2r² − πr²/2</span>
+<span class="ln gap"></span>
+<span class="ln step">dA/dr = 30 − 4r − πr = 0 → r = 30/(4+π)</span>
+<span class="ln step">d²A/dr² = −4 − π &lt; 0 → maximum</span>
+<span class="ln step">r = 30/(4+π) ≈ 4.2 m; h = 15 − r − πr/2 = 15 − r(1+π/2)</span>
+<span class="ln step">h = 15 − [30(1+π/2)/(4+π)] = 15 − 30(2+π)/(2(4+π)) = 30/(4+π)</span>
+<span class="ln tf">Width = 2r = <span class="af">60/(4+π) m</span>, Height = h = <span class="af">30/(4+π) m</span> (h = r at optimum)</span></div></div>
+
+<div class="footer">Visions Classes, Ambernath &nbsp;·&nbsp; Mathematics Paper I — Set 1 — Answer Key &nbsp;·&nbsp; Class XII</div>
+</div>
+</body>
+</html>
