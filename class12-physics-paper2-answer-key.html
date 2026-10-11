@@ -595,23 +595,39 @@ body{font-family:'Georgia',serif;background:#f4f4f4;padding:30px 10px;color:#111
 <div class="q-text-full">Derive the expression for capacitance of a parallel plate capacitor.</div></div>
 <div class="ans-body">
 <div class="diagram-box">
-<svg width="200" height="100" viewBox="0 0 200 100">
-  <!-- Plates -->
-  <rect x="60" y="15" width="80" height="8" fill="#c8e6ff" stroke="#1a237e" stroke-width="1.5" rx="1"/>
-  <text x="100" y="11" font-size="10" fill="#1a237e" text-anchor="middle" font-family="Arial">+σ (Plate 1)</text>
-  <rect x="60" y="77" width="80" height="8" fill="#ffd6d6" stroke="#c0392b" stroke-width="1.5" rx="1"/>
-  <text x="100" y="96" font-size="10" fill="#c0392b" text-anchor="middle" font-family="Arial">−σ (Plate 2)</text>
-  <!-- E field arrows -->
-  <line x1="80" y1="23" x2="80" y2="77" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#garrCap)"/>
-  <line x1="100" y1="23" x2="100" y2="77" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#garrCap)"/>
-  <line x1="120" y1="23" x2="120" y2="77" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#garrCap)"/>
-  <text x="128" y="52" font-size="12" fill="#e74c3c" font-family="Arial">E</text>
-  <!-- d label -->
-  <line x1="158" y1="23" x2="158" y2="77" stroke="#555" stroke-width="1" stroke-dasharray="2,2"/>
-  <text x="162" y="52" font-size="11" fill="#555" font-family="Arial">d</text>
-  <defs><marker id="garrCap" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#e74c3c"/></marker></defs>
+<svg width="310" height="140" viewBox="0 0 310 140">
+  <text x="155" y="13" font-size="11" fill="#1a1a2e" text-anchor="middle" font-family="Arial" font-weight="bold">Parallel Plate Capacitor with Dielectric</text>
+  <!-- Plate A (+) -->
+  <rect x="50" y="28" width="210" height="14" fill="#cce8ff" stroke="#1a237e" stroke-width="2" rx="1"/>
+  <text x="18" y="38" font-size="10" fill="#1a237e" font-family="Arial" font-weight="bold">+ + + + +</text>
+  <text x="268" y="38" font-size="9" fill="#1a237e" font-family="Arial">Plate A (+Q)</text>
+  <!-- Dielectric slab -->
+  <rect x="50" y="42" width="210" height="38" fill="#ffe8cc" stroke="#e67e22" stroke-width="1.5" rx="2"/>
+  <text x="155" y="58" font-size="10" fill="#e67e22" text-anchor="middle" font-family="Arial" font-weight="bold">Dielectric material (K)</text>
+  <text x="155" y="70" font-size="9" fill="#555" text-anchor="middle" font-family="Arial">e.g., glass, mica, wax paper</text>
+  <!-- Plate B (-) -->
+  <rect x="50" y="80" width="210" height="14" fill="#ffddee" stroke="#c0392b" stroke-width="2" rx="1"/>
+  <text x="18" y="90" font-size="10" fill="#c0392b" font-family="Arial" font-weight="bold">− − − − −</text>
+  <text x="268" y="90" font-size="9" fill="#c0392b" font-family="Arial">Plate B (−Q)</text>
+  <!-- Electric field arrows -->
+  <line x1="80" y1="42" x2="80" y2="80" stroke="#888" stroke-width="1.5" marker-end="url(#gCap2)"/>
+  <line x1="120" y1="42" x2="120" y2="80" stroke="#888" stroke-width="1.5" marker-end="url(#gCap2)"/>
+  <line x1="160" y1="42" x2="160" y2="80" stroke="#888" stroke-width="1.5" marker-end="url(#gCap2)"/>
+  <line x1="200" y1="42" x2="200" y2="80" stroke="#888" stroke-width="1.5" marker-end="url(#gCap2)"/>
+  <line x1="240" y1="42" x2="240" y2="80" stroke="#888" stroke-width="1.5" marker-end="url(#gCap2)"/>
+  <text x="305" y="62" font-size="9" fill="#888" font-family="Arial">E</text>
+  <!-- Distance d label -->
+  <line x1="22" y1="42" x2="22" y2="80" stroke="#555" stroke-width="1.5"/>
+  <line x1="18" y1="42" x2="26" y2="42" stroke="#555" stroke-width="1"/>
+  <line x1="18" y1="80" x2="26" y2="80" stroke="#555" stroke-width="1"/>
+  <text x="8" y="65" font-size="9" fill="#555" font-family="Arial">d</text>
+  <!-- Equations box -->
+  <rect x="5" y="100" width="300" height="35" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5" rx="4"/>
+  <text x="155" y="114" font-size="9" fill="#2e7d32" text-anchor="middle" font-family="Arial" font-weight="bold">C = Kε₀A/d &nbsp;|&nbsp; Without dielectric: C₀ = ε₀A/d</text>
+  <text x="155" y="128" font-size="9" fill="#555" text-anchor="middle" font-family="Arial">K = dielectric constant &nbsp;|&nbsp; Energy stored: U = ½CV² = Q²/2C</text>
+  <defs><marker id="gCap2" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#888"/></marker></defs>
 </svg>
-<div class="cap">Parallel plate capacitor: E = σ/ε₀ between plates</div>
+<div class="cap">Fig: Parallel plate capacitor with dielectric — electric field E = σ/Kε₀ between plates. Dielectric increases capacitance K times: C = Kε₀A/d.</div>
 </div>
 <table class="ans-table">
 <tr><td class="label">Derivation</td><td>
@@ -730,26 +746,47 @@ body{font-family:'Georgia',serif;background:#f4f4f4;padding:30px 10px;color:#111
 <div class="q-text-full">(a) State the Biot-Savart law. Derive B at the centre of a circular current loop. (b) Solenoid: n = 1000 turns/m, I = 2 A. Find B inside.</div></div>
 <div class="ans-body">
 <div class="diagram-box">
-<svg width="200" height="160" viewBox="0 0 200 160">
-  <!-- Circular loop -->
-  <circle cx="100" cy="80" r="55" fill="none" stroke="#1a237e" stroke-width="2.5"/>
-  <!-- Centre -->
-  <circle cx="100" cy="80" r="4" fill="#e74c3c"/>
-  <text x="105" y="78" font-size="11" fill="#e74c3c" font-family="Arial">Centre P</text>
-  <!-- Current direction (arrow on circle) -->
-  <line x1="155" y1="80" x2="155" y2="60" stroke="#1a237e" stroke-width="2" marker-end="url(#garrBs)"/>
-  <text x="160" y="72" font-size="11" fill="#1a237e" font-family="Arial">I</text>
-  <!-- Radius -->
-  <line x1="100" y1="80" x2="155" y2="80" stroke="#555" stroke-width="1.5" stroke-dasharray="3,2"/>
-  <text x="122" y="76" font-size="11" fill="#555" font-family="Arial">R</text>
-  <!-- B at centre (into or out of page) -->
-  <text x="82" y="86" font-size="12" fill="#27ae60" font-family="Arial">⊙B</text>
-  <text x="75" y="100" font-size="10" fill="#27ae60" font-family="Arial">out of page</text>
-  <!-- dI element -->
-  <text x="140" y="45" font-size="10" fill="#888" font-family="Arial">dl</text>
-  <defs><marker id="garrBs" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#1a237e"/></marker></defs>
+<svg width="310" height="175" viewBox="0 0 310 175">
+  <text x="155" y="13" font-size="11" fill="#1a1a2e" text-anchor="middle" font-family="Arial" font-weight="bold">Moving Coil Galvanometer — Textbook Diagram</text>
+  <!-- Permanent horseshoe magnet (N pole left) -->
+  <path d="M15,55 L15,120 Q15,135 30,135 L45,135 Q60,135 60,120 L60,90" fill="#ffcccc" stroke="#c0392b" stroke-width="2"/>
+  <text x="37" y="100" font-size="11" fill="#c0392b" text-anchor="middle" font-family="Arial" font-weight="bold">N</text>
+  <!-- Permanent magnet (S pole right) -->
+  <path d="M250,55 L250,120 Q250,135 235,135 L220,135 Q205,135 205,120 L205,90" fill="#cce0ff" stroke="#1a237e" stroke-width="2"/>
+  <text x="227" y="100" font-size="11" fill="#1a237e" text-anchor="middle" font-family="Arial" font-weight="bold">S</text>
+  <!-- Concave pole pieces -->
+  <path d="M60,60 Q75,65 80,80 Q75,95 60,100" fill="#ffdddd" stroke="#c0392b" stroke-width="1.5"/>
+  <path d="M205,60 Q190,65 185,80 Q190,95 205,100" fill="#ddeeff" stroke="#1a237e" stroke-width="1.5"/>
+  <!-- Soft iron cylinder (core) -->
+  <ellipse cx="155" cy="80" rx="22" ry="28" fill="#d8d8d8" stroke="#888" stroke-width="2"/>
+  <text x="155" y="78" font-size="8" fill="#555" text-anchor="middle" font-family="Arial">Soft iron</text>
+  <text x="155" y="88" font-size="8" fill="#555" text-anchor="middle" font-family="Arial">cylinder</text>
+  <!-- Coil (rectangular, surrounding the cylinder) -->
+  <rect x="105" y="52" width="100" height="56" fill="none" stroke="#e67e22" stroke-width="2.5" rx="2"/>
+  <text x="215" y="70" font-size="8" fill="#e67e22" font-family="Arial">Coil</text>
+  <text x="215" y="80" font-size="8" fill="#555" font-family="Arial">(N turns)</text>
+  <text x="215" y="90" font-size="8" fill="#555" font-family="Arial">Copper wire</text>
+  <!-- Phosphor-bronze strip (suspension) -->
+  <line x1="155" y1="52" x2="155" y2="28" stroke="#888" stroke-width="2.5"/>
+  <text x="158" y="42" font-size="7" fill="#888" font-family="Arial">Phosphor-bronze</text>
+  <text x="158" y="52" font-size="7" fill="#888" font-family="Arial">strip (spring)</text>
+  <!-- Pointer -->
+  <line x1="155" y1="28" x2="155" y2="15" stroke="#333" stroke-width="2.5"/>
+  <polygon points="150,15 160,15 155,8" fill="#333"/>
+  <text x="162" y="12" font-size="8" fill="#333" font-family="Arial">Pointer</text>
+  <!-- Scale arc -->
+  <path d="M100,15 Q155,5 210,15" fill="none" stroke="#555" stroke-width="1.5"/>
+  <text x="155" y="18" font-size="7" fill="#555" text-anchor="middle" font-family="Arial">Scale</text>
+  <!-- Current terminals -->
+  <line x1="105" y1="65" x2="85" y2="65" stroke="#333" stroke-width="2"/>
+  <circle cx="82" cy="65" r="3" fill="#333"/>
+  <text x="68" y="62" font-size="8" fill="#333" font-family="Arial">I→</text>
+  <!-- Equation box -->
+  <rect x="5" y="140" width="300" height="30" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5" rx="4"/>
+  <text x="155" y="152" font-size="9" fill="#2e7d32" text-anchor="middle" font-family="Arial" font-weight="bold">Deflecting torque: τ_d = NBIA (radial B → sinθ=1 always)</text>
+  <text x="155" y="165" font-size="9" fill="#555" text-anchor="middle" font-family="Arial">At equilibrium: NBIA = kθ → θ = (NBA/k)·I → θ ∝ I (linear scale)</text>
 </svg>
-<div class="cap">B at centre of circular loop: B = μ₀I/2R</div>
+<div class="cap">Fig: Moving Coil Galvanometer — coil of N turns in radial magnetic field between concave pole pieces. Soft iron core makes B radial. Spring restores. θ ∝ current I.</div>
 </div>
 <table class="ans-table">
 <tr><td class="label">Biot-Savart Law</td><td><span class="step formula">dB = (μ₀/4π)(Idl sinθ/r²) — directed by right-hand rule</span></td></tr>

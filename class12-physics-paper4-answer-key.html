@@ -267,23 +267,39 @@
 <div class="q-block"><div class="q-header"><div class="q-num-label">Q.4 (i) [3 Marks]</div><div class="q-text-full">Derive the expression for electric field due to a charged infinite thin spherical shell (inside, on surface, outside).</div></div>
 <div class="ans-body">
 <div class="diagram-box">
-<svg width="200" height="160" viewBox="0 0 200 160">
-  <!-- Spherical shell -->
-  <circle cx="100" cy="80" r="55" fill="none" stroke="#1a237e" stroke-width="2.5"/>
-  <!-- Charge on shell -->
-  <text x="88" y="25" font-size="11" fill="#1a237e" font-family="Arial">+Q (on surface)</text>
-  <!-- Inside Gaussian surface (small) -->
-  <circle cx="100" cy="80" r="25" fill="none" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4,2"/>
-  <text x="78" y="84" font-size="10" fill="#e74c3c" font-family="Arial">r &lt; R</text>
-  <text x="65" y="118" font-size="10" fill="#e74c3c" font-family="Arial">E = 0 inside</text>
-  <!-- Outside Gaussian surface (large) -->
-  <circle cx="100" cy="80" r="70" fill="none" stroke="#27ae60" stroke-width="1.5" stroke-dasharray="4,2"/>
-  <text x="158" y="55" font-size="10" fill="#27ae60" font-family="Arial">r &gt; R</text>
-  <!-- E arrows outside -->
-  <line x1="170" y1="80" x2="190" y2="80" stroke="#27ae60" stroke-width="2" marker-end="url(#gSph)"/>
-  <defs><marker id="gSph" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#27ae60"/></marker></defs>
+<svg width="310" height="140" viewBox="0 0 310 140">
+  <text x="155" y="13" font-size="11" fill="#1a1a2e" text-anchor="middle" font-family="Arial" font-weight="bold">Parallel Plate Capacitor with Dielectric</text>
+  <!-- Plate A (+) -->
+  <rect x="50" y="28" width="210" height="14" fill="#cce8ff" stroke="#1a237e" stroke-width="2" rx="1"/>
+  <text x="18" y="38" font-size="10" fill="#1a237e" font-family="Arial" font-weight="bold">+ + + + +</text>
+  <text x="268" y="38" font-size="9" fill="#1a237e" font-family="Arial">Plate A (+Q)</text>
+  <!-- Dielectric slab -->
+  <rect x="50" y="42" width="210" height="38" fill="#ffe8cc" stroke="#e67e22" stroke-width="1.5" rx="2"/>
+  <text x="155" y="58" font-size="10" fill="#e67e22" text-anchor="middle" font-family="Arial" font-weight="bold">Dielectric material (K)</text>
+  <text x="155" y="70" font-size="9" fill="#555" text-anchor="middle" font-family="Arial">e.g., glass, mica, wax paper</text>
+  <!-- Plate B (-) -->
+  <rect x="50" y="80" width="210" height="14" fill="#ffddee" stroke="#c0392b" stroke-width="2" rx="1"/>
+  <text x="18" y="90" font-size="10" fill="#c0392b" font-family="Arial" font-weight="bold">− − − − −</text>
+  <text x="268" y="90" font-size="9" fill="#c0392b" font-family="Arial">Plate B (−Q)</text>
+  <!-- Electric field arrows -->
+  <line x1="80" y1="42" x2="80" y2="80" stroke="#888" stroke-width="1.5" marker-end="url(#gCap2)"/>
+  <line x1="120" y1="42" x2="120" y2="80" stroke="#888" stroke-width="1.5" marker-end="url(#gCap2)"/>
+  <line x1="160" y1="42" x2="160" y2="80" stroke="#888" stroke-width="1.5" marker-end="url(#gCap2)"/>
+  <line x1="200" y1="42" x2="200" y2="80" stroke="#888" stroke-width="1.5" marker-end="url(#gCap2)"/>
+  <line x1="240" y1="42" x2="240" y2="80" stroke="#888" stroke-width="1.5" marker-end="url(#gCap2)"/>
+  <text x="305" y="62" font-size="9" fill="#888" font-family="Arial">E</text>
+  <!-- Distance d label -->
+  <line x1="22" y1="42" x2="22" y2="80" stroke="#555" stroke-width="1.5"/>
+  <line x1="18" y1="42" x2="26" y2="42" stroke="#555" stroke-width="1"/>
+  <line x1="18" y1="80" x2="26" y2="80" stroke="#555" stroke-width="1"/>
+  <text x="8" y="65" font-size="9" fill="#555" font-family="Arial">d</text>
+  <!-- Equations box -->
+  <rect x="5" y="100" width="300" height="35" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5" rx="4"/>
+  <text x="155" y="114" font-size="9" fill="#2e7d32" text-anchor="middle" font-family="Arial" font-weight="bold">C = Kε₀A/d &nbsp;|&nbsp; Without dielectric: C₀ = ε₀A/d</text>
+  <text x="155" y="128" font-size="9" fill="#555" text-anchor="middle" font-family="Arial">K = dielectric constant &nbsp;|&nbsp; Energy stored: U = ½CV² = Q²/2C</text>
+  <defs><marker id="gCap2" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#888"/></marker></defs>
 </svg>
-<div class="cap">Gaussian surfaces: inside (E=0), on surface, outside (kQ/r²)</div>
+<div class="cap">Fig: Parallel plate capacitor with dielectric — electric field E = σ/Kε₀ between plates. Dielectric increases capacitance K times: C = Kε₀A/d.</div>
 </div>
 <table class="ans-table">
 <tr><td class="label">Outside (r &gt; R)</td><td><span class="step formula">E·4πr² = Q/ε₀ → E = kQ/r² (acts like point charge)</span></td></tr>
