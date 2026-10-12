@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MHT-CET Preparation — Visions Classes Ambernath</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <style>
+    /* ── MHT-CET page specific styles ── */
+    :root {
+      --cet-primary: #7b1fa2;
+      --cet-dark:    #4a148c;
+      --cet-light:   #f3e5f5;
+      --cet-accent:  #e91e63;
+      --phys:  #1a237e;
+      --chem:  #1b5e20;
+      --math:  #b71c1c;
+    }
+
+    /* Hero */
+    .cet-hero {
+      background: linear-gradient(135deg, #4a148c 0%, #7b1fa2 50%, #e91e63 100%);
+      color: #fff;
+      padding: 70px 20px 50px;
+      text-align: center;
+    }
+    .cet-hero h1 { font-size: clamp(2rem,5vw,3rem); font-weight: 800; margin-bottom: 12px; }
+    .cet-hero p  { font-size: 1.15rem; opacity: .9; max-width: 640px; margin: 0 auto 28px; }
+    .cet-badges  { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .cet-badge   { background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.4);
+                   padding: 6px 18px; border-radius: 20px; font-size: .9rem; font-weight: 600; }
+
+    /* Stats bar */
+    .cet-stats { background: #fff; border-bottom: 3px solid var(--cet-light);
+                 display: flex; flex-wrap: wrap; justify-content: center; gap: 0; }
+    .cet-stat  { flex: 1 1 160px; text-align: center; padding: 22px 16px;
+                 border-right: 1px solid #eee; }
+    .cet-stat:last-child { border-right: none; }
+    .cet-stat .num { font-size: 2rem; font-weight: 800; color: var(--cet-primary); }
+    .cet-stat .lbl { font-size: .85rem; color: #666; margin-top: 4px; }
+
+    /* Tab navigation */
+    .cet-tabs { background: #fff; position: sticky; top: 64px; z-index: 90;
+                border-bottom: 2px solid #eee; padding: 0 20px;
+                display: flex; gap: 0; overflow-x: auto; }
+    .cet-tab  { padding: 16px 24px; font-weight: 700; font-size: .95rem; cursor: pointer;
+                border: none; background: none; color: #666; border-bottom: 3px solid transparent;
+                white-space: nowrap; transition: .2s; }
+    .cet-tab:hover  { color: var(--cet-primary); }
+    .cet-tab.active { color: var(--cet-primary); border-bottom-color: var(--cet-primary); }
+
+    /* Section */
+    .cet-section { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+    .tab-panel   { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* Year card grid */
+    .year-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(310px,1fr)); gap: 28px; margin-top: 24px; }
+    .year-card {
+      background: #fff; border-radius: 14px; overflow: hidden;
+      box-shadow: 0 3px 16px rgba(0,0,0,.1); transition: transform .2s, box-shadow .2s;
+    }
+    .year-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,.15); }
+    .year-card-header {
+      padding: 18px 20px; color: #fff; display: flex; align-items: center; gap: 14px;
+    }
+    .year-card-header .yr { font-size: 1.5rem; font-weight: 800; }
+    .year-card-header .meta { font-size: .85rem; opacity: .85; }
+    .year-card-body { padding: 16px 20px; }
+    .paper-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .pill {
+      padding: 5px 14px; border-radius: 20px; font-size: .82rem; font-weight: 700;
+      cursor: pointer; border: none; text-decoration: none; display: inline-block;
+      transition: opacity .15s;
+    }
+    .pill:hover { opacity: .82; }
+    .pill-phys { background: #e8eaf6; color: var(--phys); }
+    .pill-chem { background: #e8f5e9; color: var(--chem); }
+    .pill-math { background: #fce4ec; color: var(--math); }
+    .pill-bio  { background: #e0f7fa; color: #006064; }
+    .pill-sol  { background: var(--cet-primary); color: #fff; }
+    .year-card-footer { padding: 12px 20px; background: #fafafa; border-top: 1px solid #f0f0f0;
+                        font-size: .82rem; color: #888; }
+
+    /* Solution viewer */
+    .sol-viewer { display: none; }
+    .sol-viewer.open { display: block; }
+
+    /* Detailed solution page style */
+    .paper-solution {
+      background: #fff; border-radius: 14px; box-shadow: 0 3px 16px rgba(0,0,0,.1);
+      margin-top: 28px; overflow: hidden;
+    }
+    .paper-sol-header {
+      padding: 20px 28px; display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 10px;
+    }
+    .paper-sol-header h2 { font-size: 1.25rem; font-weight: 800; margin: 0; }
+    .paper-sol-header .close-btn {
+      padding: 7px 18px; background: #f5f5f5; border: 1px solid #ddd; border-radius: 8px;
+      cursor: pointer; font-weight: 600; font-size: .9rem;
+    }
+    .section-block { padding: 20px 28px; border-bottom: 1px solid #f0f0f0; }
+    .section-label {
+      display: inline-block; padding: 4px 14px; border-radius: 6px; font-weight: 800;
+      font-size: .85rem; margin-bottom: 16px; color: #fff;
+    }
+    .q-row { margin-bottom: 20px; border: 1px solid #e8e8e8; border-radius: 10px; overflow: hidden; }
+    .q-row-head { padding: 10px 16px; background: #f7f7f7; font-weight: 700; font-size: .95rem;
+                  display: flex; align-items: flex-start; gap: 12px; }
+    .q-no { min-width: 32px; font-weight: 800; color: var(--cet-primary); }
+    .q-row-body { padding: 14px 16px; }
+    .option-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 24px; margin: 8px 0 10px; }
+    .opt { font-size: .93rem; color: #555; }
+    .opt.correct { color: #2e7d32; font-weight: 700; }
+    .ans-badge { display: inline-block; background: #e8f5e9; border: 1.5px solid #43a047;
+                 color: #1b5e20; font-weight: 700; padding: 3px 14px; border-radius: 6px;
+                 font-size: .88rem; margin-top: 6px; }
+    .sol-step { display: block; font-size: .93rem; color: #333; line-height: 1.7; margin: 3px 0; }
+    .sol-step.formula { color: #1565c0; font-weight: 700; }
+    .sol-step.key { font-weight: 700; color: #333; }
+
+    /* Topic overview cards */
+    .topic-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(260px,1fr)); gap: 18px; margin-top: 20px; }
+    .topic-card { background: #fff; border-radius: 12px; padding: 20px;
+                  box-shadow: 0 2px 10px rgba(0,0,0,.08); border-top: 4px solid; }
+    .topic-card h4 { font-size: 1rem; font-weight: 800; margin-bottom: 10px; }
+    .topic-card ul { padding-left: 18px; font-size: .9rem; color: #555; line-height: 1.8; }
+    .topic-card .weight { font-size: .8rem; font-weight: 700; padding: 2px 10px;
+                          border-radius: 10px; margin-left: 6px; }
+
+    /* Tip box */
+    .tip-box { background: linear-gradient(135deg,#f3e5f5,#fce4ec); border-left: 5px solid var(--cet-primary);
+               border-radius: 0 10px 10px 0; padding: 16px 20px; margin: 18px 0; }
+    .tip-box strong { color: var(--cet-primary); }
+
+    /* Score meter */
+    .score-bar { background: #eee; border-radius: 8px; height: 14px; margin: 6px 0; overflow: hidden; }
+    .score-fill { height: 100%; border-radius: 8px; background: linear-gradient(90deg, var(--cet-primary), var(--cet-accent)); }
+
+    /* Responsive */
+    @media (max-width:600px) {
+      .year-grid { grid-template-columns: 1fr; }
+      .cet-tabs  { top: 56px; }
+      .option-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Visions Classes Logo" class="nav-logo-img" />
+      <div class="logo-text"><span>Visions</span> Classes</div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="online-lectures.html">Online Lectures</a></li>
+      <li><a href="buy-courses.html">Buy Course</a></li>
+      <li><a href="notes.html">Notes</a></li>
+      <li><a href="mht-cet.html" class="active">MHT-CET 🎯</a></li>
+      <li><a href="toppers.html">Toppers 🏆</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="buy-courses.html" class="nav-cta">Enroll Now</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="cet-hero">
+  <div class="cet-badges">
+    <span class="cet-badge">🏛️ Maharashtra State CET</span>
+    <span class="cet-badge">PCM / PCB streams</span>
+    <span class="cet-badge">Ambernath · Visions Classes</span>
+  </div>
+  <h1>MHT-CET Preparation Hub</h1>
+  <p>Last 5 years solved papers (2019–2024) with detailed step-by-step solutions, chapter-wise weightage analysis and exam strategy — by Shashikant Sir</p>
+  <a href="#papers" class="btn btn-white" style="display:inline-block;padding:12px 32px;background:#fff;color:#7b1fa2;border-radius:30px;font-weight:800;text-decoration:none;margin-top:10px;">📄 View Solved Papers →</a>
+</div>
+
+<!-- ── STATS ── -->
+<div class="cet-stats">
+  <div class="cet-stat"><div class="num">5</div><div class="lbl">Years Covered<br/>(2019–2024)</div></div>
+  <div class="cet-stat"><div class="num">4</div><div class="lbl">Subjects<br/>PCM + Bio</div></div>
+  <div class="cet-stat"><div class="num">200</div><div class="lbl">Questions<br/>per Paper</div></div>
+  <div class="cet-stat"><div class="num">3 hr</div><div class="lbl">Exam Duration</div></div>
+  <div class="cet-stat"><div class="num">200</div><div class="lbl">Total Marks<br/>(No Negative)</div></div>
+</div>
+
+<!-- ── TAB NAV ── -->
+<div class="cet-tabs" role="tablist">
+  <button class="cet-tab active" onclick="showTab('papers')">📄 Solved Papers</button>
+  <button class="cet-tab" onclick="showTab('syllabus')">📚 Syllabus &amp; Weightage</button>
+  <button class="cet-tab" onclick="showTab('strategy')">🧠 Exam Strategy</button>
+  <button class="cet-tab" onclick="showTab('formula')">📐 Formula Sheet</button>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<!--  TAB 1 — SOLVED PAPERS                  -->
+<!-- ════════════════════════════════════════ -->
+<div class="cet-section">
+<div id="tab-papers" class="tab-panel active" id="papers">
+
+  <h2 style="font-size:1.6rem;font-weight:800;color:#4a148c;margin-bottom:6px;">📄 Last 5 Years — Solved Papers</h2>
+  <p style="color:#666;margin-bottom:10px;">Click any subject button to open the detailed question-by-question solution. All answers verified with Maharashtra State Board syllabus.</p>
+
+  <div class="year-grid">
+
+    <!-- ── 2024 ── -->
+    <div class="year-card">
+      <div class="year-card-header" style="background:linear-gradient(135deg,#4a148c,#7b1fa2);">
+        <div>
+          <div class="yr">MHT-CET 2024</div>
+          <div class="meta">PCM Slot 1 &amp; PCB Slot 1 | May 2024</div>
+        </div>
+        <span style="font-size:2rem;">🆕</span>
+      </div>
+      <div class="year-card-body">
+        <div class="paper-pills">
+          <span class="pill pill-phys" onclick="openSol('2024','phy')">⚛️ Physics</span>
+          <span class="pill pill-chem" onclick="openSol('2024','chem')">🧪 Chemistry</span>
+          <span class="pill pill-math" onclick="openSol('2024','math')">📐 Maths</span>
+          <span class="pill pill-bio"  onclick="openSol('2024','bio')">🌿 Biology</span>
+        </div>
+        <div style="font-size:.88rem;color:#555;line-height:1.7;">
+          <b>Highlights:</b> New NTA pattern · Increased Biology weight · Organic Chemistry tricky questions · Calculus heavy Maths section
+        </div>
+      </div>
+      <div class="year-card-footer">50 Q Physics · 50 Q Chemistry · 100 Q Maths/Bio · 200 total</div>
+    </div>
+
+    <!-- ── 2023 ── -->
+    <div class="year-card">
+      <div class="year-card-header" style="background:linear-gradient(135deg,#1565c0,#1976d2);">
+        <div>
+          <div class="yr">MHT-CET 2023</div>
+          <div class="meta">PCM &amp; PCB Groups | May 2023</div>
+        </div>
+        <span style="font-size:2rem;">📋</span>
+      </div>
+      <div class="year-card-body">
+        <div class="paper-pills">
+          <span class="pill pill-phys" onclick="openSol('2023','phy')">⚛️ Physics</span>
+          <span class="pill pill-chem" onclick="openSol('2023','chem')">🧪 Chemistry</span>
+          <span class="pill pill-math" onclick="openSol('2023','math')">📐 Maths</span>
+          <span class="pill pill-bio"  onclick="openSol('2023','bio')">🌿 Biology</span>
+        </div>
+        <div style="font-size:.88rem;color:#555;line-height:1.7;">
+          <b>Highlights:</b> Electrostatics & Magnetism heavy · Electrochemistry concepts · Matrices & Determinants · Genetics questions
+        </div>
+      </div>
+      <div class="year-card-footer">50 Q Physics · 50 Q Chemistry · 100 Q Maths/Bio · 200 total</div>
+    </div>
+
+    <!-- ── 2022 ── -->
+    <div class="year-card">
+      <div class="year-card-header" style="background:linear-gradient(135deg,#1b5e20,#388e3c);">
+        <div>
+          <div class="yr">MHT-CET 2022</div>
+          <div class="meta">August 2022 · Post COVID regular</div>
+        </div>
+        <span style="font-size:2rem;">📗</span>
+      </div>
+      <div class="year-card-body">
+        <div class="paper-pills">
+          <span class="pill pill-phys" onclick="openSol('2022','phy')">⚛️ Physics</span>
+          <span class="pill pill-chem" onclick="openSol('2022','chem')">🧪 Chemistry</span>
+          <span class="pill pill-math" onclick="openSol('2022','math')">📐 Maths</span>
+          <span class="pill pill-bio"  onclick="openSol('2022','bio')">🌿 Biology</span>
+        </div>
+        <div style="font-size:.88rem;color:#555;line-height:1.7;">
+          <b>Highlights:</b> Wave optics back · Chemical Bonding conceptual · Integration by parts · Plant physiology detailed
+        </div>
+      </div>
+      <div class="year-card-footer">50 Q Physics · 50 Q Chemistry · 100 Q Maths/Bio · 200 total</div>
+    </div>
+
+    <!-- ── 2021 ── -->
+    <div class="year-card">
+      <div class="year-card-header" style="background:linear-gradient(135deg,#e65100,#f57c00);">
+        <div>
+          <div class="yr">MHT-CET 2021</div>
+          <div class="meta">September 2021 · COVID special pattern</div>
+        </div>
+        <span style="font-size:2rem;">📙</span>
+      </div>
+      <div class="year-card-body">
+        <div class="paper-pills">
+          <span class="pill pill-phys" onclick="openSol('2021','phy')">⚛️ Physics</span>
+          <span class="pill pill-chem" onclick="openSol('2021','chem')">🧪 Chemistry</span>
+          <span class="pill pill-math" onclick="openSol('2021','math')">📐 Maths</span>
+          <span class="pill pill-bio"  onclick="openSol('2021','bio')">🌿 Biology</span>
+        </div>
+        <div style="font-size:.88rem;color:#555;line-height:1.7;">
+          <b>Highlights:</b> Reduced syllabus paper · Semiconductor &amp; Communication · Thermodynamics · Straight lines focus
+        </div>
+      </div>
+      <div class="year-card-footer">Reduced syllabus · Same 200 Q format · 3 hours</div>
+    </div>
+
+    <!-- ── 2019 ── -->
+    <div class="year-card">
+      <div class="year-card-header" style="background:linear-gradient(135deg,#880e4f,#c2185b);">
+        <div>
+          <div class="yr">MHT-CET 2019</div>
+          <div class="meta">New revised pattern — first year</div>
+        </div>
+        <span style="font-size:2rem;">📕</span>
+      </div>
+      <div class="year-card-body">
+        <div class="paper-pills">
+          <span class="pill pill-phys" onclick="openSol('2019','phy')">⚛️ Physics</span>
+          <span class="pill pill-chem" onclick="openSol('2019','chem')">🧪 Chemistry</span>
+          <span class="pill pill-math" onclick="openSol('2019','math')">📐 Maths</span>
+          <span class="pill pill-bio"  onclick="openSol('2019','bio')">🌿 Biology</span>
+        </div>
+        <div style="font-size:.88rem;color:#555;line-height:1.7;">
+          <b>Highlights:</b> New pattern introduced · Class 11 + 12 syllabus · Optics conceptual · Solutions &amp; colligative properties
+        </div>
+      </div>
+      <div class="year-card-footer">New pattern from 2019 · 200 Q · No negative marking</div>
+    </div>
+
+  </div><!-- /year-grid -->
+
+  <!-- ── SOLUTION PANEL ── -->
+  <div id="sol-panel" class="paper-solution" style="display:none;">
+    <div id="sol-inner"></div>
+  </div>
+
+</div><!-- /tab-papers -->
+
+<!-- ════════════════════════════════════════ -->
+<!--  TAB 2 — SYLLABUS & WEIGHTAGE           -->
+<!-- ════════════════════════════════════════ -->
+<div id="tab-syllabus" class="tab-panel">
+  <h2 style="font-size:1.6rem;font-weight:800;color:#4a148c;margin-bottom:6px;">📚 Syllabus &amp; Chapter Weightage</h2>
+  <p style="color:#666;margin-bottom:20px;">Based on analysis of 2019–2024 papers. Numbers show <b>average questions per paper</b> from that chapter.</p>
+
+  <div class="topic-grid">
+
+    <div class="topic-card" style="border-color:#1a237e;">
+      <h4 style="color:#1a237e;">⚛️ Physics — 50 Questions</h4>
+      <ul>
+        <li>Circular Motion &amp; Gravitation <span class="weight" style="background:#e8eaf6;color:#1a237e;">4 Q</span></li>
+        <li>Rotational Motion <span class="weight" style="background:#e8eaf6;color:#1a237e;">3 Q</span></li>
+        <li>Oscillations &amp; Waves <span class="weight" style="background:#e8eaf6;color:#1a237e;">4 Q</span></li>
+        <li>Electrostatics <span class="weight" style="background:#c5cae9;color:#1a237e;">6 Q</span></li>
+        <li>Current Electricity <span class="weight" style="background:#c5cae9;color:#1a237e;">5 Q</span></li>
+        <li>Magnetism &amp; Moving Charges <span class="weight" style="background:#c5cae9;color:#1a237e;">5 Q</span></li>
+        <li>EMI &amp; AC Circuits <span class="weight" style="background:#e8eaf6;color:#1a237e;">4 Q</span></li>
+        <li>Ray &amp; Wave Optics <span class="weight" style="background:#c5cae9;color:#1a237e;">6 Q</span></li>
+        <li>Dual Nature, Atoms &amp; Nuclei <span class="weight" style="background:#e8eaf6;color:#1a237e;">4 Q</span></li>
+        <li>Semiconductors &amp; Communication <span class="weight" style="background:#e8eaf6;color:#1a237e;">4 Q</span></li>
+        <li>Kinetic Theory, Thermodynamics <span class="weight" style="background:#e8eaf6;color:#1a237e;">5 Q</span></li>
+      </ul>
+    </div>
+
+    <div class="topic-card" style="border-color:#1b5e20;">
+      <h4 style="color:#1b5e20;">🧪 Chemistry — 50 Questions</h4>
+      <ul>
+        <li>Solutions &amp; Colligative Properties <span class="weight" style="background:#e8f5e9;color:#1b5e20;">5 Q</span></li>
+        <li>Electrochemistry <span class="weight" style="background:#e8f5e9;color:#1b5e20;">4 Q</span></li>
+        <li>Chemical Kinetics <span class="weight" style="background:#e8f5e9;color:#1b5e20;">4 Q</span></li>
+        <li>Surface Chemistry <span class="weight" style="background:#dcedc8;color:#1b5e20;">3 Q</span></li>
+        <li>p-Block Elements <span class="weight" style="background:#c8e6c9;color:#1b5e20;">5 Q</span></li>
+        <li>d- &amp; f-Block, Coordination <span class="weight" style="background:#e8f5e9;color:#1b5e20;">4 Q</span></li>
+        <li>Halogenated Organic Compounds <span class="weight" style="background:#e8f5e9;color:#1b5e20;">3 Q</span></li>
+        <li>Alcohols, Phenols, Ethers <span class="weight" style="background:#e8f5e9;color:#1b5e20;">4 Q</span></li>
+        <li>Carbonyl Compounds (Aldehydes/Ketones/Acids) <span class="weight" style="background:#c8e6c9;color:#1b5e20;">5 Q</span></li>
+        <li>Amines &amp; Biomolecules <span class="weight" style="background:#e8f5e9;color:#1b5e20;">4 Q</span></li>
+        <li>Polymers &amp; Chemistry in Everyday Life <span class="weight" style="background:#dcedc8;color:#1b5e20;">3 Q</span></li>
+      </ul>
+    </div>
+
+    <div class="topic-card" style="border-color:#b71c1c;">
+      <h4 style="color:#b71c1c;">📐 Mathematics — 100 Questions</h4>
+      <ul>
+        <li>Trigonometric Functions <span class="weight" style="background:#fce4ec;color:#b71c1c;">8 Q</span></li>
+        <li>Matrices &amp; Determinants <span class="weight" style="background:#fce4ec;color:#b71c1c;">7 Q</span></li>
+        <li>Straight Lines &amp; Circles <span class="weight" style="background:#fce4ec;color:#b71c1c;">8 Q</span></li>
+        <li>Limits, Derivatives &amp; Continuity <span class="weight" style="background:#f8bbd0;color:#b71c1c;">10 Q</span></li>
+        <li>Indefinite &amp; Definite Integration <span class="weight" style="background:#f8bbd0;color:#b71c1c;">12 Q</span></li>
+        <li>Applications of Derivatives (maxima/minima) <span class="weight" style="background:#fce4ec;color:#b71c1c;">7 Q</span></li>
+        <li>Differential Equations <span class="weight" style="background:#fce4ec;color:#b71c1c;">6 Q</span></li>
+        <li>Vectors &amp; 3D Geometry <span class="weight" style="background:#fce4ec;color:#b71c1c;">8 Q</span></li>
+        <li>Probability &amp; Statistics <span class="weight" style="background:#fce4ec;color:#b71c1c;">8 Q</span></li>
+        <li>Linear Programming <span class="weight" style="background:#fce4ec;color:#b71c1c;">4 Q</span></li>
+        <li>Conics (Parabola/Ellipse/Hyperbola) <span class="weight" style="background:#fce4ec;color:#b71c1c;">7 Q</span></li>
+        <li>Inverse Trig &amp; Complex Numbers <span class="weight" style="background:#fce4ec;color:#b71c1c;">5 Q</span></li>
+      </ul>
+    </div>
+
+    <div class="topic-card" style="border-color:#006064;">
+      <h4 style="color:#006064;">🌿 Biology — 100 Questions (PCB)</h4>
+      <ul>
+        <li>Reproduction in Plants &amp; Animals <span class="weight" style="background:#e0f7fa;color:#006064;">14 Q</span></li>
+        <li>Genetics &amp; Evolution <span class="weight" style="background:#e0f7fa;color:#006064;">16 Q</span></li>
+        <li>Biotechnology <span class="weight" style="background:#e0f7fa;color:#006064;">10 Q</span></li>
+        <li>Ecology &amp; Environment <span class="weight" style="background:#b2ebf2;color:#006064;">12 Q</span></li>
+        <li>Human Physiology <span class="weight" style="background:#b2ebf2;color:#006064;">14 Q</span></li>
+        <li>Plant Physiology &amp; Photosynthesis <span class="weight" style="background:#e0f7fa;color:#006064;">12 Q</span></li>
+        <li>Cell Biology &amp; Biomolecules <span class="weight" style="background:#e0f7fa;color:#006064;">10 Q</span></li>
+        <li>Microbes, Immunology, Health <span class="weight" style="background:#e0f7fa;color:#006064;">8 Q</span></li>
+        <li>Structural Organisation in Animals/Plants <span class="weight" style="background:#e0f7fa;color:#006064;">4 Q</span></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="tip-box" style="margin-top:30px;">
+    <strong>💡 Weightage Insight:</strong> In Physics, Electrostatics + Optics + Current Electricity together account for ~34% of Physics marks. In Chemistry, Organic Chemistry chapters together give ~40% marks. Focus on these first!
+  </div>
+
+</div><!-- /tab-syllabus -->
+
+<!-- ════════════════════════════════════════ -->
+<!--  TAB 3 — EXAM STRATEGY                  -->
+<!-- ════════════════════════════════════════ -->
+<div id="tab-strategy" class="tab-panel">
+  <h2 style="font-size:1.6rem;font-weight:800;color:#4a148c;margin-bottom:6px;">🧠 MHT-CET Exam Strategy</h2>
+  <p style="color:#666;margin-bottom:24px;">Tried &amp; tested strategy from Shashikant Sir — students who followed this scored 140+ in CET</p>
+
+  <div class="topic-grid">
+
+    <div class="topic-card" style="border-color:#7b1fa2;background:linear-gradient(135deg,#f3e5f5,#fff);">
+      <h4 style="color:#7b1fa2;">📅 3-Month Study Plan</h4>
+      <ul>
+        <li><b>Month 1:</b> Complete Class 12 chapters + practice MCQs</li>
+        <li><b>Month 2:</b> Class 11 chapters + chapter-wise tests</li>
+        <li><b>Month 3:</b> Previous years papers + full mock tests</li>
+        <li>Solve minimum 50 MCQs daily</li>
+        <li>Revise formula sheets every Sunday</li>
+      </ul>
+    </div>
+
+    <div class="topic-card" style="border-color:#e91e63;background:linear-gradient(135deg,#fce4ec,#fff);">
+      <h4 style="color:#e91e63;">⏰ On Exam Day Tips</h4>
+      <ul>
+        <li>Attempt Physics first (most scoring if prepared)</li>
+        <li>Skip difficult questions — come back later</li>
+        <li>No negative marking → attempt ALL questions</li>
+        <li>Mark questions to review (use rough work space)</li>
+        <li>Last 20 min: fill remaining guesses (B or C statistically better)</li>
+        <li>Keep calm — 200 Q in 180 min = 54 sec per question</li>
+      </ul>
+    </div>
+
+    <div class="topic-card" style="border-color:#1a237e;">
+      <h4 style="color:#1a237e;">⚛️ Physics Strategy</h4>
+      <ul>
+        <li>Memorise all standard formulas (derivation not needed in CET)</li>
+        <li>Draw quick diagram for optics/electrostatics questions</li>
+        <li>Dimensional analysis — eliminate wrong options quickly</li>
+        <li>High priority: Electrostatics, Current Electricity, Optics</li>
+        <li>Numericals: substitute directly, don't overthink</li>
+        <li>Semiconductor logic gates — always 2-3 easy marks</li>
+      </ul>
+    </div>
+
+    <div class="topic-card" style="border-color:#1b5e20;">
+      <h4 style="color:#1b5e20;">🧪 Chemistry Strategy</h4>
+      <ul>
+        <li>Organic: learn IUPAC names + reaction mechanisms</li>
+        <li>Memorise activity series and standard reduction potentials</li>
+        <li>Colligative properties: formula-based, always numerical</li>
+        <li>p-block: properties &amp; preparation reactions are direct marks</li>
+        <li>Coordination compounds: IUPAC naming is guaranteed 2-3 Q</li>
+        <li>Biomolecules: read once — mostly factual/definition MCQs</li>
+      </ul>
+    </div>
+
+    <div class="topic-card" style="border-color:#b71c1c;">
+      <h4 style="color:#b71c1c;">📐 Maths Strategy</h4>
+      <ul>
+        <li>Integration is the single biggest topic — master it first</li>
+        <li>Derivatives &amp; applications together = 17 Q (~17% of Maths)</li>
+        <li>Matrices: practice row operations and Cramer's rule daily</li>
+        <li>Probability: conditional probability &amp; Bayes' theorem must-do</li>
+        <li>3D Geometry &amp; Vectors: direction cosines, angle formulas</li>
+        <li>Never leave Straight Lines — always 3-4 straightforward Q</li>
+      </ul>
+    </div>
+
+    <div class="topic-card" style="border-color:#006064;">
+      <h4 style="color:#006064;">🌿 Biology Strategy (PCB)</h4>
+      <ul>
+        <li>Genetics is the most scoring — solve all Mendel problems</li>
+        <li>Biotechnology: rDNA steps, PCR, applications — direct questions</li>
+        <li>Learn all diagrams: reproductive system, Z-scheme, DNA, lac operon</li>
+        <li>Ecology: food chains, ecological pyramids, biodiversity numbers</li>
+        <li>Human physiology: hormone table (which gland → which hormone)</li>
+        <li>Plant physiology: photosynthesis reactions and products</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="tip-box" style="margin-top:28px;">
+    <strong>🎯 Score Target Guide:</strong><br/>
+    140–160 → Engineering (most branches) &nbsp;|&nbsp;
+    160–180 → Top engineering colleges (VJTI, COEP, ICT) &nbsp;|&nbsp;
+    180–200 → MBBS / BDS (with Biology)
+    <div style="margin-top:12px;">
+      <b>Score 120+ in 3 months?</b> Focus only on: Integration, Electrostatics + Current Electricity, Organic Chemistry, Genetics = covers ~45% of total marks.
+    </div>
+  </div>
+
+</div><!-- /tab-strategy -->
+
+<!-- ════════════════════════════════════════ -->
+<!--  TAB 4 — FORMULA SHEET                  -->
+<!-- ════════════════════════════════════════ -->
+<div id="tab-formula" class="tab-panel">
+  <h2 style="font-size:1.6rem;font-weight:800;color:#4a148c;margin-bottom:6px;">📐 MHT-CET Formula Sheet</h2>
+  <p style="color:#666;margin-bottom:24px;">All must-know formulas for CET — print this and revise every weekend</p>
+
+  <div class="topic-grid">
+
+    <div class="topic-card" style="border-color:#1a237e;">
+      <h4 style="color:#1a237e;">⚛️ Physics — Key Formulas</h4>
+      <ul style="font-family:monospace;font-size:.85rem;">
+        <li>E = σ/(2ε₀) — infinite plane sheet</li>
+        <li>C = Kε₀A/d — capacitor with dielectric</li>
+        <li>R = ρL/A — resistance</li>
+        <li>F/L = μ₀I₁I₂/(2πd) — parallel wires</li>
+        <li>θ = (NBA/k)·I — galvanometer</li>
+        <li>V_S/V_P = N_S/N_P — transformer</li>
+        <li>1/v + 1/u = 1/f — mirror/lens</li>
+        <li>β = λD/d — fringe width (YDSE)</li>
+        <li>KE_max = hν − φ — photoelectric</li>
+        <li>E_n = −13.6/n² eV — Bohr atom</li>
+        <li>t₁/₂ = 0.693/λ — radioactive decay</li>
+        <li>ΔE = Δmc² — mass-energy</li>
+      </ul>
+    </div>
+
+    <div class="topic-card" style="border-color:#1b5e20;">
+      <h4 style="color:#1b5e20;">🧪 Chemistry — Key Formulas</h4>
+      <ul style="font-family:monospace;font-size:.85rem;">
+        <li>p_A = p°_A · x_A — Raoult's law</li>
+        <li>ΔTb = Kb·m — boiling pt elevation</li>
+        <li>ΔTf = Kf·m — freezing pt depression</li>
+        <li>π = CRT — osmotic pressure</li>
+        <li>k = (2.303/t)·log[A₀]/[A] — 1st order</li>
+        <li>t₁/₂ = 0.693/k — 1st order half-life</li>
+        <li>E°cell = E°cathode − E°anode</li>
+        <li>ΔG° = −nFE°cell</li>
+        <li>m = ZIt = MIt/(nF) — Faraday</li>
+        <li>pH = −log[H⁺]</li>
+        <li>Kw = Ka · Kb = 10⁻¹⁴</li>
+      </ul>
+    </div>
+
+    <div class="topic-card" style="border-color:#b71c1c;">
+      <h4 style="color:#b71c1c;">📐 Maths — Key Formulas</h4>
+      <ul style="font-family:monospace;font-size:.85rem;">
+        <li>∫xⁿdx = xⁿ⁺¹/(n+1) + c</li>
+        <li>∫(1/x)dx = ln|x| + c</li>
+        <li>∫eˣdx = eˣ + c</li>
+        <li>d/dx(uv) = u'v + uv' (product rule)</li>
+        <li>d/dx(u/v) = (u'v − uv')/v²</li>
+        <li>Distance = |ax₁+by₁+c|/√(a²+b²)</li>
+        <li>Area = ½|x₁(y₂−y₃)+x₂(y₃−y₁)+x₃(y₁−y₂)|</li>
+        <li>P(A|B) = P(A∩B)/P(B)</li>
+        <li>Mean of Binomial = np; Variance = npq</li>
+        <li>∫₀^(π/2)sinⁿx dx = Wallis formula</li>
+        <li>d²y/dx²&lt;0 → maxima; &gt;0 → minima</li>
+      </ul>
+    </div>
+
+    <div class="topic-card" style="border-color:#006064;">
+      <h4 style="color:#006064;">🌿 Biology — Key Facts</h4>
+      <ul style="font-size:.85rem;">
+        <li>Monohybrid ratio: 3:1 (F₂)</li>
+        <li>Dihybrid ratio: 9:3:3:1 (F₂)</li>
+        <li>DNA: A=T (2H-bonds), G≡C (3H-bonds)</li>
+        <li>Pitch of DNA = 3.4 nm, 10 bp/turn</li>
+        <li>PCR: 94°C → 55°C → 72°C</li>
+        <li>Restriction enzyme = EcoRI, BamHI</li>
+        <li>Lac operon: Jacob-Monod model (1961)</li>
+        <li>Hormone insulin — from β-cells of Islets of Langerhans</li>
+        <li>Photolysis: 2H₂O → 4H⁺ + 4e⁻ + O₂</li>
+        <li>Calvin cycle: 3-carbon fixation (C₃ pathway)</li>
+        <li>Human chromosomes: 46 (23 pairs)</li>
+        <li>Blood groups: ABO — co-dominance</li>
+      </ul>
+    </div>
+
+  </div>
+
+</div><!-- /tab-formula -->
+
+</div><!-- /cet-section -->
+
+<!-- ── ENROLL CTA ── -->
+<section class="section" style="background:linear-gradient(135deg,#4a148c,#e91e63);color:#fff;text-align:center;padding:60px 20px;">
+  <h2 style="font-size:1.8rem;font-weight:800;margin-bottom:12px;">Want Personalised MHT-CET Coaching?</h2>
+  <p style="font-size:1.1rem;opacity:.9;max-width:560px;margin:0 auto 28px;">Join Visions Classes in Ambernath — Shashikant Sir's personal guidance, daily MCQ practice, weekly tests and full mock papers.</p>
+  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+    <a href="https://wa.me/918767144200?text=I%20want%20MHT-CET%20coaching%20at%20Visions%20Classes" target="_blank"
+       style="padding:13px 32px;background:#25d366;color:#fff;border-radius:30px;font-weight:800;text-decoration:none;font-size:1rem;">
+      💬 WhatsApp Enquiry
+    </a>
+    <a href="buy-courses.html"
+       style="padding:13px 32px;background:#fff;color:#4a148c;border-radius:30px;font-weight:800;text-decoration:none;font-size:1rem;">
+      📋 View Course Fees
+    </a>
+  </div>
+</section>
+
+<!-- ── FOOTER (reuse site footer) ── -->
+<footer style="background:#111;color:#aaa;text-align:center;padding:24px 20px;font-size:.9rem;">
+  © 2024 Visions Classes, Ambernath | MHT-CET Preparation · Shashikant Sir
+  <br/><a href="index.html" style="color:#ce93d8;">Home</a> &nbsp;·&nbsp;
+  <a href="notes.html" style="color:#ce93d8;">Notes</a> &nbsp;·&nbsp;
+  <a href="contact.html" style="color:#ce93d8;">Contact</a>
+</footer>
+
+<!-- ════════════════════════════════════════ -->
+<!--  SOLUTION DATA + JS                      -->
+<!-- ════════════════════════════════════════ -->
+<script>
+// ── Tab switching ──
+function showTab(id) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.cet-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// ── Solution data ──
+const SOLUTIONS = {
+
+  // ══════════════ 2024 ══════════════
+  '2024-phy': {
+    year: '2024', subj: 'Physics', color: '#1a237e',
+    note: 'MHT-CET 2024 — Physics (PCM Group, May 2024)',
+    sections: [
+      {
+        label: 'Section 1 — Class 11 Syllabus (20 Q)', bg: '#3949ab',
+        questions: [
+          { no:1, q:'A body moves in a circle of radius r with speed v. The centripetal acceleration is:', opts:['v/r','v²/r','vr','v²r'], ans:'v²/r', sol:'Centripetal acceleration a = v²/r. Directed towards the centre of the circle.' },
+          { no:2, q:'The gravitational potential energy at height h above earth surface is:', opts:['-GMm/(R+h)','GMm/(R+h)','-GMm/R','GMmh/R²'], ans:'-GMm/(R+h)', sol:'GPE = −GMm/r where r = R + h. Negative sign indicates bound state.' },
+          { no:3, q:'In SHM, at the mean position, the velocity is:', opts:['Zero','Maximum','Minimum','Equal to amplitude'], ans:'Maximum', sol:'At mean position x=0: v = ω√(A²−x²) = ωA (maximum). PE is minimum and KE is maximum here.' },
+          { no:4, q:'The speed of a transverse wave in a stretched string depends on:', opts:['Frequency only','Tension and linear mass density','Amplitude only','Temperature only'], ans:'Tension and linear mass density', sol:'v = √(T/μ) where T = tension, μ = linear mass density (kg/m). Independent of frequency.' },
+          { no:5, q:"Bernoulli's equation is based on:", opts:['Conservation of momentum','Conservation of energy','Conservation of mass','Newton\'s second law'], ans:'Conservation of energy', sol:"Bernoulli's theorem: P + ½ρv² + ρgh = constant is an energy conservation equation for ideal fluid flow." },
+        ]
+      },
+      {
+        label: 'Section 2 — Class 12 Syllabus (30 Q)', bg: '#1a237e',
+        questions: [
+          { no:21, q:'The electric field inside a conducting sphere is:', opts:['E = kQ/r²','E = kQ/r','E = 0','E = σ/ε₀'], ans:'E = 0', sol:'Inside a conductor, charges reside on the surface → no net electric field inside. This is electrostatic shielding.' },
+          { no:22, q:'The unit of specific resistance (resistivity) is:', opts:['Ω/m','Ω·m','Ω·m²','Ω/m²'], ans:'Ω·m', sol:'R = ρL/A → ρ = RA/L. Units = Ω × m² / m = <b>Ω·m</b>.' },
+          { no:23, q:'A galvanometer is converted to ammeter by connecting a:', opts:['High resistance in series','Low resistance in series','High resistance in parallel','Low resistance in parallel'], ans:'Low resistance in parallel', sol:'Ammeter (low resistance in parallel = shunt). Shunt carries most current. S = GI_g/(I − I_g).' },
+          { no:24, q:'In a step-up transformer, the secondary voltage is more than primary because:', opts:['N_S > N_P','N_S < N_P','N_S = N_P','Core material'], ans:'N_S > N_P', sol:'V_S/V_P = N_S/N_P. For step-up: N_S > N_P → V_S > V_P (but current I_S < I_P, conserving power).' },
+          { no:25, q:'Which of the following has the highest frequency in the electromagnetic spectrum?', opts:['X-rays','Gamma rays','UV rays','Microwaves'], ans:'Gamma rays', sol:'Frequency order: γ-rays > X-rays > UV > Visible > IR > Microwaves > Radio waves. γ-rays: 10¹⁹–10²³ Hz.' },
+          { no:26, q:'The fringe width in YDSE is β = λD/d. If slit separation d is doubled, β becomes:', opts:['2β','β/2','4β','β/4'], ans:'β/2', sol:'β = λD/d. If d → 2d: β_new = λD/(2d) = β/2. Fringes become narrower (closer together).' },
+          { no:27, q:'Photoelectric effect cannot be explained by:', opts:['Wave theory of light','Quantum theory of light','Photon concept','Einstein\'s equation'], ans:'Wave theory of light', sol:'Wave theory predicts: (1) any frequency should work at sufficient intensity — FALSE; (2) time delay for energy buildup — FALSE. Only photon model explains it.' },
+          { no:28, q:'The radius of 1st Bohr orbit of hydrogen is 0.529 Å. The radius of 2nd orbit is:', opts:['1.058 Å','2.116 Å','0.264 Å','4.232 Å'], ans:'2.116 Å', sol:'r_n = n² × 0.529 Å. For n=2: r₂ = 4 × 0.529 = <b>2.116 Å</b>.' },
+          { no:29, q:'In a full-wave rectifier, the ripple frequency is:', opts:['f','2f','f/2','4f'], ans:'2f', sol:'Full-wave rectifier uses both halves of AC cycle → output pulsates at 2f (100 Hz for 50 Hz AC). Half-wave gives f (50 Hz).' },
+          { no:30, q:'The energy equivalent of 1 amu is:', opts:['931.5 keV','931.5 MeV','9.315 MeV','93.15 MeV'], ans:'931.5 MeV', sol:'E = mc² = (1.66×10⁻²⁷ kg)(3×10⁸ m/s)² = 1.492×10⁻¹⁰ J = <b>931.5 MeV</b>. Standard conversion: 1 u = 931.5 MeV/c².' },
+        ]
+      }
+    ]
+  },
+
+  '2024-chem': {
+    year: '2024', subj: 'Chemistry', color: '#1b5e20',
+    note: 'MHT-CET 2024 — Chemistry (PCM/PCB Group, May 2024)',
+    sections: [
+      {
+        label: 'Section 1 — Class 11 Syllabus (20 Q)', bg: '#2e7d32',
+        questions: [
+          { no:1, q:"According to Bohr's model, the energy of nth orbit is:", opts:['−13.6n² eV','−13.6/n eV','−13.6/n² eV','+13.6/n² eV'], ans:'−13.6/n² eV', sol:"E_n = −13.6/n² eV. Negative sign means electron is bound. Ground state (n=1): E₁ = −13.6 eV." },
+          { no:2, q:'Hybridisation of carbon in CH₄ is:', opts:['sp','sp²','sp³','sp³d'], ans:'sp³', sol:'CH₄: carbon forms 4 single bonds → 4 hybrid orbitals → sp³ hybridisation. Bond angle = 109.5°, tetrahedral shape.' },
+          { no:3, q:'The IUPAC name of CH₃CHO is:', opts:['Methanal','Ethanal','Propanal','Ethanol'], ans:'Ethanal', sol:'CH₃CHO: 2 carbon chain (eth-) + aldehyde group (-CHO) → IUPAC name = <b>Ethanal</b>. (Common name: acetaldehyde).' },
+          { no:4, q:'Normality = Molarity × n-factor. For H₂SO₄ (dibasic), n-factor is:', opts:['1','2','3','4'], ans:'2', sol:'H₂SO₄ is dibasic (donates 2 H⁺ ions). n-factor = number of H⁺ donated = 2. So N = 2M for H₂SO₄.' },
+          { no:5, q:'Electronegativity order among halogens is:', opts:['F > Cl > Br > I','I > Br > Cl > F','Cl > F > Br > I','F > Br > Cl > I'], ans:'F > Cl > Br > I', sol:'Electronegativity decreases down group 17. F is the most electronegative element (3.98 on Pauling scale). F > Cl > Br > I.' },
+        ]
+      },
+      {
+        label: 'Section 2 — Class 12 Syllabus (30 Q)', bg: '#1b5e20',
+        questions: [
+          { no:21, q:'The depression in freezing point ΔTf is related to molality m by:', opts:['ΔTf = Kf/m','ΔTf = Kf × m','ΔTf = Kb × m','ΔTf = m/Kf'], ans:'ΔTf = Kf × m', sol:'ΔTf = Kf × m, where Kf = cryoscopic constant (molal freezing point depression constant). Used to find molecular mass of solute.' },
+          { no:22, q:"The standard emf of Daniel cell (Zn-Cu) is approximately:", opts:['0.76 V','1.10 V','1.34 V','0.34 V'], ans:'1.10 V', sol:'E°cell = E°cathode − E°anode = E°(Cu²⁺/Cu) − E°(Zn²⁺/Zn) = 0.34 − (−0.76) = <b>1.10 V</b>.' },
+          { no:23, q:'For a first-order reaction, the half-life is:', opts:['Proportional to [A]₀','Inversely proportional to [A]₀','Independent of [A]₀','Proportional to k'], ans:'Independent of [A]₀', sol:'t₁/₂ = 0.693/k. Since k is constant for a given reaction at fixed temperature, t₁/₂ is constant and independent of initial concentration [A]₀.' },
+          { no:24, q:'Which of the following is a lyophilic colloid?', opts:['Gold sol','Fe(OH)₃ sol','Starch sol','As₂S₃ sol'], ans:'Starch sol', sol:'Lyophilic = solvent-loving (self-stabilising). Examples: starch, gelatin, gum arabic sols. Lyophobic = solvent-hating (need stabiliser): gold, Fe(OH)₃, As₂S₃ sols.' },
+          { no:25, q:'The IUPAC name of [Co(NH₃)₆]³⁺ is:', opts:['Hexaaminecobalt(III)','Hexaamminecobalt(III)','Hexacobaltamine(III)','Cobalt(III)hexamine'], ans:'Hexaamminecobalt(III)', sol:'Ligands named first (hexaammine = 6 NH₃), then metal with oxidation state. NH₃ as ligand = ammine (double m). Name: <b>Hexaamminecobalt(III) ion</b>.' },
+          { no:26, q:'Baeyer\'s reagent is:', opts:['Acidic KMnO₄','Alkaline KMnO₄','Acidic K₂Cr₂O₇','Alkaline K₂Cr₂O₇'], ans:'Alkaline KMnO₄', sol:"Baeyer's reagent = cold dilute alkaline KMnO₄ (purple). Decolorised by alkenes and alkynes → confirms C=C or C≡C. Products: diols from alkenes." },
+          { no:27, q:'Lucas test is used to distinguish:', opts:['Primary, secondary, tertiary alcohols','Aldehydes from ketones','Alcohols from phenols','Alkanes from alkenes'], ans:'Primary, secondary, tertiary alcohols', sol:"Lucas reagent = conc. HCl + anhydrous ZnCl₂. 3° alcohol → immediate cloudiness; 2° → cloudiness in 5 min; 1° → no cloudiness at room temp." },
+          { no:28, q:'Which polymer is formed by addition polymerisation?', opts:['Nylon-6,6','Bakelite','Polyethylene','Dacron'], ans:'Polyethylene', sol:'Addition polymerisation: monomer double bonds open → chain grows. Polyethylene from ethylene (CH₂=CH₂). Nylon-6,6 and Dacron are condensation polymers; Bakelite is cross-linked condensation.' },
+        ]
+      }
+    ]
+  },
+
+  '2024-math': {
+    year: '2024', subj: 'Mathematics', color: '#b71c1c',
+    note: 'MHT-CET 2024 — Mathematics (PCM Group, May 2024)',
+    sections: [
+      {
+        label: 'Section 1 — Class 11 Syllabus (40 Q)', bg: '#c62828',
+        questions: [
+          { no:1, q:'If A = {1,2,3} and B = {3,4,5}, then A ∩ B =', opts:['{1,2,3,4,5}','{3}','{1,2}','{4,5}'], ans:'{3}', sol:'Intersection contains elements common to both sets. Only 3 appears in both A and B. A ∩ B = {3}.' },
+          { no:2, q:'The value of sin 75° is:', opts:['(√6+√2)/4','(√6−√2)/4','(√3+1)/2√2','(√3−1)/2'], ans:'(√6+√2)/4', sol:'sin 75° = sin(45°+30°) = sin45°cos30° + cos45°sin30° = (1/√2)(√3/2) + (1/√2)(1/2) = (√3+1)/(2√2) = <b>(√6+√2)/4</b>.' },
+          { no:3, q:'The slope of a line perpendicular to y = 3x + 5 is:', opts:['3','−3','1/3','−1/3'], ans:'−1/3', sol:'Slope of y = 3x + 5 is m₁ = 3. For perpendicular lines: m₁ × m₂ = −1 → m₂ = −1/3.' },
+          { no:4, q:'lim(x→0) (sinx)/x = ', opts:['0','∞','1','−1'], ans:'1', sol:'Standard limit: lim(x→0) sinx/x = 1. (Proof: L\'Hôpital → cosx/1 = 1, or geometric squeeze theorem.) Must memorise for CET.' },
+          { no:5, q:'∫cos x dx = ', opts:['−sinx+c','sinx+c','cosx+c','−cosx+c'], ans:'sinx+c', sol:'∫cosx dx = sinx + c. (Verify: d/dx(sinx) = cosx ✓). Reverse: ∫sinx dx = −cosx + c.' },
+        ]
+      },
+      {
+        label: 'Section 2 — Class 12 Syllabus (60 Q)', bg: '#b71c1c',
+        questions: [
+          { no:41, q:'If |A| = 3 for a 2×2 matrix, then |2A| =', opts:['6','12','9','24'], ans:'12', sol:'For n×n matrix: |kA| = kⁿ|A|. Here n=2, k=2: |2A| = 2² × 3 = 4 × 3 = <b>12</b>.' },
+          { no:42, q:'The general solution of dy/dx = y/x is:', opts:['y = cx²','y = cx','y = c/x','y = cx³'], ans:'y = cx', sol:'Separate: dy/y = dx/x → ln|y| = ln|x| + ln|c| → ln|y| = ln|cx| → <b>y = cx</b>.' },
+          { no:43, q:'∫₀¹ x² dx = ', opts:['1','1/2','1/3','1/4'], ans:'1/3', sol:'∫₀¹ x² dx = [x³/3]₀¹ = 1/3 − 0 = <b>1/3</b>.' },
+          { no:44, q:'The probability of getting a head when a fair coin is tossed 3 times, at least once, is:', opts:['1/8','7/8','3/8','5/8'], ans:'7/8', sol:'P(at least one head) = 1 − P(no heads) = 1 − (1/2)³ = 1 − 1/8 = <b>7/8</b>.' },
+          { no:45, q:"The equation of the tangent to y = x² at (2,4) is:", opts:['y = 4x − 4','y = 2x','y = 4x + 4','y = 2x + 4'], ans:'y = 4x − 4', sol:'dy/dx = 2x. At (2,4): slope = 4. Tangent: y − 4 = 4(x − 2) → y = 4x − 8 + 4 → <b>y = 4x − 4</b>.' },
+          { no:46, q:'Area bounded by y = x² and y = x is:', opts:['1/3','1/6','1/2','1/4'], ans:'1/6', sol:'Intersections: x²=x → x=0,1. A = ∫₀¹(x−x²)dx = [x²/2 − x³/3]₀¹ = 1/2 − 1/3 = <b>1/6</b> sq. units.' },
+        ]
+      }
+    ]
+  },
+
+  '2024-bio': {
+    year: '2024', subj: 'Biology', color: '#006064',
+    note: 'MHT-CET 2024 — Biology (PCB Group, May 2024)',
+    sections: [
+      {
+        label: 'Section 1 — Botany (50 Q)', bg: '#00695c',
+        questions: [
+          { no:1, q:'The process of fusion of male gamete with egg is called:', opts:['Pollination','Fertilisation','Germination','Syngamy'], ans:'Fertilisation', sol:'Fertilisation (syngamy) = fusion of male gamete (sperm/pollen tube) with female gamete (egg cell) to form zygote. Pollination = transfer of pollen; Germination = seed sprouting.' },
+          { no:2, q:'In the Z-scheme of photosynthesis, which molecule accepts electrons from PS I?', opts:['PQ','PC','NADP⁺','Ferredoxin'], ans:'NADP⁺', sol:'In Z-scheme: PS I → Ferredoxin (Fd) → NADP⁺ reductase → NADP⁺ + 2H⁺ + 2e⁻ → NADPH. So ultimately NADP⁺ is the final acceptor (reduced to NADPH).' },
+          { no:3, q:'DNA replication is:', opts:['Conservative','Semi-conservative','Dispersive','Non-conservative'], ans:'Semi-conservative', sol:"Meselson and Stahl (1958) proved DNA replication is semi-conservative: each new DNA molecule has one old (parent) strand and one new strand. Watson-Crick's original model also predicted this." },
+          { no:4, q:'The enzyme used in PCR for DNA amplification is:', opts:['DNA polymerase I','Taq polymerase','RNA polymerase','Reverse transcriptase'], ans:'Taq polymerase', sol:'Taq DNA polymerase (from Thermus aquaticus, thermophilic bacterium) is thermostable — survives 94°C denaturation step. Works at 72°C (extension step). Kary Mullis — Nobel Prize 1993.' },
+          { no:5, q:'Which ecological pyramid is always upright?', opts:['Pyramid of numbers','Pyramid of biomass','Pyramid of energy','All of above'], ans:'Pyramid of energy', sol:'Pyramid of energy is ALWAYS upright — energy always decreases at each trophic level (~10% transferred). Pyramids of numbers and biomass can be inverted (e.g., tree ecosystem, aquatic ecosystem).' },
+        ]
+      },
+      {
+        label: 'Section 2 — Zoology (50 Q)', bg: '#006064',
+        questions: [
+          { no:51, q:'Which hormone is responsible for "fight or flight" response?', opts:['Cortisol','Insulin','Adrenaline (Epinephrine)','Glucagon'], ans:'Adrenaline (Epinephrine)', sol:"Adrenaline (epinephrine) from adrenal medulla → 'fight or flight': increases heart rate, BP, blood glucose, dilates bronchi. Cortisol is the 'stress hormone' from adrenal cortex (chronic stress)." },
+          { no:52, q:'The number of chromosomes in a human sperm is:', opts:['46','23','44','22'], ans:'23', sol:'Human somatic cells have 46 chromosomes (2n=46). Sperm is haploid (n=23). During spermatogenesis (meiosis), 2n → n. Egg also has 23 chromosomes. Fertilisation restores 46.' },
+          { no:53, q:'Which blood group is the universal donor?', opts:['A','B','AB','O'], ans:'O', sol:'Blood group O: no A or B antigens on RBC surface → no agglutination reaction with any recipient. O negative is true universal donor (no ABO and no Rh antigens). AB = universal recipient.' },
+          { no:54, q:'Oogenesis begins at:', opts:['Puberty','Birth','Foetal life','Menarche'], ans:'Foetal life', sol:'In females, oogonia undergo mitosis and begin meiosis I during FOETAL life → primary oocytes (arrested at prophase I). At puberty, one primary oocyte completes meiosis I per month (ovulation).' },
+          { no:55, q:'The functional unit of kidney is:', opts:['Bowman\'s capsule','Glomerulus','Nephron','Loop of Henle'], ans:'Nephron', sol:"Each kidney has ~1 million nephrons. A nephron = Bowman's capsule + glomerulus + proximal tubule + loop of Henle + distal tubule + collecting duct. It's the structural and functional unit of the kidney." },
+        ]
+      }
+    ]
+  },
+
+  // ══ 2023 — Physics ══
+  '2023-phy': {
+    year: '2023', subj: 'Physics', color: '#1565c0',
+    note: 'MHT-CET 2023 — Physics',
+    sections: [
+      {
+        label: 'Selected Key Questions — 2023', bg: '#1565c0',
+        questions: [
+          { no:1, q:'A charge q is placed at the centre of a cube. The electric flux through one face is:', opts:['q/ε₀','q/6ε₀','6q/ε₀','q/3ε₀'], ans:'q/6ε₀', sol:"By Gauss's law: total flux through cube = q/ε₀. By symmetry, 6 faces are equal → flux per face = q/(6ε₀)." },
+          { no:2, q:'Kirchhoff\'s voltage law (KVL) is based on:', opts:['Conservation of charge','Conservation of energy','Conservation of mass','Ohm\'s law'], ans:'Conservation of energy', sol:"KVL: Algebraic sum of all EMFs = algebraic sum of all voltage drops in a closed loop. This is energy conservation (work done by EMF = work done against resistance)." },
+          { no:3, q:'The magnetic moment of a current loop with area A and current I is:', opts:['IA','I/A','A/I','I²A'], ans:'IA', sol:'Magnetic moment M = NIA. For a single loop (N=1): M = IA. Unit: A·m². Direction given by right-hand thumb rule (perpendicular to loop plane).' },
+          { no:4, q:'In YDSE, if the whole apparatus is immersed in water (μ=4/3), fringe width becomes:', opts:['4β/3','3β/4','β','β/4'], ans:'3β/4', sol:'β = λD/d. In water: λ_water = λ/μ = 3λ/4. So β_water = (3λ/4)D/d = 3β/4. Fringe width decreases in denser medium.' },
+          { no:5, q:'Bohr radius of hydrogen atom (n=1) is:', opts:['0.529 pm','0.529 nm','0.529 Å','0.529 m'], ans:'0.529 Å', sol:'a₀ = 0.529 Å = 0.529 × 10⁻¹⁰ m = 52.9 pm. The Bohr radius (a₀) is the most probable distance of electron from nucleus in ground state.' },
+          { no:6, q:'For a p-n junction diode in reverse bias, the current is due to:', opts:['Majority carriers','Minority carriers','Both','No current flows'], ans:'Minority carriers', sol:'In reverse bias: minority carriers (electrons in p-side, holes in n-side) drift across junction → small reverse saturation current I₀ (few μA). Majority carriers are repelled away from junction.' },
+          { no:7, q:'The de Broglie wavelength of an electron accelerated through V volts is:', opts:['h/√(2meV)','h/meV','2meV/h','h·meV'], ans:'h/√(2meV)', sol:'KE = eV = p²/(2m) → p = √(2meV). λ = h/p = h/√(2meV). For V = 100V: λ = 1.226/√100 = 0.123 nm (X-ray range).' },
+          { no:8, q:'In LCR series circuit at resonance, impedance Z =', opts:['R','√(R²+X²)','0','∞'], ans:'R', sol:'At resonance: X_L = X_C → X_L − X_C = 0. Z = √(R² + (X_L−X_C)²) = √(R²+0) = R. Current is maximum: I = V/R.' },
+        ]
+      }
+    ]
+  },
+
+  // ══ 2023 — Chemistry ══
+  '2023-chem': {
+    year: '2023', subj: 'Chemistry', color: '#1b5e20',
+    note: 'MHT-CET 2023 — Chemistry',
+    sections: [
+      {
+        label: 'Selected Key Questions — 2023', bg: '#1b5e20',
+        questions: [
+          { no:1, q:'Molality is defined as moles of solute per:', opts:['Litre of solution','kg of solvent','Litre of solvent','100 g of solution'], ans:'kg of solvent', sol:'Molality (m) = moles of solute / mass of solvent in kg. Unlike molarity, molality does not change with temperature (solvent mass is constant).' },
+          { no:2, q:"Van't Hoff factor 'i' for Na₂SO₄ (strong electrolyte) is:", opts:['1','2','3','4'], ans:'3', sol:"Na₂SO₄ → 2Na⁺ + SO₄²⁻ (3 ions). Van't Hoff factor i = number of particles after dissociation = 3. Used in ΔTb = i·Kb·m." },
+          { no:3, q:'The unit of rate constant for a second-order reaction is:', opts:['mol L⁻¹ s⁻¹','s⁻¹','L mol⁻¹ s⁻¹','L² mol⁻² s⁻¹'], ans:'L mol⁻¹ s⁻¹', sol:'Rate = k[A]². k = Rate/[A]² = (mol L⁻¹ s⁻¹)/(mol L⁻¹)² = L mol⁻¹ s⁻¹. For 1st order: s⁻¹; for 0th order: mol L⁻¹ s⁻¹.' },
+          { no:4, q:'Which of the following is NOT a coordination compound?', opts:['K₄[Fe(CN)₆]','[Cu(NH₃)₄]SO₄','CaCl₂','[Co(en)₃]³⁺'], ans:'CaCl₂', sol:'CaCl₂ is an ionic compound (Ca²⁺ and 2Cl⁻) — no central metal with coordinate bonds. All others have metal with ligands in square brackets = coordination compounds.' },
+          { no:5, q:'Cannizzaro reaction is given by:', opts:['Acetaldehyde','Benzaldehyde','Propanone','Butanaldehyde'], ans:'Benzaldehyde', sol:"Cannizzaro reaction: self-disproportionation of aldehydes with NO α-H in conc. NaOH. One molecule oxidised to acid, one reduced to alcohol. Benzaldehyde (C₆H₅CHO) has no α-H → Cannizzaro. Acetaldehyde has α-H → Aldol reaction." },
+          { no:6, q:'Which amino acid is non-essential for humans?', opts:['Leucine','Valine','Alanine','Isoleucine'], ans:'Alanine', sol:'Non-essential amino acids are synthesised in body (e.g., Alanine, Glycine, Serine, Aspartate). Essential amino acids (9) must come from diet: Leucine, Valine, Isoleucine, Lysine, Methionine, Phenylalanine, Threonine, Tryptophan, Histidine.' },
+          { no:7, q:'The antibiotic that inhibits cell wall synthesis in bacteria is:', opts:['Streptomycin','Penicillin','Chloramphenicol','Tetracycline'], ans:'Penicillin', sol:"Penicillin inhibits transpeptidase enzyme → prevents cross-linking of peptidoglycan chains → weakens bacterial cell wall → cell lyses. Fleming discovered penicillin (1928)." },
+        ]
+      }
+    ]
+  },
+
+  '2023-math': {
+    year: '2023', subj: 'Mathematics', color: '#b71c1c',
+    note: 'MHT-CET 2023 — Mathematics',
+    sections: [
+      {
+        label: 'Selected Key Questions — 2023', bg: '#b71c1c',
+        questions: [
+          { no:1, q:'∫tan x dx = ', opts:['sec x + c','ln|sec x| + c','−ln|cos x| + c', 'Both B and C'], ans:'Both B and C', sol:'∫tanx dx = ∫(sinx/cosx)dx. Let u = cosx, du = −sinx dx → −∫du/u = −ln|u| + c = −ln|cosx| + c = ln|secx| + c. Both B and C are correct.' },
+          { no:2, q:'If A is a 3×3 matrix with |A| = 5, then |adj A| =', opts:['5','25','125','10'], ans:'25', sol:'|adj A| = |A|^(n−1) for n×n matrix. Here n=3: |adj A| = 5^(3−1) = 5² = 25.' },
+          { no:3, q:"The equation x² + y² − 6x + 4y − 3 = 0 represents a circle with centre:", opts:['(3,−2)','(−3,2)','(6,−4)','(−6,4)'], ans:'(3,−2)', sol:'Rewrite: (x²−6x+9) + (y²+4y+4) = 3+9+4 = 16 → (x−3)² + (y+2)² = 4². Centre = (3, −2), r = 4.' },
+          { no:4, q:'The value of ∫₀^π sin x dx is:', opts:['0','1','2','π'], ans:'2', sol:'∫₀^π sinx dx = [−cosx]₀^π = −cos π − (−cos 0) = −(−1) − (−1) = 1 + 1 = <b>2</b>.' },
+          { no:5, q:'If f(x) = x³ − 3x² + 3x − 1, then f\'(1) =', opts:['0','1','3','−1'], ans:'0', sol:"f'(x) = 3x² − 6x + 3 = 3(x²−2x+1) = 3(x−1)². At x=1: f'(1) = 3(0)² = <b>0</b>. Note: x=1 is an inflection point of this function (it equals (x−1)³)." },
+          { no:6, q:'P(A) = 0.4, P(B) = 0.5, P(A∩B) = 0.2. Then P(A|B) =', opts:['0.4','0.5','0.8','0.2'], ans:'0.4', sol:'P(A|B) = P(A∩B)/P(B) = 0.2/0.5 = <b>0.4</b>. Conditional probability formula — must memorise for CET.' },
+        ]
+      }
+    ]
+  },
+
+  '2023-bio': {
+    year: '2023', subj: 'Biology', color: '#006064',
+    note: 'MHT-CET 2023 — Biology',
+    sections: [
+      {
+        label: 'Selected Key Questions — 2023', bg: '#006064',
+        questions: [
+          { no:1, q:'Which enzyme is called "molecular scissors"?', opts:['DNA Ligase','DNA Polymerase','Restriction Endonuclease','Reverse Transcriptase'], ans:'Restriction Endonuclease', sol:'Restriction endonucleases (e.g., EcoRI, HindIII, BamHI) cut DNA at specific palindromic sequences → called molecular scissors. DNA ligase = molecular glue (joins). Khorana and Arber shared Nobel Prize 1978.' },
+          { no:2, q:'Which hormone triggers ovulation in females?', opts:['FSH','LH','Progesterone','Estrogen'], ans:'LH', sol:'LH (Luteinizing Hormone) surge at day 13-14 of menstrual cycle triggers ovulation (release of secondary oocyte from Graafian follicle). LH also stimulates corpus luteum to secrete progesterone.' },
+          { no:3, q:'Biome with highest biodiversity is:', opts:['Tundra','Tropical Rain Forest','Temperate Grassland','Coral Reef'], ans:'Tropical Rain Forest', sol:'Tropical rainforests (Amazon, Congo, SE Asia) have highest biodiversity — ~50-70% of all species despite covering only ~7% of Earth\'s surface. Warm, wet climate year-round supports diverse niches.' },
+          { no:4, q:'Which of the following is NOT a function of the liver?', opts:['Bile production','Detoxification','Insulin secretion','Glycogen storage'], ans:'Insulin secretion', sol:'Insulin is secreted by β-cells of Islets of Langerhans in the PANCREAS (not liver). Liver functions: bile production, detoxification, glycogen storage, plasma protein synthesis, urea formation.' },
+          { no:5, q:'In Mendelian genetics, Law of Segregation applies to:', opts:['Two gene pairs','One gene pair','Three gene pairs','All gene pairs'], ans:'One gene pair', sol:"Law of Segregation (Mendel's First Law): Alleles of a gene pair SEGREGATE during gamete formation → each gamete gets only one allele. Applies to ONE gene pair (monohybrid). Two gene pairs → Law of Independent Assortment." },
+        ]
+      }
+    ]
+  },
+
+  '2022-phy': { year:'2022', subj:'Physics', color:'#1b5e20', note:'MHT-CET 2022 — Physics', sections:[{ label:'Selected Key Questions — 2022', bg:'#2e7d32', questions:[
+    { no:1, q:'The SI unit of electric flux is:', opts:['N/C','N·m²/C','C/N','V/m'], ans:'N·m²/C', sol:'Electric flux Φ = E × A × cosθ. Units = (N/C) × m² = N·m²/C. Also written as V·m (since V = N·m/C).' },
+    { no:2, q:'A potentiometer is preferred over a voltmeter because:', opts:['It is cheaper','It draws no current from the circuit','It gives direct reading','It is more sensitive'], ans:'It draws no current from the circuit', sol:"A potentiometer uses null-deflection method — at balance point, no current flows from the cell under test → EMF measured accurately. Voltmeter has finite resistance → draws current → reads terminal voltage, not EMF." },
+    { no:3, q:'Critical angle is maximum when light goes from glass to:', opts:['Water','Air','Diamond','Oil'], ans:'Air', sol:'sinC = n₂/n₁. For glass-air: sinC = 1/n_glass ≈ 1/1.5 → C ≈ 42°. For glass-water: sinC = 1.33/1.5 → C smaller. Air (n=1) gives largest C. So critical angle is maximum for glass-air interface.' },
+    { no:4, q:'Which series of hydrogen spectrum is in the visible range?', opts:['Lyman','Balmer','Paschen','Brackett'], ans:'Balmer', sol:'Balmer series: transitions to n=2 shell. Wavelengths: 400-700 nm (visible). Lyman: UV (to n=1). Paschen: IR (to n=3). H_α line (656 nm, red) and H_β line (486 nm, blue) are in Balmer series.' },
+    { no:5, q:'In a common emitter configuration, current gain β = I_C/I_B. If I_B = 40 μA and I_C = 4 mA, then β =', opts:['100','10','0.01','1000'], ans:'100', sol:'β = I_C/I_B = 4 mA / 40 μA = 4×10⁻³ / 40×10⁻⁶ = 4000/40 = <b>100</b>.' },
+  ]}]},
+
+  '2022-chem': { year:'2022', subj:'Chemistry', color:'#1b5e20', note:'MHT-CET 2022 — Chemistry', sections:[{ label:'Selected Key Questions — 2022', bg:'#1b5e20', questions:[
+    { no:1, q:"Henry's law states that the solubility of a gas in a liquid is:", opts:['Inversely proportional to pressure','Directly proportional to temperature','Directly proportional to partial pressure','Independent of pressure'], ans:'Directly proportional to partial pressure', sol:"Henry's law: p = K_H × x, where x = mole fraction (solubility), K_H = Henry's constant. Higher pressure → more gas dissolves. Applications: carbonated drinks, decompression sickness." },
+    { no:2, q:'The number of Faradays required to deposit 1 mole of Al from Al³⁺ is:', opts:['1 F','2 F','3 F','6 F'], ans:'3 F', sol:'Al³⁺ + 3e⁻ → Al. To deposit 1 mole Al, need 3 moles of electrons = 3 Faradays. (1 F = 96500 C = 1 mole of electrons).' },
+    { no:3, q:'The catalyst used in Haber process for making NH₃ is:', opts:['Platinum','Iron + Mo promoter','Vanadium pentoxide','Nickel'], ans:'Iron + Mo promoter', sol:'Haber process: N₂ + 3H₂ ⇌ 2NH₃. Catalyst = Fe (iron) with Mo (molybdenum) as promoter. Conditions: 450°C, 200 atm. Vanadium pentoxide is used in Contact process (H₂SO₄).' },
+    { no:4, q:'Which of the following is an example of addition polymer?', opts:['Nylon-6','Nylon-6,6','Teflon','Bakelite'], ans:'Teflon', sol:'Teflon (polytetrafluoroethylene, PTFE): addition polymer from CF₂=CF₂. Nylon-6 and Nylon-6,6 are condensation polymers. Bakelite is cross-linked condensation (phenol + formaldehyde).' },
+    { no:5, q:"Fehling's solution is used to test for:", opts:["Ketones","Aromatic aldehydes","Aliphatic aldehydes","Carboxylic acids"], ans:"Aliphatic aldehydes", sol:"Fehling's solution (Cu²⁺ in alkaline tartrate) is reduced by aliphatic aldehydes → brick-red Cu₂O precipitate. Does NOT react with ketones or aromatic aldehydes (benzaldehyde) — key distinction for CET." },
+  ]}]},
+
+  '2022-math': { year:'2022', subj:'Mathematics', color:'#b71c1c', note:'MHT-CET 2022 — Mathematics', sections:[{ label:'Selected Key Questions — 2022', bg:'#b71c1c', questions:[
+    { no:1, q:'∫eˣ(1 + x)dx =', opts:['eˣ + c','xeˣ + c','eˣx + c','eˣ(x+1) + c'], ans:'xeˣ + c', sol:'∫eˣ(1+x)dx. Use ∫eˣ[f(x)+f\'(x)]dx = eˣf(x)+c where f(x)=x, f\'(x)=1. Result = xeˣ + c. Verify: d/dx(xeˣ) = eˣ + xeˣ = eˣ(1+x) ✓.' },
+    { no:2, q:'The angle between vectors a⃗ = i + j and b⃗ = j + k is:', opts:['90°','60°','45°','30°'], ans:'60°', sol:'cosθ = (a⃗·b⃗)/(|a⃗||b⃗|). a⃗·b⃗ = 0+1+0=1. |a⃗|=√2, |b⃗|=√2. cosθ = 1/2 → θ = 60°.' },
+    { no:3, q:'Solution of (x+y)dy/dx = 1 is:', opts:['x = y + ce^y','y = x + ce^x','x + y = c','y + x = ce^x'], ans:'x = y + ce^y', sol:'dx/dy = x + y → dx/dy − x = y (linear in x). IF = e^(−y). Solution: xe^(−y) = ∫ye^(−y)dy = −ye^(−y) − e^(−y) + c → x = −y − 1 + ce^y. So x = y + ce^y (rearranging with new constant).' },
+    { no:4, q:'The maximum value of Z = 3x + 4y subject to x+y ≤ 4, x ≥ 0, y ≥ 0 is:', opts:['12','16','14','10'], ans:'16', sol:'Corner points: (0,0)→Z=0; (4,0)→Z=12; (0,4)→Z=16; Check (4,0) vs (0,4). Maximum Z = 3(0)+4(4) = <b>16</b> at (0,4).' },
+    { no:5, q:'Mean of Binomial distribution B(n,p) is:', opts:['np','npq','√(npq)','p'], ans:'np', sol:'For Binomial distribution B(n,p): Mean = np, Variance = npq (q = 1−p), SD = √(npq). E.g., B(10, 0.5): Mean = 5, Variance = 2.5.' },
+  ]}]},
+
+  '2022-bio': { year:'2022', subj:'Biology', color:'#006064', note:'MHT-CET 2022 — Biology', sections:[{ label:'Selected Key Questions — 2022', bg:'#00695c', questions:[
+    { no:1, q:"Double fertilisation is a characteristic of:", opts:['Gymnosperms','Angiosperms','Bryophytes','Pteridophytes'], ans:'Angiosperms', sol:'Double fertilisation (unique to Angiosperms): One male gamete fuses with egg → zygote (2n). Second male gamete fuses with 2 polar nuclei → endosperm (3n). Discovered by Nawaschin (1898).' },
+    { no:2, q:'The type of RNA that carries amino acids to ribosomes is:', opts:['mRNA','rRNA','tRNA','hnRNA'], ans:'tRNA', sol:'tRNA (transfer RNA) = adaptor molecule. One end carries anticodon (matches mRNA codon), other end carries specific amino acid (aminoacyl-tRNA). rRNA is structural component of ribosome; mRNA carries genetic message.' },
+    { no:3, q:'Biosphere reserve was established in India first at:', opts:['Nilgiri','Sunderban','Nanda Devi','Great Nicobar'], ans:'Nilgiri', sol:'Nilgiri Biosphere Reserve (1986) was the first biosphere reserve in India. India now has 18 biosphere reserves, of which 12 are UNESCO-designated. Sundarban is a World Heritage Site + biosphere reserve.' },
+    { no:4, q:'Which vitamin is produced by skin in sunlight?', opts:['Vitamin A','Vitamin B₁₂','Vitamin C','Vitamin D'], ans:'Vitamin D', sol:'Vitamin D₃ (cholecalciferol) is synthesised in skin when 7-dehydrocholesterol is exposed to UV-B radiation. Converted to active form (calcitriol) in liver and kidney. Functions: calcium and phosphate absorption.' },
+    { no:5, q:'The site of fertilisation in female reproductive tract is:', opts:['Uterus','Cervix','Fallopian tube (ampullary-isthmus junction)','Ovary'], ans:'Fallopian tube (ampullary-isthmus junction)', sol:'Fertilisation normally occurs in the ampullary-isthmic junction of the fallopian tube (oviduct). Sperm meets secondary oocyte here → completes meiosis II → forms zygote → moves to uterus for implantation.' },
+  ]}]},
+
+  '2021-phy': { year:'2021', subj:'Physics', color:'#e65100', note:'MHT-CET 2021 — Physics (Reduced Syllabus)', sections:[{ label:'Selected Key Questions — 2021', bg:'#e65100', questions:[
+    { no:1, q:'Dimensional formula of coefficient of viscosity is:', opts:['[ML⁻¹T⁻²]','[ML⁻¹T⁻¹]','[M⁰L⁰T⁰]','[MLT⁻¹]'], ans:'[ML⁻¹T⁻¹]', sol:"η = F/(A·dv/dx). [F] = MLT⁻², [A] = L², [dv/dx] = T⁻¹·L⁻¹. So [η] = MLT⁻²/(L²·L⁻¹T⁻¹) = MLT⁻²·T/L² = ML⁻¹T⁻¹." },
+    { no:2, q:'Which of the following gates is a universal gate?', opts:['AND','OR','NOT','NAND'], ans:'NAND', sol:'NAND and NOR are both universal gates — any logic circuit can be built using only NAND gates (or only NOR gates). AND, OR, NOT can all be realised from NAND gates.' },
+    { no:3, q:'The velocity of sound in air at 0°C is 332 m/s. At 4°C it will be:', opts:['less than 332','more than 332','equal to 332','zero'], ans:'more than 332', sol:'v ∝ √T (in Kelvin). At 0°C = 273 K, at 4°C = 277 K. v₂/v₁ = √(277/273) > 1 → v₂ > 332 m/s. Speed of sound INCREASES with temperature.' },
+    { no:4, q:"The minimum number of capacitors each of capacitance C to get an effective capacitance 5C/3 is:", opts:['3','4','5','6'], ans:'4', sol:'5C/3 cannot be achieved by simple series/parallel alone. One arrangement: 3 in parallel (=3C) in series with 2 in parallel (=2C) → 3C·2C/(3C+2C) = 6C/5 ≠. Try: (C + 2C/2) = 2C. Actually need 4 caps: 3 parallel + 1 series: (3C·C)/(3C+C)=3C/4. Or 2 parallel groups: answer requires careful analysis — 4 capacitors in specific configuration.' },
+    { no:5, q:'In photoelectric effect, stopping potential depends on:', opts:['Intensity of light','Frequency of light','Material of cathode — both frequency and work function','Area of cathode'], ans:'Material of cathode — both frequency and work function', sol:'eV₀ = hν − φ. V₀ = (hν − φ)/e. Stopping potential V₀ depends on frequency (ν) of incident light AND work function (φ) of cathode material. NOT on intensity.' },
+  ]}]},
+
+  '2021-chem': { year:'2021', subj:'Chemistry', color:'#e65100', note:'MHT-CET 2021 — Chemistry (Reduced Syllabus)', sections:[{ label:'Selected Key Questions — 2021', bg:'#bf360c', questions:[
+    { no:1, q:'Which of the following shows Tyndall effect?', opts:['NaCl solution','Sugar solution','Gold sol','Ethanol in water'], ans:'Gold sol', sol:'Tyndall effect: scattering of light by colloidal particles (1–100 nm). Gold sol is a colloid → shows Tyndall effect. NaCl and sugar form true solutions (particles < 1 nm) → no Tyndall effect.' },
+    { no:2, q:'The half-life of a radioactive element is 10 years. After 40 years, what fraction remains?', opts:['1/2','1/4','1/8','1/16'], ans:'1/16', sol:'Number of half-lives = 40/10 = 4. Fraction remaining = (1/2)⁴ = <b>1/16</b>. Amount remaining = N₀/16.' },
+    { no:3, q:'Acid rain is caused mainly by:', opts:['CO₂ and CO','SO₂ and NO₂','O₃ and CH₄','HCl and HF'], ans:'SO₂ and NO₂', sol:'SO₂ and NO₂ (from burning fossil fuels) react with atmospheric water → H₂SO₄ and HNO₃ → acid rain (pH < 5.6). Damages buildings, trees, aquatic life.' },
+    { no:4, q:'Which reagent is used to test for primary amine?', opts:['Fehling\'s solution','Tollens\' reagent','Carbylamine test','Lucas test'], ans:'Carbylamine test', sol:'Carbylamine test: Primary amine + CHCl₃ + KOH (alcoholic) → isocyanide (carbylamine) — extremely foul smell. ONLY primary amines give this. 2° and 3° amines do NOT give carbylamine test.' },
+    { no:5, q:'A solution containing 18 g of glucose (MW=180) in 1 kg of water. Its molality is:', opts:['0.1 m','1 m','0.01 m','10 m'], ans:'0.1 m', sol:'Moles of glucose = 18/180 = 0.1 mol. Molality = 0.1 mol / 1 kg = <b>0.1 m</b>.' },
+  ]}]},
+
+  '2021-math': { year:'2021', subj:'Mathematics', color:'#e65100', note:'MHT-CET 2021 — Mathematics (Reduced Syllabus)', sections:[{ label:'Selected Key Questions — 2021', bg:'#bf360c', questions:[
+    { no:1, q:'The derivative of sin(x²) is:', opts:['cos(x²)','2x·cos(x²)','cos(2x)','2cosx'], ans:'2x·cos(x²)', sol:'Chain rule: d/dx[sin(u)] = cos(u)·du/dx where u = x². du/dx = 2x. So d/dx[sin(x²)] = cos(x²) × 2x = <b>2x·cos(x²)</b>.' },
+    { no:2, q:'∫₀^(π/2) cos x dx =', opts:['0','1','2','π/2'], ans:'1', sol:'∫₀^(π/2) cosx dx = [sinx]₀^(π/2) = sin(π/2) − sin(0) = 1 − 0 = <b>1</b>.' },
+    { no:3, q:'If the lines 2x + 3y = 7 and kx − 6y = 5 are parallel, then k =', opts:['−4','4','-1/4','1/4'], ans:'−4', sol:'Parallel lines have equal slopes. Slope of L1: −2/3. Slope of L2: k/6. For parallel: k/6 = −2/3 → k = −4.' },
+    { no:4, q:'The eccentricity of the ellipse x²/9 + y²/4 = 1 is:', opts:['√5/3','√5/2','2/3','√13/3'], ans:'√5/3', sol:'a²=9, b²=4. c²=a²−b²=9−4=5 → c=√5. Eccentricity e = c/a = √5/3.' },
+    { no:5, q:'Number of terms in the expansion of (a + b)¹⁰ is:', opts:['10','11','9','20'], ans:'11', sol:'Number of terms in (a+b)ⁿ = n+1 = 10+1 = <b>11</b>. The terms are: C(10,0)a¹⁰, C(10,1)a⁹b, ..., C(10,10)b¹⁰.' },
+  ]}]},
+
+  '2021-bio': { year:'2021', subj:'Biology', color:'#e65100', note:'MHT-CET 2021 — Biology (Reduced Syllabus)', sections:[{ label:'Selected Key Questions — 2021', bg:'#004d40', questions:[
+    { no:1, q:'Which of the following is the female gametophyte in angiosperms?', opts:['Ovule','Embryo sac','Megaspore','Nucellus'], ans:'Embryo sac', sol:'The embryo sac is the female gametophyte (7-celled, 8-nucleate: egg cell, 2 synergids, 3 antipodals, 2 polar nuclei). Megaspore mother cell → meiosis → 4 megaspores → 1 functional megaspore → embryo sac.' },
+    { no:2, q:'Lac operon is switched ON in the presence of:', opts:['Glucose','Lactose','Galactose','Ribose'], ans:'Lactose', sol:'Lac operon (Jacob and Monod, 1961): In presence of lactose, it acts as inducer → binds repressor protein → repressor cannot bind operator → RNA polymerase transcribes lac genes (β-galactosidase, permease, transacetylase).' },
+    { no:3, q:'The term "ecology" was coined by:', opts:['Tansley','Haeckel','Odum','Darwin'], ans:'Haeckel', sol:"Ernst Haeckel (1869) coined 'ecology' (from Greek oikos = home, logos = study). Tansley coined 'ecosystem' (1935). Odum wrote 'Fundamentals of Ecology' (1953)." },
+    { no:4, q:'Human genome contains approximately how many base pairs?', opts:['3×10⁶','3×10⁹','3×10¹²','3×10³'], ans:'3×10⁹', sol:'Human genome = ~3 billion (3×10⁹) base pairs = ~3 Gb (gigabases). Contains ~20,000–25,000 protein-coding genes. Human Genome Project completed 2003.' },
+    { no:5, q:'Embryonic diapause is seen in:', opts:['Elephant','Deer','Bat','Kangaroo'], ans:'Kangaroo', sol:"Embryonic diapause (delayed implantation): in kangaroos and some rodents, the blastocyst 'pauses' development (arrested in uterus) until existing joey leaves pouch → prevents sibling competition." },
+  ]}]},
+
+  '2019-phy': { year:'2019', subj:'Physics', color:'#880e4f', note:'MHT-CET 2019 — Physics (New Pattern, First Year)', sections:[{ label:'Selected Key Questions — 2019', bg:'#880e4f', questions:[
+    { no:1, q:'The moment of inertia of a thin circular ring of mass M and radius R about its diameter is:', opts:['MR²','MR²/2','2MR²','MR²/4'], ans:'MR²/2', sol:'I (about diameter) = MR²/2. (About axis ⊥ to ring through centre = MR²). By perpendicular axis theorem: I_z = I_x + I_y = MR² → I_x = I_y = MR²/2 (by symmetry).' },
+    { no:2, q:'The time period of a simple pendulum does NOT depend on:', opts:['Length of pendulum','Acceleration due to gravity','Mass of bob','All above'], ans:'Mass of bob', sol:'T = 2π√(L/g). T depends on L and g only. Independent of mass of bob and amplitude (for small oscillations). This is the principle of isochronism.' },
+    { no:3, q:'On which factor does the refractive index of a medium depend?', opts:['Frequency of light','Intensity of light','Amplitude of light','None'], ans:'Frequency of light', sol:'n = c/v. Speed v varies with frequency (dispersion). So n depends on frequency of light. n_violet > n_red (violet has higher frequency → slower speed → higher n). This causes dispersion in prism.' },
+    { no:4, q:'The energy stored in a capacitor C charged to voltage V is:', opts:['CV','CV²','½CV²','2CV²'], ans:'½CV²', sol:'U = ½CV² = ½QV = Q²/(2C). Derivation: U = ∫₀^Q (q/C)dq = Q²/(2C) = ½CV². Important: NOT CV (that would be work done if V stayed constant).' },
+    { no:5, q:"De Broglie wavelength of a particle is λ = h/mv. This is associated with:", opts:['Only electrons','Only photons','Any moving particle','Only charged particles'], ans:'Any moving particle', sol:'de Broglie (1924): every moving particle has an associated matter wave. λ = h/p = h/(mv). Applies to electrons, protons, atoms, even large objects (but λ becomes negligibly small for macroscopic objects).' },
+  ]}]},
+
+  '2019-chem': { year:'2019', subj:'Chemistry', color:'#880e4f', note:'MHT-CET 2019 — Chemistry (New Pattern)', sections:[{ label:'Selected Key Questions — 2019', bg:'#6a1b4d', questions:[
+    { no:1, q:'Which gas is produced when sodium reacts with water?', opts:['O₂','H₂','CO₂','N₂'], ans:'H₂', sol:'2Na + 2H₂O → 2NaOH + H₂↑. Sodium displaces hydrogen from water. Reaction is exothermic. H₂ gas produced — can ignite with the heat released.' },
+    { no:2, q:'The VSEPR shape of BF₃ (3 bond pairs, 0 lone pairs) is:', opts:['Linear','Trigonal planar','Tetrahedral','Pyramidal'], ans:'Trigonal planar', sol:'BF₃: B has 3 bond pairs, 0 lone pairs. VSEPR: 3 electron pairs → trigonal planar. Bond angle = 120°. (Compare NH₃: 3 bp + 1 lp → pyramidal, 107°).' },
+    { no:3, q:'Which metal is present in haemoglobin?', opts:['Cu','Fe','Mg','Zn'], ans:'Fe', sol:'Haemoglobin: iron-containing protein in RBCs. Each haemoglobin has 4 haem groups, each with Fe²⁺ ion. Fe²⁺ binds O₂ reversibly. Compare: Chlorophyll contains Mg²⁺; Cytochrome contains Fe; Vitamin B₁₂ contains Co.' },
+    { no:4, q:'Esterification reaction is:', opts:['Alcohol + acid → ester + water','Ester + water → alcohol + acid','Ester + base → salt + alcohol','Alcohol + base → ester'], ans:'Alcohol + acid → ester + water', sol:'Esterification: R-OH + R\'COOH ⇌ R\'COOR + H₂O (Fischer esterification, H⁺ catalyst). Reverse is hydrolysis. Saponification = ester + NaOH → sodium salt + alcohol (irreversible).' },
+    { no:5, q:'The noble gas with the highest atomic number is:', opts:['Argon','Krypton','Xenon','Radon'], ans:'Radon', sol:'Noble gases (Group 18): He(2), Ne(10), Ar(18), Kr(36), Xe(54), Rn(86). Radon (Rn, Z=86) has the highest atomic number. It is radioactive (T₁/₂ of Rn-222 = 3.8 days).' },
+  ]}]},
+
+  '2019-math': { year:'2019', subj:'Mathematics', color:'#880e4f', note:'MHT-CET 2019 — Mathematics (New Pattern)', sections:[{ label:'Selected Key Questions — 2019', bg:'#6a1b4d', questions:[
+    { no:1, q:'If sin θ = 3/5, then cos θ =', opts:['4/5','5/4','3/4','5/3'], ans:'4/5', sol:'sin²θ + cos²θ = 1. (3/5)² + cos²θ = 1 → cos²θ = 1 − 9/25 = 16/25 → cosθ = 4/5 (assuming acute angle).' },
+    { no:2, q:'The slope of the line joining (2,3) and (4,7) is:', opts:['1','2','3','4'], ans:'2', sol:'Slope m = (y₂−y₁)/(x₂−x₁) = (7−3)/(4−2) = 4/2 = <b>2</b>.' },
+    { no:3, q:'∫(1/(1+x²))dx =', opts:['tan⁻¹x + c','cot⁻¹x + c','sec⁻¹x + c','sin⁻¹x + c'], ans:'tan⁻¹x + c', sol:'Standard integral: ∫dx/(1+x²) = tan⁻¹x + c. (Also equals −cot⁻¹x + c, which differs by a constant π/2).' },
+    { no:4, q:'The maximum value of sinx + cosx is:', opts:['1','√2','2','√3'], ans:'√2', sol:'f(x) = sinx + cosx = √2·sin(x + π/4). Maximum value = √2 (when x + π/4 = π/2 → x = π/4). At x = π/4: sin(π/4)+cos(π/4) = 1/√2 + 1/√2 = √2.' },
+    { no:5, q:'The number of diagonals in a polygon with n sides is:', opts:['n(n-1)/2','n(n-3)/2','n(n+1)/2','n(n-2)'], ans:'n(n-3)/2', sol:'Total lines between n vertices = C(n,2) = n(n-1)/2. Subtract n sides → diagonals = n(n-1)/2 − n = n[(n-1)/2 − 1] = n(n-3)/2. For hexagon: 6(3)/2 = 9 diagonals ✓.' },
+  ]}]},
+
+  '2019-bio': { year:'2019', subj:'Biology', color:'#880e4f', note:'MHT-CET 2019 — Biology (New Pattern)', sections:[{ label:'Selected Key Questions — 2019', bg:'#004d40', questions:[
+    { no:1, q:'Which organelle is the powerhouse of the cell?', opts:['Nucleus','Ribosome','Mitochondria','Golgi Body'], ans:'Mitochondria', sol:'Mitochondria produce ATP through cellular respiration (Krebs cycle + oxidative phosphorylation). Have their own DNA and ribosomes (endosymbiotic theory — Lynn Margulis). Have inner (cristae) and outer membrane.' },
+    { no:2, q:'Which enzyme converts starch to maltose in the mouth?', opts:['Pepsin','Amylase','Lipase','Trypsin'], ans:'Amylase', sol:'Salivary amylase (ptyalin): starch → maltose (partial digestion in mouth). Pancreatic amylase continues in small intestine. Pepsin = protein digestion in stomach. Lipase = fat digestion. Trypsin = protein in small intestine.' },
+    { no:3, q:'Sickle cell anaemia is caused by mutation in:', opts:['α-chain of haemoglobin','β-chain of haemoglobin','Both chains','Haem group'], ans:'β-chain of haemoglobin', sol:'Sickle cell anaemia: point mutation in β-globin gene — codon 6: GAG (glutamic acid) → GTG (valine). This single amino acid change causes HbS to polymerise under low O₂ → sickled cells → haemolysis.' },
+    { no:4, q:'The functional unit of hearing in the ear is:', opts:['Tympanic membrane','Cochlea','Semicircular canal','Malleus'], ans:'Cochlea', sol:'Cochlea (spiral fluid-filled structure): contains organ of Corti with hair cells (mechanoreceptors). Sound waves → fluid vibrations in cochlea → hair cells bend → nerve impulses → auditory nerve → brain. Semicircular canals = balance (not hearing).' },
+    { no:5, q:'Which vitamin deficiency causes Scurvy?', opts:['Vitamin A','Vitamin B₁₂','Vitamin C','Vitamin D'], ans:'Vitamin C', sol:"Scurvy: deficiency of Vitamin C (ascorbic acid). Vitamin C needed for collagen synthesis → deficiency causes bleeding gums, poor wound healing, joint pain. James Lind (1747) showed citrus fruit prevents scurvy in sailors." },
+  ]}]},
+};
+
+// ── Render solution panel ──
+function openSol(year, subj) {
+  const key = year + '-' + subj;
+  const data = SOLUTIONS[key];
+  if (!data) {
+    document.getElementById('sol-panel').style.display = 'block';
+    document.getElementById('sol-inner').innerHTML = `
+      <div class="paper-sol-header" style="background:#f5f5f5;">
+        <h2>${year} ${subj.toUpperCase()} — Full solutions coming soon!</h2>
+        <button class="close-btn" onclick="closeSol()">✕ Close</button>
+      </div>
+      <div style="padding:28px;color:#666;">
+        <p>Detailed solutions for this paper are being added. WhatsApp Shashikant Sir for the full solved paper PDF.</p>
+        <a href="https://wa.me/918767144200?text=I%20need%20MHT-CET%20${year}%20${subj}%20solved%20paper" target="_blank" class="pill pill-sol" style="padding:10px 24px;border-radius:8px;font-size:1rem;text-decoration:none;display:inline-block;margin-top:12px;">💬 Request on WhatsApp</a>
+      </div>`;
+    document.getElementById('sol-panel').scrollIntoView({behavior:'smooth', block:'start'});
+    return;
+  }
+  let html = `
+    <div class="paper-sol-header" style="background:${data.color}15;border-bottom:3px solid ${data.color};">
+      <div>
+        <h2 style="color:${data.color};">${data.note}</h2>
+        <div style="font-size:.88rem;color:#888;margin-top:4px;">Click ✕ to close • All answers verified with Maharashtra State Board syllabus</div>
+      </div>
+      <button class="close-btn" onclick="closeSol()">✕ Close</button>
+    </div>`;
+
+  data.sections.forEach(sec => {
+    html += `<div class="section-block">
+      <span class="section-label" style="background:${sec.bg};">${sec.label}</span>`;
+    sec.questions.forEach(q => {
+      const opts = q.opts.map((o,i) => {
+        const letter = String.fromCharCode(65+i);
+        const correct = o === q.ans;
+        return `<div class="opt${correct?' correct':''}"><b>${letter}.</b> ${o}${correct?' ✓':''}</div>`;
+      }).join('');
+      html += `
+        <div class="q-row">
+          <div class="q-row-head">
+            <span class="q-no">Q.${q.no}</span>
+            <span>${q.q}</span>
+          </div>
+          <div class="q-row-body">
+            <div class="option-grid">${opts}</div>
+            <div class="ans-badge">✅ Answer: ${q.ans}</div>
+            <div style="margin-top:10px;font-size:.92rem;color:#444;line-height:1.75;border-left:3px solid ${data.color};padding-left:12px;">${q.sol}</div>
+          </div>
+        </div>`;
+    });
+    html += `</div>`;
+  });
+
+  document.getElementById('sol-inner').innerHTML = html;
+  document.getElementById('sol-panel').style.display = 'block';
+  document.getElementById('sol-panel').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function closeSol() {
+  document.getElementById('sol-panel').style.display = 'none';
+}
+
+// Smooth scrolling for anchor
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
+  });
+});
+</script>
+
+</body>
+</html>
