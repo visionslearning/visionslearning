@@ -194,17 +194,17 @@
 
 <!-- ── TAB NAV ── -->
 <div class="cet-tabs" role="tablist">
-  <button class="cet-tab active" onclick="showTab('papers')">📄 Solved Papers</button>
-  <button class="cet-tab" onclick="showTab('syllabus')">📚 Syllabus &amp; Weightage</button>
-  <button class="cet-tab" onclick="showTab('strategy')">🧠 Exam Strategy</button>
-  <button class="cet-tab" onclick="showTab('formula')">📐 Formula Sheet</button>
+  <button class="cet-tab active" onclick="showTab('papers', this)">📄 Solved Papers</button>
+  <button class="cet-tab" onclick="showTab('syllabus', this)">📚 Syllabus &amp; Weightage</button>
+  <button class="cet-tab" onclick="showTab('strategy', this)">🧠 Exam Strategy</button>
+  <button class="cet-tab" onclick="showTab('formula', this)">📐 Formula Sheet</button>
 </div>
 
 <!-- ════════════════════════════════════════ -->
 <!--  TAB 1 — SOLVED PAPERS                  -->
 <!-- ════════════════════════════════════════ -->
 <div class="cet-section">
-<div id="tab-papers" class="tab-panel active" id="papers">
+<div id="tab-papers" class="tab-panel active">
 
   <h2 style="font-size:1.6rem;font-weight:800;color:#4a148c;margin-bottom:6px;">📄 Last 5 Years — Solved Papers</h2>
   <p style="color:#666;margin-bottom:10px;">Click any subject button to open the detailed question-by-question solution. All answers verified with Maharashtra State Board syllabus.</p>
@@ -627,11 +627,11 @@
 <!-- ════════════════════════════════════════ -->
 <script>
 // ── Tab switching ──
-function showTab(id) {
+function showTab(id, btn) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.cet-tab').forEach(t => t.classList.remove('active'));
   document.getElementById('tab-' + id).classList.add('active');
-  event.target.classList.add('active');
+  if (btn) btn.classList.add('active');
 }
 
 // ── Solution data ──
