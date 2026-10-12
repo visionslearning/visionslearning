@@ -121,6 +121,22 @@
     .sol-step.formula { color: #1565c0; font-weight: 700; }
     .sol-step.key { font-weight: 700; color: #333; }
 
+    /* ── Vertical maths step-by-step ── */
+    .vmath-table { width:100%; border-collapse:collapse; margin-top:10px; }
+    .vmath-row { display:flex; align-items:baseline; padding:5px 0; border-bottom:1px dashed #f0f0f0; font-size:.91rem; line-height:1.7; }
+    .vmath-row:last-child { border-bottom:none; }
+    .vmath-label { min-width:90px; max-width:90px; font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.3px; padding-right:8px; flex-shrink:0; color:#999; }
+    .vmath-sep   { padding:0 5px; color:#ccc; flex-shrink:0; }
+    .vmath-expr  { flex:1; font-size:.92rem; color:#333; }
+    .vmath-row.vr-given   .vmath-label,.vmath-row.vr-given  .vmath-expr { color:#1565c0; }
+    .vmath-row.vr-formula .vmath-label { color:#6a1b9a; }
+    .vmath-row.vr-formula .vmath-expr  { color:#6a1b9a; font-weight:700; }
+    .vmath-row.vr-calc    .vmath-label { color:#aaa; }
+    .vmath-row.vr-calc    .vmath-expr  { color:#333; }
+    .vmath-row.vr-ans     .vmath-label { color:#c0392b; }
+    .vmath-row.vr-ans     .vmath-expr  { color:#c0392b; font-weight:700; font-size:.95rem; }
+    .vmath-row.vr-verify  .vmath-label,.vmath-row.vr-verify .vmath-expr { color:#2e7d32; font-style:italic; font-size:.85rem; }
+
     /* Topic overview cards */
     .topic-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(260px,1fr)); gap: 18px; margin-top: 20px; }
     .topic-card { background: #fff; border-radius: 12px; padding: 20px;
@@ -148,6 +164,75 @@
   </style>
 </head>
 <body>
+
+<!-- ══════════════════════════════════════════
+     PASSWORD GATE — shown until correct password entered
+════════════════════════════════════════════ -->
+<div id="pw-gate" style="
+  position:fixed; inset:0; z-index:9999;
+  background:linear-gradient(135deg,#4a148c 0%,#7b1fa2 55%,#e91e63 100%);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Arial',sans-serif;">
+  <div style="
+    background:#fff; border-radius:18px; padding:40px 36px;
+    width:100%; max-width:380px; box-shadow:0 20px 60px rgba(0,0,0,.4);
+    text-align:center;">
+
+    <!-- Logo / Title -->
+    <div style="font-size:2.4rem; margin-bottom:6px;">🎯</div>
+    <div style="font-size:1.35rem; font-weight:800; color:#4a148c; margin-bottom:4px;">MHT-CET Hub</div>
+    <div style="font-size:.88rem; color:#888; margin-bottom:28px;">Visions Classes, Ambernath — Enter password to access solved papers</div>
+
+    <!-- Password input -->
+    <div style="position:relative; margin-bottom:14px;">
+      <input id="pw-input" type="password"
+        placeholder="Enter password..."
+        autocomplete="off"
+        style="
+          width:100%; box-sizing:border-box;
+          border:2px solid #e0e0e0; border-radius:10px;
+          padding:13px 48px 13px 16px; font-size:1rem;
+          outline:none; transition:border .2s;"
+        onkeydown="if(event.key==='Enter') checkPW()"
+        oninput="document.getElementById('pw-err').style.display='none'"
+        onfocus="this.style.borderColor='#7b1fa2'"
+        onblur="this.style.borderColor='#e0e0e0'"
+      />
+      <!-- Show / hide toggle -->
+      <span onclick="togglePW()" style="
+        position:absolute; right:14px; top:50%; transform:translateY(-50%);
+        cursor:pointer; font-size:1.1rem; user-select:none;" title="Show/hide">👁</span>
+    </div>
+
+    <!-- Error message -->
+    <div id="pw-err" style="
+      display:none; color:#c0392b; font-size:.85rem;
+      margin-bottom:12px; background:#fce4ec;
+      padding:7px 12px; border-radius:7px;">
+      ❌ Incorrect password. Please try again.
+    </div>
+
+    <!-- Submit button -->
+    <button onclick="checkPW()" style="
+      width:100%; padding:13px; border:none; border-radius:10px;
+      background:linear-gradient(135deg,#7b1fa2,#e91e63);
+      color:#fff; font-size:1rem; font-weight:800;
+      cursor:pointer; letter-spacing:.5px; transition:opacity .2s;"
+      onmouseover="this.style.opacity='.88'"
+      onmouseout="this.style.opacity='1'">
+      🔓 Unlock Access
+    </button>
+
+    <div style="margin-top:20px; font-size:.8rem; color:#bbb;">
+      Contact Shashikant Sir for the password<br/>
+      <a href="https://wa.me/918767144200" target="_blank"
+         style="color:#7b1fa2; font-weight:700; text-decoration:none;">📱 WhatsApp: 8767144200</a>
+    </div>
+  </div>
+</div>
+
+<!-- Main page content — hidden until unlocked -->
+<div id="page-content" style="display:none;">
 
 <!-- ── NAV ── -->
 <nav class="navbar" id="navbar">
@@ -180,7 +265,7 @@
   </div>
   <h1>MHT-CET Preparation Hub</h1>
   <p>Last 5 years solved papers (2019–2024) with detailed step-by-step solutions, chapter-wise weightage analysis and exam strategy — by Shashikant Sir</p>
-  <a href="#papers" class="btn btn-white" style="display:inline-block;padding:12px 32px;background:#fff;color:#7b1fa2;border-radius:30px;font-weight:800;text-decoration:none;margin-top:10px;">📄 View Solved Papers →</a>
+  <a href="#tab-papers" class="btn btn-white" style="display:inline-block;padding:12px 32px;background:#fff;color:#7b1fa2;border-radius:30px;font-weight:800;text-decoration:none;margin-top:10px;">📄 View Solved Papers →</a>
 </div>
 
 <!-- ── STATS ── -->
@@ -327,11 +412,6 @@
     </div>
 
   </div><!-- /year-grid -->
-
-  <!-- ── SOLUTION PANEL ── -->
-  <div id="sol-panel" class="paper-solution" style="display:none;">
-    <div id="sol-inner"></div>
-  </div>
 
 </div><!-- /tab-papers -->
 
@@ -598,6 +678,13 @@
 
 </div><!-- /cet-section -->
 
+<!-- ── SOLUTION PANEL (outside tabs so it stays visible on any tab) ── -->
+<div class="cet-section" id="sol-section" style="display:none;padding-top:0;">
+  <div id="sol-panel" class="paper-solution">
+    <div id="sol-inner"></div>
+  </div>
+</div>
+
 <!-- ── ENROLL CTA ── -->
 <section class="section" style="background:linear-gradient(135deg,#4a148c,#e91e63);color:#fff;text-align:center;padding:60px 20px;">
   <h2 style="font-size:1.8rem;font-weight:800;margin-bottom:12px;">Want Personalised MHT-CET Coaching?</h2>
@@ -707,22 +794,92 @@ const SOLUTIONS = {
       {
         label: 'Section 1 — Class 11 Syllabus (40 Q)', bg: '#c62828',
         questions: [
-          { no:1, q:'If A = {1,2,3} and B = {3,4,5}, then A ∩ B =', opts:['{1,2,3,4,5}','{3}','{1,2}','{4,5}'], ans:'{3}', sol:'Intersection contains elements common to both sets. Only 3 appears in both A and B. A ∩ B = {3}.' },
-          { no:2, q:'The value of sin 75° is:', opts:['(√6+√2)/4','(√6−√2)/4','(√3+1)/2√2','(√3−1)/2'], ans:'(√6+√2)/4', sol:'sin 75° = sin(45°+30°) = sin45°cos30° + cos45°sin30° = (1/√2)(√3/2) + (1/√2)(1/2) = (√3+1)/(2√2) = <b>(√6+√2)/4</b>.' },
-          { no:3, q:'The slope of a line perpendicular to y = 3x + 5 is:', opts:['3','−3','1/3','−1/3'], ans:'−1/3', sol:'Slope of y = 3x + 5 is m₁ = 3. For perpendicular lines: m₁ × m₂ = −1 → m₂ = −1/3.' },
-          { no:4, q:'lim(x→0) (sinx)/x = ', opts:['0','∞','1','−1'], ans:'1', sol:'Standard limit: lim(x→0) sinx/x = 1. (Proof: L\'Hôpital → cosx/1 = 1, or geometric squeeze theorem.) Must memorise for CET.' },
-          { no:5, q:'∫cos x dx = ', opts:['−sinx+c','sinx+c','cosx+c','−cosx+c'], ans:'sinx+c', sol:'∫cosx dx = sinx + c. (Verify: d/dx(sinx) = cosx ✓). Reverse: ∫sinx dx = −cosx + c.' },
+          { no:1, q:'If A = {1,2,3} and B = {3,4,5}, then A ∩ B =', opts:['{1,2,3,4,5}','{3}','{1,2}','{4,5}'], ans:'{3}', steps:[
+            {type:'given',   label:'Given',    sep:':', expr:'A = {1,2,3} &nbsp;,&nbsp; B = {3,4,5}'},
+            {type:'formula', label:'Rule',     sep:':', expr:'A ∩ B = elements <b>common</b> to both sets'},
+            {type:'calc',    label:'Check A',  sep:':', expr:'Elements of A → 1, 2, 3'},
+            {type:'calc',    label:'Check B',  sep:':', expr:'Elements of B → 3, 4, 5'},
+            {type:'calc',    label:'Common',   sep:':', expr:'Only <b>3</b> appears in both'},
+            {type:'ans',     label:'∴ A ∩ B', sep:'=', expr:'<b>{3}</b>'},
+          ]},
+          { no:2, q:'The value of sin 75° is:', opts:['(√6+√2)/4','(√6−√2)/4','(√3+1)/2√2','(√3−1)/2'], ans:'(√6+√2)/4', steps:[
+            {type:'given',   label:'Write',    sep:':', expr:'sin 75° = sin(45° + 30°)'},
+            {type:'formula', label:'Formula',  sep:':', expr:'sin(A+B) = sinA·cosB + cosA·sinB'},
+            {type:'calc',    label:'Expand',   sep:':', expr:'= sin45°·cos30° + cos45°·sin30°'},
+            {type:'calc',    label:'Values',   sep:':', expr:'= (1/√2)·(√3/2) + (1/√2)·(1/2)'},
+            {type:'calc',    label:'Simplify', sep:':', expr:'= √3/(2√2) + 1/(2√2) = (√3+1)/(2√2)'},
+            {type:'calc',    label:'Rationalise',sep:':', expr:'= (√3+1)·√2 / (2√2·√2) = (√6+√2)/4'},
+            {type:'ans',     label:'∴ sin75°', sep:'=', expr:'<b>(√6+√2)/4</b>'},
+          ]},
+          { no:3, q:'The slope of a line perpendicular to y = 3x + 5 is:', opts:['3','−3','1/3','−1/3'], ans:'−1/3', steps:[
+            {type:'given',   label:'Given line',  sep:':', expr:'y = 3x + 5 &nbsp;→&nbsp; slope m₁ = 3'},
+            {type:'formula', label:'Rule',         sep:':', expr:'For perpendicular lines: m₁ × m₂ = −1'},
+            {type:'calc',    label:'Substitute',   sep:':', expr:'3 × m₂ = −1'},
+            {type:'ans',     label:'∴ m₂',         sep:'=', expr:'<b>−1/3</b>'},
+          ]},
+          { no:4, q:'lim(x→0) (sinx)/x = ', opts:['0','∞','1','−1'], ans:'1', steps:[
+            {type:'formula', label:'Standard limit', sep:':', expr:'lim(x→0) sinx/x = <b>1</b> (must memorise)'},
+            {type:'calc',    label:'Proof (optional)',sep:':', expr:"L'Hôpital: lim cosx/1 = cos0 = 1"},
+            {type:'verify',  label:'Check',          sep:':', expr:'x=0.01 rad → sin(0.01)/0.01 ≈ 0.99998 ≈ 1 ✓'},
+            {type:'ans',     label:'∴ Limit',         sep:'=', expr:'<b>1</b>'},
+          ]},
+          { no:5, q:'∫cos x dx = ', opts:['−sinx+c','sinx+c','cosx+c','−cosx+c'], ans:'sinx+c', steps:[
+            {type:'formula', label:'Rule',    sep:':', expr:'∫cosx dx = sinx + c'},
+            {type:'verify',  label:'Verify',  sep:':', expr:'d/dx(sinx) = cosx ✓'},
+            {type:'calc',    label:'Note',    sep:':', expr:'∫sinx dx = −cosx + c &nbsp;(opposite sign)'},
+            {type:'ans',     label:'∴ Answer',sep:'=', expr:'<b>sinx + c</b>'},
+          ]},
         ]
       },
       {
         label: 'Section 2 — Class 12 Syllabus (60 Q)', bg: '#b71c1c',
         questions: [
-          { no:41, q:'If |A| = 3 for a 2×2 matrix, then |2A| =', opts:['6','12','9','24'], ans:'12', sol:'For n×n matrix: |kA| = kⁿ|A|. Here n=2, k=2: |2A| = 2² × 3 = 4 × 3 = <b>12</b>.' },
-          { no:42, q:'The general solution of dy/dx = y/x is:', opts:['y = cx²','y = cx','y = c/x','y = cx³'], ans:'y = cx', sol:'Separate: dy/y = dx/x → ln|y| = ln|x| + ln|c| → ln|y| = ln|cx| → <b>y = cx</b>.' },
-          { no:43, q:'∫₀¹ x² dx = ', opts:['1','1/2','1/3','1/4'], ans:'1/3', sol:'∫₀¹ x² dx = [x³/3]₀¹ = 1/3 − 0 = <b>1/3</b>.' },
-          { no:44, q:'The probability of getting a head when a fair coin is tossed 3 times, at least once, is:', opts:['1/8','7/8','3/8','5/8'], ans:'7/8', sol:'P(at least one head) = 1 − P(no heads) = 1 − (1/2)³ = 1 − 1/8 = <b>7/8</b>.' },
-          { no:45, q:"The equation of the tangent to y = x² at (2,4) is:", opts:['y = 4x − 4','y = 2x','y = 4x + 4','y = 2x + 4'], ans:'y = 4x − 4', sol:'dy/dx = 2x. At (2,4): slope = 4. Tangent: y − 4 = 4(x − 2) → y = 4x − 8 + 4 → <b>y = 4x − 4</b>.' },
-          { no:46, q:'Area bounded by y = x² and y = x is:', opts:['1/3','1/6','1/2','1/4'], ans:'1/6', sol:'Intersections: x²=x → x=0,1. A = ∫₀¹(x−x²)dx = [x²/2 − x³/3]₀¹ = 1/2 − 1/3 = <b>1/6</b> sq. units.' },
+          { no:41, q:'If |A| = 3 for a 2×2 matrix, then |2A| =', opts:['6','12','9','24'], ans:'12', steps:[
+            {type:'given',   label:'Given',    sep:':', expr:'Matrix A is 2×2 &nbsp;,&nbsp; |A| = 3 &nbsp;,&nbsp; scalar k = 2'},
+            {type:'formula', label:'Rule',     sep:':', expr:'|kA| = kⁿ·|A| &nbsp; for n×n matrix'},
+            {type:'calc',    label:'Here',     sep:':', expr:'n = 2 &nbsp;,&nbsp; k = 2'},
+            {type:'calc',    label:'Substitute',sep:':', expr:'|2A| = 2² × 3'},
+            {type:'calc',    label:'Simplify', sep:':', expr:'= 4 × 3'},
+            {type:'ans',     label:'∴ |2A|',   sep:'=', expr:'<b>12</b>'},
+          ]},
+          { no:42, q:'The general solution of dy/dx = y/x is:', opts:['y = cx²','y = cx','y = c/x','y = cx³'], ans:'y = cx', steps:[
+            {type:'given',   label:'Given',      sep:':', expr:'dy/dx = y/x'},
+            {type:'formula', label:'Method',     sep:':', expr:'Separate variables: dy/y = dx/x'},
+            {type:'calc',    label:'Integrate',  sep:':', expr:'∫dy/y = ∫dx/x'},
+            {type:'calc',    label:'Step',       sep:':', expr:'ln|y| = ln|x| + ln|c|'},
+            {type:'calc',    label:'Combine',    sep:':', expr:'ln|y| = ln|cx|'},
+            {type:'ans',     label:'∴ Solution', sep:':', expr:'<b>y = cx</b>'},
+          ]},
+          { no:43, q:'∫₀¹ x² dx = ', opts:['1','1/2','1/3','1/4'], ans:'1/3', steps:[
+            {type:'formula', label:'Rule',       sep:':', expr:'∫xⁿ dx = xⁿ⁺¹/(n+1) + c'},
+            {type:'calc',    label:'Integrate',  sep:':', expr:'∫₀¹ x² dx = [x³/3]₀¹'},
+            {type:'calc',    label:'Apply limits',sep:':', expr:'= (1)³/3 − (0)³/3'},
+            {type:'calc',    label:'Simplify',   sep:':', expr:'= 1/3 − 0'},
+            {type:'ans',     label:'∴ Answer',   sep:'=', expr:'<b>1/3</b>'},
+          ]},
+          { no:44, q:'P(at least one head in 3 tosses) =', opts:['1/8','7/8','3/8','5/8'], ans:'7/8', steps:[
+            {type:'formula', label:'Trick',        sep:':', expr:'P(at least one) = 1 − P(none)'},
+            {type:'calc',    label:'P(no heads)',   sep:':', expr:'= (1/2)³ = 1/8'},
+            {type:'calc',    label:'Substitute',    sep:':', expr:'P(at least one) = 1 − 1/8'},
+            {type:'ans',     label:'∴ Answer',      sep:'=', expr:'<b>7/8</b>'},
+          ]},
+          { no:45, q:'Tangent to y = x² at (2,4):', opts:['y = 4x − 4','y = 2x','y = 4x + 4','y = 2x + 4'], ans:'y = 4x − 4', steps:[
+            {type:'given',   label:'Curve',        sep:':', expr:'y = x² &nbsp;,&nbsp; Point (2, 4)'},
+            {type:'formula', label:'Slope',        sep:':', expr:'dy/dx = 2x'},
+            {type:'calc',    label:'At x=2',       sep:':', expr:'m = 2×2 = 4'},
+            {type:'formula', label:'Tangent eq',   sep:':', expr:'y − y₁ = m(x − x₁)'},
+            {type:'calc',    label:'Substitute',   sep:':', expr:'y − 4 = 4(x − 2)'},
+            {type:'calc',    label:'Expand',       sep:':', expr:'y = 4x − 8 + 4'},
+            {type:'ans',     label:'∴ Tangent',    sep:':', expr:'<b>y = 4x − 4</b>'},
+          ]},
+          { no:46, q:'Area bounded by y = x² and y = x:', opts:['1/3','1/6','1/2','1/4'], ans:'1/6', steps:[
+            {type:'calc',    label:'Intersections', sep:':', expr:'x² = x → x(x−1) = 0 → x = 0, 1'},
+            {type:'formula', label:'Area formula',  sep:':', expr:'A = ∫₀¹ (top − bottom) dx = ∫₀¹ (x − x²) dx'},
+            {type:'calc',    label:'Integrate',     sep:':', expr:'= [x²/2 − x³/3]₀¹'},
+            {type:'calc',    label:'Apply limits',  sep:':', expr:'= (1/2 − 1/3) − 0'},
+            {type:'calc',    label:'Simplify',      sep:':', expr:'= 3/6 − 2/6 = 1/6'},
+            {type:'ans',     label:'∴ Area',        sep:'=', expr:'<b>1/6 sq. units</b>'},
+          ]},
         ]
       }
     ]
@@ -803,12 +960,48 @@ const SOLUTIONS = {
       {
         label: 'Selected Key Questions — 2023', bg: '#b71c1c',
         questions: [
-          { no:1, q:'∫tan x dx = ', opts:['sec x + c','ln|sec x| + c','−ln|cos x| + c', 'Both B and C'], ans:'Both B and C', sol:'∫tanx dx = ∫(sinx/cosx)dx. Let u = cosx, du = −sinx dx → −∫du/u = −ln|u| + c = −ln|cosx| + c = ln|secx| + c. Both B and C are correct.' },
-          { no:2, q:'If A is a 3×3 matrix with |A| = 5, then |adj A| =', opts:['5','25','125','10'], ans:'25', sol:'|adj A| = |A|^(n−1) for n×n matrix. Here n=3: |adj A| = 5^(3−1) = 5² = 25.' },
-          { no:3, q:"The equation x² + y² − 6x + 4y − 3 = 0 represents a circle with centre:", opts:['(3,−2)','(−3,2)','(6,−4)','(−6,4)'], ans:'(3,−2)', sol:'Rewrite: (x²−6x+9) + (y²+4y+4) = 3+9+4 = 16 → (x−3)² + (y+2)² = 4². Centre = (3, −2), r = 4.' },
-          { no:4, q:'The value of ∫₀^π sin x dx is:', opts:['0','1','2','π'], ans:'2', sol:'∫₀^π sinx dx = [−cosx]₀^π = −cos π − (−cos 0) = −(−1) − (−1) = 1 + 1 = <b>2</b>.' },
-          { no:5, q:'If f(x) = x³ − 3x² + 3x − 1, then f\'(1) =', opts:['0','1','3','−1'], ans:'0', sol:"f'(x) = 3x² − 6x + 3 = 3(x²−2x+1) = 3(x−1)². At x=1: f'(1) = 3(0)² = <b>0</b>. Note: x=1 is an inflection point of this function (it equals (x−1)³)." },
-          { no:6, q:'P(A) = 0.4, P(B) = 0.5, P(A∩B) = 0.2. Then P(A|B) =', opts:['0.4','0.5','0.8','0.2'], ans:'0.4', sol:'P(A|B) = P(A∩B)/P(B) = 0.2/0.5 = <b>0.4</b>. Conditional probability formula — must memorise for CET.' },
+          { no:1, q:'∫tan x dx = ', opts:['sec x + c','ln|sec x| + c','−ln|cos x| + c', 'Both B and C'], ans:'Both B and C', steps:[
+            {type:'formula', label:'Write',      sep:':', expr:'∫tanx dx = ∫ sinx/cosx dx'},
+            {type:'calc',    label:'Substitute', sep:':', expr:'Let u = cosx &nbsp;,&nbsp; du = −sinx dx'},
+            {type:'calc',    label:'Rewrite',    sep:':', expr:'= −∫ du/u'},
+            {type:'calc',    label:'Integrate',  sep:':', expr:'= −ln|u| + c'},
+            {type:'calc',    label:'Put back',   sep:':', expr:'= −ln|cosx| + c &nbsp;= ln|secx| + c'},
+            {type:'ans',     label:'∴ Answer',   sep:':', expr:'<b>Both B and C</b> are correct'},
+          ]},
+          { no:2, q:'If A is 3×3 matrix with |A| = 5, then |adj A| =', opts:['5','25','125','10'], ans:'25', steps:[
+            {type:'given',   label:'Given',      sep:':', expr:'n = 3 (3×3 matrix) &nbsp;,&nbsp; |A| = 5'},
+            {type:'formula', label:'Rule',       sep:':', expr:'|adj A| = |A|^(n−1)'},
+            {type:'calc',    label:'Substitute', sep:':', expr:'|adj A| = 5^(3−1) = 5²'},
+            {type:'ans',     label:'∴ |adj A|',  sep:'=', expr:'<b>25</b>'},
+          ]},
+          { no:3, q:'Circle x² + y² − 6x + 4y − 3 = 0, centre = ?', opts:['(3,−2)','(−3,2)','(6,−4)','(−6,4)'], ans:'(3,−2)', steps:[
+            {type:'given',   label:'Equation',   sep:':', expr:'x² + y² − 6x + 4y − 3 = 0'},
+            {type:'formula', label:'Method',     sep:':', expr:'Complete the square for x and y'},
+            {type:'calc',    label:'x terms',    sep:':', expr:'x² − 6x + 9 = (x−3)²'},
+            {type:'calc',    label:'y terms',    sep:':', expr:'y² + 4y + 4 = (y+2)²'},
+            {type:'calc',    label:'Rewrite',    sep:':', expr:'(x−3)² + (y+2)² = 3+9+4 = 16'},
+            {type:'calc',    label:'Form',       sep:':', expr:'(x−h)² + (y−k)² = r² → h=3, k=−2, r=4'},
+            {type:'ans',     label:'∴ Centre',   sep:'=', expr:'<b>(3, −2)</b> &nbsp;,&nbsp; r = 4'},
+          ]},
+          { no:4, q:'∫₀^π sin x dx = ', opts:['0','1','2','π'], ans:'2', steps:[
+            {type:'formula', label:'Integrate',   sep:':', expr:'∫sinx dx = −cosx + c'},
+            {type:'calc',    label:'Apply limits', sep:':', expr:'[−cosx]₀^π = −cos(π) − (−cos 0)'},
+            {type:'calc',    label:'Values',       sep:':', expr:'= −(−1) − (−1) = 1 + 1'},
+            {type:'ans',     label:'∴ Answer',     sep:'=', expr:'<b>2</b>'},
+          ]},
+          { no:5, q:"f(x) = x³ − 3x² + 3x − 1 &nbsp;→&nbsp; f'(1) = ?", opts:['0','1','3','−1'], ans:'0', steps:[
+            {type:'given',   label:'Given',        sep:':', expr:'f(x) = x³ − 3x² + 3x − 1'},
+            {type:'formula', label:'Differentiate',sep:':', expr:"f'(x) = 3x² − 6x + 3"},
+            {type:'calc',    label:'Factor',       sep:':', expr:"f'(x) = 3(x² − 2x + 1) = 3(x−1)²"},
+            {type:'calc',    label:'At x=1',       sep:':', expr:"f'(1) = 3(1−1)² = 3 × 0"},
+            {type:'ans',     label:"∴ f'(1)",      sep:'=', expr:'<b>0</b>'},
+          ]},
+          { no:6, q:'P(A)=0.4, P(B)=0.5, P(A∩B)=0.2 → P(A|B) = ?', opts:['0.4','0.5','0.8','0.2'], ans:'0.4', steps:[
+            {type:'formula', label:'Formula',     sep:':', expr:'P(A|B) = P(A∩B) / P(B)'},
+            {type:'given',   label:'Values',      sep:':', expr:'P(A∩B) = 0.2 &nbsp;,&nbsp; P(B) = 0.5'},
+            {type:'calc',    label:'Substitute',  sep:':', expr:'P(A|B) = 0.2 / 0.5'},
+            {type:'ans',     label:'∴ P(A|B)',    sep:'=', expr:'<b>0.4</b>'},
+          ]},
         ]
       }
     ]
@@ -848,11 +1041,44 @@ const SOLUTIONS = {
   ]}]},
 
   '2022-math': { year:'2022', subj:'Mathematics', color:'#b71c1c', note:'MHT-CET 2022 — Mathematics', sections:[{ label:'Selected Key Questions — 2022', bg:'#b71c1c', questions:[
-    { no:1, q:'∫eˣ(1 + x)dx =', opts:['eˣ + c','xeˣ + c','eˣx + c','eˣ(x+1) + c'], ans:'xeˣ + c', sol:'∫eˣ(1+x)dx. Use ∫eˣ[f(x)+f\'(x)]dx = eˣf(x)+c where f(x)=x, f\'(x)=1. Result = xeˣ + c. Verify: d/dx(xeˣ) = eˣ + xeˣ = eˣ(1+x) ✓.' },
-    { no:2, q:'The angle between vectors a⃗ = i + j and b⃗ = j + k is:', opts:['90°','60°','45°','30°'], ans:'60°', sol:'cosθ = (a⃗·b⃗)/(|a⃗||b⃗|). a⃗·b⃗ = 0+1+0=1. |a⃗|=√2, |b⃗|=√2. cosθ = 1/2 → θ = 60°.' },
-    { no:3, q:'Solution of (x+y)dy/dx = 1 is:', opts:['x = y + ce^y','y = x + ce^x','x + y = c','y + x = ce^x'], ans:'x = y + ce^y', sol:'dx/dy = x + y → dx/dy − x = y (linear in x). IF = e^(−y). Solution: xe^(−y) = ∫ye^(−y)dy = −ye^(−y) − e^(−y) + c → x = −y − 1 + ce^y. So x = y + ce^y (rearranging with new constant).' },
-    { no:4, q:'The maximum value of Z = 3x + 4y subject to x+y ≤ 4, x ≥ 0, y ≥ 0 is:', opts:['12','16','14','10'], ans:'16', sol:'Corner points: (0,0)→Z=0; (4,0)→Z=12; (0,4)→Z=16; Check (4,0) vs (0,4). Maximum Z = 3(0)+4(4) = <b>16</b> at (0,4).' },
-    { no:5, q:'Mean of Binomial distribution B(n,p) is:', opts:['np','npq','√(npq)','p'], ans:'np', sol:'For Binomial distribution B(n,p): Mean = np, Variance = npq (q = 1−p), SD = √(npq). E.g., B(10, 0.5): Mean = 5, Variance = 2.5.' },
+    { no:1, q:'∫eˣ(1 + x)dx =', opts:['eˣ + c','xeˣ + c','eˣx + c','eˣ(x+1) + c'], ans:'xeˣ + c', steps:[
+      {type:'formula', label:'Rule',       sep:':', expr:'∫eˣ[f(x) + f\'(x)]dx = eˣf(x) + c'},
+      {type:'calc',    label:'Identify',   sep:':', expr:'f(x) = x &nbsp;,&nbsp; f\'(x) = 1 &nbsp;→&nbsp; f(x)+f\'(x) = x+1 ✓'},
+      {type:'calc',    label:'Apply',      sep:':', expr:'∫eˣ(1+x)dx = eˣ·x + c'},
+      {type:'verify',  label:'Verify',     sep:':', expr:'d/dx(xeˣ) = eˣ + xeˣ = eˣ(1+x) ✓'},
+      {type:'ans',     label:'∴ Answer',   sep:'=', expr:'<b>xeˣ + c</b>'},
+    ]},
+    { no:2, q:'Angle between a⃗ = i+j and b⃗ = j+k is:', opts:['90°','60°','45°','30°'], ans:'60°', steps:[
+      {type:'formula', label:'Formula',    sep:':', expr:'cosθ = (a⃗·b⃗) / (|a⃗| × |b⃗|)'},
+      {type:'calc',    label:'Dot product',sep:':', expr:'a⃗·b⃗ = (1×0)+(1×1)+(0×1) = 1'},
+      {type:'calc',    label:'|a⃗|',       sep:':', expr:'= √(1²+1²+0²) = √2'},
+      {type:'calc',    label:'|b⃗|',       sep:':', expr:'= √(0²+1²+1²) = √2'},
+      {type:'calc',    label:'cosθ',       sep:'=', expr:'1 / (√2 × √2) = 1/2'},
+      {type:'ans',     label:'∴ θ',        sep:'=', expr:'cos⁻¹(1/2) = <b>60°</b>'},
+    ]},
+    { no:3, q:'Solution of (x+y)dy/dx = 1:', opts:['x = y + ceʸ','y = x + ceˣ','x + y = c','y + x = ceˣ'], ans:'x = y + ceʸ', steps:[
+      {type:'calc',    label:'Rewrite',    sep:':', expr:'dx/dy = x + y &nbsp;(flip dy/dx)'},
+      {type:'formula', label:'Form',       sep:':', expr:'dx/dy − x = y &nbsp;(linear ODE in x)'},
+      {type:'calc',    label:'I.F.',       sep:':', expr:'e^(∫−1 dy) = e^(−y)'},
+      {type:'calc',    label:'Multiply',   sep:':', expr:'d/dy(x·e^(−y)) = y·e^(−y)'},
+      {type:'calc',    label:'Integrate',  sep:':', expr:'x·e^(−y) = −ye^(−y) − e^(−y) + c'},
+      {type:'calc',    label:'Divide',     sep:':', expr:'x = −y − 1 + ceʸ'},
+      {type:'ans',     label:'∴ Solution', sep:':', expr:'<b>x = y + ceʸ</b> (absorbing −1 in constant)'},
+    ]},
+    { no:4, q:'Max Z = 3x+4y, x+y ≤ 4, x≥0, y≥0:', opts:['12','16','14','10'], ans:'16', steps:[
+      {type:'formula', label:'Method',      sep:':', expr:'Check Z at all corner points of feasible region'},
+      {type:'calc',    label:'(0, 0)',       sep:'→', expr:'Z = 3(0)+4(0) = 0'},
+      {type:'calc',    label:'(4, 0)',       sep:'→', expr:'Z = 3(4)+4(0) = 12'},
+      {type:'calc',    label:'(0, 4)',       sep:'→', expr:'Z = 3(0)+4(4) = <b>16</b> ← Maximum'},
+      {type:'ans',     label:'∴ Max Z',      sep:'=', expr:'<b>16</b> at (0, 4)'},
+    ]},
+    { no:5, q:'Mean of Binomial distribution B(n,p) is:', opts:['np','npq','√(npq)','p'], ans:'np', steps:[
+      {type:'formula', label:'Formula',     sep:':', expr:'For B(n,p): Mean (μ) = <b>np</b>'},
+      {type:'calc',    label:'Variance',    sep:':', expr:'σ² = npq &nbsp;where q = 1−p'},
+      {type:'calc',    label:'S.D.',        sep:':', expr:'σ = √(npq)'},
+      {type:'verify',  label:'Example',    sep:':', expr:'B(10, 0.5): Mean = 5, Var = 2.5, SD = √2.5'},
+      {type:'ans',     label:'∴ Answer',   sep:':', expr:'Mean = <b>np</b>'},
+    ]},
   ]}]},
 
   '2022-bio': { year:'2022', subj:'Biology', color:'#006064', note:'MHT-CET 2022 — Biology', sections:[{ label:'Selected Key Questions — 2022', bg:'#00695c', questions:[
@@ -880,11 +1106,40 @@ const SOLUTIONS = {
   ]}]},
 
   '2021-math': { year:'2021', subj:'Mathematics', color:'#e65100', note:'MHT-CET 2021 — Mathematics (Reduced Syllabus)', sections:[{ label:'Selected Key Questions — 2021', bg:'#bf360c', questions:[
-    { no:1, q:'The derivative of sin(x²) is:', opts:['cos(x²)','2x·cos(x²)','cos(2x)','2cosx'], ans:'2x·cos(x²)', sol:'Chain rule: d/dx[sin(u)] = cos(u)·du/dx where u = x². du/dx = 2x. So d/dx[sin(x²)] = cos(x²) × 2x = <b>2x·cos(x²)</b>.' },
-    { no:2, q:'∫₀^(π/2) cos x dx =', opts:['0','1','2','π/2'], ans:'1', sol:'∫₀^(π/2) cosx dx = [sinx]₀^(π/2) = sin(π/2) − sin(0) = 1 − 0 = <b>1</b>.' },
-    { no:3, q:'If the lines 2x + 3y = 7 and kx − 6y = 5 are parallel, then k =', opts:['−4','4','-1/4','1/4'], ans:'−4', sol:'Parallel lines have equal slopes. Slope of L1: −2/3. Slope of L2: k/6. For parallel: k/6 = −2/3 → k = −4.' },
-    { no:4, q:'The eccentricity of the ellipse x²/9 + y²/4 = 1 is:', opts:['√5/3','√5/2','2/3','√13/3'], ans:'√5/3', sol:'a²=9, b²=4. c²=a²−b²=9−4=5 → c=√5. Eccentricity e = c/a = √5/3.' },
-    { no:5, q:'Number of terms in the expansion of (a + b)¹⁰ is:', opts:['10','11','9','20'], ans:'11', sol:'Number of terms in (a+b)ⁿ = n+1 = 10+1 = <b>11</b>. The terms are: C(10,0)a¹⁰, C(10,1)a⁹b, ..., C(10,10)b¹⁰.' },
+    { no:1, q:'Derivative of sin(x²) is:', opts:['cos(x²)','2x·cos(x²)','cos(2x)','2cosx'], ans:'2x·cos(x²)', steps:[
+      {type:'formula', label:'Rule',       sep:':', expr:'Chain Rule: d/dx[f(g(x))] = f\'(g(x))·g\'(x)'},
+      {type:'calc',    label:'Here',       sep:':', expr:'f(u) = sin(u) &nbsp;,&nbsp; u = x²'},
+      {type:'calc',    label:'f\'(u)',     sep:':', expr:'= cos(u) = cos(x²)'},
+      {type:'calc',    label:'du/dx',      sep:':', expr:'= 2x'},
+      {type:'calc',    label:'Multiply',   sep:':', expr:'= cos(x²) × 2x'},
+      {type:'ans',     label:'∴ d/dx',     sep:'=', expr:'<b>2x·cos(x²)</b>'},
+    ]},
+    { no:2, q:'∫₀^(π/2) cos x dx =', opts:['0','1','2','π/2'], ans:'1', steps:[
+      {type:'formula', label:'Integrate',   sep:':', expr:'∫cosx dx = sinx + c'},
+      {type:'calc',    label:'Apply limits', sep:':', expr:'[sinx]₀^(π/2) = sin(π/2) − sin(0)'},
+      {type:'calc',    label:'Values',       sep:':', expr:'= 1 − 0'},
+      {type:'ans',     label:'∴ Answer',     sep:'=', expr:'<b>1</b>'},
+    ]},
+    { no:3, q:'Lines 2x+3y=7 and kx−6y=5 are parallel → k =', opts:['−4','4','-1/4','1/4'], ans:'−4', steps:[
+      {type:'calc',    label:'Slope L₁',    sep:':', expr:'2x+3y=7 → y = −(2/3)x + 7/3 → m₁ = −2/3'},
+      {type:'calc',    label:'Slope L₂',    sep:':', expr:'kx−6y=5 → y = (k/6)x − 5/6 → m₂ = k/6'},
+      {type:'formula', label:'Parallel',    sep:':', expr:'m₁ = m₂ → −2/3 = k/6'},
+      {type:'calc',    label:'Solve',       sep:':', expr:'k = 6 × (−2/3) = −4'},
+      {type:'ans',     label:'∴ k',         sep:'=', expr:'<b>−4</b>'},
+    ]},
+    { no:4, q:'Eccentricity of ellipse x²/9 + y²/4 = 1:', opts:['√5/3','√5/2','2/3','√13/3'], ans:'√5/3', steps:[
+      {type:'given',   label:'Ellipse',     sep:':', expr:'x²/9 + y²/4 = 1 → a² = 9, b² = 4'},
+      {type:'formula', label:'Formula',     sep:':', expr:'c² = a² − b² &nbsp;(since a > b)'},
+      {type:'calc',    label:'c²',          sep:'=', expr:'9 − 4 = 5 &nbsp;→&nbsp; c = √5'},
+      {type:'formula', label:'Eccentricity',sep:':', expr:'e = c/a = √5/3'},
+      {type:'ans',     label:'∴ e',         sep:'=', expr:'<b>√5/3</b>'},
+    ]},
+    { no:5, q:'Number of terms in (a+b)¹⁰ =', opts:['10','11','9','20'], ans:'11', steps:[
+      {type:'formula', label:'Rule',        sep:':', expr:'Number of terms in (a+b)ⁿ = n + 1'},
+      {type:'calc',    label:'Here n=10',   sep:':', expr:'Terms = 10 + 1 = 11'},
+      {type:'verify',  label:'Terms are',   sep:':', expr:'C(10,0)a¹⁰, C(10,1)a⁹b, ..., C(10,10)b¹⁰'},
+      {type:'ans',     label:'∴ Answer',    sep:'=', expr:'<b>11</b>'},
+    ]},
   ]}]},
 
   '2021-bio': { year:'2021', subj:'Biology', color:'#e65100', note:'MHT-CET 2021 — Biology (Reduced Syllabus)', sections:[{ label:'Selected Key Questions — 2021', bg:'#004d40', questions:[
@@ -912,11 +1167,40 @@ const SOLUTIONS = {
   ]}]},
 
   '2019-math': { year:'2019', subj:'Mathematics', color:'#880e4f', note:'MHT-CET 2019 — Mathematics (New Pattern)', sections:[{ label:'Selected Key Questions — 2019', bg:'#6a1b4d', questions:[
-    { no:1, q:'If sin θ = 3/5, then cos θ =', opts:['4/5','5/4','3/4','5/3'], ans:'4/5', sol:'sin²θ + cos²θ = 1. (3/5)² + cos²θ = 1 → cos²θ = 1 − 9/25 = 16/25 → cosθ = 4/5 (assuming acute angle).' },
-    { no:2, q:'The slope of the line joining (2,3) and (4,7) is:', opts:['1','2','3','4'], ans:'2', sol:'Slope m = (y₂−y₁)/(x₂−x₁) = (7−3)/(4−2) = 4/2 = <b>2</b>.' },
-    { no:3, q:'∫(1/(1+x²))dx =', opts:['tan⁻¹x + c','cot⁻¹x + c','sec⁻¹x + c','sin⁻¹x + c'], ans:'tan⁻¹x + c', sol:'Standard integral: ∫dx/(1+x²) = tan⁻¹x + c. (Also equals −cot⁻¹x + c, which differs by a constant π/2).' },
-    { no:4, q:'The maximum value of sinx + cosx is:', opts:['1','√2','2','√3'], ans:'√2', sol:'f(x) = sinx + cosx = √2·sin(x + π/4). Maximum value = √2 (when x + π/4 = π/2 → x = π/4). At x = π/4: sin(π/4)+cos(π/4) = 1/√2 + 1/√2 = √2.' },
-    { no:5, q:'The number of diagonals in a polygon with n sides is:', opts:['n(n-1)/2','n(n-3)/2','n(n+1)/2','n(n-2)'], ans:'n(n-3)/2', sol:'Total lines between n vertices = C(n,2) = n(n-1)/2. Subtract n sides → diagonals = n(n-1)/2 − n = n[(n-1)/2 − 1] = n(n-3)/2. For hexagon: 6(3)/2 = 9 diagonals ✓.' },
+    { no:1, q:'If sin θ = 3/5, then cos θ =', opts:['4/5','5/4','3/4','5/3'], ans:'4/5', steps:[
+      {type:'formula', label:'Identity',   sep:':', expr:'sin²θ + cos²θ = 1'},
+      {type:'calc',    label:'Substitute', sep:':', expr:'(3/5)² + cos²θ = 1'},
+      {type:'calc',    label:'Simplify',   sep:':', expr:'9/25 + cos²θ = 1'},
+      {type:'calc',    label:'cos²θ',      sep:'=', expr:'1 − 9/25 = 16/25'},
+      {type:'calc',    label:'cosθ',       sep:'=', expr:'√(16/25) = 4/5 &nbsp;(acute angle)'},
+      {type:'ans',     label:'∴ cosθ',     sep:'=', expr:'<b>4/5</b>'},
+    ]},
+    { no:2, q:'Slope of line joining (2,3) and (4,7):', opts:['1','2','3','4'], ans:'2', steps:[
+      {type:'formula', label:'Formula',    sep:':', expr:'m = (y₂ − y₁) / (x₂ − x₁)'},
+      {type:'given',   label:'Points',     sep:':', expr:'(x₁,y₁) = (2,3) &nbsp;,&nbsp; (x₂,y₂) = (4,7)'},
+      {type:'calc',    label:'Substitute', sep:':', expr:'m = (7−3) / (4−2)'},
+      {type:'calc',    label:'Simplify',   sep:':', expr:'= 4 / 2'},
+      {type:'ans',     label:'∴ Slope',    sep:'=', expr:'<b>2</b>'},
+    ]},
+    { no:3, q:'∫(1/(1+x²))dx =', opts:['tan⁻¹x + c','cot⁻¹x + c','sec⁻¹x + c','sin⁻¹x + c'], ans:'tan⁻¹x + c', steps:[
+      {type:'formula', label:'Standard',   sep:':', expr:'∫dx/(1+x²) = tan⁻¹x + c'},
+      {type:'verify',  label:'Verify',     sep:':', expr:'d/dx(tan⁻¹x) = 1/(1+x²) ✓'},
+      {type:'ans',     label:'∴ Answer',   sep:'=', expr:'<b>tan⁻¹x + c</b>'},
+    ]},
+    { no:4, q:'Maximum value of sinx + cosx:', opts:['1','√2','2','√3'], ans:'√2', steps:[
+      {type:'formula', label:'Rewrite',    sep:':', expr:'sinx + cosx = √2 · sin(x + π/4)'},
+      {type:'calc',    label:'Max of sin', sep:':', expr:'Maximum value of sin(anything) = 1'},
+      {type:'calc',    label:'Therefore',  sep:':', expr:'Max = √2 × 1 = √2'},
+      {type:'verify',  label:'At x=π/4',  sep:':', expr:'sin(π/4)+cos(π/4) = 1/√2+1/√2 = 2/√2 = √2 ✓'},
+      {type:'ans',     label:'∴ Maximum',  sep:'=', expr:'<b>√2</b>'},
+    ]},
+    { no:5, q:'Diagonals in n-sided polygon:', opts:['n(n-1)/2','n(n-3)/2','n(n+1)/2','n(n-2)'], ans:'n(n-3)/2', steps:[
+      {type:'formula', label:'Total lines', sep:':', expr:'C(n,2) = n(n−1)/2 &nbsp;(lines between n vertices)'},
+      {type:'calc',    label:'Subtract',    sep:':', expr:'Subtract n sides of the polygon'},
+      {type:'calc',    label:'Diagonals',   sep:'=', expr:'n(n−1)/2 − n = n[(n−1)/2 − 1] = n(n−3)/2'},
+      {type:'verify',  label:'Hexagon',     sep:':', expr:'n=6: 6(6−3)/2 = 9 diagonals ✓'},
+      {type:'ans',     label:'∴ Formula',   sep:':', expr:'<b>n(n−3)/2</b>'},
+    ]},
   ]}]},
 
   '2019-bio': { year:'2019', subj:'Biology', color:'#880e4f', note:'MHT-CET 2019 — Biology (New Pattern)', sections:[{ label:'Selected Key Questions — 2019', bg:'#004d40', questions:[
@@ -928,12 +1212,29 @@ const SOLUTIONS = {
   ]}]},
 };
 
+// ── Vertical step renderer for Maths questions ──
+function renderSteps(steps, color) {
+  const rows = steps.map(s => {
+    const type = s.type || 'calc';
+    return `<div class="vmath-row vr-${type}">
+      <span class="vmath-label">${s.label || ''}</span>
+      <span class="vmath-sep">${s.sep || ':'}</span>
+      <span class="vmath-expr">${s.expr}</span>
+    </div>`;
+  }).join('');
+  return `<div style="margin-top:10px;border:1.5px solid ${color}33;border-radius:6px;overflow:hidden;">${rows}</div>`;
+}
+
 // ── Render solution panel ──
 function openSol(year, subj) {
   const key = year + '-' + subj;
   const data = SOLUTIONS[key];
+  // Always show the sol-section wrapper
+  document.getElementById('sol-section').style.display = 'block';
+  // Ensure Papers tab is active so year cards stay visible
+  const papersTab = document.querySelector('.cet-tab');
+  showTab('papers', papersTab);
   if (!data) {
-    document.getElementById('sol-panel').style.display = 'block';
     document.getElementById('sol-inner').innerHTML = `
       <div class="paper-sol-header" style="background:#f5f5f5;">
         <h2>${year} ${subj.toUpperCase()} — Full solutions coming soon!</h2>
@@ -943,7 +1244,9 @@ function openSol(year, subj) {
         <p>Detailed solutions for this paper are being added. WhatsApp Shashikant Sir for the full solved paper PDF.</p>
         <a href="https://wa.me/918767144200?text=I%20need%20MHT-CET%20${year}%20${subj}%20solved%20paper" target="_blank" class="pill pill-sol" style="padding:10px 24px;border-radius:8px;font-size:1rem;text-decoration:none;display:inline-block;margin-top:12px;">💬 Request on WhatsApp</a>
       </div>`;
-    document.getElementById('sol-panel').scrollIntoView({behavior:'smooth', block:'start'});
+    setTimeout(() => {
+      document.getElementById('sol-section').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 50);
     return;
   }
   let html = `
@@ -973,7 +1276,7 @@ function openSol(year, subj) {
           <div class="q-row-body">
             <div class="option-grid">${opts}</div>
             <div class="ans-badge">✅ Answer: ${q.ans}</div>
-            <div style="margin-top:10px;font-size:.92rem;color:#444;line-height:1.75;border-left:3px solid ${data.color};padding-left:12px;">${q.sol}</div>
+            ${q.steps ? renderSteps(q.steps, data.color) : `<div style="margin-top:10px;font-size:.92rem;color:#444;line-height:1.75;border-left:3px solid ${data.color};padding-left:12px;">${q.sol}</div>`}
           </div>
         </div>`;
     });
@@ -981,12 +1284,15 @@ function openSol(year, subj) {
   });
 
   document.getElementById('sol-inner').innerHTML = html;
-  document.getElementById('sol-panel').style.display = 'block';
-  document.getElementById('sol-panel').scrollIntoView({behavior:'smooth', block:'start'});
+  document.getElementById('sol-section').style.display = 'block';
+  setTimeout(() => {
+    document.getElementById('sol-section').scrollIntoView({behavior:'smooth', block:'start'});
+  }, 50);
 }
 
 function closeSol() {
-  document.getElementById('sol-panel').style.display = 'none';
+  document.getElementById('sol-section').style.display = 'none';
+  document.getElementById('sol-inner').innerHTML = '';
 }
 
 // Smooth scrolling for anchor
@@ -996,7 +1302,62 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
   });
 });
+
+// Navbar scroll effect + hamburger menu
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  if (nav) nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+const hb = document.getElementById('hamburger');
+const nl = document.getElementById('navLinks');
+if (hb && nl) {
+  hb.addEventListener('click', () => {
+    hb.classList.toggle('open');
+    nl.classList.toggle('open');
+  });
+}
+
+// ── PASSWORD GATE ──
+const CORRECT_PW = 'Shashi2026';   // ← change this anytime
+
+function checkPW() {
+  const val = document.getElementById('pw-input').value.trim();
+  if (val === CORRECT_PW) {
+    // Correct — unlock
+    document.getElementById('pw-gate').style.display = 'none';
+    document.getElementById('page-content').style.display = 'block';
+    sessionStorage.setItem('cet_unlocked', '1');
+  } else {
+    // Wrong — shake + show error
+    const err = document.getElementById('pw-err');
+    err.style.display = 'block';
+    const box = document.getElementById('pw-input');
+    box.style.borderColor = '#c0392b';
+    box.style.animation = 'shake .35s';
+    setTimeout(() => { box.style.animation = ''; }, 400);
+    box.value = '';
+    box.focus();
+  }
+}
+
+function togglePW() {
+  const f = document.getElementById('pw-input');
+  f.type = f.type === 'password' ? 'text' : 'password';
+}
+
+// Already unlocked this session? Skip gate
+if (sessionStorage.getItem('cet_unlocked') === '1') {
+  document.getElementById('pw-gate').style.display = 'none';
+  document.getElementById('page-content').style.display = 'block';
+}
+
+// Shake keyframe animation
+const _ks = document.createElement('style');
+_ks.textContent = `@keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}`;
+document.head.appendChild(_ks);
 </script>
+
+</div><!-- /page-content -->
 
 </body>
 </html>
