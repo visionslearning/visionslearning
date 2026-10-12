@@ -6,12 +6,10 @@
   <title>Class XII Physics – Paper 1 & 2 Detailed Solutions | Visions Classes</title>
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:'Arial',sans-serif;background:#f0f4f8;padding:20px 10px;color:#111;font-size:14px;}
+    body{font-family:'Arial',sans-serif;background:#f0f4f8;padding:20px 10px;color:#111;font-size:14px;line-height:1.7;}
+    .page{background:#fff;max-width:880px;margin:0 auto;padding:36px 48px;border:2px solid #1a1a2e;box-shadow:0 4px 24px rgba(0,0,0,.13);}
 
-    /* ── Page wrapper ── */
-    .page{background:#fff;max-width:860px;margin:0 auto;padding:36px 48px;border:2px solid #1a1a2e;box-shadow:0 4px 24px rgba(0,0,0,.13);}
-
-    /* ── Header ── */
+    /* Header */
     .visions-header{text-align:center;padding-bottom:12px;border-bottom:4px double #1a1a2e;margin-bottom:14px;}
     .visions-header .inst-name{font-size:30px;font-weight:bold;letter-spacing:4px;text-transform:uppercase;color:#1a1a2e;}
     .visions-header .inst-name span{color:#c0392b;}
@@ -21,960 +19,936 @@
     .sol-header h2{font-size:14px;color:#555;font-weight:normal;}
     .sol-header .badge{display:inline-block;background:#1a237e;color:#fff;padding:3px 14px;border-radius:12px;font-size:12px;font-weight:bold;margin-top:6px;}
 
-    /* ── Paper divider ── */
-    .paper-banner{background:linear-gradient(135deg,#1a237e,#283593);color:#fff;padding:10px 20px;border-radius:6px;margin:28px 0 20px;display:flex;justify-content:space-between;align-items:center;}
-    .paper-banner .ptitle{font-size:15px;font-weight:bold;}
-    .paper-banner .pbadge{background:#fff;color:#1a237e;padding:3px 12px;border-radius:10px;font-size:12px;font-weight:bold;}
+    /* Paper banner */
+    .paper-banner{background:linear-gradient(135deg,#1a237e,#283593);color:#fff;padding:12px 20px;border-radius:6px;margin:28px 0 20px;display:flex;justify-content:space-between;align-items:center;}
+    .paper-banner .ptitle{font-size:16px;font-weight:bold;}
+    .paper-banner .pbadge{background:#fff;color:#1a237e;padding:3px 14px;border-radius:10px;font-size:12px;font-weight:bold;}
 
-    /* ── Section heading ── */
-    .sec-head{background:#1a1a2e;color:#fff;padding:7px 14px;font-size:13.5px;font-weight:bold;margin:22px 0 14px;display:flex;justify-content:space-between;align-items:center;border-radius:3px;}
+    /* Section heading */
+    .sec-head{background:#1a1a2e;color:#fff;padding:8px 16px;font-size:13.5px;font-weight:bold;margin:24px 0 16px;display:flex;justify-content:space-between;align-items:center;border-radius:4px;}
     .sec-head .sm{background:#fff;color:#1a1a2e;padding:2px 10px;border-radius:8px;font-size:11.5px;font-weight:bold;}
 
-    /* ── Question solution card ── */
-    .q-card{border:1.5px solid #e0e0e0;border-radius:8px;margin-bottom:18px;overflow:hidden;page-break-inside:avoid;}
-    .q-card-head{background:#f5f5f5;border-bottom:1.5px solid #e0e0e0;padding:9px 14px;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
-    .q-card-head .qno{font-size:11.5px;font-weight:bold;background:#1a237e;color:#fff;padding:2px 10px;border-radius:10px;flex-shrink:0;margin-top:2px;}
-    .q-card-head .qtext{font-size:13.5px;font-weight:bold;color:#1a1a2e;flex:1;}
-    .q-card-head .mks{font-size:11.5px;font-weight:bold;background:#c0392b;color:#fff;padding:2px 10px;border-radius:10px;flex-shrink:0;white-space:nowrap;margin-top:2px;}
+    /* Question card */
+    .q-card{border:1.5px solid #e0e0e0;border-radius:8px;margin-bottom:24px;overflow:hidden;page-break-inside:avoid;}
+    .q-card-head{background:#f5f5f5;border-bottom:1.5px solid #e0e0e0;padding:10px 16px;display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;}
+    .qno{font-size:11.5px;font-weight:bold;background:#1a237e;color:#fff;padding:3px 11px;border-radius:10px;flex-shrink:0;margin-top:2px;}
+    .qtext{font-size:13.5px;font-weight:bold;color:#1a1a2e;flex:1;min-width:200px;}
+    .mks{font-size:11.5px;font-weight:bold;background:#c0392b;color:#fff;padding:3px 11px;border-radius:10px;flex-shrink:0;margin-top:2px;}
 
-    /* ── Vertical answer body ── */
-    .ans-body{padding:12px 16px;display:flex;flex-direction:column;gap:0;}
-
-    /* Each row = one vertical line of the answer */
-    .arow{display:flex;align-items:baseline;padding:5px 0 5px 0;border-bottom:1px dashed #efefef;font-size:13.5px;line-height:1.75;}
+    /* Vertical answer rows */
+    .ans-body{padding:14px 18px;display:flex;flex-direction:column;gap:0;}
+    .arow{display:flex;align-items:baseline;padding:6px 0;border-bottom:1px dashed #efefef;font-size:13.5px;}
     .arow:last-child{border-bottom:none;}
-    .alabel{min-width:110px;max-width:110px;font-size:11px;font-weight:bold;text-transform:uppercase;letter-spacing:.3px;padding-right:8px;flex-shrink:0;color:#999;padding-top:2px;}
-    .asep{padding:0 5px;color:#ccc;flex-shrink:0;font-size:13px;}
-    .aexpr{flex:1;font-size:13.5px;color:#222;}
+    .alabel{min-width:120px;max-width:120px;font-size:11px;font-weight:bold;text-transform:uppercase;letter-spacing:.3px;padding-right:10px;flex-shrink:0;color:#aaa;}
+    .asep{padding:0 6px;color:#ccc;flex-shrink:0;}
+    .aexpr{flex:1;color:#222;}
 
-    /* Row colour themes */
-    .arow.def    .alabel,.arow.def  .aexpr{color:#1565c0;}
-    .arow.def    .aexpr{font-style:italic;}
-    .arow.form   .alabel{color:#6a1b9a;}
-    .arow.form   .aexpr{color:#6a1b9a;font-weight:bold;}
-    .arow.step   .alabel{color:#888;}
-    .arow.step   .aexpr{color:#333;}
-    .arow.ans    .alabel{color:#c0392b;}
-    .arow.ans    .aexpr{color:#c0392b;font-weight:bold;font-size:14px;}
-    .arow.note   .alabel{color:#e65100;}
-    .arow.note   .aexpr{color:#e65100;font-size:13px;}
-    .arow.verify .alabel,.arow.verify .aexpr{color:#2e7d32;font-style:italic;font-size:12.5px;}
-    .arow.dia    .alabel{color:#00838f;}
-    .arow.dia    .aexpr{color:#00838f;font-style:italic;font-size:13px;}
+    /* Row themes */
+    .arow.def    .alabel{color:#1565c0;} .arow.def    .aexpr{color:#1a237e;font-style:italic;}
+    .arow.form   .alabel{color:#6a1b9a;} .arow.form   .aexpr{color:#6a1b9a;font-weight:bold;}
+    .arow.step   .alabel{color:#888;}    .arow.step   .aexpr{color:#333;}
+    .arow.ans    .alabel{color:#c0392b;} .arow.ans    .aexpr{color:#c0392b;font-weight:bold;font-size:14px;}
+    .arow.note   .alabel{color:#e65100;} .arow.note   .aexpr{color:#e65100;font-size:13px;}
+    .arow.tip    .alabel{color:#2e7d32;} .arow.tip    .aexpr{color:#2e7d32;font-size:13px;}
+    .arow.verify .alabel{color:#00838f;} .arow.verify .aexpr{color:#00838f;font-style:italic;font-size:12.5px;}
+    .arow.exam   .alabel{color:#880e4f;} .arow.exam   .aexpr{color:#880e4f;font-size:13px;}
 
-    /* Diagram placeholder box */
-    .diag-box{border:1.5px dashed #90caf9;background:#e3f2fd;border-radius:6px;padding:10px 14px;margin:6px 0;font-size:12.5px;color:#1565c0;text-align:center;}
+    /* Diagram box */
+    .diag{border:1.5px dashed #90caf9;background:#e3f2fd;border-radius:6px;padding:12px 16px;margin:8px 0;font-size:12.5px;color:#1565c0;font-family:monospace;line-height:1.9;}
+    .diag small{font-size:11.5px;color:#1976d2;font-family:Arial,sans-serif;}
 
-    /* Year badge */
-    .yb{display:inline-block;font-size:10.5px;font-weight:bold;padding:1px 7px;border-radius:8px;margin-left:6px;vertical-align:middle;}
-    .y22{background:#c8e6c9;color:#1b5e20;}
-    .y23{background:#bbdefb;color:#0d47a1;}
-    .y24{background:#fff9c4;color:#f57f17;}
+    /* Concept box */
+    .concept{background:#fff8e1;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;padding:10px 14px;margin:8px 0;font-size:13px;color:#5d4037;}
+
+    /* Year badges */
+    .yb{display:inline-block;font-size:10.5px;font-weight:bold;padding:1px 8px;border-radius:8px;margin-left:6px;vertical-align:middle;}
+    .y22{background:#c8e6c9;color:#1b5e20;} .y23{background:#bbdefb;color:#0d47a1;} .y24{background:#fff9c4;color:#f57f17;}
 
     /* Print */
-    .print-btn{display:block;margin:28px auto 0;padding:10px 38px;background:#1a1a2e;color:#fff;border:none;font-size:15px;border-radius:5px;cursor:pointer;letter-spacing:1px;}
-    .print-btn:hover{background:#333;}
+    .print-btn{display:block;margin:28px auto 0;padding:10px 38px;background:#1a1a2e;color:#fff;border:none;font-size:15px;border-radius:5px;cursor:pointer;}
     .footer{text-align:center;margin-top:28px;font-size:12.5px;color:#555;border-top:2px double #1a1a2e;padding-top:12px;}
-
-    @media print{
-      body{background:#fff;padding:0;}
-      .page{box-shadow:none;border:none;padding:20px 30px;}
-      .no-print{display:none;}
-      .q-card{page-break-inside:avoid;}
-    }
-    @media(max-width:600px){
-      .page{padding:22px 16px;}
-      .alabel{min-width:80px;max-width:80px;}
-    }
+    @media print{body{background:#fff;padding:0;}.page{box-shadow:none;border:none;padding:20px 30px;}.no-print{display:none;}.q-card{page-break-inside:avoid;}}
+    @media(max-width:600px){.page{padding:20px 14px;}.alabel{min-width:80px;max-width:80px;}}
   </style>
 </head>
 <body>
 <div class="page">
 
-  <!-- Header -->
-  <div class="visions-header">
-    <div class="inst-name">Visions <span>Classes</span></div>
-    <div class="tagline">✦ &nbsp; Learn Today, Lead Tomorrow &nbsp; ✦</div>
+<div class="visions-header">
+  <div class="inst-name">Visions <span>Classes</span></div>
+  <div class="tagline">✦ &nbsp; Learn Today, Lead Tomorrow &nbsp; ✦</div>
+</div>
+<div class="sol-header">
+  <h1>Class XII Physics — Fully Detailed Solutions</h1>
+  <h2>Paper 1 &amp; Paper 2 &nbsp;|&nbsp; Section B (1 Mark) &amp; Section C (2 Marks) &nbsp;|&nbsp; With Concepts, Diagrams &amp; Tips</h2>
+  <span class="badge">Maharashtra State Board · By Shashikant Sir · Visions Classes Ambernath</span>
+</div>
+
+<!-- ═══════════════════════════ PAPER 1 ═══════════════════════════ -->
+<div class="paper-banner"><span class="ptitle">📄 PAPER 1 — DETAILED SOLUTIONS</span><span class="pbadge">Class XII Physics · Set 1</span></div>
+<div class="sec-head">SECTION B — Very Short Answer (1 Mark Each) <span class="sm">12 Questions · 8 × 1 = 8 Marks</span></div>
+
+<!-- B(i) Electric Flux -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">B·i</span><span class="qtext">Define electric flux. <span class="yb y24">2024</span></span><span class="mks">1 Mark</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr"><b>Electric flux (Φ<sub>E</sub>)</b> through a surface is defined as the total number of electric field lines passing normally (perpendicularly) through that surface.</span></div>
+    <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr"><b>Φ<sub>E</sub> = E · A · cosθ</b> &nbsp; where E = electric field (N/C), A = area of surface (m²), θ = angle between the electric field vector and the outward normal to the surface.</span></div>
+    <div class="arow step"><span class="alabel">When θ = 0°</span><span class="asep">:</span><span class="aexpr">Φ = EA (maximum) — field lines pass straight through, fully perpendicular to surface.</span></div>
+    <div class="arow step"><span class="alabel">When θ = 90°</span><span class="asep">:</span><span class="aexpr">Φ = 0 (minimum) — field lines are parallel to surface, none pass through it.</span></div>
+    <div class="arow step"><span class="alabel">SI Unit</span><span class="asep">:</span><span class="aexpr"><b>N·m²/C</b> or equivalently <b>V·m</b> (since 1 V = 1 N·m/C)</span></div>
+    <div class="arow step"><span class="alabel">Sign</span><span class="asep">:</span><span class="aexpr">Flux is <b>positive</b> when field lines leave the surface (outward); <b>negative</b> when field lines enter the surface (inward).</span></div>
+    <div class="concept">💡 <b>Gauss's Law connection:</b> Total electric flux through a closed surface = Q<sub>enc</sub>/ε₀. This makes electric flux extremely important in solving electrostatics problems.</div>
+    <div class="arow tip"><span class="alabel">Memory tip</span><span class="asep">:</span><span class="aexpr">Think of flux as "how much field goes through" — like counting the number of arrows piercing a window.</span></div>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Φ<sub>E</sub> = EA cosθ &nbsp;; Unit = N·m²/C &nbsp;; maximum when θ=0°, zero when θ=90°.</span></div>
   </div>
-  <div class="sol-header">
-    <h1>Class XII Physics — Detailed Solutions</h1>
-    <h2>Paper 1 &amp; Paper 2 &nbsp;|&nbsp; Section B (1 Mark) &amp; Section C (2 Marks)</h2>
-    <span class="badge">Maharashtra State Board · By Shashikant Sir</span>
+</div>
+
+<!-- B(ii) Ohm's Law -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">B·ii</span><span class="qtext">State Ohm's law. <span class="yb y23">2023</span></span><span class="mks">1 Mark</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Statement</span><span class="asep">:</span><span class="aexpr">At <b>constant temperature</b>, the electric current (I) flowing through a conductor is <b>directly proportional</b> to the potential difference (V) applied across its ends.</span></div>
+    <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr"><b>V = I × R</b> &nbsp; where R = resistance of the conductor (constant at fixed temperature). Also written as I = V/R.</span></div>
+    <div class="arow step"><span class="alabel">Graph</span><span class="asep">:</span><span class="aexpr">V vs I graph is a straight line through the origin (slope = R). A material obeying this is called an <b>ohmic conductor</b>.</span></div>
+    <div class="arow step"><span class="alabel">Unit of R</span><span class="asep">:</span><span class="aexpr">Ohm (Ω). 1 Ω = 1 V/A (when 1 V produces 1 A of current).</span></div>
+    <div class="arow note"><span class="alabel">Limitations</span><span class="asep">:</span><span class="aexpr">Ohm's law is NOT obeyed by: semiconductors (diodes, transistors), electrolytes, discharge tubes, thyristors — these are <b>non-ohmic</b> devices.</span></div>
+    <div class="concept">💡 <b>Microscopic form:</b> J = σE, where J = current density (A/m²), σ = conductivity, E = electric field. This is the more fundamental form of Ohm's law.</div>
+    <div class="arow tip"><span class="alabel">Exam tip</span><span class="asep">:</span><span class="aexpr">Always write "at constant temperature" — without this condition Ohm's law may not hold even for metals.</span></div>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">V ∝ I at constant temperature. V = IR. Valid for ohmic conductors only.</span></div>
   </div>
+</div>
 
-  <!-- ════════════════════════════════════════════════════
-       PAPER 1
-  ════════════════════════════════════════════════════ -->
-  <div class="paper-banner">
-    <span class="ptitle">📄 Paper 1 — Solutions</span>
-    <span class="pbadge">Class XII Physics · Set 1</span>
+<!-- B(iii) Magnetic Flux -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">B·iii</span><span class="qtext">Define magnetic flux and state its SI unit. <span class="yb y22">2022</span></span><span class="mks">1 Mark</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr"><b>Magnetic flux (Φ<sub>B</sub>)</b> through a surface is the total number of magnetic field lines passing normally through that surface. It is a measure of the total magnetic field passing through a given area.</span></div>
+    <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr"><b>Φ<sub>B</sub> = B · A · cosθ</b> &nbsp; where B = magnetic field (T), A = area (m²), θ = angle between B and the area vector (outward normal).</span></div>
+    <div class="arow step"><span class="alabel">Vector form</span><span class="asep">:</span><span class="aexpr">Φ<sub>B</sub> = <b>B</b> · <b>A</b> = BA cosθ (dot product of B and area vector)</span></div>
+    <div class="arow step"><span class="alabel">SI Unit</span><span class="asep">:</span><span class="aexpr"><b>Weber (Wb)</b>. &nbsp; 1 Wb = 1 T·m² = 1 V·s</span></div>
+    <div class="arow step"><span class="alabel">CGS Unit</span><span class="asep">:</span><span class="aexpr">Maxwell (Mx). 1 Wb = 10⁸ Mx</span></div>
+    <div class="concept">💡 <b>Faraday's law connection:</b> Induced EMF = −dΦ<sub>B</sub>/dt. The rate of change of magnetic flux determines the induced EMF. This is the foundation of all electrical generators.</div>
+    <div class="arow note"><span class="alabel">Important</span><span class="asep">:</span><span class="aexpr">For a closed surface, total magnetic flux is always <b>zero</b> (∮B·dA = 0) because magnetic monopoles do not exist — field lines always form closed loops.</span></div>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Φ<sub>B</sub> = BAcosθ &nbsp;; SI unit = <b>Weber (Wb)</b> = T·m²</span></div>
   </div>
+</div>
 
-  <!-- ── Section B Paper 1 ── -->
-  <div class="sec-head">Section B — Very Short Answer Questions (1 Mark Each) <span class="sm">8 × 1 = 8 Marks</span></div>
-
-  <!-- B(i) -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">B(i)</span>
-      <span class="qtext">Define electric flux. <span class="yb y24">2024</span></span>
-      <span class="mks">1 Mark</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr">Electric flux (Φ) is defined as the total number of electric field lines passing normally through a given surface area.</span></div>
-      <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr">Φ = E · A · cosθ &nbsp; where θ is the angle between <b>E</b> and the normal to the surface.</span></div>
-      <div class="arow step"><span class="alabel">SI Unit</span><span class="asep">:</span><span class="aexpr">N·m²/C &nbsp; (or &nbsp; V·m)</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Φ = E A cosθ &nbsp;; &nbsp; Unit = N·m²/C</span></div>
-    </div>
+<!-- B(iv) Power Factor -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">B·iv</span><span class="qtext">Define power factor of an AC circuit. <span class="yb y24">2024</span></span><span class="mks">1 Mark</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr"><b>Power factor</b> is the ratio of true (active/useful) power consumed to the apparent (total) power supplied in an AC circuit. It tells us how efficiently an AC circuit uses the supplied power.</span></div>
+    <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr"><b>Power factor = cosφ = R/Z</b> &nbsp; where φ = phase angle between voltage V and current I, R = resistance, Z = impedance.</span></div>
+    <div class="arow step"><span class="alabel">Also written</span><span class="asep">:</span><span class="aexpr">P<sub>true</sub> = V<sub>rms</sub> · I<sub>rms</sub> · cosφ &nbsp; and &nbsp; P<sub>apparent</sub> = V<sub>rms</sub> · I<sub>rms</sub></span></div>
+    <div class="arow step"><span class="alabel">Range</span><span class="asep">:</span><span class="aexpr">0 ≤ cosφ ≤ 1 (dimensionless)</span></div>
+    <div class="arow step"><span class="alabel">Pure resistor</span><span class="asep">:</span><span class="aexpr">cosφ = 1 (φ = 0°) → all power consumed as heat. <b>Best case.</b></span></div>
+    <div class="arow step"><span class="alabel">Pure L or C</span><span class="asep">:</span><span class="aexpr">cosφ = 0 (φ = 90°) → no power consumed (power just stored and returned). <b>Wattless current.</b></span></div>
+    <div class="arow step"><span class="alabel">At resonance</span><span class="asep">:</span><span class="aexpr">cosφ = 1 (Z = R, X<sub>L</sub> = X<sub>C</sub>) → maximum power transfer.</span></div>
+    <div class="concept">💡 <b>Practical importance:</b> Power companies penalise industries with low power factor (e.g., 0.6) because they draw more current than needed. Capacitor banks are added to correct power factor to ≈1.</div>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Power factor = cosφ = R/Z = True power / Apparent power. Range 0 to 1.</span></div>
   </div>
+</div>
 
-  <!-- B(ii) -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">B(ii)</span>
-      <span class="qtext">State Ohm's law. <span class="yb y23">2023</span></span>
-      <span class="mks">1 Mark</span>
+<!-- B(v) TIR -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">B·v</span><span class="qtext">What is total internal reflection (TIR)? <span class="yb y23">2023</span></span><span class="mks">1 Mark</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr"><b>Total Internal Reflection (TIR)</b> is the optical phenomenon where light traveling from a <b>denser medium</b> to a <b>rarer medium</b> is <b>completely reflected</b> back into the denser medium when the angle of incidence exceeds the critical angle. No refracted ray exists.</span></div>
+    <div class="arow step"><span class="alabel">Condition 1</span><span class="asep">:</span><span class="aexpr">Light must travel from <b>denser → rarer</b> medium (e.g., glass → air, water → air).</span></div>
+    <div class="arow step"><span class="alabel">Condition 2</span><span class="asep">:</span><span class="aexpr">Angle of incidence must be <b>greater than</b> the critical angle: <b>i &gt; i<sub>c</sub></b></span></div>
+    <div class="diag">
+      Denser medium (glass)<br/>
+      ─────────────────────────────<br/>
+      i&lt;ic → refracted ray exits &nbsp;|&nbsp; i=ic → refracted at 90° &nbsp;|&nbsp; i&gt;ic → TIR (no refracted ray)<br/>
+      Rarer medium (air)<br/>
+      <small>At i = ic: refracted ray grazes the surface (angle of refraction = 90°)</small>
     </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Statement</span><span class="asep">:</span><span class="aexpr">At constant temperature, the current (I) flowing through a conductor is directly proportional to the potential difference (V) across its ends.</span></div>
-      <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr">V = I × R &nbsp; where R = resistance of the conductor (constant at fixed temperature).</span></div>
-      <div class="arow note"><span class="alabel">Note</span><span class="asep">:</span><span class="aexpr">Ohm's law is valid for metallic conductors at constant temperature (not for semiconductors, diodes etc.).</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">V ∝ I &nbsp;⟹&nbsp; V = IR</span></div>
-    </div>
+    <div class="arow form"><span class="alabel">Critical angle</span><span class="asep">:</span><span class="aexpr">sin i<sub>c</sub> = n<sub>rarer</sub>/n<sub>denser</sub> = 1/n (for glass-air interface, sin i<sub>c</sub> = 1/1.5 → i<sub>c</sub> ≈ 42°)</span></div>
+    <div class="arow step"><span class="alabel">Applications</span><span class="asep">:</span><span class="aexpr"><b>1.</b> Optical fibres (communication, endoscopy) &nbsp; <b>2.</b> Diamond brilliance &nbsp; <b>3.</b> Mirage formation &nbsp; <b>4.</b> Periscope prisms &nbsp; <b>5.</b> Totally reflecting prisms (binoculars)</span></div>
+    <div class="concept">💡 <b>Optical fibre:</b> Light is trapped inside the glass core by TIR and travels thousands of km without loss. The core has higher refractive index than the cladding.</div>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Complete reflection of light at denser-rarer boundary when i &gt; i<sub>c</sub>. Conditions: denser→rarer medium AND i &gt; i<sub>c</sub>.</span></div>
   </div>
+</div>
 
-  <!-- B(iii) -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">B(iii)</span>
-      <span class="qtext">Define magnetic flux and state its SI unit. <span class="yb y22">2022</span></span>
-      <span class="mks">1 Mark</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr">Magnetic flux (Φ<sub>B</sub>) through a surface is the total number of magnetic field lines passing normally through that surface.</span></div>
-      <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr">Φ<sub>B</sub> = B · A · cosθ &nbsp; where θ = angle between <b>B</b> and area vector <b>A</b>.</span></div>
-      <div class="arow ans"><span class="alabel">SI Unit</span><span class="asep">:</span><span class="aexpr"><b>Weber (Wb)</b> &nbsp; [1 Wb = 1 T·m²]</span></div>
-    </div>
+<!-- B(vi) Work Function -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">B·vi</span><span class="qtext">Define work function of a metal. <span class="yb y22">2022</span></span><span class="mks">1 Mark</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr"><b>Work function (φ)</b> of a metal is the <b>minimum amount of energy</b> required to completely remove one electron from the surface of the metal against the attractive forces of the positive ions in the lattice.</span></div>
+    <div class="arow step"><span class="alabel">Why minimum?</span><span class="asep">:</span><span class="aexpr">Electrons at the surface need the least energy to escape (electrons deeper inside need more energy). Work function is for surface electrons.</span></div>
+    <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr"><b>φ = h · ν<sub>0</sub></b> &nbsp; where h = Planck's constant = 6.626 × 10⁻³⁴ J·s, ν<sub>0</sub> = threshold frequency</span></div>
+    <div class="arow step"><span class="alabel">Unit</span><span class="asep">:</span><span class="aexpr">Joule (J) in SI &nbsp;; in practice measured in <b>electron-volt (eV)</b>. 1 eV = 1.6 × 10⁻¹⁹ J</span></div>
+    <div class="arow step"><span class="alabel">Values</span><span class="asep">:</span><span class="aexpr">Caesium (Cs): ~2.0 eV (lowest) — used in photoelectric cells &nbsp;|&nbsp; Tungsten (W): ~4.5 eV &nbsp;|&nbsp; Platinum (Pt): ~5.7 eV (highest common metal)</span></div>
+    <div class="arow step"><span class="alabel">Einstein eq.</span><span class="asep">:</span><span class="aexpr">KE<sub>max</sub> = hν − φ → "energy of photon = work function + kinetic energy of electron"</span></div>
+    <div class="concept">💡 <b>Physical picture:</b> Imagine electrons trapped in a potential well. Work function = depth of the well. Only photons with E ≥ φ can kick the electron out.</div>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Minimum energy to eject an electron from metal surface. φ = hν<sub>0</sub>. Unit: eV or J. Depends on the metal.</span></div>
   </div>
+</div>
 
-  <!-- B(iv) -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">B(iv)</span>
-      <span class="qtext">Define power factor of an AC circuit. <span class="yb y24">2024</span></span>
-      <span class="mks">1 Mark</span>
+<!-- B(vii) Rectifier -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">B·vii</span><span class="qtext">What is a rectifier? <span class="yb y24">2024</span></span><span class="mks">1 Mark</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr">A <b>rectifier</b> is an electronic circuit (using one or more p-n junction diodes) that converts <b>alternating current (AC) into direct current (DC)</b> by allowing current to flow in only one direction.</span></div>
+    <div class="arow step"><span class="alabel">Principle</span><span class="asep">:</span><span class="aexpr">A p-n junction diode conducts in <b>forward bias</b> (low resistance, current flows) and blocks in <b>reverse bias</b> (high resistance, no current). This one-way property is used for rectification.</span></div>
+    <div class="arow step"><span class="alabel">Type 1</span><span class="asep">:</span><span class="aexpr"><b>Half-wave rectifier</b> — uses <u>one diode</u>. Only positive half cycles pass. Ripple frequency = f (input). Efficiency = 40.6%.</span></div>
+    <div class="arow step"><span class="alabel">Type 2</span><span class="asep">:</span><span class="aexpr"><b>Full-wave rectifier</b> — uses <u>two diodes</u> (centre-tap) or <u>four diodes</u> (bridge). Both half cycles pass. Ripple frequency = 2f. Efficiency = 81.2%.</span></div>
+    <div class="diag">
+      AC Input ~~~~ → [Transformer] → [Diode D] → [Load R<sub>L</sub>] → DC Output (pulsating)<br/>
+      Half-wave: only ⊕ half cycles appear at output<br/>
+      Full-wave bridge: both ⊕ and ⊖ half cycles converted to ⊕<br/>
+      <small>DC output is smoothed using a capacitor filter to reduce ripple</small>
     </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr">Power factor is the ratio of true (active) power to apparent power in an AC circuit.</span></div>
-      <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr">Power factor = cosφ = R/Z &nbsp; where φ = phase angle between V and I, Z = impedance.</span></div>
-      <div class="arow step"><span class="alabel">Range</span><span class="asep">:</span><span class="aexpr">0 ≤ cosφ ≤ 1 &nbsp;|&nbsp; For pure resistor: cosφ = 1 &nbsp;|&nbsp; For pure inductor/capacitor: cosφ = 0</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Power factor = cosφ = R/Z</span></div>
-    </div>
+    <div class="arow step"><span class="alabel">Filter</span><span class="asep">:</span><span class="aexpr">A capacitor (C filter) is connected in parallel with R<sub>L</sub> to smooth the pulsating DC into steady DC.</span></div>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Device that converts AC → DC using p-n junction diode. Types: half-wave (1 diode) and full-wave (2 or 4 diodes).</span></div>
   </div>
+</div>
 
-  <!-- B(v) -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">B(v)</span>
-      <span class="qtext">What is total internal reflection (TIR)? <span class="yb y23">2023</span></span>
-      <span class="mks">1 Mark</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr">Total Internal Reflection (TIR) is the phenomenon where light traveling from a denser medium to a rarer medium is completely reflected back into the denser medium when the angle of incidence exceeds the critical angle.</span></div>
-      <div class="arow step"><span class="alabel">Conditions</span><span class="asep">:</span><span class="aexpr">(1) Light must travel from denser → rarer medium. &nbsp; (2) Angle of incidence must be ≥ critical angle (i ≥ i<sub>c</sub>).</span></div>
-      <div class="arow note"><span class="alabel">Examples</span><span class="asep">:</span><span class="aexpr">Optical fibre, diamond sparkle, mirages, periscope prisms.</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Complete reflection of light back into denser medium when i ≥ i<sub>c</sub>.</span></div>
-    </div>
+<!-- B(viii) De Morgan -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">B·viii</span><span class="qtext">State De Morgan's second theorem. <span class="yb y23">2023</span></span><span class="mks">1 Mark</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Statement</span><span class="asep">:</span><span class="aexpr">The complement of the <b>OR</b> of two Boolean variables equals the <b>AND</b> of their individual complements.</span></div>
+    <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr"><b>(A + B)' = A' · B'</b> &nbsp; ← De Morgan's Second Theorem</span></div>
+    <div class="arow step"><span class="alabel">In words</span><span class="asep">:</span><span class="aexpr">NOT (A OR B) = (NOT A) AND (NOT B)</span></div>
+    <div class="arow step"><span class="alabel">Truth table proof</span><span class="asep">:</span><span class="aexpr">
+      A=0,B=0: (0+0)'=1 &nbsp;; 0'·0'=1·1=1 ✓<br/>
+      A=0,B=1: (0+1)'=0 &nbsp;; 0'·1'=1·0=0 ✓<br/>
+      A=1,B=0: (1+0)'=0 &nbsp;; 1'·0'=0·1=0 ✓<br/>
+      A=1,B=1: (1+1)'=0 &nbsp;; 1'·1'=0·0=0 ✓
+    </span></div>
+    <div class="arow step"><span class="alabel">First theorem</span><span class="asep">:</span><span class="aexpr"><b>(A · B)' = A' + B'</b> &nbsp; ← For comparison (NOT of AND = OR of NOTs)</span></div>
+    <div class="concept">💡 <b>Practical use:</b> De Morgan's theorems allow us to build any logic gate using only NAND gates or only NOR gates (universal gates). NOR gate is equivalent to (A+B)' = A'·B'.</div>
+    <div class="arow tip"><span class="alabel">Memory trick</span><span class="asep">:</span><span class="aexpr">"Break the bar, change the operator" → (A+B)' break the long bar over A+B → A'·B' (+ changed to ·)</span></div>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">(A + B)' = A' · B' &nbsp; [Second Theorem] &nbsp;|&nbsp; (A · B)' = A' + B' &nbsp; [First Theorem]</span></div>
   </div>
+</div>
 
-  <!-- B(vi) -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">B(vi)</span>
-      <span class="qtext">Define work function of a metal. <span class="yb y22">2022</span></span>
-      <span class="mks">1 Mark</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr">Work function (φ) of a metal is the minimum amount of energy required to completely remove one electron from the surface of the metal.</span></div>
-      <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr">φ = h × ν<sub>0</sub> &nbsp; where ν<sub>0</sub> = threshold frequency, h = Planck's constant.</span></div>
-      <div class="arow step"><span class="alabel">Unit</span><span class="asep">:</span><span class="aexpr">Joule (J) or electron-volt (eV)</span></div>
-      <div class="arow note"><span class="alabel">Note</span><span class="asep">:</span><span class="aexpr">Different metals have different work functions (e.g., Cs ≈ 2 eV, W ≈ 4.5 eV).</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Minimum energy to remove electron from metal surface. φ = hν<sub>0</sub>.</span></div>
-    </div>
+<!-- B(ix) Nuclear Binding Energy -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">B·ix</span><span class="qtext">Define nuclear binding energy. <span class="yb y22">2022</span></span><span class="mks">1 Mark</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr"><b>Nuclear binding energy (BE)</b> is the minimum energy required to completely separate all the nucleons (protons and neutrons) of a nucleus from one another to an infinite distance apart.</span></div>
+    <div class="arow step"><span class="alabel">Equivalently</span><span class="asep">:</span><span class="aexpr">It is the energy released when free protons and neutrons combine to form a nucleus. Higher binding energy = more stable nucleus.</span></div>
+    <div class="arow step"><span class="alabel">Mass defect</span><span class="asep">:</span><span class="aexpr">Δm = (Z·m<sub>p</sub> + N·m<sub>n</sub>) − M<sub>nucleus</sub> &nbsp; where Z = proton number, N = neutron number, M = actual nuclear mass</span></div>
+    <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr"><b>BE = Δm × c²</b> &nbsp; (Einstein's mass-energy relation, c = 3 × 10⁸ m/s)</span></div>
+    <div class="arow step"><span class="alabel">In MeV</span><span class="asep">:</span><span class="aexpr">BE = Δm × 931.5 MeV/u &nbsp; (1 u = 1.66 × 10⁻²⁷ kg = 931.5 MeV/c²)</span></div>
+    <div class="arow step"><span class="alabel">BE per nucleon</span><span class="asep">:</span><span class="aexpr">BE/A = binding energy per nucleon. Maximum ≈ 8.8 MeV at Fe-56 (most stable nucleus in the universe).</span></div>
+    <div class="concept">💡 <b>Why does nucleus stay together?</b> The strong nuclear force between nucleons is much stronger than the electrostatic repulsion between protons. Binding energy is the "cement" that holds the nucleus together.</div>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Energy to separate all nucleons. BE = Δm·c². More BE = more stable. Max BE/A at Fe-56.</span></div>
   </div>
+</div>
 
-  <!-- B(vii) -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">B(vii)</span>
-      <span class="qtext">What is a rectifier? <span class="yb y24">2024</span></span>
-      <span class="mks">1 Mark</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr">A rectifier is an electronic device (using a p-n junction diode) that converts alternating current (AC) into direct current (DC) by allowing current flow in only one direction.</span></div>
-      <div class="arow step"><span class="alabel">Types</span><span class="asep">:</span><span class="aexpr">(1) Half-wave rectifier — uses one diode, passes only positive half cycle.<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2) Full-wave rectifier — uses two or four diodes, passes both half cycles.</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Device that converts AC → DC using a p-n junction diode.</span></div>
-    </div>
+<!-- B(x) Critical Angle -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">B·x</span><span class="qtext">What is critical angle? On what factors does it depend? <span class="yb y24">2024</span></span><span class="mks">1 Mark</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr"><b>Critical angle (i<sub>c</sub>)</b> is the specific angle of incidence in the denser medium for which the angle of refraction in the rarer medium is <b>exactly 90°</b> (refracted ray grazes the interface).</span></div>
+    <div class="arow step"><span class="alabel">Physical meaning</span><span class="asep">:</span><span class="aexpr">At i = i<sub>c</sub>: refracted ray just grazes the surface. For i &gt; i<sub>c</sub>: Total Internal Reflection occurs (no refracted ray).</span></div>
+    <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr"><b>sin i<sub>c</sub> = n<sub>rarer</sub>/n<sub>denser</sub> = 1/n</b> &nbsp; (derived from Snell's law with r = 90°)</span></div>
+    <div class="arow step"><span class="alabel">Example</span><span class="asep">:</span><span class="aexpr">Glass (n=1.5) to Air (n=1): sin i<sub>c</sub> = 1/1.5 = 2/3 → i<sub>c</sub> ≈ <b>41.8° ≈ 42°</b></span></div>
+    <div class="arow step"><span class="alabel">Depends on 1</span><span class="asep">:</span><span class="aexpr"><b>Refractive indices</b> of both media — higher the refractive index of denser medium, smaller the critical angle.</span></div>
+    <div class="arow step"><span class="alabel">Depends on 2</span><span class="asep">:</span><span class="aexpr"><b>Wavelength (colour) of light</b> — since n varies with λ (dispersion), i<sub>c</sub> also varies. Violet light (smaller λ, larger n) has smaller i<sub>c</sub> than red light.</span></div>
+    <div class="arow step"><span class="alabel">Depends on 3</span><span class="asep">:</span><span class="aexpr"><b>Temperature</b> — refractive index changes slightly with temperature, so i<sub>c</sub> also changes slightly.</span></div>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">sin i<sub>c</sub> = 1/n. Depends on: refractive indices of media, wavelength of light, temperature.</span></div>
   </div>
+</div>
 
-  <!-- B(viii) -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">B(viii)</span>
-      <span class="qtext">State De Morgan's second theorem. <span class="yb y23">2023</span></span>
-      <span class="mks">1 Mark</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Statement</span><span class="asep">:</span><span class="aexpr">The complement of the OR of two variables equals the AND of their individual complements.</span></div>
-      <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr"><b>(A + B)' = A' · B'</b></span></div>
-      <div class="arow step"><span class="alabel">Meaning</span><span class="asep">:</span><span class="aexpr">NOT(A OR B) = (NOT A) AND (NOT B)</span></div>
-      <div class="arow note"><span class="alabel">Note</span><span class="asep">:</span><span class="aexpr">First theorem: (A · B)' = A' + B' &nbsp;|&nbsp; Second theorem: (A + B)' = A' · B'</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">(A + B)' = A' · B'</span></div>
-    </div>
+<!-- B(xi) Photon -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">B·xi</span><span class="qtext">What is a photon? State its properties. <span class="yb y23">2023</span></span><span class="mks">1 Mark</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr">A <b>photon</b> is the fundamental quantum (smallest discrete packet) of electromagnetic energy. It is a massless, chargeless particle that carries electromagnetic radiation. Proposed by Einstein (1905) to explain photoelectric effect.</span></div>
+    <div class="arow step"><span class="alabel">Property 1</span><span class="asep">:</span><span class="aexpr"><b>Energy:</b> E = hν = hc/λ &nbsp; (h = 6.626×10⁻³⁴ J·s, ν = frequency, λ = wavelength)</span></div>
+    <div class="arow step"><span class="alabel">Property 2</span><span class="asep">:</span><span class="aexpr"><b>Rest mass:</b> m₀ = 0 (but has relativistic energy and momentum)</span></div>
+    <div class="arow step"><span class="alabel">Property 3</span><span class="asep">:</span><span class="aexpr"><b>Speed:</b> c = 3 × 10⁸ m/s in vacuum (always — never slows down or speeds up in vacuum)</span></div>
+    <div class="arow step"><span class="alabel">Property 4</span><span class="asep">:</span><span class="aexpr"><b>Momentum:</b> p = h/λ = E/c = hν/c</span></div>
+    <div class="arow step"><span class="alabel">Property 5</span><span class="asep">:</span><span class="aexpr"><b>Charge:</b> Zero — photons are electrically neutral.</span></div>
+    <div class="arow step"><span class="alabel">Property 6</span><span class="asep">:</span><span class="aexpr"><b>Wave-particle duality:</b> Acts as a wave (interference, diffraction) and as a particle (photoelectric effect, Compton effect).</span></div>
+    <div class="concept">💡 <b>Visible light photon energy:</b> For λ = 500 nm (green), E = hc/λ = (6.626×10⁻³⁴ × 3×10⁸)/(500×10⁻⁹) ≈ 3.98×10⁻¹⁹ J ≈ 2.5 eV. Very tiny energy!</div>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Quantum of EM energy. E = hν; p = h/λ; m₀ = 0; charge = 0; speed = c; shows wave-particle duality.</span></div>
   </div>
+</div>
 
-  <!-- B(ix) -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">B(ix)</span>
-      <span class="qtext">Define nuclear binding energy. <span class="yb y22">2022</span></span>
-      <span class="mks">1 Mark</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr">Nuclear binding energy is the minimum energy required to completely separate all nucleons (protons and neutrons) in a nucleus to an infinite distance apart.</span></div>
-      <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr">BE = Δm × c² &nbsp; where Δm = mass defect = (sum of masses of free nucleons) − (actual nuclear mass).</span></div>
-      <div class="arow note"><span class="alabel">Note</span><span class="asep">:</span><span class="aexpr">Higher binding energy per nucleon = more stable nucleus. Fe-56 has highest BE/A ≈ 8.8 MeV.</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Energy to separate all nucleons. BE = Δm·c².</span></div>
-    </div>
+<!-- B(xii) Coulomb's Law -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">B·xii</span><span class="qtext">State Coulomb's law of electrostatics. <span class="yb y22">2022</span></span><span class="mks">1 Mark</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Statement</span><span class="asep">:</span><span class="aexpr">The electrostatic force between two <b>point charges</b> is <b>directly proportional</b> to the product of the magnitudes of the charges and <b>inversely proportional</b> to the <b>square of the distance</b> between them. The force acts along the line joining the two charges.</span></div>
+    <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr"><b>F = k·q₁·q₂/r²</b> &nbsp; where k = 1/(4πε₀) = 9 × 10⁹ N·m²/C² (Coulomb's constant)</span></div>
+    <div class="arow step"><span class="alabel">In vector form</span><span class="asep">:</span><span class="aexpr"><b>F</b> = (kq₁q₂/r²) r̂ &nbsp; (r̂ = unit vector from q₁ to q₂; positive = repulsive, negative = attractive)</span></div>
+    <div class="arow step"><span class="alabel">Direction</span><span class="asep">:</span><span class="aexpr">Like charges (++ or −−): <b>repulsive</b> (force pushes apart). Unlike charges (+−): <b>attractive</b> (force pulls together).</span></div>
+    <div class="arow step"><span class="alabel">In medium</span><span class="asep">:</span><span class="aexpr">F = kq₁q₂/(Kr²) where K = dielectric constant. Medium <b>reduces</b> the force by factor K.</span></div>
+    <div class="arow step"><span class="alabel">Inverse sq. law</span><span class="asep">:</span><span class="aexpr">Double the distance → force becomes 1/4th. Triple → 1/9th. Very similar to Newton's gravitational law.</span></div>
+    <div class="concept">💡 <b>Comparison with gravity:</b> Both are inverse square laws. But Coulomb force can be attractive OR repulsive; gravity is always attractive. Coulomb force is ~10³⁶ times stronger than gravity between proton and electron!</div>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">F = kq₁q₂/r². Inverse square law. Acts along line joining charges. Like charges repel, unlike attract.</span></div>
   </div>
+</div>
 
-  <!-- B(x) -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">B(x)</span>
-      <span class="qtext">What is critical angle? On what factors does it depend? <span class="yb y24">2024</span></span>
-      <span class="mks">1 Mark</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr">Critical angle (i<sub>c</sub>) is the angle of incidence in the denser medium for which the angle of refraction in the rarer medium is exactly 90°.</span></div>
-      <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr">sin i<sub>c</sub> = n₂/n₁ = 1/n &nbsp; (where n = refractive index of denser w.r.t. rarer medium)</span></div>
-      <div class="arow step"><span class="alabel">Depends on</span><span class="asep">:</span><span class="aexpr">(1) Refractive indices of the two media. &nbsp; (2) Wavelength (colour) of light — violet has smaller i<sub>c</sub> than red.</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">sin i<sub>c</sub> = 1/n &nbsp;; depends on refractive indices and wavelength of light.</span></div>
-    </div>
+<!-- ═══════ PAPER 1 SECTION C ═══════ -->
+<div class="sec-head">SECTION C — Short Answer Questions (2 Marks Each) <span class="sm">12 Questions · 8 × 2 = 16 Marks</span></div>
+
+<!-- C(i) Energy in Capacitor -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">C·i</span><span class="qtext">Derive the expression for energy stored in a capacitor. <span class="yb y24">2024</span></span><span class="mks">2 Marks</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Concept</span><span class="asep">:</span><span class="aexpr">When a capacitor is charged, work is done to push charge against the existing electric field. This work is stored as <b>electrostatic potential energy</b> in the capacitor (between the plates).</span></div>
+    <div class="arow step"><span class="alabel">Setup</span><span class="asep">:</span><span class="aexpr">Capacitor C being charged from 0 to Q. At any instant, charge = q → voltage = q/C.</span></div>
+    <div class="arow step"><span class="alabel">Small work dW</span><span class="asep">:</span><span class="aexpr">To add a small charge dq against voltage q/C: &nbsp; <b>dW = V · dq = (q/C) · dq</b></span></div>
+    <div class="arow form"><span class="alabel">Total work W</span><span class="asep">:</span><span class="aexpr">W = ∫₀<sup>Q</sup> (q/C) dq = (1/C) · [q²/2]₀<sup>Q</sup> = <b>Q²/(2C)</b></span></div>
+    <div class="arow step"><span class="alabel">Substitute Q=CV</span><span class="asep">:</span><span class="aexpr">W = (CV)²/(2C) = <b>½CV²</b> &nbsp; Also: W = ½QV</span></div>
+    <div class="arow ans"><span class="alabel">∴ Energy U</span><span class="asep">:</span><span class="aexpr"><b>U = ½CV² = ½QV = Q²/(2C)</b> &nbsp; (all three forms are equivalent)</span></div>
+    <div class="arow step"><span class="alabel">Energy density</span><span class="asep">:</span><span class="aexpr">u = U/(volume) = ½ε₀E² J/m³ — energy per unit volume stored in electric field between plates.</span></div>
+    <div class="concept">💡 <b>Numerical:</b> C = 10 μF, V = 100 V → U = ½ × 10×10⁻⁶ × 100² = ½ × 10⁻⁵ × 10⁴ = 0.05 J = 50 mJ. This is stored in the electric field, not in the plates.</div>
+    <div class="arow exam"><span class="alabel">Exam note</span><span class="asep">:</span><span class="aexpr">Write all three forms: U = ½CV² = ½QV = Q²/2C. Also state that energy is stored in the electric field between the plates.</span></div>
   </div>
+</div>
 
-  <!-- B(xi) -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">B(xi)</span>
-      <span class="qtext">What is a photon? State its properties. <span class="yb y23">2023</span></span>
-      <span class="mks">1 Mark</span>
+<!-- C(ii) KCL -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">C·ii</span><span class="qtext">Explain Kirchhoff's current law (KCL) with a diagram. <span class="yb y23">2023</span></span><span class="mks">2 Marks</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">KCL Statement</span><span class="asep">:</span><span class="aexpr"><b>At any node (junction) in an electrical circuit, the algebraic sum of all currents is zero.</b> Equivalently: the total current entering a node equals the total current leaving it at every instant.</span></div>
+    <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr"><b>ΣI<sub>in</sub> = ΣI<sub>out</sub></b> &nbsp; or &nbsp; <b>ΣI = 0</b> (taking inward as +ve, outward as −ve)</span></div>
+    <div class="diag">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I₁=3A&nbsp;→ ●&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← I₂=2A<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Node J)<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I₃=?↓<br/>
+      KCL: I₁ + I₂ = I₃ → 3 + 2 = 5A (leaving node)<br/>
+      <small>Total entering (I₁+I₂=5A) = Total leaving (I₃=5A)</small>
     </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr">A photon is a quantum (packet) of electromagnetic energy. It is the basic particle of light proposed by Einstein.</span></div>
-      <div class="arow step"><span class="alabel">Properties</span><span class="asep">:</span><span class="aexpr">
-        (1) Energy: E = hν = hc/λ<br/>
-        (2) Rest mass = 0 &nbsp;(but has relativistic mass)<br/>
-        (3) Speed = c = 3 × 10⁸ m/s in vacuum<br/>
-        (4) Momentum: p = h/λ = E/c<br/>
-        (5) No charge; travels in straight line.
-      </span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Quantum of EM energy. E = hν; p = h/λ; m₀ = 0; speed = c.</span></div>
-    </div>
+    <div class="arow step"><span class="alabel">Physical basis</span><span class="asep">:</span><span class="aexpr">Based on <b>conservation of electric charge</b> — charge cannot accumulate at a node. Whatever charge enters must leave immediately.</span></div>
+    <div class="arow step"><span class="alabel">Sign convention</span><span class="asep">:</span><span class="aexpr">Currents <b>flowing into</b> the node: taken as <b>positive (+)</b>. Currents <b>flowing out of</b> the node: taken as <b>negative (−)</b>.</span></div>
+    <div class="arow step"><span class="alabel">Application</span><span class="asep">:</span><span class="aexpr">Used with KVL to solve complex circuit networks (mesh analysis, nodal analysis). Essential for circuit analysis.</span></div>
+    <div class="concept">💡 <b>Water analogy:</b> At a pipe junction, the total flow of water in = total flow of water out. Similarly, current (charge flow) cannot disappear at a node.</div>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">ΣI<sub>in</sub> = ΣI<sub>out</sub> at every node. Based on charge conservation. Draw diagram with currents labeled.</span></div>
   </div>
+</div>
 
-  <!-- B(xii) -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">B(xii)</span>
-      <span class="qtext">State Coulomb's law of electrostatics. <span class="yb y22">2022</span></span>
-      <span class="mks">1 Mark</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Statement</span><span class="asep">:</span><span class="aexpr">The electrostatic force between two point charges is directly proportional to the product of the charges and inversely proportional to the square of the distance between them.</span></div>
-      <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr">F = k·q₁·q₂/r² &nbsp; where k = 1/(4πε₀) = 9 × 10⁹ N·m²/C²</span></div>
-      <div class="arow step"><span class="alabel">Direction</span><span class="asep">:</span><span class="aexpr">Along the line joining the two charges. Like charges repel; unlike charges attract.</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">F = kq₁q₂/r² &nbsp;; acts along the line joining the charges.</span></div>
-    </div>
+<!-- C(iii) Max EMF -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">C·iii</span><span class="qtext">Coil: N=50, A=0.02 m², B=0.4 T, f=60 Hz. Find maximum EMF. <span class="yb y22">2022</span></span><span class="mks">2 Marks</span></div>
+  <div class="ans-body">
+    <div class="arow step"><span class="alabel">Given</span><span class="asep">:</span><span class="aexpr">N = 50 turns, A = 0.02 m², B = 0.4 T, f = 60 Hz</span></div>
+    <div class="arow step"><span class="alabel">Concept</span><span class="asep">:</span><span class="aexpr">A coil rotating in a uniform magnetic field generates EMF. When coil is parallel to B (plane ⊥ to B), EMF is maximum.</span></div>
+    <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr"><b>E<sub>max</sub> = NBAω = NBA(2πf)</b></span></div>
+    <div class="arow step"><span class="alabel">Step 1: ω</span><span class="asep">:</span><span class="aexpr">ω = 2πf = 2π × 60 = 120π ≈ 376.99 rad/s</span></div>
+    <div class="arow step"><span class="alabel">Step 2: NBA</span><span class="asep">:</span><span class="aexpr">N×B×A = 50 × 0.4 × 0.02 = <b>0.4 Wb</b></span></div>
+    <div class="arow step"><span class="alabel">Step 3: E<sub>max</sub></span><span class="asep">:</span><span class="aexpr">E<sub>max</sub> = 0.4 × 120π = 48π ≈ <b>150.8 V</b></span></div>
+    <div class="arow ans"><span class="alabel">∴ E<sub>max</sub></span><span class="asep">=</span><span class="aexpr"><b>48π V ≈ 150.8 V</b></span></div>
+    <div class="arow note"><span class="alabel">Full expression</span><span class="asep">:</span><span class="aexpr">e = E<sub>max</sub> sinωt = 150.8 sin(120πt) V — instantaneous EMF as a function of time.</span></div>
   </div>
+</div>
 
-  <!-- ── Section C Paper 1 ── -->
-  <div class="sec-head">Section C — Short Answer Questions (2 Marks Each) <span class="sm">8 × 2 = 16 Marks</span></div>
-
-  <!-- C(i) -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">C(i)</span>
-      <span class="qtext">Derive the expression for energy stored in a capacitor. <span class="yb y24">2024</span></span>
-      <span class="mks">2 Marks</span>
+<!-- C(iv) Step-up Transformer -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">C·iv</span><span class="qtext">Draw circuit diagram of a step-up transformer and label its parts. <span class="yb y24">2024</span></span><span class="mks">2 Marks</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Principle</span><span class="asep">:</span><span class="aexpr">A transformer works on <b>mutual electromagnetic induction</b>. AC in primary creates changing magnetic flux in the iron core, which induces an EMF in the secondary coil.</span></div>
+    <div class="diag">
+      ┌──────────────────────────────────────────────────────┐<br/>
+      │ &nbsp;&nbsp;Primary coil (N<sub>P</sub>)&nbsp;&nbsp;[Laminated Iron Core]&nbsp;&nbsp;Secondary coil (N<sub>S</sub>) │<br/>
+      │ ~~~⊂⊃⊂⊃⊂⊃──────[▓▓▓▓▓]──────⊂⊃⊂⊃⊂⊃⊂⊃⊂⊃~~~│<br/>
+      │ &nbsp;&nbsp;&nbsp;AC Input V<sub>P</sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Output V<sub>S</sub>&gt;V<sub>P</sub> │<br/>
+      │ &nbsp;&nbsp;&nbsp;&nbsp;(N<sub>P</sub> turns) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(N<sub>S</sub> &gt; N<sub>P</sub>) │<br/>
+      └──────────────────────────────────────────────────────┘<br/>
+      <small>Parts: 1.Primary coil 2.Secondary coil 3.Laminated silicon steel core 4.Input terminals 5.Output terminals</small>
     </div>
-    <div class="ans-body">
-      <div class="arow step"><span class="alabel">Setup</span><span class="asep">:</span><span class="aexpr">Let a capacitor of capacitance C be charged gradually from 0 to charge Q (voltage 0 to V).</span></div>
-      <div class="arow step"><span class="alabel">At instant</span><span class="asep">:</span><span class="aexpr">When charge on capacitor = q, voltage = q/C.</span></div>
-      <div class="arow step"><span class="alabel">Small work</span><span class="asep">:</span><span class="aexpr">dW = V · dq = (q/C) · dq</span></div>
-      <div class="arow form"><span class="alabel">Total work</span><span class="asep">:</span><span class="aexpr">W = ∫₀<sup>Q</sup> (q/C) dq = [q²/2C]₀<sup>Q</sup> = Q²/2C</span></div>
-      <div class="arow step"><span class="alabel">Substitute</span><span class="asep">:</span><span class="aexpr">Q = CV &nbsp;⟹&nbsp; W = (CV)²/2C = ½CV²</span></div>
-      <div class="arow ans"><span class="alabel">∴ Energy</span><span class="asep">:</span><span class="aexpr"><b>U = ½CV² = ½QV = Q²/2C</b></span></div>
-      <div class="arow note"><span class="alabel">Units</span><span class="asep">:</span><span class="aexpr">Joules (J). This energy is stored in the electric field between the plates.</span></div>
-    </div>
+    <div class="arow step"><span class="alabel">Step-up condition</span><span class="asep">:</span><span class="aexpr"><b>N<sub>S</sub> &gt; N<sub>P</sub></b> → Voltage increases, current decreases (energy conserved).</span></div>
+    <div class="arow form"><span class="alabel">Turns ratio</span><span class="asep">:</span><span class="aexpr"><b>V<sub>S</sub>/V<sub>P</sub> = N<sub>S</sub>/N<sub>P</sub> = I<sub>P</sub>/I<sub>S</sub></b> (for ideal transformer)</span></div>
+    <div class="arow step"><span class="alabel">Why laminated?</span><span class="asep">:</span><span class="aexpr">Laminated iron core reduces <b>eddy current losses</b> (thin layers insulated from each other → induced eddy currents are small).</span></div>
+    <div class="arow step"><span class="alabel">Losses in real transformer</span><span class="asep">:</span><span class="aexpr">1. Copper loss (I²R in coils) &nbsp; 2. Iron loss (eddy currents + hysteresis) &nbsp; 3. Flux leakage &nbsp; 4. Humming (mechanical)</span></div>
+    <div class="concept">💡 <b>Why AC only?</b> Transformer needs changing flux (dΦ/dt) to induce EMF. DC gives constant flux → dΦ/dt = 0 → no induced EMF. Transformers are used at every step of power transmission.</div>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Step-up: N<sub>S</sub> &gt; N<sub>P</sub>. V<sub>S</sub>/V<sub>P</sub> = N<sub>S</sub>/N<sub>P</sub>. Parts: primary coil, secondary coil, laminated iron core.</span></div>
   </div>
+</div>
 
-  <!-- C(ii) -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">C(ii)</span>
-      <span class="qtext">Explain Kirchhoff's current law (KCL) with a diagram. <span class="yb y23">2023</span></span>
-      <span class="mks">2 Marks</span>
+<!-- C(v) Huygens' Principle -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">C·v</span><span class="qtext">Explain Huygens' principle of wave propagation. <span class="yb y23">2023</span></span><span class="mks">2 Marks</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Huygens' Principle</span><span class="asep">:</span><span class="aexpr">Every point on a given wavefront acts as a <b>new independent source of secondary spherical wavelets</b>, which spread out in all directions with the <b>same speed</b> as the original wave. The new wavefront at a later time is the <b>common tangent (envelope)</b> to all these secondary wavelets.</span></div>
+    <div class="diag">
+      Plane wavefront W₁ at time t=0:<br/>
+      A •───────────────────── • B<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;↓secondary wavelets↓<br/>
+      A'•───────────────────── •B'<br/>
+      New wavefront W₂ at time t=Δt (envelope of wavelets)<br/>
+      <small>Each point A, B emits a spherical wavelet of radius cΔt. Tangent to all wavelets = W₂.</small>
     </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">KCL Statement</span><span class="asep">:</span><span class="aexpr">The algebraic sum of all currents meeting at a junction (node) in a circuit is zero. (Equivalently: sum of currents entering = sum of currents leaving.)</span></div>
-      <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr">ΣI = 0 &nbsp; at a node &nbsp;⟹&nbsp; I₁ + I₂ = I₃ + I₄ (for a 4-wire node)</span></div>
-      <div class="arow dia"><span class="alabel">Diagram</span><span class="asep">:</span><span class="aexpr">Junction with I₁, I₂ entering and I₃, I₄ leaving → KCL: I₁ + I₂ = I₃ + I₄</span></div>
-      <div class="diag-box">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I₁ →&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← I₂<br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● (Node)<br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;I₃ ↓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓ I₄<br/>
-        <small>Currents IN: I₁ + I₂ &nbsp;|&nbsp; Currents OUT: I₃ + I₄ &nbsp;|&nbsp; KCL: I₁ + I₂ = I₃ + I₄</small>
-      </div>
-      <div class="arow step"><span class="alabel">Basis</span><span class="asep">:</span><span class="aexpr">Based on <b>conservation of electric charge</b> — charge cannot accumulate at a junction.</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">ΣI<sub>in</sub> = ΣI<sub>out</sub> at every node. Based on charge conservation.</span></div>
-    </div>
+    <div class="arow step"><span class="alabel">Forward envelope</span><span class="asep">:</span><span class="aexpr">Only the <b>forward envelope</b> is taken (backward wave is not observed due to superposition — it cancels out).</span></div>
+    <div class="arow step"><span class="alabel">Wavefront types</span><span class="asep">:</span><span class="aexpr">Point source → <b>spherical</b> wavefront. Line source → <b>cylindrical</b>. Very distant source → <b>plane</b> wavefront.</span></div>
+    <div class="arow step"><span class="alabel">Applications</span><span class="asep">:</span><span class="aexpr"><b>1.</b> Explains reflection of light &nbsp; <b>2.</b> Explains refraction (Snell's law derivation) &nbsp; <b>3.</b> Explains diffraction &nbsp; <b>4.</b> Explains interference</span></div>
+    <div class="concept">💡 <b>Why does light travel in straight lines?</b> For plane waves, all secondary wavelets have the same radius, and their envelope is another plane — so wavefront moves straight forward. This explains rectilinear propagation of light.</div>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Every wavefront point = secondary source. New wavefront = envelope of secondary wavelets. Explains reflection, refraction, diffraction.</span></div>
   </div>
+</div>
 
-  <!-- C(iii) -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">C(iii)</span>
-      <span class="qtext">Coil: 50 turns, A = 0.02 m², B = 0.4 T, f = 60 Hz. Find max EMF. <span class="yb y22">2022</span></span>
-      <span class="mks">2 Marks</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow step"><span class="alabel">Given</span><span class="asep">:</span><span class="aexpr">N = 50 turns, A = 0.02 m², B = 0.4 T, f = 60 Hz</span></div>
-      <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr">E<sub>max</sub> = NBAω = NBA(2πf)</span></div>
-      <div class="arow step"><span class="alabel">ω</span><span class="asep">=</span><span class="aexpr">2π × 60 = 120π rad/s</span></div>
-      <div class="arow step"><span class="alabel">Substitute</span><span class="asep">:</span><span class="aexpr">E<sub>max</sub> = 50 × 0.4 × 0.02 × 120π</span></div>
-      <div class="arow step"><span class="alabel">Calculate</span><span class="asep">:</span><span class="aexpr">= 50 × 0.4 × 0.02 × 376.99 = 50 × 0.4 × 7.54</span></div>
-      <div class="arow step"><span class="alabel">Simplify</span><span class="asep">:</span><span class="aexpr">= 50 × 3.016 = 150.8</span></div>
-      <div class="arow ans"><span class="alabel">∴ E<sub>max</sub></span><span class="asep">=</span><span class="aexpr"><b>≈ 150.8 V &nbsp; (or 48π V ≈ 150.8 V)</b></span></div>
-    </div>
+<!-- C(vi) Laws of Photoelectric Effect -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">C·vi</span><span class="qtext">State the laws of photoelectric effect. <span class="yb y22">2022</span></span><span class="mks">2 Marks</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr"><b>Photoelectric effect:</b> Emission of electrons from a metal surface when light of suitable frequency falls on it. Discovered by Hertz (1887), explained by Einstein (1905) — Nobel Prize 1921.</span></div>
+    <div class="arow step"><span class="alabel">Law 1 — Threshold</span><span class="asep">:</span><span class="aexpr">Photoelectric emission occurs <b>only if</b> the frequency of incident light ν ≥ threshold frequency ν₀ (characteristic of metal). <b>Below ν₀ → no emission</b>, however intense the light.</span></div>
+    <div class="arow step"><span class="alabel">Law 2 — KE vs ν</span><span class="asep">:</span><span class="aexpr">The <b>maximum kinetic energy (KE<sub>max</sub>)</b> of the emitted electrons depends <b>only on the frequency</b> of incident light, <b>NOT on intensity</b>. KE<sub>max</sub> increases linearly with ν.</span></div>
+    <div class="arow step"><span class="alabel">Law 3 — Intensity</span><span class="asep">:</span><span class="aexpr">The <b>number of photoelectrons</b> emitted per second is <b>directly proportional to the intensity</b> of incident light (for ν ≥ ν₀).</span></div>
+    <div class="arow step"><span class="alabel">Law 4 — Instantaneous</span><span class="asep">:</span><span class="aexpr">Photoelectric emission is <b>instantaneous</b> — it occurs within 10⁻⁹ seconds of light falling on metal, with no time lag, even at very low intensities.</span></div>
+    <div class="arow form"><span class="alabel">Einstein's equation</span><span class="asep">:</span><span class="aexpr"><b>KE<sub>max</sub> = hν − φ = hν − hν₀ = h(ν − ν₀)</b></span></div>
+    <div class="arow step"><span class="alabel">Stopping potential</span><span class="asep">:</span><span class="aexpr">eV₀ = KE<sub>max</sub> → V₀ = KE<sub>max</sub>/e &nbsp; (minimum retarding voltage to stop all photoelectrons)</span></div>
+    <div class="concept">💡 <b>Why wave theory fails:</b> Wave theory predicts (1) any frequency should work at sufficient intensity — WRONG; (2) time delay for energy accumulation — WRONG. Only quantum (photon) theory explains all 4 laws.</div>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">4 laws: (1) ν≥ν₀ needed (2) KE depends only on ν (3) count ∝ intensity (4) instantaneous. Einstein: KE<sub>max</sub> = hν − φ.</span></div>
   </div>
+</div>
 
-  <!-- C(iv) -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">C(iv)</span>
-      <span class="qtext">Draw the circuit diagram of a step-up transformer and label its parts. <span class="yb y24">2024</span></span>
-      <span class="mks">2 Marks</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Principle</span><span class="asep">:</span><span class="aexpr">Based on mutual electromagnetic induction. AC input in primary coil induces varying EMF in secondary coil.</span></div>
-      <div class="diag-box">
-        ┌─────────────────────────────────────────┐<br/>
-        │ AC Input (V<sub>P</sub>)    Iron Core    Output (V<sub>S</sub> &gt; V<sub>P</sub>) │<br/>
-        │ ~~~⊂⊃⊂⊃⊂⊃⊂⊃──[Iron Core]──⊂⊃⊂⊃⊂⊃⊂⊃⊂⊃⊂⊃ ~~~│<br/>
-        │ Primary Coil (N<sub>P</sub> turns)   Secondary Coil (N<sub>S</sub> turns, N<sub>S</sub> &gt; N<sub>P</sub>) │<br/>
-        └─────────────────────────────────────────┘<br/>
-        <small>Step-up: N<sub>S</sub> &gt; N<sub>P</sub> → V<sub>S</sub> &gt; V<sub>P</sub> but I<sub>S</sub> &lt; I<sub>P</sub></small>
-      </div>
-      <div class="arow step"><span class="alabel">Parts</span><span class="asep">:</span><span class="aexpr">Primary coil (N<sub>P</sub>), Secondary coil (N<sub>S</sub> &gt; N<sub>P</sub>), Laminated iron core, Input terminals, Output terminals.</span></div>
-      <div class="arow form"><span class="alabel">Ratio</span><span class="asep">:</span><span class="aexpr">V<sub>S</sub>/V<sub>P</sub> = N<sub>S</sub>/N<sub>P</sub> &gt; 1 &nbsp;(voltage increases, current decreases)</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Step-up: N<sub>S</sub> &gt; N<sub>P</sub> &nbsp;; V<sub>S</sub>/V<sub>P</sub> = N<sub>S</sub>/N<sub>P</sub></span></div>
-    </div>
+<!-- C(vii) Bohr Orbit Radius -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">C·vii</span><span class="qtext">Derive the radius of the n<sup>th</sup> Bohr orbit in hydrogen atom. <span class="yb y24">2024</span></span><span class="mks">2 Marks</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Bohr's model</span><span class="asep">:</span><span class="aexpr">Electrons revolve in fixed circular orbits without radiating energy. Centripetal force = Electrostatic attraction between electron and proton.</span></div>
+    <div class="arow form"><span class="alabel">Force balance</span><span class="asep">:</span><span class="aexpr">mv²/r = ke²/r² &nbsp;⟹&nbsp; <b>mv²r = ke²</b> &nbsp;…(1) &nbsp;[k = 9×10⁹ N·m²/C², e = 1.6×10⁻¹⁹ C]</span></div>
+    <div class="arow form"><span class="alabel">Quantisation</span><span class="asep">:</span><span class="aexpr">Angular momentum: <b>mvr = nh/(2π)</b> = nℏ &nbsp;…(2) &nbsp;[n = 1, 2, 3, ... (principal quantum number)]</span></div>
+    <div class="arow step"><span class="alabel">From (2)</span><span class="asep">:</span><span class="aexpr">v = nh/(2πmr) &nbsp;…(3)</span></div>
+    <div class="arow step"><span class="alabel">Substitute (3) in (1)</span><span class="asep">:</span><span class="aexpr">m × [nh/(2πmr)]² / r = ke²/r² &nbsp;⟹&nbsp; m × n²h²/(4π²m²r²) = ke²/r</span></div>
+    <div class="arow step"><span class="alabel">Simplify</span><span class="asep">:</span><span class="aexpr">n²h²/(4π²mr) = ke² &nbsp;⟹&nbsp; r = n²h²/(4π²mke²)</span></div>
+    <div class="arow ans"><span class="alabel">∴ r<sub>n</sub></span><span class="asep">=</span><span class="aexpr"><b>r<sub>n</sub> = n² × a₀</b> &nbsp; where a₀ = h²/(4π²mke²) = <b>0.529 Å</b> = 0.529 × 10⁻¹⁰ m (Bohr radius)</span></div>
+    <div class="arow step"><span class="alabel">Values</span><span class="asep">:</span><span class="aexpr">r₁ = 0.529 Å &nbsp;|&nbsp; r₂ = 4 × 0.529 = 2.116 Å &nbsp;|&nbsp; r₃ = 9 × 0.529 = 4.76 Å &nbsp;|&nbsp; r<sub>n</sub> ∝ n²</span></div>
+    <div class="concept">💡 Radius increases as n² — orbit spacing gets larger as we go further from nucleus. This is why atoms mostly empty space!</div>
+    <div class="arow exam"><span class="alabel">Write clearly</span><span class="asep">:</span><span class="aexpr">State both Bohr's postulates (equations 1 and 2), eliminate v, solve for r. Final answer: r<sub>n</sub> = n²a₀.</span></div>
   </div>
+</div>
 
-  <!-- C(v) -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">C(v)</span>
-      <span class="qtext">Explain Huygens' principle of wave propagation. <span class="yb y23">2023</span></span>
-      <span class="mks">2 Marks</span>
+<!-- C(viii) Half-Wave Rectifier -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">C·viii</span><span class="qtext">Draw circuit of half-wave rectifier and explain its working. <span class="yb y23">2023</span></span><span class="mks">2 Marks</span></div>
+  <div class="ans-body">
+    <div class="diag">
+      Circuit: AC~~ → [Transformer T] → [Diode D] → [R<sub>L</sub>] → Ground<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑ Forward biased (+ve half)<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓ Reverse biased (−ve half)<br/>
+      Input: ~~~∿∿∿∿∿ (AC sinewave)<br/>
+      Output: ⌒⌒⌒⌒⌒ (only +ve half cycles, pulsating DC)<br/>
+      <small>One diode D, transformer T (optional), load resistor R<sub>L</sub></small>
     </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Principle</span><span class="asep">:</span><span class="aexpr">Every point on a wavefront acts as a new source of secondary wavelets that spread out in all directions with the same speed as the wave.</span></div>
-      <div class="arow step"><span class="alabel">New wavefront</span><span class="asep">:</span><span class="aexpr">The new wavefront at a later time is the common tangent (envelope) to all the secondary wavelets.</span></div>
-      <div class="diag-box">
-        Wavefront W₁ → points A, B, C, D each emit secondary wavelets →<br/>
-        Envelope of wavelets = new wavefront W₂<br/>
-        <small>[Plane wavefront remains plane; spherical wavefront remains spherical]</small>
-      </div>
-      <div class="arow step"><span class="alabel">Application</span><span class="asep">:</span><span class="aexpr">Used to explain reflection, refraction, interference, and diffraction of light.</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Each point on wavefront = new source of secondary wavelets. New wavefront = envelope of these wavelets.</span></div>
-    </div>
+    <div class="arow step"><span class="alabel">+ve half cycle</span><span class="asep">:</span><span class="aexpr">p-end of diode at higher potential → diode is <b>forward biased</b> → conducts → current flows through R<sub>L</sub> → output voltage appears.</span></div>
+    <div class="arow step"><span class="alabel">−ve half cycle</span><span class="asep">:</span><span class="aexpr">n-end of diode at higher potential → diode is <b>reverse biased</b> → does NOT conduct → no current → output = 0 V.</span></div>
+    <div class="arow step"><span class="alabel">Output</span><span class="asep">:</span><span class="aexpr">Pulsating DC — only positive half cycles present. <b>Ripple frequency = f</b> (same as input frequency, e.g., 50 Hz).</span></div>
+    <div class="arow step"><span class="alabel">Average output</span><span class="asep">:</span><span class="aexpr">V<sub>dc</sub> = V<sub>m</sub>/π ≈ 0.318 V<sub>m</sub> &nbsp;(where V<sub>m</sub> = peak voltage)</span></div>
+    <div class="arow note"><span class="alabel">Disadvantage</span><span class="asep">:</span><span class="aexpr">Efficiency only 40.6%. Transformer utilisation poor (only half cycle used). High ripple factor (1.21). Full-wave rectifier is preferred in practice.</span></div>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">1 diode. +ve half: diode conducts. −ve half: diode blocks. Output = pulsating DC. Ripple freq = f.</span></div>
   </div>
+</div>
 
-  <!-- C(vi) -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">C(vi)</span>
-      <span class="qtext">State the laws of photoelectric effect. <span class="yb y22">2022</span></span>
-      <span class="mks">2 Marks</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow step"><span class="alabel">Law 1</span><span class="asep">:</span><span class="aexpr">Photoelectric emission occurs only if the frequency of incident light is ≥ threshold frequency (ν ≥ ν₀). Below ν₀, no emission however intense the light.</span></div>
-      <div class="arow step"><span class="alabel">Law 2</span><span class="asep">:</span><span class="aexpr">The maximum kinetic energy of emitted electrons depends only on the frequency of incident light, NOT on its intensity.</span></div>
-      <div class="arow step"><span class="alabel">Law 3</span><span class="asep">:</span><span class="aexpr">The number of photoelectrons emitted per second is directly proportional to the intensity of incident light.</span></div>
-      <div class="arow step"><span class="alabel">Law 4</span><span class="asep">:</span><span class="aexpr">Photoelectric emission is instantaneous (no time delay) — emission occurs within 10⁻⁹ s of light falling on the metal.</span></div>
-      <div class="arow form"><span class="alabel">Einstein eq.</span><span class="asep">:</span><span class="aexpr">KE<sub>max</sub> = hν − φ &nbsp;(where φ = work function)</span></div>
-      <div class="arow ans"><span class="alabel">∴ Summary</span><span class="asep">:</span><span class="aexpr">Need ν ≥ ν₀; KE depends on ν only; number ∝ intensity; instantaneous.</span></div>
-    </div>
+<!-- C(ix) YDSE Fringe Width -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">C·ix</span><span class="qtext">YDSE: d=0.5mm, D=1m, λ=500nm. Find fringe width. <span class="yb y22">2022</span></span><span class="mks">2 Marks</span></div>
+  <div class="ans-body">
+    <div class="arow step"><span class="alabel">Given</span><span class="asep">:</span><span class="aexpr">d = 0.5 mm = <b>5 × 10⁻⁴ m</b> &nbsp;|&nbsp; D = 1 m &nbsp;|&nbsp; λ = 500 nm = <b>5 × 10⁻⁷ m</b></span></div>
+    <div class="arow def"><span class="alabel">Fringe width def.</span><span class="asep">:</span><span class="aexpr">The distance between two consecutive bright (or dark) fringes on the screen.</span></div>
+    <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr"><b>β = λD/d</b></span></div>
+    <div class="arow step"><span class="alabel">Derivation note</span><span class="asep">:</span><span class="aexpr">Position of n<sup>th</sup> bright fringe: y<sub>n</sub> = nλD/d. Fringe width β = y<sub>n+1</sub> − y<sub>n</sub> = λD/d.</span></div>
+    <div class="arow step"><span class="alabel">Substitute</span><span class="asep">:</span><span class="aexpr">β = (5 × 10⁻⁷ × 1) / (5 × 10⁻⁴)</span></div>
+    <div class="arow step"><span class="alabel">Calculate</span><span class="asep">:</span><span class="aexpr">β = 5 × 10⁻⁷ / 5 × 10⁻⁴ = 10⁻³ m</span></div>
+    <div class="arow ans"><span class="alabel">∴ β</span><span class="asep">=</span><span class="aexpr"><b>1 × 10⁻³ m = 1 mm</b></span></div>
+    <div class="arow note"><span class="alabel">Effect of d</span><span class="asep">:</span><span class="aexpr">If d doubles → β halves (closer slits = wider fringes). If D doubles → β doubles. If λ increases → β increases (red fringes wider than violet).</span></div>
+    <div class="concept">💡 Fringe width for visible light (400-700 nm) with d=1 mm, D=1 m: β = 0.4 to 0.7 mm. Very fine — needs careful observation or a microscope.</div>
   </div>
+</div>
 
-  <!-- C(vii) -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">C(vii)</span>
-      <span class="qtext">Derive the radius of the n<sup>th</sup> Bohr orbit in hydrogen atom. <span class="yb y24">2024</span></span>
-      <span class="mks">2 Marks</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow step"><span class="alabel">Bohr's Cond.</span><span class="asep">:</span><span class="aexpr">The centripetal force on the electron = electrostatic attraction.</span></div>
-      <div class="arow form"><span class="alabel">Force balance</span><span class="asep">:</span><span class="aexpr">mv²/r = ke²/r² &nbsp;⟹&nbsp; mv² = ke²/r &nbsp;…(1)</span></div>
-      <div class="arow step"><span class="alabel">Quantisation</span><span class="asep">:</span><span class="aexpr">mvr = nh/2π &nbsp;⟹&nbsp; v = nh/(2πmr) &nbsp;…(2)</span></div>
-      <div class="arow step"><span class="alabel">Substitute (2)→(1)</span><span class="asep">:</span><span class="aexpr">m[nh/(2πmr)]² = ke²/r</span></div>
-      <div class="arow step"><span class="alabel">Simplify</span><span class="asep">:</span><span class="aexpr">n²h²/(4π²mr) = ke² &nbsp;⟹&nbsp; r = n²h²/(4π²mke²)</span></div>
-      <div class="arow ans"><span class="alabel">∴ r<sub>n</sub></span><span class="asep">=</span><span class="aexpr"><b>r<sub>n</sub> = n² × a₀ &nbsp; where a₀ = 0.529 Å = 0.529 × 10⁻¹⁰ m (Bohr radius)</b></span></div>
-      <div class="arow note"><span class="alabel">Values</span><span class="asep">:</span><span class="aexpr">r₁ = 0.529 Å, r₂ = 4 × 0.529 = 2.116 Å, r₃ = 9 × 0.529 = 4.76 Å</span></div>
-    </div>
+<!-- C(x) Compton Effect -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">C·x</span><span class="qtext">State the significance of Compton effect. <span class="yb y24">2024</span></span><span class="mks">2 Marks</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Compton Effect</span><span class="asep">:</span><span class="aexpr">When X-rays (or high energy photons) collide with free electrons, the <b>scattered X-rays have a longer wavelength</b> (lower energy/frequency) than the incident X-rays. Discovered by Arthur Compton (1923) — Nobel Prize 1927.</span></div>
+    <div class="arow form"><span class="alabel">Compton shift</span><span class="asep">:</span><span class="aexpr"><b>Δλ = λ' − λ = (h/m₀c)(1 − cosθ)</b> where θ = angle of scattering, h/m₀c = 0.0243 Å = Compton wavelength</span></div>
+    <div class="arow step"><span class="alabel">When θ=0°</span><span class="asep">:</span><span class="aexpr">Δλ = 0 (no scattering, photon continues forward — no change in wavelength)</span></div>
+    <div class="arow step"><span class="alabel">When θ=90°</span><span class="asep">:</span><span class="aexpr">Δλ = h/m₀c = 0.0243 Å</span></div>
+    <div class="arow step"><span class="alabel">When θ=180°</span><span class="asep">:</span><span class="aexpr">Δλ = 2h/m₀c = 0.0486 Å (maximum, photon bounces back)</span></div>
+    <div class="arow step"><span class="alabel">Significance 1</span><span class="asep">:</span><span class="aexpr"><b>Confirms particle nature of light</b> — photons carry momentum p = h/λ. This is a direct experimental proof.</span></div>
+    <div class="arow step"><span class="alabel">Significance 2</span><span class="asep">:</span><span class="aexpr"><b>Wave theory fails to explain it</b> — scattered wave should have same frequency as incident wave (by classical theory). Change in λ ONLY possible if photon acts as particle.</span></div>
+    <div class="arow step"><span class="alabel">Significance 3</span><span class="asep">:</span><span class="aexpr"><b>Validates de Broglie's hypothesis</b> (wave-particle duality) and supports quantum mechanics.</span></div>
+    <div class="arow step"><span class="alabel">Significance 4</span><span class="asep">:</span><span class="aexpr">Showed that photon-electron collision obeys conservation of energy AND momentum — same as particle collision.</span></div>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Confirms photon momentum p=h/λ, particle nature of light, wave-particle duality. Wave theory cannot explain it. Δλ = (h/m₀c)(1−cosθ).</span></div>
   </div>
+</div>
 
-  <!-- C(viii) -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">C(viii)</span>
-      <span class="qtext">Draw circuit of half-wave rectifier and explain working. <span class="yb y23">2023</span></span>
-      <span class="mks">2 Marks</span>
-    </div>
-    <div class="ans-body">
-      <div class="diag-box">
-        AC Input ~~~~ → [Transformer] → Diode (D) → R<sub>L</sub> → Output DC<br/>
-        <small>During +ve half cycle: diode forward biased → conducts → current through R<sub>L</sub><br/>
-        During −ve half cycle: diode reverse biased → does not conduct → no current</small>
-      </div>
-      <div class="arow step"><span class="alabel">+ve half cycle</span><span class="asep">:</span><span class="aexpr">Diode is forward biased (p-side at +ve, n-side at −ve) → conducts → output voltage appears across R<sub>L</sub>.</span></div>
-      <div class="arow step"><span class="alabel">−ve half cycle</span><span class="asep">:</span><span class="aexpr">Diode is reverse biased → does not conduct → no output.</span></div>
-      <div class="arow step"><span class="alabel">Output</span><span class="asep">:</span><span class="aexpr">Pulsating DC (only positive half cycles). Ripple frequency = f (input frequency).</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">One diode. Conducts only during +ve half cycle. Output = pulsating DC at frequency f.</span></div>
-    </div>
+<!-- C(xi) Fission vs Fusion -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">C·xi</span><span class="qtext">Write four differences between nuclear fission and nuclear fusion. <span class="yb y23">2023</span></span><span class="mks">2 Marks</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Fission</span><span class="asep">:</span><span class="aexpr">A <b>heavy nucleus</b> (like U-235) splits into two <b>lighter nuclei</b> of comparable mass, releasing 2-3 neutrons + energy ~200 MeV. Triggered by a slow (thermal) neutron.</span></div>
+    <div class="arow def"><span class="alabel">Fusion</span><span class="asep">:</span><span class="aexpr">Two <b>light nuclei</b> (like H-2, H-3) combine to form a <b>heavier nucleus</b> + energy ~17.6 MeV per reaction. Requires extremely high temperature (~10⁷ K) to overcome Coulomb barrier.</span></div>
+    <div class="arow step"><span class="alabel">Difference 1</span><span class="asep">:</span><span class="aexpr"><b>Type:</b> Fission = splitting heavy → light &nbsp;|&nbsp; Fusion = joining light → heavy</span></div>
+    <div class="arow step"><span class="alabel">Difference 2</span><span class="asep">:</span><span class="aexpr"><b>Trigger:</b> Fission needs slow neutron (easily achievable) &nbsp;|&nbsp; Fusion needs ~10⁷–10⁸ K temperature (very difficult — sun-like conditions)</span></div>
+    <div class="arow step"><span class="alabel">Difference 3</span><span class="asep">:</span><span class="aexpr"><b>Waste:</b> Fission produces radioactive products (dangerous, long half-life) &nbsp;|&nbsp; Fusion produces mostly helium + neutrons (much cleaner)</span></div>
+    <div class="arow step"><span class="alabel">Difference 4</span><span class="asep">:</span><span class="aexpr"><b>Energy per nucleon:</b> Fission ≈ 0.85 MeV/nucleon &nbsp;|&nbsp; Fusion ≈ 6 MeV/nucleon (fusion gives ~7× more energy per unit mass)</span></div>
+    <div class="arow step"><span class="alabel">Difference 5</span><span class="asep">:</span><span class="aexpr"><b>Control:</b> Fission: chain reaction can be controlled (nuclear reactor) &nbsp;|&nbsp; Fusion: extremely difficult to control (ITER project still ongoing)</span></div>
+    <div class="concept">💡 <b>The Sun runs on fusion:</b> 4H → He + 2e⁺ + 2ν + 26.7 MeV. The sun converts ~4 million tonnes of mass to energy per second via fusion!</div>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Any 4 of the above 5 differences. State fission reaction (U-235) and fusion reaction (H-2 + H-3) for full marks.</span></div>
   </div>
+</div>
 
-  <!-- C(ix) -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">C(ix)</span>
-      <span class="qtext">YDSE: d = 0.5 mm, D = 1 m, λ = 500 nm. Find fringe width. <span class="yb y22">2022</span></span>
-      <span class="mks">2 Marks</span>
+<!-- C(xii) B-H Curve -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">C·xii</span><span class="qtext">Draw and explain the B-H curve for a ferromagnetic material. <span class="yb y22">2022</span></span><span class="mks">2 Marks</span></div>
+  <div class="ans-body">
+    <div class="diag">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B ↑<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B<sub>s</sub>──●── ── ── ─ ← Saturation (all domains aligned)<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;╱ &nbsp;(a)<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B<sub>r</sub>─●&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← Retentivity B<sub>r</sub> (B when H=0, after saturation)<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+      ─Hc─●──────────────●─── H →<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(O = origin)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← H<sub>c</sub> = Coercivity (H needed to make B=0)<br/>
+      <small>O→a: initial magnetisation | a→b: retentivity | b→c: coercivity | c→d: reverse saturation | d→e→a: completing hysteresis loop</small>
     </div>
-    <div class="ans-body">
-      <div class="arow step"><span class="alabel">Given</span><span class="asep">:</span><span class="aexpr">d = 0.5 mm = 0.5 × 10⁻³ m &nbsp;, D = 1 m &nbsp;, λ = 500 nm = 500 × 10⁻⁹ m</span></div>
-      <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr">β = λD/d &nbsp; (fringe width)</span></div>
-      <div class="arow step"><span class="alabel">Substitute</span><span class="asep">:</span><span class="aexpr">β = (500 × 10⁻⁹ × 1) / (0.5 × 10⁻³)</span></div>
-      <div class="arow step"><span class="alabel">Calculate</span><span class="asep">:</span><span class="aexpr">= (500 × 10⁻⁹) / (5 × 10⁻⁴)</span></div>
-      <div class="arow step"><span class="alabel">Simplify</span><span class="asep">:</span><span class="aexpr">= 100 × 10⁻⁵ = 1 × 10⁻³ m</span></div>
-      <div class="arow ans"><span class="alabel">∴ β</span><span class="asep">=</span><span class="aexpr"><b>1 mm = 1 × 10⁻³ m</b></span></div>
-    </div>
+    <div class="arow step"><span class="alabel">Retentivity B<sub>r</sub></span><span class="asep">:</span><span class="aexpr">The magnetic flux density retained in the material when the magnetising field H is reduced to <b>zero</b>. Higher B<sub>r</sub> = better permanent magnet.</span></div>
+    <div class="arow step"><span class="alabel">Coercivity H<sub>c</sub></span><span class="asep">:</span><span class="aexpr">The reverse magnetising field required to reduce B to <b>zero</b> after saturation. Higher H<sub>c</sub> = harder to demagnetise (good for permanent magnets).</span></div>
+    <div class="arow step"><span class="alabel">Hysteresis loss</span><span class="asep">:</span><span class="aexpr">Area enclosed by the B-H loop = <b>energy dissipated as heat per cycle per unit volume</b>.</span></div>
+    <div class="arow step"><span class="alabel">Soft iron</span><span class="asep">:</span><span class="aexpr">Narrow B-H loop, low H<sub>c</sub>, high B<sub>r</sub> → low hysteresis loss. <b>Used in transformer cores, electromagnets</b>.</span></div>
+    <div class="arow step"><span class="alabel">Steel (hard)</span><span class="asep">:</span><span class="aexpr">Wide B-H loop, high H<sub>c</sub>, high B<sub>r</sub> → <b>Used in permanent magnets, loudspeakers</b>.</span></div>
+    <div class="concept">💡 <b>Why hysteresis?</b> Domain walls require energy to move. When H is removed, domains don't fully randomise — some remain aligned (retentivity). Extra energy needed to reverse them (coercivity).</div>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Draw loop. Label: O, saturation, retentivity B<sub>r</sub>, coercivity H<sub>c</sub>. Area = hysteresis loss. Soft iron: narrow loop; Steel: wide loop.</span></div>
   </div>
+</div>
 
-  <!-- C(x) -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">C(x)</span>
-      <span class="qtext">State the significance of Compton effect. <span class="yb y24">2024</span></span>
-      <span class="mks">2 Marks</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Compton Effect</span><span class="asep">:</span><span class="aexpr">When X-rays (or high-energy photons) collide with free/loosely bound electrons, the scattered X-rays have a longer wavelength than the incident X-rays.</span></div>
-      <div class="arow form"><span class="alabel">Shift</span><span class="asep">:</span><span class="aexpr">Δλ = λ' − λ = (h/m₀c)(1 − cosθ) &nbsp; where θ = scattering angle</span></div>
-      <div class="arow step"><span class="alabel">Significance 1</span><span class="asep">:</span><span class="aexpr">Confirms the particle nature of light — photons carry momentum p = h/λ.</span></div>
-      <div class="arow step"><span class="alabel">Significance 2</span><span class="asep">:</span><span class="aexpr">Proves wave-particle duality of radiation experimentally.</span></div>
-      <div class="arow step"><span class="alabel">Significance 3</span><span class="asep">:</span><span class="aexpr">Cannot be explained by wave theory; validates quantum theory of radiation.</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Confirms photon momentum (p = h/λ) and particle nature of EM radiation. Validates quantum theory.</span></div>
-    </div>
+<!-- ═══════════════════════════ PAPER 2 ═══════════════════════════ -->
+<div class="paper-banner"><span class="ptitle">📄 PAPER 2 — DETAILED SOLUTIONS</span><span class="pbadge">Class XII Physics · Set 2</span></div>
+<div class="sec-head">SECTION B — Very Short Answer (1 Mark Each) <span class="sm">12 Questions · 8 × 1 = 8 Marks</span></div>
+
+<!-- P2 B(i) Dielectric constant -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">B·i</span><span class="qtext">Define dielectric constant of a medium. <span class="yb y24">2024</span></span><span class="mks">1 Mark</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr"><b>Dielectric constant (K)</b>, also called relative permittivity (ε<sub>r</sub>), is the ratio of the <b>permittivity of the medium (ε)</b> to the <b>permittivity of free space (ε₀)</b>. It tells us how much a medium reduces the electric force between charges compared to vacuum.</span></div>
+    <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr"><b>K = ε / ε₀</b> &nbsp; (dimensionless quantity)</span></div>
+    <div class="arow step"><span class="alabel">Physical meaning</span><span class="asep">:</span><span class="aexpr">In a medium with K, the Coulomb force becomes: F = kq₁q₂/(Kr²) → force reduced by factor K compared to vacuum.</span></div>
+    <div class="arow step"><span class="alabel">Range</span><span class="asep">:</span><span class="aexpr">K ≥ 1 always. K = 1 for vacuum. K &gt; 1 for all real materials.</span></div>
+    <div class="arow step"><span class="alabel">Values</span><span class="asep">:</span><span class="aexpr">Air: K ≈ 1.0006 ≈ 1 &nbsp;|&nbsp; Water: K ≈ 80 &nbsp;|&nbsp; Glass: K ≈ 5–10 &nbsp;|&nbsp; Mica: K ≈ 6 &nbsp;|&nbsp; Barium titanate: K ≈ 10,000</span></div>
+    <div class="arow step"><span class="alabel">Capacitor effect</span><span class="asep">:</span><span class="aexpr">Inserting a dielectric (K &gt; 1) between capacitor plates: C increases to KC → stores more charge at same voltage.</span></div>
+    <div class="concept">💡 <b>Why K &gt; 1?</b> When placed in an electric field, dielectric molecules polarise (dipoles align). Their internal field partially cancels the applied field, reducing effective E — so more charge/voltage can be sustained.</div>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">K = ε/ε₀. Dimensionless. Always ≥ 1. Higher K = better dielectric for capacitors.</span></div>
   </div>
+</div>
 
-  <!-- C(xi) -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">C(xi)</span>
-      <span class="qtext">Write four differences between nuclear fission and nuclear fusion. <span class="yb y23">2023</span></span>
-      <span class="mks">2 Marks</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow step"><span class="alabel">Fission</span><span class="asep">:</span><span class="aexpr"><b>Heavy nucleus splits</b> into two lighter nuclei + energy (e.g., U-235 + n → Ba + Kr + 3n + ~200 MeV)</span></div>
-      <div class="arow step"><span class="alabel">Fusion</span><span class="asep">:</span><span class="aexpr"><b>Two light nuclei combine</b> to form a heavier nucleus + energy (e.g., ₁H² + ₁H³ → ₂He⁴ + n + ~17.6 MeV)</span></div>
-      <div class="arow step"><span class="alabel">Diff. 1</span><span class="asep">:</span><span class="aexpr">Fission: heavy → light &nbsp;|&nbsp; Fusion: light → heavy</span></div>
-      <div class="arow step"><span class="alabel">Diff. 2</span><span class="asep">:</span><span class="aexpr">Fission: needs slow neutron trigger &nbsp;|&nbsp; Fusion: needs very high temperature (~10⁷ K)</span></div>
-      <div class="arow step"><span class="alabel">Diff. 3</span><span class="asep">:</span><span class="aexpr">Fission: produces radioactive waste &nbsp;|&nbsp; Fusion: cleaner, less radioactive waste</span></div>
-      <div class="arow step"><span class="alabel">Diff. 4</span><span class="asep">:</span><span class="aexpr">Fission: less energy per nucleon &nbsp;|&nbsp; Fusion: more energy per nucleon (more efficient)</span></div>
-      <div class="arow ans"><span class="alabel">∴ Summary</span><span class="asep">:</span><span class="aexpr">Fission = split heavy nucleus; Fusion = join light nuclei. Fusion gives more energy/nucleon but needs higher temperature.</span></div>
-    </div>
+<!-- P2 B(ii) Faraday's First Law -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">B·ii</span><span class="qtext">State Faraday's first law of electromagnetic induction. <span class="yb y23">2023</span></span><span class="mks">1 Mark</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Statement</span><span class="asep">:</span><span class="aexpr"><b>Whenever the magnetic flux</b> linked with a closed conducting circuit <b>changes</b>, an electromotive force (EMF) is induced in the circuit. The induced EMF exists <b>only as long as the change in flux continues</b>. When the flux stops changing, the induced EMF becomes zero.</span></div>
+    <div class="arow form"><span class="alabel">Mathematical form</span><span class="asep">:</span><span class="aexpr"><b>e = −dΦ<sub>B</sub>/dt</b> &nbsp; (negative sign from Lenz's law — opposes the cause)</span></div>
+    <div class="arow step"><span class="alabel">For N turns</span><span class="asep">:</span><span class="aexpr">e = −N · dΦ<sub>B</sub>/dt &nbsp; (flux linkage = NΦ)</span></div>
+    <div class="arow step"><span class="alabel">Ways to change flux</span><span class="asep">:</span><span class="aexpr">(1) Change B (move a magnet) &nbsp; (2) Change area A (expand/contract coil) &nbsp; (3) Change angle θ (rotate coil) &nbsp; (4) Any combination of above.</span></div>
+    <div class="arow step"><span class="alabel">Second law</span><span class="asep">:</span><span class="aexpr">Magnitude of induced EMF = rate of change of magnetic flux: |e| = dΦ/dt (2nd law gives magnitude; 1st law says EMF exists).</span></div>
+    <div class="concept">💡 <b>Foundation of generators:</b> Faraday's law is why rotating a coil in a magnetic field generates electricity (AC generator). Changing B with time creates EMF in a loop (transformer). All of modern power generation is based on this law.</concept>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">EMF induced whenever flux changes. e = −dΦ/dt. EMF lasts only while flux is changing.</span></div>
   </div>
+</div>
 
-  <!-- C(xii) -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">C(xii)</span>
-      <span class="qtext">Draw and explain the B-H curve for a ferromagnetic material. <span class="yb y22">2022</span></span>
-      <span class="mks">2 Marks</span>
-    </div>
-    <div class="ans-body">
-      <div class="diag-box">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B↑<br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;Bs ─ ─ ─●─ ─ ─ ─ ─ ← Saturation<br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;╱&nbsp;&nbsp;│<br/>
-        Br ─●─&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← Retentivity (Br)<br/>
-        &nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>
-        ─Hc─●─────●──────→ H<br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← Coercivity (Hc)<br/>
-        <small>Hysteresis loop: O→A(saturation)→B(retentivity)→C(coercivity)→D(reverse sat)→loop back</small>
-      </div>
-      <div class="arow step"><span class="alabel">Retentivity (Br)</span><span class="asep">:</span><span class="aexpr">The magnetic field remaining in the material when H is reduced to zero. Measure of ability to retain magnetism.</span></div>
-      <div class="arow step"><span class="alabel">Coercivity (Hc)</span><span class="asep">:</span><span class="aexpr">The reverse field needed to demagnetise the material completely (B = 0).</span></div>
-      <div class="arow step"><span class="alabel">Hysteresis loss</span><span class="asep">:</span><span class="aexpr">Area of hysteresis loop = energy dissipated per cycle as heat.</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">B-H loop shows retentivity, coercivity, saturation. Larger area = larger hysteresis loss.</span></div>
-    </div>
+<!-- P2 B(iii) Resonant Frequency -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">B·iii</span><span class="qtext">What is the resonant frequency of an LCR circuit? Write its formula. <span class="yb y22">2022</span></span><span class="mks">1 Mark</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr"><b>Resonant frequency (f₀)</b> is the specific frequency at which the inductive reactance equals the capacitive reactance (X<sub>L</sub> = X<sub>C</sub>). At resonance: impedance is <b>minimum</b> (Z = R), current is <b>maximum</b>, and phase difference = 0°.</span></div>
+    <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr"><b>f₀ = 1 / (2π√LC)</b> &nbsp; or &nbsp; <b>ω₀ = 1/√LC</b> &nbsp; (L in Henry, C in Farad)</span></div>
+    <div class="arow step"><span class="alabel">Derivation idea</span><span class="asep">:</span><span class="aexpr">At resonance: X<sub>L</sub> = X<sub>C</sub> &nbsp;⟹&nbsp; ω₀L = 1/(ω₀C) &nbsp;⟹&nbsp; ω₀² = 1/LC &nbsp;⟹&nbsp; ω₀ = 1/√LC &nbsp;⟹&nbsp; f₀ = ω₀/2π = 1/(2π√LC)</span></div>
+    <div class="arow step"><span class="alabel">At resonance</span><span class="asep">:</span><span class="aexpr">Z = R (min), I = V/R (max), cosφ = 1, power factor = 1 (maximum power transfer)</span></div>
+    <div class="arow step"><span class="alabel">Quality factor Q</span><span class="asep">:</span><span class="aexpr">Q = ω₀L/R = 1/(ω₀CR) = (1/R)√(L/C). Higher Q = sharper resonance = more selective circuit.</span></div>
+    <div class="concept">💡 <b>Radio tuning:</b> When you tune a radio, you adjust C (variable capacitor) to make f₀ = f(broadcast station). At resonance, that station's signal causes maximum current → loudest reception.</concept>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">f₀ = 1/(2π√LC). At resonance: X<sub>L</sub> = X<sub>C</sub>, Z = R (min), I = max, cosφ = 1.</span></div>
   </div>
+</div>
 
-  <!-- ════════════════════════════════════════════════════
-       PAPER 2
-  ════════════════════════════════════════════════════ -->
-  <div class="paper-banner">
-    <span class="ptitle">📄 Paper 2 — Solutions</span>
-    <span class="pbadge">Class XII Physics · Set 2</span>
+<!-- P2 B(iv) Magnifying Power -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">B·iv</span><span class="qtext">Define magnifying power of a microscope. <span class="yb y24">2024</span></span><span class="mks">1 Mark</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr"><b>Magnifying power (M)</b> of a microscope is the ratio of the angle (β) subtended by the final image at the eye to the angle (α) subtended by the object when placed at the <b>least distance of distinct vision (D = 25 cm)</b>.</span></div>
+    <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr"><b>M = M<sub>o</sub> × M<sub>e</sub> = (L/f<sub>o</sub>) × (1 + D/f<sub>e</sub>)</b> &nbsp; for final image at D</span></div>
+    <div class="arow step"><span class="alabel">Where</span><span class="asep">:</span><span class="aexpr">L = tube length (distance between lenses), f<sub>o</sub> = focal length of objective lens, f<sub>e</sub> = focal length of eyepiece, D = 25 cm</span></div>
+    <div class="arow step"><span class="alabel">For image at ∞</span><span class="asep">:</span><span class="aexpr">M = (L/f<sub>o</sub>) × (D/f<sub>e</sub>) &nbsp; (relaxed eye — less strain, preferred in practice)</span></div>
+    <div class="arow step"><span class="alabel">To increase M</span><span class="asep">:</span><span class="aexpr">Use shorter f<sub>o</sub> and shorter f<sub>e</sub>. Both lenses should have very short focal lengths for high magnification.</span></div>
+    <div class="concept">💡 <b>Typical values:</b> Compound microscope: M = 100–2000×. Objective (M<sub>o</sub> = 10–100×) × Eyepiece (M<sub>e</sub> = 10×). Electron microscope: M = 10⁶×.</concept>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">M = angle of image / angle of object at D. M = (L/f<sub>o</sub>)(1 + D/f<sub>e</sub>). Smaller f → larger M.</span></div>
   </div>
+</div>
 
-  <!-- ── Section B Paper 2 ── -->
-  <div class="sec-head">Section B — Very Short Answer Questions (1 Mark Each) <span class="sm">8 × 1 = 8 Marks</span></div>
-
-  <!-- B(i) P2 -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">B(i)</span>
-      <span class="qtext">Define dielectric constant of a medium. <span class="yb y24">2024</span></span>
-      <span class="mks">1 Mark</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr">Dielectric constant (K or ε<sub>r</sub>) is the ratio of the permittivity of the medium to the permittivity of free space (vacuum).</span></div>
-      <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr">K = ε/ε₀ &nbsp; (dimensionless quantity, always ≥ 1)</span></div>
-      <div class="arow step"><span class="alabel">Physical meaning</span><span class="asep">:</span><span class="aexpr">K indicates how much the electric force between charges is reduced when a medium is placed between them.</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">K = ε/ε₀ &nbsp;; ratio of permittivity of medium to that of free space. K ≥ 1.</span></div>
-    </div>
+<!-- P2 B(v) Spontaneous Emission -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">B·v</span><span class="qtext">What is spontaneous emission? <span class="yb y23">2023</span></span><span class="mks">1 Mark</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr"><b>Spontaneous emission</b> is the process in which an atom in a <b>higher energy state (excited state E₂)</b> returns to a <b>lower energy state (E₁)</b> by emitting a photon <b>spontaneously</b>, without any external trigger, after an average lifetime of ~10⁻⁸ s.</span></div>
+    <div class="arow form"><span class="alabel">Energy of photon</span><span class="asep">:</span><span class="aexpr"><b>E = hν = E₂ − E₁</b></span></div>
+    <div class="arow step"><span class="alabel">Characteristics</span><span class="asep">:</span><span class="aexpr">(1) Occurs randomly — cannot predict exactly when an atom will emit &nbsp; (2) Emitted photons have random direction and random phase &nbsp; (3) Results in <b>incoherent</b> light (e.g., ordinary bulb, LED).</span></div>
+    <div class="arow step"><span class="alabel">Compare: Stimulated</span><span class="asep">:</span><span class="aexpr"><b>Stimulated emission:</b> An external photon of energy hν = E₂−E₁ triggers the atom to emit. Emitted photon is <b>coherent</b> (same phase, direction, frequency as trigger). This is the basis of <b>LASER</b>.</span></div>
+    <div class="concept">💡 <b>Spontaneous = random, incoherent. Stimulated = triggered, coherent.</b> A fluorescent tube works by spontaneous emission. A laser works by stimulated emission — that's why laser light is so intense and focused.</concept>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Atom in E₂ falls to E₁ and emits photon hν = E₂−E₁ without external trigger. Random, incoherent. Compare: stimulated emission = basis of LASER.</span></div>
   </div>
+</div>
 
-  <!-- B(ii) P2 -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">B(ii)</span>
-      <span class="qtext">State Faraday's first law of electromagnetic induction. <span class="yb y23">2023</span></span>
-      <span class="mks">1 Mark</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Statement</span><span class="asep">:</span><span class="aexpr">Whenever the magnetic flux linked with a closed circuit changes, an EMF (electromotive force) is induced in the circuit. The induced EMF lasts as long as the change in flux continues.</span></div>
-      <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr">e = −dΦ/dt &nbsp; (Faraday-Lenz law; negative sign = Lenz's law)</span></div>
-      <div class="arow note"><span class="alabel">Note</span><span class="asep">:</span><span class="aexpr">Second law gives the magnitude: e = N·dΦ/dt for N turns. This is the basis of generators and transformers.</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">EMF is induced whenever magnetic flux changes. e = −dΦ/dt.</span></div>
-    </div>
+<!-- P2 B(vi) Radioactive Decay Law -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">B·vi</span><span class="qtext">State the law of radioactive decay. Write the decay equation. <span class="yb y22">2022</span></span><span class="mks">1 Mark</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Law</span><span class="asep">:</span><span class="aexpr">The rate of radioactive decay (disintegration) of a radioactive substance at any instant is <b>directly proportional</b> to the <b>number of undecayed atoms (N)</b> present at that instant. This is a purely random, statistical process.</span></div>
+    <div class="arow form"><span class="alabel">Differential form</span><span class="asep">:</span><span class="aexpr"><b>dN/dt = −λN</b> &nbsp; (negative sign = N is decreasing with time)</span></div>
+    <div class="arow form"><span class="alabel">Integrated form</span><span class="asep">:</span><span class="aexpr"><b>N = N₀ e<sup>−λt</sup></b> &nbsp; (exponential decay law)</span></div>
+    <div class="arow step"><span class="alabel">Where</span><span class="asep">:</span><span class="aexpr">N₀ = initial number of atoms at t=0, N = atoms remaining at time t, λ = decay constant (s⁻¹), unique to each isotope</span></div>
+    <div class="arow form"><span class="alabel">Half-life T<sub>½</sub></span><span class="asep">:</span><span class="aexpr"><b>T<sub>½</sub> = 0.693/λ = ln2/λ</b> &nbsp; (time for half the atoms to decay)</span></div>
+    <div class="arow step"><span class="alabel">Activity A</span><span class="asep">:</span><span class="aexpr">A = |dN/dt| = λN = λN₀e<sup>−λt</sup>. Unit: Becquerel (Bq) = 1 disintegration/second. Old unit: Curie (Ci) = 3.7×10¹⁰ Bq.</span></div>
+    <div class="concept">💡 <b>Example:</b> C-14 (T½ = 5730 years) is used for radiocarbon dating of ancient organic materials. U-238 (T½ = 4.5×10⁹ years) is used to date rocks and Earth's age.</concept>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">dN/dt = −λN &nbsp;⟹&nbsp; N = N₀e<sup>−λt</sup>. Half-life T<sub>½</sub> = 0.693/λ.</span></div>
   </div>
+</div>
 
-  <!-- B(iii) P2 -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">B(iii)</span>
-      <span class="qtext">What is resonant frequency of an LCR circuit? Write its formula. <span class="yb y22">2022</span></span>
-      <span class="mks">1 Mark</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr">Resonant frequency (f₀) is the frequency at which inductive reactance equals capacitive reactance (X<sub>L</sub> = X<sub>C</sub>), making impedance minimum (Z = R) and current maximum.</span></div>
-      <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr">f₀ = 1 / (2π√LC) &nbsp; where L = inductance (H), C = capacitance (F)</span></div>
-      <div class="arow step"><span class="alabel">At resonance</span><span class="asep">:</span><span class="aexpr">X<sub>L</sub> = X<sub>C</sub> &nbsp;,&nbsp; Z = R (minimum) &nbsp;,&nbsp; I = V/R (maximum) &nbsp;,&nbsp; cosφ = 1</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">f₀ = 1/(2π√LC)</span></div>
-    </div>
+<!-- P2 B(vii) Mobility -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">B·vii</span><span class="qtext">Define mobility of electrons. State its SI unit. <span class="yb y24">2024</span></span><span class="mks">1 Mark</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr"><b>Mobility (μ)</b> of an electron is defined as the <b>drift velocity acquired per unit electric field</b>. It measures how easily an electron moves through a material in response to an applied electric field.</span></div>
+    <div class="arow form"><span class="alabel">Formula 1</span><span class="asep">:</span><span class="aexpr"><b>μ = v<sub>d</sub> / E</b> &nbsp; where v<sub>d</sub> = drift velocity (m/s), E = electric field (V/m)</span></div>
+    <div class="arow form"><span class="alabel">Formula 2</span><span class="asep">:</span><span class="aexpr"><b>μ = eτ / m</b> &nbsp; where e = electron charge, τ = relaxation time (mean free time between collisions), m = electron mass</span></div>
+    <div class="arow step"><span class="alabel">SI Unit</span><span class="asep">:</span><span class="aexpr"><b>m²/(V·s)</b> &nbsp; [from μ = v<sub>d</sub>/E → (m/s)/(V/m) = m²/(V·s)]</span></div>
+    <div class="arow step"><span class="alabel">Values</span><span class="asep">:</span><span class="aexpr">Electrons in Si: μ<sub>e</sub> ≈ 0.135 m²/(V·s). Holes in Si: μ<sub>h</sub> ≈ 0.048 m²/(V·s). Electrons always more mobile than holes.</span></div>
+    <div class="arow step"><span class="alabel">Conductivity link</span><span class="asep">:</span><span class="aexpr">σ = ne·e·μ<sub>e</sub> + nh·e·μ<sub>h</sub> — conductivity depends on both carrier concentration and mobility.</span></div>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">μ = v<sub>d</sub>/E = eτ/m. Unit: m²/(V·s). Electrons more mobile than holes in semiconductors.</span></div>
   </div>
+</div>
 
-  <!-- B(iv) P2 -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">B(iv)</span>
-      <span class="qtext">Define magnifying power of a microscope. <span class="yb y24">2024</span></span>
-      <span class="mks">1 Mark</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr">Magnifying power (M) of a microscope is the ratio of the angle subtended by the image at the eye to the angle subtended by the object when placed at the least distance of distinct vision (D = 25 cm).</span></div>
-      <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr">M = m<sub>o</sub> × M<sub>e</sub> = (L/f<sub>o</sub>) × (1 + D/f<sub>e</sub>) &nbsp; where L = tube length, f<sub>o</sub> = focal length of objective, f<sub>e</sub> = focal length of eyepiece.</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">M = angle(image)/angle(object at D). M = (L/f<sub>o</sub>)(1 + D/f<sub>e</sub>)</span></div>
-    </div>
+<!-- P2 B(viii) Intrinsic Semiconductor -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">B·viii</span><span class="qtext">What is an intrinsic semiconductor? Give one example. <span class="yb y23">2023</span></span><span class="mks">1 Mark</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr">An <b>intrinsic semiconductor</b> is a <b>pure semiconductor</b> material with no intentional impurity (dopant) added. Its electrical conductivity depends <b>only on the material's own properties</b> and temperature.</span></div>
+    <div class="arow step"><span class="alabel">At 0 K</span><span class="asep">:</span><span class="aexpr">All covalent bonds intact. No free electrons or holes. Valence band full, conduction band empty. Behaves like an <b>insulator</b>.</span></div>
+    <div class="arow step"><span class="alabel">At room temp</span><span class="asep">:</span><span class="aexpr">Thermal energy breaks some covalent bonds → free electrons (in conduction band) + holes (in valence band). <b>n = p = n<sub>i</sub></b> (intrinsic carrier concentration)</span></div>
+    <div class="arow step"><span class="alabel">Band gap</span><span class="asep">:</span><span class="aexpr">Si: E<sub>g</sub> = 1.1 eV. Ge: E<sub>g</sub> = 0.7 eV. Compare: Conductor E<sub>g</sub> = 0, Insulator E<sub>g</sub> &gt; 3 eV.</span></div>
+    <div class="arow step"><span class="alabel">n<sub>i</sub> at 300K</span><span class="asep">:</span><span class="aexpr">Si: n<sub>i</sub> ≈ 1.5×10¹⁰/cm³. Ge: n<sub>i</sub> ≈ 2.4×10¹³/cm³. Very small — poor conductors without doping.</span></div>
+    <div class="concept">💡 <b>Conductivity increases with temperature</b> (unlike metals) — more bonds break at higher T → more carriers → better conductor. Temperature coefficient of resistance is <b>negative</b> for semiconductors.</concept>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Pure semiconductor with no dopants. n = p = n<sub>i</sub>. Examples: Pure <b>Silicon (Si)</b> and <b>Germanium (Ge)</b>.</span></div>
   </div>
+</div>
 
-  <!-- B(v) P2 -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">B(v)</span>
-      <span class="qtext">What is spontaneous emission? <span class="yb y23">2023</span></span>
-      <span class="mks">1 Mark</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr">Spontaneous emission is the process in which an atom in an excited energy state returns to a lower (ground) state by emitting a photon without any external triggering.</span></div>
-      <div class="arow step"><span class="alabel">Energy of photon</span><span class="asep">:</span><span class="aexpr">E = hν = E₂ − E₁ &nbsp; (difference between excited and ground state energies)</span></div>
-      <div class="arow note"><span class="alabel">Compare</span><span class="asep">:</span><span class="aexpr">Stimulated emission = external photon triggers emission (basis of LASER). Spontaneous emission = random, no external trigger.</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Atom in excited state spontaneously emits photon of energy hν = E₂ − E₁ without external trigger.</span></div>
-    </div>
+<!-- P2 B(ix) KVL -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">B·ix</span><span class="qtext">State Kirchhoff's voltage law (KVL). <span class="yb y22">2022</span></span><span class="mks">1 Mark</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Statement</span><span class="asep">:</span><span class="aexpr">In any <b>closed loop</b> of a circuit, the <b>algebraic sum of all EMFs</b> is equal to the <b>algebraic sum of all the voltage drops</b> (products of current and resistance). Equivalently: the algebraic sum of all potential differences around any closed loop is zero.</span></div>
+    <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr"><b>ΣE = ΣIR</b> &nbsp; or &nbsp; <b>ΣV = 0</b> &nbsp; (around any closed loop)</span></div>
+    <div class="arow step"><span class="alabel">Sign convention</span><span class="asep">:</span><span class="aexpr">Travel in direction of current through R: voltage drop = −IR (loss). Travel against current: voltage gain = +IR. EMF source traversed from − to +: gain = +E. From + to −: loss = −E.</span></div>
+    <div class="arow step"><span class="alabel">Example</span><span class="asep">:</span><span class="aexpr">Loop with E = 12V, R₁ = 2Ω, R₂ = 4Ω, I = ? KVL: 12 = I(2+4) = 6I → I = 2A.</span></div>
+    <div class="arow step"><span class="alabel">Physical basis</span><span class="asep">:</span><span class="aexpr">Based on <b>conservation of energy</b>. A charge going around a loop returns to the same potential — no net energy gain or loss.</span></div>
+    <div class="concept">💡 <b>KCL + KVL together</b> allow us to solve ANY circuit, no matter how complex. KCL uses charge conservation; KVL uses energy conservation. These are Kirchhoff's two fundamental circuit laws.</concept>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">ΣE = ΣIR in any closed loop. Based on conservation of energy. Used with KCL to solve circuit networks.</span></div>
   </div>
+</div>
 
-  <!-- B(vi) P2 -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">B(vi)</span>
-      <span class="qtext">State the law of radioactive decay. Write the decay equation. <span class="yb y22">2022</span></span>
-      <span class="mks">1 Mark</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Law</span><span class="asep">:</span><span class="aexpr">The rate of radioactive decay at any instant is directly proportional to the number of undecayed radioactive atoms present at that instant.</span></div>
-      <div class="arow form"><span class="alabel">Equation</span><span class="asep">:</span><span class="aexpr">dN/dt = −λN &nbsp;⟹&nbsp; N = N₀e<sup>−λt</sup></span></div>
-      <div class="arow step"><span class="alabel">Where</span><span class="asep">:</span><span class="aexpr">N₀ = initial atoms, N = atoms at time t, λ = decay constant (s⁻¹)</span></div>
-      <div class="arow step"><span class="alabel">Half-life</span><span class="asep">:</span><span class="aexpr">T<sub>½</sub> = 0.693/λ</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">dN/dt ∝ −N &nbsp;; N = N₀e<sup>−λt</sup> &nbsp;; T<sub>½</sub> = 0.693/λ</span></div>
-    </div>
+<!-- P2 B(x) Transformer Principle -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">B·x</span><span class="qtext">What is the principle of a transformer? <span class="yb y24">2024</span></span><span class="mks">1 Mark</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Principle</span><span class="asep">:</span><span class="aexpr">A transformer works on the principle of <b>mutual electromagnetic induction</b>. When an <b>alternating current</b> flows through the primary coil, it produces a <b>changing magnetic flux</b> in the laminated iron core, which <b>induces an alternating EMF</b> in the secondary coil.</span></div>
+    <div class="arow form"><span class="alabel">Governing equation</span><span class="asep">:</span><span class="aexpr"><b>V<sub>S</sub>/V<sub>P</sub> = N<sub>S</sub>/N<sub>P</sub></b> &nbsp; (turns ratio determines voltage transformation)</span></div>
+    <div class="arow step"><span class="alabel">Why only AC?</span><span class="asep">:</span><span class="aexpr">DC produces <b>constant flux</b> → dΦ/dt = 0 → no induced EMF in secondary. <b>AC essential</b> — changing current → changing flux → induced EMF.</span></div>
+    <div class="arow step"><span class="alabel">Energy conservation</span><span class="asep">:</span><span class="aexpr">For ideal transformer: V<sub>P</sub>I<sub>P</sub> = V<sub>S</sub>I<sub>S</sub> &nbsp;(input power = output power). If voltage steps up, current steps down proportionally.</span></div>
+    <div class="arow step"><span class="alabel">Real transformer</span><span class="asep">:</span><span class="aexpr">Efficiency = (V<sub>S</sub>I<sub>S</sub>)/(V<sub>P</sub>I<sub>P</sub>) × 100%. Modern large transformers achieve 98–99% efficiency.</span></div>
+    <div class="concept">💡 <b>Power transmission:</b> Step-up transformer (11 kV → 220 kV) before transmission → very high V, very low I → small I²R losses in long cables. Step-down transformer at consumer end restores low voltage.</concept>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Mutual electromagnetic induction. AC only. V<sub>S</sub>/V<sub>P</sub> = N<sub>S</sub>/N<sub>P</sub>. Step-up: N<sub>S</sub>&gt;N<sub>P</sub>. Step-down: N<sub>S</sub>&lt;N<sub>P</sub>.</span></div>
   </div>
+</div>
 
-  <!-- B(vii) P2 -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">B(vii)</span>
-      <span class="qtext">Define mobility of electrons. State its SI unit. <span class="yb y24">2024</span></span>
-      <span class="mks">1 Mark</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr">Mobility (μ) of an electron is defined as the drift velocity acquired per unit electric field applied.</span></div>
-      <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr">μ = v<sub>d</sub>/E &nbsp; where v<sub>d</sub> = drift velocity, E = electric field</span></div>
-      <div class="arow step"><span class="alabel">Also</span><span class="asep">:</span><span class="aexpr">μ = eτ/m &nbsp; where τ = relaxation time, m = electron mass</span></div>
-      <div class="arow ans"><span class="alabel">SI Unit</span><span class="asep">:</span><span class="aexpr"><b>m²/(V·s)</b></span></div>
-    </div>
+<!-- P2 B(xi) Nuclear Fission -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">B·xi</span><span class="qtext">Define nuclear fission. Give one example. <span class="yb y23">2023</span></span><span class="mks">1 Mark</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr"><b>Nuclear fission</b> is the process in which a <b>heavy nucleus</b> (like U-235 or Pu-239) absorbs a slow neutron and splits into <b>two lighter nuclei of comparable mass</b>, releasing 2–3 fast neutrons and a tremendous amount of energy (~200 MeV per fission).</span></div>
+    <div class="arow form"><span class="alabel">Example</span><span class="asep">:</span><span class="aexpr"><b>₉₂U²³⁵ + ₀n¹ → ₅₆Ba¹⁴¹ + ₃₆Kr⁹² + 3 ₀n¹ + ~200 MeV</b></span></div>
+    <div class="arow step"><span class="alabel">Chain reaction</span><span class="asep">:</span><span class="aexpr">Each fission releases 3 neutrons → each can cause 3 more fissions → exponential growth = <b>chain reaction</b>. Uncontrolled: atomic bomb. Controlled: nuclear reactor.</span></div>
+    <div class="arow step"><span class="alabel">Critical mass</span><span class="asep">:</span><span class="aexpr">Minimum mass of fissile material for a self-sustaining chain reaction. For U-235: ~1 kg (with reflector). Below critical mass: reaction dies out.</span></div>
+    <div class="arow step"><span class="alabel">Moderator</span><span class="asep">:</span><span class="aexpr">In reactors, fast neutrons are slowed (moderated) using heavy water (D₂O), graphite, or light water to increase fission probability.</span></div>
+    <div class="concept">💡 <b>Energy calculation:</b> Δm ≈ 0.2 u per fission. E = 0.2 × 931.5 ≈ 186 MeV ≈ 200 MeV. 1 kg of U-235 can release energy equivalent to ~20,000 tonnes of TNT!</concept>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Heavy nucleus + slow n → 2 lighter nuclei + 2–3 neutrons + ~200 MeV. Example: U-235 → Ba-141 + Kr-92 + 3n.</span></div>
   </div>
+</div>
 
-  <!-- B(viii) P2 -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">B(viii)</span>
-      <span class="qtext">What is an intrinsic semiconductor? Give one example. <span class="yb y23">2023</span></span>
-      <span class="mks">1 Mark</span>
+<!-- P2 B(xii) Wavefront -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">B·xii</span><span class="qtext">What is a wavefront? State types of wavefronts. <span class="yb y22">2022</span></span><span class="mks">1 Mark</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr">A <b>wavefront</b> is the locus of all points in a medium that are in the <b>same phase of vibration</b> at a given instant. All points on a wavefront have the same phase, and the wave travels perpendicular to the wavefront.</span></div>
+    <div class="arow step"><span class="alabel">Type 1 — Spherical</span><span class="asep">:</span><span class="aexpr">From a <b>point source</b> in 3D → spherical wavefronts expanding outward. E.g., a candle flame, a glowing bulb filament. As r→∞, becomes approximately plane.</span></div>
+    <div class="arow step"><span class="alabel">Type 2 — Cylindrical</span><span class="asep">:</span><span class="aexpr">From a <b>line source</b> (long narrow source) → cylindrical wavefronts. E.g., a long fluorescent tube lamp, a slit illuminated by parallel light.</span></div>
+    <div class="arow step"><span class="alabel">Type 3 — Plane</span><span class="asep">:</span><span class="aexpr">From a source at <b>very large distance (infinity)</b> → plane wavefronts. E.g., sunlight (the Sun is ~150 million km away). All rays are parallel.</span></div>
+    <div class="diag">
+      Point source → ○ ○ ○ (spherical wavefronts, concentric circles)<br/>
+      Line source  → ⊂ ⊂ ⊂ (cylindrical wavefronts)<br/>
+      Distant src  → | | | (plane wavefronts, parallel lines)<br/>
+      <small>Arrow = direction of wave propagation (always perpendicular to wavefront)</small>
     </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr">An intrinsic semiconductor is a pure semiconductor with no intentional impurities added, whose electrical properties depend only on the material itself.</span></div>
-      <div class="arow step"><span class="alabel">Properties</span><span class="asep">:</span><span class="aexpr">At 0 K: acts as insulator. At room temp: thermal energy breaks bonds → equal electrons and holes (n = p = n<sub>i</sub>).</span></div>
-      <div class="arow ans"><span class="alabel">Examples</span><span class="asep">:</span><span class="aexpr"><b>Silicon (Si) and Germanium (Ge)</b> in pure form.</span></div>
-    </div>
+    <div class="concept">💡 <b>Key property:</b> The wave energy travels in the direction perpendicular to the wavefront (= direction of rays). This is why plane wavefronts give parallel rays — used in searchlights and lasers.</concept>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Locus of points in same phase. Types: (1) Spherical — point source (2) Cylindrical — line source (3) Plane — very distant source.</span></div>
   </div>
+</div>
 
-  <!-- B(ix) P2 -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">B(ix)</span>
-      <span class="qtext">State Kirchhoff's voltage law (KVL). <span class="yb y22">2022</span></span>
-      <span class="mks">1 Mark</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Statement</span><span class="asep">:</span><span class="aexpr">In any closed loop of a circuit, the algebraic sum of all the EMFs is equal to the algebraic sum of all the products of current and resistance (voltage drops).</span></div>
-      <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr">ΣE = ΣIR &nbsp; (around any closed loop)</span></div>
-      <div class="arow step"><span class="alabel">Basis</span><span class="asep">:</span><span class="aexpr">Based on conservation of energy — no net energy gain or loss in a closed loop.</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">ΣE = ΣIR &nbsp;; based on energy conservation.</span></div>
-    </div>
+<!-- ═══════ PAPER 2 SECTION C ═══════ -->
+<div class="sec-head">SECTION C — Short Answer Questions (2 Marks Each) <span class="sm">12 Questions · 8 × 2 = 16 Marks</span></div>
+
+<!-- P2 C(i) Electric Potential -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">C·i</span><span class="qtext">Derive expression for electric potential due to a point charge. <span class="yb y24">2024</span></span><span class="mks">2 Marks</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr"><b>Electric potential (V)</b> at a point is the work done per unit positive test charge to bring it from infinity to that point, without any acceleration (quasi-static process).</span></div>
+    <div class="arow step"><span class="alabel">Setup</span><span class="asep">:</span><span class="aexpr">Point charge +Q at origin O. Find V at point P at distance r from Q.</span></div>
+    <div class="arow step"><span class="alabel">Electric field</span><span class="asep">:</span><span class="aexpr">At distance x from Q: E = kQ/x² (directed radially outward for +Q)</span></div>
+    <div class="arow step"><span class="alabel">Small work dW</span><span class="asep">:</span><span class="aexpr">To move unit charge from x to x+dx (against field for +Q): dW = −E·dx = −(kQ/x²)dx</span></div>
+    <div class="arow form"><span class="alabel">Total work</span><span class="asep">:</span><span class="aexpr">V = ∫<sub>∞</sub><sup>r</sup> (−kQ/x²)dx = kQ [1/x]<sub>∞</sub><sup>r</sup> = kQ(1/r − 0) = kQ/r</span></div>
+    <div class="arow ans"><span class="alabel">∴ V</span><span class="asep">=</span><span class="aexpr"><b>V = kQ/r = Q/(4πε₀r)</b></span></div>
+    <div class="arow step"><span class="alabel">Sign</span><span class="asep">:</span><span class="aexpr">+Q: V = +kQ/r (positive potential, decreases with r). −Q: V = −kQ/r (negative potential, increases with r).</span></div>
+    <div class="arow step"><span class="alabel">Unit</span><span class="asep">:</span><span class="aexpr">Volt (V) = J/C. 1 V = 1 joule per coulomb.</span></div>
+    <div class="concept">💡 <b>Equipotential surfaces</b> for a point charge are concentric spheres. Moving along an equipotential surface requires no work (potential is constant there).</concept>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">V = kQ/r = Q/(4πε₀r). Positive for +Q, negative for −Q. Decreases as 1/r from source.</span></div>
   </div>
+</div>
 
-  <!-- B(x) P2 -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">B(x)</span>
-      <span class="qtext">What is the principle of a transformer? <span class="yb y24">2024</span></span>
-      <span class="mks">1 Mark</span>
+<!-- P2 C(ii) Parallel Resistance -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">C·ii</span><span class="qtext">Three resistors in parallel — derive expression for equivalent resistance. <span class="yb y23">2023</span></span><span class="mks">2 Marks</span></div>
+  <div class="ans-body">
+    <div class="arow step"><span class="alabel">Setup</span><span class="asep">:</span><span class="aexpr">R₁, R₂, R₃ are connected in parallel between points A and B. Battery voltage = V applied across A–B.</span></div>
+    <div class="diag">
+      A ──┬── R₁ ──┬── B<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── R₂ ──┤<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── R₃ ──┘<br/>
+      I = I₁ + I₂ + I₃ (total current from battery)<br/>
+      <small>Same voltage V across each resistor (parallel connection)</small>
     </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Principle</span><span class="asep">:</span><span class="aexpr">A transformer works on the principle of mutual electromagnetic induction. When AC flows in the primary coil, it creates a changing magnetic flux which induces an EMF in the secondary coil.</span></div>
-      <div class="arow form"><span class="alabel">Turns ratio</span><span class="asep">:</span><span class="aexpr">V<sub>S</sub>/V<sub>P</sub> = N<sub>S</sub>/N<sub>P</sub> = I<sub>P</sub>/I<sub>S</sub></span></div>
-      <div class="arow note"><span class="alabel">Note</span><span class="asep">:</span><span class="aexpr">Works only with AC. DC cannot change flux, so no EMF is induced with DC input.</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Mutual electromagnetic induction. V<sub>S</sub>/V<sub>P</sub> = N<sub>S</sub>/N<sub>P</sub>.</span></div>
-    </div>
+    <div class="arow step"><span class="alabel">Same voltage</span><span class="asep">:</span><span class="aexpr">V appears across each resistor: V<sub>1</sub> = V<sub>2</sub> = V<sub>3</sub> = V</span></div>
+    <div class="arow step"><span class="alabel">Individual currents</span><span class="asep">:</span><span class="aexpr">I₁ = V/R₁, &nbsp; I₂ = V/R₂, &nbsp; I₃ = V/R₃</span></div>
+    <div class="arow step"><span class="alabel">KCL at junction</span><span class="asep">:</span><span class="aexpr">I = I₁ + I₂ + I₃ &nbsp;⟹&nbsp; V/R<sub>eq</sub> = V/R₁ + V/R₂ + V/R₃</span></div>
+    <div class="arow step"><span class="alabel">Divide by V</span><span class="asep">:</span><span class="aexpr">1/R<sub>eq</sub> = 1/R₁ + 1/R₂ + 1/R₃</span></div>
+    <div class="arow ans"><span class="alabel">∴ Formula</span><span class="asep">:</span><span class="aexpr"><b>1/R<sub>eq</sub> = 1/R₁ + 1/R₂ + 1/R₃</b></span></div>
+    <div class="arow note"><span class="alabel">Key property</span><span class="asep">:</span><span class="aexpr">R<sub>eq</sub> is <b>always less than the smallest individual resistance</b>. Adding more parallel paths → more routes for current → lower total resistance.</span></div>
+    <div class="arow step"><span class="alabel">For 2 resistors</span><span class="asep">:</span><span class="aexpr">R<sub>eq</sub> = R₁R₂/(R₁+R₂) &nbsp; ("product over sum" — easy formula for two in parallel)</span></div>
+    <div class="concept">💡 <b>Real life:</b> All household appliances are connected in parallel. Each gets full 230 V, and can be switched on/off independently. Adding more appliances reduces total resistance → draws more current from supply.</concept>
   </div>
+</div>
 
-  <!-- B(xi) P2 -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">B(xi)</span>
-      <span class="qtext">Define nuclear fission. Give one example. <span class="yb y23">2023</span></span>
-      <span class="mks">1 Mark</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr">Nuclear fission is the process in which a heavy nucleus (like U-235) is split into two lighter nuclei of comparable masses, with the release of a large amount of energy and 2–3 neutrons.</span></div>
-      <div class="arow form"><span class="alabel">Example</span><span class="asep">:</span><span class="aexpr">₉₂U²³⁵ + ₀n¹ → ₅₆Ba¹⁴¹ + ₃₆Kr⁹² + 3₀n¹ + ~200 MeV</span></div>
-      <div class="arow step"><span class="alabel">Chain reaction</span><span class="asep">:</span><span class="aexpr">The released neutrons cause further fissions → chain reaction → basis of nuclear reactor and atom bomb.</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Heavy nucleus splits into lighter nuclei + neutrons + large energy. Example: U-235 + n → Ba + Kr + 3n + 200 MeV.</span></div>
-    </div>
+<!-- P2 C(iii) Magnetic Moment -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">C·iii</span><span class="qtext">Circular coil: N=200, r=0.1m, I=1A. Find magnetic moment. <span class="yb y22">2022</span></span><span class="mks">2 Marks</span></div>
+  <div class="ans-body">
+    <div class="arow step"><span class="alabel">Given</span><span class="asep">:</span><span class="aexpr">N = 200 turns, r = 0.1 m, I = 1 A</span></div>
+    <div class="arow def"><span class="alabel">Magnetic moment def.</span><span class="asep">:</span><span class="aexpr">Magnetic dipole moment M = NIA. It represents the strength of a current loop as a magnetic source. Direction: along axis, given by right-hand thumb rule.</span></div>
+    <div class="arow step"><span class="alabel">Step 1: Area</span><span class="asep">:</span><span class="aexpr">A = πr² = π × (0.1)² = π × 0.01 = 0.01π m² = <b>3.1416 × 10⁻² m²</b></span></div>
+    <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr"><b>M = NIA</b></span></div>
+    <div class="arow step"><span class="alabel">Step 2: Substitute</span><span class="asep">:</span><span class="aexpr">M = 200 × 1 × 0.01π = 200 × 0.01π = 2π</span></div>
+    <div class="arow ans"><span class="alabel">∴ M</span><span class="asep">=</span><span class="aexpr"><b>2π ≈ 6.28 A·m²</b></span></div>
+    <div class="arow step"><span class="alabel">SI Unit</span><span class="asep">:</span><span class="aexpr">A·m² (ampere-metre squared)</span></div>
+    <div class="arow note"><span class="alabel">Direction</span><span class="asep">:</span><span class="aexpr">Perpendicular to the plane of the coil, in the direction given by the right-hand thumb rule when fingers curl in the direction of current.</span></div>
   </div>
+</div>
 
-  <!-- B(xii) P2 -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">B(xii)</span>
-      <span class="qtext">What is a wavefront? State types of wavefronts. <span class="yb y22">2022</span></span>
-      <span class="mks">1 Mark</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr">A wavefront is the locus of all points in a medium that are in the same phase of vibration at a given instant of time.</span></div>
-      <div class="arow step"><span class="alabel">Types</span><span class="asep">:</span><span class="aexpr">
-        (1) <b>Spherical wavefront</b> — from a point source in 3D (like a candle flame).<br/>
-        (2) <b>Cylindrical wavefront</b> — from a line source (like a fluorescent tube).<br/>
-        (3) <b>Plane wavefront</b> — from a distant (effectively infinite) source.
-      </span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Locus of points in same phase. Types: spherical, cylindrical, plane.</span></div>
-    </div>
+<!-- P2 C(iv) Impedance -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">C·iv</span><span class="qtext">AC circuit: R=100Ω, L=0.5H, C=100μF, f=50Hz. Find impedance Z. <span class="yb y24">2024</span></span><span class="mks">2 Marks</span></div>
+  <div class="ans-body">
+    <div class="arow step"><span class="alabel">Given</span><span class="asep">:</span><span class="aexpr">R = 100 Ω, L = 0.5 H, C = 100 μF = 10⁻⁴ F, f = 50 Hz</span></div>
+    <div class="arow step"><span class="alabel">Step 1: ω</span><span class="asep">:</span><span class="aexpr">ω = 2πf = 2π × 50 = 100π = 314.16 rad/s</span></div>
+    <div class="arow step"><span class="alabel">Step 2: X<sub>L</sub></span><span class="asep">:</span><span class="aexpr">X<sub>L</sub> = ωL = 314.16 × 0.5 = <b>157.08 Ω</b></span></div>
+    <div class="arow step"><span class="alabel">Step 3: X<sub>C</sub></span><span class="asep">:</span><span class="aexpr">X<sub>C</sub> = 1/(ωC) = 1/(314.16 × 10⁻⁴) = 1/0.031416 = <b>31.83 Ω</b></span></div>
+    <div class="arow step"><span class="alabel">Step 4: X<sub>L</sub>−X<sub>C</sub></span><span class="asep">:</span><span class="aexpr">X<sub>L</sub> − X<sub>C</sub> = 157.08 − 31.83 = <b>125.25 Ω</b> &nbsp; (net reactance, inductive dominated)</span></div>
+    <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr"><b>Z = √[R² + (X<sub>L</sub>−X<sub>C</sub>)²]</b></span></div>
+    <div class="arow step"><span class="alabel">Step 5: Z</span><span class="asep">:</span><span class="aexpr">Z = √(100² + 125.25²) = √(10000 + 15688) = √25688 = <b>160.3 Ω</b></span></div>
+    <div class="arow ans"><span class="alabel">∴ Z</span><span class="asep">=</span><span class="aexpr"><b>≈ 160.3 Ω</b> &nbsp; (impedance is the AC equivalent of resistance)</span></div>
+    <div class="arow step"><span class="alabel">Phase angle</span><span class="asep">:</span><span class="aexpr">tanφ = (X<sub>L</sub>−X<sub>C</sub>)/R = 125.25/100 = 1.2525 → φ = tan⁻¹(1.2525) ≈ 51.3° (current lags voltage)</span></div>
   </div>
+</div>
 
-  <!-- ── Section C Paper 2 ── -->
-  <div class="sec-head">Section C — Short Answer Questions (2 Marks Each) <span class="sm">8 × 2 = 16 Marks</span></div>
-
-  <!-- C(i) P2 -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">C(i)</span>
-      <span class="qtext">Derive the expression for electric potential due to a point charge. <span class="yb y24">2024</span></span>
-      <span class="mks">2 Marks</span>
+<!-- P2 C(v) Refraction through Prism -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">C·v</span><span class="qtext">Explain refraction through a prism with diagram. Derive deviation formula. <span class="yb y23">2023</span></span><span class="mks">2 Marks</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Setup</span><span class="asep">:</span><span class="aexpr">Light enters face AB at angle of incidence i₁, refracts at angle r₁ inside prism, travels through prism, hits face AC at angle r₂ inside, exits at angle of emergence e.</span></div>
+    <div class="diag">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A (apex, angle A)<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;╱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;╲<br/>
+      incident →i₁ ╱ r₁&nbsp;→&nbsp;r₂ ╲ e → emergent<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;╱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;╲<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B──────────────C (base)<br/>
+      <small>δ = deviation = angle between incident ray direction and emergent ray direction</small>
     </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr">Electric potential at a point is the work done per unit positive charge in bringing it from infinity to that point.</span></div>
-      <div class="arow step"><span class="alabel">Setup</span><span class="asep">:</span><span class="aexpr">Point charge +Q at origin. Find V at point P at distance r.</span></div>
-      <div class="arow step"><span class="alabel">Small work</span><span class="asep">:</span><span class="aexpr">dW = −F·dx = −(kQ/x²)·dx &nbsp; (against the field, for +ve test charge)</span></div>
-      <div class="arow form"><span class="alabel">Total work</span><span class="asep">:</span><span class="aexpr">V = W/q₀ = ∫<sub>∞</sub><sup>r</sup> (−kQ/x²)dx = [kQ/x]<sub>∞</sub><sup>r</sup> = kQ/r − 0</span></div>
-      <div class="arow ans"><span class="alabel">∴ V</span><span class="asep">=</span><span class="aexpr"><b>kQ/r = Q/(4πε₀r)</b></span></div>
-      <div class="arow note"><span class="alabel">Note</span><span class="asep">:</span><span class="aexpr">Positive for +ve charge (potential increases near it); negative for −ve charge.</span></div>
-    </div>
+    <div class="arow step"><span class="alabel">At face AB</span><span class="asep">:</span><span class="aexpr">Snell's law: <b>sin i₁ = n sin r₁</b> &nbsp;…(1)</span></div>
+    <div class="arow step"><span class="alabel">At face AC</span><span class="asep">:</span><span class="aexpr">Snell's law: <b>n sin r₂ = sin e</b> &nbsp;…(2)</span></div>
+    <div class="arow step"><span class="alabel">Prism geometry</span><span class="asep">:</span><span class="aexpr">In triangle at apex: <b>A = r₁ + r₂</b> &nbsp;…(3)</span></div>
+    <div class="arow form"><span class="alabel">Deviation formula</span><span class="asep">:</span><span class="aexpr"><b>δ = (i₁ + e) − (r₁ + r₂) = i₁ + e − A</b></span></div>
+    <div class="arow step"><span class="alabel">Minimum deviation</span><span class="asep">:</span><span class="aexpr">At D<sub>m</sub>: i₁ = e and r₁ = r₂ = A/2. The refracted ray inside prism is parallel to base.</span></div>
+    <div class="arow form"><span class="alabel">Refractive index</span><span class="asep">:</span><span class="aexpr"><b>n = sin[(A+D<sub>m</sub>)/2] / sin(A/2)</b> &nbsp; ← important formula for board exam</span></div>
+    <div class="concept">💡 <b>Dispersion:</b> Different wavelengths of white light have different n → different δ → different colours separate (spectrum). Violet deviates most (highest n), red deviates least (lowest n).</concept>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">δ = i₁ + e − A. At minimum deviation: n = sin[(A+D<sub>m</sub>)/2]/sin(A/2). Draw labelled diagram.</span></div>
   </div>
+</div>
 
-  <!-- C(ii) P2 -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">C(ii)</span>
-      <span class="qtext">Three resistors in parallel — derive expression for equivalent resistance. <span class="yb y23">2023</span></span>
-      <span class="mks">2 Marks</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow step"><span class="alabel">Setup</span><span class="asep">:</span><span class="aexpr">R₁, R₂, R₃ connected in parallel across voltage V.</span></div>
-      <div class="arow step"><span class="alabel">Same voltage</span><span class="asep">:</span><span class="aexpr">Voltage across each = V. Currents: I₁ = V/R₁, I₂ = V/R₂, I₃ = V/R₃</span></div>
-      <div class="arow step"><span class="alabel">Total current</span><span class="asep">:</span><span class="aexpr">I = I₁ + I₂ + I₃ &nbsp; (KCL)</span></div>
-      <div class="arow step"><span class="alabel">Substitute</span><span class="asep">:</span><span class="aexpr">V/R<sub>eq</sub> = V/R₁ + V/R₂ + V/R₃</span></div>
-      <div class="arow step"><span class="alabel">Divide by V</span><span class="asep">:</span><span class="aexpr">1/R<sub>eq</sub> = 1/R₁ + 1/R₂ + 1/R₃</span></div>
-      <div class="arow ans"><span class="alabel">∴ Formula</span><span class="asep">:</span><span class="aexpr"><b>1/R<sub>eq</sub> = 1/R₁ + 1/R₂ + 1/R₃</b> &nbsp; (R<sub>eq</sub> &lt; smallest R)</span></div>
-    </div>
+<!-- P2 C(vi) Pair Production & Annihilation -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">C·vi</span><span class="qtext">Explain pair production and annihilation of matter. <span class="yb y22">2022</span></span><span class="mks">2 Marks</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Pair Production</span><span class="asep">:</span><span class="aexpr"><b>Pair production</b> is the conversion of a high-energy photon (γ-ray) into an <b>electron-positron pair</b> (e⁻ + e⁺) in the vicinity of a heavy nucleus. Energy → mass conversion (E = mc²).</span></div>
+    <div class="arow form"><span class="alabel">Equation</span><span class="asep">:</span><span class="aexpr"><b>γ → e⁻ + e⁺</b></span></div>
+    <div class="arow step"><span class="alabel">Energy condition</span><span class="asep">:</span><span class="aexpr">Photon energy must be ≥ 2m₀c² = 2 × (9.1×10⁻³¹) × (3×10⁸)² = <b>1.02 MeV</b> minimum.</span></div>
+    <div class="arow step"><span class="alabel">Role of nucleus</span><span class="asep">:</span><span class="aexpr">Heavy nucleus absorbs recoil momentum (conservation of momentum requires another body nearby — cannot occur in vacuum alone).</span></div>
+    <div class="arow def"><span class="alabel">Annihilation</span><span class="asep">:</span><span class="aexpr"><b>Pair annihilation</b> is the reverse: when an electron meets a positron (its antiparticle), they annihilate each other and produce <b>two γ-ray photons</b> moving in opposite directions. Mass → energy conversion.</span></div>
+    <div class="arow form"><span class="alabel">Equation</span><span class="asep">:</span><span class="aexpr"><b>e⁻ + e⁺ → γ + γ</b></span></div>
+    <div class="arow step"><span class="alabel">Each photon energy</span><span class="asep">:</span><span class="aexpr">= m₀c² = 0.511 MeV. Two photons emitted in exactly opposite directions (momentum conservation).</span></div>
+    <div class="arow step"><span class="alabel">Significance</span><span class="asep">:</span><span class="aexpr">Both processes prove <b>mass-energy equivalence (E = mc²)</b>. Matter and antimatter are interconvertible with energy.</span></div>
+    <div class="concept">💡 <b>PET scan:</b> In medical PET (Positron Emission Tomography) scans, a positron emitted by radioactive tracer annihilates with a tissue electron → two 0.511 MeV γ-rays → detected to form 3D image of body.</concept>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Pair production: γ(≥1.02 MeV)→e⁻+e⁺ (energy→mass). Annihilation: e⁻+e⁺→2γ(0.511 MeV each) (mass→energy). Both verify E=mc².</span></div>
   </div>
+</div>
 
-  <!-- C(iii) P2 -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">C(iii)</span>
-      <span class="qtext">Circular coil: 200 turns, r = 0.1 m, I = 1 A. Find magnetic moment. <span class="yb y22">2022</span></span>
-      <span class="mks">2 Marks</span>
+<!-- P2 C(vii) BE/A Graph -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">C·vii</span><span class="qtext">Draw BE per nucleon vs mass number graph and explain its features. <span class="yb y24">2024</span></span><span class="mks">2 Marks</span></div>
+  <div class="ans-body">
+    <div class="diag">
+      BE/A ↑ (MeV/nucleon)<br/>
+      &nbsp;9 ──────────●──── Fe-56 (8.8 MeV) ← PEAK (most stable)<br/>
+      &nbsp;8 ────────╱─────────────╲──────────<br/>
+      &nbsp;7 ──────╱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;╲─── U-238 (7.6 MeV)<br/>
+      &nbsp;5 ──╱<br/>
+      &nbsp;4 ─● He-4 (7.1 MeV)<br/>
+      &nbsp;1 ─● H-2 (deuteron, 1.1 MeV)<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ Mass number A<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;20&nbsp;&nbsp;50&nbsp;&nbsp;&nbsp;&nbsp;100&nbsp;&nbsp;&nbsp;&nbsp;150&nbsp;&nbsp;200&nbsp;238<br/>
+      <small>Rises steeply for light nuclei (A&lt;30) | Broad peak near Fe (A=50–65) | Gradual fall for heavy nuclei (A&gt;65)</small>
     </div>
-    <div class="ans-body">
-      <div class="arow step"><span class="alabel">Given</span><span class="asep">:</span><span class="aexpr">N = 200 turns, r = 0.1 m, I = 1 A</span></div>
-      <div class="arow step"><span class="alabel">Area</span><span class="asep">:</span><span class="aexpr">A = πr² = π × (0.1)² = π × 0.01 = 0.0314 m²</span></div>
-      <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr">M = NIA</span></div>
-      <div class="arow step"><span class="alabel">Substitute</span><span class="asep">:</span><span class="aexpr">M = 200 × 1 × 0.0314</span></div>
-      <div class="arow ans"><span class="alabel">∴ M</span><span class="asep">=</span><span class="aexpr"><b>6.28 A·m² ≈ 2π A·m²</b></span></div>
-    </div>
+    <div class="arow step"><span class="alabel">Feature 1</span><span class="asep">:</span><span class="aexpr"><b>Steeply rises</b> from H-2 (1.1 MeV) to He-4 (7.1 MeV) for very light nuclei. Light nuclei gain stability rapidly.</span></div>
+    <div class="arow step"><span class="alabel">Feature 2</span><span class="asep">:</span><span class="aexpr"><b>Broad maximum</b> around A = 50–65 (near Fe-56). Maximum BE/A ≈ 8.8 MeV. <b>Fe-56 is the most stable nucleus</b> in nature.</span></div>
+    <div class="arow step"><span class="alabel">Feature 3</span><span class="asep">:</span><span class="aexpr"><b>Gradual decrease</b> for A &gt; 65 (heavy nuclei like U-238 has BE/A ≈ 7.6 MeV). Electrostatic repulsion between many protons reduces stability.</span></div>
+    <div class="arow step"><span class="alabel">Fission explained</span><span class="asep">:</span><span class="aexpr">When U-238 (BE/A=7.6) splits into Fe-range fragments (BE/A≈8.8), <b>released energy = difference in BE/A × number of nucleons</b>.</span></div>
+    <div class="arow step"><span class="alabel">Fusion explained</span><span class="asep">:</span><span class="aexpr">When two H-2 nuclei (BE/A=1.1) fuse to form He-4 (BE/A=7.1), <b>energy released = (7.1−1.1) × 4 nucleons</b> per fusion event.</span></div>
+    <div class="concept">💡 <b>Why is Fe-56 the end point?</b> Stars fuse hydrogen → helium → carbon → ... → iron. At iron, fusion no longer releases energy (would require energy). So iron "ash" accumulates in stellar cores.</concept>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Draw graph. Peak at Fe-56 (8.8 MeV). Rise for light nuclei → fusion releases energy. Fall for heavy nuclei → fission releases energy.</span></div>
   </div>
+</div>
 
-  <!-- C(iv) P2 -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">C(iv)</span>
-      <span class="qtext">AC circuit: R=100Ω, L=0.5H, C=100μF, f=50Hz. Find impedance. <span class="yb y24">2024</span></span>
-      <span class="mks">2 Marks</span>
+<!-- P2 C(viii) p-n Junction Forward Bias -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">C·viii</span><span class="qtext">Explain p-n junction diode in forward bias with diagram. <span class="yb y23">2023</span></span><span class="mks">2 Marks</span></div>
+  <div class="ans-body">
+    <div class="diag">
+      [Battery +ve] ─── [p | n] ─── [Battery −ve]<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑↑↑&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑↑↑<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Holes→&nbsp;&nbsp;&nbsp;&nbsp;←Electrons<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Depletion layer narrows<br/>
+      I → → → → → (large current: mA range)<br/>
+      <small>p-side connected to +ve terminal, n-side to −ve terminal = Forward bias</small>
     </div>
-    <div class="ans-body">
-      <div class="arow step"><span class="alabel">Given</span><span class="asep">:</span><span class="aexpr">R = 100 Ω, L = 0.5 H, C = 100 μF = 10⁻⁴ F, f = 50 Hz</span></div>
-      <div class="arow step"><span class="alabel">ω</span><span class="asep">=</span><span class="aexpr">2πf = 2π × 50 = 100π ≈ 314.16 rad/s</span></div>
-      <div class="arow step"><span class="alabel">X<sub>L</sub></span><span class="asep">=</span><span class="aexpr">ωL = 314.16 × 0.5 = 157.08 Ω</span></div>
-      <div class="arow step"><span class="alabel">X<sub>C</sub></span><span class="asep">=</span><span class="aexpr">1/(ωC) = 1/(314.16 × 10⁻⁴) = 1/0.03142 = 31.83 Ω</span></div>
-      <div class="arow step"><span class="alabel">X<sub>L</sub>−X<sub>C</sub></span><span class="asep">=</span><span class="aexpr">157.08 − 31.83 = 125.25 Ω</span></div>
-      <div class="arow form"><span class="alabel">Z</span><span class="asep">=</span><span class="aexpr">√(R² + (X<sub>L</sub>−X<sub>C</sub>)²) = √(100² + 125.25²)</span></div>
-      <div class="arow step"><span class="alabel">Calculate</span><span class="asep">:</span><span class="aexpr">= √(10000 + 15688) = √25688</span></div>
-      <div class="arow ans"><span class="alabel">∴ Z</span><span class="asep">=</span><span class="aexpr"><b>≈ 160.3 Ω</b></span></div>
-    </div>
+    <div class="arow step"><span class="alabel">What is forward bias?</span><span class="asep">:</span><span class="aexpr">The <b>p-region is connected to +ve terminal</b> of battery and <b>n-region to −ve terminal</b>. This is the correct polarity for diode to conduct.</span></div>
+    <div class="arow step"><span class="alabel">Effect on holes</span><span class="asep">:</span><span class="aexpr">+ve terminal <b>repels holes</b> in p-region toward the junction.</span></div>
+    <div class="arow step"><span class="alabel">Effect on electrons</span><span class="asep">:</span><span class="aexpr">−ve terminal <b>repels electrons</b> in n-region toward the junction.</span></div>
+    <div class="arow step"><span class="alabel">Depletion layer</span><span class="asep">:</span><span class="aexpr">Width of depletion layer <b>decreases</b>. Barrier potential <b>reduces</b>. When V<sub>applied</sub> &gt; V<sub>barrier</sub> (≈0.7V for Si, ≈0.3V for Ge), majority carriers cross the junction freely.</span></div>
+    <div class="arow step"><span class="alabel">Current flow</span><span class="asep">:</span><span class="aexpr">Large forward current flows (mA to A range). Current increases exponentially with voltage: I = I₀(e<sup>V/nV<sub>T</sub></sup> − 1).</span></div>
+    <div class="arow step"><span class="alabel">V-I characteristic</span><span class="asep">:</span><span class="aexpr">Below knee voltage: almost zero current. Above knee voltage: current rises steeply. Dynamic resistance r<sub>d</sub> = dV/dI (very small in forward bias ≈ few Ω).</span></div>
+    <div class="concept">💡 <b>Threshold/knee voltage:</b> Si diode ≈ 0.7V, Ge diode ≈ 0.3V, LED ≈ 1.8–3.3V (depends on colour). Below this, the diode doesn't conduct significantly.</concept>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">p at +ve, n at −ve. Depletion layer narrows. Barrier reduces. Majority carriers flow → large current (mA). Draw diagram.</span></div>
   </div>
+</div>
 
-  <!-- C(v) P2 -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">C(v)</span>
-      <span class="qtext">Explain refraction through a prism with diagram. Derive deviation formula. <span class="yb y23">2023</span></span>
-      <span class="mks">2 Marks</span>
+<!-- P2 C(ix) Single Slit Diffraction -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">C·ix</span><span class="qtext">Explain Fraunhofer diffraction at a single slit with diagram. <span class="yb y22">2022</span></span><span class="mks">2 Marks</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Diffraction</span><span class="asep">:</span><span class="aexpr"><b>Diffraction</b> is the bending (spreading) of light waves around the edges of an obstacle or through a narrow opening. It is a wave property — not possible for particles.</span></div>
+    <div class="diag">
+      Plane wave → [Single slit, width a] → Converging lens → Screen<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Central bright maximum (widest, brightest)<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1st dark fringe (minimum)<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2nd bright (1st secondary max)<br/>
+      <small>Intensity decreases rapidly for secondary maxima. Pattern symmetric about centre.</small>
     </div>
-    <div class="ans-body">
-      <div class="diag-box">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A (apex)<br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;╱&nbsp;&nbsp;&nbsp;╲<br/>
-        Ray → r₁╱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;╲r₂ → emergent ray<br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;╱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;╲<br/>
-        &nbsp;&nbsp;&nbsp;B────────────C (base)<br/>
-        <small>i₁ = angle of incidence at first face; e = angle of emergence at second face</small>
-      </div>
-      <div class="arow step"><span class="alabel">At face AB</span><span class="asep">:</span><span class="aexpr">Snell's law: n = sin i₁ / sin r₁</span></div>
-      <div class="arow step"><span class="alabel">At face AC</span><span class="asep">:</span><span class="aexpr">n = sin e / sin r₂</span></div>
-      <div class="arow step"><span class="alabel">Prism angle</span><span class="asep">:</span><span class="aexpr">A = r₁ + r₂ &nbsp; (angle of prism)</span></div>
-      <div class="arow form"><span class="alabel">Deviation δ</span><span class="asep">:</span><span class="aexpr">δ = (i₁ + e) − (r₁ + r₂) = i₁ + e − A</span></div>
-      <div class="arow step"><span class="alabel">Min. deviation</span><span class="asep">:</span><span class="aexpr">At minimum deviation D<sub>m</sub>: i₁ = e and r₁ = r₂ = A/2</span></div>
-      <div class="arow ans"><span class="alabel">∴ Formula</span><span class="asep">:</span><span class="aexpr"><b>δ = i + e − A &nbsp;; at minimum deviation: n = sin[(A+D<sub>m</sub>)/2] / sin(A/2)</b></span></div>
-    </div>
+    <div class="arow step"><span class="alabel">Central maximum</span><span class="asep">:</span><span class="aexpr">At θ = 0°: all secondary wavelets from slit arrive in phase → <b>brightest and widest</b> central maximum.</span></div>
+    <div class="arow form"><span class="alabel">Minima (dark fringes)</span><span class="asep">:</span><span class="aexpr"><b>a sinθ = nλ</b> &nbsp; where n = ±1, ±2, ±3, ... &nbsp; (a = slit width, λ = wavelength)</span></div>
+    <div class="arow step"><span class="alabel">Width of central max</span><span class="asep">:</span><span class="aexpr">Angular: 2θ = 2λ/a. Linear (on screen): W = 2λD/a. <b>Narrower slit (↓a) → wider diffraction pattern</b>.</span></div>
+    <div class="arow step"><span class="alabel">Secondary maxima</span><span class="asep">:</span><span class="aexpr">Located at a sinθ = (2n+1)λ/2. Intensity rapidly decreases: 1st secondary max ≈ 4.5% of central maximum intensity.</span></div>
+    <div class="arow step"><span class="alabel">Difference from YDSE</span><span class="asep">:</span><span class="aexpr">YDSE (double slit): equal bright fringes from two point sources (interference). Single slit: unequal fringes from continuous source (diffraction). In practice: both occur together.</span></div>
+    <div class="concept">💡 <b>Resolution limit:</b> Diffraction limits the resolving power of optical instruments. Rayleigh criterion: two points just resolved when first minimum of one falls on central max of other: θ<sub>min</sub> = 1.22λ/D.</concept>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Minima: a sinθ = nλ. Central max widest (2λD/a). Narrower slit → wider pattern. Draw labelled diagram.</span></div>
   </div>
+</div>
 
-  <!-- C(vi) P2 -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">C(vi)</span>
-      <span class="qtext">Explain pair production and annihilation of matter. <span class="yb y22">2022</span></span>
-      <span class="mks">2 Marks</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Pair Production</span><span class="asep">:</span><span class="aexpr">A high-energy photon (γ-ray, E ≥ 1.02 MeV) spontaneously converts into an electron-positron pair in the presence of a heavy nucleus.</span></div>
-      <div class="arow form"><span class="alabel">Equation</span><span class="asep">:</span><span class="aexpr">γ → e⁻ + e⁺ &nbsp; (energy → mass, E = 2m₀c² = 1.02 MeV minimum)</span></div>
-      <div class="arow def"><span class="alabel">Annihilation</span><span class="asep">:</span><span class="aexpr">When an electron meets a positron, they annihilate each other and produce two γ-ray photons of equal energy moving in opposite directions.</span></div>
-      <div class="arow form"><span class="alabel">Equation</span><span class="asep">:</span><span class="aexpr">e⁻ + e⁺ → γ + γ &nbsp; (each photon has energy 0.511 MeV)</span></div>
-      <div class="arow ans"><span class="alabel">∴ Summary</span><span class="asep">:</span><span class="aexpr">Pair production: energy→mass (γ→e⁻+e⁺). Annihilation: mass→energy (e⁻+e⁺→2γ). Both obey E = mc².</span></div>
-    </div>
+<!-- P2 C(x) Ampere's Circuital Law -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">C·x</span><span class="qtext">State and explain Ampere's circuital law. <span class="yb y24">2024</span></span><span class="mks">2 Marks</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Statement</span><span class="asep">:</span><span class="aexpr">The line integral of the magnetic field <b>B</b> around any closed Amperian loop is equal to <b>μ₀ times the total electric current enclosed</b> by that loop.</span></div>
+    <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr"><b>∮ B·dl = μ₀ I<sub>enclosed</sub></b> &nbsp; (μ₀ = 4π × 10⁻⁷ T·m/A)</span></div>
+    <div class="arow step"><span class="alabel">Application 1</span><span class="asep">:</span><span class="aexpr"><b>Long straight wire:</b> Choose circular Amperian loop of radius r. B × (2πr) = μ₀I → <b>B = μ₀I/(2πr)</b></span></div>
+    <div class="arow step"><span class="alabel">Application 2</span><span class="asep">:</span><span class="aexpr"><b>Long solenoid:</b> Rectangular loop. BL = μ₀(nL)I → <b>B = μ₀nI</b> &nbsp;(inside), B = 0 outside</span></div>
+    <div class="arow step"><span class="alabel">Application 3</span><span class="asep">:</span><span class="aexpr"><b>Toroid:</b> B = μ₀NI/(2πr) inside the toroid, B = 0 outside</span></div>
+    <div class="arow step"><span class="alabel">Modified form</span><span class="asep">:</span><span class="aexpr">Maxwell added displacement current: <b>∮B·dl = μ₀(I + ε₀ dΦ<sub>E</sub>/dt)</b> — accounts for E-field changes in capacitor gaps.</span></div>
+    <div class="concept">💡 <b>Comparison with Gauss's law:</b> Gauss's law: ∮E·dA = Q/ε₀ (uses closed surface). Ampere's law: ∮B·dl = μ₀I (uses closed loop). Both are among Maxwell's four equations that describe all of electromagnetism.</concept>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">∮B·dl = μ₀I<sub>enc</sub>. Applied to wire: B = μ₀I/2πr. Applied to solenoid: B = μ₀nI.</span></div>
   </div>
+</div>
 
-  <!-- C(vii) P2 -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">C(vii)</span>
-      <span class="qtext">Draw binding energy per nucleon vs mass number graph and explain its features. <span class="yb y24">2024</span></span>
-      <span class="mks">2 Marks</span>
+<!-- P2 C(xi) B inside Solenoid -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">C·xi</span><span class="qtext">Derive the expression for magnetic field inside a long solenoid. <span class="yb y23">2023</span></span><span class="mks">2 Marks</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Solenoid</span><span class="asep">:</span><span class="aexpr">A long solenoid is a closely wound helix of wire with n turns per metre. Inside: B is <b>uniform and parallel to axis</b>. Outside: B ≈ 0 (for ideal infinite solenoid).</span></div>
+    <div class="diag">
+      [Solenoid cross-section — side view]<br/>
+      × × × × × × × (outside, B≈0)<br/>
+      a──────────b (inside, B along axis)<br/>
+      │ B→ B→ B→ │ (uniform B inside)<br/>
+      d──────────c<br/>
+      × × × × × × × (outside, B≈0)<br/>
+      <small>Rectangular Amperian loop abcda. ab = cd = L (length). bc, da are perpendicular to B.</small>
     </div>
-    <div class="ans-body">
-      <div class="diag-box">
-        BE/A ↑ (MeV)<br/>
-        &nbsp;&nbsp;9 ─────────●Fe-56 (peak ≈ 8.8 MeV)<br/>
-        &nbsp;&nbsp;8 ──────╱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;╲──────<br/>
-        &nbsp;&nbsp;7 ─────╱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;╲─ U-238<br/>
-        &nbsp;&nbsp;4 ─● He-4<br/>
-        &nbsp;&nbsp;1 ─● H-2<br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ Mass Number (A)<br/>
-        <small>Light nuclei (A&lt;56): BE/A increases → fusion releases energy<br/>
-        Heavy nuclei (A&gt;56): BE/A decreases → fission releases energy</small>
-      </div>
-      <div class="arow step"><span class="alabel">Feature 1</span><span class="asep">:</span><span class="aexpr">BE/A increases from H-1 to Fe-56, reaches maximum ≈ 8.8 MeV at Fe-56 (most stable nucleus).</span></div>
-      <div class="arow step"><span class="alabel">Feature 2</span><span class="asep">:</span><span class="aexpr">For A &gt; 56 (heavy nuclei), BE/A gradually decreases — these can undergo fission to gain stability.</span></div>
-      <div class="arow step"><span class="alabel">Feature 3</span><span class="asep">:</span><span class="aexpr">For A &lt; 56 (light nuclei), fusion of two light nuclei gives product with higher BE/A → fusion releases energy.</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Peak at Fe-56 (8.8 MeV). Fission: heavy→lighter (A&gt;56). Fusion: light→heavier (A&lt;56). Both release energy.</span></div>
-    </div>
+    <div class="arow form"><span class="alabel">Apply Ampere's law</span><span class="asep">:</span><span class="aexpr">∮B·dl = μ₀I<sub>enclosed</sub></span></div>
+    <div class="arow step"><span class="alabel">Along ab (inside)</span><span class="asep">:</span><span class="aexpr">B·L &nbsp; (B parallel to dl, length = L)</span></div>
+    <div class="arow step"><span class="alabel">Along bc and da</span><span class="asep">:</span><span class="aexpr">0 &nbsp; (B ⊥ dl, so B·dl = 0)</span></div>
+    <div class="arow step"><span class="alabel">Along cd (outside)</span><span class="asep">:</span><span class="aexpr">0 &nbsp; (B = 0 outside ideal solenoid)</span></div>
+    <div class="arow step"><span class="alabel">Total ∮B·dl</span><span class="asep">:</span><span class="aexpr">= BL + 0 + 0 + 0 = <b>BL</b></span></div>
+    <div class="arow step"><span class="alabel">Enclosed current</span><span class="asep">:</span><span class="aexpr">Number of turns in length L = nL. Each turn carries current I. I<sub>enc</sub> = nLI</span></div>
+    <div class="arow step"><span class="alabel">Equate</span><span class="asep">:</span><span class="aexpr">BL = μ₀(nLI) &nbsp;⟹&nbsp; B = μ₀nI</span></div>
+    <div class="arow ans"><span class="alabel">∴ B</span><span class="asep">=</span><span class="aexpr"><b>B = μ₀nI</b> &nbsp; (inside solenoid, uniform) &nbsp;|&nbsp; B = 0 outside (ideal solenoid)</span></div>
+    <div class="arow note"><span class="alabel">n = N/L</span><span class="asep">:</span><span class="aexpr">If total turns = N and length = L, then n = N/L → B = μ₀NI/L.</span></div>
+    <div class="concept">💡 <b>Core material:</b> With iron core (μ<sub>r</sub> ≈ 1000): B = μ₀μ<sub>r</sub>nI ≈ 1000 times stronger. Used in electromagnets.</concept>
   </div>
+</div>
 
-  <!-- C(viii) P2 -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">C(viii)</span>
-      <span class="qtext">Explain p-n junction diode in forward bias with diagram. <span class="yb y23">2023</span></span>
-      <span class="mks">2 Marks</span>
+<!-- P2 C(xii) Photoelectric Effect Observations -->
+<div class="q-card">
+  <div class="q-card-head"><span class="qno">C·xii</span><span class="qtext">What is photoelectric effect? State the experimental observations. <span class="yb y22">2022</span></span><span class="mks">2 Marks</span></div>
+  <div class="ans-body">
+    <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr"><b>Photoelectric effect</b> is the phenomenon of <b>emission of electrons from the surface of a metal</b> when electromagnetic radiation (light, UV, X-rays) of sufficiently high frequency falls on it. Discovered by Heinrich Hertz (1887). Explained by Albert Einstein (1905).</span></div>
+    <div class="arow step"><span class="alabel">Observation 1</span><span class="asep">:</span><span class="aexpr"><b>Threshold frequency ν₀:</b> Emission occurs <b>only</b> if ν ≥ ν₀. If ν &lt; ν₀, no emission regardless of how intense or long-lasting the light is.</span></div>
+    <div class="arow step"><span class="alabel">Observation 2</span><span class="asep">:</span><span class="aexpr"><b>KE depends on frequency:</b> Maximum kinetic energy (KE<sub>max</sub> = eV₀) of emitted electrons <b>increases linearly with frequency</b>, completely independent of intensity.</span></div>
+    <div class="arow step"><span class="alabel">Observation 3</span><span class="asep">:</span><span class="aexpr"><b>Current ∝ intensity:</b> For ν ≥ ν₀, the <b>number of photoelectrons per second</b> (hence the photoelectric current) is <b>directly proportional to the intensity</b> of incident light.</span></div>
+    <div class="arow step"><span class="alabel">Observation 4</span><span class="asep">:</span><span class="aexpr"><b>Instantaneous:</b> Emission is <b>immediate</b> (within ~10⁻⁹ s) even at extremely low light intensities — no time delay for energy accumulation.</span></div>
+    <div class="arow step"><span class="alabel">Why wave theory fails</span><span class="asep">:</span><span class="aexpr">Wave theory predicts: (1) any frequency works if intensity is high enough — WRONG; (2) time delay for energy accumulation — WRONG; (3) KE should increase with intensity — WRONG.</span></div>
+    <div class="arow form"><span class="alabel">Einstein's explanation</span><span class="asep">:</span><span class="aexpr">Light consists of photons, each with energy E = hν. One photon knocks out one electron: <b>KE<sub>max</sub> = hν − φ = h(ν − ν₀)</b></span></div>
+    <div class="diag">
+      Light hν → [Metal surface] → Photoelectron (KE = hν − φ)<br/>
+      Stopping potential V₀: eV₀ = KE<sub>max</sub> → V₀ = (hν − φ)/e<br/>
+      <small>KE<sub>max</sub> vs ν graph: straight line with slope h and x-intercept at ν₀</small>
     </div>
-    <div class="ans-body">
-      <div class="diag-box">
-        Battery +ve → p-side &nbsp;|&nbsp; Battery −ve → n-side<br/>
-        [+Battery] ──→ [p | n] ──→ [−Battery]<br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Depletion layer narrows<br/>
-        <small>Forward bias: p at +ve, n at −ve terminal of battery</small>
-      </div>
-      <div class="arow step"><span class="alabel">What happens</span><span class="asep">:</span><span class="aexpr">+ve terminal pushes holes in p-region toward junction; −ve terminal pushes electrons in n-region toward junction.</span></div>
-      <div class="arow step"><span class="alabel">Depletion layer</span><span class="asep">:</span><span class="aexpr">Width of depletion layer decreases → barrier potential reduces → majority carriers cross the junction.</span></div>
-      <div class="arow step"><span class="alabel">Current</span><span class="asep">:</span><span class="aexpr">Large forward current flows (mA range) once V &gt; knee voltage (≈ 0.7 V for Si, ≈ 0.3 V for Ge).</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Forward bias reduces depletion layer → majority carriers flow → large current. Diode conducts.</span></div>
-    </div>
+    <div class="concept">💡 <b>Applications:</b> Solar cells (photovoltaic), photodiodes, CCD cameras, night vision devices, burglar alarms, automatic door openers — all use the photoelectric effect.</concept>
+    <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">4 observations: (1) ν≥ν₀ needed (2) KE ∝ ν, not intensity (3) current ∝ intensity (4) instantaneous. Einstein: KE<sub>max</sub> = hν − φ.</span></div>
   </div>
+</div>
 
-  <!-- C(ix) P2 -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">C(ix)</span>
-      <span class="qtext">Explain Fraunhofer diffraction at a single slit with diagram. <span class="yb y22">2022</span></span>
-      <span class="mks">2 Marks</span>
-    </div>
-    <div class="ans-body">
-      <div class="diag-box">
-        Incident plane wave → [Single slit width a] → Lens → Screen<br/>
-        Central bright maximum at θ=0 (widest and brightest)<br/>
-        Minima at: a sinθ = mλ (m = ±1, ±2, ...)<br/>
-        Secondary maxima between minima (intensity decreasing)
-      </div>
-      <div class="arow step"><span class="alabel">Central max</span><span class="asep">:</span><span class="aexpr">All secondary wavelets from slit arrive in phase at θ = 0 → brightest, widest central maximum.</span></div>
-      <div class="arow form"><span class="alabel">Minima at</span><span class="asep">:</span><span class="aexpr">a sinθ = nλ &nbsp; where n = ±1, ±2, ... (a = slit width, λ = wavelength)</span></div>
-      <div class="arow step"><span class="alabel">Width of central max</span><span class="asep">:</span><span class="aexpr">2λ/a (angular width) or 2λD/a (linear width). Narrower slit → wider diffraction pattern.</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">Central bright max + alternating dark/bright fringes. Minima: a sinθ = nλ. Narrower slit → wider pattern.</span></div>
-    </div>
-  </div>
-
-  <!-- C(x) P2 -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">C(x)</span>
-      <span class="qtext">State and explain Ampere's circuital law. <span class="yb y24">2024</span></span>
-      <span class="mks">2 Marks</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Statement</span><span class="asep">:</span><span class="aexpr">The line integral of magnetic field <b>B</b> around any closed loop (Amperian loop) is equal to μ₀ times the total current enclosed by the loop.</span></div>
-      <div class="arow form"><span class="alabel">Formula</span><span class="asep">:</span><span class="aexpr">∮ <b>B</b>·d<b>l</b> = μ₀I<sub>enclosed</sub></span></div>
-      <div class="arow step"><span class="alabel">Application 1</span><span class="asep">:</span><span class="aexpr">Magnetic field inside a long solenoid: B = μ₀nI (n = turns per meter)</span></div>
-      <div class="arow step"><span class="alabel">Application 2</span><span class="asep">:</span><span class="aexpr">Magnetic field due to long straight wire: B = μ₀I/(2πr)</span></div>
-      <div class="arow note"><span class="alabel">Note</span><span class="asep">:</span><span class="aexpr">Maxwell later modified this to include displacement current: ∮B·dl = μ₀(I + ε₀dΦ<sub>E</sub>/dt)</span></div>
-      <div class="arow ans"><span class="alabel">∴ Answer</span><span class="asep">:</span><span class="aexpr">∮B·dl = μ₀I<sub>enc</sub> &nbsp;; used to find B for symmetric current configurations.</span></div>
-    </div>
-  </div>
-
-  <!-- C(xi) P2 -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">C(xi)</span>
-      <span class="qtext">Derive the expression for magnetic field inside a long solenoid. <span class="yb y23">2023</span></span>
-      <span class="mks">2 Marks</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow step"><span class="alabel">Setup</span><span class="asep">:</span><span class="aexpr">Long solenoid: n turns per unit length, current I. Take a rectangular Amperian loop abcd of length L.</span></div>
-      <div class="diag-box">
-        [Solenoid]<br/>
-        a────────b (inside, B uniform along ab)<br/>
-        │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>
-        d────────c (outside, B = 0)<br/>
-        <small>Amperian loop abcd. Length ab = cd = L</small>
-      </div>
-      <div class="arow form"><span class="alabel">Apply Ampere's law</span><span class="asep">:</span><span class="aexpr">∮B·dl = μ₀I<sub>enc</sub></span></div>
-      <div class="arow step"><span class="alabel">Evaluate</span><span class="asep">:</span><span class="aexpr">B·L (along ab) + 0 (along bc, da — B ⊥ dl) + 0 (along cd — B = 0 outside) = μ₀(nL)I</span></div>
-      <div class="arow step"><span class="alabel">Simplify</span><span class="asep">:</span><span class="aexpr">BL = μ₀nLI</span></div>
-      <div class="arow ans"><span class="alabel">∴ B</span><span class="asep">=</span><span class="aexpr"><b>B = μ₀nI</b> &nbsp; (uniform inside, zero outside for ideal solenoid)</span></div>
-    </div>
-  </div>
-
-  <!-- C(xii) P2 -->
-  <div class="q-card">
-    <div class="q-card-head">
-      <span class="qno">C(xii)</span>
-      <span class="qtext">What is the photoelectric effect? State the experimental observations. <span class="yb y22">2022</span></span>
-      <span class="mks">2 Marks</span>
-    </div>
-    <div class="ans-body">
-      <div class="arow def"><span class="alabel">Definition</span><span class="asep">:</span><span class="aexpr">Photoelectric effect is the phenomenon of emission of electrons from the surface of a metal when light of suitable frequency falls on it. Discovered by Hertz (1887); explained by Einstein (1905).</span></div>
-      <div class="arow step"><span class="alabel">Observation 1</span><span class="asep">:</span><span class="aexpr">Emission occurs only if incident frequency ν ≥ threshold frequency ν₀ (characteristic of metal).</span></div>
-      <div class="arow step"><span class="alabel">Observation 2</span><span class="asep">:</span><span class="aexpr">KE<sub>max</sub> of emitted electrons increases linearly with frequency, NOT with intensity.</span></div>
-      <div class="arow step"><span class="alabel">Observation 3</span><span class="asep">:</span><span class="aexpr">Number of electrons emitted per second ∝ intensity of light.</span></div>
-      <div class="arow step"><span class="alabel">Observation 4</span><span class="asep">:</span><span class="aexpr">Emission is instantaneous (no time lag), even at low intensities.</span></div>
-      <div class="arow form"><span class="alabel">Einstein eq.</span><span class="asep">:</span><span class="aexpr">KE<sub>max</sub> = hν − φ &nbsp; (h = 6.626 × 10⁻³⁴ J·s)</span></div>
-      <div class="arow ans"><span class="alabel">∴ Summary</span><span class="asep">:</span><span class="aexpr">Needs ν ≥ ν₀; KE ∝ ν; count ∝ intensity; instantaneous. Explained by Einstein's photon theory.</span></div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <div class="footer" style="margin-top:30px;">
-    *** Best of Luck *** &nbsp;|&nbsp; Learn Today, Lead Tomorrow<br/>
-    <small>Visions Classes, Ambernath &nbsp;|&nbsp; Class XII Physics — Paper 1 &amp; 2 Detailed Solutions &nbsp;|&nbsp; By Shashikant Sir</small>
-  </div>
-
+<!-- Footer -->
+<div class="footer">
+  <b>*** Best of Luck for Your Examinations! ***</b><br/>
+  Study hard, understand concepts, practise numericals daily — Success is yours!<br/><br/>
+  <small>Visions Classes, Ambernath &nbsp;|&nbsp; Shashikant Sir &nbsp;|&nbsp; Class XII Physics — Paper 1 &amp; 2 Fully Detailed Solutions<br/>
+  Section B (1 Mark × 12) + Section C (2 Marks × 12) for both papers | Maharashtra State Board</small>
+</div>
 </div><!-- /page -->
 
 <button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
-
 </body>
 </html>
