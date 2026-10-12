@@ -6,7 +6,7 @@
 <title>Class XII Physics — Paper 1 Answer Key | Visions Classes</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Georgia',serif;background:#f4f4f4;padding:30px 10px;color:#111;font-size:15px;line-height:1.9}
+body{font-family:'Georgia',serif;background:#f4f4f4;padding:30px 10px;color:#111;font-size:17px;line-height:2.0}
 .page{background:#fff;max-width:830px;margin:0 auto 30px;padding:40px 54px;border:2px solid #444;box-shadow:0 4px 18px rgba(0,0,0,.13)}
 @media print{body{background:#fff;padding:0}.page{box-shadow:none;border:none;padding:15mm 20mm}.no-print{display:none}}
 .inst-header{text-align:center;border-bottom:4px double #1a1a2e;padding-bottom:14px;margin-bottom:14px}
@@ -22,15 +22,15 @@ body{font-family:'Georgia',serif;background:#f4f4f4;padding:30px 10px;color:#111
 .q-block{margin-bottom:24px;border:1px solid #ddd;border-left:5px solid #1a1a2e;border-radius:0 6px 6px 0;overflow:hidden}
 .q-header{background:#eef0f7;padding:10px 14px;font-family:'Arial',sans-serif}
 .q-num-label{font-weight:bold;font-size:13px;color:#1a1a2e;margin-bottom:4px}
-.q-text-full{font-size:14px;color:#222;font-weight:600;line-height:1.7}
+.q-text-full{font-size:15px;color:#222;font-weight:600;line-height:1.8}
 .q-options{display:grid;grid-template-columns:1fr 1fr;gap:4px 20px;margin-top:6px;font-size:13px;color:#444}
 .ans-body{padding:12px 14px;background:#fff}
-.ans-table{width:100%;border-collapse:collapse;font-size:14px}
-.ans-table td{padding:6px 10px;vertical-align:top;border:1px solid #e0e0e0}
+.ans-table{width:100%;border-collapse:collapse;font-size:16px}
+.ans-table td{padding:8px 12px;vertical-align:top;border:1px solid #e0e0e0}
 .ans-table .label{background:#f5f5f5;font-weight:bold;width:110px;color:#1a1a2e;white-space:nowrap;font-family:'Arial',sans-serif;font-size:13px}
 .mcq-badge{display:inline-block;background:#1a237e;color:#fff;font-weight:bold;font-size:13px;padding:3px 14px;border-radius:4px;margin-bottom:8px;font-family:'Arial',sans-serif}
 .ans-box{background:#e8f5e9;border:2px solid #43a047;border-radius:6px;padding:8px 14px;margin-top:8px;font-weight:bold;font-size:14px;color:#1b5e20;font-family:'Arial',sans-serif}
-.step{display:block;margin:3px 0;font-size:14px;line-height:1.7}
+.step{display:block;margin:4px 0;font-size:16px;line-height:1.8}
 .step.formula{color:#1565c0;font-weight:bold}
 .step.therefore{font-weight:bold;color:#c62828}
 .step.therefore::before{content:"∴  "}
@@ -525,9 +525,35 @@ body{font-family:'Georgia',serif;background:#f4f4f4;padding:30px 10px;color:#111
 <div class="cap">Step-up transformer: N_S &gt; N_P → V_S &gt; V_P</div>
 </div>
 <table class="ans-table">
-<tr><td class="label">Principle</td><td>Mutual electromagnetic induction. Changing current in primary creates changing flux in core → EMF induced in secondary.</td></tr>
-<tr><td class="label">Formula</td><td><div class="ans-box">V_S/V_P = N_S/N_P = I_P/I_S</div></td></tr>
-<tr><td class="label">Parts</td><td>Primary coil (N_P), Secondary coil (N_S), Laminated soft iron core</td></tr>
+<tr><td class="label">Principle</td><td>
+<span class="step">A transformer works on the principle of <b>mutual electromagnetic induction</b> (Faraday's law).</span>
+<span class="step">When AC current in primary coil changes → changing magnetic flux in soft iron core → EMF induced in secondary coil.</span>
+</td></tr>
+<tr><td class="label">Construction</td><td>
+<span class="step"><b>Primary coil (N_P turns):</b> Connected to AC input voltage V_P.</span>
+<span class="step"><b>Secondary coil (N_S turns):</b> Provides output voltage V_S.</span>
+<span class="step"><b>Laminated soft iron core:</b> High permeability → concentrates and links all flux from primary to secondary. Laminated to reduce eddy current losses.</span>
+</td></tr>
+<tr><td class="label">Working</td><td>
+<span class="step">AC in primary → EMF induced in primary: e_P = −N_P dΦ/dt</span>
+<span class="step">Same flux Φ links secondary: e_S = −N_S dΦ/dt</span>
+<span class="step formula">V_S/V_P = N_S/N_P = <b>transformation ratio (k)</b></span>
+<span class="step">For ideal transformer (100% efficiency): V_P I_P = V_S I_S</span>
+<span class="step formula">∴ V_S/V_P = N_S/N_P = I_P/I_S</span>
+</td></tr>
+<tr><td class="label">Types</td><td>
+<span class="step"><b>Step-up transformer:</b> N_S &gt; N_P → V_S &gt; V_P, I_S &lt; I_P. Used in power transmission (reduces current → reduces I²R losses).</span>
+<span class="step"><b>Step-down transformer:</b> N_S &lt; N_P → V_S &lt; V_P. Used in household supply (230 V → 12 V).</span>
+</td></tr>
+<tr><td class="label">Energy Losses</td><td>
+<span class="step"><b>Copper loss:</b> I²R heating in coil wires — reduced by using thick low-resistance wire.</span>
+<span class="step"><b>Eddy current loss:</b> Induced currents in core — reduced by laminating the core.</span>
+<span class="step"><b>Hysteresis loss:</b> Energy lost in repeated magnetisation/demagnetisation — reduced by using soft iron (low coercivity).</span>
+<span class="step"><b>Flux leakage:</b> Some flux does not link both coils — minimised by co-winding coils on same limb.</span>
+</td></tr>
+<tr><td class="label">Formula</td><td>
+<div class="ans-box">V_S/V_P = N_S/N_P = I_P/I_S &nbsp;|&nbsp; Efficiency η = (V_S I_S)/(V_P I_P) × 100% &nbsp;(ideal: η = 100%)</div>
+</td></tr>
 </table>
 </div></div>
 
@@ -558,9 +584,30 @@ body{font-family:'Georgia',serif;background:#f4f4f4;padding:30px 10px;color:#111
 <div class="cap">Secondary wavelets from old wavefront form the new wavefront</div>
 </div>
 <table class="ans-table">
-<tr><td class="label">Point 1</td><td>Every point on a given wavefront acts as a fresh source of secondary spherical wavelets spreading in all directions with the same speed as the original wave.</td></tr>
-<tr><td class="label">Point 2</td><td>The new wavefront at any subsequent instant is the <b>forward envelope</b> (common tangent) of all these secondary wavelets.</td></tr>
-<tr><td class="label">Uses</td><td>Explains reflection, refraction, and diffraction of light.</td></tr>
+<tr><td class="label">Huygens' Principle</td><td>
+<span class="step">Proposed by <b>Christiaan Huygens (1678)</b> to explain wave propagation.</span>
+<span class="step"><b>Statement:</b></span>
+<span class="step">1. Every point on a given wavefront acts as a fresh, independent source of secondary spherical wavelets, which spread in all directions with the same speed as the original wave in that medium.</span>
+<span class="step">2. The new wavefront at any later time is the <b>forward envelope</b> (the surface tangent to all secondary wavelets) — the common tangent drawn forward.</span>
+</td></tr>
+<tr><td class="label">Types of Wavefronts</td><td>
+<span class="step"><b>Spherical wavefront:</b> From a point source in 3D (e.g., lamp in open space).</span>
+<span class="step"><b>Cylindrical wavefront:</b> From a line source (e.g., long filament).</span>
+<span class="step"><b>Plane wavefront:</b> From a very distant source (the sphere becomes nearly flat at large r).</span>
+</td></tr>
+<tr><td class="label">Laws of Reflection (Proof)</td><td>
+<span class="step">Incident plane wavefront AB strikes plane mirror. By Huygens' construction:</span>
+<span class="step">Secondary wavelets from all points on AB expand. The reflected wavefront (forward tangent) gives angle of reflection = angle of incidence.</span>
+<span class="step formula">∠i = ∠r &nbsp;&nbsp; (Law of reflection derived from Huygens' principle)</span>
+</td></tr>
+<tr><td class="label">Laws of Refraction (Proof)</td><td>
+<span class="step">Incident wavefront reaches interface AB. Speed in medium 1 = c, in medium 2 = v (v &lt; c for denser).</span>
+<span class="step">Secondary wavelets in medium 2 travel smaller distances → wavefront bends towards normal.</span>
+<span class="step formula">n = c/v = sin i/sin r &nbsp;&nbsp; (Snell's law derived)</span>
+</td></tr>
+<tr><td class="label">Significance</td><td>
+<div class="ans-box">Huygens' principle explains: reflection, refraction, diffraction, interference. It forms the basis of Wave Optics. Limitation: does not predict polarisation (needs transverse wave concept).</div>
+</td></tr>
 </table>
 </div></div>
 
@@ -592,10 +639,29 @@ body{font-family:'Georgia',serif;background:#f4f4f4;padding:30px 10px;color:#111
 <div class="cap">KE_max vs frequency: linear graph (slope = h), x-intercept = ν₀</div>
 </div>
 <table class="ans-table">
-<tr><td class="label">Law 1</td><td>There exists a <b>minimum frequency ν₀</b> (threshold) below which no emission occurs regardless of intensity.</td></tr>
-<tr><td class="label">Law 2</td><td>Photoelectric current is directly proportional to the <b>intensity</b> of incident light (above ν₀).</td></tr>
-<tr><td class="label">Law 3</td><td>Maximum kinetic energy of emitted electrons depends only on <b>frequency</b>, not on intensity.</td></tr>
-<tr><td class="label">Law 4</td><td>The process is <b>instantaneous</b> — no time delay between light incidence and electron emission.</td></tr>
+<tr><td class="label">Definition</td><td>
+<span class="step"><b>Photoelectric effect:</b> Emission of electrons from a metal surface when electromagnetic radiation of sufficiently high frequency is incident on it.</span>
+<span class="step">First observed by <b>Hertz (1887)</b>; explained by <b>Einstein (1905)</b> using photon theory — Nobel Prize 1921.</span>
+</td></tr>
+<tr><td class="label">Laws (Experimental Observations)</td><td>
+<span class="step"><b>Law 1 (Threshold Frequency ν₀):</b> For each metal, there exists a minimum frequency ν₀ (threshold frequency) below which no photoelectric emission occurs, no matter how high the intensity.</span>
+<span class="step"><b>Law 2 (Proportionality):</b> Above ν₀, the photoelectric current is directly proportional to the intensity of incident radiation.</span>
+<span class="step"><b>Law 3 (Maximum KE):</b> The maximum kinetic energy of emitted electrons depends only on the frequency of incident light — not on its intensity. KE_max increases linearly with frequency above ν₀.</span>
+<span class="step"><b>Law 4 (Instantaneous):</b> The process is instantaneous — no time lag between incidence of light and emission of electrons (even at very low intensities).</span>
+</td></tr>
+<tr><td class="label">Einstein's Explanation</td><td>
+<span class="step">Light consists of quanta called <b>photons</b>, each of energy E = hν.</span>
+<span class="step">One photon absorbed by one electron. If hν ≥ φ (work function), electron is emitted:</span>
+<span class="step formula"><b>hν = φ + KE_max = hν₀ + ½mv²_max</b> &nbsp;&nbsp;(Einstein's photoelectric equation)</span>
+<span class="step">Stopping potential V₀: eV₀ = ½mv²_max = h(ν − ν₀)</span>
+</td></tr>
+<tr><td class="label">Work Function (φ)</td><td>
+<span class="step"><b>Minimum energy</b> required to liberate an electron from the metal surface.</span>
+<span class="step formula">φ = hν₀ &nbsp;&nbsp; (h = 6.626 × 10⁻³⁴ J·s)</span>
+</td></tr>
+<tr><td class="label">Failure of Wave Theory</td><td>
+<div class="ans-box">Wave theory predicts: (1) any frequency should eject electrons given enough intensity — FALSE. (2) time delay for energy buildup — FALSE. Photon model explains all observations perfectly.</div>
+</td></tr>
 </table>
 </div></div>
 
@@ -1149,11 +1215,29 @@ hν = energy of incident photon &nbsp;|&nbsp; φ = hν₀ = work function (min. 
 <div class="cap">Zener diode voltage regulator circuit: V_out = V_Z (constant)</div>
 </div>
 <table class="ans-table">
-<tr><td class="label">Energy Bands</td><td><b>Conductor:</b> CB and VB overlap → free electrons always. <b>Semiconductor:</b> Band gap ~1 eV → partial conduction at room temp. <b>Insulator:</b> Band gap &gt;3 eV → no conduction.</td></tr>
-<tr><td class="label">Zener Regulator Working</td><td>
-<span class="step">Zener diode in reverse bias across load R_L, series resistance R_s.</span>
-<span class="step">When V_in rises above V_Z (breakdown voltage): Zener conducts in reverse → current through R_s increases → extra voltage drops across R_s.</span>
-<span class="step">Voltage across R_L (= across Zener) = V_Z = <b>constant</b></span>
+<tr><td class="label">Energy Band Theory</td><td>
+<span class="step">Electrons in solids occupy allowed energy bands separated by <b>forbidden energy gaps (band gaps)</b>.</span>
+<span class="step"><b>Valence Band (VB):</b> Highest energy band completely filled at 0 K.</span>
+<span class="step"><b>Conduction Band (CB):</b> Next higher band — usually empty at 0 K.</span>
+</td></tr>
+<tr><td class="label">Classification</td><td>
+<span class="step"><b>Conductor (metal):</b> VB and CB overlap (E_g = 0) → electrons always free → high conductivity (e.g., Cu, Al).</span>
+<span class="step"><b>Semiconductor:</b> Small band gap E_g ≈ 0.7–1.1 eV → at room temperature, thermal energy (kT ≈ 0.025 eV) promotes few electrons to CB → partial conduction. (Si: 1.1 eV, Ge: 0.67 eV)</span>
+<span class="step"><b>Insulator:</b> Large band gap E_g &gt; 3 eV → no electrons can reach CB at room temperature → no conduction (e.g., diamond: 5.4 eV, glass: ~10 eV).</span>
+</td></tr>
+<tr><td class="label">Intrinsic Semiconductor</td><td>
+<span class="step">Pure semiconductor (Si or Ge) — at 0 K acts as insulator.</span>
+<span class="step">At room temperature: electron-hole pairs generated thermally. n_e = n_h = n_i (intrinsic carrier concentration).</span>
+<span class="step">Conductivity increases with temperature (opposite to metals).</span>
+</td></tr>
+<tr><td class="label">Zener Diode as Voltage Regulator</td><td>
+<span class="step">Zener diode is a heavily doped p-n junction used in <b>reverse bias</b> at its Zener/breakdown voltage V_Z.</span>
+<span class="step">Circuit: Zener in reverse bias across load R_L; series resistor R_S between input and Zener.</span>
+<span class="step">When V_in increases above V_Z: Zener conducts → current through R_S increases → voltage drop across R_S = V_in − V_Z increases.</span>
+<span class="step">Voltage across Zener (and R_L) remains constant = <b>V_Z</b> regardless of changes in V_in or load current.</span>
+</td></tr>
+<tr><td class="label">Working</td><td>
+<div class="ans-box">I_Z = (V_in − V_Z)/R_S − I_L &nbsp;|&nbsp; V_out = V_Z = constant &nbsp;(as long as V_in ≥ V_Z and I_Z ≥ I_Z(min))</div>
 </td></tr>
 </table>
 </div></div>
