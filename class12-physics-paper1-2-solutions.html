@@ -50,6 +50,7 @@
     .solve-pill  {background:#fff3e0;color:#e65100;}
     .answer-pill {background:#ffebee;color:#c0392b;}
     .tip-pill    {background:#fffde7;color:#f57f17;}
+    .example-pill{background:#fce4ec;color:#880e4f;}
 
     /* Content rows inside blocks */
     .row{display:flex;align-items:baseline;margin:5px 0;font-size:13.5px;}
@@ -65,6 +66,7 @@
     .row.note   .rl{color:#e65100;} .row.note   .rv{color:#e65100;}
     .row.tip    .rl{color:#f57f17;} .row.tip    .rv{color:#f57f17;}
     .row.eg     .rl{color:#00838f;} .row.eg     .rv{color:#00838f;font-style:italic;}
+    .row.num    .rl{color:#880e4f;} .row.num    .rv{color:#880e4f;}
 
     /* Diagram box */
     .dbox{background:#e8eaf6;border:1.5px dashed #7986cb;border-radius:6px;padding:12px 16px;margin:8px 0;font-family:monospace;font-size:12.5px;color:#283593;line-height:2.0;}
@@ -138,7 +140,14 @@
     </div>
 
     <div class="blk">
-      <div class="blk-title answer-pill">✅ FINAL ANSWER (Write exactly this in exam)</div>
+      <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — Electric Flux</div>
+      <div class="row num"><span class="rl">Setup</span><span class="rs">:</span><span class="rv">A square surface of side 10 cm (A = 0.01 m²) is placed perpendicular to an electric field E = 500 N/C. Find flux.</span></div>
+      <div class="row num"><span class="rl">θ</span><span class="rs">=</span><span class="rv">0° (field is perpendicular to surface = along normal)</span></div>
+      <div class="row num"><span class="rl">Φ = EAcosθ</span><span class="rs">=</span><span class="rv">500 × 0.01 × cos0° = 500 × 0.01 × 1 = <b>5 N·m²/C</b></span></div>
+      <div class="row num"><span class="rl">If tilted 60°</span><span class="rs">:</span><span class="rv">Φ = 500 × 0.01 × cos60° = 5 × 0.5 = <b>2.5 N·m²/C</b> (half as many lines pierce the surface)</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER (Write exactly this in exam)</div>
       <div class="row ans"><span class="rl">Definition</span><span class="rs">:</span><span class="rv">Electric flux through a surface is the total number of electric field lines passing normally through that surface.</span></div>
       <div class="row ans"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>Φ<sub>E</sub> = E A cosθ &nbsp;; &nbsp; SI unit = N·m²/C</b></span></div>
     </div>
@@ -180,7 +189,14 @@
     </div>
 
     <div class="blk">
-      <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — Ohm's Law</div>
+      <div class="row num"><span class="rl">Problem</span><span class="rs">:</span><span class="rv">A 6 V battery is connected to a resistor. Current of 2 A flows. Find resistance.</span></div>
+      <div class="row num"><span class="rl">Solution</span><span class="rs">:</span><span class="rv">R = V/I = 6/2 = <b>3 Ω</b></span></div>
+      <div class="row num"><span class="rl">Check</span><span class="rs">:</span><span class="rv">V = IR = 2 × 3 = 6 V ✓</span></div>
+      <div class="row num"><span class="rl">Real life</span><span class="rs">:</span><span class="rv">A 60 W bulb at 230 V: R = V²/P = 230²/60 = 52900/60 ≈ <b>882 Ω</b>. Current = V/R = 230/882 ≈ 0.26 A.</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
       <div class="row ans"><span class="rl">Statement</span><span class="rs">:</span><span class="rv">At constant temperature, the current (I) through a conductor is directly proportional to the potential difference (V) across its ends.</span></div>
       <div class="row ans"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>V = IR &nbsp;; &nbsp; V ∝ I (at constant T)</b></span></div>
     </div>
@@ -217,7 +233,13 @@
     </div>
 
     <div class="blk">
-      <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — Magnetic Flux</div>
+      <div class="row num"><span class="rl">Problem</span><span class="rs">:</span><span class="rv">A rectangular coil of area 0.05 m² is placed in a uniform magnetic field B = 0.2 T. The field makes 30° with the normal to the coil. Find magnetic flux.</span></div>
+      <div class="row num"><span class="rl">Φ = BAcosθ</span><span class="rs">=</span><span class="rv">0.2 × 0.05 × cos30° = 0.01 × 0.866 = <b>8.66 × 10⁻³ Wb</b></span></div>
+      <div class="row num"><span class="rl">If B ⊥ coil (θ=90°)</span><span class="rs">:</span><span class="rv">Φ = BAcos90° = 0 Wb (no flux — field lines parallel to surface, none pass through)</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
       <div class="row ans"><span class="rl">Definition</span><span class="rs">:</span><span class="rv">Magnetic flux (Φ<sub>B</sub>) through a surface is the total number of magnetic field lines passing normally through that surface.</span></div>
       <div class="row ans"><span class="rl">Formula &amp; Unit</span><span class="rs">:</span><span class="rv"><b>Φ<sub>B</sub> = BA cosθ &nbsp;; &nbsp; SI unit = Weber (Wb)</b></span></div>
     </div>
@@ -254,7 +276,14 @@
     </div>
 
     <div class="blk">
-      <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — Power Factor</div>
+      <div class="row num"><span class="rl">Circuit</span><span class="rs">:</span><span class="rv">R = 30 Ω, X<sub>L</sub> = 40 Ω (inductor only, no capacitor). Find power factor.</span></div>
+      <div class="row num"><span class="rl">Impedance Z</span><span class="rs">=</span><span class="rv">√(R² + X<sub>L</sub>²) = √(30² + 40²) = √(900 + 1600) = √2500 = 50 Ω</span></div>
+      <div class="row num"><span class="rl">Power factor</span><span class="rs">=</span><span class="rv">cosφ = R/Z = 30/50 = <b>0.6</b></span></div>
+      <div class="row num"><span class="rl">Meaning</span><span class="rs">:</span><span class="rv">Only 60% of apparent power is actually used. If V=230V, I=5A: Apparent=1150 VA, True power=1150×0.6=<b>690 W</b>.</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
       <div class="row ans"><span class="rl">Definition</span><span class="rs">:</span><span class="rv">Power factor is the ratio of true (active) power to apparent power in an AC circuit.</span></div>
       <div class="row ans"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>Power factor = cosφ = R/Z &nbsp;; &nbsp; Range: 0 to 1</b></span></div>
     </div>
@@ -291,7 +320,14 @@
     </div>
 
     <div class="blk">
-      <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — TIR &amp; Critical Angle</div>
+      <div class="row num"><span class="rl">Given</span><span class="rs">:</span><span class="rv">Glass (n=1.5) to Air (n=1). Find critical angle. Does i=50° cause TIR?</span></div>
+      <div class="row num"><span class="rl">sin i<sub>c</sub></span><span class="rs">=</span><span class="rv">1/n = 1/1.5 = 0.667 → i<sub>c</sub> = sin⁻¹(0.667) = <b>41.8°</b></span></div>
+      <div class="row num"><span class="rl">At i=50°</span><span class="rs">:</span><span class="rv">50° &gt; 41.8° (critical angle) → <b>YES, TIR occurs</b> → light completely reflects back into glass.</span></div>
+      <div class="row num"><span class="rl">At i=30°</span><span class="rs">:</span><span class="rv">30° &lt; 41.8° → light refracts and exits glass (no TIR).</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
       <div class="row ans"><span class="rl">Definition</span><span class="rs">:</span><span class="rv">TIR is the complete reflection of light back into a denser medium when light travels from a denser to rarer medium and the angle of incidence exceeds the critical angle.</span></div>
       <div class="row ans"><span class="rl">Conditions</span><span class="rs">:</span><span class="rv"><b>(1) Denser → rarer medium &nbsp; (2) i &gt; i<sub>c</sub></b></span></div>
     </div>
@@ -325,7 +361,14 @@
     </div>
 
     <div class="blk">
-      <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — Work Function</div>
+      <div class="row num"><span class="rl">Given</span><span class="rs">:</span><span class="rv">Metal has work function φ = 4.0 eV. Light of frequency ν = 1.5 × 10¹⁵ Hz falls on it. Find KE of emitted electrons.</span></div>
+      <div class="row num"><span class="rl">Energy of photon</span><span class="rs">=</span><span class="rv">hν = 6.626×10⁻³⁴ × 1.5×10¹⁵ = 9.94×10⁻¹⁹ J = 9.94×10⁻¹⁹ / 1.6×10⁻¹⁹ = <b>6.21 eV</b></span></div>
+      <div class="row num"><span class="rl">KE<sub>max</sub></span><span class="rs">=</span><span class="rv">hν − φ = 6.21 − 4.0 = <b>2.21 eV</b></span></div>
+      <div class="row num"><span class="rl">Note</span><span class="rs">:</span><span class="rv">If ν was lower and hν = 3.5 eV &lt; φ(4.0 eV) → KE would be negative → NO emission.</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
       <div class="row ans"><span class="rl">Definition</span><span class="rs">:</span><span class="rv">Work function (φ) is the minimum amount of energy required to completely remove one electron from the surface of a metal.</span></div>
       <div class="row ans"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>φ = hν₀ &nbsp;; &nbsp; unit = eV or Joule &nbsp;; different for each metal</b></span></div>
     </div>
@@ -358,7 +401,14 @@
     </div>
 
     <div class="blk">
-      <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — Rectifier Output</div>
+      <div class="row num"><span class="rl">Input</span><span class="rs">:</span><span class="rv">AC with peak voltage V<sub>m</sub> = 20 V at 50 Hz.</span></div>
+      <div class="row num"><span class="rl">Half-wave output</span><span class="rs">:</span><span class="rv">V<sub>dc</sub> = V<sub>m</sub>/π = 20/π ≈ <b>6.37 V</b> (average). Ripple frequency = 50 Hz.</span></div>
+      <div class="row num"><span class="rl">Full-wave output</span><span class="rs">:</span><span class="rv">V<sub>dc</sub> = 2V<sub>m</sub>/π = 40/π ≈ <b>12.73 V</b> (average). Ripple frequency = 100 Hz.</span></div>
+      <div class="row num"><span class="rl">With filter</span><span class="rs">:</span><span class="rv">Add large capacitor (e.g., 1000 μF) → nearly smooth DC ≈ 20 V (near peak).</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
       <div class="row ans"><span class="rl">Definition</span><span class="rs">:</span><span class="rv">A rectifier is an electronic device (using p-n junction diodes) that converts alternating current (AC) into direct current (DC) by allowing current to flow in only one direction.</span></div>
       <div class="row ans"><span class="rl">Types</span><span class="rs">:</span><span class="rv"><b>Half-wave (1 diode) and Full-wave (2 or 4 diodes).</b></span></div>
     </div>
@@ -387,7 +437,13 @@
     </div>
 
     <div class="blk">
-      <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — De Morgan's Theorem</div>
+      <div class="row num"><span class="rl">Verify with A=1, B=0</span><span class="rs">:</span><span class="rv">LHS: (A+B)' = (1+0)' = (1)' = <b>0</b>. RHS: A'·B' = 0·1 = <b>0</b>. LHS = RHS ✓</span></div>
+      <div class="row num"><span class="rl">Verify with A=0, B=0</span><span class="rs">:</span><span class="rv">LHS: (0+0)' = (0)' = <b>1</b>. RHS: 1·1 = <b>1</b>. LHS = RHS ✓</span></div>
+      <div class="row num"><span class="rl">Gate circuit</span><span class="rs">:</span><span class="rv">A NOR gate (gives (A+B)') is equivalent to two NOT gates feeding into an AND gate (gives A'·B'). Both give identical truth tables.</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
       <div class="row ans"><span class="rl">2nd Theorem</span><span class="rs">:</span><span class="rv">The complement of the OR of two variables equals the AND of their individual complements.</span></div>
       <div class="row ans"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>(A + B)' = A' · B'</b></span></div>
     </div>
@@ -422,7 +478,14 @@
     </div>
 
     <div class="blk">
-      <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — Nuclear Binding Energy</div>
+      <div class="row num"><span class="rl">Deuterium (H-2)</span><span class="rs">:</span><span class="rv">1 proton + 1 neutron. m<sub>p</sub>=1.00728 u, m<sub>n</sub>=1.00866 u. Actual mass of deuteron = 2.01355 u.</span></div>
+      <div class="row num"><span class="rl">Mass defect Δm</span><span class="rs">=</span><span class="rv">(1.00728 + 1.00866) − 2.01355 = 2.01594 − 2.01355 = <b>0.00239 u</b></span></div>
+      <div class="row num"><span class="rl">Binding energy</span><span class="rs">=</span><span class="rv">0.00239 × 931.5 = <b>2.23 MeV</b></span></div>
+      <div class="row num"><span class="rl">BE per nucleon</span><span class="rs">=</span><span class="rv">2.23/2 = <b>1.11 MeV/nucleon</b> (low → deuterium is not very stable)</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
       <div class="row ans"><span class="rl">Definition</span><span class="rs">:</span><span class="rv">Nuclear binding energy is the minimum energy required to completely separate all nucleons (protons and neutrons) of a nucleus to infinite distance.</span></div>
       <div class="row ans"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>BE = Δm × c² &nbsp;; Δm = mass defect. Higher BE = more stable nucleus.</b></span></div>
     </div>
@@ -450,7 +513,13 @@
     </div>
 
     <div class="blk">
-      <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — Critical Angle Calculation</div>
+      <div class="row num"><span class="rl">Water to Air</span><span class="rs">:</span><span class="rv">n<sub>water</sub>=1.33, n<sub>air</sub>=1. sin i<sub>c</sub> = 1/1.33 = 0.752 → i<sub>c</sub> = sin⁻¹(0.752) = <b>48.8°</b></span></div>
+      <div class="row num"><span class="rl">Diamond to Air</span><span class="rs">:</span><span class="rv">n<sub>diamond</sub>=2.42. sin i<sub>c</sub> = 1/2.42 = 0.413 → i<sub>c</sub> = <b>24.4°</b></span></div>
+      <div class="row num"><span class="rl">Why diamonds sparkle</span><span class="rs">:</span><span class="rv">i<sub>c</sub>=24.4° is very small. Diamonds are cut with many faces so light hits internal faces at angles &gt; 24.4° → TIR occurs → light bounces inside many times and exits as a brilliant sparkle.</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
       <div class="row ans"><span class="rl">Definition</span><span class="rs">:</span><span class="rv">Critical angle (i<sub>c</sub>) is the angle of incidence in the denser medium for which the angle of refraction in the rarer medium is exactly 90°.</span></div>
       <div class="row ans"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>sin i<sub>c</sub> = 1/n. Depends on: refractive indices of both media, wavelength of light, temperature.</b></span></div>
     </div>
@@ -480,7 +549,13 @@
     </div>
 
     <div class="blk">
-      <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — Photon Energy</div>
+      <div class="row num"><span class="rl">Green light λ=500nm</span><span class="rs">:</span><span class="rv">E = hc/λ = (6.626×10⁻³⁴ × 3×10⁸) / (500×10⁻⁹) = 1.988×10⁻²⁵ / 5×10⁻⁷ = <b>3.97×10⁻¹⁹ J = 2.48 eV</b></span></div>
+      <div class="row num"><span class="rl">Momentum</span><span class="rs">=</span><span class="rv">h/λ = 6.626×10⁻³⁴ / 500×10⁻⁹ = <b>1.33×10⁻²⁷ kg·m/s</b> (even though massless!)</span></div>
+      <div class="row num"><span class="rl">X-ray λ=0.1nm</span><span class="rs">:</span><span class="rv">E = hc/λ = 1.988×10⁻²⁵ / 10⁻¹⁰ = 1.988×10⁻¹⁵ J ≈ <b>12400 eV = 12.4 keV</b> (5000× more energetic than visible light!)</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
       <div class="row ans"><span class="rl">Definition</span><span class="rs">:</span><span class="rv">A photon is a quantum (packet) of electromagnetic energy. It is the basic particle of light.</span></div>
       <div class="row ans"><span class="rl">Properties</span><span class="rs">:</span><span class="rv"><b>E=hν, p=h/λ, m₀=0, charge=0, speed=c, shows wave-particle duality.</b></span></div>
     </div>
@@ -515,7 +590,14 @@
     </div>
 
     <div class="blk">
-      <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — Coulomb's Law</div>
+      <div class="row num"><span class="rl">Given</span><span class="rs">:</span><span class="rv">q₁ = 2 μC = 2×10⁻⁶ C, q₂ = 3 μC = 3×10⁻⁶ C, r = 0.3 m</span></div>
+      <div class="row num"><span class="rl">F = kq₁q₂/r²</span><span class="rs">=</span><span class="rv">9×10⁹ × (2×10⁻⁶ × 3×10⁻⁶) / (0.3)² = 9×10⁹ × 6×10⁻¹² / 0.09</span></div>
+      <div class="row num"><span class="rl">Calculate</span><span class="rs">=</span><span class="rv">9×10⁹ × 6×10⁻¹² / 0.09 = 54×10⁻³ / 0.09 = <b>0.6 N</b> (repulsive, both charges positive)</span></div>
+      <div class="row num"><span class="rl">If r doubled</span><span class="rs">:</span><span class="rv">F becomes 0.6/4 = <b>0.15 N</b> (inverse square — quadruple the distance = 1/4 the force)</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
       <div class="row ans"><span class="rl">Statement</span><span class="rs">:</span><span class="rv">The electrostatic force between two point charges is directly proportional to the product of their charges and inversely proportional to the square of the distance between them, acting along the line joining them.</span></div>
       <div class="row ans"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>F = kq₁q₂/r² &nbsp; where k = 9×10⁹ N·m²/C²</b></span></div>
     </div>
@@ -542,8 +624,17 @@
       <div class="row step"><span class="rl">Small work dW</span><span class="rs">:</span><span class="rv">To push a tiny extra charge dq onto the capacitor against voltage q/C: &nbsp; <b>dW = V·dq = (q/C)·dq</b></span></div>
       <div class="row step"><span class="rl">Total work W</span><span class="rs">:</span><span class="rv">Integrate from q=0 to q=Q: W = ∫₀<sup>Q</sup> (q/C) dq = (1/C) × [q²/2]₀<sup>Q</sup> = Q²/(2C)</span></div>
       <div class="row step"><span class="rl">Rewrite using Q=CV</span><span class="rs">:</span><span class="rv">W = (CV)²/(2C) = <b>½CV²</b>. Also: W = ½QV (since Q=CV).</span></div>
-      <div class="row ans"><span class="rl">∴ Energy U</span><span class="rs">:</span><span class="rv"><b>U = ½CV² = ½QV = Q²/(2C)</b> &nbsp; (stored in the electric field between the plates)</span></div>
+      <div class="row ans"><span class="rl">∴ Energy U</span><span class="rs">:</span><span class="rv"><b>U = ½CV² = ½QV = Q²/(2C)</b>
+      <div class="row num" style="background:#fce4ec;"><span class="rl">🔢 Example</span><span class="rs">:</span><span class="rv">C=50μF, V=200V → U=½×50×10⁻⁶×200²=½×2=<b>1 J</b>. Also Q=CV=50×10⁻⁶×200=0.01C. Check: ½QV=½×0.01×200=1J ✓</span></div> &nbsp; (stored in the electric field between the plates)</span></div>
       <div class="row note"><span class="rl">Numerical</span><span class="rs">:</span><span class="rv">C=100μF, V=100V → U = ½×100×10⁻⁶×100² = ½×10⁻⁴×10⁴ = <b>0.5 J</b></span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — Capacitor Energy</div>
+      <div class="row num"><span class="rl">Given</span><span class="rs">:</span><span class="rv">C = 50 μF, V = 200 V. Find energy stored.</span></div>
+      <div class="row num"><span class="rl">U = ½CV²</span><span class="rs">=</span><span class="rv">½ × 50×10⁻⁶ × (200)² = ½ × 50×10⁻⁶ × 40000 = ½ × 2 = <b>1 J</b></span></div>
+      <div class="row num"><span class="rl">Also Q = CV</span><span class="rs">=</span><span class="rv">50×10⁻⁶ × 200 = 0.01 C. Check: U = ½QV = ½×0.01×200 = 1 J ✓</span></div>
+      <div class="row num"><span class="rl">Camera flash</span><span class="rs">:</span><span class="rv">Stores ≈0.5 J in capacitor, releases in 1 ms → Power = 0.5/0.001 = 500 W (very bright brief flash!)</span></div>
     </div>
   </div>
 </div>
@@ -571,9 +662,23 @@
       <div class="row step"><span class="rl">Physical basis</span><span class="rs">:</span><span class="rv">Conservation of charge. Charge cannot pile up or disappear at a node.</span></div>
     </div>
     <div class="blk">
-      <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — Energy in Capacitor</div>
+      <div class="row num"><span class="rl">Given</span><span class="rs">:</span><span class="rv">C = 50 μF = 50×10⁻⁶ F, charged to V = 200 V</span></div>
+      <div class="row num"><span class="rl">U = ½CV²</span><span class="rs">=</span><span class="rv">½ × 50×10⁻⁶ × 200² = ½ × 50×10⁻⁶ × 40000 = ½ × 2 = <b>1 Joule</b></span></div>
+      <div class="row num"><span class="rl">Also Q</span><span class="rs">=</span><span class="rv">CV = 50×10⁻⁶ × 200 = 0.01 C. Check: U = ½QV = ½×0.01×200 = 1 J ✓</span></div>
+      <div class="row num"><span class="rl">Real life</span><span class="rs">:</span><span class="rv">A camera flash stores ~0.5 J in a capacitor (~100 μF at 100 V) and releases it in ~1 ms → very bright, brief flash. Power = 0.5/0.001 = 500 W during flash!</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
       <div class="row ans"><span class="rl">Statement</span><span class="rs">:</span><span class="rv">At any node, sum of currents entering = sum of currents leaving. ΣI = 0.</span></div>
       <div class="row ans"><span class="rl">Basis</span><span class="rs">:</span><span class="rv"><b>Conservation of electric charge. Draw diagram showing 3 currents at a node.</b></span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title example-pill">&#x1F522; EASY EXAMPLE &mdash; KCL</div>
+      <div class="row num"><span class="rl">Problem</span><span class="rs">:</span><span class="rv">At a node: I&#x2081;=5A and I&#x2082;=3A flow in. I&#x2083;=2A flows out. Find I&#x2084;.</span></div>
+      <div class="row num"><span class="rl">KCL: in = out</span><span class="rs">:</span><span class="rv">5 + 3 = 2 + I&#x2084; &rarr; 8 = 2 + I&#x2084; &rarr; <b>I&#x2084; = 6 A</b> (flowing out)</span></div>
+      <div class="row num"><span class="rl">Real life</span><span class="rs">:</span><span class="rv">Road junction: 500 cars/hr enter from road A, 300 from road B. Total leaving = 800 cars/hr (splits into two exit roads). KCL works same way for charges!</span></div>
     </div>
   </div>
 </div>
@@ -596,6 +701,13 @@
       <div class="row step"><span class="rl">Step 3: E<sub>max</sub></span><span class="rs">=</span><span class="rv">0.4 × 120π = 48π ≈ <b>150.8 V</b></span></div>
       <div class="row ans"><span class="rl">∴ Answer</span><span class="rs">:</span><span class="rv"><b>E<sub>max</sub> = 48π ≈ 150.8 V</b></span></div>
     </div>
+
+    <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — AC Generator</div>
+      <div class="row num"><span class="rl">Verify</span><span class="rs">:</span><span class="rv">E<sub>max</sub> = NBAω = 50 × 0.4 × 0.02 × 120π = 0.4 × 120π = 48π ≈ <b>150.8 V</b></span></div>
+      <div class="row num"><span class="rl">E<sub>rms</sub></span><span class="rs">=</span><span class="rv">E<sub>max</sub>/√2 = 150.8/1.414 ≈ <b>106.7 V</b> (what a voltmeter reads)</span></div>
+      <div class="row num"><span class="rl">At t=1/240s</span><span class="rs">:</span><span class="rv">e = 150.8 sin(120π/240) = 150.8 sin(π/2) = <b>150.8 V</b> (maximum at this instant)</span></div>
+    </div>
   </div>
 </div>
 
@@ -617,9 +729,24 @@
       <div class="row form"><span class="rl">Einstein's equation</span><span class="rs">:</span><span class="rv"><b>KE<sub>max</sub> = hν − φ</b> &nbsp; (explains all 4 laws perfectly)</span></div>
     </div>
     <div class="blk">
-      <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — Kirchhoff's Current Law</div>
+      <div class="row num"><span class="rl">Junction problem</span><span class="rs">:</span><span class="rv">At node J: I₁ = 5A enters, I₂ = 3A enters, I₃ = 2A leaves, I₄ = ? leaves.</span></div>
+      <div class="row num"><span class="rl">KCL: ΣI<sub>in</sub></span><span class="rs">=</span><span class="rv">I₁ + I₂ = 5 + 3 = 8 A</span></div>
+      <div class="row num"><span class="rl">ΣI<sub>out</sub></span><span class="rs">=</span><span class="rv">I₃ + I₄ = 2 + I₄</span></div>
+      <div class="row num"><span class="rl">KCL gives</span><span class="rs">:</span><span class="rv">8 = 2 + I₄ → <b>I₄ = 6 A</b></span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
       <div class="row ans"><span class="rl">4 Laws</span><span class="rs">:</span><span class="rv"><b>(1) ν≥ν₀ needed &nbsp; (2) KE depends on ν only &nbsp; (3) Number ∝ intensity &nbsp; (4) Instantaneous emission</b></span></div>
       <div class="row ans"><span class="rl">Einstein eq.</span><span class="rs">:</span><span class="rv"><b>KE<sub>max</sub> = hν − φ</b></span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — Photoelectric Calculation</div>
+      <div class="row num"><span class="rl">Given</span><span class="rs">:</span><span class="rv">Sodium φ=2.3eV. UV light λ=200nm falls on it. Find KE<sub>max</sub> and stopping potential V₀.</span></div>
+      <div class="row num"><span class="rl">Photon energy hν</span><span class="rs">=</span><span class="rv">hc/λ = (6.626×10⁻³⁴×3×10⁸)/(200×10⁻⁹) = 9.94×10⁻¹⁹ J = <b>6.21 eV</b></span></div>
+      <div class="row num"><span class="rl">KE<sub>max</sub> = hν−φ</span><span class="rs">=</span><span class="rv">6.21 − 2.3 = <b>3.91 eV</b></span></div>
+      <div class="row num"><span class="rl">Stopping potential V₀</span><span class="rs">=</span><span class="rv">KE<sub>max</sub>/e = <b>3.91 V</b></span></div>
     </div>
   </div>
 </div>
@@ -640,6 +767,14 @@
       <div class="row step"><span class="rl">Substitute (2) in (1)</span><span class="rs">:</span><span class="rv">m × [nh/2πmr]² = ke²/r → n²h²/(4π²mr) = ke² → r = n²h²/(4π²mke²)</span></div>
       <div class="row ans"><span class="rl">∴ r<sub>n</sub></span><span class="rs">=</span><span class="rv"><b>r<sub>n</sub> = n² × a₀ &nbsp; where a₀ = 0.529 Å (Bohr radius)</b></span></div>
       <div class="row step"><span class="rl">Values</span><span class="rs">:</span><span class="rv">n=1: r₁=0.529Å, n=2: r₂=2.116Å (=4×0.529), n=3: r₃=4.76Å (=9×0.529)</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — Bohr Orbit Sizes</div>
+      <div class="row num"><span class="rl">n=1 (ground)</span><span class="rs">:</span><span class="rv">r₁ = 1² × 0.529 = <b>0.529 Å</b></span></div>
+      <div class="row num"><span class="rl">n=2</span><span class="rs">:</span><span class="rv">r₂ = 4 × 0.529 = <b>2.116 Å</b> (4× bigger than ground state)</span></div>
+      <div class="row num"><span class="rl">n=3</span><span class="rs">:</span><span class="rv">r₃ = 9 × 0.529 = <b>4.76 Å</b> (9× bigger than ground state)</span></div>
+      <div class="row num"><span class="rl">Energy of orbit</span><span class="rs">:</span><span class="rv">E<sub>n</sub> = −13.6/n² eV. n=1: −13.6 eV, n=2: −3.4 eV, n=3: −1.51 eV. (Negative = electron is bound.)</span></div>
     </div>
   </div>
 </div>
@@ -663,6 +798,14 @@
       <div class="row step"><span class="rl">Calculate</span><span class="rs">:</span><span class="rv">= 10⁻³ m</span></div>
       <div class="row ans"><span class="rl">∴ β</span><span class="rs">=</span><span class="rv"><b>1 mm = 1×10⁻³ m</b></span></div>
       <div class="row tip"><span class="rl">Remember</span><span class="rs">:</span><span class="rv">β ∝ λ (red fringes wider) &nbsp;; β ∝ D (farther screen = wider) &nbsp;; β ∝ 1/d (closer slits = wider fringes)</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — YDSE Further Calculations</div>
+      <div class="row num"><span class="rl">β = 1 mm (found)</span><span class="rs">:</span><span class="rv">3rd bright fringe position: y₃ = 3β = 3×1 = <b>3 mm</b> from centre</span></div>
+      <div class="row num"><span class="rl">Red light λ=700nm</span><span class="rs">:</span><span class="rv">β<sub>red</sub> = 700×10⁻⁹×1 / 5×10⁻⁴ = <b>1.4 mm</b> (wider fringes for red)</span></div>
+      <div class="row num"><span class="rl">If D doubled (D=2m)</span><span class="rs">:</span><span class="rv">β = 5×10⁻⁷×2 / 5×10⁻⁴ = <b>2 mm</b> (fringe width doubles)</span></div>
+      <div class="row num"><span class="rl">If in water (n=1.33)</span><span class="rs">:</span><span class="rv">λ<sub>water</sub> = λ/n = 500/1.33 = 376 nm → β<sub>water</sub> = 376×10⁻⁹/5×10⁻⁴ = <b>0.75 mm</b> (fringes get narrower in denser medium)</span></div>
     </div>
   </div>
 </div>
@@ -689,7 +832,13 @@
       <div class="row step"><span class="rl">Effect on capacitance</span><span class="rs">:</span><span class="rv">C = Kε₀A/d = KC₀. Filling with dielectric K increases capacitance K times.</span></div>
     </div>
     <div class="blk">
-      <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — Verify the Answer</div>
+      <div class="row num"><span class="rl">Check</span><span class="rs">:</span><span class="rv">E<sub>max</sub> = NBA(2πf) = 50 × 0.4 × 0.02 × 2π × 60 = 0.4 × 120π = 48π V</span></div>
+      <div class="row num"><span class="rl">E<sub>rms</sub></span><span class="rs">=</span><span class="rv">E<sub>max</sub>/√2 = 48π/√2 ≈ 150.8/1.414 ≈ <b>106.7 V</b> (this is the AC voltage measured by voltmeter)</span></div>
+      <div class="row num"><span class="rl">At t = 1/240 s</span><span class="rs">:</span><span class="rv">e = E<sub>max</sub> sin(120π × 1/240) = 150.8 × sin(π/2) = 150.8 × 1 = <b>150.8 V</b> (peak)</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
       <div class="row ans"><span class="rl">Definition</span><span class="rs">:</span><span class="rv">Dielectric constant (K) is the ratio of permittivity of the medium to permittivity of free space.</span></div>
       <div class="row ans"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>K = ε/ε₀. Dimensionless. Always ≥ 1.</b></span></div>
     </div>
@@ -713,7 +862,15 @@
       <div class="row step"><span class="rl">Minus sign</span><span class="rs">:</span><span class="rv">From Lenz's law — induced EMF opposes the change that causes it.</span></div>
     </div>
     <div class="blk">
-      <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — Photoelectric Calculation</div>
+      <div class="row num"><span class="rl">Given</span><span class="rs">:</span><span class="rv">Sodium metal, φ = 2.3 eV. UV light λ = 200 nm falls on it.</span></div>
+      <div class="row num"><span class="rl">Step 1: Photon energy</span><span class="rs">=</span><span class="rv">hc/λ = (6.626×10⁻³⁴ × 3×10⁸) / (200×10⁻⁹) = 9.94×10⁻¹⁹ J = 9.94×10⁻¹⁹/1.6×10⁻¹⁹ = <b>6.21 eV</b></span></div>
+      <div class="row num"><span class="rl">Step 2: KE<sub>max</sub></span><span class="rs">=</span><span class="rv">hν − φ = 6.21 − 2.3 = <b>3.91 eV</b></span></div>
+      <div class="row num"><span class="rl">Stopping potential V₀</span><span class="rs">=</span><span class="rv">KE<sub>max</sub>/e = 3.91 eV / e = <b>3.91 V</b></span></div>
+      <div class="row num"><span class="rl">Threshold wavelength</span><span class="rs">=</span><span class="rv">hc/φ = (6.626×10⁻³⁴×3×10⁸)/(2.3×1.6×10⁻¹⁹) = 1.988×10⁻²⁵/3.68×10⁻¹⁹ = <b>540 nm</b> (green light!)</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
       <div class="row ans"><span class="rl">Statement</span><span class="rs">:</span><span class="rv">Whenever the magnetic flux linked with a closed circuit changes, an EMF is induced in it. The induced EMF lasts as long as the change in flux continues.</span></div>
       <div class="row ans"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>e = −dΦ/dt</b></span></div>
     </div>
@@ -738,7 +895,14 @@
       <div class="row eg"><span class="rl">Application</span><span class="rs">:</span><span class="rv">Radio tuning: you adjust C so that f₀ matches the station's broadcast frequency → maximum current → best signal reception.</span></div>
     </div>
     <div class="blk">
-      <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — Bohr Orbit Calculations</div>
+      <div class="row num"><span class="rl">n=1 (ground state)</span><span class="rs">:</span><span class="rv">r₁ = 1² × 0.529 = <b>0.529 Å</b> = 0.0529 nm</span></div>
+      <div class="row num"><span class="rl">n=3 (third orbit)</span><span class="rs">:</span><span class="rv">r₃ = 3² × 0.529 = 9 × 0.529 = <b>4.76 Å</b></span></div>
+      <div class="row num"><span class="rl">Speed in n=1</span><span class="rs">:</span><span class="rv">v₁ = ke²/(nℏ) = 2.18×10⁶ m/s = <b>0.0073c</b> (0.73% speed of light!)</span></div>
+      <div class="row num"><span class="rl">Ionisation energy</span><span class="rs">:</span><span class="rv">Energy to remove electron from n=1: E₁ = 13.6/1² = <b>13.6 eV</b> (must supply this minimum to ionise hydrogen)</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
       <div class="row ans"><span class="rl">Definition</span><span class="rs">:</span><span class="rv">Resonant frequency is the frequency at which X<sub>L</sub> = X<sub>C</sub>, giving minimum impedance and maximum current.</span></div>
       <div class="row ans"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>f₀ = 1/(2π√LC)</b></span></div>
     </div>
@@ -764,7 +928,14 @@
       <div class="row eg"><span class="rl">Example</span><span class="rs">:</span><span class="rv">C-14: T½=5730 years. After 5730 years: N₀/2 remains. After 11460 years: N₀/4. After 17190 years: N₀/8.</span></div>
     </div>
     <div class="blk">
-      <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — YDSE Calculations</div>
+      <div class="row num"><span class="rl">Position of 3rd bright fringe</span><span class="rs">:</span><span class="rv">y₃ = nλD/d = 3 × 5×10⁻⁷ × 1 / 5×10⁻⁴ = 15×10⁻⁷/5×10⁻⁴ = <b>3 mm</b> from centre</span></div>
+      <div class="row num"><span class="rl">Fringe width β</span><span class="rs">=</span><span class="rv"><b>1 mm</b> (from calculation above)</span></div>
+      <div class="row num"><span class="rl">If λ = 700 nm (red)</span><span class="rs">:</span><span class="rv">β = 700×10⁻⁹ × 1 / 5×10⁻⁴ = <b>1.4 mm</b> (red fringes are wider — longer wavelength)</span></div>
+      <div class="row num"><span class="rl">If d = 0.25 mm (halved)</span><span class="rs">:</span><span class="rv">β = 5×10⁻⁷/2.5×10⁻⁴ = <b>2 mm</b> (fringes double in width — closer slits = wider fringes)</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
       <div class="row ans"><span class="rl">Law</span><span class="rs">:</span><span class="rv">Rate of decay is directly proportional to the number of undecayed atoms present.</span></div>
       <div class="row ans"><span class="rl">Equation</span><span class="rs">:</span><span class="rv"><b>N = N₀e⁻λᵗ &nbsp;; T½ = 0.693/λ</b></span></div>
     </div>
@@ -787,7 +958,14 @@
       <div class="row eg"><span class="rl">Simple example</span><span class="rs">:</span><span class="rv">Loop with battery E=12V, R₁=2Ω, R₂=4Ω in series: KVL: 12 = I(2+4) → I=2A. Voltage across R₁=4V, R₂=8V. Check: 4+8=12 ✓</span></div>
     </div>
     <div class="blk">
-      <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — Dielectric in a Capacitor</div>
+      <div class="row num"><span class="rl">Air capacitor</span><span class="rs">:</span><span class="rv">C₀ = ε₀A/d = 8.85×10⁻¹² × 0.01 / 0.001 = <b>88.5 pF</b></span></div>
+      <div class="row num"><span class="rl">Fill with glass (K=6)</span><span class="rs">:</span><span class="rv">C = KC₀ = 6 × 88.5 = <b>531 pF</b> (6 times more capacitance!)</span></div>
+      <div class="row num"><span class="rl">Fill with water (K=80)</span><span class="rs">:</span><span class="rv">C = 80 × 88.5 = <b>7080 pF = 7.08 nF</b></span></div>
+      <div class="row num"><span class="rl">Practical use</span><span class="rs">:</span><span class="rv">Electrolytic capacitors use metal oxide dielectric (K very high) → very high capacitance in small size. Used as filter capacitors in power supplies.</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
       <div class="row ans"><span class="rl">Statement</span><span class="rs">:</span><span class="rv">In any closed loop, algebraic sum of EMFs = algebraic sum of voltage drops (IR). Based on conservation of energy.</span></div>
       <div class="row ans"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>ΣE = ΣIR</b></span></div>
     </div>
@@ -816,6 +994,14 @@
       <div class="row ans"><span class="rl">∴ V</span><span class="rs">=</span><span class="rv"><b>V = kQ/r = Q/(4πε₀r)</b></span></div>
       <div class="row step"><span class="rl">Note</span><span class="rs">:</span><span class="rv">+Q gives +V (potential decreases as you move away). −Q gives −V (potential increases as you move away).</span></div>
     </div>
+
+    <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — Electric Potential</div>
+      <div class="row num"><span class="rl">Given</span><span class="rs">:</span><span class="rv">Q = +4 μC = 4×10⁻⁶ C. Find V at r = 0.2 m.</span></div>
+      <div class="row num"><span class="rl">V = kQ/r</span><span class="rs">=</span><span class="rv">9×10⁹ × 4×10⁻⁶ / 0.2 = 36×10³ / 0.2 = <b>180,000 V = 180 kV</b></span></div>
+      <div class="row num"><span class="rl">At r=0.4m</span><span class="rs">:</span><span class="rv">V = 180000/2 = 90 kV (V halves when r doubles — follows 1/r)</span></div>
+      <div class="row num"><span class="rl">Work to bring 2μC from ∞ to 0.2m</span><span class="rs">:</span><span class="rv">W = qV = 2×10⁻⁶ × 180000 = <b>0.36 J</b></span></div>
+    </div>
   </div>
 </div>
 
@@ -842,6 +1028,14 @@
       <div class="row step"><span class="rl">Divide by V</span><span class="rs">:</span><span class="rv">1/R<sub>eq</sub> = 1/R₁ + 1/R₂ + 1/R₃</span></div>
       <div class="row ans"><span class="rl">∴ Formula</span><span class="rs">:</span><span class="rv"><b>1/R<sub>eq</sub> = 1/R₁ + 1/R₂ + 1/R₃</b> &nbsp; (R<sub>eq</sub> &lt; smallest R)</span></div>
     </div>
+
+    <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — Parallel Resistance</div>
+      <div class="row num"><span class="rl">R₁=6Ω, R₂=3Ω, R₃=2Ω, V=12V</span><span class="rs">:</span><span class="rv">1/R<sub>eq</sub> = 1/6+1/3+1/2 = 1/6+2/6+3/6 = 6/6 = 1 → <b>R<sub>eq</sub>=1Ω</b></span></div>
+      <div class="row num"><span class="rl">Total I = V/R<sub>eq</sub></span><span class="rs">=</span><span class="rv">12/1 = <b>12 A</b></span></div>
+      <div class="row num"><span class="rl">Individual currents</span><span class="rs">:</span><span class="rv">I₁=12/6=2A, I₂=12/3=4A, I₃=12/2=6A. Check: 2+4+6=12A ✓</span></div>
+      <div class="row num"><span class="rl">Home wiring</span><span class="rs">:</span><span class="rv">All appliances in parallel: 60W bulb (261Ω), 1000W heater (53Ω), 1500W AC (35Ω) all at 230V independently.</span></div>
+    </div>
   </div>
 </div>
 
@@ -863,6 +1057,14 @@
       <div class="row step"><span class="rl">Net reactance</span><span class="rs">=</span><span class="rv">X<sub>L</sub>−X<sub>C</sub> = 157.08−31.83 = <b>125.25 Ω</b> (inductive)</span></div>
       <div class="row form"><span class="rl">Z = √[R²+(X<sub>L</sub>−X<sub>C</sub>)²]</span><span class="rs">=</span><span class="rv">√(100²+125.25²) = √(10000+15688) = √25688</span></div>
       <div class="row ans"><span class="rl">∴ Z</span><span class="rs">=</span><span class="rv"><b>≈ 160.3 Ω</b></span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — Using Z=160.3Ω</div>
+      <div class="row num"><span class="rl">If V<sub>rms</sub>=230V</span><span class="rs">:</span><span class="rv">I<sub>rms</sub> = 230/160.3 = <b>1.43 A</b></span></div>
+      <div class="row num"><span class="rl">True power</span><span class="rs">=</span><span class="rv">I²R = 1.43²×100 = <b>204.5 W</b></span></div>
+      <div class="row num"><span class="rl">Apparent power</span><span class="rs">=</span><span class="rv">VI = 230×1.43 = <b>328.9 VA</b></span></div>
+      <div class="row num"><span class="rl">Power factor</span><span class="rs">=</span><span class="rv">204.5/328.9 = R/Z = 100/160.3 = <b>0.624</b></span></div>
     </div>
   </div>
 </div>
@@ -891,8 +1093,23 @@
       <div class="row step"><span class="rl">Knee voltage</span><span class="rs">:</span><span class="rv">Si: ≈0.7V, Ge: ≈0.3V. Below this, very little current. Above: current rises steeply.</span></div>
     </div>
     <div class="blk">
-      <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — Faraday's Law in Action</div>
+      <div class="row num"><span class="rl">Coil: N=100 turns</span><span class="rs">:</span><span class="rv">Flux changes from 0.02 Wb to 0.08 Wb in 0.02 s. Find induced EMF.</span></div>
+      <div class="row num"><span class="rl">dΦ/dt</span><span class="rs">=</span><span class="rv">(0.08 − 0.02) / 0.02 = 0.06/0.02 = 3 Wb/s</span></div>
+      <div class="row num"><span class="rl">e = N × dΦ/dt</span><span class="rs">=</span><span class="rv">100 × 3 = <b>300 V</b></span></div>
+      <div class="row num"><span class="rl">Real life</span><span class="rs">:</span><span class="rv">In a car alternator, the coil (N≈200 turns, A=50 cm², B≈0.5 T) rotates at 1500 rpm (25 Hz): E<sub>max</sub>=NBA(2πf)=200×0.5×0.005×2π×25=<b>≈157 V</b></span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
       <div class="row ans"><span class="rl">Forward bias</span><span class="rs">:</span><span class="rv">p at +ve, n at −ve terminal. Depletion layer narrows, barrier reduces. Majority carriers flow → large forward current. Draw diagram.</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — Diode Circuit</div>
+      <div class="row num"><span class="rl">Circuit</span><span class="rs">:</span><span class="rv">5V battery, Si diode (0.7V drop), R=430Ω in series.</span></div>
+      <div class="row num"><span class="rl">Voltage across R</span><span class="rs">=</span><span class="rv">5 − 0.7 = <b>4.3 V</b></span></div>
+      <div class="row num"><span class="rl">Current I = V<sub>R</sub>/R</span><span class="rs">=</span><span class="rv">4.3/430 = <b>10 mA</b></span></div>
+      <div class="row num"><span class="rl">Reverse bias</span><span class="rs">:</span><span class="rv">Battery reversed → diode blocks → I ≈ 0. Only tiny leakage current (~μA) — negligible.</span></div>
     </div>
   </div>
 </div>
@@ -924,6 +1141,14 @@
       <div class="row step"><span class="rl">I<sub>enclosed</sub></span><span class="rs">=</span><span class="rv">nL × I (n turns per meter, each carrying current I, in length L)</span></div>
       <div class="row step"><span class="rl">Equate</span><span class="rs">:</span><span class="rv">BL = μ₀(nLI) → B = μ₀nI</span></div>
       <div class="row ans"><span class="rl">∴ B</span><span class="rs">=</span><span class="rv"><b>B = μ₀nI</b> &nbsp; (uniform inside, zero outside)</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title example-pill">🔢 EASY EXAMPLE — Solenoid B Field</div>
+      <div class="row num"><span class="rl">Given</span><span class="rs">:</span><span class="rv">L=50cm, N=1000 turns, I=2A. n=N/L=1000/0.5=2000 turns/m.</span></div>
+      <div class="row num"><span class="rl">B = μ₀nI</span><span class="rs">=</span><span class="rv">4π×10⁻⁷ × 2000 × 2 = 4π×10⁻⁷ × 4000 = 16π×10⁻⁴ = <b>5.03 mT</b></span></div>
+      <div class="row num"><span class="rl">With iron core (μ<sub>r</sub>=1000)</span><span class="rs">:</span><span class="rv">B = μ₀μ<sub>r</sub>nI = 1000 × 5.03 mT = <b>5.03 T</b> (1000× stronger → powerful electromagnet)</span></div>
+      <div class="row num"><span class="rl">MRI machine</span><span class="rs">:</span><span class="rv">Uses a superconducting solenoid with B = 1.5 to 3 T to image the human body. Same formula — just much higher n and I!</span></div>
     </div>
   </div>
 </div>
