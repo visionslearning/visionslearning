@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Class 11 Maths Paper 1 | Chapter 3 — Trigonometry II | Notes & Solutions</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Georgia,serif;font-size:15px;color:#1a1a1a;background:#f0f2f8;padding:16px}
+
+@media print{
+  body{background:#fff;padding:0;font-size:12px}
+  .page{box-shadow:none;margin:0;padding:12mm 15mm;border-radius:0}
+  .no-print{display:none}
+  .pb{page-break-before:always}
+  .qwrap{page-break-inside:avoid}
+}
+
+.page{max-width:820px;margin:0 auto 24px;background:#fff;border-radius:12px;
+      box-shadow:0 4px 20px rgba(0,0,0,.09);padding:32px 44px}
+
+.cover{background:linear-gradient(135deg,#4a148c,#7b1fa2);color:#fff;
+       border-radius:10px;padding:20px 28px;margin-bottom:28px;text-align:center}
+.cover .lbl{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.8}
+.cover h1{font-size:23px;font-weight:900;margin:6px 0 4px}
+.cover .sub{font-size:13px;opacity:.9;line-height:1.7}
+
+.sh{padding:10px 18px;border-radius:8px;margin:26px 0 16px;font-size:15px;font-weight:800;color:#fff}
+.sh1{background:linear-gradient(135deg,#4a148c,#7b1fa2)}
+.sh2{background:linear-gradient(135deg,#1565c0,#1976d2)}
+.sh3{background:linear-gradient(135deg,#1b5e20,#2e7d32)}
+.sh4{background:linear-gradient(135deg,#880e4f,#ad1457)}
+.sh5{background:linear-gradient(135deg,#e65100,#f57c00)}
+
+.ib{border-left:5px solid;border-radius:0 8px 8px 0;padding:10px 16px;margin:8px 0;font-size:14px;line-height:1.9}
+.ib.y{background:#fffde7;border-color:#f9a825}
+.ib.b{background:#e3f2fd;border-color:#1565c0}
+.ib.p{background:#f3e5f5;border-color:#7b1fa2}
+.ib.g{background:#e8f5e9;border-color:#2e7d32}
+.ib.r{background:#fce4ec;border-color:#c62828}
+.ib-lbl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;opacity:.6;margin-bottom:3px}
+
+.fml{background:#1a237e;color:#fff;border-radius:8px;padding:12px 18px;
+     margin:8px 0;font-family:'Courier New',monospace;font-size:14px;line-height:2.3}
+.fml span{color:#ffd54f;font-weight:700}
+
+table{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0}
+th{padding:8px;text-align:center;font-size:12px;color:#fff}
+td{padding:7px 8px;text-align:center;border:1px solid #e0e0e0}
+tr:nth-child(even) td{background:#fafafa}
+.th1{background:#4a148c} .th2{background:#1565c0}
+
+/* ── QUESTION WRAPPER ── */
+.qwrap{margin:18px 0;border-radius:10px;overflow:hidden;border:1.5px solid #e0e0e0}
+.qtitle{padding:10px 18px;font-weight:700;font-size:14px;border-bottom:2px solid;
+        display:flex;align-items:flex-start;gap:10px}
+.qt1{background:#f3e5f5;color:#4a148c;border-color:#ce93d8}
+.qt2{background:#e3f2fd;color:#1565c0;border-color:#90caf9}
+.qt3{background:#e8f5e9;color:#1b5e20;border-color:#a5d6a7}
+.qt4{background:#fce4ec;color:#880e4f;border-color:#f48fb1}
+
+.bx{color:#fff;font-size:11px;font-weight:800;padding:3px 10px;
+    border-radius:10px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.b1{background:#4a148c} .b2{background:#1565c0}
+.b3{background:#1b5e20} .b4{background:#880e4f}
+
+/* ── SOLUTION AREA ── */
+.sol{padding:18px 24px;background:#fff;font-size:15px;font-family:'Segoe UI',Georgia,serif}
+.sol-lbl{display:inline-block;background:#37474f;color:#fff;font-size:12px;
+         font-weight:700;padding:3px 12px;border-radius:4px;margin-bottom:14px;
+         text-transform:uppercase;letter-spacing:1px}
+
+.ln{display:block;margin:4px 0;line-height:1.9;font-size:15px}
+.ln.given{font-weight:600;margin-bottom:8px}
+.ln.step{padding-left:0}
+.ln.eq{padding-left:28px}
+.ln.eq::before{content:"= ";font-weight:600;color:#1565c0}
+.ln.tf{padding-left:4px}
+.ln.tf::before{content:"∴ ";font-weight:700;color:#c62828}
+.ln.bc{padding-left:4px}
+.ln.bc::before{content:"∵ ";font-weight:700;color:#e65100}
+.ln.lhs{padding-left:4px}
+.ln.lhs::before{content:"L.H.S. = ";font-weight:700;color:#1b5e20}
+.ln.rhs{padding-left:4px}
+.ln.rhs::before{content:"R.H.S. = ";font-weight:700;color:#880e4f}
+.ln.note{color:#555;font-size:13.5px;font-style:italic;margin-top:4px}
+.ln.gap{margin-top:10px;display:block}
+.ln.sub{padding-left:20px;color:#555;font-size:14px}
+
+.fr{display:inline-block;text-align:center;vertical-align:middle;margin:0 3px}
+.fr .num{display:block;border-bottom:1.5px solid #1a1a1a;padding:0 4px;font-size:15px}
+.fr .den{display:block;padding:0 4px;font-size:15px}
+
+.ans-box{display:inline-block;background:#e8f5e9;color:#1b5e20;font-weight:800;
+         font-size:16px;padding:4px 14px;border-radius:6px;
+         border:1.5px solid #a5d6a7;margin-top:4px}
+.ans-box.p{background:#f3e5f5;color:#4a148c;border-color:#ce93d8}
+
+.print-btn{display:block;width:fit-content;margin:0 auto 14px;
+           padding:9px 28px;background:#4a148c;color:#fff;
+           border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer}
+
+/* step connector */
+.conn{color:#1565c0;font-weight:700;padding:0 4px}
+</style>
+</head>
+<body>
+<button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+<!-- ═══════════════ PAGE 1 — COVER & NOTES ═══════════════ -->
+<div class="page">
+<div class="cover">
+  <div class="lbl">Class 11 · Maths Paper 1 · Chapter 3</div>
+  <h1>📐 Trigonometry — II</h1>
+  <div class="sub">Compound Angles · Allied Angles · Multiple Angles · Factorisation<br/>
+  Complete Notes + Exercise 3.1 Full Solutions · Visions Classes, Ambernath</div>
+</div>
+
+<!-- ═══ TOPICS ═══ -->
+<div class="sh sh1">📋 Topics in this Chapter</div>
+<div class="ib b">
+  <div class="ib-lbl">Let's Study</div>
+  <b>3.1</b> Trigonometric functions of sum and difference of angles (Compound angles)<br/>
+  <b>3.2</b> Trigonometric functions of allied angles<br/>
+  <b>3.3</b> Trigonometric functions of multiple angles<br/>
+  <b>3.4</b> Factorization formulae<br/>
+  <b>3.5</b> Trigonometric functions of angles of a triangle
+</div>
+
+<!-- ═══ 3.1 COMPOUND ANGLES ═══ -->
+<div class="sh sh1">📖 3.1 — Compound Angles</div>
+
+<div class="ib y">
+  <div class="ib-lbl">Definition</div>
+  <b>Compound angle</b> : An angle formed by the sum or difference of two or more angles is called a compound angle.<br/>
+  Example : (A + B), (A − B), (A + B + C) are compound angles.
+</div>
+
+<div class="sh sh2">📐 Theorem 1 — cos(A − B)</div>
+<div class="fml">
+  <span>cos(A − B) = cosA cosB + sinA sinB</span>
+</div>
+<div class="ib b">
+  <div class="ib-lbl">Proof idea</div>
+  Draw a unit circle. P makes angle A, Q makes angle B with positive X-axis.<br/>
+  ∴ P = (cosA, sinA), Q = (cosB, sinB)<br/>
+  Compute d(PQ)² from coordinates, then re-compute with OQ as new X-axis (angle = A−B).<br/>
+  Equating both gives: <b>cos(A − B) = cosA cosB + sinA sinB</b>
+</div>
+
+<div class="sh sh2">📐 Theorem 2 — cos(A + B)</div>
+<div class="fml">
+  <span>cos(A + B) = cosA cosB − sinA sinB</span>
+</div>
+<div class="ib b">
+  <div class="ib-lbl">Proof</div>
+  In cos(A − B) = cosA cosB + sinA sinB, replace B with −B:<br/>
+  cos(A + B) = cosA cos(−B) + sinA sin(−B) = cosA cosB − sinA sinB<br/>
+  <b>∵ cos(−θ) = cosθ and sin(−θ) = −sinθ</b>
+</div>
+
+<div class="sh sh2">📐 Theorem 3 — sin(A − B)</div>
+<div class="fml">
+  <span>sin(A − B) = sinA cosB − cosA sinB</span>
+</div>
+<div class="ib b">
+  <div class="ib-lbl">Proof</div>
+  Use: sin θ = cos(π/2 − θ). Put θ = A − B:<br/>
+  sin(A−B) = cos(π/2 − (A−B)) = cos((π/2 − A) + B)<br/>
+  = cos(π/2 − A)cosB − sin(π/2 − A)sinB = sinA cosB − cosA sinB
+</div>
+
+<div class="sh sh2">📐 Theorem 4 — sin(A + B)</div>
+<div class="fml">
+  <span>sin(A + B) = sinA cosB + cosA sinB</span>
+</div>
+
+<div class="sh sh2">📐 Theorem 5 — tan(A + B)</div>
+<div class="fml">
+  <span>tan(A + B) = (tanA + tanB) / (1 − tanA tanB)</span>
+</div>
+<div class="ib b">
+  <div class="ib-lbl">Proof idea</div>
+  tan(A+B) = sin(A+B)/cos(A+B). Divide numerator and denominator by cosA cosB.
+</div>
+
+<div class="sh sh2">📐 Theorem 6 — tan(A − B)</div>
+<div class="fml">
+  <span>tan(A − B) = (tanA − tanB) / (1 + tanA tanB)</span>
+</div>
+
+<div class="sh sh2">📐 Results for cot</div>
+<div class="fml">
+  cot(A + B) = <span>(cotA cotB − 1) / (cotB + cotA)</span><br/>
+  cot(A − B) = <span>(cotA cotB + 1) / (cotB − cotA)</span>
+</div>
+
+<!-- ═══ ALLIED ANGLES TABLE ═══ -->
+<div class="sh sh3">📋 3.2 — Allied Angles</div>
+<div class="ib g">
+  <div class="ib-lbl">Definition</div>
+  If the sum or difference of two angles is an integral multiple of π/2, they are called <b>allied angles</b>.<br/>
+  For angle θ, its allied angles are: <b>−θ, π/2 ± θ, π ± θ, 3π/2 ± θ, 2π ± θ</b>
+</div>
+
+<table>
+  <tr>
+    <th class="th1">Function</th>
+    <th class="th1">−θ</th>
+    <th class="th1">π/2 − θ</th>
+    <th class="th1">π/2 + θ</th>
+    <th class="th1">π − θ</th>
+    <th class="th1">π + θ</th>
+    <th class="th1">3π/2 − θ</th>
+    <th class="th1">3π/2 + θ</th>
+    <th class="th1">2π − θ</th>
+    <th class="th1">2π + θ</th>
+  </tr>
+  <tr><td><b>sin</b></td><td>−sinθ</td><td>cosθ</td><td>cosθ</td><td>sinθ</td><td>−sinθ</td><td>−cosθ</td><td>−cosθ</td><td>−sinθ</td><td>sinθ</td></tr>
+  <tr><td><b>cos</b></td><td>cosθ</td><td>sinθ</td><td>−sinθ</td><td>−cosθ</td><td>−cosθ</td><td>−sinθ</td><td>sinθ</td><td>cosθ</td><td>cosθ</td></tr>
+  <tr><td><b>tan</b></td><td>−tanθ</td><td>cotθ</td><td>−cotθ</td><td>−tanθ</td><td>tanθ</td><td>cotθ</td><td>−cotθ</td><td>−tanθ</td><td>tanθ</td></tr>
+</table>
+
+<div class="ib y">
+  <div class="ib-lbl">Quick Rule</div>
+  <b>For π/2 ± θ :</b> sin ↔ cos swap, tan ↔ cot swap. Sign depends on quadrant of the original angle.<br/>
+  <b>For π ± θ, 2π ± θ :</b> Function name stays same. Sign depends on quadrant.<br/>
+  <b>ASTC Rule :</b> All (Q1) → Sin (Q2) → Tan (Q3) → Cos (Q4) positive.
+</div>
+
+<!-- ═══ IMPORTANT DERIVED RESULTS ═══ -->
+<div class="sh sh4">⭐ Important Results to Remember</div>
+<div class="fml">
+  cos(π/2 − θ) = sinθ <span>&nbsp;&nbsp;&nbsp;&nbsp;</span> sin(π/2 − θ) = cosθ<br/>
+  cos(π/2 + θ) = −sinθ <span>&nbsp;&nbsp;&nbsp;</span> sin(π/2 + θ) = cosθ<br/>
+  cos(π − θ) = −cosθ <span>&nbsp;&nbsp;&nbsp;&nbsp;</span> sin(π − θ) = sinθ<br/>
+  cos(π + θ) = −cosθ <span>&nbsp;&nbsp;&nbsp;&nbsp;</span> sin(π + θ) = −sinθ<br/>
+  cos(2π − θ) = cosθ <span>&nbsp;&nbsp;&nbsp;&nbsp;</span> sin(2π − θ) = −sinθ<br/>
+  tan(π/2 − θ) = cotθ <span>&nbsp;&nbsp;&nbsp;&nbsp;</span> tan(π/2 + θ) = −cotθ
+</div>
+
+<!-- ═══ KEY STANDARD VALUES ═══ -->
+<div class="sh sh5">📊 Standard Values — Quick Reference</div>
+<table>
+  <tr>
+    <th class="th2">Angle</th>
+    <th class="th2">0°</th>
+    <th class="th2">30°</th>
+    <th class="th2">45°</th>
+    <th class="th2">60°</th>
+    <th class="th2">90°</th>
+    <th class="th2">120°</th>
+    <th class="th2">135°</th>
+    <th class="th2">150°</th>
+    <th class="th2">180°</th>
+  </tr>
+  <tr><td><b>sin</b></td><td>0</td><td>1/2</td><td>1/√2</td><td>√3/2</td><td>1</td><td>√3/2</td><td>1/√2</td><td>1/2</td><td>0</td></tr>
+  <tr><td><b>cos</b></td><td>1</td><td>√3/2</td><td>1/√2</td><td>1/2</td><td>0</td><td>−1/2</td><td>−1/√2</td><td>−√3/2</td><td>−1</td></tr>
+  <tr><td><b>tan</b></td><td>0</td><td>1/√3</td><td>1</td><td>√3</td><td>∞</td><td>−√3</td><td>−1</td><td>−1/√3</td><td>0</td></tr>
+</table>
+
+</div><!-- /page 1 -->
+
+<!-- ═══════════════ PAGE 2 — EXERCISE 3.1 ═══════════════ -->
+<div class="page pb">
+<div class="cover">
+  <div class="lbl">Exercise 3.1 — Complete Solutions</div>
+  <h1>✏️ Exercise 3.1</h1>
+  <div class="sub">All questions solved vertically step-by-step · Visions Classes</div>
+</div>
+
+<!-- ═══ Q1 ═══ -->
+<div class="sh sh1">Q.1 — Find the values of</div>
+
+<!-- Q1 (i) sin 15° -->
+<div class="qwrap">
+  <div class="qtitle qt1"><span class="bx b1">Q1 (i)</span> Find the value of sin 15°</div>
+  <div class="sol">
+    <span class="sol-lbl">Solution</span>
+    <span class="ln given">Write 15° as a difference of known angles :</span>
+    <span class="ln step">sin 15° = sin(45° − 30°)</span>
+    <span class="ln note">Using : sin(A − B) = sinA cosB − cosA sinB</span>
+    <span class="ln step">= sin 45° · cos 30° − cos 45° · sin 30°</span>
+    <span class="ln step">= <span class="fr"><span class="num">1</span><span class="den">√2</span></span> · <span class="fr"><span class="num">√3</span><span class="den">2</span></span> − <span class="fr"><span class="num">1</span><span class="den">√2</span></span> · <span class="fr"><span class="num">1</span><span class="den">2</span></span></span>
+    <span class="ln step">= <span class="fr"><span class="num">√3</span><span class="den">2√2</span></span> − <span class="fr"><span class="num">1</span><span class="den">2√2</span></span></span>
+    <span class="ln step">= <span class="fr"><span class="num">√3 − 1</span><span class="den">2√2</span></span></span>
+    <span class="ln step">Rationalise: multiply and divide by √2:</span>
+    <span class="ln step">= <span class="fr"><span class="num">(√3 − 1)√2</span><span class="den">2√2 · √2</span></span> = <span class="fr"><span class="num">√6 − √2</span><span class="den">4</span></span></span>
+    <span class="ln tf"><span class="ans-box">sin 15° = (√6 − √2) / 4</span></span>
+  </div>
+</div>
+
+<!-- Q1 (ii) cos 75° -->
+<div class="qwrap">
+  <div class="qtitle qt1"><span class="bx b1">Q1 (ii)</span> Find the value of cos 75°</div>
+  <div class="sol">
+    <span class="sol-lbl">Solution</span>
+    <span class="ln given">Write 75° = 45° + 30°</span>
+    <span class="ln step">cos 75° = cos(45° + 30°)</span>
+    <span class="ln note">Using : cos(A + B) = cosA cosB − sinA sinB</span>
+    <span class="ln step">= cos 45° · cos 30° − sin 45° · sin 30°</span>
+    <span class="ln step">= <span class="fr"><span class="num">1</span><span class="den">√2</span></span> · <span class="fr"><span class="num">√3</span><span class="den">2</span></span> − <span class="fr"><span class="num">1</span><span class="den">√2</span></span> · <span class="fr"><span class="num">1</span><span class="den">2</span></span></span>
+    <span class="ln step">= <span class="fr"><span class="num">√3</span><span class="den">2√2</span></span> − <span class="fr"><span class="num">1</span><span class="den">2√2</span></span> = <span class="fr"><span class="num">√3 − 1</span><span class="den">2√2</span></span> = <span class="fr"><span class="num">√6 − √2</span><span class="den">4</span></span></span>
+    <span class="ln note">∵ cos 75° = sin 15° (complementary angles)</span>
+    <span class="ln tf"><span class="ans-box">cos 75° = (√6 − √2) / 4</span></span>
+  </div>
+</div>
+
+<!-- Q1 (iii) tan 105° -->
+<div class="qwrap">
+  <div class="qtitle qt1"><span class="bx b1">Q1 (iii)</span> Find the value of tan 105°</div>
+  <div class="sol">
+    <span class="sol-lbl">Solution</span>
+    <span class="ln given">Write 105° = 60° + 45°</span>
+    <span class="ln step">tan 105° = tan(60° + 45°)</span>
+    <span class="ln note">Using : tan(A + B) = (tanA + tanB) / (1 − tanA tanB)</span>
+    <span class="ln step">= <span class="fr"><span class="num">tan 60° + tan 45°</span><span class="den">1 − tan 60° · tan 45°</span></span></span>
+    <span class="ln step">= <span class="fr"><span class="num">√3 + 1</span><span class="den">1 − √3 · 1</span></span> = <span class="fr"><span class="num">√3 + 1</span><span class="den">1 − √3</span></span></span>
+    <span class="ln step">Rationalise — multiply by (1 + √3)/(1 + √3) :</span>
+    <span class="ln step">= <span class="fr"><span class="num">(√3 + 1)(1 + √3)</span><span class="den">(1 − √3)(1 + √3)</span></span> = <span class="fr"><span class="num">√3 + 3 + 1 + √3</span><span class="den">1 − 3</span></span></span>
+    <span class="ln step">= <span class="fr"><span class="num">4 + 2√3</span><span class="den">−2</span></span> = −2 − √3</span>
+    <span class="ln tf"><span class="ans-box">tan 105° = −(2 + √3)</span></span>
+  </div>
+</div>
+
+<!-- Q1 (iv) cot 225° -->
+<div class="qwrap">
+  <div class="qtitle qt1"><span class="bx b1">Q1 (iv)</span> Find the value of cot 225°</div>
+  <div class="sol">
+    <span class="sol-lbl">Solution</span>
+    <span class="ln given">Write 225° = 180° + 45°</span>
+    <span class="ln step">cot 225° = cot(180° + 45°)</span>
+    <span class="ln note">Using allied angle: tan(π + θ) = tanθ, so cot(π + θ) = cotθ</span>
+    <span class="ln step">= cot 45°</span>
+    <span class="ln step">= 1</span>
+    <span class="ln tf"><span class="ans-box">cot 225° = 1</span></span>
+  </div>
+</div>
+
+<!-- ═══ Q2 — PROVE ═══ -->
+<div class="sh sh2">Q.2 — Prove the following</div>
+
+<!-- Q2 (i) -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="bx b2">Q2 (i)</span> Prove: cos(π/2 − x)cos(π/2 − y) − sin(π/2 − x)sin(π/2 − y) = −cos(x + y)</div>
+  <div class="sol">
+    <span class="sol-lbl">Solution</span>
+    <span class="ln given">Use allied angle results: cos(π/2 − θ) = sinθ and sin(π/2 − θ) = cosθ</span>
+    <span class="ln step">L.H.S. = cos(π/2 − x) · cos(π/2 − y) − sin(π/2 − x) · sin(π/2 − y)</span>
+    <span class="ln eq">sinx · siny − cosx · cosy</span>
+    <span class="ln eq">−(cosx cosy − sinx siny)</span>
+    <span class="ln eq">−cos(x + y)</span>
+    <span class="ln step">= R.H.S.</span>
+    <span class="ln tf"><b>Hence proved.</b></span>
+  </div>
+</div>
+
+<!-- Q2 (ii) -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="bx b2">Q2 (ii)</span> Prove: tan(π/4 + θ) = (1 + tanθ) / (1 − tanθ)</div>
+  <div class="sol">
+    <span class="sol-lbl">Solution</span>
+    <span class="ln step">L.H.S. = tan(π/4 + θ)</span>
+    <span class="ln note">Using : tan(A + B) = (tanA + tanB) / (1 − tanA tanB)</span>
+    <span class="ln step">= <span class="fr"><span class="num">tan(π/4) + tanθ</span><span class="den">1 − tan(π/4) · tanθ</span></span></span>
+    <span class="ln step">∵ tan(π/4) = 1 :</span>
+    <span class="ln step">= <span class="fr"><span class="num">1 + tanθ</span><span class="den">1 − 1 · tanθ</span></span> = <span class="fr"><span class="num">1 + tanθ</span><span class="den">1 − tanθ</span></span></span>
+    <span class="ln step">= R.H.S.</span>
+    <span class="ln tf"><b>Hence proved.</b></span>
+  </div>
+</div>
+
+<!-- Q2 (iii) -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="bx b2">Q2 (iii)</span> Prove: ((1 + tanx)/(1 − tanx))² = tan(π/4 + x) / tan(π/4 − x)</div>
+  <div class="sol">
+    <span class="sol-lbl">Solution</span>
+    <span class="ln step">R.H.S. = <span class="fr"><span class="num">tan(π/4 + x)</span><span class="den">tan(π/4 − x)</span></span></span>
+    <span class="ln step">= <span class="fr"><span class="num">(1 + tanx)/(1 − tanx)</span><span class="den">(1 − tanx)/(1 + tanx)</span></span></span>
+    <span class="ln note">∵ tan(π/4 + x) = (1+tanx)/(1−tanx) and tan(π/4 − x) = (1−tanx)/(1+tanx)</span>
+    <span class="ln step">= <span class="fr"><span class="num">1 + tanx</span><span class="den">1 − tanx</span></span> × <span class="fr"><span class="num">1 + tanx</span><span class="den">1 − tanx</span></span></span>
+    <span class="ln step">= <span class="fr"><span class="num">(1 + tanx)²</span><span class="den">(1 − tanx)²</span></span> = <span class="fr"><span class="num">(1 + tanx)</span><span class="den">(1 − tanx)</span></span>²</span>
+    <span class="ln step">= L.H.S.</span>
+    <span class="ln tf"><b>Hence proved.</b></span>
+  </div>
+</div>
+
+<!-- Q2 (iv) -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="bx b2">Q2 (iv)</span> Prove: sin[(n+1)A]·sin[(n+2)A] + cos[(n+1)A]·cos[(n+2)A] = cosA</div>
+  <div class="sol">
+    <span class="sol-lbl">Solution</span>
+    <span class="ln step">L.H.S. = sin[(n+1)A] · sin[(n+2)A] + cos[(n+1)A] · cos[(n+2)A]</span>
+    <span class="ln note">Using : cosP cosQ + sinP sinQ = cos(P − Q), with P = (n+2)A, Q = (n+1)A</span>
+    <span class="ln step">= cos[(n+2)A − (n+1)A]</span>
+    <span class="ln eq">cos[nA + 2A − nA − A]</span>
+    <span class="ln eq">cos A</span>
+    <span class="ln step">= R.H.S.</span>
+    <span class="ln tf"><b>Hence proved.</b></span>
+  </div>
+</div>
+
+<!-- Q2 (v) -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="bx b2">Q2 (v)</span> Prove: √2 · cos(π/4 − A) = cosA + sinA</div>
+  <div class="sol">
+    <span class="sol-lbl">Solution</span>
+    <span class="ln step">L.H.S. = √2 · cos(π/4 − A)</span>
+    <span class="ln note">Using : cos(A − B) = cosA cosB + sinA sinB</span>
+    <span class="ln step">= √2 · [cos(π/4) cosA + sin(π/4) sinA]</span>
+    <span class="ln step">= √2 · [<span class="fr"><span class="num">1</span><span class="den">√2</span></span> · cosA + <span class="fr"><span class="num">1</span><span class="den">√2</span></span> · sinA]</span>
+    <span class="ln step">= √2 · <span class="fr"><span class="num">1</span><span class="den">√2</span></span> · cosA + √2 · <span class="fr"><span class="num">1</span><span class="den">√2</span></span> · sinA</span>
+    <span class="ln eq">cosA + sinA</span>
+    <span class="ln step">= R.H.S.</span>
+    <span class="ln tf"><b>Hence proved.</b></span>
+  </div>
+</div>
+
+<!-- Q2 (vi) -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="bx b2">Q2 (vi)</span> Prove: cos(x−y)/cos(x+y) = (cotx coty + 1)/(cotx coty − 1)</div>
+  <div class="sol">
+    <span class="sol-lbl">Solution</span>
+    <span class="ln step">L.H.S. = <span class="fr"><span class="num">cos(x − y)</span><span class="den">cos(x + y)</span></span> = <span class="fr"><span class="num">cosx cosy + sinx siny</span><span class="den">cosx cosy − sinx siny</span></span></span>
+    <span class="ln step">Divide numerator and denominator by sinx siny :</span>
+    <span class="ln step">= <span class="fr"><span class="num">(cosx cosy)/(sinx siny) + 1</span><span class="den">(cosx cosy)/(sinx siny) − 1</span></span></span>
+    <span class="ln step">= <span class="fr"><span class="num">(cosx/sinx)(cosy/siny) + 1</span><span class="den">(cosx/sinx)(cosy/siny) − 1</span></span></span>
+    <span class="ln eq"><span class="fr"><span class="num">cotx · coty + 1</span><span class="den">cotx · coty − 1</span></span></span>
+    <span class="ln step">= R.H.S.</span>
+    <span class="ln tf"><b>Hence proved.</b></span>
+  </div>
+</div>
+
+<!-- Q2 (vii) -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="bx b2">Q2 (vii)</span> Prove: cos(x+y)·cos(x−y) = cos²y − sin²x</div>
+  <div class="sol">
+    <span class="sol-lbl">Solution</span>
+    <span class="ln step">L.H.S. = cos(x + y) · cos(x − y)</span>
+    <span class="ln step">= (cosx cosy − sinx siny)(cosx cosy + sinx siny)</span>
+    <span class="ln note">Using (a − b)(a + b) = a² − b²  with  a = cosx cosy, b = sinx siny</span>
+    <span class="ln eq">cos²x cos²y − sin²x sin²y</span>
+    <span class="ln step">= cos²x cos²y − sin²x sin²y</span>
+    <span class="ln step">= cos²x(1 − sin²y) − sin²x sin²y</span>
+    <span class="ln eq">cos²x − cos²x sin²y − sin²x sin²y</span>
+    <span class="ln eq">cos²x − sin²y(cos²x + sin²x)</span>
+    <span class="ln eq">cos²x − sin²y · 1</span>
+    <span class="ln note">Alternatively write as: (1 − sin²x) − sin²y ... But standard result uses cos²y:</span>
+    <span class="ln step">Re-write: cos²x cos²y − sin²x sin²y</span>
+    <span class="ln step">= cos²y(1 − sin²x) − sin²x(1 − cos²y)</span>
+    <span class="ln eq">cos²y − cos²y sin²x − sin²x + sin²x cos²y</span>
+    <span class="ln eq">cos²y − sin²x</span>
+    <span class="ln step">= R.H.S.</span>
+    <span class="ln tf"><b>Hence proved.</b></span>
+  </div>
+</div>
+
+<!-- Q2 (viii) -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="bx b2">Q2 (viii)</span> Prove: (tan5A − tan3A)/(tan5A + tan3A) = sin2A/sin8A</div>
+  <div class="sol">
+    <span class="sol-lbl">Solution</span>
+    <span class="ln step">Note that 5A − 3A = 2A and 5A + 3A = 8A</span>
+    <span class="ln step">L.H.S. = <span class="fr"><span class="num">tan5A − tan3A</span><span class="den">tan5A + tan3A</span></span></span>
+    <span class="ln step">= <span class="fr"><span class="num">sin5A/cos5A − sin3A/cos3A</span><span class="den">sin5A/cos5A + sin3A/cos3A</span></span></span>
+    <span class="ln step">= <span class="fr"><span class="num">(sin5A cos3A − cos5A sin3A)/(cos5A cos3A)</span><span class="den">(sin5A cos3A + cos5A sin3A)/(cos5A cos3A)</span></span></span>
+    <span class="ln step">= <span class="fr"><span class="num">sin5A cos3A − cos5A sin3A</span><span class="den">sin5A cos3A + cos5A sin3A</span></span></span>
+    <span class="ln note">Using: sin(A−B) = sinA cosB − cosA sinB and sin(A+B) = sinA cosB + cosA sinB</span>
+    <span class="ln step">= <span class="fr"><span class="num">sin(5A − 3A)</span><span class="den">sin(5A + 3A)</span></span> = <span class="fr"><span class="num">sin 2A</span><span class="den">sin 8A</span></span></span>
+    <span class="ln step">= R.H.S.</span>
+    <span class="ln tf"><b>Hence proved.</b></span>
+  </div>
+</div>
+
+<!-- Q2 (ix) -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="bx b2">Q2 (ix)</span> Prove: tan8θ − tan5θ − tan3θ = tan8θ · tan5θ · tan3θ</div>
+  <div class="sol">
+    <span class="sol-lbl">Solution</span>
+    <span class="ln given">Key idea: 8θ = 5θ + 3θ, so tan8θ = tan(5θ + 3θ)</span>
+    <span class="ln step">tan 8θ = <span class="fr"><span class="num">tan5θ + tan3θ</span><span class="den">1 − tan5θ · tan3θ</span></span></span>
+    <span class="ln step">∴ tan8θ (1 − tan5θ tan3θ) = tan5θ + tan3θ</span>
+    <span class="ln step">∴ tan8θ − tan8θ · tan5θ · tan3θ = tan5θ + tan3θ</span>
+    <span class="ln step">∴ tan8θ − tan5θ − tan3θ = tan8θ · tan5θ · tan3θ</span>
+    <span class="ln tf"><b>Hence proved.</b></span>
+  </div>
+</div>
+
+<!-- Q2 (x) -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="bx b2">Q2 (x)</span> Prove: tan50° = tan40° + 2 tan10°</div>
+  <div class="sol">
+    <span class="sol-lbl">Solution</span>
+    <span class="ln given">Write 50° = 40° + 10°, so tan50° = tan(40° + 10°)</span>
+    <span class="ln step">tan 50° = <span class="fr"><span class="num">tan40° + tan10°</span><span class="den">1 − tan40° · tan10°</span></span></span>
+    <span class="ln step">∴ tan50°(1 − tan40° tan10°) = tan40° + tan10°</span>
+    <span class="ln step">∴ tan50° − tan50° · tan40° · tan10° = tan40° + tan10° ... (i)</span>
+    <span class="ln gap"></span>
+    <span class="ln given">Also write 50° = 90° − 40°, so tan50° = cot40° = 1/tan40°</span>
+    <span class="ln step">∴ tan50° · tan40° = 1</span>
+    <span class="ln step">So : tan50° · tan40° · tan10° = tan10°</span>
+    <span class="ln gap"></span>
+    <span class="ln step">Substituting in (i):</span>
+    <span class="ln step">tan50° − tan10° = tan40° + tan10°</span>
+    <span class="ln step">∴ tan50° = tan40° + 2 tan10°</span>
+    <span class="ln tf"><b>Hence proved.</b></span>
+  </div>
+</div>
+
+<!-- Q2 (xi) -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="bx b2">Q2 (xi)</span> Prove: (cos27° + sin27°)/(cos27° − sin27°) = tan72°</div>
+  <div class="sol">
+    <span class="sol-lbl">Solution</span>
+    <span class="ln step">L.H.S. = <span class="fr"><span class="num">cos27° + sin27°</span><span class="den">cos27° − sin27°</span></span></span>
+    <span class="ln step">Divide numerator and denominator by cos27° :</span>
+    <span class="ln step">= <span class="fr"><span class="num">1 + tan27°</span><span class="den">1 − tan27°</span></span></span>
+    <span class="ln note">Using: tan(π/4 + θ) = (1 + tanθ)/(1 − tanθ), with θ = 27°</span>
+    <span class="ln step">= tan(45° + 27°)</span>
+    <span class="ln eq">tan 72°</span>
+    <span class="ln step">= R.H.S.</span>
+    <span class="ln tf"><b>Hence proved.</b></span>
+  </div>
+</div>
+
+<!-- Q2 (xii) -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="bx b2">Q2 (xii)</span> Prove: tan10° + tan35° + tan10° · tan35° = 1</div>
+  <div class="sol">
+    <span class="sol-lbl">Solution</span>
+    <span class="ln given">Note: 10° + 35° = 45°, so tan(10° + 35°) = tan45° = 1</span>
+    <span class="ln step">tan(10° + 35°) = <span class="fr"><span class="num">tan10° + tan35°</span><span class="den">1 − tan10° · tan35°</span></span> = 1</span>
+    <span class="ln step">∴ tan10° + tan35° = 1 − tan10° · tan35°</span>
+    <span class="ln step">∴ tan10° + tan35° + tan10° · tan35° = 1</span>
+    <span class="ln tf"><b>Hence proved.</b></span>
+  </div>
+</div>
+
+<!-- Q2 (xiii) -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="bx b2">Q2 (xiii)</span> Prove: (cotA cot4A + 1)/(cotA cot4A − 1) = cos3A/cos5A</div>
+  <div class="sol">
+    <span class="sol-lbl">Solution</span>
+    <span class="ln step">L.H.S. = <span class="fr"><span class="num">cotA cot4A + 1</span><span class="den">cotA cot4A − 1</span></span></span>
+    <span class="ln note">Using: cot(A − B) = (cotA cotB + 1)/(cotB − cotA) and cot(A + B) = (cotA cotB − 1)/(cotB + cotA)</span>
+    <span class="ln step">Numerator: cotA cot4A + 1 = cot4A cotA + 1</span>
+    <span class="ln step">This matches the formula for cot(4A − A) × (cot4A − cotA) — let's use a direct approach:</span>
+    <span class="ln step">Multiply numerator and denominator by sinA sin4A :</span>
+    <span class="ln step">Numerator: cosA cos4A + sinA sin4A = cos(4A − A) = <b>cos3A</b></span>
+    <span class="ln step">Denominator: cosA cos4A − sinA sin4A = cos(4A + A) = <b>cos5A</b></span>
+    <span class="ln step">= <span class="fr"><span class="num">cos3A</span><span class="den">cos5A</span></span></span>
+    <span class="ln step">= R.H.S.</span>
+    <span class="ln tf"><b>Hence proved.</b></span>
+  </div>
+</div>
+
+<!-- Q2 (xiv) -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="bx b2">Q2 (xiv)</span> Prove: (cos15° − sin15°)/(cos15° + sin15°) = 1/√3</div>
+  <div class="sol">
+    <span class="sol-lbl">Solution</span>
+    <span class="ln step">L.H.S. = <span class="fr"><span class="num">cos15° − sin15°</span><span class="den">cos15° + sin15°</span></span></span>
+    <span class="ln step">Divide numerator and denominator by cos15° :</span>
+    <span class="ln step">= <span class="fr"><span class="num">1 − tan15°</span><span class="den">1 + tan15°</span></span></span>
+    <span class="ln note">Using: tan(π/4 − θ) = (1 − tanθ)/(1 + tanθ), with θ = 15°</span>
+    <span class="ln step">= tan(45° − 15°) = tan 30°</span>
+    <span class="ln step">= <span class="fr"><span class="num">1</span><span class="den">√3</span></span></span>
+    <span class="ln step">= R.H.S.</span>
+    <span class="ln tf"><b>Hence proved.</b></span>
+  </div>
+</div>
+
+<!-- ═══ Q3 ═══ -->
+<div class="sh sh3">Q.3 — Find sin(A+B), cos(A−B), tan(A+B)</div>
+
+<!-- Q3 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="bx b3">Q3</span> sinA = −5/13, π &lt; A &lt; 3π/2 and cosB = 3/5, 3π/2 &lt; B &lt; 2π. Find sin(A+B), cos(A−B), tan(A+B).</div>
+  <div class="sol">
+    <span class="sol-lbl">Solution</span>
+
+    <span class="ln given">Step 1 — Find all ratios for A :</span>
+    <span class="ln step">sinA = −5/13, A is in 3rd quadrant (π &lt; A &lt; 3π/2) → cosA is also negative</span>
+    <span class="ln step">cos²A = 1 − sin²A = 1 − 25/169 = 144/169</span>
+    <span class="ln step">cosA = −12/13 (negative in 3rd quadrant)</span>
+    <span class="ln step">tanA = sinA/cosA = (−5/13)/(−12/13) = 5/12</span>
+
+    <span class="ln gap"></span>
+    <span class="ln given">Step 2 — Find all ratios for B :</span>
+    <span class="ln step">cosB = 3/5, B is in 4th quadrant (3π/2 &lt; B &lt; 2π) → sinB is negative</span>
+    <span class="ln step">sin²B = 1 − cos²B = 1 − 9/25 = 16/25</span>
+    <span class="ln step">sinB = −4/5 (negative in 4th quadrant)</span>
+    <span class="ln step">tanB = sinB/cosB = (−4/5)/(3/5) = −4/3</span>
+
+    <span class="ln gap"></span>
+    <span class="ln given">Step 3 — (i) sin(A + B) :</span>
+    <span class="ln step">sin(A+B) = sinA cosB + cosA sinB</span>
+    <span class="ln step">= (−5/13)(3/5) + (−12/13)(−4/5)</span>
+    <span class="ln step">= −15/65 + 48/65</span>
+    <span class="ln step">= 33/65</span>
+    <span class="ln tf"><span class="ans-box">sin(A + B) = 33/65</span></span>
+
+    <span class="ln gap"></span>
+    <span class="ln given">Step 4 — (ii) cos(A − B) :</span>
+    <span class="ln step">cos(A−B) = cosA cosB + sinA sinB</span>
+    <span class="ln step">= (−12/13)(3/5) + (−5/13)(−4/5)</span>
+    <span class="ln step">= −36/65 + 20/65</span>
+    <span class="ln step">= −16/65</span>
+    <span class="ln tf"><span class="ans-box">cos(A − B) = −16/65</span></span>
+
+    <span class="ln gap"></span>
+    <span class="ln given">Step 5 — (iii) tan(A + B) :</span>
+    <span class="ln step">tan(A+B) = (tanA + tanB)/(1 − tanA tanB)</span>
+    <span class="ln step">= (5/12 + (−4/3)) / (1 − (5/12)(−4/3))</span>
+    <span class="ln step">= (5/12 − 16/12) / (1 + 20/36)</span>
+    <span class="ln step">= (−11/12) / (56/36)</span>
+    <span class="ln step">= (−11/12) × (36/56)</span>
+    <span class="ln step">= −396/672 = −33/56</span>
+    <span class="ln tf"><span class="ans-box">tan(A + B) = −33/56</span></span>
+  </div>
+</div>
+
+<!-- ═══ Q4 ═══ -->
+<div class="sh sh4">Q.4 — Prove A + B = π/4</div>
+
+<!-- Q4 -->
+<div class="qwrap">
+  <div class="qtitle qt4"><span class="bx b4">Q4</span> If tanA = 5/6 and tanB = 1/11, prove that A + B = π/4</div>
+  <div class="sol">
+    <span class="sol-lbl">Solution</span>
+    <span class="ln given">To prove A + B = π/4, it is sufficient to show tan(A + B) = tan(π/4) = 1</span>
+    <span class="ln step">tan(A + B) = <span class="fr"><span class="num">tanA + tanB</span><span class="den">1 − tanA · tanB</span></span></span>
+    <span class="ln step">= <span class="fr"><span class="num">5/6 + 1/11</span><span class="den">1 − (5/6)(1/11)</span></span></span>
+    <span class="ln step">Numerator: 5/6 + 1/11 = 55/66 + 6/66 = 61/66</span>
+    <span class="ln step">Denominator: 1 − 5/66 = 66/66 − 5/66 = 61/66</span>
+    <span class="ln step">= <span class="fr"><span class="num">61/66</span><span class="den">61/66</span></span> = 1</span>
+    <span class="ln step">∴ tan(A + B) = 1 = tan(π/4)</span>
+    <span class="ln step">Since A + B is in the first quadrant,</span>
+    <span class="ln tf"><b>∴ A + B = π/4. Hence proved.</b></span>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<div style="text-align:center;margin-top:28px;font-size:12.5px;color:#666;border-top:2px double #4a148c;padding-top:12px;">
+  <b>Visions Classes, Ambernath</b> — Class 11 Maths Paper 1 · Chapter 3 : Trigonometry II<br/>
+  <small>Notes + Exercise 3.1 Complete Solutions · By Shashikant Sir · visionslearning.in</small>
+</div>
+
+</div><!-- /page 2 -->
+
+<button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+</body>
+</html>
