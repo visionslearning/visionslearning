@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Class 12 Chemistry — Important Q&A | Board Exam | Visions Classes</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Georgia,serif;font-size:15px;color:#1a1a1a;background:#f0f2f8;padding:16px}
+
+@media print{
+  body{background:#fff;padding:0;font-size:12px}
+  .page{box-shadow:none;margin:0;padding:10mm 14mm;border-radius:0}
+  .no-print{display:none}
+  .pb{page-break-before:always}
+  .qwrap{page-break-inside:avoid}
+}
+
+.page{max-width:840px;margin:0 auto 24px;background:#fff;border-radius:12px;
+      box-shadow:0 4px 20px rgba(0,0,0,.09);padding:30px 42px}
+
+/* ── COVER ── */
+.cover{background:linear-gradient(135deg,#1b5e20,#2e7d32);color:#fff;
+       border-radius:10px;padding:20px 28px;margin-bottom:26px;text-align:center}
+.cover .lbl{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.8}
+.cover h1{font-size:22px;font-weight:900;margin:6px 0 4px}
+.cover .sub{font-size:13px;opacity:.9;line-height:1.7}
+
+/* ── CHAPTER BANNERS ── */
+.ch-banner{padding:9px 18px;border-radius:8px;margin:28px 0 14px;font-size:14.5px;
+           font-weight:800;color:#fff;display:flex;justify-content:space-between;align-items:center}
+.ch1{background:linear-gradient(135deg,#1565c0,#1976d2)}
+.ch2{background:linear-gradient(135deg,#1b5e20,#2e7d32)}
+.ch3{background:linear-gradient(135deg,#880e4f,#ad1457)}
+.ch4{background:linear-gradient(135deg,#e65100,#f57c00)}
+.ch5{background:linear-gradient(135deg,#4a148c,#7b1fa2)}
+.ch6{background:linear-gradient(135deg,#006064,#00838f)}
+.ch7{background:linear-gradient(135deg,#37474f,#546e7a)}
+
+/* ── QUESTION CARD ── */
+.qwrap{margin:16px 0;border-radius:10px;overflow:hidden;border:1.5px solid #e0e0e0}
+.qtitle{padding:10px 18px;font-weight:700;font-size:14px;border-bottom:2px solid;
+        display:flex;align-items:flex-start;gap:10px}
+.qt1{background:#e3f2fd;color:#1565c0;border-color:#90caf9}
+.qt2{background:#e8f5e9;color:#1b5e20;border-color:#a5d6a7}
+.qt3{background:#fce4ec;color:#880e4f;border-color:#f48fb1}
+.qt4{background:#fff3e0;color:#e65100;border-color:#ffcc80}
+.qt5{background:#f3e5f5;color:#4a148c;border-color:#ce93d8}
+.qt6{background:#e0f7fa;color:#006064;border-color:#80deea}
+.qt7{background:#eceff1;color:#37474f;border-color:#b0bec5}
+
+.qbx{color:#fff;font-size:11px;font-weight:800;padding:3px 10px;
+     border-radius:10px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.b1{background:#1565c0} .b2{background:#1b5e20} .b3{background:#880e4f}
+.b4{background:#e65100} .b5{background:#4a148c} .b6{background:#006064}
+.b7{background:#37474f}
+
+/* ── SOLUTION AREA ── */
+.sol{padding:18px 24px;background:#fff;font-size:15px}
+.sol-lbl{display:inline-block;background:#37474f;color:#fff;font-size:12px;
+         font-weight:700;padding:3px 12px;border-radius:4px;margin-bottom:12px;
+         text-transform:uppercase;letter-spacing:1px}
+
+.ln{display:block;margin:4px 0;line-height:1.9;font-size:15px}
+.ln.def{font-weight:700;color:#1b5e20;font-size:15px}
+.ln.pt{padding-left:4px;font-weight:600}
+.ln.pt::before{content:"▸ ";color:#1565c0}
+.ln.eq{padding-left:28px;font-family:'Courier New',monospace;font-size:14px;color:#1a237e}
+.ln.tf{padding-left:4px}
+.ln.tf::before{content:"∴ ";font-weight:700;color:#c62828}
+.ln.note{color:#555;font-size:13.5px;font-style:italic;margin:4px 0}
+.ln.step{padding-left:0}
+.ln.gap{margin-top:10px;display:block}
+.ln.hl{background:#fffde7;padding:3px 8px;border-radius:4px;display:inline-block;
+        font-weight:600;color:#e65100;margin:2px 0}
+
+/* fraction */
+.fr{display:inline-block;text-align:center;vertical-align:middle;margin:0 3px}
+.fr .num{display:block;border-bottom:1.5px solid #1a1a1a;padding:0 4px}
+.fr .den{display:block;padding:0 4px}
+
+/* answer box */
+.ans-box{display:inline-block;background:#e8f5e9;color:#1b5e20;font-weight:800;
+         font-size:15px;padding:4px 14px;border-radius:6px;
+         border:1.5px solid #a5d6a7;margin:4px 0}
+
+/* diff table */
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0}
+th{padding:8px 10px;text-align:left;font-size:12.5px;color:#fff;background:#1b5e20}
+td{padding:7px 10px;border:1px solid #e0e0e0}
+tr:nth-child(even) td{background:#f9f9f9}
+th.th2{background:#1565c0}
+
+/* info box */
+.ib{border-left:5px solid;border-radius:0 8px 8px 0;padding:10px 16px;margin:8px 0;font-size:14px;line-height:1.9}
+.ib.g{background:#e8f5e9;border-color:#2e7d32}
+.ib.b{background:#e3f2fd;border-color:#1565c0}
+.ib.y{background:#fffde7;border-color:#f9a825}
+
+/* reaction arrow */
+.rxn{font-family:'Courier New',monospace;font-size:14px;color:#1a237e;
+     background:#e8eaf6;border-radius:4px;padding:8px 14px;margin:6px 0;display:block}
+
+.print-btn{display:block;width:fit-content;margin:0 auto 14px;
+           padding:9px 28px;background:#1b5e20;color:#fff;
+           border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer}
+</style>
+</head>
+<body>
+<button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+<div class="page">
+<div class="cover">
+  <div class="lbl">Class 12 · Chemistry · Maharashtra State Board</div>
+  <h1>🧪 Important Questions &amp; Answers</h1>
+  <div class="sub">39 Most Important Questions · Board Exam Style Answers<br/>
+  Solid State · Solutions · Chemical Kinetics · Thermodynamics · Organic Chemistry · Polymers<br/>
+  Visions Classes, Ambernath · By Shashikant Sir</div>
+</div>
+
+<!-- ════════════════════════════════════════
+     CHAPTER 1 — SOLID STATE
+════════════════════════════════════════ -->
+<div class="ch-banner ch1">📦 Solid State &amp; Solutions</div>
+
+<!-- Q1 -->
+<div class="qwrap">
+  <div class="qtitle qt1"><span class="qbx b1">Q.1</span>Packing efficiency of Simple Cubic (SC), Body Centred Cubic (BCC) and Face Centred Cubic (FCC).</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln def">Packing Efficiency = (Volume occupied by atoms in unit cell / Total volume of unit cell) × 100</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>(i) Simple Cubic (SC) :</b></span>
+    <span class="ln step">• Number of atoms per unit cell = 1 &nbsp;(8 corner × 1/8)</span>
+    <span class="ln step">• Relation: 2r = a &nbsp;(r = radius, a = edge length) &nbsp;→ r = a/2</span>
+    <span class="ln step">• Volume of atom = (4/3)πr³ = (4/3)π(a/2)³ = πa³/6</span>
+    <span class="ln step">• Volume of unit cell = a³</span>
+    <span class="ln tf"><span class="ans-box">Packing efficiency = (πa³/6)/a³ × 100 = π/6 × 100 = <b>52.4%</b></span></span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>(ii) Body Centred Cubic (BCC) :</b></span>
+    <span class="ln step">• Number of atoms per unit cell = 2 &nbsp;(8×1/8 + 1 body)</span>
+    <span class="ln step">• Relation: 4r = a√3 &nbsp;→ r = a√3/4</span>
+    <span class="ln step">• Volume occupied = 2 × (4/3)πr³ = 2 × (4/3)π(a√3/4)³ = (√3π/8)a³</span>
+    <span class="ln tf"><span class="ans-box">Packing efficiency = (√3π/8) × 100 = <b>68.0%</b></span></span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>(iii) Face Centred Cubic (FCC) :</b></span>
+    <span class="ln step">• Number of atoms per unit cell = 4 &nbsp;(8×1/8 + 6×1/2)</span>
+    <span class="ln step">• Relation: 4r = a√2 &nbsp;→ r = a√2/4 = a/(2√2)</span>
+    <span class="ln step">• Volume occupied = 4 × (4/3)πr³ = 4 × (4/3)π(a/2√2)³</span>
+    <span class="ln tf"><span class="ans-box">Packing efficiency = π/(3√2) × 100 = <b>74.0%</b></span></span>
+    <span class="ln gap"></span>
+    <span class="ln note">Summary: SC (52.4%) &lt; BCC (68%) &lt; FCC (74%). FCC is most efficiently packed.</span>
+  </div>
+</div>
+
+<!-- Q2 -->
+<div class="qwrap">
+  <div class="qtitle qt1"><span class="qbx b1">Q.2</span>Short note: Schottky Defect</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln def">Schottky defect is a type of point defect in ionic crystals where equal numbers of cations and anions are missing from their lattice sites.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Conditions:</b></span>
+    <span class="ln step">• Occurs in ionic crystals where cation and anion are of similar size (e.g., NaCl, KCl, CsCl, KBr).</span>
+    <span class="ln step">• To maintain electrical neutrality, equal numbers of cations and anions leave the lattice.</span>
+    <span class="ln pt"><b>Effects:</b></span>
+    <span class="ln step">• Density of crystal decreases (missing ions = less mass, same volume).</span>
+    <span class="ln step">• Crystal as a whole remains electrically neutral.</span>
+    <span class="ln step">• Electrical conductivity slightly increases (ions move through vacancies).</span>
+    <span class="ln pt"><b>Example:</b> NaCl, KBr, CsCl</span>
+  </div>
+</div>
+
+<!-- Q3 -->
+<div class="qwrap">
+  <div class="qtitle qt1"><span class="qbx b1">Q.3</span>Short note: Frenkel Defect</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln def">Frenkel defect is a type of point defect where an ion (usually the smaller cation) is displaced from its normal lattice site to an interstitial site.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Conditions:</b></span>
+    <span class="ln step">• Occurs in ionic crystals where there is a large difference in size between cation and anion.</span>
+    <span class="ln step">• The smaller ion (usually cation) occupies the interstitial position.</span>
+    <span class="ln pt"><b>Effects:</b></span>
+    <span class="ln step">• Density of crystal does NOT change (no ions leave the crystal).</span>
+    <span class="ln step">• Electrical neutrality is maintained.</span>
+    <span class="ln step">• Electrical conductivity increases.</span>
+    <span class="ln step">• Dielectric constant increases.</span>
+    <span class="ln pt"><b>Example:</b> AgBr, AgCl, ZnS (silver halides show both Frenkel and Schottky)</span>
+    <span class="ln gap"></span>
+    <table>
+      <tr><th>Schottky Defect</th><th class="th2">Frenkel Defect</th></tr>
+      <tr><td>Ions missing from lattice</td><td>Ions displaced to interstitial sites</td></tr>
+      <tr><td>Density decreases</td><td>Density unchanged</td></tr>
+      <tr><td>NaCl, KBr</td><td>AgBr, ZnS</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Q4 -->
+<div class="qwrap">
+  <div class="qtitle qt1"><span class="qbx b1">Q.4</span>Difference between Crystalline and Amorphous solids</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <table>
+      <tr><th>Crystalline Solids</th><th class="th2">Amorphous Solids</th></tr>
+      <tr><td>Long range order of particles</td><td>Short range / no regular order</td></tr>
+      <tr><td>Definite sharp melting point</td><td>Melts over a range of temperature</td></tr>
+      <tr><td>Anisotropic (properties vary with direction)</td><td>Isotropic (same in all directions)</td></tr>
+      <tr><td>True solids</td><td>Pseudo-solids or supercooled liquids</td></tr>
+      <tr><td>Definite heat of fusion</td><td>No definite heat of fusion</td></tr>
+      <tr><td>Example: NaCl, Diamond, Quartz</td><td>Example: Glass, Rubber, Plastic</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Q5 -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="qbx b2">Q.5</span>What is a solution?</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln def">A solution is a homogeneous mixture of two or more substances in which the composition is uniform throughout.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Components:</b></span>
+    <span class="ln step">• <b>Solute</b> — the substance dissolved (present in smaller amount).</span>
+    <span class="ln step">• <b>Solvent</b> — the substance that dissolves the solute (present in larger amount).</span>
+    <span class="ln pt"><b>Types of Solutions:</b></span>
+    <span class="ln step">• Gas in liquid (e.g., O₂ dissolved in water, aerated drinks)</span>
+    <span class="ln step">• Liquid in liquid (e.g., alcohol in water)</span>
+    <span class="ln step">• Solid in liquid (e.g., NaCl in water, sugar in water)</span>
+    <span class="ln pt"><b>Concentration Expressions:</b> Molarity, Molality, Mole fraction, Normality, % w/v</span>
+  </div>
+</div>
+
+<!-- Q6 -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="qbx b2">Q.6</span>Raoult's Law for volatile solute (Derivation)</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln def">Raoult's law states: The partial vapour pressure of each volatile component of a solution is directly proportional to its mole fraction.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>For a binary solution of volatile A and B:</b></span>
+    <span class="ln eq">P_A = P°_A × x_A &nbsp;&nbsp; and &nbsp;&nbsp; P_B = P°_B × x_B</span>
+    <span class="ln step">Where P°_A, P°_B = vapour pressures of pure components, x_A, x_B = mole fractions.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Total vapour pressure:</b></span>
+    <span class="ln eq">P_total = P_A + P_B = P°_A·x_A + P°_B·x_B</span>
+    <span class="ln eq">P_total = P°_A·x_A + P°_B·(1 − x_A)</span>
+    <span class="ln eq">P_total = P°_B + (P°_A − P°_B)·x_A</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Ideal solutions:</b> Solutions that obey Raoult's law at all concentrations and temperatures. ΔH_mix = 0, ΔV_mix = 0.</span>
+    <span class="ln note">Example: Benzene + toluene, n-hexane + n-heptane</span>
+  </div>
+</div>
+
+<!-- Q7 -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="qbx b2">Q.7</span>Raoult's Law for non-volatile solute (Derivation)</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln def">When a non-volatile solute is dissolved in a solvent, vapour pressure of solution is less than that of pure solvent.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Statement:</b> The relative lowering of vapour pressure is equal to the mole fraction of the solute.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Derivation:</b></span>
+    <span class="ln step">Let P° = vapour pressure of pure solvent, P = vapour pressure of solution.</span>
+    <span class="ln step">By Raoult's law: &nbsp; P = P° × x_solvent = P° × (1 − x_solute)</span>
+    <span class="ln eq">P = P° − P°·x_solute</span>
+    <span class="ln eq">P° − P = P°·x_solute</span>
+    <span class="ln eq">(P° − P)/P° = x_solute &nbsp;&nbsp;&nbsp; ...(Relative lowering of vapour pressure)</span>
+    <span class="ln gap"></span>
+    <span class="ln step">If n = moles of solute, N = moles of solvent:</span>
+    <span class="ln eq">x_solute = n/(n + N) ≈ n/N (for dilute solutions)</span>
+    <span class="ln tf"><span class="ans-box">(P° − P)/P° = n/N = (w/M) / (W/M_s)</span></span>
+    <span class="ln note">This is used to find molecular mass of solute from vapour pressure lowering.</span>
+  </div>
+</div>
+
+<!-- Q8 -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="qbx b2">Q.8</span>Elevation of Boiling Point (Derivation)</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln def">The boiling point of a solution is higher than that of the pure solvent. The increase is called elevation of boiling point (ΔTb).</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Derivation:</b></span>
+    <span class="ln step">Adding non-volatile solute lowers vapour pressure. Solution must be heated more to reach atmospheric pressure → boiling point increases.</span>
+    <span class="ln eq">ΔTb = Tb(solution) − Tb(pure solvent)</span>
+    <span class="ln eq">ΔTb ∝ m &nbsp;(molality of solution)</span>
+    <span class="ln tf"><span class="ans-box">ΔTb = Kb × m</span></span>
+    <span class="ln gap"></span>
+    <span class="ln step">Where <b>Kb</b> = molal elevation constant (ebullioscopic constant) — characteristic of solvent.</span>
+    <span class="ln step">Kb for water = 0.52 K·kg/mol</span>
+    <span class="ln step">m = molality = moles of solute per kg of solvent = (w × 1000)/(M × W)</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Molecular mass of solute:</b></span>
+    <span class="ln eq">M = (Kb × w × 1000) / (ΔTb × W)</span>
+  </div>
+</div>
+
+<!-- Q9 -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="qbx b2">Q.9</span>Depression of Freezing Point (Derivation and State)</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln def">The freezing point of a solution is lower than that of pure solvent. The decrease is called depression of freezing point (ΔTf).</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Derivation:</b></span>
+    <span class="ln step">Adding solute lowers vapour pressure of solution. Solid-liquid equilibrium shifts — the solution must be cooled to a lower temperature before it solidifies.</span>
+    <span class="ln eq">ΔTf = Tf(pure solvent) − Tf(solution)</span>
+    <span class="ln eq">ΔTf ∝ m</span>
+    <span class="ln tf"><span class="ans-box">ΔTf = Kf × m</span></span>
+    <span class="ln gap"></span>
+    <span class="ln step"><b>Kf</b> = molal depression constant (cryoscopic constant). Kf for water = 1.86 K·kg/mol</span>
+    <span class="ln pt"><b>Molecular mass:</b></span>
+    <span class="ln eq">M = (Kf × w × 1000) / (ΔTf × W)</span>
+    <span class="ln note">Applications: Antifreeze in car radiators, salting roads in winter, freezing mixtures.</span>
+  </div>
+</div>
+
+<!-- Q10 -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="qbx b2">Q.10</span>Prove that pH + pOH = 14</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln step">At 25°C, the ionic product of water:</span>
+    <span class="ln eq">Kw = [H⁺][OH⁻] = 1 × 10⁻¹⁴</span>
+    <span class="ln step">Taking negative logarithm on both sides:</span>
+    <span class="ln eq">−log Kw = −log[H⁺] − log[OH⁻]</span>
+    <span class="ln eq">−log(10⁻¹⁴) = pH + pOH</span>
+    <span class="ln eq">14 = pH + pOH</span>
+    <span class="ln tf"><span class="ans-box">∴ pH + pOH = 14 (at 25°C)</span></span>
+    <span class="ln gap"></span>
+    <span class="ln step">For neutral water at 25°C: pH = pOH = 7</span>
+    <span class="ln step">For acidic solution: pH &lt; 7, pOH &gt; 7</span>
+    <span class="ln step">For basic solution: pH &gt; 7, pOH &lt; 7</span>
+  </div>
+</div>
+
+<!-- Q11 -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="qbx b2">Q.11</span>Ostwald's Dilution Law for weak acid and weak base (Derivation)</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln def">Ostwald's dilution law relates the degree of dissociation of a weak electrolyte with the concentration and dissociation constant.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>For weak acid HA:</b></span>
+    <span class="ln eq">HA ⇌ H⁺ + A⁻</span>
+    <span class="ln step">Let C = initial concentration, α = degree of dissociation</span>
+    <span class="ln step">At equilibrium: [HA] = C(1−α), [H⁺] = Cα, [A⁻] = Cα</span>
+    <span class="ln eq">Ka = [H⁺][A⁻]/[HA] = (Cα)(Cα)/C(1−α) = Cα²/(1−α)</span>
+    <span class="ln step">For weak acid (α &lt;&lt; 1): (1 − α) ≈ 1</span>
+    <span class="ln tf"><span class="ans-box">Ka = Cα² &nbsp;→&nbsp; α = √(Ka/C)</span></span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>For weak base BOH:</b></span>
+    <span class="ln eq">BOH ⇌ B⁺ + OH⁻</span>
+    <span class="ln tf"><span class="ans-box">Kb = Cα² &nbsp;→&nbsp; α = √(Kb/C)</span></span>
+    <span class="ln gap"></span>
+    <span class="ln note">Conclusion: Degree of dissociation increases on dilution (as C decreases, α increases).</span>
+  </div>
+</div>
+
+<!-- Q12 -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="qbx b2">Q.12</span>Define degree of dissociation</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln def">Degree of dissociation (α) is defined as the fraction of the total number of moles of a substance that dissociate into ions at equilibrium.</span>
+    <span class="ln gap"></span>
+    <span class="ln eq">α = (Moles dissociated) / (Total moles taken initially)</span>
+    <span class="ln gap"></span>
+    <span class="ln step">• α = 0: no dissociation (strong undissociated compound)</span>
+    <span class="ln step">• α = 1: complete dissociation</span>
+    <span class="ln step">• 0 &lt; α &lt; 1: partial dissociation (weak electrolytes)</span>
+    <span class="ln step">• α increases on dilution (Ostwald's law: α = √(Ka/C))</span>
+    <span class="ln note">Unit: dimensionless (it is a ratio)</span>
+  </div>
+</div>
+
+<!-- ════════════ CHEMICAL KINETICS ════════════ -->
+<div class="ch-banner ch4">⚗️ Chemical Kinetics</div>
+
+<!-- Q13 -->
+<div class="qwrap">
+  <div class="qtitle qt4"><span class="qbx b4">Q.13</span>Open system and Closed system</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln pt"><b>Open System:</b></span>
+    <span class="ln step">A system that can exchange both <b>matter and energy</b> with the surroundings.</span>
+    <span class="ln step">Example: Hot soup in an open cup (loses heat and steam), a burning candle.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Closed System:</b></span>
+    <span class="ln step">A system that can exchange <b>only energy</b> (not matter) with the surroundings.</span>
+    <span class="ln step">Example: Sealed pressure cooker, gases in a closed cylinder with a piston.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Isolated System:</b> (for completeness)</span>
+    <span class="ln step">No exchange of matter or energy. Example: Thermos flask (ideal).</span>
+  </div>
+</div>
+
+<!-- Q14 -->
+<div class="qwrap">
+  <div class="qtitle qt4"><span class="qbx b4">Q.14</span>Integrated Rate Law for First Order Reaction</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln pt"><b>For first order reaction: A → Products</b></span>
+    <span class="ln eq">Rate = −d[A]/dt = k[A]</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Derivation:</b></span>
+    <span class="ln eq">d[A]/[A] = −k·dt</span>
+    <span class="ln step">Integrating both sides from [A]₀ to [A] and 0 to t:</span>
+    <span class="ln eq">ln[A] − ln[A]₀ = −kt</span>
+    <span class="ln eq">ln([A]/[A]₀) = −kt</span>
+    <span class="ln tf"><span class="ans-box">k = (2.303/t) × log([A]₀/[A])</span></span>
+    <span class="ln gap"></span>
+    <span class="ln step">Or in terms of concentration at time t:</span>
+    <span class="ln eq">[A] = [A]₀ × e⁻ᵏᵗ</span>
+    <span class="ln step">• Unit of k for first order = s⁻¹ (time⁻¹)</span>
+    <span class="ln step">• Plot of log[A] vs t is a straight line with slope = −k/2.303</span>
+  </div>
+</div>
+
+<!-- Q15 -->
+<div class="qwrap">
+  <div class="qtitle qt4"><span class="qbx b4">Q.15</span>Half life for first order reaction</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln def">Half life (t₁/₂) is the time required for the concentration of reactant to reduce to half of its initial value.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Derivation:</b></span>
+    <span class="ln step">At t = t₁/₂, [A] = [A]₀/2. Substituting in integrated rate law:</span>
+    <span class="ln eq">k = (2.303/t₁/₂) × log([A]₀/([A]₀/2))</span>
+    <span class="ln eq">k = (2.303/t₁/₂) × log 2</span>
+    <span class="ln eq">k = (2.303/t₁/₂) × 0.3010</span>
+    <span class="ln tf"><span class="ans-box">t₁/₂ = 0.693/k</span></span>
+    <span class="ln gap"></span>
+    <span class="ln note">Key property: For first order reaction, t₁/₂ is INDEPENDENT of initial concentration.</span>
+    <span class="ln note">Example: Radioactive decay follows first order kinetics.</span>
+  </div>
+</div>
+
+<!-- Q16 -->
+<div class="qwrap">
+  <div class="qtitle qt4"><span class="qbx b4">Q.16</span>Graphical representation for first order reaction</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln step">From integrated rate law: k = (2.303/t) × log([A]₀/[A])</span>
+    <span class="ln eq">log[A] = log[A]₀ − (k/2.303) × t</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Graph 1: log[A] vs t</b></span>
+    <span class="ln step">• Straight line with negative slope</span>
+    <span class="ln step">• Slope = −k/2.303 &nbsp;→&nbsp; k = −2.303 × slope</span>
+    <span class="ln step">• y-intercept = log[A]₀</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Graph 2: [A] vs t</b></span>
+    <span class="ln step">• Exponential decay curve</span>
+    <span class="ln step">• [A] decreases exponentially as time increases</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Graph 3: rate vs [A]</b></span>
+    <span class="ln step">• Straight line through origin (rate ∝ [A])</span>
+    <span class="ln step">• Slope = k (rate constant)</span>
+  </div>
+</div>
+
+<!-- Q39 -->
+<div class="qwrap">
+  <div class="qtitle qt4"><span class="qbx b4">Q.39</span>Pseudo first order reaction</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln def">A reaction which is not of first order but behaves as a first order reaction under certain conditions (when one reactant is in large excess) is called a pseudo first order reaction.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Example: Acid hydrolysis of ethyl acetate (ester)</b></span>
+    <span class="rxn">CH₃COOC₂H₅ + H₂O → CH₃COOH + C₂H₅OH</span>
+    <span class="ln step">Actual rate = k[ester][H₂O]² (second order)</span>
+    <span class="ln step">But water is present in large excess → [H₂O] ≈ constant</span>
+    <span class="ln eq">Rate = k'[ester] where k' = k[H₂O]</span>
+    <span class="ln step">→ Reaction appears to be first order (pseudo first order).</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Another example:</b> Inversion of cane sugar in dilute H₂SO₄</span>
+    <span class="rxn">C₁₂H₂₂O₁₁ + H₂O → C₆H₁₂O₆ + C₆H₁₂O₆</span>
+  </div>
+</div>
+
+<!-- ════════════ THERMODYNAMICS ════════════ -->
+<div class="ch-banner ch5">🔥 Thermodynamics</div>
+
+<!-- Q17 -->
+<div class="qwrap">
+  <div class="qtitle qt5"><span class="qbx b5">Q.17</span>Derivation of PV work (Work done by gas)</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln def">When a gas expands against an external pressure, it does work on the surroundings. This is called PV work or pressure-volume work.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Derivation:</b></span>
+    <span class="ln step">Consider a gas in a cylinder with a frictionless piston of cross-sectional area A.</span>
+    <span class="ln step">External pressure = P_ext. Let gas expand by small distance dx.</span>
+    <span class="ln eq">Force on piston = P_ext × A</span>
+    <span class="ln eq">Work done (dW) = Force × displacement = P_ext × A × dx = P_ext × dV</span>
+    <span class="ln step">For total expansion from V₁ to V₂:</span>
+    <span class="ln eq">W = ∫P_ext dV = P_ext(V₂ − V₁) = P_ext × ΔV</span>
+    <span class="ln tf"><span class="ans-box">W = −P_ext × ΔV &nbsp; (negative sign: work done BY system)</span></span>
+    <span class="ln gap"></span>
+    <span class="ln note">Sign convention: Work done ON the system = +W. Work done BY the system = −W.</span>
+  </div>
+</div>
+
+<!-- Q18 -->
+<div class="qwrap">
+  <div class="qtitle qt5"><span class="qbx b5">Q.18</span>Derivation of Maximum Work (Reversible isothermal expansion)</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln def">Maximum work is obtained when a gas expands reversibly and isothermally (temperature constant).</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Derivation:</b></span>
+    <span class="ln step">For reversible process: P_ext = P (gas pressure at every stage). For ideal gas: P = nRT/V</span>
+    <span class="ln eq">W_max = −∫P dV = −∫(nRT/V) dV</span>
+    <span class="ln eq">W_max = −nRT ∫(dV/V) from V₁ to V₂</span>
+    <span class="ln eq">W_max = −nRT [ln V]_{V₁}^{V₂}</span>
+    <span class="ln eq">W_max = −nRT ln(V₂/V₁)</span>
+    <span class="ln tf"><span class="ans-box">W_max = −2.303 nRT log(V₂/V₁)</span></span>
+    <span class="ln gap"></span>
+    <span class="ln step">Also written as: W_max = −2.303 nRT log(P₁/P₂) &nbsp;[since V ∝ 1/P at constant T]</span>
+    <span class="ln note">Reversible work is maximum work because it proceeds through infinite steps in equilibrium.</span>
+  </div>
+</div>
+
+<!-- Q19 -->
+<div class="qwrap">
+  <div class="qtitle qt5"><span class="qbx b5">Q.19</span>State and explain Henry's Law</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln def">Henry's law states: The solubility of a gas in a liquid is directly proportional to the partial pressure of the gas above the liquid at constant temperature.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Mathematical Form:</b></span>
+    <span class="ln tf"><span class="ans-box">p = K_H × x &nbsp; or &nbsp; C = K_H × P</span></span>
+    <span class="ln step">where p = partial pressure of gas, x = mole fraction of dissolved gas, K_H = Henry's law constant</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Explanation:</b></span>
+    <span class="ln step">• Higher pressure → more gas molecules collide with liquid surface → more dissolve → higher solubility.</span>
+    <span class="ln step">• K_H is different for different gases and changes with temperature.</span>
+    <span class="ln step">• Higher K_H → lower solubility at given pressure.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Applications:</b></span>
+    <span class="ln step">1. Carbonated drinks — CO₂ dissolved under high pressure.</span>
+    <span class="ln step">2. Scuba diving — increased N₂ solubility at depth causes "bends" on rapid ascent.</span>
+    <span class="ln step">3. Oxygen supply in blood — O₂ dissolves in blood proportional to its partial pressure.</span>
+  </div>
+</div>
+
+<!-- Q20 -->
+<div class="qwrap">
+  <div class="qtitle qt5"><span class="qbx b5">Q.20</span>State and explain Hess's Law of Constant Heat Summation</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln def">Hess's law states: The total enthalpy change (ΔH) for a chemical reaction is the same regardless of the path followed, provided the initial and final states are the same.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Explanation:</b></span>
+    <span class="ln step">Enthalpy is a state function, so ΔH depends only on initial and final states, NOT on the reaction pathway.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Example: Combustion of Carbon</b></span>
+    <span class="rxn">Route 1: C + O₂ → CO₂ &nbsp;&nbsp; ΔH₁ = −393.5 kJ</span>
+    <span class="rxn">Route 2: C + ½O₂ → CO &nbsp;&nbsp; ΔH₂ = −110.5 kJ
+                CO + ½O₂ → CO₂ &nbsp; ΔH₃ = −283.0 kJ</span>
+    <span class="ln step">ΔH₂ + ΔH₃ = −110.5 + (−283.0) = −393.5 kJ = ΔH₁ ✓</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Applications:</b></span>
+    <span class="ln step">• Calculate enthalpy of reactions that cannot be measured directly.</span>
+    <span class="ln step">• Calculate bond enthalpies, enthalpy of formation.</span>
+  </div>
+</div>
+
+<!-- ════════════ ORGANIC CHEMISTRY ════════════ -->
+<div class="ch-banner ch3">🔬 Organic Chemistry</div>
+
+<!-- Q21 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.21</span>Swarts Reaction</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln def">Swarts reaction is a method for the preparation of alkyl fluorides by treating an alkyl chloride or bromide with metallic fluoride (AgF, Hg₂F₂, SbF₃).</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Reaction:</b></span>
+    <span class="rxn">R−Cl + AgF → R−F + AgCl</span>
+    <span class="rxn">CH₃Cl + AgF → CH₃F + AgCl</span>
+    <span class="gap"></span>
+    <span class="ln step">• Alkyl fluorides cannot be prepared by direct fluorination (too vigorous).</span>
+    <span class="ln step">• Fluoride ions are released slowly from AgF and replace Cl⁻.</span>
+    <span class="ln note">Reagent: AgF, Hg₂F₂, or SbF₃ (Swarts reagent)</span>
+  </div>
+</div>
+
+<!-- Q22 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.22</span>Wurtz Reaction</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln def">Wurtz reaction is used to prepare higher alkanes by treating an alkyl halide with sodium metal in dry ether.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Reaction:</b></span>
+    <span class="rxn">2 R−X + 2Na → R−R + 2NaX &nbsp;(dry ether)</span>
+    <span class="rxn">2 CH₃Br + 2Na → CH₃−CH₃ + 2NaBr</span>
+    <span class="rxn">2 C₂H₅Br + 2Na → C₂H₅−C₂H₅ + 2NaBr &nbsp;(butane)</span>
+    <span class="ln gap"></span>
+    <span class="ln step">• Gives an alkane with double the number of carbons.</span>
+    <span class="ln step">• If two different alkyl halides are used, a mixture of three alkanes is obtained.</span>
+    <span class="ln step">• Not suitable for preparing methane (CH₃Na is unstable).</span>
+  </div>
+</div>
+
+<!-- Q23 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.23</span>SN¹ and SN² Reaction Mechanism</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln pt"><b>SN¹ (Unimolecular Nucleophilic Substitution):</b></span>
+    <span class="ln step">• Two-step mechanism. Rate = k[RX] (first order)</span>
+    <span class="ln step">• Step 1: Slow — alkyl halide ionises to form carbocation + X⁻</span>
+    <span class="rxn">R−X → R⁺ + X⁻ &nbsp;(slow, rate-determining step)</span>
+    <span class="ln step">• Step 2: Fast — nucleophile attacks the planar carbocation</span>
+    <span class="rxn">R⁺ + Nu⁻ → R−Nu &nbsp;(fast)</span>
+    <span class="ln step">• Racemization occurs (Nu attacks from both faces).</span>
+    <span class="ln step">• Favoured by: 3° &gt; 2° &gt; 1° alkyl halides, polar protic solvents.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>SN² (Bimolecular Nucleophilic Substitution):</b></span>
+    <span class="ln step">• One-step mechanism. Rate = k[RX][Nu] (second order)</span>
+    <span class="ln step">• Nucleophile attacks from the back (180° to leaving group) → transition state</span>
+    <span class="rxn">Nu⁻ + R−X → [Nu---R---X]‡ → Nu−R + X⁻</span>
+    <span class="ln step">• Walden inversion (complete inversion of configuration).</span>
+    <span class="ln step">• Favoured by: 1° &gt; 2° &gt; 3° alkyl halides, polar aprotic solvents.</span>
+    <span class="ln step">• Steric hindrance disfavours SN².</span>
+  </div>
+</div>
+
+<!-- Q24 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.24</span>Preparation of Amines</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln pt"><b>1. Reduction of Nitro Compounds:</b></span>
+    <span class="rxn">R−NO₂ + 6[H] → R−NH₂ + 2H₂O &nbsp;(Fe/HCl or Sn/HCl)</span>
+    <span class="ln pt"><b>2. Reduction of Nitriles:</b></span>
+    <span class="rxn">R−C≡N + 4[H] → R−CH₂−NH₂ &nbsp;(LiAlH₄ or H₂/Ni)</span>
+    <span class="ln pt"><b>3. Ammonolysis of Alkyl Halides (Hofmann):</b></span>
+    <span class="rxn">R−X + NH₃ → R−NH₂ + HX &nbsp;(excess NH₃, then NaOH)</span>
+    <span class="ln step">Gives mixture of 1°, 2°, 3° amines and quaternary ammonium salts.</span>
+    <span class="ln pt"><b>4. Gabriel Phthalimide Synthesis:</b> (gives pure 1° amine)</span>
+    <span class="rxn">Phthalimide + KOH → Potassium phthalimide → R−X → N-alkylphthalimide → hydrolysis → 1° amine</span>
+    <span class="ln pt"><b>5. Hofmann Bromamide Reaction:</b> (1° amine with one less C)</span>
+    <span class="rxn">RCONH₂ + Br₂ + NaOH → R−NH₂ + Na₂CO₃ + NaBr</span>
+  </div>
+</div>
+
+<!-- Q25 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.25</span>Preparation of Phenols by all four methods</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln pt"><b>1. From Diazonium Salt (most important):</b></span>
+    <span class="rxn">C₆H₅N₂⁺Cl⁻ + H₂O → C₆H₅OH + N₂ + HCl</span>
+    <span class="ln pt"><b>2. From Chlorobenzene (Dow's process — high temp &amp; pressure):</b></span>
+    <span class="rxn">C₆H₅Cl + NaOH → C₆H₅ONa → C₆H₅OH + NaCl &nbsp;(300°C, 200 atm)</span>
+    <span class="ln pt"><b>3. From Benzene Sulphonic Acid (alkali fusion):</b></span>
+    <span class="rxn">C₆H₅SO₃H + NaOH → C₆H₅ONa → C₆H₅OH &nbsp;(fusion, then H⁺)</span>
+    <span class="ln pt"><b>4. From Cumene (Industrial method — most widely used):</b></span>
+    <span class="rxn">C₆H₅CH(CH₃)₂ + O₂ → C₆H₅C(CH₃)₂OOH → C₆H₅OH + CH₃COCH₃</span>
+    <span class="ln note">Cumene hydroperoxide is decomposed with dilute H₂SO₄ to give phenol + acetone.</span>
+  </div>
+</div>
+
+<!-- Q26 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.26</span>Gabriel Phthalimide Synthesis</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln def">Gabriel phthalimide synthesis is used to prepare pure primary amines (1° amines) without any secondary or tertiary amine contamination.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Steps:</b></span>
+    <span class="ln step"><b>Step 1:</b> Phthalimide + KOH → Potassium phthalimide (K-salt)</span>
+    <span class="rxn">C₆H₄(CO)₂NH + KOH → C₆H₄(CO)₂NK + H₂O</span>
+    <span class="ln step"><b>Step 2:</b> K-phthalimide + R−X → N-alkyl phthalimide (alkylation)</span>
+    <span class="rxn">C₆H₄(CO)₂NK + R−X → C₆H₄(CO)₂N−R + KX</span>
+    <span class="ln step"><b>Step 3:</b> N-alkyl phthalimide + H₂O/KOH → primary amine + phthalic acid</span>
+    <span class="rxn">C₆H₄(CO)₂N−R + H₂O/KOH → R−NH₂ + C₆H₄(COOK)₂</span>
+    <span class="ln gap"></span>
+    <span class="ln note">Advantage: Gives PURE 1° amine. No 2° or 3° amine formed.</span>
+  </div>
+</div>
+
+<!-- Q27 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.27</span>What is Formalin?</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln def">Formalin is a 40% aqueous solution of formaldehyde (methanal, HCHO).</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Properties:</b></span>
+    <span class="ln step">• Colourless liquid with pungent smell.</span>
+    <span class="ln step">• Strong reducing agent (gives silver mirror with Tollens' reagent).</span>
+    <span class="ln step">• Undergoes Cannizzaro reaction (no α-hydrogen).</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Uses:</b></span>
+    <span class="ln step">1. Used as a preservative for biological specimens (kills bacteria).</span>
+    <span class="ln step">2. Used as a disinfectant and antiseptic.</span>
+    <span class="ln step">3. Used in manufacture of Bakelite (phenol-formaldehyde resin).</span>
+    <span class="ln step">4. Used to prepare formic acid and various plastics.</span>
+  </div>
+</div>
+
+<!-- Q28 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.28</span>Kolbe's reaction and Riemer-Tiemann reaction</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln pt"><b>Kolbe's Reaction (Kolbe-Schmitt reaction):</b></span>
+    <span class="ln step">Sodium phenoxide is heated with CO₂ under pressure → sodium salicylate → salicylic acid on acidification.</span>
+    <span class="rxn">C₆H₅ONa + CO₂ → C₆H₄(OH)(COONa) → C₆H₄(OH)COOH &nbsp;(salicylic acid)</span>
+    <span class="ln step">Conditions: 130°C, 5 atm, CO₂ pressure. The −COOH group enters ortho position.</span>
+    <span class="ln step">Use: Used to prepare aspirin (acetyl salicylic acid) from salicylic acid.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Riemer-Tiemann Reaction:</b></span>
+    <span class="ln step">Phenol treated with CHCl₃ in presence of NaOH → ortho-hydroxy benzaldehyde (salicylaldehyde).</span>
+    <span class="rxn">C₆H₅OH + CHCl₃ + NaOH → o-HOC₆H₄CHO (salicylaldehyde) + HCl</span>
+    <span class="ln step">Mechanism: CHCl₃ + NaOH → :CCl₂ (dichlorocarbene, electrophile) → attacks ring → substitution.</span>
+    <span class="ln note">Both reactions occur at the ortho position of phenol ring.</span>
+  </div>
+</div>
+
+<!-- Q29 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.29</span>Free radical mechanism involved in preparation of addition polymers</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln def">Addition polymerisation by free radical mechanism occurs in three stages: Initiation, Propagation, Termination.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Stage 1 — Initiation:</b></span>
+    <span class="rxn">Initiator (I−I) → 2I• &nbsp;(free radicals, by heat/UV/peroxide)</span>
+    <span class="rxn">I• + CH₂=CH₂ → I−CH₂−CH₂• &nbsp;(activated monomer)</span>
+    <span class="ln pt"><b>Stage 2 — Propagation:</b></span>
+    <span class="rxn">I−CH₂−CH₂• + n(CH₂=CH₂) → I−(CH₂−CH₂)n−CH₂−CH₂•</span>
+    <span class="ln step">Chain grows by addition of monomer units to the free radical end.</span>
+    <span class="ln pt"><b>Stage 3 — Termination:</b></span>
+    <span class="rxn">R• + R• → R−R &nbsp;(combination)</span>
+    <span class="rxn">R−CH₂• + •CH₂−R → R−CH₃ + R−CH=CH₂ &nbsp;(disproportionation)</span>
+    <span class="ln note">Example: Formation of polythene from ethene.</span>
+  </div>
+</div>
+
+<!-- Q30 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.30</span>Preparation, uses and properties of Nylon-6, Nylon-6,6, Bakelite, Teflon</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln pt"><b>(i) Nylon-6 (Polycaprolactam):</b></span>
+    <span class="rxn">n(caprolactam) → [−NH−(CH₂)₅−CO−]n &nbsp;(ring opening polymerisation)</span>
+    <span class="ln step">Uses: Fibres, ropes, parachutes, tyre cords, brush bristles.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>(ii) Nylon-6,6:</b></span>
+    <span class="rxn">n H₂N(CH₂)₆NH₂ + n HOOC(CH₂)₄COOH → Nylon-6,6 + nH₂O</span>
+    <span class="ln step">(Hexamethylenediamine + Adipic acid — condensation polymerisation)</span>
+    <span class="ln step">Uses: Fabrics, stockings, gears, crankshafts, parachutes.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>(iii) Bakelite (phenol-formaldehyde resin):</b></span>
+    <span class="rxn">Phenol + Formaldehyde → Novolac (linear) → Bakelite (cross-linked, thermosetting)</span>
+    <span class="ln step">Properties: Hard, infusible, electrical insulator, heat resistant.</span>
+    <span class="ln step">Uses: Electrical switches, handles of utensils, telephone cabinets.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>(iv) Teflon (polytetrafluoroethylene, PTFE):</b></span>
+    <span class="rxn">n CF₂=CF₂ → [−CF₂−CF₂−]n &nbsp;(addition polymerisation)</span>
+    <span class="ln step">Properties: Chemically inert, non-stick, high thermal stability, low friction.</span>
+    <span class="ln step">Uses: Non-stick cookware coating, electrical insulation, gaskets, valves.</span>
+  </div>
+</div>
+
+<!-- Q31 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.31</span>Halogenation, Nitration, Sulphonation of chlorobenzene and anisole</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln pt"><b>Chlorobenzene (−Cl is ortho/para director, deactivating):</b></span>
+    <span class="ln step">Halogenation: C₆H₅Cl + Cl₂ → o-C₆H₄Cl₂ + p-C₆H₄Cl₂ &nbsp;(Fe/FeCl₃ catalyst)</span>
+    <span class="ln step">Nitration: C₆H₅Cl + HNO₃ → o-ClC₆H₄NO₂ + p-ClC₆H₄NO₂ &nbsp;(H₂SO₄)</span>
+    <span class="ln step">Sulphonation: C₆H₅Cl + H₂SO₄ → o-ClC₆H₄SO₃H + p-ClC₆H₄SO₃H</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Anisole (−OCH₃ is strongly ortho/para activating):</b></span>
+    <span class="ln step">Halogenation: C₆H₅OCH₃ + Br₂ → o-BrC₆H₄OCH₃ + p-BrC₆H₄OCH₃ &nbsp;(no catalyst needed)</span>
+    <span class="ln step">Nitration: C₆H₅OCH₃ + HNO₃ → o-O₂NC₆H₄OCH₃ + p-O₂NC₆H₄OCH₃</span>
+    <span class="ln step">Sulphonation: C₆H₅OCH₃ + H₂SO₄ → o-HO₃SC₆H₄OCH₃ + p-HO₃SC₆H₄OCH₃</span>
+  </div>
+</div>
+
+<!-- Q32 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.32</span>Aldol Condensation reaction with mechanism</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln def">Aldol condensation: When an aldehyde or ketone having α-hydrogen is treated with dilute base or acid, it forms a β-hydroxy carbonyl compound (aldol), which on heating loses water to form α,β-unsaturated carbonyl compound.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Reaction (Acetaldehyde):</b></span>
+    <span class="rxn">2 CH₃CHO → CH₃CH(OH)CH₂CHO &nbsp;(Aldol, dilute NaOH, cold)
+                         ↓ (heat, −H₂O)
+                    CH₃CH=CHCHO &nbsp;(Crotonaldehyde)</span>
+    <span class="ln pt"><b>Mechanism:</b></span>
+    <span class="ln step">Step 1: Base removes α-H → carbanion (enolate)</span>
+    <span class="rxn">CH₃CHO + OH⁻ → ⁻CH₂CHO + H₂O</span>
+    <span class="ln step">Step 2: Carbanion attacks carbonyl carbon of another molecule</span>
+    <span class="rxn">⁻CH₂CHO + CH₃CHO → CH₃CH(O⁻)CH₂CHO</span>
+    <span class="ln step">Step 3: Protonation → Aldol product</span>
+    <span class="rxn">CH₃CH(O⁻)CH₂CHO + H₂O → CH₃CH(OH)CH₂CHO + OH⁻</span>
+    <span class="ln step">Step 4: Dehydration on heating → α,β-unsaturated aldehyde</span>
+  </div>
+</div>
+
+<!-- Q33 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.33</span>Clemmensen Reduction</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln def">Clemmensen reduction is a method of reducing a carbonyl group (C=O) of an aldehyde or ketone to a methylene group (CH₂) using amalgamated zinc (Zn-Hg) and concentrated HCl.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Reaction:</b></span>
+    <span class="rxn">R−CO−R' + Zn(Hg) + conc. HCl → R−CH₂−R' + ZnCl₂ + H₂O</span>
+    <span class="rxn">CH₃COCH₃ + Zn(Hg)/HCl → CH₃CH₂CH₃ &nbsp;(propane)</span>
+    <span class="rxn">C₆H₅COCH₃ + Zn(Hg)/HCl → C₆H₅CH₂CH₃ &nbsp;(ethylbenzene)</span>
+    <span class="ln gap"></span>
+    <span class="ln step">• Used when molecule is sensitive to base (complement to Wolff-Kishner).</span>
+    <span class="ln step">• Works in acidic conditions.</span>
+    <span class="ln step">• Does NOT affect C=C double bonds.</span>
+  </div>
+</div>
+
+<!-- Q34 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.34</span>Cannizzaro Reaction with mechanism</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln def">Cannizzaro reaction is a disproportionation reaction in which an aldehyde having no α-hydrogen is treated with concentrated NaOH. One molecule is oxidised to a carboxylic acid (salt) and another is reduced to an alcohol.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Reaction:</b></span>
+    <span class="rxn">2HCHO + NaOH(conc) → HCOONa + CH₃OH</span>
+    <span class="rxn">2C₆H₅CHO + NaOH(conc) → C₆H₅COONa + C₆H₅CH₂OH</span>
+    <span class="ln pt"><b>Mechanism:</b></span>
+    <span class="ln step">Step 1: OH⁻ attacks one HCHO → alkoxide intermediate</span>
+    <span class="rxn">HCHO + OH⁻ → H₂C(OH)(O⁻) &nbsp;(nucleophilic addition)</span>
+    <span class="ln step">Step 2: Hydride (H⁻) transfer from the intermediate to another HCHO</span>
+    <span class="rxn">H₂C(OH)(O⁻) + HCHO → HCOO⁻ + CH₃O⁻</span>
+    <span class="ln step">Step 3: Protonation of alkoxide</span>
+    <span class="rxn">CH₃O⁻ + H₂O → CH₃OH + OH⁻</span>
+  </div>
+</div>
+
+<!-- Q35 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.35</span>Esterification Reaction</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln def">Esterification is the reaction between a carboxylic acid and an alcohol in the presence of a mineral acid catalyst (H₂SO₄) to form an ester and water.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Reaction:</b></span>
+    <span class="rxn">RCOOH + R'OH ⇌ RCOOR' + H₂O &nbsp;(H₂SO₄ catalyst, heat)</span>
+    <span class="rxn">CH₃COOH + C₂H₅OH ⇌ CH₃COOC₂H₅ + H₂O &nbsp;(ethyl acetate)</span>
+    <span class="ln pt"><b>Mechanism (Nucleophilic Acyl Substitution):</b></span>
+    <span class="ln step">Step 1: Protonation of −COOH by H₂SO₄ → activated acid</span>
+    <span class="ln step">Step 2: Alcohol (nucleophile) attacks the activated carbonyl carbon</span>
+    <span class="ln step">Step 3: Loss of water molecule → ester formed</span>
+    <span class="ln gap"></span>
+    <span class="ln step">• Reversible reaction — equilibrium can be shifted by removing water or using excess of one reagent.</span>
+    <span class="ln step">• Used to prepare soaps, flavours, perfumes.</span>
+  </div>
+</div>
+
+<!-- Q36 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.36</span>Wolff-Kishner Reduction</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln def">Wolff-Kishner reduction is a method to reduce a carbonyl group (C=O) to methylene group (−CH₂−) by treating with hydrazine (NH₂NH₂) in the presence of KOH (base) and ethylene glycol (high boiling solvent).</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Reaction:</b></span>
+    <span class="rxn">R−CO−R' + NH₂NH₂ → R−C(=NNH₂)−R' &nbsp;(hydrazone, first step)</span>
+    <span class="rxn">R−C(=NNH₂)−R' + KOH → R−CH₂−R' + N₂ &nbsp;(Wolff-Kishner, basic conditions)</span>
+    <span class="rxn">C₆H₅COCH₃ + NH₂NH₂/KOH → C₆H₅CH₂CH₃ &nbsp;(ethylbenzene)</span>
+    <span class="ln gap"></span>
+    <span class="ln step">• Used in basic/alkaline conditions (complement to Clemmensen in acidic conditions).</span>
+    <span class="ln step">• Works when molecule is acid-sensitive.</span>
+    <span class="ln step">• Both Clemmensen and Wolff-Kishner give the same product.</span>
+  </div>
+</div>
+
+<!-- ════════════ POLYMERS ════════════ -->
+<div class="ch-banner ch6">🧬 Polymers &amp; Green Chemistry</div>
+
+<!-- Q37 -->
+<div class="qwrap">
+  <div class="qtitle qt6"><span class="qbx b6">Q.37</span>Difference between Thermoplastic and Thermosetting Polymers</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <table>
+      <tr><th>Thermoplastic Polymers</th><th class="th2">Thermosetting Polymers</th></tr>
+      <tr><td>Can be softened on heating and hardened on cooling repeatedly</td><td>Once set hard on heating, cannot be softened again</td></tr>
+      <tr><td>Linear or slightly branched chains</td><td>Highly cross-linked 3D network structure</td></tr>
+      <tr><td>Held by weak van der Waals forces</td><td>Strong covalent cross-links</td></tr>
+      <tr><td>Can be remoulded and recycled</td><td>Cannot be remoulded or recycled</td></tr>
+      <tr><td>Softer, less resistant to heat</td><td>Harder, more heat resistant</td></tr>
+      <tr><td>Examples: Polyethylene, PVC, Nylon, Teflon</td><td>Examples: Bakelite, Melamine, Urea-formaldehyde</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Q38 -->
+<div class="qwrap">
+  <div class="qtitle qt6"><span class="qbx b6">Q.38</span>What is Green Chemistry? b) Sustainable development</div>
+  <div class="sol">
+    <span class="sol-lbl">Answer</span>
+    <span class="ln pt"><b>(a) Green Chemistry:</b></span>
+    <span class="ln def">Green chemistry is a philosophy that designs chemical products and processes to reduce or eliminate the use and generation of hazardous substances.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Principles:</b></span>
+    <span class="ln step">1. Prevention — prevent waste rather than treat it.</span>
+    <span class="ln step">2. Atom economy — design synthesis to incorporate maximum raw material into final product.</span>
+    <span class="ln step">3. Use of catalysts — avoid excess reagents.</span>
+    <span class="ln step">4. Design for degradation — products should break down into harmless substances.</span>
+    <span class="ln step">5. Use renewable feedstocks.</span>
+    <span class="ln step">6. Design safer synthesis and chemicals.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>(b) Sustainable Development:</b></span>
+    <span class="ln def">Development that meets the needs of the present generation without compromising the ability of future generations to meet their own needs.</span>
+    <span class="ln step">• Balances economic growth, environmental protection, and social equity.</span>
+    <span class="ln step">• Uses renewable energy, minimises pollution, conserves biodiversity.</span>
+    <span class="ln step">• Example: Solar energy, wind energy, biodegradable plastics, organic farming.</span>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="text-align:center;margin-top:32px;font-size:12.5px;color:#666;border-top:2px double #1b5e20;padding-top:14px;">
+  <b>Visions Classes, Ambernath</b> — Class 12 Chemistry · Important Questions &amp; Answers<br/>
+  <small>Solid State · Solutions · Chemical Kinetics · Thermodynamics · Organic Chemistry · Polymers<br/>
+  By Shashikant Sir · visionslearning.in · Board Exam Style Answers</small>
+</div>
+
+</div><!-- /page -->
+<button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+</body>
+</html>
