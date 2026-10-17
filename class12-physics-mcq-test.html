@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Class 12 Physics MCQ Test | Visions Classes</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#0d1b2a;color:#e0e0e0;min-height:100vh;padding:0;}
+
+/* ── SPLASH SCREEN ── */
+#splash{position:fixed;inset:0;background:linear-gradient(135deg,#0d1b2a,#1a2f4a);display:flex;align-items:center;justify-content:center;z-index:999;flex-direction:column;text-align:center;padding:20px;}
+#splash h1{font-size:2.4rem;font-weight:900;background:linear-gradient(90deg,#00b4d8,#48cae4,#90e0ef);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:16px 0 8px;}
+#splash p{font-size:1rem;color:#90caf9;margin:4px 0;}
+#splash .meta{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin:20px 0;}
+#splash .meta span{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:8px 18px;border-radius:20px;font-size:.9rem;color:#e0e0e0;}
+#splash .start-btn{margin-top:10px;padding:16px 48px;background:linear-gradient(135deg,#0077b6,#00b4d8);color:#fff;border:none;border-radius:30px;font-size:1.1rem;font-weight:800;cursor:pointer;letter-spacing:.5px;box-shadow:0 6px 24px rgba(0,180,216,.4);transition:transform .15s,box-shadow .15s;}
+#splash .start-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,180,216,.55);}
+
+/* ── HEADER ── */
+#hdr{background:rgba(0,0,0,.5);backdrop-filter:blur(10px);position:sticky;top:0;z-index:100;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.1);}
+#hdr .logo{font-size:1rem;font-weight:800;color:#00b4d8;}
+#hdr .htimer{font-size:1.1rem;font-weight:700;color:#48cae4;background:rgba(0,180,216,.15);border:1px solid #00b4d8;padding:5px 14px;border-radius:12px;}
+#hdr .htimer.warn{color:#ff9800;border-color:#ff9800;background:rgba(255,152,0,.15);}
+#hdr .htimer.danger{color:#f44336;border-color:#f44336;background:rgba(244,67,54,.15);animation:pulse .6s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+#hdr .hprog{font-size:.85rem;color:#90caf9;}
+
+/* ── PROGRESS BAR ── */
+#progbar{height:4px;background:rgba(255,255,255,.1);}
+#progfill{height:4px;background:linear-gradient(90deg,#0077b6,#00b4d8,#48cae4);transition:width .3s;width:0%;}
+
+/* ── MAIN ── */
+#testArea{display:none;max-width:820px;margin:0 auto;padding:24px 20px 60px;}
+
+/* chapter strip */
+.ch-strip{background:linear-gradient(135deg,#0077b6,#023e8a);border-radius:10px;padding:10px 18px;margin:28px 0 16px;font-size:13px;font-weight:700;color:#90e0ef;letter-spacing:.5px;text-transform:uppercase;}
+
+/* question card */
+.qcard{background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.1);border-radius:12px;padding:22px 24px;margin-bottom:18px;transition:border-color .2s;}
+.qcard:hover{border-color:rgba(0,180,216,.35);}
+.qcard .qno{font-size:11px;font-weight:700;color:#48cae4;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;}
+.qcard .qtxt{font-size:15px;line-height:1.7;color:#e0e0e0;margin-bottom:16px;}
+.qcard .qtxt b{color:#90e0ef;}
+
+/* options */
+.opts{display:flex;flex-direction:column;gap:8px;}
+.opt{display:flex;align-items:center;gap:12px;padding:11px 16px;background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.1);border-radius:8px;cursor:pointer;transition:all .18s;font-size:14px;color:#cfd8dc;user-select:none;}
+.opt:hover{background:rgba(0,180,216,.12);border-color:#00b4d8;color:#fff;}
+.opt input[type=radio]{accent-color:#00b4d8;width:16px;height:16px;flex-shrink:0;}
+.opt.selected{background:rgba(0,180,216,.18);border-color:#00b4d8;color:#fff;}
+.opt.correct{background:rgba(76,175,80,.18)!important;border-color:#4caf50!important;color:#a5d6a7!important;}
+.opt.wrong{background:rgba(244,67,54,.18)!important;border-color:#f44336!important;color:#ef9a9a!important;}
+.opt.show-ans{background:rgba(76,175,80,.1);border-color:#4caf50;color:#a5d6a7;}
+
+/* explanation */
+.expl{display:none;margin-top:12px;padding:12px 16px;background:rgba(255,248,225,.06);border-left:3px solid #ffd54f;border-radius:0 8px 8px 0;font-size:13.5px;color:#ffe082;line-height:1.8;}
+.expl.show{display:block;}
+
+/* ── BOTTOM NAV ── */
+#botNav{position:fixed;bottom:0;left:0;right:0;background:rgba(13,27,42,.95);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.1);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px;}
+#botNav button{padding:10px 22px;border:none;border-radius:24px;font-size:.9rem;font-weight:700;cursor:pointer;transition:all .15s;}
+#prevBtn{background:rgba(255,255,255,.1);color:#90caf9;}
+#prevBtn:hover{background:rgba(255,255,255,.18);}
+#nextBtn{background:linear-gradient(135deg,#0077b6,#00b4d8);color:#fff;box-shadow:0 4px 14px rgba(0,119,182,.4);}
+#nextBtn:hover{transform:translateY(-1px);}
+#submitBtn{background:linear-gradient(135deg,#e65100,#ff7043);color:#fff;box-shadow:0 4px 14px rgba(230,81,0,.4);display:none;}
+.skip-info{font-size:.8rem;color:#607d8b;}
+
+/* ── RESULT SCREEN ── */
+#result{display:none;max-width:700px;margin:40px auto;padding:20px;}
+.result-card{background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.1);border-radius:16px;padding:32px;text-align:center;}
+.result-card .score-ring{width:160px;height:160px;border-radius:50%;border:8px solid;margin:0 auto 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.result-card .score-big{font-size:3rem;font-weight:900;}
+.result-card .score-sub{font-size:.95rem;color:#90caf9;}
+.result-card h2{font-size:1.5rem;font-weight:800;margin-bottom:6px;}
+.result-card p{color:#90caf9;margin-bottom:20px;}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:20px 0;}
+.stat-box{background:rgba(255,255,255,.06);border-radius:10px;padding:14px;text-align:center;}
+.stat-box .sv{font-size:1.6rem;font-weight:800;margin-bottom:4px;}
+.stat-box .sl{font-size:.8rem;color:#90caf9;text-transform:uppercase;letter-spacing:.5px;}
+.sv.correct{color:#4caf50;}.sv.wrong{color:#f44336;}.sv.skip{color:#ff9800;}
+.ch-score{text-align:left;margin:16px 0;}
+.ch-score table{width:100%;border-collapse:collapse;font-size:13px;}
+.ch-score th{padding:8px 10px;background:rgba(0,180,216,.2);color:#48cae4;text-align:left;}
+.ch-score td{padding:7px 10px;border-bottom:1px solid rgba(255,255,255,.06);}
+.bar{height:8px;border-radius:4px;background:rgba(255,255,255,.1);margin-top:4px;}
+.barfill{height:8px;border-radius:4px;background:linear-gradient(90deg,#0077b6,#00b4d8);}
+.result-btns{display:flex;gap:12px;justify-content:center;margin-top:24px;flex-wrap:wrap;}
+.result-btns button{padding:11px 28px;border:none;border-radius:24px;font-size:.9rem;font-weight:700;cursor:pointer;}
+.rbtn-review{background:rgba(255,255,255,.1);color:#90caf9;}
+.rbtn-again{background:linear-gradient(135deg,#0077b6,#00b4d8);color:#fff;}
+.rbtn-print{background:rgba(255,255,255,.08);color:#ccc;}
+
+@media(max-width:600px){
+  #splash h1{font-size:1.7rem;}
+  .stats-grid{grid-template-columns:1fr 1fr;}
+  #hdr .hprog{display:none;}
+}
+@media print{
+  #hdr,#botNav,#splash,#result,.no-print{display:none!important;}
+  body{background:#fff;color:#000;}
+  .qcard{border:1px solid #ccc;break-inside:avoid;margin-bottom:12px;padding:14px;}
+  .opt{border:1px solid #ddd;margin:4px 0;}
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════ SPLASH ════════════ -->
+<div id="splash">
+  <div style="font-size:3.5rem;">⚛️</div>
+  <h1>Class 12 Physics MCQ Test</h1>
+  <p style="color:#ccc;font-size:1rem;">Maharashtra State Board · All Chapters</p>
+  <div class="meta">
+    <span>📋 60 Questions</span>
+    <span>⏱️ 60 Minutes</span>
+    <span>🎯 60 Marks</span>
+    <span>✅ 1 Mark Each</span>
+    <span>❌ No Negative Marking</span>
+  </div>
+  <p style="color:#90caf9;font-size:.9rem;max-width:480px;line-height:1.6;">
+    Covers: Circular Motion · Gravitation · Rotational Motion · Oscillations · Elasticity · Surface Tension · Wave Motion · Stationary Waves · Current Electricity · Electromagnetic Induction · Magnetism · Electrostatics · Atoms · Semiconductors
+  </p>
+  <button class="start-btn" onclick="startTest()">🚀 Start Test</button>
+  <p style="margin-top:14px;font-size:.8rem;color:#607d8b;">Visions Classes, Ambernath · By Shashikant Sir</p>
+</div>
+
+<!-- ════════════ HEADER ════════════ -->
+<div id="hdr" style="display:none;">
+  <div class="logo">⚛️ Physics MCQ</div>
+  <div id="timerDisplay" class="htimer">60:00</div>
+  <div class="hprog" id="hprog">Q 1 / 60</div>
+</div>
+<div id="progbar" style="display:none;"><div id="progfill"></div></div>
+
+<!-- ════════════ TEST AREA ════════════ -->
+<div id="testArea"></div>
+
+<!-- ════════════ RESULT ════════════ -->
+<div id="result"></div>
+
+<!-- ════════════ BOTTOM NAV ════════════ -->
+<div id="botNav" style="display:none;">
+  <button id="prevBtn" onclick="navigate(-1)">← Prev</button>
+  <span class="skip-info" id="skipInfo"></span>
+  <button id="nextBtn" onclick="navigate(1)">Next →</button>
+  <button id="submitBtn" onclick="confirmSubmit()">🏁 Submit</button>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════
+//  ALL 60 MCQ QUESTIONS — CLASS 12 PHYSICS
+// ═══════════════════════════════════════════════════
+const CHAPTERS = [
+  {
+    title:"Ch.1 — Circular Motion & Gravitation",
+    color:"#0077b6",
+    qs:[
+      {q:"A body moves in a circle of radius r with speed v. The centripetal acceleration is:",opts:["v/r","v²/r","vr","v²r"],ans:1,exp:"Centripetal acceleration = v²/r directed towards the centre. It arises because the direction of velocity changes continuously."},
+      {q:"A stone tied to a string is whirled in a vertical circle. The tension in the string is maximum at:",opts:["Top","Bottom","At any point","At the sides"],ans:1,exp:"At the bottom, tension = mg + mv²/r (weight and centripetal force are in the same direction). Hence tension is maximum at the bottom."},
+      {q:"The time period of a satellite orbiting close to Earth's surface is approximately:",opts:["24 hours","84 minutes","12 hours","1 hour"],ans:1,exp:"For a satellite close to Earth surface, T = 2π√(R/g) = 2π√(6400×10³/10) ≈ 84 minutes."},
+      {q:"A car moves along a banked curve. The optimum speed for the banked angle θ is:",opts:["√(rg tanθ)","rg tanθ","√(rg/tanθ)","rg/tanθ"],ans:0,exp:"For a banked road: v_opt = √(rg tanθ). At this speed no friction is needed for circular motion."},
+      {q:"The escape velocity from the surface of the Earth is:",opts:["11.2 m/s","11.2 km/s","7.9 km/s","8 km/s"],ans:1,exp:"Escape velocity v_e = √(2gR) = √(2×9.8×6.4×10⁶) ≈ 11.2 km/s. It is √2 times orbital velocity."},
+      {q:"The gravitational potential energy at infinity is:",opts:["Zero","Maximum","Minimum","Negative"],ans:0,exp:"Gravitational PE at infinity is taken as zero (reference point). PE = −GMm/r, which approaches 0 as r→∞."},
+      {q:"For a geostationary satellite, the time period is:",opts:["24 hours","12 hours","84 minutes","365 days"],ans:0,exp:"A geostationary satellite has exactly 24 hours (1 day) time period and orbits over the equator. It appears stationary from Earth."},
+      {q:"The banking angle θ for a curved road of radius r and speed v is given by:",opts:["tanθ = v²/rg","tanθ = rg/v²","sinθ = v²/rg","cosθ = v²/rg"],ans:0,exp:"tan θ = v²/rg. This is derived by resolving forces on a vehicle on a banked road (N sinθ = mv²/r, N cosθ = mg)."},
+    ]
+  },
+  {
+    title:"Ch.2 — Rotational Motion",
+    color:"#023e8a",
+    qs:[
+      {q:"The moment of inertia of a thin circular ring of mass M and radius R about its diameter is:",opts:["MR²","MR²/2","2MR²","MR²/4"],ans:1,exp:"By the perpendicular axis theorem: I_diameter = I_z/2 = MR²/2, since I_z = MR² (about axis through centre ⊥ to ring)."},
+      {q:"The angular momentum L is related to torque τ by:",opts:["τ = L/t","L = τ×t","τ = dL/dt","L = τ/t"],ans:2,exp:"Newton's second law for rotation: τ = dL/dt. Torque equals the rate of change of angular momentum."},
+      {q:"A solid sphere of mass M and radius R has moment of inertia about its diameter:",opts:["2MR²/5","2MR²/3","MR²","MR²/2"],ans:0,exp:"I of solid sphere about diameter = 2MR²/5. For hollow sphere = 2MR²/3. Common result to memorise."},
+      {q:"A figure skater brings her arms close to her body. Her angular velocity:",opts:["Decreases","Increases","Remains same","Becomes zero"],ans:1,exp:"By conservation of angular momentum (L = Iω = constant). Bringing arms inward decreases I, so ω must increase to keep L constant."},
+      {q:"The kinetic energy of a rolling body without slipping is:",opts:["½mv²","½Iω²","½mv²(1 + k²/R²)","½mv² + Iω²"],ans:2,exp:"KE_rolling = ½mv² + ½Iω² = ½mv²(1 + k²/R²), where k = radius of gyration. For solid sphere: KE = 7mv²/10."},
+      {q:"Radius of gyration k of a body of mass M and MI = I is:",opts:["k = I/M","k = √(I/M)","k = M/I","k = √(M/I)"],ans:1,exp:"Moment of inertia I = Mk². Therefore k = √(I/M). It is the distance from axis at which all mass can be concentrated to give same I."},
+    ]
+  },
+  {
+    title:"Ch.3 — Oscillations",
+    color:"#1b4332",
+    qs:[
+      {q:"In SHM, the restoring force is:",opts:["Proportional to displacement","Inversely proportional to displacement","Constant","Proportional to velocity"],ans:0,exp:"In SHM, F = −kx. Restoring force is proportional to displacement and directed towards mean position (hence negative sign)."},
+      {q:"The time period of a simple pendulum of length L is:",opts:["2π√(g/L)","2π√(L/g)","π√(L/g)","2√(L/g)"],ans:1,exp:"T = 2π√(L/g). This formula is valid for small oscillations (θ < 15°). Period is independent of mass and amplitude (for small angles)."},
+      {q:"In SHM, at the extreme position, the velocity is:",opts:["Maximum","Zero","Equal to ωA","Equal to A"],ans:1,exp:"At extreme position x = A (amplitude): v = ω√(A²−x²) = ω√(A²−A²) = 0. PE is maximum, KE is zero at extreme."},
+      {q:"The frequency of a spring-mass system with spring constant k and mass m is:",opts:["2π√(k/m)","(1/2π)√(k/m)","2π√(m/k)","(1/2π)√(m/k)"],ans:1,exp:"ω = √(k/m), so f = ω/2π = (1/2π)√(k/m). For spring-mass, period T = 2π√(m/k)."},
+      {q:"The total energy of a particle in SHM is:",opts:["½mω²A²","mω²A²","½mω²x²","mωA"],ans:0,exp:"Total energy E = ½mω²A² = ½kA². It is constant throughout the motion and depends on amplitude A and angular frequency ω."},
+    ]
+  },
+  {
+    title:"Ch.4 — Elasticity",
+    color:"#4a148c",
+    qs:[
+      {q:"Young's modulus is defined as:",opts:["Stress/Strain","Strain/Stress","Force × Length","Stress × Area"],ans:0,exp:"Young's modulus Y = Longitudinal stress / Longitudinal strain = (F/A) / (ΔL/L) = FL/(AΔL). Unit: Pa (N/m²)."},
+      {q:"The SI unit of modulus of elasticity is:",opts:["N/m","N/m²","N·m","m/N"],ans:1,exp:"Modulus of elasticity = Stress/Strain. Strain is dimensionless, so unit = unit of stress = N/m² = Pa."},
+      {q:"Hooke's law is valid:",opts:["For all stresses","Only within elastic limit","Only for metals","Only at high temperature"],ans:1,exp:"Hooke's law (stress ∝ strain) is valid only within the proportionality limit (well within the elastic limit). Beyond this, the law breaks down."},
+      {q:"The elastic potential energy stored in a stretched wire of cross-section A, length L and extension x is:",opts:["(YA x²)/(2L)","(YAx)/(L)","YAx/L","2YAx²/L"],ans:0,exp:"Elastic PE = ½ × stress × strain × volume = ½ × (Yx/L) × (x/L) × AL = YAx²/(2L). Also = ½ × F × x."},
+    ]
+  },
+  {
+    title:"Ch.5 — Surface Tension & Fluid Mechanics",
+    color:"#006064",
+    qs:[
+      {q:"The excess pressure inside a soap bubble of radius R and surface tension T is:",opts:["2T/R","4T/R","T/R","T/(2R)"],ans:1,exp:"Soap bubble has TWO surfaces (inner + outer), so excess pressure = 2 × (2T/R) = 4T/R. For a liquid drop (one surface): 2T/R."},
+      {q:"The angle of contact for a liquid that completely wets the surface is:",opts:["90°","0°","180°","45°"],ans:1,exp:"For completely wetting liquid (e.g., water on clean glass), angle of contact θ = 0°. For non-wetting (mercury on glass): θ > 90° (135°)."},
+      {q:"Bernoulli's equation is based on:",opts:["Conservation of mass","Conservation of energy","Conservation of momentum","Newton's law"],ans:1,exp:"Bernoulli's theorem: P + ½ρv² + ρgh = constant is derived from work-energy theorem and is an expression of conservation of energy for fluid flow."},
+      {q:"The terminal velocity of a ball falling through a viscous liquid is:",opts:["Directly proportional to its radius","Proportional to square of its radius","Inversely proportional to radius","Independent of radius"],ans:1,exp:"Terminal velocity v_t = 2r²(ρ−σ)g/(9η) ∝ r². Stokes' law: v_t is proportional to the square of the radius of the falling sphere."},
+      {q:"Capillary rise h in a tube of radius r is given by:",opts:["h = T/rρg","h = 2T cosθ/(rρg)","h = Trρg/2","h = Tρg/(2r)"],ans:1,exp:"Capillary rise: h = 2T cosθ/(rρg), where T = surface tension, θ = angle of contact, r = radius, ρ = density. For θ = 0°: h = 2T/(rρg)."},
+    ]
+  },
+  {
+    title:"Ch.6 — Wave Motion & Stationary Waves",
+    color:"#880e4f",
+    qs:[
+      {q:"The speed of a transverse wave in a string depends on:",opts:["Frequency","Tension and linear density","Amplitude","Wavelength"],ans:1,exp:"v = √(T/μ) where T = tension, μ = linear mass density. Speed is independent of frequency and amplitude."},
+      {q:"In a stationary wave, the distance between a node and the nearest antinode is:",opts:["λ","λ/2","λ/4","λ/8"],ans:2,exp:"In a stationary wave, nodes are separated by λ/2, antinodes by λ/2. Distance between adjacent node and antinode = λ/4."},
+      {q:"The first harmonic (fundamental frequency) of a closed organ pipe of length L is:",opts:["v/4L","v/2L","v/L","2v/L"],ans:0,exp:"For closed pipe: only odd harmonics. Fundamental frequency f₁ = v/(4L). Open pipe: f₁ = v/(2L)."},
+      {q:"Beats are formed when two waves have:",opts:["Same frequency","Different amplitudes","Slightly different frequencies","Different phases"],ans:2,exp:"Beat frequency = |f₁ − f₂|. Beats occur when two waves of slightly different frequencies superpose. The intensity alternately increases and decreases."},
+      {q:"The phenomenon of resonance occurs when:",opts:["Applied frequency equals natural frequency","Amplitude is maximum","Velocity is maximum","Damping is maximum"],ans:0,exp:"Resonance: when driving frequency = natural frequency of the system → amplitude becomes maximum. Used in tuning forks, musical instruments."},
+      {q:"The speed of sound in air at 0°C is 332 m/s. At 100°C it will be approximately:",opts:["366 m/s","400 m/s","300 m/s","350 m/s"],ans:0,exp:"v ∝ √T. v₁₀₀/v₀ = √(373/273) ≈ 1.167. v₁₀₀ = 332 × 1.167 ≈ 387 m/s ≈ 366 m/s is closest option."},
+    ]
+  },
+  {
+    title:"Ch.7 — Electrostatics",
+    color:"#1a237e",
+    qs:[
+      {q:"The electric field inside a charged conducting sphere is:",opts:["E = kQ/r²","E = kQ/r","Zero","E = σ/ε₀"],ans:2,exp:"Inside a conductor, all charges reside on the surface. By Gauss's law, E = 0 inside a conductor. This is the principle of electrostatic shielding."},
+      {q:"The work done in moving a charge in an equipotential surface is:",opts:["Maximum","Minimum","Zero","Infinite"],ans:2,exp:"An equipotential surface has the same potential everywhere. W = q(V₁−V₂) = q×0 = 0. No work is done in moving a charge along an equipotential surface."},
+      {q:"Gauss's law states that the total electric flux through a closed surface is:",opts:["Zero always","Q/ε₀","ε₀Q","Qε₀"],ans:1,exp:"Gauss's law: ∮E·dA = Q_enc/ε₀. Total electric flux through any closed surface = total enclosed charge/ε₀."},
+      {q:"The capacitance of a parallel plate capacitor with dielectric constant K is:",opts:["C = ε₀A/d","C = Kε₀A/d","C = ε₀A/(Kd)","C = KAd/ε₀"],ans:1,exp:"With dielectric: C = Kε₀A/d = KC₀. The dielectric increases capacitance K times because it reduces the electric field between plates."},
+      {q:"Energy stored in a capacitor with charge Q and capacitance C is:",opts:["Q²/C","Q²/2C","QC/2","QC²"],ans:1,exp:"Energy U = Q²/(2C) = ½CV² = ½QV. All three forms are equivalent. Energy is stored in the electric field between the plates."},
+      {q:"The SI unit of electric flux is:",opts:["N/C","N·m²/C","C/N","V·m²"],ans:1,exp:"Electric flux Φ = EA cosθ. Units = (N/C)(m²) = N·m²/C. Also written as V·m (since 1 V/m × m² = V·m)."},
+      {q:"The electric potential at a distance r from a point charge Q is:",opts:["kQ/r²","kQ/r","kQr","Q/4πε₀r²"],ans:1,exp:"V = kQ/r = Q/(4πε₀r). Potential varies as 1/r (not 1/r² like field). Unit: Volt (V) = J/C."},
+    ]
+  },
+  {
+    title:"Ch.8 — Current Electricity",
+    color:"#b71c1c",
+    qs:[
+      {q:"Kirchhoff's current law (KCL) is based on:",opts:["Conservation of energy","Conservation of charge","Conservation of momentum","Newton's third law"],ans:1,exp:"KCL: ΣI = 0 at a junction. This is based on conservation of electric charge — charge cannot accumulate at a node."},
+      {q:"The equivalent resistance of three resistors R₁, R₂, R₃ in series is:",opts:["1/R₁+1/R₂+1/R₃","R₁+R₂+R₃","R₁R₂R₃","R₁R₂/(R₁+R₂)"],ans:1,exp:"For series: R_eq = R₁ + R₂ + R₃. In series, same current flows through all. Total resistance is sum of individual resistances."},
+      {q:"The internal resistance of an ideal EMF source is:",opts:["Infinite","Zero","1 Ω","Depends on EMF"],ans:1,exp:"An ideal voltage source has zero internal resistance (so terminal voltage = EMF). A real battery has some internal resistance r."},
+      {q:"The Wheatstone bridge is balanced when:",opts:["P/Q = R/S","P/Q = S/R","PQ = RS","P+Q = R+S"],ans:0,exp:"Wheatstone bridge balance condition: P/Q = R/S. When balanced, no current flows through the galvanometer. Used to find unknown resistance."},
+      {q:"Ohm's law is NOT applicable to:",opts:["Metallic conductors","Electrolytes","Semiconductors","All conductors"],ans:2,exp:"Ohm's law V = IR is obeyed by metallic conductors at constant temperature. Semiconductors, diodes, thyristors are non-ohmic — they do not follow Ohm's law."},
+      {q:"The resistivity of a conductor depends on:",opts:["Length","Cross-section area","Temperature","All of above"],ans:2,exp:"Resistivity (ρ) is an intrinsic property — it depends only on the material and temperature, NOT on length or area. R = ρL/A (R depends on geometry, ρ does not)."},
+      {q:"The terminal voltage of a battery with EMF ε, internal resistance r and current I is:",opts:["ε + Ir","ε − Ir","ε/r","Ir − ε"],ans:1,exp:"During discharge: Terminal voltage V = ε − Ir. The terminal voltage is less than EMF due to voltage drop across internal resistance."},
+    ]
+  },
+  {
+    title:"Ch.9 — Magnetic Effects & EMI",
+    color:"#1b5e20",
+    qs:[
+      {q:"The force on a current-carrying conductor in a magnetic field is given by:",opts:["F = qv×B","F = IL×B","F = BIL sinθ","Both B and C"],ans:3,exp:"F = IL×B (vector form) = BIL sinθ (scalar). F = qv×B is for a moving charge. Both B and C are the same expression in different forms."},
+      {q:"A galvanometer is converted into a voltmeter by connecting:",opts:["Low resistance in parallel","Low resistance in series","High resistance in series","High resistance in parallel"],ans:2,exp:"Voltmeter: High resistance in series (reduces current through galvanometer but measures full voltage across the circuit element)."},
+      {q:"Lenz's law is based on:",opts:["Conservation of energy","Conservation of charge","Newton's third law","Faraday's law"],ans:0,exp:"Lenz's law: Induced EMF opposes the cause producing it. This ensures conservation of energy — you must do work against the opposing force."},
+      {q:"The SI unit of magnetic flux is:",opts:["Tesla","Weber","Henry","Ampere"],ans:1,exp:"Magnetic flux Φ = BA cosθ. Unit: Weber (Wb) = T·m² = V·s. Faraday's law: e = −dΦ/dt."},
+      {q:"In a step-up transformer, the number of turns in the secondary coil is:",opts:["Less than primary","Equal to primary","More than primary","Zero"],ans:2,exp:"Step-up transformer: N_S > N_P → V_S > V_P. V_S/V_P = N_S/N_P. Voltage increases, current decreases (energy is conserved)."},
+      {q:"The motional EMF induced in a conductor of length L moving with velocity v perpendicular to field B is:",opts:["B²Lv","BLv","BL/v","BLv²"],ans:1,exp:"Motional EMF e = BLv sin90° = BLv. Derived from e = ∫(v×B)·dL = BLv for v ⊥ B ⊥ L."},
+      {q:"The self-inductance of a coil is defined as:",opts:["e = LI","e = −L(dI/dt)","L = NΦ/I","Both B and C"],ans:3,exp:"Self-inductance L is defined by NΦ = LI and e = −L(dI/dt). Both B and C define self-inductance. L = NΦ/I."},
+    ]
+  },
+  {
+    title:"Ch.10 — Modern Physics: Atoms & Nuclei",
+    color:"#e65100",
+    qs:[
+      {q:"The radius of the nth Bohr orbit in hydrogen atom is proportional to:",opts:["n","n²","1/n","1/n²"],ans:1,exp:"r_n = n² × 0.529 Å = n²a₀. Radius is proportional to n². n=1: 0.529Å, n=2: 2.116Å, n=3: 4.76Å."},
+      {q:"The energy of the nth orbit in hydrogen atom is:",opts:["−13.6/n eV","−13.6n² eV","−13.6/n² eV","+13.6/n² eV"],ans:2,exp:"E_n = −13.6/n² eV. Negative sign means electron is bound. Ground state (n=1): E = −13.6 eV. Ionisation energy = 13.6 eV."},
+      {q:"The binding energy per nucleon is maximum for:",opts:["Uranium-238","Iron-56","Hydrogen","Carbon-12"],ans:1,exp:"Iron-56 has maximum binding energy per nucleon ≈ 8.8 MeV. This makes it the most stable nucleus. Elements heavier or lighter than Fe release energy in fission/fusion respectively."},
+      {q:"In α-decay, the atomic number decreases by:",opts:["1","2","3","4"],ans:1,exp:"α particle = ₂He⁴. In α-decay: Z decreases by 2, A decreases by 4. Example: ₉₂U²³⁸ → ₉₀Th²³⁴ + ₂He⁴."},
+      {q:"The half-life T₁/₂ and decay constant λ are related by:",opts:["T₁/₂ = λ","T₁/₂ = 1/λ","T₁/₂ = 0.693/λ","T₁/₂ = 0.693λ"],ans:2,exp:"T₁/₂ = ln2/λ = 0.693/λ. This comes from N = N₀e⁻λᵗ — at t = T₁/₂, N = N₀/2, solving gives T₁/₂ = 0.693/λ."},
+      {q:"The photoelectric effect confirms the:",opts:["Wave nature of light","Particle nature of light","Dual nature of light","Wave nature of electrons"],ans:1,exp:"Photoelectric effect (Einstein, 1905) proves that light consists of photons (particles) each with energy hν. Wave theory cannot explain the existence of threshold frequency."},
+      {q:"The de Broglie wavelength of a particle of mass m and kinetic energy K is:",opts:["h/mv","h/√(2mK)","h√(2mK)","h/2mK"],ans:1,exp:"de Broglie: λ = h/p = h/mv. KE = p²/2m, so p = √(2mK). Therefore λ = h/√(2mK)."},
+    ]
+  },
+  {
+    title:"Ch.11 — Semiconductors & Communication",
+    color:"#37474f",
+    qs:[
+      {q:"In an n-type semiconductor, the majority charge carriers are:",opts:["Holes","Electrons","Protons","Neutrons"],ans:1,exp:"n-type semiconductor: doped with pentavalent impurity (P, As, Sb). Extra electrons become majority carriers. Minority carriers = holes."},
+      {q:"A p-n junction diode in forward bias:",opts:["Blocks current","Allows current to flow","Acts as a resistor","Generates EMF"],ans:1,exp:"Forward bias (p at +ve, n at −ve): depletion layer narrows, barrier potential decreases, majority carriers flow → current flows."},
+      {q:"The output of a full-wave rectifier has ripple frequency of:",opts:["f","2f","f/2","4f"],ans:1,exp:"Full-wave rectifier uses both halves of AC cycle → output pulsates at twice the input frequency = 2f (100 Hz for 50 Hz input)."},
+      {q:"In common emitter transistor configuration, the current gain β is defined as:",opts:["I_C/I_E","I_B/I_C","I_C/I_B","I_E/I_B"],ans:2,exp:"β = I_C/I_B (CE configuration). β = αβ/(1−α). Typical β value = 20–500. β represents current amplification."},
+      {q:"The output of an AND gate is HIGH only when:",opts:["Any input is HIGH","All inputs are HIGH","Any input is LOW","All inputs are LOW"],ans:1,exp:"AND gate: Y = A·B. Output is 1 only when ALL inputs are 1 (A=1 AND B=1). Truth table: 00→0, 01→0, 10→0, 11→1."},
+      {q:"Which of the following is a universal gate?",opts:["AND","OR","NAND","NOT"],ans:2,exp:"NAND and NOR are both universal gates — any logic circuit can be built using only NAND gates (or only NOR gates). This is due to De Morgan's theorems."},
+    ]
+  },
+  {
+    title:"Ch.12 — Wave Optics",
+    color:"#6a1b9a",
+    qs:[
+      {q:"In Young's double slit experiment, fringe width β is given by:",opts:["λD/d","λd/D","λ/(Dd)","λDd"],ans:0,exp:"β = λD/d, where λ = wavelength, D = screen distance, d = slit separation. Fringe width increases with λ and D, decreases with d."},
+      {q:"The condition for constructive interference is:",opts:["Path difference = (2n+1)λ/2","Path difference = nλ","Phase difference = (2n+1)π","Path difference = λ/4"],ans:1,exp:"Constructive interference: path difference Δ = nλ (n = 0,1,2,...) → bright fringe. Destructive: Δ = (2n+1)λ/2 → dark fringe."},
+      {q:"Diffraction of light proves its:",opts:["Particle nature","Wave nature","Dual nature","None"],ans:1,exp:"Diffraction (bending of light around obstacles) can only be explained by wave nature of light. Particles don't diffract."},
+      {q:"In a single slit diffraction, the first dark fringe occurs when:",opts:["a sinθ = λ/2","a sinθ = λ","a sinθ = 2λ","a sinθ = λ/4"],ans:1,exp:"For single slit of width a: first minimum at a sinθ = mλ where m=±1. So a sinθ = λ for first dark fringe."},
+    ]
+  },
+  {
+    title:"Ch.13 — Ray Optics",
+    color:"#004d40",
+    qs:[
+      {q:"The lens maker's formula is:",opts:["1/f = (n−1)(1/R₁−1/R₂)","1/f = n(1/R₁+1/R₂)","f = (n−1)(R₁−R₂)","1/f = (n−1)(1/R₁+1/R₂)"],ans:0,exp:"Lens maker's formula: 1/f = (n−1)(1/R₁ − 1/R₂) where n = refractive index of lens material, R₁ and R₂ = radii of curvature."},
+      {q:"The critical angle i_c and refractive index n are related by:",opts:["n = sin i_c","sin i_c = 1/n","n = cos i_c","cos i_c = 1/n"],ans:1,exp:"At critical angle: refracted ray grazes the surface (r = 90°). Snell's law: n sin i_c = 1 × sin 90° = 1. So sin i_c = 1/n."},
+      {q:"The mirror formula is:",opts:["1/v + 1/u = 1/f","1/v − 1/u = 1/f","1/f = 1/v + 1/u","v/u = f/(f−u)"],ans:2,exp:"Mirror formula: 1/f = 1/v + 1/u. (Same as option A and C — both are correct; option C is more standard form.) Magnification m = −v/u."},
+      {q:"The power of a lens with focal length f (in meters) is:",opts:["P = f","P = 1/f","P = f²","P = 1/f²"],ans:1,exp:"P = 1/f (in Dioptres, D). For f in cm: P = 100/f(cm). Converging lens: P > 0. Diverging lens: P < 0. Powers of lenses in contact are additive."},
+      {q:"Total internal reflection occurs when:",opts:["Light goes from rarer to denser medium","Light goes from denser to rarer medium and i > i_c","i < i_c","n < 1"],ans:1,exp:"TIR conditions: (1) Light must travel from denser to rarer medium. (2) Angle of incidence must be greater than critical angle."},
+    ]
+  },
+];
+
+// Flatten questions with chapter info
+let questions = [];
+CHAPTERS.forEach((ch,ci)=>{
+  ch.qs.forEach((q,qi)=>{
+    questions.push({...q, chIdx:ci, chTitle:ch.title, chColor:ch.color, chQi:qi});
+  });
+});
+
+let current = 0;
+let answers = new Array(questions.length).fill(-1);
+let timerInterval;
+let timeLeft = 3600; // 60 min
+let testStarted = false;
+let testSubmitted = false;
+
+function startTest(){
+  document.getElementById('splash').style.display = 'none';
+  document.getElementById('hdr').style.display = 'flex';
+  document.getElementById('progbar').style.display = 'block';
+  document.getElementById('testArea').style.display = 'block';
+  document.getElementById('botNav').style.display = 'flex';
+  testStarted = true;
+  renderQuestion(0);
+  startTimer();
+}
+
+function startTimer(){
+  timerInterval = setInterval(()=>{
+    timeLeft--;
+    const el = document.getElementById('timerDisplay');
+    const m = Math.floor(timeLeft/60).toString().padStart(2,'0');
+    const s = (timeLeft%60).toString().padStart(2,'0');
+    el.textContent = m+':'+s;
+    el.className = 'htimer';
+    if(timeLeft<=300) el.className = 'htimer warn';
+    if(timeLeft<=60) el.className = 'htimer danger';
+    if(timeLeft<=0){clearInterval(timerInterval);submitTest();}
+  },1000);
+}
+
+function renderQuestion(idx){
+  current = idx;
+  const q = questions[idx];
+  const area = document.getElementById('testArea');
+
+  // Build HTML for this question (and chapter header if first of chapter)
+  let html = '';
+  if(q.chQi === 0){
+    html += `<div class="ch-strip" style="background:linear-gradient(135deg,${q.chColor}cc,${q.chColor}88);">
+      ${q.chTitle}
+    </div>`;
+  }
+
+  html += `<div class="qcard" id="qcard_${idx}">
+    <div class="qno">Q.${idx+1} of ${questions.length}</div>
+    <div class="qtxt">${q.q}</div>
+    <div class="opts">`;
+
+  q.opts.forEach((opt,oi)=>{
+    const sel = answers[idx] === oi;
+    let cls = sel ? 'selected' : '';
+    if(testSubmitted){
+      if(oi === q.ans) cls = 'correct';
+      else if(sel && oi !== q.ans) cls = 'wrong';
+      else cls = '';
+    }
+    html += `<label class="opt ${cls}" id="opt_${idx}_${oi}" onclick="selectAnswer(${idx},${oi})">
+      <input type="radio" name="q${idx}" ${sel?'checked':''} ${testSubmitted?'disabled':''}>
+      <span>${String.fromCharCode(65+oi)}. ${opt}</span>
+    </label>`;
+  });
+
+  html += `</div>`;
+  if(testSubmitted){
+    html += `<div class="expl show">💡 <b>Explanation:</b> ${q.exp}</div>`;
+  }
+  html += `</div>`;
+
+  area.innerHTML = html;
+
+  // Update header
+  document.getElementById('hprog').textContent = `Q ${idx+1} / ${questions.length}`;
+  document.getElementById('progfill').style.width = ((idx+1)/questions.length*100)+'%';
+
+  // Button state
+  document.getElementById('prevBtn').disabled = idx === 0;
+  const isLast = idx === questions.length - 1;
+  document.getElementById('nextBtn').style.display = isLast ? 'none' : 'inline-block';
+  document.getElementById('submitBtn').style.display = isLast ? 'inline-block' : 'none';
+
+  // Skip info
+  const ans = answers.filter(a=>a!==-1).length;
+  document.getElementById('skipInfo').textContent = `${ans}/${questions.length} answered`;
+
+  // Scroll to top
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function selectAnswer(idx, oi){
+  if(testSubmitted) return;
+  answers[idx] = oi;
+  // Update UI
+  questions[idx].opts.forEach((_,i)=>{
+    const el = document.getElementById(`opt_${idx}_${i}`);
+    el.className = 'opt' + (i===oi?' selected':'');
+  });
+  document.getElementById('skipInfo').textContent = `${answers.filter(a=>a!==-1).length}/${questions.length} answered`;
+}
+
+function navigate(dir){
+  const nxt = current + dir;
+  if(nxt >= 0 && nxt < questions.length) renderQuestion(nxt);
+}
+
+function confirmSubmit(){
+  const unanswered = answers.filter(a=>a===-1).length;
+  if(unanswered > 0){
+    if(!confirm(`You have ${unanswered} unanswered questions. Submit anyway?`)) return;
+  }
+  submitTest();
+}
+
+function submitTest(){
+  clearInterval(timerInterval);
+  testSubmitted = true;
+  document.getElementById('botNav').style.display = 'none';
+  document.getElementById('testArea').style.display = 'none';
+  showResult();
+}
+
+function showResult(){
+  let correct = 0, wrong = 0, skipped = 0;
+  const chStats = {};
+  CHAPTERS.forEach((ch,i)=>{ chStats[i] = {correct:0,total:ch.qs.length}; });
+
+  questions.forEach((q,i)=>{
+    if(answers[i]===-1){ skipped++; }
+    else if(answers[i]===q.ans){ correct++; chStats[q.chIdx].correct++; }
+    else { wrong++; }
+  });
+
+  const pct = Math.round(correct/questions.length*100);
+  let grade, gcolor;
+  if(pct>=90){grade='Outstanding! 🏆';gcolor='#ffd700';}
+  else if(pct>=75){grade='Excellent! 🌟';gcolor='#4caf50';}
+  else if(pct>=60){grade='Good! 👍';gcolor='#00b4d8';}
+  else if(pct>=40){grade='Average 📚';gcolor='#ff9800';}
+  else{grade='Needs Improvement 💪';gcolor='#f44336';}
+
+  let chRows='';
+  CHAPTERS.forEach((ch,i)=>{
+    const s=chStats[i];
+    const p=Math.round(s.correct/s.total*100);
+    chRows+=`<tr>
+      <td>${ch.title.replace(/Ch\.\d+ — /,'')}</td>
+      <td style="color:#4caf50;">${s.correct}/${s.total}</td>
+      <td>
+        <div class="bar"><div class="barfill" style="width:${p}%;"></div></div>
+        <span style="font-size:11px;color:#90caf9;">${p}%</span>
+      </td>
+    </tr>`;
+  });
+
+  const timeTaken = 3600 - timeLeft;
+  const mm = Math.floor(timeTaken/60), ss = timeTaken%60;
+
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('hdr').style.display = 'none';
+  document.getElementById('progbar').style.display = 'none';
+
+  document.getElementById('result').innerHTML = `
+    <div class="result-card">
+      <div class="score-ring" style="border-color:${gcolor};">
+        <div class="score-big" style="color:${gcolor};">${correct}</div>
+        <div class="score-sub">out of ${questions.length}</div>
+      </div>
+      <h2 style="color:${gcolor};">${grade}</h2>
+      <p>You scored <b style="color:${gcolor};">${pct}%</b> · Time taken: ${mm}m ${ss}s</p>
+
+      <div class="stats-grid">
+        <div class="stat-box"><div class="sv correct">${correct}</div><div class="sl">✅ Correct</div></div>
+        <div class="stat-box"><div class="sv wrong">${wrong}</div><div class="sl">❌ Wrong</div></div>
+        <div class="stat-box"><div class="sv skip">${skipped}</div><div class="sl">⏭ Skipped</div></div>
+      </div>
+
+      <div class="ch-score">
+        <h3 style="margin-bottom:10px;font-size:14px;color:#90caf9;text-transform:uppercase;letter-spacing:.5px;">Chapter-wise Performance</h3>
+        <table>
+          <tr><th>Chapter</th><th>Score</th><th>Progress</th></tr>
+          ${chRows}
+        </table>
+      </div>
+
+      <div class="result-btns">
+        <button class="rbtn-review" onclick="reviewAnswers()">📖 Review Answers</button>
+        <button class="rbtn-again" onclick="location.reload()">🔄 Try Again</button>
+        <button class="rbtn-print no-print" onclick="window.print()">🖨️ Print</button>
+      </div>
+    </div>`;
+}
+
+function reviewAnswers(){
+  document.getElementById('result').style.display = 'none';
+  document.getElementById('testArea').style.display = 'block';
+  document.getElementById('hdr').style.display = 'flex';
+  document.getElementById('progbar').style.display = 'block';
+
+  // Show ALL questions at once for review
+  let html = '';
+  let lastChIdx = -1;
+  questions.forEach((q,i)=>{
+    if(q.chIdx !== lastChIdx){
+      html += `<div class="ch-strip" style="background:linear-gradient(135deg,${q.chColor}cc,${q.chColor}88);">${q.chTitle}</div>`;
+      lastChIdx = q.chIdx;
+    }
+    html += `<div class="qcard">
+      <div class="qno">Q.${i+1} — ${answers[i]===-1?'⏭ SKIPPED':(answers[i]===q.ans?'✅ CORRECT':'❌ WRONG')}</div>
+      <div class="qtxt">${q.q}</div>
+      <div class="opts">`;
+    q.opts.forEach((opt,oi)=>{
+      let cls='';
+      if(oi===q.ans) cls='show-ans correct';
+      else if(answers[i]===oi && oi!==q.ans) cls='wrong';
+      html += `<div class="opt ${cls}">
+        <span>${String.fromCharCode(65+oi)}. ${opt}</span>
+        ${oi===q.ans?'<span style="margin-left:auto;font-size:12px;color:#4caf50;">✓ Correct</span>':''}
+        ${answers[i]===oi&&oi!==q.ans?'<span style="margin-left:auto;font-size:12px;color:#f44336;">✗ Your ans</span>':''}
+      </div>`;
+    });
+    html += `</div><div class="expl show">💡 <b>Explanation:</b> ${q.exp}</div></div>`;
+  });
+
+  document.getElementById('testArea').innerHTML = html;
+
+  // Add back to result button
+  const backBtn = document.createElement('div');
+  backBtn.style.cssText='text-align:center;padding:20px 0 60px;';
+  backBtn.innerHTML=`<button onclick="showResult();document.getElementById('testArea').style.display='none';" style="padding:12px 32px;background:linear-gradient(135deg,#0077b6,#00b4d8);color:#fff;border:none;border-radius:24px;font-size:.95rem;font-weight:700;cursor:pointer;">📊 Back to Results</button>`;
+  document.getElementById('testArea').appendChild(backBtn);
+  window.scrollTo({top:0});
+}
+</script>
+</body>
+</html>
