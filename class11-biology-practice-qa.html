@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Class 11 Biology — Practice Questions & Answers | Visions Classes</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Georgia,serif;font-size:15px;color:#1a1a1a;background:#f0f2f8;padding:16px}
+
+@media print{
+  body{background:#fff;padding:0;font-size:12px}
+  .page{box-shadow:none;margin:0;padding:10mm 14mm;border-radius:0}
+  .no-print{display:none}
+  .pb{page-break-before:always}
+  .qwrap{page-break-inside:avoid}
+}
+
+.page{max-width:850px;margin:0 auto 24px;background:#fff;border-radius:12px;
+      box-shadow:0 4px 20px rgba(0,0,0,.09);padding:30px 42px}
+
+.cover{background:linear-gradient(135deg,#1b5e20,#388e3c);color:#fff;
+       border-radius:10px;padding:22px 28px;margin-bottom:26px;text-align:center}
+.cover .lbl{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.8}
+.cover h1{font-size:23px;font-weight:900;margin:6px 0 4px}
+.cover .sub{font-size:13px;opacity:.9;line-height:1.7}
+
+/* chapter banners */
+.ch{padding:9px 18px;border-radius:8px;margin:26px 0 14px;font-size:14.5px;
+    font-weight:800;color:#fff;display:flex;justify-content:space-between;align-items:center}
+.c1{background:linear-gradient(135deg,#1b5e20,#2e7d32)}
+.c2{background:linear-gradient(135deg,#1565c0,#1976d2)}
+.c3{background:linear-gradient(135deg,#880e4f,#ad1457)}
+.c4{background:linear-gradient(135deg,#e65100,#f57c00)}
+.c5{background:linear-gradient(135deg,#4a148c,#7b1fa2)}
+.c6{background:linear-gradient(135deg,#006064,#00838f)}
+
+/* question card */
+.qwrap{margin:16px 0;border-radius:10px;overflow:hidden;border:1.5px solid #e0e0e0}
+.qtitle{padding:10px 18px;font-weight:700;font-size:14px;border-bottom:2px solid;
+        display:flex;align-items:flex-start;gap:10px}
+.qt1{background:#e8f5e9;color:#1b5e20;border-color:#a5d6a7}
+.qt2{background:#e3f2fd;color:#1565c0;border-color:#90caf9}
+.qt3{background:#fce4ec;color:#880e4f;border-color:#f48fb1}
+.qt4{background:#fff3e0;color:#e65100;border-color:#ffcc80}
+.qt5{background:#f3e5f5;color:#4a148c;border-color:#ce93d8}
+.qt6{background:#e0f7fa;color:#006064;border-color:#80deea}
+
+.qbx{color:#fff;font-size:11px;font-weight:800;padding:3px 10px;
+     border-radius:10px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.b1{background:#1b5e20}.b2{background:#1565c0}.b3{background:#880e4f}
+.b4{background:#e65100}.b5{background:#4a148c}.b6{background:#006064}
+
+/* solution */
+.sol{padding:18px 24px;background:#fff;font-size:15px}
+.sol-lbl{display:inline-block;background:#37474f;color:#fff;font-size:12px;
+         font-weight:700;padding:3px 12px;border-radius:4px;margin-bottom:12px;
+         text-transform:uppercase;letter-spacing:1px}
+
+.ln{display:block;margin:4px 0;line-height:1.9;font-size:15px}
+.ln.def{font-weight:700;color:#1b5e20}
+.ln.pt{padding-left:4px;font-weight:600}
+.ln.pt::before{content:"▸ ";color:#1565c0}
+.ln.step{padding-left:0}
+.ln.tf{padding-left:4px}
+.ln.tf::before{content:"∴ ";font-weight:700;color:#c62828}
+.ln.note{color:#555;font-size:13.5px;font-style:italic;margin:4px 0}
+.ln.gap{margin-top:10px;display:block}
+.ln.hl{background:#fffde7;padding:2px 8px;border-radius:4px;display:inline-block;font-weight:600;color:#e65100;margin:2px 0}
+
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0}
+th{padding:8px 10px;text-align:left;font-size:12.5px;color:#fff;background:#1b5e20}
+td{padding:7px 10px;border:1px solid #e0e0e0}
+tr:nth-child(even) td{background:#f9f9f9}
+th.th2{background:#1565c0}
+
+.ib{border-left:5px solid;border-radius:0 8px 8px 0;padding:10px 16px;margin:8px 0;font-size:14px;line-height:1.9}
+.ib.g{background:#e8f5e9;border-color:#2e7d32}
+.ib.b{background:#e3f2fd;border-color:#1565c0}
+.ib.y{background:#fffde7;border-color:#f9a825}
+.ib.p{background:#f3e5f5;border-color:#7b1fa2}
+
+.ans-box{display:inline-block;background:#e8f5e9;color:#1b5e20;font-weight:800;
+         font-size:15px;padding:4px 14px;border-radius:6px;
+         border:1.5px solid #a5d6a7;margin:4px 0}
+
+/* diagram placeholder */
+.diag{background:#e8eaf6;border:1.5px dashed #7986cb;border-radius:8px;
+      padding:14px 18px;margin:10px 0;font-size:13px;color:#283593;
+      font-family:'Courier New',monospace;line-height:2.0;text-align:center}
+.diag small{font-family:'Segoe UI',sans-serif;font-size:12px;color:#3949ab;display:block;margin-top:6px}
+
+.print-btn{display:block;width:fit-content;margin:0 auto 14px;
+           padding:9px 28px;background:#1b5e20;color:#fff;
+           border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer}
+</style>
+</head>
+<body>
+<button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+<div class="page">
+<div class="cover">
+  <div class="lbl">Class 11 · Biology · Maharashtra State Board</div>
+  <h1>🌿 Practice Questions &amp; Answers</h1>
+  <div class="sub">32 Questions · Taxonomy · Cell Biology · Human Physiology · Plant Kingdom<br/>
+  Detailed Board-Style Answers · Visions Classes, Ambernath · By Shashikant Sir</div>
+</div>
+
+<!-- ══════════════ TAXONOMY & CLASSIFICATION ══════════════ -->
+<div class="ch c1">🔬 Taxonomy &amp; Classification</div>
+
+<!-- Q1 -->
+<div class="qwrap">
+  <div class="qtitle qt1"><span class="qbx b1">Q.1</span>What is chemotaxonomy? Give one suitable example.</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln def">Chemotaxonomy (chemical taxonomy) is the method of classifying organisms based on similarities and differences in their chemical constituents, especially secondary metabolites like alkaloids, terpenes, flavonoids, and proteins.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Basis of Chemotaxonomy:</b></span>
+    <span class="ln step">• Amino acid sequences of proteins</span>
+    <span class="ln step">• DNA base composition (G+C ratio)</span>
+    <span class="ln step">• Presence of specific secondary metabolites</span>
+    <span class="ln step">• Serotaxonomy (analysis of proteins in serum)</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Example:</b></span>
+    <span class="ln step">• Opium alkaloids (morphine, codeine) are found in <i>Papaver somniferum</i> (opium poppy). These unique chemicals help confirm its classification.</span>
+    <span class="ln step">• Quinine alkaloid is specific to <i>Cinchona</i> plants — used to classify them.</span>
+    <span class="ln note">Advantage: More reliable than morphological taxonomy alone. Reveals evolutionary relationships.</span>
+  </div>
+</div>
+
+<!-- Q2 -->
+<div class="qwrap">
+  <div class="qtitle qt1"><span class="qbx b1">Q.2</span>Write a note on useful and harmful bacteria.</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln pt"><b>Useful Bacteria:</b></span>
+    <span class="ln step">1. <b>Nitrogen fixation:</b> <i>Rhizobium</i> fixes atmospheric N₂ in root nodules of legumes → increases soil fertility.</span>
+    <span class="ln step">2. <b>Decomposers:</b> Bacteria decompose dead organic matter → recycle nutrients in ecosystem.</span>
+    <span class="ln step">3. <b>Dairy industry:</b> <i>Lactobacillus</i> converts milk to curd (lactic acid fermentation).</span>
+    <span class="ln step">4. <b>Medicine:</b> <i>Streptomyces</i> produces antibiotics like streptomycin. <i>E. coli</i> used to produce insulin.</span>
+    <span class="ln step">5. <b>Sewage treatment:</b> Aerobic bacteria decompose sewage in treatment plants.</span>
+    <span class="ln step">6. <b>Vinegar production:</b> <i>Acetobacter</i> converts alcohol to acetic acid.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Harmful Bacteria:</b></span>
+    <span class="ln step">1. <b>Human diseases:</b> <i>Mycobacterium tuberculosis</i> (TB), <i>Vibrio cholerae</i> (cholera), <i>Salmonella typhi</i> (typhoid), <i>Streptococcus</i> (strep throat).</span>
+    <span class="ln step">2. <b>Plant diseases:</b> <i>Xanthomonas oryzae</i> causes blight of rice.</span>
+    <span class="ln step">3. <b>Food spoilage:</b> Bacteria cause food to rot and become unfit for consumption.</span>
+    <span class="ln step">4. <b>Animal diseases:</b> <i>Brucella</i> causes brucellosis in cattle.</span>
+  </div>
+</div>
+
+<!-- Q3 -->
+<div class="qwrap">
+  <div class="qtitle qt1"><span class="qbx b1">Q.3</span>The systematic study of organisms is essential. Give a suitable reason.</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln def">Systematic study of organisms (systematics/taxonomy) is essential for the following reasons:</span>
+    <span class="ln step">1. <b>Identification:</b> Helps to correctly identify and name organisms, avoiding confusion.</span>
+    <span class="ln step">2. <b>Classification:</b> Organises millions of organisms into groups based on similarities and differences.</span>
+    <span class="ln step">3. <b>Evolutionary relationships:</b> Reveals phylogenetic (evolutionary) relationships between organisms.</span>
+    <span class="ln step">4. <b>Economic importance:</b> Helps identify useful plants (medicinal, agricultural) and harmful organisms (pests, pathogens).</span>
+    <span class="ln step">5. <b>Ecological importance:</b> Helps understand biodiversity and ecosystem interactions.</span>
+    <span class="ln step">6. <b>Conservation:</b> Helps in identifying endangered species and planning conservation strategies.</span>
+    <span class="ln step">7. <b>Communication:</b> Scientific names (binomial nomenclature) allow scientists worldwide to communicate about the same organism.</span>
+  </div>
+</div>
+
+<!-- Q4 -->
+<div class="qwrap">
+  <div class="qtitle qt1"><span class="qbx b1">Q.4</span>Describe the different types of viruses.</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln def">Viruses are sub-microscopic, obligate intracellular parasites consisting of nucleic acid (DNA or RNA) enclosed in a protein coat (capsid).</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Types based on Nucleic Acid:</b></span>
+    <span class="ln step">1. <b>DNA viruses:</b> Contain DNA as genetic material. E.g., Herpes virus, Pox virus, Bacteriophage (T4 phage).</span>
+    <span class="ln step">2. <b>RNA viruses:</b> Contain RNA as genetic material. E.g., Tobacco Mosaic Virus (TMV), Polio virus, HIV, Influenza virus.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Types based on Shape/Morphology:</b></span>
+    <span class="ln step">1. <b>Icosahedral (Cubical):</b> Spherical appearance with 20 triangular faces. E.g., Adenovirus, Polio virus, Herpes virus.</span>
+    <span class="ln step">2. <b>Helical:</b> Rod-shaped, nucleic acid wound in a helix. E.g., Tobacco Mosaic Virus (TMV), Influenza virus.</span>
+    <span class="ln step">3. <b>Complex:</b> Combination of icosahedral head and helical tail. E.g., Bacteriophage (T4 phage).</span>
+    <span class="ln step">4. <b>Enveloped:</b> Have a lipid bilayer envelope outside capsid. E.g., HIV, Herpes virus, Influenza.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Types based on Host:</b></span>
+    <span class="ln step">1. <b>Animal viruses:</b> Infect animals. E.g., Rabies, HIV, Pox virus.</span>
+    <span class="ln step">2. <b>Plant viruses:</b> Infect plants. E.g., TMV, Cauliflower Mosaic Virus.</span>
+    <span class="ln step">3. <b>Bacteriophages:</b> Infect bacteria. E.g., T4 phage, Lambda phage.</span>
+    <span class="ln step">4. <b>Cyanophages:</b> Infect cyanobacteria (blue-green algae). E.g., LPP1.</span>
+  </div>
+</div>
+
+<!-- Q5 -->
+<div class="qwrap">
+  <div class="qtitle qt1"><span class="qbx b1">Q.5</span>What is a herbarium?</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln def">A herbarium is a collection of dried, pressed, and preserved plant specimens that are mounted on sheets, labelled with scientific information, and systematically arranged for study and reference.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Steps in preparing a herbarium:</b></span>
+    <span class="ln step">1. Collect the plant specimen with roots, stem, leaves, flowers, and fruits.</span>
+    <span class="ln step">2. Press the specimen between sheets of blotting paper in a plant press.</span>
+    <span class="ln step">3. Dry the specimen (change blotting paper daily for 2–3 weeks).</span>
+    <span class="ln step">4. Mount the dried specimen on a herbarium sheet (white card, 28 × 41 cm).</span>
+    <span class="ln step">5. Label with: scientific name, family, date of collection, collector's name, locality, altitude.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Uses of Herbarium:</b></span>
+    <span class="ln step">• Provides reference material for identification of plants.</span>
+    <span class="ln step">• Used in taxonomic studies and research.</span>
+    <span class="ln step">• Acts as a permanent repository of biodiversity.</span>
+    <span class="ln step">• Used for study of plant distribution and ecology.</span>
+    <span class="ln note">Famous herbaria: Kew Gardens (England), Botanical Survey of India (BSI), Calcutta.</span>
+  </div>
+</div>
+
+<!-- Q7 -->
+<div class="qwrap">
+  <div class="qtitle qt1"><span class="qbx b1">Q.7</span>Write a note on a museum (Biological museum).</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln def">A biological museum is a place where specimens of plants, animals, and other organisms are preserved and displayed for educational and research purposes.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Types of specimens preserved:</b></span>
+    <span class="ln step">1. <b>Wet specimens:</b> Preserved in formalin (4% formaldehyde). E.g., fishes, amphibians, invertebrates.</span>
+    <span class="ln step">2. <b>Dry specimens:</b> Mounted insects on pins, bird skins, skeletal preparations.</span>
+    <span class="ln step">3. <b>Herbarium sheets:</b> Dried plant specimens.</span>
+    <span class="ln step">4. <b>Fossils:</b> Preserved remains or impressions of ancient organisms.</span>
+    <span class="ln step">5. <b>Models and charts:</b> Show internal anatomy.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Uses of Museum:</b></span>
+    <span class="ln step">• Educational tool for students and researchers.</span>
+    <span class="ln step">• Helps in identification and taxonomic studies.</span>
+    <span class="ln step">• Preserves biodiversity for future generations.</span>
+    <span class="ln step">• Provides evidence of evolution (through fossils).</span>
+    <span class="ln note">Famous museum: Natural History Museum (London), BNHS (Mumbai).</span>
+  </div>
+</div>
+
+<!-- Q26 -->
+<div class="qwrap">
+  <div class="qtitle qt1"><span class="qbx b1">Q.26</span>Write the meaning of taxonomy.</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln def">Taxonomy (Greek: <i>taxis</i> = arrangement, <i>nomos</i> = law) is the branch of biology that deals with the identification, nomenclature, and classification of organisms.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Three main activities of taxonomy:</b></span>
+    <span class="ln step">1. <b>Identification:</b> Determining the identity of an organism (what it is).</span>
+    <span class="ln step">2. <b>Nomenclature:</b> Giving a scientific name following binomial nomenclature (devised by Linnaeus).</span>
+    <span class="ln step">3. <b>Classification:</b> Placing the organism in appropriate group based on characteristics.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Hierarchy of classification:</b></span>
+    <span class="ln step">Kingdom → Phylum/Division → Class → Order → Family → Genus → Species</span>
+    <span class="ln note">Father of Taxonomy: Carolus Linnaeus. His system of binomial nomenclature is universally accepted.</span>
+  </div>
+</div>
+
+<!-- Q27 -->
+<div class="qwrap">
+  <div class="qtitle qt1"><span class="qbx b1">Q.27</span>What is DNA barcoding? Mention the steps in this process.</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln def">DNA barcoding is a modern technique used for rapid identification of species by analysing a short, standardised sequence of DNA (a "barcode") from an organism's genome.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Standard barcode gene:</b></span>
+    <span class="ln step">• Animals: <b>COI gene</b> (Cytochrome c oxidase subunit I) — part of mitochondrial DNA.</span>
+    <span class="ln step">• Plants: <b>rbcL and matK genes</b> — from chloroplast DNA.</span>
+    <span class="ln step">• Fungi: <b>ITS region</b> (Internal Transcribed Spacer).</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Steps in DNA barcoding:</b></span>
+    <span class="ln step">1. <b>Collection:</b> Collect a small tissue sample from the organism.</span>
+    <span class="ln step">2. <b>DNA extraction:</b> Extract total DNA from the tissue.</span>
+    <span class="ln step">3. <b>PCR amplification:</b> Amplify the specific barcode gene using Polymerase Chain Reaction (PCR).</span>
+    <span class="ln step">4. <b>DNA sequencing:</b> Determine the nucleotide sequence of the amplified region.</span>
+    <span class="ln step">5. <b>Comparison:</b> Compare the sequence with sequences in a reference database (e.g., BOLD — Barcode of Life Data System).</span>
+    <span class="ln step">6. <b>Identification:</b> Match gives the identity of the species.</span>
+    <span class="ln note">Advantage: Fast, accurate, can identify even from small or degraded samples (dried specimens, partial remains).</span>
+  </div>
+</div>
+
+<!-- ══════════════ CELL BIOLOGY & DIVISION ══════════════ -->
+<div class="ch c2">🔬 Cell Biology, Cell Cycle &amp; Cell Division</div>
+
+<!-- Q8 -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="qbx b2">Q.8</span>Write the significance of mitosis.</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln def">Mitosis is an equational cell division in which one parent cell divides to form two daughter cells with the same chromosome number (2n → 2n). It is significant because:</span>
+    <span class="ln gap"></span>
+    <span class="ln step">1. <b>Growth:</b> Responsible for growth of multicellular organisms — increases number of somatic cells.</span>
+    <span class="ln step">2. <b>Repair and regeneration:</b> Replaces old, dead, or damaged cells. E.g., healing of wounds, replacement of blood cells, regeneration in Hydra.</span>
+    <span class="ln step">3. <b>Maintains chromosome number:</b> Daughter cells have the same number of chromosomes as the parent cell — maintains species identity.</span>
+    <span class="ln step">4. <b>Vegetative reproduction:</b> In plants, mitosis helps in asexual reproduction (budding, spore formation).</span>
+    <span class="ln step">5. <b>Genetic stability:</b> Exact copies of DNA are passed to daughter cells, maintaining genetic stability.</span>
+    <span class="ln step">6. <b>Development:</b> From a single fertilised egg (zygote), mitosis produces all cells of the organism.</span>
+    <span class="ln step">7. <b>Replacement of RBCs:</b> In humans, ~200 million red blood cells are produced per hour by mitosis in bone marrow.</span>
+  </div>
+</div>
+
+<!-- Q12 -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="qbx b2">Q.12</span>Define meiosis. Name the person who coined the term "meiosis".</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln def">Meiosis is a reductional cell division in which a diploid parent cell (2n) undergoes two successive divisions to form four haploid daughter cells (n), each having half the chromosome number of the parent cell.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Key features:</b></span>
+    <span class="ln step">• Consists of two divisions: <b>Meiosis I</b> (reductional) and <b>Meiosis II</b> (equational).</span>
+    <span class="ln step">• Results in 4 haploid daughter cells (n).</span>
+    <span class="ln step">• Crossing over occurs during prophase I → genetic recombination.</span>
+    <span class="ln step">• Occurs in reproductive organs (gonads, anthers, ovaries).</span>
+    <span class="ln step">• Produces gametes (eggs and sperms) in animals, spores in plants.</span>
+    <span class="ln gap"></span>
+    <span class="ln tf"><span class="ans-box">The term "meiosis" was coined by <b>Farmer and Moore</b> in 1905.</span></span>
+    <span class="ln note">The term is derived from Greek "meion" meaning "less/reduction".</span>
+  </div>
+</div>
+
+<!-- Q19 -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="qbx b2">Q.19</span>Describe the cell cycle with a neat, labelled diagram.</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln def">The cell cycle is the sequence of events that a cell undergoes from one division to the next. It consists of two main phases: <b>Interphase</b> and <b>Mitotic phase (M phase)</b>.</span>
+    <span class="ln gap"></span>
+    <div class="diag">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CELL CYCLE<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;┌────────────────────────────────────┐<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;INTERPHASE (longest phase)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;G1 phase → S phase → G2 phase&nbsp;&nbsp;│<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;(growth)&nbsp;(DNA copy)&nbsp;(prep)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├────────────────────────────────────┤<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;M PHASE (Mitotic phase)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;Prophase→Metaphase→Anaphase→&nbsp;&nbsp;&nbsp;│<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;Telophase → Cytokinesis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└────────────────────────────────────┘
+      <small>Cell Cycle Diagram (Draw circular diagram with G1, S, G2 as Interphase + M phase)</small>
+    </div>
+    <span class="ln pt"><b>1. Interphase (90% of cell cycle time):</b></span>
+    <span class="ln step">• <b>G1 phase (Gap 1 / First growth phase):</b> Cell increases in size, synthesises proteins and RNA. Metabolically very active. Duration: 6–12 hours.</span>
+    <span class="ln step">• <b>S phase (Synthesis phase):</b> DNA replication occurs. Amount of DNA doubles (2n → 4n DNA, but still 2n chromosomes). Duration: 6–8 hours.</span>
+    <span class="ln step">• <b>G2 phase (Gap 2 / Second growth phase):</b> Cell prepares for division — spindle proteins synthesised. Cell grows further. Duration: 3–4 hours.</span>
+    <span class="ln step">• <b>G0 phase (Quiescent phase):</b> Some cells exit the cycle and remain non-dividing. E.g., nerve cells, muscle cells.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>2. M phase (Mitotic phase):</b></span>
+    <span class="ln step">Includes prophase, metaphase, anaphase, telophase (karyokinesis) followed by cytokinesis (division of cytoplasm).</span>
+  </div>
+</div>
+
+<!-- Q28 -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="qbx b2">Q.28</span>Describe prophase of mitosis.</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln def">Prophase is the first and longest phase of mitosis. It is the phase of preparation where the cell gets ready for division.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Events during Prophase:</b></span>
+    <span class="ln step">1. <b>Condensation of chromatin:</b> Chromatin threads condense and shorten to form distinct, visible chromosomes. Each chromosome consists of two sister chromatids joined at the centromere.</span>
+    <span class="ln step">2. <b>Spindle formation:</b> Centrioles (in animal cells) move to opposite poles. Spindle fibres (asters and spindle) begin to form.</span>
+    <span class="ln step">3. <b>Disappearance of nucleolus:</b> The nucleolus gradually disappears.</span>
+    <span class="ln step">4. <b>Nuclear envelope begins to break down</b> (at late prophase/prometaphase).</span>
+    <span class="ln step">5. <b>Chromosomes become visible</b> under microscope — each consists of 2 chromatids joined at centromere.</span>
+    <span class="ln gap"></span>
+    <span class="ln note">Prophase is the longest phase of mitosis. Late prophase is sometimes called prometaphase when nuclear envelope breaks down.</span>
+  </div>
+</div>
+
+<!-- Q29 -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="qbx b2">Q.29</span>Distinguish between Mitosis and Meiosis.</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <table>
+      <tr><th>Mitosis</th><th class="th2">Meiosis</th></tr>
+      <tr><td>One division only</td><td>Two successive divisions (I and II)</td></tr>
+      <tr><td>2 daughter cells formed</td><td>4 daughter cells formed</td></tr>
+      <tr><td>Daughter cells are diploid (2n)</td><td>Daughter cells are haploid (n)</td></tr>
+      <tr><td>Chromosome number maintained</td><td>Chromosome number reduced to half</td></tr>
+      <tr><td>No crossing over</td><td>Crossing over occurs in prophase I</td></tr>
+      <tr><td>No pairing of homologous chromosomes</td><td>Synapsis (pairing) of homologous chromosomes in prophase I</td></tr>
+      <tr><td>Occurs in somatic (body) cells</td><td>Occurs in reproductive cells (gonads)</td></tr>
+      <tr><td>Purpose: Growth, repair, replacement</td><td>Purpose: Gamete/spore formation</td></tr>
+      <tr><td>Genetically identical daughter cells</td><td>Genetic variation in daughter cells</td></tr>
+      <tr><td>Short duration</td><td>Long duration</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Q31 -->
+<div class="qwrap">
+  <div class="qtitle qt2"><span class="qbx b2">Q.31</span>Write a note on prophase I of meiosis.</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln def">Prophase I is the longest and most complex phase of meiosis. It is divided into 5 sub-stages: <b>LZPDD</b></span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>1. Leptotene (Leptonema) — "thin thread":</b></span>
+    <span class="ln step">• Chromosomes begin to condense and become visible as long thin threads.</span>
+    <span class="ln step">• Chromomeres (bead-like structures) become visible on chromosomes.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>2. Zygotene (Zygonema) — "paired thread":</b></span>
+    <span class="ln step">• Homologous chromosomes pair up (synapsis) with the help of synaptonemal complex.</span>
+    <span class="ln step">• Paired homologous chromosomes = bivalent (tetrad = 4 chromatids).</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>3. Pachytene (Pachynema) — "thick thread":</b></span>
+    <span class="ln step">• Chromosomes become shorter and thicker.</span>
+    <span class="ln step"><b>• Crossing over occurs</b> — exchange of segments between non-sister chromatids of homologous chromosomes at chiasmata. Leads to genetic recombination.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>4. Diplotene (Diplonema) — "double thread":</b></span>
+    <span class="ln step">• Synaptonemal complex dissolves. Homologous chromosomes begin to separate but remain attached at chiasmata.</span>
+    <span class="ln step">• Chiasmata become visible (X-shaped structures at crossing over points).</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>5. Diakinesis — "moving through":</b></span>
+    <span class="ln step">• Chromosomes are maximally condensed.</span>
+    <span class="ln step">• Chiasmata move to ends (terminalisation).</span>
+    <span class="ln step">• Nucleolus and nuclear envelope disappear.</span>
+    <span class="ln step">• Spindle fibres begin to form.</span>
+  </div>
+</div>
+
+<!-- ══════════════ PLANT KINGDOM ══════════════ -->
+<div class="ch c1">🌱 Plant Kingdom &amp; Biological Classification</div>
+
+<!-- Q11 -->
+<div class="qwrap">
+  <div class="qtitle qt1"><span class="qbx b1">Q.11</span>What are the important features of Bryophytes?</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln def">Bryophytes are the simplest land plants. They are called "Amphibians of the Plant Kingdom" because they need water for sexual reproduction but can survive on land.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Important Features:</b></span>
+    <span class="ln step">1. <b>Habitat:</b> Grow in moist, shady, humid places. Some are aquatic.</span>
+    <span class="ln step">2. <b>Plant body:</b> Thalloid (no differentiation into root, stem, leaf) in liverworts; leafy stem in mosses.</span>
+    <span class="ln step">3. <b>Vascular tissue:</b> Absent — no xylem or phloem. Transport by diffusion and osmosis.</span>
+    <span class="ln step">4. <b>Roots:</b> Absent — unicellular or multicellular rhizoids for anchorage and absorption.</span>
+    <span class="ln step">5. <b>Alternation of generations:</b> Dominant gametophyte generation (n). Sporophyte is dependent on gametophyte.</span>
+    <span class="ln step">6. <b>Reproduction:</b> Water essential for fertilisation (motile male gametes). Asexual by spores or fragmentation.</span>
+    <span class="ln step">7. <b>Economic importance:</b> <i>Sphagnum</i> (peat moss) used as fuel; <i>Marchantia</i> used medicinally.</span>
+    <span class="ln note">Examples: Marchantia (liverwort), Sphagnum, Funaria (mosses), Anthoceros (hornworts).</span>
+  </div>
+</div>
+
+<!-- Q13 -->
+<div class="qwrap">
+  <div class="qtitle qt1"><span class="qbx b1">Q.13</span>Write the characteristics of Thallophyta.</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln def">Thallophyta is the lowest division of the plant kingdom. Organisms have a simple, undifferentiated plant body called a thallus — no root, stem, or leaf.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Characteristics:</b></span>
+    <span class="ln step">1. <b>Plant body:</b> Simple, thallus-like — not differentiated into root, stem, and leaf.</span>
+    <span class="ln step">2. <b>Vascular tissue:</b> Absent (no xylem and phloem).</span>
+    <span class="ln step">3. <b>Habitat:</b> Mostly aquatic (fresh water and marine); some terrestrial.</span>
+    <span class="ln step">4. <b>Reproduction:</b> Both asexual (by spores, fragmentation) and sexual.</span>
+    <span class="ln step">5. <b>Sex organs:</b> Unicellular, not surrounded by sterile cells (non-jacketed).</span>
+    <span class="ln step">6. <b>Nutrition:</b> Autotrophic (algae have chlorophyll); some heterotrophic (fungi).</span>
+    <span class="ln step">7. <b>Embryo:</b> Not formed after fertilisation (no embryophytes).</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Includes:</b> Algae (green, red, brown), Fungi, Lichens (by old classification)</span>
+    <span class="ln note">Examples: <i>Spirogyra</i>, <i>Chara</i>, <i>Mucor</i>, <i>Ulva</i>, <i>Sargassum</i>.</span>
+  </div>
+</div>
+
+<!-- Q15 -->
+<div class="qwrap">
+  <div class="qtitle qt1"><span class="qbx b1">Q.15</span>What are the important features of Kingdom Fungi?</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln def">Fungi are eukaryotic, heterotrophic, spore-bearing organisms without chlorophyll. They obtain nutrition by absorbing organic compounds from their substrate.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Important Features:</b></span>
+    <span class="ln step">1. <b>Cell wall:</b> Made of <b>chitin</b> (not cellulose like plants).</span>
+    <span class="ln step">2. <b>Nutrition:</b> <b>Heterotrophic</b> — saprophytic (on dead matter), parasitic (on living host), or mutualistic (mycorrhizae).</span>
+    <span class="ln step">3. <b>Body:</b> Composed of <b>hyphae</b> (thread-like filaments). Mass of hyphae = mycelium. Hyphae can be septate or coenocytic (non-septate).</span>
+    <span class="ln step">4. <b>Reproduction:</b> By spores — asexual (conidia, sporangiospores) and sexual (ascospores, basidiospores).</span>
+    <span class="ln step">5. <b>Storage food:</b> Glycogen (like animals, not starch).</span>
+    <span class="ln step">6. <b>Flagella:</b> Mostly absent (except water moulds — Oomycetes).</span>
+    <span class="ln step">7. <b>Nuclear membrane:</b> Present (eukaryotic).</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Divisions:</b> Phycomycetes, Ascomycetes, Basidiomycetes, Deuteromycetes (Fungi Imperfecti).</span>
+    <span class="ln note">Examples: <i>Mucor</i> (Phycomycetes), <i>Penicillium</i>, <i>Aspergillus</i> (Ascomycetes), <i>Agaricus</i> (mushroom, Basidiomycetes), <i>Alternaria</i> (Deuteromycetes).</span>
+  </div>
+</div>
+
+<!-- Q16 -->
+<div class="qwrap">
+  <div class="qtitle qt1"><span class="qbx b1">Q.16</span>Describe the different types of viruses based on their host.</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln pt"><b>1. Animal viruses:</b></span>
+    <span class="ln step">• Infect animals including humans.</span>
+    <span class="ln step">• Can have DNA or RNA.</span>
+    <span class="ln step">• Example: Influenza virus (flu), Rabies virus, HIV (AIDS), Hepatitis B, Poliovirus, Poxvirus, Herpesvirus.</span>
+    <span class="ln step">• Can cause widespread epidemics and pandemics.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>2. Plant viruses:</b></span>
+    <span class="ln step">• Infect plants — spread by insect vectors (aphids), contaminated tools, seeds.</span>
+    <span class="ln step">• Usually contain RNA (ssRNA) enclosed in a helical capsid.</span>
+    <span class="ln step">• Cause mosaic diseases, ring spots, yellowing, stunting.</span>
+    <span class="ln step">• Example: Tobacco Mosaic Virus (TMV), Cauliflower Mosaic Virus, Potato virus X.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>3. Bacteriophages (phages):</b></span>
+    <span class="ln step">• Infect bacteria. Complex structure — icosahedral head + helical tail.</span>
+    <span class="ln step">• Contain dsDNA. Use bacterial machinery for replication.</span>
+    <span class="ln step">• Lytic cycle: phage kills the bacterium. Lysogenic cycle: phage DNA integrates into bacterial chromosome.</span>
+    <span class="ln step">• Example: T4 phage (infects <i>E. coli</i>), Lambda phage, T7 phage.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>4. Cyanophages:</b></span>
+    <span class="ln step">• Infect cyanobacteria (blue-green algae). Example: LPP1 phage.</span>
+  </div>
+</div>
+
+<!-- Q30 -->
+<div class="qwrap">
+  <div class="qtitle qt1"><span class="qbx b1">Q.30</span>What are the two subkingdoms of Kingdom Plantae?</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln step">Kingdom Plantae is divided into two subkingdoms:</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>1. Cryptogamae (Hidden reproduction — no seeds or flowers):</b></span>
+    <span class="ln step">Further divided into:</span>
+    <span class="ln step">• <b>Thallophyta</b> — Algae (no differentiated body). E.g., <i>Spirogyra</i>, <i>Ulothrix</i>.</span>
+    <span class="ln step">• <b>Bryophyta</b> — Mosses and liverworts (no vascular tissue). E.g., <i>Marchantia</i>, <i>Funaria</i>.</span>
+    <span class="ln step">• <b>Pteridophyta</b> — Ferns (vascular but no seeds). E.g., <i>Dryopteris</i>, <i>Selaginella</i>.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>2. Phanerogamae (Visible reproduction — produce seeds):</b></span>
+    <span class="ln step">Further divided into:</span>
+    <span class="ln step">• <b>Gymnospermae</b> — Naked seeds (not enclosed in fruit). E.g., <i>Pinus</i>, <i>Cycas</i>.</span>
+    <span class="ln step">• <b>Angiospermae</b> — Seeds enclosed in fruit (flowering plants). E.g., Mango, Rose, Wheat.</span>
+    <span class="ln step">&nbsp;&nbsp;&nbsp; — Monocotyledons (1 cotyledon): Wheat, Maize.</span>
+    <span class="ln step">&nbsp;&nbsp;&nbsp; — Dicotyledons (2 cotyledons): Pea, Bean, Mango.</span>
+  </div>
+</div>
+
+<!-- ══════════════ HUMAN PHYSIOLOGY ══════════════ -->
+<div class="ch c3">🫀 Human Physiology — Digestion, Excretion &amp; Skeletal System</div>
+
+<!-- Q6 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.6</span>Explain the structure of a typical synovial joint.</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln def">A synovial joint is a freely movable joint (diarthrosis) that allows a wide range of movement. It is the most common type of joint in the human body.</span>
+    <span class="ln gap"></span>
+    <div class="diag">
+&nbsp;&nbsp;&nbsp;&nbsp;STRUCTURE OF SYNOVIAL JOINT<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Bone 1 ─── [Hyaline cartilage]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Synovial cavity<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(filled with synovial fluid)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Bone 2 ─── [Hyaline cartilage]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[Fibrous capsule surrounds the joint]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[Synovial membrane lines the capsule]
+      <small>Label: Articular cartilage, Synovial membrane, Synovial cavity, Fibrous capsule, Bones</small>
+    </div>
+    <span class="ln pt"><b>Components:</b></span>
+    <span class="ln step">1. <b>Articular (hyaline) cartilage:</b> Covers the bone ends. Reduces friction and absorbs shock.</span>
+    <span class="ln step">2. <b>Synovial cavity:</b> Space between the bones filled with synovial fluid.</span>
+    <span class="ln step">3. <b>Synovial membrane (Synovium):</b> Lines the inside of the fibrous capsule. Secretes synovial fluid.</span>
+    <span class="ln step">4. <b>Synovial fluid:</b> Viscous, slippery fluid — lubricates the joint, reduces friction, nourishes cartilage.</span>
+    <span class="ln step">5. <b>Fibrous capsule (Joint capsule):</b> Outer covering of dense connective tissue that encloses the joint.</span>
+    <span class="ln step">6. <b>Ligaments:</b> Dense connective tissue bands that connect bone to bone, provide stability.</span>
+    <span class="ln note">Examples: Knee joint (hinge), Hip joint (ball and socket), Shoulder joint, Elbow joint.</span>
+  </div>
+</div>
+
+<!-- Q10 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.10</span>Explain the structure of a V.S. (vertical section) of kidney.</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln def">The human kidney is a bean-shaped organ about 10–12 cm long, 6 cm wide and 2.5 cm thick. In vertical section (LS), two distinct regions are visible:</span>
+    <span class="ln gap"></span>
+    <div class="diag">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V.S. OF KIDNEY<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Renal capsule (outer covering)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;────────────────────────<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;CORTEX (outer, dark region)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Renal corpuscles (Malpighian bodies)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= Glomerulus + Bowman's capsule<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;────────────────────────<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;MEDULLA (inner, lighter region)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Renal pyramids (triangular)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Renal columns (between pyramids)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;────────────────────────<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;RENAL PELVIS (funnel-shaped)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Major calyces → Minor calyces<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ureter exits at hilum
+      <small>Hilum = notch where ureter, blood vessels, nerves enter/exit</small>
+    </div>
+    <span class="ln pt"><b>Outer Cortex:</b></span>
+    <span class="ln step">• Dark reddish-brown. Contains renal corpuscles (glomerulus + Bowman's capsule), proximal and distal convoluted tubules, and collecting ducts.</span>
+    <span class="ln pt"><b>Inner Medulla:</b></span>
+    <span class="ln step">• Lighter in colour. Contains 8–18 triangular renal pyramids. Loops of Henle and collecting ducts run through medulla. Tips of pyramids = renal papillae — open into minor calyces.</span>
+    <span class="ln pt"><b>Renal Pelvis:</b></span>
+    <span class="ln step">• Funnel-shaped space at the hilum. Collects urine from calyces and leads into ureter.</span>
+  </div>
+</div>
+
+<!-- Q17 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.17</span>With the help of a neat, labelled diagram, explain the structure of a nephron.</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln def">A nephron is the structural and functional unit of the kidney. Each kidney contains about 1 million nephrons. A nephron consists of two main parts: the renal corpuscle and the renal tubule.</span>
+    <span class="ln gap"></span>
+    <div class="diag">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STRUCTURE OF NEPHRON<br/>
+&nbsp;&nbsp;&nbsp;Bowman's capsule ← Glomerulus (capillaries)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Renal corpuscle = above two)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br/>
+&nbsp;&nbsp;&nbsp;Proximal Convoluted Tubule (PCT) — in cortex<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br/>
+&nbsp;&nbsp;&nbsp;Loop of Henle (descending + ascending) — in medulla<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br/>
+&nbsp;&nbsp;&nbsp;Distal Convoluted Tubule (DCT) — in cortex<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br/>
+&nbsp;&nbsp;&nbsp;Collecting Duct → Renal Pelvis → Ureter
+      <small>Label all parts in diagram. Afferent arteriole brings blood in; Efferent arteriole takes blood out of glomerulus.</small>
+    </div>
+    <span class="ln pt"><b>Parts of nephron:</b></span>
+    <span class="ln step">1. <b>Bowman's capsule:</b> Double-walled cup. Inner visceral layer (podocytes) and outer parietal layer. Surrounds the glomerulus. Filtration occurs here.</span>
+    <span class="ln step">2. <b>Glomerulus:</b> Tuft of capillaries inside Bowman's capsule. High blood pressure causes filtration of blood (ultrafiltration). Glomerulus + Bowman's capsule = Malpighian body/renal corpuscle.</span>
+    <span class="ln step">3. <b>Proximal Convoluted Tubule (PCT):</b> Lined by cuboidal cells with microvilli (brush border). Reabsorbs 70–80% of water, glucose, amino acids, Na⁺.</span>
+    <span class="ln step">4. <b>Loop of Henle:</b> Hairpin-shaped. Descending limb (thin, water permeable) — water exits by osmosis. Ascending limb (thick, impermeable to water) — Na⁺ and Cl⁻ actively pumped out. Creates concentration gradient in medulla.</span>
+    <span class="ln step">5. <b>Distal Convoluted Tubule (DCT):</b> Fine tuning of urine composition. Selective secretion and reabsorption under hormonal control (ADH, aldosterone).</span>
+    <span class="ln step">6. <b>Collecting duct:</b> Multiple DCTs join. Urine flows down collecting duct into renal pelvis. Permeable to water under ADH — concentrates urine.</span>
+  </div>
+</div>
+
+<!-- Q18 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.18</span>Write a note on the sternum.</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln def">The sternum (breastbone) is a flat, elongated bone forming the middle part of the anterior thoracic wall. It provides attachment for the ribs and clavicles.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Structure — Three parts:</b></span>
+    <span class="ln step">1. <b>Manubrium (Handle):</b> Upper broad part. Articulates with clavicle (collar bone) on each side and with 1st and 2nd ribs. Jugular notch is present at its upper end.</span>
+    <span class="ln step">2. <b>Body (Corpus sterni / Gladiolus):</b> Middle, longest part. Articulates with costal cartilages of 2nd to 7th ribs. Has transverse ridges (sternebrae).</span>
+    <span class="ln step">3. <b>Xiphoid process (Xiphisternum):</b> Lower, smallest cartilaginous part. Provides attachment for abdominal muscles and diaphragm. Ossifies completely in adults.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Functions:</b></span>
+    <span class="ln step">• Forms the anterior wall of the thoracic cage — protects heart and lungs.</span>
+    <span class="ln step">• Provides attachment for ribs via costal cartilages.</span>
+    <span class="ln step">• Site for bone marrow — haematopoiesis (blood cell production).</span>
+    <span class="ln step">• Site of sternal puncture for bone marrow biopsy (clinical use).</span>
+  </div>
+</div>
+
+<!-- Q20 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.20</span>Describe the three parts of the small intestine.</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln def">The small intestine is the longest part of the alimentary canal (~6–7 m long). It is the main site of digestion and absorption. It has three parts:</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>1. Duodenum ("twelve" — about 25 cm = 12 finger-breadths):</b></span>
+    <span class="ln step">• C-shaped, shortest, and widest part. Fixed to posterior abdominal wall.</span>
+    <span class="ln step">• Receives chyme from stomach (via pyloric sphincter).</span>
+    <span class="ln step">• Receives bile from liver (via common bile duct) and pancreatic juice from pancreas (via pancreatic duct) — both open at Hepatopancreatic ampulla (Ampulla of Vater).</span>
+    <span class="ln step">• Main site for chemical digestion of proteins, fats, and carbohydrates.</span>
+    <span class="ln step">• Contains Brunner's glands (secrete mucus to protect from acid).</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>2. Jejunum ("empty" — about 2.5 m):</b></span>
+    <span class="ln step">• Middle part. Highly coiled. Reddish in colour (more blood supply).</span>
+    <span class="ln step">• Has plicae circulares (circular folds) and villi — increase surface area for absorption.</span>
+    <span class="ln step">• Main site for absorption of nutrients (amino acids, monosaccharides, fatty acids).</span>
+    <span class="ln step">• Contains Peyer's patches (lymphoid tissue — immunity).</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>3. Ileum ("coil" — about 3.5 m):</b></span>
+    <span class="ln step">• Longest part. Opens into large intestine at ileocaecal valve.</span>
+    <span class="ln step">• Continues absorption of nutrients, especially vitamin B₁₂ and bile salts.</span>
+    <span class="ln step">• Has more Peyer's patches than jejunum.</span>
+    <span class="ln step">• Walls thinner and less villi than jejunum.</span>
+  </div>
+</div>
+
+<!-- Q21 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.21</span>What are joints? Explain their different types.</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln def">A joint (articulation) is the point of contact between two or more bones of the skeleton. Joints provide support and allow movement.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Classification of Joints:</b></span>
+    <span class="ln pt"><b>A. Fibrous Joints (Synarthroses — immovable):</b></span>
+    <span class="ln step">• Bones joined by fibrous connective tissue. No movement possible.</span>
+    <span class="ln step">• Types: Sutures (flat bones of skull), Gomphosis (teeth in jaw), Syndesmosis (radius-ulna).</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>B. Cartilaginous Joints (Amphiarthroses — slightly movable):</b></span>
+    <span class="ln step">• Bones joined by cartilage. Slight movement possible.</span>
+    <span class="ln step">• Types: Synchondrosis (sternum-rib junction), Symphysis (pubic symphysis, intervertebral discs).</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>C. Synovial Joints (Diarthroses — freely movable):</b></span>
+    <span class="ln step">• Most common type. Have a synovial cavity filled with synovial fluid.</span>
+    <span class="ln step">• Types:</span>
+    <span class="ln step">&nbsp;&nbsp;1. <b>Hinge joint:</b> Movement in one plane. E.g., Knee, Elbow, Ankle.</span>
+    <span class="ln step">&nbsp;&nbsp;2. <b>Ball and socket joint:</b> Movement in all directions. E.g., Hip, Shoulder.</span>
+    <span class="ln step">&nbsp;&nbsp;3. <b>Pivot joint:</b> Rotation only. E.g., Atlas-axis (neck rotation).</span>
+    <span class="ln step">&nbsp;&nbsp;4. <b>Gliding (Plane) joint:</b> Sliding movements. E.g., Wrist carpals, intervertebral.</span>
+    <span class="ln step">&nbsp;&nbsp;5. <b>Condyloid (Ellipsoid) joint:</b> E.g., Wrist joint.</span>
+    <span class="ln step">&nbsp;&nbsp;6. <b>Saddle joint:</b> E.g., Carpometacarpal joint of thumb.</span>
+  </div>
+</div>
+
+<!-- Q22 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.22</span>Write notes on: (a) Atlas vertebra (b) Axis vertebra.</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln pt"><b>(a) Atlas (1st cervical vertebra — C1):</b></span>
+    <span class="ln step">• Ring-shaped vertebra with no body and no spinous process.</span>
+    <span class="ln step">• Has two lateral masses (superior and inferior articular facets).</span>
+    <span class="ln step">• <b>Superior articular facets</b> (concave) articulate with occipital condyles of skull — forms atlantooccipital joint → allows nodding motion ("yes" movement).</span>
+    <span class="ln step">• <b>Anterior arch</b> has a facet for dens of axis. <b>Posterior arch</b> has a groove for vertebral artery.</span>
+    <span class="ln step">• Large vertebral foramen provides space for the medulla oblongata.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>(b) Axis (2nd cervical vertebra — C2):</b></span>
+    <span class="ln step">• Has a unique tooth-like projection called the <b>dens (odontoid process)</b> on its body.</span>
+    <span class="ln step">• Dens projects upward and fits into the ring of atlas — acts as a pivot.</span>
+    <span class="ln step">• <b>Atlantoaxial joint</b> (atlas rotating around dens) → allows rotation of head ("no" movement).</span>
+    <span class="ln step">• Has a prominent bifid spinous process and superior articular facets for atlas.</span>
+    <span class="ln step">• Body is stout. Vertebral foramen is triangular.</span>
+  </div>
+</div>
+
+<!-- Q23 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.23</span>Define excretion and osmoregulation.</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln pt"><b>Excretion:</b></span>
+    <span class="ln def">Excretion is the biological process by which metabolic waste products (especially nitrogenous wastes) are eliminated from the body to maintain homeostasis.</span>
+    <span class="ln step">• Main excretory product: <b>Urea</b> in humans (ureotelism).</span>
+    <span class="ln step">• Other products: CO₂ (lungs), water vapour (lungs, skin), salts (sweat).</span>
+    <span class="ln step">• Main organ: Kidneys (also: skin, lungs, liver).</span>
+    <span class="ln step">• Urea is produced in the liver from amino acids (urea cycle / ornithine cycle).</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Osmoregulation:</b></span>
+    <span class="ln def">Osmoregulation is the active regulation of water content and osmotic pressure of body fluids within acceptable limits, despite changes in the external environment.</span>
+    <span class="ln step">• Kidneys are the main osmoregulatory organs in humans.</span>
+    <span class="ln step">• ADH (antidiuretic hormone) from posterior pituitary — promotes water reabsorption in collecting duct.</span>
+    <span class="ln step">• Aldosterone from adrenal cortex — promotes Na⁺ reabsorption (and water follows by osmosis).</span>
+    <span class="ln step">• Example: Drinking salty water → osmolality increases → ADH released → kidneys reabsorb water → concentrated urine.</span>
+  </div>
+</div>
+
+<!-- Q24 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.24</span>What are the different types of nutrition?</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln pt"><b>1. Autotrophic Nutrition:</b></span>
+    <span class="ln step">Organism synthesises its own food from inorganic substances using an external energy source.</span>
+    <span class="ln step">• <b>Photosynthesis:</b> Use sunlight as energy source. E.g., green plants, algae, cyanobacteria.</span>
+    <span class="ln step">• <b>Chemosynthesis:</b> Use chemical energy. E.g., <i>Nitrosomonas</i>, <i>Nitrobacter</i> (nitrifying bacteria).</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>2. Heterotrophic Nutrition:</b></span>
+    <span class="ln step">Organism cannot make its own food — depends on other organisms for nutrition.</span>
+    <span class="ln step">• <b>Holozoic:</b> Ingestion, digestion, absorption, assimilation of solid food. E.g., all animals including humans.</span>
+    <span class="ln step">• <b>Saprophytic (Saprotrophic):</b> Feed on dead and decaying organic matter by external digestion. E.g., fungi, some bacteria.</span>
+    <span class="ln step">• <b>Parasitic:</b> Live in/on host organism and derive nutrition at host's expense. E.g., tapeworm, <i>Cuscuta</i> (dodder plant), lice.</span>
+    <span class="ln step">• <b>Symbiotic / Mutualistic:</b> Both organisms benefit. E.g., <i>Rhizobium</i> in root nodules, lichen (alga + fungus).</span>
+    <span class="ln step">• <b>Insectivorous:</b> Carnivorous plants that trap and digest insects. E.g., <i>Drosera</i> (sundew), <i>Nepenthes</i> (pitcher plant).</span>
+  </div>
+</div>
+
+<!-- Q25 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.25</span>Write down the dental formula of a human being.</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln def">Dental formula is a shorthand way of expressing the number and type of teeth in one quadrant of each jaw (upper and lower).</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Adult human dental formula (permanent teeth):</b></span>
+    <span class="ln step">I = Incisors, C = Canine, PM = Premolars, M = Molars</span>
+    <span class="ln gap"></span>
+    <div class="diag">
+      Upper jaw: I 2/2 , C 1/1 , PM 2/2 , M 3/3<br/>
+      ──────────────────────────────────────<br/>
+      Dental formula = 2123/2123 (for one side, upper/lower)<br/>
+      <br/>
+      Total teeth = (2+1+2+3) × 4 = 8 × 4 = <b>32 permanent teeth</b>
+      <small>Incisors: for biting | Canine: for tearing | Premolars: for crushing | Molars: for grinding</small>
+    </div>
+    <span class="ln pt"><b>Milk (Deciduous) teeth formula:</b></span>
+    <span class="ln step">I 2/2 , C 1/1 , M 2/2 = total 20 milk teeth</span>
+    <span class="ln note">Wisdom teeth (3rd molars) erupt last at age 17–25 years.</span>
+  </div>
+</div>
+
+<!-- Q14 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.14</span>Write a note on ureotelism.</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln def">Ureotelism is the mode of excretion in which the main nitrogenous waste product is <b>urea</b> (CO(NH₂)₂). Organisms that excrete urea are called ureotelic.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Examples of ureotelic organisms:</b></span>
+    <span class="ln step">• Humans and all mammals, amphibians (adult frogs), cartilaginous fishes (sharks, rays).</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Formation of urea — Ornithine Cycle (Urea Cycle):</b></span>
+    <span class="ln step">Urea is produced in the liver from excess amino acids and CO₂.</span>
+    <span class="ln step">NH₃ (ammonia) + CO₂ → carbamoyl phosphate → citrulline → argininosuccinate → arginine → <b>Urea</b> + ornithine</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Properties of urea:</b></span>
+    <span class="ln step">• Less toxic than ammonia. Soluble in water. Concentrated to save water.</span>
+    <span class="ln step">• Urea:water ratio in urine = approximately 2%.</span>
+    <span class="ln gap"></span>
+    <span class="ln pt"><b>Comparison:</b></span>
+    <table>
+      <tr><th>Type</th><th class="th2">Waste Product</th><th>Example</th></tr>
+      <tr><td>Ammonotelic</td><td>Ammonia (NH₃)</td><td>Aquatic invertebrates, bony fishes</td></tr>
+      <tr><td><b>Ureotelic</b></td><td><b>Urea</b></td><td>Mammals, amphibians, adult frogs</td></tr>
+      <tr><td>Uricotelic</td><td>Uric acid</td><td>Reptiles, birds, insects, land snails</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Q32 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.32</span>Sketch and label the human digestive system.</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <div class="diag">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HUMAN DIGESTIVE SYSTEM<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mouth (lips, teeth, tongue, salivary glands)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pharynx<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Oesophagus (25 cm)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br/>
+&nbsp;&nbsp;&nbsp;Liver ──→ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stomach (cardiac, fundus, pyloric)<br/>
+&nbsp;&nbsp;&nbsp;Gall bladder &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br/>
+&nbsp;&nbsp;&nbsp;Pancreas ──→ &nbsp; Small intestine (Duodenum → Jejunum → Ileum)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Large intestine (Caecum → Ascending colon →<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Transverse → Descending → Sigmoid colon → Rectum)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anus
+      <small>Accessory organs: Liver (bile), Pancreas (enzymes + insulin), Salivary glands (amylase)</small>
+    </div>
+    <span class="ln pt"><b>Functions at each level:</b></span>
+    <span class="ln step">• <b>Mouth:</b> Mechanical digestion (teeth); salivary amylase digests starch.</span>
+    <span class="ln step">• <b>Stomach:</b> HCl (pepsin activation, kills bacteria); pepsin digests proteins; gastric lipase.</span>
+    <span class="ln step">• <b>Small intestine:</b> Main site of chemical digestion (pancreatic enzymes, bile) and absorption (villi, microvilli).</span>
+    <span class="ln step">• <b>Large intestine:</b> Absorption of water, electrolytes; formation of faeces.</span>
+  </div>
+</div>
+
+<!-- Q9 -->
+<div class="qwrap">
+  <div class="qtitle qt3"><span class="qbx b3">Q.9</span>Sketch and label: (a) Paramecium &nbsp; (b) Mucor &nbsp; (c) Spirogyra</div>
+  <div class="sol"><span class="sol-lbl">Answer</span>
+    <span class="ln pt"><b>(a) Paramecium (Kingdom Protista — ciliated protozoan):</b></span>
+    <div class="diag">
+&nbsp;&nbsp;&nbsp;PARAMECIUM (slipper-shaped)<br/>
+&nbsp;&nbsp;&nbsp;Cilia (all over body) ←<br/>
+&nbsp;&nbsp;&nbsp;Oral groove → Mouth pore → Gullet → Food vacuole<br/>
+&nbsp;&nbsp;&nbsp;Macronucleus (large — for metabolism)<br/>
+&nbsp;&nbsp;&nbsp;Micronucleus (small — for reproduction)<br/>
+&nbsp;&nbsp;&nbsp;Contractile vacuole (for osmoregulation) — 2 of them<br/>
+&nbsp;&nbsp;&nbsp;Pellicle (outer covering)<br/>
+      <small>Shape: slipper/shoe-shaped | Size: 150-300 μm | Unicellular</small>
+    </div>
+    <span class="ln pt"><b>(b) Mucor (Kingdom Fungi — Phycomycetes):</b></span>
+    <div class="diag">
+&nbsp;&nbsp;&nbsp;MUCOR (black pin mould)<br/>
+&nbsp;&nbsp;&nbsp;Sporangiophore (upright hypha) — branches from mycelium<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑<br/>
+&nbsp;&nbsp;&nbsp;Sporangium (round spore case) at tip — contains spores<br/>
+&nbsp;&nbsp;&nbsp;Columella (sterile dome inside sporangium)<br/>
+&nbsp;&nbsp;&nbsp;Coenocytic hyphae (no cross walls — multinucleate)<br/>
+&nbsp;&nbsp;&nbsp;Mycelium (white/grey cottony mass on substrate)
+      <small>Mycelium → Sporangiophore → Sporangium → Columella + Spores</small>
+    </div>
+    <span class="ln pt"><b>(c) Spirogyra (Kingdom Plantae — Green algae / Thallophyta):</b></span>
+    <div class="diag">
+&nbsp;&nbsp;&nbsp;SPIROGYRA (pond silk / water silk)<br/>
+&nbsp;&nbsp;&nbsp;Cell wall (outer — cellulose; inner — pectin)<br/>
+&nbsp;&nbsp;&nbsp;Spiral chloroplast (ribbon-like, with pyrenoids for starch)<br/>
+&nbsp;&nbsp;&nbsp;Nucleus (central, suspended by cytoplasmic strands)<br/>
+&nbsp;&nbsp;&nbsp;Vacuole (large, central)<br/>
+&nbsp;&nbsp;&nbsp;Pyrenoids (protein centre for starch synthesis) along chloroplast<br/>
+&nbsp;&nbsp;&nbsp;Filamentous arrangement — unbranched
+      <small>Spirogyra is named after its spiral/helical ribbon-shaped chloroplast.</small>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="text-align:center;margin-top:32px;font-size:12.5px;color:#666;border-top:2px double #1b5e20;padding-top:14px;">
+  <b>Visions Classes, Ambernath</b> — Class 11 Biology · Practice Questions &amp; Answers<br/>
+  <small>Taxonomy · Cell Division · Plant Kingdom · Human Physiology · Board Exam Style<br/>
+  By Shashikant Sir · visionslearning.in</small>
+</div>
+
+</div><!-- /page -->
+<button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+</body>
+</html>
