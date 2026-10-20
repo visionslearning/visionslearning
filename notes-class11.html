@@ -2731,9 +2731,15 @@
         const filter = btn.dataset.filter;
 
         // filter cards in the grid
+        let visibleCount = 0;
         chapterCards.forEach(card => {
-          card.style.display = (filter === 'all' || card.dataset.subject === filter) ? 'block' : 'none';
+          const show = (filter === 'all' || card.dataset.subject === filter);
+          card.style.display = show ? '' : 'none';
+          if (show) visibleCount++;
         });
+
+        // scroll to grid top so cards are visible
+        document.getElementById('notesChaptersGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
 
         // show/hide full physics chapter sections
         physicsOnlySections.forEach(sec => {
