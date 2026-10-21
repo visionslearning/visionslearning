@@ -2746,10 +2746,53 @@
   </div>
   <script src="main.js"></script>
   <script>
-    // Biology full-notes: expand/collapse toggle for .qbox/.qtitle/.qbody cards.
+    // Self-contained filter for notes-class11.html
+    // Runs AFTER main.js so it overrides any conflicting filter logic
+    (function() {
+      var btns  = document.querySelectorAll('.courses-filter .filter-btn');
+      var cards = document.querySelectorAll('#notesChaptersGrid .notes-chapter-card');
+      var secs  = document.querySelectorAll('.filterable-section');
+
+      if (!btns.length) return;
+
+      btns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var filter = btn.dataset.filter;
+
+          // Update active button
+          btns.forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+
+          // Show/hide grid cards
+          cards.forEach(function(card) {
+            var subj = card.dataset.subject || '';
+            card.style.display = (filter === 'all' || subj === filter) ? 'block' : 'none';
+          });
+
+          // Show/hide filterable sections (physics inline notes)
+          secs.forEach(function(sec) {
+            var subj = sec.dataset.subject || '';
+            sec.style.display = (filter === 'all' || subj === filter) ? 'block' : 'none';
+          });
+
+          // Scroll to first visible card
+          var first = null;
+          cards.forEach(function(card) {
+            if (!first && card.style.display !== 'none') first = card;
+          });
+          if (first) {
+            setTimeout(function() {
+              first.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 80);
+          }
+        });
+      });
+    })();
+
+    // Expand/collapse for any qbox cards
     function toggle(el) {
       el.classList.toggle('active');
-      const body = el.nextElementSibling;
+      var body = el.nextElementSibling;
       body.classList.toggle('open');
     }
   </script>
