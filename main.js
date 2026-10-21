@@ -105,11 +105,17 @@ document.addEventListener('DOMContentLoaded', () => {
         notesCards.forEach(card => {
           const subject = card.dataset.subject;
           if (filter === 'all' || !subject || subject === filter) {
-            card.style.display = '';
+            card.style.display = card.classList.contains('filterable-section') ? 'block' : 'flex';
           } else {
             card.style.display = 'none';
           }
         });
+
+        // Scroll to show first visible card
+        const firstVisible = Array.from(notesCards).find(c => c.style.display !== 'none');
+        if (firstVisible) {
+          setTimeout(() => firstVisible.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+        }
       });
     });
   }
