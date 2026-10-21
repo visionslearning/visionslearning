@@ -1,5 +1,5 @@
 /* =============================================
-   Visions Learning — main.js
+   Visions Learning — main.js v2
    ============================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
