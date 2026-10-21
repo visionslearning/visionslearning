@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Class XII Physics – Paper 1 & 2 Solutions with Basics | Visions Classes</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Arial',sans-serif;background:#eceff1;padding:18px 8px;color:#111;font-size:14px;line-height:1.75;}
+    .page{background:#fff;max-width:900px;margin:0 auto;padding:36px 46px;border:2px solid #1a1a2e;box-shadow:0 4px 28px rgba(0,0,0,.14);}
+
+    /* ── HEADER ── */
+    .vh{text-align:center;padding-bottom:12px;border-bottom:4px double #1a1a2e;margin-bottom:14px;}
+    .vh .in{font-size:28px;font-weight:900;letter-spacing:4px;text-transform:uppercase;color:#1a1a2e;}
+    .vh .in span{color:#c0392b;}
+    .vh .tg{font-size:12px;font-style:italic;letter-spacing:2px;color:#666;margin-top:3px;}
+    .sh{text-align:center;margin-bottom:22px;padding-bottom:12px;border-bottom:2px solid #1a237e;}
+    .sh h1{font-size:17px;font-weight:900;color:#1a237e;margin-bottom:3px;}
+    .sh h2{font-size:13px;color:#666;font-weight:normal;}
+    .sh .bdg{display:inline-block;background:#1a237e;color:#fff;padding:3px 14px;border-radius:12px;font-size:11.5px;font-weight:700;margin-top:6px;}
+
+    /* ── PAPER BANNER ── */
+    .pb{background:linear-gradient(135deg,#1a237e,#283593);color:#fff;padding:11px 20px;border-radius:6px;margin:26px 0 18px;display:flex;justify-content:space-between;align-items:center;}
+    .pb .pt{font-size:15px;font-weight:900;}
+    .pb .pk{background:#fff;color:#1a237e;padding:3px 12px;border-radius:10px;font-size:11.5px;font-weight:700;}
+
+    /* ── SECTION HEAD ── */
+    .sch{background:#1a1a2e;color:#fff;padding:8px 16px;font-size:13px;font-weight:700;margin:22px 0 14px;display:flex;justify-content:space-between;align-items:center;border-radius:4px;}
+    .sch .sm{background:#fff;color:#1a1a2e;padding:2px 10px;border-radius:8px;font-size:11px;font-weight:700;}
+
+    /* ── QUESTION CARD ── */
+    .qc{border:1.5px solid #cfd8dc;border-radius:10px;margin-bottom:28px;overflow:hidden;page-break-inside:avoid;}
+    .qch{background:#f5f5f5;border-bottom:1.5px solid #cfd8dc;padding:10px 16px;display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;}
+    .qn{font-size:11px;font-weight:700;background:#1a237e;color:#fff;padding:3px 11px;border-radius:10px;flex-shrink:0;margin-top:2px;}
+    .qt{font-size:13.5px;font-weight:700;color:#1a1a2e;flex:1;min-width:180px;}
+    .mk{font-size:11px;font-weight:700;background:#c0392b;color:#fff;padding:3px 11px;border-radius:10px;flex-shrink:0;margin-top:2px;}
+
+    /* ── ANSWER BODY ── */
+    .ab{padding:0;}
+
+    /* ── SECTION BLOCKS inside answer ── */
+    .blk{padding:14px 18px;border-bottom:1px solid #eceff1;}
+    .blk:last-child{border-bottom:none;}
+
+    /* Block label pills */
+    .blk-title{display:inline-block;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 10px;border-radius:10px;margin-bottom:10px;}
+    .basics-pill {background:#e8f5e9;color:#1b5e20;}
+    .concept-pill{background:#e3f2fd;color:#0d47a1;}
+    .formula-pill{background:#f3e5f5;color:#6a1b9a;}
+    .solve-pill  {background:#fff3e0;color:#e65100;}
+    .answer-pill {background:#ffebee;color:#c0392b;}
+    .tip-pill    {background:#fffde7;color:#f57f17;}
+    .example-pill{background:#fce4ec;color:#880e4f;}
+
+    /* Content rows inside blocks */
+    .row{display:flex;align-items:baseline;margin:5px 0;font-size:13.5px;}
+    .rl{min-width:130px;max-width:130px;font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;padding-right:8px;flex-shrink:0;}
+    .rs{padding:0 5px;color:#ccc;flex-shrink:0;}
+    .rv{flex:1;color:#222;}
+
+    /* row themes */
+    .row.basics .rl{color:#1b5e20;} .row.basics .rv{color:#2e7d32;}
+    .row.form   .rl{color:#6a1b9a;} .row.form   .rv{color:#6a1b9a;font-weight:700;}
+    .row.step   .rl{color:#888;}    .row.step   .rv{color:#333;}
+    .row.ans    .rl{color:#c0392b;} .row.ans    .rv{color:#c0392b;font-weight:700;font-size:14px;}
+    .row.note   .rl{color:#e65100;} .row.note   .rv{color:#e65100;}
+    .row.tip    .rl{color:#f57f17;} .row.tip    .rv{color:#f57f17;}
+    .row.eg     .rl{color:#00838f;} .row.eg     .rv{color:#00838f;font-style:italic;}
+    .row.num    .rl{color:#880e4f;} .row.num    .rv{color:#880e4f;}
+
+    /* Diagram box */
+    .dbox{background:#e8eaf6;border:1.5px dashed #7986cb;border-radius:6px;padding:12px 16px;margin:8px 0;font-family:monospace;font-size:12.5px;color:#283593;line-height:2.0;}
+    .dbox small{font-family:Arial,sans-serif;font-size:11.5px;color:#3949ab;}
+
+    /* Year badge */
+    .yb{display:inline-block;font-size:10px;font-weight:700;padding:1px 8px;border-radius:8px;margin-left:6px;}
+    .y22{background:#c8e6c9;color:#1b5e20;} .y23{background:#bbdefb;color:#0d47a1;} .y24{background:#fff9c4;color:#f57f17;}
+
+    /* Print */
+    .print-btn{display:block;margin:26px auto 0;padding:10px 36px;background:#1a1a2e;color:#fff;border:none;font-size:14px;border-radius:5px;cursor:pointer;}
+    .footer{text-align:center;margin-top:26px;font-size:12px;color:#666;border-top:2px double #1a1a2e;padding-top:12px;}
+    @media print{body{background:#fff;padding:0;}.page{box-shadow:none;border:none;padding:18px 28px;}.no-print{display:none;}.qc{page-break-inside:avoid;}}
+    @media(max-width:580px){.page{padding:18px 12px;}.rl{min-width:80px;max-width:80px;}}
+  </style>
+</head>
+<body>
+<div class="page">
+
+<div class="vh">
+  <div class="in">Visions <span>Classes</span></div>
+  <div class="tg">✦ &nbsp; Learn Today, Lead Tomorrow &nbsp; ✦ &nbsp; Ambernath</div>
+</div>
+<div class="sh">
+  <h1>Class XII Physics — Paper 1 &amp; 2 &nbsp;|&nbsp; Solutions with Basics</h1>
+  <h2>Section B (1 Mark) &amp; Section C (2 Marks) &nbsp;|&nbsp; Every concept explained from scratch</h2>
+  <span class="bdg">Maharashtra State Board &nbsp;·&nbsp; By Shashikant Sir &nbsp;·&nbsp; Starting from Basics → Full Answer</span>
+</div>
+
+<!-- ═══════════════════ PAPER 1 ═══════════════════ -->
+<div class="pb"><span class="pt">📄 PAPER 1 — SOLUTIONS WITH BASICS</span><span class="pk">Class XII Physics · Set 1</span></div>
+<div class="sch">SECTION B — Very Short Answer &nbsp;(1 Mark Each) <span class="sm">Attempt any 8 of 12</span></div>
+
+<!-- ════ B·i Electric Flux ════ -->
+<div class="qc">
+  <div class="qch"><span class="qn">B · i</span><span class="qt">Define electric flux. <span class="yb y24">2024</span></span><span class="mk">1 Mark</span></div>
+  <div class="ab">
+
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS FIRST — What is an Electric Field?</div>
+      <div class="row basics"><span class="rl">Electric field</span><span class="rs">:</span><span class="rv">The region around a charge where another charge experiences a force. We draw <b>field lines</b> to visualise the field — arrows show direction, closeness shows strength.</span></div>
+      <div class="row basics"><span class="rl">Field line direction</span><span class="rs">:</span><span class="rv">Away from positive charge (+). Towards negative charge (−).</span></div>
+      <div class="row basics"><span class="rl">Imagine</span><span class="rs">:</span><span class="rv">Think of field lines as arrows flying through space from a + charge. Now place a window (surface) in this space. <b>Electric flux = how many arrows pierce the window.</b></span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title concept-pill">💡 CONCEPT — What is Electric Flux?</div>
+      <div class="row step"><span class="rl">Simple idea</span><span class="rs">:</span><span class="rv">Electric flux (Φ<sub>E</sub>) tells us <b>how much electric field passes through a surface</b>. More field lines crossing a surface = higher flux.</span></div>
+      <div class="row step"><span class="rl">Effect of angle</span><span class="rs">:</span><span class="rv">If field lines hit the surface <b>head-on (θ=0°)</b> → maximum flux. If field lines are <b>parallel to surface (θ=90°)</b> → zero flux (no lines pierce the surface).</span></div>
+      <div class="dbox">
+        Case 1 (θ=0°): E → → → → | (surface) → maximum crossing = Φ = EA<br/>
+        Case 2 (θ=45°): E → → → ↗ | (surface) → partial crossing = Φ = EA·cos45°<br/>
+        Case 3 (θ=90°): E → → → ↑ || (surface) → no crossing = Φ = 0<br/>
+        <small>θ = angle between Electric field vector E and the outward normal to surface</small>
+      </div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title formula-pill">📐 FORMULA</div>
+      <div class="row form"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>Φ<sub>E</sub> = E × A × cosθ</b></span></div>
+      <div class="row step"><span class="rl">E</span><span class="rs">=</span><span class="rv">Electric field strength (N/C)</span></div>
+      <div class="row step"><span class="rl">A</span><span class="rs">=</span><span class="rv">Area of the surface (m²)</span></div>
+      <div class="row step"><span class="rl">θ</span><span class="rs">=</span><span class="rv">Angle between the field vector <b>E</b> and the <b>outward normal</b> to the surface</span></div>
+      <div class="row step"><span class="rl">SI Unit</span><span class="rs">:</span><span class="rv"><b>N·m²/C</b> or <b>V·m</b></span></div>
+      <div class="row step"><span class="rl">Sign</span><span class="rs">:</span><span class="rv">Positive when field exits surface (outward). Negative when field enters surface (inward).</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title tip-pill">⭐ GAUSS'S LAW CONNECTION (Bonus knowledge)</div>
+      <div class="row tip"><span class="rl">Gauss's Law</span><span class="rs">:</span><span class="rv">Total flux through a <b>closed surface</b> = Q<sub>inside</sub> / ε₀. This is used to find electric field of symmetric charge distributions very easily.</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Window analogy</span><span class="rs">:</span><span class="rv">Imagine sunshine coming through a window. If you hold the window perpendicular to sunlight (θ=0°), maximum light passes through — maximum flux. Tilt the window (θ=60°), less light passes through. Close the shutters flat to sunlight (θ=90°) — no light enters at all — zero flux.</span></div>
+      <div class="row eg"><span class="rl">More field lines = more flux</span><span class="rs">:</span><span class="rv">Just as more fans blowing through a door = more airflow, more electric field lines piercing a surface = greater electric flux.</span></div>
+      <div class="row eg"><span class="rl">Gauss's Law link</span><span class="rs">:</span><span class="rv">In a closed box with a charge inside, the total flux coming out from all 6 sides equals the charge divided by ε₀. No matter what shape the box is — sphere, cube, cone — same total flux! This is Gauss's Law.</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER (Write exactly this in exam)</div>
+      <div class="row ans"><span class="rl">Definition</span><span class="rs">:</span><span class="rv">Electric flux through a surface is the total number of electric field lines passing normally through that surface.</span></div>
+      <div class="row ans"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>Φ<sub>E</sub> = E A cosθ &nbsp;; &nbsp; SI unit = N·m²/C</b></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ B·ii Ohm's Law ════ -->
+<div class="qc">
+  <div class="qch"><span class="qn">B · ii</span><span class="qt">State Ohm's law. <span class="yb y23">2023</span></span><span class="mk">1 Mark</span></div>
+  <div class="ab">
+
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — What is Current and Voltage?</div>
+      <div class="row basics"><span class="rl">Current (I)</span><span class="rs">:</span><span class="rv">Flow of electric charge. Like water flowing in a pipe. Unit = Ampere (A). 1A = 1 coulomb of charge passing per second.</span></div>
+      <div class="row basics"><span class="rl">Voltage (V)</span><span class="rs">:</span><span class="rv">The "electrical pressure" that drives current. Like water pressure in a pipe. Unit = Volt (V).</span></div>
+      <div class="row basics"><span class="rl">Resistance (R)</span><span class="rs">:</span><span class="rv">The opposition to current flow. Like the narrowness of a pipe. Unit = Ohm (Ω).</span></div>
+      <div class="row eg"><span class="rl">Analogy</span><span class="rs">:</span><span class="rv">Water pipe: Pressure = Voltage, Flow rate = Current, Pipe narrowness = Resistance. More pressure → more flow (if resistance is constant).</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title concept-pill">💡 CONCEPT</div>
+      <div class="row step"><span class="rl">Observation</span><span class="rs">:</span><span class="rv">George Ohm (1827) found experimentally: if you double the voltage across a metal wire, the current also doubles. Triple the voltage → triple the current. The ratio V/I stays constant.</span></div>
+      <div class="row step"><span class="rl">This constant</span><span class="rs">=</span><span class="rv">Resistance R = V/I. For a given metallic conductor at constant temperature, R is constant.</span></div>
+      <div class="dbox">
+        V (volts)<br/>
+        &nbsp;&nbsp;12 ──────────── ● (slope = R)<br/>
+        &nbsp;&nbsp;&nbsp;6 ────── ●<br/>
+        &nbsp;&nbsp;&nbsp;0 ──── →  I (amperes)<br/>
+        <small>V vs I graph is a straight line through origin → slope = R = constant</small>
+      </div>
+      <div class="row note"><span class="rl">Condition</span><span class="rs">:</span><span class="rv"><b>Temperature must be constant</b> — metals have higher resistance at higher temperatures, so Ohm's law only holds at fixed temperature.</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title formula-pill">📐 FORMULA</div>
+      <div class="row form"><span class="rl">Ohm's Law</span><span class="rs">:</span><span class="rv"><b>V = I × R</b> &nbsp; (or I = V/R, or R = V/I)</span></div>
+      <div class="row step"><span class="rl">Ohmic conductor</span><span class="rs">:</span><span class="rv">Materials that obey Ohm's law (straight V-I graph): metals, alloys like nichrome.</span></div>
+      <div class="row step"><span class="rl">Non-ohmic</span><span class="rs">:</span><span class="rv">Semiconductors, diodes, bulb filament — these do NOT obey Ohm's law (curved V-I graph).</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Water pipe analogy</span><span class="rs">:</span><span class="rv">Current is like water flow in a pipe. Voltage is like water pressure. Resistance is like the pipe's narrowness. More pressure (voltage) → more flow (current). Narrow pipe (high resistance) → less flow.</span></div>
+      <div class="row eg"><span class="rl">Real life example</span><span class="rs">:</span><span class="rv">A torch bulb, a fan, a heater — all obey Ohm's law at constant temperature. If you double the battery voltage, the current through the device doubles.</span></div>
+      <div class="row eg"><span class="rl">Non-ohmic example</span><span class="rs">:</span><span class="rv">A diode is NON-ohmic — it conducts freely in one direction but blocks in the other. Its V-I graph is a curve, not a straight line.</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="row ans"><span class="rl">Statement</span><span class="rs">:</span><span class="rv">At constant temperature, the current (I) through a conductor is directly proportional to the potential difference (V) across its ends.</span></div>
+      <div class="row ans"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>V = IR &nbsp;; &nbsp; V ∝ I (at constant T)</b></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ B·iii Magnetic Flux ════ -->
+<div class="qc">
+  <div class="qch"><span class="qn">B · iii</span><span class="qt">Define magnetic flux and state its SI unit. <span class="yb y22">2022</span></span><span class="mk">1 Mark</span></div>
+  <div class="ab">
+
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — Magnetic Field Lines</div>
+      <div class="row basics"><span class="rl">Magnetic field B</span><span class="rs">:</span><span class="rv">The force field created by magnets or moving charges. We draw magnetic field lines (like bar magnet: lines from N to S outside, S to N inside).</span></div>
+      <div class="row basics"><span class="rl">Key difference</span><span class="rs">:</span><span class="rv">Unlike electric field lines (start/end on charges), magnetic field lines are <b>always closed loops</b> — they have no start or end (no magnetic monopoles).</span></div>
+      <div class="row basics"><span class="rl">Magnetic flux</span><span class="rs">:</span><span class="rv">Exactly like electric flux — it's the count of magnetic field lines passing through a surface. Same formula structure as electric flux.</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title concept-pill">💡 CONCEPT — Why Magnetic Flux Matters</div>
+      <div class="row step"><span class="rl">Faraday's Law</span><span class="rs">:</span><span class="rv">Changing magnetic flux through a coil <b>INDUCES an EMF</b> in the coil. This is the entire foundation of generators, transformers, and induction cooktops.</span></div>
+      <div class="row step"><span class="rl">More flux = more EMF</span><span class="rs">:</span><span class="rv">The faster the flux changes, the larger the induced voltage.</span></div>
+      <div class="row eg"><span class="rl">Example</span><span class="rs">:</span><span class="rv">Push a bar magnet into a coil → flux increases → EMF induced → current flows in coil. Pull it out → flux decreases → opposite current. Stop moving → flux constant → no EMF.</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title formula-pill">📐 FORMULA</div>
+      <div class="row form"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>Φ<sub>B</sub> = B × A × cosθ</b></span></div>
+      <div class="row step"><span class="rl">B</span><span class="rs">=</span><span class="rv">Magnetic field strength (Tesla, T)</span></div>
+      <div class="row step"><span class="rl">A</span><span class="rs">=</span><span class="rv">Area of surface (m²)</span></div>
+      <div class="row step"><span class="rl">θ</span><span class="rs">=</span><span class="rv">Angle between B and the normal to the surface</span></div>
+      <div class="row form"><span class="rl">SI Unit</span><span class="rs">:</span><span class="rv"><b>Weber (Wb)</b> = T·m² = V·s</span></div>
+      <div class="row tip"><span class="rl">Remember</span><span class="rs">:</span><span class="rv">For a <b>closed surface</b>: total magnetic flux = ZERO always (∮B·dA = 0), because field lines are loops — as many enter as leave.</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Bar magnet and ring</span><span class="rs">:</span><span class="rv">Push a bar magnet through a circular ring. Field lines pass through the ring = magnetic flux. As magnet enters deeper, flux increases. As it comes out, flux decreases. This CHANGE in flux induces current in the ring — Faraday's discovery!</span></div>
+      <div class="row eg"><span class="rl">Solar panel link</span><span class="rs">:</span><span class="rv">Solar panels convert sunlight to electricity. Similarly, a changing magnetic flux through a coil creates electricity. This is the basis of every electrical generator on Earth.</span></div>
+      <div class="row eg"><span class="rl">Zero flux case</span><span class="rs">:</span><span class="rv">If you hold a flat coil parallel to a magnetic field (field lines slide along the coil surface, not through it), the flux is zero — so no EMF is induced in the coil.</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="row ans"><span class="rl">Definition</span><span class="rs">:</span><span class="rv">Magnetic flux (Φ<sub>B</sub>) through a surface is the total number of magnetic field lines passing normally through that surface.</span></div>
+      <div class="row ans"><span class="rl">Formula &amp; Unit</span><span class="rs">:</span><span class="rv"><b>Φ<sub>B</sub> = BA cosθ &nbsp;; &nbsp; SI unit = Weber (Wb)</b></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ B·iv Power Factor ════ -->
+<div class="qc">
+  <div class="qch"><span class="qn">B · iv</span><span class="qt">Define power factor of an AC circuit. <span class="yb y24">2024</span></span><span class="mk">1 Mark</span></div>
+  <div class="ab">
+
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — AC vs DC and Phase Difference</div>
+      <div class="row basics"><span class="rl">DC circuit</span><span class="rs">:</span><span class="rv">Current and voltage are always in same direction. Power = V × I (simple).</span></div>
+      <div class="row basics"><span class="rl">AC circuit</span><span class="rs">:</span><span class="rv">Voltage and current both alternate (oscillate). But in a circuit with inductors or capacitors, current and voltage are <b>not in phase</b> — one leads or lags the other.</span></div>
+      <div class="row basics"><span class="rl">Phase difference φ</span><span class="rs">:</span><span class="rv">The angle by which current lags (or leads) the voltage. In a pure resistor: φ = 0° (in phase). In a pure inductor: φ = 90° (current lags V by 90°). In a pure capacitor: φ = 90° (current leads V by 90°).</span></div>
+      <div class="row basics"><span class="rl">Why does it matter?</span><span class="rs">:</span><span class="rv">When V and I are out of phase, the <b>actual (useful) power</b> consumed is LESS than V×I. The ratio of useful power to total apparent power = <b>power factor</b>.</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title concept-pill">💡 CONCEPT</div>
+      <div class="row step"><span class="rl">Apparent power</span><span class="rs">:</span><span class="rv">= V<sub>rms</sub> × I<sub>rms</sub> (the power the source SEEMS to supply)</span></div>
+      <div class="row step"><span class="rl">True power</span><span class="rs">:</span><span class="rv">= V<sub>rms</sub> × I<sub>rms</sub> × cosφ (the power <b>actually consumed</b> as heat or work)</span></div>
+      <div class="row step"><span class="rl">Power factor</span><span class="rs">:</span><span class="rv">= True power / Apparent power = cosφ</span></div>
+      <div class="row eg"><span class="rl">Example</span><span class="rs">:</span><span class="rv">Factory with V=230V, I=10A, cosφ=0.6: Apparent power=2300VA, True power=1380W. The remaining 920 VA is "wasted" (bounced back and forth in inductors).</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title formula-pill">📐 FORMULA</div>
+      <div class="row form"><span class="rl">Power factor</span><span class="rs">=</span><span class="rv"><b>cosφ = R/Z</b></span></div>
+      <div class="row step"><span class="rl">R</span><span class="rs">=</span><span class="rv">Resistance (Ω)</span></div>
+      <div class="row step"><span class="rl">Z</span><span class="rs">=</span><span class="rv">Impedance = total opposition in AC circuit (Ω)</span></div>
+      <div class="row step"><span class="rl">Range</span><span class="rs">:</span><span class="rv">0 ≤ cosφ ≤ 1. Pure R: cosφ=1 (best). Pure L or C: cosφ=0 (worst — no real power consumed).</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Useless AC example</span><span class="rs">:</span><span class="rv">Think of a child on a swing. You push the swing at the right moment (in phase) → maximum energy transfer. If you push at the wrong moment (out of phase) → you waste energy fighting the swing's natural motion. Power factor measures how 'in phase' you are with the circuit.</span></div>
+      <div class="row eg"><span class="rl">Industrial problem</span><span class="rs">:</span><span class="rv">Large industries with motors and inductors have low power factor (0.6–0.7). They draw more current from the grid than they actually use. Electricity boards charge extra for this. To fix it, capacitor banks are added to bring power factor closer to 1.</span></div>
+      <div class="row eg"><span class="rl">Ideal vs real</span><span class="rs">:</span><span class="rv">A pure resistor (like an electric heater) has power factor = 1. All power is used as heat. A pure inductor or capacitor has power factor = 0. Power bounces back and forth — no net energy consumed.</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="row ans"><span class="rl">Definition</span><span class="rs">:</span><span class="rv">Power factor is the ratio of true (active) power to apparent power in an AC circuit.</span></div>
+      <div class="row ans"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>Power factor = cosφ = R/Z &nbsp;; &nbsp; Range: 0 to 1</b></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ B·v TIR ════ -->
+<div class="qc">
+  <div class="qch"><span class="qn">B · v</span><span class="qt">What is total internal reflection (TIR)? <span class="yb y23">2023</span></span><span class="mk">1 Mark</span></div>
+  <div class="ab">
+
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — Refraction of Light (Snell's Law)</div>
+      <div class="row basics"><span class="rl">Refraction</span><span class="rs">:</span><span class="rv">When light passes from one medium to another, it bends. This is because light travels at different speeds in different media.</span></div>
+      <div class="row basics"><span class="rl">Denser medium</span><span class="rs">:</span><span class="rv">Higher refractive index (n &gt; 1). Light travels SLOWER. E.g., glass (n=1.5), water (n=1.33).</span></div>
+      <div class="row basics"><span class="rl">Rarer medium</span><span class="rs">:</span><span class="rv">Lower refractive index (n closer to 1). Light travels FASTER. E.g., air (n≈1).</span></div>
+      <div class="row basics"><span class="rl">Key rule</span><span class="rs">:</span><span class="rv">Light going from <b>denser → rarer</b> bends <b>away</b> from the normal. The angle of refraction &gt; angle of incidence.</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title concept-pill">💡 CONCEPT — What Happens as Angle Increases?</div>
+      <div class="dbox">
+        Light ray inside glass (denser) → hitting glass-air boundary:<br/>
+        <br/>
+        i = 20° → r = 31° (light exits, bends away from normal)<br/>
+        i = 30° → r = 48° (exits but bends more)<br/>
+        i = 41.8° → r = 90° (refracted ray GRAZES the surface) ← CRITICAL ANGLE<br/>
+        i = 50° → NO refracted ray. 100% reflection back into glass ← TOTAL INTERNAL REFLECTION<br/>
+        <small>i = angle of incidence, r = angle of refraction. Critical angle for glass-air ≈ 41.8°</small>
+      </div>
+      <div class="row step"><span class="rl">Two conditions</span><span class="rs">:</span><span class="rv"><b>1.</b> Light must go from DENSER to RARER medium. &nbsp; <b>2.</b> Angle of incidence must be GREATER than critical angle.</span></div>
+      <div class="row step"><span class="rl">Critical angle</span><span class="rs">:</span><span class="rv">sin i<sub>c</sub> = n<sub>rarer</sub>/n<sub>denser</sub> = 1/n. For glass-air: sin i<sub>c</sub> = 1/1.5 → i<sub>c</sub> = 41.8°</span></div>
+      <div class="row eg"><span class="rl">Applications</span><span class="rs">:</span><span class="rv"><b>Optical fibre</b> (internet, endoscopy), diamond brilliance, periscope prisms, mirage in desert.</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Swimming pool example</span><span class="rs">:</span><span class="rv">Look up from underwater at a steep angle — you see the outside world through the water surface. But at a very shallow angle (beyond critical angle), you see only the reflection of the pool floor. That's TIR — the surface acts like a perfect mirror from inside!</span></div>
+      <div class="row eg"><span class="rl">Optical fibre</span><span class="rs">:</span><span class="rv">In optical fibre cables, light enters one end of a thin glass strand and bounces along via TIR thousands of times per metre — never escaping — all the way to the other end. Your internet connection travels as light pulses using TIR!</span></div>
+      <div class="row eg"><span class="rl">Diamond sparkle</span><span class="rs">:</span><span class="rv">Diamonds are cut so light enters from the top and hits the internal faces at angles greater than the critical angle (≈24°). TIR bounces light inside multiple times and it exits in brilliant sparkles — that's why diamonds shine so much!</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="row ans"><span class="rl">Definition</span><span class="rs">:</span><span class="rv">TIR is the complete reflection of light back into a denser medium when light travels from a denser to rarer medium and the angle of incidence exceeds the critical angle.</span></div>
+      <div class="row ans"><span class="rl">Conditions</span><span class="rs">:</span><span class="rv"><b>(1) Denser → rarer medium &nbsp; (2) i &gt; i<sub>c</sub></b></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ B·vi Work Function ════ -->
+<div class="qc">
+  <div class="qch"><span class="qn">B · vi</span><span class="qt">Define work function of a metal. <span class="yb y22">2022</span></span><span class="mk">1 Mark</span></div>
+  <div class="ab">
+
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — Why Electrons Stay Inside Metal?</div>
+      <div class="row basics"><span class="rl">Metal structure</span><span class="rs">:</span><span class="rv">A metal consists of positive ion cores arranged in a crystal lattice, with free electrons moving freely between them (electron sea model).</span></div>
+      <div class="row basics"><span class="rl">Why trapped?</span><span class="rs">:</span><span class="rv">Although electrons are "free" to move inside the metal, they are still attracted to the positive ions. To escape the metal surface, an electron needs enough energy to overcome this attraction.</span></div>
+      <div class="row basics"><span class="rl">Analogy</span><span class="rs">:</span><span class="rv">Electrons in a metal are like students in a school. They can move freely inside (the metal), but need a specific minimum energy (bus fare) to leave (escape the metal surface).</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title concept-pill">💡 CONCEPT</div>
+      <div class="row step"><span class="rl">Work function φ</span><span class="rs">:</span><span class="rv">The MINIMUM energy needed to pull ONE electron from the SURFACE of the metal. It's the "escape energy" for surface electrons.</span></div>
+      <div class="row step"><span class="rl">Why surface?</span><span class="rs">:</span><span class="rv">Surface electrons need the least energy to escape (they only have the metal on one side pulling them back). Electrons deeper inside need MORE energy.</span></div>
+      <div class="row step"><span class="rl">Different metals</span><span class="rs">:</span><span class="rv">Each metal has a unique φ. Caesium (Cs): φ ≈ 2 eV (easiest to eject → used in photoelectric cells). Tungsten (W): φ ≈ 4.5 eV. Platinum: φ ≈ 5.7 eV.</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title formula-pill">📐 FORMULA</div>
+      <div class="row form"><span class="rl">φ = h ν₀</span><span class="rs">:</span><span class="rv">h = Planck's constant = 6.626×10⁻³⁴ J·s, ν₀ = threshold frequency (minimum frequency of light needed to eject electron)</span></div>
+      <div class="row step"><span class="rl">Unit</span><span class="rs">:</span><span class="rv">Joule (J) or electron-volt (eV). &nbsp; 1 eV = 1.6×10⁻¹⁹ J.</span></div>
+      <div class="row step"><span class="rl">Einstein's eq.</span><span class="rs">:</span><span class="rv">KE<sub>max</sub> of ejected electron = hν − φ. If photon energy (hν) = φ exactly, electron just barely escapes with zero KE.</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Bouncer at a club</span><span class="rs">:</span><span class="rv">Think of the metal surface as a club, and electrons as people inside. The work function is the 'exit fee' — the minimum energy needed to leave the club. Photons are like people paying the fee from outside. If a photon carries enough energy (hν ≥ φ), the electron can leave. If not, it stays inside no matter how many photons come (just like a crowd can't help if no one has enough money).</span></div>
+      <div class="row eg"><span class="rl">Different metals</span><span class="rs">:</span><span class="rv">Caesium has the lowest work function (~2 eV) — its electrons are easy to free, like a club with a very low exit fee. That's why caesium is used in automatic door sensors and camera light meters.</span></div>
+      <div class="row eg"><span class="rl">Threshold analogy</span><span class="rs">:</span><span class="rv">You need at least ₹100 to buy an item. If you have ₹50, you can't buy it — no matter how many ₹50 notes you bring (intensity). Only one ₹200 note (high frequency photon) works. That's exactly how threshold frequency works.</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="row ans"><span class="rl">Definition</span><span class="rs">:</span><span class="rv">Work function (φ) is the minimum amount of energy required to completely remove one electron from the surface of a metal.</span></div>
+      <div class="row ans"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>φ = hν₀ &nbsp;; &nbsp; unit = eV or Joule &nbsp;; different for each metal</b></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ B·vii Rectifier ════ -->
+<div class="qc">
+  <div class="qch"><span class="qn">B · vii</span><span class="qt">What is a rectifier? <span class="yb y24">2024</span></span><span class="mk">1 Mark</span></div>
+  <div class="ab">
+
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — AC vs DC and p-n Junction Diode</div>
+      <div class="row basics"><span class="rl">AC (alternating)</span><span class="rs">:</span><span class="rv">Current direction reverses periodically (50 times/sec in India). What comes from the mains socket. Like a seesaw — current flows both ways alternately.</span></div>
+      <div class="row basics"><span class="rl">DC (direct)</span><span class="rs">:</span><span class="rv">Current flows in only ONE direction. What batteries give. What electronic devices (phones, laptops) need. Like water flowing in one direction only.</span></div>
+      <div class="row basics"><span class="rl">p-n diode property</span><span class="rs">:</span><span class="rv">A p-n junction diode is like a ONE-WAY VALVE for current. Forward biased → conducts (low resistance). Reverse biased → blocks (very high resistance). This property is used for rectification.</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title concept-pill">💡 CONCEPT — How Rectification Works</div>
+      <div class="row step"><span class="rl">Half-wave rectifier</span><span class="rs">:</span><span class="rv">Uses ONE diode. During +ve half cycle → diode forward biased → current flows. During −ve half cycle → diode reverse biased → no current. <b>Only +ve half cycles appear at output.</b></span></div>
+      <div class="row step"><span class="rl">Full-wave rectifier</span><span class="rs">:</span><span class="rv">Uses FOUR diodes (bridge). Both +ve and −ve half cycles are converted to +ve. Output: both half cycles, double the frequency of ripple.</span></div>
+      <div class="dbox">
+        AC input: ∿∿∿∿∿ (+ve then −ve, repeating)<br/>
+        Half-wave output: ⌒ _ ⌒ _ ⌒ (only +ve half, −ve missing)<br/>
+        Full-wave output: ⌒⌒⌒⌒⌒ (both halves flipped to +ve)<br/>
+        + Capacitor filter → smooth DC (nearly flat line)<br/>
+        <small>Rectifier converts AC → DC. Used in all electronic power supplies.</small>
+      </div>
+    </div>
+
+    <div class="blk">
+      <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">One-way valve</span><span class="rs">:</span><span class="rv">A diode is like a one-way valve in a water pipe — water (current) flows freely one way but is completely blocked the other way. AC is like water sloshing back and forth. The valve lets only forward flow pass — creating one-direction (DC) output.</span></div>
+      <div class="row eg"><span class="rl">Charging your phone</span><span class="rs">:</span><span class="rv">Your phone charger converts 230V AC (from wall) to 5V DC (for phone). Inside the charger adapter is a full-wave rectifier that converts AC → DC, plus a filter to smooth it. Without the rectifier, your phone would get AC and be destroyed!</span></div>
+      <div class="row eg"><span class="rl">Four diodes bridge</span><span class="rs">:</span><span class="rv">A full-wave bridge rectifier uses 4 diodes arranged cleverly. During the positive half of AC, two diodes conduct. During the negative half, the other two conduct — but always in the same direction through the load. Both halves of AC are 'used up'.</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="row ans"><span class="rl">Definition</span><span class="rs">:</span><span class="rv">A rectifier is an electronic device (using p-n junction diodes) that converts alternating current (AC) into direct current (DC) by allowing current to flow in only one direction.</span></div>
+      <div class="row ans"><span class="rl">Types</span><span class="rs">:</span><span class="rv"><b>Half-wave (1 diode) and Full-wave (2 or 4 diodes).</b></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ B·viii De Morgan ════ -->
+<div class="qc">
+  <div class="qch"><span class="qn">B · viii</span><span class="qt">State De Morgan's second theorem. <span class="yb y23">2023</span></span><span class="mk">1 Mark</span></div>
+  <div class="ab">
+
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — Boolean Algebra and Logic Gates</div>
+      <div class="row basics"><span class="rl">Boolean variables</span><span class="rs">:</span><span class="rv">Only TWO values: 0 (FALSE/OFF) or 1 (TRUE/ON). Used in digital electronics and computers.</span></div>
+      <div class="row basics"><span class="rl">OR gate (A+B)</span><span class="rs">:</span><span class="rv">Output = 1 if ANY input is 1. Like "A OR B" in English. 0+0=0, 0+1=1, 1+0=1, 1+1=1.</span></div>
+      <div class="row basics"><span class="rl">AND gate (A·B)</span><span class="rs">:</span><span class="rv">Output = 1 only if ALL inputs are 1. Like "A AND B". 0·0=0, 0·1=0, 1·0=0, 1·1=1.</span></div>
+      <div class="row basics"><span class="rl">NOT gate (A')</span><span class="rs">:</span><span class="rv">Inverts the input. 0' = 1, 1' = 0. Like a switch that does the opposite.</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title concept-pill">💡 De Morgan's THEOREMS</div>
+      <div class="row step"><span class="rl">First theorem</span><span class="rs">:</span><span class="rv"><b>(A · B)' = A' + B'</b> → NOT(A AND B) = (NOT A) OR (NOT B)</span></div>
+      <div class="row step"><span class="rl">Second theorem</span><span class="rs">:</span><span class="rv"><b>(A + B)' = A' · B'</b> → NOT(A OR B) = (NOT A) AND (NOT B)</span></div>
+      <div class="row step"><span class="rl">Proof by truth table</span><span class="rs">:</span><span class="rv">A=0,B=0: (0+0)'=1 and 0'·0'=1·1=1 ✓ | A=0,B=1: (0+1)'=0 and 1·0=0 ✓ | A=1,B=0: (1+0)'=0 and 0·1=0 ✓ | A=1,B=1: (1+1)'=0 and 0·0=0 ✓</span></div>
+      <div class="row tip"><span class="rl">Memory trick</span><span class="rs">:</span><span class="rv">"Break the bar, change the operator." (A+B)' → break bar over (A+B) → A'·B' (+ changed to ·)</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Light switch analogy</span><span class="rs">:</span><span class="rv">Two switches A and B in parallel: light is ON if A OR B is on. The complement (A+B)' means 'light is OFF' = 'A is off AND B is off' = A'·B'. Exactly De Morgan's 2nd theorem in real life!</span></div>
+      <div class="row eg"><span class="rl">NOR gate</span><span class="rs">:</span><span class="rv">A NOR gate (NOT-OR) gives output 1 only when BOTH inputs are 0. This matches (A+B)' = A'·B'. That's why NOR is called a universal gate — any logic circuit can be built from NOR gates alone.</span></div>
+      <div class="row eg"><span class="rl">Everyday logic</span><span class="rs">:</span><span class="rv">Statement: 'I am NOT going to eat pizza OR pasta tonight.' This means: 'I am NOT going to eat pizza AND I am NOT going to eat pasta.' That's De Morgan's 2nd theorem in plain English!</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="row ans"><span class="rl">2nd Theorem</span><span class="rs">:</span><span class="rv">The complement of the OR of two variables equals the AND of their individual complements.</span></div>
+      <div class="row ans"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>(A + B)' = A' · B'</b></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ B·ix Nuclear Binding Energy ════ -->
+<div class="qc">
+  <div class="qch"><span class="qn">B · ix</span><span class="qt">Define nuclear binding energy. <span class="yb y22">2022</span></span><span class="mk">1 Mark</span></div>
+  <div class="ab">
+
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — Inside the Nucleus</div>
+      <div class="row basics"><span class="rl">Nucleus</span><span class="rs">:</span><span class="rv">The tiny central core of an atom (size ~10⁻¹⁵ m). Contains protons (+ve) and neutrons (neutral) packed extremely tightly.</span></div>
+      <div class="row basics"><span class="rl">Problem</span><span class="rs">:</span><span class="rv">Protons are positively charged. Positive charges REPEL each other. So why doesn't the nucleus fly apart? There must be a stronger attractive force.</span></div>
+      <div class="row basics"><span class="rl">Strong nuclear force</span><span class="rs">:</span><span class="rv">A very strong attractive force between nucleons (protons AND neutrons) that holds the nucleus together. Acts only over very short range (~10⁻¹⁵ m). About 100 times stronger than electromagnetic repulsion at that range.</span></div>
+      <div class="row basics"><span class="rl">Mass defect</span><span class="rs">:</span><span class="rv">The actual mass of a nucleus is LESS than the sum of masses of its individual protons and neutrons. This "missing" mass = mass defect (Δm). It was converted to energy when the nucleus formed.</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title concept-pill">💡 CONCEPT — Binding Energy</div>
+      <div class="row step"><span class="rl">Energy released</span><span class="rs">:</span><span class="rv">When protons and neutrons come together to form a nucleus, energy is <b>released</b> (= binding energy). This comes from the mass defect via E = Δm·c².</span></div>
+      <div class="row step"><span class="rl">To break nucleus</span><span class="rs">:</span><span class="rv">To SEPARATE a nucleus back into individual protons and neutrons, you need to SUPPLY exactly the binding energy amount. So binding energy = energy required to dismantle the nucleus.</span></div>
+      <div class="row eg"><span class="rl">Example</span><span class="rs">:</span><span class="rv">He-4 has 2 protons + 2 neutrons. Mass of nucleus = 4.002602 u. Mass of 2p+2n separately = 4.031882 u. Δm = 0.029280 u. BE = 0.029280 × 931.5 = 27.3 MeV.</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title formula-pill">📐 FORMULA</div>
+      <div class="row form"><span class="rl">Binding Energy</span><span class="rs">:</span><span class="rv"><b>BE = Δm × c²</b> &nbsp; where Δm = mass defect (kg), c = 3×10⁸ m/s</span></div>
+      <div class="row form"><span class="rl">In MeV</span><span class="rs">:</span><span class="rv"><b>BE = Δm (in u) × 931.5 MeV</b> &nbsp; (1 u = 931.5 MeV/c²)</span></div>
+      <div class="row step"><span class="rl">BE per nucleon</span><span class="rs">:</span><span class="rv">BE/A. Maximum at Fe-56 (≈8.8 MeV). Higher BE/A = more stable nucleus.</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Nuclear cement analogy</span><span class="rs">:</span><span class="rv">Binding energy is like the 'nuclear cement' holding protons and neutrons together. To break a nucleus apart (like demolishing a building), you must supply this energy. The stronger the cement (higher BE), the harder it is to break.</span></div>
+      <div class="row eg"><span class="rl">Mass defect mystery</span><span class="rs">:</span><span class="rv">Weigh 2 protons and 2 neutrons separately — total mass = X. Now form helium nucleus from them — mass = slightly less than X. The 'missing' mass became energy (E=mc²) when the nucleus formed. That's the binding energy released during nucleus formation.</span></div>
+      <div class="row eg"><span class="rl">Most stable nucleus</span><span class="rs">:</span><span class="rv">Iron-56 has the highest binding energy per nucleon (8.8 MeV). It's the most stable nucleus. Stars fuse lighter nuclei up to iron (releasing energy). Beyond iron, fusion requires energy — so stars can't fuse beyond iron naturally.</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="row ans"><span class="rl">Definition</span><span class="rs">:</span><span class="rv">Nuclear binding energy is the minimum energy required to completely separate all nucleons (protons and neutrons) of a nucleus to infinite distance.</span></div>
+      <div class="row ans"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>BE = Δm × c² &nbsp;; Δm = mass defect. Higher BE = more stable nucleus.</b></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ B·x Critical Angle ════ -->
+<div class="qc">
+  <div class="qch"><span class="qn">B · x</span><span class="qt">What is critical angle? On what factors does it depend? <span class="yb y24">2024</span></span><span class="mk">1 Mark</span></div>
+  <div class="ab">
+
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — Snell's Law Recap</div>
+      <div class="row basics"><span class="rl">Snell's law</span><span class="rs">:</span><span class="rv">n₁ sinθ₁ = n₂ sinθ₂. When light goes from denser (n₁) to rarer (n₂) medium: sinθ₂ = (n₁/n₂) sinθ₁. Since n₁ &gt; n₂, we have sinθ₂ &gt; sinθ₁, so θ₂ &gt; θ₁. Refracted ray bends away from normal.</span></div>
+      <div class="row basics"><span class="rl">What if θ₂ = 90°?</span><span class="rs">:</span><span class="rv">The refracted ray would go exactly along the surface (grazing). The angle of incidence at which this happens is called the <b>critical angle</b>.</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title concept-pill">💡 CONCEPT &amp; DERIVATION of Formula</div>
+      <div class="row step"><span class="rl">At critical angle</span><span class="rs">:</span><span class="rv">θ₁ = i<sub>c</sub>, θ₂ = 90°. Snell's law: n₁ sin i<sub>c</sub> = n₂ sin 90° = n₂ × 1 = n₂</span></div>
+      <div class="row form"><span class="rl">So</span><span class="rs">:</span><span class="rv"><b>sin i<sub>c</sub> = n₂/n₁</b> &nbsp; for denser medium n₁ and rarer medium n₂. For glass-air: sin i<sub>c</sub> = 1/1.5 → i<sub>c</sub> ≈ 41.8°</span></div>
+      <div class="row step"><span class="rl">Factor 1</span><span class="rs">:</span><span class="rv"><b>Refractive indices</b>: Higher n₁ (denser medium) → smaller sin i<sub>c</sub> → smaller critical angle. Diamond (n=2.42) has i<sub>c</sub> ≈ 24.4° — much smaller than glass!</span></div>
+      <div class="row step"><span class="rl">Factor 2</span><span class="rs">:</span><span class="rv"><b>Wavelength of light</b>: n varies with λ (dispersion). Violet light has higher n → smaller i<sub>c</sub>. Red light has lower n → larger i<sub>c</sub>.</span></div>
+      <div class="row step"><span class="rl">Factor 3</span><span class="rs">:</span><span class="rv"><b>Temperature</b>: Refractive index slightly changes with temperature → i<sub>c</sub> also changes slightly.</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Denser → rarer requirement</span><span class="rs">:</span><span class="rv">TIR only happens when light goes from a denser medium to a rarer medium. Light going from air into glass (rarer to denser) NEVER shows TIR — it just refracts. You can't have TIR while diving into a pool (air to water), only while looking up from inside the pool (water to air).</span></div>
+      <div class="row eg"><span class="rl">Diamond vs glass</span><span class="rs">:</span><span class="rv">Diamond has a much smaller critical angle (~24°) than glass (~42°). This means light is MORE easily trapped inside diamond. Diamond cutters exploit this — they cut faces at precise angles so light bounces inside many times before exiting, creating maximum brilliance.</span></div>
+      <div class="row eg"><span class="rl">Mirage in desert</span><span class="rs">:</span><span class="rv">On a hot day, the air near the ground is very hot (rarer, lower refractive index). Light from the sky travels from cooler air (denser) to hot air (rarer) and curves by TIR — creating the illusion of water on the road ahead. This is a mirage!</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="row ans"><span class="rl">Definition</span><span class="rs">:</span><span class="rv">Critical angle (i<sub>c</sub>) is the angle of incidence in the denser medium for which the angle of refraction in the rarer medium is exactly 90°.</span></div>
+      <div class="row ans"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>sin i<sub>c</sub> = 1/n. Depends on: refractive indices of both media, wavelength of light, temperature.</b></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ B·xi Photon ════ -->
+<div class="qc">
+  <div class="qch"><span class="qn">B · xi</span><span class="qt">What is a photon? State its properties. <span class="yb y23">2023</span></span><span class="mk">1 Mark</span></div>
+  <div class="ab">
+
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — Is Light a Wave or a Particle?</div>
+      <div class="row basics"><span class="rl">Wave theory of light</span><span class="rs">:</span><span class="rv">Maxwell (1865): Light is an electromagnetic wave. Explains interference, diffraction, polarisation. But FAILS to explain photoelectric effect.</span></div>
+      <div class="row basics"><span class="rl">Problem with waves</span><span class="rs">:</span><span class="rv">Wave theory says: bright light of ANY colour should eject electrons (given enough intensity). But experiment shows: dim UV light ejects electrons but BRIGHT red light does NOT — regardless of intensity. Waves alone can't explain this.</span></div>
+      <div class="row basics"><span class="rl">Einstein's solution (1905)</span><span class="rs">:</span><span class="rv">Light comes in discrete packets of energy called <b>photons</b>. Each photon carries a fixed energy E = hν. The colour (frequency) determines energy per photon, not brightness.</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title concept-pill">💡 PROPERTIES OF A PHOTON</div>
+      <div class="row step"><span class="rl">Energy</span><span class="rs">:</span><span class="rv">E = hν = hc/λ &nbsp; (h=6.626×10⁻³⁴ J·s, ν=frequency, λ=wavelength)</span></div>
+      <div class="row step"><span class="rl">Rest mass</span><span class="rs">:</span><span class="rv">m₀ = 0 (photon has no rest mass. But it has energy and momentum!)</span></div>
+      <div class="row step"><span class="rl">Speed</span><span class="rs">:</span><span class="rv">Always c = 3×10⁸ m/s in vacuum. Never slows down or speeds up in vacuum.</span></div>
+      <div class="row step"><span class="rl">Momentum</span><span class="rs">:</span><span class="rv">p = h/λ = E/c. Photons carry momentum even though massless!</span></div>
+      <div class="row step"><span class="rl">Charge</span><span class="rs">:</span><span class="rv">Zero. Photons are electrically neutral.</span></div>
+      <div class="row step"><span class="rl">Wave-particle duality</span><span class="rs">:</span><span class="rv">Light is BOTH wave (interference, diffraction) AND particle (photoelectric, Compton effect). Which behaviour shows depends on the experiment.</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Red vs UV light on metal</span><span class="rs">:</span><span class="rv">Shine bright red light on a metal → no electrons ejected, no matter how bright. Shine dim UV light → electrons immediately ejected. Red light photons each have low energy (hν is small). UV photons each have high energy. It's the energy per photon that matters — not total brightness. This proves light comes as individual packets (photons).</span></div>
+      <div class="row eg"><span class="rl">Photon like a bullet</span><span class="rs">:</span><span class="rv">Imagine bullets (photons) hitting a wall (metal surface). A slow bullet (low frequency = red light) never knocks out a chip. A fast bullet (high frequency = UV) knocks a chip immediately. Firing a thousand slow bullets still won't knock a chip — you need ONE fast enough bullet.</span></div>
+      <div class="row eg"><span class="rl">Massless but real momentum</span><span class="rs">:</span><span class="rv">Sunlight exerts radiation pressure on spacecraft. Proposed solar sails can be pushed by photon pressure alone — no fuel needed! Even though photons have zero mass, they carry momentum p=h/λ. This is what pushes a solar sail.</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="row ans"><span class="rl">Definition</span><span class="rs">:</span><span class="rv">A photon is a quantum (packet) of electromagnetic energy. It is the basic particle of light.</span></div>
+      <div class="row ans"><span class="rl">Properties</span><span class="rs">:</span><span class="rv"><b>E=hν, p=h/λ, m₀=0, charge=0, speed=c, shows wave-particle duality.</b></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ B·xii Coulomb's Law ════ -->
+<div class="qc">
+  <div class="qch"><span class="qn">B · xii</span><span class="qt">State Coulomb's law of electrostatics. <span class="yb y22">2022</span></span><span class="mk">1 Mark</span></div>
+  <div class="ab">
+
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — Electric Charge</div>
+      <div class="row basics"><span class="rl">Electric charge</span><span class="rs">:</span><span class="rv">A fundamental property of matter. Two types: positive (+) and negative (−). Like charges repel, unlike charges attract.</span></div>
+      <div class="row basics"><span class="rl">SI unit</span><span class="rs">:</span><span class="rv">Coulomb (C). Charge of one electron = −1.6×10⁻¹⁹ C. Charge of one proton = +1.6×10⁻¹⁹ C.</span></div>
+      <div class="row basics"><span class="rl">Coulomb's experiment</span><span class="rs">:</span><span class="rv">Charles Coulomb (1785) used a torsion balance to measure the force between charged spheres and found the mathematical relationship.</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title concept-pill">💡 CONCEPT — How Force Depends on Charge and Distance</div>
+      <div class="row step"><span class="rl">Observation 1</span><span class="rs">:</span><span class="rv">Double the charge on either sphere → force doubles. So F ∝ q₁ and F ∝ q₂. Therefore F ∝ q₁q₂.</span></div>
+      <div class="row step"><span class="rl">Observation 2</span><span class="rs">:</span><span class="rv">Double the distance → force reduces to 1/4. Triple the distance → 1/9. So F ∝ 1/r². This is the "inverse square law."</span></div>
+      <div class="row eg"><span class="rl">Analogy</span><span class="rs">:</span><span class="rv">Like gravity (F = Gm₁m₂/r²) but for charges. Both are inverse square laws. Coulomb force is ~10³⁶ times stronger than gravity at atomic distances!</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title formula-pill">📐 FORMULA</div>
+      <div class="row form"><span class="rl">Coulomb's Law</span><span class="rs">:</span><span class="rv"><b>F = k·q₁·q₂ / r²</b></span></div>
+      <div class="row step"><span class="rl">k</span><span class="rs">=</span><span class="rv">9 × 10⁹ N·m²/C² (Coulomb's constant = 1/4πε₀)</span></div>
+      <div class="row step"><span class="rl">In medium</span><span class="rs">:</span><span class="rv">F = kq₁q₂/(Kr²). Dielectric constant K reduces force.</span></div>
+      <div class="row step"><span class="rl">Direction</span><span class="rs">:</span><span class="rv">Along the line joining the two charges. Like charges → repulsive. Unlike → attractive.</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Inverse square law in life</span><span class="rs">:</span><span class="rv">Coulomb force follows inverse square law — exactly like gravity and light intensity. Stand 1 metre from a lamp — bright. Move to 2 metres — light intensity drops to 1/4. Same principle: double the distance between charges → force becomes 1/4.</span></div>
+      <div class="row eg"><span class="rl">Like charges repel</span><span class="rs">:</span><span class="rv">Try to push two same-pole magnets together — you feel resistance. Same with like charges. Two protons in a nucleus repel each other with a huge Coulomb force. Only the stronger nuclear force holds them together.</span></div>
+      <div class="row eg"><span class="rl">Huge atomic forces</span><span class="rs">:</span><span class="rv">The Coulomb attraction between the electron and proton in a hydrogen atom is about 10³⁶ times stronger than the gravitational attraction between them. Yet gravity keeps planets in orbit. That's how inconceivably strong electrostatic forces are at atomic scale!</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="row ans"><span class="rl">Statement</span><span class="rs">:</span><span class="rv">The electrostatic force between two point charges is directly proportional to the product of their charges and inversely proportional to the square of the distance between them, acting along the line joining them.</span></div>
+      <div class="row ans"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>F = kq₁q₂/r² &nbsp; where k = 9×10⁹ N·m²/C²</b></span></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══ PAPER 1 SECTION C — 2 MARKS ═══ -->
+<div class="sch">SECTION C — Short Answer &nbsp;(2 Marks Each) <span class="sm">Attempt any 8 of 12</span></div>
+
+<!-- C·i Energy in Capacitor -->
+<div class="qc">
+  <div class="qch"><span class="qn">C · i</span><span class="qt">Derive the expression for energy stored in a capacitor. <span class="yb y24">2024</span></span><span class="mk">2 Marks</span></div>
+  <div class="ab">
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — What is a Capacitor?</div>
+      <div class="row basics"><span class="rl">Capacitor</span><span class="rs">:</span><span class="rv">Two conducting plates separated by a gap (or dielectric). When connected to a battery, one plate gets +Q and the other −Q. Capacitance C = Q/V. Unit: Farad (F).</span></div>
+      <div class="row basics"><span class="rl">Energy storage</span><span class="rs">:</span><span class="rv">When you push charge onto a capacitor, you do WORK against the existing electric field between the plates. This work is stored as electric potential energy in the field between the plates.</span></div>
+      <div class="row basics"><span class="rl">Analogy</span><span class="rs">:</span><span class="rv">Like pumping air into a tyre. First stroke is easy (little pressure). Each stroke gets harder (more pressure/resistance). Total work done = energy stored in compressed air.</span></div>
+    </div>
+    <div class="blk">
+      <div class="blk-title formula-pill">📐 DERIVATION — Step by Step</div>
+      <div class="row step"><span class="rl">Setup</span><span class="rs">:</span><span class="rv">Charge a capacitor C gradually from 0 to Q. At any instant, charge already on capacitor = q. Voltage at that instant = q/C.</span></div>
+      <div class="row step"><span class="rl">Small work dW</span><span class="rs">:</span><span class="rv">To push a tiny extra charge dq onto the capacitor against voltage q/C: &nbsp; <b>dW = V·dq = (q/C)·dq</b></span></div>
+      <div class="row step"><span class="rl">Total work W</span><span class="rs">:</span><span class="rv">Integrate from q=0 to q=Q: W = ∫₀<sup>Q</sup> (q/C) dq = (1/C) × [q²/2]₀<sup>Q</sup> = Q²/(2C)</span></div>
+      <div class="row step"><span class="rl">Rewrite using Q=CV</span><span class="rs">:</span><span class="rv">W = (CV)²/(2C) = <b>½CV²</b>. Also: W = ½QV (since Q=CV).</span></div>
+      <div class="row ans"><span class="rl">∴ Energy U</span><span class="rs">:</span><span class="rv"><b>U = ½CV² = ½QV = Q²/(2C)</b>
+      <div class="row num" style="background:#fce4ec;"><span class="rl">🔢 Example</span><span class="rs">:</span><span class="rv">C=50μF, V=200V → U=½×50×10⁻⁶×200²=½×2=<b>1 J</b>. Also Q=CV=50×10⁻⁶×200=0.01C. Check: ½QV=½×0.01×200=1J ✓</span></div> &nbsp; (stored in the electric field between the plates)</span></div>
+      <div class="row note"><span class="rl">Numerical</span><span class="rs">:</span><span class="rv">C=100μF, V=100V → U = ½×100×10⁻⁶×100² = ½×10⁻⁴×10⁴ = <b>0.5 J</b></span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Flash photography</span><span class="rs">:</span><span class="rv">A camera flash stores electrical energy in a capacitor. When you press the shutter, the capacitor releases all its stored energy in a tiny fraction of a second — creating an extremely bright, brief flash of light. The energy formula U = ½CV² tells you how much energy was stored.</span></div>
+      <div class="row eg"><span class="rl">Defibrillator</span><span class="rs">:</span><span class="rv">Heart defibrillators (used in hospitals to restart hearts) work by charging a large capacitor to high voltage, then discharging it through the patient's chest in milliseconds. The energy stored in the capacitor does the work.</span></div>
+      <div class="row eg"><span class="rl">Energy in electric field</span><span class="rs">:</span><span class="rv">The energy isn't stored in the metal plates — it's stored in the electric field BETWEEN the plates. This is why breaking a charged capacitor (separating the plates) doesn't release the energy immediately — the field energy stays.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- C·ii KCL -->
+<div class="qc">
+  <div class="qch"><span class="qn">C · ii</span><span class="qt">Explain Kirchhoff's current law (KCL) with a diagram. <span class="yb y23">2023</span></span><span class="mk">2 Marks</span></div>
+  <div class="ab">
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — Conservation of Charge</div>
+      <div class="row basics"><span class="rl">Key principle</span><span class="rs">:</span><span class="rv">Electric charge can neither be created nor destroyed (conservation of charge). At any junction in a circuit, charges cannot accumulate — they must flow in and out equally.</span></div>
+      <div class="row basics"><span class="rl">Junction (node)</span><span class="rs">:</span><span class="rv">A point in a circuit where three or more wires meet. Like a road intersection where cars (charges) come from different directions and leave in different directions.</span></div>
+    </div>
+    <div class="blk">
+      <div class="blk-title concept-pill">💡 CONCEPT</div>
+      <div class="row step"><span class="rl">Statement</span><span class="rs">:</span><span class="rv">At any junction in a circuit, the <b>sum of currents entering = sum of currents leaving</b>. (Or: algebraic sum of all currents = 0.)</span></div>
+      <div class="dbox">
+        &nbsp;&nbsp;&nbsp;&nbsp;3A →──●──← 2A<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5A ↓ (leaving)<br/>
+        KCL: 3 + 2 = 5 ✓ (entering = leaving)<br/>
+        <small>∑I_in = ∑I_out &nbsp;|&nbsp; Based on conservation of electric charge</small>
+      </div>
+      <div class="row form"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>ΣI<sub>in</sub> = ΣI<sub>out</sub></b> &nbsp; or &nbsp; <b>ΣI = 0</b> (at any node)</span></div>
+      <div class="row step"><span class="rl">Physical basis</span><span class="rs">:</span><span class="rv">Conservation of charge. Charge cannot pile up or disappear at a node.</span></div>
+    </div>
+    <div class="blk">
+      <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Same concept, different view</span><span class="rs">:</span><span class="rv">Think of charging a capacitor like pumping air into a tyre. First few pumps are easy (low pressure). As tyre fills, each pump gets harder. Total work done = energy stored. For capacitor: first few charges easy (low voltage), later ones harder (high voltage). Total work = ½CV².</span></div>
+      <div class="row eg"><span class="rl">Capacitor vs battery</span><span class="rs">:</span><span class="rv">Battery stores energy chemically (can slowly charge large things). Capacitor stores energy electrically (charges and discharges INSTANTLY). That's why capacitors are used for quick bursts (camera flash, defibrillator) while batteries are used for sustained power.</span></div>
+      <div class="row eg"><span class="rl">Parallel plate insight</span><span class="rs">:</span><span class="rv">Bringing two charged plates closer together increases electric field between them. More energy stored. Separating them decreases energy. This is how a microphone works — sound waves move a plate, changing capacitance, creating a changing voltage signal.</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="row ans"><span class="rl">Statement</span><span class="rs">:</span><span class="rv">At any node, sum of currents entering = sum of currents leaving. ΣI = 0.</span></div>
+      <div class="row ans"><span class="rl">Basis</span><span class="rs">:</span><span class="rv"><b>Conservation of electric charge. Draw diagram showing 3 currents at a node.</b></span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Road junction analogy</span><span class="rs">:</span><span class="rv">At a busy road intersection: cars coming from north road + cars from east road = cars going to south road + cars going to west road. Traffic (like current) doesn't disappear or appear at junctions. KCL says exactly the same for electric current.</span></div>
+      <div class="row eg"><span class="rl">Water pipe junction</span><span class="rs">:</span><span class="rv">Water flowing in a T-junction: all water that enters must leave. Water doesn't pile up or vanish. Similarly, electric charge cannot accumulate at a circuit node — all current in must equal all current out.</span></div>
+      <div class="row eg"><span class="rl">Circuit board reality</span><span class="rs">:</span><span class="rv">Every IC chip, every phone circuit, every complex circuit uses KCL to design properly. Engineers apply KCL at every node to ensure current flows correctly to each component.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- C·iii Max EMF -->
+<div class="qc">
+  <div class="qch"><span class="qn">C · iii</span><span class="qt">Coil: N=50, A=0.02m², B=0.4T, f=60Hz. Find maximum EMF. <span class="yb y22">2022</span></span><span class="mk">2 Marks</span></div>
+  <div class="ab">
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — AC Generator Principle</div>
+      <div class="row basics"><span class="rl">Principle</span><span class="rs">:</span><span class="rv">When a coil rotates in a uniform magnetic field, the magnetic flux through it changes continuously → EMF is induced (Faraday's law). As the coil rotates, EMF oscillates between maximum and minimum values — this is how AC generators work.</span></div>
+      <div class="row basics"><span class="rl">Instantaneous EMF</span><span class="rs">:</span><span class="rv">e = NBAω sinωt. Maximum occurs when coil plane is <b>parallel to B</b> (sinωt=1, i.e., at ωt=90°).</span></div>
+    </div>
+    <div class="blk">
+      <div class="blk-title solve-pill">🔢 SOLUTION</div>
+      <div class="row step"><span class="rl">Given</span><span class="rs">:</span><span class="rv">N=50, A=0.02 m², B=0.4 T, f=60 Hz</span></div>
+      <div class="row form"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>E<sub>max</sub> = NBAω = NBA(2πf)</b></span></div>
+      <div class="row step"><span class="rl">Step 1: ω</span><span class="rs">=</span><span class="rv">2π × 60 = 120π ≈ 376.99 rad/s</span></div>
+      <div class="row step"><span class="rl">Step 2: NBA</span><span class="rs">=</span><span class="rv">50 × 0.4 × 0.02 = 0.4 Wb</span></div>
+      <div class="row step"><span class="rl">Step 3: E<sub>max</sub></span><span class="rs">=</span><span class="rv">0.4 × 120π = 48π ≈ <b>150.8 V</b></span></div>
+      <div class="row ans"><span class="rl">∴ Answer</span><span class="rs">:</span><span class="rv"><b>E<sub>max</sub> = 48π ≈ 150.8 V</b></span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Bicycle dynamo</span><span class="rs">:</span><span class="rv">A bicycle dynamo is exactly this experiment! The coil (attached to the wheel) rotates in a fixed magnetic field. EMF is maximum when coil is parallel to field, zero when perpendicular to field. Pedal faster (increase f) → brighter light → higher EMF.</span></div>
+      <div class="row eg"><span class="rl">Why AC and not DC from generator?</span><span class="rs">:</span><span class="rv">As the coil rotates, it first moves in one direction relative to the field, then the other. So the induced EMF alternates direction — naturally producing AC. To get DC from a generator, you need a commutator (like in car alternators before rectification).</span></div>
+      <div class="row eg"><span class="rl">Power stations</span><span class="rs">:</span><span class="rv">Large power station generators work on exactly this principle — massive coils rotating in strong magnetic fields, at 50 Hz (3000 RPM in India). The electricity in your home came from such a rotating coil!</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- C·vi Laws of Photoelectric Effect -->
+<div class="qc">
+  <div class="qch"><span class="qn">C · vi</span><span class="qt">State the laws of photoelectric effect. <span class="yb y22">2022</span></span><span class="mk">2 Marks</span></div>
+  <div class="ab">
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — What is Photoelectric Effect?</div>
+      <div class="row basics"><span class="rl">Phenomenon</span><span class="rs">:</span><span class="rv">When light (specifically UV or visible light of high frequency) falls on a metal surface, electrons are emitted. These electrons are called photoelectrons. Discovered by Hertz (1887).</span></div>
+      <div class="row basics"><span class="rl">Why surprising?</span><span class="rs">:</span><span class="rv">The wave theory of light predicted that ANY frequency light should work if intense enough. But experiment showed: BRIGHT RED LIGHT → NO electrons. DIM UV LIGHT → electrons emitted instantly. This completely contradicted wave theory.</span></div>
+    </div>
+    <div class="blk">
+      <div class="blk-title concept-pill">💡 THE FOUR LAWS</div>
+      <div class="row step"><span class="rl">Law 1 — Threshold</span><span class="rs">:</span><span class="rv">Emission happens ONLY if frequency ν ≥ ν₀ (threshold frequency). Below ν₀ → no emission, no matter how bright the light. (Wave theory failed here.)</span></div>
+      <div class="row step"><span class="rl">Law 2 — KE &amp; ν</span><span class="rs">:</span><span class="rv">Maximum KE of emitted electrons depends ONLY on frequency (ν), NOT on intensity. Brighter light → more electrons but NOT faster electrons.</span></div>
+      <div class="row step"><span class="rl">Law 3 — Number</span><span class="rs">:</span><span class="rv">Number of photoelectrons emitted per second ∝ intensity of light (for ν ≥ ν₀). Brighter light → more photons → more electrons.</span></div>
+      <div class="row step"><span class="rl">Law 4 — Instant</span><span class="rs">:</span><span class="rv">Emission is instantaneous (&lt;10⁻⁹ s). No time delay, even at very low intensity.</span></div>
+      <div class="row form"><span class="rl">Einstein's equation</span><span class="rs">:</span><span class="rv"><b>KE<sub>max</sub> = hν − φ</b> &nbsp; (explains all 4 laws perfectly)</span></div>
+    </div>
+    <div class="blk">
+      <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Simple daily example</span><span class="rs">:</span><span class="rv">You earn money from two sources (salary + rent) and spend it on food, bills, and savings. Total income = total spending. KCL says the same for charge at a node: total current in = total current out — charge never disappears.</span></div>
+      <div class="row eg"><span class="rl">Why it must be true</span><span class="rs">:</span><span class="rv">If more current entered a node than left, charge would pile up there. But charge pile-up creates enormous repulsive forces that immediately push current out to restore balance. Nature enforces KCL automatically.</span></div>
+      <div class="row eg"><span class="rl">Complex network shortcut</span><span class="rs">:</span><span class="rv">In complex circuits with many junctions and loops, KCL gives equations at every node. Combine with KVL equations from loops, and you can solve for every unknown current and voltage in the circuit — no matter how complex it is.</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="row ans"><span class="rl">4 Laws</span><span class="rs">:</span><span class="rv"><b>(1) ν≥ν₀ needed &nbsp; (2) KE depends on ν only &nbsp; (3) Number ∝ intensity &nbsp; (4) Instantaneous emission</b></span></div>
+      <div class="row ans"><span class="rl">Einstein eq.</span><span class="rs">:</span><span class="rv"><b>KE<sub>max</sub> = hν − φ</b></span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Coloured light experiment</span><span class="rs">:</span><span class="rv">Shine violet light on a zinc plate — electrons are emitted immediately. Replace with red light of same brightness — no electrons at all. Switch off violet, use brighter red — still nothing. Now dim the violet back on — electrons appear instantly again. Frequency (colour) is what matters, not brightness.</span></div>
+      <div class="row eg"><span class="rl">One photon, one electron</span><span class="rs">:</span><span class="rv">In photoelectric effect, each photon can release at most ONE electron. Higher intensity = more photons = more electrons per second (higher current). But each electron's speed (kinetic energy) depends only on the photon's frequency — not how many photons there are.</span></div>
+      <div class="row eg"><span class="rl">Automatic doors and burglar alarms</span><span class="rs">:</span><span class="rv">The photoelectric effect powers these everyday devices. A light beam hits a metal sensor. When someone interrupts the beam, fewer photons hit the sensor, current drops, and the circuit triggers the alarm or door motor.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- C·vii Bohr Orbit Radius -->
+<div class="qc">
+  <div class="qch"><span class="qn">C · vii</span><span class="qt">Derive the radius of the n<sup>th</sup> Bohr orbit in hydrogen atom. <span class="yb y24">2024</span></span><span class="mk">2 Marks</span></div>
+  <div class="ab">
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — Bohr's Model of Atom</div>
+      <div class="row basics"><span class="rl">Rutherford problem</span><span class="rs">:</span><span class="rv">Rutherford's nuclear model said electrons orbit the nucleus. BUT: a moving charge in circular orbit should radiate energy → lose energy → spiral into nucleus in ~10⁻⁸ s. Atoms should NOT be stable. But they ARE stable!</span></div>
+      <div class="row basics"><span class="rl">Bohr's solution (1913)</span><span class="rs">:</span><span class="rv">Electrons can only exist in specific allowed orbits where they do NOT radiate. These are called stationary orbits. The condition: angular momentum = integer multiple of h/2π.</span></div>
+    </div>
+    <div class="blk">
+      <div class="blk-title formula-pill">📐 DERIVATION</div>
+      <div class="row step"><span class="rl">Postulate 1</span><span class="rs">:</span><span class="rv">Centripetal force = Electrostatic attraction: mv²/r = ke²/r² → <b>mv² = ke²/r</b> …(1)</span></div>
+      <div class="row step"><span class="rl">Postulate 2</span><span class="rs">:</span><span class="rv">Quantisation of angular momentum: mvr = nh/2π → <b>v = nh/(2πmr)</b> …(2)</span></div>
+      <div class="row step"><span class="rl">Substitute (2) in (1)</span><span class="rs">:</span><span class="rv">m × [nh/2πmr]² = ke²/r → n²h²/(4π²mr) = ke² → r = n²h²/(4π²mke²)</span></div>
+      <div class="row ans"><span class="rl">∴ r<sub>n</sub></span><span class="rs">=</span><span class="rv"><b>r<sub>n</sub> = n² × a₀ &nbsp; where a₀ = 0.529 Å (Bohr radius)</b></span></div>
+      <div class="row step"><span class="rl">Values</span><span class="rs">:</span><span class="rv">n=1: r₁=0.529Å, n=2: r₂=2.116Å (=4×0.529), n=3: r₃=4.76Å (=9×0.529)</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Why fixed orbits?</span><span class="rs">:</span><span class="rv">Before Bohr, scientists couldn't explain why atoms don't collapse (electron losing energy, spiralling in). Bohr said: electrons can ONLY exist in specific orbits where angular momentum = n×(h/2π). In these orbits, they don't radiate. Like a ball that can only roll on specific grooves of a ramp, not anywhere in between.</span></div>
+      <div class="row eg"><span class="rl">Orbit spacing increases</span><span class="rs">:</span><span class="rv">The distance between orbits increases as we go outward (1st to 2nd orbit: gap = 4×0.529 − 0.529 = 1.59 Å, but 2nd to 3rd: gap = 9×0.529 − 4×0.529 = 2.65 Å). Atoms are mostly empty space — the nucleus is like a grain of sand in the centre of a football stadium!</span></div>
+      <div class="row eg"><span class="rl">Atomic spectra explained</span><span class="rs">:</span><span class="rv">When an electron jumps from outer to inner orbit, it emits a photon of specific frequency. That's why neon signs glow red, sodium lamps glow yellow, and mercury lamps glow blue — each element emits its own unique colour fingerprint.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- C·ix YDSE -->
+<div class="qc">
+  <div class="qch"><span class="qn">C · ix</span><span class="qt">YDSE: d=0.5mm, D=1m, λ=500nm. Find fringe width. <span class="yb y22">2022</span></span><span class="mk">2 Marks</span></div>
+  <div class="ab">
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — Young's Double Slit Experiment</div>
+      <div class="row basics"><span class="rl">Setup</span><span class="rs">:</span><span class="rv">Light passes through two narrow slits (separation d). Each slit acts as a new wave source. The two waves interfere on a screen placed distance D away → bright and dark bands = fringes.</span></div>
+      <div class="row basics"><span class="rl">Constructive interference</span><span class="rs">:</span><span class="rv">When path difference = nλ (waves in phase) → bright fringe.</span></div>
+      <div class="row basics"><span class="rl">Destructive interference</span><span class="rs">:</span><span class="rv">When path difference = (n+½)λ (waves out of phase) → dark fringe.</span></div>
+      <div class="row basics"><span class="rl">Fringe width β</span><span class="rs">:</span><span class="rv">The distance between two consecutive bright (or dark) fringes = λD/d.</span></div>
+    </div>
+    <div class="blk">
+      <div class="blk-title solve-pill">🔢 SOLUTION</div>
+      <div class="row step"><span class="rl">Given</span><span class="rs">:</span><span class="rv">d = 0.5 mm = 5×10⁻⁴ m &nbsp;, D = 1 m &nbsp;, λ = 500 nm = 5×10⁻⁷ m</span></div>
+      <div class="row form"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>β = λD/d</b></span></div>
+      <div class="row step"><span class="rl">Substitute</span><span class="rs">:</span><span class="rv">β = (5×10⁻⁷ × 1) / (5×10⁻⁴) = 5×10⁻⁷ / 5×10⁻⁴</span></div>
+      <div class="row step"><span class="rl">Calculate</span><span class="rs">:</span><span class="rv">= 10⁻³ m</span></div>
+      <div class="row ans"><span class="rl">∴ β</span><span class="rs">=</span><span class="rv"><b>1 mm = 1×10⁻³ m</b></span></div>
+      <div class="row tip"><span class="rl">Remember</span><span class="rs">:</span><span class="rv">β ∝ λ (red fringes wider) &nbsp;; β ∝ D (farther screen = wider) &nbsp;; β ∝ 1/d (closer slits = wider fringes)</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Ripples in a pond</span><span class="rs">:</span><span class="rv">Drop two pebbles in a pond at two nearby points. You see a pattern where some areas have large waves (crests meeting crests — constructive interference = bright fringes in light) and some areas are calm (crests meeting troughs — destructive interference = dark fringes in light).</span></div>
+      <div class="row eg"><span class="rl">Why fringes spread in water?</span><span class="rs">:</span><span class="rv">In YDSE, immersing apparatus in water (higher refractive index) reduces wavelength of light. Smaller λ → smaller fringe width β → fringes squeeze closer together. Like the ripple pattern in a thick liquid is denser than in water.</span></div>
+      <div class="row eg"><span class="rl">Proof of wave nature of light</span><span class="rs">:</span><span class="rv">The existence of dark fringes (where two beams of light ADD UP to zero light) is impossible for particles — particles can never cancel each other. YDSE definitively proved light is a wave (later updated to wave-particle dual nature).</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ PAPER 2 ═══════════════════ -->
+<div class="pb"><span class="pt">📄 PAPER 2 — SOLUTIONS WITH BASICS</span><span class="pk">Class XII Physics · Set 2</span></div>
+<div class="sch">SECTION B — Very Short Answer &nbsp;(1 Mark Each) <span class="sm">Attempt any 8 of 12</span></div>
+
+<!-- P2 B·i Dielectric Constant -->
+<div class="qc">
+  <div class="qch"><span class="qn">B · i</span><span class="qt">Define dielectric constant of a medium. <span class="yb y24">2024</span></span><span class="mk">1 Mark</span></div>
+  <div class="ab">
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — What is a Dielectric?</div>
+      <div class="row basics"><span class="rl">Dielectric</span><span class="rs">:</span><span class="rv">An insulating material (like glass, mica, paper, water) placed between capacitor plates. It increases the capacitance because it reduces the effective electric field between the plates.</span></div>
+      <div class="row basics"><span class="rl">Why reduction?</span><span class="rs">:</span><span class="rv">In a dielectric, the molecules form dipoles when placed in an electric field. These dipoles create an opposing internal field. Net field = external field − internal field → reduced effective field → more charge can be stored at the same voltage.</span></div>
+      <div class="row basics"><span class="rl">Permittivity</span><span class="rs">:</span><span class="rv">ε₀ = 8.85×10⁻¹² C²/(N·m²) = permittivity of free space. ε = permittivity of the medium. ε &gt; ε₀ always (medium allows more electric storage).</span></div>
+    </div>
+    <div class="blk">
+      <div class="blk-title formula-pill">📐 FORMULA</div>
+      <div class="row form"><span class="rl">K = ε/ε₀</span><span class="rs">:</span><span class="rv"><b>Dielectric constant K = permittivity of medium / permittivity of free space</b></span></div>
+      <div class="row step"><span class="rl">Dimensionless</span><span class="rs">:</span><span class="rv">K has no units. K=1 for vacuum. K&gt;1 for all real materials.</span></div>
+      <div class="row step"><span class="rl">Values</span><span class="rs">:</span><span class="rv">Air≈1, Glass≈5-10, Mica≈6, Water≈80, Barium Titanate≈10000</span></div>
+      <div class="row step"><span class="rl">Effect on capacitance</span><span class="rs">:</span><span class="rv">C = Kε₀A/d = KC₀. Filling with dielectric K increases capacitance K times.</span></div>
+    </div>
+    <div class="blk">
+      <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Same as bicycle dynamo</span><span class="rs">:</span><span class="rv">The coil in a generator is like a bicycle wheel dynamo — spin faster (higher f) → brighter output → larger E_max. The formula E_max = NBA(2πf) shows all the factors: more turns N, stronger magnet B, larger coil area A, or faster spin f all increase the output voltage.</span></div>
+      <div class="row eg"><span class="rl">AC vs peak vs rms</span><span class="rs">:</span><span class="rv">E_max is the peak voltage — what an oscilloscope shows. E_rms is what a regular voltmeter reads. E_rms = E_max/√2. When we say '230V AC' at home, that's the rms value. The actual peak voltage in your home wiring is 230×√2 ≈ 325V!</span></div>
+      <div class="row eg"><span class="rl">Generator at power station</span><span class="rs">:</span><span class="rv">A large power station turbine spins coils at 50 Hz (3000 rpm). The huge N, A, and B values give output of 11,000V to 33,000V before stepping up for transmission. Same formula, just much bigger numbers.</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="row ans"><span class="rl">Definition</span><span class="rs">:</span><span class="rv">Dielectric constant (K) is the ratio of permittivity of the medium to permittivity of free space.</span></div>
+      <div class="row ans"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>K = ε/ε₀. Dimensionless. Always ≥ 1.</b></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- P2 B·ii Faraday's First Law -->
+<div class="qc">
+  <div class="qch"><span class="qn">B · ii</span><span class="qt">State Faraday's first law of electromagnetic induction. <span class="yb y23">2023</span></span><span class="mk">1 Mark</span></div>
+  <div class="ab">
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — Electromagnetic Induction</div>
+      <div class="row basics"><span class="rl">Faraday's discovery</span><span class="rs">:</span><span class="rv">Michael Faraday (1831) discovered: moving a magnet near a coil causes current to flow in the coil. But ONLY while the magnet is moving. Stop moving → no current. This completely changed physics — it meant changing magnetic fields create electric effects.</span></div>
+      <div class="row basics"><span class="rl">What causes EMF?</span><span class="rs">:</span><span class="rv">It's not the magnetic field itself, but the <b>CHANGE in magnetic flux</b> (linked with the coil) that causes EMF. Constant field (constant flux) → no EMF.</span></div>
+      <div class="row eg"><span class="rl">Examples</span><span class="rs">:</span><span class="rv">Push magnet into coil → flux increases → EMF induced. Pull out → flux decreases → opposite EMF. Hold still → no EMF.</span></div>
+    </div>
+    <div class="blk">
+      <div class="blk-title formula-pill">📐 FORMULA</div>
+      <div class="row form"><span class="rl">Faraday's 1st Law</span><span class="rs">:</span><span class="rv">Whenever magnetic flux linked with a closed coil changes, an EMF is induced. EMF lasts ONLY as long as flux continues to change.</span></div>
+      <div class="row form"><span class="rl">Mathematical form</span><span class="rs">:</span><span class="rv"><b>e = −N dΦ/dt</b> &nbsp; (N=turns, Φ=flux, t=time)</span></div>
+      <div class="row step"><span class="rl">Minus sign</span><span class="rs">:</span><span class="rv">From Lenz's law — induced EMF opposes the change that causes it.</span></div>
+    </div>
+    <div class="blk">
+      <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Colour of light determines speed of electrons</span><span class="rs">:</span><span class="rv">Use blue light → electrons come out fast (high KE). Use red light below threshold → no electrons at all. Use brighter blue → more electrons per second, but each still at the same speed. Frequency sets the speed; intensity sets the number.</span></div>
+      <div class="row eg"><span class="rl">Why UV is dangerous to skin</span><span class="rs">:</span><span class="rv">UV photons have very high frequency (hν >> visible light). When UV hits skin cells, photons have enough energy to eject electrons from DNA molecules and break chemical bonds — causing sunburn and potentially DNA damage. Sunscreen blocks UV photons.</span></div>
+      <div class="row eg"><span class="rl">Solar cell principle</span><span class="rs">:</span><span class="rv">A solar cell is a photoelectric device. Photons from sunlight hit a semiconductor (silicon), ejecting electrons which flow as current through an external circuit. Your phone solar charger, your calculator solar strip — all photoelectric effect!</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="row ans"><span class="rl">Statement</span><span class="rs">:</span><span class="rv">Whenever the magnetic flux linked with a closed circuit changes, an EMF is induced in it. The induced EMF lasts as long as the change in flux continues.</span></div>
+      <div class="row ans"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>e = −dΦ/dt</b></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- P2 B·iii Resonant Frequency -->
+<div class="qc">
+  <div class="qch"><span class="qn">B · iii</span><span class="qt">What is the resonant frequency of an LCR circuit? Write its formula. <span class="yb y22">2022</span></span><span class="mk">1 Mark</span></div>
+  <div class="ab">
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — Reactance in AC Circuits</div>
+      <div class="row basics"><span class="rl">Inductor (L)</span><span class="rs">:</span><span class="rv">Opposes change in current. Inductive reactance X<sub>L</sub> = ωL. Higher frequency → higher X<sub>L</sub> → more opposition.</span></div>
+      <div class="row basics"><span class="rl">Capacitor (C)</span><span class="rs">:</span><span class="rv">Opposes change in voltage. Capacitive reactance X<sub>C</sub> = 1/ωC. Higher frequency → LOWER X<sub>C</sub> → less opposition.</span></div>
+      <div class="row basics"><span class="rl">Key insight</span><span class="rs">:</span><span class="rv">X<sub>L</sub> increases with frequency. X<sub>C</sub> decreases with frequency. At ONE specific frequency, they become EQUAL. This is resonance — where the circuit behaves like pure resistance.</span></div>
+    </div>
+    <div class="blk">
+      <div class="blk-title formula-pill">📐 FORMULA DERIVATION</div>
+      <div class="row step"><span class="rl">At resonance</span><span class="rs">:</span><span class="rv">X<sub>L</sub> = X<sub>C</sub> → ω₀L = 1/(ω₀C) → ω₀² = 1/LC → ω₀ = 1/√LC</span></div>
+      <div class="row form"><span class="rl">Resonant frequency</span><span class="rs">:</span><span class="rv"><b>f₀ = 1/(2π√LC)</b></span></div>
+      <div class="row step"><span class="rl">At resonance</span><span class="rs">:</span><span class="rv">Z = R (minimum), I = V/R (maximum), cosφ = 1, power factor = 1</span></div>
+      <div class="row eg"><span class="rl">Application</span><span class="rs">:</span><span class="rv">Radio tuning: you adjust C so that f₀ matches the station's broadcast frequency → maximum current → best signal reception.</span></div>
+    </div>
+    <div class="blk">
+      <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Electron jumping and light emission</span><span class="rs">:</span><span class="rv">When a neon sign is switched on, electricity excites electrons to higher orbits. They instantly fall back down to lower orbits, emitting photons. Neon emits red-orange light, argon emits blue-violet. Each element's unique orbit spacings give unique photon energies = unique colours.</span></div>
+      <div class="row eg"><span class="rl">Size of atom</span><span class="rs">:</span><span class="rv">The Bohr model shows atoms are mostly empty space. If the nucleus were the size of a football (22 cm), the first electron orbit would be 12 km away! The atom is ~99.9999% empty space — yet solid objects feel solid because of electromagnetic repulsion between electron clouds.</span></div>
+      <div class="row eg"><span class="rl">Ionisation</span><span class="rs">:</span><span class="rv">Supplying enough energy to remove the electron completely from n=1 = ionising the atom. This is what happens in a fluorescent tube — electric field ionises mercury atoms, which then emit UV, which hits the phosphor coating to give visible light.</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="row ans"><span class="rl">Definition</span><span class="rs">:</span><span class="rv">Resonant frequency is the frequency at which X<sub>L</sub> = X<sub>C</sub>, giving minimum impedance and maximum current.</span></div>
+      <div class="row ans"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>f₀ = 1/(2π√LC)</b></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- P2 B·vi Radioactive Decay Law -->
+<div class="qc">
+  <div class="qch"><span class="qn">B · vi</span><span class="qt">State the law of radioactive decay. Write the decay equation. <span class="yb y22">2022</span></span><span class="mk">1 Mark</span></div>
+  <div class="ab">
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — What is Radioactivity?</div>
+      <div class="row basics"><span class="rl">Radioactivity</span><span class="rs">:</span><span class="rv">Spontaneous disintegration of unstable nuclei with emission of radiation (α, β, or γ). Unstable nuclei have too many or too few neutrons — they "decay" to reach stability.</span></div>
+      <div class="row basics"><span class="rl">Random process</span><span class="rs">:</span><span class="rv">We cannot predict WHEN a specific atom will decay. But for a large number of atoms, we CAN predict the RATE of decay statistically.</span></div>
+      <div class="row basics"><span class="rl">Analogy</span><span class="rs">:</span><span class="rv">Like a bag of popcorn in a microwave. You can't predict which kernel pops next, but you know roughly how many per second will pop overall.</span></div>
+    </div>
+    <div class="blk">
+      <div class="blk-title formula-pill">📐 THE LAW AND EQUATION</div>
+      <div class="row step"><span class="rl">Observation</span><span class="rs">:</span><span class="rv">More atoms present → more decay per second. If N doubles, decay rate doubles. Decay rate ∝ N.</span></div>
+      <div class="row form"><span class="rl">Differential form</span><span class="rs">:</span><span class="rv"><b>dN/dt = −λN</b> &nbsp; (λ = decay constant, s⁻¹)</span></div>
+      <div class="row form"><span class="rl">Integrated form</span><span class="rs">:</span><span class="rv"><b>N = N₀ e⁻ᵏᵗ</b> &nbsp; (exponential decay)</span></div>
+      <div class="row form"><span class="rl">Half-life</span><span class="rs">:</span><span class="rv"><b>T½ = 0.693/λ</b> &nbsp; (time for half the atoms to decay)</span></div>
+      <div class="row eg"><span class="rl">Example</span><span class="rs">:</span><span class="rv">C-14: T½=5730 years. After 5730 years: N₀/2 remains. After 11460 years: N₀/4. After 17190 years: N₀/8.</span></div>
+    </div>
+    <div class="blk">
+      <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">White light fringes are coloured</span><span class="rs">:</span><span class="rv">Use white light (mixture of all colours) in YDSE instead of monochromatic light. Each colour has different λ, so each colour makes fringes of different width. They overlap at the centre (white central fringe) but spread into rainbow-coloured fringes on the sides — exactly what Newton's rings show.</span></div>
+      <div class="row eg"><span class="rl">Thin film colours</span><span class="rs">:</span><span class="rv">The beautiful colours in soap bubbles, oil films on water, and peacock feathers are all due to interference of light reflecting from the top and bottom surfaces of thin films. The colour seen depends on the film thickness and the wavelength that constructively interferes — same YDSE physics!</span></div>
+      <div class="row eg"><span class="rl">Laser range finder</span><span class="rs">:</span><span class="rv">Laser interferometers (based on YDSE principle) can measure distances to nanometre precision — finer than an atom's width. Used to detect gravitational waves (LIGO), measure distances in manufacturing, and align telescope mirrors.</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="row ans"><span class="rl">Law</span><span class="rs">:</span><span class="rv">Rate of decay is directly proportional to the number of undecayed atoms present.</span></div>
+      <div class="row ans"><span class="rl">Equation</span><span class="rs">:</span><span class="rv"><b>N = N₀e⁻λᵗ &nbsp;; T½ = 0.693/λ</b></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- P2 B·ix KVL -->
+<div class="qc">
+  <div class="qch"><span class="qn">B · ix</span><span class="qt">State Kirchhoff's voltage law (KVL). <span class="yb y22">2022</span></span><span class="mk">1 Mark</span></div>
+  <div class="ab">
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — Voltage in a Circuit Loop</div>
+      <div class="row basics"><span class="rl">Voltage rises &amp; drops</span><span class="rs">:</span><span class="rv">In a circuit, a battery provides voltage (rise). Resistors consume voltage (drop). When you travel around a complete loop and return to starting point, net change in potential must be zero — just like returning to same height after a round trip.</span></div>
+      <div class="row basics"><span class="rl">Energy conservation</span><span class="rs">:</span><span class="rv">KVL is fundamentally about conservation of energy. Energy provided by EMF sources = energy consumed by resistors in any closed loop.</span></div>
+    </div>
+    <div class="blk">
+      <div class="blk-title formula-pill">📐 FORMULA</div>
+      <div class="row form"><span class="rl">KVL Statement</span><span class="rs">:</span><span class="rv">In any closed loop of a circuit, the algebraic sum of all EMFs equals the algebraic sum of all IR drops.</span></div>
+      <div class="row form"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>ΣE = ΣIR</b></span></div>
+      <div class="row eg"><span class="rl">Simple example</span><span class="rs">:</span><span class="rv">Loop with battery E=12V, R₁=2Ω, R₂=4Ω in series: KVL: 12 = I(2+4) → I=2A. Voltage across R₁=4V, R₂=8V. Check: 4+8=12 ✓</span></div>
+    </div>
+    <div class="blk">
+      <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Why water is such a good dielectric?</span><span class="rs">:</span><span class="rv">Water molecules are permanent electric dipoles. In an electric field, they align strongly to oppose the field. This makes water's dielectric constant very high (~80). So two charges immersed in water feel a force 80 times WEAKER than in air — charges in biological cells (which contain water) interact much more weakly than in vacuum!</span></div>
+      <div class="row eg"><span class="rl">Capacitor with dielectric</span><span class="rs">:</span><span class="rv">Insert a glass slab between a charged capacitor's plates — the stored charge STAYS the same (capacitor is disconnected). But voltage across the plates DROPS (by factor K). So capacitance C = Q/V increases by K. More capacitance in same space = better energy storage.</span></div>
+      <div class="row eg"><span class="rl">Mica in capacitors</span><span class="rs">:</span><span class="rv">Mica (K≈6) is used in capacitors for high-frequency circuits because it has stable, loss-free dielectric properties. Electrolytic capacitors use metal oxide dielectrics (K very high) giving huge capacitance in tiny packages — used as filter capacitors in power supplies everywhere.</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="row ans"><span class="rl">Statement</span><span class="rs">:</span><span class="rv">In any closed loop, algebraic sum of EMFs = algebraic sum of voltage drops (IR). Based on conservation of energy.</span></div>
+      <div class="row ans"><span class="rl">Formula</span><span class="rs">:</span><span class="rv"><b>ΣE = ΣIR</b></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- P2 Section C — Key Questions -->
+<div class="sch">SECTION C — Short Answer &nbsp;(2 Marks Each) <span class="sm">Attempt any 8 of 12</span></div>
+
+<!-- P2 C·i Electric Potential -->
+<div class="qc">
+  <div class="qch"><span class="qn">C · i</span><span class="qt">Derive expression for electric potential due to a point charge. <span class="yb y24">2024</span></span><span class="mk">2 Marks</span></div>
+  <div class="ab">
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — What is Electric Potential?</div>
+      <div class="row basics"><span class="rl">Potential energy</span><span class="rs">:</span><span class="rv">Like gravitational PE (mgh) — you store energy by lifting a mass. Similarly, you store electric potential energy by moving a charge against an electric field.</span></div>
+      <div class="row basics"><span class="rl">Electric potential V</span><span class="rs">:</span><span class="rv">= PE per unit charge = Work done per unit positive charge to bring it from infinity to that point. Like measuring height above ground (reference = infinity for charges).</span></div>
+      <div class="row basics"><span class="rl">Unit</span><span class="rs">:</span><span class="rv">Volt (V) = J/C. 1 volt = 1 joule of work done per coulomb of charge moved.</span></div>
+    </div>
+    <div class="blk">
+      <div class="blk-title formula-pill">📐 DERIVATION</div>
+      <div class="row step"><span class="rl">Setup</span><span class="rs">:</span><span class="rv">Point charge +Q at origin. Find potential V at point P at distance r.</span></div>
+      <div class="row step"><span class="rl">Force at distance x</span><span class="rs">:</span><span class="rv">F = kQ/x² (on unit positive test charge)</span></div>
+      <div class="row step"><span class="rl">Small work dW</span><span class="rs">:</span><span class="rv">dW = −F·dx = −(kQ/x²)dx (negative because moving against field)</span></div>
+      <div class="row step"><span class="rl">Total work V</span><span class="rs">:</span><span class="rv">V = ∫<sub>∞</sub><sup>r</sup> (−kQ/x²)dx = kQ[1/x]<sub>∞</sub><sup>r</sup> = kQ/r − 0</span></div>
+      <div class="row ans"><span class="rl">∴ V</span><span class="rs">=</span><span class="rv"><b>V = kQ/r = Q/(4πε₀r)</b></span></div>
+      <div class="row step"><span class="rl">Note</span><span class="rs">:</span><span class="rv">+Q gives +V (potential decreases as you move away). −Q gives −V (potential increases as you move away).</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Height analogy for potential</span><span class="rs">:</span><span class="rv">Electric potential is like height above the ground. A ball at height h has gravitational PE = mgh. A charge q at potential V has electric PE = qV. Just as a ball rolls downhill (from high to low height), positive charges move from high to low potential — and that is electric current!</span></div>
+      <div class="row eg"><span class="rl">Why potential decreases with distance?</span><span class="rs">:</span><span class="rv">Moving away from a positive charge, the attractive pull gets weaker. Less work was done to bring a test charge from infinity to this farther point. So potential is lower farther away. Closer to the charge = higher potential (like being higher up a hill).</span></div>
+      <div class="row eg"><span class="rl">Lightning rod</span><span class="rs">:</span><span class="rv">A lightning rod has a sharp tip. At sharp tips, charges concentrate → very high electric field → nearby air ionises → provides a low-resistance path for lightning to flow safely to ground, protecting the building. High electric potential at tips explains this.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- P2 C·ii Parallel Resistance -->
+<div class="qc">
+  <div class="qch"><span class="qn">C · ii</span><span class="qt">Three resistors in parallel — derive equivalent resistance. <span class="yb y23">2023</span></span><span class="mk">2 Marks</span></div>
+  <div class="ab">
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — Parallel Connection</div>
+      <div class="row basics"><span class="rl">Parallel means</span><span class="rs">:</span><span class="rv">All components connected between the same two points. Like three lanes of a highway — traffic (current) splits between lanes, but all lanes go from the same start to same end.</span></div>
+      <div class="row basics"><span class="rl">Same voltage</span><span class="rs">:</span><span class="rv">In parallel connection, ALL resistors have the SAME voltage across them (= battery voltage V).</span></div>
+      <div class="row basics"><span class="rl">Different currents</span><span class="rs">:</span><span class="rv">Each resistor carries different current based on its resistance: smaller R → more current through it.</span></div>
+    </div>
+    <div class="blk">
+      <div class="blk-title formula-pill">📐 DERIVATION</div>
+      <div class="dbox">A ──┬──R₁──┬── B &nbsp;(R₁ carries I₁ = V/R₁)<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──R₂──┤ &nbsp;(R₂ carries I₂ = V/R₂)<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──R₃──┘ &nbsp;(R₃ carries I₃ = V/R₃)<br/>
+        Total: I = I₁+I₂+I₃ (KCL)<br/>
+        <small>Same V across all. Total I splits between resistors.</small>
+      </div>
+      <div class="row step"><span class="rl">KCL</span><span class="rs">:</span><span class="rv">I = I₁+I₂+I₃ = V/R₁ + V/R₂ + V/R₃</span></div>
+      <div class="row step"><span class="rl">Also</span><span class="rs">:</span><span class="rv">I = V/R<sub>eq</sub></span></div>
+      <div class="row step"><span class="rl">Divide by V</span><span class="rs">:</span><span class="rv">1/R<sub>eq</sub> = 1/R₁ + 1/R₂ + 1/R₃</span></div>
+      <div class="row ans"><span class="rl">∴ Formula</span><span class="rs">:</span><span class="rv"><b>1/R<sub>eq</sub> = 1/R₁ + 1/R₂ + 1/R₃</b> &nbsp; (R<sub>eq</sub> &lt; smallest R)</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Holiday lights vs old series lights</span><span class="rs">:</span><span class="rv">Old Christmas light strings were in series — one bulb blows, all go out. Modern ones are in parallel — each bulb connected directly to the mains voltage independently, so one blowing doesn't affect others. Parallel is safer and more practical.</span></div>
+      <div class="row eg"><span class="rl">Why appliances are in parallel at home</span><span class="rs">:</span><span class="rv">All your home appliances (fridge, TV, fan, phone charger) are connected in parallel. Each gets the full 230V independently. If you switch off the TV, others keep working. If they were in series, all would go off together!</span></div>
+      <div class="row eg"><span class="rl">More paths = less resistance</span><span class="rs">:</span><span class="rv">Three roads between two cities: traffic flows through all three simultaneously, reaching faster than if there was only one road. Parallel resistors give current multiple paths → total resistance decreases → more current flows from same battery.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- P2 C·iv Impedance -->
+<div class="qc">
+  <div class="qch"><span class="qn">C · iv</span><span class="qt">AC circuit: R=100Ω, L=0.5H, C=100μF, f=50Hz. Find impedance Z. <span class="yb y24">2024</span></span><span class="mk">2 Marks</span></div>
+  <div class="ab">
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — Impedance in LCR Circuit</div>
+      <div class="row basics"><span class="rl">Impedance Z</span><span class="rs">:</span><span class="rv">Total opposition to current flow in an AC circuit. Includes resistance R (ohmic), inductive reactance X<sub>L</sub> (due to L), and capacitive reactance X<sub>C</sub> (due to C).</span></div>
+      <div class="row basics"><span class="rl">Why not simple addition?</span><span class="rs">:</span><span class="rv">R, X<sub>L</sub>, X<sub>C</sub> are 90° out of phase with each other. So they add like a right triangle (Pythagoras), not directly.</span></div>
+    </div>
+    <div class="blk">
+      <div class="blk-title solve-pill">🔢 SOLUTION</div>
+      <div class="row step"><span class="rl">Given</span><span class="rs">:</span><span class="rv">R=100Ω, L=0.5H, C=100μF=10⁻⁴F, f=50Hz</span></div>
+      <div class="row step"><span class="rl">ω = 2πf</span><span class="rs">=</span><span class="rv">2π×50 = 100π = 314.16 rad/s</span></div>
+      <div class="row step"><span class="rl">X<sub>L</sub> = ωL</span><span class="rs">=</span><span class="rv">314.16 × 0.5 = <b>157.08 Ω</b></span></div>
+      <div class="row step"><span class="rl">X<sub>C</sub> = 1/ωC</span><span class="rs">=</span><span class="rv">1/(314.16×10⁻⁴) = 1/0.03142 = <b>31.83 Ω</b></span></div>
+      <div class="row step"><span class="rl">Net reactance</span><span class="rs">=</span><span class="rv">X<sub>L</sub>−X<sub>C</sub> = 157.08−31.83 = <b>125.25 Ω</b> (inductive)</span></div>
+      <div class="row form"><span class="rl">Z = √[R²+(X<sub>L</sub>−X<sub>C</sub>)²]</span><span class="rs">=</span><span class="rv">√(100²+125.25²) = √(10000+15688) = √25688</span></div>
+      <div class="row ans"><span class="rl">∴ Z</span><span class="rs">=</span><span class="rv"><b>≈ 160.3 Ω</b></span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Frequency matters for AC components</span><span class="rs">:</span><span class="rv">A capacitor blocks DC completely but allows AC to pass — and passes it MORE easily at higher frequencies. An inductor allows DC freely but opposes AC — and opposes MORE at higher frequencies. This frequency-dependent behaviour is why we need impedance Z, not just resistance R, for AC circuits.</span></div>
+      <div class="row eg"><span class="rl">Speaker crossover network</span><span class="rs">:</span><span class="rv">A hi-fi speaker system uses this principle: inductors let only low-frequency sound (bass) pass to the woofer. Capacitors let only high-frequency sound (treble) pass to the tweeter. The crossover network uses exactly X_L and X_C behaviour.</span></div>
+      <div class="row eg"><span class="rl">AC induction motor</span><span class="rs">:</span><span class="rv">The impedance of an AC motor changes with load and speed. A motor under heavy load has higher impedance → draws more current. A motor with no load has lower current. Same V, different Z → different I. This is why starting a large motor causes a current surge.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- P2 C·viii Forward Bias -->
+<div class="qc">
+  <div class="qch"><span class="qn">C · viii</span><span class="qt">Explain p-n junction diode in forward bias with diagram. <span class="yb y23">2023</span></span><span class="mk">2 Marks</span></div>
+  <div class="ab">
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — p-n Junction</div>
+      <div class="row basics"><span class="rl">p-type</span><span class="rs">:</span><span class="rv">Silicon doped with Boron (3-valence) → extra holes (positive charge carriers). Majority carriers = holes.</span></div>
+      <div class="row basics"><span class="rl">n-type</span><span class="rs">:</span><span class="rv">Silicon doped with Phosphorus (5-valence) → extra electrons. Majority carriers = electrons.</span></div>
+      <div class="row basics"><span class="rl">Depletion layer</span><span class="rs">:</span><span class="rv">At the p-n junction, electrons from n-side cross over and fill holes in p-side, creating a thin layer with NO free carriers. This creates a barrier potential (≈0.7V for Si) that prevents further movement.</span></div>
+    </div>
+    <div class="blk">
+      <div class="blk-title concept-pill">💡 FORWARD BIAS EXPLAINED</div>
+      <div class="dbox">
+        [Battery +] ─── [p | n] ─── [Battery −]<br/>
+        p-side at +ve potential, n-side at −ve potential<br/>
+        Holes in p pushed → junction &nbsp;&nbsp; Electrons in n pushed → junction<br/>
+        Depletion layer NARROWS → barrier reduces<br/>
+        When V &gt; 0.7V (Si): majority carriers cross → large current flows<br/>
+        <small>Forward bias = p at +ve terminal, n at −ve terminal of battery</small>
+      </div>
+      <div class="row step"><span class="rl">Mechanism</span><span class="rs">:</span><span class="rv">Battery pushes holes (in p) and electrons (in n) toward the junction. They meet and recombine at the junction → current flows continuously through external circuit.</span></div>
+      <div class="row step"><span class="rl">Knee voltage</span><span class="rs">:</span><span class="rv">Si: ≈0.7V, Ge: ≈0.3V. Below this, very little current. Above: current rises steeply.</span></div>
+    </div>
+    <div class="blk">
+      <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Moving a magnet near a coil</span><span class="rs">:</span><span class="rv">Hold a coil connected to a galvanometer. Push a bar magnet into the coil — the needle deflects (current flows). Pull it out — needle deflects the other way. Hold the magnet still inside — needle returns to zero. The change in flux is what drives the current, not the field itself.</span></div>
+      <div class="row eg"><span class="rl">Electricity generation</span><span class="rs">:</span><span class="rv">EVERY electrical generator on Earth — coal plant, hydro dam, wind turbine, nuclear plant — works by Faraday's law: rotate a coil in a magnetic field (or rotate a magnet near a coil). Changing flux induces EMF. Without Faraday's discovery, there would be no electricity grid.</span></div>
+      <div class="row eg"><span class="rl">Induction cooktop</span><span class="rs">:</span><span class="rv">An induction cooktop creates a rapidly changing magnetic field under the ceramic plate. This changing flux induces eddy currents directly in the iron base of your cooking pot, heating it — while the ceramic plate itself stays cool. Fast, efficient, safe.</span></div>
+    </div>
+    <div class="blk-title answer-pill">✅ FINAL ANSWER</div>
+      <div class="row ans"><span class="rl">Forward bias</span><span class="rs">:</span><span class="rv">p at +ve, n at −ve terminal. Depletion layer narrows, barrier reduces. Majority carriers flow → large forward current. Draw diagram.</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Like opening a gate</span><span class="rs">:</span><span class="rv">In forward bias, the battery helps majority carriers (holes in p, electrons in n) move toward the junction — like opening a gate for them. The depletion layer (the barrier) shrinks. Once the barrier is small enough (knee voltage), carriers flood across and large current flows.</span></div>
+      <div class="row eg"><span class="rl">Traffic signal analogy</span><span class="rs">:</span><span class="rv">Reverse bias = red signal (stop, no current). Forward bias = green signal (go, current flows). The knee voltage (~0.7V for Si) is like the signal turning green — below that, only trickle of current. Above that, current flows freely.</span></div>
+      <div class="row eg"><span class="rl">LED working</span><span class="rs">:</span><span class="rv">An LED is a p-n junction in forward bias. When electrons and holes recombine at the junction, they release energy as photons (light). Different semiconductor materials give different photon energies = different colours of LED light. Red, green, blue, white — all from junction recombination.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- P2 C·xi Solenoid -->
+<div class="qc">
+  <div class="qch"><span class="qn">C · xi</span><span class="qt">Derive expression for magnetic field inside a long solenoid. <span class="yb y23">2023</span></span><span class="mk">2 Marks</span></div>
+  <div class="ab">
+    <div class="blk">
+      <div class="blk-title basics-pill">🌱 BASICS — What is a Solenoid?</div>
+      <div class="row basics"><span class="rl">Solenoid</span><span class="rs">:</span><span class="rv">A long cylindrical coil of wire wound in a helix (like a spring). When current flows, it behaves like a bar magnet — uniform magnetic field inside, nearly zero outside. Used in electromagnets, inductors, MRI machines.</span></div>
+      <div class="row basics"><span class="rl">n = N/L</span><span class="rs">:</span><span class="rv">n = number of turns per unit length. N = total turns. L = total length of solenoid.</span></div>
+    </div>
+    <div class="blk">
+      <div class="blk-title formula-pill">📐 DERIVATION using Ampere's Law</div>
+      <div class="dbox">
+        [Side view of solenoid with current I]<br/>
+        Outside: B ≈ 0 (field lines spread and cancel)<br/>
+        a────────────b (Amperian loop, inside, length L)<br/>
+        │ B → → → → │ (B uniform, parallel to axis inside)<br/>
+        d────────────c (outside, B=0)<br/>
+        <small>Rectangular Amperian loop abcda. ab is inside (length L), cd is outside (B=0).</small>
+      </div>
+      <div class="row step"><span class="rl">Ampere's Law</span><span class="rs">:</span><span class="rv">∮B·dl = μ₀I<sub>enclosed</sub></span></div>
+      <div class="row step"><span class="rl">Along ab (inside)</span><span class="rs">:</span><span class="rv">B·L (B parallel to dl)</span></div>
+      <div class="row step"><span class="rl">Along bc, da</span><span class="rs">:</span><span class="rv">0 (B perpendicular to dl)</span></div>
+      <div class="row step"><span class="rl">Along cd (outside)</span><span class="rs">:</span><span class="rv">0 (B=0 outside)</span></div>
+      <div class="row step"><span class="rl">Total ∮B·dl</span><span class="rs">=</span><span class="rv">BL</span></div>
+      <div class="row step"><span class="rl">I<sub>enclosed</sub></span><span class="rs">=</span><span class="rv">nL × I (n turns per meter, each carrying current I, in length L)</span></div>
+      <div class="row step"><span class="rl">Equate</span><span class="rs">:</span><span class="rv">BL = μ₀(nLI) → B = μ₀nI</span></div>
+      <div class="row ans"><span class="rl">∴ B</span><span class="rs">=</span><span class="rv"><b>B = μ₀nI</b> &nbsp; (uniform inside, zero outside)</span></div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-title example-pill">📖 EVERYDAY EXAMPLE</div>
+      <div class="row eg"><span class="rl">Why is the field uniform inside?</span><span class="rs">:</span><span class="rv">Each circular turn of the solenoid creates a magnetic field along its axis. Inside a long solenoid, the fields from all turns add up and reinforce each other in the middle. Outside, fields from adjacent turns cancel each other. Result: uniform strong field inside, nearly zero outside — like a magnetic pipe!</span></div>
+      <div class="row eg"><span class="rl">Electromagnet vs permanent magnet</span><span class="rs">:</span><span class="rv">A solenoid with iron core is an electromagnet. Switch on the current — strong magnetic field. Switch off — field disappears instantly. Control the current — control the field strength. Permanent magnets can't do this! Electromagnets are used in cranes (lifting scrap metal), MRI machines, electric motors, doorbells.</span></div>
+      <div class="row eg"><span class="rl">Earth as a solenoid</span><span class="rs">:</span><span class="rv">Earth's magnetic field is created by electric currents flowing in the molten iron outer core. These circular currents act like a giant solenoid — giving Earth its north and south magnetic poles. Without this field, solar wind particles would strip away our atmosphere — as happened to Mars!</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <b>*** Best of Luck — Visions Classes, Ambernath ***</b><br/>
+  Understand basics → Apply concepts → Score full marks<br/><br/>
+  <small>Class XII Physics · Paper 1 &amp; 2 · Sections B &amp; C · Full solutions with basics, concepts, derivations &amp; exam tips<br/>
+  By Shashikant Sir · Visions Classes · visionslearning.in</small>
+</div>
+
+</div><!-- /page -->
+<button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+</body>
+</html>
