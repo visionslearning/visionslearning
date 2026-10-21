@@ -1,404 +1,427 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chapter 1 – The Living World | Class 11 Biology | Visions Classes</title>
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Segoe UI', sans-serif; background: #f0f4f8; color: #222; }
-  header { background: linear-gradient(135deg, #1a6b3a, #2ecc71); color: white; padding: 24px; text-align: center; }
-  header h1 { font-size: 1.8em; }
-  header p { font-size: 0.95em; margin-top: 6px; opacity: 0.9; }
-  .container { max-width: 960px; margin: 24px auto; padding: 0 16px 60px; }
-  .chapter-nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
-  .chapter-nav a { background: #1a6b3a; color: white; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-size: 0.85em; font-weight: 600; }
-  .chapter-nav a:hover { background: #145c30; }
-  .section-title { background: #1a6b3a; color: white; padding: 10px 18px; border-radius: 8px; margin: 32px 0 14px; font-size: 1.1em; font-weight: 700; letter-spacing: 1px; }
-  .exam-hot { background: linear-gradient(135deg, #b71c1c, #e53935); color: white; padding: 10px 18px; border-radius: 8px; margin: 32px 0 14px; font-size: 1.1em; font-weight: 700; }
-  .qbox { background: white; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); margin-bottom: 16px; overflow: hidden; }
-  .qtitle { background: #e8f5e9; padding: 12px 18px; font-weight: 700; color: #1a6b3a; font-size: 0.97em; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-  .qtitle:hover { background: #d4edda; }
-  .qbody { padding: 14px 18px 16px; display: none; border-top: 1px solid #e8f5e9; }
-  .qbody.open { display: block; }
-  .qbody p { margin-bottom: 8px; font-size: 0.93em; line-height: 1.65; }
-  .qbody ul { margin: 6px 0 10px 18px; }
-  .qbody ul li { font-size: 0.92em; line-height: 1.6; margin-bottom: 4px; }
-  .qbody ol { margin: 6px 0 10px 18px; }
-  .qbody ol li { font-size: 0.92em; line-height: 1.6; margin-bottom: 4px; }
-  .marks { display: inline-block; background: #2ecc71; color: white; font-size: 0.75em; padding: 2px 8px; border-radius: 12px; margin-left: 10px; font-weight: 600; vertical-align: middle; }
-  .marks.m3 { background: #1976d2; }
-  .marks.m4 { background: #7b1fa2; }
-  .tip { background: #fff8e1; border-left: 4px solid #f39c12; padding: 8px 12px; border-radius: 4px; font-size: 0.88em; margin-top: 8px; }
-  .arrow { font-size: 1.1em; transition: transform 0.2s; }
-  .qtitle.active .arrow { transform: rotate(90deg); }
-  table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 0.88em; }
-  th { background: #1a6b3a; color: white; padding: 7px 10px; text-align: left; }
-  td { padding: 6px 10px; border-bottom: 1px solid #e0e0e0; }
-  tr:nth-child(even) td { background: #f5f5f5; }
-  .keypoint-card { background: #e8f5e9; border-radius: 10px; padding: 16px 20px; margin-bottom: 14px; border-left: 5px solid #1a6b3a; }
-  .keypoint-card h4 { color: #1a6b3a; font-size: 1em; margin-bottom: 8px; }
-  .keypoint-card ul li { font-size: 0.91em; line-height: 1.6; margin-bottom: 3px; }
-</style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ch 1: The Living World — Class 11 Biology — Visions Classes</title>
+  <meta name="description" content="Class 11 Biology Chapter 1 The Living World — Characteristics of life, Herbarium, Botanical Gardens, Museum, Zoo, Biodiversity Parks, Conservation, Key. Complete notes with exam questions. Visions Classes Ambernath."/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="logo.png" type="image/png"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #f0fdf4; color: #1e293b; font-family: 'Segoe UI', system-ui, sans-serif; }
+    .navbar { background: #14532d !important; }
+    .ch-hero {
+      background: linear-gradient(135deg, #14532d 0%, #166534 50%, #15803d 100%);
+      color: #fff; padding: 90px 0 44px; text-align: center; position: relative; overflow: hidden;
+    }
+    .ch-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(134,239,172,.18) 0%, transparent 60%);
+    }
+    .ch-hero .badge {
+      display: inline-block; padding: 5px 18px; border-radius: 20px;
+      background: rgba(134,239,172,.2); border: 1px solid #86efac;
+      color: #bbf7d0; font-size: .78rem; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; position: relative;
+    }
+    .ch-hero h1 {
+      font-size: clamp(1.9rem,4.5vw,3rem); font-weight: 900; position: relative;
+      background: linear-gradient(135deg, #fff 0%, #86efac 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 8px;
+    }
+    .ch-hero p { color: #bbf7d0; font-size: .97rem; position: relative; max-width: 620px; margin: 0 auto 20px; }
+    .hero-topics { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; position: relative; margin-top: 16px; }
+    .htopic { padding: 5px 14px; border-radius: 20px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); color: #fff; font-size: .78rem; font-weight: 600; }
+    .prog-bar { height: 4px; background: rgba(21,128,61,.15); }
+    .prog-fill { height: 100%; background: linear-gradient(90deg,#15803d,#22c55e); width: 0; transition: width .4s; }
+    .quick-nav { background: #fff; border-bottom: 2px solid #dcfce7; display: flex; gap: 0; overflow-x: auto; position: sticky; top: 60px; z-index: 80; }
+    .quick-nav::-webkit-scrollbar { height: 0; }
+    .qn-btn { padding: 11px 18px; border: none; background: transparent; font-size: .8rem; font-weight: 700; color: #64748b; cursor: pointer; white-space: nowrap; border-bottom: 3px solid transparent; transition: all .2s; text-decoration: none; display: inline-block; }
+    .qn-btn:hover { color: #15803d; background: #f0fdf4; }
+    .qn-btn.active { color: #15803d; border-bottom-color: #15803d; background: #f0fdf4; }
+    .notes-body { max-width: 960px; margin: 0 auto; padding: 28px 20px 120px; }
+    .sec { background: #fff; border: 1px solid #d1fae5; border-radius: 14px; padding: 26px 28px; margin-bottom: 18px; box-shadow: 0 2px 10px rgba(21,128,61,.06); }
+    .sec-title { font-size: 1.05rem; font-weight: 800; color: #15803d; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; padding-bottom: 10px; border-bottom: 2px solid #dcfce7; }
+    .def { background: #f0fdf4; border: 1px solid #86efac; border-radius: 9px; padding: 13px 18px; margin: 10px 0; font-size: .9rem; color: #14532d; line-height: 1.65; }
+    .def .dl { font-size: .67rem; text-transform: uppercase; letter-spacing: 1px; color: #15803d; font-weight: 700; display: block; margin-bottom: 5px; }
+    .fml { background: #fefce8; border: 1.5px solid #fde047; border-radius: 9px; padding: 13px 18px; margin: 10px 0; font-size: .95rem; color: #1e293b; line-height: 1.8; }
+    .fml .fl { font-family: 'Segoe UI', sans-serif; font-size: .67rem; text-transform: uppercase; letter-spacing: 1px; color: #ca8a04; font-weight: 700; display: block; margin-bottom: 5px; }
+    .kp { list-style: none; padding: 0; margin: 10px 0; }
+    .kp li { padding: 6px 0 6px 22px; position: relative; font-size: .9rem; color: #334155; line-height: 1.7; border-bottom: 1px solid #f0fdf4; }
+    .kp li:last-child { border: none; }
+    .kp li::before { content: '▶'; position: absolute; left: 0; color: #15803d; font-size: .55rem; top: 11px; }
+    .ntable { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .86rem; }
+    .ntable th { background: #dcfce7; color: #14532d; padding: 9px 12px; text-align: left; font-weight: 700; border: 1px solid #86efac; }
+    .ntable td { padding: 9px 12px; border: 1px solid #d1fae5; color: #475569; }
+    .ntable tr:nth-child(even) td { background: #f0fdf4; }
+    .ntable tr:hover td { background: #dcfce7; color: #1e293b; }
+    .note { border-radius: 9px; padding: 11px 16px; margin: 10px 0; font-size: .88rem; line-height: 1.65; }
+    .n-grn  { background: #f0fdf4; border-left: 4px solid #22c55e; color: #14532d; }
+    .n-yel  { background: #fefce8; border-left: 4px solid #ca8a04; color: #713f12; }
+    .n-red  { background: #fff1f2; border-left: 4px solid #ef4444; color: #991b1b; }
+    .n-blue { background: #eff6ff; border-left: 4px solid #3b82f6; color: #1e40af; }
+    .eq-box { background: #1e293b; border-radius: 14px; padding: 24px 28px; margin-top: 14px; }
+    .eq-title { font-size: .95rem; font-weight: 800; color: #86efac; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .q-list { list-style: none; padding: 0; counter-reset: qnum; }
+    .q-list li { counter-increment: qnum; padding: 10px 12px 10px 46px; position: relative; font-size: .87rem; color: #cbd5e1; line-height: 1.65; border-bottom: 1px solid rgba(255,255,255,.06); }
+    .q-list li:last-child { border: none; }
+    .q-list li::before { content: 'Q' counter(qnum); position: absolute; left: 0; background: #15803d; color: #fff; font-size: .68rem; font-weight: 800; padding: 2px 7px; border-radius: 6px; top: 11px; }
+    .mk { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: .67rem; font-weight: 700; margin-left: 8px; vertical-align: middle; }
+    .m1 { background: rgba(34,197,94,.2); color: #86efac; }
+    .m2 { background: rgba(245,158,11,.2); color: #fde047; }
+    .m3 { background: rgba(99,102,241,.25); color: #a5b4fc; }
+    .m4 { background: rgba(239,68,68,.2); color: #fca5a5; }
+    strong.hg { color: #15803d; }
+    strong.hy { color: #ca8a04; }
+    strong.hr { color: #dc2626; }
+    .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 99; background: #14532d; border-top: 2px solid #166534; display: flex; align-items: center; gap: 10px; padding: 10px 20px; flex-wrap: wrap; }
+    .bn-label { color: #86efac; font-size: .82rem; flex: 1; }
+    .bn-btn { padding: 8px 18px; border-radius: 8px; border: none; cursor: pointer; font-size: .82rem; font-weight: 700; text-decoration: none; display: inline-block; }
+    .bn-all  { background: #22c55e; color: #000; }
+    .bn-prev { background: rgba(255,255,255,.12); color: #fff; }
+    .bn-next { background: rgba(255,255,255,.12); color: #fff; }
+    @media(max-width:560px) { .sec { padding: 18px 14px; } }
+  </style>
 </head>
 <body>
-<header>
-  <h1>🌍 Chapter 1 – The Living World</h1>
-  <p>Class XI Biology | Complete Notes + Key Points + Exam Questions | Visions Classes</p>
-</header>
-
-<div class="container">
-
-  <div class="chapter-nav">
-    <a href="class11-biology-practice-answers.html">← Back to Practice Q&A</a>
-    <a href="class11-biology-ch3-notes.html">Ch 3 – Kingdom Plantae</a>
-    <a href="class11-biology-ch5-notes.html">Ch 5 – Cell Structure</a>
-    <a href="notes-class11.html">All Class 11 Notes</a>
-  </div>
-
-  <!-- 1.1 BASICS -->
-  <div class="section-title">1.1 Basic Principles of Life ★ EXAM HOT</div>
-
-  <div class="keypoint-card">
-    <h4>📌 Key Points</h4>
-    <ul>
-      <li>Planet earth is made up of <strong>abiotic</strong> (non-living) and <strong>biotic</strong> (living) components</li>
-      <li>The biotic components are the living beings present around us</li>
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Visions Classes" class="nav-logo-img"/>
+      <div class="logo-text"><span>Visions</span> Classes</div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="notes-class11.html">Class 11 Notes</a></li>
+      <li><a href="notes.html">All Notes</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
   </div>
+</nav>
 
-  <div class="qbox">
-    <div class="qtitle" onclick="toggle(this)">Characteristics of Living Organisms – Complete Table <span class="arrow">▶</span></div>
-    <div class="qbody">
-      <table>
-        <tr><th>Feature</th><th>Key Points</th></tr>
-        <tr><td><strong>Metabolism</strong></td><td>Living beings need energy for survival. Metabolism = Catabolism (breaking molecules) + Anabolism (making new molecules). <strong>Most all-inclusive characteristic of life</strong> ★</td></tr>
-        <tr><td><strong>Growth</strong></td><td>From birth, organisms show well-orchestrated growth and development. Non-living things like sand mounds may grow but NOT from within.</td></tr>
-        <tr><td><strong>Ageing</strong></td><td>Growth has a limited time span. Molecules, organs and systems gradually lose effective working — this is the ageing process.</td></tr>
-        <tr><td><strong>Reproduction</strong></td><td>Organisms produce young ones (asexual or sexual). Note: Mules &amp; sterile worker bees do NOT reproduce yet are living → NOT an all-inclusive characteristic.</td></tr>
-        <tr><td><strong>Death</strong></td><td>As the body loses capacity to perform metabolism, the organism dies.</td></tr>
-        <tr><td><strong>Responsiveness / Irritability</strong></td><td>Living beings respond to thermal, chemical or biological changes in surroundings. Unique property of living organisms.</td></tr>
-      </table>
-      <div class="tip">✍️ Key point: <strong>Metabolism is the most all-inclusive characteristic of life</strong>. Reproduction is NOT all-inclusive (mules don't reproduce).</div>
+<section class="ch-hero">
+  <div class="container" style="position:relative;">
+    <div class="badge">🧬 Class 11 Biology · Chapter 1</div>
+    <h1>The Living World</h1>
+    <p>Characteristics of Life · Herbarium · Botanical Gardens · Museum · Zoo · Biodiversity Parks · Conservation · Key</p>
+    <div class="hero-topics">
+      <span class="htopic">Characteristics of Life</span>
+      <span class="htopic">Metabolism</span>
+      <span class="htopic">Herbarium</span>
+      <span class="htopic">Botanical Garden</span>
+      <span class="htopic">Museum</span>
+      <span class="htopic">Zoo</span>
+      <span class="htopic">Biodiversity Park</span>
+      <span class="htopic">In-situ vs Ex-situ</span>
+      <span class="htopic">Taxonomical Key</span>
     </div>
+  </div>
+</section>
+<div class="prog-bar"><div class="prog-fill" id="pf"></div></div>
+
+<div class="quick-nav">
+  <a class="qn-btn active" href="#s1">1.1 Characteristics</a>
+  <a class="qn-btn" href="#s2">1.2 Herbarium</a>
+  <a class="qn-btn" href="#s3">1.3 Botanical Garden</a>
+  <a class="qn-btn" href="#s4">1.4 Museum</a>
+  <a class="qn-btn" href="#s5">1.5 Zoo</a>
+  <a class="qn-btn" href="#s6">1.6 Biodiversity Park</a>
+  <a class="qn-btn" href="#s7">Conservation</a>
+  <a class="qn-btn" href="#s8">1.7 Key</a>
+  <a class="qn-btn" href="#s9">Scientists</a>
+  <a class="qn-btn" href="#s10">🎯 Exam Qs</a>
+</div>
+
+<div class="notes-body">
+
+  <!-- 1.1 CHARACTERISTICS -->
+  <div class="sec" id="s1">
+    <div class="sec-title">🌱 1.1 Characteristics of Living Organisms</div>
+    <div class="def">
+      <span class="dl">Basic Principles of Life</span>
+      Planet earth is made up of <strong class="hg">abiotic</strong> (non-living) and <strong class="hg">biotic</strong> (living) components. The biotic components are the living beings present around us.
+    </div>
+    <table class="ntable">
+      <thead><tr><th>Characteristic</th><th>Key Points</th></tr></thead>
+      <tbody>
+        <tr><td><strong class="hg">Metabolism</strong></td><td>Catabolism (breaking molecules) + Anabolism (making new molecules). <strong class="hr">Most all-inclusive characteristic of life ★</strong></td></tr>
+        <tr><td><strong class="hg">Growth</strong></td><td>Well-orchestrated growth from birth. Non-living things (sand mounds) grow but NOT from within.</td></tr>
+        <tr><td><strong class="hg">Ageing</strong></td><td>Growth has a limited time span. Molecules, organs gradually lose effective working.</td></tr>
+        <tr><td><strong class="hg">Reproduction</strong></td><td>Produce young ones (asexual or sexual). <strong class="hr">NOT all-inclusive</strong> — mules &amp; sterile worker bees do not reproduce yet are living.</td></tr>
+        <tr><td><strong class="hg">Death</strong></td><td>As the body loses capacity to perform metabolism, the organism dies.</td></tr>
+        <tr><td><strong class="hg">Responsiveness / Irritability</strong></td><td>Respond to thermal, chemical or biological changes in surroundings. Unique property of living organisms.</td></tr>
+      </tbody>
+    </table>
+    <div class="note n-yel">⭐ <strong>Most Asked:</strong> Metabolism is the most all-inclusive characteristic of life. Reproduction is NOT all-inclusive because mules don't reproduce yet are alive.</div>
   </div>
 
   <!-- 1.2 HERBARIUM -->
-  <div class="section-title">1.2 Herbarium ★ EXAM HOT</div>
-
-  <div class="keypoint-card">
-    <h4>📌 Key Points</h4>
-    <ul>
-      <li>Word <em>herbarium</em> (plural: herbaria) was coined by <strong>Pitton de Tournefort</strong></li>
-      <li>Art of herbarium was initiated by Italian taxonomist <strong>Luca Ghini (1490–1556)</strong></li>
+  <div class="sec" id="s2">
+    <div class="sec-title">📋 1.2 Herbarium</div>
+    <div class="def">
+      <span class="dl">Definition</span>
+      A herbarium is essentially a <strong class="hg">dried plant specimen</strong> that is pressed, treated and mounted on a standard size sheet to preserve it.
+    </div>
+    <ul class="kp">
+      <li>Word <em>herbarium</em> (plural: herbaria) was coined by <strong class="hg">Pitton de Tournefort</strong></li>
+      <li>Art of herbarium was initiated by Italian taxonomist <strong class="hg">Luca Ghini (1490–1556)</strong></li>
       <li>Herbaria are effective tools in taxonomic studies</li>
-      <li>A herbarium is essentially a <strong>dried plant specimen</strong> that is pressed, treated and mounted on a standard size sheet to preserve it</li>
-      <li>Label (lower right corner of sheet) contains: date &amp; place of collection, detailed classification, ecological peculiarities, local names, name of collector</li>
-      <li>Ex-situ conservation tool</li>
+      <li>It is an <strong class="hg">ex-situ conservation</strong> tool</li>
     </ul>
+    <div class="def">
+      <span class="dl">Label (lower right corner of sheet contains)</span>
+      • Date and place of collection<br/>
+      • Detailed classification of the plant<br/>
+      • Ecological peculiarities and characters<br/>
+      • Local names and name of the collector
+    </div>
+    <div class="note n-grn">✅ Herbarium = Ex-situ conservation. Living plants = In-vivo. Dried/pressed specimens = Herbarium.</div>
   </div>
 
   <!-- 1.3 BOTANICAL GARDENS -->
-  <div class="section-title">1.3 Botanical Gardens ★</div>
-
-  <div class="keypoint-card">
-    <h4>📌 Key Points</h4>
-    <ul>
-      <li>Places where plants of different varieties collected from different parts of the world are grown in a scientific and systematic <strong>in vivo</strong> manner</li>
-      <li>Plants are labelled with scientific and common names</li>
-      <li>First botanical garden established in <strong>1543 by Prof. Luca Ghini at Pisa, Italy</strong></li>
-      <li>Ex-situ conservation tool</li>
+  <div class="sec" id="s3">
+    <div class="sec-title">🌺 1.3 Botanical Gardens</div>
+    <div class="def">
+      <span class="dl">Definition</span>
+      Places where plants of different varieties collected from different parts of the world are grown in a scientific and systematic <strong class="hg">in vivo</strong> manner.
+    </div>
+    <ul class="kp">
+      <li>Plants are labelled with <strong class="hg">scientific and common names</strong></li>
+      <li>First botanical garden established in <strong class="hg">1543 by Prof. Luca Ghini at Pisa, Italy</strong></li>
+      <li>Tool for <strong class="hg">ex-situ conservation</strong></li>
+      <li>Plants are living specimens grown under controlled conditions</li>
     </ul>
+    <div class="note n-blue">📌 Key difference: Botanical garden = living plants grown <em>in vivo</em>. Herbarium = dried/pressed specimens.</div>
   </div>
 
   <!-- 1.4 MUSEUM -->
-  <div class="section-title">1.4 Museum ★</div>
-
-  <div class="keypoint-card">
-    <h4>📌 Key Points</h4>
-    <ul>
-      <li>Museums are places where collections of preserved plant and animal specimens are kept</li>
-      <li>Plant and animal specimens preserved in <strong>formalin (10%–40% formaldehyde)</strong> in transparent jars</li>
-      <li>Larger animals (birds, mammals) are usually <strong>stuffed and preserved</strong> — this science is called <strong>Taxidermy</strong></li>
-      <li>Specimens in dried form are also kept; collections include shells, skeletons, insect boxes</li>
+  <div class="sec" id="s4">
+    <div class="sec-title">🏛️ 1.4 Museum</div>
+    <div class="def">
+      <span class="dl">Definition</span>
+      Museums are places where collections of preserved plant and animal specimens are kept.
+    </div>
+    <ul class="kp">
+      <li>Plant and animal specimens preserved in <strong class="hg">formalin (10%–40% formaldehyde)</strong> in transparent jars</li>
+      <li>Jars are labelled with details of the specimens</li>
+      <li>Larger animals (birds, mammals) are usually <strong class="hg">stuffed and preserved</strong> — this science is called <strong class="hg">Taxidermy</strong></li>
+      <li>Specimens in dried form are also kept</li>
+      <li>Collections include <strong class="hg">shells, skeletons, insect boxes</strong></li>
       <li>Biological museums in educational institutes are reference hubs of biodiversity studies</li>
     </ul>
+    <div class="note n-yel">⭐ <strong>Taxidermy</strong> = science of stuffing and preserving larger animals like birds and mammals.</div>
   </div>
 
   <!-- 1.5 ZOO -->
-  <div class="section-title">1.5 Zoological Parks (Zoo) ★</div>
-
-  <div class="keypoint-card">
-    <h4>📌 Key Points</h4>
-    <ul>
-      <li>Wild animals are kept in captivity</li>
-      <li>Care is taken to provide conditions similar to their natural habitat — this is <strong>ex-situ conservation</strong></li>
-      <li>A naturalist can study food habits and behavior of animals here</li>
+  <div class="sec" id="s5">
+    <div class="sec-title">🦁 1.5 Zoological Parks (Zoo)</div>
+    <div class="def">
+      <span class="dl">Definition</span>
+      Wild animals are kept in captivity. Care is taken to provide conditions similar to their natural habitat.
+    </div>
+    <ul class="kp">
+      <li>Represents <strong class="hg">ex-situ conservation</strong></li>
+      <li>A naturalist can study <strong class="hg">food habits and behavior</strong> of animals here</li>
+      <li>Conditions are made similar to the natural habitat of the animals</li>
     </ul>
   </div>
 
   <!-- 1.6 BIODIVERSITY PARKS -->
-  <div class="section-title">1.6 Biodiversity Parks ★</div>
-
-  <div class="keypoint-card">
-    <h4>📌 Key Points</h4>
-    <ul>
-      <li>An ecological assemblage of species that form <strong>self-sustaining communities on degraded/barren landscapes</strong></li>
-      <li>Example: <em>Late Uttamrao Patil Biodiversity Park, Gureghar, Mahabaleshwar</em></li>
-      <li><strong>In-situ conservation</strong> tool</li>
+  <div class="sec" id="s6">
+    <div class="sec-title">🌳 1.6 Biodiversity Parks</div>
+    <div class="def">
+      <span class="dl">Definition</span>
+      An ecological assemblage of species that form <strong class="hg">self-sustaining communities on degraded/barren landscapes</strong>.
+    </div>
+    <ul class="kp">
+      <li>Represents <strong class="hg">in-situ conservation</strong> — organisms live in conditions closest to natural habitat</li>
+      <li>Example: <em>Late Uttamrao Patil Biodiversity Park, Gureghar, Mahabaleshwar</em> — best model for conservation of natural heritage in urban landscape</li>
+      <li>Helps restore biodiversity on degraded land</li>
+      <li>Sacred groves — plants conserved in name of holy place; recognised by IUCN</li>
     </ul>
+    <div class="note n-grn">✅ <strong>Biodiversity park = In-situ conservation</strong> (in natural/restored habitat). Zoo = Ex-situ conservation (outside natural habitat).</div>
   </div>
 
-  <!-- CONSERVATION TABLE -->
-  <div class="qbox">
-    <div class="qtitle" onclick="toggle(this)">Conservation Types – In-situ vs Ex-situ <span class="arrow">▶</span></div>
-    <div class="qbody">
-      <table>
-        <tr><th>Type</th><th>Meaning</th><th>Example</th></tr>
-        <tr><td><strong>In-situ</strong></td><td>Conservation in the natural habitat of the organism — slowing/stopping/reversing loss</td><td>Biodiversity parks, sacred groves</td></tr>
-        <tr><td><strong>Ex-situ</strong></td><td>Conservation outside the natural habitat</td><td>Zoos, botanical gardens, herbaria</td></tr>
-      </table>
-      <div class="tip">✍️ Biodiversity helps maintain stability in an ecosystem. Loss of one variety of organisms can affect the entire ecosystem.</div>
+  <!-- CONSERVATION -->
+  <div class="sec" id="s7">
+    <div class="sec-title">🔒 Types of Conservation</div>
+    <div class="def">
+      <span class="dl">Biodiversity</span>
+      Biodiversity is the degree of variation of life forms in an ecosystem. It is essential to maintain ecological stability. Population explosion and over-exploitation have resulted in loss of biodiversity at an alarming rate.
     </div>
-  </div>
-
-  <!-- OTHER BIODIVERSITY TOOLS -->
-  <div class="section-title">Other Biodiversity Tools ★</div>
-
-  <div class="qbox">
-    <div class="qtitle" onclick="toggle(this)">Flora, Monograph, Manual, Catalogue, Key <span class="arrow">▶</span></div>
-    <div class="qbody">
-      <table>
-        <tr><th>Tool</th><th>Description</th></tr>
-        <tr><td><strong>Flora</strong></td><td>Plant life occurring in a particular area at a particular time</td></tr>
-        <tr><td><strong>Monograph</strong></td><td>Describes any one selected biological group in detail</td></tr>
-        <tr><td><strong>Manual</strong></td><td>Provides information and keys for identification of species in a particular area</td></tr>
-        <tr><td><strong>Catalogue</strong></td><td>Systematic record/listing of organisms</td></tr>
+    <table class="ntable">
+      <thead><tr><th>Type</th><th>Meaning</th><th>Examples</th></tr></thead>
+      <tbody>
+        <tr><td><strong class="hg">In-situ</strong></td><td>Conservation in the natural habitat of the organism — slowing/stopping/reversing loss</td><td>Biodiversity parks, sacred groves, national parks, wildlife sanctuaries</td></tr>
+        <tr><td><strong class="hg">Ex-situ</strong></td><td>Conservation outside the natural habitat</td><td>Zoos, botanical gardens, herbaria, seed banks</td></tr>
+      </tbody>
+    </table>
+    <div class="def">
+      <span class="dl">Other Biodiversity Tools</span>
+      <table class="ntable" style="margin-top:8px;">
+        <thead><tr><th>Tool</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="hg">Flora</strong></td><td>Plant life occurring in a particular area at a particular time</td></tr>
+          <tr><td><strong class="hg">Monograph</strong></td><td>Describes any one selected biological group in detail</td></tr>
+          <tr><td><strong class="hg">Manual</strong></td><td>Provides information and keys for identification of species in a particular area</td></tr>
+          <tr><td><strong class="hg">Catalogue</strong></td><td>Systematic record/listing of organisms</td></tr>
+        </tbody>
       </table>
     </div>
+    <div class="note n-red">⚠️ Loss of one variety of organisms can affect the entire ecosystem. Biodiversity helps maintain stability.</div>
   </div>
 
   <!-- 1.7 KEY -->
-  <div class="section-title">1.7 Key ★</div>
-
-  <div class="keypoint-card">
-    <h4>📌 Key Points</h4>
-    <ul>
-      <li>Key is a <strong>taxonomical aid</strong> used for classification of plants and animals</li>
-      <li>Keys are based on <strong>contrasting characters</strong></li>
-      <li>One contrasting character gets <strong>accepted</strong>, the other <strong>rejected</strong></li>
-      <li>The statement in a key is called a <strong>lead</strong></li>
-      <li>Keys are normally <strong>analytical</strong> in nature</li>
+  <div class="sec" id="s8">
+    <div class="sec-title">🔑 1.7 Key (Taxonomical Aid)</div>
+    <div class="def">
+      <span class="dl">Definition</span>
+      A <strong class="hg">key</strong> is a taxonomical aid used for classification and identification of plants and animals.
+    </div>
+    <ul class="kp">
+      <li>Keys are based on <strong class="hg">contrasting characters</strong></li>
+      <li>One contrasting character gets <strong class="hg">accepted</strong>, the other <strong class="hr">rejected</strong></li>
+      <li>The statement in a key is called a <strong class="hg">lead</strong></li>
+      <li>Keys are normally <strong class="hg">analytical</strong> in nature</li>
+      <li>Help identify species in a particular area</li>
     </ul>
+    <div class="note n-grn">✅ Key = based on contrasting characters. Statements in key = leads.</div>
   </div>
 
-  <!-- NOTABLE SCIENTISTS -->
-  <div class="section-title">Notable Scientists ★</div>
-
-  <div class="keypoint-card">
-    <h4>📌 Dr. S. P. Agharkar</h4>
-    <ul>
-      <li>One of India's leading botanists; born <strong>November 1884 in Malvan, Maharashtra</strong></li>
-      <li>Explored biodiversity of <strong>Western Ghats</strong></li>
-      <li>Discovered a species of <strong>freshwater jellyfish</strong> previously known only in Africa</li>
-      <li>Findings published in scientific journal <em>Nature</em> in 1912</li>
-      <li>The institute <strong>ARI, Pune</strong> has been named after him</li>
-    </ul>
-  </div>
-
-  <div class="keypoint-card">
-    <h4>📌 Prof. Luca Ghini (1490–1556)</h4>
-    <ul>
-      <li>Italian taxonomist — initiated the art of herbarium</li>
-      <li>Established the <strong>first botanical garden of the world at Pisa, Italy (1543)</strong></li>
-    </ul>
-  </div>
-
-  <!-- QUICK REVISION -->
-  <div class="section-title">⚡ Quick Revision – Power One-Liners</div>
-
-  <div class="qbox">
-    <div class="qtitle" onclick="toggle(this)">📋 All Key Facts at a Glance <span class="arrow">▶</span></div>
-    <div class="qbody">
-      <table>
-        <tr><th>Term</th><th>Key Fact</th></tr>
-        <tr><td>Metabolism</td><td>Most all-inclusive characteristic of life (Catabolism + Anabolism)</td></tr>
-        <tr><td>Reproduction</td><td>NOT all-inclusive (mules don't reproduce yet are living)</td></tr>
-        <tr><td>Herbarium</td><td>Dried, pressed, mounted specimens; label at lower right corner</td></tr>
-        <tr><td>Museum</td><td>Preserved in formalin; larger animals stuffed (taxidermy)</td></tr>
-        <tr><td>Botanical garden</td><td>Living plants grown in vivo; first at Pisa by Luca Ghini (1543)</td></tr>
-        <tr><td>Zoo</td><td>Ex-situ conservation</td></tr>
-        <tr><td>Biodiversity park</td><td>In-situ conservation on degraded land</td></tr>
-        <tr><td>Key</td><td>Based on contrasting characters; statements = leads</td></tr>
-        <tr><td>Sacred groves</td><td>Plants conserved in name of holy place; recognised by IUCN</td></tr>
-        <tr><td>Dr. S. P. Agharkar</td><td>ARI, Pune; discovered freshwater jellyfish; Western Ghats</td></tr>
-      </table>
+  <!-- SCIENTISTS -->
+  <div class="sec" id="s9">
+    <div class="sec-title">👨‍🔬 Notable Scientists</div>
+    <div class="def">
+      <span class="dl">Dr. S. P. Agharkar ★</span>
+      • One of India's leading botanists; born <strong class="hg">November 1884 in Malvan, Maharashtra</strong><br/>
+      • Explored biodiversity of <strong class="hg">Western Ghats</strong><br/>
+      • Discovered a species of <strong class="hg">freshwater jellyfish</strong> previously known only in Africa<br/>
+      • Findings published in scientific journal <em>Nature</em> in <strong class="hg">1912</strong><br/>
+      • The institute <strong class="hg">ARI, Pune</strong> has been named after him
+    </div>
+    <div class="def">
+      <span class="dl">Prof. Luca Ghini (1490–1556) ★</span>
+      • Italian taxonomist — initiated the art of herbarium<br/>
+      • Established the <strong class="hg">first botanical garden of the world at Pisa, Italy (1543)</strong>
+    </div>
+    <div class="fml">
+      <span class="fl">⚡ Quick Revision One-Liners</span>
+      Metabolism = most all-inclusive characteristic ★<br/>
+      Reproduction = NOT all-inclusive (mules don't reproduce)<br/>
+      Herbarium = dried pressed specimen (ex-situ) | Label: lower right corner<br/>
+      Museum = formalin preserved; large animals = taxidermy<br/>
+      Botanical garden = living plants in vivo; first at Pisa (1543) by Luca Ghini<br/>
+      Zoo = ex-situ | Biodiversity park = in-situ on degraded land<br/>
+      Key = contrasting characters; statements = leads<br/>
+      Dr. S. P. Agharkar → ARI Pune; Western Ghats; freshwater jellyfish (1912)
     </div>
   </div>
 
-  <!-- ===== EXAM QUESTIONS: 2 MARKS ===== -->
-  <div class="exam-hot">★★ 2 Mark Exam Questions – Chapter 1</div>
+  <!-- EXAM QUESTIONS -->
+  <div class="sec" id="s10">
+    <div class="sec-title">🎯 Board Exam Questions — Chapter 1</div>
 
-  <div class="qbox">
-    <div class="qtitle" onclick="toggle(this)">Q1. What is a herbarium? How is it useful in taxonomic studies? <span class="marks">2 marks</span> <span class="arrow">▶</span></div>
-    <div class="qbody">
-      <p>A <strong>herbarium</strong> is essentially a dried plant specimen that is pressed, treated and mounted on a standard size sheet to preserve it.</p>
-      <ul>
-        <li>Word coined by <strong>Pitton de Tournefort</strong>; art initiated by <strong>Luca Ghini</strong></li>
-        <li>Label (lower right corner) contains: date, place of collection, classification, ecological details, local names, collector's name</li>
-        <li>Herbaria are effective tools in taxonomic studies — help in identification and classification of plants</li>
-        <li>It is an <strong>ex-situ</strong> conservation tool</li>
-      </ul>
-      <div class="tip">✍️ Definition + uses = full 2 marks</div>
-    </div>
-  </div>
-
-  <div class="qbox">
-    <div class="qtitle" onclick="toggle(this)">Q2. What is metabolism? Why is it the most all-inclusive characteristic of life? <span class="marks">2 marks</span> <span class="arrow">▶</span></div>
-    <div class="qbody">
-      <p><strong>Metabolism</strong> = Catabolism (breaking molecules) + Anabolism (making new molecules).</p>
-      <p>It is the sum total of all chemical reactions taking place inside a living organism.</p>
-      <p><strong>Why most all-inclusive:</strong></p>
-      <ul>
-        <li>Every living organism, without exception, carries out metabolism</li>
-        <li>Even mules (which don't reproduce) and brain-dead patients perform metabolism at the cellular level</li>
-        <li>Reproduction is NOT all-inclusive (mules don't reproduce, yet they are living)</li>
-        <li>Growth is NOT unique to living things (crystals also grow)</li>
-        <li>Therefore, metabolism is the most reliable and all-inclusive characteristic of life</li>
+    <div class="eq-box">
+      <div class="eq-title">★ 1 Mark Questions</div>
+      <ul class="q-list">
+        <li>Smallest cell? <span class="mk m1">1 mark</span> → Mycoplasma (0.3 µm)</li>
+        <li>What is taxidermy? <span class="mk m1">1 mark</span> → Science of stuffing and preserving larger animals like birds, mammals</li>
+        <li>What is a herbarium? <span class="mk m1">1 mark</span> → Dried, pressed plant specimens mounted on standard sheets for preservation</li>
+        <li>Who coined the term 'herbarium'? <span class="mk m1">1 mark</span> → Pitton de Tournefort</li>
+        <li>Give an example of in-situ conservation. <span class="mk m1">1 mark</span> → Biodiversity park / Sacred grove / National park</li>
+        <li>Give an example of ex-situ conservation. <span class="mk m1">1 mark</span> → Zoo / Botanical garden / Herbarium</li>
+        <li>What is cyclosis? <span class="mk m1">1 mark</span> → Streaming movements of cytoplasm</li>
       </ul>
     </div>
-  </div>
 
-  <div class="qbox">
-    <div class="qtitle" onclick="toggle(this)">Q3. Distinguish between in-situ and ex-situ conservation. <span class="marks">2 marks</span> <span class="arrow">▶</span></div>
-    <div class="qbody">
-      <table>
-        <tr><th>Feature</th><th>In-situ Conservation</th><th>Ex-situ Conservation</th></tr>
-        <tr><td>Definition</td><td>Conservation in the natural habitat of the organism</td><td>Conservation outside the natural habitat</td></tr>
-        <tr><td>Examples</td><td>Biodiversity parks, sacred groves, national parks</td><td>Zoos, botanical gardens, herbaria</td></tr>
-        <tr><td>Advantage</td><td>Organisms live in natural conditions</td><td>Protection from predators, poachers</td></tr>
-      </table>
+    <div class="eq-box" style="margin-top:14px;">
+      <div class="eq-title">★★ 2 Mark Questions</div>
+      <ul class="q-list">
+        <li><strong>What is metabolism? Why is it the most all-inclusive characteristic of life?</strong> <span class="mk m2">2 marks</span><br/>
+        Metabolism = Catabolism + Anabolism. Every living organism carries out metabolism without exception. Mules (no reproduction) and brain-dead patients still perform metabolism. Reproduction is NOT all-inclusive because mules and sterile worker bees do not reproduce yet are living. Hence metabolism is the most reliable all-inclusive characteristic.</li>
+
+        <li><strong>Distinguish between in-situ and ex-situ conservation.</strong> <span class="mk m2">2 marks</span><br/>
+        In-situ: conservation in natural habitat; e.g. biodiversity parks, sacred groves.<br/>
+        Ex-situ: conservation outside natural habitat; e.g. zoos, botanical gardens, herbaria.<br/>
+        In-situ preserves natural conditions; ex-situ protects from predators/poachers.</li>
+
+        <li><strong>What are taxonomical aids? Give examples.</strong> <span class="mk m2">2 marks</span><br/>
+        Taxonomical aids are tools that help in identification and classification of organisms, gathered through intensive laboratory and field studies. Examples: Herbaria, Botanical gardens, Museums, Biodiversity parks, Zoological parks, Keys, Flora, Monograph, Manual, Catalogue.</li>
+
+        <li><strong>What is a key? What are its features?</strong> <span class="mk m2">2 marks</span><br/>
+        A key is a taxonomical aid used for classification and identification of plants and animals. Features: based on contrasting characters; one character accepted, other rejected; statements = leads; normally analytical in nature.</li>
+
+        <li><strong>Write a note on herbarium and its importance.</strong> <span class="mk m2">2 marks</span><br/>
+        Herbarium = dried plant specimen pressed, treated, mounted on standard sheet. Coined by Pitton de Tournefort; initiated by Luca Ghini. Label contains: date, place, classification, ecological details, local names, collector's name. Effective tool in taxonomic studies; ex-situ conservation.</li>
+      </ul>
     </div>
-  </div>
 
-  <div class="qbox">
-    <div class="qtitle" onclick="toggle(this)">Q4. What are taxonomical aids? Give examples. <span class="marks">2 marks</span> <span class="arrow">▶</span></div>
-    <div class="qbody">
-      <p><strong>Taxonomical aids</strong> are tools that help in identification and classification of organisms, gathered through intensive laboratory and field studies.</p>
-      <p><strong>Examples:</strong></p>
-      <ul>
-        <li>Herbaria – dried, pressed, mounted plant specimens</li>
-        <li>Botanical gardens – living plants grown in vivo</li>
-        <li>Museums – preserved plant and animal specimens</li>
-        <li>Biodiversity parks – self-sustaining communities on degraded land</li>
-        <li>Zoological parks – animals in conditions similar to natural habitat</li>
-        <li>Keys, Flora, Monograph, Manual, Catalogue</li>
+    <div class="eq-box" style="margin-top:14px;">
+      <div class="eq-title">★★★ 3 Mark Questions</div>
+      <ul class="q-list">
+        <li><strong>Write about any three taxonomical aids used in biology.</strong> <span class="mk m3">3 marks</span><br/>
+        1. <strong>Herbarium:</strong> Dried plant specimen pressed, treated, mounted on standard sheet. Label: date, place, classification, ecological details. Ex-situ; effective for taxonomic studies. Initiated by Luca Ghini.<br/>
+        2. <strong>Botanical Garden:</strong> Plants from different parts of world grown in vivo. Labelled with scientific and common names. First at Pisa by Luca Ghini (1543). Ex-situ conservation.<br/>
+        3. <strong>Museum:</strong> Preserved in formalin (10–40%). Larger animals stuffed (taxidermy). Collections include shells, skeletons, insect boxes. Reference hubs of biodiversity studies.</li>
+
+        <li><strong>What are the characteristics of living organisms? Explain any three.</strong> <span class="mk m3">3 marks</span><br/>
+        1. <strong>Metabolism:</strong> Catabolism + Anabolism. Most all-inclusive characteristic of life.<br/>
+        2. <strong>Growth:</strong> Well-orchestrated growth from birth. Non-living things grow but not from within.<br/>
+        3. <strong>Reproduction:</strong> Produce young ones (asexual/sexual). NOT all-inclusive — mules and sterile worker bees don't reproduce yet are living.</li>
+      </ul>
+    </div>
+
+    <div class="eq-box" style="margin-top:14px;">
+      <div class="eq-title">★★★★ 4 Mark Questions</div>
+      <ul class="q-list">
+        <li><strong>Write in detail about any four taxonomical aids.</strong> <span class="mk m4">4 marks</span><br/>
+        1. <strong>Herbarium:</strong> Dried, pressed, mounted plant specimens. Label: date, place, classification, ecological peculiarities, local names, collector. Ex-situ; coined by Pitton de Tournefort; initiated by Luca Ghini.<br/>
+        2. <strong>Botanical Garden:</strong> Plants from world grown in vivo. Labelled with scientific and common names. First at Pisa, Italy (1543). Ex-situ conservation.<br/>
+        3. <strong>Museum:</strong> Preserved in formalin (10–40%). Larger animals stuffed (taxidermy). Collections: shells, skeletons, insect boxes. Reference hubs of biodiversity.<br/>
+        4. <strong>Zoological Park:</strong> Wild animals in captivity with conditions similar to natural habitat. Ex-situ conservation. Naturalists study food habits and behavior.</li>
+
+        <li><strong>Describe biodiversity parks and their importance in conservation.</strong> <span class="mk m4">4 marks</span><br/>
+        <strong>Biodiversity Parks:</strong> Ecological assemblage of species forming self-sustaining communities on degraded/barren landscapes. Represents in-situ conservation.<br/>
+        Example: Late Uttamrao Patil Biodiversity Park, Gureghar, Mahabaleshwar — best model for conservation of natural heritage in urban landscape.<br/>
+        <strong>Importance:</strong> Biodiversity = degree of variation of life forms in ecosystem. Essential for ecological stability. Population explosion and over-exploitation have caused alarming loss of biodiversity. Loss of one variety of organisms affects the entire ecosystem. Sacred groves = in-situ; Zoo = ex-situ; Botanical garden = ex-situ.<br/>
+        <strong>Dr. S. P. Agharkar:</strong> Explored biodiversity of Western Ghats; discovered freshwater jellyfish; published in Nature (1912); ARI, Pune named after him.</li>
       </ul>
     </div>
   </div>
 
-  <div class="qbox">
-    <div class="qtitle" onclick="toggle(this)">Q5. What is a key? What are its features? <span class="marks">2 marks</span> <span class="arrow">▶</span></div>
-    <div class="qbody">
-      <p>A <strong>key</strong> is a taxonomical aid used for classification and identification of plants and animals.</p>
-      <p><strong>Features:</strong></p>
-      <ul>
-        <li>Keys are based on <strong>contrasting characters</strong></li>
-        <li>One contrasting character gets accepted, the other rejected</li>
-        <li>The statement in a key is called a <strong>lead</strong></li>
-        <li>Keys are normally <strong>analytical</strong> in nature</li>
-        <li>Help identify species in a particular area</li>
-      </ul>
-    </div>
-  </div>
+</div><!-- end notes-body -->
 
-  <!-- ===== EXAM QUESTIONS: 3 MARKS ===== -->
-  <div class="exam-hot">★★★ 3 Mark Exam Questions – Chapter 1</div>
+<div class="bottom-nav">
+  <span class="bn-label">🌍 Ch 1 – The Living World</span>
+  <a href="notes-class11.html" class="bn-btn bn-all">📚 All Class 11 Notes</a>
+  <a href="class11-biology-ch3-notes.html" class="bn-btn bn-next">Ch 3 Kingdom Plantae →</a>
+  <a href="class11-biology-ch5-notes.html" class="bn-btn bn-next">Ch 5 Cell Structure →</a>
+</div>
 
-  <div class="qbox">
-    <div class="qtitle" onclick="toggle(this)">Q6. Write about any three taxonomical aids used in biology. <span class="marks m3">3 marks</span> <span class="arrow">▶</span></div>
-    <div class="qbody">
-      <p><strong>1. Herbarium:</strong></p>
-      <ul>
-        <li>Dried plant specimen pressed, treated and mounted on standard size sheet</li>
-        <li>Label contains: date, place, classification, ecological details</li>
-        <li>Ex-situ conservation tool; effective for taxonomic studies</li>
-      </ul>
-      <p><strong>2. Botanical Garden:</strong></p>
-      <ul>
-        <li>Plants of different varieties from different parts of world grown in vivo</li>
-        <li>Plants labelled with scientific and common names</li>
-        <li>First established in 1543 by Luca Ghini at Pisa, Italy</li>
-      </ul>
-      <p><strong>3. Museum:</strong></p>
-      <ul>
-        <li>Collections of preserved plant and animal specimens</li>
-        <li>Specimens preserved in formalin (10–40% formaldehyde)</li>
-        <li>Larger animals stuffed (taxidermy)</li>
-        <li>Reference hubs of biodiversity studies</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="qbox">
-    <div class="qtitle" onclick="toggle(this)">Q7. What are the characteristics of living organisms? Explain any three. <span class="marks m3">3 marks</span> <span class="arrow">▶</span></div>
-    <div class="qbody">
-      <p>The main characteristics of living organisms are: Metabolism, Growth, Ageing, Reproduction, Death, Responsiveness/Irritability.</p>
-      <p><strong>1. Metabolism:</strong> Metabolism = Catabolism + Anabolism. Living beings need energy for survival. It is the most all-inclusive characteristic of life.</p>
-      <p><strong>2. Growth:</strong> From birth, organisms show well-orchestrated growth and development. Non-living things may grow but not from within (e.g. sand mounds).</p>
-      <p><strong>3. Reproduction:</strong> Organisms produce young ones (asexual or sexual) to ensure continuity of race. Note: Mules &amp; sterile worker bees do not reproduce yet are living → NOT all-inclusive.</p>
-      <div class="tip">✍️ Write any 3 with explanation = 3 marks. Always mention the exception for reproduction.</div>
-    </div>
-  </div>
-
-  <!-- ===== EXAM QUESTIONS: 4 MARKS ===== -->
-  <div class="exam-hot">★★★★ 4 Mark Exam Questions – Chapter 1</div>
-
-  <div class="qbox">
-    <div class="qtitle" onclick="toggle(this)">Q8. Write in detail about any four taxonomical aids. <span class="marks m4">4 marks</span> <span class="arrow">▶</span></div>
-    <div class="qbody">
-      <p><strong>1. Herbarium:</strong> Dried plant specimen pressed, treated and mounted on standard size sheet. Label contains date, place of collection, detailed classification, ecological peculiarities, local names, name of collector. Coined by Pitton de Tournefort; initiated by Luca Ghini. Ex-situ conservation tool.</p>
-      <p><strong>2. Botanical Garden:</strong> Places where plants from different parts of the world are grown in vivo. Plants labelled with scientific and common names. First established by Luca Ghini at Pisa, Italy (1543). Ex-situ conservation.</p>
-      <p><strong>3. Museum:</strong> Collections of preserved plant and animal specimens. Preserved in formalin (10–40% formaldehyde). Larger animals stuffed (taxidermy). Collections include shells, skeletons, insect boxes. Reference hubs of biodiversity studies.</p>
-      <p><strong>4. Zoological Park (Zoo):</strong> Wild animals kept in captivity with conditions similar to their natural habitat. Used for ex-situ conservation. Naturalists study food habits and behavior of animals here.</p>
-      <div class="tip">✍️ 1 mark per aid = 4 marks. Mention key facts for each.</div>
-    </div>
-  </div>
-
-  <div class="qbox">
-    <div class="qtitle" onclick="toggle(this)">Q9. Describe biodiversity parks and their importance in conservation. <span class="marks m4">4 marks</span> <span class="arrow">▶</span></div>
-    <div class="qbody">
-      <p><strong>Biodiversity Parks:</strong> An ecological assemblage of species that form self-sustaining communities on degraded or barren landscapes.</p>
-      <p><strong>Features:</strong></p>
-      <ul>
-        <li>Represents <strong>in-situ conservation</strong> — organisms live in their natural environment</li>
-        <li>Example: Late Uttamrao Patil Biodiversity Park, Gureghar, Mahabaleshwar — best model for conservation of natural heritage in urban landscape</li>
-        <li>Helps restore biodiversity in areas where it has been degraded</li>
-      </ul>
-      <p><strong>Importance of Biodiversity Conservation:</strong></p>
-      <ul>
-        <li>Biodiversity = degree of variation of life forms in an ecosystem</li>
-        <li>Essential to maintain ecological stability</li>
-        <li>Population explosion and over-exploitation have resulted in loss of biodiversity at an alarming rate</li>
-        <li>Loss of one variety of organisms can affect the entire ecosystem</li>
-        <li>Sacred groves — plants conserved in name of holy place; recognised by IUCN</li>
-      </ul>
-      <p><strong>Dr. S. P. Agharkar's contribution:</strong> Explored biodiversity of Western Ghats; discovered freshwater jellyfish; findings in <em>Nature</em> (1912); ARI, Pune named after him.</p>
-    </div>
-  </div>
-
-</div><!-- end container -->
-
+<script src="main.js"></script>
 <script>
-function toggle(el) {
-  el.classList.toggle('active');
-  const body = el.nextElementSibling;
-  body.classList.toggle('open');
-}
-window.addEventListener('load', () => {
-  document.querySelectorAll('.qbody').forEach(b => b.classList.add('open'));
-  document.querySelectorAll('.qtitle').forEach(t => t.classList.add('active'));
-});
+  // Progress bar
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    document.getElementById('pf').style.width = pct + '%';
+  });
+  // Quick-nav active highlight
+  const secs = document.querySelectorAll('.sec');
+  const qnBtns = document.querySelectorAll('.qn-btn');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        qnBtns.forEach(b => b.classList.remove('active'));
+        const active = document.querySelector(`.qn-btn[href="#${e.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+  secs.forEach(s => obs.observe(s));
 </script>
 </body>
 </html>
