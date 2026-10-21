@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---- Course filter (courses.html) ---- */
   const filterBtns = document.querySelectorAll('.filter-btn');
   const courseCards = document.querySelectorAll('#coursesGrid .course-card');
+  const notesCards  = document.querySelectorAll('#notesChaptersGrid .notes-chapter-card, .filterable-section');
   if (filterBtns.length > 0) {
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -82,6 +83,17 @@ document.addEventListener('DOMContentLoaded', () => {
               card.style.opacity = '1';
               card.style.transform = 'translateY(0)';
             });
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Notes chapter cards (notes-class*.html) — filter by data-subject.
+        // Cards without a data-subject stay visible so content is never hidden by accident.
+        notesCards.forEach(card => {
+          const subject = card.dataset.subject;
+          if (filter === 'all' || !subject || subject === filter) {
+            card.style.display = '';
           } else {
             card.style.display = 'none';
           }
