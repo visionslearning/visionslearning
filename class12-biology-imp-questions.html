@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Class 12 Biology — Important Board Questions | Visions Classes</title>
+  <meta name="description" content="Class 12 Biology Important Questions Chapter wise for Maharashtra Board. All 15 chapters covered with 2, 3 and 5 mark questions."/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="logo.png" type="image/png"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{background:#f0fdf4;color:#1e293b;font-family:'Segoe UI',system-ui,sans-serif;}
+
+    /* NAVBAR */
+    .navbar{background:#14532d !important;}
+
+    /* HERO */
+    .ch-hero{background:linear-gradient(135deg,#14532d 0%,#166534 50%,#15803d 100%);color:#fff;padding:90px 0 44px;text-align:center;position:relative;overflow:hidden;}
+    .ch-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(134,239,172,.18) 0%,transparent 60%);}
+    .ch-hero .badge{display:inline-block;padding:5px 18px;border-radius:20px;background:rgba(134,239,172,.2);border:1px solid #86efac;color:#bbf7d0;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;position:relative;}
+    .ch-hero h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:900;position:relative;margin-bottom:10px;}
+    .ch-hero p{font-size:.95rem;opacity:.85;position:relative;}
+
+    .wrap{max-width:960px;margin:0 auto;padding:0 16px 60px;}
+
+    /* CHAPTER BLOCK */
+    .ch-block{background:#fff;border-radius:14px;box-shadow:0 3px 14px rgba(0,0,0,.07);margin-bottom:28px;overflow:hidden;}
+    .ch-head{padding:16px 22px;display:flex;align-items:center;gap:14px;cursor:pointer;user-select:none;}
+    .ch-head .num{min-width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:900;color:#fff;border:2px solid rgba(255,255,255,.4);}
+    .ch-head .info{flex:1;}
+    .ch-head .sub{font-size:.68rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;opacity:.8;}
+    .ch-head .title{font-size:1rem;font-weight:800;color:#fff;line-height:1.25;margin-top:2px;}
+    .ch-head .arrow{font-size:1rem;color:#fff;opacity:.8;transition:transform .3s;}
+    .ch-head.open .arrow{transform:rotate(180deg);}
+
+    .ch-body{display:none;padding:20px 22px;}
+    .ch-body.open{display:block;}
+
+    /* MARKS BADGE */
+    .mark-section{margin-bottom:18px;}
+    .mark-label{display:inline-flex;align-items:center;gap:6px;background:#dcfce7;color:#14532d;font-size:.72rem;font-weight:800;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px;}
+    .mark-label.m3{background:#fef9c3;color:#854d0e;}
+    .mark-label.m5{background:#fee2e2;color:#991b1b;}
+
+    /* Q BOX */
+    .qbox{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:13px 16px;margin-bottom:10px;}
+    .qbox .qi{font-size:.7rem;font-weight:800;color:#15803d;text-transform:uppercase;letter-spacing:.8px;margin-bottom:5px;}
+    .qbox.m3 .qi{color:#854d0e;}
+    .qbox.m5 .qi{color:#991b1b;}
+    .qbox p{font-size:.9rem;color:#1e293b;line-height:1.6;font-weight:600;}
+    .qbox .hint{font-size:.78rem;color:#64748b;margin-top:5px;font-style:italic;}
+
+    /* STAR */
+    .star{color:#f59e0b;font-size:.85rem;}
+
+    /* QUICK COUNT */
+    .qcount{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;}
+    .qcount span{background:#f0fdf4;border:1px solid #86efac;color:#15803d;font-size:.75rem;font-weight:700;padding:4px 10px;border-radius:20px;}
+    .qcount span.red{background:#fff1f2;border-color:#fca5a5;color:#991b1b;}
+    .qcount span.yel{background:#fefce8;border-color:#fde047;color:#854d0e;}
+
+    /* BOTTOM NAV */
+    .bottom-nav{display:flex;justify-content:space-between;align-items:center;background:#fff;border-top:1px solid #e2e8f0;padding:14px 20px;flex-wrap:wrap;gap:10px;}
+    .bottom-nav a{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#14532d,#15803d);color:#fff;padding:10px 20px;border-radius:24px;text-decoration:none;font-size:.88rem;font-weight:700;}
+    .back-top{text-align:center;margin:10px 0 24px;}
+    .back-top a{display:inline-block;background:#dcfce7;color:#14532d;padding:8px 20px;border-radius:20px;text-decoration:none;font-size:.82rem;font-weight:700;}
+
+    /* TOC */
+    .toc{background:#fff;border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.07);padding:20px 24px;margin-bottom:28px;}
+    .toc h2{color:#14532d;font-size:1.1rem;margin-bottom:14px;}
+    .toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;}
+    .toc-grid a{display:flex;align-items:center;gap:8px;padding:8px 12px;background:#f0fdf4;border:1px solid #dcfce7;border-radius:8px;text-decoration:none;color:#14532d;font-size:.83rem;font-weight:600;transition:background .2s;}
+    .toc-grid a:hover{background:#dcfce7;}
+    .toc-grid a .tn{min-width:24px;height:24px;background:#15803d;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;}
+
+    @media(max-width:600px){
+      .ch-head .title{font-size:.92rem;}
+      .ch-body{padding:14px 14px;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Visions Classes Logo" class="nav-logo-img"/>
+      <div class="logo-text"><span>Visions</span> Classes</div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="online-lectures.html">Online Lectures</a></li>
+      <li><a href="buy-courses.html">Buy Course</a></li>
+      <li><a href="notes.html" class="active">Notes</a></li>
+      <li><a href="toppers.html">Toppers 🏆</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="buy-courses.html" class="nav-cta">Enroll Now</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="ch-hero">
+  <div class="badge">Class 12 Biology — Maharashtra Board</div>
+  <h1>⭐ Important Board Questions</h1>
+  <p>All 15 Chapters · 2 Mark · 3 Mark · 5 Mark · Most Expected Questions</p>
+</div>
+
+<div class="wrap" style="padding-top:32px;">
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc" id="top">
+    <h2>📋 Chapter Index — Jump to any chapter</h2>
+    <div class="toc-grid">
+      <a href="#ch1"><div class="tn">1</div>Reproduction in Plants</a>
+      <a href="#ch2"><div class="tn">2</div>Reproduction in Animals</a>
+      <a href="#ch3"><div class="tn">3</div>Inheritance &amp; Variation</a>
+      <a href="#ch4"><div class="tn">4</div>Molecular Basis of Inheritance</a>
+      <a href="#ch5"><div class="tn">5</div>Origin &amp; Evolution of Life</a>
+      <a href="#ch6"><div class="tn">6</div>Plant Water Relation</a>
+      <a href="#ch7"><div class="tn">7</div>Plant Growth &amp; Mineral Nutrition</a>
+      <a href="#ch8"><div class="tn">8</div>Respiration &amp; Circulation</a>
+      <a href="#ch9"><div class="tn">9</div>Control &amp; Co-ordination</a>
+      <a href="#ch10"><div class="tn">10</div>Human Health &amp; Diseases</a>
+      <a href="#ch11"><div class="tn">11</div>Enhancement of Food Production</a>
+      <a href="#ch12"><div class="tn">12</div>Biotechnology</a>
+      <a href="#ch13"><div class="tn">13</div>Organisms &amp; Populations</a>
+      <a href="#ch14"><div class="tn">14</div>Ecosystems &amp; Energy Flow</a>
+      <a href="#ch15"><div class="tn">15</div>Biodiversity &amp; Conservation</a>
+    </div>
+  </div>
+
+  <!-- ═══════════ CHAPTER 1 ═══════════ -->
+  <div class="ch-block" id="ch1">
+    <div class="ch-head open" style="background:linear-gradient(135deg,#166534,#15803d);" onclick="toggle(this)">
+      <div class="num">1</div>
+      <div class="info">
+        <div class="sub">Botany</div>
+        <div class="title">Reproduction in Lower and Higher Plants</div>
+      </div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="ch-body open">
+      <div class="qcount">
+        <span>2 Mark × 4</span><span class="yel">3 Mark × 4</span><span class="red">5 Mark × 3</span>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label">2 Mark Questions</div>
+        <div class="qbox"><div class="qi">Q1 ★★</div><p>What is vegetative propagation? Give two examples.</p><div class="hint">Hint: runners, bulbs, rhizomes — natural methods</div></div>
+        <div class="qbox"><div class="qi">Q2 ★★</div><p>Distinguish between microsporogenesis and megasporogenesis.</p></div>
+        <div class="qbox"><div class="qi">Q3 ★</div><p>What is double fertilization? Where does it occur?</p></div>
+        <div class="qbox"><div class="qi">Q4 ★★</div><p>Define pollination. State its two types.</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m3">3 Mark Questions</div>
+        <div class="qbox m3"><div class="qi">Q1 ★★★</div><p>Explain the structure of a typical angiosperm ovule with a neat diagram.</p></div>
+        <div class="qbox m3"><div class="qi">Q2 ★★</div><p>Describe the process of triple fusion with its significance.</p></div>
+        <div class="qbox m3"><div class="qi">Q3 ★★</div><p>Explain the role of wind and insects as pollinating agents.</p></div>
+        <div class="qbox m3"><div class="qi">Q4 ★★</div><p>What is apomixis? Explain its significance in agriculture.</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m5">5 Mark Questions</div>
+        <div class="qbox m5"><div class="qi">Q1 ★★★</div><p>Describe the development of male gametophyte in angiosperms. Draw a neat labeled diagram of a mature pollen grain.</p></div>
+        <div class="qbox m5"><div class="qi">Q2 ★★★</div><p>Explain the development of female gametophyte (embryo sac) in angiosperms step by step.</p></div>
+        <div class="qbox m5"><div class="qi">Q3 ★★</div><p>Describe the types of vegetative reproduction in plants with suitable examples of each.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ CHAPTER 2 ═══════════ -->
+  <div class="ch-block" id="ch2">
+    <div class="ch-head open" style="background:linear-gradient(135deg,#1e3a8a,#1d4ed8);" onclick="toggle(this)">
+      <div class="num">2</div>
+      <div class="info">
+        <div class="sub">Zoology</div>
+        <div class="title">Reproduction in Lower and Higher Animals</div>
+      </div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="ch-body open">
+      <div class="qcount">
+        <span>2 Mark × 4</span><span class="yel">3 Mark × 4</span><span class="red">5 Mark × 3</span>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label">2 Mark Questions</div>
+        <div class="qbox"><div class="qi">Q1 ★★</div><p>Define oogenesis. Where does it occur?</p></div>
+        <div class="qbox"><div class="qi">Q2 ★★</div><p>What is the significance of meiosis in sexual reproduction?</p></div>
+        <div class="qbox"><div class="qi">Q3 ★★</div><p>Distinguish between oviparity and viviparity with one example each.</p></div>
+        <div class="qbox"><div class="qi">Q4 ★</div><p>What is parthenogenesis? Give one example.</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m3">3 Mark Questions</div>
+        <div class="qbox m3"><div class="qi">Q1 ★★★</div><p>Describe the process of spermatogenesis with a labeled diagram.</p></div>
+        <div class="qbox m3"><div class="qi">Q2 ★★★</div><p>Explain the menstrual cycle with the role of hormones FSH, LH, estrogen and progesterone.</p></div>
+        <div class="qbox m3"><div class="qi">Q3 ★★</div><p>What is in vitro fertilization (IVF)? Explain its steps briefly.</p></div>
+        <div class="qbox m3"><div class="qi">Q4 ★★</div><p>Write a note on contraceptive methods — natural, barrier and hormonal.</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m5">5 Mark Questions</div>
+        <div class="qbox m5"><div class="qi">Q1 ★★★</div><p>Describe the structure of human male reproductive system with a neat labeled diagram.</p></div>
+        <div class="qbox m5"><div class="qi">Q2 ★★★</div><p>Describe the structure of human female reproductive system with a neat labeled diagram.</p></div>
+        <div class="qbox m5"><div class="qi">Q3 ★★</div><p>Explain embryonic development in humans from fertilization to implantation.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ CHAPTER 3 ═══════════ -->
+  <div class="ch-block" id="ch3">
+    <div class="ch-head open" style="background:linear-gradient(135deg,#7c2d12,#b45309);" onclick="toggle(this)">
+      <div class="num">3</div>
+      <div class="info">
+        <div class="sub">Genetics</div>
+        <div class="title">Inheritance and Variation</div>
+      </div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="ch-body open">
+      <div class="qcount">
+        <span>2 Mark × 5</span><span class="yel">3 Mark × 4</span><span class="red">5 Mark × 3</span>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label">2 Mark Questions</div>
+        <div class="qbox"><div class="qi">Q1 ★★★</div><p>State Mendel's Law of Segregation.</p></div>
+        <div class="qbox"><div class="qi">Q2 ★★★</div><p>What is incomplete dominance? Give one example with expected ratio.</p></div>
+        <div class="qbox"><div class="qi">Q3 ★★</div><p>Distinguish between genotype and phenotype.</p></div>
+        <div class="qbox"><div class="qi">Q4 ★★</div><p>What is co-dominance? Give the example of ABO blood group.</p></div>
+        <div class="qbox"><div class="qi">Q5 ★★</div><p>Define linkage. Who discovered linkage?</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m3">3 Mark Questions</div>
+        <div class="qbox m3"><div class="qi">Q1 ★★★</div><p>Explain monohybrid cross with Punnett square. State the phenotypic and genotypic ratio obtained in F2.</p></div>
+        <div class="qbox m3"><div class="qi">Q2 ★★★</div><p>What is sex-linked inheritance? Explain colour blindness as an example.</p></div>
+        <div class="qbox m3"><div class="qi">Q3 ★★</div><p>Explain dihybrid cross with Punnett square. State Mendel's Law of Independent Assortment.</p></div>
+        <div class="qbox m3"><div class="qi">Q4 ★★</div><p>What are chromosomal disorders? Explain Down's syndrome and Turner's syndrome.</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m5">5 Mark Questions</div>
+        <div class="qbox m5"><div class="qi">Q1 ★★★</div><p>Explain the chromosomal theory of inheritance. Who proposed it? What evidence supported it?</p></div>
+        <div class="qbox m5"><div class="qi">Q2 ★★★</div><p>Describe the types of mutations — gene mutations and chromosomal mutations with examples.</p></div>
+        <div class="qbox m5"><div class="qi">Q3 ★★</div><p>Explain multiple allelism using ABO blood group as an example. Draw the inheritance chart.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ CHAPTER 4 ═══════════ -->
+  <div class="ch-block" id="ch4">
+    <div class="ch-head open" style="background:linear-gradient(135deg,#4c1d95,#6d28d9);" onclick="toggle(this)">
+      <div class="num">4</div>
+      <div class="info">
+        <div class="sub">Molecular Biology</div>
+        <div class="title">Molecular Basis of Inheritance</div>
+      </div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="ch-body open">
+      <div class="qcount">
+        <span>2 Mark × 5</span><span class="yel">3 Mark × 4</span><span class="red">5 Mark × 3</span>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label">2 Mark Questions</div>
+        <div class="qbox"><div class="qi">Q1 ★★★</div><p>What is Chargaff's rule? State it.</p><div class="hint">A=T, G=C; A+G = T+C (pyrimidine = purine)</div></div>
+        <div class="qbox"><div class="qi">Q2 ★★★</div><p>Distinguish between DNA and RNA — any 4 points.</p></div>
+        <div class="qbox"><div class="qi">Q3 ★★</div><p>What is the Central Dogma of molecular biology? Who proposed it?</p></div>
+        <div class="qbox"><div class="qi">Q4 ★★</div><p>Define transcription and translation.</p></div>
+        <div class="qbox"><div class="qi">Q5 ★★</div><p>What is a codon? Give an example of initiation and termination codons.</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m3">3 Mark Questions</div>
+        <div class="qbox m3"><div class="qi">Q1 ★★★</div><p>Describe the Watson-Crick model of DNA with a neat labeled diagram.</p></div>
+        <div class="qbox m3"><div class="qi">Q2 ★★★</div><p>Explain the process of DNA replication. Name the enzymes involved.</p></div>
+        <div class="qbox m3"><div class="qi">Q3 ★★</div><p>What is the lac operon model? Explain with a diagram.</p></div>
+        <div class="qbox m3"><div class="qi">Q4 ★★</div><p>What is the Human Genome Project? State its goals and salient features.</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m5">5 Mark Questions</div>
+        <div class="qbox m5"><div class="qi">Q1 ★★★</div><p>Describe the process of transcription in prokaryotes. Explain the roles of RNA polymerase, template strand and coding strand.</p></div>
+        <div class="qbox m5"><div class="qi">Q2 ★★★</div><p>Explain the process of translation (protein synthesis) in detail. Describe the role of mRNA, tRNA and ribosomes.</p></div>
+        <div class="qbox m5"><div class="qi">Q3 ★★</div><p>Explain the nucleosome model of chromatin packaging. Describe the levels of DNA packaging in eukaryotes.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ CHAPTER 5 ═══════════ -->
+  <div class="ch-block" id="ch5">
+    <div class="ch-head open" style="background:linear-gradient(135deg,#065f46,#047857);" onclick="toggle(this)">
+      <div class="num">5</div>
+      <div class="info">
+        <div class="sub">Evolution</div>
+        <div class="title">Origin and Evolution of Life</div>
+      </div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="ch-body open">
+      <div class="qcount">
+        <span>2 Mark × 4</span><span class="yel">3 Mark × 4</span><span class="red">5 Mark × 2</span>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label">2 Mark Questions</div>
+        <div class="qbox"><div class="qi">Q1 ★★★</div><p>What was the Miller-Urey experiment? What did it prove?</p></div>
+        <div class="qbox"><div class="qi">Q2 ★★</div><p>What is natural selection? State its types.</p></div>
+        <div class="qbox"><div class="qi">Q3 ★★</div><p>Distinguish between homologous and analogous organs with examples.</p></div>
+        <div class="qbox"><div class="qi">Q4 ★★</div><p>What is adaptive radiation? Give an example of Darwin's finches.</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m3">3 Mark Questions</div>
+        <div class="qbox m3"><div class="qi">Q1 ★★★</div><p>Explain Oparin-Haldane theory (chemical evolution / primordial soup theory).</p></div>
+        <div class="qbox m3"><div class="qi">Q2 ★★★</div><p>Compare Lamarck's theory and Darwin's theory of evolution.</p></div>
+        <div class="qbox m3"><div class="qi">Q3 ★★</div><p>What is Hardy-Weinberg equilibrium? State the conditions required for it.</p></div>
+        <div class="qbox m3"><div class="qi">Q4 ★★</div><p>Explain industrial melanism as an example of natural selection.</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m5">5 Mark Questions</div>
+        <div class="qbox m5"><div class="qi">Q1 ★★★</div><p>Describe the evidences of evolution — paleontological, morphological, embryological and biochemical. Give one example of each.</p></div>
+        <div class="qbox m5"><div class="qi">Q2 ★★</div><p>Explain the mechanism of evolution — mutation, genetic drift, gene flow and natural selection.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ CHAPTER 6 ═══════════ -->
+  <div class="ch-block" id="ch6">
+    <div class="ch-head open" style="background:linear-gradient(135deg,#0e7490,#0891b2);" onclick="toggle(this)">
+      <div class="num">6</div>
+      <div class="info">
+        <div class="sub">Botany</div>
+        <div class="title">Plant Water Relation</div>
+      </div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="ch-body open">
+      <div class="qcount">
+        <span>2 Mark × 4</span><span class="yel">3 Mark × 3</span><span class="red">5 Mark × 2</span>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label">2 Mark Questions</div>
+        <div class="qbox"><div class="qi">Q1 ★★★</div><p>Define osmosis. Distinguish between osmosis and diffusion.</p></div>
+        <div class="qbox"><div class="qi">Q2 ★★★</div><p>What is plasmolysis? Under what conditions does it occur?</p></div>
+        <div class="qbox"><div class="qi">Q3 ★★</div><p>Define water potential. Give its equation and explain each component.</p></div>
+        <div class="qbox"><div class="qi">Q4 ★★</div><p>What is transpiration pull theory? Who proposed it?</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m3">3 Mark Questions</div>
+        <div class="qbox m3"><div class="qi">Q1 ★★★</div><p>Explain the cohesion-tension theory of water ascent in plants.</p></div>
+        <div class="qbox m3"><div class="qi">Q2 ★★</div><p>Distinguish between apoplast and symplast pathways of water movement.</p></div>
+        <div class="qbox m3"><div class="qi">Q3 ★★</div><p>What is transpiration? Explain the factors affecting rate of transpiration.</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m5">5 Mark Questions</div>
+        <div class="qbox m5"><div class="qi">Q1 ★★★</div><p>Explain the mechanism of opening and closing of stomata. Draw a labeled diagram of stomatal apparatus.</p></div>
+        <div class="qbox m5"><div class="qi">Q2 ★★</div><p>Describe the phloem translocation. Explain the pressure flow hypothesis (Munch's hypothesis).</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ CHAPTER 7 ═══════════ -->
+  <div class="ch-block" id="ch7">
+    <div class="ch-head open" style="background:linear-gradient(135deg,#3b0764,#7e22ce);" onclick="toggle(this)">
+      <div class="num">7</div>
+      <div class="info">
+        <div class="sub">Botany</div>
+        <div class="title">Plant Growth and Mineral Nutrition</div>
+      </div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="ch-body open">
+      <div class="qcount">
+        <span>2 Mark × 4</span><span class="yel">3 Mark × 3</span><span class="red">5 Mark × 2</span>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label">2 Mark Questions</div>
+        <div class="qbox"><div class="qi">Q1 ★★★</div><p>What are plant growth regulators? Name and classify them.</p></div>
+        <div class="qbox"><div class="qi">Q2 ★★</div><p>What is photoperiodism? Define short-day plants and long-day plants with one example each.</p></div>
+        <div class="qbox"><div class="qi">Q3 ★★</div><p>What is vernalization? What is its significance?</p></div>
+        <div class="qbox"><div class="qi">Q4 ★★</div><p>Distinguish between macro-nutrients and micro-nutrients with two examples each.</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m3">3 Mark Questions</div>
+        <div class="qbox m3"><div class="qi">Q1 ★★★</div><p>Explain the roles of auxins, gibberellins and cytokinins in plant growth. Give one function of each.</p></div>
+        <div class="qbox m3"><div class="qi">Q2 ★★</div><p>What is nitrogen fixation? Explain biological nitrogen fixation with the role of Rhizobium.</p></div>
+        <div class="qbox m3"><div class="qi">Q3 ★★</div><p>Describe the sigmoid growth curve with its three phases.</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m5">5 Mark Questions</div>
+        <div class="qbox m5"><div class="qi">Q1 ★★★</div><p>Describe the role of abscisic acid (ABA) and ethylene as plant growth inhibitors. Give three functions of each.</p></div>
+        <div class="qbox m5"><div class="qi">Q2 ★★</div><p>Explain the mineral deficiency symptoms of nitrogen, phosphorus, calcium and magnesium in plants.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ CHAPTER 8 ═══════════ -->
+  <div class="ch-block" id="ch8">
+    <div class="ch-head open" style="background:linear-gradient(135deg,#881337,#be123c);" onclick="toggle(this)">
+      <div class="num">8</div>
+      <div class="info">
+        <div class="sub">Zoology</div>
+        <div class="title">Respiration and Circulation</div>
+      </div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="ch-body open">
+      <div class="qcount">
+        <span>2 Mark × 5</span><span class="yel">3 Mark × 4</span><span class="red">5 Mark × 3</span>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label">2 Mark Questions</div>
+        <div class="qbox"><div class="qi">Q1 ★★★</div><p>What is tidal volume and vital capacity? Give their normal values.</p></div>
+        <div class="qbox"><div class="qi">Q2 ★★★</div><p>Distinguish between aerobic and anaerobic respiration.</p></div>
+        <div class="qbox"><div class="qi">Q3 ★★</div><p>What is the role of haemoglobin in oxygen transport?</p></div>
+        <div class="qbox"><div class="qi">Q4 ★★</div><p>What is the double circulatory system in humans?</p></div>
+        <div class="qbox"><div class="qi">Q5 ★★</div><p>Define cardiac output. What is its normal value?</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m3">3 Mark Questions</div>
+        <div class="qbox m3"><div class="qi">Q1 ★★★</div><p>Describe the mechanism of breathing in humans — inspiration and expiration.</p></div>
+        <div class="qbox m3"><div class="qi">Q2 ★★★</div><p>Explain the conducting system of the human heart — SA node, AV node, Bundle of His, Purkinje fibres.</p></div>
+        <div class="qbox m3"><div class="qi">Q3 ★★</div><p>What is the Bohr effect? How does CO₂ affect the affinity of haemoglobin for oxygen?</p></div>
+        <div class="qbox m3"><div class="qi">Q4 ★★</div><p>Describe the various lung volumes and capacities — TLC, IRV, ERV, RV, FRC.</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m5">5 Mark Questions</div>
+        <div class="qbox m5"><div class="qi">Q1 ★★★</div><p>Describe the structure of human heart with a neat labeled diagram. Explain the cardiac cycle.</p></div>
+        <div class="qbox m5"><div class="qi">Q2 ★★★</div><p>Explain the process of glycolysis (EMP pathway) with the net ATP gain.</p></div>
+        <div class="qbox m5"><div class="qi">Q3 ★★</div><p>Describe the Krebs cycle (TCA cycle) with the products formed at each step.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ CHAPTER 9 ═══════════ -->
+  <div class="ch-block" id="ch9">
+    <div class="ch-head open" style="background:linear-gradient(135deg,#1e3a5f,#1d4ed8);" onclick="toggle(this)">
+      <div class="num">9</div>
+      <div class="info">
+        <div class="sub">Zoology</div>
+        <div class="title">Control and Co-ordination</div>
+      </div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="ch-body open">
+      <div class="qcount">
+        <span>2 Mark × 5</span><span class="yel">3 Mark × 4</span><span class="red">5 Mark × 3</span>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label">2 Mark Questions</div>
+        <div class="qbox"><div class="qi">Q1 ★★★</div><p>What is a reflex action? Draw a labeled diagram of a reflex arc.</p></div>
+        <div class="qbox"><div class="qi">Q2 ★★★</div><p>Distinguish between CNS and PNS.</p></div>
+        <div class="qbox"><div class="qi">Q3 ★★</div><p>What is a synapse? How is nerve impulse transmitted across it?</p></div>
+        <div class="qbox"><div class="qi">Q4 ★★</div><p>What is resting membrane potential? How is action potential generated?</p></div>
+        <div class="qbox"><div class="qi">Q5 ★★</div><p>Name the hormones secreted by the pituitary gland (anterior and posterior).</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m3">3 Mark Questions</div>
+        <div class="qbox m3"><div class="qi">Q1 ★★★</div><p>Describe the structure of a neuron with a neat labeled diagram.</p></div>
+        <div class="qbox m3"><div class="qi">Q2 ★★★</div><p>Explain the role of hormones in regulating blood glucose — insulin and glucagon.</p></div>
+        <div class="qbox m3"><div class="qi">Q3 ★★</div><p>Describe the functions of thyroid gland hormones. What happens in hypothyroidism and hyperthyroidism?</p></div>
+        <div class="qbox m3"><div class="qi">Q4 ★★</div><p>What is feedback mechanism? Explain negative feedback with an example.</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m5">5 Mark Questions</div>
+        <div class="qbox m5"><div class="qi">Q1 ★★★</div><p>Describe the structure of human brain — forebrain, midbrain and hindbrain. Give functions of each part.</p></div>
+        <div class="qbox m5"><div class="qi">Q2 ★★★</div><p>Explain the structure and function of the eye. Draw a labeled diagram of the human eye.</p></div>
+        <div class="qbox m5"><div class="qi">Q3 ★★</div><p>Describe the structure and function of the ear. Draw a labeled diagram of the human ear.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ CHAPTER 10 ═══════════ -->
+  <div class="ch-block" id="ch10">
+    <div class="ch-head open" style="background:linear-gradient(135deg,#7f1d1d,#dc2626);" onclick="toggle(this)">
+      <div class="num">10</div>
+      <div class="info">
+        <div class="sub">Zoology</div>
+        <div class="title">Human Health and Diseases</div>
+      </div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="ch-body open">
+      <div class="qcount">
+        <span>2 Mark × 4</span><span class="yel">3 Mark × 4</span><span class="red">5 Mark × 2</span>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label">2 Mark Questions</div>
+        <div class="qbox"><div class="qi">Q1 ★★★</div><p>What is immunity? Distinguish between innate and acquired immunity.</p></div>
+        <div class="qbox"><div class="qi">Q2 ★★★</div><p>What is an antigen and antibody? How do antibodies provide immunity?</p></div>
+        <div class="qbox"><div class="qi">Q3 ★★</div><p>Name the causative organisms of malaria, typhoid and AIDS.</p></div>
+        <div class="qbox"><div class="qi">Q4 ★★</div><p>What are cancer cells? How do they differ from normal cells?</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m3">3 Mark Questions</div>
+        <div class="qbox m3"><div class="qi">Q1 ★★★</div><p>Describe the life cycle of Plasmodium (malarial parasite) in humans.</p></div>
+        <div class="qbox m3"><div class="qi">Q2 ★★★</div><p>Explain the structure of HIV. How does it cause AIDS?</p></div>
+        <div class="qbox m3"><div class="qi">Q3 ★★</div><p>Write a note on drugs and alcohol abuse — types, effects and de-addiction.</p></div>
+        <div class="qbox m3"><div class="qi">Q4 ★★</div><p>Explain active and passive immunity with one example each.</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m5">5 Mark Questions</div>
+        <div class="qbox m5"><div class="qi">Q1 ★★★</div><p>Describe the immune response — humoral immunity (B cells, antibodies) and cell-mediated immunity (T cells). Draw a diagram.</p></div>
+        <div class="qbox m5"><div class="qi">Q2 ★★</div><p>Explain the types of cancer — carcinoma, sarcoma, lymphoma. Describe the methods of cancer diagnosis and treatment.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ CHAPTER 11 ═══════════ -->
+  <div class="ch-block" id="ch11">
+    <div class="ch-head open" style="background:linear-gradient(135deg,#14532d,#16a34a);" onclick="toggle(this)">
+      <div class="num">11</div>
+      <div class="info">
+        <div class="sub">Applied Biology</div>
+        <div class="title">Enhancement of Food Production</div>
+      </div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="ch-body open">
+      <div class="qcount">
+        <span>2 Mark × 3</span><span class="yel">3 Mark × 3</span><span class="red">5 Mark × 2</span>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label">2 Mark Questions</div>
+        <div class="qbox"><div class="qi">Q1 ★★★</div><p>What is plant breeding? Name the steps involved in plant breeding.</p></div>
+        <div class="qbox"><div class="qi">Q2 ★★</div><p>What is tissue culture? State its applications.</p></div>
+        <div class="qbox"><div class="qi">Q3 ★★</div><p>What is biofortification? Give two examples of biofortified crops.</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m3">3 Mark Questions</div>
+        <div class="qbox m3"><div class="qi">Q1 ★★★</div><p>What is the Green Revolution? Who led it? What were its achievements and limitations?</p></div>
+        <div class="qbox m3"><div class="qi">Q2 ★★</div><p>Explain single cell protein (SCP). Give two examples and its significance.</p></div>
+        <div class="qbox m3"><div class="qi">Q3 ★★</div><p>What is animal husbandry? Describe the methods to improve milk production.</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m5">5 Mark Questions</div>
+        <div class="qbox m5"><div class="qi">Q1 ★★★</div><p>Explain hybridization in plant breeding — emasculation, bagging, crossing. What is hybrid vigour (heterosis)?</p></div>
+        <div class="qbox m5"><div class="qi">Q2 ★★</div><p>Describe the process of micropropagation (somatic embryogenesis) in tissue culture. What is totipotency?</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ CHAPTER 12 ═══════════ -->
+  <div class="ch-block" id="ch12">
+    <div class="ch-head open" style="background:linear-gradient(135deg,#1e40af,#3b82f6);" onclick="toggle(this)">
+      <div class="num">12</div>
+      <div class="info">
+        <div class="sub">Applied Biology</div>
+        <div class="title">Biotechnology</div>
+      </div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="ch-body open">
+      <div class="qcount">
+        <span>2 Mark × 4</span><span class="yel">3 Mark × 4</span><span class="red">5 Mark × 3</span>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label">2 Mark Questions</div>
+        <div class="qbox"><div class="qi">Q1 ★★★</div><p>What is recombinant DNA technology? Name the tools required.</p></div>
+        <div class="qbox"><div class="qi">Q2 ★★★</div><p>What are restriction enzymes? Give one example. What do they do?</p></div>
+        <div class="qbox"><div class="qi">Q3 ★★</div><p>What is PCR (Polymerase Chain Reaction)? State its uses.</p></div>
+        <div class="qbox"><div class="qi">Q4 ★★</div><p>What is a transgenic organism? Give one example of a transgenic plant and animal.</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m3">3 Mark Questions</div>
+        <div class="qbox m3"><div class="qi">Q1 ★★★</div><p>Describe the construction of recombinant DNA. Explain the role of restriction enzyme, vector and DNA ligase.</p></div>
+        <div class="qbox m3"><div class="qi">Q2 ★★★</div><p>Explain how insulin is produced using recombinant DNA technology (Humulin).</p></div>
+        <div class="qbox m3"><div class="qi">Q3 ★★</div><p>What is gene therapy? Explain somatic gene therapy with an example (ADA deficiency).</p></div>
+        <div class="qbox m3"><div class="qi">Q4 ★★</div><p>What are Bt crops? Explain how Bt toxin protects crops from insects.</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m5">5 Mark Questions</div>
+        <div class="qbox m5"><div class="qi">Q1 ★★★</div><p>Explain the process of gel electrophoresis. What is its use in biotechnology? Draw a neat labeled diagram.</p></div>
+        <div class="qbox m5"><div class="qi">Q2 ★★★</div><p>Describe the applications of biotechnology in medicine — production of vaccines, antibiotics and hormones.</p></div>
+        <div class="qbox m5"><div class="qi">Q3 ★★</div><p>What are the ethical issues related to biotechnology — biopiracy, GMO risks and biopatents?</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ CHAPTER 13 ═══════════ -->
+  <div class="ch-block" id="ch13">
+    <div class="ch-head open" style="background:linear-gradient(135deg,#713f12,#d97706);" onclick="toggle(this)">
+      <div class="num">13</div>
+      <div class="info">
+        <div class="sub">Ecology</div>
+        <div class="title">Organisms and Populations</div>
+      </div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="ch-body open">
+      <div class="qcount">
+        <span>2 Mark × 4</span><span class="yel">3 Mark × 3</span><span class="red">5 Mark × 2</span>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label">2 Mark Questions</div>
+        <div class="qbox"><div class="qi">Q1 ★★★</div><p>Define population. State the attributes of a population.</p></div>
+        <div class="qbox"><div class="qi">Q2 ★★</div><p>What is an ecological niche? How does it differ from habitat?</p></div>
+        <div class="qbox"><div class="qi">Q3 ★★</div><p>Distinguish between mutualism and commensalism with one example each.</p></div>
+        <div class="qbox"><div class="qi">Q4 ★★</div><p>What is the logistic growth model? Write the equation and explain each term.</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m3">3 Mark Questions</div>
+        <div class="qbox m3"><div class="qi">Q1 ★★★</div><p>Compare exponential growth and logistic growth in populations. Draw the J-curve and S-curve.</p></div>
+        <div class="qbox m3"><div class="qi">Q2 ★★</div><p>Explain predation with examples. What are the adaptations of prey to escape predators?</p></div>
+        <div class="qbox m3"><div class="qi">Q3 ★★</div><p>What is interspecific competition? Explain the competitive exclusion principle (Gause's law).</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m5">5 Mark Questions</div>
+        <div class="qbox m5"><div class="qi">Q1 ★★★</div><p>Describe the adaptations of organisms to abiotic factors — temperature, water, light and soil.</p></div>
+        <div class="qbox m5"><div class="qi">Q2 ★★</div><p>Explain the types of interspecific interactions — mutualism, commensalism, parasitism, competition and amensalism with examples.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ CHAPTER 14 ═══════════ -->
+  <div class="ch-block" id="ch14">
+    <div class="ch-head open" style="background:linear-gradient(135deg,#064e3b,#059669);" onclick="toggle(this)">
+      <div class="num">14</div>
+      <div class="info">
+        <div class="sub">Ecology</div>
+        <div class="title">Ecosystems and Energy Flow</div>
+      </div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="ch-body open">
+      <div class="qcount">
+        <span>2 Mark × 4</span><span class="yel">3 Mark × 3</span><span class="red">5 Mark × 2</span>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label">2 Mark Questions</div>
+        <div class="qbox"><div class="qi">Q1 ★★★</div><p>What is an ecosystem? Name its biotic and abiotic components.</p></div>
+        <div class="qbox"><div class="qi">Q2 ★★★</div><p>What is the 10% law of energy transfer? Who proposed it?</p></div>
+        <div class="qbox"><div class="qi">Q3 ★★</div><p>Distinguish between food chain and food web with one example each.</p></div>
+        <div class="qbox"><div class="qi">Q4 ★★</div><p>What is ecological succession? Distinguish between primary and secondary succession.</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m3">3 Mark Questions</div>
+        <div class="qbox m3"><div class="qi">Q1 ★★★</div><p>Explain the nitrogen cycle with a labeled diagram. Name the bacteria involved at each step.</p></div>
+        <div class="qbox m3"><div class="qi">Q2 ★★★</div><p>Describe the ecological pyramids — pyramid of numbers, biomass and energy. Which is always upright?</p></div>
+        <div class="qbox m3"><div class="qi">Q3 ★★</div><p>Explain the carbon cycle with a diagram. How does deforestation affect the carbon cycle?</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m5">5 Mark Questions</div>
+        <div class="qbox m5"><div class="qi">Q1 ★★★</div><p>Describe the structure and function of a pond ecosystem. Draw a labeled diagram showing producers, consumers and decomposers.</p></div>
+        <div class="qbox m5"><div class="qi">Q2 ★★</div><p>Explain the productivity of an ecosystem — GPP, NPP, and secondary productivity. What factors affect NPP?</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ CHAPTER 15 ═══════════ -->
+  <div class="ch-block" id="ch15">
+    <div class="ch-head open" style="background:linear-gradient(135deg,#1e3a5f,#0369a1);" onclick="toggle(this)">
+      <div class="num">15</div>
+      <div class="info">
+        <div class="sub">Ecology</div>
+        <div class="title">Biodiversity, Conservation and Environmental Issues</div>
+      </div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="ch-body open">
+      <div class="qcount">
+        <span>2 Mark × 4</span><span class="yel">3 Mark × 4</span><span class="red">5 Mark × 2</span>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label">2 Mark Questions</div>
+        <div class="qbox"><div class="qi">Q1 ★★★</div><p>What is biodiversity? Name the three levels of biodiversity.</p></div>
+        <div class="qbox"><div class="qi">Q2 ★★★</div><p>What are biodiversity hotspots? Name two hotspots found in India.</p></div>
+        <div class="qbox"><div class="qi">Q3 ★★</div><p>Distinguish between in-situ and ex-situ conservation with two examples each.</p></div>
+        <div class="qbox"><div class="qi">Q4 ★★</div><p>What is the greenhouse effect? Name two greenhouse gases.</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m3">3 Mark Questions</div>
+        <div class="qbox m3"><div class="qi">Q1 ★★★</div><p>Explain the causes of biodiversity loss — the 4 E's (Evil quartet).</p><div class="hint">Hint: Habitat loss, over-exploitation, alien species invasion, co-extinctions</div></div>
+        <div class="qbox m3"><div class="qi">Q2 ★★★</div><p>What is ozone depletion? How does it occur? What are its effects on living organisms?</p></div>
+        <div class="qbox m3"><div class="qi">Q3 ★★</div><p>Explain water pollution — causes, effects and control measures.</p></div>
+        <div class="qbox m3"><div class="qi">Q4 ★★</div><p>What is biomagnification? Explain with the example of DDT in a food chain.</p></div>
+      </div>
+
+      <div class="mark-section">
+        <div class="mark-label m5">5 Mark Questions</div>
+        <div class="qbox m5"><div class="qi">Q1 ★★★</div><p>Describe the arguments for conserving biodiversity — narrowly utilitarian, broadly utilitarian and ethical. Explain the IUCN categories of threatened species.</p></div>
+        <div class="qbox m5"><div class="qi">Q2 ★★</div><p>Explain global warming — causes, effects and steps taken to control it at national and international level (Kyoto Protocol, Montreal Protocol).</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="back-top"><a href="#top">↑ Back to Chapter Index</a></div>
+
+</div><!-- end wrap -->
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Visions Classes" class="footer-logo-img"/>
+        <span class="logo-text"><span>Visions</span> Classes</span>
+        <p>"Learn Today, Lead Tomorrow"</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="notes-class12.html">Class 12 Notes</a></li>
+          <li><a href="notes-class11.html">Class 11 Notes</a></li>
+          <li><a href="notes.html">All Notes</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+918767144200">📞 +91 87671 44200</a></li>
+          <li><a href="https://wa.me/918767144200" target="_blank">💬 WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Visions Learning. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- CALL BAR -->
+<div class="call-now-bar">
+  <a href="https://wa.me/918767144200" target="_blank" class="call-now-btn">💬 WhatsApp</a>
+  <a href="tel:+918767144200" class="call-now-btn call">📞 Call Now</a>
+</div>
+
+<script src="main.js"></script>
+<script>
+  function toggle(el) {
+    el.classList.toggle('open');
+    var body = el.nextElementSibling;
+    body.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
