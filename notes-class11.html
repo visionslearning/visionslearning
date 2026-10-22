@@ -140,7 +140,7 @@
            BIOLOGY SECTION — ALWAYS VISIBLE
            Separate dedicated section, no filter JS needed
       ═══════════════════════════════════════════ -->
-      <div id="bio-section" style="display:none; margin-bottom:32px;">
+      <div id="bio-section" style="display:block; margin-bottom:32px;">
         <div style="background:linear-gradient(135deg,#14532d,#15803d);border-radius:14px;padding:16px 22px;margin-bottom:18px;display:flex;align-items:center;gap:12px;">
           <span style="font-size:1.6rem;">🧬</span>
           <div>
@@ -3886,11 +3886,17 @@
           s.style.display = (filter === 'all' || sub === filter) ? 'block' : 'none';
         });
 
-        // 3. Scroll to the grid, accounting for fixed navbar
-        var grid = document.getElementById('notesChaptersGrid');
-        if (grid) {
+        // 3. Biology dedicated section
+        var bioSec = document.getElementById('bio-section');
+        if (bioSec) {
+          bioSec.style.display = (filter === 'all' || filter === 'biology') ? 'block' : 'none';
+        }
+
+        // 4. Scroll to grid / bio-section
+        var scrollTarget = (filter === 'biology' && bioSec) ? bioSec : document.getElementById('notesChaptersGrid');
+        if (scrollTarget) {
           setTimeout(function() {
-            var top = grid.getBoundingClientRect().top + window.pageYOffset - NAVBAR_H;
+            var top = scrollTarget.getBoundingClientRect().top + window.pageYOffset - NAVBAR_H;
             window.scrollTo({ top: top, behavior: 'smooth' });
           }, 60);
         }
