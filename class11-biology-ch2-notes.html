@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Class 11 Biology Ch 2 — Systematics of Living Organisms | Visions Classes</title>
+  <meta name="description" content="Class 11 Biology Chapter 2 Systematics of Living Organisms — Complete Notes, Key Points and Important Q&A. Maharashtra Board."/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="logo.png" type="image/png"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{background:#f0fdf4;color:#1e293b;font-family:'Segoe UI',system-ui,sans-serif;line-height:1.7;}
+    .navbar{background:#14532d !important;}
+
+    /* HERO */
+    .ch-hero{background:linear-gradient(135deg,#14532d 0%,#166534 50%,#15803d 100%);color:#fff;padding:90px 20px 44px;text-align:center;position:relative;overflow:hidden;}
+    .ch-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(134,239,172,.18) 0%,transparent 60%);}
+    .ch-hero .badge{display:inline-block;padding:5px 18px;border-radius:20px;background:rgba(134,239,172,.2);border:1px solid #86efac;color:#bbf7d0;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;position:relative;}
+    .ch-hero h1{font-size:clamp(1.7rem,4vw,2.5rem);font-weight:900;margin-bottom:8px;position:relative;}
+    .ch-hero p{font-size:.95rem;opacity:.85;position:relative;}
+
+    .wrap{max-width:900px;margin:0 auto;padding:28px 16px 60px;}
+
+    /* KEY POINTS BOX */
+    .keybox{background:#ebf8ff;border:1px solid #bee3f8;border-radius:12px;padding:18px 22px;margin-bottom:24px;}
+    .keybox h2{color:#1d4ed8;font-size:1.05rem;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+    .keybox ul{padding-left:20px;}
+    .keybox ul li{margin-bottom:6px;font-size:.9rem;}
+
+    /* SECTION CARD */
+    .sec{background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.07);margin-bottom:22px;overflow:hidden;}
+    .sec-head{background:linear-gradient(135deg,#14532d,#15803d);padding:14px 20px;display:flex;align-items:center;gap:12px;}
+    .sec-head .num{min-width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:900;color:#fff;border:2px solid rgba(255,255,255,.4);}
+    .sec-head h2{font-size:.98rem;font-weight:800;color:#fff;}
+    .sec-body{padding:18px 20px;}
+
+    /* DEFINITION BOX */
+    .def{background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:10px 15px;margin:8px 0;font-size:.88rem;color:#14532d;}
+    .def .dl{font-size:.65rem;text-transform:uppercase;letter-spacing:1px;font-weight:800;color:#15803d;display:block;margin-bottom:4px;}
+
+    /* TABLE */
+    table{width:100%;border-collapse:collapse;font-size:.85rem;margin:10px 0;}
+    th{background:#14532d;color:#fff;padding:9px 12px;text-align:left;}
+    td{padding:8px 12px;border-bottom:1px solid #e2e8f0;}
+    tr:nth-child(even) td{background:#f7fafc;}
+
+    /* Q&A */
+    .qa-sec{background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.07);margin-bottom:22px;overflow:hidden;}
+    .qa-head{background:linear-gradient(135deg,#1e3a8a,#1d4ed8);padding:14px 20px;}
+    .qa-head h2{font-size:1rem;font-weight:800;color:#fff;}
+    .qa-body{padding:18px 20px;}
+    .qa{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;margin-bottom:12px;overflow:hidden;cursor:pointer;}
+    .qa-q{padding:12px 16px;display:flex;align-items:flex-start;gap:10px;}
+    .qa-q:hover{background:#f1f5f9;}
+    .qnum{min-width:30px;height:20px;background:#1d4ed8;color:#fff;font-size:.63rem;font-weight:800;border-radius:4px;display:flex;align-items:center;justify-content:center;margin-top:3px;flex-shrink:0;}
+    .qtext{font-size:.9rem;color:#1e293b;font-weight:600;flex:1;line-height:1.5;}
+    .qstar{color:#f59e0b;font-size:.78rem;}
+    .tog{font-size:.72rem;font-weight:700;color:#1d4ed8;background:#eff6ff;padding:3px 8px;border-radius:10px;white-space:nowrap;margin-left:6px;flex-shrink:0;}
+    .qa-ans{display:none;padding:12px 16px 14px;border-top:1px dashed #e2e8f0;background:#fff;font-size:.87rem;color:#334155;line-height:1.7;}
+    .qa-ans.open{display:block;}
+    .qa-ans strong{color:#14532d;}
+    .qa-ans ul{padding-left:18px;margin:5px 0;}
+    .qa-ans ul li{margin-bottom:4px;}
+
+    /* QUICK REVISION */
+    .quick{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:1px solid #86efac;border-radius:12px;padding:18px 22px;margin-bottom:22px;}
+    .quick h2{color:#14532d;font-size:1rem;margin-bottom:12px;}
+    .quick ul{padding-left:18px;}
+    .quick ul li{font-size:.88rem;margin-bottom:5px;color:#1e293b;}
+
+    /* MCQ */
+    .mcq{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:14px 18px;margin-bottom:10px;}
+    .mcq .mq{font-size:.88rem;font-weight:600;color:#1e293b;margin-bottom:8px;}
+    .mcq .opts{font-size:.84rem;color:#475569;display:grid;grid-template-columns:1fr 1fr;gap:4px;}
+    .mcq .ans{font-size:.82rem;font-weight:700;color:#15803d;margin-top:8px;background:#f0fdf4;padding:4px 10px;border-radius:6px;display:inline-block;}
+
+    .back-top{text-align:center;margin:10px 0 20px;}
+    .back-top a{display:inline-block;background:#dcfce7;color:#14532d;padding:8px 20px;border-radius:20px;text-decoration:none;font-size:.82rem;font-weight:700;}
+
+    @media(max-width:580px){
+      .sec-body,.qa-body{padding:14px 12px;}
+      .mcq .opts{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Visions Classes Logo" class="nav-logo-img"/>
+      <div class="logo-text"><span>Visions</span> Classes</div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="notes.html" class="active">Notes</a></li>
+      <li><a href="notes-class11.html">Class 11</a></li>
+      <li><a href="buy-courses.html" class="nav-cta">Enroll Now</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="ch-hero">
+  <div class="badge">Class 11 Biology · Chapter 2</div>
+  <h1>🔬 Systematics of Living Organisms</h1>
+  <p>Notes · Key Points · Important Q&amp;A · MCQs — Maharashtra Board</p>
+</div>
+
+<div class="wrap" id="top">
+
+  <!-- KEY POINTS -->
+  <div class="keybox">
+    <h2>⭐ Key Points at a Glance</h2>
+    <ul>
+      <li><strong>Systematics</strong> — study of kinds and diversity of organisms and their evolutionary relationships (G. Simpson, 1961).</li>
+      <li><strong>Taxonomy</strong> — classification following rules; term coined by <strong>A.P. de Candolle</strong> (Swiss Botanist, 1778–1841).</li>
+      <li>Classification types: <strong>Artificial</strong> (Linnaeus), <strong>Natural</strong> (Bentham &amp; Hooker), <strong>Phylogenetic</strong> (Engler &amp; Prantl).</li>
+      <li><strong>Three Domains</strong> proposed by <strong>Carl Woese</strong> (1990) — Archaea, Bacteria, Eukarya.</li>
+      <li><strong>Five Kingdoms</strong> proposed by <strong>R.H. Whittaker</strong> (1969) — Monera, Protista, Plantae, Fungi, Animalia.</li>
+      <li>Taxonomic hierarchy (highest → lowest): <strong>Kingdom → Division/Phylum → Class → Order → Family → Genus → Species</strong>.</li>
+      <li><strong>Binomial nomenclature</strong> introduced by <strong>Carl Linnaeus</strong> in "Species Plantarum" (1753).</li>
+      <li><strong>DNA barcoding</strong> — identification of species based on DNA sequence from tiny tissue sample.</li>
+      <li><strong>Viroids</strong> — discovered by <strong>T.O. Diener</strong> (1971); single-stranded RNA, no protein coat.</li>
+      <li><strong>Numerical taxonomy</strong> — first proposed by <strong>Sokel and Sneath</strong> (1963).</li>
+    </ul>
+  </div>
+
+  <!-- 2.1 SYSTEMATICS & TAXONOMY -->
+  <div class="sec">
+    <div class="sec-head"><div class="num">2.1</div><h2>Systematics &amp; Taxonomy</h2></div>
+    <div class="sec-body">
+      <div class="def"><span class="dl">Systematics</span>"Systematics is the study of kinds and diversity of organisms and their comparative and evolutionary relationship." — <strong>G. Simpson, 1961</strong></div>
+      <div class="def"><span class="dl">Taxonomy</span>Classification following certain rules or principles. From Greek: <em>taxis</em> = arrangement + <em>nomos</em> = law/rule. Term first introduced by <strong>A.P. de Candolle</strong> (Swiss Botanist, 1778–1841).</div>
+
+      <p style="font-size:.88rem;font-weight:700;color:#14532d;margin:14px 0 8px;">Types of Classification:</p>
+      <table>
+        <tr><th>Type</th><th>Basis</th><th>Example</th></tr>
+        <tr><td><strong>Artificial</strong></td><td>Few easily observable non-evolutionary features (habit, colour) — irrespective of affinity</td><td>Linnaeus system</td></tr>
+        <tr><td><strong>Natural</strong></td><td>Objectively significant features — considers relationships</td><td>Bentham &amp; Hooker</td></tr>
+        <tr><td><strong>Phylogenetic</strong></td><td>Based on common evolutionary descent</td><td>Engler &amp; Prantl</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- 2.3 THREE DOMAINS -->
+  <div class="sec">
+    <div class="sec-head"><div class="num">2.3</div><h2>Three Domains of Life</h2></div>
+    <div class="sec-body">
+      <p style="font-size:.88rem;margin-bottom:10px;">Proposed by <strong>Carl Woese</strong> in <strong>1990</strong>. Domain is a unit <em>larger than Kingdom</em>.</p>
+      <table>
+        <tr><th>Domain</th><th>Cell Type</th><th>Key Feature</th></tr>
+        <tr><td><strong>Archaea</strong></td><td>Prokaryotic</td><td>Survive extreme conditions (extremophiles); cell wall without peptidoglycan; unique rRNA</td></tr>
+        <tr><td><strong>Bacteria</strong></td><td>Prokaryotic</td><td>Cell wall with peptidoglycan; differ from Archaea in cell wall structure</td></tr>
+        <tr><td><strong>Eukarya</strong></td><td>Eukaryotic</td><td>Includes Protista, Fungi, Plantae, Animalia</td></tr>
+      </table>
+      <div class="def" style="margin-top:10px;"><span class="dl">All three domains have</span>Very unique ribosomal RNA (rRNA). Cladogram of three domains of life shows phylogenetic descent from a common ancestor.</div>
+    </div>
+  </div>
+
+  <!-- 2.4–2.8 SPECIAL TOPICS -->
+  <div class="sec">
+    <div class="sec-head"><div class="num">2.4–2.8</div><h2>Chemotaxonomy · Numerical Taxonomy · Cladogram · Phylogeny · DNA Barcoding</h2></div>
+    <div class="sec-body">
+      <div class="def"><span class="dl">2.4 Chemotaxonomy</span>Classification based on <strong>chemical constituents</strong> of organisms. E.g., Archaea — cell wall without peptidoglycan; Prokarya — with peptidoglycan; Fungi — chitinous cell wall; Plants — cellulosic cell wall.</div>
+      <div class="def"><span class="dl">2.5 Numerical Taxonomy</span>Classification based on <strong>quantification of characters</strong> using algorithms like cluster analysis. Proposed by <strong>Sokel and Sneath (1963)</strong>. Avoids subjective evaluation.</div>
+      <div class="def"><span class="dl">2.6 Cladogram</span>A typical <strong>branching pattern diagram</strong> showing hypothetical evolutionary relationship. Three domains of life diagram is a cladogram.</div>
+      <div class="def"><span class="dl">2.7 Phylogeny</span><strong>Evolutionary relationship</strong> of organisms. Considers morphological status AND relationship of groups with other life. Woese's three domains and Whittaker's five kingdoms are examples of phylogenetic relationship.</div>
+      <div class="def"><span class="dl">2.8 DNA Barcoding</span>New method for <strong>identification of species</strong> based on its DNA sequence from a tiny tissue sample. Steps: (a) Collecting DNA barcode data of known species (b) Matching barcode sequence of unknown sample against barcode library.<br/><strong>Applications:</strong> Protection of endangered species, preservation of natural resources, pest control, identifying disease vectors, authentication of health products, identification of medicinal plants.</div>
+    </div>
+  </div>
+
+  <!-- 2.9–2.11 TAXONOMIC HIERARCHY -->
+  <div class="sec">
+    <div class="sec-head"><div class="num">2.9–2.11</div><h2>Taxonomic Categories, Hierarchy &amp; Units</h2></div>
+    <div class="sec-body">
+      <div class="def"><span class="dl">Taxon</span>A taxonomic group of any rank in the system of classification — H.J. Lam (1948). E.g., Angiospermae, Dicotyledonae, Malvaceae are all taxa.</div>
+      <p style="font-size:.88rem;font-weight:700;color:#14532d;margin:12px 0 8px;">Taxonomic Hierarchy (Highest → Lowest):</p>
+      <table>
+        <tr><th>Category</th><th>China Rose (Plant)</th><th>Cobra (Animal)</th></tr>
+        <tr><td><strong>Kingdom</strong></td><td>Plantae</td><td>Animalia</td></tr>
+        <tr><td><strong>Division/Phylum</strong></td><td>Angiospermae</td><td>Chordata</td></tr>
+        <tr><td><strong>Class</strong></td><td>Dicotyledonae</td><td>Reptilia</td></tr>
+        <tr><td><strong>Sub-class</strong></td><td>Polypetalae</td><td>Diapsida</td></tr>
+        <tr><td><strong>Order</strong></td><td>Malvales</td><td>Squamata</td></tr>
+        <tr><td><strong>Family</strong></td><td>Malvaceae</td><td>Elapidae</td></tr>
+        <tr><td><strong>Genus</strong></td><td><em>Hibiscus</em></td><td><em>Naja</em></td></tr>
+        <tr><td><strong>Species</strong></td><td><em>rosa-sinensis</em></td><td><em>naja</em></td></tr>
+      </table>
+
+      <p style="font-size:.88rem;font-weight:700;color:#14532d;margin:14px 0 8px;">Units of Classification — Key Points:</p>
+      <div class="def"><span class="dl">Species</span>Basic unit of classification. Group of organisms that can <strong>interbreed under natural conditions to produce fertile offspring</strong>. Ranked below genus. Denoted by Latin binomial.</div>
+      <div class="def"><span class="dl">Genus</span>Group of <strong>species bearing close resemblance</strong> in morphological characters but they do NOT interbreed. E.g., Tiger, Leopard, Lion — all genus <em>Panthera</em>. Brinjal, Potato — genus <em>Solanum</em>.</div>
+      <div class="def"><span class="dl">Family</span>Group of <strong>closely related genera</strong>. E.g., <em>Hibiscus, Gossypium, Sida, Bombax</em> — family Malvaceae. Cat, Leopard, Tiger, Lion — family Felidae. Dog — family Canidae.</div>
+      <div class="def"><span class="dl">Order (Cohort)</span>Group of <strong>closely related families</strong>. E.g., Papavaraceae, Brassicaceae, Capparidaceae → Order Parietales. Dogs (Canidae) and Cats (Felidae) → Order Carnivora.</div>
+      <div class="def"><span class="dl">Class</span>Assemblage of <strong>closely allied orders</strong>. E.g., Orders Carnivora + Primates → Class Mammalia.</div>
+      <div class="def"><span class="dl">Division/Phylum</span>Category of <strong>related classes</strong>. E.g., Angiospermae includes classes Dicotyledonae + Monocotyledonae.</div>
+      <div class="def"><span class="dl">Kingdom</span>Highest taxonomic category. E.g., Sub-kingdoms Phanerogams + Cryptogams → Kingdom Plantae.</div>
+    </div>
+  </div>
+
+  <!-- 2.12 NOMENCLATURE -->
+  <div class="sec">
+    <div class="sec-head"><div class="num">2.12</div><h2>Nomenclature &amp; Binomial System</h2></div>
+    <div class="sec-body">
+      <p style="font-size:.88rem;margin-bottom:10px;">Binomial nomenclature introduced by <strong>Carl Linnaeus</strong> in book <em>"Species Plantarum"</em> (1753).</p>
+      <p style="font-size:.88rem;margin-bottom:10px;">Old code: <strong>ICBN</strong> (International Code of Botanical Nomenclature). Changed to <strong>ICNAFP</strong> (International Code of Nomenclature for Algae, Fungi and Plants) — "Shenzhen Code" at XIX IBC, Shenzhen, China, July 2017. Published 26 June 2018.</p>
+
+      <p style="font-size:.88rem;font-weight:700;color:#14532d;margin:12px 0 8px;">Rules of Binomial Nomenclature:</p>
+      <ul style="font-size:.87rem;padding-left:18px;">
+        <li>Name composed of two <strong>Latin/Greek words</strong></li>
+        <li><strong>Generic epithet</strong> (genus name) — simple noun; written FIRST; begins with <strong>CAPITAL letter</strong></li>
+        <li><strong>Specific epithet</strong> (species name) — descriptive adjective; written SECOND; begins with <strong>small letter</strong></li>
+        <li>Scientific name must be <strong>underlined separately</strong> (handwritten) or printed in <strong>italics</strong></li>
+        <li>Each epithet: minimum 3 letters, maximum 13 letters</li>
+        <li>Author's name written in full or abbreviated after scientific name. E.g., <em>Mangifera indica</em> L. (L = Linnaeus)</li>
+      </ul>
+      <div class="def" style="margin-top:12px;"><span class="dl">Example</span>Sunflower = <em>Helianthus annuus</em> L. | China Rose = <em>Hibiscus rosa-sinensis</em> | Mango = <em>Mangifera indica</em> L.</div>
+    </div>
+  </div>
+
+  <!-- 2.13 FIVE KINGDOMS -->
+  <div class="sec">
+    <div class="sec-head"><div class="num">2.13</div><h2>Salient Features of Five Kingdoms (R.H. Whittaker, 1969)</h2></div>
+    <div class="sec-body">
+      <p style="font-size:.88rem;margin-bottom:12px;">Carl Linnaeus classified organisms into 2 Kingdoms (Plantae and Animalia) — found inadequate for organisms like Bacteria, Fungi, Euglena. So <strong>R.H. Whittaker (1969)</strong> proposed Five Kingdom classification showing phylogenetic relationship.</p>
+
+      <table>
+        <tr><th>Characters</th><th>Monera</th><th>Protista</th><th>Fungi</th><th>Plantae</th><th>Animalia</th></tr>
+        <tr><td>Cell type</td><td>Prokaryotic</td><td>Eukaryotic</td><td>Eukaryotic</td><td>Eukaryotic</td><td>Eukaryotic</td></tr>
+        <tr><td>Cell wall</td><td>Present (peptidoglycan)</td><td>Present in some</td><td>Present (chitin)</td><td>Present (cellulose)</td><td>Absent</td></tr>
+        <tr><td>Nuclear membrane</td><td>Absent</td><td>Present</td><td>Present</td><td>Present</td><td>Present</td></tr>
+        <tr><td>Body organization</td><td>Unicellular</td><td>Unicellular</td><td>Multicellular/loose tissue</td><td>Tissue/organ</td><td>Tissue/organ/system</td></tr>
+        <tr><td>Mode of nutrition</td><td>Autotrophic/Heterotrophic</td><td>Both</td><td>Heterotrophic (saprotrophic)</td><td>Autotrophic (photosynthetic)</td><td>Heterotrophic (holozoic)</td></tr>
+        <tr><td>Ecological role</td><td>Decomposers</td><td>Producers (phytoplankton)</td><td>Decomposers</td><td>Producers</td><td>Consumers</td></tr>
+      </table>
+
+      <p style="font-size:.9rem;font-weight:800;color:#14532d;margin:16px 0 8px;">1. Kingdom Monera</p>
+      <ul style="font-size:.87rem;padding-left:18px;">
+        <li>Unicellular <strong>prokaryotic</strong> organisms — omnipresent</li>
+        <li>No well-defined nucleus; DNA = simple double-stranded circular chromosome called <strong>nucleoid</strong></li>
+        <li>Extrachromosomal DNA = <strong>plasmids</strong></li>
+        <li>Cell wall: <strong>peptidoglycan</strong> (murein)</li>
+        <li>No membrane-bound organelles; Ribosomes = <strong>70S</strong></li>
+        <li>Reproduction: asexual (binary fission, budding); rarely sexual by conjugation</li>
+        <li>Shapes: <strong>Coccus</strong> (spherical), <strong>Bacillus</strong> (rod), <strong>Vibrio</strong> (comma), <strong>Spirillum</strong> (spiral)</li>
+      </ul>
+      <div class="def" style="margin-top:8px;"><span class="dl">a. Archaebacteria</span>Extremophiles — found in volcanic craters, salty lakes, hot springs. <strong>Halophiles</strong> (high salt), <strong>Thermophiles</strong> (high temp). E.g., methanogenic bacteria in gut of ruminants (cows, buffaloes) → produce methane in biogas plants. Cell wall WITHOUT peptidoglycan.</div>
+      <div class="def"><span class="dl">b. Eubacteria (True bacteria)</span>Cell wall WITH peptidoglycan. Autotrophs (photosynthetic — <em>Chlorobium</em>, <em>Chromatium</em>; chemosynthetic — sulphur bacteria) and heterotrophs. Useful: <em>Lactobacilli</em> (curd), <em>Azotobacter</em> (N₂ fixation), <em>Streptomyces</em> (antibiotics). Harmful: typhoid, cholera, TB, tetanus.</div>
+      <div class="def"><span class="dl">Cyanobacteria (Blue-green algae)</span>Multicellular filamentous; fresh water; covered by <strong>mucilagenous sheath</strong>. Photosynthetic pigments: Chl-a, Chl-b, carotenes, xanthophylls. Filaments show <strong>heterocyst</strong> — helps in nitrogen fixation. E.g., <em>Nostoc</em>.</div>
+      <div class="def"><span class="dl">Mycoplasma</span>Smallest living forms. <strong>No cell wall</strong>. Many forms pathogenic. Resistant to common antibiotics due to absence of cell wall.</div>
+
+      <p style="font-size:.9rem;font-weight:800;color:#14532d;margin:14px 0 8px;">2. Kingdom Protista</p>
+      <ul style="font-size:.87rem;padding-left:18px;">
+        <li>Unicellular <strong>eukaryotic</strong> organisms</li>
+        <li>Show link with Plantae, Fungi and Animalia</li>
+      </ul>
+      <div class="def"><span class="dl">a. Plant-like Protists (Chrysophytes / Phytoplanktons)</span>Microscopic, mostly photosynthetic — major producers in oceans. Body wall = two soap-box like silica covers → called <strong>diatoms</strong>. <strong>Diatomaceous earth</strong> (accumulated shells) used in polishing and filtration.</div>
+      <div class="def"><span class="dl">Dinoflagellates</span>Aquatic (mostly marine), photosynthetic. Cell wall = cellulosic stiff plates. Pair of flagella. Wide range of pigments (yellow, green, brown, blue, red). <em>Gonyaulax</em> causes famous <strong>"red tide"</strong> — makes sea appear red.</div>
+      <div class="def"><span class="dl">Euglenoids</span>Lack cell wall; have tough proteinaceous <strong>pellicle</strong>. Two flagella (one short, one long). Heterotrophs in dark; photosynthetic in light (similar pigments to higher plants).</div>
+      <div class="def"><span class="dl">b. Animal-like Protists (Protozoans)</span>Lack cell wall; heterotrophs; primitive animal forms.<ul style="margin-top:6px;"><li><strong>Amoeboid protozoans</strong> — pseudopodia. <em>Amoeba</em> (free living); <em>Entamoeba</em> (endoparasite → amoebic dysentery)</li><li><strong>Flagellated protozoans</strong> — flagella. <em>Trypanosoma</em> → sleeping sickness</li><li><strong>Ciliated protozoans</strong> — cilia. <em>Paramoecium</em> — has gullet (cytostome)</li><li><strong>Sporozoans</strong> — spore forming. <em>Plasmodium</em> → malaria</li></ul></div>
+      <div class="def"><span class="dl">c. Fungi-like Protists (Myxomycetes)</span>Saprophytic; found on decaying leaves. Cells aggregate → large cell mass called <strong>plasmodium</strong> (NOT malaria parasite). Spores very tough — survive harsh conditions.</div>
+
+      <p style="font-size:.9rem;font-weight:800;color:#14532d;margin:14px 0 8px;">3. Kingdom Plantae</p>
+      <ul style="font-size:.87rem;padding-left:18px;">
+        <li>Dominated by <strong>autotrophs</strong> (photosynthetic)</li>
+        <li>Some semi-autotrophic insectivorous: Venus fly trap, pitcher plant, bladderwort</li>
+        <li>Some heterotrophic parasitic: <em>Cuscuta</em></li>
+        <li><strong>Multicellular, eukaryotic</strong>; chlorophyll-containing cells</li>
+        <li>Cell wall: <strong>cellulose</strong></li>
+        <li>Show <strong>alternation of generations</strong></li>
+        <li>Divided into: <strong>Cryptogamae</strong> (Cryptogams) and <strong>Phanerogamae</strong> (Phanerogams)</li>
+      </ul>
+
+      <p style="font-size:.9rem;font-weight:800;color:#14532d;margin:14px 0 8px;">4. Kingdom Fungi</p>
+      <ul style="font-size:.87rem;padding-left:18px;">
+        <li>Eukaryotic <strong>heterotrophs</strong> — extracellular digestion</li>
+        <li>Found in warm, humid places</li>
+        <li>Body: unicellular or filamentous (<strong>hyphae</strong>); mass of hyphae = <strong>mycelium</strong></li>
+        <li>Hyphae: septate or non-septate; uni or multinucleate</li>
+        <li>Non-septate multinucleate hyphae = <strong>coenocytic hyphae</strong></li>
+        <li>Cell wall: <strong>chitin</strong> (fungal cellulose)</li>
+        <li>Mostly saprophytic; some parasitic, some symbiotic (lichens with algae; mycorrhiza with roots)</li>
+      </ul>
+      <table style="margin-top:8px;">
+        <tr><th>Type</th><th>Common Name</th><th>Key Feature</th><th>Examples</th></tr>
+        <tr><td><strong>Phycomycetes</strong></td><td>Algal fungi</td><td>Aseptate coenocytic hyphae; moist/damp habitats</td><td><em>Mucor, Rhizopus</em> (bread mould), <em>Albugo</em></td></tr>
+        <tr><td><strong>Ascomycetes</strong></td><td>Sac fungi</td><td>Branched septate hyphae; ascospores in asci</td><td><em>Aspergillus, Penicillium, Neurospora, Saccharomyces</em></td></tr>
+        <tr><td><strong>Basidiomycetes</strong></td><td>Club fungi</td><td>Branched septate hyphae; basidiospores</td><td><em>Agaricus</em> (mushroom), <em>Ustilago</em> (smut), <em>Puccinia</em> (rust)</td></tr>
+        <tr><td><strong>Deuteromycetes</strong></td><td>Imperfect fungi</td><td>Only asexual reproduction known</td><td><em>Alternaria, Colletotrichum</em></td></tr>
+      </table>
+      <div class="def" style="margin-top:10px;"><span class="dl">Lichens</span>Symbiosis of algae (phycobiont — cyanobacteria or green algae) + fungi (mycobiont). Algae provides food; fungi provides shelter, water and minerals. Excellent example of symbiosis. Found in extreme environments. <strong>Pollution indicators</strong> — not found in polluted areas. Help in soil formation. E.g., <em>Parmelia</em>.</div>
+
+      <p style="font-size:.9rem;font-weight:800;color:#14532d;margin:14px 0 8px;">5. Kingdom Animalia</p>
+      <ul style="font-size:.87rem;padding-left:18px;">
+        <li>Heterotrophs — holozoic nutrition</li>
+        <li>Most have locomotion</li>
+        <li>Multicellular eukaryotes; cells <strong>lack chlorophyll and cell wall</strong></li>
+        <li>Growth is <strong>determinate</strong> (follow definite pattern)</li>
+      </ul>
+
+      <p style="font-size:.9rem;font-weight:800;color:#14532d;margin:14px 0 8px;">2.14 Acellular Organisms (not in Whittaker's 5 Kingdoms)</p>
+      <div class="def"><span class="dl">Viruses</span>Named by <strong>Louis Pasteur</strong>. Name 'virus' given by <strong>M.J. Beijernek</strong>. <strong>Stanley</strong> showed viruses are inert outside host and can be crystallised. Have protein coat (<strong>capsid</strong>) made of capsomeres around nucleic acid. Genetic material: either DNA or RNA (never both). <strong>Bacteriophages</strong> (infect bacteria) — usually double-stranded DNA. Cause diseases: TMV in plants; smallpox, mumps, AIDS in humans.</div>
+      <div class="def"><span class="dl">Viroids</span>Discovered by <strong>T.O. Diener (1971)</strong>. Single-stranded RNA — <strong>no protein coat</strong>. Low molecular weight; smaller than viruses. Cause Potato Spindle Tuber disease.</div>
+      <div class="def"><span class="dl">Prions</span>Abnormally folded proteins causing infectious neurological diseases. Word prion = "proteinaceous infectious particle". E.g., <strong>Mad cow disease</strong> in cattle; <strong>Jacob's disease</strong> in humans.</div>
+    </div>
+  </div>
+
+  <!-- QUICK REVISION -->
+  <div class="quick">
+    <h2>🔁 Quick Revision — One Liners</h2>
+    <ul>
+      <li>Systematics — G. Simpson (1961) | Taxonomy — A.P. de Candolle (1778–1841)</li>
+      <li>Three Domains — Carl Woese (1990): Archaea, Bacteria, Eukarya</li>
+      <li>Five Kingdoms — R.H. Whittaker (1969): Monera, Protista, Fungi, Plantae, Animalia</li>
+      <li>Numerical taxonomy — Sokel &amp; Sneath (1963)</li>
+      <li>Binomial nomenclature — Carl Linnaeus, "Species Plantarum" (1753)</li>
+      <li>ICBN → ICNAFP (Shenzhen Code, 2018)</li>
+      <li>Monera: prokaryotic, 70S ribosomes, peptidoglycan cell wall, nucleoid</li>
+      <li>Mycoplasma: smallest living; NO cell wall; antibiotic-resistant</li>
+      <li>Cyanobacteria: heterocyst → nitrogen fixation</li>
+      <li>Gonyaulax → red tide | Trypanosoma → sleeping sickness | Plasmodium → malaria</li>
+      <li>Fungi cell wall = chitin | Plant cell wall = cellulose | Archaea cell wall = no peptidoglycan</li>
+      <li>Lichens = pollution indicators; symbiosis of algae + fungi</li>
+      <li>Viroids — T.O. Diener (1971) — single-stranded RNA, no protein coat</li>
+      <li>Bacteriophage — virus that infects bacteria; double-stranded DNA</li>
+      <li>Species: can interbreed + produce fertile offspring</li>
+      <li>Genus: morphologically similar species but they do NOT interbreed</li>
+    </ul>
+  </div>
+
+  <!-- MCQs -->
+  <div class="qa-sec">
+    <div class="qa-head"><h2>🎯 MCQ Practice (Board Style)</h2></div>
+    <div class="qa-body">
+
+      <div class="mcq">
+        <div class="mq">1. Which of the following shows single stranded RNA and lacks protein coat?</div>
+        <div class="opts"><span>a. Bacteriophage</span><span>b. Plant virus</span><span>c. Viroid</span><span>d. Animal virus</span></div>
+        <div class="ans">✅ Answer: c. Viroid</div>
+      </div>
+
+      <div class="mcq">
+        <div class="mq">2. Causative agent of "red tide" is _____________.</div>
+        <div class="opts"><span>a. Dinoflagellate</span><span>b. Euglenoid</span><span>c. Chrysophyte</span><span>d. Lichen</span></div>
+        <div class="ans">✅ Answer: a. Dinoflagellate (Gonyaulax)</div>
+      </div>
+
+      <div class="mcq">
+        <div class="mq">3. Select odd one out for Heterotrophic bacteria.</div>
+        <div class="opts"><span>a. Nitrogen fixing bacteria</span><span>b. Lactobacilli</span><span>c. Methanogens</span><span>d. Cyanobacteria</span></div>
+        <div class="ans">✅ Answer: d. Cyanobacteria (they are autotrophic/photosynthetic)</div>
+      </div>
+
+      <div class="mcq">
+        <div class="mq">4. Paramoecium : Ciliated Protist :: Plasmodium : __________</div>
+        <div class="opts"><span>a. Amoeboid protozoan</span><span>b. Ciliophora</span><span>c. Flagellate protozoan</span><span>d. Sporozoan</span></div>
+        <div class="ans">✅ Answer: d. Sporozoan</div>
+      </div>
+
+      <div class="mcq">
+        <div class="mq">5. Term 'Taxonomy' was first introduced by ___________.</div>
+        <div class="opts"><span>a. Carl Linnaeus</span><span>b. A.P. de Candolle</span><span>c. R.H. Whittaker</span><span>d. G. Simpson</span></div>
+        <div class="ans">✅ Answer: b. A.P. de Candolle</div>
+      </div>
+
+      <div class="mcq">
+        <div class="mq">6. Which is the correctly written scientific name of sunflower?</div>
+        <div class="opts"><span>a. Helianthus annuus L.</span><span>b. Helianthus Annuus l.</span><span>c. helianthus annuus L.</span><span>d. HELIANTHUS ANNUUS</span></div>
+        <div class="ans">✅ Answer: a. Helianthus annuus L. (genus starts capital, species starts small, author name)</div>
+      </div>
+
+      <div class="mcq">
+        <div class="mq">7. Three domains of life were proposed by _____ in _____.</div>
+        <div class="opts"><span>a. R.H. Whittaker, 1969</span><span>b. Carl Woese, 1990</span><span>c. Linnaeus, 1753</span><span>d. G. Simpson, 1961</span></div>
+        <div class="ans">✅ Answer: b. Carl Woese, 1990</div>
+      </div>
+
+      <div class="mcq">
+        <div class="mq">8. Which fungi is called "imperfect fungi" because they reproduce only asexually?</div>
+        <div class="opts"><span>a. Phycomycetes</span><span>b. Ascomycetes</span><span>c. Basidiomycetes</span><span>d. Deuteromycetes</span></div>
+        <div class="ans">✅ Answer: d. Deuteromycetes (e.g., Alternaria, Colletotrichum)</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- IMPORTANT Q&A -->
+  <div class="qa-sec">
+    <div class="qa-head"><h2>❓ Important Questions &amp; Answers</h2></div>
+    <div class="qa-body">
+
+      <div class="qa" onclick="tog(this)">
+        <div class="qa-q"><div class="qnum">Q1</div><div class="qtext">Define Systematics. Who defined it and when? <span class="qstar">★★★</span></div><div class="tog">Show ▾</div></div>
+        <div class="qa-ans">"<strong>Systematics is the study of kinds and diversity of organisms and their comparative and evolutionary relationship</strong>" — <strong>G. Simpson, 1961</strong>.<br/>The methods of classification date back to ancient times when Indian, Greek and Roman philosophers contributed to systematise science. This field of biology includes taxonomy and the study of evolutionary relationships.</div>
+      </div>
+
+      <div class="qa" onclick="tog(this)">
+        <div class="qa-q"><div class="qnum">Q2</div><div class="qtext">What is Taxonomy? What is the origin of the word? Who coined it? <span class="qstar">★★★</span></div><div class="tog">Show ▾</div></div>
+        <div class="qa-ans"><strong>Taxonomy</strong> means classification following certain rules or principles.<br/>The word comes from two Greek words:<ul><li><em>taxis</em> = arrangement</li><li><em>nomos</em> = law or rule</li></ul>The term <strong>taxonomy was first introduced by A.P. de Candolle</strong> (Swiss Botanist, 1778–1841).</div>
+      </div>
+
+      <div class="qa" onclick="tog(this)">
+        <div class="qa-q"><div class="qnum">Q3</div><div class="qtext">Distinguish between Artificial, Natural and Phylogenetic classification. <span class="qstar">★★</span></div><div class="tog">Show ▾</div></div>
+        <div class="qa-ans"><ul><li><strong>Artificial classification:</strong> Based on few easily observable and non-evolutionary features like habit, colour — irrespective of their affinity with other organisms. E.g., Linnaeus system of classification.</li><li><strong>Natural classification:</strong> Based on objectively significant characters rather than selected for convenience. Considers actual relationships. E.g., Bentham and Hooker's system.</li><li><strong>Phylogenetic classification:</strong> Based on common evolutionary descent — reflects evolutionary history. E.g., Engler and Prantl classification.</li></ul></div>
+      </div>
+
+      <div class="qa" onclick="tog(this)">
+        <div class="qa-q"><div class="qnum">Q4</div><div class="qtext">What are the Three Domains of life? Who proposed them? Compare them. <span class="qstar">★★★</span></div><div class="tog">Show ▾</div></div>
+        <div class="qa-ans">Proposed by <strong>Carl Woese in 1990</strong>. Domain is a unit larger than Kingdom.<br/>Three domains are <strong>Archaea, Bacteria, and Eukarya</strong>.<ul><li><strong>Archaea and Bacteria</strong> — both have prokaryotic cells</li><li><strong>Eukarya</strong> — has eukaryotic cells</li><li>All three have very unique ribosomal RNA (rRNA)</li><li>Archaea survive in extreme environments (extremophiles) — volcanic craters, salty lakes, hot springs</li><li>Bacteria differ from Archaea in structure of cell wall — Bacteria have peptidoglycan; Archaea do NOT</li></ul>The three domains are shown in a <strong>cladogram</strong> (phylogenetic descent diagram) branching from a common ancestor.</div>
+      </div>
+
+      <div class="qa" onclick="tog(this)">
+        <div class="qa-q"><div class="qnum">Q5</div><div class="qtext">What is DNA barcoding? Explain its steps and applications. <span class="qstar">★★★</span></div><div class="tog">Show ▾</div></div>
+        <div class="qa-ans"><strong>DNA barcoding</strong> is a new method for the <strong>identification of any species</strong> based on its DNA sequence from a tiny tissue sample.<br/><strong>Steps:</strong><ul><li>(a) Collecting DNA barcode data of known species</li><li>(b) Matching the barcode sequence of the unknown sample against the barcode library for identification</li></ul><strong>Applications:</strong><ul><li>Protection of endangered species</li><li>Preservation of natural resources</li><li>Pest control in agriculture</li><li>Identifying disease vectors</li><li>Authentication of natural health products</li><li>Identification of medicinal plants</li></ul>It also helps study newly identified species and understanding ecological and evolutionary relationships.</div>
+      </div>
+
+      <div class="qa" onclick="tog(this)">
+        <div class="qa-q"><div class="qnum">Q6</div><div class="qtext">Write the taxonomic hierarchy from Kingdom to Species. Give one example. <span class="qstar">★★★</span></div><div class="tog">Show ▾</div></div>
+        <div class="qa-ans"><strong>Taxonomic hierarchy</strong> (highest → lowest):<br/><strong>Kingdom → Division/Phylum → Class → Order → Family → Genus → Species</strong><br/><br/>These are <strong>compulsory categories</strong>. There are also <strong>facultative categories</strong> like sub-order, sub-family, sub-class.<br/><br/><strong>Example — China Rose:</strong> Kingdom Plantae → Division Angiospermae → Class Dicotyledonae → Sub-class Polypetalae → Order Malvales → Family Malvaceae → Genus <em>Hibiscus</em> → Species <em>rosa-sinensis</em><br/><br/>As we go higher in taxonomic ladder, <strong>number of common characters decreases</strong>.</div>
+      </div>
+
+      <div class="qa" onclick="tog(this)">
+        <div class="qa-q"><div class="qnum">Q7</div><div class="qtext">State the rules of Binomial Nomenclature. Who introduced this system? <span class="qstar">★★★</span></div><div class="tog">Show ▾</div></div>
+        <div class="qa-ans">Introduced by <strong>Carl Linnaeus</strong> in book "<strong>Species Plantarum</strong>" (1753).<br/><strong>Rules:</strong><ul><li>Name composed of two Latin/Greek words</li><li>Generic epithet (genus) — simple noun; written FIRST; begins with <strong>CAPITAL letter</strong></li><li>Specific epithet (species) — descriptive adjective; written SECOND; begins with <strong>small letter</strong></li><li>Scientific name — <strong>underlined separately</strong> (handwritten) or printed in <strong>italics</strong></li><li>Each epithet: min 3 letters, max 13 letters</li><li>Author's name written after in full or abbreviated. E.g., <em>Mangifera indica</em> L. (L = Linnaeus)</li></ul>Example: Sunflower = <em>Helianthus annuus</em> L.</div>
+      </div>
+
+      <div class="qa" onclick="tog(this)">
+        <div class="qa-q"><div class="qnum">Q8</div><div class="qtext">Why did Whittaker propose Five Kingdom classification? Name the five kingdoms. <span class="qstar">★★★</span></div><div class="tog">Show ▾</div></div>
+        <div class="qa-ans">Carl Linnaeus' two kingdom classification (Plantae and Animalia) was found <strong>inadequate</strong> because it could not classify organisms that show characters of BOTH kingdoms, e.g., Bacteria, Fungi, Euglena.<br/>Hence <strong>R.H. Whittaker (1969)</strong> proposed Five Kingdom classification showing phylogenetic relationships.<br/><strong>Five Kingdoms:</strong><ul><li>1. Kingdom Monera</li><li>2. Kingdom Protista</li><li>3. Kingdom Plantae</li><li>4. Kingdom Fungi</li><li>5. Kingdom Animalia</li></ul></div>
+      </div>
+
+      <div class="qa" onclick="tog(this)">
+        <div class="qa-q"><div class="qnum">Q9</div><div class="qtext">What are the salient features of Kingdom Monera? <span class="qstar">★★★</span></div><div class="tog">Show ▾</div></div>
+        <div class="qa-ans"><strong>Kingdom Monera</strong> features:<ul><li>Unicellular <strong>prokaryotic</strong> organisms — omnipresent</li><li>No well-defined nucleus; genetic material = <strong>nucleoid</strong> (circular double-stranded DNA)</li><li>Extra chromosomal DNA = <strong>plasmids</strong></li><li>Cell wall: <strong>peptidoglycan</strong> (murein)</li><li>No membrane-bound organelles (no mitochondria, chloroplast, ER)</li><li>Ribosomes: <strong>70S</strong> (smaller than eukaryotic cells)</li><li>Reproduction: asexual (binary fission, budding); rarely sexual by conjugation</li><li>Shapes: Coccus, Bacillus, Vibrio, Spirillum</li><li>Classified as: <strong>Archaebacteria</strong> and <strong>Eubacteria</strong></li></ul></div>
+      </div>
+
+      <div class="qa" onclick="tog(this)">
+        <div class="qa-q"><div class="qnum">Q10</div><div class="qtext">Write a note on useful and harmful bacteria. <span class="qstar">★★</span></div><div class="tog">Show ▾</div></div>
+        <div class="qa-ans"><strong>Useful bacteria:</strong><ul><li><em>Lactobacilli</em> — curdling of milk (anaerobic)</li><li><em>Azotobacter</em> — nitrogen fixation in soil</li><li><em>Streptomyces</em> — antibiotic production</li><li>Bacteria used in composting and degrading oil</li><li>Methanogenic bacteria in ruminant gut → biogas production</li></ul><strong>Harmful bacteria:</strong><ul><li>Cause diseases: <strong>Typhoid</strong> (<em>Salmonella typhi</em>), <strong>Cholera</strong> (<em>Vibrio cholerae</em>), <strong>Tuberculosis</strong> (<em>Mycobacterium tuberculosis</em>), <strong>Tetanus</strong> (<em>Clostridium tetani</em>)</li></ul></div>
+      </div>
+
+      <div class="qa" onclick="tog(this)">
+        <div class="qa-q"><div class="qnum">Q11</div><div class="qtext">What are the economic importance of fungi? <span class="qstar">★★</span></div><div class="tog">Show ▾</div></div>
+        <div class="qa-ans"><strong>Useful fungi:</strong><ul><li><em>Agaricus</em> (mushroom) — consumed as food</li><li><em>Saccharomyces</em> (yeast) — used in bakery and breweries (fermentation)</li><li><em>Penicillium</em> — source of <strong>antibiotic Penicillin</strong></li><li>Morels and truffles — consumed as delicacies</li><li><em>Neurospora</em> — useful in genetic and biochemical assays</li><li>Fungi involved in decomposition — recycle nutrients</li></ul><strong>Harmful fungi:</strong><ul><li><em>Puccinia</em> — causes rust disease in wheat (harmful to plants)</li><li>Various fungi cause diseases in animals and humans</li></ul></div>
+      </div>
+
+      <div class="qa" onclick="tog(this)">
+        <div class="qa-q"><div class="qnum">Q12</div><div class="qtext">Differentiate between viruses and viroids. <span class="qstar">★★★</span></div><div class="tog">Show ▾</div></div>
+        <div class="qa-ans"><table style="font-size:.84rem;"><tr style="background:#dcfce7;"><th style="padding:6px;border:1px solid #86efac;">Virus</th><th style="padding:6px;border:1px solid #86efac;">Viroid</th></tr><tr><td style="padding:6px;border:1px solid #e2e8f0;">Has protein coat (capsid)</td><td style="padding:6px;border:1px solid #e2e8f0;"><strong>No protein coat</strong></td></tr><tr><td style="padding:6px;border:1px solid #e2e8f0;">Genetic material: DNA or RNA</td><td style="padding:6px;border:1px solid #e2e8f0;">Only <strong>single-stranded RNA</strong></td></tr><tr><td style="padding:6px;border:1px solid #e2e8f0;">Larger in size</td><td style="padding:6px;border:1px solid #e2e8f0;"><strong>Smaller</strong> than viruses; low molecular weight</td></tr><tr><td style="padding:6px;border:1px solid #e2e8f0;">E.g., TMV, HIV, Bacteriophage</td><td style="padding:6px;border:1px solid #e2e8f0;">E.g., Potato Spindle Tuber disease agent</td></tr><tr><td style="padding:6px;border:1px solid #e2e8f0;">Named by Louis Pasteur; 'virus' by Beijernek</td><td style="padding:6px;border:1px solid #e2e8f0;">Discovered by <strong>T.O. Diener (1971)</strong></td></tr></table></div>
+      </div>
+
+      <div class="qa" onclick="tog(this)">
+        <div class="qa-q"><div class="qnum">Q13</div><div class="qtext">What is Lichen? Explain its significance. <span class="qstar">★★</span></div><div class="tog">Show ▾</div></div>
+        <div class="qa-ans"><strong>Lichen</strong> is a co-existence (symbiosis) of algae and fungi for mutual benefit.<ul><li><strong>Algal member (phycobiont)</strong> — mostly cyanobacteria or green algae; provides food by photosynthesis</li><li><strong>Fungal member (mycobiont)</strong> — provides shelter, absorbs water and minerals for the alga</li></ul><strong>Significance:</strong><ul><li>Excellent example of <strong>symbiosis</strong></li><li>Found in extreme environments like snow-clad poles</li><li><strong>Pollution indicators</strong> — NOT found in polluted regions</li><li>Important role in <strong>soil formation</strong> through specific acid production</li></ul>E.g., <em>Parmelia</em></div>
+      </div>
+
+      <div class="qa" onclick="tog(this)">
+        <div class="qa-q"><div class="qnum">Q14</div><div class="qtext">Why is binomial nomenclature important? <span class="qstar">★★</span></div><div class="tog">Show ▾</div></div>
+        <div class="qa-ans">Common names (vernacular names) cause confusion — widely distributed organisms have many different local names in different languages and dialects. E.g., Mango has over 50 Sanskrit names in Ayurveda; Pansy has about 50 common English names.<br/><strong>Binomial nomenclature is important because:</strong><ul><li>Provides a <strong>unique, universal name</strong> for each organism</li><li>Names are <strong>internationally accepted</strong> — used worldwide</li><li>Names are <strong>systematic</strong> and in Latin/Greek — stable language</li><li>Avoids confusion caused by local/regional common names</li><li>Reflects genus-species relationship and sometimes evolutionary information</li></ul></div>
+      </div>
+
+      <div class="qa" onclick="tog(this)">
+        <div class="qa-q"><div class="qnum">Q15</div><div class="qtext">What is the difference between species and genus? <span class="qstar">★★</span></div><div class="tog">Show ▾</div></div>
+        <div class="qa-ans"><ul><li><strong>Species:</strong> Basic unit of classification. Group of organisms that can <strong>interbreed under natural conditions to produce fertile offspring</strong>. E.g., Lion (<em>Panthera leo</em>), Tiger (<em>Panthera tigris</em>) are different species.</li><li><strong>Genus:</strong> A group of species bearing <strong>close morphological resemblance</strong> but they do <strong>NOT interbreed</strong>. E.g., Tiger, Leopard, Lion all belong to same genus <em>Panthera</em> — same genus, different species.</li></ul></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="back-top"><a href="#top">↑ Back to Top</a></div>
+
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Visions Classes" class="footer-logo-img"/>
+        <span class="logo-text"><span>Visions</span> Classes</span>
+        <p>"Learn Today, Lead Tomorrow"</p>
+      </div>
+      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="notes-class11.html">Class 11 Notes</a></li><li><a href="notes.html">All Notes</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+918767144200">📞 +91 87671 44200</a></li><li><a href="https://wa.me/918767144200" target="_blank">💬 WhatsApp</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Visions Learning. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<div class="call-now-bar">
+  <a href="https://wa.me/918767144200" target="_blank" class="call-now-btn">💬 WhatsApp</a>
+  <a href="tel:+918767144200" class="call-now-btn call">📞 Call Now</a>
+</div>
+
+<script src="main.js"></script>
+<script>
+  function tog(el){
+    var ans = el.querySelector('.qa-ans');
+    var btn = el.querySelector('.tog');
+    if(!ans||!btn) return;
+    var open = ans.classList.toggle('open');
+    btn.textContent = open ? 'Hide ▴' : 'Show ▾';
+  }
+</script>
+</body>
+</html>
