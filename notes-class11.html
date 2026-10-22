@@ -10,6 +10,104 @@
   <!-- Biology full-notes (inline) — scoped styles so the .qbox/.qtitle/.qbody content
        embedded from class11-biology-practice-answers.html renders correctly without
        clashing with the global .section-title / .container rules in style.css. -->
+  
+      <script>
+      function bioChToggle(ch) {
+        var c = document.getElementById('bio-ch' + ch + '-collapse');
+        var b = document.getElementById('bio-ch' + ch + '-btn');
+        if (!c || !b) return;
+        var opening = c.style.display === 'none';
+        c.style.display = opening ? 'block' : 'none';
+        b.innerHTML = opening
+          ? '📖 Hide Chapter ' + ch + ' Notes ▴'
+          : '📖 Open Chapter ' + ch + ' Notes ▾';
+        if (opening) { c.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      }
+      </script>
+  <style id="bio-ch-styles">
+.bio-ch-inline *, .bio-ch-inline *::before, .bio-ch-inline *::after { box-sizing: border-box; margin: 0; padding: 0; }
+.bio-ch-inline body { background: #f0fdf4; color: #1e293b; font-family: 'Segoe UI', system-ui, sans-serif; }
+.bio-ch-inline .navbar { background: #14532d !important; }
+.bio-ch-inline .ch-hero {
+      background: linear-gradient(135deg, #14532d 0%, #166534 50%, #15803d 100%);
+      color: #fff; padding: 90px 0 44px; text-align: center; position: relative; overflow: hidden;
+    }
+.bio-ch-inline .ch-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(134,239,172,.18) 0%, transparent 60%);
+    }
+.bio-ch-inline .ch-hero .badge {
+      display: inline-block; padding: 5px 18px; border-radius: 20px;
+      background: rgba(134,239,172,.2); border: 1px solid #86efac;
+      color: #bbf7d0; font-size: .78rem; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; position: relative;
+    }
+.bio-ch-inline .ch-hero h1 {
+      font-size: clamp(1.9rem,4.5vw,3rem); font-weight: 900; position: relative;
+      background: linear-gradient(135deg, #fff 0%, #86efac 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 8px;
+    }
+.bio-ch-inline .ch-hero p { color: #bbf7d0; font-size: .97rem; position: relative; max-width: 620px; margin: 0 auto 20px; }
+.bio-ch-inline .hero-topics { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; position: relative; margin-top: 16px; }
+.bio-ch-inline .htopic { padding: 5px 14px; border-radius: 20px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); color: #fff; font-size: .78rem; font-weight: 600; }
+.bio-ch-inline .prog-bar { height: 4px; background: rgba(21,128,61,.15); }
+.bio-ch-inline .prog-fill { height: 100%; background: linear-gradient(90deg,#15803d,#22c55e); width: 0; transition: width .4s; }
+.bio-ch-inline .quick-nav { background: #fff; border-bottom: 2px solid #dcfce7; display: flex; gap: 0; overflow-x: auto; position: sticky; top: 60px; z-index: 80; }
+.bio-ch-inline .quick-nav::-webkit-scrollbar { height: 0; }
+.bio-ch-inline .qn-btn { padding: 11px 18px; border: none; background: transparent; font-size: .8rem; font-weight: 700; color: #64748b; cursor: pointer; white-space: nowrap; border-bottom: 3px solid transparent; transition: all .2s; text-decoration: none; display: inline-block; }
+.bio-ch-inline .qn-btn:hover { color: #15803d; background: #f0fdf4; }
+.bio-ch-inline .qn-btn.active { color: #15803d; border-bottom-color: #15803d; background: #f0fdf4; }
+.bio-ch-inline .notes-body { max-width: 960px; margin: 0 auto; padding: 28px 20px 120px; }
+.bio-ch-inline .sec { background: #fff; border: 1px solid #d1fae5; border-radius: 14px; padding: 26px 28px; margin-bottom: 18px; box-shadow: 0 2px 10px rgba(21,128,61,.06); }
+.bio-ch-inline .sec-title { font-size: 1.05rem; font-weight: 800; color: #15803d; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; padding-bottom: 10px; border-bottom: 2px solid #dcfce7; }
+.bio-ch-inline .def { background: #f0fdf4; border: 1px solid #86efac; border-radius: 9px; padding: 13px 18px; margin: 10px 0; font-size: .9rem; color: #14532d; line-height: 1.65; }
+.bio-ch-inline .def .dl { font-size: .67rem; text-transform: uppercase; letter-spacing: 1px; color: #15803d; font-weight: 700; display: block; margin-bottom: 5px; }
+.bio-ch-inline .fml { background: #fefce8; border: 1.5px solid #fde047; border-radius: 9px; padding: 13px 18px; margin: 10px 0; font-size: .95rem; color: #1e293b; line-height: 1.8; }
+.bio-ch-inline .fml .fl { font-family: 'Segoe UI', sans-serif; font-size: .67rem; text-transform: uppercase; letter-spacing: 1px; color: #ca8a04; font-weight: 700; display: block; margin-bottom: 5px; }
+.bio-ch-inline .kp { list-style: none; padding: 0; margin: 10px 0; }
+.bio-ch-inline .kp li { padding: 6px 0 6px 22px; position: relative; font-size: .9rem; color: #334155; line-height: 1.7; border-bottom: 1px solid #f0fdf4; }
+.bio-ch-inline .kp li:last-child { border: none; }
+.bio-ch-inline .kp li::before { content: '▶'; position: absolute; left: 0; color: #15803d; font-size: .55rem; top: 11px; }
+.bio-ch-inline .ntable { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .86rem; }
+.bio-ch-inline .ntable th { background: #dcfce7; color: #14532d; padding: 9px 12px; text-align: left; font-weight: 700; border: 1px solid #86efac; }
+.bio-ch-inline .ntable td { padding: 9px 12px; border: 1px solid #d1fae5; color: #475569; }
+.bio-ch-inline .ntable tr:nth-child(even) td { background: #f0fdf4; }
+.bio-ch-inline .ntable tr:hover td { background: #dcfce7; color: #1e293b; }
+.bio-ch-inline .note { border-radius: 9px; padding: 11px 16px; margin: 10px 0; font-size: .88rem; line-height: 1.65; }
+.bio-ch-inline .n-grn { background: #f0fdf4; border-left: 4px solid #22c55e; color: #14532d; }
+.bio-ch-inline .n-yel { background: #fefce8; border-left: 4px solid #ca8a04; color: #713f12; }
+.bio-ch-inline .n-red { background: #fff1f2; border-left: 4px solid #ef4444; color: #991b1b; }
+.bio-ch-inline .n-blue { background: #eff6ff; border-left: 4px solid #3b82f6; color: #1e40af; }
+.bio-ch-inline .eq-box { background: #1e293b; border-radius: 14px; padding: 24px 28px; margin-top: 14px; }
+.bio-ch-inline .eq-title { font-size: .95rem; font-weight: 800; color: #86efac; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.bio-ch-inline .q-list { list-style: none; padding: 0; counter-reset: qnum; }
+.bio-ch-inline .q-list li { counter-increment: qnum; padding: 10px 12px 10px 46px; position: relative; font-size: .87rem; color: #cbd5e1; line-height: 1.65; border-bottom: 1px solid rgba(255,255,255,.06); }
+.bio-ch-inline .q-list li:last-child { border: none; }
+.bio-ch-inline .q-list li::before { content: 'Q' counter(qnum); position: absolute; left: 0; background: #15803d; color: #fff; font-size: .68rem; font-weight: 800; padding: 2px 7px; border-radius: 6px; top: 11px; }
+.bio-ch-inline .mk { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: .67rem; font-weight: 700; margin-left: 8px; vertical-align: middle; }
+.bio-ch-inline .m1 { background: rgba(34,197,94,.2); color: #86efac; }
+.bio-ch-inline .m2 { background: rgba(245,158,11,.2); color: #fde047; }
+.bio-ch-inline .m3 { background: rgba(99,102,241,.25); color: #a5b4fc; }
+.bio-ch-inline .m4 { background: rgba(239,68,68,.2); color: #fca5a5; }
+.bio-ch-inline strong.hg { color: #15803d; }
+.bio-ch-inline strong.hy { color: #ca8a04; }
+.bio-ch-inline strong.hr { color: #dc2626; }
+.bio-ch-inline .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 99; background: #14532d; border-top: 2px solid #166534; display: flex; align-items: center; gap: 10px; padding: 10px 20px; flex-wrap: wrap; }
+.bio-ch-inline .bn-label { color: #86efac; font-size: .82rem; flex: 1; }
+.bio-ch-inline .bn-btn { padding: 8px 18px; border-radius: 8px; border: none; cursor: pointer; font-size: .82rem; font-weight: 700; text-decoration: none; display: inline-block; }
+.bio-ch-inline .bn-all { background: #22c55e; color: #000; }
+.bio-ch-inline .bn-prev { background: rgba(255,255,255,.12); color: #fff; }
+.bio-ch-inline .bn-next { background: rgba(255,255,255,.12); color: #fff; }
+@media(max-width:560px) {
+.bio-ch-inline .sec { padding: 18px 14px; }
+}
+
+.bio-ch-inline { border-radius: 10px; overflow: hidden; }
+.bio-ch-inline .notes-body { padding-bottom: 24px; }
+.bio-ch-inline .bottom-nav { display: none !important; }
+
+  </style>
 </head>
 <body>
 
@@ -1488,461 +1586,11 @@
                 <li>20 Exam Important Questions (2M / 3M / 4M) with full answers</li>
               </ul>
             </div>
-            <div style="margin-top:14px;">
-              <a href="class11-biology-ch1-notes.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#15803d,#22c55e);color:#fff;padding:10px 20px;border-radius:24px;text-decoration:none;font-size:0.88rem;font-weight:700;">
-                📖 Open Full Chapter 1 Notes →
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- BIOLOGY — CARD 2: Chapter 3 – Kingdom Plantae -->
-        <div class="notes-chapter-card" data-subject="biology">
-          <div class="notes-chapter-header" style="background:#fff7ed;border-bottom:2px solid #fed7aa;">
-            <span class="notes-subject-icon" style="color:#c2410c;">🌿</span>
-            <div>
-              <div class="notes-subject-label" style="color:#9a3412;font-weight:700;letter-spacing:.5px;">BIOLOGY</div>
-              <h3 style="color:#1e293b;">Chapter 3 — Kingdom Plantae</h3>
-            </div>
-          </div>
-          <div class="notes-chapter-body">
-            <div class="notes-block">
-              <div class="notes-block-title">📌 Topics Covered</div>
-              <ul class="notes-list">
-                <li>Classification — Cryptogams vs Phanerogams flowchart</li>
-                <li>Thallophyta (Algae) — Green / Brown / Red Algae; pigments &amp; stored food table ★</li>
-                <li>Bryophyta — amphibious plants; rhizoids; Funaria, Sphagnum</li>
-                <li>Pteridophyta — first vascular land plants; tracheids + sieve cells ★</li>
-                <li>Gymnosperms — naked seeds; Cycas (coralloid roots); Ginkgo biloba = living fossil</li>
-                <li>Angiosperms — most advanced; seeds enclosed in fruit (ovary)</li>
-                <li>Dicotyledonae vs Monocotyledonae — full comparison table ★</li>
-                <li>Alternation of Generations — Diplontic, Haplontic, Haplo-diplontic</li>
-                <li>20 Exam Important Questions (2M / 3M / 4M) with full answers</li>
-              </ul>
-            </div>
-            <div style="margin-top:14px;">
-              <a href="class11-biology-ch3-notes.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#15803d,#22c55e);color:#fff;padding:10px 20px;border-radius:24px;text-decoration:none;font-size:0.88rem;font-weight:700;">
-                📖 Open Full Chapter 3 Notes →
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- BIOLOGY — CARD 3: Chapter 5 – Cell Structure & Organization -->
-        <div class="notes-chapter-card" data-subject="biology">
-          <div class="notes-chapter-header" style="background:#fff7ed;border-bottom:2px solid #fed7aa;">
-            <span class="notes-subject-icon" style="color:#c2410c;">🔬</span>
-            <div>
-              <div class="notes-subject-label" style="color:#9a3412;font-weight:700;letter-spacing:.5px;">BIOLOGY</div>
-              <h3 style="color:#1e293b;">Chapter 5 — Cell Structure &amp; Organization</h3>
-            </div>
-          </div>
-          <div class="notes-chapter-body">
-            <div class="notes-block">
-              <div class="notes-block-title">📌 Topics Covered</div>
-              <ul class="notes-list">
-                <li>Cell Basics &amp; Microscopy — Mycoplasma (0.3µm), Ostrich egg; EM = 500,000×</li>
-                <li>Cell Theory — Schleiden (1838), Schwann (1839), Virchow (1855); 6 postulates ★</li>
-                <li>Totipotency &amp; Stem Cells — embryonic cells; medical applications</li>
-                <li>Prokaryotic vs Eukaryotic — full comparison table ★</li>
-                <li>Prokaryotic Cell Structure — glycocalyx, mesosomes, plasmids (F &amp; R), Theta model ★</li>
-                <li>Plasma Membrane &amp; Fluid Mosaic Model — Singer &amp; Nicholson 1972 ★★</li>
-                <li>ER, Golgi Complex, Lysosomes, Mitochondria, Plastids, Nucleus</li>
-                <li>Cilia &amp; Flagella — 9+2 axoneme arrangement ★★ | Centrioles — 9 triplet microtubules</li>
-                <li>Quick Revision table + 20 Exam Questions (2M / 3M / 4M) with answers</li>
-              </ul>
-            </div>
-            <div style="margin-top:14px;">
-              <a href="class11-biology-ch5-notes.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#15803d,#22c55e);color:#fff;padding:10px 20px;border-radius:24px;text-decoration:none;font-size:0.88rem;font-weight:700;">
-                📖 Open Full Chapter 5 Notes →
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- BIOLOGY — CARD 6: TYBSc Physical Chemistry Ch 1 & 2 -->
-        <div class="notes-chapter-card" data-subject="chemistry" style="border:2px solid #1565c0;">
-          <div class="notes-chapter-header" style="background:linear-gradient(135deg,#0d47a1,#1565c0);">
-            <span class="notes-subject-icon" style="color:white;">⚗️</span>
-            <div>
-              <div class="notes-subject-label" style="color:rgba(255,255,255,0.8);">TYBSc Sem 5 — Physical Chemistry</div>
-              <h3 style="color:white;">Ch 1: Molecular Spectroscopy &amp; Ch 2: Colligative Properties</h3>
-            </div>
-          </div>
-          <div class="notes-chapter-body">
-            <div class="notes-block">
-              <div class="notes-block-title">📚 Ch 1 — Molecular Spectroscopy</div>
-              <ul class="notes-list">
-                <li>✅ Dipole Moment (μ = q×d), Debye unit, key molecules table</li>
-                <li>✅ Disubstituted benzene formula (ortho/meta/para)</li>
-                <li>✅ IR Spectroscopy — stretching, bending vibrations, fingerprint region</li>
-                <li>✅ Clausius-Mosotti &amp; Debye equation, types of polarisation</li>
-                <li>✅ Raman Spectroscopy — Stokes/Anti-Stokes, Mutual Exclusion Rule</li>
-                <li>✅ 10 Exam Q&amp;A (3–5 mark answers)</li>
-              </ul>
-            </div>
-            <div class="notes-block">
-              <div class="notes-block-title">📚 Ch 2 — Colligative Properties</div>
-              <ul class="notes-list">
-                <li>✅ Raoult's Law, Relative Lowering of Vapour Pressure</li>
-                <li>✅ Elevation of Boiling Point (ΔTb = Kb × m)</li>
-                <li>✅ Depression of Freezing Point — Beckmann &amp; Rast method</li>
-                <li>✅ Osmotic Pressure — Van't Hoff equation (πV = nRT)</li>
-                <li>✅ Reverse Osmosis (RO), Van't Hoff factor (i)</li>
-                <li>✅ 8 Exam Q&amp;A + Numerical (camphor Rast method solved)</li>
-              </ul>
-            </div>
             <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
-              <a href="tybsc-sem5-physical-chemistry-notes.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#0d47a1,#1565c0);color:#fff;padding:12px 24px;border-radius:28px;text-decoration:none;font-size:0.9rem;font-weight:700;box-shadow:0 4px 12px rgba(13,71,161,0.35);">
-                ⚗️ Open Physical Chemistry Notes →
-              </a>
-              <a href="physical-chemistry-full-notes.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1565c0,#1976d2);color:#fff;padding:12px 20px;border-radius:28px;text-decoration:none;font-size:0.85rem;font-weight:600;">
-                📖 Full Notes with Explanations →
-              </a>
+              <button id="bio-ch1-btn" type="button" onclick="bioChToggle(1)" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#15803d,#22c55e);color:#fff;padding:10px 20px;border:none;border-radius:24px;font-size:0.88rem;font-weight:700;cursor:pointer;">📖 Open Chapter 1 Notes ▾</button>
+              <a href="class11-biology-ch1-notes.html" style="display:inline-flex;align-items:center;gap:8px;background:#f0fdf4;border:1.5px solid #86efac;color:#15803d;padding:10px 18px;border-radius:24px;text-decoration:none;font-size:0.85rem;font-weight:700;">🔗 Open Full Page →</a>
             </div>
-          </div>
-        </div>
-
-        <!-- BIOLOGY — CARD 4: TYBSc Physical Chemistry Ch 3 & 4 -->
-        <div class="notes-chapter-card" data-subject="chemistry" style="border:2px solid #6a1b9a;">
-          <div class="notes-chapter-header" style="background:linear-gradient(135deg,#4a148c,#6a1b9a);">
-            <span class="notes-subject-icon" style="color:white;">⚛️</span>
-            <div>
-              <div class="notes-subject-label" style="color:rgba(255,255,255,0.8);">TYBSc Sem 5 — Physical Chemistry</div>
-              <h3 style="color:white;">Ch 3: Nuclear Chemistry &amp; Ch 4: Surface Chemistry</h3>
-            </div>
-          </div>
-          <div class="notes-chapter-body">
-            <div class="notes-block">
-              <div class="notes-block-title">📚 Ch 3 — Nuclear Chemistry</div>
-              <ul class="notes-list">
-                <li>✅ Detection methods — PMT (Photomultiplier Tube) construction &amp; working</li>
-                <li>✅ Radioactive Tracers — Photosynthesis (¹⁸O), Ester Hydrolysis, Friedel-Crafts</li>
-                <li>✅ Fissile vs Fertile materials (²³⁵U, ²³⁹Pu, ²³²Th)</li>
-                <li>✅ Nuclear Reactor — all 6 components with functions</li>
-                <li>✅ Multiplication Factor (k=1 critical, k&gt;1 bomb, k&lt;1 stops)</li>
-                <li>✅ 6 Exam Q&amp;A (4–8 mark answers)</li>
-              </ul>
-            </div>
-            <div class="notes-block">
-              <div class="notes-block-title">📚 Ch 4 — Surface Chemistry</div>
-              <ul class="notes-list">
-                <li>✅ Adsorption — Physisorption vs Chemisorption (full table)</li>
-                <li>✅ Freundlich Isotherm (x/m = kP^1/n) &amp; Langmuir Isotherm derivation</li>
-                <li>✅ Colloids — Tyndall Effect, Brownian Motion, Electrophoresis</li>
-                <li>✅ Hardy-Schulze Rule, Gold Number, Zeta Potential</li>
-                <li>✅ Emulsions (O/W, W/O), Gels, Surfactants, CMC, Micelles</li>
-                <li>✅ Donnan Membrane Equilibrium, Gibbs Adsorption Equation</li>
-                <li>✅ 12 Exam Q&amp;A + most expected questions list with star ratings</li>
-              </ul>
-            </div>
-            <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
-              <a href="tybsc-sem5-ch3-ch4-notes.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#4a148c,#6a1b9a);color:#fff;padding:12px 24px;border-radius:28px;text-decoration:none;font-size:0.9rem;font-weight:700;box-shadow:0 4px 12px rgba(74,20,140,0.35);">
-                ⚛️ Open Nuclear &amp; Surface Chemistry →
-              </a>
-              <a href="physical-chemistry-ch3-ch4-notes.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#6a1b9a,#7b1fa2);color:#fff;padding:12px 20px;border-radius:28px;text-decoration:none;font-size:0.85rem;font-weight:600;">
-                📖 Ch 3 &amp; 4 Full Notes →
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- BIOLOGY — CARD 5: Physical Chemistry Cheat Sheet (Quick Revision) -->
-        <div class="notes-chapter-card" data-subject="chemistry" style="border:2px solid #e65100;">
-          <div class="notes-chapter-header" style="background:linear-gradient(135deg,#bf360c,#e64a19);">
-            <span class="notes-subject-icon" style="color:white;">⚡</span>
-            <div>
-              <div class="notes-subject-label" style="color:rgba(255,255,255,0.8);">TYBSc Sem 5 — Quick Revision</div>
-              <h3 style="color:white;">Physical Chemistry — Cheat Sheet &amp; Complete Revision Notes</h3>
-            </div>
-          </div>
-          <div class="notes-chapter-body">
-            <div class="notes-block">
-              <div class="notes-block-title">📚 What's Inside</div>
-              <ul class="notes-list">
-                <li>✅ <strong>Cheat Sheet</strong> — All key formulas, rules &amp; facts in 1 page (print-ready)</li>
-                <li>✅ Dipole moment table, IR group frequencies, Raman activity rules</li>
-                <li>✅ All 4 colligative property formulas with constants</li>
-                <li>✅ Van't Hoff factor table (NaCl=2, BaCl₂=3, K₂SO₄=3)</li>
-                <li>✅ Nuclear Reactor components quick table</li>
-                <li>✅ Adsorption isotherms comparison</li>
-                <li>✅ Colloid terms — CMC, Gold Number, Zeta Potential</li>
-                <li>✅ <strong>Complete Notes</strong> — full Q&amp;A for all chapters with mark breakdowns</li>
-              </ul>
-            </div>
-            <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
-              <a href="physical-chemistry-cheatsheet.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#bf360c,#e64a19);color:#fff;padding:12px 22px;border-radius:28px;text-decoration:none;font-size:0.88rem;font-weight:700;box-shadow:0 4px 12px rgba(191,54,12,0.35);">
-                ⚡ Quick Revision Cheat Sheet →
-              </a>
-              <a href="physical-chemistry-complete-cheatsheet.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#e64a19,#f4511e);color:#fff;padding:12px 20px;border-radius:28px;text-decoration:none;font-size:0.85rem;font-weight:600;">
-                📋 Complete Cheat Sheet →
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- BIOLOGY — CARD 6: TYBSc MCQ Practice -->
-        <div class="notes-chapter-card" data-subject="chemistry" style="border:2px solid #c62828;">
-          <div class="notes-chapter-header" style="background:linear-gradient(135deg,#b71c1c,#c62828);">
-            <span class="notes-subject-icon" style="color:white;">🎯</span>
-            <div>
-              <div class="notes-subject-label" style="color:rgba(255,255,255,0.8);">TYBSc Sem 5 — MCQ Practice</div>
-              <h3 style="color:white;">Physical Chemistry — MCQ Test Practice</h3>
-            </div>
-          </div>
-          <div class="notes-chapter-body">
-            <div class="notes-block">
-              <div class="notes-block-title">🎯 Practice MCQs</div>
-              <ul class="notes-list">
-                <li>✅ Multiple Choice Questions — Ch 1 to Ch 4</li>
-                <li>✅ Covers Spectroscopy, Colligative Properties, Nuclear &amp; Surface Chemistry</li>
-                <li>✅ Instant answer checking</li>
-                <li>✅ Ideal for semester exam preparation</li>
-              </ul>
-            </div>
-            <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
-              <a href="tybsc-sem5-mcq-practice.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#b71c1c,#c62828);color:#fff;padding:12px 24px;border-radius:28px;text-decoration:none;font-size:0.9rem;font-weight:700;box-shadow:0 4px 12px rgba(183,28,28,0.35);">
-                🎯 Start MCQ Practice →
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- end notesChaptersGrid -->
-
-      <!-- ===== BIOLOGY FULL CHAPTER NOTES (Ch 1, 3, 5 — embedded inline from
-           class11-biology-ch1/ch3/ch5-notes.html so students see real notes under the
-           Biology filter without navigating away, like the Physics inline sections) ===== -->
-      <section id="bio-full-notes" class="filterable-section" data-subject="biology" style="margin-top:40px;">
-        <style>
-#bio-full-notes *, #bio-full-notes *::before, #bio-full-notes *::after { box-sizing: border-box; margin: 0; padding: 0; }
-#bio-full-notes body { background: #f0fdf4; color: #1e293b; font-family: 'Segoe UI', system-ui, sans-serif; }
-#bio-full-notes .navbar { background: #14532d !important; }
-#bio-full-notes .ch-hero {
-      background: linear-gradient(135deg, #14532d 0%, #166534 50%, #15803d 100%);
-      color: #fff; padding: 90px 0 44px; text-align: center; position: relative; overflow: hidden;
-    }
-#bio-full-notes .ch-hero::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(134,239,172,.18) 0%, transparent 60%);
-    }
-#bio-full-notes .ch-hero .badge {
-      display: inline-block; padding: 5px 18px; border-radius: 20px;
-      background: rgba(134,239,172,.2); border: 1px solid #86efac;
-      color: #bbf7d0; font-size: .78rem; font-weight: 700;
-      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; position: relative;
-    }
-#bio-full-notes .ch-hero h1 {
-      font-size: clamp(1.9rem,4.5vw,3rem); font-weight: 900; position: relative;
-      background: linear-gradient(135deg, #fff 0%, #86efac 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-      margin-bottom: 8px;
-    }
-#bio-full-notes .ch-hero p { color: #bbf7d0; font-size: .97rem; position: relative; max-width: 620px; margin: 0 auto 20px; }
-#bio-full-notes .hero-topics { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; position: relative; margin-top: 16px; }
-#bio-full-notes .htopic { padding: 5px 14px; border-radius: 20px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); color: #fff; font-size: .78rem; font-weight: 600; }
-#bio-full-notes .prog-bar { height: 4px; background: rgba(21,128,61,.15); }
-#bio-full-notes .prog-fill { height: 100%; background: linear-gradient(90deg,#15803d,#22c55e); width: 0; transition: width .4s; }
-#bio-full-notes .quick-nav { background: #fff; border-bottom: 2px solid #dcfce7; display: flex; gap: 0; overflow-x: auto; position: sticky; top: 60px; z-index: 80; }
-#bio-full-notes .quick-nav::-webkit-scrollbar { height: 0; }
-#bio-full-notes .qn-btn { padding: 11px 18px; border: none; background: transparent; font-size: .8rem; font-weight: 700; color: #64748b; cursor: pointer; white-space: nowrap; border-bottom: 3px solid transparent; transition: all .2s; text-decoration: none; display: inline-block; }
-#bio-full-notes .qn-btn:hover { color: #15803d; background: #f0fdf4; }
-#bio-full-notes .qn-btn.active { color: #15803d; border-bottom-color: #15803d; background: #f0fdf4; }
-#bio-full-notes .notes-body { max-width: 960px; margin: 0 auto; padding: 28px 20px 120px; }
-#bio-full-notes .sec { background: #fff; border: 1px solid #d1fae5; border-radius: 14px; padding: 26px 28px; margin-bottom: 18px; box-shadow: 0 2px 10px rgba(21,128,61,.06); }
-#bio-full-notes .sec-title { font-size: 1.05rem; font-weight: 800; color: #15803d; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; padding-bottom: 10px; border-bottom: 2px solid #dcfce7; }
-#bio-full-notes .def { background: #f0fdf4; border: 1px solid #86efac; border-radius: 9px; padding: 13px 18px; margin: 10px 0; font-size: .9rem; color: #14532d; line-height: 1.65; }
-#bio-full-notes .def .dl { font-size: .67rem; text-transform: uppercase; letter-spacing: 1px; color: #15803d; font-weight: 700; display: block; margin-bottom: 5px; }
-#bio-full-notes .fml { background: #fefce8; border: 1.5px solid #fde047; border-radius: 9px; padding: 13px 18px; margin: 10px 0; font-size: .95rem; color: #1e293b; line-height: 1.8; }
-#bio-full-notes .fml .fl { font-family: 'Segoe UI', sans-serif; font-size: .67rem; text-transform: uppercase; letter-spacing: 1px; color: #ca8a04; font-weight: 700; display: block; margin-bottom: 5px; }
-#bio-full-notes .kp { list-style: none; padding: 0; margin: 10px 0; }
-#bio-full-notes .kp li { padding: 6px 0 6px 22px; position: relative; font-size: .9rem; color: #334155; line-height: 1.7; border-bottom: 1px solid #f0fdf4; }
-#bio-full-notes .kp li:last-child { border: none; }
-#bio-full-notes .kp li::before { content: '▶'; position: absolute; left: 0; color: #15803d; font-size: .55rem; top: 11px; }
-#bio-full-notes .ntable { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .86rem; }
-#bio-full-notes .ntable th { background: #dcfce7; color: #14532d; padding: 9px 12px; text-align: left; font-weight: 700; border: 1px solid #86efac; }
-#bio-full-notes .ntable td { padding: 9px 12px; border: 1px solid #d1fae5; color: #475569; }
-#bio-full-notes .ntable tr:nth-child(even) td { background: #f0fdf4; }
-#bio-full-notes .ntable tr:hover td { background: #dcfce7; color: #1e293b; }
-#bio-full-notes .note { border-radius: 9px; padding: 11px 16px; margin: 10px 0; font-size: .88rem; line-height: 1.65; }
-#bio-full-notes .n-grn { background: #f0fdf4; border-left: 4px solid #22c55e; color: #14532d; }
-#bio-full-notes .n-yel { background: #fefce8; border-left: 4px solid #ca8a04; color: #713f12; }
-#bio-full-notes .n-red { background: #fff1f2; border-left: 4px solid #ef4444; color: #991b1b; }
-#bio-full-notes .n-blue { background: #eff6ff; border-left: 4px solid #3b82f6; color: #1e40af; }
-#bio-full-notes .eq-box { background: #1e293b; border-radius: 14px; padding: 24px 28px; margin-top: 14px; }
-#bio-full-notes .eq-title { font-size: .95rem; font-weight: 800; color: #86efac; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
-#bio-full-notes .q-list { list-style: none; padding: 0; counter-reset: qnum; }
-#bio-full-notes .q-list li { counter-increment: qnum; padding: 10px 12px 10px 46px; position: relative; font-size: .87rem; color: #cbd5e1; line-height: 1.65; border-bottom: 1px solid rgba(255,255,255,.06); }
-#bio-full-notes .q-list li:last-child { border: none; }
-#bio-full-notes .q-list li::before { content: 'Q' counter(qnum); position: absolute; left: 0; background: #15803d; color: #fff; font-size: .68rem; font-weight: 800; padding: 2px 7px; border-radius: 6px; top: 11px; }
-#bio-full-notes .mk { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: .67rem; font-weight: 700; margin-left: 8px; vertical-align: middle; }
-#bio-full-notes .m1 { background: rgba(34,197,94,.2); color: #86efac; }
-#bio-full-notes .m2 { background: rgba(245,158,11,.2); color: #fde047; }
-#bio-full-notes .m3 { background: rgba(99,102,241,.25); color: #a5b4fc; }
-#bio-full-notes .m4 { background: rgba(239,68,68,.2); color: #fca5a5; }
-#bio-full-notes strong.hg { color: #15803d; }
-#bio-full-notes strong.hy { color: #ca8a04; }
-#bio-full-notes strong.hr { color: #dc2626; }
-#bio-full-notes .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 99; background: #14532d; border-top: 2px solid #166534; display: flex; align-items: center; gap: 10px; padding: 10px 20px; flex-wrap: wrap; }
-#bio-full-notes .bn-label { color: #86efac; font-size: .82rem; flex: 1; }
-#bio-full-notes .bn-btn { padding: 8px 18px; border-radius: 8px; border: none; cursor: pointer; font-size: .82rem; font-weight: 700; text-decoration: none; display: inline-block; }
-#bio-full-notes .bn-all { background: #22c55e; color: #000; }
-#bio-full-notes .bn-prev { background: rgba(255,255,255,.12); color: #fff; }
-#bio-full-notes .bn-next { background: rgba(255,255,255,.12); color: #fff; }
-@media(max-width:560px) {
-#bio-full-notes .sec { padding: 18px 14px; }
-}
-#bio-full-notes *, #bio-full-notes *::before, #bio-full-notes *::after { box-sizing: border-box; margin: 0; padding: 0; }
-#bio-full-notes body { background: #f0fdf4; color: #1e293b; font-family: 'Segoe UI', system-ui, sans-serif; }
-#bio-full-notes .navbar { background: #14532d !important; }
-#bio-full-notes .ch-hero { background: linear-gradient(135deg, #14532d 0%, #166534 50%, #15803d 100%); color: #fff; padding: 90px 0 44px; text-align: center; position: relative; overflow: hidden; }
-#bio-full-notes .ch-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(134,239,172,.18) 0%, transparent 60%); }
-#bio-full-notes .ch-hero .badge { display: inline-block; padding: 5px 18px; border-radius: 20px; background: rgba(134,239,172,.2); border: 1px solid #86efac; color: #bbf7d0; font-size: .78rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; position: relative; }
-#bio-full-notes .ch-hero h1 { font-size: clamp(1.9rem,4.5vw,3rem); font-weight: 900; position: relative; background: linear-gradient(135deg, #fff 0%, #86efac 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px; }
-#bio-full-notes .ch-hero p { color: #bbf7d0; font-size: .97rem; position: relative; max-width: 620px; margin: 0 auto 20px; }
-#bio-full-notes .hero-topics { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; position: relative; margin-top: 16px; }
-#bio-full-notes .htopic { padding: 5px 14px; border-radius: 20px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); color: #fff; font-size: .78rem; font-weight: 600; }
-#bio-full-notes .prog-bar { height: 4px; background: rgba(21,128,61,.15); }
-#bio-full-notes .prog-fill { height: 100%; background: linear-gradient(90deg,#15803d,#22c55e); width: 0; transition: width .4s; }
-#bio-full-notes .quick-nav { background: #fff; border-bottom: 2px solid #dcfce7; display: flex; gap: 0; overflow-x: auto; position: sticky; top: 60px; z-index: 80; }
-#bio-full-notes .quick-nav::-webkit-scrollbar { height: 0; }
-#bio-full-notes .qn-btn { padding: 11px 18px; border: none; background: transparent; font-size: .8rem; font-weight: 700; color: #64748b; cursor: pointer; white-space: nowrap; border-bottom: 3px solid transparent; transition: all .2s; text-decoration: none; display: inline-block; }
-#bio-full-notes .qn-btn:hover { color: #15803d; background: #f0fdf4; }
-#bio-full-notes .qn-btn.active { color: #15803d; border-bottom-color: #15803d; background: #f0fdf4; }
-#bio-full-notes .notes-body { max-width: 960px; margin: 0 auto; padding: 28px 20px 120px; }
-#bio-full-notes .sec { background: #fff; border: 1px solid #d1fae5; border-radius: 14px; padding: 26px 28px; margin-bottom: 18px; box-shadow: 0 2px 10px rgba(21,128,61,.06); }
-#bio-full-notes .sec-title { font-size: 1.05rem; font-weight: 800; color: #15803d; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; padding-bottom: 10px; border-bottom: 2px solid #dcfce7; }
-#bio-full-notes .def { background: #f0fdf4; border: 1px solid #86efac; border-radius: 9px; padding: 13px 18px; margin: 10px 0; font-size: .9rem; color: #14532d; line-height: 1.65; }
-#bio-full-notes .def .dl { font-size: .67rem; text-transform: uppercase; letter-spacing: 1px; color: #15803d; font-weight: 700; display: block; margin-bottom: 5px; }
-#bio-full-notes .fml { background: #fefce8; border: 1.5px solid #fde047; border-radius: 9px; padding: 13px 18px; margin: 10px 0; font-size: .92rem; color: #1e293b; line-height: 1.8; }
-#bio-full-notes .fml .fl { font-family: 'Segoe UI', sans-serif; font-size: .67rem; text-transform: uppercase; letter-spacing: 1px; color: #ca8a04; font-weight: 700; display: block; margin-bottom: 5px; }
-#bio-full-notes .kp { list-style: none; padding: 0; margin: 10px 0; }
-#bio-full-notes .kp li { padding: 6px 0 6px 22px; position: relative; font-size: .9rem; color: #334155; line-height: 1.7; border-bottom: 1px solid #f0fdf4; }
-#bio-full-notes .kp li:last-child { border: none; }
-#bio-full-notes .kp li::before { content: '▶'; position: absolute; left: 0; color: #15803d; font-size: .55rem; top: 11px; }
-#bio-full-notes .ntable { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .86rem; }
-#bio-full-notes .ntable th { background: #dcfce7; color: #14532d; padding: 9px 12px; text-align: left; font-weight: 700; border: 1px solid #86efac; }
-#bio-full-notes .ntable td { padding: 9px 12px; border: 1px solid #d1fae5; color: #475569; }
-#bio-full-notes .ntable tr:nth-child(even) td { background: #f0fdf4; }
-#bio-full-notes .ntable tr:hover td { background: #dcfce7; color: #1e293b; }
-#bio-full-notes .note { border-radius: 9px; padding: 11px 16px; margin: 10px 0; font-size: .88rem; line-height: 1.65; }
-#bio-full-notes .n-grn { background: #f0fdf4; border-left: 4px solid #22c55e; color: #14532d; }
-#bio-full-notes .n-yel { background: #fefce8; border-left: 4px solid #ca8a04; color: #713f12; }
-#bio-full-notes .n-red { background: #fff1f2; border-left: 4px solid #ef4444; color: #991b1b; }
-#bio-full-notes .n-blue { background: #eff6ff; border-left: 4px solid #3b82f6; color: #1e40af; }
-#bio-full-notes .eq-box { background: #1e293b; border-radius: 14px; padding: 24px 28px; margin-top: 14px; }
-#bio-full-notes .eq-title { font-size: .95rem; font-weight: 800; color: #86efac; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
-#bio-full-notes .q-list { list-style: none; padding: 0; counter-reset: qnum; }
-#bio-full-notes .q-list li { counter-increment: qnum; padding: 10px 12px 10px 46px; position: relative; font-size: .87rem; color: #cbd5e1; line-height: 1.65; border-bottom: 1px solid rgba(255,255,255,.06); }
-#bio-full-notes .q-list li:last-child { border: none; }
-#bio-full-notes .q-list li::before { content: 'Q' counter(qnum); position: absolute; left: 0; background: #15803d; color: #fff; font-size: .68rem; font-weight: 800; padding: 2px 7px; border-radius: 6px; top: 11px; }
-#bio-full-notes .mk { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: .67rem; font-weight: 700; margin-left: 8px; vertical-align: middle; }
-#bio-full-notes .m1 { background: rgba(34,197,94,.2); color: #86efac; }
-#bio-full-notes .m2 { background: rgba(245,158,11,.2); color: #fde047; }
-#bio-full-notes .m3 { background: rgba(99,102,241,.25); color: #a5b4fc; }
-#bio-full-notes .m4 { background: rgba(239,68,68,.2); color: #fca5a5; }
-#bio-full-notes strong.hg { color: #15803d; }
-#bio-full-notes strong.hy { color: #ca8a04; }
-#bio-full-notes strong.hr { color: #dc2626; }
-#bio-full-notes .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 99; background: #14532d; border-top: 2px solid #166534; display: flex; align-items: center; gap: 10px; padding: 10px 20px; flex-wrap: wrap; }
-#bio-full-notes .bn-label { color: #86efac; font-size: .82rem; flex: 1; }
-#bio-full-notes .bn-btn { padding: 8px 18px; border-radius: 8px; border: none; cursor: pointer; font-size: .82rem; font-weight: 700; text-decoration: none; display: inline-block; }
-#bio-full-notes .bn-all { background: #22c55e; color: #000; }
-#bio-full-notes .bn-prev { background: rgba(255,255,255,.12); color: #fff; }
-#bio-full-notes .bn-next { background: rgba(255,255,255,.12); color: #fff; }
-@media(max-width:560px) {
-#bio-full-notes .sec { padding: 18px 14px; }
-}
-#bio-full-notes *, #bio-full-notes *::before, #bio-full-notes *::after { box-sizing: border-box; margin: 0; padding: 0; }
-#bio-full-notes body { background: #f0fdf4; color: #1e293b; font-family: 'Segoe UI', system-ui, sans-serif; }
-#bio-full-notes .navbar { background: #14532d !important; }
-#bio-full-notes .ch-hero { background: linear-gradient(135deg, #14532d 0%, #166534 50%, #15803d 100%); color: #fff; padding: 90px 0 44px; text-align: center; position: relative; overflow: hidden; }
-#bio-full-notes .ch-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(134,239,172,.18) 0%, transparent 60%); }
-#bio-full-notes .ch-hero .badge { display: inline-block; padding: 5px 18px; border-radius: 20px; background: rgba(134,239,172,.2); border: 1px solid #86efac; color: #bbf7d0; font-size: .78rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; position: relative; }
-#bio-full-notes .ch-hero h1 { font-size: clamp(1.9rem,4.5vw,3rem); font-weight: 900; position: relative; background: linear-gradient(135deg, #fff 0%, #86efac 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px; }
-#bio-full-notes .ch-hero p { color: #bbf7d0; font-size: .97rem; position: relative; max-width: 620px; margin: 0 auto 20px; }
-#bio-full-notes .hero-topics { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; position: relative; margin-top: 16px; }
-#bio-full-notes .htopic { padding: 5px 14px; border-radius: 20px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); color: #fff; font-size: .78rem; font-weight: 600; }
-#bio-full-notes .prog-bar { height: 4px; background: rgba(21,128,61,.15); }
-#bio-full-notes .prog-fill { height: 100%; background: linear-gradient(90deg,#15803d,#22c55e); width: 0; transition: width .4s; }
-#bio-full-notes .quick-nav { background: #fff; border-bottom: 2px solid #dcfce7; display: flex; gap: 0; overflow-x: auto; position: sticky; top: 60px; z-index: 80; }
-#bio-full-notes .quick-nav::-webkit-scrollbar { height: 0; }
-#bio-full-notes .qn-btn { padding: 11px 18px; border: none; background: transparent; font-size: .8rem; font-weight: 700; color: #64748b; cursor: pointer; white-space: nowrap; border-bottom: 3px solid transparent; transition: all .2s; text-decoration: none; display: inline-block; }
-#bio-full-notes .qn-btn:hover { color: #15803d; background: #f0fdf4; }
-#bio-full-notes .qn-btn.active { color: #15803d; border-bottom-color: #15803d; background: #f0fdf4; }
-#bio-full-notes .notes-body { max-width: 960px; margin: 0 auto; padding: 28px 20px 120px; }
-#bio-full-notes .sec { background: #fff; border: 1px solid #d1fae5; border-radius: 14px; padding: 26px 28px; margin-bottom: 18px; box-shadow: 0 2px 10px rgba(21,128,61,.06); }
-#bio-full-notes .sec-title { font-size: 1.05rem; font-weight: 800; color: #15803d; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; padding-bottom: 10px; border-bottom: 2px solid #dcfce7; }
-#bio-full-notes .def { background: #f0fdf4; border: 1px solid #86efac; border-radius: 9px; padding: 13px 18px; margin: 10px 0; font-size: .9rem; color: #14532d; line-height: 1.65; }
-#bio-full-notes .def .dl { font-size: .67rem; text-transform: uppercase; letter-spacing: 1px; color: #15803d; font-weight: 700; display: block; margin-bottom: 5px; }
-#bio-full-notes .fml { background: #fefce8; border: 1.5px solid #fde047; border-radius: 9px; padding: 13px 18px; margin: 10px 0; font-size: .92rem; color: #1e293b; line-height: 1.8; }
-#bio-full-notes .fml .fl { font-family: 'Segoe UI', sans-serif; font-size: .67rem; text-transform: uppercase; letter-spacing: 1px; color: #ca8a04; font-weight: 700; display: block; margin-bottom: 5px; }
-#bio-full-notes .kp { list-style: none; padding: 0; margin: 10px 0; }
-#bio-full-notes .kp li { padding: 6px 0 6px 22px; position: relative; font-size: .9rem; color: #334155; line-height: 1.7; border-bottom: 1px solid #f0fdf4; }
-#bio-full-notes .kp li:last-child { border: none; }
-#bio-full-notes .kp li::before { content: '▶'; position: absolute; left: 0; color: #15803d; font-size: .55rem; top: 11px; }
-#bio-full-notes .fg-wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); gap: 10px; margin: 12px 0; }
-#bio-full-notes .fg { background: #f0fdf4; border: 1px solid #86efac; border-radius: 9px; padding: 13px 15px; }
-#bio-full-notes .fg h4 { font-size: .82rem; color: #14532d; margin-bottom: 5px; font-weight: 700; }
-#bio-full-notes .fg p { font-size: .88rem; color: #1e293b; }
-#bio-full-notes .ntable { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .86rem; }
-#bio-full-notes .ntable th { background: #dcfce7; color: #14532d; padding: 9px 12px; text-align: left; font-weight: 700; border: 1px solid #86efac; }
-#bio-full-notes .ntable td { padding: 9px 12px; border: 1px solid #d1fae5; color: #475569; }
-#bio-full-notes .ntable tr:nth-child(even) td { background: #f0fdf4; }
-#bio-full-notes .ntable tr:hover td { background: #dcfce7; color: #1e293b; }
-#bio-full-notes .note { border-radius: 9px; padding: 11px 16px; margin: 10px 0; font-size: .88rem; line-height: 1.65; }
-#bio-full-notes .n-grn { background: #f0fdf4; border-left: 4px solid #22c55e; color: #14532d; }
-#bio-full-notes .n-yel { background: #fefce8; border-left: 4px solid #ca8a04; color: #713f12; }
-#bio-full-notes .n-red { background: #fff1f2; border-left: 4px solid #ef4444; color: #991b1b; }
-#bio-full-notes .n-blue { background: #eff6ff; border-left: 4px solid #3b82f6; color: #1e40af; }
-#bio-full-notes .eq-box { background: #1e293b; border-radius: 14px; padding: 24px 28px; margin-top: 14px; }
-#bio-full-notes .eq-title { font-size: .95rem; font-weight: 800; color: #86efac; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
-#bio-full-notes .q-list { list-style: none; padding: 0; counter-reset: qnum; }
-#bio-full-notes .q-list li { counter-increment: qnum; padding: 10px 12px 10px 46px; position: relative; font-size: .87rem; color: #cbd5e1; line-height: 1.65; border-bottom: 1px solid rgba(255,255,255,.06); }
-#bio-full-notes .q-list li:last-child { border: none; }
-#bio-full-notes .q-list li::before { content: 'Q' counter(qnum); position: absolute; left: 0; background: #15803d; color: #fff; font-size: .68rem; font-weight: 800; padding: 2px 7px; border-radius: 6px; top: 11px; }
-#bio-full-notes .mk { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: .67rem; font-weight: 700; margin-left: 8px; vertical-align: middle; }
-#bio-full-notes .m1 { background: rgba(34,197,94,.2); color: #86efac; }
-#bio-full-notes .m2 { background: rgba(245,158,11,.2); color: #fde047; }
-#bio-full-notes .m3 { background: rgba(99,102,241,.25); color: #a5b4fc; }
-#bio-full-notes .m4 { background: rgba(239,68,68,.2); color: #fca5a5; }
-#bio-full-notes strong.hg { color: #15803d; }
-#bio-full-notes strong.hy { color: #ca8a04; }
-#bio-full-notes strong.hr { color: #dc2626; }
-#bio-full-notes .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 99; background: #14532d; border-top: 2px solid #166634; display: flex; align-items: center; gap: 10px; padding: 10px 20px; flex-wrap: wrap; }
-#bio-full-notes .bn-label { color: #86efac; font-size: .82rem; flex: 1; }
-#bio-full-notes .bn-btn { padding: 8px 18px; border-radius: 8px; border: none; cursor: pointer; font-size: .82rem; font-weight: 700; text-decoration: none; display: inline-block; }
-#bio-full-notes .bn-all { background: #22c55e; color: #000; }
-#bio-full-notes .bn-prev { background: rgba(255,255,255,.12); color: #fff; }
-#bio-full-notes .bn-next { background: rgba(255,255,255,.12); color: #fff; }
-@media(max-width:560px) {
-#bio-full-notes .sec { padding: 18px 14px; }
-#bio-full-notes .fg-wrap { grid-template-columns: 1fr; }
-}
-#bio-full-notes .bio-ch-banner {
-  max-width: 960px; margin: 30px auto 12px; padding: 14px 20px;
-  border-radius: 12px; color: #fff; font-size: 1.2rem; font-weight: 800;
-  box-shadow: 0 4px 12px rgba(0,0,0,.12); letter-spacing: .3px;
-}
-#bio-full-notes .bio-ch-banner.bch1 { background: linear-gradient(135deg,#1b5e20,#388e3c); }
-#bio-full-notes .bio-ch-banner.bch3 { background: linear-gradient(135deg,#33691e,#558b2f); }
-#bio-full-notes .bio-ch-banner.bch5 { background: linear-gradient(135deg,#004d40,#00796b); }
-#bio-full-notes .notes-body { padding-bottom: 32px; }
-#bio-full-notes .bio-intro { max-width: 960px; margin: 0 auto 8px; padding: 8px 20px 0; }
-#bio-full-notes .bio-intro h2 { font-size: 1.6rem; font-weight: 900; color: #14532d; margin: 0; }
-#bio-full-notes .bio-intro p { color: #475569; margin: 6px 0 0; font-size: .95rem; }
-
-        </style>
-        <div class="bio-intro">
-          <h2>🧬 Class 11 Biology — Full Chapter Notes</h2>
-          <p>Chapters 1, 3 &amp; 5 — The Living World, Kingdom Plantae &amp; Cell Structure &amp; Organization. Complete Maharashtra Board notes with board exam questions.</p>
-          <div style="margin-top:14px;">
-            <button id="bioOpenBtn" type="button" onclick="bioToggleNotes()" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1b5e20,#388e3c);color:#fff;padding:12px 24px;border:none;border-radius:28px;font-size:0.95rem;font-weight:700;cursor:pointer;box-shadow:0 4px 12px rgba(27,94,32,0.35);">📖 Open Biology Notes (Ch 1, 3 &amp; 5) ▾</button>
-          </div>
-        </div>
-        <div id="bio-notes-collapsible" style="display:none;">
-    <div class="bio-ch-banner bch1">🌍 Chapter 1 — The Living World</div>
-    <div class="notes-body">
+        <div id="bio-ch1-collapse" class="bio-ch-inline" style="display:none;margin-top:12px;border-top:2px solid #d1fae5;padding-top:16px;">
 
   <!-- 1.1 CHARACTERISTICS -->
   <div class="sec" id="bch1-s1">
@@ -2199,9 +1847,39 @@
     </div>
   </div>
 
-</div><!-- end notes-body -->
-    <div class="bio-ch-banner bch3">🌿 Chapter 3 — Kingdom Plantae</div>
-    <div class="notes-body">
+        </div>
+          </div>
+        </div>
+
+        <!-- BIOLOGY — CARD 2: Chapter 3 – Kingdom Plantae -->
+        <div class="notes-chapter-card" data-subject="biology">
+          <div class="notes-chapter-header" style="background:#fff7ed;border-bottom:2px solid #fed7aa;">
+            <span class="notes-subject-icon" style="color:#c2410c;">🌿</span>
+            <div>
+              <div class="notes-subject-label" style="color:#9a3412;font-weight:700;letter-spacing:.5px;">BIOLOGY</div>
+              <h3 style="color:#1e293b;">Chapter 3 — Kingdom Plantae</h3>
+            </div>
+          </div>
+          <div class="notes-chapter-body">
+            <div class="notes-block">
+              <div class="notes-block-title">📌 Topics Covered</div>
+              <ul class="notes-list">
+                <li>Classification — Cryptogams vs Phanerogams flowchart</li>
+                <li>Thallophyta (Algae) — Green / Brown / Red Algae; pigments &amp; stored food table ★</li>
+                <li>Bryophyta — amphibious plants; rhizoids; Funaria, Sphagnum</li>
+                <li>Pteridophyta — first vascular land plants; tracheids + sieve cells ★</li>
+                <li>Gymnosperms — naked seeds; Cycas (coralloid roots); Ginkgo biloba = living fossil</li>
+                <li>Angiosperms — most advanced; seeds enclosed in fruit (ovary)</li>
+                <li>Dicotyledonae vs Monocotyledonae — full comparison table ★</li>
+                <li>Alternation of Generations — Diplontic, Haplontic, Haplo-diplontic</li>
+                <li>20 Exam Important Questions (2M / 3M / 4M) with full answers</li>
+              </ul>
+            </div>
+            <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
+              <button id="bio-ch3-btn" type="button" onclick="bioChToggle(3)" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#15803d,#22c55e);color:#fff;padding:10px 20px;border:none;border-radius:24px;font-size:0.88rem;font-weight:700;cursor:pointer;">📖 Open Chapter 3 Notes ▾</button>
+              <a href="class11-biology-ch3-notes.html" style="display:inline-flex;align-items:center;gap:8px;background:#f0fdf4;border:1.5px solid #86efac;color:#15803d;padding:10px 18px;border-radius:24px;text-decoration:none;font-size:0.85rem;font-weight:700;">🔗 Open Full Page →</a>
+            </div>
+        <div id="bio-ch3-collapse" class="bio-ch-inline" style="display:none;margin-top:12px;border-top:2px solid #d1fae5;padding-top:16px;">
 
   <!-- 3.1 CLASSIFICATION -->
   <div class="sec" id="bch3-s1">
@@ -2486,9 +2164,39 @@
     </div>
   </div>
 
-</div><!-- end notes-body -->
-    <div class="bio-ch-banner bch5">🔬 Chapter 5 — Cell Structure &amp; Organization</div>
-    <div class="notes-body">
+        </div>
+          </div>
+        </div>
+
+        <!-- BIOLOGY — CARD 3: Chapter 5 – Cell Structure & Organization -->
+        <div class="notes-chapter-card" data-subject="biology">
+          <div class="notes-chapter-header" style="background:#fff7ed;border-bottom:2px solid #fed7aa;">
+            <span class="notes-subject-icon" style="color:#c2410c;">🔬</span>
+            <div>
+              <div class="notes-subject-label" style="color:#9a3412;font-weight:700;letter-spacing:.5px;">BIOLOGY</div>
+              <h3 style="color:#1e293b;">Chapter 5 — Cell Structure &amp; Organization</h3>
+            </div>
+          </div>
+          <div class="notes-chapter-body">
+            <div class="notes-block">
+              <div class="notes-block-title">📌 Topics Covered</div>
+              <ul class="notes-list">
+                <li>Cell Basics &amp; Microscopy — Mycoplasma (0.3µm), Ostrich egg; EM = 500,000×</li>
+                <li>Cell Theory — Schleiden (1838), Schwann (1839), Virchow (1855); 6 postulates ★</li>
+                <li>Totipotency &amp; Stem Cells — embryonic cells; medical applications</li>
+                <li>Prokaryotic vs Eukaryotic — full comparison table ★</li>
+                <li>Prokaryotic Cell Structure — glycocalyx, mesosomes, plasmids (F &amp; R), Theta model ★</li>
+                <li>Plasma Membrane &amp; Fluid Mosaic Model — Singer &amp; Nicholson 1972 ★★</li>
+                <li>ER, Golgi Complex, Lysosomes, Mitochondria, Plastids, Nucleus</li>
+                <li>Cilia &amp; Flagella — 9+2 axoneme arrangement ★★ | Centrioles — 9 triplet microtubules</li>
+                <li>Quick Revision table + 20 Exam Questions (2M / 3M / 4M) with answers</li>
+              </ul>
+            </div>
+            <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
+              <button id="bio-ch5-btn" type="button" onclick="bioChToggle(5)" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#15803d,#22c55e);color:#fff;padding:10px 20px;border:none;border-radius:24px;font-size:0.88rem;font-weight:700;cursor:pointer;">📖 Open Chapter 5 Notes ▾</button>
+              <a href="class11-biology-ch5-notes.html" style="display:inline-flex;align-items:center;gap:8px;background:#f0fdf4;border:1.5px solid #86efac;color:#15803d;padding:10px 18px;border-radius:24px;text-decoration:none;font-size:0.85rem;font-weight:700;">🔗 Open Full Page →</a>
+            </div>
+        <div id="bio-ch5-collapse" class="bio-ch-inline" style="display:none;margin-top:12px;border-top:2px solid #d1fae5;padding-top:16px;">
 
   <!-- 5.1–5.4 BASICS -->
   <div class="sec" id="bch5-s1">
@@ -2912,21 +2620,160 @@
     </div>
   </div>
 
-</div><!-- end notes-body -->
-        </div><!-- /bio-notes-collapsible -->
-        <script>
-        function bioToggleNotes(){
-          var c=document.getElementById('bio-notes-collapsible');
-          var b=document.getElementById('bioOpenBtn');
-          if(!c||!b) return;
-          var open=c.style.display==='none';
-          c.style.display=open?'block':'none';
-          b.innerHTML=open?'📖 Hide Biology Notes ▴':'📖 Open Biology Notes (Ch 1, 3 &amp; 5) ▾';
-          b.classList.toggle('open',open);
-          if(open){c.scrollIntoView({behavior:'smooth',block:'start'});}
-        }
-        </script>
-      </section>
+        </div>
+          </div>
+        </div>
+
+        <!-- BIOLOGY — CARD 6: TYBSc Physical Chemistry Ch 1 & 2 -->
+        <div class="notes-chapter-card" data-subject="chemistry" style="border:2px solid #1565c0;">
+          <div class="notes-chapter-header" style="background:linear-gradient(135deg,#0d47a1,#1565c0);">
+            <span class="notes-subject-icon" style="color:white;">⚗️</span>
+            <div>
+              <div class="notes-subject-label" style="color:rgba(255,255,255,0.8);">TYBSc Sem 5 — Physical Chemistry</div>
+              <h3 style="color:white;">Ch 1: Molecular Spectroscopy &amp; Ch 2: Colligative Properties</h3>
+            </div>
+          </div>
+          <div class="notes-chapter-body">
+            <div class="notes-block">
+              <div class="notes-block-title">📚 Ch 1 — Molecular Spectroscopy</div>
+              <ul class="notes-list">
+                <li>✅ Dipole Moment (μ = q×d), Debye unit, key molecules table</li>
+                <li>✅ Disubstituted benzene formula (ortho/meta/para)</li>
+                <li>✅ IR Spectroscopy — stretching, bending vibrations, fingerprint region</li>
+                <li>✅ Clausius-Mosotti &amp; Debye equation, types of polarisation</li>
+                <li>✅ Raman Spectroscopy — Stokes/Anti-Stokes, Mutual Exclusion Rule</li>
+                <li>✅ 10 Exam Q&amp;A (3–5 mark answers)</li>
+              </ul>
+            </div>
+            <div class="notes-block">
+              <div class="notes-block-title">📚 Ch 2 — Colligative Properties</div>
+              <ul class="notes-list">
+                <li>✅ Raoult's Law, Relative Lowering of Vapour Pressure</li>
+                <li>✅ Elevation of Boiling Point (ΔTb = Kb × m)</li>
+                <li>✅ Depression of Freezing Point — Beckmann &amp; Rast method</li>
+                <li>✅ Osmotic Pressure — Van't Hoff equation (πV = nRT)</li>
+                <li>✅ Reverse Osmosis (RO), Van't Hoff factor (i)</li>
+                <li>✅ 8 Exam Q&amp;A + Numerical (camphor Rast method solved)</li>
+              </ul>
+            </div>
+            <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
+              <a href="tybsc-sem5-physical-chemistry-notes.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#0d47a1,#1565c0);color:#fff;padding:12px 24px;border-radius:28px;text-decoration:none;font-size:0.9rem;font-weight:700;box-shadow:0 4px 12px rgba(13,71,161,0.35);">
+                ⚗️ Open Physical Chemistry Notes →
+              </a>
+              <a href="physical-chemistry-full-notes.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1565c0,#1976d2);color:#fff;padding:12px 20px;border-radius:28px;text-decoration:none;font-size:0.85rem;font-weight:600;">
+                📖 Full Notes with Explanations →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BIOLOGY — CARD 4: TYBSc Physical Chemistry Ch 3 & 4 -->
+        <div class="notes-chapter-card" data-subject="chemistry" style="border:2px solid #6a1b9a;">
+          <div class="notes-chapter-header" style="background:linear-gradient(135deg,#4a148c,#6a1b9a);">
+            <span class="notes-subject-icon" style="color:white;">⚛️</span>
+            <div>
+              <div class="notes-subject-label" style="color:rgba(255,255,255,0.8);">TYBSc Sem 5 — Physical Chemistry</div>
+              <h3 style="color:white;">Ch 3: Nuclear Chemistry &amp; Ch 4: Surface Chemistry</h3>
+            </div>
+          </div>
+          <div class="notes-chapter-body">
+            <div class="notes-block">
+              <div class="notes-block-title">📚 Ch 3 — Nuclear Chemistry</div>
+              <ul class="notes-list">
+                <li>✅ Detection methods — PMT (Photomultiplier Tube) construction &amp; working</li>
+                <li>✅ Radioactive Tracers — Photosynthesis (¹⁸O), Ester Hydrolysis, Friedel-Crafts</li>
+                <li>✅ Fissile vs Fertile materials (²³⁵U, ²³⁹Pu, ²³²Th)</li>
+                <li>✅ Nuclear Reactor — all 6 components with functions</li>
+                <li>✅ Multiplication Factor (k=1 critical, k&gt;1 bomb, k&lt;1 stops)</li>
+                <li>✅ 6 Exam Q&amp;A (4–8 mark answers)</li>
+              </ul>
+            </div>
+            <div class="notes-block">
+              <div class="notes-block-title">📚 Ch 4 — Surface Chemistry</div>
+              <ul class="notes-list">
+                <li>✅ Adsorption — Physisorption vs Chemisorption (full table)</li>
+                <li>✅ Freundlich Isotherm (x/m = kP^1/n) &amp; Langmuir Isotherm derivation</li>
+                <li>✅ Colloids — Tyndall Effect, Brownian Motion, Electrophoresis</li>
+                <li>✅ Hardy-Schulze Rule, Gold Number, Zeta Potential</li>
+                <li>✅ Emulsions (O/W, W/O), Gels, Surfactants, CMC, Micelles</li>
+                <li>✅ Donnan Membrane Equilibrium, Gibbs Adsorption Equation</li>
+                <li>✅ 12 Exam Q&amp;A + most expected questions list with star ratings</li>
+              </ul>
+            </div>
+            <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
+              <a href="tybsc-sem5-ch3-ch4-notes.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#4a148c,#6a1b9a);color:#fff;padding:12px 24px;border-radius:28px;text-decoration:none;font-size:0.9rem;font-weight:700;box-shadow:0 4px 12px rgba(74,20,140,0.35);">
+                ⚛️ Open Nuclear &amp; Surface Chemistry →
+              </a>
+              <a href="physical-chemistry-ch3-ch4-notes.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#6a1b9a,#7b1fa2);color:#fff;padding:12px 20px;border-radius:28px;text-decoration:none;font-size:0.85rem;font-weight:600;">
+                📖 Ch 3 &amp; 4 Full Notes →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BIOLOGY — CARD 5: Physical Chemistry Cheat Sheet (Quick Revision) -->
+        <div class="notes-chapter-card" data-subject="chemistry" style="border:2px solid #e65100;">
+          <div class="notes-chapter-header" style="background:linear-gradient(135deg,#bf360c,#e64a19);">
+            <span class="notes-subject-icon" style="color:white;">⚡</span>
+            <div>
+              <div class="notes-subject-label" style="color:rgba(255,255,255,0.8);">TYBSc Sem 5 — Quick Revision</div>
+              <h3 style="color:white;">Physical Chemistry — Cheat Sheet &amp; Complete Revision Notes</h3>
+            </div>
+          </div>
+          <div class="notes-chapter-body">
+            <div class="notes-block">
+              <div class="notes-block-title">📚 What's Inside</div>
+              <ul class="notes-list">
+                <li>✅ <strong>Cheat Sheet</strong> — All key formulas, rules &amp; facts in 1 page (print-ready)</li>
+                <li>✅ Dipole moment table, IR group frequencies, Raman activity rules</li>
+                <li>✅ All 4 colligative property formulas with constants</li>
+                <li>✅ Van't Hoff factor table (NaCl=2, BaCl₂=3, K₂SO₄=3)</li>
+                <li>✅ Nuclear Reactor components quick table</li>
+                <li>✅ Adsorption isotherms comparison</li>
+                <li>✅ Colloid terms — CMC, Gold Number, Zeta Potential</li>
+                <li>✅ <strong>Complete Notes</strong> — full Q&amp;A for all chapters with mark breakdowns</li>
+              </ul>
+            </div>
+            <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
+              <a href="physical-chemistry-cheatsheet.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#bf360c,#e64a19);color:#fff;padding:12px 22px;border-radius:28px;text-decoration:none;font-size:0.88rem;font-weight:700;box-shadow:0 4px 12px rgba(191,54,12,0.35);">
+                ⚡ Quick Revision Cheat Sheet →
+              </a>
+              <a href="physical-chemistry-complete-cheatsheet.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#e64a19,#f4511e);color:#fff;padding:12px 20px;border-radius:28px;text-decoration:none;font-size:0.85rem;font-weight:600;">
+                📋 Complete Cheat Sheet →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BIOLOGY — CARD 6: TYBSc MCQ Practice -->
+        <div class="notes-chapter-card" data-subject="chemistry" style="border:2px solid #c62828;">
+          <div class="notes-chapter-header" style="background:linear-gradient(135deg,#b71c1c,#c62828);">
+            <span class="notes-subject-icon" style="color:white;">🎯</span>
+            <div>
+              <div class="notes-subject-label" style="color:rgba(255,255,255,0.8);">TYBSc Sem 5 — MCQ Practice</div>
+              <h3 style="color:white;">Physical Chemistry — MCQ Test Practice</h3>
+            </div>
+          </div>
+          <div class="notes-chapter-body">
+            <div class="notes-block">
+              <div class="notes-block-title">🎯 Practice MCQs</div>
+              <ul class="notes-list">
+                <li>✅ Multiple Choice Questions — Ch 1 to Ch 4</li>
+                <li>✅ Covers Spectroscopy, Colligative Properties, Nuclear &amp; Surface Chemistry</li>
+                <li>✅ Instant answer checking</li>
+                <li>✅ Ideal for semester exam preparation</li>
+              </ul>
+            </div>
+            <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
+              <a href="tybsc-sem5-mcq-practice.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#b71c1c,#c62828);color:#fff;padding:12px 24px;border-radius:28px;text-decoration:none;font-size:0.9rem;font-weight:700;box-shadow:0 4px 12px rgba(183,28,28,0.35);">
+                🎯 Start MCQ Practice →
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end notesChaptersGrid -->
+
 
       <!-- CH 10 ELECTROSTATICS NOTES — PHYSICS -->
       <div id="physics-ch10" class="filterable-section" data-subject="physics" style="margin-top:40px;">
