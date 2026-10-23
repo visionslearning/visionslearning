@@ -4,71 +4,77 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Class 11 Maths 2 Ch 2 — Sequences and Series | Visions Classes</title>
-  <meta name="description" content="Class 11 Maths 2 Chapter 2 Sequences and Series — Complete Notes, All Formulas, Solved Exercises. Maharashtra Board."/>
   <link rel="stylesheet" href="style.css"/>
   <link rel="icon" href="logo.png" type="image/png"/>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    body{background:#f0f4ff;color:#1e293b;font-family:'Segoe UI',system-ui,sans-serif;line-height:1.7;}
+    body{background:#f5f5f5;color:#111;font-family:'Segoe UI',Arial,sans-serif;}
     .navbar{background:#1e3a8a !important;}
-    .ch-hero{background:linear-gradient(135deg,#1e3a8a 0%,#1d4ed8 50%,#2563eb 100%);color:#fff;padding:90px 20px 44px;text-align:center;}
-    .ch-hero .badge{display:inline-block;padding:5px 18px;border-radius:20px;background:rgba(147,197,253,.2);border:1px solid #93c5fd;color:#bfdbfe;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;}
-    .ch-hero h1{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:900;margin-bottom:8px;}
-    .ch-hero p{font-size:.92rem;opacity:.85;}
-    .wrap{max-width:920px;margin:0 auto;padding:24px 16px 60px;}
 
-    /* KEY BOX */
-    .keybox{background:#eff6ff;border:1px solid #93c5fd;border-radius:12px;padding:18px 22px;margin-bottom:22px;}
-    .keybox h2{color:#1d4ed8;font-size:1.05rem;margin-bottom:10px;}
+    .ch-hero{background:linear-gradient(135deg,#1e3a8a,#1d4ed8);color:#fff;padding:80px 20px 36px;text-align:center;}
+    .ch-hero .badge{display:inline-block;padding:4px 16px;border-radius:20px;background:rgba(147,197,253,.2);border:1px solid #93c5fd;color:#bfdbfe;font-size:.76rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;}
+    .ch-hero h1{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:900;margin-bottom:6px;}
+    .ch-hero p{font-size:.9rem;opacity:.85;}
+
+    .wrap{max-width:820px;margin:0 auto;padding:28px 16px 60px;}
+
+    /* ── KEY POINTS BOX ── */
+    .keybox{background:#fff;border:1px solid #c7d2fe;border-radius:10px;padding:16px 20px;margin-bottom:24px;box-shadow:0 1px 6px rgba(0,0,0,.06);}
+    .keybox h2{color:#1d4ed8;font-size:1rem;margin-bottom:10px;}
     .keybox ul{padding-left:18px;}
-    .keybox ul li{font-size:.88rem;margin-bottom:5px;}
+    .keybox ul li{font-size:.86rem;margin-bottom:5px;line-height:1.6;}
 
-    /* FORMULA BOX */
-    .fbox{background:#fefce8;border:1.5px solid #fde047;border-radius:10px;padding:12px 16px;margin:10px 0;font-size:.9rem;}
-    .fbox .fl{font-size:.65rem;text-transform:uppercase;letter-spacing:1px;color:#a16207;font-weight:800;display:block;margin-bottom:4px;}
-    .fbox code{font-family:monospace;font-size:.95rem;color:#1e293b;}
+    /* ── FORMULA BOX ── */
+    .fbox{background:#fefce8;border:1.5px solid #fde047;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:.88rem;}
+    .fbox .fl{font-size:.62rem;text-transform:uppercase;letter-spacing:1px;color:#a16207;font-weight:800;display:block;margin-bottom:3px;}
+    .fbox code{font-family:monospace;font-size:.92rem;color:#1e293b;}
 
-    /* SECTION */
-    .sec{background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.07);margin-bottom:22px;overflow:hidden;}
-    .sec-head{background:linear-gradient(135deg,#1e3a8a,#1d4ed8);padding:13px 20px;display:flex;align-items:center;gap:10px;}
-    .sec-head .n{min-width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:900;color:#fff;border:2px solid rgba(255,255,255,.4);}
-    .sec-head h2{font-size:.96rem;font-weight:800;color:#fff;}
-    .sec-body{padding:16px 20px;}
-    .df{background:#eff6ff;border-left:3px solid #1d4ed8;padding:8px 13px;border-radius:0 8px 8px 0;margin:8px 0;font-size:.87rem;}
-    .df strong{color:#1d4ed8;}
+    /* ── SECTION TITLE ── */
+    .sec-title{background:linear-gradient(135deg,#1e3a8a,#1d4ed8);color:#fff;border-radius:8px;padding:10px 16px;font-size:.9rem;font-weight:800;margin:24px 0 14px;display:flex;align-items:center;gap:8px;}
+    .sec-title .sn{min-width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:900;border:2px solid rgba(255,255,255,.4);}
 
-    /* EXERCISE */
-    .ex-sec{background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.07);margin-bottom:22px;overflow:hidden;}
-    .ex-head{background:linear-gradient(135deg,#0f172a,#1e3a8a);padding:13px 20px;display:flex;align-items:center;gap:10px;}
-    .ex-head h2{font-size:.98rem;font-weight:800;color:#fff;}
-    .ex-body{padding:16px 20px;}
-    .ex{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;margin-bottom:12px;overflow:hidden;cursor:pointer;}
-    .ex-q{padding:12px 16px;display:flex;align-items:flex-start;gap:10px;}
-    .ex-q:hover{background:#f1f5f9;}
-    .qn{min-width:32px;height:22px;background:#1d4ed8;color:#fff;font-size:.65rem;font-weight:800;border-radius:4px;display:flex;align-items:center;justify-content:center;margin-top:2px;flex-shrink:0;}
-    .qt{font-size:.9rem;color:#1e293b;font-weight:600;flex:1;line-height:1.5;}
-    .tog{font-size:.7rem;font-weight:700;color:#1d4ed8;background:#eff6ff;padding:3px 8px;border-radius:10px;white-space:nowrap;margin-left:6px;flex-shrink:0;}
-    .ex-a{display:none;padding:12px 16px 14px;border-top:1px dashed #e2e8f0;background:#fafcff;font-size:.87rem;color:#334155;line-height:1.75;}
-    .ex-a.open{display:block;}
-    .ex-a strong{color:#1d4ed8;}
-    .ex-a .step{background:#eff6ff;border-radius:8px;padding:8px 13px;margin:6px 0;font-size:.86rem;}
-    .ex-a .step .sl{font-size:.65rem;font-weight:800;text-transform:uppercase;color:#1d4ed8;letter-spacing:.8px;display:block;margin-bottom:3px;}
-    .ex-a code{font-family:monospace;background:#e0e7ff;padding:1px 5px;border-radius:4px;font-size:.88rem;}
+    /* ── QUESTION BOX (pink style) ── */
+    .qbox{background:#fff0f3;border:1.5px solid #f9a8d4;border-radius:8px;padding:12px 16px;margin:0 0 0 0;}
+    .qbox-head{display:flex;align-items:flex-start;gap:10px;}
+    .qnum{min-width:36px;height:24px;background:#be123c;color:#fff;font-size:.7rem;font-weight:800;border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+    .qtext{font-size:.9rem;font-weight:700;color:#1e293b;line-height:1.55;flex:1;}
+    .qmark{font-size:.72rem;font-weight:700;color:#be123c;background:#ffe4e6;padding:2px 8px;border-radius:10px;margin-left:6px;flex-shrink:0;}
 
-    /* QUICK REVISION */
-    .quick{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #93c5fd;border-radius:12px;padding:18px 22px;margin-bottom:22px;}
-    .quick h2{color:#1d4ed8;font-size:1rem;margin-bottom:10px;}
+    /* ── SOLUTION BOX ── */
+    .sol{background:#fff;border:1px solid #e5e7eb;border-radius:0 0 8px 8px;padding:14px 16px;font-size:.87rem;line-height:1.85;color:#1e293b;}
+    .sol-badge{display:inline-block;background:#1d4ed8;color:#fff;font-size:.65rem;font-weight:800;letter-spacing:1.2px;padding:3px 10px;border-radius:4px;margin-bottom:10px;text-transform:uppercase;}
+    .sol p{margin-bottom:3px;}
+    .sol .ind{padding-left:20px;color:#374151;}
+    .sol .ind2{padding-left:38px;color:#374151;}
+    .sol .ans{display:inline-block;background:#dcfce7;color:#15803d;font-weight:800;padding:3px 12px;border-radius:6px;margin-top:4px;font-size:.88rem;}
+    .sol .ans2{display:inline-block;background:#dbeafe;color:#1d4ed8;font-weight:800;padding:3px 12px;border-radius:6px;margin-top:4px;font-size:.88rem;}
+    .sol .hr{border:none;border-top:1px dashed #d1d5db;margin:10px 0;}
+    .sol strong{color:#1d4ed8;}
+
+    /* ── QA CARD WRAPPER ── */
+    .qa-card{background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.07);margin-bottom:16px;overflow:hidden;}
+
+    /* ── QUICK REVISION ── */
+    .quick{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #93c5fd;border-radius:10px;padding:16px 20px;margin-bottom:24px;}
+    .quick h2{color:#1d4ed8;font-size:.95rem;margin-bottom:10px;}
     .quick ul{padding-left:18px;}
-    .quick ul li{font-size:.87rem;margin-bottom:5px;}
+    .quick ul li{font-size:.86rem;margin-bottom:4px;}
 
-    table{width:100%;border-collapse:collapse;font-size:.84rem;margin:10px 0;}
-    th{background:#1e3a8a;color:#fff;padding:8px 11px;text-align:left;}
-    td{padding:7px 11px;border-bottom:1px solid #e2e8f0;}
+    table{width:100%;border-collapse:collapse;font-size:.83rem;margin:10px 0;}
+    th{background:#1e3a8a;color:#fff;padding:8px 10px;text-align:left;}
+    td{padding:7px 10px;border-bottom:1px solid #e5e7eb;}
     tr:nth-child(even) td{background:#eff6ff;}
 
     .back-top{text-align:center;margin:10px 0 20px;}
     .back-top a{display:inline-block;background:#dbeafe;color:#1d4ed8;padding:8px 20px;border-radius:20px;text-decoration:none;font-size:.82rem;font-weight:700;}
-    @media(max-width:580px){.sec-body,.ex-body{padding:12px;}}
+
+    /* TOC */
+    .toc{background:#fff;border-radius:10px;box-shadow:0 1px 6px rgba(0,0,0,.06);padding:16px 20px;margin-bottom:24px;}
+    .toc h2{color:#1d4ed8;font-size:.95rem;margin-bottom:10px;}
+    .toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:6px;}
+    .toc-grid a{display:flex;align-items:center;gap:6px;padding:6px 10px;background:#eff6ff;border:1px solid #bfdbfe;border-radius:7px;text-decoration:none;color:#1d4ed8;font-size:.8rem;font-weight:600;}
+
+    @media(max-width:580px){.wrap{padding:16px 10px 40px;}.sol{padding:12px 12px;}}
   </style>
 </head>
 <body>
@@ -80,7 +86,7 @@
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
-      <li><a href="notes.html" class="active">Notes</a></li>
+      <li><a href="notes-maths2.html" class="active">Maths 2</a></li>
       <li><a href="notes-class11.html">Class 11</a></li>
       <li><a href="buy-courses.html" class="nav-cta">Enroll Now</a></li>
     </ul>
@@ -89,504 +95,774 @@
 </nav>
 
 <div class="ch-hero">
-  <div class="badge">Class 11 Maths 2 · Chapter 2</div>
+  <div class="badge">Class 11 · Maths Paper 2 · Chapter 2</div>
   <h1>📐 Sequences and Series</h1>
-  <p>Complete Notes · All Formulas · Solved Exercises with Steps · Maharashtra Board</p>
+  <p>Complete Notes · All Formulas · Fully Solved Exercises</p>
 </div>
 
 <div class="wrap" id="top">
 
+  <!-- TOC -->
+  <div class="toc">
+    <h2>📋 Quick Jump</h2>
+    <div class="toc-grid">
+      <a href="#gp">📌 G.P. Basics</a>
+      <a href="#ex21">📝 Exercise 2.1</a>
+      <a href="#sum">📌 Sum of G.P.</a>
+      <a href="#ex22">📝 Exercise 2.2</a>
+      <a href="#inf">📌 Infinite G.P.</a>
+      <a href="#ex23">📝 Exercise 2.3</a>
+      <a href="#hp">📌 H.P. &amp; Means</a>
+      <a href="#ex24">📝 Exercise 2.4</a>
+      <a href="#agp">📌 A.G.P.</a>
+      <a href="#ex25">📝 Exercise 2.5</a>
+      <a href="#sigma">📌 Σ Formulas</a>
+      <a href="#ex26">📝 Exercise 2.6</a>
+    </div>
+  </div>
+
   <!-- KEY POINTS -->
   <div class="keybox">
-    <h2>⭐ Key Points at a Glance</h2>
+    <h2>⭐ All Key Formulas at a Glance</h2>
     <ul>
-      <li><strong>Sequence:</strong> Numbers arranged in a definite order. General form: t₁, t₂, t₃, ..., tₙ</li>
-      <li><strong>A.P.:</strong> tₙ₊₁ − tₙ = d (constant). nth term: tₙ = a + (n−1)d. Sum: Sₙ = n/2[2a + (n−1)d]</li>
-      <li><strong>G.P.:</strong> tₙ₊₁/tₙ = r (constant). nth term: tₙ = arⁿ⁻¹. Sum: Sₙ = a(rⁿ−1)/(r−1)</li>
-      <li><strong>Sum of infinite G.P.:</strong> S∞ = a/(1−r), only when |r| &lt; 1</li>
-      <li><strong>H.P.:</strong> Reciprocals of terms are in A.P. nth term of H.P. = 1/(nth term of corresponding A.P.)</li>
-      <li><strong>A.M. = (x+y)/2, G.M. = √(xy), H.M. = 2xy/(x+y)</strong></li>
-      <li><strong>Relation:</strong> G² = AH and A ≥ G ≥ H (for positive numbers)</li>
-      <li><strong>A.G.P.:</strong> Each term = product of corresponding A.P. and G.P. terms. tₙ = [a+(n−1)d]rⁿ⁻¹</li>
-      <li><strong>Sum of natural numbers:</strong> Σr = n(n+1)/2</li>
-      <li><strong>Sum of squares:</strong> Σr² = n(n+1)(2n+1)/6</li>
-      <li><strong>Sum of cubes:</strong> Σr³ = [n(n+1)/2]²</li>
+      <li><strong>A.P. nth term:</strong> tₙ = a + (n−1)d &nbsp;|&nbsp; <strong>Sum:</strong> Sₙ = n/2[2a+(n−1)d]</li>
+      <li><strong>G.P. nth term:</strong> tₙ = arⁿ⁻¹ &nbsp;|&nbsp; <strong>Sum:</strong> Sₙ = a(rⁿ−1)/(r−1), r≠1</li>
+      <li><strong>Infinite G.P.:</strong> S∞ = a/(1−r), only when |r| &lt; 1</li>
+      <li><strong>3 numbers in G.P.:</strong> take a/r, a, ar → product = a³</li>
+      <li><strong>4 numbers in G.P.:</strong> take a/r³, a/r, ar, ar³ → product = a⁴</li>
+      <li><strong>H.P. nth term:</strong> reciprocals in A.P. → tₙ(HP) = 1/[a+(n−1)d]</li>
+      <li><strong>A.M. = (x+y)/2 &nbsp;|&nbsp; G.M. = √(xy) &nbsp;|&nbsp; H.M. = 2xy/(x+y)</strong></li>
+      <li><strong>G² = AH &nbsp;|&nbsp; A ≥ G ≥ H</strong> (for positive numbers)</li>
+      <li><strong>A.G.P. tₙ = [a+(n−1)d]rⁿ⁻¹ &nbsp;|&nbsp; S∞ = a/(1−r) + dr/(1−r)²</strong></li>
+      <li><strong>Σr = n(n+1)/2 &nbsp;|&nbsp; Σr² = n(n+1)(2n+1)/6 &nbsp;|&nbsp; Σr³ = [n(n+1)/2]²</strong></li>
     </ul>
   </div>
 
-  <!-- SECTION 1: SEQUENCES -->
-  <div class="sec">
-    <div class="sec-head"><div class="n">1</div><h2>Sequences — Definitions</h2></div>
-    <div class="sec-body">
-      <div class="df"><strong>Sequence:</strong> A set of numbers arranged in a definite order. Written as t₁, t₂, t₃, ..., tₙ where t₁ = first term, tₙ = nth term.</div>
-      <ul style="font-size:.87rem;padding-left:18px;margin-top:8px;">
-        <li><strong>Finite sequence:</strong> Contains finite number of terms. Written as {t₁, t₂, ..., tₙ}</li>
-        <li><strong>Infinite sequence:</strong> Never ends. Written as {t₁, t₂, t₃, ...} or {tₙ} n ≥ 1</li>
-        <li><strong>Progression:</strong> A sequence that follows a specific pattern</li>
-      </ul>
-    </div>
-  </div>
+  <!-- ══════════════════════════════════
+       SECTION: G.P. BASICS
+  ══════════════════════════════════ -->
+  <div class="sec-title" id="gp"><div class="sn">1</div>Geometric Progression (G.P.) — Theory</div>
 
-  <!-- SECTION 2: AP -->
-  <div class="sec">
-    <div class="sec-head"><div class="n">2</div><h2>Arithmetic Progression (A.P.)</h2></div>
-    <div class="sec-body">
-      <div class="df"><strong>A.P.:</strong> A sequence where the difference between any term and its preceding term (tₙ₊₁ − tₙ) is <strong>constant</strong>. This constant is the <strong>common difference d</strong>.</div>
-      <div class="fbox"><span class="fl">nth Term</span><code>tₙ = a + (n−1)d</code> where a = first term, d = common difference</div>
-      <div class="fbox"><span class="fl">Sum of n terms</span><code>Sₙ = n/2 × [2a + (n−1)d]</code> &nbsp;OR&nbsp; <code>Sₙ = n/2 × (first term + last term)</code></div>
-      <p style="font-size:.87rem;margin-top:10px;"><strong>Properties of A.P.:</strong> If t₁, t₂, ..., tₙ are in A.P. then:</p>
-      <ul style="font-size:.87rem;padding-left:18px;margin-top:6px;">
-        <li>t₁±k, t₂±k, ..., tₙ±k are also in A.P.</li>
-        <li>kt₁, kt₂, ..., ktₙ are also in A.P. (k ≠ 0)</li>
-      </ul>
-      <p style="font-size:.87rem;margin-top:8px;"><strong>Examples of A.P.:</strong> 2,5,8,11,14 (d=3); 4,10,16,22 (d=6); −3,2,7,12 (d=5)</p>
-      <p style="font-size:.87rem;margin-top:4px;"><strong>NOT A.P.:</strong> 4,16,64,256 (ratio constant, not difference) — this is G.P.</p>
-    </div>
-  </div>
-
-  <!-- SECTION 3: GP -->
-  <div class="sec">
-    <div class="sec-head"><div class="n">3</div><h2>Geometric Progression (G.P.)</h2></div>
-    <div class="sec-body">
-      <div class="df"><strong>G.P.:</strong> A sequence where the ratio tₙ₊₁/tₙ = r is <strong>constant</strong> for all n. This constant r is called the <strong>common ratio</strong>.</div>
-      <div class="fbox"><span class="fl">nth Term</span><code>tₙ = arⁿ⁻¹</code> where a = first term, r = common ratio</div>
-      <div class="fbox"><span class="fl">Sum of n terms (r ≠ 1)</span><code>Sₙ = a(rⁿ−1)/(r−1)</code> [use when r &gt; 1] &nbsp;OR&nbsp; <code>Sₙ = a(1−rⁿ)/(1−r)</code> [use when r &lt; 1]</div>
-      <div class="fbox"><span class="fl">Sum when r = 1</span><code>Sₙ = a × n</code> (G.P. becomes a, a, a, ... n times)</div>
-      <div class="fbox"><span class="fl">Sum of Infinite G.P. (|r| &lt; 1)</span><code>S∞ = a/(1−r)</code> &nbsp;|&nbsp; If |r| ≥ 1, sum to infinity does NOT exist</div>
-
-      <p style="font-size:.87rem;font-weight:700;color:#1d4ed8;margin:12px 0 6px;">Properties of G.P.:</p>
-      <ul style="font-size:.87rem;padding-left:18px;">
-        <li>1/t₁, 1/t₂, ..., 1/tₙ are also in G.P.</li>
-        <li>kt₁, kt₂, ..., ktₙ are also in G.P. (k ≠ 0)</li>
-        <li>t₁ⁿ, t₂ⁿ, t₃ⁿ, ... are also in G.P.</li>
-      </ul>
-
-      <p style="font-size:.87rem;font-weight:700;color:#1d4ed8;margin:12px 0 6px;">Convenient assumptions:</p>
-      <table>
-        <tr><th>Terms needed</th><th>Assume as</th><th>Common ratio</th></tr>
-        <tr><td>3 terms in G.P.</td><td>a/r, a, ar</td><td>r</td></tr>
-        <tr><td>4 terms in G.P.</td><td>a/r³, a/r, ar, ar³</td><td>r²</td></tr>
-        <tr><td>5 terms in G.P.</td><td>a/r², a/r, a, ar, ar²</td><td>r</td></tr>
-      </table>
-
-      <p style="font-size:.87rem;font-weight:700;color:#1d4ed8;margin:12px 0 6px;">Expressing recurring decimals as rational numbers:</p>
-      <div class="df">0.6̄ = 0.6+0.06+0.006+... → a=0.6, r=0.1 → S∞ = 0.6/(1−0.1) = 0.6/0.9 = <strong>2/3</strong></div>
-    </div>
-  </div>
-
-  <!-- SECTION 4: HP -->
-  <div class="sec">
-    <div class="sec-head"><div class="n">4</div><h2>Harmonic Progression (H.P.)</h2></div>
-    <div class="sec-body">
-      <div class="df"><strong>H.P.:</strong> A sequence t₁, t₂, t₃, ..., tₙ (tₙ ≠ 0) is H.P. if 1/t₁, 1/t₂, 1/t₃, ..., 1/tₙ are in A.P.</div>
-      <p style="font-size:.87rem;margin-top:8px;"><strong>To find nth term of H.P.:</strong></p>
-      <ul style="font-size:.87rem;padding-left:18px;margin-top:4px;">
-        <li>Write the reciprocals → they form an A.P. with first term a and common difference d</li>
-        <li>Find tₙ of that A.P. = a + (n−1)d</li>
-        <li>nth term of H.P. = 1/[a + (n−1)d]</li>
-      </ul>
-      <p style="font-size:.87rem;margin-top:8px;"><strong>Example:</strong> 1/2, 2/5, 1/3, 2/7 → reciprocals: 2, 5/2, 3, 7/2 → A.P. with a=2, d=1/2 → tₙ of A.P. = 2+(n−1)(1/2) = (n+3)/2 → tₙ of H.P. = 2/(n+3)</p>
-    </div>
-  </div>
-
-  <!-- SECTION 5: MEANS -->
-  <div class="sec">
-    <div class="sec-head"><div class="n">5</div><h2>Arithmetic Mean, Geometric Mean, Harmonic Mean</h2></div>
-    <div class="sec-body">
-      <table>
-        <tr><th>Mean</th><th>Formula (2 numbers x and y)</th><th>Formula (n numbers)</th></tr>
-        <tr><td><strong>A.M. (A)</strong></td><td>A = (x+y)/2</td><td>A = (x₁+x₂+...+xₙ)/n</td></tr>
-        <tr><td><strong>G.M. (G)</strong></td><td>G = √(xy)</td><td>G = (x₁·x₂·...·xₙ)^(1/n)</td></tr>
-        <tr><td><strong>H.M. (H)</strong></td><td>H = 2xy/(x+y)</td><td>H = n ÷ (1/x₁+1/x₂+...+1/xₙ)</td></tr>
-      </table>
-      <div class="fbox" style="margin-top:10px;"><span class="fl">Key Theorem</span><code>G² = AH</code> &nbsp;&nbsp; and &nbsp;&nbsp; <code>A ≥ G ≥ H</code> (for positive numbers x, y)<br/><small>If x = y then A = G = H</small></div>
-      <p style="font-size:.87rem;margin-top:8px;"><strong>Example:</strong> x=4, y=16 → A=(4+16)/2=10, G=√(4×16)=√64=8, H=2×4×16/(4+16)=128/20=32/5<br/>Verify: G²=64 = A×H = 10×32/5 = 64 ✓ and 10 ≥ 8 ≥ 6.4 ✓</p>
-    </div>
-  </div>
-
-  <!-- SECTION 6: AGP -->
-  <div class="sec">
-    <div class="sec-head"><div class="n">6</div><h2>Arithmetico-Geometric Progression (A.G.P.)</h2></div>
-    <div class="sec-body">
-      <div class="df"><strong>A.G.P.:</strong> A sequence where each term is the <strong>product of corresponding terms of an A.P. and a G.P.</strong></div>
-      <p style="font-size:.87rem;margin:8px 0;"><strong>General form:</strong> a, (a+d)r, (a+2d)r², (a+3d)r³, ...</p>
-      <div class="fbox"><span class="fl">nth Term of A.G.P.</span><code>tₙ = [a + (n−1)d] × rⁿ⁻¹</code></div>
-      <div class="fbox"><span class="fl">Sum of n terms (r ≠ 1)</span><code>Sₙ = a/(1−r) + dr(1−rⁿ⁻¹)/(1−r)² − [a+(n−1)d]rⁿ/(1−r)</code></div>
-      <div class="fbox"><span class="fl">Sum to Infinity (|r| &lt; 1)</span><code>S∞ = a/(1−r) + dr/(1−r)²</code></div>
-    </div>
-  </div>
-
-  <!-- SECTION 7: SUMMATION RESULTS -->
-  <div class="sec">
-    <div class="sec-head"><div class="n">7</div><h2>Important Summation Results</h2></div>
-    <div class="sec-body">
-      <div class="fbox"><span class="fl">Sum of first n natural numbers</span><code>Σr = n(n+1)/2</code></div>
-      <div class="fbox"><span class="fl">Sum of squares of first n natural numbers</span><code>Σr² = n(n+1)(2n+1)/6</code></div>
-      <div class="fbox"><span class="fl">Sum of cubes of first n natural numbers</span><code>Σr³ = [n(n+1)/2]²</code></div>
-      <p style="font-size:.87rem;font-weight:700;color:#1d4ed8;margin:10px 0 6px;">Properties of Summation:</p>
-      <ul style="font-size:.87rem;padding-left:18px;">
-        <li>Σ(k·tᵣ) = k·Σtᵣ (k = constant)</li>
-        <li>Σ(aᵣ + bᵣ) = Σaᵣ + Σbᵣ</li>
-        <li>Σ1 = n (sum of n ones)</li>
-        <li>Σk = kn (k = constant, summed n times)</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- QUICK REVISION -->
-  <div class="quick">
-    <h2>🔁 Quick Revision — All Formulas</h2>
+  <div class="keybox">
     <ul>
-      <li>A.P. nth term: tₙ = a + (n−1)d | Sum: Sₙ = n/2[2a+(n−1)d]</li>
-      <li>G.P. nth term: tₙ = arⁿ⁻¹ | Sum: Sₙ = a(rⁿ−1)/(r−1) for r≠1</li>
-      <li>G.P. infinite sum: S∞ = a/(1−r) only if |r| &lt; 1</li>
-      <li>3 numbers in G.P.: take a/r, a, ar → product = a³</li>
-      <li>4 numbers in G.P.: take a/r³, a/r, ar, ar³ → product = a⁴</li>
-      <li>H.P. nth term: take reciprocals → find A.P. nth term → take reciprocal back</li>
-      <li>A.M. = (x+y)/2 | G.M. = √(xy) | H.M. = 2xy/(x+y)</li>
-      <li>G² = AH | A ≥ G ≥ H for positive numbers</li>
-      <li>A.G.P. tₙ = [a+(n−1)d]rⁿ⁻¹ | S∞ = a/(1−r) + dr/(1−r)²</li>
-      <li>Σr = n(n+1)/2 | Σr² = n(n+1)(2n+1)/6 | Σr³ = [n(n+1)/2]²</li>
-      <li>Recurring decimal → G.P. with |r|&lt;1 → use S∞ = a/(1−r)</li>
+      <li><strong>G.P.:</strong> tₙ₊₁/tₙ = r (constant common ratio) for all n</li>
+      <li>G.P. written as: a, ar, ar², ar³, ... where a = first term, r = common ratio</li>
+      <li><strong>nth term:</strong> tₙ = arⁿ⁻¹</li>
+      <li><strong>Property:</strong> If t₁,t₂,...,tₙ in G.P. then 1/t₁, 1/t₂,... also in G.P.</li>
+      <li><strong>For 3 numbers in G.P.:</strong> take a/r, a, ar → product = a³</li>
+      <li><strong>For 4 numbers in G.P.:</strong> take a/r³, a/r, ar, ar³ → product = a⁴</li>
+      <li><strong>For 5 numbers in G.P.:</strong> take a/r², a/r, a, ar, ar² → product = a⁵</li>
     </ul>
   </div>
 
-  <!-- ═══════════ EXERCISE 2.1 ═══════════ -->
-  <div class="ex-sec">
-    <div class="ex-head"><h2>📝 Exercise 2.1 — G.P. — nth Term &amp; Properties (Solved)</h2></div>
-    <div class="ex-body">
+  <!-- ══════════════════════════════════
+       EXERCISE 2.1
+  ══════════════════════════════════ -->
+  <div class="sec-title" id="ex21"><div class="sn">2</div>Exercise 2.1 — G.P. nth Term (Solved)</div>
 
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q1</div><div class="qt">Check whether the following sequences are G.P. If so, write tₙ. i) 2,6,18,54,... ii) 1,−5,25,−125,... iii) √5, 1/√5, 1/5√5, 1/25√5,... iv) 3,4,5,6,... v) 7,14,21,28,...</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          <strong>Method:</strong> Check if t₂/t₁ = t₃/t₂ = constant (common ratio r). If yes → G.P., find tₙ = ar^(n−1).<br/><br/>
-          <div class="step"><span class="sl">i) 2, 6, 18, 54, ...</span>r = 6/2 = 3; 18/6 = 3; 54/18 = 3 → r = 3 (constant) → <strong>YES, G.P.</strong><br/>a = 2, r = 3 → <code>tₙ = 2 × 3^(n−1)</code></div>
-          <div class="step"><span class="sl">ii) 1, −5, 25, −125, ...</span>r = −5/1 = −5; 25/(−5) = −5 → r = −5 (constant) → <strong>YES, G.P.</strong><br/>a = 1, r = −5 → <code>tₙ = 1 × (−5)^(n−1) = (−5)^(n−1)</code></div>
-          <div class="step"><span class="sl">iii) √5, 1/√5, 1/5√5, 1/25√5, ...</span>r = (1/√5)/√5 = 1/5; (1/5√5)/(1/√5) = 1/5 → r = 1/5 → <strong>YES, G.P.</strong><br/>a = √5 = 5^(1/2), r = 1/5 = 5^(−1) → <code>tₙ = 5^(1/2) × (5^(−1))^(n−1) = 5^(1/2−(n−1)) = 5^((3−2n)/2)</code></div>
-          <div class="step"><span class="sl">iv) 3, 4, 5, 6, ...</span>r = 4/3; 5/4 — these are NOT equal → <strong>NOT a G.P.</strong> (This is an A.P. with d=1)</div>
-          <div class="step"><span class="sl">v) 7, 14, 21, 28, ...</span>r = 14/7 = 2; 21/14 = 3/2 — NOT equal → <strong>NOT a G.P.</strong> (A.P. with d=7)</div>
-        </div>
+  <!-- Q1 -->
+  <div class="qa-card">
+    <div class="qbox">
+      <div class="qbox-head">
+        <div class="qnum">Q1</div>
+        <div class="qtext">Check whether the following sequences are G.P. If so, write tₙ.<br/>
+        i) 2, 6, 18, 54, ... &nbsp; ii) 1, −5, 25, −125, ... &nbsp; iii) √5, 1/√5, 1/5√5, ... &nbsp; iv) 3, 4, 5, 6, ... &nbsp; v) 7, 14, 21, 28, ...</div>
+        <div class="qmark">★★</div>
       </div>
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q2</div><div class="qt">For the G.P.: i) r=1/3, a=9, find t₇ &nbsp; ii) a=7/243, r=3, find t₆ &nbsp; iii) r=−3, t₆=1701, find a &nbsp; iv) a=2/3, t₆=162, find r</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          <strong>Formula:</strong> tₙ = ar^(n−1)<br/><br/>
-          <div class="step"><span class="sl">i) r=1/3, a=9, find t₇</span>t₇ = 9 × (1/3)^6 = 9 × 1/729 = 9/729 = <strong>1/81</strong></div>
-          <div class="step"><span class="sl">ii) a=7/243, r=3, find t₆</span>t₆ = (7/243) × 3^5 = (7/243) × 243 = <strong>7</strong></div>
-          <div class="step"><span class="sl">iii) r=−3, t₆=1701, find a</span>t₆ = ar^5 = a×(−3)^5 = a×(−243) = 1701 → a = 1701/(−243) = <strong>−7</strong></div>
-          <div class="step"><span class="sl">iv) a=2/3, t₆=162, find r</span>t₆ = (2/3)×r^5 = 162 → r^5 = 162 × 3/2 = 243 = 3^5 → <strong>r = 3</strong></div>
-        </div>
-      </div>
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q3</div><div class="qt">Which term of G.P. 5, 25, 125, 625, ... is 5¹⁰?</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          a = 5, r = 25/5 = 5, tₙ = 5¹⁰<br/>
-          <div class="step"><span class="sl">Using tₙ = arⁿ⁻¹</span>5 × 5^(n−1) = 5¹⁰ → 5^1 × 5^(n−1) = 5^10 → 5^n = 5^10 → <strong>n = 10</strong></div>
-          ∴ 5¹⁰ is the <strong>10th term</strong> of the G.P.
-        </div>
-      </div>
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q4</div><div class="qt">For what values of x are the terms 4/3, x, 4/27 in G.P.?</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          For three terms a, b, c to be in G.P.: <code>b² = ac</code><br/>
-          <div class="step"><span class="sl">Apply condition b² = ac</span>x² = (4/3) × (4/27) = 16/81<br/>x = ±√(16/81) = ±4/9 → <strong>x = 4/9 or x = −4/9</strong></div>
-        </div>
-      </div>
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q6</div><div class="qt">Find three numbers in G.P. such that their sum is 21 and sum of their squares is 189.</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          Let three numbers be a/r, a, ar.<br/>
-          <div class="step"><span class="sl">Product condition (if product given): a³ = product</span>Here only sum conditions given. Use a/r + a + ar = 21 ...(1) and (a/r)²+a²+(ar)² = 189 ...(2)</div>
-          <div class="step"><span class="sl">From (1): a(1/r + 1 + r) = 21</span>From (2): a²(1/r² + 1 + r²) = 189. Divide: (2)÷(1)²: [a²(1/r²+1+r²)] / [a²(1/r+1+r)²] = 189/441 = 3/7<br/>Note: (1/r+1+r)² = 1/r²+1+r²+2(1/r+1+r)−2 — easier to guess: try a=3, r=... </div>
-          <div class="step"><span class="sl">Try a=3: 3(1/r+1+r)=21 → 1/r+1+r=7 → 1+r+r²=7r → r²−6r+1=0</span>r = (6±√32)/2 = 3±2√2. Try integer values: Note if a=7, r can be 1/7... Let's try product=a³=?<br/><strong>Systematic:</strong> (a/r + a + ar)² = 441 and a²(1/r²+1+r²) = 189<br/>a²[(1/r+1+r)² − 2(1/r+1+r) + 2 − 2] ... try a=7: 7(1/r+1+r)=21 → 1/r+1+r=3 → r²−2r+1=0 → (r−1)²=0 → r=1 (not valid for distinct terms). Try a=3: 1/r+r=6 → r²−6r+1=0 → not integer. By checking: <strong>Numbers are 3, 6, 12</strong> (sum=21, sum of squares=9+36+144=189 ✓, r=2, a=6)</div>
-        </div>
-      </div>
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q11</div><div class="qt">The number of bacteria in a culture doubles every hour. If there were 50 bacteria originally, how many at end of 5th hour?</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          This forms a G.P. with a = 50, r = 2 (doubles every hour).<br/>
-          <div class="step"><span class="sl">After n hours: tₙ₊₁ = a × 2ⁿ</span>After 5th hour: t₆ = 50 × 2^5 = 50 × 32 = <strong>1600 bacteria</strong></div>
-        </div>
-      </div>
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q13</div><div class="qt">The numbers 3, x, x+6 are in G.P. Find (i) x (ii) 20th term (iii) nth term.</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          For G.P.: x² = 3(x+6)<br/>
-          <div class="step"><span class="sl">Solve for x</span>x² = 3x+18 → x²−3x−18 = 0 → (x−6)(x+3) = 0 → x = 6 or x = −3</div>
-          <div class="step"><span class="sl">Check both values</span>If x=6: 3, 6, 12 → r=2 ✓ (valid G.P.)<br/>If x=−3: 3, −3, 3 → r=−1 ✓ (also valid)</div>
-          <div class="step"><span class="sl">Taking x=6: a=3, r=2</span>20th term: t₂₀ = 3×2¹⁹ = <strong>3×524288 = 1572864</strong><br/>nth term: <strong>tₙ = 3×2^(n−1)</strong></div>
-        </div>
-      </div>
-
+    </div>
+    <div class="sol">
+      <span class="sol-badge">Solution</span>
+      <p><strong>Rule:</strong> Check if t₂/t₁ = t₃/t₂ = constant (r). If yes → G.P., find tₙ = arⁿ⁻¹</p>
+      <div class="hr"></div>
+      <p><strong>i) 2, 6, 18, 54, ...</strong></p>
+      <p class="ind">t₂/t₁ = 6/2 = 3</p>
+      <p class="ind">t₃/t₂ = 18/6 = 3</p>
+      <p class="ind">t₄/t₃ = 54/18 = 3 → r = 3 (constant)</p>
+      <p class="ind">∴ <strong>YES, it is a G.P.</strong> with a = 2, r = 3</p>
+      <p class="ind"><span class="ans">tₙ = 2 × 3ⁿ⁻¹</span></p>
+      <div class="hr"></div>
+      <p><strong>ii) 1, −5, 25, −125, ...</strong></p>
+      <p class="ind">t₂/t₁ = −5/1 = −5</p>
+      <p class="ind">t₃/t₂ = 25/(−5) = −5 → r = −5 (constant)</p>
+      <p class="ind">∴ <strong>YES, it is a G.P.</strong> with a = 1, r = −5</p>
+      <p class="ind"><span class="ans">tₙ = (−5)ⁿ⁻¹</span></p>
+      <div class="hr"></div>
+      <p><strong>iii) √5, 1/√5, 1/5√5, ...</strong></p>
+      <p class="ind">t₂/t₁ = (1/√5)/√5 = 1/5</p>
+      <p class="ind">t₃/t₂ = (1/5√5)/(1/√5) = 1/5 → r = 1/5 (constant)</p>
+      <p class="ind">∴ <strong>YES, it is a G.P.</strong> with a = √5 = 5^(1/2), r = 1/5</p>
+      <p class="ind"><span class="ans">tₙ = 5^((3−2n)/2)</span></p>
+      <div class="hr"></div>
+      <p><strong>iv) 3, 4, 5, 6, ...</strong></p>
+      <p class="ind">t₂/t₁ = 4/3 &nbsp;|&nbsp; t₃/t₂ = 5/4 → ratios NOT equal</p>
+      <p class="ind">∴ <strong>NOT a G.P.</strong> (this is an A.P. with d = 1)</p>
+      <div class="hr"></div>
+      <p><strong>v) 7, 14, 21, 28, ...</strong></p>
+      <p class="ind">t₂/t₁ = 14/7 = 2 &nbsp;|&nbsp; t₃/t₂ = 21/14 = 3/2 → NOT equal</p>
+      <p class="ind">∴ <strong>NOT a G.P.</strong> (this is an A.P. with d = 7)</p>
     </div>
   </div>
 
-  <!-- ═══════════ EXERCISE 2.2 ═══════════ -->
-  <div class="ex-sec">
-    <div class="ex-head"><h2>📝 Exercise 2.2 — Sum of G.P. (Solved)</h2></div>
-    <div class="ex-body">
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q1</div><div class="qt">Find Sₙ for: i) 3,6,12,24,... &nbsp; ii) p,q,q²/p,q³/p²,... &nbsp; iii) 0.7,0.07,0.007,... &nbsp; iv) √5,−5,5√5,−25,...</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          <div class="step"><span class="sl">i) 3,6,12,24,... → a=3, r=2</span>Sₙ = a(rⁿ−1)/(r−1) = 3(2ⁿ−1)/(2−1) = <strong>3(2ⁿ−1)</strong></div>
-          <div class="step"><span class="sl">ii) p, q, q²/p, ... → a=p, r=q/p</span>Sₙ = p[(q/p)ⁿ−1]/[(q/p)−1] = p × [qⁿ/pⁿ − 1] / [(q−p)/p] = <strong>p²(qⁿ−pⁿ) / [pⁿ⁻¹(q−p)]</strong></div>
-          <div class="step"><span class="sl">iii) 0.7,0.07,0.007,... → a=0.7, r=0.1</span>Sₙ = 0.7(1−0.1ⁿ)/(1−0.1) = 0.7(1−0.1ⁿ)/0.9 = <strong>7(1−0.1ⁿ)/9 = 7/9 × (1−(1/10)ⁿ)</strong></div>
-          <div class="step"><span class="sl">iv) √5,−5,5√5,−25,... → a=√5, r=−5/√5=−√5</span>Sₙ = √5[(−√5)ⁿ−1]/[(−√5)−1] = <strong>√5[(−√5)ⁿ−1]/(−√5−1)</strong></div>
-        </div>
+  <!-- Q2 -->
+  <div class="qa-card">
+    <div class="qbox">
+      <div class="qbox-head">
+        <div class="qnum">Q2</div>
+        <div class="qtext">For the G.P.:<br/>
+        i) r = 1/3, a = 9, find t₇ &nbsp; ii) a = 7/243, r = 3, find t₆<br/>
+        iii) r = −3, t₆ = 1701, find a &nbsp; iv) a = 2/3, t₆ = 162, find r</div>
+        <div class="qmark">★★</div>
       </div>
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q3</div><div class="qt">i) a=2, r=3, Sₙ=242, find n &nbsp; ii) Sum of first 3 terms is 125 and sum of next 3 terms is 27, find r.</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          <div class="step"><span class="sl">i) a=2, r=3, Sₙ=242</span>Sₙ = 2(3ⁿ−1)/(3−1) = 2(3ⁿ−1)/2 = 3ⁿ−1 = 242 → 3ⁿ = 243 = 3⁵ → <strong>n = 5</strong></div>
-          <div class="step"><span class="sl">ii) S₃=125, S₆−S₃=27</span>S₆ = 125+27 = 152. S₃ = a(1−r³)/(1−r) = 125 ...(1) and S₆ = a(1−r⁶)/(1−r) = 152 ...(2)<br/>Dividing (2)÷(1): (1−r⁶)/(1−r³) = 152/125 → (1+r³) = 152/125 → r³ = 152/125 − 1 = 27/125 → r = <strong>3/5</strong></div>
-        </div>
-      </div>
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q5</div><div class="qt">Find the sum to n terms: i) 3+33+333+3333+... &nbsp; ii) 8+88+888+8888+...</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          <strong>Method:</strong> Factor out the single digit, multiply and divide by 9 to create a 10-based G.P.<br/>
-          <div class="step"><span class="sl">i) 3+33+333+...</span>= 3(1+11+111+...) = 3/9 × (9+99+999+...) = 1/3 × [(10−1)+(100−1)+(1000−1)+...] = 1/3 × [(10+100+...n terms) − n]<br/>= 1/3 × [10(10ⁿ−1)/9 − n] = <strong>(10/27)(10ⁿ−1) − n/3</strong></div>
-          <div class="step"><span class="sl">ii) 8+88+888+...</span>Same method: = 8/9 × (9+99+999+...) = 8/9 × [(10+100+...n terms) − n]<br/>= <strong>(80/81)(10ⁿ−1) − 8n/9</strong></div>
-        </div>
-      </div>
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q8</div><div class="qt">For a sequence, if Sₙ = 2(3ⁿ−1), find the nth term and show it is a G.P.</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          <div class="step"><span class="sl">Find tₙ using tₙ = Sₙ − Sₙ₋₁</span>Sₙ = 2(3ⁿ−1); Sₙ₋₁ = 2(3^(n-1)−1)<br/>tₙ = 2(3ⁿ−1) − 2(3^(n−1)−1) = 2×3ⁿ − 2 − 2×3^(n−1) + 2 = 2×3ⁿ − 2×3^(n−1) = 2×3^(n−1)(3−1) = <strong>4×3^(n−1)</strong></div>
-          <div class="step"><span class="sl">Verify G.P. condition</span>tₙ₊₁/tₙ = 4×3ⁿ / (4×3^(n−1)) = 3 = constant for all n → <strong>It is a G.P. with r=3</strong><br/>First term: t₁ = 4×3⁰ = 4</div>
-        </div>
-      </div>
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q12</div><div class="qt">The value of a house appreciates 5% per year. How much is it worth after 6 years if current worth is Rs. 15 Lac? [Given (1.05)⁵=1.28, (1.05)⁶=1.34]</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          This forms a G.P. with a = 15 Lac, r = 1.05 (5% appreciation each year).<br/>
-          <div class="step"><span class="sl">Value after 6 years = t₇ = ar⁶</span>= 15 × (1.05)⁶ = 15 × 1.34 = <strong>Rs. 20.1 Lac</strong></div>
-        </div>
-      </div>
-
+    </div>
+    <div class="sol">
+      <span class="sol-badge">Solution</span>
+      <p><strong>Formula: tₙ = arⁿ⁻¹</strong></p>
+      <div class="hr"></div>
+      <p><strong>i) r = 1/3, a = 9, find t₇</strong></p>
+      <p class="ind">t₇ = a × r⁶ = 9 × (1/3)⁶</p>
+      <p class="ind">= 9 × 1/729</p>
+      <p class="ind">= 9/729</p>
+      <p class="ind"><span class="ans">t₇ = 1/81</span></p>
+      <div class="hr"></div>
+      <p><strong>ii) a = 7/243, r = 3, find t₆</strong></p>
+      <p class="ind">t₆ = a × r⁵ = (7/243) × 3⁵</p>
+      <p class="ind">= (7/243) × 243</p>
+      <p class="ind"><span class="ans">t₆ = 7</span></p>
+      <div class="hr"></div>
+      <p><strong>iii) r = −3, t₆ = 1701, find a</strong></p>
+      <p class="ind">t₆ = a × r⁵ = a × (−3)⁵ = a × (−243) = 1701</p>
+      <p class="ind">a = 1701 ÷ (−243)</p>
+      <p class="ind"><span class="ans">a = −7</span></p>
+      <div class="hr"></div>
+      <p><strong>iv) a = 2/3, t₆ = 162, find r</strong></p>
+      <p class="ind">t₆ = (2/3) × r⁵ = 162</p>
+      <p class="ind">r⁵ = 162 × 3/2 = 243 = 3⁵</p>
+      <p class="ind"><span class="ans">r = 3</span></p>
     </div>
   </div>
 
-  <!-- ═══════════ EXERCISE 2.3 ═══════════ -->
-  <div class="ex-sec">
-    <div class="ex-head"><h2>📝 Exercise 2.3 — Sum of Infinite G.P. &amp; Recurring Decimals (Solved)</h2></div>
-    <div class="ex-body">
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q1</div><div class="qt">Determine if sum to infinity exists, if yes find it: i) 1/2,1/4,1/8,... ii) 2,4/3,8/9,16/27,... iii) −3,1,−1/3,1/9,... iv) 1/5,−2/5,4/5,... v) 9,8.1,7.29,...</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          <strong>Rule:</strong> S∞ exists only if |r| &lt; 1. Then S∞ = a/(1−r).<br/><br/>
-          <div class="step"><span class="sl">i) 1/2,1/4,1/8,... → a=1/2, r=1/2</span>|r|=1/2 &lt; 1 → exists. S∞ = (1/2)/(1−1/2) = (1/2)/(1/2) = <strong>1</strong></div>
-          <div class="step"><span class="sl">ii) 2,4/3,8/9,... → a=2, r=(4/3)/2=2/3</span>|r|=2/3 &lt; 1 → exists. S∞ = 2/(1−2/3) = 2/(1/3) = <strong>6</strong></div>
-          <div class="step"><span class="sl">iii) −3,1,−1/3,1/9,... → a=−3, r=1/(−3)=−1/3</span>|r|=1/3 &lt; 1 → exists. S∞ = −3/(1−(−1/3)) = −3/(4/3) = <strong>−9/4</strong></div>
-          <div class="step"><span class="sl">iv) 1/5,−2/5,4/5,... → a=1/5, r=−2</span>|r|=2 &gt; 1 → <strong>Sum to infinity does NOT exist</strong></div>
-          <div class="step"><span class="sl">v) 9,8.1,7.29,... → a=9, r=8.1/9=0.9</span>|r|=0.9 &lt; 1 → exists. S∞ = 9/(1−0.9) = 9/0.1 = <strong>90</strong></div>
-        </div>
+  <!-- Q3 -->
+  <div class="qa-card">
+    <div class="qbox">
+      <div class="qbox-head">
+        <div class="qnum">Q3</div>
+        <div class="qtext">Which term of the G.P. 5, 25, 125, 625, ... is 5¹⁰?</div>
+        <div class="qmark">★★</div>
       </div>
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q2</div><div class="qt">Express as rational numbers: i) 0.7̄ &nbsp; ii) 2.4̄ &nbsp; iii) 2.35̄ &nbsp; iv) 51.0̄2̄</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          <strong>Method:</strong> Write as G.P. sum → S∞ = a/(1−r)<br/><br/>
-          <div class="step"><span class="sl">i) 0.777... = 0.7+0.07+0.007+...</span>a=0.7, r=0.1 → S∞ = 0.7/(1−0.1) = 0.7/0.9 = <strong>7/9</strong></div>
-          <div class="step"><span class="sl">ii) 2.444... = 2 + 0.4+0.04+0.004+...</span>2 + [a=0.4, r=0.1] → 2 + 0.4/0.9 = 2 + 4/9 = <strong>22/9</strong></div>
-          <div class="step"><span class="sl">iii) 2.3555... = 2.3 + 0.05+0.005+0.0005+...</span>2.3 + [a=0.05, r=0.1] → 23/10 + 0.05/0.9 = 23/10 + 5/90 = 23/10 + 1/18 = 207/90 + 5/90 = <strong>212/90 = 106/45</strong></div>
-          <div class="step"><span class="sl">iv) 51.02̄ = 51.0202... = 51 + 0.02+0.0002+...</span>51 + [a=0.02, r=0.01] → 51 + 0.02/(1−0.01) = 51 + 0.02/0.99 = 51 + 2/99 = (51×99+2)/99 = <strong>5051/99</strong></div>
-        </div>
-      </div>
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q3</div><div class="qt">Common ratio of G.P. is 2/3 and sum to infinity is 12. Find the first term.</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          r = 2/3, S∞ = 12<br/>
-          <div class="step"><span class="sl">S∞ = a/(1−r)</span>12 = a/(1−2/3) = a/(1/3) → a = 12 × (1/3) = <strong>a = 4</strong></div>
-        </div>
-      </div>
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q5</div><div class="qt">Sum of infinite G.P. is 5 and sum of squares of terms is 15. Find the G.P.</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          Let G.P. be a, ar, ar², ... → S∞ = a/(1−r) = 5 ...(1)<br/>Squares: a², a²r², a²r⁴,... (G.P. with first term a², ratio r²) → a²/(1−r²) = 15 ...(2)<br/>
-          <div class="step"><span class="sl">Divide (2)÷(1)²</span>[a²/(1−r²)] / [a/(1−r)]² = 15/25 → [a²(1−r)²] / [a²(1−r²)] = 3/5 → (1−r)/(1+r) = 3/5 → 5−5r = 3+3r → 2 = 8r → <strong>r = 1/4</strong></div>
-          <div class="step"><span class="sl">Find a from (1)</span>a/(1−1/4) = 5 → a/(3/4) = 5 → <strong>a = 15/4</strong></div>
-          <strong>G.P. = 15/4, 15/16, 15/64, ...</strong>
-        </div>
-      </div>
-
+    </div>
+    <div class="sol">
+      <span class="sol-badge">Solution</span>
+      <p>Given: a = 5, r = 25/5 = 5, tₙ = 5¹⁰</p>
+      <p class="ind">tₙ = arⁿ⁻¹</p>
+      <p class="ind">5¹⁰ = 5 × 5ⁿ⁻¹</p>
+      <p class="ind">5¹⁰ = 5ⁿ</p>
+      <p class="ind">∴ n = 10</p>
+      <p class="ind"><span class="ans">5¹⁰ is the 10th term</span></p>
     </div>
   </div>
 
-  <!-- ═══════════ EXERCISE 2.4 ═══════════ -->
-  <div class="ex-sec">
-    <div class="ex-head"><h2>📝 Exercise 2.4 — H.P. and A.M., G.M., H.M. (Solved)</h2></div>
-    <div class="ex-body">
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q1</div><div class="qt">Verify whether the following are H.P.: i) 1/3,1/5,1/7,1/9,... &nbsp; ii) 1/3,1/6,1/12,1/24,... &nbsp; iii) 5,10/17,10/32,10/47,...</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          <strong>Method:</strong> Take reciprocals and check if they form an A.P. (constant difference).<br/><br/>
-          <div class="step"><span class="sl">i) Reciprocals: 3,5,7,9,...</span>d = 5−3 = 2; 7−5 = 2; 9−7 = 2 → constant → reciprocals are in A.P. → <strong>YES, H.P.</strong></div>
-          <div class="step"><span class="sl">ii) Reciprocals: 3,6,12,24,...</span>6/3=2; 12/6=2 → ratio constant → reciprocals are in G.P. (NOT A.P.) → <strong>NOT H.P.</strong></div>
-          <div class="step"><span class="sl">iii) Reciprocals: 1/5, 17/10, 32/10, 47/10,...</span>= 2/10, 17/10, 32/10, 47/10 → d = 15/10 each time → constant → <strong>YES, H.P.</strong></div>
-        </div>
+  <!-- Q4 -->
+  <div class="qa-card">
+    <div class="qbox">
+      <div class="qbox-head">
+        <div class="qnum">Q4</div>
+        <div class="qtext">For what values of x are the terms 4/3, x, 4/27 in G.P.?</div>
+        <div class="qmark">★★</div>
       </div>
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q2</div><div class="qt">Find nth term and 8th term of H.P.: i) 1/2,1/5,1/8,1/11,... &nbsp; ii) 1/4,1/6,1/8,1/10,... &nbsp; iii) 1/5,1/10,1/15,1/20,...</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          <div class="step"><span class="sl">i) Reciprocals in A.P.: 2,5,8,11,... → a=2, d=3</span>tₙ of A.P. = 2+(n−1)×3 = 3n−1 → tₙ of H.P. = <strong>1/(3n−1)</strong><br/>t₈ = 1/(3×8−1) = 1/23</div>
-          <div class="step"><span class="sl">ii) Reciprocals in A.P.: 4,6,8,10,... → a=4, d=2</span>tₙ of A.P. = 4+(n−1)×2 = 2n+2 = 2(n+1) → tₙ of H.P. = <strong>1/(2(n+1)) = 1/(2n+2)</strong><br/>t₈ = 1/(2×9) = 1/18</div>
-          <div class="step"><span class="sl">iii) Reciprocals in A.P.: 5,10,15,20,... → a=5, d=5</span>tₙ of A.P. = 5+(n−1)×5 = 5n → tₙ of H.P. = <strong>1/(5n)</strong><br/>t₈ = 1/40</div>
-        </div>
-      </div>
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q3</div><div class="qt">Find A.M. of two positive numbers whose G.M. and H.M. are 4 and 16/5 respectively.</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          G = 4, H = 16/5. Use G² = AH:<br/>
-          <div class="step"><span class="sl">G² = AH → 16 = A × 16/5</span>A = 16 × 5/16 = <strong>5</strong></div>
-          A.M. = 5
-        </div>
-      </div>
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q5</div><div class="qt">Find G.M. of two positive numbers whose A.M. and H.M. are 75 and 48.</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          A = 75, H = 48. Use G² = AH:<br/>
-          <div class="step"><span class="sl">G² = AH = 75 × 48 = 3600</span>G = √3600 = <strong>60</strong></div>
-        </div>
-      </div>
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q6</div><div class="qt">Insert two numbers between 1/4 and 1/3 so that the resulting sequence is a H.P.</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          For H.P.: take reciprocals → 4 and 3 must be in A.P. with 4 terms: 4, H₁', H₂', 3<br/>
-          <div class="step"><span class="sl">4 terms in A.P.: a=4, t₄=3</span>3 = 4 + 3d → 3d = −1 → d = −1/3<br/>H₁' = 4 + (−1/3) = 11/3; H₂' = 4 + 2×(−1/3) = 10/3</div>
-          <div class="step"><span class="sl">Numbers to insert in H.P.</span>H₁ = 1/H₁' = <strong>3/11</strong>; H₂ = 1/H₂' = <strong>3/10</strong></div>
-        </div>
-      </div>
-
+    </div>
+    <div class="sol">
+      <span class="sol-badge">Solution</span>
+      <p>For three terms a, b, c in G.P.: <strong>b² = ac</strong></p>
+      <p class="ind">x² = (4/3) × (4/27)</p>
+      <p class="ind">x² = 16/81</p>
+      <p class="ind">x = ± √(16/81)</p>
+      <p class="ind"><span class="ans">x = 4/9 &nbsp; or &nbsp; x = −4/9</span></p>
     </div>
   </div>
 
-  <!-- ═══════════ EXERCISE 2.5 ═══════════ -->
-  <div class="ex-sec">
-    <div class="ex-head"><h2>📝 Exercise 2.5 — A.G.P. (Arithmetico-Geometric Progression) (Solved)</h2></div>
-    <div class="ex-body">
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q1</div><div class="qt">Find Sₙ of: i) 2,4x,6x²,8x³,... &nbsp; ii) 1,4x,7x²,10x³,... &nbsp; iii) 1,2×3,3×9,4×27,...</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          <div class="step"><span class="sl">i) 2,4x,6x²,8x³,... → A.P. part: 2,4,6,8 (a=2,d=2); G.P. part: 1,x,x²,x³ (r=x)</span>tₙ = [2+(n−1)×2]×xⁿ⁻¹ = 2n×xⁿ⁻¹<br/>Using A.G.P. formula: Sₙ = a/(1−r) + dr/(1−r)² − [a+(n−1)d]rⁿ/(1−r)<br/>= 2/(1−x) + 2x/(1−x)² − 2n×xⁿ/(1−x) for x ≠ 1<br/><strong>Sₙ = 2/(1−x) + 2x/(1−x)² − 2nxⁿ/(1−x)</strong></div>
-          <div class="step"><span class="sl">ii) 1,4x,7x²,10x³,... → A.P.: 1,4,7,10 (a=1,d=3); G.P.: 1,x,x²,x³ (r=x)</span>tₙ = [1+(n−1)×3]×xⁿ⁻¹ = (3n−2)xⁿ⁻¹<br/>Sₙ = 1/(1−x) + 3x/(1−x)² − (3n−2)xⁿ/(1−x) for x ≠ 1</div>
-          <div class="step"><span class="sl">iii) 1,2×3,3×9,4×27,... = 1×1, 2×3, 3×9, 4×27 → A.P.: 1,2,3,4 (a=1,d=1); G.P.: 1,3,9,27 (r=3)</span>tₙ = n×3^(n−1)<br/>Sₙ = 1/(1−3) + 1×3/(1−3)² − n×3ⁿ/(1−3) = −1/2 + 3/4 + n×3ⁿ/2 = 1/4 + n×3ⁿ/2<br/><strong>Sₙ = (2n−1)×3ⁿ/4 + 1/4 = [(2n−1)×3ⁿ + 1]/4</strong></div>
-        </div>
+  <!-- Q6 -->
+  <div class="qa-card">
+    <div class="qbox">
+      <div class="qbox-head">
+        <div class="qnum">Q6</div>
+        <div class="qtext">Find three numbers in G.P. such that their sum is 21 and sum of their squares is 189.</div>
+        <div class="qmark">★★★</div>
       </div>
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q2</div><div class="qt">Find sum to infinity: i) 1,2/4,3/16,4/64,... &nbsp; ii) 3,6/5,9/25,12/125,...</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          <strong>Formula for S∞ of A.G.P.:</strong> S∞ = a/(1−r) + dr/(1−r)² (when |r| &lt; 1)<br/><br/>
-          <div class="step"><span class="sl">i) 1, 2/4, 3/16, 4/64,... = 1×1, 2×(1/4), 3×(1/4)², 4×(1/4)³ → A.P.: 1,2,3,4 (a=1,d=1); r=1/4</span>S∞ = 1/(1−1/4) + 1×(1/4)/(1−1/4)² = 1/(3/4) + (1/4)/(9/16) = 4/3 + (1/4)×(16/9) = 4/3 + 4/9 = 12/9+4/9 = <strong>16/9</strong></div>
-          <div class="step"><span class="sl">ii) 3,6/5,9/25,12/125,... = 3×1, 3×2×(1/5), 3×3×(1/5)², 3×4×(1/5)³ → 3×[1, 2/5, 3/25,...] → a=1, d=1, r=1/5</span>S∞ of inner = 1/(1−1/5) + (1/5)/(1−1/5)² = 1/(4/5) + (1/5)/(16/25) = 5/4 + 5/16 = 20/16+5/16 = 25/16<br/>Multiply by 3: <strong>S∞ = 3×25/16 = 75/16</strong></div>
-        </div>
-      </div>
-
+    </div>
+    <div class="sol">
+      <span class="sol-badge">Solution</span>
+      <p>Let three numbers in G.P. be <strong>a/r, a, ar</strong></p>
+      <p class="ind">Sum of squares: (a/r)² + a² + (ar)² = 189 ...(2)</p>
+      <p class="ind">Sum: a/r + a + ar = 21 ...(1)</p>
+      <p><strong>Try a = 6, r = 2 (from sum condition):</strong></p>
+      <p class="ind">Numbers: 3, 6, 12</p>
+      <p class="ind">Sum = 3 + 6 + 12 = 21 ✓</p>
+      <p class="ind">Sum of squares = 9 + 36 + 144 = 189 ✓</p>
+      <p class="ind"><span class="ans">Numbers are 3, 6, 12</span></p>
     </div>
   </div>
 
-  <!-- ═══════════ EXERCISE 2.6 ═══════════ -->
-  <div class="ex-sec">
-    <div class="ex-head"><h2>📝 Exercise 2.6 — Summation using Σr, Σr², Σr³ (Solved)</h2></div>
-    <div class="ex-body">
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q1</div><div class="qt">Find the sum Σ(r+1)(2r−1) from r=1 to n</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          <div class="step"><span class="sl">Expand (r+1)(2r−1) = 2r²+2r−r−1 = 2r²+r−1</span>Σ(2r²+r−1) = 2Σr² + Σr − Σ1<br/>= 2×n(n+1)(2n+1)/6 + n(n+1)/2 − n<br/>= n(n+1)(2n+1)/3 + n(n+1)/2 − n<br/>= n[((n+1)(2n+1)/3) + (n+1)/2 − 1]<br/>= n[2(n+1)(2n+1) + 3(n+1) − 6]/6<br/>= n[(2n+2)(2n+1) + 3n+3 − 6]/6<br/>= n[4n²+2n+4n+2 + 3n−3]/6<br/>= n[4n²+9n−1]/6 → <strong>Sₙ = n(4n²+9n−1)/6</strong></div>
-        </div>
+  <!-- Q11 -->
+  <div class="qa-card">
+    <div class="qbox">
+      <div class="qbox-head">
+        <div class="qnum">Q11</div>
+        <div class="qtext">The number of bacteria doubles every hour. If there were 50 bacteria originally, how many will be there at end of 5th hour?</div>
+        <div class="qmark">★★</div>
       </div>
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q2</div><div class="qt">Find Σ(3r²−2r+1) from r=1 to n</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          <div class="step"><span class="sl">Expand using standard results</span>= 3Σr² − 2Σr + Σ1<br/>= 3×n(n+1)(2n+1)/6 − 2×n(n+1)/2 + n<br/>= n(n+1)(2n+1)/2 − n(n+1) + n<br/>= n[(n+1)(2n+1)/2 − (n+1) + 1]<br/>= n[(n+1)(2n+1) − 2(n+1) + 2]/2<br/>= n[(2n²+3n+1) − 2n−2+2]/2<br/>= n[2n²+n+1]/2 → <strong>Sₙ = n(2n²+n+1)/2</strong></div>
-        </div>
-      </div>
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q6</div><div class="qt">Find sum of 2²+4²+6²+8²+... upto n terms.</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          <div class="step"><span class="sl">General term: (2r)² = 4r²</span>Sₙ = Σ4r² (r=1 to n) = 4Σr² = 4×n(n+1)(2n+1)/6 = <strong>2n(n+1)(2n+1)/3</strong></div>
-        </div>
-      </div>
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">Q5</div><div class="qt">Find sum of 5×7 + 9×11 + 13×15 + ... upto n terms.</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          <div class="step"><span class="sl">Find rth term</span>First factors: 5,9,13,... → A.P. with a=5, d=4 → rth term = 5+(r−1)×4 = 4r+1<br/>Second factors: 7,11,15,... → A.P. with a=7, d=4 → rth term = 7+(r−1)×4 = 4r+3<br/>General term: tᵣ = (4r+1)(4r+3) = 16r²+12r+4r+3 = 16r²+16r+3</div>
-          <div class="step"><span class="sl">Σtᵣ = Σ(16r²+16r+3)</span>= 16Σr² + 16Σr + 3Σ1 = 16×n(n+1)(2n+1)/6 + 16×n(n+1)/2 + 3n<br/>= 8n(n+1)(2n+1)/3 + 8n(n+1) + 3n<br/>= n[8(n+1)(2n+1)/3 + 8(n+1) + 3]<br/>= n[8(2n²+3n+1)/3 + 8n+8+3]/1 ... simplify<br/>= n(16n²+36n+17)/3 → <strong>Sₙ = n(16n²+36n+17)/3</strong></div>
-        </div>
-      </div>
-
+    </div>
+    <div class="sol">
+      <span class="sol-badge">Solution</span>
+      <p>This forms a G.P. with a = 50, r = 2</p>
+      <p class="ind">After 5 hours → t₆ = a × r⁵</p>
+      <p class="ind">= 50 × 2⁵</p>
+      <p class="ind">= 50 × 32</p>
+      <p class="ind"><span class="ans">= 1600 bacteria</span></p>
     </div>
   </div>
 
-  <!-- MISC EXERCISE KEY QUESTIONS -->
-  <div class="ex-sec">
-    <div class="ex-head"><h2>📝 Miscellaneous Exercise — Selected Important Problems (Solved)</h2></div>
-    <div class="ex-body">
-
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">MCQ</div><div class="qt">MCQ Answers: Common ratio of G.P. 0.12,0.24,0.48? | 10th term of 1/4,−1/2,1,−2,...?</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          <div class="step"><span class="sl">1) 0.12, 0.24, 0.48 → r = 0.24/0.12 = 2</span><strong>Answer: D) 2</strong></div>
-          <div class="step"><span class="sl">2) 1/4,−1/2,1,−2,... → a=1/4, r=−2; t₁₀=ar⁹=(1/4)(−2)⁹=(1/4)(−512)=−128</span><strong>Answer: C) −128</strong></div>
-        </div>
+  <!-- Q13 -->
+  <div class="qa-card">
+    <div class="qbox">
+      <div class="qbox-head">
+        <div class="qnum">Q13</div>
+        <div class="qtext">The numbers 3, x and x + 6 are in G.P. Find (i) x &nbsp; (ii) 20th term &nbsp; (iii) nth term</div>
+        <div class="qmark">★★★</div>
       </div>
+    </div>
+    <div class="sol">
+      <span class="sol-badge">Solution</span>
+      <p>For G.P.: x² = 3(x + 6)</p>
+      <p class="ind">x² = 3x + 18</p>
+      <p class="ind">x² − 3x − 18 = 0</p>
+      <p class="ind">(x − 6)(x + 3) = 0</p>
+      <p class="ind">x = 6 &nbsp; or &nbsp; x = −3</p>
+      <div class="hr"></div>
+      <p><strong>Taking x = 6:</strong> G.P. is 3, 6, 12 → a = 3, r = 2</p>
+      <p class="ind">t₂₀ = 3 × 2¹⁹ = 3 × 524288</p>
+      <p class="ind"><span class="ans2">t₂₀ = 1572864</span></p>
+      <p class="ind"><span class="ans">tₙ = 3 × 2ⁿ⁻¹</span></p>
+    </div>
+  </div>
 
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">M1</div><div class="qt">In a G.P., the fourth term is 48 and the eighth term is 768. Find the tenth term.</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          <div class="step"><span class="sl">t₄ = ar³ = 48 and t₈ = ar⁷ = 768</span>Divide: r⁴ = 768/48 = 16 = 2⁴ → r = 2</div>
-          <div class="step"><span class="sl">Find a: ar³ = 48 → a×8 = 48 → a = 6</span>t₁₀ = ar⁹ = 6×2⁹ = 6×512 = <strong>3072</strong></div>
-        </div>
+  <!-- ══════════════════════════════════
+       SUM OF G.P.
+  ══════════════════════════════════ -->
+  <div class="sec-title" id="sum"><div class="sn">3</div>Sum of G.P. — Formulas</div>
+  <div class="keybox">
+    <ul>
+      <li><strong>Sₙ = a(rⁿ−1)/(r−1)</strong> &nbsp; when r &gt; 1</li>
+      <li><strong>Sₙ = a(1−rⁿ)/(1−r)</strong> &nbsp; when r &lt; 1</li>
+      <li><strong>Sₙ = a × n</strong> &nbsp; when r = 1</li>
+      <li><strong>tₙ = Sₙ − Sₙ₋₁</strong></li>
+    </ul>
+  </div>
+
+  <!-- EXERCISE 2.2 -->
+  <div class="sec-title" id="ex22"><div class="sn">4</div>Exercise 2.2 — Sum of G.P. (Solved)</div>
+
+  <!-- Q1 -->
+  <div class="qa-card">
+    <div class="qbox">
+      <div class="qbox-head">
+        <div class="qnum">Q1</div>
+        <div class="qtext">Find Sₙ for: i) 3, 6, 12, 24, ... &nbsp; ii) 0.7, 0.07, 0.007, ...</div>
+        <div class="qmark">★★</div>
       </div>
+    </div>
+    <div class="sol">
+      <span class="sol-badge">Solution</span>
+      <p><strong>i) 3, 6, 12, 24, ... → a = 3, r = 2</strong></p>
+      <p class="ind">Sₙ = a(rⁿ−1)/(r−1)</p>
+      <p class="ind">= 3(2ⁿ−1)/(2−1)</p>
+      <p class="ind"><span class="ans">Sₙ = 3(2ⁿ−1)</span></p>
+      <div class="hr"></div>
+      <p><strong>ii) 0.7, 0.07, 0.007, ... → a = 0.7, r = 0.1</strong></p>
+      <p class="ind">Sₙ = a(1−rⁿ)/(1−r)</p>
+      <p class="ind">= 0.7(1−0.1ⁿ)/(1−0.1)</p>
+      <p class="ind">= 0.7(1−0.1ⁿ)/0.9</p>
+      <p class="ind"><span class="ans">Sₙ = 7/9 × (1 − (1/10)ⁿ)</span></p>
+    </div>
+  </div>
 
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">M5</div><div class="qt">Find three numbers in G.P. such that their sum is 35 and product is 1000.</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          Let three numbers be a/r, a, ar.<br/>
-          <div class="step"><span class="sl">Product: (a/r)×a×(ar) = a³ = 1000 → a = 10</span></div>
-          <div class="step"><span class="sl">Sum: 10/r + 10 + 10r = 35 → 10/r + 10r = 25 → multiply by r: 10r² − 25r + 10 = 0 → 2r²−5r+2=0 → (2r−1)(r−2)=0</span>r = 1/2 or r = 2</div>
-          <div class="step"><span class="sl">If r=2: numbers = 5, 10, 20 ✓ (sum=35, product=1000 ✓)</span><strong>Numbers: 5, 10, 20</strong></div>
-        </div>
+  <!-- Q3 -->
+  <div class="qa-card">
+    <div class="qbox">
+      <div class="qbox-head">
+        <div class="qnum">Q3</div>
+        <div class="qtext">i) a = 2, r = 3, Sₙ = 242, find n &nbsp;&nbsp; ii) Sum of first 3 terms = 125, sum of next 3 terms = 27, find r</div>
+        <div class="qmark">★★★</div>
       </div>
+    </div>
+    <div class="sol">
+      <span class="sol-badge">Solution</span>
+      <p><strong>i) a = 2, r = 3, Sₙ = 242, find n</strong></p>
+      <p class="ind">Sₙ = 2(3ⁿ−1)/(3−1) = (3ⁿ−1) = 242</p>
+      <p class="ind">3ⁿ = 243 = 3⁵</p>
+      <p class="ind"><span class="ans">n = 5</span></p>
+      <div class="hr"></div>
+      <p><strong>ii) S₃ = 125, S₆ − S₃ = 27</strong></p>
+      <p class="ind">S₆ = 125 + 27 = 152</p>
+      <p class="ind">S₆/S₃ = (1−r⁶)/(1−r³) = 152/125</p>
+      <p class="ind">(1 + r³) = 152/125</p>
+      <p class="ind">r³ = 152/125 − 1 = 27/125</p>
+      <p class="ind"><span class="ans">r = 3/5</span></p>
+    </div>
+  </div>
 
-      <div class="ex" onclick="tog(this)">
-        <div class="ex-q"><div class="qn">M33</div><div class="qt">Find sum to infinity of: 1 + 4/5 + 7/25 + 10/125 + 13/625 + ...</div><div class="tog">Show ▾</div></div>
-        <div class="ex-a">
-          This is an A.G.P. with A.P. part: 1,4,7,10,13 (a=1,d=3) and G.P. part: 1,1/5,(1/5)²,... (r=1/5)<br/>
-          <div class="step"><span class="sl">S∞ = a/(1−r) + dr/(1−r)²</span>= 1/(1−1/5) + 3×(1/5)/(1−1/5)²<br/>= 1/(4/5) + (3/5)/(4/5)²<br/>= 5/4 + (3/5)/(16/25)<br/>= 5/4 + (3/5)×(25/16)<br/>= 5/4 + 15/16<br/>= 20/16 + 15/16<br/>= <strong>35/16</strong></div>
-        </div>
+  <!-- Q5 -->
+  <div class="qa-card">
+    <div class="qbox">
+      <div class="qbox-head">
+        <div class="qnum">Q5</div>
+        <div class="qtext">Find the sum to n terms: i) 3 + 33 + 333 + ... &nbsp; ii) 8 + 88 + 888 + ...</div>
+        <div class="qmark">★★★</div>
       </div>
+    </div>
+    <div class="sol">
+      <span class="sol-badge">Solution</span>
+      <p><strong>i) 3 + 33 + 333 + ...</strong></p>
+      <p class="ind">= 3(1 + 11 + 111 + ...)</p>
+      <p class="ind">= 3/9 × (9 + 99 + 999 + ...)</p>
+      <p class="ind">= 1/3 × [(10−1) + (100−1) + (1000−1) + ...]</p>
+      <p class="ind">= 1/3 × [(10 + 100 + ... n terms) − n]</p>
+      <p class="ind">= 1/3 × [10(10ⁿ−1)/9 − n]</p>
+      <p class="ind"><span class="ans">Sₙ = (10/27)(10ⁿ−1) − n/3</span></p>
+      <div class="hr"></div>
+      <p><strong>ii) 8 + 88 + 888 + ...</strong></p>
+      <p class="ind">= 8/9 × (9 + 99 + 999 + ...)</p>
+      <p class="ind">= 8/9 × [(10 + 100 + ... n terms) − n]</p>
+      <p class="ind"><span class="ans">Sₙ = (80/81)(10ⁿ−1) − 8n/9</span></p>
+    </div>
+  </div>
 
+  <!-- Q8 -->
+  <div class="qa-card">
+    <div class="qbox">
+      <div class="qbox-head">
+        <div class="qnum">Q8</div>
+        <div class="qtext">For a sequence, if Sₙ = 2(3ⁿ − 1), find the nth term and show it is a G.P.</div>
+        <div class="qmark">★★★</div>
+      </div>
+    </div>
+    <div class="sol">
+      <span class="sol-badge">Solution</span>
+      <p>Using tₙ = Sₙ − Sₙ₋₁:</p>
+      <p class="ind">Sₙ = 2(3ⁿ − 1)</p>
+      <p class="ind">Sₙ₋₁ = 2(3ⁿ⁻¹ − 1)</p>
+      <p class="ind">tₙ = 2(3ⁿ − 1) − 2(3ⁿ⁻¹ − 1)</p>
+      <p class="ind">= 2 × 3ⁿ − 2 × 3ⁿ⁻¹</p>
+      <p class="ind">= 2 × 3ⁿ⁻¹(3 − 1)</p>
+      <p class="ind"><span class="ans">tₙ = 4 × 3ⁿ⁻¹</span></p>
+      <div class="hr"></div>
+      <p>Verify G.P.:</p>
+      <p class="ind">tₙ₊₁/tₙ = (4 × 3ⁿ)/(4 × 3ⁿ⁻¹) = 3 = constant</p>
+      <p class="ind">∴ It is a G.P. with r = 3, first term t₁ = 4</p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       INFINITE G.P.
+  ══════════════════════════════════ -->
+  <div class="sec-title" id="inf"><div class="sn">5</div>Infinite G.P. &amp; Recurring Decimals</div>
+  <div class="keybox">
+    <ul>
+      <li><strong>S∞ = a/(1−r)</strong> only when |r| &lt; 1</li>
+      <li>If |r| ≥ 1 → sum to infinity does NOT exist</li>
+      <li>Recurring decimal → write as G.P. → use S∞</li>
+    </ul>
+  </div>
+
+  <!-- EXERCISE 2.3 -->
+  <div class="sec-title" id="ex23"><div class="sn">6</div>Exercise 2.3 — Infinite G.P. (Solved)</div>
+
+  <!-- Q1 -->
+  <div class="qa-card">
+    <div class="qbox">
+      <div class="qbox-head">
+        <div class="qnum">Q1</div>
+        <div class="qtext">Determine if sum to infinity exists. If yes, find it.<br/>
+        i) 1/2, 1/4, 1/8, ... &nbsp; ii) 2, 4/3, 8/9, ... &nbsp; iii) −3, 1, −1/3, 1/9, ... &nbsp; iv) 1/5, −2/5, 4/5, ... &nbsp; v) 9, 8.1, 7.29, ...</div>
+        <div class="qmark">★★</div>
+      </div>
+    </div>
+    <div class="sol">
+      <span class="sol-badge">Solution</span>
+      <p><strong>Rule:</strong> S∞ exists only if |r| &lt; 1. Then S∞ = a/(1−r)</p>
+      <div class="hr"></div>
+      <p><strong>i) 1/2, 1/4, 1/8, ... → a = 1/2, r = 1/2</strong></p>
+      <p class="ind">|r| = 1/2 &lt; 1 → S∞ exists</p>
+      <p class="ind">S∞ = (1/2)/(1 − 1/2) = (1/2)/(1/2)</p>
+      <p class="ind"><span class="ans">S∞ = 1</span></p>
+      <div class="hr"></div>
+      <p><strong>ii) 2, 4/3, 8/9, ... → a = 2, r = 2/3</strong></p>
+      <p class="ind">|r| = 2/3 &lt; 1 → S∞ exists</p>
+      <p class="ind">S∞ = 2/(1 − 2/3) = 2/(1/3)</p>
+      <p class="ind"><span class="ans">S∞ = 6</span></p>
+      <div class="hr"></div>
+      <p><strong>iii) −3, 1, −1/3, 1/9, ... → a = −3, r = −1/3</strong></p>
+      <p class="ind">|r| = 1/3 &lt; 1 → S∞ exists</p>
+      <p class="ind">S∞ = −3/(1 − (−1/3)) = −3/(4/3)</p>
+      <p class="ind"><span class="ans">S∞ = −9/4</span></p>
+      <div class="hr"></div>
+      <p><strong>iv) 1/5, −2/5, 4/5, ... → a = 1/5, r = −2</strong></p>
+      <p class="ind">|r| = 2 &gt; 1 → <span class="ans">S∞ does NOT exist</span></p>
+      <div class="hr"></div>
+      <p><strong>v) 9, 8.1, 7.29, ... → a = 9, r = 0.9</strong></p>
+      <p class="ind">|r| = 0.9 &lt; 1 → S∞ exists</p>
+      <p class="ind">S∞ = 9/(1 − 0.9) = 9/0.1</p>
+      <p class="ind"><span class="ans">S∞ = 90</span></p>
+    </div>
+  </div>
+
+  <!-- Q2 recurring -->
+  <div class="qa-card">
+    <div class="qbox">
+      <div class="qbox-head">
+        <div class="qnum">Q2</div>
+        <div class="qtext">Express as rational numbers: i) 0.7̄ &nbsp; ii) 2.4̄ &nbsp; iii) 2.35̄ &nbsp; iv) 51.0̄2̄</div>
+        <div class="qmark">★★★</div>
+      </div>
+    </div>
+    <div class="sol">
+      <span class="sol-badge">Solution</span>
+      <p><strong>Method:</strong> Write as G.P. with S∞ = a/(1−r)</p>
+      <div class="hr"></div>
+      <p><strong>i) 0.777... = 0.7 + 0.07 + 0.007 + ...</strong></p>
+      <p class="ind">a = 0.7, r = 0.1</p>
+      <p class="ind">S∞ = 0.7/(1 − 0.1) = 0.7/0.9</p>
+      <p class="ind"><span class="ans">= 7/9</span></p>
+      <div class="hr"></div>
+      <p><strong>ii) 2.444... = 2 + 0.4 + 0.04 + ...</strong></p>
+      <p class="ind">= 2 + [a = 0.4, r = 0.1]</p>
+      <p class="ind">= 2 + 0.4/0.9 = 2 + 4/9</p>
+      <p class="ind"><span class="ans">= 22/9</span></p>
+      <div class="hr"></div>
+      <p><strong>iii) 2.3555... = 2.3 + 0.05 + 0.005 + ...</strong></p>
+      <p class="ind">= 23/10 + [a = 0.05, r = 0.1]</p>
+      <p class="ind">= 23/10 + 0.05/0.9 = 23/10 + 1/18</p>
+      <p class="ind">= 207/90 + 5/90</p>
+      <p class="ind"><span class="ans">= 212/90 = 106/45</span></p>
+      <div class="hr"></div>
+      <p><strong>iv) 51.0202... = 51 + 0.02 + 0.0002 + ...</strong></p>
+      <p class="ind">= 51 + [a = 0.02, r = 0.01]</p>
+      <p class="ind">= 51 + 0.02/0.99 = 51 + 2/99</p>
+      <p class="ind"><span class="ans">= 5051/99</span></p>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="qa-card">
+    <div class="qbox">
+      <div class="qbox-head">
+        <div class="qnum">Q5</div>
+        <div class="qtext">Sum of infinite G.P. is 5 and sum of squares of terms is 15. Find the G.P.</div>
+        <div class="qmark">★★★</div>
+      </div>
+    </div>
+    <div class="sol">
+      <span class="sol-badge">Solution</span>
+      <p>S∞ = a/(1−r) = 5 ...(1)</p>
+      <p>Squares form G.P. with first term a², ratio r²:</p>
+      <p class="ind">a²/(1−r²) = 15 ...(2)</p>
+      <div class="hr"></div>
+      <p>Divide (2) by (1)²:</p>
+      <p class="ind">[a²/(1−r²)] ÷ [a²/(1−r)²] = 15/25</p>
+      <p class="ind">(1−r)²/(1−r²) = 3/5</p>
+      <p class="ind">(1−r)/(1+r) = 3/5</p>
+      <p class="ind">5 − 5r = 3 + 3r</p>
+      <p class="ind">8r = 2 → <span class="ans2">r = 1/4</span></p>
+      <div class="hr"></div>
+      <p>From (1): a/(1 − 1/4) = 5 → a/(3/4) = 5</p>
+      <p class="ind"><span class="ans2">a = 15/4</span></p>
+      <p class="ind"><span class="ans">G.P. = 15/4, 15/16, 15/64, ...</span></p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       H.P. AND MEANS
+  ══════════════════════════════════ -->
+  <div class="sec-title" id="hp"><div class="sn">7</div>H.P. and Means (A.M., G.M., H.M.)</div>
+  <div class="keybox">
+    <ul>
+      <li><strong>H.P.:</strong> 1/t₁, 1/t₂, ... are in A.P. → tₙ(HP) = 1/[a+(n−1)d]</li>
+      <li><strong>A.M. = (x+y)/2 &nbsp;|&nbsp; G.M. = √(xy) &nbsp;|&nbsp; H.M. = 2xy/(x+y)</strong></li>
+      <li><strong>G² = AH</strong> &nbsp;|&nbsp; <strong>A ≥ G ≥ H</strong> for positive x, y</li>
+      <li>If x = y then A = G = H</li>
+    </ul>
+  </div>
+
+  <!-- EXERCISE 2.4 -->
+  <div class="sec-title" id="ex24"><div class="sn">8</div>Exercise 2.4 — H.P. and Means (Solved)</div>
+
+  <!-- Q2 -->
+  <div class="qa-card">
+    <div class="qbox">
+      <div class="qbox-head">
+        <div class="qnum">Q2</div>
+        <div class="qtext">Find nth term and 8th term of H.P.:<br/>
+        i) 1/2, 1/5, 1/8, 1/11, ... &nbsp; ii) 1/4, 1/6, 1/8, 1/10, ... &nbsp; iii) 1/5, 1/10, 1/15, 1/20, ...</div>
+        <div class="qmark">★★★</div>
+      </div>
+    </div>
+    <div class="sol">
+      <span class="sol-badge">Solution</span>
+      <p><strong>Method:</strong> Write reciprocals → form A.P. → find nth term → take reciprocal back</p>
+      <div class="hr"></div>
+      <p><strong>i) Reciprocals: 2, 5, 8, 11, ... → a = 2, d = 3</strong></p>
+      <p class="ind">tₙ of A.P. = 2 + (n−1) × 3 = 3n − 1</p>
+      <p class="ind"><span class="ans">tₙ of H.P. = 1/(3n−1)</span></p>
+      <p class="ind">t₈ = 1/(3×8−1) = <span class="ans2">1/23</span></p>
+      <div class="hr"></div>
+      <p><strong>ii) Reciprocals: 4, 6, 8, 10, ... → a = 4, d = 2</strong></p>
+      <p class="ind">tₙ of A.P. = 4 + (n−1) × 2 = 2n + 2</p>
+      <p class="ind"><span class="ans">tₙ of H.P. = 1/(2n+2) = 1/2(n+1)</span></p>
+      <p class="ind">t₈ = 1/18</p>
+      <div class="hr"></div>
+      <p><strong>iii) Reciprocals: 5, 10, 15, 20, ... → a = 5, d = 5</strong></p>
+      <p class="ind">tₙ of A.P. = 5n</p>
+      <p class="ind"><span class="ans">tₙ of H.P. = 1/(5n)</span></p>
+      <p class="ind">t₈ = 1/40</p>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="qa-card">
+    <div class="qbox">
+      <div class="qbox-head">
+        <div class="qnum">Q3</div>
+        <div class="qtext">Find A.M. of two positive numbers whose G.M. = 4 and H.M. = 16/5</div>
+        <div class="qmark">★★</div>
+      </div>
+    </div>
+    <div class="sol">
+      <span class="sol-badge">Solution</span>
+      <p>Given: G = 4, H = 16/5</p>
+      <p>Using G² = AH:</p>
+      <p class="ind">4² = A × (16/5)</p>
+      <p class="ind">16 = A × 16/5</p>
+      <p class="ind">A = 16 × 5/16</p>
+      <p class="ind"><span class="ans">A.M. = 5</span></p>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="qa-card">
+    <div class="qbox">
+      <div class="qbox-head">
+        <div class="qnum">Q5</div>
+        <div class="qtext">Find G.M. of two positive numbers whose A.M. = 75 and H.M. = 48</div>
+        <div class="qmark">★★</div>
+      </div>
+    </div>
+    <div class="sol">
+      <span class="sol-badge">Solution</span>
+      <p>Given: A = 75, H = 48</p>
+      <p>Using G² = AH:</p>
+      <p class="ind">G² = 75 × 48 = 3600</p>
+      <p class="ind">G = √3600</p>
+      <p class="ind"><span class="ans">G.M. = 60</span></p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       A.G.P.
+  ══════════════════════════════════ -->
+  <div class="sec-title" id="agp"><div class="sn">9</div>Arithmetico-Geometric Progression (A.G.P.)</div>
+  <div class="keybox">
+    <ul>
+      <li><strong>A.G.P. tₙ = [a + (n−1)d] × rⁿ⁻¹</strong></li>
+      <li><strong>S∞ = a/(1−r) + dr/(1−r)²</strong> when |r| &lt; 1</li>
+    </ul>
+  </div>
+
+  <!-- EXERCISE 2.5 -->
+  <div class="sec-title" id="ex25"><div class="sn">10</div>Exercise 2.5 — A.G.P. (Solved)</div>
+
+  <!-- Q2i -->
+  <div class="qa-card">
+    <div class="qbox">
+      <div class="qbox-head">
+        <div class="qnum">Q2i</div>
+        <div class="qtext">Find sum to infinity of: 1, 2/4, 3/16, 4/64, ...</div>
+        <div class="qmark">★★★</div>
+      </div>
+    </div>
+    <div class="sol">
+      <span class="sol-badge">Solution</span>
+      <p>= 1×1, 2×(1/4), 3×(1/4)², 4×(1/4)³, ...</p>
+      <p>A.P. part: 1, 2, 3, 4 → a = 1, d = 1</p>
+      <p>G.P. part: 1, 1/4, (1/4)², ... → r = 1/4</p>
+      <div class="hr"></div>
+      <p>Using S∞ = a/(1−r) + dr/(1−r)²:</p>
+      <p class="ind">= 1/(1−1/4) + 1×(1/4)/(1−1/4)²</p>
+      <p class="ind">= 1/(3/4) + (1/4)/(9/16)</p>
+      <p class="ind">= 4/3 + (1/4)×(16/9)</p>
+      <p class="ind">= 4/3 + 4/9</p>
+      <p class="ind">= 12/9 + 4/9</p>
+      <p class="ind"><span class="ans">S∞ = 16/9</span></p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       SIGMA FORMULAS
+  ══════════════════════════════════ -->
+  <div class="sec-title" id="sigma"><div class="sn">11</div>Summation (Σ) Formulas</div>
+  <div class="keybox">
+    <ul>
+      <li><strong>Σr = n(n+1)/2</strong> (sum of first n natural numbers)</li>
+      <li><strong>Σr² = n(n+1)(2n+1)/6</strong> (sum of squares)</li>
+      <li><strong>Σr³ = [n(n+1)/2]²</strong> (sum of cubes)</li>
+      <li><strong>Σ1 = n</strong> &nbsp;|&nbsp; <strong>Σk = kn</strong></li>
+    </ul>
+  </div>
+
+  <!-- EXERCISE 2.6 -->
+  <div class="sec-title" id="ex26"><div class="sn">12</div>Exercise 2.6 — Summation (Solved)</div>
+
+  <!-- Q1 -->
+  <div class="qa-card">
+    <div class="qbox">
+      <div class="qbox-head">
+        <div class="qnum">Q1</div>
+        <div class="qtext">Find the sum Σ(r+1)(2r−1) from r = 1 to n</div>
+        <div class="qmark">★★★</div>
+      </div>
+    </div>
+    <div class="sol">
+      <span class="sol-badge">Solution</span>
+      <p>Expand (r+1)(2r−1):</p>
+      <p class="ind">= 2r² + 2r − r − 1</p>
+      <p class="ind">= 2r² + r − 1</p>
+      <div class="hr"></div>
+      <p>Σ(2r² + r − 1) = 2Σr² + Σr − Σ1</p>
+      <p class="ind">= 2 × n(n+1)(2n+1)/6 + n(n+1)/2 − n</p>
+      <p class="ind">= n(n+1)(2n+1)/3 + n(n+1)/2 − n</p>
+      <p class="ind">= n[((n+1)(2n+1)/3) + (n+1)/2 − 1]</p>
+      <p class="ind">= n[2(n+1)(2n+1) + 3(n+1) − 6] / 6</p>
+      <p class="ind">= n[4n² + 6n + 2 + 3n + 3 − 6] / 6</p>
+      <p class="ind">= n[4n² + 9n − 1] / 6</p>
+      <p class="ind"><span class="ans">Sₙ = n(4n² + 9n − 1)/6</span></p>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="qa-card">
+    <div class="qbox">
+      <div class="qbox-head">
+        <div class="qnum">Q2</div>
+        <div class="qtext">Find Σ(3r² − 2r + 1) from r = 1 to n</div>
+        <div class="qmark">★★</div>
+      </div>
+    </div>
+    <div class="sol">
+      <span class="sol-badge">Solution</span>
+      <p>= 3Σr² − 2Σr + Σ1</p>
+      <p class="ind">= 3 × n(n+1)(2n+1)/6 − 2 × n(n+1)/2 + n</p>
+      <p class="ind">= n(n+1)(2n+1)/2 − n(n+1) + n</p>
+      <p class="ind">= n[(n+1)(2n+1)/2 − (n+1) + 1]</p>
+      <p class="ind">= n[(2n²+3n+1)/2 − n]</p>
+      <p class="ind">= n[2n²+3n+1 − 2n] / 2</p>
+      <p class="ind">= n[2n² + n + 1] / 2</p>
+      <p class="ind"><span class="ans">Sₙ = n(2n² + n + 1)/2</span></p>
+    </div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="qa-card">
+    <div class="qbox">
+      <div class="qbox-head">
+        <div class="qnum">Q6</div>
+        <div class="qtext">Find sum of 2² + 4² + 6² + 8² + ... upto n terms</div>
+        <div class="qmark">★★</div>
+      </div>
+    </div>
+    <div class="sol">
+      <span class="sol-badge">Solution</span>
+      <p>General term = (2r)² = 4r²</p>
+      <p>Sₙ = Σ 4r² = 4 Σr²</p>
+      <p class="ind">= 4 × n(n+1)(2n+1)/6</p>
+      <p class="ind">= 2n(n+1)(2n+1)/3</p>
+      <p class="ind"><span class="ans">Sₙ = 2n(n+1)(2n+1)/3</span></p>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="qa-card">
+    <div class="qbox">
+      <div class="qbox-head">
+        <div class="qnum">Q5</div>
+        <div class="qtext">Find the sum 5×7 + 9×11 + 13×15 + ... upto n terms</div>
+        <div class="qmark">★★★</div>
+      </div>
+    </div>
+    <div class="sol">
+      <span class="sol-badge">Solution</span>
+      <p>First factors: 5, 9, 13, ... → a = 5, d = 4 → rth term = 4r + 1</p>
+      <p>Second factors: 7, 11, 15, ... → a = 7, d = 4 → rth term = 4r + 3</p>
+      <div class="hr"></div>
+      <p>tᵣ = (4r+1)(4r+3) = 16r² + 16r + 3</p>
+      <div class="hr"></div>
+      <p>Sₙ = Σ(16r² + 16r + 3)</p>
+      <p class="ind">= 16Σr² + 16Σr + 3Σ1</p>
+      <p class="ind">= 16 × n(n+1)(2n+1)/6 + 16 × n(n+1)/2 + 3n</p>
+      <p class="ind">= 8n(n+1)(2n+1)/3 + 8n(n+1) + 3n</p>
+      <p class="ind">= n[8(n+1)(2n+1)/3 + 8(n+1) + 3]</p>
+      <p class="ind"><span class="ans">Sₙ = n(16n² + 36n + 17)/3</span></p>
+    </div>
+  </div>
+
+  <!-- MISC -->
+  <div class="sec-title"><div class="sn">13</div>Miscellaneous — Important Problems</div>
+
+  <div class="qa-card">
+    <div class="qbox">
+      <div class="qbox-head">
+        <div class="qnum">M1</div>
+        <div class="qtext">In a G.P., the 4th term is 48 and the 8th term is 768. Find the 10th term.</div>
+        <div class="qmark">★★★</div>
+      </div>
+    </div>
+    <div class="sol">
+      <span class="sol-badge">Solution</span>
+      <p>t₄ = ar³ = 48 ...(1)</p>
+      <p>t₈ = ar⁷ = 768 ...(2)</p>
+      <div class="hr"></div>
+      <p>Divide (2) ÷ (1):</p>
+      <p class="ind">r⁴ = 768/48 = 16 = 2⁴</p>
+      <p class="ind">r = 2</p>
+      <div class="hr"></div>
+      <p>From (1): a × 8 = 48 → a = 6</p>
+      <div class="hr"></div>
+      <p>t₁₀ = ar⁹ = 6 × 2⁹ = 6 × 512</p>
+      <p class="ind"><span class="ans">t₁₀ = 3072</span></p>
+    </div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qbox">
+      <div class="qbox-head">
+        <div class="qnum">M33</div>
+        <div class="qtext">Find sum to infinity of: 1 + 4/5 + 7/25 + 10/125 + 13/625 + ...</div>
+        <div class="qmark">★★★</div>
+      </div>
+    </div>
+    <div class="sol">
+      <span class="sol-badge">Solution</span>
+      <p>A.G.P.: A.P. part: 1, 4, 7, 10, ... → a = 1, d = 3</p>
+      <p>G.P. part: 1, 1/5, (1/5)², ... → r = 1/5</p>
+      <div class="hr"></div>
+      <p>S∞ = a/(1−r) + dr/(1−r)²</p>
+      <p class="ind">= 1/(1−1/5) + 3×(1/5)/(1−1/5)²</p>
+      <p class="ind">= 1/(4/5) + (3/5)/(16/25)</p>
+      <p class="ind">= 5/4 + (3/5)×(25/16)</p>
+      <p class="ind">= 5/4 + 15/16</p>
+      <p class="ind">= 20/16 + 15/16</p>
+      <p class="ind"><span class="ans">S∞ = 35/16</span></p>
     </div>
   </div>
 
   <div class="back-top"><a href="#top">↑ Back to Top</a></div>
-
 </div>
 
 <footer class="footer">
@@ -597,7 +873,7 @@
         <span class="logo-text"><span>Visions</span> Classes</span>
         <p>"Learn Today, Lead Tomorrow"</p>
       </div>
-      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="notes-class11.html">Class 11 Notes</a></li><li><a href="notes.html">All Notes</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="notes-maths2.html">Maths 2</a></li><li><a href="notes-class11.html">Class 11</a></li><li><a href="notes.html">All Notes</a></li></ul></div>
       <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+918767144200">📞 +91 87671 44200</a></li><li><a href="https://wa.me/918767144200" target="_blank">💬 WhatsApp</a></li></ul></div>
     </div>
     <div class="footer-bottom"><p>© 2026 Visions Learning. All rights reserved.</p></div>
@@ -608,14 +884,5 @@
   <a href="tel:+918767144200" class="call-now-btn call">📞 Call Now</a>
 </div>
 <script src="main.js"></script>
-<script>
-  function tog(el){
-    var a=el.querySelector('.ex-a');
-    var b=el.querySelector('.tog');
-    if(!a||!b)return;
-    var o=a.classList.toggle('open');
-    b.textContent=o?'Hide ▴':'Show ▾';
-  }
-</script>
 </body>
 </html>
