@@ -4058,8 +4058,20 @@
           bioSec.style.display = (filter === 'all' || filter === 'biology') ? 'block' : 'none';
         }
 
-        // 4. Scroll to grid / bio-section
-        var scrollTarget = (filter === 'biology' && bioSec) ? bioSec : document.getElementById('notesChaptersGrid');
+        // 4. Hide doubt CTA when a filter is active
+        var doubtCta = document.querySelector('.notes-doubt-cta');
+        if (doubtCta) {
+          doubtCta.style.display = (filter === 'all') ? 'block' : 'none';
+        }
+
+        // 5. Scroll to first visible card for that subject
+        var scrollTarget = document.getElementById('notesChaptersGrid');
+        if (filter === 'biology' && bioSec) {
+          scrollTarget = bioSec;
+        } else if (filter !== 'all') {
+          var firstCard = document.querySelector('#notesChaptersGrid .notes-chapter-card[data-subject="' + filter + '"]');
+          if (firstCard) scrollTarget = firstCard;
+        }
         if (scrollTarget) {
           setTimeout(function() {
             var top = scrollTarget.getBoundingClientRect().top + window.pageYOffset - NAVBAR_H;
