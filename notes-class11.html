@@ -3936,7 +3936,7 @@
       </div>
 
       <!-- EXERCISE PAGES -->
-      <div style="margin-top:48px;">
+      <div id="exercise-pages-section" style="margin-top:48px;">
         <h2 class="section-title">📝 Chapter-wise <span>Exercises with Solutions</span></h2>
         <p class="section-subtitle">SSC Maharashtra Board — complete exercise questions with solved answers</p>
         <div class="class-selector-grid" style="margin-top:28px;">
@@ -4062,6 +4062,11 @@
         var doubtCta = document.querySelector('.notes-doubt-cta');
         if (doubtCta) {
           doubtCta.style.display = (filter === 'all') ? 'block' : 'none';
+        }
+        // 5. Hide exercise pages section when filter active
+        var exPages = document.getElementById('exercise-pages-section');
+        if (exPages) {
+          exPages.style.display = (filter === 'all') ? 'block' : 'none';
         }
 
         // 5. Scroll to first visible card for that subject
