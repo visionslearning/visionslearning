@@ -4035,53 +4035,44 @@
   <script>
     // Self-contained filter — notes-class11.html
     (function() {
-      var NAVBAR_H = 80; // fixed navbar height + buffer
-
       function applyFilter(filter) {
-        // 1. Grid cards
+        // 1. Show/hide every card in the grid
         var cards = document.querySelectorAll('#notesChaptersGrid .notes-chapter-card');
         cards.forEach(function(c) {
           var s = c.getAttribute('data-subject') || '';
-          c.style.display = (filter === 'all' || s === filter) ? 'block' : 'none';
+          c.style.display = (filter === 'all' || s === filter) ? '' : 'none';
         });
 
-        // 2. Filterable sections (big physics/biology inline sections)
-        var secs = document.querySelectorAll('.filterable-section');
-        secs.forEach(function(s) {
+        // 2. Big inline filterable sections (physics electrostatics etc)
+        document.querySelectorAll('.filterable-section').forEach(function(s) {
           var sub = s.getAttribute('data-subject') || '';
-          s.style.display = (filter === 'all' || sub === filter) ? 'block' : 'none';
+          s.style.display = (filter === 'all' || sub === filter) ? '' : 'none';
         });
 
-        // 3. Biology dedicated section
+        // 3. Biology top grid section
         var bioSec = document.getElementById('bio-section');
-        if (bioSec) {
-          bioSec.style.display = (filter === 'all' || filter === 'biology') ? 'block' : 'none';
-        }
+        if (bioSec) bioSec.style.display = (filter === 'all' || filter === 'biology') ? '' : 'none';
 
-        // 4. Hide doubt CTA when a filter is active
+        // 4. Hide bottom sections when filtering
         var doubtCta = document.querySelector('.notes-doubt-cta');
-        if (doubtCta) {
-          doubtCta.style.display = (filter === 'all') ? 'block' : 'none';
-        }
-        // 5. Hide exercise pages section when filter active
+        if (doubtCta) doubtCta.style.display = (filter === 'all') ? '' : 'none';
         var exPages = document.getElementById('exercise-pages-section');
-        if (exPages) {
-          exPages.style.display = (filter === 'all') ? 'block' : 'none';
-        }
+        if (exPages) exPages.style.display = (filter === 'all') ? '' : 'none';
 
-        // 5. Scroll to first visible card for that subject
-        var scrollTarget = document.getElementById('notesChaptersGrid');
-        if (filter === 'biology' && bioSec) {
-          scrollTarget = bioSec;
-        } else if (filter !== 'all') {
-          var firstCard = document.querySelector('#notesChaptersGrid .notes-chapter-card[data-subject="' + filter + '"]');
-          if (firstCard) scrollTarget = firstCard;
+        // 5. Scroll — find the first visible matching element
+        var target = null;
+        if (filter === 'all') {
+          target = document.querySelector('.notes-page-section') || document.getElementById('notesChaptersGrid');
+        } else if (filter === 'biology') {
+          target = bioSec || document.querySelector('.notes-chapter-card[data-subject="biology"]');
+        } else {
+          target = document.querySelector('.notes-chapter-card[data-subject="' + filter + '"]');
         }
-        if (scrollTarget) {
+        if (target) {
           setTimeout(function() {
-            var top = scrollTarget.getBoundingClientRect().top + window.pageYOffset - NAVBAR_H;
+            var top = target.getBoundingClientRect().top + window.pageYOffset - 90;
             window.scrollTo({ top: top, behavior: 'smooth' });
-          }, 60);
+          }, 50);
         }
       }
 
