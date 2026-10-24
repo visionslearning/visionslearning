@@ -142,34 +142,6 @@
     .tts-title { color: #e2e8f0; font-weight: 600; font-size: .85rem; }
 
     @media(max-width:560px){ .cmp-grid{grid-template-columns:1fr;} .slide{padding:22px 16px;} }
-  
-    
-    /* ── PRINT watermarks (injected by JS, one per page) ── */
-    .vl-print-wm {
-      display: none;
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      margin-left: -150px;
-      margin-top: -150px;
-      border-radius: 50%;
-      border: 5px solid rgba(192,57,43,0.30);
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      pointer-events: none;
-      z-index: 9999;
-      text-align: center;
-      transform: rotate(-30deg);
-    }
-    .vl-print-wm .wm-main {
-      font-size: 34px;
-      font-weight: 900;
-      letter-spacing: 3px;
-      color: rgba(26,26,46,0.22);
-      text-transform: uppercase;
-      line-height: 1.2;
-    }
     .vl-print-wm .wm-main span { color: rgba(192,57,43,0.30); }
     .vl-print-wm .wm-sub {
       font-size: 13px;
@@ -199,7 +171,7 @@
     }
 
     
-    /* ── VISIONS CLASSES WATERMARK ── */
+    
     /* Screen watermark */
     .vl-wm-screen {
       position: fixed;
@@ -230,9 +202,16 @@
       width: 300px;
       height: 300px;
     }
+      body { position: relative !important; }
+    }
+
+    
+    /* ── VISIONS CLASSES WATERMARK (screen only) ── */
+    #vlScreenLayer { display: block; }
+    #vlPrintLayer  { display: none; }
     @media print {
-      .vl-wm-screen { display: none !important; }
-      .vl-wm-print  { display: block !important; }
+      #vlScreenLayer { display: none !important; }
+      #vlPrintLayer  { display: block !important; }
       body { position: relative !important; }
     }
 
@@ -240,58 +219,8 @@
 </head>
 <body>
 
-<!-- Screen Watermark -->
-<div class="vl-wm-screen">
-  <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-    <g transform="rotate(-30, 150, 150)">
-      <circle cx="150" cy="150" r="140" fill="none" stroke="rgba(192,57,43,0.35)" stroke-width="5"/>
-      <circle cx="150" cy="150" r="128" fill="none" stroke="rgba(26,26,46,0.18)" stroke-width="2" stroke-dasharray="6,4"/>
-      <text x="150" y="135" text-anchor="middle" font-family="Arial,sans-serif" font-size="36" font-weight="900" letter-spacing="3" fill="rgba(192,57,43,0.35)">VISIONS</text>
-      <text x="150" y="178" text-anchor="middle" font-family="Arial,sans-serif" font-size="36" font-weight="900" letter-spacing="3" fill="rgba(26,26,46,0.25)">CLASSES</text>
-      <text x="150" y="202" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,26,46,0.20)">visionslearning.in</text>
-    </g>
-  </svg>
 </div>
 
-<!-- Print Watermark Container (JS fills with per-page watermarks) -->
-<div class="vl-wm-print" id="vlPrintWm"></div>
-<script>
-(function(){
-  var A4 = 1122; // A4 at 96dpi ~= 1122px
-  function buildSVG() {
-    return '<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">'
-      + '<g transform="rotate(-30,150,150)">'
-      + '<circle cx="150" cy="150" r="140" fill="none" stroke="rgba(192,57,43,0.30)" stroke-width="5"/>'
-      + '<circle cx="150" cy="150" r="128" fill="none" stroke="rgba(26,26,46,0.15)" stroke-width="2" stroke-dasharray="6,4"/>'
-      + '<text x="150" y="135" text-anchor="middle" font-family="Arial,sans-serif" font-size="36" font-weight="900" letter-spacing="3" fill="rgba(192,57,43,0.30)">VISIONS</text>'
-      + '<text x="150" y="178" text-anchor="middle" font-family="Arial,sans-serif" font-size="36" font-weight="900" letter-spacing="3" fill="rgba(26,26,46,0.22)">CLASSES</text>'
-      + '<text x="150" y="202" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,26,46,0.18)">visionslearning.in</text>'
-      + '</g></svg>';
-  }
-  function inject() {
-    var container = document.getElementById('vlPrintWm');
-    if (!container) return;
-    var totalH = Math.max(
-      document.body.scrollHeight, document.body.offsetHeight,
-      document.documentElement.scrollHeight, document.documentElement.offsetHeight
-    );
-    container.style.height = totalH + 'px';
-    var pages = Math.ceil(totalH / A4);
-    var html = '';
-    for (var i = 0; i < pages; i++) {
-      var top = i * A4 + (A4 / 2) - 150; // center of each page minus half wm height
-      html += '<div class="vl-wm-print-page" style="top:' + top + 'px">' + buildSVG() + '</div>';
-    }
-    container.innerHTML = html;
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', inject);
-  } else {
-    inject();
-  }
-  // Also re-inject before print in case layout changed
-  window.addEventListener('beforeprint', inject);
-})();
 </script>
 
 <div class="wm-circle2"></div>
@@ -1143,5 +1072,115 @@ document.addEventListener('keydown',e=>{if(e.key==='m'||e.key==='M')toggleTTS();
 document.body.addEventListener('click',()=>{if(ttsEnabled&&!synth.speaking)speak(NARRATION['s1']);},{once:true});
 synth.addEventListener('voiceschanged',()=>{});
 </script>
+
+<script id="vlWmScript">
+(function(){
+  var SVG_W = 300, SVG_H = 300;
+
+  // Build one watermark SVG as data URL (no external resources)
+  function svgDataUrl() {
+    var svg = [
+      '<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">',
+      '<g transform="rotate(-30,150,150)">',
+      '<circle cx="150" cy="150" r="140" fill="none" stroke="#c0392b" stroke-opacity="0.30" stroke-width="5"/>',
+      '<circle cx="150" cy="150" r="128" fill="none" stroke="#1a1a2e" stroke-opacity="0.15" stroke-width="2" stroke-dasharray="6,4"/>',
+      '<text x="150" y="135" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="36" font-weight="900" letter-spacing="3" fill="#c0392b" fill-opacity="0.30">VISIONS</text>',
+      '<text x="150" y="178" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="36" font-weight="900" letter-spacing="3" fill="#1a1a2e" fill-opacity="0.22">CLASSES</text>',
+      '<text x="150" y="202" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="#1a1a2e" fill-opacity="0.18">visionslearning.in</text>',
+      '</g></svg>'
+    ].join('');
+    return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+  }
+
+  // Create/update the print watermark overlay
+  function buildPrintLayer() {
+    var existing = document.getElementById('vlPrintLayer');
+    if (existing) existing.parentNode.removeChild(existing);
+
+    var totalH = Math.max(
+      document.body.scrollHeight || 0,
+      document.documentElement.scrollHeight || 0
+    );
+    if (totalH < 100) totalH = 2000; // fallback
+
+    var layer = document.createElement('div');
+    layer.id = 'vlPrintLayer';
+    layer.style.cssText = [
+      'position:absolute',
+      'top:0','left:0',
+      'width:100%',
+      'height:' + totalH + 'px',
+      'pointer-events:none',
+      'z-index:99999',
+      'display:none'
+    ].join(';');
+
+    var A4 = 1123; // A4 at 96dpi
+    var pages = Math.ceil(totalH / A4);
+    var url = svgDataUrl();
+    var html = '';
+    for (var i = 0; i < pages; i++) {
+      var top = Math.round(i * A4 + A4/2 - SVG_H/2);
+      html += '<img src="' + url + '" width="300" height="300" '
+           +  'style="position:absolute;top:' + top + 'px;left:50%;margin-left:-150px;opacity:1;" />';
+    }
+    layer.innerHTML = html;
+
+    // Insert as first child of body so it paints under content
+    document.body.insertBefore(layer, document.body.firstChild);
+    return layer;
+  }
+
+  // Screen watermark: single fixed SVG
+  function buildScreenLayer() {
+    var existing = document.getElementById('vlScreenLayer');
+    if (existing) return;
+    var div = document.createElement('div');
+    div.id = 'vlScreenLayer';
+    div.style.cssText = [
+      'position:fixed','top:50%','left:50%',
+      'transform:translate(-50%,-50%)',
+      'pointer-events:none','z-index:99999'
+    ].join(';');
+    var img = document.createElement('img');
+    img.src = svgDataUrl();
+    img.width = 300; img.height = 300;
+    div.appendChild(img);
+    document.body.appendChild(div);
+  }
+
+  function init() {
+    buildScreenLayer();
+    // Don't build print layer yet — body may be hidden (password pages)
+    // It gets built on beforeprint
+  }
+
+  window.addEventListener('beforeprint', function() {
+    var screen = document.getElementById('vlScreenLayer');
+    if (screen) screen.style.display = 'none';
+    var layer = buildPrintLayer();
+    layer.style.display = 'block';
+  });
+
+  window.addEventListener('afterprint', function() {
+    var screen = document.getElementById('vlScreenLayer');
+    if (screen) screen.style.display = '';
+    var layer = document.getElementById('vlPrintLayer');
+    if (layer) layer.style.display = 'none';
+  });
+
+  // Expose for password-protected pages to call after unlock
+  window.vlInjectWatermark = function() {
+    buildScreenLayer();
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
 </body>
 </html>
