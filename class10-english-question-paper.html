@@ -7,6 +7,49 @@
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
 
+    /* ── PASSWORD SCREEN ── */
+    #pw-screen {
+      position: fixed; inset: 0;
+      background: linear-gradient(135deg,#1a1a2e,#c0392b);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 9999;
+    }
+    .pw-box {
+      background: #fff;
+      border-radius: 14px;
+      padding: 36px 40px;
+      text-align: center;
+      max-width: 360px;
+      width: 90%;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+    }
+    .pw-box .lock { font-size: 3rem; margin-bottom: 10px; }
+    .pw-box h2 { color: #1a1a2e; font-size: 1.3rem; margin-bottom: 6px; }
+    .pw-box p { color: #666; font-size: .88rem; margin-bottom: 20px; }
+    .pw-box input {
+      width: 100%; padding: 12px 16px;
+      border: 2px solid #ddd; border-radius: 8px;
+      font-size: 1rem; text-align: center;
+      letter-spacing: 4px; outline: none;
+      margin-bottom: 14px;
+    }
+    .pw-box input:focus { border-color: #c0392b; }
+    .pw-box button {
+      width: 100%; padding: 12px;
+      background: linear-gradient(135deg,#7b1c1c,#c0392b);
+      color: #fff; border: none; border-radius: 8px;
+      font-size: 1rem; font-weight: 700; cursor: pointer;
+    }
+    .pw-box button:hover { opacity: .9; }
+    .pw-box .err {
+      color: #c0392b; font-size: .85rem;
+      margin-top: 10px; display: none;
+    }
+    .pw-box .hint { font-size: .78rem; color: #999; margin-top: 12px; }
+
+    /* ── PAPER CONTENT ── */
+    #paper-content { display: none; }
+
     body {
       font-family: 'Arial', sans-serif;
       background: #f0f0f0;
@@ -175,6 +218,36 @@
   </style>
 </head>
 <body>
+
+<!-- ── PASSWORD SCREEN ── -->
+<div id="pw-screen">
+  <div class="pw-box">
+    <div class="lock">🔐</div>
+    <h2>Password Required</h2>
+    <p>This question paper is password protected.<br/>Enter the password to access it.</p>
+    <input type="password" id="pw-input" placeholder="Enter Password" onkeydown="if(event.key==='Enter')checkPw()"/>
+    <button onclick="checkPw()">🔓 Unlock Paper</button>
+    <div class="err" id="pw-err">❌ Wrong password. Please try again.</div>
+    <div class="hint">Contact Shashikant Sir for password<br/>📞 +91 87671 44200</div>
+  </div>
+</div>
+
+<script>
+  function checkPw() {
+    var v = document.getElementById('pw-input').value.trim();
+    if (v === 'Visions@2026') {
+      document.getElementById('pw-screen').style.display = 'none';
+      document.getElementById('paper-content').style.display = 'block';
+    } else {
+      document.getElementById('pw-err').style.display = 'block';
+      document.getElementById('pw-input').value = '';
+      document.getElementById('pw-input').focus();
+    }
+  }
+</script>
+
+<!-- ── PAPER CONTENT ── -->
+<div id="paper-content">
 <div class="page">
 
   <!-- ── VISIONS HEADER ── -->
@@ -640,5 +713,6 @@
   </div>
 
 </div>
+</div><!-- end paper-content -->
 </body>
 </html>
