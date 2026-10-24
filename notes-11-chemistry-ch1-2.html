@@ -1140,5 +1140,31 @@
     </a>
   </div>
   <script src="main.js"></script>
+
+<script>
+/* Inject one print watermark per A4 page */
+(function() {
+  function makeWM(topPx) {
+    var d = document.createElement('div');
+    d.className = 'vl-print-wm';
+    d.style.position = 'absolute';
+    d.style.left = '50%';
+    d.style.top = topPx + 'px';
+    d.innerHTML = '<div class="wm-circle"></div><div class="wm-circle2"></div><div class="wm-main"><span>VISIONS</span><br/>CLASSES</div><div class="wm-sub">visionslearning.in</div>';
+    return d;
+  }
+  window.addEventListener('load', function() {
+    var body = document.body;
+    var A4_PX = 1122; // A4 at 96dpi
+    var totalHeight = Math.max(body.scrollHeight, body.offsetHeight, document.documentElement.scrollHeight);
+    var pages = Math.ceil(totalHeight / A4_PX);
+    for (var i = 0; i < pages; i++) {
+      var wm = makeWM(i * A4_PX + A4_PX / 2);
+      body.appendChild(wm);
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
