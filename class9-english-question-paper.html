@@ -5,124 +5,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Class 9 English Question Paper — SSC Maharashtra Board | Visions Classes</title>
   <style>
-    /* ── WATERMARK ── */
-    #vlScreenLayer { display:block; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none; z-index:9999; }
-    #vlPrintLayer  { display:none; position:absolute; top:0; left:0; width:100%; pointer-events:none; z-index:9999; }
-    @media print {
-      #vlScreenLayer { display:none !important; }
-      #vlPrintLayer  { display:block !important; }
-      body { position:relative !important; }
-    }
+    #vlScreenLayer{display:block;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;}
+    #vlPrintLayer{display:none;position:absolute;top:0;left:0;width:100%;pointer-events:none;z-index:9999;}
+    @media print{#vlScreenLayer{display:none!important;}#vlPrintLayer{display:block!important;}body{position:relative!important;}}
 
-    *{ margin:0; padding:0; box-sizing:border-box; }
-    body{ font-family:'Arial',sans-serif; background:#e8e8e8; color:#111; font-size:13px; }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Arial',sans-serif;background:#e0e0e0;color:#111;font-size:13px;}
 
-    /* ── PAGE ── */
-    .page{
-      width:210mm; background:#fff;
-      margin:20px auto; padding:15mm 17mm 14mm 17mm;
-      box-shadow:0 2px 14px rgba(0,0,0,.18);
-    }
-    @media print{
-      body{ background:#fff; }
-      .page{ margin:0; box-shadow:none; padding:12mm 15mm 10mm 15mm; width:100%; }
-      .page-break{ page-break-before:always; }
-    }
+    .page{width:210mm;background:#fff;margin:20px auto;padding:14mm 16mm 13mm 16mm;box-shadow:0 2px 14px rgba(0,0,0,.18);}
+    @media print{body{background:#fff;}.page{margin:0;box-shadow:none;padding:11mm 14mm 10mm 14mm;width:100%;}.pb{page-break-before:always;}}
 
-    /* ── HEADER ── */
-    .inst-header{ text-align:center; border-bottom:4px double #1a1a2e; padding-bottom:10px; margin-bottom:10px; }
-    .inst-name{ font-size:28px; font-weight:900; letter-spacing:4px; color:#1a1a2e; text-transform:uppercase; }
-    .inst-name span{ color:#c0392b; }
-    .inst-addr{ font-size:11.5px; color:#555; margin-top:3px; letter-spacing:.5px; }
+    /* HEADER */
+    .inst-hdr{text-align:center;border-bottom:4px double #1a1a2e;padding-bottom:9px;margin-bottom:9px;}
+    .inst-name{font-size:27px;font-weight:900;letter-spacing:4px;color:#1a1a2e;text-transform:uppercase;}
+    .inst-name span{color:#c0392b;}
+    .inst-addr{font-size:11px;color:#555;margin-top:3px;}
 
-    .paper-title{ text-align:center; margin-bottom:10px; }
-    .paper-title .board{ font-size:12px; font-weight:bold; color:#444; letter-spacing:.8px; }
-    .paper-title .subject{ font-size:20px; font-weight:900; color:#1a1a2e; letter-spacing:2px; text-transform:uppercase; margin:2px 0; }
-    .paper-title .units{ font-size:12px; color:#555; }
+    .paper-hdr{text-align:center;margin-bottom:9px;}
+    .paper-hdr .brd{font-size:12px;font-weight:bold;color:#444;letter-spacing:.8px;}
+    .paper-hdr .subj{font-size:19px;font-weight:900;color:#1a1a2e;letter-spacing:2px;text-transform:uppercase;margin:2px 0;}
+    .paper-hdr .sub2{font-size:11.5px;color:#555;}
 
-    /* ── INFO GRID ── */
-    .info-grid{
-      display:grid; grid-template-columns:1fr 1fr 1fr;
-      border:2px solid #111; font-size:12.5px; font-weight:bold; margin-bottom:0;
-    }
-    .info-grid span{ padding:5px 10px; border-right:1.5px solid #333; }
-    .info-grid span:last-child{ border-right:none; }
-    .student-grid{
-      display:grid; grid-template-columns:1fr 2fr 1fr;
-      border:2px solid #111; border-top:none; font-size:12px; margin-bottom:10px;
-    }
-    .student-grid span{ padding:5px 10px; border-right:1.5px solid #333; }
-    .student-grid span:last-child{ border-right:none; }
+    .info-row{display:grid;grid-template-columns:1fr 1fr 1fr;border:2px solid #111;font-size:12.5px;font-weight:bold;}
+    .info-row span{padding:5px 10px;border-right:1.5px solid #333;}
+    .info-row span:last-child{border-right:none;}
+    .stu-row{display:grid;grid-template-columns:1fr 2fr 1fr;border:2px solid #111;border-top:none;font-size:12px;margin-bottom:9px;}
+    .stu-row span{padding:5px 10px;border-right:1.5px solid #333;}
+    .stu-row span:last-child{border-right:none;}
 
-    /* ── INSTRUCTIONS ── */
-    .instructions{
-      border:1px solid #aaa; background:#f9f9f9;
-      padding:7px 12px; font-size:11.5px; margin-bottom:10px;
-    }
-    .instructions b{ display:block; margin-bottom:3px; font-size:12px; }
-    .instructions ol{ padding-left:18px; }
-    .instructions li{ line-height:1.6; }
+    .instr{border:1px solid #aaa;background:#f9f9f9;padding:6px 12px;font-size:11.5px;margin-bottom:9px;}
+    .instr b{display:block;margin-bottom:3px;font-size:12px;}
+    .instr ol{padding-left:18px;}
+    .instr li{line-height:1.6;}
 
-    /* ── SECTION BAR ── */
-    .sec-bar{
-      background:#1a1a2e; color:#fff;
-      padding:5px 14px; font-size:12.5px; font-weight:bold; letter-spacing:1px;
-      display:flex; justify-content:space-between; align-items:center;
-      text-transform:uppercase; margin:14px 0 6px;
-    }
+    /* SECTION */
+    .sec{background:#1a1a2e;color:#fff;padding:5px 14px;font-size:12.5px;font-weight:bold;
+         display:flex;justify-content:space-between;align-items:center;
+         text-transform:uppercase;margin:13px 0 6px;letter-spacing:1px;}
 
-    /* ── QUESTION BLOCKS ── */
-    .qb{ border:1px solid #ccc; margin-bottom:8px; page-break-inside:avoid; }
-    .qb-head{
-      background:#f0f0f0; border-bottom:1px solid #ccc;
-      padding:5px 10px; font-size:12.5px; font-weight:bold;
-      display:flex; justify-content:space-between;
-    }
-    .qb-body{ padding:7px 12px 9px; font-size:12px; line-height:1.75; }
-    .qb-body p{ margin-bottom:5px; }
+    /* QUESTION BLOCK */
+    .qb{border:1px solid #ccc;margin-bottom:7px;page-break-inside:avoid;}
+    .qh{background:#f0f0f0;border-bottom:1px solid #ccc;padding:5px 10px;
+        font-size:12.5px;font-weight:bold;display:flex;justify-content:space-between;}
+    .qb-body{padding:7px 12px 8px;font-size:12px;line-height:1.8;}
 
-    /* ── PASSAGE ── */
-    .passage{
-      background:#fafafa; border:1px solid #ddd;
-      border-left:5px solid #c0392b;
-      padding:8px 12px; font-size:12px; line-height:1.85;
-      margin:6px 0; font-family:Georgia,serif;
-    }
-    .passage-lbl{ font-size:11.5px; font-weight:bold; color:#c0392b; margin-bottom:4px; font-style:italic; }
+    /* PASSAGE */
+    .pass{background:#fafafa;border:1px solid #ddd;border-left:5px solid #c0392b;
+          padding:8px 12px;font-size:12px;line-height:1.9;margin:5px 0;font-family:Georgia,serif;}
+    .pass-lbl{font-size:11.5px;font-weight:bold;color:#c0392b;margin-bottom:3px;font-style:italic;}
 
-    /* ── POEM ── */
-    .poem{
-      background:#f0f4ff; border:1px solid #b0beff;
-      border-left:5px solid #3949ab;
-      padding:8px 16px; font-size:12px; line-height:2;
-      margin:6px 0; font-family:Georgia,serif; font-style:italic;
-    }
-    .poem-lbl{ font-size:11.5px; font-weight:bold; color:#3949ab; margin-bottom:4px; font-style:normal; }
+    /* POEM */
+    .poem{background:#f0f4ff;border:1px solid #b0beff;border-left:5px solid #3949ab;
+          padding:8px 16px;font-size:12px;line-height:2.1;margin:5px 0;
+          font-family:Georgia,serif;font-style:italic;}
+    .poem-lbl{font-size:11.5px;font-weight:bold;color:#3949ab;margin-bottom:3px;font-style:normal;}
 
-    /* ── SUB-QUESTION ── */
-    .sq{ font-weight:bold; margin:7px 0 3px; font-size:12.5px; display:flex; justify-content:space-between; }
-    .sq span{ font-weight:normal; font-size:11.5px; color:#555; }
+    /* SUB Q */
+    .sq{font-weight:bold;margin:7px 0 3px;font-size:12.5px;display:flex;justify-content:space-between;}
+    .sq span{font-weight:normal;font-size:11.5px;color:#555;}
 
-    /* ── MCQ OPTIONS ── */
-    .opts{ display:grid; grid-template-columns:1fr 1fr; gap:1px 18px; font-size:12px; padding:2px 0 4px; }
+    /* MCQ */
+    .opts{display:grid;grid-template-columns:1fr 1fr;gap:1px 16px;font-size:12px;padding:2px 0 4px;}
 
-    /* ── BLANKS ── */
-    .bl{ display:inline-block; border-bottom:1px solid #222; vertical-align:bottom; }
-    .s{ width:70px; } .m{ width:130px; } .l{ width:200px; } .xl{ width:290px; }
+    /* BLANK */
+    .bl{display:inline-block;border-bottom:1px solid #222;vertical-align:bottom;}
+    .s{width:65px;}.m{width:120px;}.l{width:190px;}.xl{width:280px;}
 
-    /* ── ANSWER LINES ── */
-    .alines p{ border-bottom:1px solid #bbb; min-height:20px; margin-bottom:3px; }
+    /* ANSWER LINES */
+    .al p{border-bottom:1px solid #bbb;min-height:20px;margin-bottom:3px;}
 
-    /* ── NOTE BOX ── */
-    .note{ background:#fff8e1; border:1px solid #ffe082; padding:5px 10px; font-size:11.5px; margin:6px 0; border-radius:3px; }
+    /* NOTE */
+    .note{background:#fff8e1;border:1px solid #ffe082;padding:5px 10px;font-size:11.5px;margin:5px 0;border-radius:3px;}
 
-    /* ── FOOTER ── */
-    .paper-footer{ text-align:center; font-size:11.5px; color:#555; border-top:2px solid #1a1a2e; padding-top:7px; margin-top:18px; }
+    /* MARKS TABLE */
+    .marks-table{width:100%;border-collapse:collapse;font-size:12px;margin:6px 0;}
+    .marks-table td,.marks-table th{border:1px solid #ccc;padding:4px 8px;text-align:center;}
+    .marks-table th{background:#1a1a2e;color:#fff;font-size:11.5px;}
+    .marks-table tr:nth-child(even) td{background:#f5f5f5;}
+
+    .footer{text-align:center;font-size:11.5px;color:#555;border-top:2px solid #1a1a2e;padding-top:7px;margin-top:16px;}
   </style>
 </head>
 <body>
 
-<!-- Screen Watermark -->
 <div id="vlScreenLayer">
   <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
     <g transform="rotate(-30,150,150)">
@@ -134,149 +99,237 @@
     </g>
   </svg>
 </div>
-<!-- Print Watermark -->
 <div id="vlPrintLayer"></div>
 
-<!-- ════════════════ PAPER ════════════════ -->
 <div class="page">
 
-  <!-- HEADER -->
-  <div class="inst-header">
+  <!-- ── HEADER ── -->
+  <div class="inst-hdr">
     <div class="inst-name"><span>VISIONS</span> CLASSES</div>
     <div class="inst-addr">Javsai Gaon, Thakre Nagar, Ambernath &nbsp;|&nbsp; +91 87671 44200 &nbsp;|&nbsp; visionslearning.in</div>
   </div>
-
-  <div class="paper-title">
-    <div class="board">Maharashtra State Board of Secondary &amp; Higher Secondary Education (SSC)</div>
-    <div class="subject">English (Second Language) — Std. IX</div>
-    <div class="units">Kumarbharati Std. IX &nbsp;|&nbsp; Unit 1 (1.1–1.5) &amp; Unit 2 (2.1–2.6) &nbsp;|&nbsp; <em>No Writing Skill</em></div>
+  <div class="paper-hdr">
+    <div class="brd">Maharashtra State Board of Secondary &amp; Higher Secondary Education (SSC)</div>
+    <div class="subj">English (Second Language) — Std. IX</div>
+    <div class="sub2">Kumarbharati Std. IX — Unit 1 &amp; Unit 2 &nbsp;|&nbsp; <em>Writing Skill not included</em></div>
   </div>
-
-  <div class="info-grid">
+  <div class="info-row">
     <span>Time: 3 Hours</span>
     <span style="text-align:center;">Total Marks: 80</span>
     <span style="text-align:right;">Date: <span class="bl l"></span></span>
   </div>
-  <div class="student-grid">
+  <div class="stu-row">
     <span>Roll No: <span class="bl s"></span></span>
     <span>Name: <span class="bl l"></span></span>
     <span>Seat No: <span class="bl s"></span></span>
   </div>
-
-  <div class="instructions">
+  <div class="instr">
     <b>General Instructions:</b>
     <ol>
       <li>All questions are compulsory unless stated otherwise.</li>
       <li>Figures to the right indicate full marks for that question.</li>
-      <li>Answers to Q.4 and Q.5 must be based on the textbook lessons/poems.</li>
-      <li><strong>Writing Skill is NOT included in this paper.</strong></li>
-      <li>Start each answer on a new line.</li>
+      <li>Start each answer on a new line. Write neatly.</li>
+      <li><strong>Writing Skill (Q.5) is NOT included in this paper.</strong></li>
     </ol>
   </div>
 
-  <!-- ══════════════════════════════════════
-       Q.1  SEEN PROSE PASSAGE — Unit 1
-  ══════════════════════════════════════ -->
-  <div class="sec-bar"><span>Q.1 — Seen Prose (Unit 1)</span><span>20 Marks</span></div>
+  <!-- MARKS AT A GLANCE -->
+  <table class="marks-table">
+    <tr>
+      <th>Q.1 — Language Study</th><th>Q.2 — Seen Passage (Prose)</th>
+      <th>Q.3 — Seen Passage (Poetry)</th><th>Q.4 — Unseen Passage</th><th>Total</th>
+    </tr>
+    <tr>
+      <td>20 Marks</td><td>20 Marks</td><td>20 Marks</td><td>20 Marks</td><td><strong>80 Marks</strong></td>
+    </tr>
+  </table>
+
+  <!-- ════════════════════════════════════════
+       Q.1  LANGUAGE STUDY — Grammar + Vocab
+  ════════════════════════════════════════ -->
+  <div class="sec"><span>Q.1 — Language Study (Grammar &amp; Vocabulary)</span><span>20 Marks</span></div>
+
+  <!-- Q.1 A — Grammar -->
+  <div class="qb">
+    <div class="qh"><span>(A) Do as directed (any FIVE, each 2 marks):</span><span>[10 Marks]</span></div>
+    <div class="qb-body">
+      <ol style="padding-left:18px;line-height:2.3;">
+        <li><strong>Punctuate</strong> the following sentence correctly:<br/>
+          <em>when the storm passed the father said we will survive</em></li>
+
+        <li><strong>Change the Voice:</strong><br/>
+          "The boys built a raft from broken timber."</li>
+
+        <li><strong>Change the Narration</strong> (Direct → Indirect):<br/>
+          Father said, "We must stay together and be brave."</li>
+
+        <li><strong>Rewrite using the correct tense</strong> (Past Perfect):<br/>
+          "By the time they reached the island, they ___ (build) a shelter."</li>
+
+        <li><strong>Add a question tag:</strong><br/>
+          "She has never seen a sea turtle before, <span class="bl m"></span>?"</li>
+
+        <li><strong>Rewrite using <em>so…that</em>:</strong><br/>
+          "The storm was very fierce. The ship broke into pieces."</li>
+
+        <li><strong>Identify the type of clause</strong> (underlined):<br/>
+          <u>When the ship was wrecked</u>, the family stayed calm.</li>
+
+        <li><strong>Rewrite in Positive degree</strong>:<br/>
+          "Gold is more valuable than silver."</li>
+      </ol>
+      <div class="al"><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p></div>
+    </div>
+  </div>
+
+  <!-- Q.1 B — Vocabulary -->
+  <div class="qb">
+    <div class="qh"><span>(B) Vocabulary (any FIVE, each 2 marks):</span><span>[10 Marks]</span></div>
+    <div class="qb-body">
+      <ol style="padding-left:18px;line-height:2.3;">
+        <li><strong>Make a word register</strong> of four words related to: <em>SURVIVAL</em><br/>
+          <span class="bl m"></span> &nbsp; <span class="bl m"></span> &nbsp; <span class="bl m"></span> &nbsp; <span class="bl m"></span></li>
+
+        <li><strong>Synonyms</strong> — write one synonym for each word:<br/>
+          unconquerable — <span class="bl m"></span> &nbsp;|&nbsp; trembling — <span class="bl m"></span> &nbsp;|&nbsp; remarkable — <span class="bl m"></span></li>
+
+        <li><strong>Antonyms</strong> — write one antonym for each word:<br/>
+          danger — <span class="bl m"></span> &nbsp;|&nbsp; ancient — <span class="bl m"></span> &nbsp;|&nbsp; destruction — <span class="bl m"></span></li>
+
+        <li><strong>Word building</strong> — add prefix or suffix to form new words:<br/>
+          kind → <span class="bl m"></span> (+ness) &nbsp;|&nbsp; fear → <span class="bl m"></span> (+less) &nbsp;|&nbsp; courage → <span class="bl m"></span> (+ous)</li>
+
+        <li><strong>Match</strong> the words with meanings:<br/>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px 20px;font-size:12px;margin-top:3px;">
+            <span>i. wrecked</span><span>a. peaceful coexistence</span>
+            <span>ii. harmony</span><span>b. badly damaged</span>
+            <span>iii. stranded</span><span>c. stuck without help</span>
+            <span>iv. rewarding</span><span>d. giving satisfaction</span>
+          </div>
+          Answers: i-<span class="bl s"></span>, ii-<span class="bl s"></span>, iii-<span class="bl s"></span>, iv-<span class="bl s"></span>
+        </li>
+
+        <li><strong>Use in sentences</strong> (any TWO words):<br/>
+          <em>courage, survival, kindness, unconquerable</em>
+          <div class="al" style="margin-top:4px;"><p></p><p></p></div></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       Q.2  SEEN PROSE PASSAGE
+  ════════════════════════════════════════ -->
+  <div class="pb"></div>
+  <div class="sec"><span>Q.2 — Seen Passage (Prose from Textbook)</span><span>20 Marks</span></div>
 
   <div class="qb">
-    <div class="qb-head"><span>(A) Read the following extract and do the activities.</span><span>[12 Marks]</span></div>
+    <div class="qh"><span>(A) Read the following extract and do all activities.</span><span>[12 Marks]</span></div>
     <div class="qb-body">
-
-      <div class="passage">
-        <div class="passage-lbl">Extract from: 1.2 The Swiss Family Robinson (Adapted)</div>
-        <p>When the storm finally passed, the ship lay wrecked on the rocks. There was no other ship in sight, no shore visible — only the wild, open sea in all directions. The father looked at his wife and four sons and made a silent decision: they would not give up.</p>
-        <p>Using ropes, barrels, and broken timber from the ship, they built a raft, large enough to carry the family and their most important belongings. The boys worked with surprising energy, forgetting their fear in the excitement of doing something. By evening, the raft was ready.</p>
-        <p>The next morning, they reached a green island. It was rich with fruit trees, fresh water, and animals they had never seen before. The father chose a spot among the roots of a great tree and built their first shelter. "This is our home now," he said, "and we shall make the best of it."</p>
-        <p>Life on the island was hard but rewarding. The family learned to hunt, to farm, to build, and to live in harmony with nature. The mother, who had been the quietest on the ship, became the strongest on the island.</p>
+      <div class="pass">
+        <div class="pass-lbl">Extract A — From: 1.2 The Swiss Family Robinson (Adapted from Textbook)</div>
+        <p>When the storm finally died down, the ship lay wrecked on the sharp rocks. There was no land visible — only the open, wild sea in every direction. The father looked at his wife and four sons and made a silent decision: they would not give up.</p>
+        <p>Using ropes, barrels, and broken timber from the ship, they built a raft large enough to carry the family and their most important belongings. The boys worked with surprising energy, forgetting their fear in the excitement of building something useful. By evening, the raft was ready.</p>
+        <p>The next morning, they reached a green island. It was rich with fruit trees, fresh water, and animals they had never seen before. The father chose a spot among the roots of a tall tree and built the first shelter. "This is our home now," he said quietly, "and we shall make the best of it."</p>
+        <p>Life on the island was hard but rewarding. The family learned to hunt, to farm, and to live in harmony with nature. The mother, who had been the quietest on the ship, became the strongest on the island.</p>
       </div>
 
       <div class="sq">A₁. Choose the correct alternative: <span>(2 Marks)</span></div>
-      <p>i. After the storm, the ship was —</p>
+      <p>i. After the storm, the family's ship was —</p>
       <div class="opts">
         <span>(a) sailing smoothly</span><span>(b) wrecked on the rocks</span>
-        <span>(c) docked at a harbour</span><span>(d) returned to port</span>
+        <span>(c) docked at harbour</span><span>(d) lost at sea</span>
       </div>
-      <p>ii. The father built the raft using —</p>
+      <p style="margin-top:4px;">ii. "We shall make the best of it" means —</p>
       <div class="opts">
-        <span>(a) bamboo and stones</span><span>(b) iron rods and nets</span>
-        <span>(c) ropes, barrels, and timber</span><span>(d) plastic and cloth</span>
+        <span>(a) they will leave the island</span><span>(b) they will find gold</span>
+        <span>(c) they will do well despite difficulties</span><span>(d) they will cry</span>
       </div>
 
-      <div class="sq">A₂. State whether True or False: <span>(2 Marks)</span></div>
+      <div class="sq">A₂. State True or False: <span>(2 Marks)</span></div>
       <ol style="padding-left:18px;line-height:2;">
-        <li>The family gave up hope after the shipwreck. <span class="bl s"></span></li>
-        <li>The boys worked hard and forgot their fear while building the raft. <span class="bl s"></span></li>
-        <li>The island had no fresh water or fruit trees. <span class="bl s"></span></li>
-        <li>The mother became the strongest person on the island. <span class="bl s"></span></li>
+        <li>The family panicked and gave up after the shipwreck. &nbsp;<span class="bl s"></span></li>
+        <li>The boys forgot their fear while working on the raft. &nbsp;<span class="bl s"></span></li>
+        <li>The island had no fruit trees or fresh water. &nbsp;<span class="bl s"></span></li>
+        <li>The mother became the strongest person on the island. &nbsp;<span class="bl s"></span></li>
       </ol>
 
-      <div class="sq">A₃. Match the following (Column A with Column B): <span>(2 Marks)</span></div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px 30px;font-size:12px;line-height:1.9;">
-        <div><strong>Column A</strong></div><div><strong>Column B</strong></div>
-        <div>i. raft</div><div>a. place to live temporarily</div>
-        <div>ii. shelter</div><div>b. flat floating structure</div>
-        <div>iii. timber</div><div>c. wood used for building</div>
-        <div>iv. harmony</div><div>d. peaceful agreement</div>
-      </div>
-      <p style="margin-top:4px;">Answers: i — <span class="bl s"></span>, ii — <span class="bl s"></span>, iii — <span class="bl s"></span>, iv — <span class="bl s"></span></p>
-
-      <div class="sq">A₄. Find words from the extract: <span>(2 Marks)</span></div>
-      <ol style="padding-left:18px;line-height:2;">
-        <li>A word meaning "broken, destroyed" — <span class="bl m"></span></li>
-        <li>A word meaning "a place giving protection" — <span class="bl m"></span></li>
-        <li>Opposite of "punishing" — <span class="bl m"></span></li>
-        <li>Synonym of "visible" — <span class="bl m"></span></li>
-      </ol>
-
-      <div class="sq">A₅. Do as directed: <span>(2 Marks)</span></div>
+      <div class="sq">A₃. Find words from the extract: <span>(2 Marks)</span></div>
       <ol style="padding-left:18px;line-height:2.1;">
-        <li>"They built a raft." (Rewrite in Passive Voice)</li>
-        <li>"The mother was quiet on the ship." (Rewrite using: <em>not only … but also</em>)</li>
-        <li>"This is our home now," he said. (Change to Indirect Speech)</li>
-        <li>"Life on the island was hard." (Rewrite using Degree of Comparison — Positive)</li>
+        <li>A word meaning "broke/destroyed" — <span class="bl m"></span></li>
+        <li>A word meaning "a place giving protection" — <span class="bl m"></span></li>
+        <li>Opposite of "punishing/unrewarding" — <span class="bl m"></span></li>
+        <li>Synonym of "visible / in sight" — <span class="bl m"></span></li>
       </ol>
-      <div class="alines"><p></p><p></p><p></p><p></p></div>
 
-      <div class="sq">A₆. Personal Response: <span>(2 Marks)</span></div>
-      <p>The family said, "We shall make the best of it." Have you ever made the best of a difficult situation? Write 2–3 sentences.</p>
-      <div class="alines"><p></p><p></p><p></p></div>
-    </div>
-  </div>
-
-  <div class="qb">
-    <div class="qb-head"><span>(B) Grammar — Language Study (based on the extract above)</span><span>[8 Marks]</span></div>
-    <div class="qb-body">
-      <div class="note">Do any FOUR of the following. Each carries 2 marks.</div>
+      <div class="sq">A₄. Do as directed: <span>(4 Marks)</span></div>
       <ol style="padding-left:18px;line-height:2.2;">
-        <li>Rewrite using the correct tense form (Past Perfect):<br/>
-          "By the time they reached the island, they ___ (build) the raft."</li>
-        <li>Add a question tag:<br/>
-          "The father made a silent decision, <span class="bl m"></span>?"</li>
-        <li>Change the voice:<br/>
-          "Nature rewarded the family for their patience."</li>
-        <li>Rewrite using <em>so … that</em>:<br/>
-          "The storm was very fierce. The ship was wrecked."</li>
-        <li>Identify the type of clause (underlined):<br/>
-          <em>Because they worked together</em>, the raft was ready by evening.</li>
-        <li>Rewrite in Superlative degree:<br/>
-          "The island was a better place than the ship."</li>
+        <li>"They built a raft." (Rewrite in Passive Voice)</li>
+        <li>"The father made a silent decision." (Rewrite using — <em>not only…but also</em>)</li>
+        <li>"This is our home now," he said. (Change to Indirect Speech)</li>
+        <li>"Life on the island was hard." (Rewrite in Positive Degree)</li>
       </ol>
-      <div class="alines"><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p></div>
+      <div class="al"><p></p><p></p><p></p><p></p><p></p><p></p></div>
+
+      <div class="sq">A₅. Personal Response: <span>(2 Marks)</span></div>
+      <p>The family said "We shall make the best of it." Have you ever faced a hard situation and made the best of it? Write 2–3 sentences.</p>
+      <div class="al"><p></p><p></p><p></p></div>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════
-       Q.2  POETRY
-  ══════════════════════════════════════ -->
-  <div class="page-break"></div>
-  <div class="sec-bar"><span>Q.2 — Poetry (Unit 2.1 &amp; 2.5)</span><span>20 Marks</span></div>
+  <div class="qb">
+    <div class="qh"><span>(B) Read the following extract and do the activities.</span><span>[8 Marks]</span></div>
+    <div class="qb-body">
+      <div class="pass">
+        <div class="pass-lbl">Extract B — From: 2.3 Somebody's Mother (Adapted from Textbook)</div>
+        <p>The woman was old and ragged and grey, bent with the chill of a winter's day. The street was wet with fresh snow, and the woman's feet were slow and uncertain. She stood at the crossing, trembling with cold, trying to cross the road while cars rushed past and people hurried on without a glance.</p>
+        <p>Then a young boy stopped. He was probably on his way to school. He walked quietly up to her, offered her his arm, and helped her carefully across the busy road. The old woman thanked him with a tired but grateful smile.</p>
+        <p>"She's somebody's mother," the boy thought. "And if my mother were old and alone on a street like this, I would want someone to help her too."</p>
+      </div>
+
+      <div class="sq">B₁. Choose the correct alternative: <span>(2 Marks)</span></div>
+      <p>i. The old woman was unable to cross the road because —</p>
+      <div class="opts">
+        <span>(a) she had no money</span><span>(b) she was cold, slow, and the traffic was busy</span>
+        <span>(c) the road was closed</span><span>(d) she was waiting for a bus</span>
+      </div>
+      <p style="margin-top:4px;">ii. The boy helped the old woman because —</p>
+      <div class="opts">
+        <span>(a) he knew her</span><span>(b) he was paid to help</span>
+        <span>(c) he thought of his own mother</span><span>(d) his teacher told him to</span>
+      </div>
+
+      <div class="sq">B₂. True or False: <span>(2 Marks)</span></div>
+      <ol style="padding-left:18px;line-height:2;">
+        <li>Everyone stopped to help the old woman. &nbsp;<span class="bl s"></span></li>
+        <li>The old woman thanked the boy with a grateful smile. &nbsp;<span class="bl s"></span></li>
+        <li>The boy was in a hurry and ran past her. &nbsp;<span class="bl s"></span></li>
+        <li>The boy thought of his own mother while helping. &nbsp;<span class="bl s"></span></li>
+      </ol>
+
+      <div class="sq">B₃. Personal Response: <span>(2 Marks)</span></div>
+      <p>"Acts of kindness cost nothing, but mean everything." Do you agree? Write 2–3 sentences about an act of kindness you did or saw.</p>
+      <div class="al"><p></p><p></p><p></p></div>
+
+      <div class="sq">B₄. Do as directed: <span>(2 Marks)</span></div>
+      <ol style="padding-left:18px;line-height:2.2;">
+        <li>"Nobody stopped to help her." (Rewrite in Affirmative)</li>
+        <li>"He offered her his arm and helped her across." (Identify the conjunction and its type)</li>
+      </ol>
+      <div class="al"><p></p><p></p><p></p></div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       Q.3  SEEN POETRY
+  ════════════════════════════════════════ -->
+  <div class="pb"></div>
+  <div class="sec"><span>Q.3 — Seen Passage (Poetry from Textbook)</span><span>20 Marks</span></div>
 
   <div class="qb">
-    <div class="qb-head"><span>(A) Read the following stanza and do the activities.</span><span>[10 Marks]</span></div>
+    <div class="qh"><span>(A) Read the following poem and do all activities.</span><span>[12 Marks]</span></div>
     <div class="qb-body">
       <div class="poem">
-        <div class="poem-lbl">Poem: Invictus — William Ernest Henley (Unit 2.1)</div>
+        <div class="poem-lbl">Poem: Invictus — William Ernest Henley (Textbook Unit 2.1)</div>
         Out of the night that covers me,<br/>
         Black as the Pit from pole to pole,<br/>
         I thank whatever gods may be<br/>
@@ -285,56 +338,67 @@
         I have not winced nor cried aloud.<br/>
         Under the bludgeonings of chance<br/>
         My head is bloody, but unbowed.<br/><br/>
+        Beyond this place of wrath and tears<br/>
+        Looms but the Horror of the shade,<br/>
+        And yet the menace of the years<br/>
+        Finds, and shall find, me unafraid.<br/><br/>
         It matters not how strait the gate,<br/>
         How charged with punishments the scroll,<br/>
         I am the master of my fate,<br/>
         I am the captain of my soul.
       </div>
 
-      <div class="sq">B₁. Choose the correct alternative: <span>(2 Marks)</span></div>
-      <p>i. The phrase "unconquerable soul" means —</p>
+      <div class="sq">C₁. Choose the correct alternative: <span>(2 Marks)</span></div>
+      <p>i. "Unconquerable soul" means —</p>
       <div class="opts">
-        <span>(a) a soul full of fear</span><span>(b) a soul that cannot be defeated</span>
-        <span>(c) a restless soul</span><span>(d) a tired soul</span>
+        <span>(a) a frightened soul</span><span>(b) a soul that cannot be defeated</span>
+        <span>(c) a sad soul</span><span>(d) a restless soul</span>
       </div>
-      <p>ii. "My head is bloody, but unbowed" means the poet —</p>
+      <p style="margin-top:4px;">ii. "My head is bloody, but unbowed" shows the poet —</p>
       <div class="opts">
-        <span>(a) is injured and gives up</span><span>(b) has a headache</span>
-        <span>(c) is hurt but refuses to surrender</span><span>(d) bows to his enemies</span>
+        <span>(a) is injured and surrenders</span><span>(b) is hurt but never gives up</span>
+        <span>(c) is afraid of pain</span><span>(d) has a high fever</span>
       </div>
 
-      <div class="sq">B₂. State True or False: <span>(2 Marks)</span></div>
+      <div class="sq">C₂. State True or False: <span>(2 Marks)</span></div>
       <ol style="padding-left:18px;line-height:2;">
-        <li>The poet is grateful for his unconquerable soul. <span class="bl s"></span></li>
-        <li>The poet has cried aloud under difficult circumstances. <span class="bl s"></span></li>
-        <li>"I am the captain of my soul" shows the poet is in control of his life. <span class="bl s"></span></li>
-        <li>The poem is about surrendering to fate. <span class="bl s"></span></li>
+        <li>The poet thanks the gods for his unconquerable soul. &nbsp;<span class="bl s"></span></li>
+        <li>The poet cried aloud when things were difficult. &nbsp;<span class="bl s"></span></li>
+        <li>The poet is afraid of what the future holds. &nbsp;<span class="bl s"></span></li>
+        <li>"I am the captain of my soul" shows self-control and determination. &nbsp;<span class="bl s"></span></li>
       </ol>
 
-      <div class="sq">B₃. Figures of Speech — Name and explain: <span>(2 Marks)</span></div>
+      <div class="sq">C₃. Name the figure of speech: <span>(2 Marks)</span></div>
       <ol style="padding-left:18px;line-height:2.1;">
-        <li>"Black as the Pit from pole to pole" — Figure of speech: <span class="bl m"></span></li>
-        <li>"I am the captain of my soul" — Figure of speech: <span class="bl m"></span></li>
+        <li>"Black as the Pit from pole to pole" — <span class="bl m"></span></li>
+        <li>"I am the captain of my soul" — <span class="bl m"></span></li>
+        <li>"My head is bloody, but unbowed" — <span class="bl m"></span></li>
+        <li>"The menace of the years finds me unafraid" — <span class="bl m"></span></li>
       </ol>
 
-      <div class="sq">B₄. Poetic Appreciation (any ONE): <span>(2 Marks)</span></div>
-      <ol style="padding-left:18px;">
-        <li>Explain the central idea of the poem <em>Invictus</em> in 3–4 sentences.</li>
-        <li>What does the poet mean by "master of my fate" and "captain of my soul"? Write 3–4 sentences.</li>
+      <div class="sq">C₄. Find from the poem: <span>(2 Marks)</span></div>
+      <ol style="padding-left:18px;line-height:2.1;">
+        <li>Rhyming pair from stanza 1: <span class="bl m"></span> and <span class="bl m"></span></li>
+        <li>A word meaning "circumstances / situations": <span class="bl m"></span></li>
+        <li>A word meaning "not bowed down / proud": <span class="bl m"></span></li>
+        <li>Opposite of "cowardly": <span class="bl m"></span></li>
       </ol>
-      <div class="alines"><p></p><p></p><p></p><p></p></div>
 
-      <div class="sq">B₅. Personal Response: <span>(2 Marks)</span></div>
-      <p>The poem teaches us to face difficulties with courage. Write about a time you showed courage in a difficult situation. (2–3 sentences)</p>
-      <div class="alines"><p></p><p></p><p></p></div>
+      <div class="sq">C₅. Appreciation — answer in 3–4 sentences: <span>(2 Marks)</span></div>
+      <p>What is the central idea (theme) of the poem <em>Invictus</em>? What message does it give the reader?</p>
+      <div class="al"><p></p><p></p><p></p><p></p></div>
+
+      <div class="sq">C₆. Personal Response: <span>(2 Marks)</span></div>
+      <p>The poet says "I am the master of my fate." Do you believe a person can control their own fate? Give a reason with an example. (2–3 sentences)</p>
+      <div class="al"><p></p><p></p><p></p></div>
     </div>
   </div>
 
   <div class="qb">
-    <div class="qb-head"><span>(B) Read the following stanza and answer.</span><span>[10 Marks]</span></div>
+    <div class="qh"><span>(B) Read the following stanza and do the activities.</span><span>[8 Marks]</span></div>
     <div class="qb-body">
       <div class="poem">
-        <div class="poem-lbl">Poem: Autumn — Unit 2.5 (Emily Dickinson / textbook poem)</div>
+        <div class="poem-lbl">Poem: Autumn (Textbook Unit 2.5)</div>
         The morns are meeker than they were,<br/>
         The nuts are getting brown;<br/>
         The berry's cheek is plumper,<br/>
@@ -345,228 +409,138 @@
         I'll put a trinket on.
       </div>
 
-      <div class="sq">C₁. Choose the correct alternative: <span>(2 Marks)</span></div>
-      <p>i. "The rose is out of town" suggests that —</p>
-      <div class="opts">
-        <span>(a) roses have gone on a journey</span><span>(b) roses are no longer blooming in autumn</span>
-        <span>(c) roses have been sold</span><span>(d) roses are rare flowers</span>
-      </div>
-      <p>ii. "The maple wears a gayer scarf" is an example of —</p>
-      <div class="opts">
-        <span>(a) Simile</span><span>(b) Alliteration</span>
-        <span>(c) Personification</span><span>(d) Metaphor</span>
-      </div>
-
-      <div class="sq">C₂. Find from the poem: <span>(2 Marks)</span></div>
-      <ol style="padding-left:18px;line-height:2;">
-        <li>Two signs of autumn mentioned in the poem: <span class="bl l"></span></li>
-        <li>A word meaning "quieter/gentler": <span class="bl m"></span></li>
-        <li>A word meaning "brighter/more colourful": <span class="bl m"></span></li>
-        <li>Rhyming pair in the last stanza: <span class="bl m"></span></li>
-      </ol>
-
-      <div class="sq">C₃. Figures of Speech — Name: <span>(2 Marks)</span></div>
-      <ol style="padding-left:18px;line-height:2;">
-        <li>"The field a scarlet gown" — <span class="bl m"></span></li>
-        <li>"The berry's cheek is plumper" — <span class="bl m"></span></li>
-      </ol>
-
-      <div class="sq">C₄. Appreciation of the poem (any ONE): <span>(2 Marks)</span></div>
-      <ol style="padding-left:18px;">
-        <li>Describe the mood of the poem <em>Autumn</em>. Give two examples from the poem.</li>
-        <li>How does the poet use nature to describe the season of autumn? Write 3–4 sentences.</li>
-      </ol>
-      <div class="alines"><p></p><p></p><p></p><p></p></div>
-
-      <div class="sq">C₅. Compare: <span>(2 Marks)</span></div>
-      <p>Both <em>Invictus</em> and <em>Autumn</em> deal with change — one inner, one in nature. Write 2–3 sentences comparing their themes.</p>
-      <div class="alines"><p></p><p></p><p></p></div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════
-       Q.3  UNSEEN PASSAGE
-  ══════════════════════════════════════ -->
-  <div class="page-break"></div>
-  <div class="sec-bar"><span>Q.3 — Unseen Passage</span><span>10 Marks</span></div>
-
-  <div class="qb">
-    <div class="qb-head"><span>Read the following passage carefully and do the activities.</span><span>[10 Marks]</span></div>
-    <div class="qb-body">
-      <div class="passage">
-        <div class="passage-lbl">Unseen Passage</div>
-        <p>Every year, millions of sea turtles are born on sandy beaches around the world. As soon as the eggs hatch, the tiny turtles begin their dangerous journey to the sea. They must cross the beach quickly because birds, crabs, and other animals are always waiting to catch them. Only a few out of every hundred will survive to reach the water.</p>
-        <p>Once in the ocean, sea turtles spend their lives travelling across thousands of kilometres of open water. They eat jellyfish, seagrass, and small fish. What is most remarkable is that female sea turtles, when they are ready to lay their eggs, always return to the very same beach where they were born. Scientists believe they use the earth's magnetic field to find their way.</p>
-        <p>Today, sea turtles face many dangers — fishing nets, plastic waste in the ocean, and the destruction of their nesting beaches by human activity. Many countries have passed laws to protect them. Volunteers guard nesting beaches at night and help baby turtles reach the sea safely. Every effort counts when a species is fighting for survival.</p>
-      </div>
-
       <div class="sq">D₁. Choose the correct alternative: <span>(2 Marks)</span></div>
-      <p>i. The baby turtles' first danger after hatching is —</p>
+      <p>i. "The rose is out of town" suggests —</p>
       <div class="opts">
-        <span>(a) deep ocean waves</span><span>(b) birds and crabs on the beach</span>
-        <span>(c) fishing nets</span><span>(d) plastic waste</span>
+        <span>(a) roses went on a trip</span><span>(b) roses are no longer blooming</span>
+        <span>(c) roses were sold</span><span>(d) roses are rare</span>
       </div>
-      <p>ii. Female sea turtles return to their birth beach because —</p>
+      <p style="margin-top:4px;">ii. "The maple wears a gayer scarf" is an example of —</p>
       <div class="opts">
-        <span>(a) the sand is warm there</span><span>(b) other beaches are crowded</span>
-        <span>(c) they use the earth's magnetic field to navigate</span><span>(d) their food is found there</span>
+        <span>(a) Simile</span><span>(b) Personification</span>
+        <span>(c) Alliteration</span><span>(d) Metaphor</span>
       </div>
 
-      <div class="sq">D₂. State True or False: <span>(2 Marks)</span></div>
-      <ol style="padding-left:18px;line-height:2;">
-        <li>All baby turtles survive and reach the ocean safely. <span class="bl s"></span></li>
-        <li>Sea turtles eat jellyfish and seagrass. <span class="bl s"></span></li>
-        <li>Human activity poses no threat to sea turtles. <span class="bl s"></span></li>
-        <li>Volunteers help baby turtles reach the sea at night. <span class="bl s"></span></li>
+      <div class="sq">D₂. Find from the poem: <span>(2 Marks)</span></div>
+      <ol style="padding-left:18px;line-height:2.1;">
+        <li>Two signs of autumn: <span class="bl l"></span></li>
+        <li>A word meaning "quieter / gentler": <span class="bl m"></span></li>
+        <li>A word meaning "brighter / more colourful": <span class="bl m"></span></li>
+        <li>Rhyming words in stanza 2: <span class="bl m"></span></li>
       </ol>
 
-      <div class="sq">D₃. Answer in one sentence: <span>(2 Marks)</span></div>
-      <ol style="padding-left:18px;line-height:2.2;">
-        <li>What do sea turtles eat in the ocean?</li>
-        <li>How do female turtles find their way back to the beach where they were born?</li>
-      </ol>
-      <div class="alines"><p></p><p></p><p></p><p></p></div>
+      <div class="sq">D₃. Appreciation: <span>(2 Marks)</span></div>
+      <p>How does the poet use nature to describe autumn? What mood does the poem create? Write 3–4 sentences.</p>
+      <div class="al"><p></p><p></p><p></p><p></p></div>
 
-      <div class="sq">D₄. Find words from the passage: <span>(2 Marks)</span></div>
-      <ol style="padding-left:18px;line-height:2;">
-        <li>A word meaning "remarkable / extraordinary" — <span class="bl m"></span></li>
-        <li>Opposite of "construction" — <span class="bl m"></span></li>
-        <li>Synonym of "guard / protect" — <span class="bl m"></span></li>
-        <li>A word meaning "hatching place / location where eggs are laid" — <span class="bl m"></span></li>
-      </ol>
-
-      <div class="sq">D₅. Give your opinion: <span>(2 Marks)</span></div>
-      <p>"Every effort counts when a species is fighting for survival." What can students do to help protect sea turtles? Write 2–3 sentences.</p>
-      <div class="alines"><p></p><p></p><p></p></div>
+      <div class="sq">D₄. Compare: <span>(2 Marks)</span></div>
+      <p><em>Invictus</em> describes the human spirit facing challenges; <em>Autumn</em> describes nature changing. Write 2–3 sentences comparing the mood of both poems.</p>
+      <div class="al"><p></p><p></p><p></p></div>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════
-       Q.4  SEEN PROSE — Unit 2
-  ══════════════════════════════════════ -->
-  <div class="page-break"></div>
-  <div class="sec-bar"><span>Q.4 — Seen Prose (Unit 2) + Vocabulary</span><span>16 Marks</span></div>
+  <!-- ════════════════════════════════════════
+       Q.4  UNSEEN PASSAGE
+  ════════════════════════════════════════ -->
+  <div class="pb"></div>
+  <div class="sec"><span>Q.4 — Unseen Passage</span><span>20 Marks</span></div>
 
   <div class="qb">
-    <div class="qb-head"><span>(A) Read the following extract and do the activities.</span><span>[10 Marks]</span></div>
+    <div class="qh"><span>(A) Read the following passage carefully and do all activities.</span><span>[12 Marks]</span></div>
     <div class="qb-body">
-      <div class="passage">
-        <div class="passage-lbl">Extract from: 2.3 Somebody's Mother (Adapted)</div>
-        <p>The woman was old and ragged and grey, and bent with the chill of a winter's day. The street was wet with a recent snow, and the woman's feet were aged and slow. She stood at the crossing, trembling with cold, trying to cross the busy road in the sleet and cold. Nobody seemed to notice her. Cars rushed past and people hurried on.</p>
-        <p>Then a young boy stopped. He was probably on his way to school. He did not hurry past like the others. Instead, he walked up to the old woman, offered her his arm, and helped her carefully across the road. The old woman thanked him with a tired smile.</p>
-        <p>"She's somebody's mother," the boy thought, "and if my mother were old and alone on a street, I would want somebody to help her too."</p>
-        <p>Acts of kindness cost nothing, but they mean everything to those who receive them. The boy who helped that old woman that day did not know her name, her story, or where she lived — but he knew what it meant to be human.</p>
+      <div class="pass">
+        <div class="pass-lbl">Passage — Unseen</div>
+        <p>Every year, millions of sea turtles hatch on sandy beaches around the world. As soon as the eggs crack open, the tiny turtles begin a dangerous race to the sea. They must cross the beach quickly, because seabirds, crabs, and other creatures are waiting to catch them. Only a few out of every hundred will survive to reach the water.</p>
+        <p>Once in the ocean, sea turtles travel thousands of kilometres across open water. They feed on jellyfish, seagrass, and small fish. What is most astonishing is that female sea turtles, when they are ready to lay eggs, always return to the very beach where they were born. Scientists believe they use the earth's magnetic field to navigate back.</p>
+        <p>Today, sea turtles face serious threats — fishing nets, plastic waste in the ocean, and the destruction of their nesting beaches by human activity and construction. Many countries have passed laws to protect them. Volunteers patrol nesting beaches at night, guiding baby turtles safely to the sea. Every small effort, every piece of plastic picked up, every nest protected, counts when a species is fighting for survival.</p>
       </div>
 
       <div class="sq">E₁. Choose the correct alternative: <span>(2 Marks)</span></div>
-      <p>i. The old woman was standing at the crossing because she wanted to —</p>
+      <p>i. Baby turtles face danger on the beach from —</p>
       <div class="opts">
-        <span>(a) beg for money</span><span>(b) cross the busy road</span>
-        <span>(c) rest for a while</span><span>(d) meet a friend</span>
+        <span>(a) waves and storms</span><span>(b) seabirds and crabs</span>
+        <span>(c) deep ocean fish</span><span>(d) other turtles</span>
       </div>
-      <p>ii. The boy helped the old woman because he —</p>
+      <p style="margin-top:4px;">ii. Female sea turtles return to the beach where they were born in order to —</p>
       <div class="opts">
-        <span>(a) knew her personally</span><span>(b) was paid to help</span>
-        <span>(c) thought of his own mother</span><span>(d) was told to help her</span>
+        <span>(a) find food</span><span>(b) meet other turtles</span>
+        <span>(c) lay their eggs</span><span>(d) escape from predators</span>
       </div>
 
-      <div class="sq">E₂. True or False: <span>(2 Marks)</span></div>
+      <div class="sq">E₂. State True or False: <span>(2 Marks)</span></div>
       <ol style="padding-left:18px;line-height:2;">
-        <li>People noticed the old woman and helped her immediately. <span class="bl s"></span></li>
-        <li>The boy was on his way to school when he stopped to help. <span class="bl s"></span></li>
-        <li>The old woman thanked the boy with a tired smile. <span class="bl s"></span></li>
-        <li>Acts of kindness cost a great deal of money. <span class="bl s"></span></li>
+        <li>All baby turtles survive and reach the sea safely. &nbsp;<span class="bl s"></span></li>
+        <li>Sea turtles use the earth's magnetic field to find their way. &nbsp;<span class="bl s"></span></li>
+        <li>Humans pose no threat to sea turtles. &nbsp;<span class="bl s"></span></li>
+        <li>Volunteers help guide baby turtles to the sea at night. &nbsp;<span class="bl s"></span></li>
       </ol>
 
       <div class="sq">E₃. Answer in one sentence: <span>(2 Marks)</span></div>
       <ol style="padding-left:18px;line-height:2.2;">
-        <li>What was the weather like when the old woman stood at the crossing?</li>
-        <li>What did the boy think after helping the old woman?</li>
+        <li>What do sea turtles eat in the ocean?</li>
+        <li>What have many countries done to protect sea turtles?</li>
       </ol>
-      <div class="alines"><p></p><p></p><p></p><p></p></div>
+      <div class="al"><p></p><p></p><p></p><p></p></div>
 
-      <div class="sq">E₄. Do as directed: <span>(2 Marks)</span></div>
-      <ol style="padding-left:18px;line-height:2.2;">
-        <li>"A young boy stopped." (Rewrite in Past Continuous Tense)</li>
-        <li>"Acts of kindness cost nothing." (Rewrite using: <em>not … anything</em>)</li>
-        <li>"He offered her his arm and helped her." (Identify the conjunction and name its type)</li>
-        <li>"Nobody seemed to notice her." (Rewrite in Affirmative)</li>
+      <div class="sq">E₄. Find words from the passage: <span>(2 Marks)</span></div>
+      <ol style="padding-left:18px;line-height:2.1;">
+        <li>A word meaning "very surprising / amazing" — <span class="bl m"></span></li>
+        <li>Opposite of "construction" — <span class="bl m"></span></li>
+        <li>A word meaning "guide / find the way" — <span class="bl m"></span></li>
+        <li>Synonym of "dangers / risks" — <span class="bl m"></span></li>
       </ol>
-      <div class="alines"><p></p><p></p><p></p><p></p></div>
 
-      <div class="sq">E₅. Personal Response: <span>(2 Marks)</span></div>
-      <p>"Acts of kindness cost nothing, but they mean everything." Do you agree? Describe one act of kindness you did or witnessed. (2–3 sentences)</p>
-      <div class="alines"><p></p><p></p><p></p></div>
+      <div class="sq">E₅. Give your opinion: <span>(2 Marks)</span></div>
+      <p>"Every small effort counts when a species is fighting for survival." What can students do to help protect sea turtles or other endangered animals? Write 2–3 sentences.</p>
+      <div class="al"><p></p><p></p><p></p></div>
     </div>
   </div>
 
   <div class="qb">
-    <div class="qb-head"><span>(B) Vocabulary (do any THREE)</span><span>[6 Marks]</span></div>
+    <div class="qh"><span>(B) Read the following passage and do the activities.</span><span>[8 Marks]</span></div>
     <div class="qb-body">
-      <ol style="padding-left:18px;line-height:2.3;">
-        <li><strong>Word-web:</strong> Write four words related to: <em>COURAGE</em><br/>
-          <span class="bl m"></span> &nbsp; <span class="bl m"></span> &nbsp; <span class="bl m"></span> &nbsp; <span class="bl m"></span></li>
-        <li><strong>Synonyms:</strong> Write one synonym for each:<br/>
-          remarkable — <span class="bl s"></span> &nbsp;|&nbsp; trembling — <span class="bl s"></span> &nbsp;|&nbsp; survive — <span class="bl s"></span></li>
-        <li><strong>Antonyms:</strong> Write one antonym for each:<br/>
-          danger — <span class="bl s"></span> &nbsp;|&nbsp; ancient — <span class="bl s"></span> &nbsp;|&nbsp; destruction — <span class="bl s"></span></li>
-        <li><strong>Make sentences:</strong> Use any TWO words in meaningful sentences:<br/>
-          <em>unconquerable, survival, kindness, harmony</em>
-          <div class="alines" style="margin-top:4px;"><p></p><p></p></div></li>
-        <li><strong>Prefix/Suffix:</strong> Add prefix or suffix and use in a sentence:<br/>
-          kind → <span class="bl s"></span> (+ <em>ness</em>) &nbsp;|&nbsp; conquer → <span class="bl s"></span> (+ <em>un</em>) &nbsp;|&nbsp; survive → <span class="bl s"></span> (+ <em>al</em>)</li>
+      <div class="pass">
+        <div class="pass-lbl">Passage — Unseen (2)</div>
+        <p>Trees are more than just wood and leaves. They are the lungs of our planet. A single large tree can absorb up to 22 kilograms of carbon dioxide per year and release enough oxygen for two people to breathe. In cities, trees lower temperatures by providing shade and releasing water vapour. Streets with trees are cooler by up to 5 degrees Celsius compared to treeless ones.</p>
+        <p>Trees also hold the soil together, preventing erosion during heavy rains. Their roots act like sponges, absorbing rainwater and slowly releasing it into the ground, which prevents floods and keeps wells and rivers full. A forest is like a giant water tank hidden underground.</p>
+        <p>Despite all this, forests around the world are disappearing at an alarming rate. An area of forest the size of a football field is cut down every single second. The reasons are many — farming, construction, and fuel. But the solutions are also available. Planting trees, reducing paper waste, and supporting forest protection laws are all within our reach. Every tree planted is a step towards a healthier planet.</p>
+      </div>
+
+      <div class="sq">F₁. Choose the correct alternative: <span>(2 Marks)</span></div>
+      <p>i. Trees are called "the lungs of our planet" because —</p>
+      <div class="opts">
+        <span>(a) they look like lungs</span><span>(b) they absorb CO₂ and release oxygen</span>
+        <span>(c) they grow inside caves</span><span>(d) they are red in colour</span>
+      </div>
+      <p style="margin-top:4px;">ii. Tree roots prevent floods by —</p>
+      <div class="opts">
+        <span>(a) blocking rivers</span><span>(b) absorbing rainwater slowly into the ground</span>
+        <span>(c) making soil hard</span><span>(d) creating underground tunnels</span>
+      </div>
+
+      <div class="sq">F₂. True or False: <span>(2 Marks)</span></div>
+      <ol style="padding-left:18px;line-height:2;">
+        <li>A large tree can absorb up to 22 kg of carbon dioxide per year. &nbsp;<span class="bl s"></span></li>
+        <li>Streets with trees are hotter than treeless streets. &nbsp;<span class="bl s"></span></li>
+        <li>Forests are disappearing very quickly around the world. &nbsp;<span class="bl s"></span></li>
+        <li>Planting trees can help solve the problem of deforestation. &nbsp;<span class="bl s"></span></li>
       </ol>
+
+      <div class="sq">F₃. Find words from the passage: <span>(2 Marks)</span></div>
+      <ol style="padding-left:18px;line-height:2.1;">
+        <li>A word meaning "wearing away of soil" — <span class="bl m"></span></li>
+        <li>Synonym of "alarming / worrying" — <span class="bl m"></span></li>
+        <li>A word meaning "to take in / soak up" — <span class="bl m"></span></li>
+        <li>Opposite of "disappearing" — <span class="bl m"></span></li>
+      </ol>
+
+      <div class="sq">F₄. Opinion: <span>(2 Marks)</span></div>
+      <p>"Every tree planted is a step towards a healthier planet." What will you do in your school or neighbourhood to protect trees? Write 2–3 sentences.</p>
+      <div class="al"><p></p><p></p><p></p></div>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════
-       Q.5  LITERATURE — ANSWER IN DETAIL
-  ══════════════════════════════════════ -->
-  <div class="page-break"></div>
-  <div class="sec-bar"><span>Q.5 — Literature (Textbook Lessons &amp; Poems)</span><span>14 Marks</span></div>
-
-  <div class="qb">
-    <div class="qb-head"><span>(A) Answer in ONE sentence each (any SIX):</span><span>[6 Marks]</span></div>
-    <div class="qb-body">
-      <ol style="padding-left:18px;line-height:2.3;">
-        <li>What is the main theme of the lesson <em>Life</em>? (1.1)</li>
-        <li>How did the Robinson boys help build the raft? (1.2)</li>
-        <li>What does the poet mean by "I am the master of my fate"? (2.1 Invictus)</li>
-        <li>Where does a female sea turtle lay her eggs? (2.2)</li>
-        <li>Who helped the old woman in <em>Somebody's Mother</em> and how? (2.3)</li>
-        <li>What is the setting of the lesson <em>The Fall of Troy</em>? (2.4)</li>
-        <li>Name any two signs of autumn described in the poem <em>Autumn</em>. (2.5)</li>
-        <li>What does the poem <em>The Past in the Present</em> describe? (2.6)</li>
-      </ol>
-      <div class="alines"><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p></div>
-    </div>
-  </div>
-
-  <div class="qb">
-    <div class="qb-head"><span>(B) Answer in SHORT — 3 to 4 sentences (any TWO):</span><span>[4 Marks]</span></div>
-    <div class="qb-body">
-      <ol style="padding-left:18px;line-height:2.2;">
-        <li>Describe the challenges faced by the Robinson family after the shipwreck and how they overcame them. (1.2)</li>
-        <li>How does the poem <em>Invictus</em> inspire the reader? Give two examples from the poem. (2.1)</li>
-        <li>What does <em>Somebody's Mother</em> teach us about compassion? Support your answer with an example from the lesson. (2.3)</li>
-        <li>Describe the atmosphere of autumn as shown in the poem <em>Autumn</em>. (2.5)</li>
-      </ol>
-      <div class="alines"><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p></div>
-    </div>
-  </div>
-
-  <div class="qb">
-    <div class="qb-head"><span>(C) Answer in DETAIL — 8 to 10 sentences (any ONE):</span><span>[4 Marks]</span></div>
-    <div class="qb-body">
-      <ol style="padding-left:18px;line-height:2.2;">
-        <li>"The poem <em>Invictus</em> is a poem of courage, determination and self-belief." Justify this statement with reference to the poem. (2.1)</li>
-        <li>Describe in detail how the Robinson family survived and built a life on the deserted island. What qualities helped them? (1.2)</li>
-      </ol>
-      <div class="alines"><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p></div>
-    </div>
-  </div>
-
-  <div class="paper-footer">
+  <div class="footer">
     ✦ &nbsp; Best of Luck &nbsp; ✦ &nbsp;&nbsp; Visions Classes, Ambernath &nbsp;&nbsp; ✦ &nbsp; visionslearning.in &nbsp; ✦
   </div>
 
@@ -574,39 +548,39 @@
 
 <script id="vlWmScript">
 (function(){
-  var SVG_H = 300;
-  function svgDataUrl() {
-    var s = '<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">'
-      + '<g transform="rotate(-30,150,150)">'
-      + '<circle cx="150" cy="150" r="140" fill="none" stroke="#c0392b" stroke-opacity="0.30" stroke-width="5"/>'
-      + '<circle cx="150" cy="150" r="128" fill="none" stroke="#1a1a2e" stroke-opacity="0.15" stroke-width="2" stroke-dasharray="6,4"/>'
-      + '<text x="150" y="135" text-anchor="middle" font-family="Arial,sans-serif" font-size="36" font-weight="900" letter-spacing="3" fill="#c0392b" fill-opacity="0.30">VISIONS</text>'
-      + '<text x="150" y="178" text-anchor="middle" font-family="Arial,sans-serif" font-size="36" font-weight="900" letter-spacing="3" fill="#1a1a2e" fill-opacity="0.22">CLASSES</text>'
-      + '<text x="150" y="202" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="#1a1a2e" fill-opacity="0.18">visionslearning.in</text>'
-      + '</g></svg>';
-    return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(s);
+  var SVG_H=300;
+  function svgUrl(){
+    var s='<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">'
+      +'<g transform="rotate(-30,150,150)">'
+      +'<circle cx="150" cy="150" r="140" fill="none" stroke="#c0392b" stroke-opacity="0.30" stroke-width="5"/>'
+      +'<circle cx="150" cy="150" r="128" fill="none" stroke="#1a1a2e" stroke-opacity="0.15" stroke-width="2" stroke-dasharray="6,4"/>'
+      +'<text x="150" y="135" text-anchor="middle" font-family="Arial,sans-serif" font-size="36" font-weight="900" letter-spacing="3" fill="#c0392b" fill-opacity="0.30">VISIONS</text>'
+      +'<text x="150" y="178" text-anchor="middle" font-family="Arial,sans-serif" font-size="36" font-weight="900" letter-spacing="3" fill="#1a1a2e" fill-opacity="0.22">CLASSES</text>'
+      +'<text x="150" y="202" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="#1a1a2e" fill-opacity="0.18">visionslearning.in</text>'
+      +'</g></svg>';
+    return 'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(s);
   }
-  function buildPrint() {
-    var el = document.getElementById('vlPrintLayer');
-    if (!el) return;
-    var h = Math.max(document.body.scrollHeight||0, document.documentElement.scrollHeight||0);
-    if (h < 100) h = 4000;
-    el.style.height = h + 'px';
-    var A4 = 1123, pages = Math.ceil(h / A4), url = svgDataUrl(), html = '';
-    for (var i = 0; i < pages; i++) {
-      var top = Math.round(i * A4 + A4/2 - SVG_H/2);
-      html += '<img src="' + url + '" width="300" height="300" style="position:absolute;top:' + top + 'px;left:50%;margin-left:-150px;" />';
+  function buildPrint(){
+    var el=document.getElementById('vlPrintLayer');
+    if(!el)return;
+    var h=Math.max(document.body.scrollHeight||0,document.documentElement.scrollHeight||0);
+    if(h<100)h=5000;
+    el.style.height=h+'px';
+    var A4=1123,pages=Math.ceil(h/A4),url=svgUrl(),html='';
+    for(var i=0;i<pages;i++){
+      var top=Math.round(i*A4+A4/2-SVG_H/2);
+      html+='<img src="'+url+'" width="300" height="300" style="position:absolute;top:'+top+'px;left:50%;margin-left:-150px;" />';
     }
-    el.innerHTML = html;
+    el.innerHTML=html;
   }
-  window.addEventListener('beforeprint', function() {
-    document.getElementById('vlScreenLayer').style.display = 'none';
+  window.addEventListener('beforeprint',function(){
+    document.getElementById('vlScreenLayer').style.display='none';
     buildPrint();
-    document.getElementById('vlPrintLayer').style.display = 'block';
+    document.getElementById('vlPrintLayer').style.display='block';
   });
-  window.addEventListener('afterprint', function() {
-    document.getElementById('vlScreenLayer').style.display = '';
-    document.getElementById('vlPrintLayer').style.display = 'none';
+  window.addEventListener('afterprint',function(){
+    document.getElementById('vlScreenLayer').style.display='';
+    document.getElementById('vlPrintLayer').style.display='none';
   });
 })();
 </script>
