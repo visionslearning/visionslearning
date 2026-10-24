@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; font-size: 12px; background: #f5f5f5; color: #111; padding: 12px; }
+  h1 { text-align: center; font-size: 16px; background: #1a237e; color: #fff; padding: 8px; border-radius: 6px; margin-bottom: 10px; }
+  .chapter-title { font-size: 14px; background: #283593; color: #fff; padding: 5px 10px; border-radius: 4px; margin: 12px 0 6px; }
+  .section { background: #fff; border: 1.5px solid #3949ab; border-radius: 6px; padding: 8px 10px; margin-bottom: 8px; }
+  .section h2 { font-size: 12px; background: #3949ab; color: #fff; padding: 3px 7px; border-radius: 3px; margin-bottom: 6px; display: inline-block; }
+  .section h3 { font-size: 11px; color: #1a237e; margin: 7px 0 3px; border-bottom: 1px solid #c5cae9; padding-bottom: 2px; }
+  .formula { background: #fffde7; border-left: 4px solid #f9a825; padding: 4px 8px; margin: 4px 0; font-family: monospace; font-size: 11px; border-radius: 3px; }
+  .explain { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 4px 8px; margin: 4px 0; font-size: 11px; border-radius: 3px; line-height: 1.6; }
+  .tip { background: #e8f5e9; border-left: 4px solid #388e3c; padding: 4px 8px; margin: 4px 0; font-size: 11px; border-radius: 3px; }
+  .qa-block { background: #fff8e1; border: 1px solid #ffe082; border-radius: 5px; padding: 7px 9px; margin: 6px 0; }
+  .qa-block .q { color: #b71c1c; font-weight: bold; font-size: 11.5px; margin-bottom: 4px; }
+  .qa-block .a { font-size: 11px; line-height: 1.7; color: #212121; }
+  .qa-block .a ul { padding-left: 16px; }
+  .qa-block .a li { margin: 2px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 11px; margin: 5px 0; }
+  td, th { border: 1px solid #9fa8da; padding: 3px 6px; }
+  th { background: #e8eaf6; font-weight: bold; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .num { background: #fce4ec; border-left: 4px solid #c62828; padding: 5px 8px; margin: 4px 0; font-size: 11px; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<h1>⚗️ TYBSc Sem 5 – Physical Chemistry | Full Notes + Q&A with Explanation</h1>
+
+<!-- ===================== CHAPTER 1 ===================== -->
+<div class="chapter-title">📡 CHAPTER 1 – MOLECULAR SPECTROSCOPY</div>
+
+<!-- DIPOLE MOMENT -->
+<div class="section">
+  <h2>1.1 Dipole Moment</h2>
+  <div class="explain">
+    <b>What is Dipole Moment?</b><br>
+    When two atoms bonded together have different electronegativities, electrons are pulled more towards one atom — creating a partial negative (δ−) and partial positive (δ+) end. This separation of charge is called a <b>dipole</b>. The dipole moment (μ) measures how strong this polarity is.
+  </div>
+  <div class="formula">μ = q × d &nbsp;&nbsp; Unit: Debye (D) &nbsp;&nbsp; 1 D = 3.336 × 10⁻³⁰ C·m</div>
+  <div class="explain">q = magnitude of charge | d = distance between charges<br>
+  A molecule has net μ only if bond dipoles <b>do not cancel</b> each other vectorially.</div>
+
+  <h3>Key Bond Moments</h3>
+  <table>
+    <tr><th>Bond</th><th>μ (D)</th><th>Bond</th><th>μ (D)</th></tr>
+    <tr><td>H–F</td><td>1.9</td><td>C–F</td><td>1.5</td></tr>
+    <tr><td>H–Cl</td><td>1.1</td><td>C–Cl</td><td>1.5</td></tr>
+    <tr><td>H–O</td><td>1.5</td><td>C=O</td><td>2.3</td></tr>
+    <tr><td>H–N</td><td>1.3</td><td>C≡N</td><td>1.2</td></tr>
+  </table>
+
+  <h3>Key Molecules</h3>
+  <table>
+    <tr><th>Molecule</th><th>μ (D)</th><th>Structure</th><th>Why?</th></tr>
+    <tr><td>CO₂</td><td>0</td><td>Linear</td><td>Two C=O moments are equal & opposite → cancel</td></tr>
+    <tr><td>SO₂</td><td>1.63</td><td>Angular</td><td>Lone pair on S → bent → moments don't cancel</td></tr>
+    <tr><td>H₂O</td><td>1.85</td><td>Angular</td><td>Two O–H moments + lone pairs → net dipole</td></tr>
+    <tr><td>NH₃</td><td>1.47</td><td>Pyramidal</td><td>Lone pair adds to bond moments</td></tr>
+    <tr><td>BF₃</td><td>0</td><td>Planar triangular</td><td>3 B–F moments cancel symmetrically</td></tr>
+    <tr><td>CH₄</td><td>0</td><td>Tetrahedral</td><td>4 C–H moments cancel</td></tr>
+  </table>
+  <div class="tip">💡 Symmetrical molecule → μ = 0 | Unsymmetrical → μ ≠ 0</div>
+
+  <h3>Disubstituted Benzene (Ortho / Meta / Para)</h3>
+  <div class="explain">
+    When two identical groups are attached to benzene ring at different positions, the angle between their bond moments changes. Using vector addition:
+  </div>
+  <div class="formula">μ_net = √(μ₁² + μ₂² + 2μ₁μ₂ cosθ) = 2μ cos(θ/2) [when μ₁=μ₂]</div>
+  <table>
+    <tr><th>Isomer</th><th>θ (angle)</th><th>μ (D)</th><th>Reason</th></tr>
+    <tr><td>Ortho</td><td>60°</td><td>2.6</td><td>Moments add up (close angle)</td></tr>
+    <tr><td>Meta</td><td>120°</td><td>1.5</td><td>Partial cancellation</td></tr>
+    <tr><td>Para</td><td>180°</td><td>0</td><td>Moments exactly opposite → cancel</td></tr>
+  </table>
+  <div class="tip">💡 This is a common exam numerical — para always gives μ = 0 for identical substituents</div>
+</div>
+
+<!-- IR SPECTROSCOPY -->
+<div class="section">
+  <h2>1.2 Infrared (IR) Spectroscopy</h2>
+  <div class="explain">
+    IR spectroscopy studies how molecules absorb infrared radiation. When IR light hits a molecule, bonds start vibrating. The frequency at which they vibrate depends on bond strength (k) and masses of atoms (μ).
+  </div>
+  <div class="formula">ν̃ = (1/2πc) √(k/μ) &nbsp;&nbsp; where μ (reduced mass) = m₁m₂ / (m₁+m₂)</div>
+  <div class="explain">
+    k = force constant (bond strength) | c = speed of light<br>
+    <b>Stronger bond → higher k → higher frequency</b><br>
+    <b>Heavier atoms → larger μ → lower frequency</b>
+  </div>
+
+  <h3>Types of Vibrations</h3>
+  <div class="explain">
+    <b>A. Stretching</b> — bond length changes (along bond axis):<br>
+    &nbsp;&nbsp;• <b>Symmetric:</b> Both atoms move away from centre simultaneously<br>
+    &nbsp;&nbsp;• <b>Asymmetric:</b> One atom moves in, the other moves out<br><br>
+    <b>B. Bending</b> — bond angle changes:<br>
+    &nbsp;&nbsp;• <b>In-plane:</b> Scissoring (atoms move towards each other) | Rocking (group swings in plane)<br>
+    &nbsp;&nbsp;• <b>Out-of-plane:</b> Wagging (both move in/out same direction) | Twisting (opposite directions)<br><br>
+    Degrees of freedom: Non-linear molecule = <b>3N–6</b> | Linear molecule = <b>3N–5</b>
+  </div>
+  <div class="tip">💡 Stretching requires MORE energy than bending</div>
+
+  <h3>Characteristic Group Frequencies</h3>
+  <table>
+    <tr><th>Bond</th><th>Frequency (cm⁻¹)</th><th>Notes</th></tr>
+    <tr><td>O–H (phenolic)</td><td>3600–3700</td><td>Broad peak</td></tr>
+    <tr><td>C–H aliphatic</td><td>2700–3000</td><td>Common in organic</td></tr>
+    <tr><td>C–H aromatic</td><td>3000–3100</td><td>Slightly higher than aliphatic</td></tr>
+    <tr><td>C≡C</td><td>2100–2250</td><td>Triple bond – very strong</td></tr>
+    <tr><td>C=O aldehyde</td><td>1720–1740</td><td>Sharp, strong peak</td></tr>
+    <tr><td>C=C</td><td>1620–1670</td><td>Double bond</td></tr>
+    <tr><td>C–O</td><td>1000–1050</td><td>Single bond</td></tr>
+    <tr><td>C–Cl</td><td>500–600</td><td>Heavy atom – low freq</td></tr>
+  </table>
+
+  <h3>Fingerprint Region (900–1400 cm⁻¹)</h3>
+  <div class="explain">
+    This spectral region is called the <b>fingerprint region</b> because it is <b>unique for every molecule</b> — just like a human fingerprint. It contains many overlapping bands from complex vibrations of the whole molecule. Even tiny structural changes produce different patterns. Used for:
+    <ul>
+      <li>Identifying unknown compounds</li>
+      <li>Comparing two compounds (if same fingerprint = same compound)</li>
+      <li>Detecting structural differences</li>
+    </ul>
+  </div>
+
+  <h3>Isotopic Effect</h3>
+  <div class="explain">
+    When a light atom is replaced by its heavier isotope (e.g., H → D), the reduced mass (μ) increases. Since ν̃ ∝ 1/√μ, the frequency <b>decreases</b>.
+  </div>
+  <div class="formula">ν̃(H–X) / ν̃(D–X) = √(μ_DX / μ_HX) ≈ √2 ≈ 1.414</div>
+  <div class="explain">Example: O–H absorbs at ~3600 cm⁻¹ → O–D absorbs at ~2630 cm⁻¹<br>
+  This isotopic shift is used to <b>confirm the presence of O–H or N–H groups</b> in a molecule.</div>
+</div>
+
+<!-- RAMAN -->
+<div class="section">
+  <h2>1.3 Raman Spectroscopy</h2>
+  <div class="explain">
+    <b>Discovery:</b> C.V. Raman (1928) — Nobel Prize 1930<br><br>
+    When monochromatic light is scattered by a molecule, most scattered light has the <b>same frequency</b> (Rayleigh scattering). A tiny fraction (~1%) has <b>different frequency</b> — this is the <b>Raman Effect</b>. The change in frequency corresponds to vibrational energy levels of the molecule.
+  </div>
+
+  <h3>Stokes & Anti-Stokes Lines</h3>
+  <table>
+    <tr><th>Type</th><th>Frequency</th><th>Intensity</th><th>Explanation</th></tr>
+    <tr><td>Rayleigh</td><td>ν₀ (same)</td><td>Highest (~99%)</td><td>Elastic scattering, no energy change</td></tr>
+    <tr><td>Stokes</td><td>ν₀ − Δν (lower)</td><td>Strong</td><td>Molecule gains energy; photon loses energy</td></tr>
+    <tr><td>Anti-Stokes</td><td>ν₀ + Δν (higher)</td><td>Weak</td><td>Molecule loses energy; photon gains energy</td></tr>
+  </table>
+  <div class="tip">💡 Stokes lines are more intense because most molecules are in the <b>ground vibrational state</b> at room temperature → easier to absorb energy</div>
+  <div class="formula">Raman Shift: Δν = ν₀ − ν_Stokes = ν_Anti-Stokes − ν₀</div>
+
+  <h3>Raman Activity Condition</h3>
+  <div class="explain">
+    A vibration is <b>Raman active</b> if there is a change in <b>polarisability</b> of the molecule during vibration.<br>
+    A vibration is <b>IR active</b> if there is a change in <b>dipole moment</b> during vibration.<br><br>
+    <b>Mutual Exclusion Rule:</b> In centrosymmetric molecules (e.g., CO₂), IR active vibrations are Raman inactive and vice versa.
+  </div>
+  <div class="tip">💡 IR + Raman together give <b>complete molecular structure</b> information. Raman is useful for non-polar molecules like N₂, O₂ that have no IR spectrum.</div>
+</div>
+
+<!-- POLARISATION & DEBYE -->
+<div class="section">
+  <h2>1.4 Molecular Polarisation & Debye Equation</h2>
+  <div class="explain">
+    When a molecule is placed in an electric field, its charge distribution gets distorted — this is called <b>polarisation</b>. Total molar polarisation (PT) has three parts:
+  </div>
+  <div class="formula">PT = Pe + Pa + Po</div>
+
+  <h3>Types of Polarisation</h3>
+  <table>
+    <tr><th>Type</th><th>Symbol</th><th>Cause</th><th>Molecules</th><th>Temp Dependence</th></tr>
+    <tr><td>Electronic</td><td>Pe</td><td>Displacement of electron cloud relative to nucleus</td><td>All molecules</td><td>Independent</td></tr>
+    <tr><td>Atomic/Ionic</td><td>Pa</td><td>Displacement of atoms/ions relative to each other</td><td>All molecules</td><td>Independent</td></tr>
+    <tr><td>Orientation</td><td>Po</td><td>Permanent dipoles align along electric field</td><td>Polar only</td><td>Decreases as T↑</td></tr>
+  </table>
+  <div class="tip">💡 Non-polar: PT = Pe + Pa | Polar: PT = Pe + Pa + Po</div>
+
+  <h3>Clausius-Mosotti Equation (non-polar molecules)</h3>
+  <div class="formula">PM = [(εr−1)/(εr+2)] × (M/ρ) = (4/3)πNAα</div>
+  <div class="explain">εr = dielectric constant | M = mol. weight | ρ = density | NA = Avogadro number | α = polarisability<br>
+  Valid only for <b>non-polar molecules</b> (no orientation polarisation).</div>
+
+  <h3>Debye Equation (polar molecules)</h3>
+  <div class="explain">
+    Debye extended Clausius-Mosotti to include orientation polarisation for polar molecules:
+  </div>
+  <div class="formula">PT = (4/3)πNAα + μ²NA / 3kT</div>
+  <div class="explain">
+    This is of the form <b>PT = A + B/T</b> where:<br>
+    A = (4/3)πNAα — temperature-independent (induced polarisation)<br>
+    B = μ²NA/3k — gives dipole moment from slope
+  </div>
+  <div class="explain">
+    <b>How to determine μ experimentally (Debye method):</b><br>
+    <ol style="padding-left:16px">
+      <li>Measure total molar polarisation PT at several different temperatures</li>
+      <li>Plot PT on Y-axis vs 1/T on X-axis → straight line</li>
+      <li>Slope = μ²NA/3k → rearrange to find μ</li>
+      <li>Intercept = (4/3)πNAα → gives polarisability α</li>
+    </ol>
+  </div>
+  <div class="formula">μ = √(3k × Slope / NA)</div>
+</div>
+
+<!-- CH1 Q&A -->
+<div class="section">
+  <h2>⭐ Chapter 1 – All Important Q&A with Full Explanation</h2>
+
+  <div class="qa-block">
+    <div class="q">Q1. What is dipole moment? How is it used to determine the structure of a molecule? (5M)</div>
+    <div class="a">
+      <b>Dipole Moment (μ):</b> It is the product of the magnitude of charge (q) and the distance (d) between the charges.<br>
+      <b>Formula:</b> μ = q × d &nbsp; Unit: Debye (1 D = 3.336×10⁻³⁰ C·m)<br><br>
+      <b>Use in determining structure:</b>
+      <ul>
+        <li>If μ = 0 → molecule is symmetrical (e.g., CO₂ is linear, BF₃ is planar triangular)</li>
+        <li>If μ ≠ 0 → molecule is unsymmetrical (e.g., SO₂ is angular, NH₃ is pyramidal)</li>
+        <li>Used to distinguish cis/trans isomers: <b>cis has higher μ</b> than trans (in cis, dipoles add; in trans, they cancel)</li>
+        <li>Used to identify ortho, meta, para isomers: ortho (2.6D) &gt; meta (1.5D) &gt; para (0D)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="qa-block">
+    <div class="q">Q2. Why does CO₂ have μ = 0 but SO₂ has μ = 1.63 D? (4M)</div>
+    <div class="a">
+      <b>CO₂ (μ = 0):</b> Carbon dioxide has a <b>linear structure</b> (O=C=O). The two C=O bond moments are equal in magnitude but point in exactly opposite directions (180°). By vector addition, they cancel completely → net μ = 0.<br><br>
+      <b>SO₂ (μ = 1.63 D):</b> Sulphur dioxide has an <b>angular (bent) structure</b> due to the lone pair on the sulphur atom. The two S=O bond moments do NOT cancel because the angle between them is not 180°. The lone pair also contributes → net dipole moment = 1.63 D.
+    </div>
+  </div>
+
+  <div class="qa-block">
+    <div class="q">Q3. Identification of ortho, meta, para isomers using dipole moment (5M)</div>
+    <div class="a">
+      For disubstituted benzene with identical groups (μ₁ = μ₂ = μ):<br>
+      <div class="formula" style="margin:4px 0">μ_net = 2μ cos(θ/2)</div>
+      <ul>
+        <li><b>Ortho (θ = 60°):</b> μ = 2μ cos30° = 2×1.5×(√3/2) ≈ 2.6 D — highest dipole</li>
+        <li><b>Meta (θ = 120°):</b> μ = 2μ cos60° = 2×1.5×0.5 = 1.5 D</li>
+        <li><b>Para (θ = 180°):</b> μ = 2μ cos90° = 0 D — moments cancel completely</li>
+      </ul>
+      Calculated values match experimental values → dipole moment is a reliable tool for identifying isomers.
+    </div>
+  </div>
+
+  <div class="qa-block">
+    <div class="q">Q4. Types of molecular vibrations with diagrams (6M)</div>
+    <div class="a">
+      <b>A. Stretching Vibrations</b> — change in bond length (along bond axis):
+      <ul>
+        <li><b>Symmetric stretching:</b> Both atoms move away from central atom simultaneously (e.g., both O atoms in H₂O move away from O)</li>
+        <li><b>Asymmetric stretching:</b> One atom moves towards central atom while other moves away</li>
+      </ul>
+      <b>B. Bending Vibrations</b> — change in bond angle:
+      <ul>
+        <li><b>In-plane Scissoring:</b> Two H atoms in H₂O move towards each other like scissors</li>
+        <li><b>In-plane Rocking:</b> The whole group oscillates within the plane</li>
+        <li><b>Out-of-plane Wagging:</b> Both atoms move in and out of plane in same direction</li>
+        <li><b>Out-of-plane Twisting:</b> Both atoms move in and out of plane in opposite directions</li>
+      </ul>
+      Degrees of freedom: Non-linear molecule (N atoms) = 3N–6 | Linear = 3N–5
+    </div>
+  </div>
+
+  <div class="qa-block">
+    <div class="q">Q5. What is the fingerprint region in IR spectroscopy? What is its significance? (3M)</div>
+    <div class="a">
+      The spectral region <b>900–1400 cm⁻¹</b> is called the <b>fingerprint region</b>. It contains a large number of overlapping absorption bands arising from complex vibrations of the entire molecule.<br><br>
+      <b>Significance:</b>
+      <ul>
+        <li>Unique for every compound — just like a human fingerprint</li>
+        <li>No two different compounds show the same absorption pattern in this region</li>
+        <li>Used for identification and comparison of unknown compounds</li>
+        <li>Even a small change in molecular structure causes a remarkable change in this region</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="qa-block">
+    <div class="q">Q6. Explain Raman Effect. What are Stokes and Anti-Stokes lines? (6M)</div>
+    <div class="a">
+      <b>Raman Effect (C.V. Raman, 1928):</b> When monochromatic light is incident on a substance, most scattered light has the same frequency as incident light (Rayleigh scattering). A small fraction (~1%) has a different frequency — this is called the <b>Raman Effect</b>.<br><br>
+      <b>Stokes Lines:</b> Scattered light has <b>lower frequency</b> (ν_s &lt; ν₀). The molecule absorbs energy and goes to a higher vibrational level. These lines appear on the low-frequency side. They are <b>more intense</b> (most molecules are in ground state).<br><br>
+      <b>Anti-Stokes Lines:</b> Scattered light has <b>higher frequency</b> (ν_as &gt; ν₀). Molecule was already in excited state and loses energy. These are <b>weaker</b> (fewer molecules in excited state).<br><br>
+      <b>Raman Shift:</b> Δν = ν₀ − ν_Stokes = ν_Anti-Stokes − ν₀ (same magnitude on both sides)
+    </div>
+  </div>
+
+  <div class="qa-block">
+    <div class="q">Q7. Isotopic effect in IR spectroscopy with example (4M)</div>
+    <div class="a">
+      When a lighter atom is replaced by its heavier isotope, the <b>reduced mass (μ) increases</b>. Since stretching frequency is inversely proportional to √μ, the <b>frequency decreases</b>.<br>
+      <div class="formula" style="margin:4px 0">ν̃ = (1/2πc)√(k/μ) &nbsp; → &nbsp; ν̃(H–X)/ν̃(D–X) = √(μ_DX/μ_HX) ≈ √2 ≈ 1.414</div>
+      <b>Example:</b> O–H bond absorbs at ~3600 cm⁻¹. When H is replaced by D (deuterium, twice as heavy):<br>
+      O–D absorbs at ~2630 cm⁻¹ (lower frequency)<br><br>
+      <b>Application:</b> This isotopic shift is used to confirm the presence of O–H or N–H groups in a molecule. If a peak shifts on deuteration, it confirms an O–H or N–H bond.
+    </div>
+  </div>
+
+  <div class="qa-block">
+    <div class="q">Q8. Condition for IR active and Raman active vibrations (3M)</div>
+    <div class="a">
+      <b>(a) IR Active:</b> A vibration is IR active if it involves a <b>change in the electric dipole moment</b> during the vibration. Only molecules with polar bonds that undergo asymmetric vibrations are IR active. (e.g., HCl, H₂O — YES; Symmetric N₂, Cl₂ — NO)<br><br>
+      <b>(b) Raman Active:</b> A vibration is Raman active if it involves a <b>change in polarisability</b> of the molecule during vibration.<br><br>
+      <b>Mutual Exclusion Rule:</b> For centrosymmetric molecules (e.g., CO₂), vibrations that are IR active are Raman inactive and vice versa. No vibration can be both IR and Raman active in such molecules.
+    </div>
+  </div>
+
+  <div class="qa-block">
+    <div class="q">Q9. Explain Debye equation. How is dipole moment determined experimentally? (5M)</div>
+    <div class="a">
+      <b>Debye Equation:</b> Debye extended the Clausius-Mosotti equation for polar molecules by including orientation polarisation:<br>
+      <div class="formula" style="margin:4px 0">PT = (4/3)πNAα + μ²NA/3kT = A + B/T</div>
+      where A = (4/3)πNAα (temp-independent) and B = μ²NA/3k<br><br>
+      <b>Experimental determination of μ:</b>
+      <ul>
+        <li>Measure total molar polarisation PT at several different temperatures</li>
+        <li>Plot PT (y-axis) vs 1/T (x-axis) → straight line obtained</li>
+        <li>Slope of line = μ²NA/3k</li>
+        <li>Rearrange: <b>μ = √(3k × Slope / NA)</b></li>
+        <li>Intercept = (4/3)πNAα → gives polarisability α</li>
+      </ul>
+      This is the <b>Debye method</b> for experimental determination of dipole moment.
+    </div>
+  </div>
+
+  <div class="qa-block">
+    <div class="q">Q10. Types of molecular polarisation — explain each (4M)</div>
+    <div class="a">
+      <b>Total polarisation: PT = Pe + Pa + Po</b><br><br>
+      <b>(i) Electronic Polarisation (Pe):</b> Applied electric field displaces the electron cloud relative to the nucleus. Present in ALL molecules (polar and non-polar). Temperature-independent. Occurs even at high frequencies.<br><br>
+      <b>(ii) Atomic/Ionic Polarisation (Pa):</b> Electric field causes displacement of atoms or ions relative to each other within the molecule. Temperature-independent. Disappears at high frequencies.<br><br>
+      <b>(iii) Orientation Polarisation (Po):</b> Polar molecules have permanent dipoles. In an electric field, these dipoles try to align along the field direction. Temperature-dependent — higher temperature means more thermal energy opposing alignment → Po decreases. Present only in polar molecules.<br><br>
+      <b>Summary:</b> Non-polar molecules: PT = Pe + Pa | Polar molecules: PT = Pe + Pa + Po
+    </div>
+  </div>
+</div>
+
+<!-- ===================== CHAPTER 2 ===================== -->
+<div class="chapter-title">🌡️ CHAPTER 2 – CHEMICAL THERMODYNAMICS: COLLIGATIVE PROPERTIES</div>
+
+<div class="section">
+  <h2>What are Colligative Properties?</h2>
+  <div class="explain">
+    Colligative properties are properties of solutions that depend <b>only on the number of solute particles</b> dissolved, NOT on the nature or identity of the solute. For example, 1 mole of glucose and 1 mole of NaCl dissolved in 1L water will produce different colligative effects (because NaCl dissociates into 2 ions).
+  </div>
+  <div class="tip">Four Colligative Properties: 1. Lowering of vapour pressure &nbsp; 2. Elevation of boiling point &nbsp; 3. Depression of freezing point &nbsp; 4. Osmotic pressure</div>
+</div>
+
+<!-- VP -->
+<div class="section">
+  <h2>2.1 Vapour Pressure & Raoult's Law</h2>
+  <div class="explain">
+    <b>Vapour Pressure:</b> Pressure exerted by vapour above a liquid in dynamic equilibrium with the liquid at a given temperature. Liquids with weak intermolecular forces have high VP (more volatile). VP increases with temperature.
+  </div>
+
+  <h3>Raoult's Law</h3>
+  <div class="explain">
+    When a non-volatile solute is dissolved in a solvent, some solute molecules occupy surface positions → fewer solvent molecules can escape → VP decreases.
+  </div>
+  <div class="formula">p = p° × x₁ &nbsp;&nbsp; (x₁ = mole fraction of solvent)</div>
+  <div class="formula">Relative Lowering of VP: (p° − p) / p° = x₂ &nbsp;&nbsp; (x₂ = mole fraction of solute)</div>
+  <div class="explain">Derivation: x₁ + x₂ = 1 → x₁ = 1−x₂ → p = p°(1−x₂) → p°−p = p°x₂ → (p°−p)/p° = x₂</div>
+  <div class="formula">Molecular weight: M₂ = (W₂ × M₁ × p°) / (W₁ × (p°−p))</div>
+</div>
+
+<!-- Tb Tf -->
+<div class="section">
+  <h2>2.2 Elevation of Boiling Point & Depression of Freezing Point</h2>
+
+  <h3>Boiling Point Elevation (ΔTb)</h3>
+  <div class="explain">
+    Boiling point = temperature at which VP = atmospheric pressure. When solute is added → VP decreases → the solution needs to be heated to a higher temperature to reach atmospheric pressure → <b>boiling point increases</b>.
+  </div>
+  <div class="formula">ΔTb = Kb × m &nbsp;&nbsp; (m = molality of solution)</div>
+  <div class="formula">Kb = (R × T_b² × M₁) / (1000 × lv) &nbsp;&nbsp; (lv = latent heat of vaporisation/gram)</div>
+
+  <h3>Freezing Point Depression (ΔTf)</h3>
+  <div class="explain">
+    Freezing point = temperature at which solid and liquid are in equilibrium (VP of solid = VP of liquid). Dissolved solute lowers the VP of the liquid → the temperature must be lowered further to match the VP of solid → <b>freezing point decreases</b>.
+  </div>
+  <div class="formula">ΔTf = Kf × m</div>
+  <div class="formula">Kf = (R × T_f² × M₁) / (1000 × lf) &nbsp;&nbsp; (lf = latent heat of fusion/gram)</div>
+  <div class="formula">Molecular weight: M₂ = (1000 × Kf × W₂) / (ΔTf × W₁)</div>
+
+  <h3>Rast Method vs Beckmann Method</h3>
+  <table>
+    <tr><th>Method</th><th>Solvent</th><th>Kf</th><th>Special feature</th></tr>
+    <tr><td>Rast Method</td><td>Camphor</td><td>37.7 K·kg·mol⁻¹</td><td>Very high Kf → large ΔTf → accurate even for small amounts</td></tr>
+    <tr><td>Beckmann Method</td><td>Any solvent</td><td>Depends on solvent</td><td>Adjustable Beckmann thermometer used (can be set to any temperature range)</td></tr>
+  </table>
+</div>
+
+<!-- Osmosis -->
+<div class="section">
+  <h2>2.3 Osmotic Pressure & Van't Hoff's Equation</h2>
+
+  <h3>Osmosis</h3>
+  <div class="explain">
+    <b>Osmosis:</b> Spontaneous flow of solvent through a semipermeable membrane (SPM) from a region of lower solute concentration (dilute) to higher solute concentration (concentrated). The SPM allows solvent molecules to pass but not solute molecules.<br><br>
+    <b>Osmotic Pressure (π):</b> The minimum pressure that must be applied on the solution side to just stop osmosis when separated from pure solvent by a SPM.
+  </div>
+
+  <h3>Van't Hoff's Laws</h3>
+  <div class="explain">
+    Van't Hoff found that osmotic pressure follows laws similar to ideal gas laws:<br>
+    <b>Boyle's Law:</b> At constant T, π ∝ 1/V → πV = constant<br>
+    <b>Charles' Law:</b> At constant V, π ∝ T → π/T = constant<br>
+    <b>Combining:</b> πV = nRT
+  </div>
+  <div class="formula">πV = nRT &nbsp; → &nbsp; π = CRT &nbsp; → &nbsp; M = WRT / πV</div>
+  <div class="tip">💡 This equation is analogous to ideal gas equation PV = nRT</div>
+
+  <h3>Reverse Osmosis (RO)</h3>
+  <div class="explain">
+    If pressure applied on the solution side is <b>greater than osmotic pressure</b>, solvent molecules are forced to flow from the solution to the pure solvent side — this is <b>Reverse Osmosis</b>.<br><br>
+    Key terms: <b>Feed water</b> = input solution | <b>Permeate</b> = purified water output | <b>Reject stream</b> = concentrated residue<br>
+    Applications: Seawater desalination, household water purifiers, industrial wastewater treatment, removing heavy metals/bacteria.
+  </div>
+
+  <h3>Van't Hoff Factor (i)</h3>
+  <div class="explain">
+    Electrolytes (like NaCl, BaCl₂) dissociate in solution → produce more particles than expected → greater colligative effect than predicted. The Van't Hoff factor (i) accounts for this:
+  </div>
+  <div class="formula">i = Total moles of particles in solution / Moles of solute dissolved</div>
+  <div class="formula">Modified equations: ΔTb = i·Kb·m | ΔTf = i·Kf·m | π = i·CRT</div>
+  <table>
+    <tr><th>Electrolyte</th><th>Dissociation</th><th>i</th></tr>
+    <tr><td>Glucose, urea</td><td>No dissociation</td><td>1</td></tr>
+    <tr><td>NaCl → Na⁺ + Cl⁻</td><td>2 ions</td><td>2</td></tr>
+    <tr><td>KCl → K⁺ + Cl⁻</td><td>2 ions</td><td>2</td></tr>
+    <tr><td>BaCl₂ → Ba²⁺ + 2Cl⁻</td><td>3 ions</td><td>3</td></tr>
+    <tr><td>K₂SO₄ → 2K⁺ + SO₄²⁻</td><td>3 ions</td><td>3</td></tr>
+  </table>
+</div>
+
+<!-- CH2 Q&A -->
+<div class="section">
+  <h2>⭐ Chapter 2 – All Important Q&A with Full Explanation</h2>
+
+  <div class="qa-block">
+    <div class="q">Q1. State and explain Raoult's Law. Derive relative lowering of VP. (6M)</div>
+    <div class="a">
+      <b>Raoult's Law:</b> The vapour pressure of a solvent above a solution equals the product of the vapour pressure of the pure solvent and the mole fraction of the solvent.<br>
+      <b>p = p° × x₁</b><br><br>
+      <b>Derivation of Relative Lowering:</b><br>
+      Since x₁ + x₂ = 1 → x₁ = 1 − x₂<br>
+      Substituting: p = p°(1 − x₂) = p° − p°x₂<br>
+      ∴ p° − p = p°x₂<br>
+      ∴ (p° − p)/p° = x₂ = relative lowering of VP<br><br>
+      <b>Conclusion:</b> Relative lowering of VP equals the mole fraction of solute. It depends only on the number of solute particles (not their nature) → hence it is a colligative property.
+    </div>
+  </div>
+
+  <div class="qa-block">
+    <div class="q">Q2. Define osmosis and osmotic pressure. Give Van't Hoff's equation with derivation. (6M)</div>
+    <div class="a">
+      <b>Osmosis:</b> Spontaneous flow of solvent through a semipermeable membrane from a dilute solution (or pure solvent) to a concentrated solution, driven by the difference in concentration.<br><br>
+      <b>Osmotic Pressure (π):</b> The minimum pressure that must be applied on the solution side to just stop osmotic flow when it is separated from pure solvent by a SPM.<br><br>
+      <b>Van't Hoff Equation Derivation:</b><br>
+      Van't Hoff Boyle's law: πV = constant (at constant T)<br>
+      Van't Hoff Charles' law: π/T = constant (at constant V)<br>
+      Combining both: πV/T = constant = R (per mole)<br>
+      For 1 mole: πV = RT<br>
+      For n moles in volume V: <b>πV = nRT</b><br>
+      ∴ π = (n/V)RT = CRT (C = concentration)<br>
+      ∴ M = WRT/πV (used to find molecular weight)
+    </div>
+  </div>
+
+  <div class="qa-block">
+    <div class="q">Q3. Depression of freezing point. Derive expression for Kf. (6M)</div>
+    <div class="a">
+      <b>Depression of Freezing Point:</b> When a non-volatile solute is dissolved in a solvent, the vapour pressure of the solution is lower than that of the pure solvent. The solid-liquid equilibrium (freezing) is disturbed and the temperature must be lowered further → freezing point is depressed.<br>
+      <b>ΔTf = Kf × m</b><br><br>
+      <b>Derivation of Kf (from Clausius-Clapeyron equation):</b><br>
+      <b>Kf = (R × T_f² × M₁) / (1000 × lf)</b><br>
+      where: T_f = freezing point of pure solvent (Kelvin) | lf = latent heat of fusion per gram of solvent | M₁ = mol. weight of solvent | R = gas constant<br><br>
+      <b>Molar depression constant:</b> Kf is defined as the depression in freezing point produced when 1 mole of solute is dissolved in 1 kg (1000g) of solvent.
+    </div>
+  </div>
+
+  <div class="qa-block">
+    <div class="q">Q4. Beckmann method for molecular weight by depression of freezing point. (5M)</div>
+    <div class="a">
+      <b>Apparatus:</b> Freezing tube with Beckmann thermometer and stirrer, placed inside an outer vessel (cooling bath) containing a freezing mixture (ice + salt).<br><br>
+      <b>Procedure:</b>
+      <ul>
+        <li>Take known weight (W₁) of pure solvent in freezing tube</li>
+        <li>Cool slowly with stirring → note freezing point of pure solvent (T_f°)</li>
+        <li>Add known weight (W₂) of solute, dissolve completely</li>
+        <li>Cool solution → note new freezing point (T_f)</li>
+        <li>Calculate: ΔTf = T_f° − T_f</li>
+      </ul>
+      <b>M₂ = (1000 × Kf × W₂) / (ΔTf × W₁)</b><br><br>
+      <b>Rast Method:</b> Uses camphor as solvent (Kf = 37.7 K·kg·mol⁻¹ — very high). Because Kf is so large, even a small amount of solute gives a measurable ΔTf → more accurate.
+    </div>
+  </div>
+
+  <div class="qa-block">
+    <div class="q">Q5. Explain Reverse Osmosis. Applications. (4M)</div>
+    <div class="a">
+      <b>Reverse Osmosis (RO):</b> When pressure greater than the osmotic pressure is applied on the solution side, solvent molecules are forced to flow from the solution through the SPM to the pure solvent side. This is the reverse of normal osmosis.<br><br>
+      <b>Key Terms:</b>
+      <ul>
+        <li><b>Feed water:</b> The solution from which pure water is to be extracted</li>
+        <li><b>Permeate:</b> Purified/desalinated water obtained on the other side</li>
+        <li><b>Reject stream:</b> Concentrated salt/brine water that doesn't pass through</li>
+      </ul>
+      <b>Applications:</b>
+      <ul>
+        <li>Desalination of seawater to produce drinking water</li>
+        <li>Household water purifiers (RO purifiers)</li>
+        <li>Removal of heavy metals, bacteria, dissolved salts from water</li>
+        <li>Industrial wastewater treatment</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="qa-block">
+    <div class="q">Q6. Explain Van't Hoff factor. How does it modify colligative equations? (4M)</div>
+    <div class="a">
+      <b>Van't Hoff Factor (i):</b> When electrolytes dissolve, they dissociate into ions, producing more particles than expected. This increases the colligative effect beyond what we'd predict for a non-dissociating solute. The Van't Hoff factor (i) accounts for this:<br>
+      <b>i = Total moles of particles in solution / Moles of solute dissolved</b><br><br>
+      <b>Modified Colligative Equations:</b>
+      <ul>
+        <li>ΔTb = i × Kb × m</li>
+        <li>ΔTf = i × Kf × m</li>
+        <li>(p°−p)/p° = i × x₂</li>
+        <li>π = i × CRT</li>
+      </ul>
+      <b>Examples:</b> Glucose (i=1), NaCl (i=2), BaCl₂ (i=3), K₂SO₄ (i=3)
+    </div>
+  </div>
+
+  <div class="qa-block">
+    <div class="q">Q7. Vapour pressure of liquid. Factors affecting it. (4M)</div>
+    <div class="a">
+      <b>Vapour Pressure:</b> The pressure exerted by the vapour of a liquid above its surface when liquid and vapour are in dynamic equilibrium at a given temperature.<br><br>
+      <b>Factors affecting VP:</b>
+      <ul>
+        <li><b>Nature of liquid:</b> Liquids with weak intermolecular forces (e.g., diethyl ether) have high VP (more volatile). Liquids with strong forces (e.g., water, glycerol) have low VP.</li>
+        <li><b>Temperature:</b> VP increases with temperature — more molecules gain enough kinetic energy to escape from the liquid surface into the vapour phase.</li>
+        <li><b>Presence of solute:</b> Adding a non-volatile solute lowers the VP of the solvent (Raoult's Law) because solute molecules occupy surface area.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="qa-block">
+    <div class="q">Q8. NUMERICAL – Calculate molecular weight by Rast method</div>
+    <div class="a">
+      <div class="num">
+        <b>Given:</b> Kf = 37.7 K·kg·mol⁻¹ | W₂ (solute) = 0.033 g | W₁ (camphor) = 0.450 g | ΔTf = 17.7 K<br><br>
+        <b>Formula:</b> M₂ = (1000 × Kf × W₂) / (ΔTf × W₁)<br><br>
+        <b>Calculation:</b><br>
+        M₂ = (1000 × 37.7 × 0.033) / (17.7 × 0.450)<br>
+        M₂ = 1244.1 / 7.965<br>
+        <b>M₂ ≈ 156 g·mol⁻¹ ✓</b>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MASTER FORMULA TABLE -->
+<div class="section">
+  <h2>🔢 Master Formula Table – All You Need</h2>
+  <table>
+    <tr><th>Topic</th><th>Formula</th><th>Key Value / Note</th></tr>
+    <tr><td>Dipole Moment</td><td>μ = q·d</td><td>Unit: Debye | 1D = 3.336×10⁻³⁰ C·m</td></tr>
+    <tr><td>Benzene isomers μ</td><td>μ = 2μcos(θ/2)</td><td>Ortho=2.6D, Meta=1.5D, Para=0D</td></tr>
+    <tr><td>IR Frequency</td><td>ν̃ = (1/2πc)√(k/μ)</td><td>Fingerprint: 900–1400 cm⁻¹</td></tr>
+    <tr><td>Isotopic shift</td><td>ν̃H/ν̃D = √2 ≈ 1.414</td><td>O–H(3600) → O–D(2630 cm⁻¹)</td></tr>
+    <tr><td>Debye method (μ)</td><td>μ = √(3k·slope/NA)</td><td>Plot PT vs 1/T → slope = μ²NA/3k</td></tr>
+    <tr><td>Clausius-Mosotti</td><td>PM = [(εr−1)/(εr+2)]×(M/ρ)</td><td>Non-polar molecules only</td></tr>
+    <tr><td>Raoult's Law</td><td>(p°−p)/p° = x₂</td><td>Relative lowering = mole fraction of solute</td></tr>
+    <tr><td>Mol. wt from VP</td><td>M₂ = W₂M₁p°/[W₁(p°−p)]</td><td>—</td></tr>
+    <tr><td>Boiling point elevation</td><td>ΔTb = Kb·m</td><td>Kb = ebullioscopic constant</td></tr>
+    <tr><td>Freezing point depression</td><td>ΔTf = Kf·m</td><td>Kf camphor = 37.7 K·kg·mol⁻¹</td></tr>
+    <tr><td>Mol. wt (Rast/Beckmann)</td><td>M₂ = 1000·Kf·W₂/(ΔTf·W₁)</td><td>W in grams, Kf from table</td></tr>
+    <tr><td>Osmotic pressure</td><td>πV = nRT; π = CRT</td><td>R = 0.0821 L·atm·mol⁻¹·K⁻¹</td></tr>
+    <tr><td>Mol. wt from osmosis</td><td>M = WRT/πV</td><td>Use T in Kelvin</td></tr>
+    <tr><td>Van't Hoff factor</td><td>ΔTf = i·Kf·m; π = i·CRT</td><td>NaCl→i=2; BaCl₂→i=3</td></tr>
+  </table>
+</div>
+
+<p style="text-align:center; margin-top:10px; font-size:11px; color:#555; padding:8px; background:#e8f5e9; border-radius:4px;">
+  📖 TYBSc Sem 5 – Physical Chemistry | Complete Notes with Full Explanation | Good luck in your exams! 🍀
+</p>
+
+</body>
+</html>

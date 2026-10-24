@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Class 9 – Maths | Chapter 3: Triangles – Notes & Solutions</title>
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 14px;
+      color: #1a1a2e;
+      background: #f5f6fa;
+      padding: 24px;
+    }
+
+    /* ── Print styles ── */
+    @media print {
+      body { background: #fff; padding: 0; font-size: 12px; }
+      .page { box-shadow: none; margin: 0; padding: 20mm 18mm; border-radius: 0; }
+      .no-print { display: none; }
+      .page-break { page-break-before: always; }
+      h1 { font-size: 20px; }
+      h2 { font-size: 15px; }
+      h3 { font-size: 13px; }
+    }
+
+    /* ── Page Card ── */
+    .page {
+      max-width: 860px;
+      margin: 0 auto 32px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.10);
+      padding: 40px 48px;
+    }
+
+    /* ── Header Banner ── */
+    .header-banner {
+      background: linear-gradient(135deg, #e91e8c 0%, #c2185b 100%);
+      color: #fff;
+      border-radius: 10px;
+      padding: 20px 28px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .header-banner .subject { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; opacity: .85; }
+    .header-banner h1 { font-size: 26px; font-weight: 800; margin: 6px 0 4px; }
+    .header-banner .subtitle { font-size: 13px; opacity: .9; }
+
+    /* ── Section Headings ── */
+    h2 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #c2185b;
+      border-left: 5px solid #e91e8c;
+      padding-left: 10px;
+      margin: 28px 0 12px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+    h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin: 18px 0 8px;
+      background: #fce4ec;
+      padding: 6px 12px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+
+    /* ── Theorem / Key Note boxes ── */
+    .theorem-box {
+      background: #fff8e1;
+      border: 1.5px solid #ffc107;
+      border-left: 5px solid #ffc107;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 12px 0;
+    }
+    .theorem-box .label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #f57f17;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .key-box {
+      background: #e8f5e9;
+      border: 1.5px solid #4caf50;
+      border-left: 5px solid #4caf50;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 12px 0;
+    }
+    .key-box .label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #2e7d32;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .proof-box {
+      background: #e3f2fd;
+      border: 1.5px solid #1976d2;
+      border-left: 5px solid #1976d2;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 12px 0;
+    }
+    .proof-box .label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #0d47a1;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    /* ── Topic list ── */
+    .topic-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin: 12px 0;
+    }
+    .topic-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      padding: 6px 10px;
+      background: #fce4ec;
+      border-radius: 6px;
+    }
+    .topic-item::before {
+      content: '▸';
+      color: #e91e8c;
+      font-size: 12px;
+    }
+
+    /* ── Math steps ── */
+    .steps { margin: 8px 0 8px 20px; }
+    .steps li { margin: 5px 0; line-height: 1.7; }
+    .step-line {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin: 5px 0;
+      line-height: 1.7;
+    }
+    .step-line .arrow { color: #c2185b; font-weight: 700; min-width: 18px; }
+
+    /* ── Solved Examples ── */
+    .example {
+      border: 1.5px solid #ce93d8;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      background: #fdf2ff;
+    }
+    .example-title {
+      font-weight: 700;
+      color: #6a1b9a;
+      font-size: 13px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .example-title .badge {
+      background: #6a1b9a;
+      color: #fff;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+
+    /* ── Practice Set ── */
+    .practice-box {
+      background: #e8eaf6;
+      border: 1.5px solid #3949ab;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .practice-box .q-num {
+      font-weight: 700;
+      color: #1a237e;
+      margin-bottom: 4px;
+    }
+    .answer {
+      background: #fff;
+      border: 1px dashed #3949ab;
+      border-radius: 6px;
+      padding: 8px 12px;
+      margin-top: 8px;
+      font-size: 13px;
+    }
+    .answer .ans-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #3949ab;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    /* ── Math expressions ── */
+    .math { font-style: italic; font-family: 'Cambria Math', Georgia, serif; }
+    .highlight { color: #c2185b; font-weight: 700; }
+    .degree::after { content: '°'; }
+
+    /* ── Divider ── */
+    hr { border: none; border-top: 1.5px solid #f0f0f0; margin: 24px 0; }
+
+    /* ── Quick Reference Table ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 13px;
+    }
+    th {
+      background: #c2185b;
+      color: #fff;
+      padding: 9px 12px;
+      text-align: left;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+    td {
+      padding: 8px 12px;
+      border-bottom: 1px solid #f0f0f0;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background: #fce4ec20; }
+
+    /* ── Print button ── */
+    .print-btn {
+      display: block;
+      width: fit-content;
+      margin: 0 auto 20px;
+      padding: 10px 28px;
+      background: #e91e8c;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      letter-spacing: .5px;
+    }
+    .print-btn:hover { background: #c2185b; }
+  </style>
+</head>
+<body>
+
+<!-- Print Button -->
+<button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+<!-- ══════════════════════════════════════════ PAGE 1 ══ -->
+<div class="page">
+
+  <!-- Header -->
+  <div class="header-banner">
+    <div class="subject">Class 9 · Mathematics · Standard</div>
+    <h1>Chapter 3 — Triangles</h1>
+    <div class="subtitle">Key Notes &amp; Exercise Solutions | Practice Set 3.1</div>
+  </div>
+
+  <!-- Topics Covered -->
+  <h2>Topics Covered</h2>
+  <div class="topic-grid">
+    <div class="topic-item">Theorem of Remote Interior Angles</div>
+    <div class="topic-item">Property of Exterior Angle</div>
+    <div class="topic-item">Congruence of Triangles</div>
+    <div class="topic-item">Isosceles Triangle Theorem</div>
+    <div class="topic-item">Property of 30°–60°–90° Triangle</div>
+    <div class="topic-item">Median of a Triangle</div>
+    <div class="topic-item">Perpendicular Bisector Theorem</div>
+    <div class="topic-item">Angle Bisector Theorem</div>
+    <div class="topic-item">Property of Median on Hypotenuse</div>
+    <div class="topic-item">Similar Triangles</div>
+  </div>
+
+  <hr/>
+
+  <!-- ─── KEY NOTES ─── -->
+  <h2>Key Notes</h2>
+
+  <!-- Note 1 -->
+  <h3>1. Angle Sum Property of a Triangle</h3>
+  <div class="key-box">
+    <div class="label">★ Key Fact</div>
+    The sum of all three interior angles of any triangle is always <span class="highlight">180°</span>.
+    <br/><br/>
+    <span class="math">∠A + ∠B + ∠C = 180°</span>
+  </div>
+
+  <!-- Note 2 -->
+  <h3>2. Theorem — Remote Interior Angles</h3>
+  <div class="theorem-box">
+    <div class="label">Theorem</div>
+    <b>Statement:</b> The measure of an exterior angle of a triangle is equal to the sum of its two remote (non-adjacent) interior angles.
+    <br/><br/>
+    If <span class="math">∠PRS</span> is an exterior angle of <span class="math">△PQR</span>, then:
+    <br/>
+    <span class="highlight">∠PRS = ∠PQR + ∠QPR</span>
+  </div>
+
+  <div class="proof-box">
+    <div class="label">Proof (Step-by-Step)</div>
+    <div class="step-line"><span class="arrow">1.</span> In △PQR: &nbsp; <span class="math">∠PQR + ∠QPR + ∠PRQ = 180°</span> &nbsp;…(I) <em>[angle sum]</em></div>
+    <div class="step-line"><span class="arrow">2.</span> <span class="math">∠PRQ + ∠PRS = 180°</span> &nbsp;…(II) <em>[linear pair]</em></div>
+    <div class="step-line"><span class="arrow">3.</span> From (I) and (II): &nbsp; <span class="math">∠PQR + ∠QPR + ∠PRQ = ∠PRQ + ∠PRS</span></div>
+    <div class="step-line"><span class="arrow">4.</span> Cancel <span class="math">∠PRQ</span> from both sides: &nbsp; <span class="highlight">∠PQR + ∠QPR = ∠PRS</span> &nbsp;✓</div>
+  </div>
+
+  <!-- Note 3 -->
+  <h3>3. Property of an Exterior Angle</h3>
+  <div class="key-box">
+    <div class="label">★ Key Property</div>
+    Since <span class="math">∠PRS = ∠PQR + ∠QPR</span>, and both remote interior angles are positive:
+    <br/><br/>
+    <span class="highlight">∠PRS &gt; ∠P &nbsp;&nbsp;&nbsp; and &nbsp;&nbsp;&nbsp; ∠PRS &gt; ∠Q</span>
+    <br/><br/>
+    ∴ <b>An exterior angle of a triangle is always greater than either of its remote interior angles.</b>
+  </div>
+
+  <!-- Note 4 -->
+  <h3>4. Sum of Exterior Angles of a Triangle = 360°</h3>
+  <div class="theorem-box">
+    <div class="label">Theorem</div>
+    The sum of the three exterior angles of a triangle (each formed by extending sides in the same direction) is <span class="highlight">360°</span>.
+  </div>
+  <div class="proof-box">
+    <div class="label">Proof — Method I (using remote interior angle theorem)</div>
+    <div class="step-line"><span class="arrow">1.</span> <span class="math">∠PAB = ∠ABC + ∠ACB</span> &nbsp;…(I)</div>
+    <div class="step-line"><span class="arrow">2.</span> <span class="math">∠ACR = ∠ABC + ∠BAC</span> &nbsp;…(II)</div>
+    <div class="step-line"><span class="arrow">3.</span> <span class="math">∠CBQ = ∠BAC + ∠ACB</span> &nbsp;…(III)</div>
+    <div class="step-line"><span class="arrow">4.</span> Adding (I)+(II)+(III): &nbsp; <span class="math">= 2(∠ABC + ∠ACB + ∠BAC) = 2 × 180° = <span class="highlight">360°</span></span></div>
+  </div>
+  <div class="proof-box">
+    <div class="label">Proof — Method II (using linear pairs)</div>
+    <div class="step-line"><span class="arrow">•</span> Each interior angle + its exterior angle = 180° (linear pair)</div>
+    <div class="step-line"><span class="arrow">•</span> <span class="math">∠c + ∠f = 180°, &nbsp; ∠a + ∠d = 180°, &nbsp; ∠b + ∠e = 180°</span></div>
+    <div class="step-line"><span class="arrow">•</span> Sum all: &nbsp; <span class="math">(∠a+∠b+∠c) + (∠d+∠e+∠f) = 540°</span></div>
+    <div class="step-line"><span class="arrow">•</span> <span class="math">180° + (∠d+∠e+∠f) = 540°</span></div>
+    <div class="step-line"><span class="arrow">∴</span> <span class="highlight">∠d + ∠e + ∠f = 360°</span> &nbsp;✓</div>
+  </div>
+
+  <!-- Note 5 — Angle Bisectors -->
+  <h3>5. Angle Bisectors Meet at Incenter</h3>
+  <div class="key-box">
+    <div class="label">★ Key Result</div>
+    If bisectors of <span class="math">∠B</span> and <span class="math">∠C</span> of <span class="math">△ABC</span> intersect at point P, then:
+    <br/><br/>
+    <span class="highlight">∠BPC = 90° + ½ ∠BAC</span>
+    <br/><br/>
+    <b>Logic:</b> &nbsp; <span class="math">∠PBC + ∠PCB = 90° − ½∠BAC</span>, and by angle sum in △BPC, <span class="math">∠BPC = 180° − (90° − ½∠BAC) = 90° + ½∠BAC</span>
+  </div>
+
+  <hr/>
+
+  <!-- ─── QUICK REFERENCE TABLE ─── -->
+  <h2>Quick Reference</h2>
+  <table>
+    <tr><th>Property / Theorem</th><th>Formula / Statement</th></tr>
+    <tr><td>Angle Sum Property</td><td>∠A + ∠B + ∠C = 180°</td></tr>
+    <tr><td>Exterior Angle Theorem</td><td>Exterior ∠ = Sum of two remote interior ∠s</td></tr>
+    <tr><td>Exterior &gt; Remote Interior</td><td>Ext. ∠ &gt; each remote interior ∠</td></tr>
+    <tr><td>Sum of All Exterior Angles</td><td>∠1 + ∠2 + ∠3 = 360°</td></tr>
+    <tr><td>Bisectors of ∠B &amp; ∠C meet at P</td><td>∠BPC = 90° + ½∠BAC</td></tr>
+  </table>
+
+</div><!-- end page 1 -->
+
+
+<!-- ══════════════════════════════════════════ PAGE 2 ══ -->
+<div class="page page-break">
+
+  <div class="header-banner">
+    <div class="subject">Class 9 · Mathematics · Chapter 3</div>
+    <h1>Solved Examples &amp; Practice Set 3.1</h1>
+    <div class="subtitle">Step-by-Step Solutions</div>
+  </div>
+
+  <!-- ─── SOLVED EXAMPLES ─── -->
+  <h2>Solved Examples</h2>
+
+  <!-- Ex 1 -->
+  <div class="example">
+    <div class="example-title">
+      <span class="badge">Ex 1</span>
+      Angles of a triangle are in ratio 5 : 6 : 7. Find the measures.
+    </div>
+    <b>Solution:</b>
+    <ul class="steps">
+      <li>Let the angles be <span class="math">5x, 6x, 7x</span></li>
+      <li><span class="math">5x + 6x + 7x = 180°</span></li>
+      <li><span class="math">18x = 180°</span> &nbsp;⟹&nbsp; <span class="math">x = 10°</span></li>
+      <li><span class="highlight">5x = 50°, &nbsp; 6x = 60°, &nbsp; 7x = 70°</span></li>
+    </ul>
+    <div class="answer">
+      <div class="ans-label">Answer</div>
+      The three angles are <b>50°, 60°, and 70°</b>.
+    </div>
+  </div>
+
+  <!-- Ex 2 -->
+  <div class="example">
+    <div class="example-title">
+      <span class="badge">Ex 2</span>
+      Find ∠PRS and ∠RTS from figure 3.4 (given ∠QPR = 30°, ∠PQR = 40°, ∠TSR = 20°).
+    </div>
+    <b>Solution:</b>
+    <ul class="steps">
+      <li><span class="math">∠PRS</span> is an exterior angle of <span class="math">△PQR</span></li>
+      <li>By remote interior angle theorem: &nbsp; <span class="math">∠PRS = ∠PQR + ∠QPR = 40° + 30° = <span class="highlight">70°</span></span></li>
+      <li>In <span class="math">△RTS</span>: &nbsp; <span class="math">∠TRS + ∠RTS + ∠TSR = 180°</span></li>
+      <li>Note: <span class="math">∠TRS = ∠PRS = 70°</span> (same angle), <span class="math">∠TSR = 20°</span></li>
+      <li><span class="math">70° + ∠RTS + 20° = 180°</span></li>
+      <li><span class="math">∠RTS + 90° = 180°</span></li>
+      <li><span class="highlight">∠RTS = 90°</span></li>
+    </ul>
+    <div class="answer">
+      <div class="ans-label">Answer</div>
+      <b>∠PRS = 70°</b> &nbsp;&amp;&nbsp; <b>∠RTS = 90°</b>
+    </div>
+  </div>
+
+  <!-- Ex 3 -->
+  <div class="example">
+    <div class="example-title">
+      <span class="badge">Ex 3</span>
+      Prove: Sum of exterior angles of a triangle = 360°
+    </div>
+    <b>Given:</b> &nbsp;∠PAB, ∠QBC, ∠ACR are exterior angles of △ABC.
+    <br/><b>To Prove:</b> &nbsp;<span class="math">∠PAB + ∠QBC + ∠ACR = 360°</span>
+    <br/><br/><b>Proof (Method I):</b>
+    <ul class="steps">
+      <li><span class="math">∠PAB = ∠ABC + ∠ACB</span> &nbsp;…(I) [remote int. angles]</li>
+      <li><span class="math">∠ACR = ∠ABC + ∠BAC</span> &nbsp;…(II)</li>
+      <li><span class="math">∠CBQ = ∠BAC + ∠ACB</span> &nbsp;…(III)</li>
+      <li>Adding: <span class="math">= 2∠ABC + 2∠ACB + 2∠BAC = 2(180°) = <span class="highlight">360°</span></span> &nbsp;✓</li>
+    </ul>
+  </div>
+
+  <!-- Ex 4 -->
+  <div class="example">
+    <div class="example-title">
+      <span class="badge">Ex 4</span>
+      Bisectors of ∠B and ∠C of △ABC meet at P. Prove: ∠BPC = 90° + ½∠BAC
+    </div>
+    <b>Proof:</b>
+    <ul class="steps">
+      <li>In △ABC: &nbsp;<span class="math">∠BAC + ∠ABC + ∠ACB = 180°</span></li>
+      <li>Divide by 2: &nbsp;<span class="math">½∠BAC + ½∠ABC + ½∠ACB = 90°</span></li>
+      <li>Since BP bisects ∠B: &nbsp;<span class="math">∠PBC = ½∠ABC</span>; since CP bisects ∠C: &nbsp;<span class="math">∠PCB = ½∠ACB</span></li>
+      <li>So: &nbsp;<span class="math">½∠BAC + ∠PBC + ∠PCB = 90°</span></li>
+      <li>⟹ &nbsp;<span class="math">∠PBC + ∠PCB = 90° − ½∠BAC</span> &nbsp;…(I)</li>
+      <li>In △BPC: &nbsp;<span class="math">∠BPC + ∠PBC + ∠PCB = 180°</span></li>
+      <li>Using (I): &nbsp;<span class="math">∠BPC + (90° − ½∠BAC) = 180°</span></li>
+      <li><span class="highlight">∠BPC = 90° + ½∠BAC</span> &nbsp;✓</li>
+    </ul>
+    <div class="answer">
+      <div class="ans-label">Hence Proved</div>
+      <b>∠BPC = 90° + ½∠BAC</b>
+    </div>
+  </div>
+
+  <hr/>
+
+  <!-- ─── PRACTICE SET 3.1 ─── -->
+  <h2>Practice Set 3.1 — Solutions</h2>
+
+  <!-- Q1 -->
+  <div class="practice-box">
+    <div class="q-num">Q1. In figure 3.8, ∠ACD is an exterior angle of △ABC. ∠B = 40°, ∠A = 70°. Find ∠ACD.</div>
+    <b>Solution:</b>
+    <ul class="steps">
+      <li><span class="math">∠ACD</span> is an exterior angle of <span class="math">△ABC</span>.</li>
+      <li>By remote interior angle theorem: &nbsp;<span class="math">∠ACD = ∠A + ∠B</span></li>
+      <li><span class="math">∠ACD = 70° + 40°</span></li>
+    </ul>
+    <div class="answer">
+      <div class="ans-label">Answer</div>
+      <b>∠ACD = 110°</b>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="practice-box">
+    <div class="q-num">Q2. In △PQR, ∠P = 70°, ∠Q = 65°. Find ∠R.</div>
+    <b>Solution:</b>
+    <ul class="steps">
+      <li>Angle sum property: &nbsp;<span class="math">∠P + ∠Q + ∠R = 180°</span></li>
+      <li><span class="math">70° + 65° + ∠R = 180°</span></li>
+      <li><span class="math">∠R = 180° − 135°</span></li>
+    </ul>
+    <div class="answer">
+      <div class="ans-label">Answer</div>
+      <b>∠R = 45°</b>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="practice-box">
+    <div class="q-num">Q3. Angles of a triangle are x°, (x−20)°, (x−40)°. Find each angle.</div>
+    <b>Solution:</b>
+    <ul class="steps">
+      <li><span class="math">x + (x−20) + (x−40) = 180°</span></li>
+      <li><span class="math">3x − 60 = 180°</span></li>
+      <li><span class="math">3x = 240°</span> &nbsp;⟹&nbsp; <span class="math">x = 80°</span></li>
+      <li>Angles: <span class="math">x = 80°</span>, &nbsp;<span class="math">x−20 = 60°</span>, &nbsp;<span class="math">x−40 = 40°</span></li>
+    </ul>
+    <div class="answer">
+      <div class="ans-label">Answer</div>
+      <b>The three angles are 80°, 60°, and 40°.</b>
+      <br/><em>Verification: 80 + 60 + 40 = 180° ✓</em>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="practice-box">
+    <div class="q-num">Q4. One angle is twice the smallest; another is thrice the smallest. Find all three angles.</div>
+    <b>Solution:</b>
+    <ul class="steps">
+      <li>Let the smallest angle = <span class="math">x</span></li>
+      <li>Second angle = <span class="math">2x</span>, &nbsp; Third angle = <span class="math">3x</span></li>
+      <li><span class="math">x + 2x + 3x = 180°</span></li>
+      <li><span class="math">6x = 180°</span> &nbsp;⟹&nbsp; <span class="math">x = 30°</span></li>
+      <li>Angles: <span class="math">30°</span>, <span class="math">60°</span>, <span class="math">90°</span></li>
+    </ul>
+    <div class="answer">
+      <div class="ans-label">Answer</div>
+      <b>The three angles are 30°, 60°, and 90°.</b>
+      <br/><em>Note: This is a right-angled triangle! Verification: 30 + 60 + 90 = 180° ✓</em>
+    </div>
+  </div>
+
+  <hr/>
+
+  <!-- ─── MEMORY TIPS ─── -->
+  <h2>Memory Tips</h2>
+  <div class="key-box">
+    <div class="label">★ Quick Tricks to Remember</div>
+    <ul class="steps">
+      <li><b>Ext. angle = Sum of 2 remote interior angles</b> — think of it as "the outside angle collects the two angles far away."</li>
+      <li><b>Exterior > each remote interior</b> — since it equals their sum, it must be bigger than each one alone.</li>
+      <li><b>3 exterior angles = 360°</b> — same as one full rotation around a point.</li>
+      <li><b>For ratio problems</b> — always set angles as <em>kx, mx, nx</em> and use sum = 180°.</li>
+      <li><b>For bisector problems</b> — divide the whole angle equation by 2 first, then use triangle angle sum.</li>
+    </ul>
+  </div>
+
+  <!-- Footer -->
+  <div style="text-align:center; margin-top:30px; font-size:11px; color:#999;">
+    Class 9 – Mathematics | Chapter 3: Triangles | Notes &amp; Practice Set 3.1 Solutions
+  </div>
+
+</div><!-- end page 2 -->
+
+</body>
+</html>

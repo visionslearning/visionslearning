@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FYBCom – Accounting & Financial Management | Part 1 Notes</title>
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f0f4f8;
+      color: #1a1a2e;
+      line-height: 1.7;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+      color: #fff;
+      padding: 40px 24px 32px;
+      text-align: center;
+    }
+    header .subject-tag {
+      display: inline-block;
+      background: #e94560;
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+    header h1 { font-size: 1.9rem; font-weight: 800; margin-bottom: 6px; }
+    header p  { font-size: 0.95rem; opacity: 0.75; }
+
+    /* ── TOC ── */
+    .toc {
+      max-width: 860px;
+      margin: 28px auto 0;
+      background: #fff;
+      border-radius: 12px;
+      padding: 22px 28px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .toc h2 { font-size: 1rem; font-weight: 700; color: #0f3460; margin-bottom: 10px; }
+    .toc ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+    .toc ul li a {
+      text-decoration: none;
+      background: #f0f4f8;
+      color: #0f3460;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid #d0daea;
+      transition: background 0.2s, color 0.2s;
+    }
+    .toc ul li a:hover { background: #0f3460; color: #fff; }
+
+    /* ── Main Layout ── */
+    main { max-width: 860px; margin: 28px auto 60px; padding: 0 16px; }
+
+    /* ── Chapter Cards ── */
+    .chapter {
+      background: #fff;
+      border-radius: 14px;
+      margin-bottom: 36px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      overflow: hidden;
+    }
+    .chapter-header {
+      padding: 22px 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .ch1 .chapter-header { background: linear-gradient(120deg, #0f3460, #1a6eb5); }
+    .ch2 .chapter-header { background: linear-gradient(120deg, #e94560, #c0392b); }
+
+    .chapter-num {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; font-weight: 800; color: #fff;
+      flex-shrink: 0;
+    }
+    .chapter-header h2 { color: #fff; font-size: 1.25rem; font-weight: 700; }
+    .chapter-header p  { color: rgba(255,255,255,0.75); font-size: 0.82rem; margin-top: 2px; }
+
+    .chapter-body { padding: 28px; }
+
+    /* ── Section ── */
+    .section { margin-bottom: 30px; }
+    .section:last-child { margin-bottom: 0; }
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f3460;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e2e8f0;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title .icon {
+      width: 28px; height: 28px;
+      background: #0f3460;
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 0.85rem; flex-shrink: 0;
+    }
+    .ch2 .section-title .icon { background: #e94560; }
+    .ch2 .section-title { color: #c0392b; }
+
+    /* ── Concept Cards ── */
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .concept-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 16px;
+      border-left: 4px solid #1a6eb5;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .concept-card:hover { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0,0,0,0.09); }
+    .ch2 .concept-card { border-left-color: #e94560; }
+    .concept-card h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 6px;
+    }
+    .concept-card p { font-size: 0.83rem; color: #4a5568; }
+
+    /* ── Definition Box ── */
+    .def-box {
+      background: linear-gradient(135deg, #ebf4ff, #dbeafe);
+      border: 1px solid #93c5fd;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+      font-size: 0.88rem;
+      color: #1e3a5f;
+    }
+    .def-box strong { color: #0f3460; }
+
+    /* ── Table ── */
+    .table-wrap { overflow-x: auto; margin-top: 10px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.84rem;
+    }
+    thead tr { background: #0f3460; color: #fff; }
+    .ch2 thead tr { background: #e94560; }
+    th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+    tbody tr:nth-child(even) { background: #f8fafc; }
+    tbody tr:hover { background: #eef2ff; }
+
+    /* ── Key Points Box ── */
+    .key-box {
+      background: #fffbeb;
+      border: 1px solid #fcd34d;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-top: 20px;
+    }
+    .key-box h4 { font-size: 0.88rem; font-weight: 700; color: #92400e; margin-bottom: 8px; }
+    .key-box ul { list-style: none; }
+    .key-box ul li::before { content: "⭐ "; }
+    .key-box ul li { font-size: 0.83rem; color: #78350f; margin-bottom: 4px; }
+
+    /* ── Difference Table ── */
+    .diff-table thead tr { background: #374151; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: #94a3b8;
+    }
+
+    @media print {
+      body { background: #fff; }
+      header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .chapter-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════ HEADER ══════════ -->
+<header>
+  <div class="subject-tag">FYBCom | Semester I</div>
+  <h1>Accounting &amp; Financial Management</h1>
+  <p>Part 1 — Complete Notes &nbsp;|&nbsp; Chapter 1 &amp; Chapter 2</p>
+</header>
+
+<!-- ══════════ TABLE OF CONTENTS ══════════ -->
+<div class="toc">
+  <h2>📋 Quick Navigation</h2>
+  <ul>
+    <li><a href="#ch1">Chapter 1: Accounting Concepts</a></li>
+    <li><a href="#conventions">Accounting Conventions</a></li>
+    <li><a href="#ch2">Chapter 2: Accounting Standards</a></li>
+    <li><a href="#as-list">List of AS (ICAI)</a></li>
+    <li><a href="#diff">AS vs Ind AS</a></li>
+  </ul>
+</div>
+
+<!-- ══════════ MAIN ══════════ -->
+<main>
+
+  <!-- ╔══════════════════════════════════════╗ -->
+  <!-- ║  CHAPTER 1 – ACCOUNTING CONCEPTS    ║ -->
+  <!-- ╚══════════════════════════════════════╝ -->
+  <div class="chapter ch1" id="ch1">
+    <div class="chapter-header">
+      <div class="chapter-num">1</div>
+      <div>
+        <h2>Accounting Concepts &amp; Conventions</h2>
+        <p>Fundamental assumptions that govern accounting records &amp; reporting</p>
+      </div>
+    </div>
+    <div class="chapter-body">
+
+      <!-- Meaning -->
+      <div class="section">
+        <div class="section-title"><span class="icon">📖</span> Meaning &amp; Introduction</div>
+        <div class="def-box">
+          <strong>Accounting Concepts</strong> are basic assumptions or conditions upon which the science of accounting is based. They are the <em>foundation rules</em> that every accountant follows while recording transactions.<br><br>
+          <strong>Accounting Conventions</strong> are customs or practices followed by accountants to ensure uniformity, comparability, and fairness in financial statements.
+        </div>
+        <p style="font-size:0.87rem; color:#4a5568;">
+          These concepts and conventions are not legally enforceable but are universally accepted guidelines. They ensure that financial statements are prepared consistently and can be compared across periods and organisations.
+        </p>
+      </div>
+
+      <!-- 10 Accounting Concepts -->
+      <div class="section">
+        <div class="section-title"><span class="icon">💡</span> Important Accounting Concepts</div>
+        <div class="concept-grid">
+
+          <div class="concept-card">
+            <h4>1. Business Entity Concept</h4>
+            <p>The business is treated as a separate entity from its owner. Owner's personal transactions are not recorded in business books.<br><em>Example: Capital introduced by owner is shown as a liability of the business.</em></p>
+          </div>
+
+          <div class="concept-card">
+            <h4>2. Money Measurement Concept</h4>
+            <p>Only those transactions that can be expressed in monetary terms are recorded. Non-monetary events (e.g., employee skill, customer loyalty) are <strong>not</strong> recorded.<br><em>Currency used in India: Indian Rupees (₹)</em></p>
+          </div>
+
+          <div class="concept-card">
+            <h4>3. Going Concern Concept</h4>
+            <p>The business is assumed to continue its operations for the foreseeable future. Assets are recorded at cost, not at liquidation value. Long-term investments are justified under this concept.</p>
+          </div>
+
+          <div class="concept-card">
+            <h4>4. Cost Concept (Historical Cost)</h4>
+            <p>Assets are recorded at their original purchase price (cost), not at current market value. The cost is the basis for all future accounting entries for that asset.<br><em>Example: Land bought for ₹5 lakh is always shown at ₹5 lakh.</em></p>
+          </div>
+
+          <div class="concept-card">
+            <h4>5. Dual Aspect Concept</h4>
+            <p>Every business transaction has two aspects — a debit and a credit of equal amount. This forms the basis of Double Entry Bookkeeping.<br><em>Formula: Assets = Liabilities + Capital</em></p>
+          </div>
+
+          <div class="concept-card">
+            <h4>6. Accrual Concept</h4>
+            <p>Revenues and expenses are recognised when they are <em>earned or incurred</em>, NOT when cash is received or paid. This gives a true and fair view of profit.<br><em>Example: Outstanding salary is recorded even if not yet paid.</em></p>
+          </div>
+
+          <div class="concept-card">
+            <h4>7. Matching Concept</h4>
+            <p>Expenses of a period should be matched with the revenues of the same period. Profit = Revenues earned – Expenses incurred during that period.<br><em>Related to: Accrual concept.</em></p>
+          </div>
+
+          <div class="concept-card">
+            <h4>8. Periodicity Concept</h4>
+            <p>The life of a business is divided into equal time periods (usually 12 months) for accounting purposes. This helps stakeholders assess performance regularly.<br><em>Accounting year in India: 1 April – 31 March.</em></p>
+          </div>
+
+          <div class="concept-card">
+            <h4>9. Realisation Concept</h4>
+            <p>Revenue is recognised only when it is actually earned — i.e., when goods/services are delivered and the right to receive payment arises. Advance receipts are NOT treated as revenue.</p>
+          </div>
+
+          <div class="concept-card">
+            <h4>10. Objective Evidence Concept</h4>
+            <p>Every accounting entry should be supported by an objective and verifiable document (voucher, invoice, receipt). This ensures reliability and authenticity of records.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Effect on Accounts (from image) -->
+      <div class="section">
+        <div class="section-title"><span class="icon">📊</span> Effects on Accounts — Key Concepts Explained</div>
+
+        <p style="font-size:0.88rem; color:#4a5568; margin-bottom:14px;">The following effects are based on the Business Entity, Money Measurement, and Periodicity concepts from your textbook:</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Concept</th><th>Effect on Accounts</th><th>Example</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Business Entity</strong></td>
+                <td>Books are kept in the name of the business, not the owner. Only business transactions are recorded.</td>
+                <td>Journal of Maruti Agencies ≠ Journal of Mr. Sanjay</td>
+              </tr>
+              <tr>
+                <td><strong>Money Measurement</strong></td>
+                <td>Only monetary items recorded. Non-monetary items like staff quality are excluded.</td>
+                <td>Air pollution cannot be recorded in books</td>
+              </tr>
+              <tr>
+                <td><strong>Periodicity</strong></td>
+                <td>Accounts prepared for a fixed period (12 months). Helps compare performance year over year.</td>
+                <td>Annual accounts: 1 April 2025 – 31 March 2026</td>
+              </tr>
+              <tr>
+                <td><strong>Going Concern</strong></td>
+                <td>Assets depreciated over useful life; long-term prepayments are justified.</td>
+                <td>Machinery depreciated over 10 years</td>
+              </tr>
+              <tr>
+                <td><strong>Accrual</strong></td>
+                <td>Outstanding and prepaid items are adjusted. Profit shown correctly.</td>
+                <td>Outstanding rent shown as a liability</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Accounting Conventions -->
+      <div class="section" id="conventions">
+        <div class="section-title"><span class="icon">📏</span> Accounting Conventions</div>
+        <div class="concept-grid">
+
+          <div class="concept-card">
+            <h4>1. Convention of Consistency</h4>
+            <p>The same accounting methods and policies should be followed from one period to another. This allows meaningful comparison of financial statements across years.<br><em>Example: If SLM depreciation is used, it should be used every year.</em></p>
+          </div>
+
+          <div class="concept-card">
+            <h4>2. Convention of Conservatism (Prudence)</h4>
+            <p>"Anticipate no profits but provide for all possible losses." Accountants follow a cautious approach — recognise losses early but delay recognition of gains.<br><em>Example: Creating provision for bad debts.</em></p>
+          </div>
+
+          <div class="concept-card">
+            <h4>3. Convention of Full Disclosure</h4>
+            <p>All material information relevant to users of financial statements must be disclosed. Nothing significant should be hidden.<br><em>Example: Contingent liabilities disclosed in notes to accounts.</em></p>
+          </div>
+
+          <div class="concept-card">
+            <h4>4. Convention of Materiality</h4>
+            <p>Only those items that are significant enough to affect the decision of a user need to be separately disclosed. Insignificant items can be combined or ignored.<br><em>Example: Small stationery expense need not be shown separately.</em></p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Difference: Concepts vs Conventions -->
+      <div class="section">
+        <div class="section-title"><span class="icon">⚖️</span> Accounting Concepts vs Conventions</div>
+        <div class="table-wrap">
+          <table class="diff-table">
+            <thead><tr><th>Basis</th><th>Accounting Concepts</th><th>Accounting Conventions</th></tr></thead>
+            <tbody>
+              <tr><td>Meaning</td><td>Basic assumptions underlying accounting</td><td>Customs/practices followed by accountants</td></tr>
+              <tr><td>Nature</td><td>Theoretical and fundamental</td><td>Practical and traditional</td></tr>
+              <tr><td>Flexibility</td><td>Rigid — must be followed strictly</td><td>Flexible — may vary over time</td></tr>
+              <tr><td>Examples</td><td>Going Concern, Dual Aspect, Accrual</td><td>Conservatism, Consistency, Disclosure</td></tr>
+              <tr><td>Origin</td><td>Based on logic and reasoning</td><td>Based on general usage and experience</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Key Points -->
+      <div class="key-box">
+        <h4>⭐ Chapter 1 — Exam Key Points</h4>
+        <ul>
+          <li>Business Entity Concept separates owner from business — capital is a <em>liability</em> of the business.</li>
+          <li>Money Measurement limits accounts to monetary transactions only.</li>
+          <li>Accrual + Matching concepts together give true profit for the period.</li>
+          <li>Going Concern justifies asset depreciation and deferred expenses.</li>
+          <li>Conservatism = "play safe" — always expect the worst financially.</li>
+          <li>Periodicity concept → accounting year in India is April 1 to March 31.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div><!-- end chapter 1 -->
+
+
+  <!-- ╔══════════════════════════════════════╗ -->
+  <!-- ║  CHAPTER 2 – ACCOUNTING STANDARDS   ║ -->
+  <!-- ╚══════════════════════════════════════╝ -->
+  <div class="chapter ch2" id="ch2">
+    <div class="chapter-header">
+      <div class="chapter-num">2</div>
+      <div>
+        <h2>Accounting Standards</h2>
+        <p>Guidelines issued by ICAI for uniform preparation of financial statements</p>
+      </div>
+    </div>
+    <div class="chapter-body">
+
+      <!-- Meaning -->
+      <div class="section">
+        <div class="section-title"><span class="icon">📖</span> Meaning &amp; Definition</div>
+        <div class="def-box" style="background: linear-gradient(135deg,#fff0f0,#ffdede); border-color:#fca5a5; color:#7f1d1d;">
+          <strong>Accounting Standards (AS)</strong> are written policy documents issued by expert accounting bodies that lay down the rules for <em>recognition, measurement, presentation, and disclosure</em> of accounting transactions in financial statements.<br><br>
+          In India, AS are issued by the <strong>Institute of Chartered Accountants of India (ICAI)</strong> through its <em>Accounting Standards Board (ASB)</em>, established in 1977.
+        </div>
+      </div>
+
+      <!-- Objectives -->
+      <div class="section">
+        <div class="section-title"><span class="icon">🎯</span> Objectives of Accounting Standards</div>
+        <div class="concept-grid">
+          <div class="concept-card">
+            <h4>Uniformity</h4>
+            <p>Ensure that financial statements of different companies are prepared on a uniform basis, making them comparable.</p>
+          </div>
+          <div class="concept-card">
+            <h4>Reliability</h4>
+            <p>Improve the reliability of financial statements so that users (investors, creditors) can trust the information.</p>
+          </div>
+          <div class="concept-card">
+            <h4>Transparency</h4>
+            <p>Promote transparency by requiring adequate disclosure of all material information in financial statements.</p>
+          </div>
+          <div class="concept-card">
+            <h4>Reduce Manipulation</h4>
+            <p>Prevent window dressing and creative accounting by laying down specific rules for recording and reporting.</p>
+          </div>
+          <div class="concept-card">
+            <h4>Global Comparability</h4>
+            <p>Harmonise domestic standards with International Accounting Standards (IAS/IFRS) for global comparability.</p>
+          </div>
+          <div class="concept-card">
+            <h4>Guidance</h4>
+            <p>Provide guidance to accountants and auditors on how to treat specific items in financial statements.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Benefits -->
+      <div class="section">
+        <div class="section-title"><span class="icon">✅</span> Benefits / Advantages of Accounting Standards</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>#</th><th>Benefit</th><th>Explanation</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Uniformity in Reporting</td><td>All companies follow the same rules, making inter-firm comparison easy.</td></tr>
+              <tr><td>2</td><td>Better Decision Making</td><td>Investors, banks, and management get reliable data for decisions.</td></tr>
+              <tr><td>3</td><td>Builds Investor Confidence</td><td>Standardised statements increase trust in published accounts.</td></tr>
+              <tr><td>4</td><td>Reduces Fraud &amp; Errors</td><td>Clear guidelines reduce scope for manipulation of accounts.</td></tr>
+              <tr><td>5</td><td>Helps Auditors</td><td>Auditors can verify accounts against defined standards easily.</td></tr>
+              <tr><td>6</td><td>International Recognition</td><td>Aligned with IFRS, helping Indian companies attract foreign investment.</td></tr>
+              <tr><td>7</td><td>Legal Compliance</td><td>Companies Act requires compliance with AS, giving them legal standing.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Limitations -->
+      <div class="section">
+        <div class="section-title"><span class="icon">⚠️</span> Limitations of Accounting Standards</div>
+        <div class="concept-grid">
+          <div class="concept-card">
+            <h4>Rigidity</h4>
+            <p>Standards may be too rigid and may not suit every type of business or situation.</p>
+          </div>
+          <div class="concept-card">
+            <h4>Frequent Changes</h4>
+            <p>Standards keep getting revised; keeping up with changes is time-consuming.</p>
+          </div>
+          <div class="concept-card">
+            <h4>Complex Language</h4>
+            <p>Some standards are written in technical language, making implementation difficult for small businesses.</p>
+          </div>
+          <div class="concept-card">
+            <h4>May Allow Alternatives</h4>
+            <p>Certain standards allow multiple treatment options, reducing comparability.</p>
+          </div>
+          <div class="concept-card">
+            <h4>Cost of Implementation</h4>
+            <p>Complying with all standards involves significant time and cost, especially for SMEs.</p>
+          </div>
+          <div class="concept-card">
+            <h4>Not a Substitute for Judgement</h4>
+            <p>Standards cannot replace professional judgement; they only provide a framework.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- List of Important AS -->
+      <div class="section" id="as-list">
+        <div class="section-title"><span class="icon">📋</span> Important Accounting Standards issued by ICAI</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>AS No.</th><th>Title</th><th>Key Aspect</th></tr></thead>
+            <tbody>
+              <tr><td>AS 1</td><td>Disclosure of Accounting Policies</td><td>All significant accounting policies must be disclosed in financial statements.</td></tr>
+              <tr><td>AS 2</td><td>Valuation of Inventories</td><td>Inventories valued at cost or Net Realisable Value (NRV), whichever is lower.</td></tr>
+              <tr><td>AS 3</td><td>Cash Flow Statements</td><td>Cash flows classified into Operating, Investing, and Financing activities.</td></tr>
+              <tr><td>AS 4</td><td>Contingencies &amp; Events after Balance Sheet Date</td><td>Provides treatment for events occurring after the balance sheet date.</td></tr>
+              <tr><td>AS 5</td><td>Net Profit/Loss for the Period, Prior Period &amp; Changes in Policies</td><td>Deals with extraordinary items and prior period adjustments.</td></tr>
+              <tr><td>AS 6</td><td>Depreciation Accounting</td><td>Methods of depreciation and its disclosure. (Now merged in AS 10 revised)</td></tr>
+              <tr><td>AS 9</td><td>Revenue Recognition</td><td>Revenue recognised when significant risks are transferred to buyer.</td></tr>
+              <tr><td>AS 10</td><td>Property, Plant &amp; Equipment (Fixed Assets)</td><td>Cost of acquisition, depreciation, and disposal of fixed assets.</td></tr>
+              <tr><td>AS 13</td><td>Accounting for Investments</td><td>Classification and valuation of investments (current vs. long-term).</td></tr>
+              <tr><td>AS 15</td><td>Employee Benefits</td><td>Accounting for gratuity, leave encashment, provident fund, etc.</td></tr>
+              <tr><td>AS 16</td><td>Borrowing Costs</td><td>Borrowing costs can be capitalised if related to qualifying assets.</td></tr>
+              <tr><td>AS 22</td><td>Accounting for Taxes on Income</td><td>Deals with deferred tax assets and liabilities.</td></tr>
+              <tr><td>AS 26</td><td>Intangible Assets</td><td>Recognition and amortisation of intangibles like goodwill, patents, trademarks.</td></tr>
+              <tr><td>AS 28</td><td>Impairment of Assets</td><td>Asset should not be carried at more than its recoverable amount.</td></tr>
+              <tr><td>AS 29</td><td>Provisions, Contingent Liabilities &amp; Assets</td><td>When to recognise provisions vs. disclose contingent liabilities.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ICAI / ASB -->
+      <div class="section">
+        <div class="section-title"><span class="icon">🏛️</span> Role of ICAI &amp; Accounting Standards Board (ASB)</div>
+        <div class="def-box" style="background: linear-gradient(135deg,#fff0f0,#ffdede); border-color:#fca5a5; color:#7f1d1d;">
+          <strong>ICAI (Institute of Chartered Accountants of India)</strong> was established in 1949 under The Chartered Accountants Act. It is the sole body in India authorized to issue Accounting Standards.<br><br>
+          <strong>ASB (Accounting Standards Board)</strong> was set up by ICAI in <strong>1977</strong>. It formulates and revises accounting standards keeping in view the international standards (IFRS/IAS) issued by IASB.
+        </div>
+        <div class="concept-grid" style="margin-top:12px;">
+          <div class="concept-card">
+            <h4>Functions of ASB</h4>
+            <p>• Formulate Accounting Standards<br>• Review &amp; revise existing standards<br>• Provide guidance notes<br>• Harmonise with IFRS</p>
+          </div>
+          <div class="concept-card">
+            <h4>Process of Issuing AS</h4>
+            <p>1. Identify topic<br>2. Form a study group<br>3. Draft the standard<br>4. Invite public comments<br>5. Finalize &amp; issue the standard</p>
+          </div>
+          <div class="concept-card">
+            <h4>Applicability</h4>
+            <p>AS are applicable to all entities covered under Companies Act, 2013. Small and Medium Enterprises (SMEs) follow a simplified version.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- AS vs Ind AS -->
+      <div class="section" id="diff">
+        <div class="section-title"><span class="icon">⚖️</span> AS vs Ind AS (Indian Accounting Standards)</div>
+        <div class="table-wrap">
+          <table class="diff-table">
+            <thead><tr><th>Basis</th><th>Accounting Standards (AS)</th><th>Ind AS</th></tr></thead>
+            <tbody>
+              <tr><td>Full Form</td><td>Accounting Standards</td><td>Indian Accounting Standards</td></tr>
+              <tr><td>Based On</td><td>Indian GAAP</td><td>IFRS (International Financial Reporting Standards)</td></tr>
+              <tr><td>Issued By</td><td>ICAI (via ASB)</td><td>MCA / ICAI (converged with IFRS)</td></tr>
+              <tr><td>Applicability</td><td>Smaller companies, non-listed entities</td><td>Listed companies &amp; large companies (net worth &gt; ₹250 crore)</td></tr>
+              <tr><td>Measurement</td><td>Mainly historical cost</td><td>Fair value measurement allowed</td></tr>
+              <tr><td>Number</td><td>32 standards</td><td>40 standards (Ind AS 1 – Ind AS 116, etc.)</td></tr>
+              <tr><td>Effective From</td><td>Long established</td><td>Phased implementation from 2016–17</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Key Points -->
+      <div class="key-box" style="border-color:#f87171; background:#fff5f5;">
+        <h4 style="color:#991b1b;">⭐ Chapter 2 — Exam Key Points</h4>
+        <ul style="color:#7f1d1d;">
+          <li>ICAI issues Accounting Standards in India; ASB was established in 1977.</li>
+          <li>AS 1 — Disclosure of Accounting Policies is the most fundamental standard.</li>
+          <li>AS 2 — Inventory valued at Cost or NRV, whichever is lower (Conservatism!).</li>
+          <li>AS 9 — Revenue recognised when risks &amp; rewards are transferred.</li>
+          <li>Ind AS are IFRS-converged standards applicable to listed/large companies.</li>
+          <li>Total AS issued by ICAI = 32 (some withdrawn/revised).</li>
+          <li>Main purpose: uniformity, reliability, and comparability of financial statements.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div><!-- end chapter 2 -->
+
+</main>
+
+<!-- ══════════ EXAM Q&A SECTION ══════════ -->
+<main style="max-width:860px; margin: 0 auto 60px; padding: 0 16px;">
+
+  <!-- Q&A Header Card -->
+  <div style="background: linear-gradient(135deg,#7c3aed,#4f46e5); border-radius:14px; padding:26px 28px; margin-bottom:28px; color:#fff;">
+    <div style="font-size:0.78rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; background:rgba(255,255,255,0.2); display:inline-block; padding:4px 14px; border-radius:20px; margin-bottom:12px;">Exam Preparation</div>
+    <h2 style="font-size:1.5rem; font-weight:800; margin-bottom:6px;">📝 Important Questions &amp; Answers</h2>
+    <p style="opacity:0.8; font-size:0.88rem;">Chapter 1 &amp; 2 — Short Answers, Long Answers &amp; Difference Questions</p>
+  </div>
+
+  <!-- ── Chapter 1 Q&A ── -->
+  <div style="background:#fff; border-radius:14px; margin-bottom:28px; box-shadow:0 2px 16px rgba(0,0,0,0.07); overflow:hidden;">
+    <div style="background:linear-gradient(120deg,#0f3460,#1a6eb5); padding:18px 28px; display:flex; align-items:center; gap:12px;">
+      <div style="width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1.1rem;flex-shrink:0;">1</div>
+      <div>
+        <h3 style="color:#fff;font-size:1.05rem;font-weight:700;">Chapter 1 — Accounting Concepts &amp; Conventions</h3>
+        <p style="color:rgba(255,255,255,0.7);font-size:0.8rem;">2 marks · 5 marks · 8 marks questions</p>
+      </div>
+    </div>
+    <div style="padding:28px;">
+
+      <!-- 2 mark Q -->
+      <div style="margin-bottom:22px;">
+        <div style="background:#dbeafe;color:#1e3a5f;font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:inline-block;padding:3px 10px;border-radius:10px;margin-bottom:12px;">2 Marks Questions</div>
+
+        <!-- Q1 -->
+        <div style="border:1px solid #e2e8f0;border-radius:10px;margin-bottom:12px;overflow:hidden;">
+          <div style="background:#f0f4f8;padding:12px 16px;border-left:4px solid #1a6eb5;">
+            <strong style="font-size:0.88rem;color:#0f3460;">Q1. What is the Business Entity Concept?</strong>
+          </div>
+          <div style="padding:12px 16px;font-size:0.85rem;color:#374151;line-height:1.7;">
+            <strong>Ans.</strong> The Business Entity Concept states that a business is treated as a separate and distinct entity from its owner. All business transactions are recorded in the books of the business and not in the name of the owner. The owner's personal transactions are kept separate from business transactions. For example, capital introduced by the owner is treated as a <em>liability</em> of the business, not as the owner's asset.
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div style="border:1px solid #e2e8f0;border-radius:10px;margin-bottom:12px;overflow:hidden;">
+          <div style="background:#f0f4f8;padding:12px 16px;border-left:4px solid #1a6eb5;">
+            <strong style="font-size:0.88rem;color:#0f3460;">Q2. What is the Money Measurement Concept?</strong>
+          </div>
+          <div style="padding:12px 16px;font-size:0.85rem;color:#374151;line-height:1.7;">
+            <strong>Ans.</strong> According to the Money Measurement Concept, only those transactions and events that can be expressed in terms of money are recorded in the books of accounts. Non-monetary events like the quality of management, employee morale, or air pollution caused by a factory cannot be measured in money and hence are <em>not recorded</em> in accounting books. In India, all accounts use Indian Rupees (₹) as the unit of measurement.
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div style="border:1px solid #e2e8f0;border-radius:10px;margin-bottom:12px;overflow:hidden;">
+          <div style="background:#f0f4f8;padding:12px 16px;border-left:4px solid #1a6eb5;">
+            <strong style="font-size:0.88rem;color:#0f3460;">Q3. What is the Going Concern Concept?</strong>
+          </div>
+          <div style="padding:12px 16px;font-size:0.85rem;color:#374151;line-height:1.7;">
+            <strong>Ans.</strong> The Going Concern Concept assumes that a business will continue its operations for an indefinitely long period in the future. It is not expected to be closed down or liquidated in the near future. Because of this assumption, assets are recorded at historical cost and depreciated over their useful lives. Long-term investments and prepaid expenses are also justified under this concept.
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div style="border:1px solid #e2e8f0;border-radius:10px;margin-bottom:12px;overflow:hidden;">
+          <div style="background:#f0f4f8;padding:12px 16px;border-left:4px solid #1a6eb5;">
+            <strong style="font-size:0.88rem;color:#0f3460;">Q4. What is the Dual Aspect Concept?</strong>
+          </div>
+          <div style="padding:12px 16px;font-size:0.85rem;color:#374151;line-height:1.7;">
+            <strong>Ans.</strong> The Dual Aspect Concept states that every business transaction has two equal and opposite effects — a debit and a credit. This is the foundation of the Double Entry System of bookkeeping. The accounting equation based on this concept is: <strong>Assets = Liabilities + Capital</strong>. For example, when a business buys goods for cash, one account (Purchases) is debited and another (Cash) is credited.
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div style="border:1px solid #e2e8f0;border-radius:10px;margin-bottom:12px;overflow:hidden;">
+          <div style="background:#f0f4f8;padding:12px 16px;border-left:4px solid #1a6eb5;">
+            <strong style="font-size:0.88rem;color:#0f3460;">Q5. What is the Periodicity (Accounting Period) Concept?</strong>
+          </div>
+          <div style="padding:12px 16px;font-size:0.85rem;color:#374151;line-height:1.7;">
+            <strong>Ans.</strong> The Periodicity Concept states that the life of a business should be divided into equal and shorter time periods for the purpose of preparing financial statements. Usually, the accounting period is 12 months. In India, the financial year runs from <strong>1st April to 31st March</strong>. This helps owners, investors, and government bodies to assess the financial performance and position of the business at regular intervals.
+          </div>
+        </div>
+
+        <!-- Q6 -->
+        <div style="border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">
+          <div style="background:#f0f4f8;padding:12px 16px;border-left:4px solid #1a6eb5;">
+            <strong style="font-size:0.88rem;color:#0f3460;">Q6. What is the Convention of Conservatism?</strong>
+          </div>
+          <div style="padding:12px 16px;font-size:0.85rem;color:#374151;line-height:1.7;">
+            <strong>Ans.</strong> The Convention of Conservatism (also called Prudence) states that an accountant should <em>"anticipate no profits but provide for all possible losses."</em> This means that expected losses must be recorded immediately, but expected profits should only be recorded when they are actually realised. Example: Creating a provision for bad debts even before they actually occur. This ensures that financial statements do not overstate profits or assets.
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 mark Q -->
+      <div style="margin-bottom:22px;">
+        <div style="background:#dcfce7;color:#14532d;font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:inline-block;padding:3px 10px;border-radius:10px;margin-bottom:12px;">5 Marks Questions</div>
+
+        <!-- Q7 -->
+        <div style="border:1px solid #e2e8f0;border-radius:10px;margin-bottom:12px;overflow:hidden;">
+          <div style="background:#f0f9ff;padding:12px 16px;border-left:4px solid #22c55e;">
+            <strong style="font-size:0.88rem;color:#14532d;">Q7. Explain the Accrual Concept and Matching Concept with examples.</strong>
+          </div>
+          <div style="padding:14px 16px;font-size:0.85rem;color:#374151;line-height:1.8;">
+            <strong>Ans.</strong><br>
+            <strong>Accrual Concept:</strong> According to this concept, revenues and expenses are recognised in the accounting period in which they are <em>earned or incurred</em>, regardless of when cash is actually received or paid. It ensures a true and fair view of profit.<br>
+            <em>Example:</em> If rent of ₹5,000 is due for March but not yet paid, it is still recorded as an expense in March (Outstanding Rent – Liability).<br><br>
+            <strong>Matching Concept:</strong> This concept states that the expenses of a particular accounting period must be matched with the revenues of the same period to find the correct profit or loss. It is an extension of the accrual concept.<br>
+            <em>Example:</em> Cost of goods sold should be matched with the revenue earned from selling those goods in the same period. Prepaid expenses (future benefit) and outstanding expenses (past benefit unpaid) are adjusted accordingly.<br><br>
+            <strong>Relationship:</strong> Both concepts together ensure that the Profit &amp; Loss Account reflects the true profit for the period — not just the cash inflows and outflows.
+          </div>
+        </div>
+
+        <!-- Q8 -->
+        <div style="border:1px solid #e2e8f0;border-radius:10px;margin-bottom:12px;overflow:hidden;">
+          <div style="background:#f0f9ff;padding:12px 16px;border-left:4px solid #22c55e;">
+            <strong style="font-size:0.88rem;color:#14532d;">Q8. Explain any four Accounting Conventions.</strong>
+          </div>
+          <div style="padding:14px 16px;font-size:0.85rem;color:#374151;line-height:1.8;">
+            <strong>Ans.</strong><br>
+            <strong>1. Convention of Consistency:</strong> The same accounting policies and methods must be used consistently from one period to another. This makes financial statements comparable over time. <em>Example: If Straight Line Method (SLM) of depreciation is used, it should be used every year.</em><br><br>
+            <strong>2. Convention of Conservatism:</strong> "Anticipate no profits, provide for all possible losses." Losses are recorded as soon as they are probable, but profits are recorded only when realised. <em>Example: Provision for doubtful debts.</em><br><br>
+            <strong>3. Convention of Full Disclosure:</strong> All material information relevant to users should be fully disclosed in financial statements or notes. Nothing significant should be hidden. <em>Example: Contingent liabilities must be shown in notes to accounts.</em><br><br>
+            <strong>4. Convention of Materiality:</strong> Only items that are significant enough to influence the decisions of users need separate disclosure. Insignificant items may be merged with other items. <em>Example: Postage expenses of ₹50 need not be shown separately.</em>
+          </div>
+        </div>
+
+        <!-- Q9 -->
+        <div style="border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">
+          <div style="background:#f0f9ff;padding:12px 16px;border-left:4px solid #22c55e;">
+            <strong style="font-size:0.88rem;color:#14532d;">Q9. Distinguish between Accounting Concepts and Accounting Conventions. (5 points)</strong>
+          </div>
+          <div style="padding:14px 16px;font-size:0.85rem;color:#374151;line-height:1.8;">
+            <strong>Ans.</strong>
+            <table style="width:100%;border-collapse:collapse;font-size:0.83rem;margin-top:10px;">
+              <thead><tr style="background:#0f3460;color:#fff;"><th style="padding:8px 12px;text-align:left;">Basis</th><th style="padding:8px 12px;text-align:left;">Accounting Concepts</th><th style="padding:8px 12px;text-align:left;">Accounting Conventions</th></tr></thead>
+              <tbody>
+                <tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:8px 12px;">Meaning</td><td style="padding:8px 12px;">Basic assumptions on which accounting is based</td><td style="padding:8px 12px;">Customs and practices followed by accountants</td></tr>
+                <tr style="background:#f8fafc;border-bottom:1px solid #e2e8f0;"><td style="padding:8px 12px;">Nature</td><td style="padding:8px 12px;">Fundamental and theoretical</td><td style="padding:8px 12px;">Practical and traditional</td></tr>
+                <tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:8px 12px;">Flexibility</td><td style="padding:8px 12px;">Rigid — must be strictly followed</td><td style="padding:8px 12px;">Flexible — may change over time</td></tr>
+                <tr style="background:#f8fafc;border-bottom:1px solid #e2e8f0;"><td style="padding:8px 12px;">Examples</td><td style="padding:8px 12px;">Dual Aspect, Going Concern, Accrual</td><td style="padding:8px 12px;">Conservatism, Consistency, Materiality</td></tr>
+                <tr><td style="padding:8px 12px;">Origin</td><td style="padding:8px 12px;">Based on logic and reasoning</td><td style="padding:8px 12px;">Based on general usage and experience</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 mark Q -->
+      <div>
+        <div style="background:#fef3c7;color:#78350f;font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:inline-block;padding:3px 10px;border-radius:10px;margin-bottom:12px;">8 Marks Questions</div>
+
+        <!-- Q10 -->
+        <div style="border:1px solid #e2e8f0;border-radius:10px;margin-bottom:12px;overflow:hidden;">
+          <div style="background:#fffbeb;padding:12px 16px;border-left:4px solid #f59e0b;">
+            <strong style="font-size:0.88rem;color:#78350f;">Q10. Explain any eight Accounting Concepts in detail.</strong>
+          </div>
+          <div style="padding:14px 16px;font-size:0.85rem;color:#374151;line-height:1.8;">
+            <strong>Ans.</strong><br>
+            <strong>1. Business Entity Concept:</strong> Business is a separate entity from its owner. Only business transactions are recorded. Capital is treated as liability.<br><br>
+            <strong>2. Money Measurement Concept:</strong> Only transactions expressible in money are recorded. Non-monetary aspects like loyalty or morale are excluded.<br><br>
+            <strong>3. Going Concern Concept:</strong> Business is assumed to continue indefinitely. Assets are depreciated over useful life. Prepaid expenses are valid.<br><br>
+            <strong>4. Cost Concept:</strong> Assets are recorded at their original purchase price (historical cost), not current market value. Example: Land bought for ₹5 lakh always shown at ₹5 lakh in books.<br><br>
+            <strong>5. Dual Aspect Concept:</strong> Every transaction has two equal effects — debit and credit. This is the basis of Double Entry. Equation: Assets = Liabilities + Capital.<br><br>
+            <strong>6. Accrual Concept:</strong> Revenue and expenses recorded when earned/incurred, not when cash is received/paid. Outstanding items are adjusted.<br><br>
+            <strong>7. Matching Concept:</strong> Expenses of a period are matched with revenues of the same period. Ensures accurate profit calculation.<br><br>
+            <strong>8. Periodicity Concept:</strong> Business life divided into equal time periods (usually 12 months) for preparing accounts. In India, financial year is 1 April – 31 March.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Chapter 2 Q&A ── -->
+  <div style="background:#fff; border-radius:14px; margin-bottom:28px; box-shadow:0 2px 16px rgba(0,0,0,0.07); overflow:hidden;">
+    <div style="background:linear-gradient(120deg,#e94560,#c0392b); padding:18px 28px; display:flex; align-items:center; gap:12px;">
+      <div style="width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1.1rem;flex-shrink:0;">2</div>
+      <div>
+        <h3 style="color:#fff;font-size:1.05rem;font-weight:700;">Chapter 2 — Accounting Standards</h3>
+        <p style="color:rgba(255,255,255,0.7);font-size:0.8rem;">2 marks · 5 marks · 8 marks questions</p>
+      </div>
+    </div>
+    <div style="padding:28px;">
+
+      <!-- 2 mark -->
+      <div style="margin-bottom:22px;">
+        <div style="background:#fce7f3;color:#831843;font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:inline-block;padding:3px 10px;border-radius:10px;margin-bottom:12px;">2 Marks Questions</div>
+
+        <div style="border:1px solid #e2e8f0;border-radius:10px;margin-bottom:12px;overflow:hidden;">
+          <div style="background:#fff0f0;padding:12px 16px;border-left:4px solid #e94560;">
+            <strong style="font-size:0.88rem;color:#c0392b;">Q1. What are Accounting Standards?</strong>
+          </div>
+          <div style="padding:12px 16px;font-size:0.85rem;color:#374151;line-height:1.7;">
+            <strong>Ans.</strong> Accounting Standards are written policy documents issued by expert accounting bodies that establish rules for <em>recognition, measurement, presentation, and disclosure</em> of accounting transactions in financial statements. In India, they are issued by ICAI (Institute of Chartered Accountants of India) through its Accounting Standards Board (ASB). Their main purpose is to bring uniformity and reliability in financial reporting.
+          </div>
+        </div>
+
+        <div style="border:1px solid #e2e8f0;border-radius:10px;margin-bottom:12px;overflow:hidden;">
+          <div style="background:#fff0f0;padding:12px 16px;border-left:4px solid #e94560;">
+            <strong style="font-size:0.88rem;color:#c0392b;">Q2. What is ICAI? When was it established?</strong>
+          </div>
+          <div style="padding:12px 16px;font-size:0.85rem;color:#374151;line-height:1.7;">
+            <strong>Ans.</strong> ICAI stands for <strong>Institute of Chartered Accountants of India</strong>. It was established in the year <strong>1949</strong> under The Chartered Accountants Act. It is the sole body authorised to issue Accounting Standards in India. It set up the <strong>Accounting Standards Board (ASB) in 1977</strong> to formulate and revise accounting standards in line with international practices.
+          </div>
+        </div>
+
+        <div style="border:1px solid #e2e8f0;border-radius:10px;margin-bottom:12px;overflow:hidden;">
+          <div style="background:#fff0f0;padding:12px 16px;border-left:4px solid #e94560;">
+            <strong style="font-size:0.88rem;color:#c0392b;">Q3. State the meaning of AS 1.</strong>
+          </div>
+          <div style="padding:12px 16px;font-size:0.85rem;color:#374151;line-height:1.7;">
+            <strong>Ans.</strong> <strong>AS 1 — Disclosure of Accounting Policies</strong> requires that all significant accounting policies adopted by a company in the preparation of financial statements must be disclosed. This helps users understand the basis on which financial statements are prepared. Policies once adopted should be applied consistently. Any change in policy must be disclosed with its financial effect. It is the most fundamental of all Accounting Standards.
+          </div>
+        </div>
+
+        <div style="border:1px solid #e2e8f0;border-radius:10px;margin-bottom:12px;overflow:hidden;">
+          <div style="background:#fff0f0;padding:12px 16px;border-left:4px solid #e94560;">
+            <strong style="font-size:0.88rem;color:#c0392b;">Q4. What is AS 2? State the rule for valuation of inventory.</strong>
+          </div>
+          <div style="padding:12px 16px;font-size:0.85rem;color:#374151;line-height:1.7;">
+            <strong>Ans.</strong> <strong>AS 2 — Valuation of Inventories</strong> deals with the accounting treatment for inventories (stock). According to AS 2, inventories should be valued at <strong>Cost or Net Realisable Value (NRV), whichever is lower</strong>. This follows the Convention of Conservatism. Cost includes purchase price, freight, duties, and other costs to bring the inventory to its present condition. NRV is the estimated selling price minus estimated costs of completion and selling.
+          </div>
+        </div>
+
+        <div style="border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">
+          <div style="background:#fff0f0;padding:12px 16px;border-left:4px solid #e94560;">
+            <strong style="font-size:0.88rem;color:#c0392b;">Q5. What is AS 9 — Revenue Recognition?</strong>
+          </div>
+          <div style="padding:12px 16px;font-size:0.85rem;color:#374151;line-height:1.7;">
+            <strong>Ans.</strong> <strong>AS 9 — Revenue Recognition</strong> deals with the basis for recognising revenue in the Profit &amp; Loss Account. Revenue from the sale of goods is recognised when all significant risks and rewards of ownership have been transferred to the buyer. Revenue from services is recognised on the basis of completion of service. Interest income is recognised on a time proportion basis. Revenue is recognised when it is reasonable to expect that it will be collected.
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 marks -->
+      <div style="margin-bottom:22px;">
+        <div style="background:#fce7f3;color:#831843;font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:inline-block;padding:3px 10px;border-radius:10px;margin-bottom:12px;">5 Marks Questions</div>
+
+        <div style="border:1px solid #e2e8f0;border-radius:10px;margin-bottom:12px;overflow:hidden;">
+          <div style="background:#fff0f0;padding:12px 16px;border-left:4px solid #f87171;">
+            <strong style="font-size:0.88rem;color:#c0392b;">Q6. State the objectives of Accounting Standards.</strong>
+          </div>
+          <div style="padding:14px 16px;font-size:0.85rem;color:#374151;line-height:1.8;">
+            <strong>Ans.</strong> The main objectives of Accounting Standards are:<br><br>
+            <strong>1. Uniformity:</strong> AS ensure that all companies prepare financial statements on a uniform basis, making them comparable across organisations.<br><br>
+            <strong>2. Reliability:</strong> They improve the reliability of financial information, helping investors and creditors make informed decisions.<br><br>
+            <strong>3. Transparency:</strong> AS require disclosure of all material information, promoting transparency in financial reporting.<br><br>
+            <strong>4. Reduce Manipulation:</strong> Clear accounting rules prevent window dressing and creative accounting, reducing the scope for fraud.<br><br>
+            <strong>5. Global Comparability:</strong> By aligning with IFRS, Indian standards help attract foreign investment and enable global comparison of financial statements.
+          </div>
+        </div>
+
+        <div style="border:1px solid #e2e8f0;border-radius:10px;margin-bottom:12px;overflow:hidden;">
+          <div style="background:#fff0f0;padding:12px 16px;border-left:4px solid #f87171;">
+            <strong style="font-size:0.88rem;color:#c0392b;">Q7. State the benefits of Accounting Standards.</strong>
+          </div>
+          <div style="padding:14px 16px;font-size:0.85rem;color:#374151;line-height:1.8;">
+            <strong>Ans.</strong><br>
+            <strong>1. Uniformity in Reporting:</strong> All companies follow the same rules making inter-firm comparison easy.<br><br>
+            <strong>2. Better Decision Making:</strong> Investors, banks, and management get reliable data for sound decisions.<br><br>
+            <strong>3. Builds Investor Confidence:</strong> Standardised statements increase trust in published accounts and attract investment.<br><br>
+            <strong>4. Reduces Fraud &amp; Errors:</strong> Clear guidelines reduce scope for manipulation or misrepresentation of accounts.<br><br>
+            <strong>5. Helps Auditors:</strong> Auditors can verify accounts against defined standards, making the audit process easier and more objective.<br><br>
+            <strong>6. Legal Compliance:</strong> The Companies Act, 2013 requires compliance with Accounting Standards, giving them legal enforceability.
+          </div>
+        </div>
+
+        <div style="border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">
+          <div style="background:#fff0f0;padding:12px 16px;border-left:4px solid #f87171;">
+            <strong style="font-size:0.88rem;color:#c0392b;">Q8. Distinguish between AS and Ind AS. (5 points)</strong>
+          </div>
+          <div style="padding:14px 16px;font-size:0.85rem;color:#374151;line-height:1.8;">
+            <strong>Ans.</strong>
+            <table style="width:100%;border-collapse:collapse;font-size:0.83rem;margin-top:10px;">
+              <thead><tr style="background:#e94560;color:#fff;"><th style="padding:8px 12px;text-align:left;">Basis</th><th style="padding:8px 12px;text-align:left;">AS</th><th style="padding:8px 12px;text-align:left;">Ind AS</th></tr></thead>
+              <tbody>
+                <tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:8px 12px;">Based On</td><td style="padding:8px 12px;">Indian GAAP</td><td style="padding:8px 12px;">IFRS (International)</td></tr>
+                <tr style="background:#f8fafc;border-bottom:1px solid #e2e8f0;"><td style="padding:8px 12px;">Applicability</td><td style="padding:8px 12px;">Smaller / non-listed companies</td><td style="padding:8px 12px;">Listed &amp; large companies (NW &gt; ₹250 cr)</td></tr>
+                <tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:8px 12px;">Measurement</td><td style="padding:8px 12px;">Mainly historical cost</td><td style="padding:8px 12px;">Fair value measurement allowed</td></tr>
+                <tr style="background:#f8fafc;border-bottom:1px solid #e2e8f0;"><td style="padding:8px 12px;">Number</td><td style="padding:8px 12px;">32 standards</td><td style="padding:8px 12px;">40 standards</td></tr>
+                <tr><td style="padding:8px 12px;">Effective From</td><td style="padding:8px 12px;">Long established</td><td style="padding:8px 12px;">Phased from 2016–17</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 marks -->
+      <div>
+        <div style="background:#fce7f3;color:#831843;font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:inline-block;padding:3px 10px;border-radius:10px;margin-bottom:12px;">8 Marks Questions</div>
+
+        <div style="border:1px solid #e2e8f0;border-radius:10px;margin-bottom:12px;overflow:hidden;">
+          <div style="background:#fff0f0;padding:12px 16px;border-left:4px solid #e94560;">
+            <strong style="font-size:0.88rem;color:#c0392b;">Q9. Explain in detail the objectives, benefits, and limitations of Accounting Standards.</strong>
+          </div>
+          <div style="padding:14px 16px;font-size:0.85rem;color:#374151;line-height:1.8;">
+            <strong>Ans.</strong><br>
+            <strong style="color:#c0392b;">A. Objectives:</strong><br>
+            1. To bring uniformity in preparation of financial statements.<br>
+            2. To improve reliability and trustworthiness of financial information.<br>
+            3. To ensure full and transparent disclosure of material information.<br>
+            4. To reduce manipulation and fraudulent reporting.<br>
+            5. To harmonise Indian accounting with International standards (IFRS).<br><br>
+            <strong style="color:#c0392b;">B. Benefits:</strong><br>
+            1. Makes inter-company comparison possible due to uniform accounting methods.<br>
+            2. Increases investor confidence in financial statements.<br>
+            3. Provides a ready framework and guidance to accountants and auditors.<br>
+            4. Helps the government in monitoring company performance and levying taxes.<br>
+            5. Facilitates foreign investment by aligning with global standards.<br><br>
+            <strong style="color:#c0392b;">C. Limitations:</strong><br>
+            1. Some standards are rigid and do not suit every type or size of business.<br>
+            2. Frequent revisions make it difficult for businesses to keep up.<br>
+            3. Technical language makes implementation difficult for small entities.<br>
+            4. Certain standards offer multiple treatment options, reducing comparability.<br>
+            5. High cost of compliance, especially for SMEs (Small &amp; Medium Enterprises).
+          </div>
+        </div>
+
+        <div style="border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">
+          <div style="background:#fff0f0;padding:12px 16px;border-left:4px solid #e94560;">
+            <strong style="font-size:0.88rem;color:#c0392b;">Q10. Write short notes on any four Accounting Standards.</strong>
+          </div>
+          <div style="padding:14px 16px;font-size:0.85rem;color:#374151;line-height:1.8;">
+            <strong>Ans.</strong><br>
+            <strong>1. AS 1 — Disclosure of Accounting Policies:</strong> All significant accounting policies (depreciation method, inventory valuation, etc.) must be disclosed in financial statements. Policies should be applied consistently. Any change and its effect must be disclosed.<br><br>
+            <strong>2. AS 2 — Valuation of Inventories:</strong> Inventories must be valued at Cost or Net Realisable Value (NRV), whichever is lower. Cost includes purchase price, import duties, and other costs. Methods allowed: FIFO or Weighted Average Cost.<br><br>
+            <strong>3. AS 9 — Revenue Recognition:</strong> Revenue from sale of goods is recognised when risks and rewards are transferred to the buyer. Revenue from services is recognised as per completion. Interest is recognised on time proportion basis.<br><br>
+            <strong>4. AS 10 — Property, Plant &amp; Equipment:</strong> Fixed assets are recorded at cost of acquisition. Cost includes purchase price + directly attributable expenses. Depreciation is charged systematically over the useful life of the asset. On disposal, profit/loss is recognised in the P&amp;L account.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Fill in the Blanks ── -->
+  <div style="background:#fff; border-radius:14px; margin-bottom:28px; box-shadow:0 2px 16px rgba(0,0,0,0.07); overflow:hidden;">
+    <div style="background:linear-gradient(120deg,#059669,#047857); padding:18px 28px;">
+      <h3 style="color:#fff;font-size:1.05rem;font-weight:700;">✏️ Fill in the Blanks (1 Mark Each)</h3>
+    </div>
+    <div style="padding:24px;">
+      <ol style="font-size:0.86rem; color:#374151; line-height:2.2; padding-left:20px;">
+        <li>According to the Business Entity Concept, the owner's capital is treated as a ________ of the business. <strong style="color:#059669;">(Liability)</strong></li>
+        <li>The ________ Concept assumes that a business will continue its operations indefinitely. <strong style="color:#059669;">(Going Concern)</strong></li>
+        <li>Every transaction has two aspects according to the ________ Concept. <strong style="color:#059669;">(Dual Aspect)</strong></li>
+        <li>The accounting equation is: Assets = ________ + Capital. <strong style="color:#059669;">(Liabilities)</strong></li>
+        <li>In India, the financial year runs from 1st April to ________. <strong style="color:#059669;">(31st March)</strong></li>
+        <li>ICAI was established in the year ________. <strong style="color:#059669;">(1949)</strong></li>
+        <li>The Accounting Standards Board (ASB) was established by ICAI in ________. <strong style="color:#059669;">(1977)</strong></li>
+        <li>AS 2 deals with valuation of ________. <strong style="color:#059669;">(Inventories/Stock)</strong></li>
+        <li>Inventories are valued at cost or NRV, whichever is ________. <strong style="color:#059669;">(Lower)</strong></li>
+        <li>AS 9 deals with ________ Recognition. <strong style="color:#059669;">(Revenue)</strong></li>
+        <li>The Convention of ________ states "anticipate no profits, provide for all possible losses." <strong style="color:#059669;">(Conservatism)</strong></li>
+        <li>Only monetary transactions are recorded under the ________ Concept. <strong style="color:#059669;">(Money Measurement)</strong></li>
+        <li>AS 1 deals with Disclosure of ________ Policies. <strong style="color:#059669;">(Accounting)</strong></li>
+        <li>Ind AS are based on ________ standards. <strong style="color:#059669;">(IFRS / International)</strong></li>
+        <li>The total number of Accounting Standards issued by ICAI is ________. <strong style="color:#059669;">(32)</strong></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ── True / False ── -->
+  <div style="background:#fff; border-radius:14px; margin-bottom:28px; box-shadow:0 2px 16px rgba(0,0,0,0.07); overflow:hidden;">
+    <div style="background:linear-gradient(120deg,#d97706,#b45309); padding:18px 28px;">
+      <h3 style="color:#fff;font-size:1.05rem;font-weight:700;">✅ True or False (1 Mark Each)</h3>
+    </div>
+    <div style="padding:24px;">
+      <ol style="font-size:0.86rem; color:#374151; line-height:2.2; padding-left:20px;">
+        <li>Business Entity Concept treats owner and business as separate entities. <strong style="color:#059669;">(True)</strong></li>
+        <li>Non-monetary items like employee morale are recorded in accounts. <strong style="color:#e94560;">(False)</strong></li>
+        <li>The matching concept matches expenses with revenues of the same period. <strong style="color:#059669;">(True)</strong></li>
+        <li>Revenue is recognised when cash is received, according to the accrual concept. <strong style="color:#e94560;">(False — recognised when earned)</strong></li>
+        <li>Going Concern Concept assumes the business will close down soon. <strong style="color:#e94560;">(False)</strong></li>
+        <li>AS 2 says inventory should be valued at cost or NRV, whichever is lower. <strong style="color:#059669;">(True)</strong></li>
+        <li>ICAI was established in 1977. <strong style="color:#e94560;">(False — 1949; ASB was set up in 1977)</strong></li>
+        <li>Ind AS are based on IFRS. <strong style="color:#059669;">(True)</strong></li>
+        <li>Convention of Conservatism means "anticipate all profits and provide for no losses." <strong style="color:#e94560;">(False — opposite is true)</strong></li>
+        <li>AS 1 requires disclosure of all significant accounting policies. <strong style="color:#059669;">(True)</strong></li>
+      </ol>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  FYBCom | Accounting &amp; Financial Management — Part 1 Notes &nbsp;|&nbsp;
+  Prepared for academic reference &nbsp;|&nbsp; ICAI standards subject to revision
+</footer>
+
+</body>
+</html>

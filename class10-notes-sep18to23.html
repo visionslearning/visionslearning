@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Class 10 – Notes & Important Q&A | Sep 18–23</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',Arial,sans-serif;font-size:14px;color:#1a1a2e;background:#f0f2f8;padding:20px}
+
+  @media print{
+    body{background:#fff;padding:0;font-size:11.5px}
+    .page{box-shadow:none;margin:0;padding:16mm 15mm;border-radius:0}
+    .no-print{display:none}
+    .page-break{page-break-before:always}
+    h1{font-size:18px} h2{font-size:13px} h3{font-size:12px}
+    .qa-item{page-break-inside:avoid}
+  }
+
+  /* ── page card ── */
+  .page{max-width:900px;margin:0 auto 28px;background:#fff;border-radius:12px;
+        box-shadow:0 4px 20px rgba(0,0,0,.10);padding:36px 44px}
+
+  /* ── cover banner ── */
+  .cover{background:linear-gradient(135deg,#1565c0 0%,#0d47a1 100%);color:#fff;
+         border-radius:10px;padding:26px 32px;margin-bottom:32px;text-align:center}
+  .cover .label{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.8}
+  .cover h1{font-size:26px;font-weight:900;margin:8px 0 6px}
+  .cover .sub{font-size:13px;opacity:.9;line-height:1.6}
+
+  /* ── day header ── */
+  .day-header{display:flex;align-items:center;gap:14px;margin:28px 0 14px;
+              background:#e8eaf6;border-radius:8px;padding:10px 16px}
+  .day-badge{background:#1565c0;color:#fff;font-size:12px;font-weight:700;
+             padding:4px 12px;border-radius:20px;white-space:nowrap}
+  .day-header h2{font-size:15px;font-weight:700;color:#1a237e}
+
+  /* ── subject banner ── */
+  .subj{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;
+        letter-spacing:1px;padding:3px 10px;border-radius:10px;margin-bottom:10px}
+  .sci1{background:#fce4ec;color:#c62828}
+  .sci2{background:#e8f5e9;color:#2e7d32}
+  .math{background:#e3f2fd;color:#0d47a1}
+  .math2{background:#f3e5f5;color:#6a1b9a}
+
+  /* ── section heading ── */
+  h3{font-size:14px;font-weight:700;padding:6px 14px;border-radius:6px;
+     display:inline-block;margin:14px 0 8px}
+  .h3-s1{background:#fce4ec;color:#b71c1c}
+  .h3-s2{background:#e8f5e9;color:#1b5e20}
+  .h3-m1{background:#e3f2fd;color:#0d47a1}
+  .h3-m2{background:#f3e5f5;color:#4a148c}
+
+  /* ── note boxes ── */
+  .key-box{border-radius:8px;padding:13px 16px;margin:10px 0;font-size:13px;line-height:1.7}
+  .kb-yellow{background:#fff8e1;border-left:5px solid #f9a825}
+  .kb-blue  {background:#e3f2fd;border-left:5px solid #1976d2}
+  .kb-green {background:#e8f5e9;border-left:5px solid #388e3c}
+  .kb-pink  {background:#fce4ec;border-left:5px solid #e91e63}
+  .kb-purple{background:#f3e5f5;border-left:5px solid #7b1fa2}
+
+  .box-label{font-size:10px;font-weight:800;text-transform:uppercase;
+             letter-spacing:1.2px;margin-bottom:6px;opacity:.75}
+
+  /* ── formula strip ── */
+  .formula{background:#1a237e;color:#fff;border-radius:7px;padding:10px 16px;
+           margin:8px 0;font-size:13px;font-family:'Courier New',monospace;line-height:1.8}
+
+  /* ── Q&A ── */
+  .qa-block{margin:12px 0}
+  .qa-item{border:1.5px solid #e0e0e0;border-radius:8px;margin:8px 0;overflow:hidden}
+  .qa-q{background:#f5f5f5;padding:9px 14px;font-weight:700;font-size:13px;color:#1a1a2e;
+        border-bottom:1px solid #e0e0e0}
+  .qa-q .qnum{color:#1565c0;margin-right:6px}
+  .qa-a{padding:9px 14px;font-size:13px;line-height:1.7;color:#2d2d2d;background:#fff}
+  .qa-a .ans-tag{font-size:10px;font-weight:800;text-transform:uppercase;color:#2e7d32;
+                 margin-right:6px;letter-spacing:1px}
+
+  /* ── table ── */
+  table{width:100%;border-collapse:collapse;font-size:12.5px;margin:10px 0}
+  th{background:#1565c0;color:#fff;padding:8px 10px;text-align:left;font-size:11.5px}
+  td{padding:7px 10px;border-bottom:1px solid #f0f0f0;vertical-align:top}
+  tr:nth-child(even) td{background:#f8f9ff}
+
+  /* ── bullet list ── */
+  ul.pts{margin:6px 0 6px 20px} ul.pts li{margin:4px 0;line-height:1.7}
+  .hl{color:#c62828;font-weight:700}
+  .hlb{color:#0d47a1;font-weight:700}
+  .hlg{color:#2e7d32;font-weight:700}
+  .hlp{color:#6a1b9a;font-weight:700}
+
+  hr{border:none;border-top:2px solid #f0f0f0;margin:20px 0}
+
+  /* ── print btn ── */
+  .print-btn{display:block;width:fit-content;margin:0 auto 18px;padding:10px 28px;
+             background:#1565c0;color:#fff;border:none;border-radius:8px;
+             font-size:14px;font-weight:600;cursor:pointer}
+  .print-btn:hover{background:#0d47a1}
+
+  /* ── index card ── */
+  .index-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+  .index-card{border-radius:8px;padding:10px 14px;font-size:12px;line-height:1.6}
+  .ic1{background:#fce4ec;border-left:4px solid #e91e63}
+  .ic2{background:#e8f5e9;border-left:4px solid #4caf50}
+  .ic3{background:#e3f2fd;border-left:4px solid #1976d2}
+  .ic4{background:#f3e5f5;border-left:4px solid #7b1fa2}
+  .index-card .day-tag{font-weight:800;font-size:11px;text-transform:uppercase;opacity:.7;margin-bottom:4px}
+  .index-card .topic{font-weight:700;font-size:13px}
+</style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+<!-- ════════════ COVER PAGE ════════════ -->
+<div class="page">
+  <div class="cover">
+    <div class="label">Visions Learning · Class 10 · Study Plan</div>
+    <h1>📚 Notes & Important Q&A</h1>
+    <div class="sub">
+      September 18 – 23, 2026 &nbsp;|&nbsp; 6 Days &nbsp;|&nbsp; 7 Topics<br/>
+      Science 1 · Science 2 · Maths 1 · Maths 2
+    </div>
+  </div>
+
+  <h2 style="color:#1565c0;border-left:5px solid #1565c0;padding-left:10px;font-size:15px;margin-bottom:14px">📅 What You'll Study This Week</h2>
+  <div class="index-grid">
+    <div class="index-card ic1"><div class="day-tag">Day 8 · Sep 18</div><div class="topic">🔥 Heat</div><div>Conduction, Convection, Radiation, Specific Heat</div></div>
+    <div class="index-card ic3"><div class="day-tag">Day 8 · Sep 18</div><div class="topic">📐 Arithmetic Progression</div><div>nth term, Sum formula, Word problems</div></div>
+    <div class="index-card ic2"><div class="day-tag">Day 9 · Sep 19</div><div class="topic">🧬 Life Processes Part 2</div><div>Control & Coordination, Reproduction</div></div>
+    <div class="index-card ic3"><div class="day-tag">Day 9 · Sep 19</div><div class="topic">🎲 Probability</div><div>Basic concepts, Coins, Cards, Dice</div></div>
+    <div class="index-card ic1"><div class="day-tag">Day 10–11 · Sep 20–21</div><div class="topic">💡 Refraction & Lenses</div><div>Laws, Refractive index, Lens formula</div></div>
+    <div class="index-card ic4"><div class="day-tag">Day 10–11 · Sep 20–21</div><div class="topic">⭕ Circle</div><div>Tangents, Chords, Theorems</div></div>
+    <div class="index-card ic2" style="grid-column:1/3"><div class="day-tag">Day 12 · Sep 22</div><div class="topic">🌿 Environmental Management</div><div>Ecosystem, Pollution, Conservation</div></div>
+    <div class="index-card ic1"><div class="day-tag">Day 13 · Sep 23</div><div class="topic">📝 Practice Test 2 – Science 2</div><div>Revision + Full test</div></div>
+  </div>
+</div>
+
+
+<!-- ════════════ PAGE 2 – HEAT ════════════ -->
+<div class="page page-break">
+  <div class="day-header"><span class="day-badge">Day 8 · Sep 18</span><h2>Heat — Science 1</h2></div>
+  <span class="subj sci1">Science 1</span>
+
+  <h3 class="h3-s1">🔑 Key Notes</h3>
+  <div class="key-box kb-pink">
+    <div class="box-label">★ Core Concepts</div>
+    <ul class="pts">
+      <li><span class="hl">Heat</span> is a form of energy that flows from a body at higher temperature to one at lower temperature.</li>
+      <li><span class="hl">Temperature</span> is the measure of the degree of hotness or coldness of a body. SI unit: Kelvin (K). Common unit: °C.</li>
+      <li>Relation: <b>K = °C + 273</b></li>
+      <li><span class="hl">Specific Heat Capacity (s)</span>: Heat required to raise temperature of 1 kg of a substance by 1°C (or 1 K). Unit: J/kg·°C</li>
+      <li>Water has the highest specific heat capacity: <b>4200 J/kg·°C</b></li>
+    </ul>
+  </div>
+
+  <h3 class="h3-s1">🌡️ Modes of Heat Transfer</h3>
+  <table>
+    <tr><th>Mode</th><th>Medium Required?</th><th>How it Works</th><th>Example</th></tr>
+    <tr><td><b>Conduction</b></td><td>Yes (solid)</td><td>Particle-to-particle transfer without movement of particles</td><td>Metal spoon in hot tea</td></tr>
+    <tr><td><b>Convection</b></td><td>Yes (liquid/gas)</td><td>Bulk movement of fluid particles</td><td>Boiling water, sea breeze</td></tr>
+    <tr><td><b>Radiation</b></td><td>No (vacuum also)</td><td>Electromagnetic waves (infrared)</td><td>Sun's heat reaching Earth</td></tr>
+  </table>
+
+  <h3 class="h3-s1">📐 Important Formula</h3>
+  <div class="formula">
+    Q = m × s × ΔT<br/>
+    Q = Heat gained/lost (Joules)<br/>
+    m = mass (kg)<br/>
+    s = specific heat capacity (J/kg·°C)<br/>
+    ΔT = change in temperature (T₂ − T₁)
+  </div>
+
+  <div class="key-box kb-yellow">
+    <div class="box-label">Also Remember</div>
+    <ul class="pts">
+      <li><span class="hl">Good conductors</span> (metals: copper, iron) transfer heat quickly. <span class="hl">Bad conductors / Insulators</span> (wood, plastic, air) transfer heat slowly.</li>
+      <li><span class="hl">Black/rough surfaces</span> absorb and radiate heat better than white/smooth surfaces.</li>
+      <li><span class="hl">Calorimetry principle</span>: Heat lost by hot body = Heat gained by cold body (when no heat is lost to surroundings).</li>
+      <li><span class="hl">Latent heat</span>: Heat absorbed/released during change of state without change in temperature.</li>
+    </ul>
+  </div>
+
+  <h3 class="h3-s1">❓ Important Questions & Answers</h3>
+  <div class="qa-block">
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q1.</span> What is specific heat capacity? Give the value for water.</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> Specific heat capacity is the amount of heat required to raise the temperature of 1 kg of a substance by 1°C. The specific heat capacity of water is <b>4200 J/kg·°C</b>, which is the highest among common substances. This is why water is used as a coolant.</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q2.</span> Differentiate between conduction, convection and radiation with examples.</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> <b>Conduction</b>: Transfer of heat through a solid without movement of particles. Ex: metal rod heated at one end gets hot at other end. <b>Convection</b>: Transfer through movement of fluid particles. Ex: warm air rises, cool air takes its place (room heater). <b>Radiation</b>: Transfer through electromagnetic waves, no medium needed. Ex: heat from the Sun.</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q3 (Numerical).</span> How much heat is needed to raise the temperature of 5 kg of water from 20°C to 70°C? (s of water = 4200 J/kg·°C)</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> Q = m × s × ΔT = 5 × 4200 × (70 − 20) = 5 × 4200 × 50 = <b>10,50,000 J = 1.05 × 10⁶ J</b></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q4.</span> Why is cooking utensil made of metal but its handle is made of plastic/wood?</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> Metals are good conductors of heat so the utensil body conducts heat quickly to cook food. Wood/plastic are bad conductors (insulators), so the handle remains cool and safe to hold — this prevents burning of hands.</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q5.</span> State the principle of calorimetry.</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> When two bodies at different temperatures are mixed (in an insulated system), the <b>heat lost by the hotter body = heat gained by the colder body</b>. That is: m₁s₁ΔT₁ = m₂s₂ΔT₂</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q6.</span> Why does the Earth not become too hot during the day or too cold at night compared to the Moon?</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> The Earth has an atmosphere and large amounts of water. Water has high specific heat capacity, so it absorbs a lot of heat during the day without a large temperature rise, and releases heat slowly at night. The atmosphere also traps some heat. The Moon has no atmosphere or water, so it experiences extreme temperature changes.</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════ PAGE 3 – ARITHMETIC PROGRESSION ════════════ -->
+<div class="page page-break">
+  <div class="day-header"><span class="day-badge">Day 8 · Sep 18</span><h2>Arithmetic Progression (AP) — Maths 1</h2></div>
+  <span class="subj math">Maths 1</span>
+
+  <h3 class="h3-m1">🔑 Key Notes</h3>
+  <div class="key-box kb-blue">
+    <div class="box-label">★ Definitions</div>
+    <ul class="pts">
+      <li><span class="hlb">AP</span>: A sequence in which the difference between any two consecutive terms is constant.</li>
+      <li><span class="hlb">Common Difference (d)</span> = any term − previous term = a₂ − a₁ = a₃ − a₂ …</li>
+      <li><span class="hlb">First term</span> = a (or a₁)</li>
+      <li>General AP: a, a+d, a+2d, a+3d, …</li>
+      <li>If d &gt; 0 → increasing AP &nbsp;|&nbsp; d &lt; 0 → decreasing AP &nbsp;|&nbsp; d = 0 → constant sequence</li>
+    </ul>
+  </div>
+
+  <h3 class="h3-m1">📐 Key Formulas</h3>
+  <div class="formula">
+    nth term:    tₙ = a + (n−1)d<br/><br/>
+    Sum of n terms:  Sₙ = n/2 × [2a + (n−1)d]<br/>
+                 OR  Sₙ = n/2 × (a + l)   [l = last term]<br/><br/>
+    Middle term (odd n):  t_{(n+1)/2}<br/>
+    If tₙ is known:  n = (tₙ − a)/d + 1
+  </div>
+
+  <div class="key-box kb-yellow">
+    <div class="box-label">★ Important Tips</div>
+    <ul class="pts">
+      <li>To check if a sequence is AP: check if d is constant throughout.</li>
+      <li>Three terms in AP: take them as <b>(a−d), a, (a+d)</b> — their sum = 3a.</li>
+      <li>Four terms in AP: take them as <b>(a−3d), (a−d), (a+d), (a+3d)</b>.</li>
+      <li>Sum of n terms: <b>Sₙ − S_{n−1} = tₙ</b></li>
+    </ul>
+  </div>
+
+  <h3 class="h3-m1">❓ Important Questions & Answers</h3>
+  <div class="qa-block">
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q1.</span> Find the 20th term of the AP: 3, 7, 11, 15, …</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> a = 3, d = 4, n = 20.<br/> t₂₀ = a + (n−1)d = 3 + 19 × 4 = 3 + 76 = <b>79</b></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q2.</span> Find the sum of first 25 terms of the AP: 5, 8, 11, 14, …</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> a = 5, d = 3, n = 25.<br/> S₂₅ = 25/2 × [2×5 + 24×3] = 25/2 × [10 + 72] = 25/2 × 82 = 25 × 41 = <b>1025</b></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q3.</span> Which term of the AP 4, 9, 14, 19, … is 124?</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> a = 4, d = 5, tₙ = 124.<br/> 124 = 4 + (n−1)×5 → 120 = (n−1)×5 → n−1 = 24 → <b>n = 25</b>. So 124 is the 25th term.</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q4 (Word Problem).</span> A contractor pays ₹200 for the first day, ₹225 for the second day, ₹250 for the third day and so on. What will he pay on the 15th day?</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> a = 200, d = 25, n = 15.<br/> t₁₅ = 200 + 14×25 = 200 + 350 = <b>₹550</b></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q5.</span> The sum of three consecutive terms of an AP is 27 and their product is 504. Find the terms.</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> Let terms be (a−d), a, (a+d).<br/> Sum: 3a = 27 → a = 9.<br/> Product: (9−d) × 9 × (9+d) = 504 → 9(81−d²) = 504 → 81−d² = 56 → d² = 25 → d = ±5.<br/> Terms: <b>4, 9, 14</b> or <b>14, 9, 4</b>.</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q6.</span> Find the sum of all multiples of 7 between 1 and 200.</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> AP: 7, 14, 21, … 196. a = 7, d = 7, l = 196.<br/> n = (196−7)/7 + 1 = 28.<br/> S = 28/2 × (7 + 196) = 14 × 203 = <b>2842</b></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════ PAGE 4 – LIFE PROCESSES PART 2 ════════════ -->
+<div class="page page-break">
+  <div class="day-header"><span class="day-badge">Day 9 · Sep 19</span><h2>Life Processes Part 2 — Science 2</h2></div>
+  <span class="subj sci2">Science 2</span>
+  <p style="font-size:12px;color:#555;margin-bottom:10px">Topics: Control & Coordination (Nervous + Hormonal) · Reproduction</p>
+
+  <h3 class="h3-s2">🧠 Control & Coordination</h3>
+  <div class="key-box kb-green">
+    <div class="box-label">★ Nervous System</div>
+    <ul class="pts">
+      <li><span class="hlg">Neurons</span> are the basic structural and functional units of the nervous system.</li>
+      <li>Parts of neuron: <b>Dendrite → Cell body (Cyton) → Axon → Nerve endings</b></li>
+      <li><span class="hlg">CNS</span> (Central Nervous System) = Brain + Spinal cord</li>
+      <li><span class="hlg">PNS</span> (Peripheral Nervous System) = Cranial nerves + Spinal nerves</li>
+      <li><span class="hlg">Reflex action</span>: Automatic, involuntary response to a stimulus. Path = Reflex arc.</li>
+      <li>Reflex arc: Receptor → Afferent nerve → Spinal cord → Efferent nerve → Effector</li>
+    </ul>
+  </div>
+
+  <div class="key-box kb-green">
+    <div class="box-label">★ Endocrine System (Chemical Coordination)</div>
+    <table>
+      <tr><th>Gland</th><th>Hormone</th><th>Function</th></tr>
+      <tr><td>Pituitary (master gland)</td><td>GH, TSH, FSH, LH</td><td>Growth, controls other glands</td></tr>
+      <tr><td>Thyroid</td><td>Thyroxine</td><td>Controls metabolism</td></tr>
+      <tr><td>Pancreas (Islets of Langerhans)</td><td>Insulin, Glucagon</td><td>Regulates blood sugar</td></tr>
+      <tr><td>Adrenal</td><td>Adrenaline</td><td>Emergency hormone (fight or flight)</td></tr>
+      <tr><td>Testes/Ovaries</td><td>Testosterone/Estrogen</td><td>Secondary sexual characteristics</td></tr>
+    </table>
+  </div>
+
+  <h3 class="h3-s2">🌱 Plant Hormones (Phytohormones)</h3>
+  <div class="key-box kb-yellow">
+    <ul class="pts">
+      <li><span class="hlg">Auxin</span> – promotes cell elongation, phototropism</li>
+      <li><span class="hlg">Gibberellin</span> – promotes stem elongation, seed germination</li>
+      <li><span class="hlg">Cytokinin</span> – promotes cell division</li>
+      <li><span class="hlg">Abscisic acid (ABA)</span> – inhibits growth, promotes dormancy (stress hormone)</li>
+      <li><span class="hlg">Ethylene</span> – promotes fruit ripening</li>
+    </ul>
+  </div>
+
+  <h3 class="h3-s2">🔬 Reproduction</h3>
+  <div class="key-box kb-green">
+    <div class="box-label">★ Types</div>
+    <ul class="pts">
+      <li><span class="hlg">Asexual reproduction</span>: Single parent, no gametes. Types: Fission (Amoeba, Paramecium), Budding (Hydra, Yeast), Fragmentation (Spirogyra), Spore formation (Rhizopus), Vegetative propagation (plants).</li>
+      <li><span class="hlg">Sexual reproduction</span>: Two parents, involves gametes (male + female). Results in genetic variation.</li>
+      <li>In humans: Male gamete = sperm; Female gamete = ovum. Fertilisation occurs in fallopian tube.</li>
+      <li><span class="hlg">Pollination</span> in plants: Self-pollination (same flower) or Cross-pollination (different flower/plant).</li>
+    </ul>
+  </div>
+
+  <h3 class="h3-s2">❓ Important Questions & Answers</h3>
+  <div class="qa-block">
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q1.</span> What is a reflex action? Give one example and explain the reflex arc.</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> A reflex action is a sudden, automatic and involuntary response of the body to a stimulus, without conscious thought. Example: Withdrawing hand on touching a hot object. <b>Reflex arc:</b> Stimulus → Receptor (skin) → Sensory/Afferent nerve → Spinal cord (nerve centre) → Motor/Efferent nerve → Effector (muscle) → Response.</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q2.</span> What is the role of adrenaline hormone? Why is it called the emergency hormone?</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> Adrenaline is secreted by the adrenal glands in emergency situations (fear, anger, excitement). It: increases heart rate, raises blood pressure, dilates pupils, increases blood sugar, prepares the body for 'fight or flight'. Because it prepares the body for immediate response to danger, it is called the <b>emergency hormone</b>.</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q3.</span> Why is the pituitary gland called the 'master gland'?</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> The pituitary gland is called the master gland because it secretes hormones (like TSH, FSH, LH) that control and regulate the secretion of hormones from other endocrine glands such as the thyroid, gonads and adrenal glands.</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q4.</span> What is the function of insulin? What happens when it is not produced sufficiently?</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> Insulin (secreted by beta cells of islets of Langerhans in pancreas) lowers blood glucose levels by promoting the conversion of glucose to glycogen in the liver. When insulin is insufficient, blood glucose levels rise, causing <b>Diabetes mellitus</b>.</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q5.</span> Name and explain any two asexual reproduction methods with examples.</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> <b>1. Binary Fission</b>: The parent organism splits into two equal daughter cells. Example: Amoeba, Paramecium. <b>2. Budding</b>: A small outgrowth (bud) develops on the parent body, grows, and detaches to form a new organism. Example: Hydra, Yeast.</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q6.</span> What is phototropism? How do auxins explain it?</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> Phototropism is the growth movement of a plant in response to light. When light falls from one side, auxin migrates to the shaded side, causing greater cell elongation on that side, making the shoot bend <b>towards light</b> (positive phototropism). Roots show negative phototropism.</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════ PAGE 5 – PROBABILITY ════════════ -->
+<div class="page page-break">
+  <div class="day-header"><span class="day-badge">Day 9 · Sep 19</span><h2>Probability — Maths 1</h2></div>
+  <span class="subj math">Maths 1</span>
+
+  <h3 class="h3-m1">🔑 Key Notes</h3>
+  <div class="key-box kb-blue">
+    <div class="box-label">★ Basic Definitions</div>
+    <ul class="pts">
+      <li><span class="hlb">Experiment</span>: An action with a well-defined outcome (e.g., tossing a coin).</li>
+      <li><span class="hlb">Sample Space (S)</span>: Set of all possible outcomes.</li>
+      <li><span class="hlb">Event (E)</span>: Any subset of the sample space.</li>
+      <li><span class="hlb">Probability of event E</span>: P(E) = Number of favourable outcomes / Total number of outcomes</li>
+      <li>0 ≤ P(E) ≤ 1 always. &nbsp; P(E) + P(E') = 1</li>
+      <li><span class="hlb">Impossible event</span>: P = 0. &nbsp; <span class="hlb">Sure event</span>: P = 1.</li>
+    </ul>
+  </div>
+
+  <h3 class="h3-m1">🎯 Quick Reference — Sample Spaces</h3>
+  <div class="formula">
+    Coin (1): S = {H, T}  → n(S) = 2<br/>
+    Coin (2): S = {HH, HT, TH, TT}  → n(S) = 4<br/>
+    Die (1):  S = {1,2,3,4,5,6}  → n(S) = 6<br/>
+    Two Dice: n(S) = 36<br/>
+    Cards (1 pack): n(S) = 52  (4 suits × 13 cards each)<br/>
+      → Suits: Hearts♥, Diamonds♦ (Red) | Spades♠, Clubs♣ (Black)<br/>
+      → Face cards: Jack, Queen, King (3 per suit = 12 total)<br/>
+      → Ace cards: 4 total (1 per suit)
+  </div>
+
+  <h3 class="h3-m1">❓ Important Questions & Answers</h3>
+  <div class="qa-block">
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q1.</span> A die is thrown once. Find P(getting an even number) and P(getting a prime number).</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> S = {1,2,3,4,5,6}, n(S) = 6.<br/> Even numbers: {2,4,6} → P(even) = 3/6 = <b>1/2</b><br/> Prime numbers: {2,3,5} → P(prime) = 3/6 = <b>1/2</b></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q2.</span> Two coins are tossed simultaneously. Find P(at least one head).</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> S = {HH, HT, TH, TT}, n(S) = 4.<br/> At least one head: {HH, HT, TH} → 3 outcomes.<br/> P(at least one H) = 3/4 &nbsp; OR &nbsp; P = 1 − P(no head) = 1 − 1/4 = <b>3/4</b></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q3.</span> A card is drawn at random from a pack of 52 cards. Find P(a king), P(a red card), P(a face card).</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> n(S) = 52.<br/> Kings = 4 → P(king) = 4/52 = <b>1/13</b><br/> Red cards = 26 → P(red) = 26/52 = <b>1/2</b><br/> Face cards = 12 → P(face card) = 12/52 = <b>3/13</b></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q4.</span> Two dice are thrown together. Find P(sum = 7) and P(sum = 11).</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> n(S) = 36.<br/> Sum = 7: {(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)} → 6 outcomes → P = 6/36 = <b>1/6</b><br/> Sum = 11: {(5,6),(6,5)} → 2 outcomes → P = 2/36 = <b>1/18</b></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q5.</span> A bag contains 3 red, 5 blue and 2 green balls. A ball is drawn at random. Find P(red), P(not green), P(blue or green).</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> Total = 10.<br/> P(red) = 3/10 &nbsp;|&nbsp; P(not green) = 8/10 = <b>4/5</b> &nbsp;|&nbsp; P(blue or green) = 7/10</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q6.</span> The probability of winning a game is 0.4. What is the probability of losing it?</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> P(lose) = 1 − P(win) = 1 − 0.4 = <b>0.6</b></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════ PAGE 6 – REFRACTION + LENSES ════════════ -->
+<div class="page page-break">
+  <div class="day-header"><span class="day-badge">Day 10–11 · Sep 20–21</span><h2>Refraction of Light & Lenses — Science 1</h2></div>
+  <span class="subj sci1">Science 1</span>
+
+  <h3 class="h3-s1">💡 Refraction of Light — Key Notes</h3>
+  <div class="key-box kb-pink">
+    <div class="box-label">★ Definition & Laws</div>
+    <ul class="pts">
+      <li><span class="hl">Refraction</span>: Bending of light when it passes from one medium to another due to change in speed.</li>
+      <li><b>Laws of Refraction:</b>
+        <ol style="margin-left:20px;margin-top:4px">
+          <li>Incident ray, refracted ray and normal — all lie in the same plane.</li>
+          <li><b>Snell's Law</b>: sin i / sin r = constant = n (refractive index)</li>
+        </ol>
+      </li>
+      <li>Light bends <b>towards normal</b> when going from rarer to denser medium (speed decreases).</li>
+      <li>Light bends <b>away from normal</b> when going from denser to rarer medium (speed increases).</li>
+    </ul>
+  </div>
+
+  <h3 class="h3-s1">📐 Refractive Index</h3>
+  <div class="formula">
+    n = sin i / sin r  (Snell's Law)<br/>
+    n = Speed of light in vacuum (c) / Speed of light in medium (v)<br/>
+    n = c / v<br/>
+    n of water ≈ 1.33 | n of glass ≈ 1.5 | n of diamond ≈ 2.42
+  </div>
+
+  <div class="key-box kb-yellow">
+    <div class="box-label">★ Total Internal Reflection (TIR)</div>
+    <ul class="pts">
+      <li>Occurs when light travels from denser to rarer medium AND angle of incidence exceeds the <b>critical angle</b>.</li>
+      <li>Examples: Optical fibres, Sparkling of diamond, Mirage.</li>
+      <li>Critical angle of glass ≈ 42°, Diamond ≈ 24° (high refractive index → small critical angle → more TIR → more sparkle).</li>
+    </ul>
+  </div>
+
+  <h3 class="h3-s1">🔭 Lenses — Key Notes</h3>
+  <div class="key-box kb-pink">
+    <div class="box-label">★ Types & Key Terms</div>
+    <ul class="pts">
+      <li><span class="hl">Convex lens</span>: Converging lens — thicker at centre. Used in cameras, magnifying glasses, eye correction (hypermetropia).</li>
+      <li><span class="hl">Concave lens</span>: Diverging lens — thinner at centre. Used in eye correction (myopia).</li>
+      <li><span class="hl">Optical centre (O)</span>: Centre of the lens.</li>
+      <li><span class="hl">Principal focus (F)</span>: Point where parallel rays converge (convex) or appear to diverge from (concave).</li>
+      <li><span class="hl">Focal length (f)</span>: Distance from optical centre to principal focus. +ve for convex, −ve for concave.</li>
+    </ul>
+  </div>
+
+  <h3 class="h3-s1">📐 Lens Formulas</h3>
+  <div class="formula">
+    Lens formula:  1/v − 1/u = 1/f<br/>
+    Magnification: m = v/u = h'/h<br/>
+    Power of lens: P = 1/f  (f in metres, P in Dioptre D)<br/><br/>
+    Sign convention: distances measured from optical centre;<br/>
+    distances in direction of incident light = +ve; opposite = −ve
+  </div>
+
+  <table>
+    <tr><th>Object Position (Convex)</th><th>Image Nature</th><th>Image Position</th></tr>
+    <tr><td>At infinity</td><td>Real, inverted, highly diminished</td><td>At F</td></tr>
+    <tr><td>Beyond 2F</td><td>Real, inverted, diminished</td><td>Between F and 2F</td></tr>
+    <tr><td>At 2F</td><td>Real, inverted, same size</td><td>At 2F</td></tr>
+    <tr><td>Between F and 2F</td><td>Real, inverted, magnified</td><td>Beyond 2F</td></tr>
+    <tr><td>At F</td><td>At infinity</td><td>—</td></tr>
+    <tr><td>Between O and F</td><td>Virtual, erect, magnified</td><td>Same side as object</td></tr>
+  </table>
+
+  <h3 class="h3-s1">❓ Important Questions & Answers</h3>
+  <div class="qa-block">
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q1.</span> State Snell's Law of refraction. Define refractive index.</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> <b>Snell's Law</b>: The ratio of the sine of the angle of incidence to the sine of the angle of refraction is constant for a given pair of media. This constant is called the <b>refractive index (n)</b>: n = sin i / sin r. Refractive index is also equal to the ratio of speed of light in vacuum to speed of light in the medium: n = c/v.</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q2.</span> What is total internal reflection? State its two conditions and two applications.</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> TIR occurs when all light is reflected back into the same medium without any refraction. <b>Conditions:</b> (1) Light must travel from denser to rarer medium. (2) Angle of incidence must exceed the critical angle. <b>Applications:</b> Optical fibres (internet/communication), sparkling of diamond, mirage formation.</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q3 (Numerical).</span> A convex lens has focal length 10 cm. Object is placed 30 cm from lens. Find image distance and magnification.</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> f = +10 cm, u = −30 cm.<br/> 1/v − 1/u = 1/f → 1/v − 1/(−30) = 1/10 → 1/v = 1/10 − 1/30 = 2/30 → v = <b>+15 cm</b> (real, on other side).<br/> m = v/u = 15/(−30) = <b>−0.5</b> (real, inverted, diminished).</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q4.</span> What is the power of a lens? A doctor prescribes −2.5 D lens. What type is it and what is its focal length?</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> Power of a lens (P) = 1/f (f in metres), unit = Dioptre (D). Positive power = convex; Negative power = concave. Here P = −2.5 D → <b>Concave lens</b>. f = 1/P = 1/(−2.5) = <b>−0.4 m = −40 cm</b>.</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q5.</span> A pencil placed in water appears bent at the surface. Why?</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> When light travels from water (denser medium) to air (rarer medium) it bends away from the normal. The eye traces back these rays in a straight line, so the submerged part of the pencil appears bent/displaced at the water surface. This is due to <b>refraction of light</b>.</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════ PAGE 7 – CIRCLE ════════════ -->
+<div class="page page-break">
+  <div class="day-header"><span class="day-badge">Day 10–11 · Sep 20–21</span><h2>Circle — Maths 2</h2></div>
+  <span class="subj math2">Maths 2</span>
+
+  <h3 class="h3-m2">🔑 Key Terms</h3>
+  <div class="key-box kb-purple">
+    <div class="box-label">★ Definitions</div>
+    <ul class="pts">
+      <li><span class="hlp">Circle</span>: Locus of all points equidistant from a fixed point (centre).</li>
+      <li><span class="hlp">Chord</span>: Line segment joining any two points on a circle. Diameter is the longest chord.</li>
+      <li><span class="hlp">Tangent</span>: A line that touches the circle at exactly one point (point of tangency). It is always perpendicular to the radius at that point.</li>
+      <li><span class="hlp">Secant</span>: A line that intersects a circle at two points.</li>
+      <li><span class="hlp">Arc</span>: Part of the circumference. Minor arc (smaller) and Major arc (larger).</li>
+      <li><span class="hlp">Sector</span>: Region between two radii and the arc.</li>
+    </ul>
+  </div>
+
+  <h3 class="h3-m2">📜 Important Theorems</h3>
+  <div class="key-box kb-purple">
+    <div class="box-label">★ Theorems to Know</div>
+    <ul class="pts">
+      <li><b>Theorem 1:</b> The tangent to a circle is perpendicular to the radius drawn to the point of tangency. (∠OAT = 90°)</li>
+      <li><b>Theorem 2:</b> Two tangents drawn from an external point to a circle are equal in length. (PA = PB if P is external point)</li>
+      <li><b>Theorem 3:</b> The perpendicular from the centre of a circle to a chord bisects the chord.</li>
+      <li><b>Theorem 4:</b> Equal chords are equidistant from the centre.</li>
+      <li><b>Theorem 5:</b> The angle subtended by an arc at the centre is double the angle subtended at any point on the remaining part of the circle. (∠AOB = 2∠ACB)</li>
+      <li><b>Theorem 6:</b> Angles in the same segment of a circle are equal.</li>
+      <li><b>Theorem 7:</b> Angle in a semicircle is 90°.</li>
+      <li><b>Theorem 8 (Cyclic quadrilateral):</b> Opposite angles of a cyclic quadrilateral are supplementary (sum = 180°).</li>
+    </ul>
+  </div>
+
+  <h3 class="h3-m2">📐 Formulas</h3>
+  <div class="formula">
+    Circumference = 2πr<br/>
+    Area of circle = πr²<br/>
+    Area of sector = (θ/360) × πr²<br/>
+    Length of arc = (θ/360) × 2πr<br/>
+    Tangent–Radius angle = 90°<br/>
+    PA² = PO² − r²  (length of tangent from external point P)
+  </div>
+
+  <h3 class="h3-m2">❓ Important Questions & Answers</h3>
+  <div class="qa-block">
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q1.</span> Prove that the tangent to a circle is perpendicular to the radius at the point of contact.</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> Let O be the centre of a circle and T be the point of tangency of tangent XY. Take any point P on the tangent (other than T). Since P lies outside the circle, OP &gt; OT (radius). This is true for every point on the tangent. Thus OT is the shortest distance from O to line XY. The shortest distance from a point to a line is the perpendicular. Therefore <b>OT ⊥ XY</b>, i.e., radius ⊥ tangent at point of contact. ✓</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q2.</span> Two tangents PA and PB are drawn from external point P. Prove PA = PB.</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> In △OAP and △OBP: OA = OB (radii), OP = OP (common), ∠OAP = ∠OBP = 90° (tangent ⊥ radius). By RHS congruence: △OAP ≅ △OBP. Therefore <b>PA = PB</b>. ✓</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q3.</span> If PA and PB are tangents from P and ∠APB = 60°, find ∠OAP and ∠AOB.</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> ∠OAP = 90° (tangent–radius). In quadrilateral OAPB: ∠AOB + ∠OAP + ∠APB + ∠OBP = 360° → ∠AOB + 90° + 60° + 90° = 360° → <b>∠AOB = 120°</b>. Also ∠OAP = 90°.</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q4.</span> State and verify: angle in a semicircle is 90°.</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> <b>Theorem:</b> The angle subtended by a diameter at any point on the circle is 90°. If AB is a diameter and C is any point on the circle, then ∠ACB = 90°. This follows from the theorem that the central angle (180°) is double the inscribed angle, so ∠ACB = 180°/2 = 90°.</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q5.</span> The distance from external point P to the centre O is 10 cm and radius = 6 cm. Find the length of the tangent from P.</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> PA² = PO² − r² = 10² − 6² = 100 − 36 = 64. PA = <b>8 cm</b>.</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q6.</span> ABCD is a cyclic quadrilateral where ∠A = 80°. Find ∠C.</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> In a cyclic quadrilateral, opposite angles are supplementary. ∠A + ∠C = 180° → 80° + ∠C = 180° → <b>∠C = 100°</b>.</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════ PAGE 8 – ENVIRONMENTAL MANAGEMENT ════════════ -->
+<div class="page page-break">
+  <div class="day-header"><span class="day-badge">Day 12 · Sep 22</span><h2>Environmental Management — Science 2</h2></div>
+  <span class="subj sci2">Science 2</span>
+
+  <h3 class="h3-s2">🌍 Ecosystem — Key Notes</h3>
+  <div class="key-box kb-green">
+    <div class="box-label">★ Core Concepts</div>
+    <ul class="pts">
+      <li><span class="hlg">Ecosystem</span>: A system formed by the interaction of living organisms (biotic) with their non-living environment (abiotic).</li>
+      <li><span class="hlg">Producers</span>: Green plants — make their own food by photosynthesis.</li>
+      <li><span class="hlg">Consumers</span>: Animals — Primary (herbivores), Secondary (carnivores), Tertiary.</li>
+      <li><span class="hlg">Decomposers</span>: Bacteria, fungi — break down dead matter, recycle nutrients.</li>
+      <li><span class="hlg">Food chain</span>: Grass → Grasshopper → Frog → Snake → Hawk</li>
+      <li><span class="hlg">Food web</span>: Interconnected network of food chains.</li>
+      <li><span class="hlg">10% energy law</span>: Only 10% of energy is transferred from one trophic level to the next.</li>
+    </ul>
+  </div>
+
+  <h3 class="h3-s2">⚠️ Pollution</h3>
+  <table>
+    <tr><th>Type</th><th>Main Causes</th><th>Effects</th><th>Control</th></tr>
+    <tr><td><b>Air Pollution</b></td><td>Vehicles, industries, burning fossil fuels</td><td>Respiratory diseases, acid rain, global warming</td><td>CNG vehicles, scrubbers, afforestation</td></tr>
+    <tr><td><b>Water Pollution</b></td><td>Industrial effluents, sewage, pesticides</td><td>Water-borne diseases, aquatic life damage</td><td>Sewage treatment, ban on dumping, ETP</td></tr>
+    <tr><td><b>Soil Pollution</b></td><td>Pesticides, plastics, chemical fertilizers</td><td>Reduced soil fertility, toxic food chain</td><td>Organic farming, proper waste disposal</td></tr>
+    <tr><td><b>Noise Pollution</b></td><td>Vehicles, industries, loudspeakers</td><td>Hearing loss, stress, hypertension</td><td>Noise barriers, silencers, green belts</td></tr>
+  </table>
+
+  <h3 class="h3-s2">🌿 Conservation</h3>
+  <div class="key-box kb-green">
+    <div class="box-label">★ Key Points</div>
+    <ul class="pts">
+      <li><span class="hlg">Biodiversity</span>: Variety of living organisms in a region. Essential for ecosystem stability.</li>
+      <li><span class="hlg">Deforestation</span>: Removal of forests → loss of habitat, soil erosion, reduced rainfall, global warming.</li>
+      <li><span class="hlg">Afforestation</span>: Planting trees — best solution to many environmental problems.</li>
+      <li><span class="hlg">Wildlife sanctuaries & National parks</span>: Protected areas for wildlife conservation.</li>
+      <li><span class="hlg">3 R's</span>: <b>Reduce, Reuse, Recycle</b> — for waste management.</li>
+      <li><span class="hlg">Global Warming</span>: Rise in Earth's average temperature due to increase in greenhouse gases (CO₂, CH₄, N₂O). Leads to melting of glaciers, rise in sea level, climate change.</li>
+      <li><span class="hlg">Ozone layer depletion</span>: CFCs (chlorofluorocarbons) destroy ozone (O₃) layer → harmful UV rays reach Earth's surface → skin cancer, eye damage.</li>
+    </ul>
+  </div>
+
+  <h3 class="h3-s2">❓ Important Questions & Answers</h3>
+  <div class="qa-block">
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q1.</span> What is an ecosystem? Explain its biotic and abiotic components.</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> An ecosystem is a functional unit of nature where living organisms interact with each other and with their physical environment. <b>Biotic components</b>: all living organisms — producers (plants), consumers (animals), decomposers (bacteria, fungi). <b>Abiotic components</b>: non-living factors — sunlight, temperature, water, soil, air, minerals.</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q2.</span> Explain the 10% energy law with a food chain example.</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> Only 10% of energy at one trophic level is available to the next level; 90% is lost as heat. Example: If grass has 10,000 J → grasshopper gets 1000 J → frog gets 100 J → snake gets 10 J → hawk gets 1 J. This explains why food chains rarely have more than 4–5 levels.</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q3.</span> What is acid rain? How is it formed and what are its effects?</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> Acid rain is precipitation (rain, snow) with pH below 5.6. It forms when sulphur dioxide (SO₂) and nitrogen oxides (NOₓ) from burning fossil fuels react with water vapour in the atmosphere to form H₂SO₄ and HNO₃. <b>Effects</b>: damages forests, aquatic life, corrodes buildings and monuments, makes soil acidic.</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q4.</span> What is global warming? What are its causes and effects?</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> Global warming is the gradual increase in Earth's average surface temperature. <b>Causes:</b> Increased CO₂, CH₄, N₂O (greenhouse gases) from burning fossil fuels, deforestation, industries trap more heat in the atmosphere. <b>Effects:</b> Melting of polar ice caps and glaciers, rise in sea levels, flooding of coastal areas, extreme weather events, extinction of species.</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q5.</span> What is the importance of the ozone layer? What causes its depletion?</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> The ozone layer (in the stratosphere) absorbs harmful UV radiation from the sun, protecting life on Earth. <b>Depletion:</b> Chlorofluorocarbons (CFCs) — used in refrigerators, air conditioners, aerosol sprays — release chlorine atoms that react with and destroy ozone molecules. Effects: increased UV radiation causes skin cancer, cataracts, weakens immune system, harms crops.</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qnum">Q6.</span> State any four measures to conserve biodiversity.</div>
+      <div class="qa-a"><span class="ans-tag">Ans:</span> (1) Establishing wildlife sanctuaries and national parks to protect habitats. (2) Afforestation — planting trees to restore forests. (3) Banning hunting/poaching of endangered species. (4) Reducing pollution and use of pesticides. (5) Practicing sustainable agriculture. (6) Public awareness and education about conservation.</div>
+    </div>
+  </div>
+
+  <hr/>
+
+  <!-- ── REVISION REMINDER ── -->
+  <div class="key-box kb-blue" style="margin-top:16px">
+    <div class="box-label">📝 Day 13 – Sep 23 · Practice Test 2 – Science 2</div>
+    <ul class="pts">
+      <li>Covers all 4 chapters of Science 2: Heredity & Evolution, Life Processes Part 1 & 2, Environmental Management.</li>
+      <li>Attempt under <b>real exam conditions</b> — timed (1 hour), no book.</li>
+      <li>After the test, mark your mistakes and revisit those specific topics.</li>
+      <li>Quick tip before the test: revise your formula sheet and key diagrams (reflex arc, food chain, neuron diagram).</li>
+    </ul>
+  </div>
+
+  <!-- footer -->
+  <div style="text-align:center;margin-top:28px;font-size:11px;color:#aaa">
+    Visions Learning · Class 10 Notes · September 18–23, 2026 · 7 Topics Covered
+  </div>
+</div><!-- end last page -->
+
+</body>
+</html>

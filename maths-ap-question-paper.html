@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>कक्षा 10 गणित – समांतर श्रेणी प्रश्न पत्र</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f0f0f0;
+      padding: 30px 10px;
+      color: #111;
+    }
+
+    .page {
+      background: #fff;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 36px 50px;
+      border: 2px solid #333;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    /* ── VISIONS HEADER ── */
+    .visions-header {
+      text-align: center;
+      padding-bottom: 12px;
+      border-bottom: 4px double #1a1a2e;
+      margin-bottom: 14px;
+    }
+    .visions-header .inst-name {
+      font-size: 32px;
+      font-weight: bold;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #1a1a2e;
+    }
+    .visions-header .inst-name span { color: #c0392b; }
+    .visions-header .tagline {
+      font-size: 13px;
+      font-style: italic;
+      letter-spacing: 2px;
+      color: #555;
+      margin-top: 4px;
+    }
+
+    /* ── PAPER HEADER ── */
+    .header {
+      text-align: center;
+      border-bottom: 2px solid #333;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+    }
+    .header .board {
+      font-size: 12.5px;
+      color: #555;
+      margin-bottom: 4px;
+    }
+    .header h1 {
+      font-size: 19px;
+      font-weight: bold;
+      margin: 5px 0 2px;
+    }
+    .header h2 {
+      font-size: 15px;
+      font-weight: normal;
+      color: #333;
+      margin-bottom: 4px;
+    }
+    .header .chapter {
+      font-size: 13.5px;
+      font-style: italic;
+      color: #444;
+    }
+
+    /* ── META ROW ── */
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13.5px;
+      padding: 9px 0;
+      border-bottom: 1px solid #aaa;
+      margin-bottom: 14px;
+    }
+    .meta span { font-weight: bold; }
+
+    /* ── INSTRUCTIONS ── */
+    .instructions {
+      background: #fafafa;
+      border: 1px solid #ccc;
+      padding: 10px 16px;
+      margin-bottom: 20px;
+      font-size: 13.5px;
+    }
+    .instructions p { font-weight: bold; margin-bottom: 6px; font-size: 14px; }
+    .instructions ol { padding-left: 20px; }
+    .instructions ol li { margin-bottom: 4px; line-height: 1.8; }
+
+    /* ── SECTION TITLE ── */
+    .section-title {
+      background: #1a1a2e;
+      color: #fff;
+      padding: 7px 14px;
+      font-size: 14px;
+      font-weight: bold;
+      margin: 22px 0 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .section-title .marks {
+      background: #fff;
+      color: #1a1a2e;
+      padding: 2px 10px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    /* ── QUESTION ── */
+    .question {
+      margin-bottom: 16px;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+    .question .qnum { font-weight: bold; margin-right: 4px; }
+    .question .qmarks {
+      float: right;
+      font-size: 12.5px;
+      color: #555;
+      font-style: italic;
+    }
+
+    /* ── MCQ OPTIONS ── */
+    .options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px 30px;
+      margin: 8px 0 8px 26px;
+      font-size: 13.5px;
+    }
+
+    /* ── SUB LIST ── */
+    .sub-list {
+      list-style: none;
+      padding-left: 22px;
+      margin: 5px 0;
+    }
+    .sub-list li { margin-bottom: 6px; font-size: 13.5px; line-height: 1.8; }
+
+    /* ── ACTIVITY BOX ── */
+    .activity-box {
+      border: 1px dashed #888;
+      padding: 12px 16px;
+      margin: 8px 0 12px;
+      font-size: 13.5px;
+      line-height: 2.6;
+      background: #fdfdfd;
+    }
+    .blank {
+      display: inline-block;
+      min-width: 45px;
+      border-bottom: 1px solid #333;
+      text-align: center;
+      margin: 0 3px;
+    }
+
+    /* ── DIVIDER ── */
+    hr.divider {
+      border: none;
+      border-top: 1px dashed #bbb;
+      margin: 16px 0;
+    }
+
+    /* ── NOTE ── */
+    .note {
+      font-size: 12.5px;
+      font-style: italic;
+      color: #666;
+      margin: 3px 0 6px 22px;
+    }
+
+    /* ── MARKS TABLE ── */
+    .marks-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 13px;
+    }
+    .marks-table th {
+      background: #1a1a2e;
+      color: #fff;
+      padding: 7px 10px;
+      text-align: left;
+    }
+    .marks-table td { padding: 6px 10px; border-bottom: 1px solid #ddd; }
+    .marks-table tr:nth-child(even) td { background: #f9f9f9; }
+    .marks-table .total td {
+      font-weight: bold;
+      background: #eef;
+      border-top: 2px solid #333;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      text-align: center;
+      margin-top: 28px;
+      font-size: 12.5px;
+      color: #555;
+      border-top: 2px double #333;
+      padding-top: 10px;
+    }
+
+    /* ── PRINT BUTTON ── */
+    .print-btn {
+      display: block;
+      margin: 22px auto 0;
+      padding: 10px 38px;
+      background: #1a1a2e;
+      color: #fff;
+      border: none;
+      font-size: 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      letter-spacing: 1px;
+    }
+    .print-btn:hover { background: #333; }
+
+    @media print {
+      body { background: #fff; padding: 0; }
+      .page { box-shadow: none; border: none; padding: 20px 30px; }
+      .no-print { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- VISIONS CLASSES HEADING -->
+  <div class="visions-header">
+    <div class="inst-name">Visions <span>Classes</span></div>
+    <div class="tagline">✦ &nbsp; Learn Today, Lead Tomorrow &nbsp; ✦</div>
+  </div>
+
+  <!-- PAPER HEADER -->
+  <div class="header">
+    <div class="board">महाराष्ट्र राज्य माध्यमिक एवं उच्च माध्यमिक शिक्षा बोर्ड</div>
+    <h1>माध्यमिक विद्यालय प्रमाणपत्र (SSC) परीक्षा</h1>
+    <h2>गणित (भाग – १) &nbsp;|&nbsp; कक्षा १० &nbsp;|&nbsp; हिंदी माध्यम</h2>
+    <div class="chapter">अध्याय ३ : समांतर श्रेणी &nbsp;—&nbsp; अभ्यास सेट ३.१ से ३.३</div>
+  </div>
+
+  <!-- META -->
+  <div class="meta">
+    <div>कुल अंक : <span>२०</span></div>
+    <div>समय : <span>१ घंटा</span></div>
+  </div>
+
+  <!-- INSTRUCTIONS -->
+  <div class="instructions">
+    <p>सामान्य निर्देश :</p>
+    <ol>
+      <li>सभी प्रश्न <strong>अनिवार्य</strong> हैं।</li>
+      <li>कैलकुलेटर का उपयोग <strong>वर्जित</strong> है।</li>
+      <li>पूरे अंकों के लिए सभी पद (Steps) स्पष्ट रूप से लिखें। दाईं ओर के अंक प्रश्न के अंक दर्शाते हैं।</li>
+      <li>प्र. ३ में ३ में से कोई भी <strong>२ प्रश्न</strong> हल करें।</li>
+    </ol>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       प्र.१  बहुविकल्पीय प्रश्न  — ४ अंक
+  ══════════════════════════════════════════ -->
+  <div class="section-title">
+    प्र. १ &nbsp; सही विकल्प चुनिए (बहुविकल्पीय प्रश्न)
+    <span class="marks">४ अंक (प्रत्येक १)</span>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(१)</span>
+    निम्नलिखित में से कौन-सी श्रेणी समांतर श्रेणी है?
+    <div class="options">
+      <div>(अ) &nbsp; १, ३, ६, १०, . . .</div>
+      <div>(ब) &nbsp; २, ४, ६, ८, . . .</div>
+      <div>(क) &nbsp; १, ४, ९, १६, . . .</div>
+      <div>(ड) &nbsp; २, ६, १८, ५४, . . .</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(२)</span>
+    किसी समांतर श्रेणी का पहला पद ८ और सार्व अंतर −५ है। चौथा पद क्या होगा?
+    <div class="options">
+      <div>(अ) &nbsp; २३</div>
+      <div>(ब) &nbsp; ३</div>
+      <div>(क) &nbsp; −७</div>
+      <div>(ड) &nbsp; −२</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(३)</span>
+    यदि t<sub>n</sub> = 5n − 2, तो समांतर श्रेणी का ३०वाँ पद क्या है?
+    <div class="options">
+      <div>(अ) &nbsp; १५०</div>
+      <div>(ब) &nbsp; १४८</div>
+      <div>(क) &nbsp; १५२</div>
+      <div>(ड) &nbsp; १४६</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(४)</span>
+    पहली १० प्राकृत संख्याओं का योग कितना होता है?
+    <div class="options">
+      <div>(अ) &nbsp; ४५</div>
+      <div>(ब) &nbsp; १००</div>
+      <div>(क) &nbsp; ५०</div>
+      <div>(ड) &nbsp; ५५</div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- ══════════════════════════════════════════
+       प्र.२  क्रियाकलाप  — ४ अंक
+  ══════════════════════════════════════════ -->
+  <div class="section-title">
+    प्र. २ &nbsp; निम्नलिखित क्रियाकलाप पूरे कीजिए
+    <span class="marks">४ अंक</span>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(अ)</span>
+    निम्नलिखित समांतर श्रेणी से दिए गए खानों में सही संख्या लिखिए :
+    <span class="qmarks">[२ अंक]</span>
+    <br/><br/>
+    <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; १, ८, १५, २२, . . .</strong>
+    <div class="activity-box">
+      यहाँ &nbsp; a = <span class="blank"></span>, &nbsp;
+      t<sub>1</sub> = <span class="blank"></span>, &nbsp;
+      t<sub>2</sub> = <span class="blank"></span>, &nbsp;
+      t<sub>3</sub> = <span class="blank"></span>
+      <br/>
+      t<sub>2</sub> − t<sub>1</sub> = <span class="blank"></span> − <span class="blank"></span> = <span class="blank"></span>
+      <br/>
+      t<sub>3</sub> − t<sub>2</sub> = <span class="blank"></span> − <span class="blank"></span> = <span class="blank"></span>
+      <br/>
+      ∴ &nbsp; d = <span class="blank"></span>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(ब)</span>
+    a = ६, d = ३ दिया है। S<sub>27</sub> ज्ञात करने के लिए निम्नलिखित क्रियाकलाप पूरा कीजिए :
+    <span class="qmarks">[२ अंक]</span>
+    <div class="activity-box">
+      S<sub>n</sub> = n/2 [ <span class="blank"></span> + (n − 1) d ]
+      <br/>
+      S<sub>27</sub> = 27/2 &nbsp;[ 12 + (27 − 1) × <span class="blank"></span> ]
+      <br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 27/2 × <span class="blank"></span>
+      <br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 27 × 45 = <span class="blank"></span>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- ══════════════════════════════════════════
+       प्र.३  लघु उत्तरीय  — ६ अंक (३ में से २)
+  ══════════════════════════════════════════ -->
+  <div class="section-title">
+    प्र. ३ &nbsp; निम्नलिखित प्रश्न हल कीजिए &nbsp; (३ में से कोई २)
+    <span class="marks">६ अंक (प्रत्येक ३)</span>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(१)</span>
+    निम्नलिखित समांतर श्रेणी का २०वाँ पद ज्ञात कीजिए :
+    <br/>
+    <strong>&nbsp;&nbsp;&nbsp;&nbsp; −१२, −५, २, ९, १६, २३, ३०, . . .</strong>
+    <br/>
+    <span class="note">(पहले जाँचें कि यह समांतर श्रेणी है या नहीं, फिर सूत्र t<sub>n</sub> = a + (n−1)d लगाएँ।)</span>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(२)</span>
+    निम्नलिखित समांतर श्रेणी का १९वाँ पद ज्ञात कीजिए :
+    <br/>
+    <strong>&nbsp;&nbsp;&nbsp;&nbsp; ७, १३, १९, २५, . . .</strong>
+    <br/>
+    <span class="note">(सूत्र t<sub>n</sub> = a + (n−1)d का उपयोग करें।)</span>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(३)</span>
+    किसी समांतर श्रेणी का १७वाँ पद उसके १०वें पद से ७ अधिक है। सार्व अंतर ज्ञात कीजिए।
+    <br/>
+    <span class="note">(सूत्र t<sub>n</sub> = a + (n−1)d का उपयोग करें और सभी पद लिखें।)</span>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- ══════════════════════════════════════════
+       प्र.४  शब्द समस्या  — ६ अंक
+  ══════════════════════════════════════════ -->
+  <div class="section-title">
+    प्र. ४ &nbsp; शब्द समस्या हल कीजिए &nbsp;(अभ्यास सेट ३.२)
+    <span class="marks">६ अंक</span>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(अ)</span>
+    <strong>११, ८, ५, २, . . .</strong>
+    <br/>
+    इस समांतर श्रेणी में <strong>−१५१</strong> कौन-सा पद है?
+    <span class="qmarks">[३ अंक]</span>
+    <br/>
+    <span class="note">(सूत्र t<sub>n</sub> = a + (n−1)d का उपयोग करके पूरा हल लिखिए।)</span>
+  </div>
+
+  <div class="question">
+    <span class="qnum">(ब)</span>
+    किसी समांतर श्रेणी का ११वाँ पद <strong>१६</strong> और २१वाँ पद <strong>२९</strong> है।
+    उस समांतर श्रेणी का <strong>४१वाँ पद</strong> ज्ञात कीजिए।
+    <span class="qmarks">[३ अंक]</span>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- MARKS DISTRIBUTION TABLE -->
+  <div class="section-title">
+    अंक वितरण
+    <span class="marks">संदर्भ के लिए</span>
+  </div>
+
+  <table class="marks-table">
+    <thead>
+      <tr>
+        <th>प्र. क्र.</th>
+        <th>प्रकार</th>
+        <th>विषय-वस्तु</th>
+        <th>अंक</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>प्र. १</td>
+        <td>बहुविकल्पीय (४ × १)</td>
+        <td>समांतर श्रेणी की मूल अवधारणाएँ — अभ्यास सेट ३.१ व ३.२</td>
+        <td>४</td>
+      </tr>
+      <tr>
+        <td>प्र. २</td>
+        <td>क्रियाकलाप (अ + ब)</td>
+        <td>समांतर श्रेणी के पद व योग सूत्र — अभ्यास सेट ३.१ व ३.३</td>
+        <td>४</td>
+      </tr>
+      <tr>
+        <td>प्र. ३</td>
+        <td>लघु उत्तरीय (३ में से २ × ३)</td>
+        <td>समांतर श्रेणी, सार्व अंतर, 17वाँ पद — अभ्यास सेट ३.१ व ३.२</td>
+        <td>६</td>
+      </tr>
+      <tr>
+        <td>प्र. ४</td>
+        <td>शब्द समस्या (अ + ब)</td>
+        <td>nवाँ पद ज्ञात करना — अभ्यास सेट ३.२</td>
+        <td>६</td>
+      </tr>
+      <tr class="total">
+        <td colspan="3">कुल योग</td>
+        <td>२०</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    *** परीक्षा के लिए शुभकामनाएँ *** &nbsp;|&nbsp; ईमानदार रहें, कठिन परिश्रम करें
+    <br/>
+    <small>Visions Classes &nbsp;|&nbsp; Learn Today, Lead Tomorrow &nbsp;|&nbsp; कक्षा १० गणित (भाग–१) — अध्याय ३ : समांतर श्रेणी</small>
+  </div>
+
+</div>
+
+<!-- PRINT BUTTON -->
+<button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+<!-- ══════════════════════════════════════════
+<!-- ══════════════════════════════════════════
+     ANSWER KEY — VERTICAL STEP-BY-STEP STYLE
+════════════════════════════════════════════ -->
+<style>
+  .ak-page {
+    background:#fff; max-width:800px; margin:30px auto 0;
+    padding:36px 50px; border:2px solid #333;
+    box-shadow:0 4px 20px rgba(0,0,0,.15);
+    font-family:'Arial',sans-serif; color:#111;
+  }
+  .ak-sec {
+    background:#1a1a2e; color:#fff; padding:7px 14px;
+    font-size:14px; font-weight:bold; margin:24px 0 14px;
+    display:flex; justify-content:space-between; align-items:center;
+    border-radius:2px;
+  }
+  .ak-sec .mk { background:#fff; color:#1a1a2e; padding:2px 10px; border-radius:10px; font-size:12px; font-weight:bold; }
+  .ak-card { border:1.5px solid #e0e0e0; border-radius:6px; margin-bottom:20px; overflow:hidden; page-break-inside:avoid; }
+  .ak-card-head {
+    background:#f5f5f5; border-bottom:1.5px solid #e0e0e0;
+    padding:8px 14px; display:flex; justify-content:space-between; align-items:flex-start; gap:10px;
+  }
+  .ak-card-head .qtext { font-size:13.5px; font-weight:bold; color:#1a1a2e; flex:1; }
+  .ak-ans-badge { background:#1b5e20; color:#fff; padding:3px 14px; border-radius:12px; font-size:12px; font-weight:bold; white-space:nowrap; flex-shrink:0; }
+
+  /* ── VERTICAL solution body ── */
+  .ak-sol { padding:12px 16px; display:flex; flex-direction:column; gap:0; }
+
+  /* Each row = one line of working, stacked top-to-bottom */
+  .sol-row {
+    display:flex; align-items:baseline; padding:5px 0;
+    border-bottom:1px dashed #ebebeb; font-size:13.5px; line-height:1.75;
+  }
+  .sol-row:last-child { border-bottom:none; }
+
+  /* Left column: step label */
+  .sol-label {
+    min-width:110px; max-width:110px; font-size:11.5px; font-weight:bold;
+    color:#999; text-transform:uppercase; letter-spacing:.3px;
+    padding-right:8px; flex-shrink:0; padding-top:2px;
+  }
+  /* Separator */
+  .sol-sep { color:#ccc; padding:0 6px; font-size:13px; flex-shrink:0; }
+  /* Right column: the maths */
+  .sol-math { flex:1; font-size:13.5px; color:#222; }
+
+  /* Row colour themes */
+  .sol-row.type-given   .sol-label, .sol-row.type-given   .sol-math  { color:#1565c0; }
+  .sol-row.type-formula .sol-label { color:#6a1b9a; }
+  .sol-row.type-formula .sol-math  { color:#6a1b9a; font-weight:bold; }
+  .sol-row.type-calc    .sol-label { color:#888; }
+  .sol-row.type-calc    .sol-math  { color:#333; }
+  .sol-row.type-ans     .sol-label { color:#c0392b; }
+  .sol-row.type-ans     .sol-math  { color:#c0392b; font-weight:bold; font-size:14px; }
+  .sol-row.type-verify  .sol-label, .sol-row.type-verify .sol-math { color:#2e7d32; font-style:italic; font-size:12.5px; }
+  .sol-row.type-note    .sol-label, .sol-row.type-note   .sol-math { color:#e65100; font-size:12.5px; }
+
+  /* Filled-answer highlight for activity questions */
+  .fv {
+    display:inline-block; min-width:36px; background:#fff9c4;
+    border-bottom:2px solid #f9a825; text-align:center;
+    font-weight:bold; color:#c0392b; padding:0 5px; border-radius:3px;
+  }
+
+  /* Formula reference box */
+  .ak-fbox { background:#e8eaf6; border:2px solid #3949ab; border-radius:8px; padding:14px 18px; margin-top:22px; }
+  .ak-fbox .ft { font-weight:bold; color:#1a237e; font-size:14.5px; margin-bottom:10px; }
+  .ak-fbox table { width:100%; border-collapse:collapse; font-size:13.5px; }
+  .ak-fbox td { padding:6px 10px; border:1px solid #c5cae9; }
+  .ak-fbox td:first-child  { background:#e8eaf6; font-weight:bold; color:#1a237e; width:150px; }
+  .ak-fbox td:nth-child(2) { font-weight:bold; color:#6a1b9a; }
+  .ak-fbox td:last-child   { color:#555; font-size:12.5px; }
+
+  @media print {
+    .ak-page { box-shadow:none; border:none; padding:20px 30px; }
+    .no-print { display:none; }
+  }
+</style>
+
+<div class="ak-page" id="answer-key">
+
+  <div class="visions-header">
+    <div class="inst-name">Visions <span>Classes</span></div>
+    <div class="tagline">&#x2756; &nbsp; उत्तर-कुंजी — चरण-दर-चरण हल (ऊर्ध्वाधर) &nbsp; &#x2756;</div>
+  </div>
+  <div class="header">
+    <h1>उत्तर-कुंजी (Answer Key)</h1>
+    <h2>कक्षा १० गणित — अध्याय ३ : समांतर श्रेणी</h2>
+    <div class="chapter" style="color:#c0392b;font-weight:bold;">प्रत्येक प्रश्न का ऊर्ध्वाधर चरण-दर-चरण हल</div>
+  </div>
+
+  <!-- ═══════ प्र.१  MCQ ═══════ -->
+  <div class="ak-sec">प्र. १ — बहुविकल्पीय प्रश्न <span class="mk">४ × १ = ४ अंक</span></div>
+
+  <div class="ak-card">
+    <div class="ak-card-head"><span class="qtext">(१) कौन-सी श्रेणी समांतर श्रेणी है?</span><span class="ak-ans-badge">&#x2713; उत्तर : (ब)</span></div>
+    <div class="ak-sol">
+      <div class="sol-row type-given">   <span class="sol-label">परिभाषा</span><span class="sol-sep">&#x2192;</span><span class="sol-math">समांतर श्रेणी = हर क्रमागत पदों का अंतर <b>नियत (d = constant)</b> हो।</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">(अ) जाँचें</span><span class="sol-sep">&#x2192;</span><span class="sol-math">१,३,६,१० &nbsp;&#x2192;&nbsp; ३&#x2212;१=२, ६&#x2212;३=३ &nbsp;&#x2192; d असमान &#x2717;</span></div>
+      <div class="sol-row type-calc" style="background:#f1f8e9;"><span class="sol-label">(ब) जाँचें</span><span class="sol-sep">&#x2192;</span><span class="sol-math">२,४,६,८ &nbsp;&#x2192;&nbsp; ४&#x2212;२=<b>२</b>, ६&#x2212;४=<b>२</b>, ८&#x2212;६=<b>२</b> &nbsp;&#x2192; d = २ (नियत) &#x2713;</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">(क) जाँचें</span><span class="sol-sep">&#x2192;</span><span class="sol-math">१,४,९,१६ &nbsp;&#x2192;&nbsp; वर्ग श्रेणी, d असमान &#x2717;</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">(ड) जाँचें</span><span class="sol-sep">&#x2192;</span><span class="sol-math">२,६,१८,५४ &nbsp;&#x2192;&nbsp; गुणोत्तर श्रेणी (×३) &#x2717;</span></div>
+      <div class="sol-row type-ans">     <span class="sol-label">&#x2234; उत्तर</span><span class="sol-sep">&#x2192;</span><span class="sol-math">(ब) &nbsp; २, ४, ६, ८, ...&nbsp; जिसका d = २</span></div>
+    </div>
+  </div>
+
+  <div class="ak-card">
+    <div class="ak-card-head"><span class="qtext">(२) a = ८, d = &#x2212;५ &nbsp;&#x2192;&nbsp; t&#x2084; = ?</span><span class="ak-ans-badge">&#x2713; उत्तर : (क)</span></div>
+    <div class="ak-sol">
+      <div class="sol-row type-given">   <span class="sol-label">दिया है</span>   <span class="sol-sep">:</span><span class="sol-math">a = ८ &nbsp;,&nbsp; d = &#x2212;५ &nbsp;,&nbsp; n = ४</span></div>
+      <div class="sol-row type-formula"> <span class="sol-label">सूत्र</span>      <span class="sol-sep">:</span><span class="sol-math">t&#x2099; = a + (n &#x2212; 1) &times; d</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">रखें</span>      <span class="sol-sep">:</span><span class="sol-math">t&#x2084; = ८ + (४ &#x2212; १) &times; (&#x2212;५)</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">सरल</span>      <span class="sol-sep">:</span><span class="sol-math">t&#x2084; = ८ + ३ &times; (&#x2212;५)</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label"></span>          <span class="sol-sep"></span>  <span class="sol-math">t&#x2084; = ८ &#x2212; १५</span></div>
+      <div class="sol-row type-ans">     <span class="sol-label">&#x2234; t&#x2084;</span><span class="sol-sep">=</span><span class="sol-math"><b>&#x2212;७</b> &nbsp; &#x2192; सही विकल्प : (क)</span></div>
+    </div>
+  </div>
+
+  <div class="ak-card">
+    <div class="ak-card-head"><span class="qtext">(३) t&#x2099; = 5n &#x2212; 2 &nbsp;&#x2192;&nbsp; t&#x2083;&#x2080; = ?</span><span class="ak-ans-badge">&#x2713; उत्तर : (ब)</span></div>
+    <div class="ak-sol">
+      <div class="sol-row type-given">   <span class="sol-label">दिया है</span>  <span class="sol-sep">:</span><span class="sol-math">t&#x2099; = 5n &#x2212; 2 &nbsp;,&nbsp; n = ३०</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">रखें</span>     <span class="sol-sep">:</span><span class="sol-math">t&#x2083;&#x2080; = 5 &times; ३० &#x2212; २</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">सरल</span>     <span class="sol-sep">:</span><span class="sol-math">t&#x2083;&#x2080; = १५० &#x2212; २</span></div>
+      <div class="sol-row type-ans">     <span class="sol-label">&#x2234; t&#x2083;&#x2080;</span><span class="sol-sep">=</span><span class="sol-math"><b>१४८</b> &nbsp; &#x2192; सही विकल्प : (ब)</span></div>
+    </div>
+  </div>
+
+  <div class="ak-card">
+    <div class="ak-card-head"><span class="qtext">(४) पहली १० प्राकृत संख्याओं का योग = ?</span><span class="ak-ans-badge">&#x2713; उत्तर : (ड)</span></div>
+    <div class="ak-sol">
+      <div class="sol-row type-given">   <span class="sol-label">दिया है</span>  <span class="sol-sep">:</span><span class="sol-math">a = १, d = १, n = १०</span></div>
+      <div class="sol-row type-formula"> <span class="sol-label">सूत्र</span>     <span class="sol-sep">:</span><span class="sol-math">S&#x2099; = n/2 &times; (n + 1) &nbsp;[जब a=1, d=1]</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">रखें</span>     <span class="sol-sep">:</span><span class="sol-math">S&#x2081;&#x2080; = १०/२ &times; (१० + १)</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">सरल</span>     <span class="sol-sep">:</span><span class="sol-math">S&#x2081;&#x2080; = ५ &times; ११</span></div>
+      <div class="sol-row type-ans">     <span class="sol-label">&#x2234; S&#x2081;&#x2080;</span><span class="sol-sep">=</span><span class="sol-math"><b>५५</b> &nbsp; &#x2192; सही विकल्प : (ड)</span></div>
+      <div class="sol-row type-verify">  <span class="sol-label">जाँच</span>     <span class="sol-sep">:</span><span class="sol-math">१+२+३+४+५+६+७+८+९+१० = ५५ &#x2713;</span></div>
+    </div>
+  </div>
+
+  <!-- ═══════ प्र.२  Activity ═══════ -->
+  <div class="ak-sec">प्र. २ — क्रियाकलाप <span class="mk">४ अंक</span></div>
+
+  <div class="ak-card">
+    <div class="ak-card-head"><span class="qtext">(अ) श्रेणी १, ८, १५, २२, ... — रिक्त स्थान भरें</span><span class="ak-ans-badge">d = ७</span></div>
+    <div class="ak-sol">
+      <div class="sol-row type-given">  <span class="sol-label">पद पढ़ें</span>  <span class="sol-sep">:</span><span class="sol-math">a = <span class="fv">१</span> &nbsp;,&nbsp; t&#x2081; = <span class="fv">१</span> &nbsp;,&nbsp; t&#x2082; = <span class="fv">८</span> &nbsp;,&nbsp; t&#x2083; = <span class="fv">१५</span></span></div>
+      <div class="sol-row type-calc">   <span class="sol-label">t&#x2082; &#x2212; t&#x2081;</span><span class="sol-sep">=</span><span class="sol-math"><span class="fv">८</span> &#x2212; <span class="fv">१</span> = <span class="fv">७</span></span></div>
+      <div class="sol-row type-calc">   <span class="sol-label">t&#x2083; &#x2212; t&#x2082;</span><span class="sol-sep">=</span><span class="sol-math"><span class="fv">१५</span> &#x2212; <span class="fv">८</span> = <span class="fv">७</span></span></div>
+      <div class="sol-row type-note">   <span class="sol-label">निष्कर्ष</span> <span class="sol-sep">:</span><span class="sol-math">अंतर समान है &#x2234; यह A.P. है।</span></div>
+      <div class="sol-row type-ans">    <span class="sol-label">&#x2234; d</span>      <span class="sol-sep">=</span><span class="sol-math"><span class="fv"><b>७</b></span></span></div>
+    </div>
+  </div>
+
+  <div class="ak-card">
+    <div class="ak-card-head"><span class="qtext">(ब) a = ६, d = ३ &nbsp;&#x2192;&nbsp; S&#x2082;&#x2087; ज्ञात करें</span><span class="ak-ans-badge">S&#x2082;&#x2087; = १२१५</span></div>
+    <div class="ak-sol">
+      <div class="sol-row type-given">   <span class="sol-label">दिया है</span>    <span class="sol-sep">:</span><span class="sol-math">a = ६ &nbsp;,&nbsp; d = ३ &nbsp;,&nbsp; n = २७</span></div>
+      <div class="sol-row type-formula"> <span class="sol-label">सूत्र</span>       <span class="sol-sep">:</span><span class="sol-math">S&#x2099; = n/2 &nbsp;[ <span class="fv">2a</span> + (n &#x2212; 1) &times; d ]</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">रखें</span>       <span class="sol-sep">:</span><span class="sol-math">S&#x2082;&#x2087; = 27/2 &nbsp;[ 2&times;6 + (27&#x2212;1) &times; <span class="fv">3</span> ]</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">सरल (i)</span>   <span class="sol-sep">:</span><span class="sol-math">= 27/2 &nbsp;[ 12 + 26 &times; 3 ]</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">सरल (ii)</span>  <span class="sol-sep">:</span><span class="sol-math">= 27/2 &nbsp;[ 12 + 78 ]</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">सरल (iii)</span> <span class="sol-sep">:</span><span class="sol-math">= 27/2 &times; <span class="fv">90</span></span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">सरल (iv)</span>  <span class="sol-sep">:</span><span class="sol-math">= 27 &times; 45</span></div>
+      <div class="sol-row type-ans">     <span class="sol-label">&#x2234; S&#x2082;&#x2087;</span>  <span class="sol-sep">=</span><span class="sol-math"><span class="fv"><b>१२१५</b></span></span></div>
+    </div>
+  </div>
+
+  <!-- ═══════ प्र.३  Short Answer ═══════ -->
+  <div class="ak-sec">प्र. ३ — लघु उत्तरीय &nbsp;(३ में से कोई २) <span class="mk">३ &times; २ = ६ अंक</span></div>
+
+  <div class="ak-card">
+    <div class="ak-card-head"><span class="qtext">(१) &#x2212;१२, &#x2212;५, २, ९, ... का २०वाँ पद</span><span class="ak-ans-badge">t&#x2082;&#x2080; = १२१</span></div>
+    <div class="ak-sol">
+      <div class="sol-row type-note">    <span class="sol-label">चरण १ जाँच</span><span class="sol-sep">:</span><span class="sol-math">&#x2212;५&#x2212;(&#x2212;१२)=७, २&#x2212;(&#x2212;५)=७, ९&#x2212;२=७ &nbsp;&#x2192;&nbsp; d=७ (नियत) &#x2234; यह A.P. है &#x2713;</span></div>
+      <div class="sol-row type-given">   <span class="sol-label">चरण २ दिया</span><span class="sol-sep">:</span><span class="sol-math">a = &#x2212;१२ &nbsp;,&nbsp; d = ७ &nbsp;,&nbsp; n = २०</span></div>
+      <div class="sol-row type-formula"> <span class="sol-label">चरण ३ सूत्र</span><span class="sol-sep">:</span><span class="sol-math">t&#x2099; = a + (n &#x2212; 1) &times; d</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">चरण ४ रखें</span><span class="sol-sep">:</span><span class="sol-math">t&#x2082;&#x2080; = &#x2212;१२ + (२० &#x2212; १) &times; ७</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">चरण ५</span>     <span class="sol-sep">:</span><span class="sol-math">t&#x2082;&#x2080; = &#x2212;१२ + १९ &times; ७</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">चरण ६</span>     <span class="sol-sep">:</span><span class="sol-math">t&#x2082;&#x2080; = &#x2212;१२ + १३३</span></div>
+      <div class="sol-row type-ans">     <span class="sol-label">&#x2234; t&#x2082;&#x2080;</span>  <span class="sol-sep">=</span><span class="sol-math"><b>१२१</b></span></div>
+    </div>
+  </div>
+
+  <div class="ak-card">
+    <div class="ak-card-head"><span class="qtext">(२) ७, १३, १९, २५, ... का १९वाँ पद</span><span class="ak-ans-badge">t&#x2081;&#x2089; = ११५</span></div>
+    <div class="ak-sol">
+      <div class="sol-row type-given">   <span class="sol-label">चरण १ दिया</span><span class="sol-sep">:</span><span class="sol-math">a = ७ &nbsp;,&nbsp; d = १३&#x2212;७ = ६ &nbsp;,&nbsp; n = १९</span></div>
+      <div class="sol-row type-formula"> <span class="sol-label">चरण २ सूत्र</span><span class="sol-sep">:</span><span class="sol-math">t&#x2099; = a + (n &#x2212; 1) &times; d</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">चरण ३ रखें</span><span class="sol-sep">:</span><span class="sol-math">t&#x2081;&#x2089; = ७ + (१९ &#x2212; १) &times; ६</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">चरण ४</span>     <span class="sol-sep">:</span><span class="sol-math">t&#x2081;&#x2089; = ७ + १८ &times; ६</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">चरण ५</span>     <span class="sol-sep">:</span><span class="sol-math">t&#x2081;&#x2089; = ७ + १०८</span></div>
+      <div class="sol-row type-ans">     <span class="sol-label">&#x2234; t&#x2081;&#x2089;</span>  <span class="sol-sep">=</span><span class="sol-math"><b>११५</b></span></div>
+    </div>
+  </div>
+
+  <div class="ak-card">
+    <div class="ak-card-head"><span class="qtext">(३) t&#x2081;&#x2087; = t&#x2081;&#x2080; + ७ &nbsp;&#x2192;&nbsp; d ज्ञात करें</span><span class="ak-ans-badge">d = १</span></div>
+    <div class="ak-sol">
+      <div class="sol-row type-formula"> <span class="sol-label">सूत्र</span>        <span class="sol-sep">:</span><span class="sol-math">t&#x2099; = a + (n&#x2212;1)d का उपयोग</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">चरण १</span>       <span class="sol-sep">:</span><span class="sol-math">t&#x2081;&#x2087; = a + १६d &nbsp;&nbsp;...(i)</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">चरण २</span>       <span class="sol-sep">:</span><span class="sol-math">t&#x2081;&#x2080; = a + ९d &nbsp;&nbsp;...(ii)</span></div>
+      <div class="sol-row type-given">   <span class="sol-label">शर्त (दिया)</span><span class="sol-sep">:</span><span class="sol-math">t&#x2081;&#x2087; = t&#x2081;&#x2080; + ७</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">चरण ३ रखें</span><span class="sol-sep">:</span><span class="sol-math">a + १६d = a + ९d + ७</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">चरण ४</span>      <span class="sol-sep">:</span><span class="sol-math">१६d &#x2212; ९d = ७</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">चरण ५</span>      <span class="sol-sep">:</span><span class="sol-math">७d = ७</span></div>
+      <div class="sol-row type-ans">     <span class="sol-label">&#x2234; d</span>         <span class="sol-sep">=</span><span class="sol-math"><b>१</b></span></div>
+    </div>
+  </div>
+
+  <!-- ═══════ प्र.४  Word Problems ═══════ -->
+  <div class="ak-sec">प्र. ४ — शब्द समस्याएँ <span class="mk">३ + ३ = ६ अंक</span></div>
+
+  <div class="ak-card">
+    <div class="ak-card-head"><span class="qtext">(अ) ११, ८, ५, २, ... में &#x2212;१५१ कौन-सा पद है?</span><span class="ak-ans-badge">n = ५५</span></div>
+    <div class="ak-sol">
+      <div class="sol-row type-given">   <span class="sol-label">चरण १ दिया</span> <span class="sol-sep">:</span><span class="sol-math">a = ११ &nbsp;,&nbsp; d = ८&#x2212;११ = &#x2212;३ &nbsp;,&nbsp; t&#x2099; = &#x2212;१५१</span></div>
+      <div class="sol-row type-formula"> <span class="sol-label">चरण २ सूत्र</span> <span class="sol-sep">:</span><span class="sol-math">t&#x2099; = a + (n &#x2212; 1) &times; d</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">चरण ३ रखें</span> <span class="sol-sep">:</span><span class="sol-math">&#x2212;१५१ = ११ + (n &#x2212; १) &times; (&#x2212;३)</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">चरण ४</span>       <span class="sol-sep">:</span><span class="sol-math">&#x2212;१५१ &#x2212; ११ = (n &#x2212; १) &times; (&#x2212;३)</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">चरण ५</span>       <span class="sol-sep">:</span><span class="sol-math">&#x2212;१६२ = &#x2212;३ &times; (n &#x2212; १)</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">चरण ६</span>       <span class="sol-sep">:</span><span class="sol-math">n &#x2212; १ = &#x2212;१६२ &div; (&#x2212;३) = ५४</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">चरण ७</span>       <span class="sol-sep">:</span><span class="sol-math">n = ५४ + १</span></div>
+      <div class="sol-row type-ans">     <span class="sol-label">&#x2234; n</span>          <span class="sol-sep">=</span><span class="sol-math"><b>५५</b> &nbsp;&#x2192;&nbsp; &#x2212;१५१ इस A.P. का <b>५५वाँ पद</b> है।</span></div>
+    </div>
+  </div>
+
+  <div class="ak-card">
+    <div class="ak-card-head"><span class="qtext">(ब) t&#x2081;&#x2081; = १६ &nbsp;और&nbsp; t&#x2082;&#x2081; = २९ &nbsp;&#x2192;&nbsp; t&#x2084;&#x2081; = ?</span><span class="ak-ans-badge">t&#x2084;&#x2081; = ५५</span></div>
+    <div class="ak-sol">
+      <div class="sol-row type-formula"> <span class="sol-label">सूत्र</span>           <span class="sol-sep">:</span><span class="sol-math">t&#x2099; = a + (n&#x2212;1)d का उपयोग</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">चरण १</span>          <span class="sol-sep">:</span><span class="sol-math">t&#x2081;&#x2081; = a + १०d = १६ &nbsp;...(i)</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">चरण २</span>          <span class="sol-sep">:</span><span class="sol-math">t&#x2082;&#x2081; = a + २०d = २९ &nbsp;...(ii)</span></div>
+      <div class="sol-row type-note">    <span class="sol-label">चरण ३ (ii)&#x2212;(i)</span><span class="sol-sep">:</span><span class="sol-math">(a+२०d) &#x2212; (a+१०d) = २९ &#x2212; १६</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">चरण ४</span>          <span class="sol-sep">:</span><span class="sol-math">१०d = १३</span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">चरण ५</span>          <span class="sol-sep">:</span><span class="sol-math">d = १३/१० = <b>१.३</b></span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">चरण ६ (i) से</span> <span class="sol-sep">:</span><span class="sol-math">a = १६ &#x2212; १०&times;१.३ = १६ &#x2212; १३ = <b>३</b></span></div>
+      <div class="sol-row type-calc">    <span class="sol-label">चरण ७ t&#x2084;&#x2081;</span>   <span class="sol-sep">:</span><span class="sol-math">t&#x2084;&#x2081; = ३ + (४१&#x2212;१)&times;१.३ = ३ + ४०&times;१.३ = ३ + ५२</span></div>
+      <div class="sol-row type-ans">     <span class="sol-label">&#x2234; t&#x2084;&#x2081;</span>      <span class="sol-sep">=</span><span class="sol-math"><b>५५</b></span></div>
+      <div class="sol-row type-verify">  <span class="sol-label">जाँच</span>           <span class="sol-sep">:</span><span class="sol-math">t&#x2081;&#x2081; = ३+१०&times;१.३=१६ &#x2713; &nbsp;|&nbsp; t&#x2082;&#x2081; = ३+२०&times;१.३=२९ &#x2713;</span></div>
+    </div>
+  </div>
+
+  <!-- Formula reference -->
+  <div class="ak-fbox">
+    <div class="ft">&#x1F4D0; समांतर श्रेणी — मुख्य सूत्र (Quick Reference)</div>
+    <table>
+      <tr><td>nवाँ पद (t&#x2099;)</td><td>t&#x2099; = a + (n &minus; 1) d</td><td>a = पहला पद, d = सार्व अंतर, n = पद संख्या</td></tr>
+      <tr><td>n पदों का योग (S&#x2099;)</td><td>S&#x2099; = n/2 [2a + (n&minus;1)d]</td><td>या &nbsp; S&#x2099; = n/2 [a + l], &nbsp; l = अंतिम पद</td></tr>
+      <tr><td>सार्व अंतर (d)</td><td>d = t&#x2082; &minus; t&#x2081; = t&#x2083; &minus; t&#x2082;</td><td>हर क्रमागत पदों का अंतर समान होता है</td></tr>
+      <tr><td>nवाँ पद (योग से)</td><td>t&#x2099; = S&#x2099; &minus; S&#x2099;&#x208B;&#x2081;</td><td>जब योग का सूत्र दिया हो</td></tr>
+    </table>
+  </div>
+
+  <div class="footer" style="margin-top:22px;">
+    &#x2756; &nbsp; Visions Classes — उत्तर-कुंजी &nbsp; &#x2756; &nbsp; कक्षा १० गणित : समांतर श्रेणी
+    <br/><small>यह उत्तर-कुंजी केवल संदर्भ हेतु है। विद्यार्थियों को स्वयं हल करना चाहिए।</small>
+  </div>
+
+</div>
+
+<button class="print-btn no-print" onclick="window.print()" style="margin-top:10px;">&#x1F5A8;&#xFE0F; Print Answer Key</button>
+
+</body>
+</html>

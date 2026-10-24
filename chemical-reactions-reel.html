@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Chemical Reactions — Visions Learning</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;600;700;800;900&family=Bubblegum+Sans&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;background:#0a0a0a;overflow:hidden;font-family:'Poppins',sans-serif}
+
+/* ── STAGE 9:16 ── */
+.stage{width:390px;height:692px;position:relative;overflow:hidden;margin:auto;
+  top:50%;transform:translateY(-50%);background:#000;border-radius:20px;
+  box-shadow:0 0 80px rgba(0,229,255,.12),0 0 40px rgba(0,0,0,.9)}
+canvas{position:absolute;inset:0;pointer-events:none}
+#bgC{z-index:0}#fxC{z-index:5}
+.scan{position:absolute;inset:0;z-index:6;pointer-events:none;
+  background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,.03) 3px,rgba(0,0,0,.03) 4px)}
+.flash{position:absolute;inset:0;z-index:18;background:#fff;opacity:0;pointer-events:none;transition:opacity .07s}
+.flash.on{opacity:.5}
+.lb{position:absolute;left:0;right:0;height:36px;background:#000;z-index:20;transition:height 1.2s cubic-bezier(.77,0,.18,1)}
+#lbT{top:0}#lbB{bottom:0}
+.lb.open{height:0}
+
+/* ── UI CHROME ── */
+.wm{position:absolute;top:48px;left:50%;transform:translateX(-50%);z-index:25;
+  font-size:10px;font-weight:700;letter-spacing:2.5px;color:rgba(255,255,255,.35);
+  font-family:'Orbitron',sans-serif;opacity:0;transition:opacity 1.2s;white-space:nowrap}
+.wm.show{opacity:1}
+.pbar{position:absolute;top:0;left:0;height:3px;z-index:25;width:0%;
+  background:linear-gradient(90deg,#00e5ff,#7c4dff,#ff4081);
+  box-shadow:0 0 8px #00e5ff;transition:width .4s ease}
+.pbarglow{position:absolute;top:0;left:0;height:3px;z-index:24;width:0%;
+  background:linear-gradient(90deg,#00e5ff,#7c4dff,#ff4081);
+  filter:blur(4px);opacity:.6;transition:width .4s ease}
+
+/* ── SCENE AREA (top 68%) ── */
+#scene{position:absolute;top:44px;left:0;right:0;bottom:158px;z-index:2;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  overflow:hidden;padding:0 10px}
+
+/* ── SPEAKER BAR ── */
+.spkBar{position:absolute;bottom:0;left:0;right:0;height:158px;z-index:6;pointer-events:none;
+  background:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.8) 28%,rgba(0,0,0,.95) 100%);
+  border-top:1px solid rgba(124,77,255,.12)}
+
+/* ── CHARACTER ── */
+.cw{position:absolute;z-index:8;width:120px;height:160px;
+  opacity:0;filter:drop-shadow(0 6px 18px rgba(0,229,255,.18));
+  transition:opacity .5s,transform .5s cubic-bezier(.34,1.56,.64,1)}
+.cw.L{left:0;bottom:34px;transform:translateX(-40px)}
+.cw.L.show{transform:translateX(0);opacity:1}
+.cw.bounce{animation:cBnc .5s cubic-bezier(.34,1.56,.64,1)}
+@keyframes cBnc{0%{transform:translateY(0)}35%{transform:translateY(-12px)}100%{transform:translateY(0)}}
+.cfloat{animation:cf 3.2s ease-in-out infinite}
+@keyframes cf{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.csway{animation:cs 4.5s ease-in-out infinite}
+@keyframes cs{0%,100%{transform:rotate(0)}30%{transform:rotate(.8deg)}70%{transform:rotate(-.8deg)}}
+.meye{animation:meblink 3.8s infinite;transform-origin:center}
+@keyframes meblink{0%,88%,100%{transform:scaleY(1)}91%{transform:scaleY(.07)}95%{transform:scaleY(1)}}
+.mmouth{transform-origin:80px 90px}
+
+/* ── SPEECH BUBBLE ── */
+.bub{position:absolute;z-index:10;max-width:186px;
+  background:linear-gradient(135deg,rgba(15,5,32,.97),rgba(6,2,18,.99));
+  border:1.5px solid rgba(124,77,255,.5);border-radius:16px;padding:9px 13px;
+  font-size:12px;font-weight:600;color:#ece4ff;line-height:1.5;
+  opacity:0;transform:scale(.55) translateY(8px);
+  transition:opacity .32s,transform .32s cubic-bezier(.34,1.56,.64,1);
+  box-shadow:0 4px 18px rgba(124,77,255,.22);font-family:'Bubblegum Sans',cursive;
+  backdrop-filter:blur(10px)}
+.bub.show{opacity:1;transform:scale(1) translateY(0)}
+.bub::after{content:'';position:absolute;width:0;height:0;border:8px solid transparent}
+.bub.BL{left:116px;bottom:96px}
+.bub.BL::after{border-top-color:rgba(15,5,32,.97);border-left:0;left:12px;bottom:-15px}
+.bub .hl {color:#a78bfa;font-weight:800}
+.bub .hlg{color:#34d399;font-weight:800}
+.bub .hlr{color:#f87171;font-weight:800}
+.bub .hlo{color:#fbbf24;font-weight:800}
+
+/* ── TELEPROMPTER ── */
+#cue{position:absolute;bottom:3px;left:118px;right:6px;z-index:22;
+  background:transparent;border:none;padding:3px 5px;
+  opacity:0;transition:opacity .4s;pointer-events:none}
+#cue.show{opacity:1}
+#cueL{font-size:8px;font-weight:700;letter-spacing:1.5px;color:rgba(0,229,255,.45);
+  text-transform:uppercase;font-family:'Orbitron',sans-serif;margin-bottom:2px}
+#cueT{font-size:11px;color:rgba(220,210,255,.75);line-height:1.4;font-weight:500;
+  max-height:50px;overflow:hidden}
+.cword{display:inline}.cword.lit{color:#f7c948;font-weight:700}
+
+/* ── VOICE BARS ── */
+#vb{position:absolute;bottom:34px;right:12px;z-index:22;
+  display:flex;gap:3px;align-items:flex-end;height:16px;opacity:0;transition:opacity .3s}
+#vb.show{opacity:1}
+#vb span{width:3.5px;border-radius:2px;background:#00e5ff;animation:vba .45s ease-in-out infinite}
+#vb span:nth-child(1){height:4px;animation-delay:0s}
+#vb span:nth-child(2){height:10px;animation-delay:.1s}
+#vb span:nth-child(3){height:16px;animation-delay:.2s}
+#vb span:nth-child(4){height:10px;animation-delay:.3s}
+#vb span:nth-child(5){height:4px;animation-delay:.4s}
+@keyframes vba{0%,100%{transform:scaleY(.3);opacity:.45}50%{transform:scaleY(1);opacity:1}}
+
+/* ── MUTE ── */
+#muteBtn{position:absolute;top:50px;right:12px;z-index:26;background:rgba(0,0,0,.55);
+  border:1px solid rgba(255,255,255,.15);border-radius:50%;width:28px;height:28px;
+  color:#fff;font-size:12px;cursor:pointer;display:none;
+  align-items:center;justify-content:center}
+#muteBtn.show{display:flex}
+
+/* ── START BUTTON ── */
+#startBtn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:50;
+  background:linear-gradient(135deg,#7c4dff,#00e5ff);border:none;border-radius:50px;
+  padding:16px 30px;color:#fff;font-size:15px;font-weight:800;cursor:pointer;
+  font-family:'Poppins',sans-serif;letter-spacing:.5px;
+  box-shadow:0 0 28px rgba(0,229,255,.45),0 0 55px rgba(124,77,255,.28);
+  animation:sbP 1.5s ease-in-out infinite}
+@keyframes sbP{0%,100%{box-shadow:0 0 18px rgba(0,229,255,.4)}50%{box-shadow:0 0 45px rgba(0,229,255,.75)}}
+#startBtn:hover{transform:translate(-50%,-50%) scale(1.04)}
+
+/* ── REPLAY ── */
+#replayBtn{display:none;position:absolute;bottom:45px;left:50%;transform:translateX(-50%);
+  z-index:30;background:rgba(0,229,255,.1);border:2px solid #00e5ff;color:#00e5ff;
+  font-size:13px;font-weight:700;padding:8px 24px;border-radius:28px;cursor:pointer;
+  font-family:'Poppins',sans-serif}
+
+/* ═══════════════ SCENE COMPONENTS ═══════════════ */
+
+/* generic */
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeLeft{from{opacity:0;transform:translateX(-24px)}to{opacity:1;transform:translateX(0)}}
+@keyframes fadeRight{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:translateX(0)}}
+@keyframes zoomIn{from{opacity:0;transform:scale(.65)}to{opacity:1;transform:scale(1)}}
+@keyframes popIn{from{opacity:0;transform:scale(0) rotate(-12deg)}60%{transform:scale(1.12) rotate(3deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+@keyframes glow{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes arrowMove{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+@keyframes countUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ribbonSlide{from{transform:translateX(-100%)}to{transform:translateX(0)}}
+@keyframes tBounce{0%,100%{transform:translateY(0)}40%{transform:translateY(-16px)}60%{transform:translateY(-7px)}}
+@keyframes oPulse{0%,100%{text-shadow:0 0 18px #f7c948}50%{text-shadow:0 0 45px #f7c948,0 0 70px rgba(247,201,72,.4)}}
+@keyframes coPop{0%{transform:scale(0) rotate(-15deg);opacity:0}65%{transform:scale(1.2)}100%{transform:scale(1);opacity:1}}
+@keyframes checkDraw{0%{stroke-dashoffset:30}100%{stroke-dashoffset:0}}
+@keyframes crossDraw{0%{stroke-dashoffset:20}100%{stroke-dashoffset:0}}
+
+/* scene title chip */
+.chip{display:inline-block;font-family:'Orbitron',sans-serif;font-size:9px;
+  letter-spacing:2.5px;text-transform:uppercase;padding:4px 12px;
+  border-radius:20px;margin-bottom:10px;font-weight:700;
+  animation:fadeIn .6s ease both}
+
+/* concept box */
+.cbox{background:rgba(255,255,255,.05);border-radius:14px;padding:13px 14px;
+  width:100%;position:relative;overflow:hidden}
+.cbox::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3.5px;border-radius:2px}
+
+/* ── MOLECULE ── */
+.mol{display:inline-flex;align-items:center;justify-content:center;
+  border-radius:10px;padding:7px 12px;font-family:'Orbitron',sans-serif;
+  font-weight:900;font-size:18px;letter-spacing:1px;position:relative}
+.mol-atom{display:inline-flex;align-items:center;justify-content:center;
+  width:34px;height:34px;border-radius:50%;font-size:13px;font-weight:800;
+  position:relative;margin:0 2px}
+.atom-sub{font-size:9px;vertical-align:sub;margin-left:1px}
+
+/* ── ATOM COUNTER ── */
+.abox{background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.2);
+  border-radius:11px;padding:8px 10px;text-align:center;min-width:70px;
+  position:relative;transition:border-color .45s,background .45s,transform .3s}
+.abox.ok{border-color:#00e676;background:rgba(0,230,118,.14);transform:scale(1.04)}
+.abox.bad{border-color:#ff1744;background:rgba(255,23,68,.12)}
+.abox-lbl{font-size:9.5px;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:1px;font-weight:700}
+.abox-nums{display:flex;gap:6px;justify-content:center;align-items:center;margin-top:3px}
+.abox-l{font-size:15px;font-weight:800;color:#ffb3b3}
+.abox-r{font-size:15px;font-weight:800;color:#b9f6ca}
+.abox .tick{position:absolute;top:2px;right:4px;font-size:11px;opacity:0;
+  transform:scale(0);transition:opacity .3s,transform .3s cubic-bezier(.34,1.56,.64,1)}
+.abox.ok .tick{opacity:1;transform:scale(1)}
+
+/* step card */
+.scard{width:100%;background:rgba(255,255,255,.09);border-radius:12px;padding:9px 12px;
+  margin:4px 0;text-align:left;animation:fadeLeft .4s ease both}
+.scard-n{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:3px}
+.scard-eq{font-family:'Orbitron',sans-serif;font-size:13px;font-weight:700;color:#fff;letter-spacing:.5px}
+.scard-note{font-size:11px;margin-top:2px;color:rgba(255,255,255,.75)}
+
+/* type card */
+.tcard{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.05);
+  border-radius:13px;padding:10px 12px;border-left:3px solid;
+  transform:translateX(-30px);opacity:0}
+.tcard.in{animation:fadeLeft .45s cubic-bezier(.22,1,.36,1) both}
+.tcard-icon{font-size:26px;flex-shrink:0;line-height:1}
+.tcard-body{flex:1;text-align:left}
+.tcard-name{font-size:13px;font-weight:800;margin-bottom:2px}
+.tcard-eq{font-size:11px;font-weight:600;opacity:.8}
+.tcard-tag{font-size:10px;font-weight:700;margin-top:3px;opacity:.65}
+
+/* coeff */
+.coeff{font-family:'Orbitron',sans-serif;font-weight:900;color:#ffe57a;
+  text-shadow:0 0 16px #f7c948,0 0 30px rgba(247,201,72,.4);opacity:0;font-size:24px;
+  display:inline-block;vertical-align:baseline}
+.coeff.pop{animation:coPop .5s cubic-bezier(.34,1.56,.64,1) both}
+
+/* eq-mol */
+.emol{font-family:'Orbitron',sans-serif;font-weight:900;font-size:20px;color:#ffffff;
+  transition:color .4s,text-shadow .4s;display:inline-block;
+  text-shadow:0 0 8px rgba(255,255,255,.3)}
+.emol.bal{color:#00e676;text-shadow:0 0 16px #00e676,0 0 30px rgba(0,230,118,.3)}
+.emol.unbal{color:#ff4444;text-shadow:0 0 12px #ff4444;animation:shake .4s ease-in-out}
+
+/* final balanced pill */
+.finpill{background:linear-gradient(135deg,rgba(0,230,118,.18),rgba(0,230,118,.08));
+  border:2px solid #00e676;border-radius:14px;padding:12px 16px;text-align:center;
+  width:100%;box-shadow:0 0 20px rgba(0,230,118,.25),0 0 40px rgba(0,230,118,.1);
+  animation:pulse 2s ease-in-out infinite}
+
+/* info ribbon */
+.ribbon{overflow:hidden;border-radius:8px;margin:5px 0;
+  background:rgba(255,255,255,.04);border-left:3px solid}
+.ribbon-inner{padding:7px 11px;animation:ribbonSlide .5s ease both}
+
+/* diagram arrows */
+.diarrow{font-size:28px;color:#7c4dff;text-shadow:0 0 12px #7c4dff;
+  animation:arrowMove 1.2s ease-in-out infinite;display:inline-block}
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
+  <canvas id="bgC" width="390" height="692"></canvas>
+  <canvas id="fxC" width="390" height="692"></canvas>
+  <div class="scan"></div>
+  <div class="flash" id="flash"></div>
+  <div class="lb" id="lbT"></div>
+  <div class="lb" id="lbB"></div>
+  <div class="wm" id="wm">✦ VISIONS LEARNING ✦</div>
+  <div class="pbar" id="pbar"></div>
+  <div class="pbarglow" id="pbarG"></div>
+  <div class="spkBar"></div>
+  <div id="scene"></div>
+
+  <!-- Anime character (original SVG — sharp jawline, cool hair, sunglasses, beard) -->
+  <div class="cw L" id="charWrap">
+    <svg viewBox="0 -30 160 250" width="185" height="255" class="cfloat csway">
+      <defs>
+        <radialGradient id="sg" cx="50%" cy="35%" r="58%">
+          <stop offset="0%" stop-color="#f0c090"/><stop offset="60%" stop-color="#d4955a"/><stop offset="100%" stop-color="#b87840"/>
+        </radialGradient>
+        <linearGradient id="swg" x1="0%" y1="0%" x2="80%" y2="100%">
+          <stop offset="0%" stop-color="#1e1e2e"/><stop offset="100%" stop-color="#080810"/>
+        </linearGradient>
+        <linearGradient id="hg" x1="0%" y1="0%" x2="60%" y2="100%">
+          <stop offset="0%" stop-color="#3a2510"/><stop offset="55%" stop-color="#1e1008"/><stop offset="100%" stop-color="#080402"/>
+        </linearGradient>
+        <linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#0a0a0a"/><stop offset="100%" stop-color="#1c1c1c"/>
+        </linearGradient>
+        <filter id="cg" x="-25%" y="-25%" width="150%" height="150%">
+          <feGaussianBlur stdDeviation="3" result="b"/>
+          <feFlood flood-color="#00e5ff" flood-opacity=".4" result="c"/>
+          <feComposite in="c" in2="b" operator="in" result="g"/>
+          <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="ss"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="rgba(0,0,0,.5)"/></filter>
+      </defs>
+      <ellipse cx="80" cy="218" rx="46" ry="6" fill="rgba(0,0,0,.3)"/>
+      <ellipse cx="80" cy="130" rx="62" ry="86" fill="none" stroke="rgba(0,229,255,.07)" stroke-width="7"/>
+      <!-- body -->
+      <path d="M22 140 Q20 118 38 110 L60 106 L80 120 L100 106 L122 110 Q140 118 138 140 L140 218 L20 218 Z" fill="url(#swg)" filter="url(#ss)"/>
+      <line x1="36" y1="126" x2="34" y2="218" stroke="rgba(255,255,255,.03)" stroke-width="4"/>
+      <line x1="52" y1="118" x2="50" y2="218" stroke="rgba(255,255,255,.03)" stroke-width="4"/>
+      <line x1="68" y1="114" x2="66" y2="218" stroke="rgba(255,255,255,.03)" stroke-width="4"/>
+      <line x1="84" y1="113" x2="82" y2="218" stroke="rgba(255,255,255,.03)" stroke-width="4"/>
+      <line x1="100" y1="114" x2="98" y2="218" stroke="rgba(255,255,255,.03)" stroke-width="4"/>
+      <line x1="116" y1="118" x2="114" y2="218" stroke="rgba(255,255,255,.03)" stroke-width="4"/>
+      <path d="M60 106 Q80 124 100 106" fill="none" stroke="#2a2a3e" stroke-width="4" stroke-linecap="round"/>
+      <!-- arms -->
+      <path d="M22 140 Q10 162 14 192 L28 194 Q26 164 34 142 Z" fill="url(#swg)"/>
+      <ellipse cx="21" cy="196" rx="9" ry="7" fill="url(#sg)"/>
+      <g style="transform-origin:80px 130px;animation:apnt 2s ease-in-out infinite">
+        <path d="M138 140 Q150 160 148 188 L134 190 Q134 162 128 142 Z" fill="url(#swg)"/>
+        <ellipse cx="141" cy="192" rx="9" ry="7" fill="url(#sg)"/>
+        <rect x="137" y="174" width="7" height="20" rx="3.5" fill="url(#sg)" filter="url(#cg)"/>
+      </g>
+      <!-- neck -->
+      <path d="M66 108 Q80 118 94 108 L92 95 Q80 104 68 95 Z" fill="url(#sg)"/>
+      <!-- face — sharp V jawline -->
+      <path d="M40 52 Q36 88 40 110 Q50 136 80 142 Q110 136 120 110 Q124 88 120 52 Q108 38 80 36 Q52 38 40 52 Z" fill="url(#sg)" filter="url(#ss)"/>
+      <path d="M40 80 Q46 84 50 90" fill="none" stroke="rgba(140,80,30,.12)" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M120 80 Q114 84 110 90" fill="none" stroke="rgba(140,80,30,.12)" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- beard -->
+      <path d="M40 86 Q36 108 40 122 Q52 142 80 144 Q108 142 120 122 Q124 108 120 86 Q110 102 80 104 Q50 102 40 86 Z" fill="#1a1008" opacity=".87"/>
+      <path d="M40 86 Q44 74 52 78 Q46 90 42 104 Z" fill="#1a1008" opacity=".6"/>
+      <path d="M120 86 Q116 74 108 78 Q114 90 118 104 Z" fill="#1a1008" opacity=".6"/>
+      <path d="M58 88 Q80 95 102 88 Q99 81 80 79 Q61 81 58 88 Z" fill="#120a04" opacity=".75"/>
+      <path d="M62 122 Q80 132 98 122 Q94 140 80 142 Q66 140 62 122 Z" fill="#0e0804" opacity=".7"/>
+      <!-- hair spikes -->
+      <path d="M38 50 Q36 14 80 6 Q124 14 122 50 L118 26 Q112 4 80 2 Q48 4 42 26 Z" fill="#080402"/>
+      <ellipse cx="80" cy="32" rx="44" ry="30" fill="#100804"/>
+      <polygon points="36,54 26,10 46,4 50,46" fill="#2a1a0d"/>
+      <polygon points="46,46 42,6 60,-2 62,38" fill="#321e10"/>
+      <polygon points="58,38 60,-8 74,-14 72,32" fill="#3a2414"/>
+      <polygon points="70,34 73,-20 87,-20 90,34" fill="#3e2816"/>
+      <polygon points="90,32 87,-8 101,-14 104,38" fill="#3a2414"/>
+      <polygon points="104,38 106,6 120,-2 114,46" fill="#321e10"/>
+      <polygon points="114,46 118,10 132,54 126,50" fill="#2a1a0d"/>
+      <polygon points="37,56 28,14 34,12 42,52" fill="#4a2e18" opacity=".85"/>
+      <polygon points="47,48 43,10 48,8 51,46" fill="#543820" opacity=".85"/>
+      <polygon points="71,36 74,-18 77,-16 75,36" fill="#664a2e" opacity=".9"/>
+      <path d="M36 56 Q52 48 80 44 Q108 48 124 56 L120 64 Q106 54 80 52 Q54 54 40 64 Z" fill="#1e1208"/>
+      <line x1="75" y1="-16" x2="78" y2="-4" stroke="rgba(200,150,80,.5)" stroke-width="4" stroke-linecap="round"/>
+      <line x1="62" y1="-2" x2="64" y2="8" stroke="rgba(180,120,60,.38)" stroke-width="3" stroke-linecap="round"/>
+      <line x1="98" y1="-2" x2="96" y2="8" stroke="rgba(180,120,60,.38)" stroke-width="3" stroke-linecap="round"/>
+      <path d="M56 44 Q58 28 66 20 Q74 13 80 18 Q76 26 72 38 Z" fill="#2a1a0d"/>
+      <path d="M104 44 Q102 28 94 20 Q86 13 80 18 Q84 26 88 38 Z" fill="#2a1a0d"/>
+      <path d="M36 54 Q27 72 29 96 L41 94 Q39 74 41 56 Z" fill="#100804"/>
+      <path d="M124 54 Q133 72 131 96 L119 94 Q121 74 119 56 Z" fill="#100804"/>
+      <!-- eyebrows -->
+      <path d="M46 46 Q58 40 70 44" stroke="#0a0602" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+      <path d="M90 44 Q102 40 114 46" stroke="#0a0602" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+      <!-- eyes (blink) -->
+      <g class="meye" style="transform-origin:57px 64px">
+        <ellipse cx="57" cy="64" rx="9" ry="10" fill="#fff"/>
+        <ellipse cx="57" cy="65" rx="6" ry="7" fill="#1a1a2e"/>
+        <circle cx="57" cy="65" r="3" fill="#000"/>
+        <circle cx="54" cy="62" r="2" fill="#fff"/>
+      </g>
+      <g class="meye" style="transform-origin:103px 64px;animation-delay:.08s">
+        <ellipse cx="103" cy="64" rx="9" ry="10" fill="#fff"/>
+        <ellipse cx="103" cy="65" rx="6" ry="7" fill="#1a1a2e"/>
+        <circle cx="103" cy="65" r="3" fill="#000"/>
+        <circle cx="100" cy="62" r="2" fill="#fff"/>
+      </g>
+      <!-- sunglasses -->
+      <rect x="38" y="48" width="38" height="24" rx="5" fill="rgba(0,0,0,.4)" transform="translate(2,3)"/>
+      <rect x="84" y="48" width="38" height="24" rx="5" fill="rgba(0,0,0,.4)" transform="translate(2,3)"/>
+      <rect x="38" y="46" width="38" height="24" rx="5" fill="url(#lg)"/>
+      <rect x="84" y="46" width="38" height="24" rx="5" fill="url(#lg)"/>
+      <rect x="38" y="46" width="38" height="7" rx="4" fill="#111"/>
+      <rect x="84" y="46" width="38" height="7" rx="4" fill="#111"/>
+      <rect x="38" y="46" width="38" height="24" rx="5" fill="none" stroke="#181818" stroke-width="2.5"/>
+      <rect x="84" y="46" width="38" height="24" rx="5" fill="none" stroke="#181818" stroke-width="2.5"/>
+      <rect x="38" y="46" width="38" height="24" rx="5" fill="none" stroke="rgba(124,77,255,.28)" stroke-width="1"/>
+      <rect x="84" y="46" width="38" height="24" rx="5" fill="none" stroke="rgba(124,77,255,.28)" stroke-width="1"/>
+      <path d="M76 58 Q80 54 84 58" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+      <path d="M38 57 Q24 57 22 63" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+      <path d="M122 57 Q136 57 138 63" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+      <rect x="43" y="49" width="12" height="3.5" rx="2" fill="rgba(255,255,255,.18)" transform="rotate(-10 49 51)"/>
+      <rect x="89" y="49" width="12" height="3.5" rx="2" fill="rgba(255,255,255,.18)" transform="rotate(-10 95 51)"/>
+      <!-- nose -->
+      <path d="M76 62 Q77 74 76 78 Q79 83 80 83 Q81 83 84 78 Q83 74 84 62" fill="none" stroke="#b87040" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M72 78 Q78 84 80 84 Q82 84 88 78" fill="none" stroke="#b87040" stroke-width="1.6" stroke-linecap="round"/>
+      <!-- mouth -->
+      <path d="M70 91 Q80 99 90 91" fill="#c4785a"/>
+      <path d="M70 89 Q74 85 78 87 Q80 86 82 87 Q86 85 90 89 Q85 92 80 92 Q75 92 70 89 Z" fill="#b06248"/>
+      <ellipse class="mmouth" id="mouthEl" cx="80" cy="90" rx="6" ry="2.5" fill="#6a2818" opacity=".75"/>
+      <rect x="76" y="88" width="8" height="2" rx="1" fill="rgba(255,252,250,.6)"/>
+      <!-- glow -->
+      <ellipse cx="80" cy="90" rx="46" ry="80" fill="none" stroke="rgba(0,229,255,.09)" stroke-width="2"/>
+    </svg>
+  </div>
+
+  <div class="bub BL" id="bubble"></div>
+  <div id="cue"><div id="cueL">📖 SCRIPT</div><div id="cueT"></div></div>
+  <div id="vb"><span></span><span></span><span></span><span></span><span></span></div>
+  <button id="muteBtn" onclick="toggleMute()">🔊</button>
+  <button id="startBtn" onclick="boot()">🎙️ Tap to Start</button>
+  <button id="replayBtn" onclick="boot()">↺ Replay</button>
+</div>
+
+<style>
+@keyframes apnt{0%,100%{transform:rotate(0)}50%{transform:rotate(-13deg)}}
+</style>
+
+<script>
+/* ══ PARTICLES ══ */
+const bgC=document.getElementById('bgC'),bgX=bgC.getContext('2d');
+const SYMS=['H₂','O₂','CO₂','Na','Fe','Mg','H₂O','Ca','Cl','⚗','⚡'];
+const PCOLS=['#00e5ff','#7c4dff','#ff4081','#f7c948','#69f0ae','#ff6d00'];
+const pts=[];
+for(let i=0;i<55;i++)pts.push({x:Math.random()*390,y:Math.random()*692,vx:(Math.random()-.5)*.28,vy:-(Math.random()*.32+.07),sz:Math.random()*8+5,al:Math.random()*.16+.03,sym:SYMS[Math.floor(Math.random()*SYMS.length)],col:PCOLS[Math.floor(Math.random()*PCOLS.length)],rot:Math.random()*360,rv:(Math.random()-.5)*.35});
+(function bgL(){bgX.clearRect(0,0,390,692);for(const p of pts){bgX.save();bgX.globalAlpha=p.al;bgX.font=`700 ${p.sz}px Poppins,sans-serif`;bgX.fillStyle=p.col;bgX.translate(p.x,p.y);bgX.rotate(p.rot*Math.PI/180);bgX.fillText(p.sym,0,0);bgX.restore();p.x+=p.vx;p.y+=p.vy;p.rot+=p.rv;if(p.y<-20){p.y=712;p.x=Math.random()*390}if(p.x<-30)p.x=420;if(p.x>420)p.x=-30}requestAnimationFrame(bgL)})();
+
+/* ══ FX ══ */
+const fxC=document.getElementById('fxC'),fxX=fxC.getContext('2d');
+const sparks=[],conf=[];
+function spSparks(x,y,col,n=18){for(let i=0;i<n;i++){const a=Math.random()*Math.PI*2,s=Math.random()*5+2;sparks.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life:1,dec:Math.random()*.04+.02,r:Math.random()*4+2,col})}}
+function spRing(x,y,col){sparks.push({x,y,ring:true,r:0,life:1,dec:.028,col})}
+function spConf(x,y){const cs=['#f7c948','#ff6b6b','#00e5ff','#69f0ae','#e040fb','#ff6d00','#fff'];for(let i=0;i<32;i++)conf.push({x,y,vx:(Math.random()-.5)*8,vy:-(Math.random()*8+3),rot:Math.random()*360,rv:(Math.random()-.5)*14,w:Math.random()*8+4,h:Math.random()*5+3,col:cs[Math.floor(Math.random()*cs.length)],life:1,dec:.011})}
+(function fxL(){fxX.clearRect(0,0,390,692);for(let i=sparks.length-1;i>=0;i--){const s=sparks[i];if(s.ring){fxX.beginPath();fxX.arc(s.x,s.y,s.r,0,Math.PI*2);fxX.strokeStyle=s.col;fxX.globalAlpha=s.life;fxX.lineWidth=2;fxX.stroke();s.r+=2.2;s.life-=s.dec}else{fxX.beginPath();fxX.arc(s.x,s.y,s.r*s.life,0,Math.PI*2);fxX.fillStyle=s.col;fxX.globalAlpha=s.life;fxX.fill();s.x+=s.vx;s.y+=s.vy;s.vy+=.12;s.life-=s.dec}fxX.globalAlpha=1;if(s.life<=0)sparks.splice(i,1)}for(let i=conf.length-1;i>=0;i--){const p=conf[i];fxX.save();fxX.globalAlpha=p.life;fxX.fillStyle=p.col;fxX.translate(p.x,p.y);fxX.rotate(p.rot*Math.PI/180);fxX.fillRect(-p.w/2,-p.h/2,p.w,p.h);fxX.restore();p.x+=p.vx;p.y+=p.vy;p.vy+=.2;p.rot+=p.rv;p.life-=p.dec;if(p.life<=0)conf.splice(i,1)}requestAnimationFrame(fxL)})();
+
+/* ══ HELPERS ══ */
+const scEl=document.getElementById('scene');
+const flashEl=document.getElementById('flash');
+const pbar=document.getElementById('pbar'),pbarG=document.getElementById('pbarG');
+const wm=document.getElementById('wm');
+const stage=document.getElementById('stage');
+const charWrap=document.getElementById('charWrap');
+const bubEl=document.getElementById('bubble');
+const cueEl=document.getElementById('cue');
+const cueTEl=document.getElementById('cueT');
+const vbEl=document.getElementById('vb');
+const muteBtn=document.getElementById('muteBtn');
+const mouthEl=document.getElementById('mouthEl');
+
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+function flash(){flashEl.classList.add('on');setTimeout(()=>flashEl.classList.remove('on'),110)}
+function clr(){scEl.innerHTML=''}
+function setP(i,t){const w=((i+1)/t*100)+'%';pbar.style.width=w;pbarG.style.width=w}
+
+/* char */
+function charShow(){charWrap.className='cw L show'}
+function charHide(){charWrap.className='cw L';bubEl.classList.remove('show')}
+function charBounce(){charWrap.classList.add('bounce');setTimeout(()=>charWrap.classList.remove('bounce'),500)}
+let talkT=null;
+function startTalk(){if(talkT)clearInterval(talkT);let n=0;talkT=setInterval(()=>{n++;if(mouthEl)mouthEl.style.transform=n%2?'scaleY(.18)':'scaleY(1)'},125)}
+function stopTalk(){if(talkT){clearInterval(talkT);talkT=null}if(mouthEl)mouthEl.style.transform='scaleY(.42)'}
+function say(h){bubEl.innerHTML=h;bubEl.classList.add('show')}
+function hideBub(){bubEl.classList.remove('show')}
+
+/* ══ TTS + TELEPROMPTER ══ */
+let ttsOn=false,muted=false,ttsVoice=null;
+let wEls=[],wIdx=0,wTimer=null;
+function loadVoice(){const vs=speechSynthesis.getVoices();const pref=['Google UK English Male','Microsoft David','Alex','Daniel','Google US English'];for(const n of pref){const v=vs.find(x=>x.name===n);if(v){ttsVoice=v;return}}ttsVoice=vs.find(v=>v.lang.startsWith('en'))||vs[0]||null}
+speechSynthesis.onvoiceschanged=loadVoice;
+
+function renderCue(txt){const words=txt.split(' ');wEls=[];wIdx=0;cueTEl.innerHTML=words.map((w,i)=>`<span class="cword" id="cw${i}">${w} </span>`).join('');words.forEach((_,i)=>wEls.push(document.getElementById('cw'+i)));cueEl.classList.add('show')}
+function startHL(ms){if(wTimer)clearInterval(wTimer);wIdx=0;const n=wEls.length;if(!n)return;const iv=Math.max(75,ms/n);wTimer=setInterval(()=>{if(wIdx>0)wEls[wIdx-1].classList.remove('lit');if(wIdx<n){wEls[wIdx].classList.add('lit');wIdx++}else clearInterval(wTimer)},iv)}
+function stopHL(){if(wTimer){clearInterval(wTimer);wTimer=null}wEls.forEach(s=>s.classList.remove('lit'))}
+
+function speak(text){
+  return new Promise(resolve=>{
+    renderCue(text);
+    const estMs=text.split(' ').length*390;
+    startHL(estMs);startTalk();
+    if(!ttsOn||muted){setTimeout(()=>{stopTalk();stopHL();resolve()},estMs);return}
+    speechSynthesis.cancel();
+    const utt=new SpeechSynthesisUtterance(text);
+    if(ttsVoice)utt.voice=ttsVoice;
+    utt.rate=0.88;utt.pitch=1.06;utt.volume=1;
+    utt.onstart=()=>{vbEl.classList.add('show');startHL(estMs)};
+    utt.onend=()=>{vbEl.classList.remove('show');stopTalk();stopHL();resolve()};
+    utt.onerror=()=>{stopTalk();stopHL();resolve()};
+    speechSynthesis.speak(utt);
+  });
+}
+function toggleMute(){muted=!muted;muteBtn.textContent=muted?'🔇':'🔊';if(muted){speechSynthesis.cancel();if(audioCtx)audioCtx.suspend()}else if(audioCtx)audioCtx.resume()}
+
+/* ══ BACKGROUND MUSIC ══ */
+let audioCtx=null,musicOn=false,masterGain=null;
+function startMusic(){
+  if(musicOn)return;
+  audioCtx=new(window.AudioContext||window.webkitAudioContext)();
+  musicOn=true;
+  masterGain=audioCtx.createGain();
+  masterGain.gain.setValueAtTime(0,audioCtx.currentTime);
+  masterGain.gain.linearRampToValueAtTime(0.28,audioCtx.currentTime+3.5);
+  masterGain.connect(audioCtx.destination);
+  const rev=audioCtx.createDelay(2);rev.delayTime.value=0.28;
+  const revFb=audioCtx.createGain();revFb.gain.value=0.38;
+  rev.connect(revFb);revFb.connect(rev);rev.connect(masterGain);
+  function pad(f,t,dur,v=0.15,type='sine'){const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type=type;o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+0.7);g.gain.linearRampToValueAtTime(v*.6,t+dur-.9);g.gain.linearRampToValueAtTime(0,t+dur);o.connect(g);g.connect(rev);g.connect(masterGain);o.start(t);o.stop(t+dur)}
+  function pluck(f,t,v=0.1){const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='triangle';o.frequency.value=f;g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.0001,t+1.5);o.connect(g);g.connect(rev);g.connect(masterGain);o.start(t);o.stop(t+1.6)}
+  function bass(f,t,dur,v=0.2){const o=audioCtx.createOscillator(),g=audioCtx.createGain(),fi=audioCtx.createBiquadFilter();fi.type='lowpass';fi.frequency.value=200;o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.08);g.gain.linearRampToValueAtTime(0,t+dur);o.connect(g);g.connect(fi);fi.connect(masterGain);o.start(t);o.stop(t+dur+.1)}
+  function hat(t,v=.055){const buf=audioCtx.createBuffer(1,audioCtx.sampleRate*.08,audioCtx.sampleRate);const d=buf.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,3);const src=audioCtx.createBufferSource(),g=audioCtx.createGain(),fi=audioCtx.createBiquadFilter();fi.type='highpass';fi.frequency.value=8000;src.buffer=buf;g.gain.setValueAtTime(v,t);src.connect(fi);fi.connect(g);g.connect(masterGain);src.start(t)}
+  const chords=[[220,277,330],[174,220,261],[261,329,392],[196,246,293]];
+  const sparkles=[659,784,880,1047,1175,1319,880,784];
+  const bassNotes=[110,87,130,98];
+  const BPM=70,bar=60/BPM*4;
+  function loop(t){if(!musicOn)return;for(let b=0;b<4;b++){const bt=t+b*bar;chords[b].forEach(f=>pad(f,bt,bar*.95,.12,'sine'));chords[b].forEach(f=>pad(f*2,bt+.35,bar*.65,.04,'triangle'));bass(bassNotes[b],bt,.55,.26);bass(bassNotes[b],bt+bar*.5,.45,.2);for(let k=0;k<4;k++)hat(bt+k*(bar/4));if(b===1||b===3){pluck(sparkles[b*2],bt+bar*.28,.09);pluck(sparkles[b*2+1],bt+bar*.65,.07)}}setTimeout(()=>loop(t+4*bar),(4*bar-.5)*1000)}
+  loop(audioCtx.currentTime+.5);
+}
+
+/* ══ SCENE HELPERS ══ */
+async function ss(html,plain){charShow();charBounce();say(html);await speak(plain);hideBub();await wait(280)}
+
+/* ══════════════════════════ SCENES ══════════════════════════ */
+
+async function runShow(){
+  document.getElementById('replayBtn').style.display='none';
+  speechSynthesis.cancel();
+  charHide();wm.classList.add('show');cueEl.classList.remove('show');
+  const T=7;
+
+  /* ━━━ SCENE 0: CINEMATIC INTRO ━━━ */
+  setP(0,T);
+  document.getElementById('lbT').classList.add('open');
+  document.getElementById('lbB').classList.add('open');
+  stage.style.background='radial-gradient(ellipse at 50% 25%,#180040 0%,#08001c 55%,#000 100%)';
+  clr();
+  scEl.innerHTML=`
+    <div style="text-align:center;padding:16px 20px">
+      <div style="font-family:Orbitron;font-size:9px;letter-spacing:5px;color:rgba(0,229,255,.45);animation:fadeIn 1.2s ease both;margin-bottom:12px;text-transform:uppercase">Visions Learning Presents</div>
+      <div style="font-size:70px;animation:zoomIn 1s cubic-bezier(.34,1.56,.64,1) .4s both;filter:drop-shadow(0 0 30px #a855f7) drop-shadow(0 0 60px rgba(168,85,247,.3))">⚗️</div>
+      <div style="font-family:Orbitron;font-size:30px;font-weight:900;color:#fff;line-height:1.1;margin:12px 0;animation:fadeUp 1s ease .7s both">
+        Chemical<br><span style="color:#f7c948;text-shadow:0 0 20px #f7c948,0 0 40px rgba(247,201,72,.35)">Reactions</span>
+      </div>
+      <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s ease 1.1s both;margin-top:10px">
+        <span style="background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.3);color:#00e5ff;font-size:11px;font-weight:700;padding:5px 14px;border-radius:20px">⚗ What is it?</span>
+        <span style="background:rgba(124,77,255,.1);border:1px solid rgba(124,77,255,.3);color:#a78bfa;font-size:11px;font-weight:700;padding:5px 14px;border-radius:20px">⚖ Balancing</span>
+        <span style="background:rgba(255,171,64,.1);border:1px solid rgba(255,171,64,.3);color:#ffab40;font-size:11px;font-weight:700;padding:5px 14px;border-radius:20px">⚡ 4 Types</span>
+      </div>
+    </div>`;
+  await wait(800);
+  await ss('Hey friends! 👋<br>Today let\'s master<br><span class="hl">Chemical Reactions</span><br>step by step! 🔥',
+    'Welcome to Visions Learning! Today we will learn everything about chemical reactions, how to balance them, and the four types. Let us get started!');
+
+  /* ━━━ SCENE 1: WHAT IS A REACTION ━━━ */
+  flash();setP(1,T);
+  stage.style.background='radial-gradient(ellipse at 35% 40%,#001830 0%,#000d1a 55%,#000 100%)';
+  clr();
+  scEl.innerHTML=`
+    <div style="width:362px;padding:8px 4px">
+      <div class="chip" style="background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.3);color:#00e5ff">What is a Chemical Reaction?</div>
+
+      <!-- Visual: Before → After -->
+      <div style="background:rgba(0,0,0,.5);border-radius:16px;padding:14px;margin-bottom:10px;animation:fadeUp .6s ease .1s both;border:1px solid rgba(0,229,255,.12)">
+        <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:10px">
+          <!-- Reactants side -->
+          <div style="text-align:center">
+            <div style="font-size:10px;color:rgba(255,255,255,.4);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px">Before</div>
+            <div style="display:flex;gap:6px;justify-content:center">
+              <div style="background:rgba(229,57,53,.2);border:1.5px solid #e53935;border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-family:Orbitron;font-size:12px;font-weight:700;color:#ef9a9a;animation:pulse 2s ease-in-out infinite">Mg</div>
+              <div style="background:rgba(33,150,243,.2);border:1.5px solid #2196f3;border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-family:Orbitron;font-size:12px;font-weight:700;color:#90caf9;animation:pulse 2s ease-in-out .3s infinite">O₂</div>
+            </div>
+          </div>
+          <!-- Arrow with fire -->
+          <div style="text-align:center">
+            <div style="font-size:22px;animation:arrowMove 1s ease-in-out infinite;display:block">🔥</div>
+            <div style="font-size:22px;color:#7c4dff;text-shadow:0 0 10px #7c4dff;animation:arrowMove 1s ease-in-out .15s infinite">→</div>
+          </div>
+          <!-- Product side -->
+          <div style="text-align:center">
+            <div style="font-size:10px;color:rgba(255,255,255,.4);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px">After</div>
+            <div style="background:rgba(67,160,71,.2);border:2px solid #43a047;border-radius:50%;width:48px;height:48px;display:flex;align-items:center;justify-content:center;font-family:Orbitron;font-size:11px;font-weight:700;color:#a5d6a7;box-shadow:0 0 12px rgba(67,160,71,.3)">MgO</div>
+          </div>
+        </div>
+        <div style="text-align:center;font-size:11px;color:rgba(255,255,255,.4);border-top:1px solid rgba(255,255,255,.07);padding-top:7px">New substance with <strong style="color:#00e5ff">different properties</strong> formed ✓</div>
+      </div>
+
+      <!-- Definition -->
+      <div class="cbox" style="animation:fadeUp .6s ease .3s both;border-left-color:#00e5ff">
+        <div style="position:absolute;left:0;top:0;bottom:0;width:3.5px;border-radius:2px;background:#00e5ff"></div>
+        <div style="color:#e0f7fa;font-size:13px;line-height:1.7;padding-left:4px">A process where one or more substances transform into <strong style="color:#00e5ff">new substances with different chemical properties.</strong></div>
+        <div style="color:#ffe082;font-size:11.5px;margin-top:6px;padding-top:6px;border-top:1px solid rgba(255,255,255,.07)">जब पदार्थ नए गुणधर्म वाले पदार्थ में बदल जाएँ</div>
+      </div>
+
+      <!-- Signs of reaction -->
+      <div style="display:flex;gap:7px;margin-top:8px;animation:fadeUp .6s ease .5s both">
+        <div style="flex:1;background:rgba(255,107,107,.12);border:1px solid rgba(255,107,107,.3);border-radius:10px;padding:7px;text-align:center">
+          <div style="font-size:18px">🌡️</div><div style="font-size:10px;color:#ff8a80;font-weight:700;margin-top:2px">Heat/Light</div>
+        </div>
+        <div style="flex:1;background:rgba(66,165,245,.12);border:1px solid rgba(66,165,245,.3);border-radius:10px;padding:7px;text-align:center">
+          <div style="font-size:18px">🫧</div><div style="font-size:10px;color:#90caf9;font-weight:700;margin-top:2px">Gas Formed</div>
+        </div>
+        <div style="flex:1;background:rgba(102,187,106,.12);border:1px solid rgba(102,187,106,.3);border-radius:10px;padding:7px;text-align:center">
+          <div style="font-size:18px">🎨</div><div style="font-size:10px;color:#a5d6a7;font-weight:700;margin-top:2px">Color Change</div>
+        </div>
+        <div style="flex:1;background:rgba(255,193,7,.12);border:1px solid rgba(255,193,7,.3);border-radius:10px;padding:7px;text-align:center">
+          <div style="font-size:18px">💧</div><div style="font-size:10px;color:#ffe082;font-weight:700;margin-top:2px">Precipitate</div>
+        </div>
+      </div>
+    </div>`;
+  await ss('Mg burns in O₂ →<br>forms <span class="hlg">MgO</span> !<br>New substance = <span class="hl">reaction!</span><br>Look for heat,gas,color 🎨',
+    'A chemical reaction is a process where substances transform into new substances with different properties. When Magnesium burns in Oxygen, it forms Magnesium Oxide. Signs of a reaction include heat, light, gas formation, color change, and precipitate formation.');
+
+  /* ━━━ SCENE 2: REACTANTS & PRODUCTS ━━━ */
+  flash();setP(2,T);
+  stage.style.background='radial-gradient(ellipse at 60% 35%,#1a0040 0%,#0a001e 55%,#000 100%)';
+  clr();
+  scEl.innerHTML=`
+    <div style="width:362px;padding:8px 4px">
+      <div class="chip" style="background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.3);color:#a78bfa">Reactants vs Products</div>
+
+      <!-- Big equation visual -->
+      <div style="background:rgba(0,0,0,.55);border-radius:16px;padding:16px;border:1px solid rgba(124,77,255,.15);animation:zoomIn .7s cubic-bezier(.34,1.56,.64,1) .1s both;margin-bottom:10px">
+        <div style="display:flex;align-items:stretch;gap:0">
+          <!-- Reactant box -->
+          <div style="flex:1;background:rgba(229,57,53,.12);border:1.5px solid #e53935;border-radius:12px 0 0 12px;padding:12px 8px;text-align:center">
+            <div style="font-size:9px;color:#ef9a9a;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:5px;font-weight:700">REACTANTS<br><span style="opacity:.6">अभिकारक</span></div>
+            <div style="font-family:Orbitron;font-size:16px;font-weight:900;color:#ef9a9a">H₂ + O₂</div>
+            <div style="font-size:10px;color:rgba(255,255,255,.35);margin-top:5px">Starting<br>substances</div>
+          </div>
+          <!-- Arrow -->
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 8px;background:rgba(124,77,255,.08)">
+            <div style="font-size:26px;color:#7c4dff;text-shadow:0 0 12px #7c4dff;animation:arrowMove 1.2s ease-in-out infinite;font-weight:900">→</div>
+          </div>
+          <!-- Product box -->
+          <div style="flex:1;background:rgba(67,160,71,.12);border:1.5px solid #43a047;border-radius:0 12px 12px 0;padding:12px 8px;text-align:center">
+            <div style="font-size:9px;color:#a5d6a7;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:5px;font-weight:700">PRODUCTS<br><span style="opacity:.6">उत्पाद</span></div>
+            <div style="font-family:Orbitron;font-size:16px;font-weight:900;color:#a5d6a7">H₂O</div>
+            <div style="font-size:10px;color:rgba(255,255,255,.35);margin-top:5px">New<br>substances</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rules -->
+      <div style="animation:fadeUp .5s ease .4s both">
+        <div class="ribbon" style="border-color:#e53935;animation:fadeLeft .5s ease .4s both">
+          <div class="ribbon-inner" style="animation-delay:.4s">
+            <span style="color:#ef9a9a;font-weight:700;font-size:13px">📌 LEFT side</span>
+            <span style="color:rgba(255,255,255,.6);font-size:12px"> = Reactants (what you start with)</span>
+          </div>
+        </div>
+        <div class="ribbon" style="border-color:#43a047;animation:fadeLeft .5s ease .55s both">
+          <div class="ribbon-inner" style="animation-delay:.55s">
+            <span style="color:#a5d6a7;font-weight:700;font-size:13px">📌 RIGHT side</span>
+            <span style="color:rgba(255,255,255,.6);font-size:12px"> = Products (what you end up with)</span>
+          </div>
+        </div>
+        <div class="ribbon" style="border-color:#7c4dff;animation:fadeLeft .5s ease .7s both">
+          <div class="ribbon-inner" style="animation-delay:.7s">
+            <span style="color:#a78bfa;font-weight:700;font-size:13px">📌 Arrow (→)</span>
+            <span style="color:rgba(255,255,255,.6);font-size:12px"> = direction of reaction</span>
+          </div>
+        </div>
+        <div class="ribbon" style="border-color:#f7c948;animation:fadeLeft .5s ease .85s both">
+          <div class="ribbon-inner" style="animation-delay:.85s">
+            <span style="color:#f7c948;font-weight:700;font-size:13px">📌 Condition</span>
+            <span style="color:rgba(255,255,255,.6);font-size:12px"> = heat/light written above arrow</span>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  await ss('<span class="hlr">LEFT</span> = Reactants<br><span class="hlg">RIGHT</span> = Products<br>Arrow → shows<br>direction! Simple! 👌',
+    'Reactants are the starting substances written on the left side. Products are the new substances formed, written on the right side. The arrow shows the direction of the reaction. Any conditions like heat or light are written above the arrow.');
+
+  /* ━━━ SCENE 3: LAW OF CONSERVATION ━━━ */
+  flash();setP(3,T);
+  stage.style.background='radial-gradient(ellipse at 50% 50%,#002a0a 0%,#001205 55%,#000 100%)';
+  clr();
+  scEl.innerHTML=`
+    <div style="width:362px;padding:8px 4px">
+      <div class="chip" style="background:rgba(105,240,174,.1);border:1px solid rgba(105,240,174,.3);color:#69f0ae">Law of Conservation of Mass</div>
+
+      <!-- law card -->
+      <div style="background:rgba(0,0,0,.55);border:2px solid rgba(105,240,174,.3);border-radius:16px;padding:16px;margin-bottom:10px;animation:zoomIn .7s cubic-bezier(.34,1.56,.64,1) .15s both;position:relative;overflow:hidden">
+        <div style="position:absolute;top:-20px;right:-20px;width:100px;height:100px;background:radial-gradient(circle,rgba(105,240,174,.12),transparent 70%)"></div>
+        <div style="font-family:Orbitron;font-size:13px;font-weight:700;color:#69f0ae;letter-spacing:1px;margin-bottom:8px">⚖️ Lavoisier's Law</div>
+        <div style="color:#e8f5e9;font-size:13.5px;line-height:1.7">Matter can <strong style="color:#69f0ae">neither be created<br>nor destroyed</strong> in a chemical reaction.</div>
+        <div style="color:rgba(255,255,255,.35);font-size:11px;font-style:italic;margin-top:5px">— Antoine Lavoisier, 1789</div>
+        <div style="color:#ffe082;font-size:12px;margin-top:8px;padding-top:7px;border-top:1px solid rgba(255,255,255,.08)">द्रव्यमान न बनता है, न नष्ट होता है।</div>
+      </div>
+
+      <!-- Scale visual -->
+      <div style="background:rgba(0,0,0,.45);border-radius:14px;padding:12px;border:1px solid rgba(105,240,174,.1);animation:fadeUp .6s ease .4s both;margin-bottom:10px">
+        <div style="display:flex;align-items:center;justify-content:center;gap:10px">
+          <div style="text-align:center;flex:1">
+            <div style="background:rgba(244,67,54,.15);border:1.5px solid rgba(244,67,54,.5);border-radius:12px;padding:10px;margin-bottom:5px">
+              <div style="font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px">Reactants</div>
+              <div style="font-family:Orbitron;font-size:15px;font-weight:700;color:#ef9a9a">2H₂ + O₂</div>
+              <div style="font-size:10px;color:#ef9a9a;margin-top:3px">4+32 = <strong>36g</strong></div>
+            </div>
+          </div>
+          <div style="text-align:center">
+            <div style="font-family:Orbitron;font-size:30px;color:#69f0ae;font-weight:900;text-shadow:0 0 14px #69f0ae;animation:scalePulse 1.6s ease-in-out infinite">=</div>
+            <div style="font-size:10px;color:#69f0ae;font-weight:700">MUST EQUAL</div>
+          </div>
+          <div style="text-align:center;flex:1">
+            <div style="background:rgba(76,175,80,.15);border:1.5px solid rgba(76,175,80,.5);border-radius:12px;padding:10px;margin-bottom:5px">
+              <div style="font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px">Products</div>
+              <div style="font-family:Orbitron;font-size:15px;font-weight:700;color:#a5d6a7">2H₂O</div>
+              <div style="font-size:10px;color:#a5d6a7;margin-top:3px">36 = <strong>36g</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:rgba(247,201,72,.1);border:1.5px solid rgba(247,201,72,.4);border-radius:28px;padding:8px 18px;color:#f7c948;font-size:12.5px;font-weight:700;display:inline-block;animation:pillGlow 2s ease-in-out infinite;animation:fadeUp .6s ease .65s both;width:100%;text-align:center">
+        ⚡ Atoms on BOTH sides MUST be equal → Balance the equation!
+      </div>
+    </div>`;
+  await ss('⚖️ Lavoisier\'s Law!<br>Atoms NEVER vanish —<br><span class="hlg">36g → 36g</span><br>Always balanced! 🧪',
+    'The Law of Conservation of Mass says matter can neither be created nor destroyed. So the total mass of reactants must equal the total mass of products. This is why we must balance chemical equations — the atoms on both sides must be equal!');
+
+  /* ━━━ SCENE 4: BALANCING STEP BY STEP ━━━ */
+  flash();setP(4,T);
+  stage.style.background='radial-gradient(ellipse at 50% 40%,#0a0020 0%,#03000e 55%,#000 100%)';
+  clr();
+  scEl.innerHTML=`
+    <div style="width:362px;padding:6px 4px">
+      <div class="chip" style="background:rgba(255,171,64,.15);border:1px solid rgba(255,171,64,.5);color:#ffab40">Step-by-Step Balancing</div>
+
+      <!-- Live equation display -->
+      <div style="background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.18);border-radius:16px;padding:14px;margin-bottom:8px">
+        <div style="display:flex;align-items:center;justify-content:center;gap:4px;flex-wrap:wrap">
+          <span class="coeff" id="c1"></span><span class="emol" id="m1">H₂</span>
+          <span style="font-size:18px;color:rgba(255,255,255,.35);margin:0 3px;font-weight:700">+</span>
+          <span class="coeff" id="c2"></span><span class="emol" id="m2">O₂</span>
+          <span style="font-size:24px;color:#7c4dff;text-shadow:0 0 10px #7c4dff;animation:arrowMove 1.2s ease-in-out infinite;margin:0 4px">→</span>
+          <span class="coeff" id="c3"></span><span class="emol" id="m3">H₂O</span>
+        </div>
+        <div id="eqSt" style="font-size:11px;margin-top:7px;color:rgba(255,23,68,.8);font-weight:700;text-align:center;letter-spacing:.5px">⚠ UNBALANCED — atoms don't match!</div>
+      </div>
+
+      <!-- Atom counters -->
+      <div style="display:flex;gap:8px;justify-content:center;margin-bottom:8px">
+        <div class="abox bad" id="hBox"><div class="tick">✓</div><div class="abox-lbl">H atoms</div><div class="abox-nums"><span class="abox-l" id="hL">2</span><span style="font-size:11px;color:rgba(255,255,255,.25)">≠</span><span class="abox-r" id="hR">2</span></div></div>
+        <div class="abox bad" id="oBox"><div class="tick">✓</div><div class="abox-lbl">O atoms</div><div class="abox-nums"><span class="abox-l" id="oL">2</span><span style="font-size:11px;color:rgba(255,255,255,.25)">≠</span><span class="abox-r" id="oR">1</span></div></div>
+      </div>
+
+      <div id="scards"></div>
+    </div>`;
+
+  function addCard(num,eq,note,col){
+    const d=document.createElement('div');d.className='scard';d.style.borderLeft=`4px solid ${col}`;
+    d.innerHTML=`<div class="scard-n" style="color:${col}">${num}</div><div class="scard-eq">${eq}</div><div class="scard-note">${note}</div>`;
+    document.getElementById('scards').appendChild(d);
+  }
+
+  // H initially fine, O not
+  document.getElementById('hBox').classList.replace('bad','ok');
+
+  await ss('<span class="hlo">Step 1:</span> Count atoms!<br>H left=2, right=2 ✓<br>O left=<span class="hlr">2</span>, right=<span class="hlr">1</span> ✗<br>O is NOT balanced!',
+    'Step 1 — count atoms on both sides. Hydrogen has 2 on the left and 2 on the right, so that is fine. But Oxygen has 2 on the left and only 1 on the right. Oxygen is not balanced!');
+  addCard('STEP 1 — Count Atoms','H₂ + O₂ → H₂O','H: 2=2 ✓ | O: 2≠1 ✗ Unbalanced!','#ff9800');
+
+  // step 2
+  spSparks(195,240,'#f7c948',16);spRing(195,240,'#f7c948');flash();
+  document.getElementById('c3').textContent='2';document.getElementById('c3').classList.add('pop');
+  document.getElementById('oR').textContent='2';document.getElementById('hR').textContent='4';
+  document.getElementById('oBox').classList.replace('bad','ok');
+  document.getElementById('hBox').classList.replace('ok','bad');
+  document.getElementById('m3').classList.add('bal');
+  document.querySelector('#hBox .abox-nums span:nth-child(2)').textContent='≠';
+  await ss('<span class="hlo">Step 2:</span> Put <span class="hl">2</span> before H₂O<br>O: 2=2 ✓<br>Now H: left=<span class="hlr">2</span>, right=<span class="hlr">4</span> ✗<br>Fix H now!',
+    'Step 2 — put the number 2 in front of H2O. Now Oxygen is balanced, 2 equals 2. But Hydrogen is now 2 on the left and 4 on the right. We need to fix Hydrogen!');
+  addCard('STEP 2 — Balance Oxygen','H₂ + O₂ → 2H₂O','O: 2=2 ✓ | H: 2≠4 ✗ Fix Hydrogen!','#f7c948');
+
+  // step 3
+  spSparks(115,240,'#00e5ff',16);spRing(115,240,'#00e5ff');flash();
+  document.getElementById('c1').textContent='2';document.getElementById('c1').classList.add('pop');
+  document.getElementById('hL').textContent='4';
+  document.getElementById('hBox').classList.replace('bad','ok');
+  document.querySelector('#hBox .abox-nums span:nth-child(2)').textContent='=';
+  document.getElementById('m1').classList.add('bal');
+  document.getElementById('eqSt').innerHTML='<span style="color:#00e676;font-weight:700;text-shadow:0 0 8px #00e676;font-size:12px">✓ PERFECTLY BALANCED!</span>';
+  for(let k=0;k<5;k++)setTimeout(()=>{spSparks(195+Math.random()*40-20,260+Math.random()*30-15,PCOLS[k%PCOLS.length],14);spRing(195,260,'#00e676')},k*85);
+  spConf(195,260);
+
+  // final pill
+  const fp=document.createElement('div');fp.className='finpill';fp.style.cssText='margin-top:8px;animation:fadeUp .5s ease both';
+  fp.innerHTML=`<div style="font-family:Orbitron;font-size:17px;font-weight:900;color:#00e676;letter-spacing:2px;text-shadow:0 0 14px #00e676">2H₂ + O₂ → 2H₂O</div><div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:4px">H: 4=4 ✓ &nbsp;|&nbsp; O: 2=2 ✓ &nbsp;|&nbsp; Mass balanced!</div>`;
+  document.getElementById('scards').appendChild(fp);
+
+  await ss('<span class="hlo">Step 3:</span> Put <span class="hl">2</span> before H₂<br>H: 4=4 ✓ O: 2=2 ✓<br><span class="hlg">🎉 PERFECTLY BALANCED!</span>',
+    'Step 3 — put 2 in front of H2. Now Hydrogen is 4 on both sides and Oxygen is 2 on both sides. The equation is perfectly balanced! 2H2 plus O2 gives 2H2O. Excellent work!');
+  addCard('STEP 3 — Balance Hydrogen','2H₂ + O₂ → 2H₂O','H: 4=4 ✓ | O: 2=2 ✓ | BALANCED! 🎉','#00e676');
+
+  /* ━━━ SCENE 5: 4 TYPES ━━━ */
+  flash();setP(5,T);
+  stage.style.background='radial-gradient(ellipse at 50% 35%,#000e30 0%,#000610 55%,#000 100%)';
+  clr();
+  scEl.innerHTML=`
+    <div style="width:362px;padding:6px 4px">
+      <div class="chip" style="background:rgba(130,177,255,.1);border:1px solid rgba(130,177,255,.3);color:#82b1ff">4 Types of Chemical Reactions</div>
+      <div id="tgrid" style="display:flex;flex-direction:column;gap:7px"></div>
+    </div>`;
+
+  const types=[
+    {icon:'➕',name:'Combination / संयोजन',eq:'A + B → AB',ex:'2H₂ + O₂ → 2H₂O',
+     tag:'Two or more substances combine into ONE',col:'#2196f3',nc:'#64b5f6',
+     speech:'Combination reaction — two or more substances join together to form one product.'},
+    {icon:'💥',name:'Decomposition / वियोजन',eq:'AB → A + B',ex:'2H₂O → 2H₂ + O₂',
+     tag:'ONE substance breaks into two or more',col:'#f44336',nc:'#ef9a9a',
+     speech:'Decomposition reaction — one substance breaks down into two or more simpler substances.'},
+    {icon:'🔄',name:'Displacement / विस्थापन',eq:'A + BC → AC + B',ex:'Fe + CuSO₄ → FeSO₄ + Cu',
+     tag:'Reactive element replaces less reactive',col:'#4caf50',nc:'#a5d6a7',
+     speech:'Displacement reaction — a more reactive element replaces a less reactive one from its compound.'},
+    {icon:'⚡',name:'Double Displacement / द्विविस्थापन',eq:'AB + CD → AD + CB',ex:'NaCl + AgNO₃ → NaNO₃ + AgCl↓',
+     tag:'Both compounds exchange their ions',col:'#ff9800',nc:'#ffcc80',
+     speech:'Double displacement reaction — two compounds exchange their ions to form two new compounds. Often forms a precipitate.'},
+  ];
+
+  const tgrid=document.getElementById('tgrid');
+  for(let i=0;i<types.length;i++){
+    const t=types[i];
+    const card=document.createElement('div');
+    card.className='tcard';card.style.borderColor=t.col;
+    card.innerHTML=`<div class="tcard-icon">${t.icon}</div>
+      <div class="tcard-body">
+        <div class="tcard-name" style="color:${t.nc}">${t.name}</div>
+        <div class="tcard-eq" style="color:${t.nc};opacity:.9">${t.eq} &nbsp;<span style="opacity:.6">(${t.ex})</span></div>
+        <div class="tcard-tag" style="color:${t.nc}">${t.tag}</div>
+      </div>`;
+    tgrid.appendChild(card);
+    await wait(80);
+    card.classList.add('in');card.style.animationDelay=`${i*0.13}s`;
+    spSparks(195,370,t.col,8);
+    await ss(t.icon+' <span class="hl">'+t.name.split('/')[0].trim()+'</span><br>'+t.tag,t.speech);
+    await wait(100);
+  }
+
+  /* ━━━ SCENE 6: OUTRO ━━━ */
+  flash();setP(6,T);
+  stage.style.background='radial-gradient(ellipse at 50% 25%,#1a0040 0%,#0a0020 55%,#000 100%)';
+  clr();
+  for(let k=0;k<5;k++)setTimeout(()=>{spConf(Math.random()*390,0);spSparks(Math.random()*390,Math.random()*180,PCOLS[k%PCOLS.length],12)},k*120);
+  scEl.innerHTML=`
+    <div style="text-align:center;padding:16px 20px">
+      <div style="font-size:68px;filter:drop-shadow(0 0 22px #f7c948);animation:tBounce 1.8s ease-in-out infinite">🏆</div>
+      <div style="font-family:Orbitron;font-size:28px;font-weight:900;color:#f7c948;text-shadow:0 0 20px #f7c948;margin:10px 0;animation:oPulse 2s ease-in-out infinite">You Got This!</div>
+      <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px;margin:10px 0;text-align:left">
+        <div style="font-size:11px;font-weight:700;color:rgba(247,201,72,.7);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px;font-family:Orbitron">Quick Revision</div>
+        <div style="display:flex;flex-direction:column;gap:5px">
+          <div style="display:flex;align-items:center;gap:8px;animation:fadeLeft .5s ease .1s both"><span style="color:#00e5ff;font-size:14px">✦</span><span style="color:#e0e0e0;font-size:12px">Reaction = new substance with new properties</span></div>
+          <div style="display:flex;align-items:center;gap:8px;animation:fadeLeft .5s ease .25s both"><span style="color:#69f0ae;font-size:14px">✦</span><span style="color:#e0e0e0;font-size:12px">Atoms are conserved — balance equations</span></div>
+          <div style="display:flex;align-items:center;gap:8px;animation:fadeLeft .5s ease .4s both"><span style="color:#f7c948;font-size:14px">✦</span><span style="color:#e0e0e0;font-size:12px">4 Types: Combination, Decomposition, Displacement, Double Displacement</span></div>
+        </div>
+      </div>
+      <div style="background:rgba(247,201,72,.1);border:2px solid #f7c948;border-radius:28px;padding:9px 26px;color:#f7c948;font-size:14px;font-weight:800;display:inline-block;box-shadow:0 0 18px rgba(247,201,72,.28);margin-top:6px">@Visions Learning</div>
+      <div style="margin-top:8px;color:rgba(255,255,255,.22);font-size:10.5px">#Chemistry #ChemicalReactions #CBSE #Science</div>
+    </div>`;
+  await ss('🎉 Well done!<br>Remember the 3 rules!<br>Practice daily &amp; you\'ll<br>score 100%! 👋',
+    'Congratulations! You have mastered chemical reactions. Remember: a reaction forms new substances, atoms are always conserved so we balance equations, and there are four types of reactions. Practice balancing equations every day and you will score full marks. Thank you for learning with Visions Learning!');
+
+  pbar.style.width='100%';pbarG.style.width='100%';
+  cueEl.classList.remove('show');
+  document.getElementById('replayBtn').style.display='block';
+}
+
+/* ══ BOOT ══ */
+function boot(){
+  document.getElementById('startBtn').style.display='none';
+  document.getElementById('replayBtn').style.display='none';
+  ttsOn=true;muteBtn.classList.add('show');
+  loadVoice();startMusic();runShow();
+}
+
+/* extra keyframes */
+const es=document.createElement('style');
+es.textContent='@keyframes scalePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}@keyframes pillGlow{0%,100%{box-shadow:0 0 8px rgba(247,201,72,.25)}50%{box-shadow:0 0 22px rgba(247,201,72,.65)}}';
+document.head.appendChild(es);
+</script>
+</body>
+</html>

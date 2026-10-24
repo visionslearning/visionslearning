@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AFM Notes – Capital & Revenue | F.Y.B.Com. Sem I</title>
+  <style>
+    :root {
+      --primary: #1a237e;
+      --accent: #283593;
+      --highlight: #e8eaf6;
+      --green: #1b5e20;
+      --green-light: #e8f5e9;
+      --red: #b71c1c;
+      --red-light: #ffebee;
+      --orange: #e65100;
+      --orange-light: #fff3e0;
+      --purple: #4a148c;
+      --purple-light: #f3e5f5;
+      --border: #c5cae9;
+      --text: #212121;
+      --muted: #546e7a;
+      --white: #ffffff;
+      --shadow: 0 2px 8px rgba(0,0,0,0.10);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f0f2f8;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, #3949ab 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 40px 20px 30px;
+    }
+    header .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 20px;
+      padding: 4px 16px;
+      font-size: 0.82rem;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 6px; }
+    header p  { font-size: 1rem; opacity: 0.85; }
+
+    /* ── Nav ── */
+    nav {
+      background: var(--accent);
+      padding: 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      justify-content: center;
+    }
+    nav a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 0.82rem;
+      padding: 10px 12px;
+      transition: background 0.2s;
+      border-radius: 4px;
+    }
+    nav a:hover { background: rgba(255,255,255,0.15); color: #fff; }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 16px 60px;
+    }
+
+    /* ── Tip box ── */
+    .tip-box {
+      background: #fff8e1;
+      border-left: 5px solid #f9a825;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-bottom: 30px;
+      font-size: 0.95rem;
+    }
+    .tip-box strong { color: #e65100; }
+
+    /* ── Section cards ── */
+    .section {
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+      overflow: hidden;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 22px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .section-header .icon {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .section-header h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      flex: 1;
+    }
+    .section-header .toggle {
+      font-size: 1.2rem;
+      color: #888;
+      transition: transform 0.3s;
+    }
+    .section-header.open .toggle { transform: rotate(180deg); }
+
+    .section-body { padding: 0 22px 20px; display: none; }
+    .section-body.open { display: block; }
+
+    /* colour themes per section */
+    .cap-exp  .section-header { background: #e8eaf6; }
+    .cap-exp  .section-header h2 { color: var(--primary); }
+    .cap-exp  .section-header .icon { background: var(--primary); color: #fff; }
+
+    .rev-exp  .section-header { background: var(--green-light); }
+    .rev-exp  .section-header h2 { color: var(--green); }
+    .rev-exp  .section-header .icon { background: var(--green); color: #fff; }
+
+    .def-rev  .section-header { background: var(--orange-light); }
+    .def-rev  .section-header h2 { color: var(--orange); }
+    .def-rev  .section-header .icon { background: var(--orange); color: #fff; }
+
+    .cap-rec  .section-header { background: #fce4ec; }
+    .cap-rec  .section-header h2 { color: var(--red); }
+    .cap-rec  .section-header .icon { background: var(--red); color: #fff; }
+
+    .rev-rec  .section-header { background: #e0f7fa; }
+    .rev-rec  .section-header h2 { color: #006064; }
+    .rev-rec  .section-header .icon { background: #006064; color: #fff; }
+
+    .compare  .section-header { background: #f3e5f5; }
+    .compare  .section-header h2 { color: var(--purple); }
+    .compare  .section-header .icon { background: var(--purple); color: #fff; }
+
+    .profits  .section-header { background: #fff9c4; }
+    .profits  .section-header h2 { color: #f57f17; }
+    .profits  .section-header .icon { background: #f57f17; color: #fff; }
+
+    .wrong    .section-header { background: #fbe9e7; }
+    .wrong    .section-header h2 { color: #bf360c; }
+    .wrong    .section-header .icon { background: #bf360c; color: #fff; }
+
+    .qa       .section-header { background: #e8f5e9; }
+    .qa       .section-header h2 { color: #1b5e20; }
+    .qa       .section-header .icon { background: #1b5e20; color: #fff; }
+
+    /* ── Inner elements ── */
+    .def-block {
+      background: #f5f5f5;
+      border-left: 4px solid #90a4ae;
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin: 14px 0;
+      font-style: italic;
+      font-size: 0.93rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+      color: var(--primary);
+      margin: 18px 0 8px;
+      border-bottom: 2px solid var(--highlight);
+      padding-bottom: 4px;
+    }
+
+    ul, ol { padding-left: 20px; margin: 8px 0; }
+    li { margin-bottom: 6px; font-size: 0.93rem; }
+
+    .char-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 12px;
+      margin: 14px 0;
+    }
+    .char-card {
+      border-radius: 8px;
+      padding: 12px 14px;
+      border: 1px solid #e0e0e0;
+    }
+    .char-card .char-title {
+      font-weight: 700;
+      font-size: 0.88rem;
+      margin-bottom: 4px;
+    }
+    .char-card p { font-size: 0.87rem; color: #444; margin: 0; }
+
+    /* ── Tables ── */
+    .table-wrap { overflow-x: auto; margin: 16px 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    thead th {
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 700;
+      color: #fff;
+    }
+    tbody td {
+      padding: 9px 14px;
+      border-bottom: 1px solid #e0e0e0;
+      vertical-align: top;
+    }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:nth-child(even) { background: #fafafa; }
+
+    .table-rr-cr thead th:first-child  { background: #006064; }
+    .table-rr-cr thead th:last-child   { background: var(--red); }
+    .table-rr-cr tbody td:first-child  { color: #006064; font-weight: 600; }
+
+    .table-re-ce thead th:first-child  { background: var(--green); }
+    .table-re-ce thead th:last-child   { background: var(--primary); }
+    .table-re-ce tbody td:first-child  { color: var(--green); font-weight: 600; }
+
+    /* ── Wrong treatment cards ── */
+    .wrong-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 14px 0;
+    }
+    .wrong-card {
+      border-radius: 8px;
+      padding: 14px;
+      border: 1px solid #e0e0e0;
+    }
+    .wrong-card .case { font-weight: 700; font-size: 0.85rem; margin-bottom: 6px; }
+    .wrong-card ul { padding-left: 16px; }
+    .wrong-card li { font-size: 0.83rem; }
+    .wc-1 { background: #ffebee; }
+    .wc-2 { background: #e8f5e9; }
+    .wc-3 { background: #e3f2fd; }
+    .wc-4 { background: #fff9c4; }
+
+    /* ── QA section ── */
+    .qa-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    .qa-table th { background: #1b5e20; color: #fff; padding: 9px 12px; text-align: left; }
+    .qa-table td { padding: 8px 12px; border-bottom: 1px solid #e0e0e0; vertical-align: top; }
+    .qa-table tr:nth-child(even) td { background: #f1f8e9; }
+    .badge-ce  { background: #e8eaf6; color: var(--primary);  padding: 2px 8px; border-radius: 12px; font-size: 0.78rem; font-weight: 700; white-space: nowrap; }
+    .badge-re  { background: #e8f5e9; color: var(--green);   padding: 2px 8px; border-radius: 12px; font-size: 0.78rem; font-weight: 700; white-space: nowrap; }
+    .badge-cr  { background: #fce4ec; color: var(--red);     padding: 2px 8px; border-radius: 12px; font-size: 0.78rem; font-weight: 700; white-space: nowrap; }
+    .badge-dre { background: var(--orange-light); color: var(--orange); padding: 2px 8px; border-radius: 12px; font-size: 0.78rem; font-weight: 700; white-space: nowrap; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      background: #e8eaf6;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.4rem; }
+      .char-grid, .wrong-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════ HEADER ════════════════════════════════ -->
+<header>
+  <div class="badge">F.Y.B.Com. · Semester I · AFM – I</div>
+  <h1>📘 Accountancy &amp; Financial Management – I</h1>
+  <p>Chapter: Capital and Revenue — Expenditure and Receipts</p>
+</header>
+
+<!-- ════════════════════════════════ NAV ════════════════════════════════ -->
+<nav>
+  <a href="#cap-exp">Capital Expenditure</a>
+  <a href="#rev-exp">Revenue Expenditure</a>
+  <a href="#def-rev">Deferred Revenue</a>
+  <a href="#cap-rec">Capital Receipts</a>
+  <a href="#rev-rec">Revenue Receipts</a>
+  <a href="#compare">Comparison</a>
+  <a href="#profits">Profits &amp; Losses</a>
+  <a href="#wrong">Wrong Treatment</a>
+  <a href="#qa">Quick Q&amp;A</a>
+</nav>
+
+<!-- ════════════════════════════════ CONTAINER ════════════════════════════════ -->
+<div class="container">
+
+  <!-- Tip -->
+  <div class="tip-box">
+    💡 <strong>Golden Rule:</strong> Ask yourself — <em>Does this expenditure/receipt bring a long-term asset or future benefit?</em> → <strong>Capital</strong>. Is it routine, recurring, and for running the business? → <strong>Revenue</strong>.
+  </div>
+
+  <!-- ── 1. Capital Expenditure ── -->
+  <div class="section cap-exp" id="cap-exp">
+    <div class="section-header open" onclick="toggle(this)">
+      <div class="icon">💰</div>
+      <h2>1. Capital Expenditure</h2>
+      <span class="toggle">▼</span>
+    </div>
+    <div class="section-body open">
+      <div class="def-block">
+        <strong>Definition:</strong> Capital expenditure means an expenditure carrying probable future benefits (Guidance Note – ICAI). Eric Kohler defined it as <em>"an expenditure intended to benefit future periods; an addition to fixed assets. The term is generally restricted to expenditures that add fixed asset units or that have the effect of increasing the capacity, efficiency, life span or economy of operation of an existing asset."</em>
+      </div>
+
+      <h3>Characteristics / Tests</h3>
+      <div class="char-grid">
+        <div class="char-card" style="background:#e8eaf6; border-color:#c5cae9;">
+          <div class="char-title">1. Long-term Benefits</div>
+          <p>Benefits can be enjoyed for a number of years.</p>
+        </div>
+        <div class="char-card" style="background:#e8eaf6; border-color:#c5cae9;">
+          <div class="char-title">2. Investing Activity</div>
+          <p>Helps to set up and develop a business; creates and increases earning capacity.</p>
+        </div>
+        <div class="char-card" style="background:#e8eaf6; border-color:#c5cae9;">
+          <div class="char-title">3. Recoverable</div>
+          <p>Money spent can be recovered through income generated by the asset or by selling it.</p>
+        </div>
+        <div class="char-card" style="background:#e8eaf6; border-color:#c5cae9;">
+          <div class="char-title">4. Non-recurring</div>
+          <p>Need not be incurred again and again.</p>
+        </div>
+        <div class="char-card" style="background:#e8eaf6; border-color:#c5cae9;">
+          <div class="char-title">5. Effect on Funds &amp; Profits</div>
+          <p>Decreases funds in current year but <em>may increase profits and funds in future</em>.</p>
+        </div>
+        <div class="char-card" style="background:#e8eaf6; border-color:#c5cae9;">
+          <div class="char-title">6. Disclosure in Final A/c</div>
+          <p>Shown as <strong>Assets in Balance Sheet</strong>.</p>
+        </div>
+      </div>
+
+      <h3>Examples of Capital Expenditure</h3>
+      <ul>
+        <li>Purchase of land, building, machinery, furniture</li>
+        <li>Cost of addition or extension to an existing asset (inseparable part)</li>
+        <li>Investments — shares, securities, debentures, immovable properties</li>
+        <li>Cost of acquisition of an intangible asset — goodwill, patents, trade-mark, copyrights</li>
+        <li>Carriage, installation charges, legal fees paid while purchasing a fixed asset</li>
+        <li>Wages paid for erection of new machinery</li>
+        <li>Cost of acquiring and development of a wasting asset (mine, oil-well, tea estate)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── 2. Revenue Expenditure ── -->
+  <div class="section rev-exp" id="rev-exp">
+    <div class="section-header open" onclick="toggle(this)">
+      <div class="icon">📊</div>
+      <h2>2. Revenue Expenditure</h2>
+      <span class="toggle">▼</span>
+    </div>
+    <div class="section-body open">
+      <div class="def-block">
+        <strong>Definition:</strong> Revenue expenditure means an expenditure from which no future benefit is expected (Guidance Note – ICAI). Eric Kohler defined it as <em>"an expenditure charged against operation; a term used to contrast with capital expenditure."</em> Items of expenditure having immediate or short-term benefits (less than 1 year) are treated as revenue expenditure.
+      </div>
+
+      <h3>Characteristics / Tests</h3>
+      <div class="char-grid">
+        <div class="char-card" style="background:#e8f5e9; border-color:#a5d6a7;">
+          <div class="char-title">1. Business Activity</div>
+          <p>Pertains to business activity; helps to run a business and earn income.</p>
+        </div>
+        <div class="char-card" style="background:#e8f5e9; border-color:#a5d6a7;">
+          <div class="char-title">2. Maintain Asset</div>
+          <p>Helps to maintain an asset in working condition (e.g. repairs).</p>
+        </div>
+        <div class="char-card" style="background:#e8f5e9; border-color:#a5d6a7;">
+          <div class="char-title">3. Not Recoverable</div>
+          <p>Money spent is irretrievably gone; expired costs and revenue losses are treated as revenue expenditure.</p>
+        </div>
+        <div class="char-card" style="background:#e8f5e9; border-color:#a5d6a7;">
+          <div class="char-title">4. Recurring</div>
+          <p>Same type of expenditure is incurred again and again (e.g. purchase of goods, payment of rent).</p>
+        </div>
+        <div class="char-card" style="background:#e8f5e9; border-color:#a5d6a7;">
+          <div class="char-title">5. Reduces Funds &amp; Profits</div>
+          <p>As money goes out irretrievably, it reduces both funds and profits of the current year.</p>
+        </div>
+      </div>
+
+      <h3>Disclosure in Final Accounts</h3>
+      <ul>
+        <li>Current year → shown as <strong>expenses in Profit &amp; Loss Account</strong></li>
+        <li>Future period (prepaid) → shown as <strong>Asset (pre-paid expenses) in Balance Sheet</strong></li>
+        <li>Incurred but not yet paid → shown as <strong>Liability (outstanding expenses) in Balance Sheet</strong></li>
+      </ul>
+
+      <h3>Examples of Revenue Expenditure</h3>
+      <ul>
+        <li>Cost of production — wages, factory expenses, power</li>
+        <li>Cost of administration — salaries, rent, stationery</li>
+        <li>Cost of selling and distribution — travelling, freight outward</li>
+        <li>Cost of finance — interest on loans</li>
+        <li>Repairs to keep machinery in working condition</li>
+        <li>Excise duty paid on manufacture of goods</li>
+        <li>Payment of MVAT, annual fees, audit fees</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── 3. Deferred Revenue Expenditure ── -->
+  <div class="section def-rev" id="def-rev">
+    <div class="section-header" onclick="toggle(this)">
+      <div class="icon">⏳</div>
+      <h2>3. Deferred Revenue Expenditure</h2>
+      <span class="toggle">▼</span>
+    </div>
+    <div class="section-body">
+      <div class="def-block">
+        <strong>Definition:</strong> Deferred Revenue Expenditure is that expenditure which is carried forward on the presumption that it will be of benefit over subsequent period(s) (Guidance Note – ICAI). It is also known as <em>'deferred expenditure'</em>. It has a mixed nature with features of both revenue and capital expenditure.
+      </div>
+
+      <h3>Key Points</h3>
+      <ul>
+        <li>Items with medium-term benefits (say 3 years) are treated as deferred revenue expenditure.</li>
+        <li>Proportionate cost (1/3) related to current year is charged as <strong>expenses in P&amp;L</strong>.</li>
+        <li>Balance (unexpired) cost (2/3) is carried forward as <strong>'fictitious asset' in the Balance Sheet</strong>.</li>
+        <li>Gradual and systematic writing off is called <strong><em>amortisation</em></strong> (Guidance Note – ICAI).</li>
+      </ul>
+
+      <h3>Examples (as per ICAI Guidance Note on Revised Schedule VI)</h3>
+      <ul>
+        <li>Share issue expenses</li>
+        <li>Discount on issue of Shares</li>
+        <li>Debenture issue expenses</li>
+        <li>Discount on issue of Debentures</li>
+        <li>Premium payable on redemption of Debentures</li>
+      </ul>
+
+      <div class="def-block" style="background:#fff8e1; border-color:#f9a825; font-style:normal;">
+        📝 <strong>Tutorial Note:</strong> As per Accounting Standard 26, items like research expenses, heavy advertisement expenditure, preliminary expenses, and expenses on shifting the business are now treated as <em>revenue expenses</em>, not deferred revenue expenditure.
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 4. Capital Receipts ── -->
+  <div class="section cap-rec" id="cap-rec">
+    <div class="section-header" onclick="toggle(this)">
+      <div class="icon">🏦</div>
+      <h2>4. Capital Receipts</h2>
+      <span class="toggle">▼</span>
+    </div>
+    <div class="section-body">
+      <div class="def-block">
+        <strong>Definition:</strong> Capital Receipt means an amount received by a concern in the course of its <em>financing activity</em> (obtaining money as capital or loan or sale of assets). A concern needs money to carry on its business activities and investment activities (purchase of assets or investments).
+      </div>
+
+      <h3>Characteristics / Tests</h3>
+      <div class="char-grid">
+        <div class="char-card" style="background:#fce4ec; border-color:#f48fb1;">
+          <div class="char-title">1. Financing Activity</div>
+          <p>Receipt arising out of financing activity; provides funds to acquire new assets.</p>
+        </div>
+        <div class="char-card" style="background:#fce4ec; border-color:#f48fb1;">
+          <div class="char-title">2. Returnable</div>
+          <p>Money received as Capital or Loan has to be paid back.</p>
+        </div>
+        <div class="char-card" style="background:#fce4ec; border-color:#f48fb1;">
+          <div class="char-title">3. Non-recurring</div>
+          <p>Such amounts are not received regularly or again and again.</p>
+        </div>
+        <div class="char-card" style="background:#fce4ec; border-color:#f48fb1;">
+          <div class="char-title">4. Effect on Funds &amp; Profits</div>
+          <p>Increases funds in current year but may decrease profits in future due to interest payments.</p>
+        </div>
+      </div>
+
+      <h3>Disclosure in Final Accounts</h3>
+      <ul>
+        <li>Capital receipt is shown as <strong>Liability in Balance Sheet</strong>.</li>
+        <li>Capital receipt from sale of asset or investment is deducted from the concerned fixed asset on the Assets side.</li>
+      </ul>
+
+      <h3>Examples of Capital Receipts</h3>
+      <ul>
+        <li>Cash brought in by the proprietor</li>
+        <li>Loan received from the Bank</li>
+        <li>Money received on issue of shares or debentures</li>
+        <li>Premium on issue of shares</li>
+        <li>Amount received on sale of old machinery</li>
+        <li>Amount received on sale of shares held as investment</li>
+        <li>Insurance compensation for machinery destroyed in fire</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── 5. Revenue Receipts ── -->
+  <div class="section rev-rec" id="rev-rec">
+    <div class="section-header" onclick="toggle(this)">
+      <div class="icon">💵</div>
+      <h2>5. Revenue Receipts</h2>
+      <span class="toggle">▼</span>
+    </div>
+    <div class="section-body">
+      <div class="def-block">
+        <strong>Definition:</strong> Revenue receipts means the receipts from customers for sale of goods, for services given, or for use of funds (loans, capital) or use of assets (patents, know-how) (Guidance Note – ICAI). Revenue receipts are recurring in nature and arise from past capital expenditure.
+      </div>
+
+      <h3>Characteristics / Tests</h3>
+      <div class="char-grid">
+        <div class="char-card" style="background:#e0f7fa; border-color:#80cbc4;">
+          <div class="char-title">1. Business Activity</div>
+          <p>Receipt in the course of business activity (e.g. sale of goods, fees received).</p>
+        </div>
+        <div class="char-card" style="background:#e0f7fa; border-color:#80cbc4;">
+          <div class="char-title">2. Recurring</div>
+          <p>Same type of receipt is received again and again on a regular basis.</p>
+        </div>
+        <div class="char-card" style="background:#e0f7fa; border-color:#80cbc4;">
+          <div class="char-title">3. Not Returnable</div>
+          <p>Money received as revenue is not refundable. Goods or services have been supplied against it.</p>
+        </div>
+        <div class="char-card" style="background:#e0f7fa; border-color:#80cbc4;">
+          <div class="char-title">4. Increases Funds &amp; Profits</div>
+          <p>Increases both funds and profits of the current year.</p>
+        </div>
+      </div>
+
+      <h3>Disclosure in Final Accounts</h3>
+      <ul>
+        <li>Current year → shown as <strong>income in Profit &amp; Loss Account</strong></li>
+        <li>Received now but pertaining to future period → shown as <strong>Liability (advance income) in Balance Sheet</strong></li>
+        <li>Earned in current year but not yet received → shown as <strong>Asset (income receivable) in Balance Sheet</strong></li>
+      </ul>
+
+      <h3>Examples of Revenue Receipts</h3>
+      <ul>
+        <li>Sale of goods</li>
+        <li>Fees received for rendering services</li>
+        <li>Interest on loans given</li>
+        <li>Dividend on shares</li>
+        <li>Royalty for use of patents, know-how</li>
+        <li>Insurance claims for loss of current assets (e.g. stock destroyed in fire)</li>
+        <li>Recoveries and refunds (e.g. recovery of bad debt written off)</li>
+        <li>Rent received from letting out business property</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── 6. Comparison Tables ── -->
+  <div class="section compare" id="compare">
+    <div class="section-header" onclick="toggle(this)">
+      <div class="icon">⚖️</div>
+      <h2>6. Comparison Tables</h2>
+      <span class="toggle">▼</span>
+    </div>
+    <div class="section-body">
+
+      <h3>Revenue Receipt vs. Capital Receipt</h3>
+      <div class="table-wrap">
+        <table class="table-rr-cr">
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Revenue Receipt (RR)</th>
+              <th>Capital Receipt (CR)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Pertains to business activity</td><td>Pertains to financing activity</td></tr>
+            <tr><td>2</td><td>Examples: sale of goods, fees, interest, dividend, royalty</td><td>Examples: capital from owner, loans from bank, sale of assets</td></tr>
+            <tr><td>3</td><td>Current year → income in P&amp;L; Future period → Liability in B/S</td><td>Shown as Liability in Balance Sheet</td></tr>
+            <tr><td>4</td><td>Need not be returned / refunded</td><td>May be returned back</td></tr>
+            <tr><td>5</td><td>Recurring in nature</td><td>Non-recurring in nature</td></tr>
+            <tr><td>6</td><td>Increases profits and funds</td><td>Increases funds; may reduce profits (interest on loans)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:24px;">Revenue Expenditure vs. Capital Expenditure</h3>
+      <div class="table-wrap">
+        <table class="table-re-ce">
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Revenue Expenditure (RE)</th>
+              <th>Capital Expenditure (CE)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Pertains to business activity</td><td>Pertains to investing activity</td></tr>
+            <tr><td>2</td><td>Helps to run a business</td><td>Helps to set up and develop a business</td></tr>
+            <tr><td>3</td><td>Helps to maintain an existing asset</td><td>Helps to acquire a new asset</td></tr>
+            <tr><td>4</td><td>Examples: goods, fees, salaries, rent</td><td>Examples: machines, investments in shares</td></tr>
+            <tr><td>5</td><td>Current year → expenses in P&amp;L; Future period → Asset (prepaid) in B/S</td><td>Shown as Assets in Balance Sheet</td></tr>
+            <tr><td>6</td><td>Money gone irretrievably — cannot be recovered</td><td>Money may come back on sale of asset or investment</td></tr>
+            <tr><td>7</td><td>Recurring in nature</td><td>Non-recurring in nature</td></tr>
+            <tr><td>8</td><td>Reduces both funds and profits of current year</td><td>Decreases funds but may increase profits in future</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── 7. Revenue Profits & Capital Profits ── -->
+  <div class="section profits" id="profits">
+    <div class="section-header" onclick="toggle(this)">
+      <div class="icon">📈</div>
+      <h2>7. Revenue Profits &amp; Capital Profits / Losses</h2>
+      <span class="toggle">▼</span>
+    </div>
+    <div class="section-body">
+
+      <h3>Profits</h3>
+      <ul>
+        <li><strong>Revenue / Operating Profit:</strong> Net profit arising from the normal operations and activities of a concern. Net profit = excess of revenue over expenses during a particular period.</li>
+        <li><strong>Capital Profit:</strong> Arises when a capital asset is sold at a price higher than its cost (e.g. shares issued at premium — share premium is capital profit).
+          <ul>
+            <li>Capital profits on sale of assets → credited to P&amp;L account as extraordinary income.</li>
+            <li>Capital profits related to shares (share premium) → credited to <strong>Capital Reserve</strong>, not P&amp;L.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Losses</h3>
+      <ul>
+        <li><strong>Revenue Loss:</strong> Loss in the course of business (e.g. loss of goods due to fire, theft, bad debts). Written off by debit to P&amp;L account.</li>
+        <li><strong>Capital Loss:</strong> Loss in the course of investing and finance activities (e.g. sale of fixed asset at a loss, issue of shares at discount).
+          <ul>
+            <li>Capital losses related to assets/investments → debited to P&amp;L (expired cost).</li>
+            <li>Capital losses related to shares (discount on shares) → carried forward as <strong>'Fictitious assets' in Balance Sheet</strong>.</li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+  <!-- ── 8. Effect of Wrong Treatment ── -->
+  <div class="section wrong" id="wrong">
+    <div class="section-header" onclick="toggle(this)">
+      <div class="icon">⚠️</div>
+      <h2>8. Effect of Wrong Treatment on Profits</h2>
+      <span class="toggle">▼</span>
+    </div>
+    <div class="section-body">
+      <p style="margin-bottom:14px; font-size:0.93rem;">If an item of revenue is wrongly recorded as capital or <em>vice versa</em>, the profit and the assets or liabilities are shown at a wrong amount.</p>
+      <div class="wrong-grid">
+        <div class="wrong-card wc-1">
+          <div class="case">❌ Case 1: Revenue Exp → shown as Capital Exp</div>
+          <ul>
+            <li>P&amp;L shows <strong>lower expenses → higher profits</strong></li>
+            <li>Balance Sheet shows <strong>higher assets</strong></li>
+          </ul>
+        </div>
+        <div class="wrong-card wc-2">
+          <div class="case">❌ Case 2: Capital Exp → shown as Revenue Exp</div>
+          <ul>
+            <li>P&amp;L shows <strong>lower profits</strong></li>
+            <li>Balance Sheet shows <strong>lower assets</strong></li>
+          </ul>
+        </div>
+        <div class="wrong-card wc-3">
+          <div class="case">❌ Case 3: Revenue Receipt → shown as Capital Receipt</div>
+          <ul>
+            <li>P&amp;L shows <strong>lower profits</strong></li>
+            <li>Balance Sheet shows <strong>higher liabilities</strong></li>
+          </ul>
+        </div>
+        <div class="wrong-card wc-4">
+          <div class="case">❌ Case 4: Capital Receipt → shown as Revenue Receipt</div>
+          <ul>
+            <li>P&amp;L shows <strong>higher profits</strong></li>
+            <li>Balance Sheet shows <strong>lower liabilities</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 9. Quick Q&A ── -->
+  <div class="section qa" id="qa">
+    <div class="section-header" onclick="toggle(this)">
+      <div class="icon">✅</div>
+      <h2>9. Quick Answer Guide (from Past Papers)</h2>
+      <span class="toggle">▼</span>
+    </div>
+    <div class="section-body">
+      <p style="font-size:0.87rem; margin-bottom:12px; color:var(--muted);">Source: F.Y.B.Com. IDOL exam questions (adapted)</p>
+      <div class="table-wrap">
+        <table class="qa-table">
+          <thead>
+            <tr><th>#</th><th>Item</th><th>Classification</th><th>Reason</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Wages paid for construction of railway platform</td><td><span class="badge-ce">Capital Expenditure</span></td><td>Expenses incurred to put the assets to use</td></tr>
+            <tr><td>2</td><td>Received ₹8,00,000 on issue of 9% cumulative preference shares</td><td><span class="badge-cr">Capital Receipt</span></td><td>Received on account of issue of shares</td></tr>
+            <tr><td>3</td><td>Direct wages ₹3,25,000 paid for January 2014</td><td><span class="badge-ce">Capital Expenditure</span></td><td>Expenses paid on direct wages</td></tr>
+            <tr><td>4</td><td>Underwriting commission on issue of Preference shares</td><td><span class="badge-dre">Deferred Revenue Expenditure</span></td><td>Any kinds of expenses paid on issue of Preference shares</td></tr>
+            <tr><td>5</td><td>Legal expenses ₹54,875 for purchase of machinery</td><td><span class="badge-ce">Capital Expenditure</span></td><td>Legal expenses paid while purchasing the machinery</td></tr>
+            <tr><td>6</td><td>MVAT paid to Government of Maharashtra</td><td><span class="badge-re">Revenue Expenditure</span></td><td>Amount paid to government regularly in the form of MVAT</td></tr>
+            <tr><td>7</td><td>Premium ₹1,60,000 received on issue of new 9% cumulative preference shares</td><td><span class="badge-cr">Capital Receipt</span></td><td>Premium received on issue of new preference shares</td></tr>
+            <tr><td>8</td><td>Paid legal fees ₹64,500</td><td><span class="badge-re">Revenue Expenditure</span></td><td>Legal fees paid is recurring in nature</td></tr>
+            <tr><td>9</td><td>Rent paid ₹25,000 in June 2013 for month of May 2013</td><td><span class="badge-re">Revenue Expenditure</span></td><td>Recurring operating business expense</td></tr>
+            <tr><td>10</td><td>Import duty ₹35,000 on purchase of new machinery</td><td><span class="badge-ce">Capital Expenditure</span></td><td>Direct cost for acquiring the asset; to be capitalised as per AS-10</td></tr>
+            <tr><td>11</td><td>Professional fees paid ₹25,000 to advocate for purchase of new office premises</td><td><span class="badge-ce">Capital Expenditure</span></td><td>Legal expenses incurred to purchase of new office — increases asset value</td></tr>
+            <tr><td>12</td><td>Annual membership fees ₹5,000 to Machinery Manufacturers Association</td><td><span class="badge-re">Revenue Expenditure</span></td><td>Regular recurring expenditure for running business</td></tr>
+            <tr><td>13</td><td>Bank interest paid ₹35,000 on loan for purchase of land &amp; buildings</td><td><span class="badge-re">Revenue Expenditure</span></td><td>Interest is a finance cost — recurring in nature</td></tr>
+            <tr><td>14</td><td>Purchase of old machinery for cash ₹1,00,000</td><td><span class="badge-ce">Capital Expenditure</span></td><td>Benefit from machinery will be available for many years</td></tr>
+            <tr><td>15</td><td>Interest paid ₹15,000 on Bank Overdraft</td><td><span class="badge-re">Revenue Expenditure</span></td><td>Incurred for normal running of the business</td></tr>
+            <tr><td>16</td><td>Premium ₹25,000 received on issue of new shares</td><td><span class="badge-cr">Capital Receipt</span></td><td>Premium is received on issue of new shares</td></tr>
+            <tr><td>17</td><td>Dividend and Interest ₹10,000 on investments</td><td><span class="badge-re">Revenue Receipt</span></td><td>Received in ordinary course of business on investments</td></tr>
+            <tr><td>18</td><td>Cost of redecorating a cinema hall</td><td><span class="badge-re">Revenue Expenditure</span></td><td>Recurring, incurred for normal business operations</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<footer>
+  Accountancy &amp; Financial Management – I &nbsp;|&nbsp; F.Y.B.Com. Semester I &nbsp;|&nbsp; Study Notes
+</footer>
+
+<script>
+  function toggle(header) {
+    const body = header.nextElementSibling;
+    const isOpen = body.classList.contains('open');
+    if (isOpen) {
+      body.classList.remove('open');
+      header.classList.remove('open');
+    } else {
+      body.classList.add('open');
+      header.classList.add('open');
+    }
+  }
+
+  // Open first two sections by default (already open via HTML classes)
+</script>
+
+</body>
+</html>

@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TYBSc Sem 5 – MCQ Practice | Physical Chemistry</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',sans-serif;background:#0d1117;color:#e6edf3;min-height:100vh;}
+
+    /* Header */
+    header{background:linear-gradient(135deg,#0d1b2a,#1b263b,#415a77);text-align:center;padding:36px 20px 28px;}
+    header h1{font-size:2rem;letter-spacing:1px;color:#fff;}
+    header p{font-size:0.95rem;color:#a8b2c1;margin-top:6px;}
+
+    /* Progress bar */
+    #progress-wrap{background:#161b22;padding:14px 20px;position:sticky;top:0;z-index:100;border-bottom:1px solid #30363d;}
+    #progress-inner{max-width:800px;margin:0 auto;display:flex;align-items:center;gap:14px;}
+    #progress-bar-bg{flex:1;background:#21262d;border-radius:10px;height:10px;overflow:hidden;}
+    #progress-bar{height:10px;background:linear-gradient(90deg,#238636,#2ea043);border-radius:10px;transition:width 0.4s ease;width:0%;}
+    #progress-text{font-size:0.82rem;color:#8b949e;white-space:nowrap;}
+    #score-display{font-size:0.82rem;color:#f0883e;font-weight:600;white-space:nowrap;}
+
+    /* Chapter tabs */
+    #chapter-tabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;padding:18px 16px;background:#161b22;border-bottom:1px solid #30363d;}
+    .ch-tab{padding:7px 18px;border-radius:20px;border:1px solid #30363d;background:transparent;color:#8b949e;cursor:pointer;font-size:0.85rem;transition:all 0.2s;}
+    .ch-tab:hover{border-color:#58a6ff;color:#58a6ff;}
+    .ch-tab.active{background:#1f6feb;border-color:#1f6feb;color:#fff;font-weight:600;}
+
+    /* Main */
+    .container{max-width:800px;margin:0 auto;padding:20px 20px 80px;}
+
+    /* Chapter heading */
+    .ch-heading{padding:16px 22px;border-radius:10px;margin:28px 0 18px;font-size:1.2rem;font-weight:700;display:flex;align-items:center;gap:10px;}
+    .ch1-bg{background:linear-gradient(135deg,#1a2744,#0f3460);border-left:5px solid #58a6ff;}
+    .ch2-bg{background:linear-gradient(135deg,#1a3a2a,#0d4a2a);border-left:5px solid #3fb950;}
+    .ch3-bg{background:linear-gradient(135deg,#2d1b4e,#4a0e6e);border-left:5px solid #bc8cff;}
+    .ch4-bg{background:linear-gradient(135deg,#3a1a0e,#7b2d00);border-left:5px solid #f0883e;}
+
+    /* MCQ Card */
+    .mcq-card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:22px;margin-bottom:18px;transition:border-color 0.2s;}
+    .mcq-card.answered-correct{border-color:#238636;background:#0d1f0f;}
+    .mcq-card.answered-wrong{border-color:#da3633;background:#200d0d;}
+
+    .q-header{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px;}
+    .q-num{background:#21262d;color:#8b949e;font-size:0.78rem;padding:3px 9px;border-radius:20px;font-weight:600;white-space:nowrap;margin-top:2px;}
+    .q-text{font-size:0.96rem;color:#e6edf3;line-height:1.6;flex:1;}
+
+    /* Options */
+    .options{display:flex;flex-direction:column;gap:8px;}
+    .option{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;border-radius:8px;border:1px solid #30363d;cursor:pointer;transition:all 0.15s;background:#0d1117;}
+    .option:hover:not(.disabled){border-color:#58a6ff;background:#1a2744;}
+    .option.disabled{cursor:default;}
+    .option.selected-correct{border-color:#238636;background:#0d2910;color:#3fb950;}
+    .option.selected-wrong{border-color:#da3633;background:#200d0d;color:#f85149;}
+    .option.show-correct{border-color:#238636;background:#0d2910;color:#3fb950;}
+    .opt-letter{font-size:0.8rem;font-weight:700;min-width:22px;height:22px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#21262d;color:#8b949e;margin-top:1px;}
+    .option.selected-correct .opt-letter{background:#238636;color:#fff;}
+    .option.selected-wrong .opt-letter{background:#da3633;color:#fff;}
+    .option.show-correct .opt-letter{background:#238636;color:#fff;}
+    .opt-text{font-size:0.9rem;line-height:1.5;flex:1;}
+
+    /* Explanation */
+    .explanation{margin-top:12px;padding:12px 16px;background:#1c2128;border-radius:8px;border-left:3px solid #f0883e;font-size:0.88rem;color:#a8b2c1;display:none;line-height:1.6;}
+    .explanation strong{color:#f0883e;}
+    .explanation.show{display:block;}
+
+    /* Result icons */
+    .result-icon{float:right;font-size:1.1rem;}
+
+    /* Nav buttons */
+    #bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#161b22;border-top:1px solid #30363d;padding:12px 20px;display:flex;justify-content:center;gap:12px;z-index:100;}
+    .nav-btn{padding:9px 22px;border-radius:8px;border:none;cursor:pointer;font-size:0.88rem;font-weight:600;transition:all 0.2s;}
+    #btn-prev{background:#21262d;color:#8b949e;}
+    #btn-prev:hover{background:#30363d;color:#e6edf3;}
+    #btn-next{background:#1f6feb;color:#fff;}
+    #btn-next:hover{background:#388bfd;}
+    #btn-submit{background:#238636;color:#fff;display:none;}
+    #btn-submit:hover{background:#2ea043;}
+    #btn-reset{background:#da3633;color:#fff;display:none;}
+    #btn-reset:hover{background:#f85149;}
+
+    /* Score modal */
+    #score-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:999;align-items:center;justify-content:center;}
+    #score-modal.show{display:flex;}
+    #score-box{background:#161b22;border:1px solid #30363d;border-radius:16px;padding:36px 32px;text-align:center;max-width:480px;width:90%;}
+    #score-box h2{font-size:1.6rem;margin-bottom:10px;}
+    #score-box .big-score{font-size:3.5rem;font-weight:800;margin:18px 0 10px;}
+    #score-box p{color:#8b949e;margin-bottom:20px;}
+    .score-bar-wrap{background:#21262d;border-radius:10px;height:14px;overflow:hidden;margin-bottom:24px;}
+    .score-bar-fill{height:14px;border-radius:10px;transition:width 1s ease;}
+    .medal{font-size:3rem;margin-bottom:8px;}
+    #btn-review{background:#1f6feb;color:#fff;border:none;padding:10px 28px;border-radius:8px;cursor:pointer;font-size:0.95rem;font-weight:600;margin-right:8px;}
+    #btn-retry{background:#21262d;color:#e6edf3;border:none;padding:10px 28px;border-radius:8px;cursor:pointer;font-size:0.95rem;}
+
+    /* Chapter filter */
+    .chapter-section{display:block;}
+
+    /* Stats */
+    .stat-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:12px 0;}
+    .stat-chip{background:#21262d;border-radius:20px;padding:5px 14px;font-size:0.82rem;color:#8b949e;}
+    .stat-chip span{font-weight:700;color:#e6edf3;}
+
+    @media(max-width:500px){
+      header h1{font-size:1.4rem;}
+      .mcq-card{padding:16px;}
+      #score-box{padding:24px 18px;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📝 TYBSc Sem 5 – MCQ Practice</h1>
+  <p>Physical Chemistry | All 4 Chapters | 80 Questions</p>
+</header>
+
+<div id="progress-wrap">
+  <div id="progress-inner">
+    <div id="progress-bar-bg"><div id="progress-bar"></div></div>
+    <div id="progress-text">0 / 60 answered</div>
+    <div id="score-display">Score: 0</div>
+  </div>
+</div>
+
+<div id="chapter-tabs">
+  <button class="ch-tab active" onclick="filterChapter('all')">All Chapters</button>
+  <button class="ch-tab" onclick="filterChapter('ch1')">Ch 1: Spectroscopy</button>
+  <button class="ch-tab" onclick="filterChapter('ch2')">Ch 2: Colligative</button>
+  <button class="ch-tab" onclick="filterChapter('ch3')">Ch 3: Nuclear</button>
+  <button class="ch-tab" onclick="filterChapter('ch4')">Ch 4: Surface</button>
+</div>
+
+<div class="container" id="quiz-container"></div>
+
+<div id="bottom-nav">
+  <button class="nav-btn" id="btn-prev" onclick="scrollToTop()">↑ Top</button>
+  <button class="nav-btn" id="btn-submit" onclick="submitQuiz()">🏆 Submit &amp; See Score</button>
+  <button class="nav-btn" id="btn-reset" onclick="resetQuiz()">🔄 Reset</button>
+  <button class="nav-btn" id="btn-next" onclick="scrollToNext()">Next Unanswered ↓</button>
+</div>
+
+<!-- Score Modal -->
+<div id="score-modal">
+  <div id="score-box">
+    <div class="medal" id="modal-medal">🏆</div>
+    <h2 id="modal-title">Quiz Complete!</h2>
+    <div class="big-score" id="modal-score"></div>
+    <div class="score-bar-wrap"><div class="score-bar-fill" id="modal-bar"></div></div>
+    <p id="modal-msg"></p>
+    <div class="stat-row">
+      <div class="stat-chip">Correct: <span id="stat-correct">0</span></div>
+      <div class="stat-chip">Wrong: <span id="stat-wrong">0</span></div>
+      <div class="stat-chip">Skipped: <span id="stat-skip">0</span></div>
+    </div>
+    <button id="btn-review" onclick="closeModal()">📖 Review Answers</button>
+    <button id="btn-retry" onclick="resetQuiz()">🔄 Try Again</button>
+  </div>
+</div>
+
+<script>
+const questions = [
+
+  // ══════════════════════════════════════════
+  // CHAPTER 1 – MOLECULAR SPECTROSCOPY (15 Q)
+  // ══════════════════════════════════════════
+  {
+    ch: 'ch1', chName: 'Chapter 1 – Molecular Spectroscopy',
+    q: 'The dipole moment of CO₂ is:',
+    opts: ['1.63 D', '0 D', '1.85 D', '1.47 D'],
+    ans: 1,
+    exp: 'CO₂ has a linear structure (O=C=O). The two C=O bond moments are equal and opposite, so they cancel vectorially → net dipole moment = 0 D.'
+  },
+  {
+    ch: 'ch1', chName: 'Chapter 1 – Molecular Spectroscopy',
+    q: 'The unit of dipole moment is:',
+    opts: ['Joule', 'Debye (D)', 'Coulomb', 'Newton'],
+    ans: 1,
+    exp: 'Dipole moment is expressed in Debye (D). 1 D = 3.336 × 10⁻³⁰ C·m.'
+  },
+  {
+    ch: 'ch1', chName: 'Chapter 1 – Molecular Spectroscopy',
+    q: 'Which of the following molecules has the highest dipole moment?',
+    opts: ['CO₂', 'BF₃', 'H₂O', 'CH₄'],
+    ans: 2,
+    exp: 'H₂O has an angular structure with two O–H bonds and lone pairs on oxygen, giving a net dipole moment of 1.85 D — the highest among the options.'
+  },
+  {
+    ch: 'ch1', chName: 'Chapter 1 – Molecular Spectroscopy',
+    q: 'The dipole moment of para-dichlorobenzene is:',
+    opts: ['2.6 D', '1.5 D', '0 D', '3.0 D'],
+    ans: 2,
+    exp: 'In para isomer, two C–Cl dipoles are exactly opposite (θ = 180°), so μ = 2μ cos(90°) = 0 D.'
+  },
+  {
+    ch: 'ch1', chName: 'Chapter 1 – Molecular Spectroscopy',
+    q: 'Which isomer of dichlorobenzene has the highest dipole moment?',
+    opts: ['ortho', 'meta', 'para', 'All equal'],
+    ans: 0,
+    exp: 'Ortho isomer has θ = 60° between the two C–Cl bonds, giving the largest resultant dipole moment (~2.6 D). Meta = 1.5 D, Para = 0 D.'
+  },
+  {
+    ch: 'ch1', chName: 'Chapter 1 – Molecular Spectroscopy',
+    q: 'The fingerprint region in IR spectroscopy lies between:',
+    opts: ['400–600 cm⁻¹', '900–1400 cm⁻¹', '2000–2500 cm⁻¹', '3000–3500 cm⁻¹'],
+    ans: 1,
+    exp: 'The fingerprint region (900–1400 cm⁻¹) is unique to each compound. No two different molecules show the same pattern in this region.'
+  },
+  {
+    ch: 'ch1', chName: 'Chapter 1 – Molecular Spectroscopy',
+    q: 'In IR spectroscopy, a vibration is active if there is a change in:',
+    opts: ['Polarisability', 'Dipole moment', 'Bond order', 'Reduced mass'],
+    ans: 1,
+    exp: 'IR activity requires a change in dipole moment during vibration. Raman activity requires a change in polarisability.'
+  },
+  {
+    ch: 'ch1', chName: 'Chapter 1 – Molecular Spectroscopy',
+    q: 'The O–H bond in phenol absorbs IR radiation at approximately:',
+    opts: ['1000 × 10² cm⁻¹', '2100 × 10² cm⁻¹', '3700 × 10² cm⁻¹', '500 × 10² cm⁻¹'],
+    ans: 2,
+    exp: 'The O–H (phenolic) bond has a characteristic absorption frequency of 3700 × 10² m⁻¹ due to its strong O–H stretching vibration.'
+  },
+  {
+    ch: 'ch1', chName: 'Chapter 1 – Molecular Spectroscopy',
+    q: 'Raman Effect was discovered by C.V. Raman in:',
+    opts: ['1920', '1928', '1935', '1930'],
+    ans: 1,
+    exp: 'Prof. C.V. Raman discovered the Raman Effect in 1928 and was awarded the Nobel Prize in Physics in 1930 for this discovery.'
+  },
+  {
+    ch: 'ch1', chName: 'Chapter 1 – Molecular Spectroscopy',
+    q: 'Stokes lines in Raman spectroscopy appear at:',
+    opts: ['Higher frequency than incident light', 'Same frequency as incident light', 'Lower frequency than incident light', 'No definite frequency'],
+    ans: 2,
+    exp: 'Stokes lines have lower frequency than incident light (ν_s < ν₀). The molecule absorbs energy → scattered photon has less energy → lower frequency.'
+  },
+  {
+    ch: 'ch1', chName: 'Chapter 1 – Molecular Spectroscopy',
+    q: 'Which type of molecular vibration does NOT change bond length?',
+    opts: ['Symmetric stretching', 'Asymmetric stretching', 'Bending vibration', 'None of the above'],
+    ans: 2,
+    exp: 'Bending vibrations involve change in bond angle, NOT bond length. Stretching vibrations change the bond length.'
+  },
+  {
+    ch: 'ch1', chName: 'Chapter 1 – Molecular Spectroscopy',
+    q: 'The stretching frequency of a bond is related to force constant (k) and reduced mass (μ) as:',
+    opts: ['ν ∝ √(k·μ)', 'ν ∝ √(k/μ)', 'ν ∝ k/μ', 'ν ∝ μ/k'],
+    ans: 1,
+    exp: 'From the formula ν̃ = (1/2πc)√(k/μ), stretching frequency is proportional to √(k/μ). Stronger bond (higher k) → higher frequency; heavier atoms (higher μ) → lower frequency.'
+  },
+  {
+    ch: 'ch1', chName: 'Chapter 1 – Molecular Spectroscopy',
+    q: 'The O–D bond absorbs at a ________ frequency compared to O–H bond:',
+    opts: ['Higher', 'Same', 'Lower', 'Depends on temperature'],
+    ans: 2,
+    exp: 'Deuterium (D) is heavier than H → higher reduced mass → lower frequency. O–H absorbs at ~3600 cm⁻¹, O–D at ~2630 cm⁻¹. Ratio ≈ √2.'
+  },
+  {
+    ch: 'ch1', chName: 'Chapter 1 – Molecular Spectroscopy',
+    q: 'The Mutual Exclusion Rule applies to:',
+    opts: ['All molecules', 'Centrosymmetric molecules only', 'Polar molecules only', 'Diatomic molecules only'],
+    ans: 1,
+    exp: 'The Mutual Exclusion Rule states: for centrosymmetric molecules (with centre of symmetry), IR active vibrations are Raman inactive and vice versa (e.g., CO₂).'
+  },
+  {
+    ch: 'ch1', chName: 'Chapter 1 – Molecular Spectroscopy',
+    q: 'For a non-linear molecule with N atoms, the number of vibrational modes is:',
+    opts: ['3N', '3N – 3', '3N – 5', '3N – 6'],
+    ans: 3,
+    exp: 'For a non-linear molecule: total degrees of freedom = 3N; translational = 3, rotational = 3, so vibrational = 3N – 6. For linear molecules it is 3N – 5.'
+  },
+
+  // ══════════════════════════════════════════
+  // CHAPTER 2 – COLLIGATIVE PROPERTIES (15 Q)
+  // ══════════════════════════════════════════
+  {
+    ch: 'ch2', chName: 'Chapter 2 – Chemical Thermodynamics (Colligative Properties)',
+    q: 'Colligative properties depend on:',
+    opts: ['Nature of solute', 'Size of solute particles', 'Number of solute particles', 'Colour of solution'],
+    ans: 2,
+    exp: 'Colligative properties depend only on the number of solute particles (moles) dissolved, not on their nature or identity.'
+  },
+  {
+    ch: 'ch2', chName: 'Chapter 2 – Chemical Thermodynamics (Colligative Properties)',
+    q: 'Raoult\'s Law states that relative lowering of vapour pressure equals:',
+    opts: ['Mole fraction of solvent', 'Mole fraction of solute', 'Molality of solution', 'Molarity of solution'],
+    ans: 1,
+    exp: 'Raoult\'s Law: (p° – p)/p° = x₂, where x₂ is the mole fraction of the solute. This is the relative lowering of vapour pressure.'
+  },
+  {
+    ch: 'ch2', chName: 'Chapter 2 – Chemical Thermodynamics (Colligative Properties)',
+    q: 'Van\'t Hoff factor (i) for NaCl in dilute solution is approximately:',
+    opts: ['1', '2', '3', '0.5'],
+    ans: 1,
+    exp: 'NaCl → Na⁺ + Cl⁻ (2 ions). So Van\'t Hoff factor i ≈ 2 for complete dissociation. For non-electrolytes, i = 1.'
+  },
+  {
+    ch: 'ch2', chName: 'Chapter 2 – Chemical Thermodynamics (Colligative Properties)',
+    q: 'The unit of ebullioscopic constant (K_b) is:',
+    opts: ['K/mol', 'K·kg·mol⁻¹', 'mol/kg', 'mol/L'],
+    ans: 1,
+    exp: 'K_b (molal elevation constant) has units K·kg·mol⁻¹ because ΔT_b = K_b × m and molality m = mol/kg.'
+  },
+  {
+    ch: 'ch2', chName: 'Chapter 2 – Chemical Thermodynamics (Colligative Properties)',
+    q: 'The cryoscopic constant (K_f) of camphor used in the Rast method is:',
+    opts: ['1.86 K·kg/mol', '37.7 K·kg/mol', '0.52 K·kg/mol', '5.12 K·kg/mol'],
+    ans: 1,
+    exp: 'Camphor has K_f = 37.7 K·kg·mol⁻¹, which is unusually high. This large value allows accurate measurement of small ΔT_f, making it ideal for molecular weight determination.'
+  },
+  {
+    ch: 'ch2', chName: 'Chapter 2 – Chemical Thermodynamics (Colligative Properties)',
+    q: 'Osmotic pressure (π) is related to concentration by:',
+    opts: ['π = nRT/V', 'π = nR/TV', 'π = V/nRT', 'π = RT/V'],
+    ans: 0,
+    exp: 'Van\'t Hoff\'s equation for osmotic pressure: πV = nRT, therefore π = nRT/V = CRT, analogous to the ideal gas law PV = nRT.'
+  },
+  {
+    ch: 'ch2', chName: 'Chapter 2 – Chemical Thermodynamics (Colligative Properties)',
+    q: 'When pressure greater than osmotic pressure is applied to the solution side, the phenomenon is called:',
+    opts: ['Osmosis', 'Electro-osmosis', 'Reverse osmosis', 'Dialysis'],
+    ans: 2,
+    exp: 'Reverse osmosis (RO) occurs when pressure > osmotic pressure is applied to the solution, forcing solvent to flow from solution to pure solvent through SPM. Used in water purifiers.'
+  },
+  {
+    ch: 'ch2', chName: 'Chapter 2 – Chemical Thermodynamics (Colligative Properties)',
+    q: 'Which colligative property is used in water purifiers?',
+    opts: ['Elevation of boiling point', 'Depression of freezing point', 'Reverse osmosis', 'Vapour pressure lowering'],
+    ans: 2,
+    exp: 'Reverse osmosis (RO) is the principle behind household water purifiers. Pressure > osmotic pressure forces water through an RO membrane, leaving dissolved impurities behind.'
+  },
+  {
+    ch: 'ch2', chName: 'Chapter 2 – Chemical Thermodynamics (Colligative Properties)',
+    q: 'In Beckmann method, which solvent is commonly used for freezing point depression measurement?',
+    opts: ['Water', 'Benzene', 'Camphor', 'Ethanol'],
+    ans: 1,
+    exp: 'The Beckmann method uses common solvents like benzene (K_f = 5.12) and water (K_f = 1.86). The Rast method specifically uses camphor (K_f = 37.7) for small samples.'
+  },
+  {
+    ch: 'ch2', chName: 'Chapter 2 – Chemical Thermodynamics (Colligative Properties)',
+    q: 'The vapour pressure of a liquid ________ with increase in temperature:',
+    opts: ['Decreases', 'Remains same', 'Increases', 'First increases then decreases'],
+    ans: 2,
+    exp: 'Vapour pressure increases with temperature as more molecules gain sufficient kinetic energy to escape into the vapour phase from the liquid surface.'
+  },
+  {
+    ch: 'ch2', chName: 'Chapter 2 – Chemical Thermodynamics (Colligative Properties)',
+    q: 'The "permeate" in a reverse osmosis system refers to:',
+    opts: ['Concentrated salt solution', 'Pure/desalinated water obtained', 'The semipermeable membrane', 'Feed water'],
+    ans: 1,
+    exp: 'In RO: Feed water = source water; Permeate = purified/desalinated water obtained; Reject stream = concentrated brine/contaminants left behind.'
+  },
+  {
+    ch: 'ch2', chName: 'Chapter 2 – Chemical Thermodynamics (Colligative Properties)',
+    q: 'Van\'t Hoff factor for BaCl₂ (fully dissociated) is:',
+    opts: ['1', '2', '3', '4'],
+    ans: 2,
+    exp: 'BaCl₂ → Ba²⁺ + 2Cl⁻ → 3 ions. So i = 3 for complete dissociation of BaCl₂.'
+  },
+  {
+    ch: 'ch2', chName: 'Chapter 2 – Chemical Thermodynamics (Colligative Properties)',
+    q: 'The flow of solvent from dilute solution to concentrated solution through SPM is called:',
+    opts: ['Diffusion', 'Osmosis', 'Dialysis', 'Filtration'],
+    ans: 1,
+    exp: 'Osmosis is the spontaneous flow of solvent through a semipermeable membrane from a region of lower solute concentration (dilute) to higher concentration (concentrated).'
+  },
+  {
+    ch: 'ch2', chName: 'Chapter 2 – Chemical Thermodynamics (Colligative Properties)',
+    q: 'Addition of non-volatile solute to a solvent ________ its boiling point:',
+    opts: ['Decreases', 'Does not change', 'Increases', 'First increases then decreases'],
+    ans: 2,
+    exp: 'Adding a non-volatile solute lowers the vapour pressure of the solvent, so the solution must be heated to a higher temperature to reach atmospheric pressure → elevated boiling point.'
+  },
+  {
+    ch: 'ch2', chName: 'Chapter 2 – Chemical Thermodynamics (Colligative Properties)',
+    q: 'Which formula is used in the Rast method to find molecular weight?',
+    opts: [
+      'M₂ = K_f × W₁ / (ΔT_f × W₂)',
+      'M₂ = 1000 × K_f × W₂ / (ΔT_f × W₁)',
+      'M₂ = ΔT_f × W₁ / K_f',
+      'M₂ = K_f × W₂ × ΔT_f'
+    ],
+    ans: 1,
+    exp: 'Rast method formula: M₂ = (1000 × K_f × W₂) / (ΔT_f × W₁), where W₂ = mass of solute, W₁ = mass of solvent (camphor), ΔT_f = freezing point depression.'
+  },
+
+  // ══════════════════════════════════════════
+  // CHAPTER 3 – NUCLEAR CHEMISTRY (15 Q)
+  // ══════════════════════════════════════════
+  {
+    ch: 'ch3', chName: 'Chapter 3 – Nuclear Chemistry',
+    q: 'In a Photomultiplier Tube (PMT), the dynodes are arranged in:',
+    opts: ['Decreasing order of positive potential', 'Increasing order of positive potential', 'Equal potential', 'Random order'],
+    ans: 1,
+    exp: 'In PMT, dynodes are arranged in increasing order of positive potential. Each dynode multiplies the electrons from the previous one, creating an amplified current.'
+  },
+  {
+    ch: 'ch3', chName: 'Chapter 3 – Nuclear Chemistry',
+    q: 'Radioactive isotopes used to track chemical/biological pathways are called:',
+    opts: ['Isotones', 'Isobars', 'Tracers', 'Isomers'],
+    ans: 2,
+    exp: 'Radioactive tracers are radioisotopes used to follow the path of atoms in chemical or biological reactions. They are chemically identical to stable isotopes but detectable via radiation.'
+  },
+  {
+    ch: 'ch3', chName: 'Chapter 3 – Nuclear Chemistry',
+    q: 'In the photosynthesis tracer experiment, the O₂ released was found to come from:',
+    opts: ['CO₂', 'Water (H₂O)', 'Glucose', 'Both CO₂ and H₂O'],
+    ans: 1,
+    exp: 'Using ¹⁸O-labelled water and CO₂, it was found that the ¹⁸O appeared in O₂ only when ¹⁸O-CO₂ was used. Hence, O₂ released in photosynthesis comes from water.'
+  },
+  {
+    ch: 'ch3', chName: 'Chapter 3 – Nuclear Chemistry',
+    q: 'In ester hydrolysis tracer experiment using H₂¹⁸O, ¹⁸O was found in:',
+    opts: ['Alcohol', 'Acid (carboxylic acid)', 'Both equally', 'Neither'],
+    ans: 1,
+    exp: 'The ¹⁸O from labelled water appeared in the acid (carboxyl group), confirming that the acyl-oxygen bond (C–O of acid) breaks during ester hydrolysis (Path I).'
+  },
+  {
+    ch: 'ch3', chName: 'Chapter 3 – Nuclear Chemistry',
+    q: 'In Friedel-Crafts reaction, AlCl₃ acts as:',
+    opts: ['Reactant', 'Product', 'Catalyst', 'Solvent'],
+    ans: 2,
+    exp: 'AlCl₃ acts as a Lewis acid catalyst. It forms an intermediate with CH₃Cl (carbocation complex) that attacks benzene. AlCl₃ is regenerated at the end.'
+  },
+  {
+    ch: 'ch3', chName: 'Chapter 3 – Nuclear Chemistry',
+    q: 'Which of the following is a FISSILE material?',
+    opts: ['²³⁸U', '²³²Th', '²³⁵U', '²³¹Pa'],
+    ans: 2,
+    exp: '²³⁵U is a fissile material — it can undergo nuclear fission directly when bombarded by slow (thermal) neutrons. ²³⁸U and ²³²Th are fertile materials.'
+  },
+  {
+    ch: 'ch3', chName: 'Chapter 3 – Nuclear Chemistry',
+    q: 'Which is a FERTILE material used in Indian nuclear reactors?',
+    opts: ['²³⁵U', '²³⁹Pu', '²³²Th', '²³³U'],
+    ans: 2,
+    exp: 'India has large deposits of thorium (²³²Th) as monazite sand in Kerala. ²³²Th is a fertile material that can be converted to fissile ²³³U by neutron bombardment.'
+  },
+  {
+    ch: 'ch3', chName: 'Chapter 3 – Nuclear Chemistry',
+    q: 'The purpose of a moderator in a nuclear reactor is to:',
+    opts: ['Absorb excess neutrons', 'Slow down fast neutrons', 'Prevent radiation leakage', 'Generate electricity'],
+    ans: 1,
+    exp: 'The moderator (D₂O, graphite) slows down fast neutrons to thermal (slow) neutrons, which are required for sustained fission of ²³⁵U.'
+  },
+  {
+    ch: 'ch3', chName: 'Chapter 3 – Nuclear Chemistry',
+    q: 'Control rods in a nuclear reactor are made of:',
+    opts: ['Uranium', 'Graphite', 'Cadmium or boron steel', 'Lead'],
+    ans: 2,
+    exp: 'Control rods are made of cadmium or boron steel because these materials have a high cross-section for neutron absorption. They regulate the chain reaction by absorbing excess neutrons.'
+  },
+  {
+    ch: 'ch3', chName: 'Chapter 3 – Nuclear Chemistry',
+    q: 'The multiplication factor k = 1 in a nuclear reactor means:',
+    opts: ['Reaction has stopped', 'Supercritical / explosive', 'Sustained critical chain reaction', 'Subcritical condition'],
+    ans: 2,
+    exp: 'k = 1 means exactly one neutron from each fission event causes another fission → sustained, controlled chain reaction (critical condition). k > 1 = supercritical (bomb), k < 1 = subcritical (stops).'
+  },
+  {
+    ch: 'ch3', chName: 'Chapter 3 – Nuclear Chemistry',
+    q: 'The coolant in a nuclear reactor is used to:',
+    opts: ['Slow down neutrons', 'Absorb radiation', 'Remove heat from the reactor core', 'Reflect neutrons'],
+    ans: 2,
+    exp: 'The coolant (D₂O or CO₂) circulates through the core and removes the heat generated by fission. This heat is then used to produce steam to run turbines for electricity generation.'
+  },
+  {
+    ch: 'ch3', chName: 'Chapter 3 – Nuclear Chemistry',
+    q: 'Which metal foil is used in a Photomultiplier Tube to reflect light to the photocathode?',
+    opts: ['Gold foil', 'Aluminum foil', 'Silver foil', 'Copper foil'],
+    ans: 1,
+    exp: 'Thin aluminum foil acts as a light reflector in the PMT, directing the scintillation light towards the photosensitive cathode to initiate the electron multiplication process.'
+  },
+  {
+    ch: 'ch3', chName: 'Chapter 3 – Nuclear Chemistry',
+    q: 'The shielding in a nuclear reactor is provided by:',
+    opts: ['Cadmium rods', 'Heavy water', 'Thick lead sheets', 'Graphite blocks'],
+    ans: 2,
+    exp: 'Thick lead sheets (shielding) surround the nuclear reactor to prevent leakage of harmful α, β, and γ radiation to the surrounding environment.'
+  },
+  {
+    ch: 'ch3', chName: 'Chapter 3 – Nuclear Chemistry',
+    q: '²³⁸U is converted to ²³⁹Pu by:',
+    opts: ['α decay', 'β decay', 'Neutron bombardment', 'Fission'],
+    ans: 2,
+    exp: '²³⁸U (fertile) + neutron → ²³⁹U → (β decay) → ²³⁹Np → (β decay) → ²³⁹Pu (fissile). This is how fertile material is converted to fissile in a breeder reactor.'
+  },
+  {
+    ch: 'ch3', chName: 'Chapter 3 – Nuclear Chemistry',
+    q: 'Which gas can act as both a coolant and neutron reflector in a nuclear reactor?',
+    opts: ['N₂', 'O₂', 'CO₂', 'H₂'],
+    ans: 2,
+    exp: 'CO₂ (and helium) can be used as coolant as well as neutron reflector in certain reactor designs. They help remove heat and reflect neutrons back into the core.'
+  },
+
+  // ══════════════════════════════════════════
+  // CHAPTER 4 – SURFACE CHEMISTRY (15 Q)
+  // ══════════════════════════════════════════
+  {
+    ch: 'ch4', chName: 'Chapter 4 – Surface Chemistry',
+    q: 'Adsorption is a ________ phenomenon:',
+    opts: ['Bulk', 'Surface', 'Both bulk and surface', 'Neither'],
+    ans: 1,
+    exp: 'Adsorption is a surface phenomenon — accumulation of higher concentration of substance on the surface of another substance, not in the bulk.'
+  },
+  {
+    ch: 'ch4', chName: 'Chapter 4 – Surface Chemistry',
+    q: 'In physisorption, the force involved is:',
+    opts: ['Covalent bond', 'Ionic bond', 'Van der Waals forces', 'Hydrogen bond'],
+    ans: 2,
+    exp: 'Physical adsorption (physisorption) involves weak van der Waals forces between the adsorbate and adsorbent surface. These are reversible and non-specific.'
+  },
+  {
+    ch: 'ch4', chName: 'Chapter 4 – Surface Chemistry',
+    q: 'Freundlich adsorption isotherm equation is:',
+    opts: ['x/m = k/P^n', 'x/m = k·P^(1/n)', 'x/m = bP/(1+bP)', 'x/m = kP'],
+    ans: 1,
+    exp: 'Freundlich isotherm: x/m = k·P^(1/n) where n > 1. It is an empirical equation valid only at low pressures. Taking log: log(x/m) = log k + (1/n)·log P.'
+  },
+  {
+    ch: 'ch4', chName: 'Chapter 4 – Surface Chemistry',
+    q: 'Langmuir adsorption isotherm assumes:',
+    opts: ['Multilayer adsorption', 'Monolayer adsorption', 'Physical adsorption only', 'No interaction between adsorbate molecules (among other assumptions)'],
+    ans: 3,
+    exp: 'Langmuir\'s key postulates include: monolayer adsorption, all sites identical, no interaction between adsorbed molecules, gas behaves ideally, and adsorption is chemical (strong).'
+  },
+  {
+    ch: 'ch4', chName: 'Chapter 4 – Surface Chemistry',
+    q: 'The Langmuir isotherm equation is:',
+    opts: ['θ = b/(1+bP)', 'θ = bP/(1+bP)', 'θ = P/(b+P)', 'θ = 1/(1+bP)'],
+    ans: 1,
+    exp: 'Langmuir adsorption isotherm: θ = bP/(1+bP), where θ = fraction of surface covered, P = pressure, b = k_a/k_d (proportionality constant).'
+  },
+  {
+    ch: 'ch4', chName: 'Chapter 4 – Surface Chemistry',
+    q: 'CMC stands for:',
+    opts: ['Critical Molecular Concentration', 'Critical Micelle Concentration', 'Colloidal Micelle Content', 'Critical Mass Constant'],
+    ans: 1,
+    exp: 'CMC = Critical Micelle Concentration. It is the concentration above which surfactant molecules aggregate into spherical micelles in solution.'
+  },
+  {
+    ch: 'ch4', chName: 'Chapter 4 – Surface Chemistry',
+    q: 'In an oil-in-water (O/W) emulsion, the dispersion medium is:',
+    opts: ['Oil', 'Water', 'Emulsifier', 'Air'],
+    ans: 1,
+    exp: 'In O/W emulsion, oil is the dispersed phase and water is the dispersion medium (continuous phase). Examples: milk, salad dressings, cold cream.'
+  },
+  {
+    ch: 'ch4', chName: 'Chapter 4 – Surface Chemistry',
+    q: 'Butter is an example of which type of emulsion?',
+    opts: ['Oil-in-water (O/W)', 'Water-in-oil (W/O)', 'Solid-in-liquid', 'Gas-in-liquid'],
+    ans: 1,
+    exp: 'Butter is a W/O (water-in-oil) emulsion — water droplets are dispersed in a continuous oil (fat) phase. Other examples: margarine, cold cream (W/O type).'
+  },
+  {
+    ch: 'ch4', chName: 'Chapter 4 – Surface Chemistry',
+    q: 'Migration of colloidal particles under an applied electric field is called:',
+    opts: ['Electro-osmosis', 'Electrophoresis', 'Streaming potential', 'Dorn effect'],
+    ans: 1,
+    exp: 'Electrophoresis = migration of dispersed colloidal particles under an electric field. Electro-osmosis = movement of the dispersion medium (when particles are held stationary).'
+  },
+  {
+    ch: 'ch4', chName: 'Chapter 4 – Surface Chemistry',
+    q: 'Gibbs adsorption equation: S = −(c/RT)(dγ/dc). If dγ/dc is negative, then:',
+    opts: ['Negative adsorption occurs', 'Surface tension increases', 'Positive adsorption — substance is a surfactant', 'No adsorption occurs'],
+    ans: 2,
+    exp: 'If dγ/dc < 0 (surface tension decreases with concentration), then S > 0 → positive adsorption → solute concentrates at surface → substance is a surface-active agent (surfactant).'
+  },
+  {
+    ch: 'ch4', chName: 'Chapter 4 – Surface Chemistry',
+    q: 'Donnan membrane equilibrium occurs when:',
+    opts: [
+      'Two electrolyte solutions of same concentration are separated',
+      'A non-diffusible ion is present on one side of a semipermeable membrane',
+      'Temperature difference exists across the membrane',
+      'Only diffusible ions are present'
+    ],
+    ans: 1,
+    exp: 'Donnan equilibrium arises when a non-diffusible macromolecular ion (like a protein) is present on one side of an SPM. It prevents equal distribution of small diffusible ions, creating osmotic and electrical potential differences.'
+  },
+  {
+    ch: 'ch4', chName: 'Chapter 4 – Surface Chemistry',
+    q: 'Activated charcoal is a good adsorbent because it has:',
+    opts: ['High density', 'High molecular weight', 'Large surface area', 'Strong magnetic properties'],
+    ans: 2,
+    exp: 'Activated charcoal has a very large surface area (due to extensive pore network), making it an excellent adsorbent for gases, odours, and toxic substances.'
+  },
+  {
+    ch: 'ch4', chName: 'Chapter 4 – Surface Chemistry',
+    q: 'The process of breaking an emulsion into its component liquids is called:',
+    opts: ['Emulsification', 'Demulsification', 'Coagulation', 'Peptisation'],
+    ans: 1,
+    exp: 'Demulsification is the breaking of an emulsion into two separate liquid layers. Methods include heating, centrifugation, freezing, or adding chemicals (electrolytes/surfactants).'
+  },
+  {
+    ch: 'ch4', chName: 'Chapter 4 – Surface Chemistry',
+    q: 'Which type of surfactant has surface activity in the anionic part?',
+    opts: ['Cationic surfactant', 'Non-ionic surfactant', 'Anionic surfactant', 'Amphoteric surfactant'],
+    ans: 2,
+    exp: 'Anionic surfactants have their surface-active part in the anion. Example: Sodium cetyl sulphate (C₁₆H₃₃SO₄⁻Na⁺). Cationic = surface activity in cation (e.g., cetyl trimethyl ammonium bromide).'
+  },
+  {
+    ch: 'ch4', chName: 'Chapter 4 – Surface Chemistry',
+    q: 'Gels that contain more solid and less liquid with a rigid structure are called:',
+    opts: ['Hydrogels', 'Xerogels', 'Aerogels', 'Organogels'],
+    ans: 1,
+    exp: 'Xerogels contain more solid and less liquid — they have a rigid structure (e.g., sheet of gelatin, cellophane foil). Common gel examples include silicic acid, ferric hydroxide, gelatin, agar.'
+  },
+
+  // ══════════════════════════════════════════════════════
+  // NEW MCQs – Ch1: Molecular Polarisation (5 Questions)
+  // ══════════════════════════════════════════════════════
+  {
+    ch: 'ch1', chName: 'Chapter 1 – Molecular Spectroscopy',
+    q: 'Total molar polarisation P_T is given by:',
+    opts: ['P_e only', 'P_e + P_a', 'P_e + P_o', 'P_e + P_a + P_o'],
+    ans: 3,
+    exp: 'Total molar polarisation P_T = P_e (electronic) + P_a (atomic/ionic) + P_o (orientation). For non-polar molecules P_o = 0, so P_T = P_e + P_a only.'
+  },
+  {
+    ch: 'ch1', chName: 'Chapter 1 – Molecular Spectroscopy',
+    q: 'Which component of molar polarisation is temperature-dependent?',
+    opts: ['Electronic polarisation (P_e)', 'Atomic polarisation (P_a)', 'Orientation polarisation (P_o)', 'All three are temperature-dependent'],
+    ans: 2,
+    exp: 'Orientation polarisation (P_o) is temperature-dependent. As temperature increases, thermal energy disrupts alignment of permanent dipoles → P_o decreases. P_e and P_a are temperature-independent.'
+  },
+  {
+    ch: 'ch1', chName: 'Chapter 1 – Molecular Spectroscopy',
+    q: 'The Clausius-Mosotti equation is valid for:',
+    opts: ['Polar molecules only', 'Non-polar molecules only', 'All molecules', 'Ionic solids only'],
+    ans: 1,
+    exp: 'The Clausius-Mosotti equation is valid for non-polar molecules only. It relates molar polarisation to dielectric constant (ε_r) and density but does not include orientation polarisation (P_o = 0 for non-polar).'
+  },
+  {
+    ch: 'ch1', chName: 'Chapter 1 – Molecular Spectroscopy',
+    q: 'In the Debye equation P_T = A + B/T, the slope B is equal to:',
+    opts: ['(4/3)πN_A α', 'μ²N_A / 3k', 'kT / μ²', 'N_A / 3kT'],
+    ans: 1,
+    exp: 'In the Debye equation, B = μ²N_A / 3k (temperature-dependent term due to orientation polarisation). A = (4/3)πN_A α (temperature-independent induced polarisation). Plotting P_T vs 1/T gives slope = B = μ²N_A/3k.'
+  },
+  {
+    ch: 'ch1', chName: 'Chapter 1 – Molecular Spectroscopy',
+    q: 'Which of the following molecules has an orientation polarisation component?',
+    opts: ['N₂', 'CCl₄', 'HCl', 'CO₂'],
+    ans: 2,
+    exp: 'HCl is a polar molecule (permanent dipole moment ≠ 0), so it has orientation polarisation (P_o). N₂, CCl₄, and CO₂ are non-polar (symmetric structures, μ = 0) → P_o = 0.'
+  },
+
+  // ══════════════════════════════════════════════════════
+  // NEW MCQs – Ch2: Colligative Properties (3 Questions)
+  // ══════════════════════════════════════════════════════
+  {
+    ch: 'ch2', chName: 'Chapter 2 – Chemical Thermodynamics (Colligative Properties)',
+    q: 'Which of the following has the highest boiling point elevation for the same molal concentration?',
+    opts: ['Glucose (non-electrolyte)', 'NaCl (i ≈ 2)', 'BaCl₂ (i ≈ 3)', 'Urea (non-electrolyte)'],
+    ans: 2,
+    exp: 'ΔT_b = i × K_b × m. BaCl₂ has i ≈ 3 (Ba²⁺ + 2Cl⁻), which is the highest Van\'t Hoff factor among the options. So BaCl₂ solution has the greatest boiling point elevation at the same molal concentration.'
+  },
+  {
+    ch: 'ch2', chName: 'Chapter 2 – Chemical Thermodynamics (Colligative Properties)',
+    q: 'In the osmotic pressure equation πV = nRT, this is analogous to:',
+    opts: ['Raoult\'s Law', 'Ideal Gas Law PV = nRT', 'Henry\'s Law', 'Clausius-Mosotti equation'],
+    ans: 1,
+    exp: 'Van\'t Hoff\'s osmotic pressure equation πV = nRT is mathematically identical to the ideal gas law PV = nRT, replacing pressure P with osmotic pressure π. This analogy was pointed out by Van\'t Hoff in 1887.'
+  },
+  {
+    ch: 'ch2', chName: 'Chapter 2 – Chemical Thermodynamics (Colligative Properties)',
+    q: 'Which method is most suitable for determining molecular weight of a high-molecular-weight polymer in solution?',
+    opts: ['Freezing point depression', 'Boiling point elevation', 'Osmotic pressure measurement', 'Vapour pressure lowering'],
+    ans: 2,
+    exp: 'Osmotic pressure is most sensitive for high molecular weight substances. Even a tiny concentration of a polymer produces a measurable osmotic pressure (π = CRT), whereas ΔT_b and ΔT_f would be too small to measure accurately.'
+  },
+
+  // ══════════════════════════════════════════════════════
+  // NEW MCQs – Ch3: Nuclear Chemistry (3 Questions)
+  // ══════════════════════════════════════════════════════
+  {
+    ch: 'ch3', chName: 'Chapter 3 – Nuclear Chemistry',
+    q: 'Photosynthesis tracer experiment proved that O₂ is released from H₂O. Which isotope was used?',
+    opts: ['¹⁴C labelled CO₂', '¹⁸O labelled CO₂', '¹⁸O labelled H₂O', '³H labelled H₂O'],
+    ans: 1,
+    exp: 'When ¹⁸O-labelled CO₂ (C¹⁸O₂) was used with normal water, the released O₂ contained ¹⁸O. This proved O₂ comes from CO₂ (not H₂O) is wrong — it actually proved O₂ comes from H₂O. The key experiment used ¹⁸O-labelled H₂O to show O₂ did NOT have ¹⁸O. Both isotopes were used but ¹⁸O-CO₂ confirmed the source.'
+  },
+  {
+    ch: 'ch3', chName: 'Chapter 3 – Nuclear Chemistry',
+    q: 'In a nuclear reactor, heavy water (D₂O) serves as:',
+    opts: ['Fuel', 'Both moderator and coolant', 'Shielding material', 'Control rod material'],
+    ans: 1,
+    exp: 'Heavy water (D₂O) serves as both moderator (slows fast neutrons to thermal neutrons) and coolant (removes heat from the reactor core) in many nuclear reactors, including CANDU-type reactors.'
+  },
+  {
+    ch: 'ch3', chName: 'Chapter 3 – Nuclear Chemistry',
+    q: 'Which radioactive isotope is commonly used as a tracer in biological/medical studies for carbon dating?',
+    opts: ['¹²C', '¹⁸O', '¹⁴C', '³H'],
+    ans: 2,
+    exp: '¹⁴C (Carbon-14) is a radioactive isotope widely used as a tracer in biological studies and for carbon dating of ancient artifacts. It behaves chemically like ¹²C but emits β radiation detectable by Geiger counter.'
+  },
+
+  // ══════════════════════════════════════════════════════
+  // NEW MCQs – Ch4: Colloids, Adsorption Apps (9 Questions)
+  // ══════════════════════════════════════════════════════
+  {
+    ch: 'ch4', chName: 'Chapter 4 – Surface Chemistry',
+    q: 'The Tyndall Effect is observed in:',
+    opts: ['True solutions only', 'Colloidal solutions only', 'Both true and colloidal solutions', 'Suspensions and colloids but not true solutions'],
+    ans: 3,
+    exp: 'Tyndall Effect (scattering of light to make beam visible) is observed in colloidal solutions and suspensions but NOT in true solutions. Particles in true solutions are too small to scatter visible light. This effect distinguishes colloids from true solutions.'
+  },
+  {
+    ch: 'ch4', chName: 'Chapter 4 – Surface Chemistry',
+    q: 'Brownian motion in colloids is caused by:',
+    opts: ['Gravity acting on particles', 'Unequal bombardment of colloidal particles by medium molecules', 'Magnetic force between particles', 'Temperature gradient in the solution'],
+    ans: 1,
+    exp: 'Brownian motion is caused by unequal/asymmetric bombardment of colloidal particles by the molecules of the dispersion medium. This continuous random bombardment gives a random zigzag motion to the particles.'
+  },
+  {
+    ch: 'ch4', chName: 'Chapter 4 – Surface Chemistry',
+    q: 'According to the Hardy-Schulze rule, which ion has the greatest coagulating power for a negatively charged colloid?',
+    opts: ['Na⁺', 'Mg²⁺', 'Al³⁺', 'K⁺'],
+    ans: 2,
+    exp: 'Hardy-Schulze Rule: higher the valency of the coagulating ion (opposite charge to colloid), greater the coagulating power. For a negatively charged colloid: Al³⁺ > Mg²⁺ > Na⁺ (i.e. K⁺). Al³⁺ has the highest valency (3+) → greatest coagulating power.'
+  },
+  {
+    ch: 'ch4', chName: 'Chapter 4 – Surface Chemistry',
+    q: 'The gold number of a protective colloid is a measure of:',
+    opts: ['Its molecular weight', 'Its coagulation value', 'Its protective power (smaller = better)', 'The amount of gold in the colloid'],
+    ans: 2,
+    exp: 'Gold number measures the protective power of a lyophilic colloid. It is the minimum mass (mg) of protective colloid to prevent coagulation of 10 mL gold sol. Smaller gold number = more protective power. Gelatin (0.005–0.01) is the best; starch (25) is poor.'
+  },
+  {
+    ch: 'ch4', chName: 'Chapter 4 – Surface Chemistry',
+    q: 'The protective colloid with the smallest gold number (most protective) is:',
+    opts: ['Starch', 'Haemoglobin', 'Gum arabic', 'Gelatin'],
+    ans: 3,
+    exp: 'Gelatin has a gold number of 0.005–0.01, which is the smallest (i.e. most protective) among common protective colloids. Starch has gold number of ~25 (least protective). Smaller gold number = better protection.'
+  },
+  {
+    ch: 'ch4', chName: 'Chapter 4 – Surface Chemistry',
+    q: 'In froth flotation, which substance is selectively adsorbed on the ore surface?',
+    opts: ['Water', 'Sand (gangue)', 'Pine oil', 'Hydrochloric acid'],
+    ans: 2,
+    exp: 'In froth flotation, pine oil is selectively adsorbed on the surface of sulphide ore particles making them hydrophobic. Air is blown through — ore particles attach to air bubbles and float as froth. Gangue (sand) sinks. Used to concentrate copper, zinc, lead sulphide ores.'
+  },
+  {
+    ch: 'ch4', chName: 'Chapter 4 – Surface Chemistry',
+    q: 'Gas masks work on the principle of:',
+    opts: ['Absorption', 'Adsorption by activated charcoal', 'Chemical neutralisation', 'Filtration'],
+    ans: 1,
+    exp: 'Gas masks contain activated charcoal which adsorbs toxic gases (CO, SO₂, Cl₂, phosgene) on its large surface area. This is a surface phenomenon (adsorption), not absorption (bulk phenomenon).'
+  },
+  {
+    ch: 'ch4', chName: 'Chapter 4 – Surface Chemistry',
+    q: 'Zeta potential is defined as:',
+    opts: [
+      'Potential at the centre of the colloidal particle',
+      'Potential at the slipping plane between the particle and bulk medium',
+      'Potential difference across the semipermeable membrane',
+      'Surface tension of colloidal solution'
+    ],
+    ans: 1,
+    exp: 'Zeta potential (ζ) is the electric potential at the slipping/shear plane — the boundary between the layer of ions bound to the particle and the bulk dispersion medium. Higher zeta potential → more electrostatic repulsion → more stable colloid. Coagulation occurs when ζ → 0.'
+  },
+  {
+    ch: 'ch4', chName: 'Chapter 4 – Surface Chemistry',
+    q: 'Chromatography is based on the principle of:',
+    opts: ['Coagulation', 'Differential adsorption', 'Osmosis', 'Electrophoresis'],
+    ans: 1,
+    exp: 'Chromatography works by differential (selective) adsorption of mixture components on a stationary adsorbent phase (e.g., silica gel, alumina). Components with different affinities for the adsorbent move at different rates and get separated.'
+  }
+];
+
+// State
+let answered = {}; // {index: selectedOption}
+let currentFilter = 'all';
+let submitted = false;
+
+function getFilteredIndices() {
+  return questions.reduce((arr, q, i) => {
+    if (currentFilter === 'all' || q.ch === currentFilter) arr.push(i);
+    return arr;
+  }, []);
+}
+
+function renderQuiz() {
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+
+  const indices = getFilteredIndices();
+  let currentCh = '';
+  let qNum = 0;
+
+  indices.forEach(i => {
+    const q = questions[i];
+
+    // Chapter heading
+    if (q.chName !== currentCh) {
+      currentCh = q.chName;
+      const hd = document.createElement('div');
+      const colorClass = {ch1:'ch1-bg',ch2:'ch2-bg',ch3:'ch3-bg',ch4:'ch4-bg'}[q.ch];
+      hd.className = `ch-heading ${colorClass}`;
+      hd.innerHTML = `<span>${{ch1:'📡',ch2:'🌡️',ch3:'⚛️',ch4:'🧪'}[q.ch]}</span> ${q.chName}`;
+      container.appendChild(hd);
+    }
+
+    qNum++;
+    const card = document.createElement('div');
+    card.className = 'mcq-card';
+    card.id = `card-${i}`;
+
+    const isAnswered = answered[i] !== undefined;
+    const isCorrect = isAnswered && answered[i] === q.ans;
+    if (submitted && isAnswered) {
+      card.classList.add(isCorrect ? 'answered-correct' : 'answered-wrong');
+    }
+
+    let optsHTML = q.opts.map((opt, oi) => {
+      let cls = 'option';
+      let letter = String.fromCharCode(65 + oi); // A B C D
+      if (submitted || isAnswered) cls += ' disabled';
+      if (isAnswered && answered[i] === oi) {
+        cls += isCorrect ? ' selected-correct' : ' selected-wrong';
+      }
+      if (submitted && oi === q.ans && (!isAnswered || answered[i] !== oi)) {
+        cls += ' show-correct';
+      }
+      return `<div class="${cls}" onclick="selectOption(${i}, ${oi})">
+        <span class="opt-letter">${letter}</span>
+        <span class="opt-text">${opt}</span>
+      </div>`;
+    }).join('');
+
+    const resultIcon = submitted
+      ? (isAnswered ? (isCorrect ? '<span class="result-icon">✅</span>' : '<span class="result-icon">❌</span>') : '<span class="result-icon">⏭️</span>')
+      : '';
+
+    const expCls = (submitted || isAnswered) ? 'explanation show' : 'explanation';
+
+    card.innerHTML = `
+      <div class="q-header">
+        <span class="q-num">Q${qNum}</span>
+        <span class="q-text">${q.q} ${resultIcon}</span>
+      </div>
+      <div class="options">${optsHTML}</div>
+      <div class="${expCls}"><strong>💡 Explanation:</strong> ${q.exp}</div>
+    `;
+    container.appendChild(card);
+  });
+
+  updateProgress();
+  updateSubmitBtn();
+}
+
+function selectOption(qIndex, optIndex) {
+  if (answered[qIndex] !== undefined || submitted) return;
+  answered[qIndex] = optIndex;
+
+  // Re-render just this card
+  const q = questions[qIndex];
+  const card = document.getElementById(`card-${qIndex}`);
+  const isCorrect = optIndex === q.ans;
+  card.classList.add(isCorrect ? 'answered-correct' : 'answered-wrong');
+
+  // Update options
+  const opts = card.querySelectorAll('.option');
+  opts.forEach((el, oi) => {
+    el.classList.add('disabled');
+    if (oi === optIndex) el.classList.add(isCorrect ? 'selected-correct' : 'selected-wrong');
+    if (!isCorrect && oi === q.ans) el.classList.add('show-correct');
+  });
+
+  // Show explanation
+  card.querySelector('.explanation').classList.add('show');
+
+  updateProgress();
+  updateSubmitBtn();
+}
+
+function updateProgress() {
+  const indices = getFilteredIndices();
+  const total = indices.length;
+  const done = indices.filter(i => answered[i] !== undefined).length;
+  const correct = indices.filter(i => answered[i] === questions[i].ans).length;
+  const pct = total > 0 ? Math.round(done / total * 100) : 0;
+  document.getElementById('progress-bar').style.width = pct + '%';
+  document.getElementById('progress-text').textContent = `${done} / ${total} answered`;
+  document.getElementById('score-display').textContent = `Score: ${correct}`;
+}
+
+function updateSubmitBtn() {
+  const indices = getFilteredIndices();
+  const done = indices.filter(i => answered[i] !== undefined).length;
+  const submitBtn = document.getElementById('btn-submit');
+  const resetBtn = document.getElementById('btn-reset');
+  if (!submitted) {
+    submitBtn.style.display = done > 0 ? 'block' : 'none';
+    resetBtn.style.display = 'none';
+  } else {
+    submitBtn.style.display = 'none';
+    resetBtn.style.display = 'block';
+  }
+}
+
+function submitQuiz() {
+  submitted = true;
+  const indices = getFilteredIndices();
+  const total = indices.length;
+  const correct = indices.filter(i => answered[i] === questions[i].ans).length;
+  const wrong = indices.filter(i => answered[i] !== undefined && answered[i] !== questions[i].ans).length;
+  const skipped = indices.filter(i => answered[i] === undefined).length;
+  const pct = Math.round(correct / total * 100);
+
+  // Set modal content
+  document.getElementById('stat-correct').textContent = correct;
+  document.getElementById('stat-wrong').textContent = wrong;
+  document.getElementById('stat-skip').textContent = skipped;
+  document.getElementById('modal-score').textContent = `${correct} / ${total}`;
+
+  let medal, title, msg, color;
+  if (pct >= 90)      { medal='🏆'; title='Outstanding!'; msg='Excellent! You\'re fully prepared for the exam!'; color='#2ea043'; }
+  else if (pct >= 75) { medal='🥇'; title='Great Job!'; msg='Very good! A little more revision and you\'re exam-ready.'; color='#58a6ff'; }
+  else if (pct >= 60) { medal='🥈'; title='Good Effort!'; msg='You\'re on the right track. Revise weak topics once more.'; color='#f0883e'; }
+  else if (pct >= 40) { medal='🥉'; title='Keep Trying!'; msg='Review the notes again and reattempt the quiz.'; color='#da3633'; }
+  else                { medal='📚'; title='Needs More Study'; msg='Go back to the notes and study each chapter carefully.'; color='#da3633'; }
+
+  document.getElementById('modal-medal').textContent = medal;
+  document.getElementById('modal-title').textContent = title;
+  document.getElementById('modal-msg').textContent = msg;
+
+  const bar = document.getElementById('modal-bar');
+  bar.style.background = color;
+  bar.style.width = '0%';
+
+  document.getElementById('score-modal').classList.add('show');
+  setTimeout(() => { bar.style.width = pct + '%'; }, 100);
+
+  renderQuiz();
+}
+
+function closeModal() {
+  document.getElementById('score-modal').classList.remove('show');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function resetQuiz() {
+  answered = {};
+  submitted = false;
+  document.getElementById('score-modal').classList.remove('show');
+  renderQuiz();
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function filterChapter(ch) {
+  currentFilter = ch;
+  answered = {};
+  submitted = false;
+  document.querySelectorAll('.ch-tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  renderQuiz();
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function scrollToNext() {
+  const indices = getFilteredIndices();
+  const unanswered = indices.find(i => answered[i] === undefined);
+  if (unanswered !== undefined) {
+    const el = document.getElementById(`card-${unanswered}`);
+    if (el) el.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+}
+
+function scrollToTop() {
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+// Init
+renderQuiz();
+</script>
+</body>
+</html>

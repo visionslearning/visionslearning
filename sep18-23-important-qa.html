@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Important Q&A | Sep 18–23 | Class 10</title>
+  <style>
+    :root {
+      --primary: #1a237e;
+      --heat: #bf360c;
+      --heat-bg: #fbe9e7;
+      --ap: #1565c0;
+      --ap-bg: #e3f2fd;
+      --life: #2e7d32;
+      --life-bg: #e8f5e9;
+      --prob: #6a1b9a;
+      --prob-bg: #f3e5f5;
+      --refr: #00695c;
+      --refr-bg: #e0f2f1;
+      --lens: #e65100;
+      --lens-bg: #fff3e0;
+      --env: #558b2f;
+      --env-bg: #f1f8e9;
+      --eq: #283593;
+      --eq-bg: #e8eaf6;
+      --shadow: 0 2px 10px rgba(0,0,0,0.10);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f0f4f8;
+      color: #212121;
+      line-height: 1.7;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+      color: #fff;
+      text-align: center;
+      padding: 36px 20px 28px;
+    }
+    header .sub { font-size: 0.85rem; opacity: 0.8; margin-bottom: 8px; letter-spacing: 1px; }
+    header h1 { font-size: 1.9rem; font-weight: 800; margin-bottom: 6px; }
+    header p { font-size: 0.95rem; opacity: 0.85; }
+
+    /* ── Date badges ── */
+    .date-strip {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      justify-content: center;
+      padding: 14px 20px;
+      background: #e8eaf6;
+    }
+    .date-badge {
+      background: #fff;
+      border: 1.5px solid #c5cae9;
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1a237e;
+    }
+
+    /* ── Nav ── */
+    nav {
+      background: #283593;
+      padding: 6px 16px;
+      display: flex; flex-wrap: wrap; gap: 4px; justify-content: center;
+    }
+    nav a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 0.78rem;
+      padding: 7px 11px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    nav a:hover { background: rgba(255,255,255,0.15); color: #fff; }
+
+    /* ── Container ── */
+    .container { max-width: 960px; margin: 28px auto; padding: 0 14px 60px; }
+
+    /* ── Subject block ── */
+    .subject-block { margin-bottom: 32px; }
+    .subject-header {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 20px;
+      border-radius: 12px 12px 0 0;
+      cursor: pointer;
+      user-select: none;
+    }
+    .subject-header .icon { font-size: 1.5rem; }
+    .subject-header h2 { font-size: 1.1rem; font-weight: 800; flex: 1; }
+    .subject-header .day-tag {
+      font-size: 0.75rem; font-weight: 700;
+      background: rgba(255,255,255,0.3);
+      border-radius: 12px;
+      padding: 3px 10px;
+    }
+    .subject-header .arr { font-size: 1rem; color: rgba(0,0,0,0.4); transition: transform 0.3s; }
+    .subject-header.open .arr { transform: rotate(180deg); }
+
+    .subject-body {
+      background: #fff;
+      border-radius: 0 0 12px 12px;
+      box-shadow: var(--shadow);
+      display: none;
+      padding: 20px 22px;
+    }
+    .subject-body.open { display: block; }
+
+    /* colour themes */
+    .heat-block   .subject-header { background: var(--heat); color: #fff; }
+    .ap-block     .subject-header { background: var(--ap);   color: #fff; }
+    .life-block   .subject-header { background: var(--life); color: #fff; }
+    .prob-block   .subject-header { background: var(--prob); color: #fff; }
+    .refr-block   .subject-header { background: var(--refr); color: #fff; }
+    .lens-block   .subject-header { background: var(--lens); color: #fff; }
+    .env-block    .subject-header { background: var(--env);  color: #fff; }
+    .eq-block     .subject-header { background: var(--eq);   color: #fff; }
+
+    /* ── Q&A Cards ── */
+    .qa-list { display: flex; flex-direction: column; gap: 14px; }
+
+    .qa-card {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #e0e0e0;
+    }
+    .qa-q {
+      padding: 12px 16px;
+      font-weight: 700;
+      font-size: 0.93rem;
+      display: flex; gap: 10px; align-items: flex-start;
+      cursor: pointer;
+    }
+    .qa-q .qnum {
+      min-width: 28px; height: 28px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.78rem; font-weight: 800; color: #fff;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .qa-q .qtxt { flex: 1; }
+    .qa-q .qarr { font-size: 0.85rem; color: #888; transition: transform 0.3s; margin-top: 4px; }
+    .qa-q.open .qarr { transform: rotate(180deg); }
+
+    .qa-a {
+      padding: 0 16px 14px 54px;
+      font-size: 0.9rem;
+      display: none;
+      border-top: 1px solid #f0f0f0;
+      padding-top: 12px;
+    }
+    .qa-a.open { display: block; }
+    .qa-a ul, .qa-a ol { padding-left: 18px; margin: 6px 0; }
+    .qa-a li { margin-bottom: 5px; }
+    .qa-a .formula {
+      background: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 6px;
+      padding: 8px 14px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.88rem;
+      margin: 8px 0;
+      display: inline-block;
+    }
+    .qa-a .note {
+      background: #fff9c4;
+      border-left: 3px solid #f9a825;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      margin-top: 8px;
+    }
+    .qa-a strong { color: #1a237e; }
+
+    /* marks badge */
+    .marks {
+      display: inline-block;
+      font-size: 0.7rem; font-weight: 700;
+      padding: 2px 8px; border-radius: 10px;
+      margin-left: 6px; vertical-align: middle;
+    }
+    .m1 { background: #e8f5e9; color: #2e7d32; }
+    .m2 { background: #e3f2fd; color: #1565c0; }
+    .m3 { background: #fff3e0; color: #e65100; }
+    .m4 { background: #fce4ec; color: #c62828; }
+
+    /* heat */
+    .heat-block .qa-q { background: var(--heat-bg); }
+    .heat-block .qa-q .qnum { background: var(--heat); }
+    /* ap */
+    .ap-block .qa-q { background: var(--ap-bg); }
+    .ap-block .qa-q .qnum { background: var(--ap); }
+    /* life */
+    .life-block .qa-q { background: var(--life-bg); }
+    .life-block .qa-q .qnum { background: var(--life); }
+    /* prob */
+    .prob-block .qa-q { background: var(--prob-bg); }
+    .prob-block .qa-q .qnum { background: var(--prob); }
+    /* refr */
+    .refr-block .qa-q { background: var(--refr-bg); }
+    .refr-block .qa-q .qnum { background: var(--refr); }
+    /* lens */
+    .lens-block .qa-q { background: var(--lens-bg); }
+    .lens-block .qa-q .qnum { background: var(--lens); }
+    /* env */
+    .env-block .qa-q { background: var(--env-bg); }
+    .env-block .qa-q .qnum { background: var(--env); }
+    /* eq */
+    .eq-block .qa-q { background: var(--eq-bg); }
+    .eq-block .qa-q .qnum { background: var(--eq); }
+
+    /* ── Section divider ── */
+    .day-label {
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #888;
+      letter-spacing: 1px;
+      margin: 28px 0 10px;
+      text-transform: uppercase;
+    }
+
+    footer {
+      text-align: center;
+      padding: 18px;
+      font-size: 0.8rem;
+      color: #777;
+      background: #e8eaf6;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="sub">CLASS 10 · SCIENCE &amp; MATHS · VISIONS LEARNING</div>
+  <h1>📝 Important Questions &amp; Answers</h1>
+  <p>September 18 – 23, 2026 &nbsp;|&nbsp; 6 Days &nbsp;|&nbsp; 8 Topics</p>
+</header>
+
+<div class="date-strip">
+  <span class="date-badge">📅 Day 8 · Sep 18 · Heat + AP</span>
+  <span class="date-badge">📅 Day 9 · Sep 19 · Life Processes 2 + Probability</span>
+  <span class="date-badge">📅 Day 10 · Sep 20 · Refraction + Circle</span>
+  <span class="date-badge">📅 Day 11 · Sep 21 · Lenses + Circle</span>
+  <span class="date-badge">📅 Day 12 · Sep 22 · Env. Management + Equations Revision</span>
+  <span class="date-badge">📅 Day 13 · Sep 23 · Science 2 Revision + Test</span>
+</div>
+
+<nav>
+  <a href="#heat">🔥 Heat</a>
+  <a href="#ap">📐 Arithmetic Progression</a>
+  <a href="#life">🧬 Life Processes 2</a>
+  <a href="#prob">🎲 Probability</a>
+  <a href="#refr">🌊 Refraction of Light</a>
+  <a href="#lens">🔭 Lenses</a>
+  <a href="#env">🌿 Environmental Management</a>
+  <a href="#eq">🔢 Linear &amp; Quadratic Equations</a>
+</nav>
+
+<div class="container">
+
+<!-- ════════════ DAY 8 ════════════ -->
+<div class="day-label">📅 Day 8 — Friday, 18 September</div>
+
+<!-- ── HEAT ── -->
+<div class="subject-block heat-block" id="heat">
+  <div class="subject-header open" onclick="toggleBlock(this)">
+    <span class="icon">🔥</span>
+    <h2>Heat — Conduction, Convection, Radiation &amp; Numericals</h2>
+    <span class="day-tag">Science 1</span>
+    <span class="arr">▼</span>
+  </div>
+  <div class="subject-body open">
+    <div class="qa-list">
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">1</span>
+          <span class="qtxt">What are the three modes of heat transfer? Explain each briefly. <span class="marks m3">3 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a open">
+          <ul>
+            <li><strong>Conduction:</strong> Transfer of heat through a medium without movement of the medium itself. Particles vibrate and pass energy to neighbours. E.g. heating one end of a metal rod — the other end gets hot.</li>
+            <li><strong>Convection:</strong> Transfer of heat through actual movement of fluid (liquid or gas) particles. Hotter, lighter fluid rises and cooler fluid comes down forming a convection current. E.g. boiling water, sea breeze.</li>
+            <li><strong>Radiation:</strong> Transfer of heat without any medium. Energy travels as electromagnetic waves. E.g. heat from the Sun reaching Earth.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">2</span>
+          <span class="qtxt">Define Specific Heat Capacity. Write its SI unit. <span class="marks m2">2 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a">
+          <p><strong>Specific Heat Capacity (c)</strong> is the amount of heat energy required to raise the temperature of 1 kg of a substance by 1°C (or 1 K).</p>
+          <div class="formula">Q = m × c × ΔT</div>
+          <ul>
+            <li>Q = Heat absorbed (in Joules)</li>
+            <li>m = Mass (in kg)</li>
+            <li>c = Specific heat capacity</li>
+            <li>ΔT = Change in temperature (in °C or K)</li>
+          </ul>
+          <p><strong>SI unit:</strong> J / (kg·K) &nbsp;or&nbsp; J kg⁻¹ K⁻¹</p>
+          <div class="note">📌 Specific heat capacity of water = 4200 J/(kg·K) — highest among common substances, which is why water is used as a coolant.</div>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">3</span>
+          <span class="qtxt">Numerical: How much heat energy is required to raise the temperature of 2 kg of water from 20°C to 70°C? (Specific heat of water = 4200 J/kg°C) <span class="marks m3">3 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a">
+          <p><strong>Given:</strong></p>
+          <ul>
+            <li>m = 2 kg</li>
+            <li>c = 4200 J/kg°C</li>
+            <li>ΔT = 70 – 20 = 50°C</li>
+          </ul>
+          <p><strong>Formula:</strong></p>
+          <div class="formula">Q = m × c × ΔT</div>
+          <p><strong>Solution:</strong></p>
+          <div class="formula">Q = 2 × 4200 × 50 = 4,20,000 J = 420 kJ</div>
+          <p><strong>Answer: 4,20,000 J (420 kJ)</strong></p>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">4</span>
+          <span class="qtxt">Why is the bottom of cooking vessels made of copper but the handles are made of plastic or wood? <span class="marks m2">2 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a">
+          <ul>
+            <li><strong>Bottom (Copper):</strong> Copper is a very good conductor of heat, so it quickly transfers heat from the flame to the food being cooked.</li>
+            <li><strong>Handle (Plastic/Wood):</strong> Plastic and wood are poor conductors of heat (insulators), so they stay cool and prevent burns when held.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">5</span>
+          <span class="qtxt">What is the difference between heat and temperature? <span class="marks m2">2 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a">
+          <ul>
+            <li><strong>Heat:</strong> Form of energy that flows from a hotter body to a cooler body. Measured in Joules (J).</li>
+            <li><strong>Temperature:</strong> Measure of the degree of hotness or coldness of a body. Measured in °C or K.</li>
+          </ul>
+          <div class="note">📌 A large body may have more heat than a small body even if the small body has a higher temperature.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── ARITHMETIC PROGRESSION ── -->
+<div class="subject-block ap-block" id="ap">
+  <div class="subject-header open" onclick="toggleBlock(this)">
+    <span class="icon">📐</span>
+    <h2>Arithmetic Progression — Word Problems &amp; Practice</h2>
+    <span class="day-tag">Maths 1</span>
+    <span class="arr">▼</span>
+  </div>
+  <div class="subject-body open">
+    <div class="qa-list">
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">1</span>
+          <span class="qtxt">Write the key formulas of Arithmetic Progression (AP). <span class="marks m2">2 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a open">
+          <ul>
+            <li><strong>nth term:</strong> <span style="font-family:monospace;">tₙ = a + (n – 1)d</span></li>
+            <li><strong>Sum of n terms:</strong> <span style="font-family:monospace;">Sₙ = n/2 × [2a + (n–1)d]</span> &nbsp; or &nbsp; <span style="font-family:monospace;">Sₙ = n/2 × (a + l)</span></li>
+            <li>a = first term, d = common difference, l = last term, n = number of terms</li>
+          </ul>
+          <div class="note">📌 Common difference d = any term − previous term</div>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">2</span>
+          <span class="qtxt">The sum of three consecutive terms of an AP is 27 and their product is 504. Find the terms. <span class="marks m4">4 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a">
+          <p>Let the three consecutive terms be <strong>(a – d), a, (a + d)</strong></p>
+          <p><strong>Sum:</strong> (a – d) + a + (a + d) = 27 → 3a = 27 → <strong>a = 9</strong></p>
+          <p><strong>Product:</strong> (9 – d) × 9 × (9 + d) = 504</p>
+          <div class="formula">9 × (81 – d²) = 504 → 81 – d² = 56 → d² = 25 → d = ±5</div>
+          <p><strong>When d = 5:</strong> Terms are 4, 9, 14</p>
+          <p><strong>When d = –5:</strong> Terms are 14, 9, 4</p>
+          <p><strong>Answer: The three terms are 4, 9, 14.</strong></p>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">3</span>
+          <span class="qtxt">A contractor has to pay a fine for delay. He pays ₹200 for the 1st day, ₹250 for the 2nd day, ₹300 for the 3rd day and so on. How much does he pay in all for 30 days? <span class="marks m4">4 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a">
+          <p>a = 200, d = 50, n = 30</p>
+          <div class="formula">Sₙ = n/2 × [2a + (n–1)d]</div>
+          <div class="formula">S₃₀ = 30/2 × [2×200 + 29×50]</div>
+          <div class="formula">= 15 × [400 + 1450] = 15 × 1850 = 27,750</div>
+          <p><strong>Answer: ₹27,750</strong></p>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">4</span>
+          <span class="qtxt">How many terms of the AP 9, 17, 25… must be taken to give a sum of 636? <span class="marks m3">3 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a">
+          <p>a = 9, d = 8, Sₙ = 636</p>
+          <div class="formula">n/2 × [2×9 + (n–1)×8] = 636</div>
+          <div class="formula">n × [18 + 8n – 8] = 1272</div>
+          <div class="formula">n(8n + 10) = 1272 → 8n² + 10n – 1272 = 0 → 4n² + 5n – 636 = 0</div>
+          <div class="formula">(n – 12)(4n + 53) = 0 → n = 12</div>
+          <p><strong>Answer: 12 terms</strong></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ DAY 9 ════════════ -->
+<div class="day-label">📅 Day 9 — Saturday, 19 September</div>
+
+<!-- ── LIFE PROCESSES PART 2 ── -->
+<div class="subject-block life-block" id="life">
+  <div class="subject-header" onclick="toggleBlock(this)">
+    <span class="icon">🧬</span>
+    <h2>Life Processes Part 2 — Control, Coordination &amp; Reproduction</h2>
+    <span class="day-tag">Science 2</span>
+    <span class="arr">▼</span>
+  </div>
+  <div class="subject-body">
+    <div class="qa-list">
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">1</span>
+          <span class="qtxt">Distinguish between nervous system and endocrine system (hormonal system). <span class="marks m4">4 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a open">
+          <table style="width:100%; border-collapse:collapse; font-size:0.88rem;">
+            <tr style="background:#e8f5e9;">
+              <th style="padding:7px; border:1px solid #ccc;">Nervous System</th>
+              <th style="padding:7px; border:1px solid #ccc;">Endocrine System</th>
+            </tr>
+            <tr><td style="padding:6px; border:1px solid #eee;">Uses electrical impulses (nerve impulses)</td><td style="padding:6px; border:1px solid #eee;">Uses chemical messengers (hormones)</td></tr>
+            <tr><td style="padding:6px; border:1px solid #eee;">Response is very fast</td><td style="padding:6px; border:1px solid #eee;">Response is slow</td></tr>
+            <tr><td style="padding:6px; border:1px solid #eee;">Effect is short-lived</td><td style="padding:6px; border:1px solid #eee;">Effect lasts longer</td></tr>
+            <tr><td style="padding:6px; border:1px solid #eee;">Controlled by brain and spinal cord</td><td style="padding:6px; border:1px solid #eee;">Controlled by endocrine glands</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">2</span>
+          <span class="qtxt">What is a reflex action? Describe the reflex arc with a diagram description. <span class="marks m3">3 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a">
+          <p><strong>Reflex Action:</strong> An automatic and rapid involuntary response to a stimulus without the involvement of the brain. E.g. withdrawing hand from a hot object.</p>
+          <p><strong>Reflex Arc path:</strong></p>
+          <div class="formula">Stimulus → Receptor → Sensory nerve → Spinal cord → Motor nerve → Effector → Response</div>
+          <div class="note">📌 Reflex arc bypasses the brain for speed — the spinal cord processes the response directly.</div>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">3</span>
+          <span class="qtxt">Name the male and female sex hormones. What are their functions? <span class="marks m2">2 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a">
+          <ul>
+            <li><strong>Testosterone</strong> (Male — secreted by testes): Controls development of secondary sexual characters in males — facial hair, deepening of voice, muscle development.</li>
+            <li><strong>Oestrogen</strong> (Female — secreted by ovaries): Controls development of secondary sexual characters in females — breast development, widening of hips, menstrual cycle.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">4</span>
+          <span class="qtxt">What is the role of the following hormones: (a) Insulin (b) Adrenaline (c) Thyroxine? <span class="marks m3">3 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a">
+          <ul>
+            <li><strong>Insulin</strong> (Pancreas): Regulates blood sugar levels — converts excess glucose to glycogen for storage. Deficiency causes diabetes.</li>
+            <li><strong>Adrenaline</strong> (Adrenal gland): "Fight or flight" hormone — increases heart rate, dilates airways, boosts blood glucose during emergency/stress.</li>
+            <li><strong>Thyroxine</strong> (Thyroid gland): Regulates metabolism, growth, and development. Requires iodine for production. Deficiency causes goitre.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">5</span>
+          <span class="qtxt">Distinguish between asexual and sexual reproduction. <span class="marks m4">4 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a">
+          <table style="width:100%; border-collapse:collapse; font-size:0.88rem;">
+            <tr style="background:#e8f5e9;">
+              <th style="padding:7px; border:1px solid #ccc;">Asexual Reproduction</th>
+              <th style="padding:7px; border:1px solid #ccc;">Sexual Reproduction</th>
+            </tr>
+            <tr><td style="padding:6px; border:1px solid #eee;">Single parent involved</td><td style="padding:6px; border:1px solid #eee;">Two parents (male &amp; female) involved</td></tr>
+            <tr><td style="padding:6px; border:1px solid #eee;">No formation of gametes</td><td style="padding:6px; border:1px solid #eee;">Gametes (sperm &amp; egg) are formed</td></tr>
+            <tr><td style="padding:6px; border:1px solid #eee;">Offspring are genetically identical</td><td style="padding:6px; border:1px solid #eee;">Offspring have genetic variation</td></tr>
+            <tr><td style="padding:6px; border:1px solid #eee;">E.g. budding in yeast, binary fission in amoeba</td><td style="padding:6px; border:1px solid #eee;">E.g. reproduction in humans, flowering plants</td></tr>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── PROBABILITY ── -->
+<div class="subject-block prob-block" id="prob">
+  <div class="subject-header" onclick="toggleBlock(this)">
+    <span class="icon">🎲</span>
+    <h2>Probability — Coins, Cards, Dice</h2>
+    <span class="day-tag">Maths 1</span>
+    <span class="arr">▼</span>
+  </div>
+  <div class="subject-body">
+    <div class="qa-list">
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">1</span>
+          <span class="qtxt">State the formula for probability. What are the possible values of probability? <span class="marks m2">2 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a open">
+          <div class="formula">P(Event) = Number of favourable outcomes / Total number of outcomes</div>
+          <ul>
+            <li>Probability always lies between <strong>0 and 1</strong> (inclusive).</li>
+            <li>P = 0 → impossible event; P = 1 → certain event.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">2</span>
+          <span class="qtxt">A coin is tossed twice. Find the probability of getting: (a) Both heads (b) At least one tail (c) No tail <span class="marks m3">3 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a">
+          <p>Sample space = {HH, HT, TH, TT} → Total outcomes = 4</p>
+          <ul>
+            <li>(a) Both heads: {HH} → P = <strong>1/4</strong></li>
+            <li>(b) At least one tail: {HT, TH, TT} → P = <strong>3/4</strong></li>
+            <li>(c) No tail (= both heads): {HH} → P = <strong>1/4</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">3</span>
+          <span class="qtxt">A card is drawn from a well-shuffled deck of 52 cards. Find the probability that the card is: (a) a red card (b) a king (c) a face card (d) a spade <span class="marks m4">4 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a">
+          <p>Total cards = 52</p>
+          <ul>
+            <li>(a) Red cards = 26 → P = <strong>26/52 = 1/2</strong></li>
+            <li>(b) Kings = 4 → P = <strong>4/52 = 1/13</strong></li>
+            <li>(c) Face cards (J, Q, K) = 12 → P = <strong>12/52 = 3/13</strong></li>
+            <li>(d) Spades = 13 → P = <strong>13/52 = 1/4</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">4</span>
+          <span class="qtxt">A die is thrown once. Find the probability of getting: (a) a number greater than 4 (b) an even number (c) a multiple of 3 <span class="marks m3">3 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a">
+          <p>Sample space = {1, 2, 3, 4, 5, 6} → Total outcomes = 6</p>
+          <ul>
+            <li>(a) Greater than 4: {5, 6} → P = <strong>2/6 = 1/3</strong></li>
+            <li>(b) Even number: {2, 4, 6} → P = <strong>3/6 = 1/2</strong></li>
+            <li>(c) Multiple of 3: {3, 6} → P = <strong>2/6 = 1/3</strong></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ DAY 10 ════════════ -->
+<div class="day-label">📅 Day 10 — Sunday, 20 September</div>
+
+<!-- ── REFRACTION ── -->
+<div class="subject-block refr-block" id="refr">
+  <div class="subject-header" onclick="toggleBlock(this)">
+    <span class="icon">🌊</span>
+    <h2>Refraction of Light — Laws, Refractive Index, TIR</h2>
+    <span class="day-tag">Science 1</span>
+    <span class="arr">▼</span>
+  </div>
+  <div class="subject-body">
+    <div class="qa-list">
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">1</span>
+          <span class="qtxt">State the laws of refraction of light. <span class="marks m3">3 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a open">
+          <ol>
+            <li>The incident ray, the refracted ray, and the normal at the point of incidence all lie in the <strong>same plane</strong>.</li>
+            <li>The ratio of the sine of the angle of incidence to the sine of the angle of refraction is constant for a given pair of media and for a given colour of light (<strong>Snell's Law</strong>):</li>
+          </ol>
+          <div class="formula">sin i / sin r = n = constant (refractive index)</div>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">2</span>
+          <span class="qtxt">What is refractive index? If the speed of light in glass is 2 × 10⁸ m/s and in vacuum is 3 × 10⁸ m/s, find the refractive index of glass. <span class="marks m3">3 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a">
+          <p><strong>Refractive Index (n):</strong> Ratio of the speed of light in vacuum (c) to the speed of light in the medium (v).</p>
+          <div class="formula">n = c / v = 3×10⁸ / 2×10⁸ = 1.5</div>
+          <p><strong>Answer: Refractive index of glass = 1.5</strong></p>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">3</span>
+          <span class="qtxt">What is Total Internal Reflection (TIR)? State its two conditions. Give two applications. <span class="marks m4">4 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a">
+          <p><strong>Total Internal Reflection:</strong> When light travels from a denser medium to a rarer medium and the angle of incidence exceeds the critical angle, light is completely reflected back into the denser medium.</p>
+          <p><strong>Conditions:</strong></p>
+          <ol>
+            <li>Light must travel from a denser medium to a rarer medium.</li>
+            <li>The angle of incidence must be greater than the critical angle.</li>
+          </ol>
+          <p><strong>Applications:</strong></p>
+          <ul>
+            <li><strong>Optical fibres</strong> — used in internet cables and medical endoscopes.</li>
+            <li><strong>Sparkling of diamonds</strong> — diamonds are cut so that TIR makes them sparkle brilliantly.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">4</span>
+          <span class="qtxt">Why does a ray of light bend when it passes from one medium to another? <span class="marks m2">2 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a">
+          <p>Light bends (refracts) when it passes from one medium to another because the <strong>speed of light changes</strong> in different media. When light enters a denser medium, it slows down and bends towards the normal. When it enters a rarer medium, it speeds up and bends away from the normal.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ DAY 11 ════════════ -->
+<div class="day-label">📅 Day 11 — Monday, 21 September</div>
+
+<!-- ── LENSES ── -->
+<div class="subject-block lens-block" id="lens">
+  <div class="subject-header" onclick="toggleBlock(this)">
+    <span class="icon">🔭</span>
+    <h2>Lenses — Ray Diagrams, Lens Formula, Power</h2>
+    <span class="day-tag">Science 1</span>
+    <span class="arr">▼</span>
+  </div>
+  <div class="subject-body">
+    <div class="qa-list">
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">1</span>
+          <span class="qtxt">State the lens formula. Define magnification for lenses. <span class="marks m2">2 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a open">
+          <div class="formula">Lens Formula:  1/v − 1/u = 1/f</div>
+          <ul>
+            <li>v = image distance, u = object distance, f = focal length</li>
+          </ul>
+          <div class="formula">Magnification:  m = v / u = h' / h</div>
+          <ul>
+            <li>h' = image height, h = object height</li>
+            <li>m > 0 → virtual, erect image; m < 0 → real, inverted image</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">2</span>
+          <span class="qtxt">Numerical: An object is placed 15 cm from a convex lens of focal length 10 cm. Find the image distance and magnification. <span class="marks m4">4 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a">
+          <p>Given: u = –15 cm (object on left), f = +10 cm (convex lens)</p>
+          <div class="formula">1/v − 1/u = 1/f</div>
+          <div class="formula">1/v − 1/(−15) = 1/10</div>
+          <div class="formula">1/v + 1/15 = 1/10</div>
+          <div class="formula">1/v = 1/10 − 1/15 = 3/30 − 2/30 = 1/30</div>
+          <div class="formula">v = +30 cm</div>
+          <p><strong>Image distance = 30 cm</strong> (real, on opposite side)</p>
+          <div class="formula">m = v/u = 30/(−15) = −2</div>
+          <p><strong>Magnification = −2</strong> (real, inverted, magnified)</p>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">3</span>
+          <span class="qtxt">What is the power of a lens? A convex lens has a focal length of 25 cm. What is its power? <span class="marks m2">2 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a">
+          <p><strong>Power of a Lens:</strong> The reciprocal of the focal length in metres.</p>
+          <div class="formula">P = 1/f(in metres)</div>
+          <div class="formula">f = 25 cm = 0.25 m → P = 1/0.25 = +4 D</div>
+          <p><strong>Answer: Power = +4 Dioptre (D)</strong></p>
+          <div class="note">📌 Convex lens → positive power; Concave lens → negative power</div>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">4</span>
+          <span class="qtxt">Compare convex lens and concave lens. <span class="marks m4">4 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a">
+          <table style="width:100%; border-collapse:collapse; font-size:0.88rem;">
+            <tr style="background:#fff3e0;">
+              <th style="padding:7px; border:1px solid #ccc;">Convex Lens</th>
+              <th style="padding:7px; border:1px solid #ccc;">Concave Lens</th>
+            </tr>
+            <tr><td style="padding:6px; border:1px solid #eee;">Thicker in the middle</td><td style="padding:6px; border:1px solid #eee;">Thinner in the middle</td></tr>
+            <tr><td style="padding:6px; border:1px solid #eee;">Converges (brings together) light rays</td><td style="padding:6px; border:1px solid #eee;">Diverges (spreads out) light rays</td></tr>
+            <tr><td style="padding:6px; border:1px solid #eee;">Positive focal length</td><td style="padding:6px; border:1px solid #eee;">Negative focal length</td></tr>
+            <tr><td style="padding:6px; border:1px solid #eee;">Used to correct hypermetropia (long-sightedness)</td><td style="padding:6px; border:1px solid #eee;">Used to correct myopia (short-sightedness)</td></tr>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ DAY 12 ════════════ -->
+<div class="day-label">📅 Day 12 — Tuesday, 22 September</div>
+
+<!-- ── ENVIRONMENTAL MANAGEMENT ── -->
+<div class="subject-block env-block" id="env">
+  <div class="subject-header" onclick="toggleBlock(this)">
+    <span class="icon">🌿</span>
+    <h2>Environmental Management — Ecosystem, Pollution, Conservation</h2>
+    <span class="day-tag">Science 2</span>
+    <span class="arr">▼</span>
+  </div>
+  <div class="subject-body">
+    <div class="qa-list">
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">1</span>
+          <span class="qtxt">What is an ecosystem? Name its two main components. <span class="marks m2">2 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a open">
+          <p>An <strong>ecosystem</strong> is a functional unit of nature where living organisms interact with each other and with their physical (non-living) environment.</p>
+          <ul>
+            <li><strong>Biotic components</strong> — all living things: producers, consumers, decomposers.</li>
+            <li><strong>Abiotic components</strong> — non-living factors: sunlight, water, temperature, soil, air.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">2</span>
+          <span class="qtxt">What is a food chain? Explain with an example and state the 10% energy law. <span class="marks m3">3 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a">
+          <p>A <strong>food chain</strong> is the sequence in which energy and nutrients pass from one organism to another through feeding.</p>
+          <div class="formula">Grass → Grasshopper → Frog → Snake → Eagle</div>
+          <p><strong>10% Energy Law (Lindeman's Law):</strong> Only 10% of the energy stored at one trophic level is transferred to the next trophic level. The remaining 90% is lost as heat during metabolism.</p>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">3</span>
+          <span class="qtxt">Define biodiversity. What are the major threats to biodiversity? <span class="marks m3">3 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a">
+          <p><strong>Biodiversity:</strong> The variety of living organisms (plants, animals, microorganisms) found in a given area including their genetic diversity and the ecosystems they form.</p>
+          <p><strong>Major Threats:</strong></p>
+          <ul>
+            <li>Habitat destruction (deforestation, urbanisation)</li>
+            <li>Overexploitation of natural resources</li>
+            <li>Pollution (air, water, soil)</li>
+            <li>Introduction of invasive (foreign) species</li>
+            <li>Climate change and global warming</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">4</span>
+          <span class="qtxt">What is the greenhouse effect? Name the main greenhouse gases and write its consequences. <span class="marks m4">4 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a">
+          <p>The <strong>greenhouse effect</strong> is the warming of Earth's surface due to trapping of heat by certain gases in the atmosphere that allow sunlight in but prevent heat from escaping.</p>
+          <p><strong>Main greenhouse gases:</strong> CO₂, CH₄ (methane), N₂O, water vapour, CFCs.</p>
+          <p><strong>Consequences:</strong></p>
+          <ul>
+            <li>Global warming → rise in average temperature</li>
+            <li>Melting of polar ice caps → rise in sea level</li>
+            <li>Extreme weather events — floods, droughts</li>
+            <li>Extinction of species</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── LINEAR & QUADRATIC EQUATIONS REVISION ── -->
+<div class="subject-block eq-block" id="eq">
+  <div class="subject-header" onclick="toggleBlock(this)">
+    <span class="icon">🔢</span>
+    <h2>Linear &amp; Quadratic Equations — Revision</h2>
+    <span class="day-tag">Maths 1</span>
+    <span class="arr">▼</span>
+  </div>
+  <div class="subject-body">
+    <div class="qa-list">
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">1</span>
+          <span class="qtxt">Solve the following system of linear equations: 2x + 3y = 13 and 5x – 2y = 4. <span class="marks m3">3 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a open">
+          <p>Multiply eq1 × 2 and eq2 × 3:</p>
+          <div class="formula">4x + 6y = 26 ... (i)</div>
+          <div class="formula">15x − 6y = 12 ... (ii)</div>
+          <p>Add (i) + (ii): 19x = 38 → <strong>x = 2</strong></p>
+          <p>Substitute x = 2 in eq1: 4 + 3y = 13 → 3y = 9 → <strong>y = 3</strong></p>
+          <p><strong>Answer: x = 2, y = 3</strong></p>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">2</span>
+          <span class="qtxt">Write the quadratic formula. When does a quadratic equation have: (a) two real roots (b) one root (c) no real root? <span class="marks m3">3 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a">
+          <div class="formula">x = [–b ± √(b² – 4ac)] / 2a</div>
+          <p><strong>Discriminant: D = b² – 4ac</strong></p>
+          <ul>
+            <li>(a) D &gt; 0 → two distinct real roots</li>
+            <li>(b) D = 0 → two equal real roots (one repeated root)</li>
+            <li>(c) D &lt; 0 → no real roots (complex roots)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">3</span>
+          <span class="qtxt">The sum of two numbers is 27 and their product is 182. Find the numbers. <span class="marks m4">4 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a">
+          <p>Let the numbers be x and (27 – x).</p>
+          <div class="formula">x(27 – x) = 182</div>
+          <div class="formula">27x – x² = 182</div>
+          <div class="formula">x² – 27x + 182 = 0</div>
+          <div class="formula">(x – 13)(x – 14) = 0</div>
+          <p><strong>x = 13 or x = 14</strong></p>
+          <p><strong>Answer: The two numbers are 13 and 14.</strong></p>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggleQA(this)">
+          <span class="qnum">4</span>
+          <span class="qtxt">A train travels 360 km at a uniform speed. If the speed had been 5 km/h more, it would have taken 1 hour less. Find the speed of the train. <span class="marks m4">4 Marks</span></span>
+          <span class="qarr">▼</span>
+        </div>
+        <div class="qa-a">
+          <p>Let speed = x km/h</p>
+          <div class="formula">360/x − 360/(x+5) = 1</div>
+          <div class="formula">360(x+5) − 360x = x(x+5)</div>
+          <div class="formula">1800 = x² + 5x</div>
+          <div class="formula">x² + 5x − 1800 = 0</div>
+          <div class="formula">(x − 40)(x + 45) = 0 → x = 40</div>
+          <p><strong>Answer: Speed of the train = 40 km/h</strong></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ DAY 13 TIP ════════════ -->
+<div class="day-label">📅 Day 13 — Wednesday, 23 September · Science 2 Revision + Test</div>
+<div style="background:#e8f5e9; border-left:5px solid #2e7d32; border-radius:8px; padding:16px 20px; margin-bottom:30px; font-size:0.93rem;">
+  <strong>📝 Practice Test 2 — Science 2 (All 4 Chapters)</strong><br><br>
+  Review these chapters before the test:
+  <ul style="margin-top:8px; padding-left:20px;">
+    <li><strong>Heredity &amp; Evolution</strong> — Mendel's laws, natural selection, homologous/analogous organs</li>
+    <li><strong>Life Processes Part 1</strong> — Nutrition, respiration (aerobic/anaerobic), transportation, excretion</li>
+    <li><strong>Life Processes Part 2</strong> — Nervous system, hormones, reproduction (covered above ✅)</li>
+    <li><strong>Environmental Management</strong> — Ecosystem, food chain, biodiversity, pollution (covered above ✅)</li>
+  </ul>
+  <div style="margin-top:10px; background:#fff9c4; padding:8px 12px; border-radius:6px;">
+    ⏱️ <strong>Test tip:</strong> Attempt under exam conditions — 1 hour, no books. Focus on diagrams + definitions.
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<footer>
+  Visions Learning &nbsp;|&nbsp; Class 10 · Science &amp; Maths &nbsp;|&nbsp; Sep 18–23, 2026 · Important Q&amp;A
+</footer>
+
+<script>
+  function toggleBlock(header) {
+    const body = header.nextElementSibling;
+    body.classList.toggle('open');
+    header.classList.toggle('open');
+  }
+
+  function toggleQA(qEl) {
+    const aEl = qEl.nextElementSibling;
+    aEl.classList.toggle('open');
+    qEl.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>

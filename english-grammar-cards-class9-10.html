@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>English Grammar Cards – Class 9 & 10 | Board Exam</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;font-size:13.5px;color:#1a1a2e;background:#f0f2f8;padding:18px}
+
+@media print{
+  body{background:#fff;padding:0;font-size:11px}
+  .page{box-shadow:none;margin:0;padding:14mm 13mm;border-radius:0}
+  .no-print{display:none}
+  .pb{page-break-before:always}
+  .card{page-break-inside:avoid}
+}
+
+/* page */
+.page{max-width:950px;margin:0 auto 26px;background:#fff;border-radius:12px;
+      box-shadow:0 4px 20px rgba(0,0,0,.10);padding:34px 42px}
+
+/* cover */
+.cover{border-radius:10px;padding:24px 30px;margin-bottom:28px;text-align:center}
+.cover9{background:linear-gradient(135deg,#1565c0,#0d47a1)}
+.cover10{background:linear-gradient(135deg,#2e7d32,#1b5e20)}
+.cover .lbl{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.8;color:#fff}
+.cover h1{font-size:26px;font-weight:900;color:#fff;margin:7px 0 5px}
+.cover .sub{font-size:13px;color:rgba(255,255,255,.88)}
+
+/* section title */
+.sec-title{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1px;
+           padding:6px 14px;border-radius:20px;display:inline-block;margin:18px 0 10px}
+.st9{background:#e3f2fd;color:#0d47a1}
+.st10{background:#e8f5e9;color:#1b5e20}
+
+/* card grid */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:4px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:4px}
+.grid-1{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:4px}
+
+/* card */
+.card{border-radius:9px;overflow:hidden;border:1.5px solid #e0e0e0}
+.card-head{padding:8px 14px;font-size:12px;font-weight:800;text-transform:uppercase;
+           letter-spacing:.8px}
+.card-body{padding:11px 14px;font-size:12.5px;line-height:1.75}
+
+/* card colour themes */
+.c-blue .card-head{background:#1565c0;color:#fff}
+.c-blue .card-body{background:#e8f1fd}
+.c-sky .card-head{background:#0288d1;color:#fff}
+.c-sky .card-body{background:#e1f5fe}
+.c-teal .card-head{background:#00796b;color:#fff}
+.c-teal .card-body{background:#e0f2f1}
+.c-green .card-head{background:#2e7d32;color:#fff}
+.c-green .card-body{background:#e8f5e9}
+.c-lime .card-head{background:#558b2f;color:#fff}
+.c-lime .card-body{background:#f1f8e9}
+.c-orange .card-head{background:#e65100;color:#fff}
+.c-orange .card-body{background:#fff3e0}
+.c-red .card-head{background:#b71c1c;color:#fff}
+.c-red .card-body{background:#fce4ec}
+.c-purple .card-head{background:#6a1b9a;color:#fff}
+.c-purple .card-body{background:#f3e5f5}
+.c-indigo .card-head{background:#283593;color:#fff}
+.c-indigo .card-body{background:#e8eaf6}
+.c-amber .card-head{background:#ff8f00;color:#fff}
+.c-amber .card-body{background:#fff8e1}
+.c-brown .card-head{background:#4e342e;color:#fff}
+.c-brown .card-body{background:#efebe9}
+.c-pink .card-head{background:#ad1457;color:#fff}
+.c-pink .card-body{background:#fce4ec}
+.c-cyan .card-head{background:#006064;color:#fff}
+.c-cyan .card-body{background:#e0f7fa}
+.c-deep .card-head{background:#37474f;color:#fff}
+.c-deep .card-body{background:#eceff1}
+
+/* inside card elements */
+b{color:#0d47a1}
+.g b{color:#1b5e20}
+table{width:100%;border-collapse:collapse;font-size:12px;margin:4px 0}
+th{background:rgba(0,0,0,.12);padding:5px 8px;text-align:left;font-size:11px}
+td{padding:5px 8px;border-bottom:1px solid rgba(0,0,0,.07);vertical-align:top}
+tr:last-child td{border-bottom:none}
+.eg{font-style:italic;color:#555;font-size:11.5px}
+.tag{display:inline-block;font-size:10px;font-weight:700;padding:1px 7px;border-radius:8px;margin:1px 2px}
+.t-blue{background:#bbdefb;color:#0d47a1}
+.t-green{background:#c8e6c9;color:#1b5e20}
+.t-red{background:#ffcdd2;color:#b71c1c}
+.t-orange{background:#ffe0b2;color:#e65100}
+.t-purple{background:#e1bee7;color:#6a1b9a}
+.t-amber{background:#fff9c4;color:#f57f17}
+.rule{background:#fff9c4;border-left:4px solid #ffc107;padding:6px 10px;
+      border-radius:0 6px 6px 0;margin:6px 0;font-size:12px}
+.warn{background:#fce4ec;border-left:4px solid #e91e63;padding:6px 10px;
+      border-radius:0 6px 6px 0;margin:6px 0;font-size:12px}
+.tip {background:#e8f5e9;border-left:4px solid #43a047;padding:6px 10px;
+      border-radius:0 6px 6px 0;margin:6px 0;font-size:12px}
+ul.bl{margin:4px 0 4px 16px} ul.bl li{margin:3px 0}
+ol.nl{margin:4px 0 4px 16px} ol.nl li{margin:3px 0}
+hr.div{border:none;border-top:2px solid #e0e0e0;margin:18px 0}
+
+/* print btn */
+.print-btn{display:block;width:fit-content;margin:0 auto 16px;padding:9px 28px;
+           background:#1565c0;color:#fff;border:none;border-radius:8px;
+           font-size:13px;font-weight:600;cursor:pointer}
+.print-btn:hover{background:#0d47a1}
+
+/* chapter index strip */
+.index-strip{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}
+.ix{font-size:11px;font-weight:700;padding:4px 11px;border-radius:12px;cursor:default}
+</style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+<!-- ══════════════════════════════════════
+     CLASS 9 — COVER
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="cover cover9">
+    <div class="lbl">Board Exam Grammar Cards</div>
+    <h1>📘 Class 9 — English Grammar</h1>
+    <div class="sub">Parts of Speech · Tenses · Sentences · Voice · Narration · Punctuation</div>
+  </div>
+
+  <div class="index-strip">
+    <span class="ix" style="background:#bbdefb;color:#0d47a1">1. Parts of Speech</span>
+    <span class="ix" style="background:#b3e5fc;color:#01579b">2. Noun & Pronoun</span>
+    <span class="ix" style="background:#b2ebf2;color:#006064">3. Adjective & Adverb</span>
+    <span class="ix" style="background:#c8e6c9;color:#1b5e20">4. Verb & Tenses</span>
+    <span class="ix" style="background:#ffe0b2;color:#e65100">5. 12 Tenses Chart</span>
+    <span class="ix" style="background:#f8bbd0;color:#880e4f">6. Types of Sentences</span>
+    <span class="ix" style="background:#e1bee7;color:#4a148c">7. Active & Passive Voice</span>
+    <span class="ix" style="background:#fff9c4;color:#f57f17">8. Direct & Indirect Speech</span>
+    <span class="ix" style="background:#dcedc8;color:#33691e">9. Punctuation</span>
+  </div>
+
+  <!-- ── CARD 1: Parts of Speech overview ── -->
+  <span class="sec-title st9">1 · Parts of Speech</span>
+  <div class="grid-3">
+    <div class="card c-blue">
+      <div class="card-head">🔤 The 8 Parts of Speech</div>
+      <div class="card-body">
+        <table>
+          <tr><th>Part</th><th>What it does</th></tr>
+          <tr><td><b>Noun</b></td><td>Name of person, place, thing, idea</td></tr>
+          <tr><td><b>Pronoun</b></td><td>Replaces a noun</td></tr>
+          <tr><td><b>Verb</b></td><td>Shows action or state</td></tr>
+          <tr><td><b>Adjective</b></td><td>Describes a noun</td></tr>
+          <tr><td><b>Adverb</b></td><td>Describes verb/adj/adverb</td></tr>
+          <tr><td><b>Preposition</b></td><td>Shows relation between nouns</td></tr>
+          <tr><td><b>Conjunction</b></td><td>Joins words/clauses</td></tr>
+          <tr><td><b>Interjection</b></td><td>Expresses emotion</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="card c-sky">
+      <div class="card-head">🏷️ Types of Noun</div>
+      <div class="card-body">
+        <ul class="bl">
+          <li><b>Proper:</b> Ram, Mumbai, India</li>
+          <li><b>Common:</b> boy, city, dog</li>
+          <li><b>Collective:</b> flock, team, army</li>
+          <li><b>Abstract:</b> love, honesty, joy</li>
+          <li><b>Material:</b> gold, water, iron</li>
+          <li><b>Countable:</b> can be counted — pen, books</li>
+          <li><b>Uncountable:</b> milk, air, sugar</li>
+        </ul>
+        <div class="rule">💡 Proper nouns always begin with a <b>Capital Letter</b>.</div>
+      </div>
+    </div>
+    <div class="card c-teal">
+      <div class="card-head">👤 Types of Pronoun</div>
+      <div class="card-body">
+        <table>
+          <tr><th>Type</th><th>Example</th></tr>
+          <tr><td>Personal</td><td>I, we, you, he, she, they</td></tr>
+          <tr><td>Possessive</td><td>mine, ours, yours, his</td></tr>
+          <tr><td>Reflexive</td><td>myself, herself, itself</td></tr>
+          <tr><td>Demonstrative</td><td>this, that, these, those</td></tr>
+          <tr><td>Interrogative</td><td>who, which, what</td></tr>
+          <tr><td>Relative</td><td>who, whom, whose, which, that</td></tr>
+          <tr><td>Indefinite</td><td>someone, nobody, all, each</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CARD 2: Adjective & Adverb ── -->
+  <span class="sec-title st9">2 · Adjective & Adverb</span>
+  <div class="grid">
+    <div class="card c-orange">
+      <div class="card-head">🎨 Types of Adjective</div>
+      <div class="card-body">
+        <table>
+          <tr><th>Type</th><th>Example</th></tr>
+          <tr><td>Descriptive/Qualitative</td><td>tall girl, hot tea</td></tr>
+          <tr><td>Quantitative</td><td>some rice, much water</td></tr>
+          <tr><td>Numeral</td><td>three boys, first rank</td></tr>
+          <tr><td>Demonstrative</td><td>this book, those pens</td></tr>
+          <tr><td>Interrogative</td><td>which class? what colour?</td></tr>
+          <tr><td>Possessive</td><td>my bag, their house</td></tr>
+          <tr><td>Proper</td><td>Indian food, French wine</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="card c-amber">
+      <div class="card-head">🚀 Types of Adverb</div>
+      <div class="card-body">
+        <table>
+          <tr><th>Type</th><th>Example</th></tr>
+          <tr><td>Manner</td><td>quickly, slowly, well</td></tr>
+          <tr><td>Time</td><td>now, then, yesterday, soon</td></tr>
+          <tr><td>Place</td><td>here, there, inside, away</td></tr>
+          <tr><td>Frequency</td><td>always, never, often, seldom</td></tr>
+          <tr><td>Degree</td><td>very, too, quite, almost</td></tr>
+          <tr><td>Reason</td><td>therefore, hence, so</td></tr>
+        </table>
+        <div class="rule">💡 Most adverbs are formed by adding <b>-ly</b> to adjective: quick → quickly</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CARD 3: Preposition & Conjunction ── -->
+  <div class="grid">
+    <div class="card c-purple">
+      <div class="card-head">📍 Prepositions</div>
+      <div class="card-body">
+        <table>
+          <tr><th>Type</th><th>Examples</th></tr>
+          <tr><td>Place</td><td>in, on, at, under, above, between, behind</td></tr>
+          <tr><td>Time</td><td>at, on, in, before, after, since, for, during</td></tr>
+          <tr><td>Direction</td><td>to, into, towards, from, across, along</td></tr>
+          <tr><td>Manner</td><td>by, with, without, like</td></tr>
+        </table>
+        <div class="warn">⚠️ Common tricky uses: <b>at</b> (specific time/place) · <b>in</b> (larger place/month/year) · <b>on</b> (days/dates/surfaces)</div>
+      </div>
+    </div>
+    <div class="card c-indigo">
+      <div class="card-head">🔗 Conjunctions</div>
+      <div class="card-body">
+        <table>
+          <tr><th>Type</th><th>Words</th><th>Use</th></tr>
+          <tr><td>Co-ordinating</td><td>and, but, or, nor, for, yet, so</td><td>Joins equal clauses</td></tr>
+          <tr><td>Subordinating</td><td>because, since, although, if, when, unless, until, after, before</td><td>Joins main + sub clause</td></tr>
+          <tr><td>Correlative</td><td>either…or, neither…nor, both…and, not only…but also</td><td>Pairs</td></tr>
+        </table>
+        <div class="eg">Ex: She studied hard <b>so</b> she passed. &nbsp;|&nbsp; <b>Although</b> it rained, we played.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     CLASS 9 PAGE 2 — TENSES
+══════════════════════════════════════ -->
+<div class="page pb">
+  <span class="sec-title st9">3 · Tenses — The Complete Chart</span>
+
+  <!-- Present -->
+  <div class="card c-blue" style="margin-bottom:10px">
+    <div class="card-head">🟦 PRESENT TENSES</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Tense</th><th>Structure</th><th>Use / Signal Words</th><th>Example</th></tr>
+        <tr><td><b>Simple Present</b></td><td>S + V₁(s/es) + O</td><td>Habits, facts, universal truths · always, usually, every day</td><td class="eg">She <b>eats</b> an apple daily.</td></tr>
+        <tr><td><b>Present Continuous</b></td><td>S + is/am/are + V-ing</td><td>Action happening now · now, at this moment, look</td><td class="eg">He <b>is reading</b> a book.</td></tr>
+        <tr><td><b>Present Perfect</b></td><td>S + has/have + V₃</td><td>Completed with present effect · just, already, yet, ever, never, recently</td><td class="eg">I <b>have finished</b> my work.</td></tr>
+        <tr><td><b>Present Perfect Continuous</b></td><td>S + has/have + been + V-ing</td><td>Action started in past, still going · since, for</td><td class="eg">She <b>has been studying</b> for 2 hours.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Past -->
+  <div class="card c-red" style="margin-bottom:10px">
+    <div class="card-head">🟥 PAST TENSES</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Tense</th><th>Structure</th><th>Use / Signal Words</th><th>Example</th></tr>
+        <tr><td><b>Simple Past</b></td><td>S + V₂ + O</td><td>Completed past action · yesterday, ago, last, in 2010</td><td class="eg">He <b>went</b> to school.</td></tr>
+        <tr><td><b>Past Continuous</b></td><td>S + was/were + V-ing</td><td>Action in progress at a past time · while, when, at that time</td><td class="eg">She <b>was sleeping</b> when I called.</td></tr>
+        <tr><td><b>Past Perfect</b></td><td>S + had + V₃</td><td>Action completed before another past action · before, after, already, by the time</td><td class="eg">He <b>had left</b> before she arrived.</td></tr>
+        <tr><td><b>Past Perfect Continuous</b></td><td>S + had + been + V-ing</td><td>Action ongoing up to a point in past · for, since (+ past reference)</td><td class="eg">They <b>had been waiting</b> for an hour.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Future -->
+  <div class="card c-green" style="margin-bottom:10px">
+    <div class="card-head">🟩 FUTURE TENSES</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Tense</th><th>Structure</th><th>Use / Signal Words</th><th>Example</th></tr>
+        <tr><td><b>Simple Future</b></td><td>S + will/shall + V₁</td><td>Decision/prediction · tomorrow, next week, soon</td><td class="eg">I <b>will come</b> tomorrow.</td></tr>
+        <tr><td><b>Future Continuous</b></td><td>S + will + be + V-ing</td><td>Action in progress at future time · at this time tomorrow</td><td class="eg">She <b>will be working</b> at 9 AM.</td></tr>
+        <tr><td><b>Future Perfect</b></td><td>S + will + have + V₃</td><td>Completed before a future time · by, by the time</td><td class="eg">I <b>will have finished</b> by Monday.</td></tr>
+        <tr><td><b>Future Perfect Continuous</b></td><td>S + will + have + been + V-ing</td><td>Duration up to a future time · for (+ future point)</td><td class="eg">She <b>will have been teaching</b> for 10 years.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card c-amber">
+      <div class="card-head">⚡ V1 / V2 / V3 Quick Reference</div>
+      <div class="card-body">
+        <table>
+          <tr><th>V1 (Base)</th><th>V2 (Past)</th><th>V3 (Past Participle)</th></tr>
+          <tr><td>go</td><td>went</td><td>gone</td></tr>
+          <tr><td>write</td><td>wrote</td><td>written</td></tr>
+          <tr><td>take</td><td>took</td><td>taken</td></tr>
+          <tr><td>speak</td><td>spoke</td><td>spoken</td></tr>
+          <tr><td>eat</td><td>ate</td><td>eaten</td></tr>
+          <tr><td>see</td><td>saw</td><td>seen</td></tr>
+          <tr><td>give</td><td>gave</td><td>given</td></tr>
+          <tr><td>break</td><td>broke</td><td>broken</td></tr>
+          <tr><td>buy</td><td>bought</td><td>bought</td></tr>
+          <tr><td>bring</td><td>brought</td><td>brought</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="card c-teal">
+      <div class="card-head">📌 Types of Sentences</div>
+      <div class="card-body">
+        <table>
+          <tr><th>Type</th><th>Meaning</th><th>Example</th></tr>
+          <tr><td><b>Assertive / Declarative</b></td><td>States a fact</td><td class="eg">The sun rises in the east.</td></tr>
+          <tr><td><b>Interrogative</b></td><td>Asks a question</td><td class="eg">Where are you going?</td></tr>
+          <tr><td><b>Imperative</b></td><td>Order/request/advice</td><td class="eg">Please sit down.</td></tr>
+          <tr><td><b>Exclamatory</b></td><td>Expresses strong emotion</td><td class="eg">What a beautiful day!</td></tr>
+          <tr><td><b>Optative</b></td><td>Expresses wish/prayer</td><td class="eg">May you live long!</td></tr>
+        </table>
+        <div class="rule">💡 Based on structure: <b>Simple</b> (1 clause) · <b>Compound</b> (2 main clauses joined by and/but/or) · <b>Complex</b> (1 main + 1 sub clause)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     CLASS 9 PAGE 3 — VOICE & NARRATION
+══════════════════════════════════════ -->
+<div class="page pb">
+  <span class="sec-title st9">4 · Active & Passive Voice</span>
+
+  <div class="card c-purple" style="margin-bottom:10px">
+    <div class="card-head">🔄 How to Change Active → Passive</div>
+    <div class="card-body">
+      <ol class="nl">
+        <li>Object of active sentence becomes the <b>Subject</b> of passive sentence.</li>
+        <li>Use suitable form of <b>to be</b> (is/am/are/was/were/has been/have been/will be…).</li>
+        <li>Main verb becomes <b>V3 (past participle)</b>.</li>
+        <li>Subject of active sentence becomes <b>Object with "by"</b> (or is omitted if unimportant).</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card c-indigo" style="margin-bottom:10px">
+    <div class="card-head">📋 Passive Voice — All Tenses</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Tense</th><th>Active</th><th>Passive</th></tr>
+        <tr><td>Simple Present</td><td>She <b>writes</b> a letter.</td><td>A letter <b>is written</b> by her.</td></tr>
+        <tr><td>Simple Past</td><td>He <b>ate</b> the food.</td><td>The food <b>was eaten</b> by him.</td></tr>
+        <tr><td>Simple Future</td><td>They <b>will do</b> the work.</td><td>The work <b>will be done</b> by them.</td></tr>
+        <tr><td>Pres. Continuous</td><td>She <b>is writing</b> a letter.</td><td>A letter <b>is being written</b> by her.</td></tr>
+        <tr><td>Past Continuous</td><td>He <b>was eating</b> food.</td><td>Food <b>was being eaten</b> by him.</td></tr>
+        <tr><td>Present Perfect</td><td>She <b>has written</b> a letter.</td><td>A letter <b>has been written</b> by her.</td></tr>
+        <tr><td>Past Perfect</td><td>He <b>had finished</b> work.</td><td>Work <b>had been finished</b> by him.</td></tr>
+        <tr><td>Imperative</td><td><b>Open</b> the door.</td><td>Let the door <b>be opened</b>.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card c-pink">
+      <div class="card-head">👤 Object Pronoun Changes in Passive</div>
+      <div class="card-body">
+        <table>
+          <tr><th>Subject (Active)</th><th>Object "by ___" (Passive)</th></tr>
+          <tr><td>I</td><td>by me</td></tr>
+          <tr><td>We</td><td>by us</td></tr>
+          <tr><td>You</td><td>by you</td></tr>
+          <tr><td>He</td><td>by him</td></tr>
+          <tr><td>She</td><td>by her</td></tr>
+          <tr><td>They</td><td>by them</td></tr>
+          <tr><td>It</td><td>by it</td></tr>
+        </table>
+        <div class="warn">⚠️ When subject is "someone/people/one" — omit "by ___" in passive.</div>
+      </div>
+    </div>
+    <div class="card c-deep">
+      <div class="card-head">⚠️ Voice — Points to Remember</div>
+      <div class="card-body">
+        <ul class="bl">
+          <li>Only <b>transitive verbs</b> (verbs with an object) can be made passive.</li>
+          <li>Intransitive verbs (run, sleep, die) <b>cannot</b> be made passive.</li>
+          <li>Modal passives: <b>can/could/should/must/may</b> + be + V3<br/><span class="eg">She must write it → It must be written.</span></li>
+          <li>Imperative passive: Let + object + be + V3</li>
+        </ul>
+        <div class="rule">💡 In exams: always check tense first → choose correct 'be' form → put V3.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="div"/>
+  <span class="sec-title st9">5 · Direct & Indirect Speech (Narration)</span>
+
+  <div class="card c-orange" style="margin-bottom:10px">
+    <div class="card-head">🗣️ Rules for Changing Direct → Indirect</div>
+    <div class="card-body">
+      <ol class="nl">
+        <li>Remove the <b>inverted commas</b>. Use a conjunction (<b>that / to / if / whether / what / when</b>…).</li>
+        <li>Change the <b>pronoun</b> according to the subject of reporting verb.</li>
+        <li>Change the <b>tense</b> of the reported speech (backshift) — if reporting verb is in past.</li>
+        <li>Change <b>adverbs of time and place</b> (this→that, here→there, now→then, today→that day…).</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card c-amber" style="margin-bottom:10px">
+    <div class="card-head">⏱️ Tense Backshift Table</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Direct Speech Tense</th><th>→ Indirect Speech Tense</th></tr>
+        <tr><td>Simple Present</td><td>→ Simple Past</td></tr>
+        <tr><td>Present Continuous</td><td>→ Past Continuous</td></tr>
+        <tr><td>Present Perfect</td><td>→ Past Perfect</td></tr>
+        <tr><td>Simple Past</td><td>→ Past Perfect</td></tr>
+        <tr><td>Past Continuous</td><td>→ Past Perfect Continuous</td></tr>
+        <tr><td>will</td><td>→ would</td></tr>
+        <tr><td>can</td><td>→ could</td></tr>
+        <tr><td>may</td><td>→ might</td></tr>
+        <tr><td>shall</td><td>→ should</td></tr>
+        <tr><td>must</td><td>→ had to / must (permanent rule)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card c-blue">
+      <div class="card-head">📅 Time/Place Word Changes</div>
+      <div class="card-body">
+        <table>
+          <tr><th>Direct</th><th>Indirect</th></tr>
+          <tr><td>now</td><td>then</td></tr>
+          <tr><td>today</td><td>that day</td></tr>
+          <tr><td>tomorrow</td><td>the next day / the following day</td></tr>
+          <tr><td>yesterday</td><td>the previous day / the day before</td></tr>
+          <tr><td>this week</td><td>that week</td></tr>
+          <tr><td>last night</td><td>the previous night</td></tr>
+          <tr><td>here</td><td>there</td></tr>
+          <tr><td>this</td><td>that</td></tr>
+          <tr><td>these</td><td>those</td></tr>
+          <tr><td>ago</td><td>before</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="card c-teal">
+      <div class="card-head">❓ Types of Sentences in Narration</div>
+      <div class="card-body">
+        <ul class="bl">
+          <li><b>Statement:</b> Use <em>that</em><br/><span class="eg">He said, "I am happy." → He said <b>that</b> he was happy.</span></li>
+          <li><b>Question (Yes/No):</b> Use <em>if / whether</em><br/><span class="eg">She asked, "Are you ready?" → She asked <b>if</b> I was ready.</span></li>
+          <li><b>Question (Wh-):</b> Use the <em>same wh- word</em><br/><span class="eg">He asked, "Where do you live?" → He asked <b>where</b> I lived.</span></li>
+          <li><b>Command/Request:</b> Use <em>to + V1</em> (ordered/requested/advised/told)<br/><span class="eg">"Sit down." → He told me <b>to sit down</b>.</span></li>
+          <li><b>Exclamatory:</b> Convert to statement + <em>exclaimed with joy/sorrow</em><br/><span class="eg">"How beautiful!" → She exclaimed that it was very beautiful.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Punctuation -->
+  <hr class="div"/>
+  <span class="sec-title st9">6 · Punctuation</span>
+  <div class="grid">
+    <div class="card c-brown">
+      <div class="card-head">✏️ Punctuation Marks & Uses</div>
+      <div class="card-body">
+        <table>
+          <tr><th>Mark</th><th>Use</th><th>Example</th></tr>
+          <tr><td><b>. Full Stop</b></td><td>End of statement/abbreviation</td><td class="eg">She is happy. / Mr. Sharma</td></tr>
+          <tr><td><b>, Comma</b></td><td>Pause, list, clauses</td><td class="eg">Ram, Shyam and Mohan came.</td></tr>
+          <tr><td><b>? Question Mark</b></td><td>End of direct question</td><td class="eg">Where are you?</td></tr>
+          <tr><td><b>! Exclamation</b></td><td>Emotion/exclamatory sentence</td><td class="eg">What a lovely gift!</td></tr>
+          <tr><td><b>" " Inverted Commas</b></td><td>Direct speech</td><td class="eg">He said, "I am fine."</td></tr>
+          <tr><td><b>' Apostrophe</b></td><td>Possession / contraction</td><td class="eg">Ravi's book. / don't</td></tr>
+          <tr><td><b>; Semicolon</b></td><td>Links related independent clauses</td><td class="eg">He came; she left.</td></tr>
+          <tr><td><b>: Colon</b></td><td>Introduces a list or explanation</td><td class="eg">Bring these: pen, pencil, eraser.</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="card c-cyan">
+      <div class="card-head">🏆 Board Exam Quick Tips — Class 9</div>
+      <div class="card-body">
+        <ul class="bl">
+          <li>In Tenses — look for <b>signal words</b> (since, for, ago, just, already, yet, still).</li>
+          <li>In Passive — remember the <b>4 steps</b>: object → subject, choose 'be', add V3, subject → 'by object'.</li>
+          <li>In Narration — first identify <b>type of sentence</b> (statement/question/command), then change.</li>
+          <li>In Narration — <b>pronoun change rule</b>: 1st person changes acc. to subject of reporting verb; 2nd person changes acc. to object; 3rd person stays same.</li>
+          <li>Sentences: <b>Simple</b> has one subject + one predicate. <b>Compound</b> uses co-ordinating conjunctions. <b>Complex</b> uses subordinating conjunctions.</li>
+          <li>Adjective degrees: <b>Positive → Comparative → Superlative</b>. Ex: good → better → best.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     CLASS 10 — COVER
+══════════════════════════════════════ -->
+<div class="page pb">
+  <div class="cover cover10">
+    <div class="lbl">Board Exam Grammar Cards</div>
+    <h1>📗 Class 10 — English Grammar</h1>
+    <div class="sub">Tenses · Voice · Narration · Clauses · Transformation · Word Forms · Degrees · Conditionals</div>
+  </div>
+
+  <div class="index-strip">
+    <span class="ix" style="background:#c8e6c9;color:#1b5e20">1. Tenses (Advanced)</span>
+    <span class="ix" style="background:#a5d6a7;color:#1b5e20">2. Active & Passive (All types)</span>
+    <span class="ix" style="background:#80cbc4;color:#004d40">3. Narration (All types)</span>
+    <span class="ix" style="background:#b3e5fc;color:#01579b">4. Types of Clauses</span>
+    <span class="ix" style="background:#ffe0b2;color:#e65100">5. Transformation of Sentences</span>
+    <span class="ix" style="background:#e1bee7;color:#4a148c">6. Word Forms</span>
+    <span class="ix" style="background:#fff9c4;color:#f57f17">7. Degrees of Comparison</span>
+    <span class="ix" style="background:#ffcdd2;color:#b71c1c">8. Conditionals</span>
+    <span class="ix" style="background:#dcedc8;color:#33691e">9. Common Errors</span>
+  </div>
+
+  <!-- Tenses revision -->
+  <span class="sec-title st10">1 · Tenses — Quick Revision</span>
+  <div class="card c-green" style="margin-bottom:10px">
+    <div class="card-head">⚡ Tense Formula Summary — All 12</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Tense</th><th>Formula</th><th>Key Signal Words</th></tr>
+        <tr><td>Simple Present</td><td>S + V1(s/es)</td><td>every day, always, usually, often, sometimes, never, rarely</td></tr>
+        <tr><td>Present Continuous</td><td>S + is/am/are + V-ing</td><td>now, at present, at this moment, currently, look, listen</td></tr>
+        <tr><td>Present Perfect</td><td>S + has/have + V3</td><td>just, already, yet, ever, never, recently, lately, so far</td></tr>
+        <tr><td>Present Perfect Cont.</td><td>S + has/have + been + V-ing</td><td>since (point), for (period) + still continuing</td></tr>
+        <tr><td>Simple Past</td><td>S + V2</td><td>yesterday, ago, last, in [year], once, in those days</td></tr>
+        <tr><td>Past Continuous</td><td>S + was/were + V-ing</td><td>when, while, at that time, all day yesterday</td></tr>
+        <tr><td>Past Perfect</td><td>S + had + V3</td><td>before, after, already, by the time, as soon as, since, when</td></tr>
+        <tr><td>Past Perfect Cont.</td><td>S + had + been + V-ing</td><td>for, since (with past reference point)</td></tr>
+        <tr><td>Simple Future</td><td>S + will + V1</td><td>tomorrow, next, soon, in future, shortly</td></tr>
+        <tr><td>Future Continuous</td><td>S + will + be + V-ing</td><td>at this time tomorrow, at 5 PM tomorrow</td></tr>
+        <tr><td>Future Perfect</td><td>S + will + have + V3</td><td>by, by the time, by next [time]</td></tr>
+        <tr><td>Future Perfect Cont.</td><td>S + will + have + been + V-ing</td><td>by [time], for [duration] (future)</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     CLASS 10 PAGE 2 — VOICE & NARRATION
+══════════════════════════════════════ -->
+<div class="page pb">
+  <span class="sec-title st10">2 · Active & Passive Voice — Complete</span>
+
+  <div class="grid">
+    <div class="card c-teal">
+      <div class="card-head">🔄 4-Step Method</div>
+      <div class="card-body">
+        <ol class="nl">
+          <li>Object of active → <b>New Subject</b></li>
+          <li>Correct form of <b>'be'</b> (based on tense + new subject)</li>
+          <li>Main verb → <b>V3</b></li>
+          <li>Original subject → <b>'by + object pronoun'</b></li>
+        </ol>
+        <div class="rule">💡 'by' phrase can be <b>omitted</b> when subject is unknown, obvious, or unimportant (e.g., "People say", "Someone has stolen").</div>
+      </div>
+    </div>
+    <div class="card c-lime">
+      <div class="card-head">📋 All Tenses Passive Reference</div>
+      <div class="card-body">
+        <table>
+          <tr><th>Tense</th><th>Passive Form</th></tr>
+          <tr><td>Simple Present</td><td>is/am/are + V3</td></tr>
+          <tr><td>Pres. Continuous</td><td>is/am/are + being + V3</td></tr>
+          <tr><td>Present Perfect</td><td>has/have + been + V3</td></tr>
+          <tr><td>Simple Past</td><td>was/were + V3</td></tr>
+          <tr><td>Past Continuous</td><td>was/were + being + V3</td></tr>
+          <tr><td>Past Perfect</td><td>had + been + V3</td></tr>
+          <tr><td>Simple Future</td><td>will + be + V3</td></tr>
+          <tr><td>Future Perfect</td><td>will + have + been + V3</td></tr>
+          <tr><td>Modals (can/may…)</td><td>modal + be + V3</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card c-green">
+      <div class="card-head">✅ Passive Examples — Practice Set</div>
+      <div class="card-body">
+        <table>
+          <tr><th>Active</th><th>Passive</th></tr>
+          <tr><td class="eg">She <b>writes</b> stories.</td><td class="eg">Stories <b>are written</b> by her.</td></tr>
+          <tr><td class="eg">He <b>is making</b> tea.</td><td class="eg">Tea <b>is being made</b> by him.</td></tr>
+          <tr><td class="eg">We <b>have completed</b> the task.</td><td class="eg">The task <b>has been completed</b> by us.</td></tr>
+          <tr><td class="eg">She <b>had written</b> the letter.</td><td class="eg">The letter <b>had been written</b> by her.</td></tr>
+          <tr><td class="eg">They <b>will build</b> a bridge.</td><td class="eg">A bridge <b>will be built</b> by them.</td></tr>
+          <tr><td class="eg">You should <b>help</b> the poor.</td><td class="eg">The poor should <b>be helped</b>.</td></tr>
+          <tr><td class="eg"><b>Please open</b> the door.</td><td class="eg">You are requested to <b>open</b> the door. / Let the door <b>be opened</b>.</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="card c-orange">
+      <div class="card-head">👤 Pronoun Changes — Active to Passive</div>
+      <div class="card-body">
+        <table>
+          <tr><th>Active Subject</th><th>Passive "by ___"</th></tr>
+          <tr><td>I</td><td>by me</td></tr>
+          <tr><td>We</td><td>by us</td></tr>
+          <tr><td>You</td><td>by you</td></tr>
+          <tr><td>He</td><td>by him</td></tr>
+          <tr><td>She</td><td>by her</td></tr>
+          <tr><td>They</td><td>by them</td></tr>
+          <tr><td>It</td><td>by it</td></tr>
+        </table>
+        <div class="warn">⚠️ Passive verbs: <b>know, contain, have, suit, resemble, lack</b> — these stative verbs generally do NOT take passive voice.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="div"/>
+  <span class="sec-title st10">3 · Narration — Complete Rules</span>
+
+  <div class="card c-indigo" style="margin-bottom:10px">
+    <div class="card-head">🗣️ Narration — All Sentence Types at a Glance</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Sentence Type</th><th>Conjunction Used</th><th>Reporting Verb</th><th>Example</th></tr>
+        <tr><td><b>Statement</b></td><td>that</td><td>said, told, replied, answered, informed, admitted, confessed, complained, remarked</td><td class="eg">"I am tired." → He said <b>that</b> he was tired.</td></tr>
+        <tr><td><b>Yes/No Question</b></td><td>if / whether</td><td>asked, enquired, wanted to know</td><td class="eg">"Can you help?" → She asked <b>if</b> I could help.</td></tr>
+        <tr><td><b>Wh- Question</b></td><td>same Wh- word</td><td>asked, enquired, wanted to know</td><td class="eg">"Why are you late?" → He asked <b>why</b> I was late.</td></tr>
+        <tr><td><b>Command / Order</b></td><td>to + V1</td><td>ordered, commanded, told, directed, warned, forbade (not to)</td><td class="eg">"Go away!" → He ordered me <b>to go</b> away.</td></tr>
+        <tr><td><b>Request</b></td><td>to + V1</td><td>requested, begged, implored, urged</td><td class="eg">"Please help me." → She requested me <b>to help</b> her.</td></tr>
+        <tr><td><b>Advice</b></td><td>to + V1</td><td>advised, suggested, recommended</td><td class="eg">"You should rest." → He advised me <b>to rest</b>.</td></tr>
+        <tr><td><b>Exclamatory</b></td><td>that (convert to statement)</td><td>exclaimed with joy/sorrow/surprise/wonder, cried out</td><td class="eg">"Bravo! You won." → He exclaimed with joy <b>that</b> I had won.</td></tr>
+        <tr><td><b>Optative / Wish</b></td><td>that</td><td>wished, prayed, blessed</td><td class="eg">"May you succeed!" → She prayed <b>that</b> I might succeed.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card c-purple">
+      <div class="card-head">👤 Pronoun Change Rules</div>
+      <div class="card-body">
+        <div class="rule">📌 <b>1st person</b> (I, we, me, us, my, our) → changes according to <b>subject</b> of reporting verb.</div>
+        <div class="rule">📌 <b>2nd person</b> (you, your, yours) → changes according to <b>object</b> of reporting verb.</div>
+        <div class="rule">📌 <b>3rd person</b> (he, she, it, they) → <b>no change</b>.</div>
+        <br/>
+        <div class="eg">He said to me, "I love <b>your</b> work." → He told me that he loved <b>my</b> work.<br/>
+        (I→he [subject], your→my [object of reporting verb = me])</div>
+      </div>
+    </div>
+    <div class="card c-amber">
+      <div class="card-head">🔁 No Tense Change — When?</div>
+      <div class="card-body">
+        <div class="tip">✅ Tense does <b>NOT</b> change when:</div>
+        <ul class="bl">
+          <li>Reporting verb is in <b>Present or Future tense</b>.<br/><span class="eg">She says, "I am happy." → She says that she <b>is</b> happy.</span></li>
+          <li>The reported speech is a <b>universal truth or fact</b>.<br/><span class="eg">He said, "The sun rises in the east." → He said that the sun <b>rises</b> in the east.</span></li>
+          <li>The reported speech is a <b>historical fact</b>.<br/><span class="eg">She said, "India got independence in 1947." → She said that India <b>got</b> independence in 1947.</span></li>
+          <li>Reported speech contains <b>must</b> for rules/necessity — stays as <b>must</b>.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     CLASS 10 PAGE 3 — CLAUSES, TRANSFORMATION, WORD FORMS
+══════════════════════════════════════ -->
+<div class="page pb">
+  <span class="sec-title st10">4 · Types of Clauses</span>
+
+  <div class="card c-cyan" style="margin-bottom:10px">
+    <div class="card-head">📐 Clause Types — Noun, Adjective, Adverb</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Clause Type</th><th>Function</th><th>Introduced by</th><th>Example</th></tr>
+        <tr><td><b>Noun Clause</b></td><td>Works as subject or object of main verb</td><td>that, what, who, which, when, where, how, whether, if</td><td class="eg">I know <b>that she is honest</b>. / <b>What he said</b> was wrong.</td></tr>
+        <tr><td><b>Adjective Clause (Relative)</b></td><td>Describes/modifies a noun</td><td>who, whom, whose, which, that</td><td class="eg">The girl <b>who scored highest</b> won the prize. / The book <b>that I bought</b> is torn.</td></tr>
+        <tr><td><b>Adverb Clause</b></td><td>Modifies verb/adj — shows time, place, cause, condition, contrast</td><td>when, where, because, since, although, if, unless, until, so that, as soon as</td><td class="eg">She left <b>before he arrived</b>. / He failed <b>because he was careless</b>.</td></tr>
+      </table>
+      <div class="rule">💡 Quick test: <b>Noun clause</b> → replace with "it/this/that". <b>Adj clause</b> → which noun does it describe? <b>Adverb clause</b> → answers when/where/why/how/under what condition.</div>
+    </div>
+  </div>
+
+  <hr class="div"/>
+  <span class="sec-title st10">5 · Transformation of Sentences</span>
+
+  <div class="grid">
+    <div class="card c-green">
+      <div class="card-head">🔃 Affirmative ↔ Negative</div>
+      <div class="card-body">
+        <table>
+          <tr><th>Affirmative</th><th>Negative</th></tr>
+          <tr><td class="eg">He is always late.</td><td class="eg">He is never early.</td></tr>
+          <tr><td class="eg">All students passed.</td><td class="eg">No student failed. / Not a single student failed.</td></tr>
+          <tr><td class="eg">She is too weak to run.</td><td class="eg">She is so weak that she cannot run.</td></tr>
+          <tr><td class="eg">As soon as he came, she left.</td><td class="eg">No sooner had he come than she left.</td></tr>
+          <tr><td class="eg">Both Ravi and Raj came.</td><td class="eg">Neither Ravi nor Raj was absent.</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="card c-lime">
+      <div class="card-head">🔃 Assertive ↔ Interrogative</div>
+      <div class="card-body">
+        <table>
+          <tr><th>Assertive</th><th>Interrogative</th></tr>
+          <tr><td class="eg">Everyone loves their motherland.</td><td class="eg">Who does not love their motherland?</td></tr>
+          <tr><td class="eg">Nobody can deny this truth.</td><td class="eg">Can anybody deny this truth?</td></tr>
+          <tr><td class="eg">It is impossible to do this.</td><td class="eg">Is it possible to do this?</td></tr>
+          <tr><td class="eg">He is the best player.</td><td class="eg">Is he not the best player?</td></tr>
+        </table>
+        <div class="rule">💡 Affirmative assertive → Negative interrogative &amp; vice versa.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card c-orange">
+      <div class="card-head">🔃 Simple ↔ Compound ↔ Complex</div>
+      <div class="card-body">
+        <table>
+          <tr><th>Type</th><th>Example</th></tr>
+          <tr><td><b>Simple</b></td><td class="eg">Despite being sick, she attended school.</td></tr>
+          <tr><td><b>Compound</b></td><td class="eg">She was sick <b>but</b> she attended school.</td></tr>
+          <tr><td><b>Complex</b></td><td class="eg"><b>Although</b> she was sick, she attended school.</td></tr>
+        </table>
+        <br/>
+        <table>
+          <tr><td><b>Simple</b></td><td class="eg">On arriving home, he ate food.</td></tr>
+          <tr><td><b>Complex</b></td><td class="eg"><b>When</b> he arrived home, he ate food.</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="card c-red">
+      <div class="card-head">🔃 Exclamatory ↔ Assertive</div>
+      <div class="card-body">
+        <table>
+          <tr><th>Exclamatory</th><th>Assertive</th></tr>
+          <tr><td class="eg">What a beautiful garden!</td><td class="eg">It is a very beautiful garden.</td></tr>
+          <tr><td class="eg">How bravely he fought!</td><td class="eg">He fought very bravely.</td></tr>
+          <tr><td class="eg">What lovely weather!</td><td class="eg">The weather is very lovely.</td></tr>
+        </table>
+        <div class="rule">💡 <b>What + a/an + adj + noun</b> → Assertive: It is a very + adj + noun.<br/><b>How + adj/adv</b> → Assertive: S + V + very + adj/adv.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="div"/>
+  <span class="sec-title st10">6 · Word Forms</span>
+
+  <div class="card c-deep" style="margin-bottom:10px">
+    <div class="card-head">📚 Noun → Verb → Adjective → Adverb</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Noun</th><th>Verb</th><th>Adjective</th><th>Adverb</th></tr>
+        <tr><td>beauty</td><td>beautify</td><td>beautiful</td><td>beautifully</td></tr>
+        <tr><td>success</td><td>succeed</td><td>successful</td><td>successfully</td></tr>
+        <tr><td>strength</td><td>strengthen</td><td>strong</td><td>strongly</td></tr>
+        <tr><td>decision</td><td>decide</td><td>decisive / decided</td><td>decisively</td></tr>
+        <tr><td>education</td><td>educate</td><td>educated / educational</td><td>educationally</td></tr>
+        <tr><td>knowledge</td><td>know</td><td>knowledgeable</td><td>knowledgeably</td></tr>
+        <tr><td>creation</td><td>create</td><td>creative</td><td>creatively</td></tr>
+        <tr><td>imagination</td><td>imagine</td><td>imaginative</td><td>imaginatively</td></tr>
+        <tr><td>happiness</td><td>—</td><td>happy</td><td>happily</td></tr>
+        <tr><td>anger</td><td>anger/enrage</td><td>angry</td><td>angrily</td></tr>
+        <tr><td>patience</td><td>—</td><td>patient</td><td>patiently</td></tr>
+        <tr><td>bravery</td><td>—</td><td>brave</td><td>bravely</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     CLASS 10 PAGE 4 — DEGREES, CONDITIONALS, ERRORS
+══════════════════════════════════════ -->
+<div class="page pb">
+  <span class="sec-title st10">7 · Degrees of Comparison</span>
+
+  <div class="card c-green" style="margin-bottom:10px">
+    <div class="card-head">📊 Positive → Comparative → Superlative</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Positive</th><th>Comparative</th><th>Superlative</th></tr>
+        <tr><td>tall</td><td>taller</td><td>tallest</td></tr>
+        <tr><td>beautiful</td><td>more beautiful</td><td>most beautiful</td></tr>
+        <tr><td>good / well</td><td>better</td><td>best</td></tr>
+        <tr><td>bad / ill</td><td>worse</td><td>worst</td></tr>
+        <tr><td>little</td><td>less</td><td>least</td></tr>
+        <tr><td>many / much</td><td>more</td><td>most</td></tr>
+        <tr><td>far</td><td>farther / further</td><td>farthest / furthest</td></tr>
+        <tr><td>old</td><td>older / elder</td><td>oldest / eldest</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card c-lime" style="margin-bottom:10px">
+    <div class="card-head">🔃 Transforming Degrees — Same Meaning</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Degree</th><th>Example Sentence</th></tr>
+        <tr><td><b>Superlative</b></td><td class="eg">Sachin is the <b>greatest</b> batsman in India.</td></tr>
+        <tr><td><b>Comparative</b></td><td class="eg">Sachin is <b>greater than</b> any other batsman in India.</td></tr>
+        <tr><td><b>Positive</b></td><td class="eg">No other batsman in India is <b>as great as</b> Sachin.</td></tr>
+      </table>
+      <div class="rule">💡 Pattern: <b>Superlative</b> → Comparative: [Subject] is more/___er than any other [noun].<br/> → Positive: No other [noun] is as ___ as [subject].</div>
+    </div>
+  </div>
+
+  <hr class="div"/>
+  <span class="sec-title st10">8 · Conditionals (If-Clauses)</span>
+
+  <div class="card c-teal" style="margin-bottom:10px">
+    <div class="card-head">🎯 4 Types of Conditional Sentences</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Type</th><th>Meaning</th><th>If-clause</th><th>Main clause</th><th>Example</th></tr>
+        <tr><td><b>Type 0 (Zero)</b></td><td>Universal / Scientific truth</td><td>Simple Present</td><td>Simple Present</td><td class="eg">If you heat water to 100°C, it <b>boils</b>.</td></tr>
+        <tr><td><b>Type 1 (Real)</b></td><td>Possible future condition</td><td>Simple Present</td><td>will + V1</td><td class="eg">If it rains, we <b>will stay</b> home.</td></tr>
+        <tr><td><b>Type 2 (Unreal Present)</b></td><td>Imaginary / unlikely present</td><td>Simple Past</td><td>would + V1</td><td class="eg">If I were rich, I <b>would help</b> the poor.</td></tr>
+        <tr><td><b>Type 3 (Unreal Past)</b></td><td>Imaginary past (regret)</td><td>Past Perfect</td><td>would have + V3</td><td class="eg">If he had studied, he <b>would have passed</b>.</td></tr>
+      </table>
+      <div class="warn">⚠️ In Type 2, always use <b>"were"</b> (not "was") for all persons — especially in formal/exam writing: "If I <b>were</b> you…"</div>
+    </div>
+  </div>
+
+  <hr class="div"/>
+  <span class="sec-title st10">9 · Common Errors to Avoid in Board Exams</span>
+
+  <div class="grid">
+    <div class="card c-red">
+      <div class="card-head">❌ Common Grammar Errors</div>
+      <div class="card-body">
+        <table>
+          <tr><th>Wrong ❌</th><th>Correct ✅</th></tr>
+          <tr><td class="eg">He didn't <b>went</b>.</td><td class="eg">He didn't <b>go</b>.</td></tr>
+          <tr><td class="eg">She is more <b>taller</b>.</td><td class="eg">She is <b>taller</b>.</td></tr>
+          <tr><td class="eg">I have seen him <b>yesterday</b>.</td><td class="eg">I <b>saw</b> him yesterday.</td></tr>
+          <tr><td class="eg">He <b>suggested me to</b> go.</td><td class="eg">He <b>suggested that</b> I should go.</td></tr>
+          <tr><td class="eg">She told <b>that</b> come here.</td><td class="eg">She told me <b>to</b> come there.</td></tr>
+          <tr><td class="eg">One of my friend.</td><td class="eg">One of my <b>friends</b>.</td></tr>
+          <tr><td class="eg">He is <b>more</b> intelligent than <b>any</b>.</td><td class="eg">He is more intelligent than <b>any other</b> student.</td></tr>
+          <tr><td class="eg">The news <b>are</b> good.</td><td class="eg">The news <b>is</b> good.</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="card c-pink">
+      <div class="card-head">🏆 Board Exam Tips — Class 10</div>
+      <div class="card-body">
+        <ul class="bl">
+          <li>In <b>Tenses</b> — always find the signal word first; it tells you the tense directly.</li>
+          <li>In <b>Voice</b> — identify tense → apply correct passive formula → change pronouns.</li>
+          <li>In <b>Narration</b> — identify sentence type first → apply correct conjunction → backshift tense → change pronouns → change time/place words.</li>
+          <li>In <b>Clauses</b> — find the main verb and subordinating conjunction to identify clause type.</li>
+          <li>In <b>Transformation</b> — meaning must remain <b>exactly the same</b> — only structure changes.</li>
+          <li>In <b>Degrees</b> — "No other…as…as" (Positive), "more than any other" (Comparative), "the most" (Superlative).</li>
+          <li>In <b>Conditionals</b> — never use "will" in the if-clause of Type 1.</li>
+          <li><b>Revise irregular verbs</b> (V1/V2/V3) — they appear in tenses, voice and narration questions.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Final footer -->
+  <div style="text-align:center;margin-top:26px;font-size:11px;color:#aaa;border-top:1px solid #eee;padding-top:12px">
+    Visions Learning · English Grammar Cards · Class 9 &amp; 10 · Board Exam Preparation
+  </div>
+</div>
+
+</body>
+</html>

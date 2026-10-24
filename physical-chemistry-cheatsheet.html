@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; font-size: 11px; background: #fff; color: #111; padding: 8px; }
+  h1 { text-align: center; font-size: 14px; background: #1a237e; color: #fff; padding: 5px; border-radius: 4px; margin-bottom: 6px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .box { border: 1.5px solid #1a237e; border-radius: 4px; padding: 5px; }
+  .box h2 { font-size: 11px; background: #1a237e; color: #fff; padding: 2px 5px; border-radius: 2px; margin-bottom: 4px; }
+  .box h3 { font-size: 10px; color: #1a237e; margin: 4px 0 2px; border-bottom: 1px solid #c5cae9; }
+  table { width: 100%; border-collapse: collapse; font-size: 10px; }
+  td, th { border: 1px solid #9fa8da; padding: 2px 4px; }
+  th { background: #e8eaf6; font-weight: bold; }
+  .formula { background: #fffde7; border-left: 3px solid #f9a825; padding: 3px 5px; margin: 3px 0; font-family: monospace; font-size: 10px; border-radius: 2px; }
+  .tip { background: #e8f5e9; border-left: 3px solid #388e3c; padding: 3px 5px; margin: 3px 0; font-size: 10px; border-radius: 2px; }
+  ul { padding-left: 14px; }
+  li { margin: 2px 0; }
+  .full { grid-column: 1 / -1; }
+  .red { color: #c62828; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<h1>⚗️ TYBSc Sem 5 — Physical Chemistry | Quick Revision Cheat Sheet</h1>
+
+<div class="grid">
+
+  <!-- DIPOLE MOMENT -->
+  <div class="box">
+    <h2>📌 CH1: Dipole Moment</h2>
+    <div class="formula">μ = q × d &nbsp;&nbsp; Unit: Debye (D)</div>
+    <h3>Key Molecules</h3>
+    <table>
+      <tr><th>Molecule</th><th>μ (D)</th><th>Structure</th></tr>
+      <tr><td>CO₂</td><td>0</td><td>Linear</td></tr>
+      <tr><td>SO₂</td><td>1.63</td><td>Angular</td></tr>
+      <tr><td>H₂O</td><td>1.85</td><td>Angular</td></tr>
+      <tr><td>NH₃</td><td>1.47</td><td>Pyramidal</td></tr>
+      <tr><td>BF₃</td><td>0</td><td>Planar triangular</td></tr>
+      <tr><td>CH₄</td><td>0</td><td>Tetrahedral</td></tr>
+    </table>
+    <h3>Disubstituted Benzene</h3>
+    <div class="formula">μ = √(μ₁² + μ₂² + 2μ₁μ₂ cosθ)</div>
+    <table>
+      <tr><th>Isomer</th><th>θ</th><th>μ (D)</th></tr>
+      <tr><td>Ortho</td><td>60°</td><td>2.6</td></tr>
+      <tr><td>Meta</td><td>120°</td><td>1.5</td></tr>
+      <tr><td>Para</td><td>180°</td><td>0</td></tr>
+    </table>
+    <div class="tip">💡 Symmetrical → μ=0 | Unsymmetrical → μ≠0</div>
+  </div>
+
+  <!-- IR SPECTROSCOPY -->
+  <div class="box">
+    <h2>📌 CH1: IR Spectroscopy</h2>
+    <div class="formula">ν̃ = (1/2πc) √(k/μ) &nbsp; μ = m₁m₂/(m₁+m₂)</div>
+    <div class="tip">Stronger bond → higher freq. | Heavier atom → lower freq.</div>
+    <h3>Key Group Frequencies</h3>
+    <table>
+      <tr><th>Bond</th><th>Freq (cm⁻¹)</th></tr>
+      <tr><td>O–H</td><td>~3600–3700</td></tr>
+      <tr><td>C–H aliphatic</td><td>2700–3000</td></tr>
+      <tr><td>C≡C</td><td>2100–2250</td></tr>
+      <tr><td>C=O aldehyde</td><td>1720–1740</td></tr>
+      <tr><td>C=C</td><td>1620–1670</td></tr>
+      <tr><td>C–Cl</td><td>500–600</td></tr>
+    </table>
+    <h3>Vibration Types</h3>
+    <ul>
+      <li><b>Stretching:</b> Symmetric / Asymmetric</li>
+      <li><b>Bending (in-plane):</b> Scissoring, Rocking</li>
+      <li><b>Bending (out-of-plane):</b> Wagging, Twisting</li>
+    </ul>
+    <div class="tip">💡 Fingerprint region: <b>900–1400 cm⁻¹</b> — unique per molecule</div>
+    <h3>Isotopic Effect</h3>
+    <div class="formula">ν̃(H–X) / ν̃(D–X) = √2 ≈ 1.414<br>O–H: ~3600 → O–D: ~2630 cm⁻¹</div>
+  </div>
+
+  <!-- RAMAN + POLARISATION -->
+  <div class="box">
+    <h2>📌 CH1: Raman Spectroscopy</h2>
+    <table>
+      <tr><th>Type</th><th>Frequency</th><th>Intensity</th></tr>
+      <tr><td>Rayleigh</td><td>ν₀ (same)</td><td>Highest</td></tr>
+      <tr><td>Stokes</td><td>ν₀ − Δν</td><td>Strong</td></tr>
+      <tr><td>Anti-Stokes</td><td>ν₀ + Δν</td><td>Weak</td></tr>
+    </table>
+    <div class="tip">💡 <b>IR active</b> = change in dipole moment<br>💡 <b>Raman active</b> = change in polarisability<br>💡 <b>Mutual Exclusion</b>: centrosymmetric molecules (e.g. CO₂) — IR active = Raman inactive</div>
+
+    <h2 style="margin-top:6px">📌 CH1: Polarisation & Debye</h2>
+    <div class="formula">PT = Pe + Pa + Po</div>
+    <ul>
+      <li><b>Pe</b> — Electronic (all molecules, temp-independent)</li>
+      <li><b>Pa</b> — Atomic/Ionic (temp-independent)</li>
+      <li><b>Po</b> — Orientation (polar only, <span class="red">temp-dependent ↓ as T↑</span>)</li>
+    </ul>
+    <div class="formula">PT = (4/3)πNAα + μ²NA/3kT = A + B/T</div>
+    <div class="tip">💡 Plot PT vs 1/T → slope = μ²NA/3k → find μ</div>
+    <div class="formula">μ = √(3k × Slope / NA)</div>
+  </div>
+
+  <!-- COLLIGATIVE PROPERTIES -->
+  <div class="box">
+    <h2>📌 CH2: Colligative Properties</h2>
+    <div class="tip">Depend on <b>number of solute particles</b>, NOT on nature of solute</div>
+
+    <h3>1. Vapour Pressure — Raoult's Law</h3>
+    <div class="formula">p = p° × x₁<br>(p°− p)/p° = x₂ = mole fraction of solute</div>
+    <div class="formula">M₂ = (W₂ × M₁ × p°) / (W₁ × (p°− p))</div>
+
+    <h3>2. Boiling Point Elevation</h3>
+    <div class="formula">ΔTb = Kb × m<br>Kb = RT_b² × M₁ / (1000 × lv)</div>
+
+    <h3>3. Freezing Point Depression</h3>
+    <div class="formula">ΔTf = Kf × m<br>Kf = RT_f² × M₁ / (1000 × lf)</div>
+    <div class="formula">M₂ = (1000 × Kf × W₂) / (ΔTf × W₁)</div>
+    <div class="tip">💡 Camphor Kf = <b>37.7 K·kg·mol⁻¹</b> (Rast method)<br>Beckmann thermometer = adjustable range thermometer</div>
+
+    <h3>4. Osmotic Pressure — Van't Hoff</h3>
+    <div class="formula">πV = nRT &nbsp;→&nbsp; π = CRT<br>M = WRT / πV</div>
+    <div class="tip">💡 <b>Reverse Osmosis</b>: apply pressure &gt; π on solution side → pure water obtained</div>
+
+    <h3>Van't Hoff Factor (i) — Electrolytes</h3>
+    <div class="formula">i = observed / calculated (no dissociation)<br>ΔTb = i·Kb·m &nbsp;|&nbsp; ΔTf = i·Kf·m &nbsp;|&nbsp; π = i·CRT</div>
+    <table>
+      <tr><th>Electrolyte</th><th>i</th></tr>
+      <tr><td>Glucose (non-electrolyte)</td><td>1</td></tr>
+      <tr><td>NaCl, KCl</td><td>2</td></tr>
+      <tr><td>BaCl₂, K₂SO₄</td><td>3</td></tr>
+    </table>
+  </div>
+
+  <!-- NUMERICALS QUICK REF -->
+  <div class="box full">
+    <h2>🔢 Numerical Quick Reference</h2>
+    <table>
+      <tr>
+        <th>Problem Type</th>
+        <th>Formula to Use</th>
+        <th>Remember</th>
+      </tr>
+      <tr>
+        <td>Mol. wt from VP</td>
+        <td>M₂ = (W₂ × M₁ × p°) / (W₁ × (p°−p))</td>
+        <td>Use mole fractions</td>
+      </tr>
+      <tr>
+        <td>Mol. wt from ΔTf (Rast)</td>
+        <td>M₂ = (1000 × Kf × W₂) / (ΔTf × W₁)</td>
+        <td>Kf camphor = 37.7</td>
+      </tr>
+      <tr>
+        <td>Mol. wt from osmosis</td>
+        <td>M = WRT / πV</td>
+        <td>R = 0.0821 L·atm·mol⁻¹·K⁻¹</td>
+      </tr>
+      <tr>
+        <td>Dipole moment (Debye plot)</td>
+        <td>μ = √(3k × slope / NA)</td>
+        <td>Plot PT vs 1/T</td>
+      </tr>
+      <tr>
+        <td>IR frequency ratio (isotope)</td>
+        <td>ν̃H / ν̃D = √(μD/μH) ≈ √2</td>
+        <td>Heavier = lower freq</td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+
+<p style="text-align:center; margin-top:6px; font-size:10px; color:#555;">TYBSc Sem 5 Physical Chemistry — Ch 1 (Spectroscopy) & Ch 2 (Colligative Properties) | Good Luck! 🍀</p>
+</body>
+</html>

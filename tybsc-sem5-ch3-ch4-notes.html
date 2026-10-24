@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TYBSc Sem 5 – Ch 3 & 4 Physical Chemistry Notes</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      color: #1a1a2e;
+      line-height: 1.75;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0d1b2a, #1b4332, #0f3460);
+      color: white;
+      text-align: center;
+      padding: 40px 20px 28px;
+    }
+    header h1 { font-size: 2rem; letter-spacing: 1px; }
+    header p  { font-size: 0.95rem; opacity: 0.85; margin-top: 6px; }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      background: #0f3460;
+      padding: 12px 20px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #e2e8f0;
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 5px 13px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.3);
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    nav a:hover { background: rgba(255,255,255,0.15); }
+
+    .container { max-width: 980px; margin: 30px auto; padding: 0 20px 60px; }
+
+    .chapter-title {
+      color: white;
+      padding: 18px 24px;
+      border-radius: 12px;
+      margin: 44px 0 20px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    }
+    .ch3-color { background: linear-gradient(135deg, #7b2d8b, #4a0e6e); }
+    .ch4-color { background: linear-gradient(135deg, #1a6b3a, #0d4a2a); }
+
+    .section-title {
+      background: #16213e;
+      color: #e2e8f0;
+      padding: 10px 20px;
+      border-radius: 8px;
+      margin: 28px 0 14px;
+      font-size: 1.05rem;
+      border-left: 5px solid #e63946;
+    }
+    .section-title.green { border-left-color: #10b981; }
+
+    .note-card {
+      background: white;
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+      border-left: 4px solid #0f3460;
+    }
+    .note-card.purple { border-left-color: #7b2d8b; }
+    .note-card.green  { border-left-color: #1a6b3a; }
+    .note-card h4 {
+      color: #0f3460;
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+    .note-card.purple h4 { color: #7b2d8b; }
+    .note-card.green  h4 { color: #1a6b3a; }
+    .note-card p, .note-card li { font-size: 0.93rem; color: #374151; }
+    .note-card ul { padding-left: 20px; margin-top: 6px; }
+    .note-card ul li { margin-bottom: 4px; }
+
+    .formula-box {
+      background: #fff8e1;
+      border: 1px solid #fbc02d;
+      border-radius: 8px;
+      padding: 12px 18px;
+      margin: 10px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.95rem;
+      color: #5d4037;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    @media(max-width:650px){ .two-col { grid-template-columns: 1fr; } }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.88rem;
+    }
+    th {
+      background: #0f3460;
+      color: white;
+      padding: 9px 13px;
+      text-align: left;
+    }
+    th.purple-th { background: #7b2d8b; }
+    th.green-th  { background: #1a6b3a; }
+    td { padding: 8px 13px; border-bottom: 1px solid #e5e7eb; }
+    tr:nth-child(even) td { background: #f8fafc; }
+
+    .tip {
+      background: #d1fae5;
+      border-left: 4px solid #10b981;
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin: 10px 0;
+      font-size: 0.88rem;
+      color: #065f46;
+    }
+    .warn {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin: 10px 0;
+      font-size: 0.88rem;
+      color: #78350f;
+    }
+
+    /* Q&A */
+    .qa-section {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 30px;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.09);
+    }
+    .qa-section h3 {
+      font-size: 1.2rem;
+      border-bottom: 2px solid;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+    }
+    .qa-section.purple-qa h3 { color: #7b2d8b; border-color: #7b2d8b; }
+    .qa-section.green-qa  h3 { color: #1a6b3a; border-color: #1a6b3a; }
+
+    .qa-item { margin-bottom: 22px; border-radius: 8px; overflow: hidden; }
+    .question {
+      color: #ffd700;
+      padding: 12px 18px;
+      font-weight: 600;
+      font-size: 0.93rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .question.purple-q { background: #4a0e6e; }
+    .question.green-q  { background: #0d4a2a; }
+    .answer {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 14px 18px;
+      font-size: 0.92rem;
+      color: #374151;
+    }
+    .answer ul { padding-left: 20px; margin-top: 6px; }
+    .answer ul li { margin-bottom: 4px; }
+    .answer .formula {
+      background: #fff8e1;
+      border-left: 3px solid #f59e0b;
+      padding: 7px 12px;
+      margin: 8px 0;
+      font-family: 'Courier New', monospace;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+
+    .badge {
+      display: inline-block;
+      color: white;
+      font-size: 0.68rem;
+      padding: 2px 8px;
+      border-radius: 12px;
+      white-space: nowrap;
+      font-weight: 600;
+    }
+    .badge-purple { background: #7b2d8b; }
+    .badge-green  { background: #1a6b3a; }
+    .badge-gold   { background: #d97706; }
+
+    /* Quick Rev Table */
+    .rev-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 14px;
+    }
+    @media(max-width:650px){ .rev-grid { grid-template-columns: 1fr; } }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: #6b7280;
+      font-size: 0.85rem;
+      border-top: 1px solid #e5e7eb;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>⚛️ TYBSc Sem 5 – Physical Chemistry</h1>
+  <p>Chapter 3: Nuclear Chemistry &nbsp;|&nbsp; Chapter 4: Surface Chemistry</p>
+  <p style="margin-top:8px;font-size:0.82rem;opacity:0.7;">Complete Notes + Important Exam Questions &amp; Answers</p>
+</header>
+
+<nav>
+  <a href="#ch3">Ch 3: Nuclear Chemistry</a>
+  <a href="#ch3-detectors">Detectors</a>
+  <a href="#ch3-tracers">Tracers</a>
+  <a href="#ch3-reactor">Nuclear Reactor</a>
+  <a href="#ch3-qa">Ch 3 Q&amp;A</a>
+  <a href="#ch4">Ch 4: Surface Chemistry</a>
+  <a href="#ch4-adsorption">Adsorption</a>
+  <a href="#ch4-isotherms">Isotherms</a>
+  <a href="#ch4-colloids">Colloids &amp; Emulsions</a>
+  <a href="#ch4-surfactants">Surfactants</a>
+  <a href="#ch4-qa">Ch 4 Q&amp;A</a>
+</nav>
+
+<div class="container">
+
+<!-- ═══════════════════════════════════════ -->
+<!--       CHAPTER 3 – NUCLEAR CHEMISTRY    -->
+<!-- ═══════════════════════════════════════ -->
+
+<div class="chapter-title ch3-color" id="ch3">
+  ⚛️ Chapter 3 – Nuclear Chemistry
+</div>
+
+<!-- 3.1 Detection -->
+<div class="section-title" id="ch3-detectors">3.1 Detection of Radioactive Radiations</div>
+
+<div class="note-card purple">
+  <h4>Methods of Detection</h4>
+  <p>Radioactive radiations (α, β, γ) are invisible but can be detected by their interactions with matter. Main detection methods:</p>
+  <ul>
+    <li>Ionisation methods (GM Counter)</li>
+    <li>Photographic methods</li>
+    <li>Scintillation methods (Electrometer, PMT)</li>
+    <li>Fluorescence methods</li>
+  </ul>
+</div>
+
+<div class="two-col">
+  <div class="note-card purple">
+    <h4>Photomultiplier Tube (P.M.T.)</h4>
+    <ul>
+      <li>Also called an <strong>electron multiplier tube</strong></li>
+      <li>Surrounded by a photosensitive cathode and anode</li>
+      <li>Dynodes are arranged in increasing order of positive potential</li>
+      <li>Incident electrons hit first dynode → secondary electrons produced</li>
+      <li>Each dynode multiplies electrons → amplified current</li>
+      <li>Aluminum foil acts as light reflector of P.M.T.</li>
+    </ul>
+  </div>
+  <div class="note-card purple">
+    <h4>Electrometer</h4>
+    <ul>
+      <li>Connected to anode of PMT</li>
+      <li>Measures amplified current from photomultiplier tube</li>
+      <li>Secondary electrons from cesium/antimony metal and silver oxide are multiplied in multiples of incident electrons</li>
+    </ul>
+    <br>
+    <h4>Phosphor / Scintillator</h4>
+    <ul>
+      <li>Solid organic phosphors: naphthalene, anthracene</li>
+      <li>Liquid: BaPt(CN)₄ can also be used</li>
+      <li>Thin aluminum foil reflects light to photocathode</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 3.2 Tracers -->
+<div class="section-title" id="ch3-tracers">3.2 Applications of Radioisotopes as Tracers</div>
+
+<div class="note-card purple">
+  <h4>What are Radioactive Tracers?</h4>
+  <p>Radioactive isotopes (radioisotopes) are used as <strong>tracers</strong> because they behave chemically identical to normal isotopes but can be detected by their radioactive emissions. They help track the path of atoms/molecules in chemical and biological processes.</p>
+  <div class="tip">💡 Tracers are like "labels" — same chemistry, but detectable!</div>
+</div>
+
+<div class="two-col">
+  <div class="note-card purple">
+    <h4>(i) Photosynthesis Mechanism</h4>
+    <p>Plants use CO₂ and H₂O to synthesize carbohydrates. Using isotopes <strong>¹⁴C and ¹⁸O</strong>:</p>
+    <div class="formula-box" style="font-size:0.82rem;">
+      6 C¹⁶O₂ + 6 H₂¹⁸O → C₆H₁₂¹⁸O₆ + 6 ¹⁶O₂<br>
+      6 C¹⁸O₂ + 6 H₂¹⁶O → C₆H₁₂O₆ + 6 ¹⁸O₂
+    </div>
+    <p>Result: The O₂ released in photosynthesis comes from <strong>water (H₂O)</strong>, not from CO₂.</p>
+  </div>
+  <div class="note-card purple">
+    <h4>(ii) Hydrolysis of Esters</h4>
+    <p>Using labelled water H₂¹⁸O to determine which bond breaks during ester hydrolysis:</p>
+    <ul>
+      <li><strong>Path I:</strong> Acyl-oxygen bond breaks (acid + alcohol)</li>
+      <li><strong>Path II:</strong> Alkyl-oxygen bond breaks</li>
+    </ul>
+    <p>Experiment with ¹⁸O water showed the <strong>acid contains ¹⁸O</strong>, not the alcohol → <strong>acyl-oxygen bond breaks</strong> (Path I is correct).</p>
+  </div>
+</div>
+
+<div class="note-card purple">
+  <h4>(iii) Friedel-Crafts Reaction Mechanism</h4>
+  <p>AlCl₃ is the catalyst. Using labelled chlorine in HCl gas:</p>
+  <div class="formula-box" style="font-size:0.85rem;">
+    C₆H₆ + CH₃Cl → (AlCl₃ catalyst) → C₆H₅CH₃ + HCl↑
+  </div>
+  <p>The labelled Cl from CH₃Cl (not from AlCl₃) appeared in the HCl evolved → confirms AlCl₃ forms an intermediate complex (CH₃–AlCl₃) which then donates the CH₃⁺ carbocation to benzene ring.</p>
+</div>
+
+<!-- 3.3 Nuclear Reactor -->
+<div class="section-title" id="ch3-reactor">3.3 Nuclear Reactor</div>
+
+<div class="note-card purple">
+  <h4>Fissile vs Fertile Materials</h4>
+  <div class="two-col" style="margin-top:8px;">
+    <div>
+      <strong>Fissile Materials:</strong>
+      <ul>
+        <li>Undergo fission directly with slow neutrons</li>
+        <li>Examples: ²³⁵U, ²³⁹Pu, ²³³U</li>
+      </ul>
+    </div>
+    <div>
+      <strong>Fertile Materials:</strong>
+      <ul>
+        <li>Non-fissile but converted to fissile by neutron bombardment</li>
+        <li>Examples: ²³⁸U (→ ²³⁹Pu), ²³²Th (→ ²³³U)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="tip">💡 ²³⁵U and ²³⁹Pu are called fertile elements. ²³²Th is fertile material (India — monazite sands in Kerala).</div>
+</div>
+
+<div class="note-card purple">
+  <h4>Essential Components of a Nuclear Reactor</h4>
+  <table>
+    <tr><th class="purple-th">Component</th><th class="purple-th">Material Used</th><th class="purple-th">Function</th></tr>
+    <tr><td><strong>(i) Core / Fuel</strong></td><td>²³⁵U or ²³⁹Pu</td><td>Fissionable material — provides nuclear fuel</td></tr>
+    <tr><td><strong>(ii) Moderator</strong></td><td>Heavy water (D₂O), graphite, ordinary water</td><td>Slows down fast neutrons to thermal (slow) neutrons</td></tr>
+    <tr><td><strong>(iii) Control Rods</strong></td><td>Cadmium or boron steel</td><td>Absorb excess neutrons; maintain multiplication factor k = 1</td></tr>
+    <tr><td><strong>(iv) Coolant</strong></td><td>Heavy water (D₂O) or graphite</td><td>Removes heat generated in core by fission</td></tr>
+    <tr><td><strong>(v) Shielding</strong></td><td>Thick lead sheets</td><td>Prevents leakage of radiation from reactor</td></tr>
+    <tr><td><strong>(vi) Neutron Reflectors</strong></td><td>Helium, CO₂</td><td>Prevent neutrons from escaping from core surface</td></tr>
+  </table>
+</div>
+
+<div class="note-card purple">
+  <h4>Power Reactor</h4>
+  <p>A <strong>power reactor</strong> is used to generate electric power. The fission energy is converted to heat → steam → turbine → electricity.</p>
+  <ul>
+    <li><strong>Construction:</strong> Nuclear reactor core surrounded by thick blocks of carbon (graphite) as moderator + shield</li>
+    <li><strong>Aluminium boxes</strong> contain ²³⁵U in long pins placed in alternate rows in graphite blocks</li>
+    <li><strong>D₂O (coolant)</strong> is circulated through pipes around the fuel core</li>
+    <li>Cadmium rods act as neutron absorbers; control neutron density and temperature</li>
+  </ul>
+  <div class="tip">💡 India has one of the largest deposits of thorium (²³²Th) as monazite sand in Kerala!</div>
+</div>
+
+<div class="note-card purple">
+  <h4>Neutron Flux &amp; Multiplication Factor</h4>
+  <div class="formula-box">
+    Neutron flux = number of neutrons emitted per second from surface area of fuel<br>
+    For Ra–Be alloy: neutron flux ~ 10⁶ neutrons/cm²/s<br><br>
+    Multiplication Factor (k):<br>
+    k = 1 → critical (sustained chain reaction)<br>
+    k &gt; 1 → supercritical (explosion – bomb)<br>
+    k &lt; 1 → subcritical (reaction dies out)
+  </div>
+</div>
+
+<!-- CH 3 Q&A -->
+<div class="qa-section purple-qa" id="ch3-qa">
+  <h3>⭐ Chapter 3 – Important Exam Q&amp;A</h3>
+
+  <div class="qa-item">
+    <div class="question purple-q">Q1. Describe the construction and working of a Photomultiplier Tube (PMT). <span class="badge badge-purple">5 Marks</span></div>
+    <div class="answer">
+      <strong>Photomultiplier Tube (PMT):</strong> Also known as electron multiplier tube. Used to detect and amplify scintillations from radioactive decay.
+      <br><br>
+      <strong>Construction:</strong>
+      <ul>
+        <li>A crystal of phosphor (e.g., NaI activated by Tl) surrounded by a photosensitive cathode</li>
+        <li>Aluminum foil acts as a light reflector</li>
+        <li>Dynodes (multiple electrodes) arranged in increasing order of positive potential</li>
+        <li>Connected to an electrometer to measure current</li>
+      </ul>
+      <strong>Working:</strong>
+      <ul>
+        <li>Nuclear radiation strikes the phosphor → produces a flash of light (scintillation)</li>
+        <li>Light falls on photocathode → ejects photoelectrons</li>
+        <li>Photoelectrons accelerated to first dynode → secondary electrons produced</li>
+        <li>Secondary electrons multiplied at each subsequent dynode</li>
+        <li>Large amplified current measured by electrometer — this is the detected signal</li>
+      </ul>
+      <strong>Advantages:</strong> Simple to operate, high sensitivity, can distinguish between different types of radiation, efficient for counting γ-rays.
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="question purple-q">Q2. What are radioactive tracers? Explain their use in the study of photosynthesis. <span class="badge badge-purple">5 Marks</span></div>
+    <div class="answer">
+      <strong>Radioactive Tracers:</strong> Radioisotopes are atoms with radioactive nuclei that behave chemically identical to stable isotopes but can be detected by their radioactive emissions. When incorporated into compounds, they "trace" or follow the path of atoms through chemical/biological reactions.
+      <br><br>
+      <strong>Application in Photosynthesis:</strong>
+      <br>The overall reaction of photosynthesis is:
+      <div class="formula">6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂</div>
+      The question was: does the O₂ released come from CO₂ or H₂O?
+      <br><br>
+      Using ¹⁸O labelled water (H₂¹⁸O):
+      <div class="formula">6C¹⁶O₂ + 6H₂¹⁸O → C₆H₁₂¹⁸O₆ + 6¹⁶O₂ — No, this gives O₂ without ¹⁸O</div>
+      Using ¹⁸O labelled CO₂ (C¹⁸O₂):
+      <div class="formula">6C¹⁸O₂ + 6H₂¹⁶O → C₆H₁₂O₆ + 6¹⁸O₂ — O₂ released has ¹⁸O</div>
+      <strong>Conclusion:</strong> The oxygen released in photosynthesis comes from <strong>water (H₂O)</strong>, not from CO₂. This was confirmed by detecting ¹⁸O in evolved O₂ only when ¹⁸O-labelled CO₂ was used.
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="question purple-q">Q3. Explain the use of radioactive tracers in the hydrolysis of esters. <span class="badge badge-purple">4 Marks</span></div>
+    <div class="answer">
+      <strong>Problem:</strong> In acid/base hydrolysis of esters (R–CO–O–R'), the question was whether the acyl-oxygen bond or the alkyl-oxygen bond breaks.
+      <br><br>
+      <strong>Experiment:</strong> Labelled water (H₂¹⁸O) was used in the hydrolysis:
+      <div class="formula">R–CO–O–R' + H₂¹⁸O → ?</div>
+      <strong>Path I (acyl-oxygen bond breaks):</strong> ¹⁸O appears in the acid → R–C(=O)–¹⁸OH + R'OH
+      <br>
+      <strong>Path II (alkyl-oxygen bond breaks):</strong> ¹⁸O would appear in the alcohol → RCOOH + R'¹⁸OH
+      <br><br>
+      <strong>Result:</strong> The ¹⁸O was found in the acid (not the alcohol). Hence, <strong>Path I is correct</strong> — the <strong>acyl-oxygen bond breaks</strong> during ester hydrolysis.
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="question purple-q">Q4. Differentiate between fissile and fertile materials. Give two examples of each. <span class="badge badge-purple">4 Marks</span></div>
+    <div class="answer">
+      <table>
+        <tr><th class="purple-th">Fissile Materials</th><th class="purple-th">Fertile Materials</th></tr>
+        <tr><td>Undergo nuclear fission directly when bombarded by slow (thermal) neutrons</td><td>Cannot undergo fission directly but can be converted to fissile material by neutron bombardment</td></tr>
+        <tr><td>Liberate large energy during fission</td><td>Act as nuclear fuel precursors</td></tr>
+        <tr><td>Examples: ²³⁵U, ²³⁹Pu, ²³³U</td><td>Examples: ²³⁸U (→²³⁹Pu), ²³²Th (→²³³U)</td></tr>
+        <tr><td>Directly used in reactors</td><td>Used as target material in breeder reactors</td></tr>
+      </table>
+      <br>India has large deposits of <strong>thorium (²³²Th)</strong> as monazite sand (Kerala), making it a strategic fertile resource.
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="question purple-q">Q5. Describe the essential components of a nuclear reactor with their functions. <span class="badge badge-purple">8 Marks</span></div>
+    <div class="answer">
+      A nuclear reactor is a device in which controlled fission chain reaction is maintained to produce energy.
+      <br><br>
+      <strong>(i) Core / Nuclear Fuel:</strong> The fissionable material (²³⁵U or ²³⁹Pu) placed in the core. Energy is produced here by fission reaction.
+      <br><br>
+      <strong>(ii) Moderator:</strong> Heavy water (D₂O), graphite, or ordinary water. Slows down fast neutrons to thermal (slow) neutrons required for sustained fission of ²³⁵U.
+      <br><br>
+      <strong>(iii) Control Rods:</strong> Made of cadmium or boron steel. These absorb excess neutrons to maintain multiplication factor k = 1 (critical). If k &gt; 1, rods are inserted more; if k &lt; 1, they are withdrawn.
+      <br><br>
+      <strong>(iv) Coolant:</strong> Heavy water (D₂O) or graphite circulated through pipes around the fuel core. Removes heat generated and transfers it to a heat exchanger to produce steam for power generation.
+      <br><br>
+      <strong>(v) Shielding:</strong> Thick layers of lead sheets surround the reactor. Prevents leakage of harmful radiation (α, β, γ) to the environment.
+      <br><br>
+      <strong>(vi) Neutron Reflectors:</strong> Substances like helium or CO₂ around the core surface. Reflect neutrons back into the core to prevent their escape.
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="question purple-q">Q6. Explain the Friedel-Crafts reaction mechanism using radioactive tracers. <span class="badge badge-purple">4 Marks</span></div>
+    <div class="answer">
+      <strong>Reaction:</strong>
+      <div class="formula">C₆H₆ + CH₃Cl → (AlCl₃) → C₆H₅CH₃ + HCl</div>
+      <strong>Question:</strong> Does the AlCl₃ catalyst donate Cl to form HCl, or does the Cl come from CH₃Cl?
+      <br><br>
+      <strong>Tracer Experiment:</strong> Labelled chlorine was used only in the HCl gas (not in AlCl₃ or CH₃Cl). Results showed that labelled Cl appeared in the HCl product, not from AlCl₃.
+      <br><br>
+      <strong>Mechanism Confirmed:</strong>
+      <ul>
+        <li>AlCl₃ interacts with CH₃Cl to form intermediate complex: CH₃⁺...AlCl₄⁻</li>
+        <li>CH₃⁺ (carbocation) attacks benzene ring (electrophilic substitution)</li>
+        <li>HCl is released and AlCl₃ is regenerated as catalyst</li>
+      </ul>
+      This confirms AlCl₃ forms an intermediate but is not consumed, acting as a <strong>true catalyst</strong>.
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ═══════════════════════════════════════ -->
+<!--      CHAPTER 4 – SURFACE CHEMISTRY     -->
+<!-- ═══════════════════════════════════════ -->
+
+<div class="chapter-title ch4-color" id="ch4">
+  🧪 Chapter 4 – Surface Chemistry (Unit IV)
+</div>
+
+<!-- 4.1 Adsorption -->
+<div class="section-title green" id="ch4-adsorption">4.1 Adsorption</div>
+
+<div class="note-card green">
+  <h4>Surface Chemistry — Introduction</h4>
+  <p><strong>Surface chemistry</strong> is a branch of physical chemistry dealing with properties of surfaces and phase boundaries. The surface phenomenon involving accumulation of one substance on the surface of another is called <strong>adsorption</strong>.</p>
+  <ul>
+    <li><strong>Adsorbent:</strong> The substance on whose surface adsorption occurs (e.g., activated charcoal, silica gel, Pd, Ni)</li>
+    <li><strong>Adsorbate:</strong> The substance that gets adsorbed on the surface (e.g., H₂ on Ni, NH₃ on activated charcoal)</li>
+    <li><strong>Desorption:</strong> Removal of adsorbed substance from adsorbent surface</li>
+    <li><strong>Sorption:</strong> Both adsorption and absorption occurring simultaneously</li>
+  </ul>
+  <div class="tip">💡 Adsorption = surface phenomenon; Absorption = bulk phenomenon</div>
+</div>
+
+<div class="note-card green">
+  <h4>Physical vs Chemical Adsorption</h4>
+  <table>
+    <tr><th class="green-th">Property</th><th class="green-th">Physisorption</th><th class="green-th">Chemisorption</th></tr>
+    <tr><td>Force</td><td>Weak van der Waals forces</td><td>Chemical bond formation (strong)</td></tr>
+    <tr><td>Specificity</td><td>Non-specific</td><td>Highly specific</td></tr>
+    <tr><td>Reversibility</td><td>Reversible</td><td>Irreversible</td></tr>
+    <tr><td>Layers</td><td>Multilayer</td><td>Unimolecular layer only</td></tr>
+    <tr><td>Temperature</td><td>Occurs at low temperature; decreases with increase in T</td><td>Occurs at high temperature; increases initially then decreases</td></tr>
+    <tr><td>Heat evolved</td><td>Low: &lt;40 kJ/mol</td><td>High: 40–400 kJ/mol</td></tr>
+    <tr><td>Activation energy</td><td>Low</td><td>High</td></tr>
+    <tr><td>Example</td><td>N₂ on Fe surface</td><td>H₂ on Ni surface</td></tr>
+  </table>
+</div>
+
+<div class="note-card green">
+  <h4>Factors Affecting Adsorption</h4>
+  <ul>
+    <li><strong>Surface area:</strong> Greater surface area → greater adsorption. Activated charcoal has large surface area.</li>
+    <li><strong>Temperature:</strong> Physisorption decreases with increase in temperature; chemisorption increases initially then decreases.</li>
+    <li><strong>Pressure:</strong> Adsorption increases with pressure (for gases).</li>
+    <li><strong>Nature of adsorbate:</strong> Gases with higher critical temperature are more easily adsorbed (e.g., SO₂ &gt; CO₂ &gt; H₂).</li>
+    <li><strong>Nature of adsorbent:</strong> Activated charcoal, silica gel, alumina are good adsorbents due to high surface area.</li>
+  </ul>
+</div>
+
+<!-- 4.2 Adsorption Isotherms -->
+<div class="section-title green" id="ch4-isotherms">4.2 Adsorption Isotherms</div>
+
+<div class="note-card green">
+  <h4>Adsorption Isotherm</h4>
+  <p>A graphical curve showing the relationship between the amount of substance adsorbed per unit mass of adsorbent and the equilibrium pressure at <strong>constant temperature</strong> is called an <strong>adsorption isotherm</strong>.</p>
+  <p>Five types of adsorption isotherms (Brunauer classification) have been reported for physical adsorption.</p>
+</div>
+
+<div class="note-card green">
+  <h4>Freundlich Adsorption Isotherm</h4>
+  <p>An <strong>empirical equation</strong> given by Freundlich (valid only at low pressures):</p>
+  <div class="formula-box">
+    x/m = k·P^(1/n) &nbsp;&nbsp; (n &gt; 1)<br><br>
+    Taking log: log(x/m) = log k + (1/n)·log P
+  </div>
+  <p>where x = mass adsorbed, m = mass of adsorbent, P = pressure, k and n are constants.</p>
+  <ul>
+    <li>Plotting log(x/m) vs log P gives a straight line</li>
+    <li>Slope = 1/n, Intercept = log k</li>
+    <li><strong>Limitation:</strong> Valid only at low pressures; entirely empirical (no theoretical background)</li>
+  </ul>
+</div>
+
+<div class="note-card green">
+  <h4>Langmuir Adsorption Isotherm (1916)</h4>
+  <p>Langmuir derived a theoretical equation based on <strong>kinetic theory of gases</strong>.</p>
+  <p><strong>Postulates:</strong></p>
+  <ul>
+    <li>All gases behave ideally</li>
+    <li>Adsorbed layer is <strong>unimolecular</strong> (monolayer)</li>
+    <li>Gas molecules adsorbed on selective sites (one site = one molecule)</li>
+    <li>Bond between gas molecule and adsorbent site is sufficiently strong (chemical)</li>
+    <li>Heat of adsorption is same for all sites and independent of surface coverage</li>
+  </ul>
+  <p><strong>Derivation:</strong></p>
+  <p>Let θ = fraction of surface covered. Then (1 − θ) = fraction uncovered.</p>
+  <div class="formula-box">
+    Rate of adsorption = k_a × (1 − θ) × P<br>
+    Rate of desorption = k_d × θ<br><br>
+    At equilibrium: k_a(1−θ)P = k_d·θ<br>
+    Solving: θ = (k_a/k_d)·P / [1 + (k_a/k_d)·P]<br><br>
+    Let b = k_a/k_d (proportionality constant):<br>
+    <strong>θ = bP / (1 + bP)</strong>  ← Langmuir Adsorption Isotherm
+  </div>
+  <p><strong>Special cases:</strong></p>
+  <ul>
+    <li>At low pressure: bP &lt;&lt; 1 → θ = bP (linear — follows Freundlich with 1/n = 1)</li>
+    <li>At high pressure: bP &gt;&gt; 1 → θ = 1 (saturation — monolayer complete)</li>
+  </ul>
+</div>
+
+<!-- 4.2b Applications of Adsorption + Colloid Properties -->
+<div class="section-title green">4.2b Applications of Adsorption &amp; Properties of Colloids</div>
+
+<div class="note-card green">
+  <h4>Applications of Adsorption</h4>
+  <table>
+    <tr><th class="green-th">Application</th><th class="green-th">How Adsorption Helps</th></tr>
+    <tr><td><strong>Gas masks</strong></td><td>Activated charcoal adsorbs toxic gases (CO, Cl₂) — used in gas masks during war/industrial accidents</td></tr>
+    <tr><td><strong>Dehumidification</strong></td><td>Silica gel adsorbs water vapour — used to keep electronic components and medicines dry</td></tr>
+    <tr><td><strong>Chromatography</strong></td><td>Differential adsorption of mixture components on adsorbent (silica/alumina) separates them</td></tr>
+    <tr><td><strong>Heterogeneous catalysis</strong></td><td>Catalyst surface adsorbs reactants, weakens bonds → speeds up reaction (e.g., Fe in Haber process)</td></tr>
+    <tr><td><strong>Clarification of sugar</strong></td><td>Animal charcoal adsorbs coloured impurities from sugar solution → produces white sugar</td></tr>
+    <tr><td><strong>Froth flotation</strong></td><td>Pine oil adsorbs on ore particles (not gangue) → ore floats; used to concentrate sulphide ores</td></tr>
+    <tr><td><strong>Removal of moisture</strong></td><td>Activated silica gel or alumina adsorb water vapour from gases</td></tr>
+  </table>
+</div>
+
+<div class="note-card green">
+  <h4>Tyndall Effect</h4>
+  <p>When a beam of light is passed through a <strong>colloidal solution</strong>, the path of light becomes visible due to scattering of light by colloidal particles. This is called the <strong>Tyndall Effect</strong>.</p>
+  <ul>
+    <li>Observed in colloids — NOT in true solutions (particles too small to scatter)</li>
+    <li>The illuminated path is called the <strong>Tyndall cone</strong></li>
+    <li>Used to distinguish true solutions from colloids</li>
+  </ul>
+  <div class="tip">💡 Examples: Blue colour of sky, visibility of headlight beams in fog, beam of light in dusty room — all Tyndall Effect!</div>
+</div>
+
+<div class="note-card green">
+  <h4>Brownian Motion</h4>
+  <p>The <strong>continuous random zigzag motion</strong> of colloidal particles in a dispersion medium is called <strong>Brownian motion</strong>. It was first observed by Robert Brown (1827) in pollen grains.</p>
+  <ul>
+    <li>Caused by <strong>unequal bombardment</strong> of colloidal particles by molecules of dispersion medium</li>
+    <li>More pronounced for smaller particles and less viscous medium</li>
+    <li>Brownian motion prevents settling of colloidal particles → responsible for <strong>kinetic stability</strong> of colloids</li>
+  </ul>
+  <div class="tip">💡 Brownian motion is direct evidence of the kinetic molecular theory of matter.</div>
+</div>
+
+<div class="note-card green">
+  <h4>Coagulation (Flocculation) of Colloids</h4>
+  <p>The <strong>process of settling of colloidal particles</strong> by adding an electrolyte or by other means is called <strong>coagulation</strong> or flocculation. Colloidal particles carry a charge — adding opposite ions neutralises the charge → particles aggregate and settle.</p>
+  <p><strong>Methods of coagulation:</strong></p>
+  <ul>
+    <li>By adding electrolyte</li>
+    <li>By electrophoresis (particles migrate to electrode and get discharged)</li>
+    <li>By mixing oppositely charged colloids</li>
+    <li>By boiling (increases collision between particles)</li>
+  </ul>
+</div>
+
+<div class="note-card green">
+  <h4>Hardy-Schulze Rule</h4>
+  <p>The coagulating power of an electrolyte depends on the <strong>valency of the active ion</strong> (ion of opposite charge to the colloid).</p>
+  <div class="formula-box">
+    Hardy-Schulze Rule:<br>
+    Higher the valency of the coagulating ion → greater the coagulating power<br><br>
+    For a negative colloid (e.g., As₂S₃ sol):<br>
+    Al³⁺ &gt; Mg²⁺ &gt; Na⁺ &nbsp;&nbsp; (coagulating power)<br><br>
+    For a positive colloid (e.g., Fe(OH)₃ sol):<br>
+    [Fe(CN)₆]⁴⁻ &gt; SO₄²⁻ &gt; Cl⁻ &nbsp;&nbsp; (coagulating power)
+  </div>
+  <div class="tip">💡 Hardy-Schulze Rule: Coagulating power ∝ (valency of active ion)⁶ approximately (Schulze rule of six).</div>
+</div>
+
+<div class="note-card green">
+  <h4>Gold Number (Protective Colloids)</h4>
+  <p>A <strong>protective colloid</strong> is a lyophilic colloid that, when added to a lyophobic colloid, prevents its coagulation by forming a protective layer around the particles.</p>
+  <p><strong>Gold Number</strong> (introduced by Zsigmondy): The minimum mass (in mg) of a protective colloid required to just prevent the coagulation of 10 mL of a standard gold sol (red → blue colour change) on adding 1 mL of 10% NaCl solution.</p>
+  <div class="formula-box">
+    Smaller the gold number → Better the protective power<br><br>
+    Gold numbers of some colloids:<br>
+    Gelatin: 0.005–0.01 (best protective colloid)<br>
+    Haemoglobin: 0.03–0.07<br>
+    Gum arabic: 0.1–0.2<br>
+    Starch: 25
+  </div>
+  <div class="tip">💡 Gelatin has the smallest gold number → most effective protective colloid. Used in ice cream, medicines, photographic films.</div>
+</div>
+
+<div class="note-card green">
+  <h4>Zeta Potential</h4>
+  <p>The electric potential at the slipping/shear plane between the colloidal particle (with its bound ions layer) and the bulk of the dispersion medium is called <strong>zeta potential (ζ)</strong>.</p>
+  <ul>
+    <li>Higher zeta potential → greater electrostatic repulsion between particles → more stable colloid</li>
+    <li>Coagulation occurs when zeta potential is reduced to zero (by adding electrolyte)</li>
+    <li>Zeta potential is related to electrophoretic mobility of colloidal particles</li>
+  </ul>
+</div>
+
+<!-- 4.3 Colloids & Emulsions -->
+<div class="section-title green" id="ch4-colloids">4.3 Colloids, Emulsions &amp; Gels</div>
+
+<div class="note-card green">
+  <h4>Colloids — Key Terms</h4>
+  <table>
+    <tr><th class="green-th">Term</th><th class="green-th">Definition</th></tr>
+    <tr><td>Colloid</td><td>Heterogeneous system with particle size 1–1000 nm (between true solution and suspension)</td></tr>
+    <tr><td>Dispersed phase</td><td>The substance distributed as particles</td></tr>
+    <tr><td>Dispersion medium</td><td>The medium in which particles are distributed</td></tr>
+    <tr><td>CMC</td><td>Critical Micelle Concentration — concentration at which micelles begin to form</td></tr>
+    <tr><td>Micelle</td><td>Spherical aggregate of surfactant molecules with hydrophilic heads outward and hydrophobic tails inward</td></tr>
+    <tr><td>Electrophoresis</td><td>Migration of colloidal particles under applied electric field</td></tr>
+    <tr><td>Electro-osmosis</td><td>Movement of dispersion medium through a porous membrane under applied electric field</td></tr>
+  </table>
+</div>
+
+<div class="note-card green">
+  <h4>Electrophoresis &amp; Electro-osmosis</h4>
+  <p><strong>Electrophoresis:</strong> Migration of dispersed colloidal particles towards oppositely charged electrode under electric field. If electrophoresis is prevented, the dispersion medium moves instead — this is <strong>electro-osmosis</strong>.</p>
+  <p><strong>Streaming Potential (Quincke's Equation):</strong></p>
+  <div class="formula-box">
+    ζ = Pη² / (2DE) &nbsp;&nbsp;&nbsp; [ζ = zeta potential]
+  </div>
+  <p><strong>Dorn Effect / Sedimentation Potential:</strong> Difference in potential created between electrodes when small particles fall in a liquid under gravity.</p>
+  <div class="formula-box">ζ = 4πηS / (Dk) &nbsp;&nbsp; where S = streaming liquid, k = specific conductance, D = dielectric constant</div>
+</div>
+
+<div class="note-card green">
+  <h4>Emulsions</h4>
+  <p>Emulsions are colloidal systems of two immiscible liquids dispersed in each other with the help of an <strong>emulsifier</strong>.</p>
+  <div class="two-col" style="margin-top:8px;">
+    <div>
+      <strong>Types:</strong>
+      <ul>
+        <li><strong>O/W (Oil in Water):</strong> Oil drops dispersed in water (e.g., milk, cold cream)</li>
+        <li><strong>W/O (Water in Oil):</strong> Water drops dispersed in oil (e.g., butter, vanishing cream)</li>
+      </ul>
+    </div>
+    <div>
+      <strong>Identification Rule:</strong>
+      <ul>
+        <li>If γ_a &gt; γ_b → water-in-oil (W/O) emulsion is stable</li>
+        <li>If γ_b &gt; γ_a → oil-in-water (O/W) emulsion is stable</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="note-card green">
+  <h4>Types of Emulsifiers</h4>
+  <ul>
+    <li><strong>(i) Surfactants:</strong> Break up grease/oil on surfaces by emulsifying action — long chain alkyl sulphonates, soaps</li>
+    <li><strong>(ii) Proteins:</strong> e.g., casein in milk — lyophilic (water-loving) emulsifier</li>
+    <li><strong>(iii) Carbon black emulsions:</strong> Emulsify and stabilise water-in-oil and oil-in-water emulsions</li>
+  </ul>
+  <div class="tip">💡 Emulsifier reduces interfacial tension between oil and water → stable emulsion forms</div>
+</div>
+
+<div class="note-card green">
+  <h4>Demulsification</h4>
+  <p>Breaking of an emulsion into two separate liquid layers is called <strong>demulsification</strong>. Methods:</p>
+  <ul>
+    <li><strong>Physical:</strong> Heating, freezing, or centrifugation (e.g., breaking of milk emulsion to get cream)</li>
+    <li><strong>Chemical:</strong> Adding electrolytes, surfactants, or detergents to destroy the emulsifier film</li>
+  </ul>
+  <p>Example: Splitting of milk by adding lime juice → fat separates.</p>
+</div>
+
+<div class="note-card green">
+  <h4>Gels</h4>
+  <p>A <strong>gel</strong> is a colloidal system in which a liquid is dispersed in a solid medium (semi-solid jelly-like form).</p>
+  <ul>
+    <li><strong>Xerogels:</strong> Contain more solid and less liquid — rigid structure (e.g., sheet of gelatin, cellophane)</li>
+    <li><strong>Other gels:</strong> Silicic acid, ferric hydroxide, gum arabic, gelatin, agar</li>
+  </ul>
+  <p><strong>Classification by mechanical properties:</strong></p>
+  <ul>
+    <li>On basis of mechanical properties (rigidity) — varies from substance to substance</li>
+  </ul>
+</div>
+
+<!-- 4.4 Surfactants -->
+<div class="section-title green" id="ch4-surfactants">4.4 Surfactants — Properties &amp; Applications</div>
+
+<div class="note-card green">
+  <h4>What are Surfactants?</h4>
+  <p>Surfactants (surface-active agents) are substances that <strong>decrease surface tension</strong> when added to a liquid. They concentrate at the interface and have a dual structure:</p>
+  <ul>
+    <li><strong>Hydrophilic head</strong> (polar/water-loving)</li>
+    <li><strong>Hydrophobic tail</strong> (non-polar/water-hating, usually a long hydrocarbon chain)</li>
+  </ul>
+  <div class="formula-box">
+    Gibbs Adsorption Equation:<br>
+    S = −(c/RT) × (dγ/dc)<br>
+    where S = excess concentration at surface, γ = surface tension, c = bulk concentration
+  </div>
+  <p>If dγ/dc is <strong>negative</strong> (surfactant) → S is positive → substance concentrates at surface = <strong>positive adsorption</strong></p>
+</div>
+
+<div class="note-card green">
+  <h4>Classification of Surfactants</h4>
+  <table>
+    <tr><th class="green-th">Type</th><th class="green-th">Example</th><th class="green-th">Active Ion</th></tr>
+    <tr><td>Anionic</td><td>Sodium cetyl sulphate (C₁₆H₃₃SO₄Na⁺)</td><td>Surface activity in anion</td></tr>
+    <tr><td>Cationic</td><td>Cetyl trimethyl ammonium bromide</td><td>Surface activity in cation</td></tr>
+    <tr><td>Non-ionic</td><td>Polyglycol ether (C₁₆H₃₃(OCH₂CH₂)ₙOH)</td><td>No charge</td></tr>
+    <tr><td>Amphoteric</td><td>Amino acids, protein molecules</td><td>Both ionic forms possible</td></tr>
+  </table>
+</div>
+
+<div class="note-card green">
+  <h4>Micelle Structure &amp; CMC</h4>
+  <p>At low concentrations, surfactants exist as individual molecules. Above a critical concentration called <strong>CMC (Critical Micelle Concentration)</strong>, surfactant molecules aggregate into spherical structures called <strong>micelles</strong>:</p>
+  <ul>
+    <li>Hydrophilic heads face the water (outward)</li>
+    <li>Hydrophobic tails point inward (away from water)</li>
+    <li>CMC is a definite value for each surfactant</li>
+    <li>Above CMC, conductance of ionic surfactant drops — micelles form</li>
+  </ul>
+  <div class="tip">💡 Ionic micelles behave like macromolecular electrolytes — conducts less than expected</div>
+</div>
+
+<div class="note-card green">
+  <h4>Detergents vs Soaps</h4>
+  <p><strong>Soaps:</strong> Sodium/potassium salts of higher fatty acids (e.g., sodium stearate). Ineffective in hard water — precipitate with Ca²⁺/Mg²⁺ ions.</p>
+  <p><strong>Detergents:</strong> Cleaning agents with sulphonate group. Work even in hard water because sulphonates of Ca²⁺/Mg²⁺ are soluble.</p>
+  <p>Example: Linear alkyl benzene sulphonate (LABS)</p>
+  <div class="formula-box">
+    Structure: Linear alkyl chain + Benzene ring + –SO₃⁻Na⁺ (sulphonate group)
+  </div>
+</div>
+
+<div class="note-card green">
+  <h4>Applications of Surfactants</h4>
+  <table>
+    <tr><th class="green-th">Application</th><th class="green-th">How it Works</th></tr>
+    <tr><td>Detergent &amp; cleaning</td><td>Micelles trap dirt/grease in hydrophobic core; rinsed away with water</td></tr>
+    <tr><td>Pesticides</td><td>Improve spray coverage — oil-in-water emulsions; reduce pesticide amount needed</td></tr>
+    <tr><td>Food Industry</td><td>Stabilise emulsions in cream, ice cream, salad dressings (silicone surfactants at low concentration)</td></tr>
+    <tr><td>Wetting agents</td><td>Surfactants help liquids spread over surfaces (e.g., water on waxy leaves)</td></tr>
+  </table>
+</div>
+
+<div class="note-card green">
+  <h4>Donnan Membrane Equilibrium</h4>
+  <p>When a protein (non-diffusible macromolecular ion) is separated from a salt solution by a semipermeable membrane, the distribution of diffusible ions across the membrane is <strong>unequal</strong> — this is the <strong>Donnan Membrane Equilibrium</strong>.</p>
+  <ul>
+    <li>The non-diffusible ions prevent small ions from escaping through the membrane</li>
+    <li>At equilibrium: [Na⁺]inside × [Cl⁻]inside = [Na⁺]outside × [Cl⁻]outside</li>
+    <li>Creates osmotic pressure difference and electrical potential difference</li>
+  </ul>
+</div>
+
+<!-- CH 4 Q&A -->
+<div class="qa-section green-qa" id="ch4-qa">
+  <h3>⭐ Chapter 4 – Important Exam Q&amp;A</h3>
+
+  <div class="qa-item">
+    <div class="question green-q">Q1. Define adsorption. Distinguish between physisorption and chemisorption. <span class="badge badge-green">6 Marks</span></div>
+    <div class="answer">
+      <strong>Adsorption:</strong> It is the phenomenon of accumulation (concentration) of higher concentration of one substance on the surface of another substance compared to the bulk.
+      <br><br>
+      <strong>Difference between Physisorption and Chemisorption:</strong>
+      <table>
+        <tr><th>Physisorption</th><th>Chemisorption</th></tr>
+        <tr><td>Due to weak van der Waals forces</td><td>Due to formation of chemical bonds</td></tr>
+        <tr><td>Non-specific — occurs on any surface</td><td>Highly specific</td></tr>
+        <tr><td>Reversible process</td><td>Irreversible process</td></tr>
+        <tr><td>Multilayer formation possible</td><td>Only monolayer formation</td></tr>
+        <tr><td>Occurs at low temperature</td><td>Occurs at high temperature</td></tr>
+        <tr><td>Low heat: &lt;40 kJ/mol</td><td>High heat: 40–400 kJ/mol</td></tr>
+        <tr><td>Low activation energy</td><td>High activation energy</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="question green-q">Q2. State and explain the Freundlich adsorption isotherm. What are its limitations? <span class="badge badge-green">5 Marks</span></div>
+    <div class="answer">
+      <strong>Freundlich Adsorption Isotherm:</strong> An empirical relationship between the amount of gas adsorbed per unit mass of adsorbent and the pressure at constant temperature.
+      <div class="formula">x/m = k·P^(1/n) &nbsp;&nbsp; (n &gt; 1)</div>
+      Taking logarithm:
+      <div class="formula">log(x/m) = log k + (1/n)·log P</div>
+      This is a straight line equation: plotting log(x/m) vs log P gives slope = 1/n and intercept = log k.
+      <br><br>
+      <strong>Limitations:</strong>
+      <ul>
+        <li>Valid only at low pressures — fails at high pressures</li>
+        <li>Purely empirical — no theoretical basis</li>
+        <li>k and n are temperature-dependent constants</li>
+        <li>Cannot predict saturation adsorption (x/m → ∞ as P → ∞ according to this equation, which is unrealistic)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="question green-q">Q3. Derive the Langmuir adsorption isotherm. State its postulates and limitations. <span class="badge badge-green">8 Marks</span></div>
+    <div class="answer">
+      <strong>Postulates of Langmuir Theory:</strong>
+      <ul>
+        <li>All gases behave ideally</li>
+        <li>Adsorbed layer is monomolecular (monolayer)</li>
+        <li>Gas molecules adsorb on selective sites; one molecule per site</li>
+        <li>Bond between molecule and surface is strong enough</li>
+        <li>Heat of adsorption is same for all sites and independent of coverage</li>
+      </ul>
+      <strong>Derivation:</strong>
+      <br>Let θ = fraction of surface covered; (1−θ) = uncovered fraction; P = pressure
+      <div class="formula">Rate of adsorption ∝ (1−θ)·P = k_a(1−θ)P</div>
+      <div class="formula">Rate of desorption ∝ θ = k_d·θ</div>
+      At equilibrium:
+      <div class="formula">k_a(1−θ)P = k_d·θ</div>
+      <div class="formula">k_aP − k_aθP = k_dθ</div>
+      <div class="formula">k_aP = θ(k_d + k_aP)</div>
+      <div class="formula">θ = k_aP / (k_d + k_aP) = bP / (1 + bP) &nbsp; [where b = k_a/k_d]</div>
+      <strong>Langmuir Isotherm: θ = bP / (1 + bP)</strong>
+      <br><br>
+      <strong>Limitations:</strong>
+      <ul>
+        <li>Assumes monolayer — fails at high pressures where multilayer forms</li>
+        <li>Assumes all sites are identical — not always true</li>
+        <li>Ignores interaction between adsorbed molecules</li>
+        <li>Does not explain Type II–V isotherms</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="question green-q">Q4. What is an emulsion? Explain types of emulsions and role of emulsifiers. <span class="badge badge-green">5 Marks</span></div>
+    <div class="answer">
+      <strong>Emulsion:</strong> A colloidal system in which two immiscible liquids (usually oil and water) are dispersed in each other with the help of a third substance called an emulsifier.
+      <br><br>
+      <strong>Types:</strong>
+      <ul>
+        <li><strong>O/W (Oil-in-Water):</strong> Oil is dispersed phase, water is dispersion medium. Examples: milk, cold cream, vanishing cream.</li>
+        <li><strong>W/O (Water-in-Oil):</strong> Water is dispersed phase, oil is medium. Examples: butter, margarine.</li>
+      </ul>
+      <strong>Role of Emulsifier:</strong>
+      <ul>
+        <li>Reduces interfacial tension between oil and water</li>
+        <li>Forms a film around dispersed droplets preventing coalescence</li>
+        <li>Common emulsifiers: soaps, detergents (anionic), long-chain alkyl sulphonates, proteins (casein in milk)</li>
+      </ul>
+      <strong>Stability rule:</strong> If interfacial tension of dispersion medium side > that of dispersed phase side → stable emulsion forms with the medium surrounding the dispersed phase.
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="question green-q">Q5. Explain Gibbs adsorption equation. What are surface-active agents (surfactants)? <span class="badge badge-green">5 Marks</span></div>
+    <div class="answer">
+      <strong>Gibbs Adsorption Equation:</strong>
+      <br>For a dilute solution, Gibbs showed that the excess concentration of solute per unit area at the surface is:
+      <div class="formula">S = −(c/RT) × (dγ/dc)</div>
+      where S = surface excess, γ = surface tension, c = bulk concentration, R = gas constant, T = temperature.
+      <br><br>
+      <strong>Interpretation:</strong>
+      <ul>
+        <li>If dγ/dc is <strong>negative</strong> → S is positive → solute concentrates at surface → called <strong>positive adsorption</strong> → substance is a surfactant</li>
+        <li>If dγ/dc is <strong>positive</strong> → S is negative → solute depleted at surface → <strong>negative adsorption</strong></li>
+      </ul>
+      <strong>Surfactants:</strong> Substances that decrease surface tension when dissolved in a solvent. They have dual nature — hydrophilic head + hydrophobic tail (e.g., soaps, detergents, LABS).
+      <br><br>
+      Water has high surface tension — when surfactants dissolve, they concentrate at the surface and bring about a large decrease in surface tension.
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="question green-q">Q6. Explain electrophoresis and electro-osmosis with diagrams. <span class="badge badge-green">6 Marks</span></div>
+    <div class="answer">
+      <strong>Electrophoresis:</strong> The migration of colloidal particles (dispersed phase) under the influence of an applied electric field.
+      <ul>
+        <li>Negatively charged colloids migrate towards anode (positive electrode)</li>
+        <li>Positively charged colloids migrate towards cathode (negative electrode)</li>
+        <li>Used to determine charge on colloidal particles</li>
+      </ul>
+      <strong>Electro-osmosis:</strong> When electrophoresis is prevented (particles cannot move), the dispersion medium (liquid) moves in the opposite direction under the electric field.
+      <ul>
+        <li>Direction of flow depends on charge of colloidal particles</li>
+        <li>For negatively charged particles: medium flows towards cathode</li>
+        <li>Steady state reached when electro-osmotic pressure equals counter-back pressure</li>
+      </ul>
+      <strong>Streaming Potential (Quincke):</strong> When a liquid is forced through a porous material, a potential difference arises. Related to zeta potential by:
+      <div class="formula">ζ = Pη² / (2DE)</div>
+      where P = driving pressure, η = viscosity, D = dielectric constant, E = streaming potential.
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="question green-q">Q7. Write a note on applications of surfactants in detergency and pesticides. <span class="badge badge-green">5 Marks</span></div>
+    <div class="answer">
+      <strong>A. Detergency:</strong>
+      <ul>
+        <li>Detergents are surfactants with a sulphonate group (–SO₃⁻) that work even in hard water</li>
+        <li>Cleaning mechanism: Hydrophobic tail of detergent embeds into grease/oil; hydrophilic head faces water</li>
+        <li>Agitation causes grease to be emulsified into small micelles and suspended in water</li>
+        <li>Rinsing removes the dirt-laden micelles</li>
+        <li>Advantage over soaps: Ca²⁺/Mg²⁺ sulphonates are soluble → work in hard water</li>
+      </ul>
+      <strong>B. Pesticides:</strong>
+      <ul>
+        <li>Surfactants improve spraying, dispersing, and spreading of pesticides on plant foliage</li>
+        <li>Oil-in-water emulsions of pesticides allow smaller amounts to be used — same effectiveness</li>
+        <li>Wetting property: surfactants reduce contact angle → pesticide spreads over waxy leaves</li>
+        <li>Silicone surfactants work at very low concentrations and are added to spray mixtures to decrease surface tension → larger proportion of each droplet reaches plant surface</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="question green-q">Q8. Explain Donnan Membrane Equilibrium. <span class="badge badge-green">4 Marks</span></div>
+    <div class="answer">
+      <strong>Donnan Membrane Equilibrium</strong> (demonstrated by Gibbs and Donnan):
+      <br>When a protein (non-diffusible macromolecular ion) in solution is separated from a simple salt solution (e.g., NaCl) by a semipermeable membrane:
+      <ul>
+        <li>Protein ions (large) cannot pass through the membrane</li>
+        <li>Small ions (Na⁺, Cl⁻) can pass through (diffusible ions)</li>
+        <li>But the non-diffusible ions prevent small ions from distributing equally</li>
+      </ul>
+      <strong>At Equilibrium:</strong>
+      <div class="formula">[Na⁺]_inside × [Cl⁻]_inside = [Na⁺]_outside × [Cl⁻]_outside</div>
+      This unequal distribution of ions creates:
+      <ul>
+        <li>An osmotic pressure difference across the membrane</li>
+        <li>An electrical potential difference (Donnan potential)</li>
+      </ul>
+      <strong>Importance:</strong> Explains behaviour of biological membranes, osmotic pressure of protein solutions, and ion transport in living cells.
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="question green-q">Q9. State and explain the Hardy-Schulze Rule with examples. <span class="badge badge-green">4 Marks</span></div>
+    <div class="answer">
+      <strong>Hardy-Schulze Rule:</strong> The coagulating power of an electrolyte depends upon the valency of the active ion (ion bearing opposite charge to the colloidal particles). Higher the valency, greater the coagulating power.
+      <br><br>
+      <strong>For negatively charged colloid</strong> (e.g., As₂S₃ sol):
+      <div class="formula">Al³⁺ > Mg²⁺ > Na⁺ &nbsp;&nbsp; (order of coagulating power)</div>
+      <strong>For positively charged colloid</strong> (e.g., Fe(OH)₃ sol):
+      <div class="formula">[Fe(CN)₆]⁴⁻ > SO₄²⁻ > Cl⁻ &nbsp;&nbsp; (order of coagulating power)</div>
+      <strong>Coagulation value:</strong> The minimum concentration of electrolyte (in millimoles per litre) required to cause coagulation of a colloid is called its <strong>coagulation value</strong>. Lower coagulation value = higher coagulating power.
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="question green-q">Q10. What is the Tyndall Effect? What is Brownian motion? State their significance. <span class="badge badge-green">4 Marks</span></div>
+    <div class="answer">
+      <strong>Tyndall Effect:</strong> When a beam of light passes through a colloidal solution, the path of the beam becomes visible due to scattering of light by colloidal particles. This phenomenon is called the Tyndall Effect.
+      <ul>
+        <li>Not observed in true solutions (particles too small to scatter light)</li>
+        <li>Used to distinguish colloids from true solutions</li>
+        <li>Illuminated path = Tyndall cone</li>
+        <li>Examples: blue colour of sky, headlights in fog, beam of light in dusty room</li>
+      </ul>
+      <strong>Brownian Motion:</strong> The continuous, random zigzag motion of colloidal particles in a dispersion medium, caused by unequal bombardment by medium molecules.
+      <ul>
+        <li>First observed by Robert Brown (1827) in pollen grains</li>
+        <li>More pronounced for smaller particles in less viscous medium</li>
+        <li>Responsible for kinetic stability of colloids — prevents settling</li>
+        <li>Provides direct evidence for kinetic molecular theory</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="question green-q">Q11. What is gold number? How does it measure protective power of a colloid? <span class="badge badge-green">4 Marks</span></div>
+    <div class="answer">
+      <strong>Gold Number</strong> (introduced by Zsigmondy): The minimum mass in milligrams of a protective colloid that just prevents the coagulation of 10 mL of a standard red gold sol when 1 mL of 10% NaCl is added to it.
+      <br><br>
+      <div class="formula">Smaller gold number → Greater protective power</div>
+      <table>
+        <tr><th>Protective Colloid</th><th>Gold Number</th></tr>
+        <tr><td>Gelatin</td><td>0.005–0.01 (best)</td></tr>
+        <tr><td>Haemoglobin</td><td>0.03–0.07</td></tr>
+        <tr><td>Gum arabic</td><td>0.1–0.2</td></tr>
+        <tr><td>Starch</td><td>25 (poor)</td></tr>
+      </table>
+      <br>
+      <strong>Mechanism:</strong> The protective colloid forms an adsorbed layer around the lyophobic colloidal particles, preventing the electrolyte ions from reaching and neutralising their charge. This prevents coagulation.
+      <br><br>
+      <strong>Applications:</strong> Gelatin used in photographic films, ice cream, medicines; proteins in blood protect iron oxide particles from coagulating.
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="question green-q">Q12. Explain the applications of adsorption in daily life and industry. <span class="badge badge-green">5 Marks</span></div>
+    <div class="answer">
+      <ul>
+        <li><strong>Gas masks:</strong> Activated charcoal in gas masks adsorbs poisonous gases (CO, SO₂, Cl₂) protecting soldiers/workers from toxic environments.</li>
+        <li><strong>Dehumidification:</strong> Silica gel (SiO₂) adsorbs moisture from air. Used in packaging of electronics, medicines, and food products.</li>
+        <li><strong>Chromatography:</strong> Separation of mixtures by differential adsorption on a stationary adsorbent phase. Alumina and silica gel are common adsorbents.</li>
+        <li><strong>Heterogeneous catalysis:</strong> Reactants are adsorbed on catalyst surface (e.g., N₂ and H₂ on Fe surface in Haber process). Adsorption weakens bonds and lowers activation energy.</li>
+        <li><strong>Clarification of sugar:</strong> Animal charcoal (bone char) adsorbs coloured impurities from raw sugar solution to produce white refined sugar.</li>
+        <li><strong>Froth flotation:</strong> Pine oil selectively adsorbs on sulphide ore particles → they become hydrophobic → float as froth, separated from gangue. Used in metallurgy.</li>
+        <li><strong>Water purification:</strong> Activated carbon removes taste, odour, and organic contaminants from drinking water by adsorption.</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<!-- QUICK REVISION -->
+<div class="chapter-title" style="background: linear-gradient(135deg, #0f3460, #16213e); margin-top: 50px;">
+  ⚡ Quick Revision – Key Points for Exam
+</div>
+
+<div class="rev-grid">
+  <div class="note-card purple">
+    <h4>Chapter 3 – Must Remember</h4>
+    <table>
+      <tr><th>Topic</th><th>Key Point</th></tr>
+      <tr><td>PMT</td><td>Detects via electron multiplication at dynodes</td></tr>
+      <tr><td>Tracer in photosynthesis</td><td>O₂ comes from H₂O (proven by ¹⁸O tracers)</td></tr>
+      <tr><td>Ester hydrolysis</td><td>Acyl-oxygen bond breaks (Path I)</td></tr>
+      <tr><td>Friedel-Crafts</td><td>AlCl₃ forms intermediate; Cl comes from CH₃Cl</td></tr>
+      <tr><td>Fissile</td><td>²³⁵U, ²³⁹Pu, ²³³U</td></tr>
+      <tr><td>Fertile</td><td>²³⁸U, ²³²Th (India — Kerala monazite)</td></tr>
+      <tr><td>Moderator</td><td>D₂O, graphite — slows neutrons</td></tr>
+      <tr><td>Control rods</td><td>Cd or B steel — absorb neutrons; k = 1</td></tr>
+      <tr><td>k factor</td><td>k=1: critical, k&gt;1: bomb, k&lt;1: stops</td></tr>
+    </table>
+  </div>
+
+  <div class="note-card green">
+    <h4>Chapter 4 – Must Remember</h4>
+    <table>
+      <tr><th>Topic</th><th>Key Point</th></tr>
+      <tr><td>Physisorption</td><td>Weak, reversible, multilayer, low temp</td></tr>
+      <tr><td>Chemisorption</td><td>Strong, irreversible, monolayer, high temp</td></tr>
+      <tr><td>Freundlich</td><td>x/m = kP^(1/n) — empirical, low P only</td></tr>
+      <tr><td>Langmuir</td><td>θ = bP/(1+bP) — monolayer, theoretical</td></tr>
+      <tr><td>CMC</td><td>Concentration at which micelles form</td></tr>
+      <tr><td>O/W emulsion</td><td>Milk, cold cream</td></tr>
+      <tr><td>W/O emulsion</td><td>Butter, margarine</td></tr>
+      <tr><td>Surfactant</td><td>dγ/dc negative → positive adsorption</td></tr>
+      <tr><td>Donnan</td><td>Non-diffusible ions → unequal distribution</td></tr>
+      <tr><td>Electrophoresis</td><td>Colloidal particles move under electric field</td></tr>
+      <tr><td>Tyndall Effect</td><td>Scattering of light by colloid particles; not in true solution</td></tr>
+      <tr><td>Brownian Motion</td><td>Random zigzag motion due to unequal bombardment by medium molecules</td></tr>
+      <tr><td>Hardy-Schulze Rule</td><td>Higher valency of active ion → greater coagulating power</td></tr>
+      <tr><td>Gold Number</td><td>Smaller gold number → better protective colloid; Gelatin = best (0.005–0.01)</td></tr>
+      <tr><td>Gas mask</td><td>Activated charcoal adsorbs toxic gases</td></tr>
+      <tr><td>Froth flotation</td><td>Pine oil selectively adsorbs on sulphide ore</td></tr>
+      <tr><td>Zeta Potential</td><td>Potential at slipping plane; higher ζ → more stable colloid</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="note-card" style="margin-top:16px; border-left-color:#e63946;">
+  <h4 style="color:#e63946;">📝 Most Expected Questions in Sem 5 Exam</h4>
+  <ul>
+    <li>Langmuir isotherm — derivation (8 marks) ⭐⭐⭐</li>
+    <li>Nuclear reactor components (6–8 marks) ⭐⭐⭐</li>
+    <li>Radioactive tracers — photosynthesis / ester hydrolysis (5 marks) ⭐⭐⭐</li>
+    <li>Physisorption vs Chemisorption table (4–6 marks) ⭐⭐⭐</li>
+    <li>Emulsions — types and emulsifiers (5 marks) ⭐⭐</li>
+    <li>Gibbs adsorption equation + surfactants (5 marks) ⭐⭐</li>
+    <li>Electrophoresis and electro-osmosis (5 marks) ⭐⭐</li>
+    <li>Freundlich isotherm + limitations (4 marks) ⭐⭐</li>
+    <li>Donnan membrane equilibrium (4 marks) ⭐</li>
+    <li>PMT construction and working (4 marks) ⭐</li>
+    <li>Hardy-Schulze Rule with examples (4 marks) ⭐⭐</li>
+    <li>Tyndall Effect and Brownian motion (4 marks) ⭐⭐</li>
+    <li>Gold number and protective colloids (4 marks) ⭐⭐</li>
+    <li>Applications of adsorption (5 marks) ⭐⭐</li>
+    <li>Debye equation / types of polarisation (4–5 marks) ⭐⭐</li>
+  </ul>
+</div>
+
+</div>
+
+<footer>
+  📖 TYBSc Sem 5 – Physical Chemistry Notes &nbsp;|&nbsp; Chapters 3 &amp; 4 &nbsp;|&nbsp; All the best! 🍀
+</footer>
+
+</body>
+</html>
