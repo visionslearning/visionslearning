@@ -8,10 +8,62 @@
   <link rel="icon" href="logo.png" type="image/png" />
 </head>
 <body>
-<!-- VISIONS CLASSES WATERMARK -->
-<div class="vl-watermark">
-  <div class="wm-circle"></div>
-  <div class="wm-circle2"></div>
+
+<!-- Screen Watermark -->
+<div class="vl-wm-screen">
+  <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+    <g transform="rotate(-30, 150, 150)">
+      <circle cx="150" cy="150" r="140" fill="none" stroke="rgba(192,57,43,0.35)" stroke-width="5"/>
+      <circle cx="150" cy="150" r="128" fill="none" stroke="rgba(26,26,46,0.18)" stroke-width="2" stroke-dasharray="6,4"/>
+      <text x="150" y="135" text-anchor="middle" font-family="Arial,sans-serif" font-size="36" font-weight="900" letter-spacing="3" fill="rgba(192,57,43,0.35)">VISIONS</text>
+      <text x="150" y="178" text-anchor="middle" font-family="Arial,sans-serif" font-size="36" font-weight="900" letter-spacing="3" fill="rgba(26,26,46,0.25)">CLASSES</text>
+      <text x="150" y="202" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,26,46,0.20)">visionslearning.in</text>
+    </g>
+  </svg>
+</div>
+
+<!-- Print Watermark Container (JS fills with per-page watermarks) -->
+<div class="vl-wm-print" id="vlPrintWm"></div>
+<script>
+(function(){
+  var A4 = 1122; // A4 at 96dpi ~= 1122px
+  function buildSVG() {
+    return '<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">'
+      + '<g transform="rotate(-30,150,150)">'
+      + '<circle cx="150" cy="150" r="140" fill="none" stroke="rgba(192,57,43,0.30)" stroke-width="5"/>'
+      + '<circle cx="150" cy="150" r="128" fill="none" stroke="rgba(26,26,46,0.15)" stroke-width="2" stroke-dasharray="6,4"/>'
+      + '<text x="150" y="135" text-anchor="middle" font-family="Arial,sans-serif" font-size="36" font-weight="900" letter-spacing="3" fill="rgba(192,57,43,0.30)">VISIONS</text>'
+      + '<text x="150" y="178" text-anchor="middle" font-family="Arial,sans-serif" font-size="36" font-weight="900" letter-spacing="3" fill="rgba(26,26,46,0.22)">CLASSES</text>'
+      + '<text x="150" y="202" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,26,46,0.18)">visionslearning.in</text>'
+      + '</g></svg>';
+  }
+  function inject() {
+    var container = document.getElementById('vlPrintWm');
+    if (!container) return;
+    var totalH = Math.max(
+      document.body.scrollHeight, document.body.offsetHeight,
+      document.documentElement.scrollHeight, document.documentElement.offsetHeight
+    );
+    container.style.height = totalH + 'px';
+    var pages = Math.ceil(totalH / A4);
+    var html = '';
+    for (var i = 0; i < pages; i++) {
+      var top = i * A4 + (A4 / 2) - 150; // center of each page minus half wm height
+      html += '<div class="vl-wm-print-page" style="top:' + top + 'px">' + buildSVG() + '</div>';
+    }
+    container.innerHTML = html;
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', inject);
+  } else {
+    inject();
+  }
+  // Also re-inject before print in case layout changed
+  window.addEventListener('beforeprint', inject);
+})();
+</script>
+
+<div class="wm-circle2"></div>
   <div class="wm-main"><span>VISIONS</span><br/>CLASSES</div>
   <div class="wm-sub">visionslearning.in</div>
 </div>
@@ -438,31 +490,6 @@
       });
     });
   </script>
-
-<script>
-/* Inject one print watermark per A4 page */
-(function() {
-  function makeWM(topPx) {
-    var d = document.createElement('div');
-    d.className = 'vl-print-wm';
-    d.style.position = 'absolute';
-    d.style.left = '50%';
-    d.style.top = topPx + 'px';
-    d.innerHTML = '<div class="wm-circle"></div><div class="wm-circle2"></div><div class="wm-main"><span>VISIONS</span><br/>CLASSES</div><div class="wm-sub">visionslearning.in</div>';
-    return d;
-  }
-  window.addEventListener('load', function() {
-    var body = document.body;
-    var A4_PX = 1122; // A4 at 96dpi
-    var totalHeight = Math.max(body.scrollHeight, body.offsetHeight, document.documentElement.scrollHeight);
-    var pages = Math.ceil(totalHeight / A4_PX);
-    for (var i = 0; i < pages; i++) {
-      var wm = makeWM(i * A4_PX + A4_PX / 2);
-      body.appendChild(wm);
-    }
-  });
-})();
-</script>
 
 </body>
 </html>

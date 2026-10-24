@@ -133,53 +133,7 @@
     .nav-btn.next:hover { transform: translateY(-2px); }
     .lesson-nav { display: flex; justify-content: space-between; align-items: center; padding: 20px; max-width: 900px; margin: 0 auto 60px; gap: 12px; flex-wrap: wrap; }
   
-    /* ── VISIONS CLASSES WATERMARK ── */
-    .vl-watermark {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(-30deg);
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      border: 5px solid rgba(192,57,43,0.35);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      pointer-events: none;
-      z-index: 9999;
-      text-align: center;
-    }
-    .vl-watermark .wm-main {
-      font-size: 34px;
-      font-weight: 900;
-      letter-spacing: 3px;
-      color: rgba(26,26,46,0.25);
-      text-transform: uppercase;
-      line-height: 1.2;
-    }
-    .vl-watermark .wm-main span { color: rgba(192,57,43,0.35); }
-    .vl-watermark .wm-sub {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: rgba(26,26,46,0.20);
-      text-transform: uppercase;
-      margin-top: 6px;
-    }
-    .vl-watermark .wm-circle {
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      border: 4px solid rgba(26,26,46,0.18);
-    }
-    .vl-watermark .wm-circle2 {
-      position: absolute;
-      inset: 12px;
-      border-radius: 50%;
-      border: 2px dashed rgba(192,57,43,0.25);
-    }
+    
     /* ── PRINT watermarks (injected by JS, one per page) ── */
     .vl-print-wm {
       display: none;
@@ -227,30 +181,110 @@
       border-radius: 50%;
       border: 2px dashed rgba(192,57,43,0.22);
     }
-    @media print {
-      .vl-watermark { display: none !important; }
-      .vl-print-wm { display: flex !important; }
+    
       body { position: relative; }
     }
-    /* ── PRINT: repeat watermark on every page ── */
+    
+    
+    }
+
+    
+    /* ── VISIONS CLASSES WATERMARK ── */
+    /* Screen watermark */
+    .vl-wm-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      pointer-events: none;
+      z-index: 9999;
+      overflow: hidden;
+    }
+    .vl-wm-screen svg {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    /* Print watermark container - absolute, spans full doc */
+    .vl-wm-print {
+      display: none;
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+    .vl-wm-print-page {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 300px;
+    }
     @media print {
-      .vl-watermark { display: none !important; }
-      body {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Ccircle cx='150' cy='150' r='140' fill='none' stroke='rgba(192,57,43,0.30)' stroke-width='5'/%3E%3Ccircle cx='150' cy='150' r='128' fill='none' stroke='rgba(26,26,46,0.18)' stroke-width='2' stroke-dasharray='6,4'/%3E%3Ctext x='150' y='138' text-anchor='middle' font-family='Arial,sans-serif' font-size='36' font-weight='900' letter-spacing='3' fill='rgba(192,57,43,0.32)' transform='rotate(-30,150,150)'%3EVISIONS%3C/text%3E%3Ctext x='150' y='178' text-anchor='middle' font-family='Arial,sans-serif' font-size='36' font-weight='900' letter-spacing='3' fill='rgba(26,26,46,0.22)' transform='rotate(-30,150,150)'%3ECLASSES%3C/text%3E%3Ctext x='150' y='200' text-anchor='middle' font-family='Arial,sans-serif' font-size='13' font-weight='700' letter-spacing='2' fill='rgba(26,26,46,0.18)' transform='rotate(-30,150,150)'%3Evisionslearning.in%3C/text%3E%3C/svg%3E");
-        background-repeat: repeat;
-        background-size: 300px 300px;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
+      .vl-wm-screen { display: none !important; }
+      .vl-wm-print  { display: block !important; }
+      body { position: relative !important; }
     }
 
     </style>
 </head>
 <body>
-<!-- VISIONS CLASSES WATERMARK -->
-<div class="vl-watermark">
-  <div class="wm-circle"></div>
-  <div class="wm-circle2"></div>
+
+<!-- Screen Watermark -->
+<div class="vl-wm-screen">
+  <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+    <g transform="rotate(-30, 150, 150)">
+      <circle cx="150" cy="150" r="140" fill="none" stroke="rgba(192,57,43,0.35)" stroke-width="5"/>
+      <circle cx="150" cy="150" r="128" fill="none" stroke="rgba(26,26,46,0.18)" stroke-width="2" stroke-dasharray="6,4"/>
+      <text x="150" y="135" text-anchor="middle" font-family="Arial,sans-serif" font-size="36" font-weight="900" letter-spacing="3" fill="rgba(192,57,43,0.35)">VISIONS</text>
+      <text x="150" y="178" text-anchor="middle" font-family="Arial,sans-serif" font-size="36" font-weight="900" letter-spacing="3" fill="rgba(26,26,46,0.25)">CLASSES</text>
+      <text x="150" y="202" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,26,46,0.20)">visionslearning.in</text>
+    </g>
+  </svg>
+</div>
+
+<!-- Print Watermark Container (JS fills with per-page watermarks) -->
+<div class="vl-wm-print" id="vlPrintWm"></div>
+<script>
+(function(){
+  var A4 = 1122; // A4 at 96dpi ~= 1122px
+  function buildSVG() {
+    return '<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">'
+      + '<g transform="rotate(-30,150,150)">'
+      + '<circle cx="150" cy="150" r="140" fill="none" stroke="rgba(192,57,43,0.30)" stroke-width="5"/>'
+      + '<circle cx="150" cy="150" r="128" fill="none" stroke="rgba(26,26,46,0.15)" stroke-width="2" stroke-dasharray="6,4"/>'
+      + '<text x="150" y="135" text-anchor="middle" font-family="Arial,sans-serif" font-size="36" font-weight="900" letter-spacing="3" fill="rgba(192,57,43,0.30)">VISIONS</text>'
+      + '<text x="150" y="178" text-anchor="middle" font-family="Arial,sans-serif" font-size="36" font-weight="900" letter-spacing="3" fill="rgba(26,26,46,0.22)">CLASSES</text>'
+      + '<text x="150" y="202" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,26,46,0.18)">visionslearning.in</text>'
+      + '</g></svg>';
+  }
+  function inject() {
+    var container = document.getElementById('vlPrintWm');
+    if (!container) return;
+    var totalH = Math.max(
+      document.body.scrollHeight, document.body.offsetHeight,
+      document.documentElement.scrollHeight, document.documentElement.offsetHeight
+    );
+    container.style.height = totalH + 'px';
+    var pages = Math.ceil(totalH / A4);
+    var html = '';
+    for (var i = 0; i < pages; i++) {
+      var top = i * A4 + (A4 / 2) - 150; // center of each page minus half wm height
+      html += '<div class="vl-wm-print-page" style="top:' + top + 'px">' + buildSVG() + '</div>';
+    }
+    container.innerHTML = html;
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', inject);
+  } else {
+    inject();
+  }
+  // Also re-inject before print in case layout changed
+  window.addEventListener('beforeprint', inject);
+})();
+</script>
+
+<div class="wm-circle2"></div>
   <div class="wm-main"><span>VISIONS</span><br/>CLASSES</div>
   <div class="wm-sub">visionslearning.in</div>
 </div>
