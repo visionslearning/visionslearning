@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FYBCom Commerce-1 Module 2 — Business Planning & Strategy | Visions Classes</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="logo.png" type="image/png"/>
+  <style>
+    #vlScreenLayer{display:block;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;}
+    #vlPrintLayer{display:none;position:absolute;top:0;left:0;width:100%;pointer-events:none;z-index:9999;}
+    @media print{#vlScreenLayer{display:none!important;}#vlPrintLayer{display:block!important;}body{position:relative!important;}}
+    body{background:#f4f6fb;}
+
+    /* HERO */
+    .hero{background:linear-gradient(135deg,#1e3a8a,#1d4ed8);color:#fff;padding:28px 20px 22px;text-align:center;}
+    .hero .badge{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:4px 16px;font-size:.75rem;letter-spacing:1px;margin-bottom:8px;}
+    .hero h1{font-size:clamp(1.3rem,4vw,1.9rem);font-weight:900;margin-bottom:4px;}
+    .hero p{font-size:.88rem;opacity:.88;}
+
+    /* QUICK NAV */
+    .qnav{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;padding:11px 14px;background:#fff;border-bottom:1px solid #e0e7ff;position:sticky;top:0;z-index:100;}
+    .qnav a{background:#eff6ff;color:#1e3a8a;border:1px solid #bfdbfe;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;}
+    .qnav a:hover{background:#1d4ed8;color:#fff;}
+
+    /* WRAP */
+    .wrap{max-width:860px;margin:0 auto;padding:0 14px 40px;}
+
+    /* SECTION */
+    .sec{display:flex;align-items:center;gap:10px;background:linear-gradient(90deg,#1e3a8a,#1d4ed8);color:#fff;padding:10px 16px;border-radius:10px;margin:24px 0 10px;font-size:.98rem;font-weight:800;}
+    .sec .sn{min-width:28px;height:28px;background:rgba(255,255,255,.22);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:900;}
+
+    /* THEORY BOX */
+    .theory{background:#fff;border:1px solid #e0e7ff;border-radius:10px;padding:12px 16px;margin-bottom:12px;font-size:.88rem;line-height:1.85;box-shadow:0 1px 4px rgba(0,0,0,.05);}
+    .theory h3{color:#1e3a8a;font-size:.92rem;font-weight:800;margin-bottom:6px;}
+
+    /* QA CARD */
+    .qa{background:#fff;border:1px solid #e0e7ff;border-radius:8px;margin-bottom:10px;overflow:hidden;page-break-inside:avoid;box-shadow:0 1px 4px rgba(0,0,0,.05);}
+    .qa-head{background:#eff6ff;border-bottom:1px solid #e0e7ff;padding:7px 13px;font-size:.9rem;font-weight:800;color:#1e3a8a;display:flex;justify-content:space-between;align-items:center;}
+    .q-box{background:#fefce8;border-bottom:2px dashed #fde68a;padding:8px 13px;font-size:.88rem;line-height:1.8;}
+    .q-lbl{font-size:.68rem;font-weight:900;color:#92400e;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;}
+    .a-box{background:#f0fdf4;padding:8px 13px;font-size:.88rem;line-height:1.85;}
+    .a-lbl{font-size:.68rem;font-weight:900;color:#15803d;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;}
+    .ak{border-left:3px solid #1d4ed8;padding:4px 10px;margin:4px 0;font-size:.87rem;background:#fff;border-radius:0 4px 4px 0;line-height:1.8;}
+    .ans{font-weight:700;color:#15803d;font-size:.88rem;margin:2px 0;}
+    .ms{font-size:.7rem;color:#1d4ed8;background:#dbeafe;display:inline-block;padding:2px 8px;border-radius:10px;margin-top:4px;font-weight:bold;}
+    .note{background:#fef2f2;border:1px solid #fca5a5;padding:5px 10px;border-radius:4px;font-size:.82rem;color:#991b1b;margin:5px 0;}
+    .tip{background:#f0f9ff;border:1px solid #7dd3fc;border-radius:5px;padding:5px 10px;font-size:.82rem;color:#0369a1;margin:5px 0;}
+
+    /* DEFINITION BOX */
+    .def{background:#eff6ff;border-left:4px solid #1d4ed8;padding:7px 12px;border-radius:0 6px 6px 0;font-size:.87rem;margin:5px 0;line-height:1.8;}
+    .def strong{color:#1e3a8a;}
+
+    /* TABLE */
+    .t{width:100%;border-collapse:collapse;font-size:.86rem;margin:6px 0;}
+    .t th{background:#1e3a8a;color:#fff;padding:6px 10px;text-align:left;}
+    .t td{border:1px solid #e0e7ff;padding:6px 10px;vertical-align:top;}
+    .t tr:nth-child(even) td{background:#f0f6ff;}
+
+    /* POINTS LIST */
+    .pts{padding-left:18px;font-size:.87rem;line-height:2;}
+    .pts li{margin-bottom:2px;}
+    .pts li strong{color:#1e3a8a;}
+  </style>
+</head>
+<body>
+
+<div id="vlScreenLayer">
+  <svg width="260" height="260" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+    <g transform="rotate(-30,150,150)">
+      <circle cx="150" cy="150" r="140" fill="none" stroke="#1d4ed8" stroke-opacity="0.25" stroke-width="5"/>
+      <circle cx="150" cy="150" r="128" fill="none" stroke="#1a1a2e" stroke-opacity="0.12" stroke-width="2" stroke-dasharray="6,4"/>
+      <text x="150" y="135" text-anchor="middle" font-family="Arial" font-size="34" font-weight="900" fill="#1d4ed8" fill-opacity="0.25">VISIONS</text>
+      <text x="150" y="175" text-anchor="middle" font-family="Arial" font-size="34" font-weight="900" fill="#1a1a2e" fill-opacity="0.18">CLASSES</text>
+    </g>
+  </svg>
+</div>
+<div id="vlPrintLayer"></div>
+
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="logo" style="height:32px;"/><span class="logo-text"><span>Visions</span> Classes</span></a>
+    <ul class="nav-links"><li><a href="notes-class12.html" class="active">Notes</a></li></ul>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="badge">FYBCom · Commerce-1 · Module 2 · Important for External</div>
+  <h1>Business Planning &amp; Strategy</h1>
+  <p>Business Planning · Basic Strategies · Contemporary Practices · ESG · CSR</p>
+</div>
+
+<div class="qnav">
+  <a href="#bpp">Business Planning</a>
+  <a href="#lpg">LPG Impact</a>
+  <a href="#strategies">Basic Strategies</a>
+  <a href="#restructuring">Re-structuring</a>
+  <a href="#contemporary">Contemporary Practices</a>
+  <a href="#esg">ESG</a>
+  <a href="#ethics">Ethics &amp; CSR</a>
+</div>
+
+<div class="wrap">
+
+<!-- ════════════════════════════════
+     1. BUSINESS PLANNING PROCESS
+════════════════════════════════ -->
+<div class="sec" id="bpp"><div class="sn">1</div>Introduction to Business Planning Process (Idea to Execution)</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q1. What is Business Planning? Define it.</span><span>4 Marks</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Define Business Planning. Explain the concept in brief.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="def"><strong>Business Planning</strong> is the process of setting objectives and determining the best course of action to achieve them. It involves identifying resources, setting goals, anticipating problems and creating a roadmap for the future of the business.</div>
+    <div class="ak">Business Planning is a <strong>systematic process</strong> that converts a business idea into an executable plan. It includes defining the business vision, analysing the market, setting financial targets, and laying down strategies to achieve goals within a specific time frame.</div>
+    <div class="ms">4 marks — definition + explanation</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q2. Explain the Business Planning Process — Idea to Execution.</span><span>6 Marks</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Describe the steps of the business planning process from idea to execution.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="ak">The Business Planning Process involves the following stages:</div>
+    <table class="t">
+      <tr><th>Step</th><th>Stage</th><th>What happens</th></tr>
+      <tr><td>1</td><td><strong>Idea Generation</strong></td><td>Identifying a business opportunity or problem to solve</td></tr>
+      <tr><td>2</td><td><strong>Market Research</strong></td><td>Studying the target market, competitors and customer needs</td></tr>
+      <tr><td>3</td><td><strong>Setting Objectives</strong></td><td>Defining SMART goals (Specific, Measurable, Achievable, Relevant, Time-bound)</td></tr>
+      <tr><td>4</td><td><strong>Formulating Strategy</strong></td><td>Deciding HOW to achieve objectives — product, pricing, promotion, distribution</td></tr>
+      <tr><td>5</td><td><strong>Resource Planning</strong></td><td>Identifying human, financial, and material resources needed</td></tr>
+      <tr><td>6</td><td><strong>Preparing Business Plan</strong></td><td>Writing the formal document — executive summary, financial projections, risk analysis</td></tr>
+      <tr><td>7</td><td><strong>Implementation (Execution)</strong></td><td>Putting the plan into action — hiring, production, marketing, sales</td></tr>
+      <tr><td>8</td><td><strong>Monitoring &amp; Review</strong></td><td>Tracking progress and making corrections as needed</td></tr>
+    </table>
+    <div class="ms">6 marks — award 1 mark for each stage (any 6)</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q3. What is Strategy? What is Concept of Strategy in a Globalized World?</span><span>4 Marks</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Define strategy and explain the concept of strategy in the context of globalization.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="def"><strong>Strategy</strong> is a long-term plan of action designed to achieve a specific goal. In business, it means deciding what to do, how to do it, and with what resources — to gain competitive advantage.</div>
+    <div class="ak"><strong>Concept of Strategy in a Globalized World:</strong><br/>
+    In today's globalized world, businesses must think beyond local markets. A global strategy means:
+    <ul class="pts" style="margin-top:4px;">
+      <li><strong>Going beyond borders</strong> — selling products/services internationally</li>
+      <li><strong>Adapting to local cultures</strong> — "Think Global, Act Local" (Glocalization)</li>
+      <li><strong>Competing globally</strong> — facing competition from international firms</li>
+      <li><strong>Using global resources</strong> — sourcing materials, talent and technology worldwide</li>
+      <li><strong>Digital strategy</strong> — using internet, e-commerce and digital platforms to reach global customers</li>
+    </ul>
+    Example: A company like Reliance or Infosys uses global strategy — serving customers worldwide while adapting to local needs.
+    </div>
+    <div class="ms">4 marks — definition (2) + points (2)</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     2. LPG — LIBERALISATION, PRIVATISATION, GLOBALISATION
+════════════════════════════════ -->
+<div class="sec" id="lpg"><div class="sn">2</div>Impact of Liberalisation, Privatisation and Globalisation (LPG)</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q1. What is LPG? Explain Liberalisation, Privatisation and Globalisation.</span><span>6 Marks</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Explain the meaning of LPG — Liberalisation, Privatisation and Globalisation.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="ak">In 1991, India introduced the <strong>New Economic Policy (NEP)</strong> based on LPG to overcome an economic crisis.</div>
+    <table class="t">
+      <tr><th>Term</th><th>Meaning</th><th>Key Points</th></tr>
+      <tr>
+        <td><strong>Liberalisation (L)</strong></td>
+        <td>Reducing government restrictions on business and trade</td>
+        <td>• Removed industrial licensing (License Raj)<br/>• Allowed foreign companies to enter India<br/>• Reduced import duties and quotas<br/>• Free pricing of goods</td>
+      </tr>
+      <tr>
+        <td><strong>Privatisation (P)</strong></td>
+        <td>Transfer of ownership from government to private sector</td>
+        <td>• Disinvestment in public sector companies<br/>• Private sector allowed in areas previously reserved for government<br/>• More efficient management<br/>• Example: Air India sold to Tata Group</td>
+      </tr>
+      <tr>
+        <td><strong>Globalisation (G)</strong></td>
+        <td>Integration of India's economy with the world economy</td>
+        <td>• Free flow of goods, services, capital and technology<br/>• Foreign Direct Investment (FDI) allowed<br/>• India joined WTO in 1995<br/>• MNCs entered Indian market</td>
+      </tr>
+    </table>
+    <div class="ms">6 marks — 2 marks each for L, P, G</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q2. What are the positive and negative impacts of LPG on Indian business?</span><span>6 Marks</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Explain the impact of LPG on the Indian economy and business — positive and negative.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <table class="t">
+      <tr><th>Positive Impact</th><th>Negative Impact</th></tr>
+      <tr><td>Rapid economic growth — India became one of fastest-growing economies</td><td>Increased inequality — rich got richer, rural poor left behind</td></tr>
+      <tr><td>Inflow of foreign investment (FDI) — created jobs</td><td>Small Indian industries suffered competition from MNCs</td></tr>
+      <tr><td>Better quality goods and services at lower prices</td><td>Environmental damage due to rapid industrialisation</td></tr>
+      <tr><td>Technology transfer — India got access to modern technology</td><td>Brain drain — skilled workers moved abroad for better opportunities</td></tr>
+      <tr><td>Growth of IT, telecom, banking sectors</td><td>Dependence on foreign capital increased</td></tr>
+      <tr><td>Consumer choice increased massively</td><td>Cultural influence of western countries on Indian society</td></tr>
+    </table>
+    <div class="ms">6 marks — 3 positive + 3 negative (1 mark each)</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     3. BASIC STRATEGIES
+════════════════════════════════ -->
+<div class="sec" id="strategies"><div class="sn">3</div>Basic Strategies — Growth, Stability, Retrenchment</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q1. What are the three basic corporate strategies? Explain each.</span><span>6 Marks</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Explain Growth, Stability and Retrenchment strategies with examples.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <table class="t">
+      <tr><th>Strategy</th><th>Meaning</th><th>When used</th><th>Example</th></tr>
+      <tr>
+        <td><strong>Growth Strategy</strong></td>
+        <td>Expanding the business — increasing sales, market share, profits or product lines</td>
+        <td>When market is growing and company has resources to expand</td>
+        <td>Reliance expanding into Jio telecom · Zomato entering new cities</td>
+      </tr>
+      <tr>
+        <td><strong>Stability Strategy</strong></td>
+        <td>Maintaining current performance without major changes — "If it ain't broke, don't fix it"</td>
+        <td>When company is performing well and market is stable</td>
+        <td>A profitable small business that doesn't want to take risks of expansion</td>
+      </tr>
+      <tr>
+        <td><strong>Retrenchment Strategy</strong></td>
+        <td>Reducing the size or scope of business — cutting costs, selling assets, closing divisions</td>
+        <td>When company is in financial trouble or losing market share</td>
+        <td>Kingfisher Airlines shutting down routes · Companies laying off staff</td>
+      </tr>
+    </table>
+    <div class="ms">6 marks — 2 marks each (definition + example)</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q2. What is Growth Strategy? Explain its types.</span><span>4 Marks</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Define growth strategy and explain its types with examples.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="def"><strong>Growth Strategy</strong> is a business strategy aimed at increasing the company's market share, revenue, product range, or geographic presence.</div>
+    <ul class="pts">
+      <li><strong>Market Penetration:</strong> Selling more of existing products in existing markets (e.g., Amul increasing milk sales in India)</li>
+      <li><strong>Market Development:</strong> Entering new markets with existing products (e.g., Indian companies entering African markets)</li>
+      <li><strong>Product Development:</strong> Launching new products for existing customers (e.g., Apple launching iPhone 16)</li>
+      <li><strong>Diversification:</strong> New products in new markets (e.g., Reliance — oil company entering retail and telecom)</li>
+    </ul>
+    <div class="ms">4 marks — definition (1) + 3 types with examples (1 each)</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q3. What is Retrenchment Strategy? What are its types?</span><span>4 Marks</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Explain retrenchment strategy and its different forms.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="def"><strong>Retrenchment Strategy</strong> involves reducing or downsizing the business to improve efficiency and return to profitability during difficult times.</div>
+    <ul class="pts">
+      <li><strong>Turnaround Strategy:</strong> Taking steps to reverse declining performance — cutting costs, improving efficiency, changing management (see next topic)</li>
+      <li><strong>Divestiture:</strong> Selling a part or division of the business to generate cash</li>
+      <li><strong>Liquidation:</strong> Shutting down the entire business and selling all assets</li>
+      <li><strong>Harvesting:</strong> Maximising short-term profit from a declining product before withdrawing it</li>
+    </ul>
+    <div class="ms">4 marks — definition (1) + 3 types (1 each)</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     4. BUSINESS RE-STRUCTURING & TURNAROUND
+════════════════════════════════ -->
+<div class="sec" id="restructuring"><div class="sn">4</div>Business Re-structuring &amp; Turn-around Strategy</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q1. What is Business Re-structuring? Explain with example.</span><span>4 Marks</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Define business re-structuring and explain why and how it is done.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="def"><strong>Business Re-structuring</strong> is the process of making significant changes to the organisation's structure, operations, finances or workforce to improve efficiency, profitability or competitiveness.</div>
+    <div class="ak"><strong>Why it is done:</strong><br/>
+    • Financial crisis — debts, falling profits<br/>
+    • Change in market conditions — new competition, technology changes<br/>
+    • Post-merger integration<br/>
+    • Improving operational efficiency<br/>
+    <br/><strong>How it is done:</strong><br/>
+    • Cost cutting — reducing unnecessary expenses<br/>
+    • Workforce reduction (layoffs) or reorganisation<br/>
+    • Selling non-core business units<br/>
+    • Mergers and acquisitions<br/>
+    • Technology upgrades<br/>
+    <br/><strong>Example:</strong> Tata Steel restructured by closing inefficient plants in Europe and focusing on India's growing steel demand.</div>
+    <div class="ms">4 marks</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q2. What is Turn-around Strategy? Explain with a simple example.</span><span>4 Marks</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Explain turn-around strategy with a practical example.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="def"><strong>Turn-around Strategy</strong> is a type of retrenchment strategy used when a business is in decline or loss. The aim is to reverse the negative trend and make the company profitable again.</div>
+    <div class="ak"><strong>Steps in Turn-around Strategy:</strong><br/>
+    1. <strong>Diagnosis</strong> — Find the root cause of failure (bad management, high costs, wrong products)<br/>
+    2. <strong>Crisis Stabilisation</strong> — Stop losses immediately; cut unnecessary expenses<br/>
+    3. <strong>Change of Leadership</strong> — Often a new CEO or management team is brought in<br/>
+    4. <strong>Stakeholder Management</strong> — Communicate with investors, banks, employees<br/>
+    5. <strong>Restructuring</strong> — Close unprofitable divisions; focus on core strengths<br/>
+    6. <strong>Recovery</strong> — Grow profitability again<br/>
+    <br/><strong>Simple Example — Starbucks India:</strong> When Starbucks was losing money, they changed their menu to include Indian-flavoured drinks, hired local managers and reduced prices. This turned their losses into profits.</div>
+    <div class="tip">💡 Another Example: Maruti Suzuki in the 1990s was struggling. After restructuring and introducing the Alto model at a low price, it turned around and became India's top car brand.</div>
+    <div class="ms">4 marks</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     5. CONTEMPORARY PRACTICES
+════════════════════════════════ -->
+<div class="sec" id="contemporary"><div class="sn">5</div>Contemporary Practices &amp; Ethical Commerce</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q1. What is E-Commerce? Explain its advantages and disadvantages.</span><span>6 Marks</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Define E-Commerce. Explain its types, advantages and disadvantages.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="def"><strong>E-Commerce (Electronic Commerce)</strong> is the buying and selling of goods and services over the internet. It includes online shopping, digital payments, and electronic transactions.</div>
+    <div class="ak"><strong>Types of E-Commerce:</strong><br/>
+    • <strong>B2C</strong> (Business to Consumer): Amazon, Flipkart, Myntra<br/>
+    • <strong>B2B</strong> (Business to Business): IndiaMart, TradeIndia<br/>
+    • <strong>C2C</strong> (Consumer to Consumer): OLX, Quikr<br/>
+    • <strong>D2C</strong> (Direct to Consumer): Brands selling directly on their own website</div>
+    <table class="t" style="margin-top:6px;">
+      <tr><th>Advantages</th><th>Disadvantages</th></tr>
+      <tr><td>24/7 availability — shop anytime, anywhere</td><td>No physical inspection of product before buying</td></tr>
+      <tr><td>Lower operating costs for sellers</td><td>Cyber security risks — fraud, hacking</td></tr>
+      <tr><td>Wider reach — global customers</td><td>Delivery delays and logistics problems</td></tr>
+      <tr><td>Easy price comparison for consumers</td><td>Digital divide — not accessible to all</td></tr>
+      <tr><td>Reduced paperwork and faster transactions</td><td>Impersonal — no human interaction</td></tr>
+    </table>
+    <div class="ms">6 marks</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q2. What is UPI? How has it changed India's payment system?</span><span>4 Marks</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Explain UPI (Unified Payments Interface) and its impact on Indian commerce.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="def"><strong>UPI (Unified Payments Interface)</strong> is a real-time digital payment system developed by the National Payments Corporation of India (NPCI). It allows instant transfer of money between bank accounts using a smartphone.</div>
+    <div class="ak"><strong>Key features of UPI:</strong><br/>
+    • Works 24×7 including holidays<br/>
+    • Instant transfer — money reaches in seconds<br/>
+    • No need to share bank details — only VPA (Virtual Payment Address) like yourname@upi<br/>
+    • Free for users — no transaction charges<br/>
+    • Apps: PhonePe, Google Pay, BHIM, Paytm<br/>
+    <br/><strong>Impact on Indian Commerce:</strong><br/>
+    • Transformed India into a less-cash economy<br/>
+    • Small vendors (vegetable sellers, auto-rickshaw drivers) now accept digital payments<br/>
+    • India leads the world in UPI transactions (₹20+ lakh crore monthly)<br/>
+    • Boosted e-commerce growth significantly<br/>
+    • Financially included millions of unbanked citizens</div>
+    <div class="ms">4 marks</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q3. What is Remote Work? What is Free-lancing? Explain with advantages.</span><span>4 Marks</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Explain remote work and free-lancing as contemporary business practices.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="ak"><strong>Remote Work:</strong><br/>
+    Remote work means working from a location other than the company's office — typically from home or any location with internet. It became widespread during and after COVID-19.<br/>
+    <strong>Advantages:</strong> No commute · Work-life balance · Lower office costs for companies · Access to global talent<br/>
+    <strong>Disadvantages:</strong> Isolation · Difficulty in team coordination · Blurring of work-life boundaries<br/>
+    <br/><strong>Free-lancing:</strong><br/>
+    Free-lancing means working independently for multiple clients without being permanently employed by any single company. A freelancer is their own boss.<br/>
+    <strong>Examples:</strong> Graphic designers, content writers, web developers, photographers<br/>
+    <strong>Platforms:</strong> Upwork, Fiverr, Freelancer.com<br/>
+    <strong>Advantages:</strong> Flexibility · Multiple income sources · No fixed office · Work from anywhere<br/>
+    <strong>Disadvantages:</strong> No job security · No employee benefits (PF, health insurance) · Irregular income</div>
+    <div class="ms">4 marks — 2 marks each</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q4. What is Ethical Commerce? Why is it important?</span><span>4 Marks</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Define ethical commerce and explain its importance in modern business.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="def"><strong>Ethical Commerce</strong> means conducting business honestly, fairly and responsibly — respecting customers, employees, environment and society while making profits.</div>
+    <ul class="pts">
+      <li><strong>Fair pricing</strong> — not exploiting customers with unfair prices</li>
+      <li><strong>Honest advertising</strong> — not making false claims about products</li>
+      <li><strong>Fair treatment of employees</strong> — equal pay, safe working conditions</li>
+      <li><strong>Environmental responsibility</strong> — not polluting, using eco-friendly practices</li>
+      <li><strong>Data privacy</strong> — protecting customer data in digital business</li>
+    </ul>
+    <div class="ak"><strong>Importance:</strong> Ethical businesses build <em>trust and reputation</em>, attract loyal customers, reduce legal risks and contribute positively to society. In the long run, ethical businesses are more sustainable than those that prioritise profit over principles.</div>
+    <div class="ms">4 marks</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     6. ESG
+════════════════════════════════ -->
+<div class="sec" id="esg"><div class="sn">6</div>Introduction to ESG (Environmental, Social and Governance)</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q1. What is ESG? Explain Environmental, Social and Governance components.</span><span>6 Marks</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Define ESG and explain each of its three components with examples.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="def"><strong>ESG (Environmental, Social and Governance)</strong> is a framework used to evaluate how a company manages its impact on the environment, its responsibility to society, and the quality of its internal governance and leadership.</div>
+    <table class="t">
+      <tr><th>Component</th><th>Meaning</th><th>Examples</th></tr>
+      <tr>
+        <td><strong>E — Environmental</strong></td>
+        <td>How a company manages its impact on the natural environment</td>
+        <td>
+          • Reducing carbon emissions<br/>
+          • Using renewable energy (solar, wind)<br/>
+          • Water conservation<br/>
+          • Waste management and recycling<br/>
+          • Avoiding deforestation
+        </td>
+      </tr>
+      <tr>
+        <td><strong>S — Social</strong></td>
+        <td>How a company manages relationships with employees, suppliers, customers and communities</td>
+        <td>
+          • Fair wages and safe working conditions<br/>
+          • Diversity and inclusion (gender, disability)<br/>
+          • Community development programmes<br/>
+          • Customer privacy and data protection<br/>
+          • Education and healthcare for communities
+        </td>
+      </tr>
+      <tr>
+        <td><strong>G — Governance</strong></td>
+        <td>How a company is led, controlled and held accountable — internal policies and ethics</td>
+        <td>
+          • Transparent financial reporting<br/>
+          • Independent Board of Directors<br/>
+          • Anti-corruption and anti-bribery policies<br/>
+          • Equal rights for shareholders<br/>
+          • Whistleblower protection
+        </td>
+      </tr>
+    </table>
+    <div class="ak"><strong>Why ESG matters:</strong> Investors worldwide now invest in companies with good ESG scores. Companies with strong ESG practices attract better investors, employees and customers — and face fewer regulatory and legal problems.</div>
+    <div class="ms">6 marks — 2 marks each for E, S, G</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q2. Difference between ESG and CSR. (Short note)</span><span>4 Marks</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>What is the difference between ESG and CSR?</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <table class="t">
+      <tr><th>Basis</th><th>ESG</th><th>CSR</th></tr>
+      <tr><td>Full form</td><td>Environmental, Social and Governance</td><td>Corporate Social Responsibility</td></tr>
+      <tr><td>Focus</td><td>Measuring a company's sustainability and ethical practices</td><td>Company's voluntary contribution to society</td></tr>
+      <tr><td>Who uses it</td><td>Investors, financial analysts, regulators</td><td>Company's own initiative; reported to public</td></tr>
+      <tr><td>Nature</td><td>Quantitative — scored and measured</td><td>Qualitative — voluntary activities</td></tr>
+      <tr><td>Scope</td><td>Broader — includes governance too</td><td>Narrower — mainly social and environmental activities</td></tr>
+      <tr><td>Example</td><td>Company reducing CO₂ emissions measured in tonnes</td><td>Company building a school in a tribal area</td></tr>
+    </table>
+    <div class="ms">4 marks</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     7. BUSINESS ETHICS, CSR & SUSTAINABILITY
+════════════════════════════════ -->
+<div class="sec" id="ethics"><div class="sn">7</div>Business Ethics, CSR and Sustainability</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q1. What is Business Ethics? State its importance.</span><span>4 Marks</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Define business ethics and explain why it is important in modern commerce.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="def"><strong>Business Ethics</strong> refers to the application of ethical principles and moral standards to business activities. It involves making decisions that are not just legal but also <em>right, fair and honest</em>.</div>
+    <ul class="pts">
+      <li><strong>Honesty and Integrity:</strong> Truthful dealing with customers, suppliers and employees</li>
+      <li><strong>Fairness:</strong> Equal treatment, no discrimination</li>
+      <li><strong>Accountability:</strong> Taking responsibility for actions and decisions</li>
+      <li><strong>Transparency:</strong> Open and clear communication</li>
+      <li><strong>Respect:</strong> For people, environment and laws</li>
+    </ul>
+    <div class="ak"><strong>Importance of Business Ethics:</strong><br/>
+    1. Builds trust with customers and investors<br/>
+    2. Protects company from legal problems<br/>
+    3. Improves employee morale and loyalty<br/>
+    4. Creates a positive brand image<br/>
+    5. Ensures long-term business sustainability</div>
+    <div class="ms">4 marks — definition (1) + importance (3 points)</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q2. What is CSR (Corporate Social Responsibility)? Explain with examples.</span><span>6 Marks</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Define CSR. Explain why companies practice CSR with examples.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="def"><strong>Corporate Social Responsibility (CSR)</strong> is the responsibility of a business to conduct itself ethically and contribute to the economic development while improving the quality of life of the workforce, local communities and society at large.</div>
+    <div class="ak"><strong>Under the Companies Act 2013 (India):</strong> Companies with net worth of ₹500 crore or more, or turnover of ₹1000 crore or more, must spend at least <strong>2% of average net profit</strong> on CSR activities.</div>
+    <table class="t" style="margin-top:6px;">
+      <tr><th>Area</th><th>CSR Activities</th><th>Example</th></tr>
+      <tr><td>Education</td><td>Scholarships, school construction, digital literacy</td><td>Tata Trusts funding education programmes</td></tr>
+      <tr><td>Health</td><td>Free health camps, hospitals, clean water</td><td>Reliance Foundation hospitals</td></tr>
+      <tr><td>Environment</td><td>Tree plantation, solar energy, waste management</td><td>Infosys planting lakhs of trees</td></tr>
+      <tr><td>Women Empowerment</td><td>Skill development for women, SHGs</td><td>HUL's "Project Shakti" — women entrepreneurs</td></tr>
+      <tr><td>Disaster Relief</td><td>Aid during floods, earthquakes, COVID</td><td>Companies donating to PM CARES Fund</td></tr>
+    </table>
+    <div class="ms">6 marks — definition (2) + legal requirement (1) + 3 examples (1 each)</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q3. What is Sustainability in Business? Why is it important?</span><span>4 Marks</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Define business sustainability and explain its three pillars.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="def"><strong>Business Sustainability</strong> means meeting the needs of the present generation without compromising the ability of future generations to meet their needs. Sustainable businesses create long-term value without harming the environment or society.</div>
+    <div class="ak"><strong>The Three Pillars of Sustainability ("Triple Bottom Line"):</strong></div>
+    <table class="t">
+      <tr><th>Pillar</th><th>Focus</th><th>Example</th></tr>
+      <tr><td><strong>People (Social)</strong></td><td>Fair treatment of employees, communities, society</td><td>Fair wages, safe workplaces, community development</td></tr>
+      <tr><td><strong>Planet (Environmental)</strong></td><td>Protecting the natural environment</td><td>Reducing emissions, using renewable energy, waste recycling</td></tr>
+      <tr><td><strong>Profit (Economic)</strong></td><td>Ensuring financial viability and long-term growth</td><td>Profitable business that doesn't harm people or planet</td></tr>
+    </table>
+    <div class="tip">💡 Sustainable businesses are increasingly preferred by investors, customers and employees. A business that ignores sustainability faces future regulatory penalties and reputational damage.</div>
+    <div class="ms">4 marks — definition (1) + 3 pillars with examples (3)</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q4. Short Note — Any ONE (from exam perspective)</span><span>4 Marks</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Likely short note questions:</div>
+    <p>a) Turn-around strategy &nbsp; b) E-Commerce &nbsp; c) ESG &nbsp; d) CSR &nbsp; e) Business Ethics &nbsp; f) Remote Work and Free-lancing &nbsp; g) LPG and its impact</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Format for Short Note (4 marks):</div>
+    <div class="ak">Every short note answer should include:<br/>
+    1. <strong>Definition / Meaning</strong> — 1–2 lines<br/>
+    2. <strong>Key Features / Types / Components</strong> — 3–4 points<br/>
+    3. <strong>Example / Importance</strong> — 1–2 lines<br/>
+    4. <strong>Conclusion</strong> — 1 line<br/>
+    <br/>All notes above can be used as short note answers. Aim for 80–100 words per short note.
+    </div>
+    <div class="ms">4 marks per short note</div>
+  </div>
+</div>
+
+</div><!-- end .wrap -->
+
+<div style="text-align:center;padding:20px;">
+  <a href="notes-class12.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1e3a8a,#1d4ed8);color:#fff;padding:12px 28px;border-radius:28px;text-decoration:none;font-size:.9rem;font-weight:700;">← Back to Notes</a>
+</div>
+
+<script>
+(function(){
+  var H=260;
+  function svgUrl(){
+    var s='<svg xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 300 300">'
+      +'<g transform="rotate(-30,150,150)">'
+      +'<circle cx="150" cy="150" r="140" fill="none" stroke="#1d4ed8" stroke-opacity="0.25" stroke-width="5"/>'
+      +'<circle cx="150" cy="150" r="128" fill="none" stroke="#1a1a2e" stroke-opacity="0.12" stroke-width="2" stroke-dasharray="6,4"/>'
+      +'<text x="150" y="135" text-anchor="middle" font-family="Arial" font-size="34" font-weight="900" fill="#1d4ed8" fill-opacity="0.25">VISIONS</text>'
+      +'<text x="150" y="175" text-anchor="middle" font-family="Arial" font-size="34" font-weight="900" fill="#1a1a2e" fill-opacity="0.18">CLASSES</text>'
+      +'</g></svg>';
+    return 'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(s);
+  }
+  function build(){
+    var el=document.getElementById('vlPrintLayer');if(!el)return;
+    var h=Math.max(document.body.scrollHeight||0,document.documentElement.scrollHeight||0);
+    if(h<100)h=5000;el.style.height=h+'px';
+    var A4=1123,pages=Math.ceil(h/A4),u=svgUrl(),html='';
+    for(var i=0;i<pages;i++){var top=Math.round(i*A4+A4/2-H/2);html+='<img src="'+u+'" width="260" height="260" style="position:absolute;top:'+top+'px;left:50%;margin-left:-130px;" />';}
+    el.innerHTML=html;
+  }
+  window.addEventListener('beforeprint',function(){document.getElementById('vlScreenLayer').style.display='none';build();document.getElementById('vlPrintLayer').style.display='block';});
+  window.addEventListener('afterprint',function(){document.getElementById('vlScreenLayer').style.display='';document.getElementById('vlPrintLayer').style.display='none';});
+})();
+</script>
+</body>
+</html>
