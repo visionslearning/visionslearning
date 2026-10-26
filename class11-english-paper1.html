@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Class 11 English Question Paper — First Semester | Visions Classes</title>
+  <style>
+    #vlScreenLayer{display:block;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;}
+    #vlPrintLayer{display:none;position:absolute;top:0;left:0;width:100%;pointer-events:none;z-index:9999;}
+    @media print{#vlScreenLayer{display:none!important;}#vlPrintLayer{display:block!important;}body{position:relative!important;}}
+
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Arial',sans-serif;background:#e0e0e0;color:#111;font-size:12.5px;}
+
+    /* PAGE */
+    .page{width:210mm;background:#fff;margin:20px auto;padding:13mm 16mm 12mm 16mm;box-shadow:0 2px 14px rgba(0,0,0,.18);}
+    @media print{body{background:#fff;}.page{margin:0;box-shadow:none;padding:10mm 14mm 9mm 14mm;width:100%;}.pb{page-break-before:always;}}
+
+    /* HEADER */
+    .inst-hdr{text-align:center;border-bottom:4px double #1a1a2e;padding-bottom:8px;margin-bottom:8px;}
+    .inst-name{font-size:26px;font-weight:900;letter-spacing:4px;color:#1a1a2e;text-transform:uppercase;}
+    .inst-name span{color:#c0392b;}
+    .inst-addr{font-size:11px;color:#555;margin-top:2px;}
+    .paper-hdr{text-align:center;margin-bottom:8px;}
+    .paper-hdr .brd{font-size:12px;font-weight:bold;color:#444;letter-spacing:.8px;}
+    .paper-hdr .subj{font-size:18px;font-weight:900;color:#1a1a2e;letter-spacing:2px;text-transform:uppercase;margin:2px 0;}
+    .paper-hdr .sub2{font-size:11px;color:#555;}
+
+    .info-row{display:grid;grid-template-columns:1fr 1fr 1fr;border:2px solid #111;font-size:12px;font-weight:bold;}
+    .info-row span{padding:5px 10px;border-right:1.5px solid #333;}
+    .info-row span:last-child{border-right:none;}
+    .stu-row{display:grid;grid-template-columns:1fr 2fr 1fr;border:2px solid #111;border-top:none;font-size:11.5px;margin-bottom:8px;}
+    .stu-row span{padding:5px 10px;border-right:1.5px solid #333;}
+    .stu-row span:last-child{border-right:none;}
+
+    .instr{border:1px solid #aaa;background:#f9f9f9;padding:6px 12px;font-size:11px;margin-bottom:8px;}
+    .instr b{display:block;margin-bottom:2px;font-size:11.5px;}
+    .instr ol{padding-left:16px;}
+    .instr li{line-height:1.6;}
+
+    /* MARKS TABLE */
+    .marks-table{width:100%;border-collapse:collapse;font-size:11px;margin:5px 0 8px;}
+    .marks-table td,.marks-table th{border:1px solid #ccc;padding:3px 7px;text-align:center;}
+    .marks-table th{background:#1a1a2e;color:#fff;font-size:11px;}
+
+    /* SECTION */
+    .sec{background:#1a1a2e;color:#fff;padding:5px 13px;font-size:12px;font-weight:bold;
+         display:flex;justify-content:space-between;align-items:center;
+         margin:11px 0 5px;letter-spacing:.8px;}
+    .sec-sub{background:#e8edf8;border-left:4px solid #1a1a2e;padding:4px 12px;font-size:11.5px;
+             font-weight:bold;display:flex;justify-content:space-between;margin:5px 0 4px;}
+
+    /* QUESTION BLOCK */
+    .qb{border:1px solid #ccc;margin-bottom:6px;page-break-inside:avoid;}
+    .qh{background:#f4f4f4;border-bottom:1px solid #ccc;padding:4px 10px;
+        font-size:12px;font-weight:bold;display:flex;justify-content:space-between;}
+    .qbody{padding:6px 12px 7px;font-size:11.5px;line-height:1.75;}
+
+    /* PASSAGE */
+    .pass{background:#fafafa;border:1px solid #ddd;border-left:5px solid #c0392b;
+          padding:7px 11px;font-size:11.5px;line-height:1.9;margin:4px 0;font-family:Georgia,serif;}
+    .pass-lbl{font-size:11px;font-weight:bold;color:#c0392b;margin-bottom:3px;font-style:italic;}
+
+    /* POEM */
+    .poem{background:#f0f4ff;border:1px solid #b0beff;border-left:5px solid #3949ab;
+          padding:7px 15px;font-size:11.5px;line-height:2;margin:4px 0;
+          font-family:Georgia,serif;font-style:italic;}
+    .poem-lbl{font-size:11px;font-weight:bold;color:#3949ab;margin-bottom:3px;font-style:normal;}
+
+    /* SUB-Q */
+    .sq{font-weight:bold;margin:6px 0 3px;font-size:12px;display:flex;justify-content:space-between;}
+    .sq span{font-weight:normal;font-size:11px;color:#555;}
+
+    /* MCQ OPTIONS */
+    .opts{display:grid;grid-template-columns:1fr 1fr;gap:1px 14px;font-size:11.5px;padding:2px 0 3px;}
+
+    /* BLANKS */
+    .bl{display:inline-block;border-bottom:1px solid #222;vertical-align:bottom;}
+    .s{width:60px;}.m{width:110px;}.l{width:180px;}.xl{width:270px;}
+
+    /* ANSWER LINES */
+    .al p{border-bottom:1px solid #bbb;min-height:18px;margin-bottom:3px;}
+
+    /* MATCH TABLE */
+    .match-table{width:100%;border-collapse:collapse;font-size:11.5px;margin:5px 0;}
+    .match-table td{border:1px solid #ddd;padding:4px 8px;}
+    .match-table th{background:#f0f0f0;border:1px solid #ddd;padding:4px 8px;font-weight:bold;}
+
+    /* NOTE */
+    .note{background:#fffbeb;border:1px solid #fde68a;padding:4px 10px;border-radius:4px;font-size:11px;margin:4px 0;}
+
+    /* WRITING SKILL BOX */
+    .ws-box{background:#f8faff;border:1px solid #c7d2fe;border-radius:6px;padding:8px 12px;margin:5px 0;font-size:11.5px;}
+    .ws-title{font-weight:bold;color:#1d4ed8;font-size:12px;margin-bottom:4px;}
+
+    .footer{text-align:center;font-size:11px;color:#555;border-top:2px solid #1a1a2e;padding-top:6px;margin-top:14px;}
+
+    /* PORTION BOX */
+    .portion-box{background:#f0fdf4;border:2px solid #86efac;border-radius:8px;padding:10px 16px;margin-bottom:10px;font-size:11.5px;}
+    .portion-box h3{color:#15803d;font-size:13px;margin-bottom:6px;font-weight:900;}
+    .portion-box ul{padding-left:18px;}
+    .portion-box li{line-height:1.8;}
+  </style>
+</head>
+<body>
+
+<div id="vlScreenLayer">
+  <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+    <g transform="rotate(-30,150,150)">
+      <circle cx="150" cy="150" r="140" fill="none" stroke="#c0392b" stroke-opacity="0.30" stroke-width="5"/>
+      <circle cx="150" cy="150" r="128" fill="none" stroke="#1a1a2e" stroke-opacity="0.15" stroke-width="2" stroke-dasharray="6,4"/>
+      <text x="150" y="135" text-anchor="middle" font-family="Arial,sans-serif" font-size="36" font-weight="900" letter-spacing="3" fill="#c0392b" fill-opacity="0.30">VISIONS</text>
+      <text x="150" y="178" text-anchor="middle" font-family="Arial,sans-serif" font-size="36" font-weight="900" letter-spacing="3" fill="#1a1a2e" fill-opacity="0.22">CLASSES</text>
+      <text x="150" y="202" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="#1a1a2e" fill-opacity="0.18">visionslearning.in</text>
+    </g>
+  </svg>
+</div>
+<div id="vlPrintLayer"></div>
+
+<!-- ════════════ PAGE ════════════ -->
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="inst-hdr">
+    <div class="inst-name"><span>VISIONS</span> CLASSES</div>
+    <div class="inst-addr">Javsai Gaon, Thakre Nagar, Ambernath &nbsp;|&nbsp; +91 87671 44200 &nbsp;|&nbsp; visionslearning.in</div>
+  </div>
+  <div class="paper-hdr">
+    <div class="brd">Maharashtra State Board of Secondary &amp; Higher Secondary Education (HSC)</div>
+    <div class="subj">English — Std. XI &nbsp;|&nbsp; First Semester</div>
+    <div class="sub2">PROSE: 1.1, 1.2, 1.3 &nbsp;|&nbsp; POETRY: 2.1, 2.2, 2.3 &nbsp;|&nbsp; WRITING SKILLS: 3.1, 3.2, 3.3 &nbsp;|&nbsp; DRAMA: 4.1, 4.2</div>
+  </div>
+
+  <div class="info-row">
+    <span>Time: 3 Hours</span>
+    <span style="text-align:center;">Total Marks: 50</span>
+    <span style="text-align:right;">Date: <span class="bl l"></span></span>
+  </div>
+  <div class="stu-row">
+    <span>Roll No: <span class="bl s"></span></span>
+    <span>Name: <span class="bl l"></span></span>
+    <span>Seat No: <span class="bl s"></span></span>
+  </div>
+
+  <div class="instr">
+    <b>General Instructions:</b>
+    <ol>
+      <li>All questions are compulsory unless internal options are given.</li>
+      <li>Figures to the right indicate full marks.</li>
+      <li>For Q4 Writing Skills — attempt any <strong>TWO</strong> out of three.</li>
+      <li>Start each answer on a new line. Write neatly.</li>
+    </ol>
+  </div>
+
+  <!-- MARKS AT A GLANCE -->
+  <table class="marks-table">
+    <tr>
+      <th>Q1 Seen Prose</th><th>Q2 Unseen Passage</th><th>Q3 Poetry</th><th>Q4 Writing Skills</th><th>Q5 Drama</th><th>Total</th>
+    </tr>
+    <tr>
+      <td>12 Marks</td><td>12 Marks</td><td>12 Marks</td><td>6 Marks</td><td>8 Marks</td><td><strong>50 Marks</strong></td>
+    </tr>
+  </table>
+
+  <!-- ════════════════════════════════
+       Q.1  SEEN PROSE PASSAGE
+  ════════════════════════════════ -->
+  <div class="sec"><span>Q.1 — Comprehension: Seen Prose Passage (1.1, 1.2, 1.3)</span><span>12 Marks</span></div>
+
+  <!-- Q1A -->
+  <div class="sec-sub"><span>Q.1A — Read the following extract and do all activities.</span><span>[10 Marks]</span></div>
+  <div class="qb">
+    <div class="qbody">
+      <div class="pass">
+        <div class="pass-lbl">Extract — From: 1.2 On Saying Please (Adapted)</div>
+        <p>There is no law that compels a man to say "please" when he asks a favour, or "thank you" when he gets it. But it is one of those social graces that make life pleasant and smooth. The man who says "please" and "thank you" does not merely observe a ritual; he is showing a spirit of goodwill. He is saying, in effect, "I recognise that you are not my servant, but my equal. I am asking, not commanding."</p>
+        <p>The bus conductor who is treated with respect will give you his best service. The shopkeeper who is greeted pleasantly will go out of his way to help you. Civility costs nothing, but buys everything.</p>
+        <p>We live together in society and it is society that makes life bearable. The roots of society are manners. Without manners, society cannot survive. When we are rude, we weaken those roots. When we are polite, we water them.</p>
+      </div>
+
+      <div class="sq">A₁. — Understanding: Choose the correct alternative: <span>(2 Marks)</span></div>
+      <p>i. Saying "please" and "thank you" shows —</p>
+      <div class="opts">
+        <span>(A) weakness</span><span>(B) spirit of goodwill</span>
+        <span>(C) strict obedience</span><span>(D) legal duty</span>
+      </div>
+      <p style="margin-top:5px;">ii. "Civility costs nothing but buys everything" means —</p>
+      <div class="opts">
+        <span>(A) being polite is expensive</span><span>(B) politeness has no value</span>
+        <span>(C) being polite gains you much at no cost</span><span>(D) buying costs civility</span>
+      </div>
+
+      <div class="sq">A₂. — Interpretation: Answer in 2–3 sentences: <span>(2 Marks)</span></div>
+      <p>What does the writer mean by "the roots of society are manners"? Explain in your own words.</p>
+      <div class="al"><p></p><p></p><p></p></div>
+
+      <div class="sq">A₃. — Personal Response: <span>(2 Marks)</span></div>
+      <p>"When we are polite, we water the roots of society." Do you agree? Give a real-life example from your experience. Write 2–3 sentences.</p>
+      <div class="al"><p></p><p></p><p></p></div>
+
+      <div class="sq">A₄. — Grammar (any TWO from the passage): <span>(2 Marks)</span></div>
+      <ol style="padding-left:16px;line-height:2.1;">
+        <li>Change the Voice: "He is saying, in effect, 'I recognise that you are not my servant.'"</li>
+        <li>Change the Narration: The writer said, "Civility costs nothing but buys everything."</li>
+        <li>Rewrite using 'so…that': "He was very polite. Everyone respected him."</li>
+        <li>Add a question tag: "The bus conductor treated with respect gives his best service, <span class="bl m"></span>?"</li>
+      </ol>
+      <div class="al"><p></p><p></p><p></p><p></p></div>
+
+      <div class="sq">A₅. — Vocabulary: <span>(2 Marks)</span></div>
+      <ol style="padding-left:16px;line-height:2.1;">
+        <li>Find a word from the passage meaning "polite behaviour" — <span class="bl m"></span></li>
+        <li>Find a word opposite to "rude" — <span class="bl m"></span></li>
+        <li>Find a word meaning "able to be endured / livable" — <span class="bl m"></span></li>
+        <li>Find a synonym for "pleasant" from the passage — <span class="bl m"></span></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Q1B -->
+  <div class="sec-sub"><span>Q.1B — Do as directed (Grammar outside textbook):</span><span>[2 Marks]</span></div>
+  <div class="qb">
+    <div class="qbody">
+      <p style="font-weight:bold;margin-bottom:6px;">Attempt any ONE:</p>
+      <ol style="padding-left:16px;font-size:11.5px;line-height:2.2;">
+        <li><strong>Spot the error</strong> and rewrite correctly:<br/>
+          <em>"She don't know the answer so she keep quiet."</em></li>
+        <li><strong>Grammar question</strong> — Rewrite using correct form of verb:<br/>
+          "Neither the students nor the teacher <span class="bl m"></span> (be) present yesterday."</li>
+      </ol>
+      <div class="al"><p></p><p></p></div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       Q.2  UNSEEN PASSAGE
+  ════════════════════════════════ -->
+  <div class="pb"></div>
+  <div class="sec"><span>Q.2 — Comprehension: Unseen Passage</span><span>12 Marks</span></div>
+
+  <!-- Q2A -->
+  <div class="sec-sub"><span>Q.2A — Read the following passage and do all activities.</span><span>[10 Marks]</span></div>
+  <div class="qb">
+    <div class="qbody">
+      <div class="pass">
+        <div class="pass-lbl">Unseen Passage</div>
+        <p>Every morning, Sunita woke up before sunrise. She lived alone in a small house at the edge of a village and had done so for thirty years. People in the village called her 'the silent woman' because she rarely spoke unless necessary. But her silence was not sadness — it was contentment.</p>
+        <p>She spent her mornings tending to her garden. She grew vegetables, herbs and flowers. Her garden was the most colourful thing in the village. Children from the school nearby would press their faces to the fence to look at the marigolds and sunflowers. Some days, she left small bundles of vegetables at neighbours' doors without knocking.</p>
+        <p>One summer, the rains failed. The wells dried up. The farmers lost their crops. But Sunita's garden survived because she had dug a small underground tank years ago to store rainwater. When the worst days came, she opened her garden to the village. She gave out vegetables every morning and let children sit in the shade of her mango trees.</p>
+        <p>The village headman came to thank her. Sunita simply said, "The garden does not belong to me alone. The sun, the rain, the soil — they all share it with me. I am just the one who remembered to prepare."</p>
+      </div>
+
+      <div class="sq">A₁. — Understanding: Choose the correct alternative: <span>(2 Marks)</span></div>
+      <p>i. People called Sunita 'the silent woman' because —</p>
+      <div class="opts">
+        <span>(A) she was deaf</span><span>(B) she rarely spoke unless necessary</span>
+        <span>(C) she was angry at everyone</span><span>(D) she had no friends</span>
+      </div>
+      <p style="margin-top:5px;">ii. Sunita's garden survived the drought because —</p>
+      <div class="opts">
+        <span>(A) she prayed every day</span><span>(B) she used chemical fertilisers</span>
+        <span>(C) she had dug an underground rainwater tank</span><span>(D) the rains never failed there</span>
+      </div>
+
+      <div class="sq">A₂. — Interpretation: Answer in 2–3 sentences: <span>(2 Marks)</span></div>
+      <p>What does Sunita mean when she says "The garden does not belong to me alone"? What quality of character does this show?</p>
+      <div class="al"><p></p><p></p><p></p></div>
+
+      <div class="sq">A₃. — Personal Response: <span>(2 Marks)</span></div>
+      <p>Sunita prepared for the future without anyone asking her to. Write 2–3 sentences about why preparing for difficulties in advance is important.</p>
+      <div class="al"><p></p><p></p><p></p></div>
+
+      <div class="sq">A₄. — Grammar (any TWO from the passage): <span>(2 Marks)</span></div>
+      <ol style="padding-left:16px;line-height:2.1;">
+        <li>Change the Voice: "She gave out vegetables every morning."</li>
+        <li>Change the Narration: Sunita said, "The garden does not belong to me alone."</li>
+        <li>Rewrite using 'Although': "The rains failed. Sunita's garden survived."</li>
+        <li>Identify tense and name it: "She had dug a small underground tank years ago."</li>
+      </ol>
+      <div class="al"><p></p><p></p><p></p><p></p></div>
+
+      <div class="sq">A₅. — Vocabulary: <span>(2 Marks)</span></div>
+      <ol style="padding-left:16px;line-height:2.1;">
+        <li>Find a word meaning "happiness / satisfaction" — <span class="bl m"></span></li>
+        <li>Find a word meaning "looking after / caring for" — <span class="bl m"></span></li>
+        <li>Synonym of "survived" from the passage — <span class="bl m"></span></li>
+        <li>Antonym of "failure" (context: rains failed) — <span class="bl m"></span></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Q2B -->
+  <div class="sec-sub"><span>Q.2B — Summary Writing:</span><span>[2 Marks]</span></div>
+  <div class="qb">
+    <div class="qbody">
+      <p style="font-size:11.5px;">Write a summary of the above unseen passage in about 80–100 words. Give it a suitable title.</p>
+      <p style="font-weight:bold;margin-top:4px;">Title: <span class="bl l"></span></p>
+      <div class="al"><p></p><p></p><p></p><p></p><p></p><p></p></div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       Q.3  POETRY
+  ════════════════════════════════ -->
+  <div class="pb"></div>
+  <div class="sec"><span>Q.3 — Comprehension: Seen Poetry (2.1, 2.2, 2.3)</span><span>12 Marks</span></div>
+
+  <!-- Q3A -->
+  <div class="sec-sub"><span>Q.3A — Read the following poem/extract and do all activities.</span><span>[8 Marks]</span></div>
+  <div class="qb">
+    <div class="qbody">
+      <div class="poem">
+        <div class="poem-lbl">Poem: Song of the Open Road — Walt Whitman (Textbook 2.1, Adapted stanza)</div>
+        Afoot and light-hearted I take to the open road,<br/>
+        Healthy, free, the world before me,<br/>
+        The long brown path before me leading wherever I choose.<br/><br/>
+        Henceforth I ask not good-fortune, I myself am good-fortune,<br/>
+        Henceforth I whimper no more, postpone no more, need nothing,<br/>
+        Done with indoor complaints, libraries, querulous criticisms,<br/>
+        Strong and content I travel the open road.<br/><br/>
+        The earth, that is sufficient,<br/>
+        I do not want the constellations any nearer,<br/>
+        I know they are very well where they are,<br/>
+        I know they suffice for those who belong to them.
+      </div>
+
+      <div class="sq">A₁. — Understanding: Choose the correct alternative: <span>(2 Marks)</span></div>
+      <p>i. The poet says "I myself am good-fortune" — this means he —</p>
+      <div class="opts">
+        <span>(A) is very rich</span><span>(B) believes his own spirit is his greatest asset</span>
+        <span>(C) has no problems</span><span>(D) relies on luck</span>
+      </div>
+      <p style="margin-top:5px;">ii. "Done with indoor complaints" suggests the poet is —</p>
+      <div class="opts">
+        <span>(A) angry at buildings</span><span>(B) leaving behind negative thinking to embrace freedom</span>
+        <span>(C) building a new house</span><span>(D) ignoring libraries</span>
+      </div>
+
+      <div class="sq">A₂. — Personal Response: <span>(2 Marks)</span></div>
+      <p>The poet says "Healthy, free, the world before me." What does freedom mean to you as a student? Write 2–3 sentences.</p>
+      <div class="al"><p></p><p></p><p></p></div>
+
+      <div class="sq">A₃. — Figure of Speech: Name and explain: <span>(2 Marks)</span></div>
+      <ol style="padding-left:16px;line-height:2.1;">
+        <li>"I myself am good-fortune" — Figure of speech: <span class="bl m"></span></li>
+        <li>"Afoot and light-hearted I take to the open road" — Figure of speech: <span class="bl m"></span></li>
+        <li>"Strong and content I travel the open road" — Figure of speech: <span class="bl m"></span></li>
+        <li>Find an example of Repetition in the poem: <span class="bl l"></span></li>
+      </ol>
+
+      <div class="sq">A₄. — Creativity: <span>(2 Marks)</span></div>
+      <p><strong>Compose a poem of 4 lines on any ONE topic:</strong></p>
+      <div class="opts" style="margin-bottom:6px;">
+        <span>a) Beauty of Nature</span><span>b) Home</span>
+      </div>
+      <div class="al"><p></p><p></p><p></p><p></p><p></p></div>
+    </div>
+  </div>
+
+  <!-- Q3B -->
+  <div class="sec-sub"><span>Q.3B — Critical Appreciation of Poem (2.1, 2.2, 2.3):</span><span>[4 Marks]</span></div>
+  <div class="qb">
+    <div class="qbody">
+      <p style="font-size:11.5px;margin-bottom:6px;">Write a critical appreciation of any ONE poem from the textbook (2.1, 2.2 or 2.3) in about 100–120 words. Cover: title, poet, theme, message, figures of speech, your opinion.</p>
+      <div class="al"><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p></div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       Q.4  WRITING SKILLS
+  ════════════════════════════════ -->
+  <div class="pb"></div>
+  <div class="sec"><span>Q.4 — Writing Skills (Attempt any TWO)</span><span>6 Marks</span></div>
+
+  <div class="qb">
+    <div class="qbody">
+      <div class="note">📝 Attempt any TWO of the following. Each carries 3 marks.</div>
+
+      <!-- Option 1: Expansion -->
+      <div class="ws-box" style="margin-top:8px;">
+        <div class="ws-title">Option A — Expansion of Idea (any ONE): <span style="font-weight:normal;color:#555;">(3 Marks)</span></div>
+        <p>Expand the following idea in 80–100 words:</p>
+        <div class="opts" style="margin-top:4px;font-weight:bold;">
+          <span>a) "Travel Broadens the Mind"</span>
+          <span>b) "Love Thy Neighbour As Thyself"</span>
+        </div>
+        <div class="al" style="margin-top:6px;"><p></p><p></p><p></p><p></p><p></p><p></p><p></p></div>
+      </div>
+
+      <!-- Option 2: Blog -->
+      <div class="ws-box">
+        <div class="ws-title">Option B — Blog Writing (any ONE): <span style="font-weight:normal;color:#555;">(3 Marks)</span></div>
+        <p>Write a blog (80–100 words) on any ONE topic. Use the given points:</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:5px;font-size:11.5px;">
+          <div style="background:#fff;border:1px solid #e0e7ff;padding:6px 10px;border-radius:4px;">
+            <strong>a) Health &amp; Fitness</strong><br/>
+            Points: Physical Fitness · Balanced Diet · Stress Management
+          </div>
+          <div style="background:#fff;border:1px solid #e0e7ff;padding:6px 10px;border-radius:4px;">
+            <strong>b) Personality Development</strong><br/>
+            Points: Physical Fitness · Balanced Diet · Stress Management
+          </div>
+        </div>
+        <div class="al" style="margin-top:6px;"><p></p><p></p><p></p><p></p><p></p><p></p><p></p></div>
+      </div>
+
+      <!-- Option 3: Email -->
+      <div class="ws-box">
+        <div class="ws-title">Option C — Email Writing (any ONE): <span style="font-weight:normal;color:#555;">(3 Marks)</span></div>
+        <p>Write a formal email (80–100 words) on any ONE of the following:</p>
+        <ol style="padding-left:16px;line-height:1.9;margin-top:4px;">
+          <li>Write an email to the Water Department complaining about irregular water supply in your locality.</li>
+          <li>You are the secretary of the 'Literary Association' of your Junior College. On occasion of 'World Poetry Day', you have organised a poetry recitation competition. Draft an email to invite a famous poet to inaugurate the function. (Give details of the function.)</li>
+        </ol>
+        <div style="background:#fff;border:1px solid #ddd;border-radius:4px;padding:6px 10px;margin-top:6px;font-size:11px;">
+          <strong>To:</strong> <span class="bl xl"></span><br/>
+          <strong>Subject:</strong> <span class="bl xl"></span><br/>
+          <strong>Body:</strong>
+        </div>
+        <div class="al" style="margin-top:4px;"><p></p><p></p><p></p><p></p><p></p><p></p><p></p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       Q.5  DRAMA
+  ════════════════════════════════ -->
+  <div class="pb"></div>
+  <div class="sec"><span>Q.5 — Drama (4.1 &amp; 4.2)</span><span>8 Marks</span></div>
+
+  <!-- Q5A — MCQ from Lesson 4.1 -->
+  <div class="sec-sub"><span>Q.5A — MCQs from Lesson 4.1 (Drama)</span><span>[4 Marks]</span></div>
+  <div class="qb">
+    <div class="qbody">
+      <div class="note">📌 DRAMA — MCQs from Lesson 4.1</div>
+
+      <div class="sq" style="margin-top:8px;">1. Match the column: <span>(2 Marks)</span></div>
+      <table class="match-table">
+        <tr><th>Column A</th><th>Column B</th><th>Answer</th></tr>
+        <tr><td>i) Soliloquy</td><td>a) Seeds of modern drama</td><td><span class="bl s"></span></td></tr>
+        <tr><td>ii) Exposition</td><td>b) Location</td><td><span class="bl s"></span></td></tr>
+        <tr><td>iii) Sanskrit Drama</td><td>c) Reveals the nature of character</td><td><span class="bl s"></span></td></tr>
+        <tr><td>iv) Setting</td><td>d) Introduction</td><td><span class="bl s"></span></td></tr>
+      </table>
+
+      <div class="sq" style="margin-top:8px;">2. List any FOUR periods of history of English Drama. <span>(2 Marks)</span></div>
+      <ol style="padding-left:16px;line-height:2.1;font-size:11.5px;">
+        <li><span class="bl xl"></span></li>
+        <li><span class="bl xl"></span></li>
+        <li><span class="bl xl"></span></li>
+        <li><span class="bl xl"></span></li>
+      </ol>
+
+      <div class="sq" style="margin-top:8px;">3. Pick the odd element out: <span>(2 Marks)</span></div>
+      <ol style="padding-left:16px;font-size:11.5px;line-height:2.2;" type="a">
+        <li>plot, conflict, monologue, character — Odd: <span class="bl m"></span> because: <span class="bl l"></span></li>
+        <li>flat, round, dynamic, <u>dramatist</u> — Odd: <span class="bl m"></span> because: <span class="bl l"></span></li>
+        <li>Romantic period, modern period, medieval period, restoration period — Odd: <span class="bl m"></span> because: <span class="bl l"></span></li>
+        <li>Robin Hood, All for Love, Harry Potter, Romeo and Juliet — Odd: <span class="bl m"></span> because: <span class="bl l"></span></li>
+      </ol>
+
+      <div class="sq" style="margin-top:8px;">4. Complete the statements using correct words from the brackets: <span>(2 Marks)</span></div>
+      <div class="note" style="margin-bottom:6px;">( one act play &nbsp;·&nbsp; Romans &nbsp;·&nbsp; playwright &nbsp;·&nbsp; theme )</div>
+      <ol style="padding-left:16px;font-size:11.5px;line-height:2.3;">
+        <li>The central idea around which the plot revolves is <span class="bl m"></span>.</li>
+        <li><span class="bl m"></span> established vast amphitheatres in England.</li>
+        <li>A person who writes plays is called a <span class="bl m"></span>.</li>
+        <li>A <span class="bl m"></span> is limited to a single dominant theme and limited characters.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Q5B — Brief Questions from Lesson 4.2 -->
+  <div class="sec-sub"><span>Q.5B — Brief Questions from Lesson 4.2 (Drama)</span><span>[4 Marks]</span></div>
+  <div class="qb">
+    <div class="qbody">
+      <div class="note">📌 Answer the following in about 50 words each (prepare for 2 marks each):</div>
+      <ol style="padding-left:16px;font-size:11.5px;line-height:1.7;margin-top:6px;">
+        <li style="margin-bottom:8px;"><strong>Find the reason of the man for staying at the place.</strong>
+          <div class="al"><p></p><p></p><p></p></div>
+        </li>
+        <li style="margin-bottom:8px;"><strong>The Sergeant supports the man by misguiding his officers. Write your views.</strong>
+          <div class="al"><p></p><p></p><p></p></div>
+        </li>
+        <li style="margin-bottom:8px;"><strong>Write your opinion about the man and the sergeant.</strong>
+          <div class="al"><p></p><p></p><p></p></div>
+        </li>
+        <li style="margin-bottom:8px;"><strong>The sergeant's reaction surprises the audience. Write your views.</strong>
+          <div class="al"><p></p><p></p><p></p></div>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="footer">
+    ✦ &nbsp; Best of Luck &nbsp; ✦ &nbsp;&nbsp; Visions Classes, Ambernath &nbsp;&nbsp; ✦ &nbsp; visionslearning.in &nbsp; ✦
+  </div>
+
+</div><!-- /.page -->
+
+<script id="vlWmScript">
+(function(){
+  var SVG_H=300;
+  function svgUrl(){
+    var s='<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">'
+      +'<g transform="rotate(-30,150,150)">'
+      +'<circle cx="150" cy="150" r="140" fill="none" stroke="#c0392b" stroke-opacity="0.30" stroke-width="5"/>'
+      +'<circle cx="150" cy="150" r="128" fill="none" stroke="#1a1a2e" stroke-opacity="0.15" stroke-width="2" stroke-dasharray="6,4"/>'
+      +'<text x="150" y="135" text-anchor="middle" font-family="Arial,sans-serif" font-size="36" font-weight="900" letter-spacing="3" fill="#c0392b" fill-opacity="0.30">VISIONS</text>'
+      +'<text x="150" y="178" text-anchor="middle" font-family="Arial,sans-serif" font-size="36" font-weight="900" letter-spacing="3" fill="#1a1a2e" fill-opacity="0.22">CLASSES</text>'
+      +'<text x="150" y="202" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="#1a1a2e" fill-opacity="0.18">visionslearning.in</text>'
+      +'</g></svg>';
+    return 'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(s);
+  }
+  function buildPrint(){
+    var el=document.getElementById('vlPrintLayer');
+    if(!el)return;
+    var h=Math.max(document.body.scrollHeight||0,document.documentElement.scrollHeight||0);
+    if(h<100)h=5000;
+    el.style.height=h+'px';
+    var A4=1123,pages=Math.ceil(h/A4),url=svgUrl(),html='';
+    for(var i=0;i<pages;i++){
+      var top=Math.round(i*A4+A4/2-SVG_H/2);
+      html+='<img src="'+url+'" width="300" height="300" style="position:absolute;top:'+top+'px;left:50%;margin-left:-150px;" />';
+    }
+    el.innerHTML=html;
+  }
+  window.addEventListener('beforeprint',function(){
+    document.getElementById('vlScreenLayer').style.display='none';
+    buildPrint();
+    document.getElementById('vlPrintLayer').style.display='block';
+  });
+  window.addEventListener('afterprint',function(){
+    document.getElementById('vlScreenLayer').style.display='';
+    document.getElementById('vlPrintLayer').style.display='none';
+  });
+})();
+</script>
+</body>
+</html>
