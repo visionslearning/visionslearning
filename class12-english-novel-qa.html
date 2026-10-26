@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Class 12 English — Novel Section Q&A | Visions Classes</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="logo.png" type="image/png"/>
+  <style>
+    #vlScreenLayer{display:block;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;}
+    #vlPrintLayer{display:none;position:absolute;top:0;left:0;width:100%;pointer-events:none;z-index:9999;}
+    @media print{#vlScreenLayer{display:none!important;}#vlPrintLayer{display:block!important;}body{position:relative!important;}}
+    body{background:#f4f6fb;}
+
+    /* HERO */
+    .hero{background:linear-gradient(135deg,#7b1c1c,#c0392b);color:#fff;padding:28px 20px 22px;text-align:center;}
+    .hero .badge{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:4px 16px;font-size:.75rem;letter-spacing:1px;margin-bottom:8px;}
+    .hero h1{font-size:clamp(1.3rem,4vw,1.9rem);font-weight:900;margin-bottom:4px;}
+    .hero p{font-size:.88rem;opacity:.88;}
+
+    /* QUICK NAV */
+    .qnav{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;padding:11px 14px;background:#fff;border-bottom:1px solid #fecaca;position:sticky;top:0;z-index:100;}
+    .qnav a{background:#fef2f2;color:#991b1b;border:1px solid #fecaca;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;}
+    .qnav a:hover{background:#c0392b;color:#fff;}
+
+    /* WRAP */
+    .wrap{max-width:860px;margin:0 auto;padding:0 14px 40px;}
+
+    /* SECTION */
+    .sec{display:flex;align-items:center;gap:10px;color:#fff;padding:10px 16px;border-radius:10px;margin:24px 0 10px;font-size:1rem;font-weight:800;}
+    .sec .sn{min-width:30px;height:30px;background:rgba(255,255,255,.22);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:900;}
+    .sec.s1{background:linear-gradient(90deg,#1a1a2e,#2d3a6e);}
+    .sec.s2{background:linear-gradient(90deg,#7b1c1c,#c0392b);}
+    .sec.s3{background:linear-gradient(90deg,#14532d,#15803d);}
+    .sec.s4{background:linear-gradient(90deg,#1e3a8a,#1d4ed8);}
+
+    /* NOVEL INFO BOX */
+    .novel-info{background:#fff;border:1px solid #fecaca;border-radius:10px;padding:12px 16px;margin-bottom:12px;font-size:.88rem;line-height:1.8;}
+    .novel-info h3{font-size:1rem;font-weight:900;color:#7b1c1c;margin-bottom:6px;}
+    .ni-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 20px;font-size:.86rem;}
+    .ni-grid span{color:#555;}
+    .ni-grid strong{color:#1a1a2e;}
+
+    /* QA CARD */
+    .qa{background:#fff;border:1px solid #fecaca;border-radius:8px;margin-bottom:10px;overflow:hidden;page-break-inside:avoid;}
+    .qa-head{background:#fef2f2;border-bottom:1px solid #fecaca;padding:6px 13px;font-size:.9rem;font-weight:800;color:#7b1c1c;display:flex;justify-content:space-between;align-items:center;}
+    .q-box{background:#fffbeb;border-bottom:2px dashed #fde68a;padding:8px 13px;font-size:.88rem;line-height:1.8;}
+    .q-lbl{font-size:.68rem;font-weight:900;color:#92400e;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;}
+    .a-box{background:#f0fdf4;padding:8px 13px;font-size:.88rem;line-height:1.85;}
+    .a-lbl{font-size:.68rem;font-weight:900;color:#15803d;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;}
+    .ans{font-weight:700;color:#15803d;font-size:.88rem;margin:2px 0;}
+    .ak{border-left:3px solid #15803d;padding:4px 10px;margin:4px 0;font-size:.87rem;background:#fff;border-radius:0 4px 4px 0;line-height:1.8;}
+    .ms{font-size:.7rem;color:#15803d;background:#dcfce7;display:inline-block;padding:2px 8px;border-radius:10px;margin-top:4px;font-weight:bold;}
+    .note{background:#fef2f2;border:1px solid #fca5a5;padding:5px 10px;border-radius:4px;font-size:.82rem;color:#991b1b;margin:5px 0;}
+    .theme-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:8px 12px;font-size:.86rem;margin:6px 0;line-height:1.8;}
+    .theme-title{font-weight:800;color:#1d4ed8;font-size:.84rem;margin-bottom:3px;}
+
+    /* MATCH TABLE */
+    .mt{width:100%;border-collapse:collapse;font-size:.86rem;margin:5px 0;}
+    .mt th{background:#c0392b;color:#fff;padding:5px 9px;text-align:left;}
+    .mt td{border:1px solid #fecaca;padding:5px 9px;vertical-align:top;}
+    .mt tr:nth-child(even) td{background:#fef2f2;}
+    .correct{color:#15803d;font-weight:bold;}
+  </style>
+</head>
+<body>
+
+<div id="vlScreenLayer">
+  <svg width="260" height="260" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+    <g transform="rotate(-30,150,150)">
+      <circle cx="150" cy="150" r="140" fill="none" stroke="#c0392b" stroke-opacity="0.28" stroke-width="5"/>
+      <circle cx="150" cy="150" r="128" fill="none" stroke="#1a1a2e" stroke-opacity="0.13" stroke-width="2" stroke-dasharray="6,4"/>
+      <text x="150" y="135" text-anchor="middle" font-family="Arial" font-size="34" font-weight="900" fill="#c0392b" fill-opacity="0.28">VISIONS</text>
+      <text x="150" y="175" text-anchor="middle" font-family="Arial" font-size="34" font-weight="900" fill="#1a1a2e" fill-opacity="0.20">CLASSES</text>
+    </g>
+  </svg>
+</div>
+<div id="vlPrintLayer"></div>
+
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="logo" style="height:32px;"/><span class="logo-text"><span>Visions</span> Classes</span></a>
+    <ul class="nav-links"><li><a href="notes-class12.html" class="active">Class 12 Notes</a></li></ul>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="badge">Class 12 · English · Section IV · Novel</div>
+  <h1>📚 Novel Section — Questions &amp; Answers</h1>
+  <p>4.1 History of Novel &nbsp;·&nbsp; 4.2 To Sir, With Love &nbsp;·&nbsp; 4.3 Around the World in Eighty Days &nbsp;·&nbsp; 4.4 The Sign of Four</p>
+</div>
+
+<div class="qnav">
+  <a href="#history">4.1 History of Novel</a>
+  <a href="#toSir">4.2 To Sir, With Love</a>
+  <a href="#aroundWorld">4.3 Around the World</a>
+  <a href="#signOfFour">4.4 The Sign of Four</a>
+</div>
+
+<div class="wrap">
+
+<!-- ══════════════ 4.1 HISTORY OF NOVEL ══════════════ -->
+<div class="sec s1" id="history"><div class="sn">4.1</div>History of Novel</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q1. What is a Novel? Give its definition.</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>What is a novel? Define it with its key features.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="ak">A <strong>novel</strong> is a long, fictional prose narrative that portrays characters, events, and settings in a complex and detailed way. It tells a story that unfolds over many chapters and explores human experience in depth. Key features include: a plot, characters, setting, theme, point of view, and style.</div>
+    <div class="ms">2 marks</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q2. Mention any four types / genres of the Novel.</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Name and briefly describe any four types/genres of novel.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <table class="mt">
+      <tr><th>Type</th><th>Description</th><th>Example</th></tr>
+      <tr><td><strong>Historical Novel</strong></td><td>Set in a past period; blends real history with fiction</td><td>A Tale of Two Cities</td></tr>
+      <tr><td><strong>Detective / Mystery Novel</strong></td><td>Involves solving a crime; suspense and investigation</td><td>The Sign of Four</td></tr>
+      <tr><td><strong>Adventure Novel</strong></td><td>Exciting journey, danger, exploration</td><td>Around the World in Eighty Days</td></tr>
+      <tr><td><strong>Social / Realistic Novel</strong></td><td>Depicts real social issues and human relationships</td><td>To Sir, With Love</td></tr>
+      <tr><td><strong>Autobiographical Novel</strong></td><td>Based on the author's own life experiences</td><td>To Sir, With Love</td></tr>
+      <tr><td><strong>Epistolary Novel</strong></td><td>Written in the form of letters or diary entries</td><td>Pamela (Samuel Richardson)</td></tr>
+    </table>
+    <div class="ms">1 mark each for any four = 4 marks</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q3. Match the following — Novel History (Objective)</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Match Column A with Column B:</p>
+    <p>i) Daniel Defoe &nbsp; ii) Samuel Richardson &nbsp; iii) Henry Fielding &nbsp; iv) Jane Austen<br/>
+    a) Pride and Prejudice &nbsp; b) Robinson Crusoe &nbsp; c) Tom Jones &nbsp; d) Pamela</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="ak">i) Daniel Defoe → <strong class="correct">b) Robinson Crusoe</strong></div>
+    <div class="ak">ii) Samuel Richardson → <strong class="correct">d) Pamela</strong></div>
+    <div class="ak">iii) Henry Fielding → <strong class="correct">c) Tom Jones</strong></div>
+    <div class="ak">iv) Jane Austen → <strong class="correct">a) Pride and Prejudice</strong></div>
+    <div class="ms">½ mark each = 2 marks</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q4. State True or False — History of Novel</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>a) Robinson Crusoe by Daniel Defoe is considered one of the first English novels.<br/>
+    b) A novel can only be written in the first person.<br/>
+    c) A theme is the central idea or message of a novel.<br/>
+    d) The epistolary novel uses letters or diary entries as its form.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="ans">a) <strong class="correct">True</strong> &nbsp; b) <strong class="correct">False</strong> &nbsp; c) <strong class="correct">True</strong> &nbsp; d) <strong class="correct">True</strong></div>
+    <div class="ms">½ mark each = 2 marks</div>
+  </div>
+</div>
+
+<!-- ══════════════ 4.2 TO SIR, WITH LOVE ══════════════ -->
+<div class="sec s2" id="toSir"><div class="sn">4.2</div>To Sir, With Love — E.R. Braithwaite</div>
+
+<div class="novel-info">
+  <h3>📖 Novel at a Glance</h3>
+  <div class="ni-grid">
+    <span><strong>Author:</strong> E.R. Braithwaite (1912–2016)</span>
+    <span><strong>Full name:</strong> Eustace Edward Ricardo Braithwaite</span>
+    <span><strong>Type:</strong> Autobiographical / Social Novel</span>
+    <span><strong>Setting:</strong> East End of London, 1950s</span>
+    <span><strong>Protagonist:</strong> Rick Braithwaite (the teacher)</span>
+    <span><strong>School:</strong> Greenslade Secondary Modern School</span>
+  </div>
+  <div class="theme-box" style="margin-top:8px;">
+    <div class="theme-title">🎯 Themes:</div>
+    Racial discrimination · Education and dignity · Student-teacher relationship · Overcoming prejudice · Identity and self-respect
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q1. Who is the protagonist of "To Sir, With Love"? Describe him briefly.</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Who is Rick Braithwaite? Write about his background and challenges.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="ak">Rick Braithwaite (E.R. Braithwaite) is the protagonist and narrator of the novel. He is a black, educated man from British Guiana (now Guyana) who served in World War II. Despite his engineering degree, he faces racial discrimination and cannot find a job in his field in post-war Britain. Out of necessity, he accepts a teaching job at Greenslade Secondary Modern School in London's East End, where he faces a class of difficult, underprivileged students. Through patience, respect and a changed approach to teaching, he transforms both his students and himself.</div>
+    <div class="ms">3–4 marks for character description</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q2. What challenges did Braithwaite face at Greenslade School?</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Describe the initial difficulties Braithwaite faced when he began teaching at Greenslade School.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="ak">When Braithwaite joined Greenslade, he faced several serious challenges:
+      <br/>• Students were undisciplined, indifferent and disrespectful towards teachers
+      <br/>• They used abusive language and deliberately destroyed class materials
+      <br/>• They showed no interest in learning
+      <br/>• Braithwaite also faced racial prejudice — both from students and some staff members
+      <br/>• His modern, formal teaching methods initially had no effect on the students
+      <br/>He overcame these by changing his approach — treating students with dignity, addressing them as "Mr." and "Miss", and connecting their lessons to real life.
+    </div>
+    <div class="ms">2 marks for any two challenges clearly described</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q3. How did Braithwaite change his teaching method? What was the result?</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Describe Braithwaite's new teaching approach and its effect on students.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="ak">Braithwaite made a dramatic change in his teaching approach. He began to:
+      <br/>• Address students formally as "Mr." and "Miss" — treating them with dignity
+      <br/>• Focus on practical, real-life lessons rather than theoretical textbook work
+      <br/>• Take students on educational visits to museums, galleries and theatres
+      <br/>• Encourage students to discuss current events and social issues
+      <br/>• Establish a Student Council to give students responsibility
+      <br/><strong>Result:</strong> The students gradually changed. They became more responsible, respectful and engaged. They developed trust and affection for "Sir" Braithwaite and eventually grew into caring, thoughtful young adults. The novel ends with students collecting money for a funeral — a powerful symbol of their transformation.
+    </div>
+    <div class="ms">3 marks</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q4. What is the theme of "To Sir, With Love"? (2 marks)</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>State the central theme of the novel "To Sir, With Love".</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="ak">The central theme of the novel is the <strong>power of education, dignity and human respect to overcome racial prejudice and social inequality</strong>. Braithwaite shows that when a teacher treats students as individuals with dignity, they respond with effort and growth. The novel also explores racial discrimination in post-war Britain and how one man's integrity can break down barriers of prejudice and indifference.</div>
+    <div class="ms">2 marks</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q5. Match the Column — To Sir, With Love (Objective)</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>i) E.R. Braithwaite &nbsp; ii) Greenslade School &nbsp; iii) Student Council &nbsp; iv) "Sir"<br/>
+    a) Name given to Braithwaite by students &nbsp; b) Author of the novel &nbsp; c) School where story is set &nbsp; d) Student self-governance body</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="ak">i) → <strong class="correct">b) Author of the novel</strong></div>
+    <div class="ak">ii) → <strong class="correct">c) School where story is set</strong></div>
+    <div class="ak">iii) → <strong class="correct">d) Student self-governance body</strong></div>
+    <div class="ak">iv) → <strong class="correct">a) Name given to Braithwaite by students</strong></div>
+    <div class="ms">½ mark each = 2 marks</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q6. Write about racial discrimination in the novel. (Short answer ~50 words)</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>How does racial discrimination affect Braithwaite's life in post-war Britain?</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="ak">Despite his engineering degree and war service, Braithwaite is refused jobs because of his race. Even in school, some students initially refuse to interact with him due to racial prejudice. A white girl who likes him faces social pressure. These experiences show that racial discrimination was deeply rooted in British society at the time, affecting even educated, qualified individuals.</div>
+    <div class="ms">2 marks — any 2 relevant points</div>
+  </div>
+</div>
+
+<!-- ══════════════ 4.3 AROUND THE WORLD ══════════════ -->
+<div class="sec s3" id="aroundWorld"><div class="sn">4.3</div>Around the World in Eighty Days — Jules Verne</div>
+
+<div class="novel-info">
+  <h3>📖 Novel at a Glance</h3>
+  <div class="ni-grid">
+    <span><strong>Author:</strong> Jules Gabriel Verne (1828–1905)</span>
+    <span><strong>Nationality:</strong> French</span>
+    <span><strong>Type:</strong> Adventure / Science Fiction Novel</span>
+    <span><strong>Setting:</strong> Around the world — 1872</span>
+    <span><strong>Protagonist:</strong> Phileas Fogg</span>
+    <span><strong>Companion:</strong> Passepartout (servant)</span>
+  </div>
+  <div class="theme-box" style="margin-top:8px;">
+    <div class="theme-title">🎯 Themes:</div>
+    Adventure and perseverance · Precision and discipline · Trust and friendship · Technology and progress · Cultural diversity
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q1. Who is Phileas Fogg? Describe his character.</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Describe the character of Phileas Fogg with examples from the novel.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="ak">Phileas Fogg is the eccentric English gentleman and protagonist of the novel. He is:
+      <br/>• Extraordinarily <strong>precise and punctual</strong> — his life runs like clockwork
+      <br/>• <strong>Wealthy but mysterious</strong> — nobody knows how he earned his money
+      <br/>• <strong>Calm and unemotional</strong> — never loses composure even in crisis
+      <br/>• <strong>Generous and fair</strong> — he helps Aouda, rescues her from death, and is loyal to Passepartout
+      <br/>• Member of the Reform Club, London
+      <br/>He bets £20,000 with his club members that he can travel around the world in exactly 80 days — and this bet drives the entire plot of the novel.
+    </div>
+    <div class="ms">3 marks — any 3 qualities with examples</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q2. Why does Phileas Fogg bet to travel around the world in 80 days?</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>What was the bet and how did the journey begin?</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="ak">At the Reform Club in London, Fogg's fellow members argue that a new railway line in India makes it impossible to travel around the world in 80 days. Fogg disagrees and bets £20,000 (half his fortune) that he can complete the journey in exactly 80 days. He leaves immediately on October 2, 1872, with his new French servant Passepartout, carrying a travel bag and a diary to record every step of the journey. He must return to London by December 21, 1872 — 80 days later — to win the bet.</div>
+    <div class="ms">2 marks</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q3. Who is Passepartout? What is his role?</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Describe Passepartout and his importance in the novel.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="ak">Jean Passepartout is Fogg's loyal French servant who joins him just before the journey begins. He is:
+      <br/>• <strong>Cheerful, enthusiastic</strong> and resourceful — a comic contrast to Fogg's coldness
+      <br/>• <strong>Deeply loyal</strong> — he risks his life multiple times to help Fogg
+      <br/>• <strong>Clumsy but well-intentioned</strong> — his mistakes sometimes cause delays
+      <br/>He is the emotional heart of the novel — his warmth makes the story human. Together, Fogg and Passepartout represent the perfect pair: logic and emotion working together to overcome challenges.
+    </div>
+    <div class="ms">2 marks</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q4. Who is Aouda? What is her importance?</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Describe Aouda's character and her significance in the novel.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="ak">Aouda is a young, educated Indian woman whom Fogg and Passepartout rescue in India. She was about to be forced into a ritual sacrifice (Sati) and Fogg bravely saves her life. Aouda then accompanies them on the rest of the journey. She is intelligent, grateful and composed. At the end of the novel, Aouda proposes to Fogg and they get married. Her presence humanises Fogg and adds a romantic dimension to what is otherwise a story of cold calculation and adventure.</div>
+    <div class="ms">2 marks</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q5. How does Fogg win the bet? What is the twist at the end?</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Describe the climax and ending of the novel.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="ak">Fogg returns to London and believes he has arrived one day late — he thinks he has lost the bet. He is heartbroken. However, he then realises that because he travelled eastward (in the direction of the sun), he gained one full day without realising it. He had forgotten to count this "extra day" gained by crossing time zones. He rushes to the Reform Club in the final seconds and arrives exactly on time — winning the £20,000 bet! The story ends with Fogg marrying Aouda, having gained not just the money but, more importantly, love and friendship.</div>
+    <div class="ms">3 marks</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q6. Match the Column — Around the World in Eighty Days</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>i) Phileas Fogg &nbsp; ii) Passepartout &nbsp; iii) Aouda &nbsp; iv) Detective Fix<br/>
+    a) Indian woman rescued from Sati &nbsp; b) English eccentric who makes the bet &nbsp; c) French servant, loyal companion &nbsp; d) Detective who wrongly suspects Fogg</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="ak">i) → <strong class="correct">b) English eccentric who makes the bet</strong></div>
+    <div class="ak">ii) → <strong class="correct">c) French servant, loyal companion</strong></div>
+    <div class="ak">iii) → <strong class="correct">a) Indian woman rescued from Sati</strong></div>
+    <div class="ak">iv) → <strong class="correct">d) Detective who wrongly suspects Fogg of being a bank robber</strong></div>
+    <div class="ms">½ mark each = 2 marks</div>
+  </div>
+</div>
+
+<!-- ══════════════ 4.4 THE SIGN OF FOUR ══════════════ -->
+<div class="sec s4" id="signOfFour"><div class="sn">4.4</div>The Sign of Four — Sir Arthur Conan Doyle</div>
+
+<div class="novel-info">
+  <h3>📖 Novel at a Glance</h3>
+  <div class="ni-grid">
+    <span><strong>Author:</strong> Sir Arthur Ignatius Conan Doyle (1859–1930)</span>
+    <span><strong>Nationality:</strong> British (Scottish)</span>
+    <span><strong>Type:</strong> Detective / Mystery Novel</span>
+    <span><strong>Setting:</strong> London &amp; Thames River, 1888</span>
+    <span><strong>Protagonist:</strong> Sherlock Holmes</span>
+    <span><strong>Narrator:</strong> Dr. John H. Watson</span>
+  </div>
+  <div class="theme-box" style="margin-top:8px;">
+    <div class="theme-title">🎯 Themes:</div>
+    Justice and crime · Logic vs. emotion · Greed and betrayal · Loyalty and friendship · British imperialism / colonial past
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q1. Who is Sherlock Holmes? Describe his character and methods.</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Describe the character of Sherlock Holmes with his methods of detection.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="ak">Sherlock Holmes is the brilliant fictional detective created by Sir Arthur Conan Doyle. In "The Sign of Four" he is:
+      <br/>• <strong>Extraordinarily observant</strong> — notices what others miss ("Elementary, my dear Watson")
+      <br/>• <strong>Logical and analytical</strong> — uses deductive reasoning to solve crimes
+      <br/>• <strong>Eccentric</strong> — plays the violin, uses cocaine when bored (a controversial detail)
+      <br/>• <strong>Emotionally detached</strong> — rarely shows feelings; sees emotion as a hindrance
+      <br/>• <strong>Confident and direct</strong> — sometimes arrogant but always correct
+      <br/>His method: observe every detail, form hypotheses, test them, deduce the truth. He solves the mystery of the Agra Treasure through brilliant observation of footprints, tools, and physical evidence.
+    </div>
+    <div class="ms">3 marks</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q2. Who is Dr. Watson? What is his role in the novel?</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Describe Dr. Watson's character and his importance in "The Sign of Four".</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="ak">Dr. John H. Watson is Holmes's close friend and the narrator of the novel. He is:
+      <br/>• A <strong>retired army doctor</strong> — brave, loyal and practical
+      <br/>• The <strong>emotional contrast</strong> to Holmes — he shows warmth, empathy and falls in love with Mary Morstan during the case
+      <br/>• <strong>The reader's guide</strong> — through his eyes, we experience the mystery as it unfolds
+      <br/>Watson is not as brilliant as Holmes but his loyalty and courage are essential. His narration makes Holmes's genius accessible and the story human. The novel also ends with Watson's romance with Mary Morstan adding a personal dimension.
+    </div>
+    <div class="ms">2 marks</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q3. What is the mystery in "The Sign of Four"? Briefly describe the plot.</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Summarise the plot of "The Sign of Four" in about 80 words.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="ak">Mary Morstan comes to Holmes for help — she has been receiving mysterious pearls for years and her father disappeared. Holmes and Watson investigate and discover the secret of the "Agra Treasure" — a vast fortune stolen in India involving four men who made a pact (the "Sign of Four"). One of them, Jonathan Small, was betrayed by his partners. The treasure is stolen by Small and his companion Tonga, leading to a thrilling chase on the River Thames. Holmes solves the case, Small is arrested, but the treasure is lost forever in the river.</div>
+    <div class="ms">2–3 marks for plot summary</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q4. Who are the "Sign of Four"? What was their pact?</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Explain who the four men are and what their pact involved.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="ak">The "Sign of Four" refers to four men who made a secret pact to steal the Agra Treasure in India:
+      <br/>1. <strong>Jonathan Small</strong> — English soldier; the main villain and narrator of the backstory
+      <br/>2. <strong>Abdullah Khan</strong> — Indian soldier
+      <br/>3. <strong>Dost Akbar</strong> — Indian soldier
+      <br/>4. <strong>Mahomet Singh</strong> — Indian soldier
+      <br/>They murdered a merchant for his treasure, hid it and swore loyalty to each other. However, they were betrayed, imprisoned and the treasure hidden in a box. Jonathan Small later escapes and seeks revenge on those who betrayed him, leading to the events of the novel.
+    </div>
+    <div class="ms">2 marks — names + brief pact description</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q5. What is the Agra Treasure? What happens to it at the end?</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>Describe the Agra Treasure and its fate in the novel.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="ak">The Agra Treasure is a vast collection of precious jewels and gems that was originally the property of a wealthy Indian merchant. It was stolen by the four men during the Indian Mutiny (1857). The treasure was hidden and its secret passed down through the years. Mary Morstan's father, Captain Morstan, was one of those who knew about it. In the climax, during the chase on the Thames, Jonathan Small throws the treasure chest into the river rather than let Holmes capture it. The treasure is lost forever — but justice is served and Mary and Watson find love.</div>
+    <div class="ms">2–3 marks</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q6. Match the Column — The Sign of Four</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>i) Sherlock Holmes &nbsp; ii) Dr. Watson &nbsp; iii) Mary Morstan &nbsp; iv) Jonathan Small<br/>
+    a) Narrator and Holmes's companion &nbsp; b) Main villain &nbsp; c) Client who seeks Holmes's help &nbsp; d) Brilliant detective</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="ak">i) → <strong class="correct">d) Brilliant detective</strong></div>
+    <div class="ak">ii) → <strong class="correct">a) Narrator and Holmes's companion</strong></div>
+    <div class="ak">iii) → <strong class="correct">c) Client who seeks Holmes's help</strong></div>
+    <div class="ak">iv) → <strong class="correct">b) Main villain</strong></div>
+    <div class="ms">½ mark each = 2 marks</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q7. State True or False — The Sign of Four</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>a) Sherlock Holmes narrates "The Sign of Four".<br/>
+    b) Mary Morstan comes to Holmes because she has been receiving mysterious pearls.<br/>
+    c) The Agra Treasure is found and given to Mary Morstan at the end.<br/>
+    d) Jonathan Small made a pact with three other men to steal a treasure.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="ans">a) <strong class="correct">False</strong> (Dr. Watson narrates) &nbsp; b) <strong class="correct">True</strong> &nbsp; c) <strong class="correct">False</strong> (treasure is thrown into the Thames) &nbsp; d) <strong class="correct">True</strong></div>
+    <div class="ms">½ mark each = 2 marks</div>
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qa-head"><span>Q8. What is the theme of "The Sign of Four"? (Short answer)</span></div>
+  <div class="q-box"><div class="q-lbl">❓ Question</div>
+    <p>State the main theme of the novel in 2–3 sentences.</p>
+  </div>
+  <div class="a-box"><div class="a-lbl">✅ Answer</div>
+    <div class="ak">The central theme of "The Sign of Four" is <strong>the triumph of logic, reason and justice over crime and greed</strong>. Holmes's deductive method shows that careful observation and reasoning will always expose the truth. The novel also explores themes of <strong>loyalty and betrayal</strong> — the four men's pact ultimately destroys them — and the <strong>legacy of British colonialism in India</strong>, as the treasure represents wealth stolen from an occupied land.</div>
+    <div class="ms">2 marks</div>
+  </div>
+</div>
+
+</div><!-- end .wrap -->
+
+<div style="text-align:center;padding:20px;">
+  <a href="notes-class12.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#7b1c1c,#c0392b);color:#fff;padding:12px 28px;border-radius:28px;text-decoration:none;font-size:.9rem;font-weight:700;">← Back to Class 12 Notes</a>
+</div>
+
+<script>
+(function(){
+  var H=260;
+  function svgUrl(){
+    var s='<svg xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 300 300">'
+      +'<g transform="rotate(-30,150,150)">'
+      +'<circle cx="150" cy="150" r="140" fill="none" stroke="#c0392b" stroke-opacity="0.28" stroke-width="5"/>'
+      +'<circle cx="150" cy="150" r="128" fill="none" stroke="#1a1a2e" stroke-opacity="0.13" stroke-width="2" stroke-dasharray="6,4"/>'
+      +'<text x="150" y="135" text-anchor="middle" font-family="Arial" font-size="34" font-weight="900" fill="#c0392b" fill-opacity="0.28">VISIONS</text>'
+      +'<text x="150" y="175" text-anchor="middle" font-family="Arial" font-size="34" font-weight="900" fill="#1a1a2e" fill-opacity="0.20">CLASSES</text>'
+      +'</g></svg>';
+    return 'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(s);
+  }
+  function build(){
+    var el=document.getElementById('vlPrintLayer');if(!el)return;
+    var h=Math.max(document.body.scrollHeight||0,document.documentElement.scrollHeight||0);
+    if(h<100)h=5000;el.style.height=h+'px';
+    var A4=1123,pages=Math.ceil(h/A4),u=svgUrl(),html='';
+    for(var i=0;i<pages;i++){var top=Math.round(i*A4+A4/2-H/2);html+='<img src="'+u+'" width="260" height="260" style="position:absolute;top:'+top+'px;left:50%;margin-left:-130px;" />';}
+    el.innerHTML=html;
+  }
+  window.addEventListener('beforeprint',function(){document.getElementById('vlScreenLayer').style.display='none';build();document.getElementById('vlPrintLayer').style.display='block';});
+  window.addEventListener('afterprint',function(){document.getElementById('vlScreenLayer').style.display='';document.getElementById('vlPrintLayer').style.display='none';});
+})();
+</script>
+</body>
+</html>
