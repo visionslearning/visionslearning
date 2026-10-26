@@ -1,61 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Class 10 Hindi Grammar Notes (English Medium) | Visions Classes</title>
+  <title>Class 10 Hindi Grammar Notes | Visions Classes</title>
   <link rel="stylesheet" href="style.css"/>
   <link rel="icon" href="logo.png" type="image/png"/>
   <style>
     #vlScreenLayer{display:block;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;}
     #vlPrintLayer{display:none;position:absolute;top:0;left:0;width:100%;pointer-events:none;z-index:9999;}
     @media print{#vlScreenLayer{display:none!important;}#vlPrintLayer{display:block!important;}body{position:relative!important;}}
-
+    *{margin:0;padding:0;box-sizing:border-box;}
     body{background:#f4f6fb;font-family:'Arial',sans-serif;}
-
     .gr-hero{background:linear-gradient(135deg,#b45309,#d97706);color:#fff;padding:28px 20px 22px;text-align:center;}
     .gr-hero .badge{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:4px 16px;font-size:.75rem;letter-spacing:1px;margin-bottom:8px;}
     .gr-hero h1{font-size:clamp(1.3rem,4vw,1.9rem);font-weight:900;margin-bottom:4px;}
     .gr-hero p{font-size:.88rem;opacity:.88;}
-
     .qnav{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;padding:11px 14px;background:#fff;border-bottom:1px solid #fde68a;position:sticky;top:0;z-index:100;}
     .qnav a{background:#fef3c7;color:#92400e;border:1px solid #fde68a;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;}
     .qnav a:hover{background:#d97706;color:#fff;}
-
     .gr-wrap{max-width:860px;margin:0 auto;padding:0 14px 40px;}
-
     .gr-sec{display:flex;align-items:center;gap:10px;background:linear-gradient(90deg,#b45309,#d97706);color:#fff;padding:9px 15px;border-radius:10px;margin:24px 0 9px;font-size:.98rem;font-weight:800;}
     .gr-sec .sn{min-width:27px;height:27px;background:rgba(255,255,255,.22);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:900;}
-
     .gc{background:#fff;border:1px solid #e2e8f0;border-radius:10px;margin-bottom:10px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);}
-    .gc-head{background:#fffbeb;border-bottom:2px solid #fde68a;padding:8px 13px;font-size:.92rem;font-weight:800;color:#92400e;display:flex;justify-content:space-between;align-items:center;}
-    .gc-body{padding:11px 13px;font-size:.88rem;line-height:1.85;}
-
-    .def{background:#fef3c7;border-left:4px solid #d97706;padding:6px 11px;border-radius:0 5px 5px 0;margin:5px 0;font-size:.86rem;line-height:1.8;}
-    .def strong{color:#92400e;}
-
-    .gr-table{width:100%;border-collapse:collapse;font-size:.84rem;margin:7px 0;}
-    .gr-table th{background:#d97706;color:#fff;padding:5px 9px;text-align:left;}
-    .gr-table td{border:1px solid #fde68a;padding:5px 9px;vertical-align:top;}
+    .gc-head{background:#fffbeb;border-bottom:2px solid #fde68a;padding:8px 13px;font-size:.92rem;font-weight:800;color:#92400e;}
+    .gc-body{padding:11px 13px;font-size:.9rem;line-height:1.9;}
+    .def{background:#fef3c7;border-left:4px solid #d97706;padding:7px 12px;border-radius:0 5px 5px 0;margin:5px 0;font-size:.88rem;line-height:1.85;}
+    .gr-table{width:100%;border-collapse:collapse;font-size:.86rem;margin:7px 0;}
+    .gr-table th{background:#d97706;color:#fff;padding:6px 10px;text-align:left;}
+    .gr-table td{border:1px solid #fde68a;padding:6px 10px;vertical-align:top;}
     .gr-table tr:nth-child(even) td{background:#fffbeb;}
-
-    .ex{background:#f0fdf4;border-left:3px solid #16a34a;padding:4px 9px;border-radius:0 4px 4px 0;font-size:.85rem;margin:4px 0;color:#14532d;}
-    .ex b{color:#15803d;}
-
-    .rule{background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:7px 11px;font-size:.85rem;margin:5px 0;line-height:1.8;}
-    .rule-title{font-weight:800;color:#1d4ed8;margin-bottom:3px;font-size:.84rem;}
-
-    .hi{font-family:'Arial Unicode MS',Arial,sans-serif;font-size:.9rem;color:#92400e;font-weight:600;}
-    .en{font-size:.82rem;color:#555;font-style:italic;}
-
-    .trick{background:#f0f9ff;border:1px solid #7dd3fc;border-radius:6px;padding:7px 11px;font-size:.85rem;margin:5px 0;line-height:1.8;}
-    .trick-title{font-weight:800;color:#0369a1;font-size:.83rem;margin-bottom:3px;}
-
-    .note{background:#fef2f2;border:1px solid #fca5a5;padding:5px 10px;border-radius:5px;font-size:.82rem;color:#991b1b;margin:5px 0;}
-
+    .ex{background:#f0fdf4;border-left:3px solid #16a34a;padding:5px 10px;border-radius:0 4px 4px 0;font-size:.87rem;margin:4px 0;color:#14532d;}
+    .rule{background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:8px 12px;font-size:.87rem;margin:6px 0;line-height:1.9;}
+    .rule-title{font-weight:800;color:#1d4ed8;margin-bottom:3px;font-size:.86rem;}
+    .trick{background:#f0f9ff;border:1px solid #7dd3fc;border-radius:6px;padding:7px 12px;font-size:.87rem;margin:6px 0;line-height:1.85;}
+    .trick-title{font-weight:800;color:#0369a1;font-size:.84rem;margin-bottom:3px;}
+    .note{background:#fef2f2;border:1px solid #fca5a5;padding:5px 10px;border-radius:5px;font-size:.83rem;color:#991b1b;margin:5px 0;}
+    .hi{font-family:'Arial Unicode MS',Arial,sans-serif;font-size:.9rem;color:#1a1a2e;}
     .tag{display:inline-block;background:#d97706;color:#fff;padding:1px 7px;border-radius:8px;font-size:.72rem;font-weight:700;margin-left:4px;vertical-align:middle;}
-    .tag-blue{background:#1d4ed8;}
-    .tag-green{background:#15803d;}
+    .vigyapan-box{border:3px double #d97706;border-radius:8px;padding:12px 16px;font-size:.87rem;line-height:2;text-align:center;background:#fffbeb;margin:6px 0;}
   </style>
 </head>
 <body>
@@ -80,302 +63,269 @@
 </nav>
 
 <div class="gr-hero">
-  <div class="badge">Class 10 · Hindi (Second Language) · Maharashtra SSC</div>
+  <div class="badge">कक्षा १० · हिंदी (द्वितीय भाषा) · Maharashtra SSC</div>
   <h1>हिंदी व्याकरण — Hindi Grammar Notes</h1>
-  <p>English Medium · Maharashtra State Board · All Topics with Examples &amp; Exam Tips</p>
+  <p>सम्पूर्ण व्याकरण · परीक्षा के लिए उपयोगी · उदाहरण सहित</p>
 </div>
 
 <div class="qnav">
-  <a href="#sandhi">1. संधि Sandhi</a>
-  <a href="#samas">2. समास Samas</a>
-  <a href="#karak">3. कारक Karak</a>
-  <a href="#vakya">4. वाक्य-भेद Vakya</a>
-  <a href="#alankar">5. अलंकार Alankar</a>
-  <a href="#vilom">6. विलोम Antonyms</a>
-  <a href="#paryay">7. पर्यायवाची Synonyms</a>
-  <a href="#muhavare">8. मुहावरे Idioms</a>
-  <a href="#lokokti">9. लोकोक्तियाँ Proverbs</a>
-  <a href="#patra">10. पत्र-लेखन Letters</a>
-  <a href="#suchna">11. सूचना-लेखन Notice</a>
-  <a href="#sandesh">12. संदेश-लेखन Message</a>
-  <a href="#jaankari">13. जानकारी-लेखन Report</a>
-  <a href="#vigyapan">14. विज्ञापन Advertisement</a>
+  <a href="#sandhi">१. संधि</a>
+  <a href="#samas">२. समास</a>
+  <a href="#karak">३. कारक</a>
+  <a href="#vakya">४. वाक्य-भेद</a>
+  <a href="#alankar">५. अलंकार</a>
+  <a href="#vilom">६. विलोम</a>
+  <a href="#paryay">७. पर्यायवाची</a>
+  <a href="#muhavare">८. मुहावरे</a>
+  <a href="#lokokti">९. लोकोक्तियाँ</a>
+  <a href="#patra">१०. पत्र-लेखन</a>
+  <a href="#suchna">११. सूचना-लेखन</a>
+  <a href="#sandesh">१२. संदेश-लेखन</a>
+  <a href="#jaankari">१३. जानकारी-लेखन</a>
+  <a href="#vigyapan">१४. विज्ञापन-लेखन</a>
 </div>
 
 <div class="gr-wrap">
 
-<!-- ══════════════ 1. SANDHI ══════════════ -->
-<div class="gr-sec" id="sandhi"><div class="sn">1</div>संधि — Sandhi (Junction of Letters)</div>
-
+<!-- ══════════ १. संधि ══════════ -->
+<div class="gr-sec" id="sandhi"><div class="sn">१</div>संधि</div>
 <div class="gc">
-  <div class="gc-head">What is Sandhi?</div>
+  <div class="gc-head">संधि — परिभाषा और भेद</div>
   <div class="gc-body">
-    <div class="def"><strong>Definition:</strong> When two letters (sounds) come together and merge, causing a change in pronunciation, that change is called <strong>Sandhi (संधि)</strong>. It literally means "junction" or "union".</div>
-    <div class="def" style="margin-top:6px;"><strong>Sandhi-Vichchhed (संधि-विच्छेद)</strong> means splitting the merged word back into its original two parts.</div>
-
+    <div class="def"><strong>परिभाषा:</strong> दो वर्णों के परस्पर मेल से जो विकार उत्पन्न होता है, उसे <strong>संधि</strong> कहते हैं। संधि किए हुए शब्द को तोड़ना <strong>संधि-विच्छेद</strong> कहलाता है।</div>
     <table class="gr-table">
-      <tr><th>Type</th><th>When it happens</th><th>Example</th><th>Sandhi-Vichchhed</th></tr>
+      <tr><th>संधि-भेद</th><th>परिभाषा</th><th>उदाहरण</th><th>संधि-विच्छेद</th></tr>
       <tr>
-        <td><strong>1. Swar Sandhi<br/>(स्वर संधि)</strong><br/><span class="tag tag-blue">Vowel Junction</span></td>
-        <td>Two vowels meet together</td>
+        <td class="hi"><strong>१. स्वर संधि</strong><br/><span class="tag" style="background:#15803d;">Swar Sandhi</span></td>
+        <td class="hi">दो स्वरों के मेल से होने वाला परिवर्तन</td>
         <td class="hi">विद्यालय<br/>रामावतार<br/>गणेश</td>
         <td class="hi">विद्या + आलय<br/>राम + अवतार<br/>गण + ईश</td>
       </tr>
       <tr>
-        <td><strong>2. Vyanjan Sandhi<br/>(व्यंजन संधि)</strong><br/><span class="tag tag-green">Consonant Junction</span></td>
-        <td>Consonant meets vowel or consonant</td>
+        <td class="hi"><strong>२. व्यंजन संधि</strong><br/><span class="tag" style="background:#1d4ed8;">Vyanjan Sandhi</span></td>
+        <td class="hi">व्यंजन के साथ स्वर या व्यंजन का मेल</td>
         <td class="hi">जगदीश<br/>सदानंद<br/>उद्घाटन</td>
         <td class="hi">जगत् + ईश<br/>सत् + आनंद<br/>उत् + घाटन</td>
       </tr>
       <tr>
-        <td><strong>3. Visarg Sandhi<br/>(विसर्ग संधि)</strong><br/><span class="tag">Visarg Junction</span></td>
-        <td>Visarg (ः) meets vowel or consonant</td>
+        <td class="hi"><strong>३. विसर्ग संधि</strong><br/><span class="tag">Visarg Sandhi</span></td>
+        <td class="hi">विसर्ग (:) के साथ स्वर या व्यंजन का मेल</td>
         <td class="hi">मनोरथ<br/>निष्फल<br/>दुर्जन</td>
         <td class="hi">मन: + रथ<br/>नि: + फल<br/>दु: + जन</td>
       </tr>
     </table>
-
     <div class="rule">
-      <div class="rule-title">⭐ Key Rules for Swar Sandhi (most common in exam):</div>
-      अ / आ &nbsp;+&nbsp; अ / आ &nbsp;= <strong>आ</strong> &nbsp;→ <span class="hi">राम + अवतार = रामावतार</span><br/>
-      अ / आ &nbsp;+&nbsp; इ / ई &nbsp;= <strong>ए</strong> &nbsp;→ <span class="hi">गण + ईश = गणेश</span><br/>
-      अ / आ &nbsp;+&nbsp; उ / ऊ &nbsp;= <strong>ओ</strong> &nbsp;→ <span class="hi">चंद्र + उदय = चंद्रोदय</span><br/>
-      इ / ई &nbsp;+&nbsp; इ / ई &nbsp;= <strong>ई</strong> &nbsp;→ <span class="hi">मुनि + ईश = मुनीश</span>
+      <div class="rule-title">⭐ स्वर संधि के महत्वपूर्ण नियम:</div>
+      अ / आ + अ / आ = <strong>आ</strong> → <span class="hi">राम + अवतार = रामावतार</span><br/>
+      अ / आ + इ / ई = <strong>ए</strong> → <span class="hi">गण + ईश = गणेश</span><br/>
+      अ / आ + उ / ऊ = <strong>ओ</strong> → <span class="hi">चंद्र + उदय = चंद्रोदय</span><br/>
+      इ / ई + इ / ई = <strong>ई</strong> → <span class="hi">मुनि + ईश = मुनीश</span>
     </div>
-
     <div class="trick">
-      <div class="trick-title">💡 Exam Tip:</div>
-      In exam, you may be asked to write Sandhi-Vichchhed (split the word). Simply identify the vowel change and reverse it.<br/>
-      Example: <span class="hi">महात्मा → महा + आत्मा</span> (Two आ sounds merged into आ)
+      <div class="trick-title">💡 परीक्षा टिप्स:</div>
+      संधि-विच्छेद में शब्द को तोड़कर दो भागों में लिखें।<br/>
+      जैसे: <span class="hi">महात्मा = महा + आत्मा</span>
     </div>
   </div>
 </div>
 
-<!-- ══════════════ 2. SAMAS ══════════════ -->
-<div class="gr-sec" id="samas"><div class="sn">2</div>समास — Samas (Compound Words)</div>
-
+<!-- ══════════ २. समास ══════════ -->
+<div class="gr-sec" id="samas"><div class="sn">२</div>समास</div>
 <div class="gc">
-  <div class="gc-head">What is Samas?</div>
+  <div class="gc-head">समास — परिभाषा और भेद</div>
   <div class="gc-body">
-    <div class="def"><strong>Definition:</strong> When two or more words are combined into one short word by dropping the connecting words (vibhakti / case markers), it is called <strong>Samas (समास)</strong>. The expanded form is called <strong>Samas-Vigrah (समास-विग्रह)</strong>.</div>
-
+    <div class="def"><strong>परिभाषा:</strong> दो या अधिक शब्दों के बीच की विभक्ति को हटाकर बने संक्षिप्त शब्द को <strong>समास</strong> कहते हैं। उसे पुनः विस्तार से लिखना <strong>समास-विग्रह</strong> कहलाता है।</div>
     <table class="gr-table">
-      <tr><th>Type of Samas</th><th>Key Feature</th><th>Example</th><th>Vigrah (Expansion)</th></tr>
+      <tr><th>समास-भेद</th><th>पहचान</th><th>उदाहरण</th><th>समास-विग्रह</th></tr>
       <tr>
-        <td><strong>1. Avyayibhav<br/>(अव्ययीभाव)</strong></td>
-        <td>First word is an indeclinable (avyay). Whole word acts as an adverb.</td>
-        <td class="hi">यथाशक्ति<br/>प्रतिदिन<br/>आजन्म</td>
-        <td class="hi">शक्ति के अनुसार<br/>प्रत्येक दिन<br/>जन्म से मृत्यु तक</td>
+        <td class="hi"><strong>१. अव्ययीभाव समास</strong></td>
+        <td class="hi">पहला पद अव्यय होता है</td>
+        <td class="hi">यथाशक्ति, प्रतिदिन, आजन्म</td>
+        <td class="hi">शक्ति के अनुसार, प्रत्येक दिन, जन्म से</td>
       </tr>
       <tr>
-        <td><strong>2. Tatpurush<br/>(तत्पुरुष)</strong></td>
-        <td>Second word is the main (head) word. The case marker between them is dropped.</td>
-        <td class="hi">राजपुत्र<br/>देशसेवा<br/>हस्तलिखित</td>
-        <td class="hi">राजा का पुत्र<br/>देश की सेवा<br/>हाथ से लिखा हुआ</td>
+        <td class="hi"><strong>२. तत्पुरुष समास</strong></td>
+        <td class="hi">दूसरा पद प्रधान, बीच की विभक्ति लुप्त</td>
+        <td class="hi">राजपुत्र, देशसेवा, हस्तलिखित</td>
+        <td class="hi">राजा का पुत्र, देश की सेवा, हाथ से लिखित</td>
       </tr>
       <tr>
-        <td><strong>3. Karmadharaya<br/>(कर्मधारय)</strong></td>
-        <td>One word describes / qualifies the other. Adjective + Noun, or simile.</td>
-        <td class="hi">नीलकमल<br/>महात्मा<br/>चन्द्रमुख</td>
-        <td class="hi">नीला है जो कमल<br/>महान है जो आत्मा<br/>चन्द्र जैसा मुख</td>
+        <td class="hi"><strong>३. कर्मधारय समास</strong></td>
+        <td class="hi">विशेषण + विशेष्य या उपमान + उपमेय</td>
+        <td class="hi">नीलकमल, महात्मा, चंद्रमुख</td>
+        <td class="hi">नीला है जो कमल, महान है जो आत्मा, चंद्र जैसा मुख</td>
       </tr>
       <tr>
-        <td><strong>4. Dvigu<br/>(द्विगु)</strong></td>
-        <td>First word is a number (numeral). Represents a group/collection.</td>
-        <td class="hi">त्रिभुज<br/>सप्ताह<br/>नवरात्र</td>
-        <td class="hi">तीन भुजाओं का समूह<br/>सात दिनों का समूह<br/>नौ रातों का समूह</td>
+        <td class="hi"><strong>४. द्विगु समास</strong></td>
+        <td class="hi">पहला पद संख्यावाचक होता है</td>
+        <td class="hi">त्रिभुज, सप्ताह, नवरात्र</td>
+        <td class="hi">तीन भुजाओं का समूह, सात दिनों का समूह, नौ रातों का समूह</td>
       </tr>
       <tr>
-        <td><strong>5. Dvandva<br/>(द्वंद्व)</strong></td>
-        <td>Both words are equally important. "And" (और) relationship between them.</td>
-        <td class="hi">माता-पिता<br/>राम-कृष्ण<br/>देश-विदेश</td>
-        <td class="hi">माता और पिता<br/>राम और कृष्ण<br/>देश और विदेश</td>
+        <td class="hi"><strong>५. द्वंद्व समास</strong></td>
+        <td class="hi">दोनों पद प्रधान, 'और' का संबंध</td>
+        <td class="hi">माता-पिता, राम-कृष्ण, देश-विदेश</td>
+        <td class="hi">माता और पिता, राम और कृष्ण, देश और विदेश</td>
       </tr>
       <tr>
-        <td><strong>6. Bahuvrihi<br/>(बहुव्रीहि)</strong></td>
-        <td>Neither word is main — both together describe a third person/thing.</td>
-        <td class="hi">नीलकंठ<br/>लंबोदर<br/>चतुर्भुज</td>
-        <td class="hi">नीला है कंठ जिसका (= शिव)<br/>लंबा है उदर जिसका (= गणेश)<br/>चार भुजाएँ हैं जिसकी (= विष्णु)</td>
-      </tr>
-    </table>
-
-    <div class="trick">
-      <div class="trick-title">💡 Quick Identification Tricks:</div>
-      <strong>Dvigu</strong> → first word is a number → <span class="hi">त्रिकोण, पंचवटी, सप्तर्षि</span><br/>
-      <strong>Dvandva</strong> → put "and" between both words and both make sense<br/>
-      <strong>Bahuvrihi</strong> → the vigrah ends with "जिसका / जिसके / जिसकी" pointing to someone else<br/>
-      <strong>Tatpurush</strong> → second word is the head; a case marker (का, के, से, को...) was dropped
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════ 3. KARAK ══════════════ -->
-<div class="gr-sec" id="karak"><div class="sn">3</div>कारक — Karak (Case / Vibhakti)</div>
-
-<div class="gc">
-  <div class="gc-head">What is Karak?</div>
-  <div class="gc-body">
-    <div class="def"><strong>Definition:</strong> The relationship between a noun (संज्ञा) or pronoun (सर्वनाम) and the verb (क्रिया) in a sentence is shown by <strong>Karak</strong>. Each karak has its own marker word called <strong>Vibhakti (विभक्ति)</strong> or <strong>Karak Chinh</strong>.</div>
-
-    <table class="gr-table">
-      <tr><th>#</th><th>Karak (Case)</th><th>English Name</th><th>Marker (Vibhakti)</th><th>Example</th></tr>
-      <tr><td>1</td><td class="hi"><strong>कर्ता कारक</strong></td><td>Nominative (Subject)</td><td class="hi"><strong>ने</strong></td><td class="hi">राम <u>ने</u> खाना खाया।</td></tr>
-      <tr><td>2</td><td class="hi"><strong>कर्म कारक</strong></td><td>Accusative (Object)</td><td class="hi"><strong>को</strong></td><td class="hi">माँ ने बच्चे <u>को</u> बुलाया।</td></tr>
-      <tr><td>3</td><td class="hi"><strong>करण कारक</strong></td><td>Instrumental (By/With)</td><td class="hi"><strong>से / के द्वारा</strong></td><td class="hi">कलम <u>से</u> लिखो।</td></tr>
-      <tr><td>4</td><td class="hi"><strong>संप्रदान कारक</strong></td><td>Dative (For)</td><td class="hi"><strong>को / के लिए</strong></td><td class="hi">गरीब <u>के लिए</u> खाना दो।</td></tr>
-      <tr><td>5</td><td class="hi"><strong>अपादान कारक</strong></td><td>Ablative (Separation — From)</td><td class="hi"><strong>से</strong> (separation)</td><td class="hi">पेड़ <u>से</u> पत्ता गिरा।</td></tr>
-      <tr><td>6</td><td class="hi"><strong>संबंध कारक</strong></td><td>Genitive (Possession — Of)</td><td class="hi"><strong>का / की / के</strong></td><td class="hi">यह राम <u>का</u> घर है।</td></tr>
-      <tr><td>7</td><td class="hi"><strong>अधिकरण कारक</strong></td><td>Locative (In/On/At)</td><td class="hi"><strong>में / पर</strong></td><td class="hi">मेज <u>पर</u> किताब है।</td></tr>
-      <tr><td>8</td><td class="hi"><strong>संबोधन कारक</strong></td><td>Vocative (Calling / Address)</td><td class="hi"><strong>हे! अरे! ओ!</strong></td><td class="hi"><u>हे</u> राम! क्या हो गया?</td></tr>
-    </table>
-
-    <div class="note">⚠️ Confusion: कर्म (को) vs संप्रदान (के लिए / को) — Karm uses को when something is done TO someone. Sampradan uses को/के लिए when something is given FOR someone.</div>
-    <div class="trick">
-      <div class="trick-title">💡 Memory Trick — Remember all 8:</div>
-      <strong>क</strong>र्ता · <strong>क</strong>र्म · <strong>क</strong>रण · <strong>सं</strong>प्रदान · <strong>अ</strong>पादान · <strong>सं</strong>बंध · <strong>अ</strong>धिकरण · <strong>सं</strong>बोधन = <em>"KKK San A-San A-San"</em>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════ 4. VAKYA-BHED ══════════════ -->
-<div class="gr-sec" id="vakya"><div class="sn">4</div>वाक्य-भेद — Vakya-Bhed (Types of Sentences)</div>
-
-<div class="gc">
-  <div class="gc-head">Based on Meaning (अर्थ के आधार पर) — 8 Types</div>
-  <div class="gc-body">
-    <table class="gr-table">
-      <tr><th>Type</th><th>Hindi Name</th><th>Meaning</th><th>Example</th></tr>
-      <tr><td>1</td><td class="hi"><strong>विधानवाचक</strong></td><td>Affirmative / Statement</td><td class="hi">राम विद्यालय जाता है।</td></tr>
-      <tr><td>2</td><td class="hi"><strong>निषेधवाचक</strong></td><td>Negative</td><td class="hi">मैं वहाँ नहीं जाऊँगा।</td></tr>
-      <tr><td>3</td><td class="hi"><strong>प्रश्नवाचक</strong></td><td>Interrogative / Question</td><td class="hi">तुम कहाँ जा रहे हो?</td></tr>
-      <tr><td>4</td><td class="hi"><strong>आज्ञावाचक</strong></td><td>Imperative / Command</td><td class="hi">यहाँ बैठो।</td></tr>
-      <tr><td>5</td><td class="hi"><strong>इच्छावाचक</strong></td><td>Optative / Wish</td><td class="hi">भगवान तुम्हें सुखी रखे।</td></tr>
-      <tr><td>6</td><td class="hi"><strong>संदेहवाचक</strong></td><td>Doubtful / Probable</td><td class="hi">शायद वह आए।</td></tr>
-      <tr><td>7</td><td class="hi"><strong>विस्मयवाचक</strong></td><td>Exclamatory / Surprise</td><td class="hi">वाह! क्या सुंदर दृश्य है!</td></tr>
-      <tr><td>8</td><td class="hi"><strong>संकेतवाचक</strong></td><td>Conditional / If-Then</td><td class="hi">यदि मेहनत करोगे तो पास होगे।</td></tr>
-    </table>
-  </div>
-</div>
-
-<div class="gc">
-  <div class="gc-head">Based on Structure (रचना के आधार पर) — 3 Types</div>
-  <div class="gc-body">
-    <table class="gr-table">
-      <tr><th>Type</th><th>Hindi Name</th><th>Meaning</th><th>Key Words</th><th>Example</th></tr>
-      <tr>
-        <td>1</td><td class="hi"><strong>सरल वाक्य</strong></td>
-        <td>Simple Sentence — one subject + one verb</td>
-        <td>—</td>
-        <td class="hi">राम खाना खाता है।</td>
-      </tr>
-      <tr>
-        <td>2</td><td class="hi"><strong>संयुक्त वाक्य</strong></td>
-        <td>Compound Sentence — two independent clauses joined</td>
-        <td class="hi">और, परंतु, किंतु, इसलिए</td>
-        <td class="hi">राम आया और उसने खाना खाया।</td>
-      </tr>
-      <tr>
-        <td>3</td><td class="hi"><strong>मिश्र वाक्य</strong></td>
-        <td>Complex Sentence — one main + one dependent clause</td>
-        <td class="hi">कि, जो, जब, यदि, क्योंकि</td>
-        <td class="hi">मुझे पता है कि वह आएगा।</td>
+        <td class="hi"><strong>६. बहुव्रीहि समास</strong></td>
+        <td class="hi">दोनों पद मिलकर किसी तीसरे का विशेषण</td>
+        <td class="hi">नीलकंठ, लंबोदर, चतुर्भुज</td>
+        <td class="hi">नीला है कंठ जिसका (शिव), लंबा उदर जिसका (गणेश), चार भुजाएँ हैं जिसकी (विष्णु)</td>
       </tr>
     </table>
     <div class="trick">
-      <div class="trick-title">💡 How to identify:</div>
-      If the sentence has <span class="hi">और / परंतु / किंतु</span> → Sanyukt (Compound)<br/>
-      If the sentence has <span class="hi">कि / जो / यदि / क्योंकि</span> → Mishr (Complex)<br/>
-      If it has neither → Saral (Simple)
+      <div class="trick-title">💡 समास पहचानने की तरकीब:</div>
+      <strong>द्विगु</strong> → पहला शब्द संख्या है → <span class="hi">त्रिकोण, पंचवटी</span><br/>
+      <strong>द्वंद्व</strong> → दोनों शब्दों के बीच 'और' लगाने से अर्थ बनता है<br/>
+      <strong>बहुव्रीहि</strong> → विग्रह में "जिसका / जिसके" आता है और वह किसी तीसरे को दर्शाता है<br/>
+      <strong>तत्पुरुष</strong> → दूसरा शब्द प्रमुख है; का/के/से/को जैसी विभक्ति हटी हुई है
     </div>
   </div>
 </div>
 
-<!-- ══════════════ 5. ALANKAR ══════════════ -->
-<div class="gr-sec" id="alankar"><div class="sn">5</div>अलंकार — Alankar (Figures of Speech)</div>
-
+<!-- ══════════ ३. कारक ══════════ -->
+<div class="gr-sec" id="karak"><div class="sn">३</div>कारक</div>
 <div class="gc">
-  <div class="gc-head">Shabdalankar (शब्दालंकार) — Based on Sound / Word</div>
+  <div class="gc-head">कारक — आठों भेद और विभक्ति-चिह्न</div>
+  <div class="gc-body">
+    <div class="def"><strong>परिभाषा:</strong> संज्ञा या सर्वनाम का क्रिया से जो संबंध होता है, उसे <strong>कारक</strong> कहते हैं। प्रत्येक कारक का अपना परसर्ग (विभक्ति-चिह्न) होता है।</div>
+    <table class="gr-table">
+      <tr><th>#</th><th>कारक</th><th>विभक्ति-चिह्न</th><th>उदाहरण</th></tr>
+      <tr><td>१</td><td class="hi"><strong>कर्ता कारक</strong></td><td class="hi"><strong>ने</strong></td><td class="hi">राम <u>ने</u> खाना खाया।</td></tr>
+      <tr><td>२</td><td class="hi"><strong>कर्म कारक</strong></td><td class="hi"><strong>को</strong></td><td class="hi">माँ ने बच्चे <u>को</u> बुलाया।</td></tr>
+      <tr><td>३</td><td class="hi"><strong>करण कारक</strong></td><td class="hi"><strong>से / के द्वारा</strong></td><td class="hi">कलम <u>से</u> लिखो।</td></tr>
+      <tr><td>४</td><td class="hi"><strong>संप्रदान कारक</strong></td><td class="hi"><strong>को / के लिए</strong></td><td class="hi">गरीब <u>के लिए</u> खाना दो।</td></tr>
+      <tr><td>५</td><td class="hi"><strong>अपादान कारक</strong></td><td class="hi"><strong>से</strong> (अलग होना)</td><td class="hi">पेड़ <u>से</u> पत्ता गिरा।</td></tr>
+      <tr><td>६</td><td class="hi"><strong>संबंध कारक</strong></td><td class="hi"><strong>का / की / के</strong></td><td class="hi">यह राम <u>का</u> घर है।</td></tr>
+      <tr><td>७</td><td class="hi"><strong>अधिकरण कारक</strong></td><td class="hi"><strong>में / पर</strong></td><td class="hi">मेज <u>पर</u> किताब है।</td></tr>
+      <tr><td>८</td><td class="hi"><strong>संबोधन कारक</strong></td><td class="hi"><strong>हे! अरे! ओ!</strong></td><td class="hi"><u>हे</u> राम! क्या हो गया?</td></tr>
+    </table>
+    <div class="trick">
+      <div class="trick-title">💡 याद करने की तरकीब:</div>
+      <span class="hi">क</span>र्ता · <span class="hi">क</span>र्म · <span class="hi">क</span>रण · <span class="hi">सं</span>प्रदान · <span class="hi">अ</span>पादान · <span class="hi">सं</span>बंध · <span class="hi">अ</span>धिकरण · <span class="hi">सं</span>बोधन
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ ४. वाक्य-भेद ══════════ -->
+<div class="gr-sec" id="vakya"><div class="sn">४</div>वाक्य-भेद</div>
+<div class="gc">
+  <div class="gc-head">अर्थ के आधार पर वाक्य-भेद (८ प्रकार)</div>
   <div class="gc-body">
     <table class="gr-table">
-      <tr><th>Alankar</th><th>Definition in English</th><th>Example</th><th>How to identify</th></tr>
+      <tr><th>वाक्य-भेद</th><th>परिभाषा</th><th>उदाहरण</th></tr>
+      <tr><td class="hi"><strong>१. विधानवाचक</strong></td><td class="hi">सामान्य कथन करना</td><td class="hi">राम विद्यालय जाता है।</td></tr>
+      <tr><td class="hi"><strong>२. निषेधवाचक</strong></td><td class="hi">मना करना / नकारना</td><td class="hi">मैं वहाँ नहीं जाऊँगा।</td></tr>
+      <tr><td class="hi"><strong>३. प्रश्नवाचक</strong></td><td class="hi">प्रश्न पूछना</td><td class="hi">तुम कहाँ जा रहे हो?</td></tr>
+      <tr><td class="hi"><strong>४. आज्ञावाचक</strong></td><td class="hi">आदेश या अनुरोध</td><td class="hi">यहाँ बैठो।</td></tr>
+      <tr><td class="hi"><strong>५. इच्छावाचक</strong></td><td class="hi">इच्छा / कामना</td><td class="hi">भगवान तुम्हें सुखी रखे।</td></tr>
+      <tr><td class="hi"><strong>६. संदेहवाचक</strong></td><td class="hi">संदेह / अनुमान</td><td class="hi">शायद वह आए।</td></tr>
+      <tr><td class="hi"><strong>७. विस्मयवाचक</strong></td><td class="hi">आश्चर्य / हर्ष</td><td class="hi">वाह! क्या सुंदर दृश्य है!</td></tr>
+      <tr><td class="hi"><strong>८. संकेतवाचक</strong></td><td class="hi">शर्त या संकेत</td><td class="hi">यदि मेहनत करोगे तो पास होगे।</td></tr>
+    </table>
+  </div>
+</div>
+<div class="gc">
+  <div class="gc-head">रचना के आधार पर वाक्य-भेद (३ प्रकार)</div>
+  <div class="gc-body">
+    <table class="gr-table">
+      <tr><th>वाक्य-भेद</th><th>परिभाषा</th><th>प्रमुख शब्द</th><th>उदाहरण</th></tr>
+      <tr><td class="hi"><strong>१. सरल वाक्य</strong></td><td class="hi">एक उद्देश्य + एक विधेय</td><td class="hi">—</td><td class="hi">राम खाना खाता है।</td></tr>
+      <tr><td class="hi"><strong>२. संयुक्त वाक्य</strong></td><td class="hi">दो स्वतंत्र वाक्य जोड़े जाते हैं</td><td class="hi">और, परंतु, किंतु, इसलिए</td><td class="hi">राम आया और उसने खाना खाया।</td></tr>
+      <tr><td class="hi"><strong>३. मिश्र वाक्य</strong></td><td class="hi">एक प्रधान + एक आश्रित वाक्य</td><td class="hi">कि, जो, जब, यदि, क्योंकि</td><td class="hi">मुझे पता है कि वह आएगा।</td></tr>
+    </table>
+    <div class="trick">
+      <div class="trick-title">💡 पहचानने का तरीका:</div>
+      <span class="hi">और / परंतु / किंतु</span> हो → संयुक्त वाक्य<br/>
+      <span class="hi">कि / जो / यदि / क्योंकि</span> हो → मिश्र वाक्य<br/>
+      इनमें से कोई नहीं → सरल वाक्य
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ ५. अलंकार ══════════ -->
+<div class="gr-sec" id="alankar"><div class="sn">५</div>अलंकार</div>
+<div class="gc">
+  <div class="gc-head">शब्दालंकार</div>
+  <div class="gc-body">
+    <table class="gr-table">
+      <tr><th>अलंकार</th><th>परिभाषा</th><th>उदाहरण</th><th>पहचान</th></tr>
       <tr>
-        <td class="hi"><strong>अनुप्रास</strong><br/><span class="en">Anupras</span></td>
-        <td>Repetition of the same consonant sound at the beginning of words.</td>
+        <td class="hi"><strong>१. अनुप्रास</strong></td>
+        <td class="hi">एक ही व्यंजन की बार-बार आवृत्ति</td>
         <td class="hi">चारु चंद्र की चंचल किरणें।</td>
-        <td>Same consonant repeated — like Alliteration in English</td>
+        <td class="hi">एक व्यंजन बार-बार</td>
       </tr>
       <tr>
-        <td class="hi"><strong>यमक</strong><br/><span class="en">Yamak</span></td>
-        <td>Same word used more than once with different meanings.</td>
-        <td class="hi">कनक कनक ते सौगुनी...<br/>(कनक = gold, कनक = dhatura plant)</td>
-        <td>Same word, different meaning each time</td>
+        <td class="hi"><strong>२. यमक</strong></td>
+        <td class="hi">एक शब्द अलग-अलग अर्थों में कई बार आए</td>
+        <td class="hi">कनक कनक ते सौगुनी...<br/>(कनक = सोना / धतूरा)</td>
+        <td class="hi">एक शब्द, अलग-अलग अर्थ</td>
       </tr>
       <tr>
-        <td class="hi"><strong>श्लेष</strong><br/><span class="en">Shlesh</span></td>
-        <td>One word carries two or more meanings simultaneously in a single use.</td>
-        <td class="hi">रहिमन पानी राखिए...<br/>(पानी = water, lustre, honour)</td>
-        <td>One word, multiple meanings at the same time</td>
+        <td class="hi"><strong>३. श्लेष</strong></td>
+        <td class="hi">एक शब्द एक ही बार में दो अर्थ दे</td>
+        <td class="hi">रहिमन पानी राखिए...<br/>(पानी = जल / चमक / सम्मान)</td>
+        <td class="hi">एक शब्द, एक साथ दो अर्थ</td>
       </tr>
     </table>
   </div>
 </div>
-
 <div class="gc">
-  <div class="gc-head">Arthalankar (अर्थालंकार) — Based on Meaning</div>
+  <div class="gc-head">अर्थालंकार</div>
   <div class="gc-body">
     <table class="gr-table">
-      <tr><th>Alankar</th><th>Definition in English</th><th>Example</th><th>Key Identifier</th></tr>
+      <tr><th>अलंकार</th><th>परिभाषा</th><th>उदाहरण</th><th>पहचान</th></tr>
       <tr>
-        <td class="hi"><strong>उपमा</strong><br/><span class="en">Upama (Simile)</span></td>
-        <td>A direct comparison between two things using comparison words.</td>
+        <td class="hi"><strong>१. उपमा</strong></td>
+        <td class="hi">दो वस्तुओं में समानता — सा, सी, जैसा शब्द का प्रयोग</td>
         <td class="hi">मुख चंद्र <u>जैसा</u> सुंदर है।</td>
-        <td>Uses: <span class="hi">जैसा, सा, सी, से, सरिस</span></td>
+        <td class="hi">सा / सी / जैसा / सरिस</td>
       </tr>
       <tr>
-        <td class="hi"><strong>रूपक</strong><br/><span class="en">Rupak (Metaphor)</span></td>
-        <td>The compared thing IS directly called the comparing thing. No "like/as".</td>
+        <td class="hi"><strong>२. रूपक</strong></td>
+        <td class="hi">उपमेय में उपमान का आरोप — 'सा' नहीं</td>
         <td class="hi">मुख <u>चंद्र है</u>।</td>
-        <td>No जैसा/सा — one thing IS the other</td>
+        <td class="hi">सा/जैसा नहीं — एक ही बात दूसरा है</td>
       </tr>
       <tr>
-        <td class="hi"><strong>उत्प्रेक्षा</strong><br/><span class="en">Utpreksha</span></td>
-        <td>Imagining one thing as if it were another (fancy / imagination).</td>
+        <td class="hi"><strong>३. उत्प्रेक्षा</strong></td>
+        <td class="hi">समानता की कल्पना — मानो, जानो, ज्यों</td>
         <td class="hi"><u>मानो</u> बादल आकाश में नाच रहे हों।</td>
-        <td>Uses: <span class="hi">मानो, मनु, जानो, ज्यों</span></td>
+        <td class="hi">मानो / मनु / जानो / ज्यों</td>
       </tr>
       <tr>
-        <td class="hi"><strong>मानवीकरण</strong><br/><span class="en">Manvikaran (Personification)</span></td>
-        <td>Non-living things are given human qualities or actions.</td>
+        <td class="hi"><strong>४. मानवीकरण</strong></td>
+        <td class="hi">निर्जीव वस्तु को सजीव की तरह दिखाना</td>
         <td class="hi">बादल <u>रोते</u> हैं।</td>
-        <td>Non-living thing does a human action</td>
+        <td class="hi">निर्जीव वस्तु मानव-क्रिया करे</td>
       </tr>
       <tr>
-        <td class="hi"><strong>अतिशयोक्ति</strong><br/><span class="en">Atishayokti (Hyperbole)</span></td>
-        <td>Deliberate exaggeration for effect.</td>
-        <td class="hi">उसकी आँखें देखकर मेरा दिल रुक गया।</td>
-        <td>Impossible / exaggerated claim</td>
+        <td class="hi"><strong>५. अतिशयोक्ति</strong></td>
+        <td class="hi">बढ़ा-चढ़ाकर वर्णन करना</td>
+        <td class="hi">उसकी आँखें देखकर दिल रुक गया।</td>
+        <td class="hi">असंभव / बहुत बढ़ा-चढ़ाकर</td>
       </tr>
     </table>
-
     <div class="trick">
-      <div class="trick-title">💡 Upama vs Rupak vs Utpreksha — Quick Difference:</div>
-      <strong>Upama:</strong> Word जैसा/सा present → <span class="hi">चाँद जैसा मुख</span> (face like the moon)<br/>
-      <strong>Rupak:</strong> No जैसा, direct = → <span class="hi">मुख चाँद है</span> (face IS the moon)<br/>
-      <strong>Utpreksha:</strong> Word मानो/जानो → <span class="hi">मानो चाँद उतर आया</span> (as if the moon descended)
+      <div class="trick-title">💡 उपमा / रूपक / उत्प्रेक्षा — फर्क:</div>
+      <strong>उपमा</strong> → <span class="hi">जैसा/सा</span> है → <span class="hi">चाँद जैसा मुख</span><br/>
+      <strong>रूपक</strong> → <span class="hi">जैसा/सा नहीं</span>, सीधे एक ही है दूसरा → <span class="hi">मुख चाँद है</span><br/>
+      <strong>उत्प्रेक्षा</strong> → <span class="hi">मानो/जानो</span> है → <span class="hi">मानो चाँद उतर आया</span>
     </div>
   </div>
 </div>
 
-<!-- ══════════════ 6. VILOM ══════════════ -->
-<div class="gr-sec" id="vilom"><div class="sn">6</div>विलोम शब्द — Vilom Shabd (Antonyms)</div>
-
+<!-- ══════════ ६. विलोम ══════════ -->
+<div class="gr-sec" id="vilom"><div class="sn">६</div>विलोम शब्द</div>
 <div class="gc">
   <div class="gc-head">परीक्षा के लिए महत्वपूर्ण विलोम शब्द</div>
   <div class="gc-body">
     <table class="gr-table">
       <tr><th>शब्द</th><th>विलोम</th><th>शब्द</th><th>विलोम</th></tr>
       <tr><td class="hi">सुख</td><td class="hi">दुख</td><td class="hi">आशा</td><td class="hi">निराशा</td></tr>
-      <tr><td class="hi">सत्य</td><td class="hi">असत्य / झूठ</td><td class="hi">अमीर</td><td class="hi">गरीब</td></tr>
+      <tr><td class="hi">सत्य</td><td class="hi">असत्य</td><td class="hi">अमीर</td><td class="hi">गरीब</td></tr>
       <tr><td class="hi">उचित</td><td class="hi">अनुचित</td><td class="hi">साहस</td><td class="hi">कायरता</td></tr>
       <tr><td class="hi">विजय</td><td class="hi">पराजय</td><td class="hi">स्वर्ग</td><td class="hi">नरक</td></tr>
       <tr><td class="hi">आदर</td><td class="hi">अनादर</td><td class="hi">प्रेम</td><td class="hi">घृणा</td></tr>
@@ -388,9 +338,8 @@
   </div>
 </div>
 
-<!-- ══════════════ 7. PARYAYAVACHI ══════════════ -->
-<div class="gr-sec" id="paryay"><div class="sn">7</div>पर्यायवाची शब्द — Paryayavachi (Synonyms)</div>
-
+<!-- ══════════ ७. पर्यायवाची ══════════ -->
+<div class="gr-sec" id="paryay"><div class="sn">७</div>पर्यायवाची शब्द</div>
 <div class="gc">
   <div class="gc-head">परीक्षा के लिए महत्वपूर्ण पर्यायवाची शब्द</div>
   <div class="gc-body">
@@ -410,338 +359,247 @@
   </div>
 </div>
 
-<!-- ══════════════ 8. MUHAVARE ══════════════ -->
-<div class="gr-sec" id="muhavare"><div class="sn">8</div>मुहावरे — Muhavare (Idioms)</div>
-
+<!-- ══════════ ८. मुहावरे ══════════ -->
+<div class="gr-sec" id="muhavare"><div class="sn">८</div>मुहावरे</div>
 <div class="gc">
   <div class="gc-head">परीक्षा के लिए महत्वपूर्ण मुहावरे</div>
   <div class="gc-body">
     <table class="gr-table">
-      <tr><th>Idiom (मुहावरा)</th><th>अर्थ (Meaning)</th><th>वाक्य-प्रयोग (Sentence)</th></tr>
-      <tr>
-        <td class="hi">अंगूठा दिखाना</td>
-        <td class="hi">साफ मना करना / इनकार करना</td>
-        <td class="hi">उसने मदद करने से अंगूठा दिखा दिया।</td>
-      </tr>
-      <tr>
-        <td class="hi">आँखें खुलना</td>
-        <td class="hi">होश आना / सच्चाई का पता चलना</td>
-        <td class="hi">ठोकर खाने के बाद उसकी आँखें खुलीं।</td>
-      </tr>
-      <tr>
-        <td class="hi">आसमान छूना</td>
-        <td class="hi">बहुत ऊँचाई पर पहुँचना / बड़ी सफलता पाना</td>
-        <td class="hi">मेहनत से उसने आसमान छू लिया।</td>
-      </tr>
-      <tr>
-        <td class="hi">खून पसीना एक करना</td>
-        <td class="hi">बहुत परिश्रम करना</td>
-        <td class="hi">उसने खून-पसीना एक करके यह मकान बनाया।</td>
-      </tr>
-      <tr>
-        <td class="hi">नाक में दम करना</td>
-        <td class="hi">बहुत परेशान करना</td>
-        <td class="hi">बच्चों ने माँ की नाक में दम कर दिया।</td>
-      </tr>
-      <tr>
-        <td class="hi">पानी-पानी होना</td>
-        <td class="hi">बहुत लज्जित होना / शर्म से डूब जाना</td>
-        <td class="hi">झूठ पकड़े जाने पर वह पानी-पानी हो गया।</td>
-      </tr>
-      <tr>
-        <td class="hi">हवा से बातें करना</td>
-        <td class="hi">बहुत तेज़ दौड़ना / तेज़ गति से चलना</td>
-        <td class="hi">घोड़ा हवा से बातें कर रहा था।</td>
-      </tr>
-      <tr>
-        <td class="hi">मुँह में पानी आना</td>
-        <td class="hi">खाने की बहुत इच्छा होना / मन ललचाना</td>
-        <td class="hi">मिठाई देखकर मुँह में पानी आ गया।</td>
-      </tr>
-      <tr>
-        <td class="hi">कलेजा मुँह को आना</td>
-        <td class="hi">बहुत डर लगना / घबरा जाना</td>
-        <td class="hi">शेर देखकर कलेजा मुँह को आ गया।</td>
-      </tr>
-      <tr>
-        <td class="hi">सिर पर पाँव रखकर भागना</td>
-        <td class="hi">बहुत तेज़ भागना / डर के मारे भागना</td>
-        <td class="hi">डर के मारे वह सिर पर पाँव रखकर भाग गया।</td>
-      </tr>
+      <tr><th>मुहावरा</th><th>अर्थ</th><th>वाक्य-प्रयोग</th></tr>
+      <tr><td class="hi">अंगूठा दिखाना</td><td class="hi">साफ मना करना</td><td class="hi">उसने मदद करने से अंगूठा दिखा दिया।</td></tr>
+      <tr><td class="hi">आँखें खुलना</td><td class="hi">होश आना / सच्चाई का पता चलना</td><td class="hi">ठोकर खाने के बाद उसकी आँखें खुलीं।</td></tr>
+      <tr><td class="hi">आसमान छूना</td><td class="hi">बहुत ऊँचाई पर पहुँचना</td><td class="hi">मेहनत से उसने आसमान छू लिया।</td></tr>
+      <tr><td class="hi">खून पसीना एक करना</td><td class="hi">बहुत परिश्रम करना</td><td class="hi">उसने खून-पसीना एक करके मकान बनाया।</td></tr>
+      <tr><td class="hi">नाक में दम करना</td><td class="hi">बहुत परेशान करना</td><td class="hi">बच्चों ने माँ की नाक में दम कर दिया।</td></tr>
+      <tr><td class="hi">पानी-पानी होना</td><td class="hi">बहुत लज्जित होना</td><td class="hi">झूठ पकड़े जाने पर वह पानी-पानी हो गया।</td></tr>
+      <tr><td class="hi">हवा से बातें करना</td><td class="hi">बहुत तेज़ दौड़ना</td><td class="hi">घोड़ा हवा से बातें कर रहा था।</td></tr>
+      <tr><td class="hi">मुँह में पानी आना</td><td class="hi">खाने की इच्छा होना</td><td class="hi">मिठाई देखकर मुँह में पानी आ गया।</td></tr>
+      <tr><td class="hi">कलेजा मुँह को आना</td><td class="hi">बहुत डर लगना</td><td class="hi">शेर देखकर कलेजा मुँह को आ गया।</td></tr>
+      <tr><td class="hi">सिर पर पाँव रखकर भागना</td><td class="hi">डर के मारे बहुत तेज़ भागना</td><td class="hi">डर के मारे वह सिर पर पाँव रखकर भाग गया।</td></tr>
     </table>
   </div>
 </div>
 
-<!-- ══════════════ 9. LOKOKTI ══════════════ -->
-<div class="gr-sec" id="lokokti"><div class="sn">9</div>लोकोक्तियाँ — Lokoktiyan (Proverbs)</div>
-
+<!-- ══════════ ९. लोकोक्तियाँ ══════════ -->
+<div class="gr-sec" id="lokokti"><div class="sn">९</div>लोकोक्तियाँ</div>
 <div class="gc">
   <div class="gc-head">परीक्षा के लिए महत्वपूर्ण लोकोक्तियाँ</div>
   <div class="gc-body">
     <table class="gr-table">
-      <tr><th>लोकोक्ति</th><th>अर्थ (Hindi Meaning)</th></tr>
-      <tr><td class="hi">अकेला चना भाड़ नहीं फोड़ सकता।</td><td class="hi">अकेला व्यक्ति बड़ा काम नहीं कर सकता। एकता में शक्ति होती है।</td></tr>
+      <tr><th>लोकोक्ति</th><th>अर्थ</th></tr>
+      <tr><td class="hi">अकेला चना भाड़ नहीं फोड़ सकता।</td><td class="hi">अकेला व्यक्ति बड़ा काम नहीं कर सकता।</td></tr>
       <tr><td class="hi">करत-करत अभ्यास के जड़मति होत सुजान।</td><td class="hi">निरंतर अभ्यास से मूर्ख भी बुद्धिमान बन जाता है।</td></tr>
-      <tr><td class="hi">खोदा पहाड़, निकली चुहिया।</td><td class="hi">बहुत परिश्रम करने पर भी फल बहुत कम मिलना।</td></tr>
+      <tr><td class="hi">खोदा पहाड़, निकली चुहिया।</td><td class="hi">बहुत परिश्रम पर फल बहुत कम मिलना।</td></tr>
       <tr><td class="hi">जैसी करनी वैसी भरनी।</td><td class="hi">जैसा कर्म करोगे, वैसा ही फल मिलेगा।</td></tr>
-      <tr><td class="hi">दूध का जला छाछ भी फूँककर पीता है।</td><td class="hi">एक बार नुकसान होने पर व्यक्ति भविष्य में बहुत सावधान हो जाता है।</td></tr>
-      <tr><td class="hi">नाच न जाने आँगन टेढ़ा।</td><td class="hi">खुद की कमी को दूसरों या परिस्थितियों पर डालना।</td></tr>
-      <tr><td class="hi">मन चंगा तो कठौती में गंगा।</td><td class="hi">मन शुद्ध हो तो हर जगह ईश्वर मिलते हैं, बाहरी दिखावे की ज़रूरत नहीं।</td></tr>
+      <tr><td class="hi">दूध का जला छाछ भी फूँककर पीता है।</td><td class="hi">एक बार नुकसान होने पर व्यक्ति बहुत सावधान हो जाता है।</td></tr>
+      <tr><td class="hi">नाच न जाने आँगन टेढ़ा।</td><td class="hi">खुद की कमी को दूसरों पर डालना।</td></tr>
+      <tr><td class="hi">मन चंगा तो कठौती में गंगा।</td><td class="hi">मन शुद्ध हो तो हर जगह ईश्वर मिलते हैं।</td></tr>
       <tr><td class="hi">अंधेर नगरी चौपट राजा।</td><td class="hi">जहाँ न न्याय हो न अच्छा शासन, वहाँ सब अव्यवस्था होती है।</td></tr>
-      <tr><td class="hi">बड़े बोलों का मुँह काला।</td><td class="hi">शेखी बघारना बुरा होता है — घमंडी व्यक्ति की इज्ज़त जाती है।</td></tr>
-      <tr><td class="hi">होनहार बिरवान के होत चिकने पात।</td><td class="hi">जो व्यक्ति भविष्य में महान बनेगा, उसके गुण बचपन से ही दिखते हैं।</td></tr>
+      <tr><td class="hi">बड़े बोलों का मुँह काला।</td><td class="hi">घमंड करने वाले की इज्ज़त जाती है।</td></tr>
+      <tr><td class="hi">होनहार बिरवान के होत चिकने पात।</td><td class="hi">जो भविष्य में महान बनेगा, उसके गुण बचपन से दिखते हैं।</td></tr>
     </table>
   </div>
 </div>
 
-<!-- ══════════════ 10. PATRA LEKHAN ══════════════ -->
-<div class="gr-sec" id="patra"><div class="sn">10</div>पत्र-लेखन — Patra Lekhan (Letter Writing)</div>
-
+<!-- ══════════ १०. पत्र-लेखन ══════════ -->
+<div class="gr-sec" id="patra"><div class="sn">१०</div>पत्र-लेखन</div>
 <div class="gc">
-  <div class="gc-head">औपचारिक पत्र — Formal Letter (to Principal, Officer, Editor)</div>
+  <div class="gc-head">औपचारिक पत्र — प्रारूप (Formal Letter)</div>
   <div class="gc-body">
+    <div class="def"><strong>परिभाषा:</strong> प्रधानाचार्य, अधिकारी, संपादक या सरकारी विभाग को लिखा जाने वाला पत्र <strong>औपचारिक पत्र</strong> कहलाता है।</div>
     <div class="rule">
-      <div class="rule-title">Format — Formal Letter (Official/Sarkari Patra):</div>
-      <span class="hi" style="font-size:.88rem;line-height:2.2;display:block;">
-        <strong>प्रेषक का पता:</strong> (Your address — top left)<br/>
-        <strong>दिनांक:</strong> (Date)<br/>
-        <br/>
+      <div class="rule-title">प्रारूप (Format):</div>
+      <div class="hi" style="line-height:2.2;font-size:.88rem;">
+        <strong>प्रेषक का पता:</strong> (बायीं ओर)<br/>
+        <strong>दिनांक:</strong><br/><br/>
         <strong>सेवा में,</strong><br/>
-        (Recipient's designation)<br/>
-        (Organisation / Address)<br/>
-        <br/>
-        <strong>विषय:</strong> (Subject — one line summary)<br/>
-        <br/>
+        (प्राप्तकर्ता का पद / नाम)<br/>
+        (पता)<br/><br/>
+        <strong>विषय:</strong> (एक पंक्ति में संक्षेप)<br/><br/>
         <strong>महोदय / महोदया,</strong><br/>
-        (Main body — 2 to 3 paragraphs)<br/>
-        <br/>
+        (पत्र का मुख्य भाग — ३-४ वाक्य)<br/><br/>
         <strong>भवदीय / आपका आज्ञाकारी,</strong><br/>
-        (Your name)<br/>
-        (Date &amp; Place)
-      </span>
+        (नाम)
+      </div>
     </div>
-    <div class="ex"><b>Example Subject lines:</b>
-      <span class="hi"> विद्यालय में पुस्तकालय की व्यवस्था के बारे में। | मुहल्ले में पानी की समस्या के संबंध में।</span>
-    </div>
+    <div class="note">📌 <strong>महोदय</strong> = पुरुष को। <strong>महोदया</strong> = महिला को। <strong>मान्यवर</strong> = आदरणीय बड़े को।</div>
   </div>
 </div>
-
 <div class="gc">
-  <div class="gc-head">अनौपचारिक पत्र — Informal Letter (to Friend, Parent, Relative)</div>
+  <div class="gc-head">अनौपचारिक पत्र — प्रारूप (Informal Letter)</div>
   <div class="gc-body">
+    <div class="def"><strong>परिभाषा:</strong> मित्र, माता-पिता, भाई-बहन या रिश्तेदारों को लिखा जाने वाला पत्र <strong>अनौपचारिक पत्र</strong> कहलाता है।</div>
     <div class="rule">
-      <div class="rule-title">Format — Informal Letter (Personal/Niji Patra):</div>
-      <span class="hi" style="font-size:.88rem;line-height:2.2;display:block;">
-        <strong>पता:</strong> (Your address — top left)<br/>
-        <strong>दिनांक:</strong> (Date)<br/>
-        <br/>
+      <div class="rule-title">प्रारूप (Format):</div>
+      <div class="hi" style="line-height:2.2;font-size:.88rem;">
+        <strong>पता:</strong> (बायीं ओर)<br/>
+        <strong>दिनांक:</strong><br/><br/>
         <strong>आदरणीय / प्रिय</strong> (संबोधन),<br/>
-        <br/>
-        (Main body — 2 to 3 paragraphs)<br/>
-        <br/>
+        (पत्र का मुख्य भाग)<br/><br/>
         <strong>आपका / तुम्हारा,</strong><br/>
-        (Your name)
-      </span>
-    </div>
-    <div class="note">📌 <strong>Formal Letter</strong> = to Principal, Municipal Corporation, Editor, Government Officer<br/>
-    <strong>Informal Letter</strong> = to friend, older relative (mitra, mata-pita, bhai)</div>
-    <div class="trick">
-      <div class="trick-title">💡 Exam Tip for Letter Writing:</div>
-      Always write the <strong>subject line (विषय)</strong> clearly in formal letters.<br/>
-      Use <span class="hi">महोदय</span> for male, <span class="hi">महोदया</span> for female, <span class="hi">मान्यवर</span> for respected elder.<br/>
-      Closing for formal = <span class="hi">भवदीय</span>. Closing for informal to elder = <span class="hi">आपका</span>.
+        (नाम)
+      </div>
     </div>
   </div>
 </div>
 
-</div><!-- end .gr-wrap -->
-
-<!-- ══════════════ 11. SUCHNA LEKHAN ══════════════ -->
-<div class="gr-sec" id="suchna"><div class="sn">11</div>सूचना-लेखन — Suchna Lekhan (Notice Writing)</div>
-
+<!-- ══════════ ११. सूचना-लेखन ══════════ -->
+<div class="gr-sec" id="suchna"><div class="sn">११</div>सूचना-लेखन (Notice Writing)</div>
 <div class="gc">
-  <div class="gc-head">What is Suchna Lekhan? (Notice Writing)</div>
+  <div class="gc-head">सूचना — परिभाषा और प्रारूप</div>
   <div class="gc-body">
-    <div class="def"><strong>Definition:</strong> A <strong>Suchna (सूचना)</strong> is a short official written announcement given to a group of people about an event, meeting, programme or important information. It is formal, clear and to-the-point.</div>
-
+    <div class="def"><strong>परिभाषा:</strong> किसी कार्यक्रम, बैठक या महत्वपूर्ण जानकारी को एक समूह तक पहुँचाने के लिए लिखित घोषणा को <strong>सूचना</strong> कहते हैं।</div>
     <div class="rule">
-      <div class="rule-title">📋 Format of Suchna Lekhan:</div>
-      <div style="background:#fff;border:1px dashed #d97706;border-radius:6px;padding:10px 14px;font-size:.86rem;line-height:2.2;">
-        <span class="hi"><strong>सूचना</strong></span> &nbsp; (Title — top centre, boxed or underlined)<br/>
-        <span class="hi"><strong>संस्था / विद्यालय का नाम</strong></span> &nbsp; (Name of school/organisation)<br/>
-        <span class="hi"><strong>दिनांक:</strong></span> &nbsp; (Date)<br/>
-        <br/>
-        <span class="hi"><strong>विषय:</strong></span> &nbsp; (Subject — in 1 line)<br/>
-        <br/>
-        <span class="hi">(Main body — who, what, when, where, how — 3 to 4 lines)</span><br/>
-        <br/>
-        <span class="hi"><strong>हस्ताक्षर:</strong></span> &nbsp; (Signature / Name of person issuing notice)<br/>
-        <span class="hi"><strong>पदनाम:</strong></span> &nbsp; (Designation — e.g., मुख्याध्यापक, सचिव)
+      <div class="rule-title">प्रारूप (Format):</div>
+      <div class="hi" style="line-height:2.2;font-size:.88rem;">
+        <strong>सूचना</strong> (शीर्षक — बीच में, बॉक्स में या रेखांकित)<br/>
+        <strong>संस्था / विद्यालय का नाम</strong><br/>
+        <strong>दिनांक:</strong><br/><br/>
+        <strong>विषय:</strong> (एक पंक्ति में)<br/><br/>
+        (मुख्य विषय — कौन, क्या, कब, कहाँ, कैसे — ३-४ पंक्तियाँ)<br/><br/>
+        <strong>हस्ताक्षर / नाम:</strong><br/>
+        <strong>पदनाम:</strong> (जैसे — मुख्याध्यापक, सचिव)
       </div>
     </div>
-
-    <div class="rule">
-      <div class="rule-title">✅ Sample Notice (English Medium):</div>
-      <div style="background:#fffbeb;border:2px solid #d97706;border-radius:6px;padding:10px 14px;font-size:.86rem;line-height:2.1;">
-        <div style="text-align:center;font-weight:900;font-size:.95rem;border-bottom:2px solid #d97706;padding-bottom:4px;margin-bottom:6px;" class="hi">सूचना</div>
-        <span class="hi"><strong>श्री विवेकानंद विद्यालय, अंबरनाथ</strong></span><br/>
-        <span class="hi"><strong>दिनांक:</strong> 15 नवंबर 2026</span><br/><br/>
-        <span class="hi"><strong>विषय:</strong> वार्षिक खेल-दिवस की सूचना।</span><br/><br/>
-        <span class="hi">सभी विद्यार्थियों को सूचित किया जाता है कि हमारे विद्यालय का वार्षिक खेल-दिवस दिनांक 25 नवंबर 2026 को प्रातः 9 बजे से सायं 4 बजे तक विद्यालय मैदान में आयोजित किया जाएगा। सभी छात्र-छात्राएँ खेल की वेशभूषा में उपस्थित रहें।</span><br/><br/>
-        <span class="hi">— <strong>सचिव, खेल-समिति</strong></span>
-      </div>
-    </div>
-
-    <div class="trick">
-      <div class="trick-title">💡 Exam Tips for Suchna Lekhan:</div>
-      Always write <span class="hi">सूचना</span> as a heading in a box or underlined.<br/>
-      Include: <strong>Who</strong> is giving it · <strong>What</strong> is happening · <strong>When &amp; Where</strong> · <strong>Who should attend</strong><br/>
-      Keep it short — 4 to 5 lines maximum. No personal language.<br/>
-      End with signature + designation.
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════ 12. SANDESH LEKHAN ══════════════ -->
-<div class="gr-sec" id="sandesh"><div class="sn">12</div>संदेश-लेखन — Sandesh Lekhan (Message Writing)</div>
-
-<div class="gc">
-  <div class="gc-head">What is Sandesh Lekhan? (Message Writing)</div>
-  <div class="gc-body">
-    <div class="def"><strong>Definition:</strong> A <strong>Sandesh (संदेश)</strong> is a short written message left for someone when they are not available. It records important information given by a caller or visitor so that the person can read it later.</div>
-
-    <div class="rule">
-      <div class="rule-title">📋 Format of Sandesh Lekhan:</div>
-      <div style="background:#fff;border:1px dashed #d97706;border-radius:6px;padding:10px 14px;font-size:.86rem;line-height:2.2;">
-        <span class="hi"><strong>संदेश</strong></span> &nbsp; (Title — centre)<br/>
-        <span class="hi"><strong>दिनांक:</strong></span> &nbsp; (Date) &nbsp;&nbsp; <span class="hi"><strong>समय:</strong></span> &nbsp; (Time)<br/>
-        <br/>
-        <span class="hi"><strong>प्रेषक:</strong></span> &nbsp; (Who gave the message — sender's name)<br/>
-        <span class="hi"><strong>प्राप्तकर्ता:</strong></span> &nbsp; (Who should receive it — receiver's name)<br/>
-        <br/>
-        <span class="hi">(Body of message — 2 to 3 lines: what was said, what should be done)</span><br/>
-        <br/>
-        <span class="hi"><strong>संदेश लेखक:</strong></span> &nbsp; (Name of person writing the message)
-      </div>
-    </div>
-
-    <div class="rule">
-      <div class="rule-title">✅ Sample Message:</div>
-      <div style="background:#fffbeb;border:2px solid #d97706;border-radius:6px;padding:10px 14px;font-size:.86rem;line-height:2.1;">
-        <div style="text-align:center;font-weight:900;font-size:.95rem;border-bottom:2px solid #d97706;padding-bottom:4px;margin-bottom:6px;" class="hi">संदेश</div>
-        <span class="hi"><strong>दिनांक:</strong> 20 अक्टूबर 2026 &nbsp;&nbsp; <strong>समय:</strong> दोपहर 2:30 बजे</span><br/><br/>
-        <span class="hi"><strong>प्रेषक:</strong> श्री रमेश शर्मा (चाचाजी)</span><br/>
-        <span class="hi"><strong>प्राप्तकर्ता:</strong> अमित</span><br/><br/>
-        <span class="hi">चाचाजी का फ़ोन आया था। उन्होंने कहा कि कल शाम 6 बजे तुम्हें उनके घर आना है। वे कुछ जरूरी बात करना चाहते हैं। कृपया उन्हें वापस फ़ोन करें।</span><br/><br/>
-        <span class="hi">— <strong>माँ</strong></span>
-      </div>
-    </div>
-
-    <div class="trick">
-      <div class="trick-title">💡 Exam Tips for Sandesh Lekhan:</div>
-      Always mention: <strong>Date, Time, Sender, Receiver, Message content, Message-writer</strong><br/>
-      Keep in a box format. Language should be simple and direct.<br/>
-      Word limit: 30–40 words for message body only.
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════ 13. JAANKARI LEKHAN ══════════════ -->
-<div class="gr-sec" id="jaankari"><div class="sn">13</div>जानकारी-लेखन — Jaankari Lekhan (Information / Report Writing)</div>
-
-<div class="gc">
-  <div class="gc-head">What is Jaankari Lekhan? (Information/Report Writing)</div>
-  <div class="gc-body">
-    <div class="def"><strong>Definition:</strong> <strong>Jaankari Lekhan (जानकारी लेखन)</strong> means writing a short factual report or description about a person, event, place or topic in a clear, organised format. In Maharashtra SSC Hindi, this includes writing about school events, programmes, social issues, etc.</div>
-
-    <div class="rule">
-      <div class="rule-title">📋 Format / Structure of Jaankari Lekhan:</div>
-      <div style="background:#fff;border:1px dashed #d97706;border-radius:6px;padding:10px 14px;font-size:.86rem;line-height:2.2;">
-        <span class="hi"><strong>शीर्षक:</strong></span> &nbsp; (Title of the event/topic)<br/>
-        <span class="hi"><strong>दिनांक / समय / स्थान:</strong></span> &nbsp; (Date / Time / Venue)<br/>
-        <br/>
-        <span class="hi"><strong>कार्यक्रम का विवरण:</strong></span><br/>
-        <span class="hi">— आयोजन कैसे हुआ (How the programme was organised)</span><br/>
-        <span class="hi">— प्रमुख अतिथि / वक्ता (Chief Guest / Speakers)</span><br/>
-        <span class="hi">— मुख्य गतिविधियाँ (Main activities)</span><br/>
-        <span class="hi">— परिणाम / पुरस्कार (Results / Awards if any)</span><br/>
-        <br/>
-        <span class="hi"><strong>निष्कर्ष:</strong></span> &nbsp; (Conclusion — 1 line impression)
-      </div>
-    </div>
-
-    <div class="rule">
-      <div class="rule-title">✅ Sample Jaankari Lekhan — वाद-विवाद प्रतियोगिता:</div>
-      <div style="background:#fffbeb;border:2px solid #d97706;border-radius:6px;padding:10px 14px;font-size:.86rem;line-height:2.1;">
-        <span class="hi"><strong>शीर्षक: अंतर-विद्यालयीय वाद-विवाद प्रतियोगिता</strong><br/>
-        दिनांक: 5 दिसंबर 2026 | स्थान: विद्यालय सभागार<br/><br/>
-        हमारे विद्यालय में दिनांक 5 दिसंबर को एक भव्य वाद-विवाद प्रतियोगिता का आयोजन किया गया। इस कार्यक्रम में शहर के दस विद्यालयों के छात्र-छात्राओं ने भाग लिया। कार्यक्रम के मुख्य अतिथि नगर के प्रसिद्ध वक्ता श्री अनिल वर्मा थे। विषय था — "पर्यावरण रक्षा हमारी जिम्मेदारी"।<br/><br/>
-        प्रथम पुरस्कार हमारे विद्यालय की छात्रा सुनीता राव को मिला। कार्यक्रम बहुत सफल रहा।</span>
-      </div>
-    </div>
-
-    <div class="trick">
-      <div class="trick-title">💡 Exam Tips:</div>
-      Answer 5 questions in your writing: <strong>What? When? Where? Who? How?</strong><br/>
-      Use past tense throughout (it is a report of something that happened).<br/>
-      Include 1 opening line, 2–3 detail lines, 1 closing line. Total: ~80 words.
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════ 14. VIGYAPAN ══════════════ -->
-<div class="gr-sec" id="vigyapan"><div class="sn">14</div>विज्ञापन-लेखन — Vigyapan Lekhan (Advertisement Writing)</div>
-
-<div class="gc">
-  <div class="gc-head">What is Vigyapan Lekhan? (Advertisement Writing)</div>
-  <div class="gc-body">
-    <div class="def"><strong>Definition:</strong> <strong>Vigyapan (विज्ञापन)</strong> is a written advertisement designed to attract attention and promote a product, service, event or cause. A good advertisement is <em>short, catchy, clear and attractive</em>.</div>
-
-    <div class="rule">
-      <div class="rule-title">📋 Format of Vigyapan Lekhan:</div>
-      <div style="background:#fff;border:1px dashed #d97706;border-radius:6px;padding:10px 14px;font-size:.86rem;line-height:2.2;">
-        <span class="hi"><strong>⬛ बॉर्डर / Box</strong></span> &nbsp; (Always write in a box/frame)<br/>
-        <span class="hi"><strong>शीर्षक / नारा:</strong></span> &nbsp; (Catchy headline / slogan — bold, attractive)<br/>
-        <span class="hi"><strong>चित्र / प्रतीक:</strong></span> &nbsp; (Symbol or simple drawing — optional)<br/>
-        <span class="hi"><strong>मुख्य जानकारी:</strong></span> &nbsp; (Product name, features, price, offer)<br/>
-        <span class="hi"><strong>संपर्क:</strong></span> &nbsp; (Contact details — address / phone / website)<br/>
-        <span class="hi"><strong>नारा / Tag line:</strong></span> &nbsp; (Slogan at the bottom — optional but effective)
-      </div>
-    </div>
-
-    <div class="rule">
-      <div class="rule-title">✅ Sample Advertisement — Product:</div>
-      <div style="background:#fffbeb;border:3px double #d97706;border-radius:8px;padding:12px 16px;font-size:.86rem;line-height:2;text-align:center;">
-        <div style="font-size:1.1rem;font-weight:900;color:#b45309;" class="hi">🌟 नई पुस्तक आ गई! 🌟</div>
-        <div class="hi" style="font-size:.95rem;font-weight:800;margin:4px 0;">हिंदी व्याकरण — कक्षा 10</div>
-        <div class="hi">✅ SSC बोर्ड के नवीनतम पाठ्यक्रम पर आधारित</div>
-        <div class="hi">✅ सरल भाषा में — उदाहरण सहित</div>
-        <div class="hi">✅ परीक्षा के लिए पूर्णतः उपयोगी</div>
-        <div class="hi" style="margin-top:6px;"><strong>मूल्य: ₹120 मात्र</strong> &nbsp;|&nbsp; उपलब्ध: सभी प्रमुख पुस्तक-दुकानों पर</div>
-        <div class="hi"><strong>संपर्क:</strong> विज़न पब्लिकेशन्स, अंबरनाथ | 📞 87671 44200</div>
-        <div style="font-style:italic;color:#b45309;margin-top:4px;font-size:.82rem;" class="hi">"पढ़ेंगे तो बढ़ेंगे!"</div>
-      </div>
-    </div>
-
     <div class="rule" style="margin-top:8px;">
-      <div class="rule-title">✅ Sample Advertisement — Event / Lost &amp; Found:</div>
-      <div style="background:#fffbeb;border:3px double #d97706;border-radius:8px;padding:12px 16px;font-size:.86rem;line-height:2;text-align:center;">
-        <div style="font-size:1rem;font-weight:900;color:#991b1b;" class="hi">⚠️ खोया हुआ — LOST ⚠️</div>
-        <div class="hi">दिनांक 10 नवंबर 2026 को हमारे विद्यालय परिसर में</div>
-        <div class="hi"><strong>एक काले रंग का बस्ता (School Bag)</strong> खो गया है।</div>
-        <div class="hi">उसमें हिंदी, गणित, विज्ञान की पाठ्यपुस्तकें हैं।</div>
-        <div class="hi" style="margin-top:4px;">मिलने पर कृपया संपर्क करें: <strong>अमित सिंह, कक्षा 10-B</strong></div>
-        <div class="hi">📞 9876543210</div>
-        <div style="font-style:italic;color:#15803d;margin-top:4px;font-size:.82rem;" class="hi">"ईमानदारी सबसे बड़ा गुण है।"</div>
+      <div class="rule-title">✅ नमूना सूचना:</div>
+      <div class="hi" style="font-size:.86rem;line-height:2.1;background:#fffbeb;border:2px solid #d97706;border-radius:6px;padding:10px 14px;">
+        <div style="text-align:center;font-weight:900;border-bottom:2px solid #d97706;padding-bottom:4px;margin-bottom:6px;">सूचना</div>
+        <strong>श्री विवेकानंद विद्यालय, अंबरनाथ</strong><br/>
+        <strong>दिनांक:</strong> १५ नवंबर २०२६<br/><br/>
+        <strong>विषय:</strong> वार्षिक खेल-दिवस की सूचना।<br/><br/>
+        सभी विद्यार्थियों को सूचित किया जाता है कि हमारे विद्यालय का वार्षिक खेल-दिवस दिनांक २५ नवंबर २०२६ को प्रातः ९ बजे से सायं ४ बजे तक विद्यालय मैदान में आयोजित किया जाएगा। सभी छात्र-छात्राएँ खेल की वेशभूषा में उपस्थित रहें।<br/><br/>
+        — <strong>सचिव, खेल-समिति</strong>
       </div>
     </div>
-
     <div class="trick">
-      <div class="trick-title">💡 Exam Tips for Vigyapan Lekhan:</div>
-      <strong>Always write in a box/border</strong> — this is mandatory in Maharashtra SSC.<br/>
-      Use <strong>bullet points or ✅ symbols</strong> for features — makes it look attractive.<br/>
-      Keep a catchy <strong>slogan (नारा)</strong> — this gets extra marks.<br/>
-      Types asked in exam: Product ad · Event ad · Lost &amp; Found · Job vacancy · Social awareness
+      <div class="trick-title">💡 परीक्षा टिप्स:</div>
+      'सूचना' शब्द हमेशा बॉक्स में या रेखांकित करें।<br/>
+      <strong>कौन, क्या, कब, कहाँ</strong> — ये चार बातें ज़रूर लिखें।<br/>
+      ४-५ पंक्तियों से अधिक नहीं। अंत में हस्ताक्षर और पदनाम।
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ १२. संदेश-लेखन ══════════ -->
+<div class="gr-sec" id="sandesh"><div class="sn">१२</div>संदेश-लेखन (Message Writing)</div>
+<div class="gc">
+  <div class="gc-head">संदेश — परिभाषा और प्रारूप</div>
+  <div class="gc-body">
+    <div class="def"><strong>परिभाषा:</strong> जब कोई व्यक्ति उपस्थित न हो और उसके लिए कोई ज़रूरी बात छोड़ी जाए, उसे <strong>संदेश</strong> कहते हैं।</div>
+    <div class="rule">
+      <div class="rule-title">प्रारूप (Format):</div>
+      <div class="hi" style="line-height:2.2;font-size:.88rem;">
+        <strong>संदेश</strong> (शीर्षक — बीच में)<br/>
+        <strong>दिनांक:</strong> &nbsp;&nbsp; <strong>समय:</strong><br/><br/>
+        <strong>प्रेषक:</strong> (संदेश देने वाले का नाम)<br/>
+        <strong>प्राप्तकर्ता:</strong> (जिसके लिए संदेश है)<br/><br/>
+        (संदेश का विषय — २-३ पंक्तियाँ)<br/><br/>
+        <strong>संदेश लेखक:</strong> (जिसने संदेश लिखा)
+      </div>
+    </div>
+    <div class="rule" style="margin-top:8px;">
+      <div class="rule-title">✅ नमूना संदेश:</div>
+      <div class="hi" style="font-size:.86rem;line-height:2.1;background:#fffbeb;border:2px solid #d97706;border-radius:6px;padding:10px 14px;">
+        <div style="text-align:center;font-weight:900;border-bottom:2px solid #d97706;padding-bottom:4px;margin-bottom:6px;">संदेश</div>
+        <strong>दिनांक:</strong> २० अक्टूबर २०२६ &nbsp;&nbsp; <strong>समय:</strong> दोपहर २:३० बजे<br/><br/>
+        <strong>प्रेषक:</strong> श्री रमेश शर्मा (चाचाजी)<br/>
+        <strong>प्राप्तकर्ता:</strong> अमित<br/><br/>
+        चाचाजी का फ़ोन आया था। उन्होंने कहा कि कल शाम ६ बजे तुम्हें उनके घर आना है। वे कुछ ज़रूरी बात करना चाहते हैं। कृपया उन्हें वापस फ़ोन करें।<br/><br/>
+        — <strong>माँ</strong>
+      </div>
+    </div>
+    <div class="trick">
+      <div class="trick-title">💡 परीक्षा टिप्स:</div>
+      दिनांक, समय, प्रेषक, प्राप्तकर्ता — ये सभी ज़रूर लिखें।<br/>
+      भाषा सरल और सीधी रखें। शब्द-सीमा: ३०-४० शब्द।
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ १३. जानकारी-लेखन ══════════ -->
+<div class="gr-sec" id="jaankari"><div class="sn">१३</div>जानकारी-लेखन (Report Writing)</div>
+<div class="gc">
+  <div class="gc-head">जानकारी-लेखन — परिभाषा और प्रारूप</div>
+  <div class="gc-body">
+    <div class="def"><strong>परिभाषा:</strong> किसी कार्यक्रम, घटना या विषय का संक्षिप्त और तथ्यपूर्ण विवरण लिखना <strong>जानकारी-लेखन</strong> कहलाता है।</div>
+    <div class="rule">
+      <div class="rule-title">प्रारूप (Format):</div>
+      <div class="hi" style="line-height:2.2;font-size:.88rem;">
+        <strong>शीर्षक:</strong> (कार्यक्रम का नाम)<br/>
+        <strong>दिनांक / समय / स्थान:</strong><br/><br/>
+        <strong>विवरण:</strong><br/>
+        — कार्यक्रम कैसे हुआ<br/>
+        — प्रमुख अतिथि / वक्ता<br/>
+        — मुख्य गतिविधियाँ<br/>
+        — परिणाम / पुरस्कार<br/><br/>
+        <strong>निष्कर्ष:</strong> (एक पंक्ति में समापन)
+      </div>
+    </div>
+    <div class="rule" style="margin-top:8px;">
+      <div class="rule-title">✅ नमूना जानकारी-लेखन:</div>
+      <div class="hi" style="font-size:.86rem;line-height:2.1;background:#fffbeb;border:2px solid #d97706;border-radius:6px;padding:10px 14px;">
+        <strong>शीर्षक: अंतर-विद्यालयीय वाद-विवाद प्रतियोगिता</strong><br/>
+        <strong>दिनांक:</strong> ५ दिसंबर २०२६ | <strong>स्थान:</strong> विद्यालय सभागार<br/><br/>
+        हमारे विद्यालय में दिनांक ५ दिसंबर को एक भव्य वाद-विवाद प्रतियोगिता का आयोजन किया गया। दस विद्यालयों के छात्र-छात्राओं ने भाग लिया। मुख्य अतिथि श्री अनिल वर्मा थे। विषय था — "पर्यावरण रक्षा हमारी जिम्मेदारी"। प्रथम पुरस्कार हमारे विद्यालय की छात्रा सुनीता राव को मिला। कार्यक्रम बहुत सफल रहा।
+      </div>
+    </div>
+    <div class="trick">
+      <div class="trick-title">💡 परीक्षा टिप्स:</div>
+      पाँच प्रश्नों के उत्तर दें: <strong>क्या? कब? कहाँ? कौन? कैसे?</strong><br/>
+      भूतकाल का प्रयोग करें (यह हो चुकी घटना है)।<br/>
+      लगभग ८० शब्दों में लिखें।
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ १४. विज्ञापन-लेखन ══════════ -->
+<div class="gr-sec" id="vigyapan"><div class="sn">१४</div>विज्ञापन-लेखन (Advertisement Writing)</div>
+<div class="gc">
+  <div class="gc-head">विज्ञापन — परिभाषा और प्रारूप</div>
+  <div class="gc-body">
+    <div class="def"><strong>परिभाषा:</strong> किसी वस्तु, सेवा, कार्यक्रम या सामाजिक उद्देश्य को आकर्षक ढंग से प्रस्तुत करने के लिए लिखित सूचना को <strong>विज्ञापन</strong> कहते हैं। यह संक्षिप्त, आकर्षक और स्पष्ट होना चाहिए।</div>
+    <div class="rule">
+      <div class="rule-title">प्रारूप (Format):</div>
+      <div class="hi" style="line-height:2.2;font-size:.88rem;">
+        <strong>⬛ बॉक्स / फ्रेम में लिखें</strong> (ज़रूरी है)<br/>
+        <strong>शीर्षक / नारा:</strong> (आकर्षक, बोल्ड)<br/>
+        <strong>मुख्य जानकारी:</strong> (वस्तु का नाम, विशेषताएँ, मूल्य)<br/>
+        <strong>संपर्क:</strong> (पता / फ़ोन नंबर)<br/>
+        <strong>नारा (Tagline):</strong> (अंत में — वैकल्पिक पर अंक मिलते हैं)
+      </div>
+    </div>
+    <div class="rule" style="margin-top:8px;">
+      <div class="rule-title">✅ नमूना विज्ञापन — वस्तु:</div>
+      <div class="hi vigyapan-box">
+        <div style="font-size:1rem;font-weight:900;color:#b45309;">🌟 नई पुस्तक आ गई! 🌟</div>
+        <div style="font-size:.92rem;font-weight:800;margin:4px 0;">हिंदी व्याकरण — कक्षा १०</div>
+        ✅ SSC बोर्ड के नवीनतम पाठ्यक्रम पर आधारित<br/>
+        ✅ सरल भाषा में — उदाहरण सहित<br/>
+        ✅ परीक्षा के लिए पूर्णतः उपयोगी<br/>
+        <strong style="margin-top:6px;display:block;">मूल्य: ₹१२० मात्र | सभी प्रमुख पुस्तक-दुकानों पर उपलब्ध</strong>
+        <strong>संपर्क:</strong> विज़न पब्लिकेशन्स, अंबरनाथ | 📞 ८७६७१ ४४२००<br/>
+        <em style="color:#b45309;">"पढ़ेंगे तो बढ़ेंगे!"</em>
+      </div>
+    </div>
+    <div class="rule" style="margin-top:8px;">
+      <div class="rule-title">✅ नमूना विज्ञापन — खोया-पाया:</div>
+      <div class="hi vigyapan-box">
+        <div style="font-size:1rem;font-weight:900;color:#991b1b;">⚠️ खोया हुआ ⚠️</div>
+        दिनांक १० नवंबर २०२६ को विद्यालय परिसर में<br/>
+        <strong>एक काले रंग का बस्ता (School Bag)</strong> खो गया है।<br/>
+        उसमें हिंदी, गणित, विज्ञान की पाठ्यपुस्तकें हैं।<br/>
+        <strong style="display:block;margin-top:4px;">मिलने पर संपर्क करें: अमित सिंह, कक्षा १०-B</strong>
+        📞 ९८७६५४३२१०<br/>
+        <em style="color:#15803d;">"ईमानदारी सबसे बड़ा गुण है।"</em>
+      </div>
+    </div>
+    <div class="trick">
+      <div class="trick-title">💡 परीक्षा टिप्स:</div>
+      विज्ञापन हमेशा <strong>बॉक्स में</strong> लिखें — यह अनिवार्य है।<br/>
+      ✅ चिह्नों और बुलेट का उपयोग करें — आकर्षक लगता है।<br/>
+      अंत में <strong>नारा (Tagline)</strong> लिखें — अतिरिक्त अंक मिलते हैं।<br/>
+      परीक्षा में पूछे जाने वाले विज्ञापन: वस्तु · कार्यक्रम · खोया-पाया · नौकरी · सामाजिक जागरूकता
     </div>
   </div>
 </div>
@@ -749,7 +607,7 @@
 </div><!-- end .gr-wrap -->
 
 <div style="text-align:center;padding:20px;">
-  <a href="notes-class10.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#b45309,#d97706);color:#fff;padding:12px 28px;border-radius:28px;text-decoration:none;font-size:.9rem;font-weight:700;">← Back to Class 10 Notes</a>
+  <a href="notes-class10.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#b45309,#d97706);color:#fff;padding:12px 28px;border-radius:28px;text-decoration:none;font-size:.9rem;font-weight:700;">← Class 10 Notes पर वापस जाएँ</a>
 </div>
 
 <script>
