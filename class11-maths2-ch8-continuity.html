@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Class 11 Maths 2 — Ch 8 Continuity | Visions Classes</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="logo.png" type="image/png"/>
+  <style>
+    #vlScreenLayer{display:block;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;}
+    #vlPrintLayer{display:none;position:absolute;top:0;left:0;width:100%;pointer-events:none;z-index:9999;}
+    @media print{#vlScreenLayer{display:none!important;}#vlPrintLayer{display:block!important;}body{position:relative!important;}}
+    body{background:#f4f6fb;}
+
+    .ch-hero{background:linear-gradient(135deg,#1b5e20,#2e7d32,#388e3c);color:#fff;padding:28px 20px 24px;text-align:center;}
+    .ch-hero .badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 16px;font-size:.72rem;letter-spacing:1px;margin-bottom:10px;}
+    .ch-hero h1{font-size:clamp(1.3rem,4vw,1.9rem);font-weight:900;margin-bottom:5px;}
+    .ch-hero p{font-size:.88rem;opacity:.85;}
+
+    .qnav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:12px 16px;background:#fff;border-bottom:1px solid #c8e6c9;position:sticky;top:0;z-index:100;}
+    .qnav a{background:#f1f8e9;color:#2e7d32;border:1px solid #a5d6a7;padding:5px 13px;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;}
+    .qnav a:hover{background:#2e7d32;color:#fff;}
+
+    .wrap{max-width:820px;margin:0 auto;padding:0 16px 40px;}
+
+    .sec-title{display:flex;align-items:center;gap:12px;background:linear-gradient(90deg,#1b5e20,#2e7d32);color:#fff;padding:11px 16px;border-radius:10px;margin:26px 0 12px;font-size:1rem;font-weight:800;}
+    .sec-title .sn{min-width:28px;height:28px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:900;}
+
+    .formula-box{background:#f1f8e9;border:1px solid #a5d6a7;border-radius:8px;padding:12px 16px;margin-bottom:14px;font-size:.9rem;line-height:1.9;}
+    .formula-box h3{color:#2e7d32;font-size:.92rem;font-weight:800;margin-bottom:6px;}
+    .f{background:#fff;border:1.5px solid #2e7d32;border-radius:5px;padding:4px 12px;font-size:.9rem;display:inline-block;margin:3px 4px;}
+
+    .def-box{background:#e8f5e9;border-left:5px solid #43a047;border-radius:0 8px 8px 0;padding:11px 16px;margin:10px 0 14px;font-size:.9rem;line-height:1.85;}
+    .def-box strong{color:#1b5e20;}
+
+    .warn-box{background:#fff8e1;border-left:5px solid #ffa000;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;font-size:.88rem;color:#5d4037;}
+    .warn-box strong{color:#e65100;}
+
+    /* QUESTION CARD */
+    .qcard{background:#fff;border:1px solid #e2e8f0;border-radius:8px;margin-bottom:12px;overflow:hidden;page-break-inside:avoid;}
+    .qcard-head{background:#f8fff8;border-bottom:1px solid #e2e8f0;padding:9px 14px;display:flex;align-items:flex-start;gap:10px;}
+    .qnum{min-width:38px;height:22px;background:#2e7d32;color:#fff;font-size:.68rem;font-weight:800;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;padding:0 5px;}
+    .qtext{font-size:.91rem;font-weight:600;color:#1a1a2e;line-height:1.5;}
+
+    .sol{padding:12px 16px;border-top:2px solid #f0fff0;}
+    .sol-lbl{font-size:.68rem;font-weight:800;letter-spacing:1px;color:#2e7d32;text-transform:uppercase;margin-bottom:8px;}
+    .sol p{font-size:.92rem;line-height:1.9;margin-bottom:2px;padding-left:0;}
+    .sol .indent{padding-left:20px;}
+    .sol .indent2{padding-left:36px;}
+    .sol .ans-line{background:#f0fdf4;border-left:3px solid #16a34a;padding:4px 10px;border-radius:0 4px 4px 0;font-weight:700;color:#14532d;font-size:.9rem;margin:5px 0;}
+    .sol .note-line{background:#fff7ed;border-left:3px solid #f97316;padding:4px 10px;border-radius:0 4px 4px 0;font-size:.83rem;color:#9a3412;margin:4px 0;}
+
+    .part-lbl{font-weight:700;color:#2e7d32;font-size:.87rem;margin:10px 0 4px;}
+    .part-divider{border:none;border-top:1px dashed #c8e6c9;margin:10px 0;}
+
+    .ex-title{background:#e8f5e9;border-left:5px solid #2e7d32;padding:8px 14px;border-radius:0 6px 6px 0;margin:20px 0 12px;font-weight:800;color:#1b5e20;font-size:.95rem;}
+
+    footer{text-align:center;padding:20px;color:#777;font-size:.82rem;border-top:1px solid #eee;margin-top:40px;}
+  </style>
+</head>
+<body>
+
+<div id="vlScreenLayer">
+  <svg width="260" height="260" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+    <g transform="rotate(-30,150,150)">
+      <circle cx="150" cy="150" r="140" fill="none" stroke="#c0392b" stroke-opacity="0.25" stroke-width="5"/>
+      <circle cx="150" cy="150" r="128" fill="none" stroke="#1a1a2e" stroke-opacity="0.12" stroke-width="2" stroke-dasharray="6,4"/>
+      <text x="150" y="135" text-anchor="middle" font-family="Arial" font-size="34" font-weight="900" fill="#c0392b" fill-opacity="0.25">VISIONS</text>
+      <text x="150" y="175" text-anchor="middle" font-family="Arial" font-size="34" font-weight="900" fill="#1a1a2e" fill-opacity="0.18">CLASSES</text>
+    </g>
+  </svg>
+</div>
+<div id="vlPrintLayer"></div>
+
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="logo" style="height:32px;"/><span class="logo-text"><span>Visions</span> Classes</span></a>
+    <ul class="nav-links"><li><a href="notes-maths2.html" class="active">Maths 2</a></li><li><a href="notes-class11.html">Class 11</a></li></ul>
+  </div>
+</nav>
+
+<div class="ch-hero">
+  <div class="badge">Class 11 · Maths Paper 2 · Maharashtra Board</div>
+  <h1>📐 Chapter 8 — Continuity</h1>
+  <p>Complete Notes + All Exercises Solved Step-by-Step · Ex 8.1 · Miscellaneous Exercise 8</p>
+</div>
+
+<div class="qnav">
+  <a href="#theory">📚 Theory</a>
+  <a href="#types">Types of Discontinuity</a>
+  <a href="#ivt">IVT</a>
+  <a href="#ex81">Exercise 8.1</a>
+  <a href="#misc">Misc Exercise</a>
+  <a href="#remember">📌 Let's Remember</a>
+</div>
+
+<div class="wrap">
+
+<!-- ══════════════════════ THEORY ══════════════════════ -->
+<div class="sec-title" id="theory"><div class="sn">📚</div> Theory — Key Concepts &amp; Definitions</div>
+
+<div class="formula-box">
+  <h3>✅ Continuity at a Point</h3>
+  A function <b>f(x)</b> is continuous at a point <b>x = a</b> if and only if <b>all three conditions</b> are satisfied:
+  <br/><br/>
+  <div class="f">① f(a) is defined</div>
+  <div class="f">② lim<sub>x→a</sub> f(x) exists</div>
+  <div class="f">③ lim<sub>x→a</sub> f(x) = f(a)</div>
+</div>
+
+<div class="formula-box">
+  <h3>📌 Continuity from Right and Left</h3>
+  <div class="f">Continuous from Right at a : lim<sub>x→a⁺</sub> f(x) = f(a)</div>
+  <div class="f">Continuous from Left at b : lim<sub>x→b⁻</sub> f(x) = f(b)</div>
+</div>
+
+<div class="formula-box">
+  <h3>📌 Continuity over an Interval</h3>
+  <b>Open Interval (a,b):</b> f is continuous at every point in the interval.<br/><br/>
+  <b>Closed Interval [a,b]:</b> f is continuous at every point in (a,b), continuous from right at a, and continuous from left at b.
+</div>
+
+<!-- ══════════════════════ TYPES OF DISCONTINUITY ══════════════════════ -->
+<div class="sec-title" id="types"><div class="sn">⚠️</div> Types of Discontinuity</div>
+
+<div class="def-box">
+  <strong>Removable Discontinuity:</strong> f(x) is discontinuous at a, but lim<sub>x→a</sub> f(x) <em>exists</em>. f(a) may or may not be defined. It can be "fixed" by redefining f(a).
+</div>
+
+<div class="def-box">
+  <strong>Jump Discontinuity:</strong> Both lim<sub>x→a⁻</sub> f(x) and lim<sub>x→a⁺</sub> f(x) exist, but<br/>
+  lim<sub>x→a⁻</sub> f(x) ≠ lim<sub>x→a⁺</sub> f(x). The function "jumps" at a.
+</div>
+
+<div class="def-box">
+  <strong>Infinite Discontinuity:</strong> lim<sub>x→a⁺</sub> f(x) = ±∞ or lim<sub>x→a⁻</sub> f(x) = ±∞.
+</div>
+
+<!-- ══════════════════════ IVT ══════════════════════ -->
+<div class="sec-title" id="ivt"><div class="sn">📈</div> Intermediate Value Theorem (IVT)</div>
+
+<div class="def-box">
+  <strong>IVT Statement:</strong> If f is continuous on a closed interval [a, b], and y₀ is any value between f(a) and f(b), then y₀ = f(c) for some c in [a, b].
+</div>
+
+<div class="warn-box">
+  <strong>Geometric meaning:</strong> Any horizontal line y = y₀ crossing between f(a) and f(b) will cross the curve y = f(x) at least once over [a, b].
+</div>
+
+<div class="warn-box">
+  <strong>Important:</strong> The continuity of f on the interval is essential. If f is discontinuous at even one point, the conclusion may fail.
+</div>
+
+<!-- ══════════════════════ EXERCISE 8.1 ══════════════════════ -->
+<div class="sec-title" id="ex81"><div class="sn">✏️</div> Exercise 8.1 — All Questions Solved</div>
+
+<!-- Q1 -->
+<div class="ex-title">Q.1 — Examine the continuity</div>
+
+<!-- Q1(i) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">1(i)</div>
+    <div class="qtext">Examine the continuity of f(x) = x³ + 2x² − x − 2 at x = −2.</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p><b>Step 1: Find f(−2)</b></p>
+    <p class="indent">f(−2) = (−2)³ + 2(−2)² − (−2) − 2</p>
+    <p class="indent">= −8 + 8 + 2 − 2 = <b>0</b></p>
+    <p><b>Step 2: Find lim<sub>x→−2</sub> f(x)</b></p>
+    <p class="indent">f(x) is a polynomial → continuous everywhere</p>
+    <p class="indent">lim<sub>x→−2</sub> f(x) = f(−2) = <b>0</b></p>
+    <p><b>Step 3: Check condition</b></p>
+    <p class="indent">f(−2) = 0 = lim<sub>x→−2</sub> f(x) ✓</p>
+    <div class="ans-line">∴ f(x) is continuous at x = −2.</div>
+  </div>
+</div>
+
+<!-- Q1(ii) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">1(ii)</div>
+    <div class="qtext">f(x) = sin x, for x ≤ π/4 &nbsp;|&nbsp; cos x, for x &gt; π/4 &nbsp;&nbsp;at x = π/4</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p><b>Step 1: f(π/4)</b></p>
+    <p class="indent">f(π/4) = sin(π/4) = 1/√2</p>
+    <p><b>Step 2: Left-hand limit (LHL)</b></p>
+    <p class="indent">lim<sub>x→(π/4)⁻</sub> f(x) = lim sin x = sin(π/4) = 1/√2</p>
+    <p><b>Step 3: Right-hand limit (RHL)</b></p>
+    <p class="indent">lim<sub>x→(π/4)⁺</sub> f(x) = lim cos x = cos(π/4) = 1/√2</p>
+    <p><b>Step 4: Check</b></p>
+    <p class="indent">LHL = RHL = f(π/4) = 1/√2 ✓</p>
+    <div class="ans-line">∴ f(x) is continuous at x = π/4.</div>
+  </div>
+</div>
+
+<!-- Q1(iii) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">1(iii)</div>
+    <div class="qtext">f(x) = (x² − 9)/(x − 3), for x ≠ 3 &nbsp;|&nbsp; = 8, for x = 3 &nbsp;&nbsp;at x = 3</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p><b>Step 1: f(3) = 8</b> (given)</p>
+    <p><b>Step 2: Find lim<sub>x→3</sub> f(x)</b></p>
+    <p class="indent">lim<sub>x→3</sub> (x² − 9)/(x − 3)</p>
+    <p class="indent">= lim<sub>x→3</sub> (x+3)(x−3)/(x−3)</p>
+    <p class="indent">= lim<sub>x→3</sub> (x + 3) = 3 + 3 = <b>6</b></p>
+    <p><b>Step 3: Check</b></p>
+    <p class="indent">lim<sub>x→3</sub> f(x) = 6 ≠ 8 = f(3) ✗</p>
+    <div class="ans-line">∴ f(x) is NOT continuous at x = 3. (Removable discontinuity)</div>
+    <div class="note-line">💡 If we redefine f(3) = 6, it becomes continuous.</div>
+  </div>
+</div>
+
+<!-- Q2 -->
+<div class="ex-title">Q.2 — Examine whether the function is continuous at the given points</div>
+
+<!-- Q2(i) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">2(i)</div>
+    <div class="qtext">f(x) = x³ − 2x + 1, if x ≤ 2 &nbsp;|&nbsp; = 3x − 2, if x &gt; 2 &nbsp;&nbsp;at x = 2</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p><b>Step 1: f(2)</b> (using x ≤ 2 branch)</p>
+    <p class="indent">f(2) = (2)³ − 2(2) + 1 = 8 − 4 + 1 = <b>5</b></p>
+    <p><b>Step 2: LHL</b></p>
+    <p class="indent">lim<sub>x→2⁻</sub> f(x) = lim (x³ − 2x + 1) = 8 − 4 + 1 = <b>5</b></p>
+    <p><b>Step 3: RHL</b></p>
+    <p class="indent">lim<sub>x→2⁺</sub> f(x) = lim (3x − 2) = 6 − 2 = <b>4</b></p>
+    <p><b>Step 4: Check</b></p>
+    <p class="indent">LHL = 5 ≠ RHL = 4 ✗</p>
+    <div class="ans-line">∴ f(x) is NOT continuous at x = 2. (Jump discontinuity)</div>
+  </div>
+</div>
+
+<!-- Q2(ii) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">2(ii)</div>
+    <div class="qtext">f(x) = (x² + 18x − 19)/(x − 1), for x ≠ 1 &nbsp;|&nbsp; = 20, for x = 1 &nbsp;&nbsp;at x = 1</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p><b>Step 1: f(1) = 20</b> (given)</p>
+    <p><b>Step 2: Find lim<sub>x→1</sub> f(x)</b></p>
+    <p class="indent">lim<sub>x→1</sub> (x² + 18x − 19)/(x − 1)</p>
+    <p class="indent">Factor numerator: (x − 1)(x + 19)</p>
+    <p class="indent">= lim<sub>x→1</sub> (x + 19) = 1 + 19 = <b>20</b></p>
+    <p><b>Step 3: Check</b></p>
+    <p class="indent">lim<sub>x→1</sub> f(x) = 20 = f(1) ✓</p>
+    <div class="ans-line">∴ f(x) is continuous at x = 1.</div>
+  </div>
+</div>
+
+<!-- Q2(iii) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">2(iii)</div>
+    <div class="qtext">f(x) = x/(tan 3x) + 2, for x &lt; 0 &nbsp;|&nbsp; = 7/3, for x ≥ 0 &nbsp;&nbsp;at x = 0</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p><b>Step 1: f(0) = 7/3</b> (given)</p>
+    <p><b>Step 2: LHL</b></p>
+    <p class="indent">lim<sub>x→0⁻</sub> [x/(tan 3x) + 2]</p>
+    <p class="indent">= lim<sub>x→0</sub> x/(tan 3x) + 2</p>
+    <p class="indent">= lim<sub>x→0</sub> (x/3x) · (3x/tan 3x) + 2</p>
+    <p class="indent">= (1/3) · 1 + 2 = <b>7/3</b></p>
+    <p><b>Step 3: Check</b></p>
+    <p class="indent">LHL = 7/3 = f(0) ✓</p>
+    <div class="ans-line">∴ f(x) is continuous at x = 0.</div>
+  </div>
+</div>
+
+<!-- Q3 -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">Q.3</div>
+    <div class="qtext">Find all the points of discontinuities of f(x) = ⌊x⌋ on the interval (−3, 2).</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>The greatest integer function ⌊x⌋ is discontinuous at every integer value.</p>
+    <p>Integers in the open interval (−3, 2):</p>
+    <p class="indent">−2, −1, 0, 1</p>
+    <div class="ans-line">∴ f(x) is discontinuous at x = −2, −1, 0, 1.</div>
+    <div class="note-line">💡 At each integer n: LHL = n−1, RHL = n → LHL ≠ RHL (Jump discontinuity)</div>
+  </div>
+</div>
+
+<!-- Q4 -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">Q.4</div>
+    <div class="qtext">Discuss the continuity of f(x) = |2x + 3|, at x = −3/2.</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p><b>Step 1: f(−3/2)</b></p>
+    <p class="indent">f(−3/2) = |2(−3/2) + 3| = |−3 + 3| = |0| = <b>0</b></p>
+    <p><b>Step 2: lim<sub>x→−3/2</sub> f(x)</b></p>
+    <p class="indent">|2x + 3| is continuous everywhere (modulus of a polynomial)</p>
+    <p class="indent">lim = |2(−3/2) + 3| = 0</p>
+    <p><b>Step 3: Check</b></p>
+    <p class="indent">lim = 0 = f(−3/2) ✓</p>
+    <div class="ans-line">∴ f(x) is continuous at x = −3/2.</div>
+  </div>
+</div>
+
+<!-- Q5 -->
+<div class="ex-title">Q.5 — Test the continuity of the following functions</div>
+
+<!-- Q5(i) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">5(i)</div>
+    <div class="qtext">f(x) = [√(x−1) − (x−1)^(1/3)] / (x − 2), for x ≠ 2 &nbsp;|&nbsp; = 1/5, for x = 2, at x = 2</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p><b>Step 1: f(2) = 1/5</b> (given)</p>
+    <p><b>Step 2: Find lim<sub>x→2</sub> f(x)</b></p>
+    <p class="indent">Let x − 1 = t, so as x→2, t→1</p>
+    <p class="indent">= lim<sub>t→1</sub> (t^(1/2) − t^(1/3)) / (t − 1)</p>
+    <p class="indent">= lim<sub>t→1</sub> [t^(1/2) − 1 − (t^(1/3) − 1)] / (t − 1)</p>
+    <p class="indent">Using: lim<sub>t→1</sub> (t^n − 1)/(t − 1) = n</p>
+    <p class="indent">= 1/2 − 1/3 = 3/6 − 2/6 = <b>1/6</b></p>
+    <p><b>Step 3: Check</b></p>
+    <p class="indent">lim = 1/6 ≠ 1/5 = f(2) ✗</p>
+    <div class="ans-line">∴ f(x) is NOT continuous at x = 2.</div>
+  </div>
+</div>
+
+<!-- Q5(ii) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">5(ii)</div>
+    <div class="qtext">f(x) = (x³ − 8) / (√(x+2) − √(3x−2)), for x ≠ 2 &nbsp;|&nbsp; = −24, for x = 2, at x = 2</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p><b>Step 1: f(2) = −24</b> (given)</p>
+    <p><b>Step 2: Find lim<sub>x→2</sub> f(x)</b></p>
+    <p class="indent">Rationalise denominator: multiply by (√(x+2) + √(3x−2))</p>
+    <p class="indent">Denominator becomes: (x+2) − (3x−2) = −2x + 4 = −2(x−2)</p>
+    <p class="indent">Numerator: x³ − 8 = (x−2)(x² + 2x + 4)</p>
+    <p class="indent">lim = lim<sub>x→2</sub> [(x−2)(x²+2x+4)(√(x+2)+√(3x−2))] / [−2(x−2)]</p>
+    <p class="indent">= (4+4+4)(√4 + √4) / (−2)</p>
+    <p class="indent">= 12 × 4 / (−2) = <b>−24</b></p>
+    <p><b>Step 3: Check</b></p>
+    <p class="indent">lim = −24 = f(2) ✓</p>
+    <div class="ans-line">∴ f(x) is continuous at x = 2.</div>
+  </div>
+</div>
+
+<!-- Q5(iii) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">5(iii)</div>
+    <div class="qtext">f(x) = 4x + 1, for x ≤ 8/3 &nbsp;|&nbsp; = (59 − 9x)/3, for x &gt; 8/3, at x = 8/3</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p><b>Step 1: f(8/3)</b></p>
+    <p class="indent">f(8/3) = 4(8/3) + 1 = 32/3 + 3/3 = <b>35/3</b></p>
+    <p><b>Step 2: LHL</b></p>
+    <p class="indent">lim<sub>x→(8/3)⁻</sub> (4x + 1) = 4(8/3) + 1 = 35/3</p>
+    <p><b>Step 3: RHL</b></p>
+    <p class="indent">lim<sub>x→(8/3)⁺</sub> (59 − 9x)/3 = (59 − 24)/3 = 35/3</p>
+    <p><b>Step 4: Check</b></p>
+    <p class="indent">LHL = RHL = f(8/3) = 35/3 ✓</p>
+    <div class="ans-line">∴ f(x) is continuous at x = 8/3.</div>
+  </div>
+</div>
+
+<!-- Q5(iv) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">5(iv)</div>
+    <div class="qtext">f(x) = [(27 − 2x)^(1/3) − 3] / [9 − 3(243 + 5x)^(1/5)], for x ≠ 0 &nbsp;|&nbsp; = 2, for x = 0, at x = 0</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p><b>Step 1: f(0) = 2</b> (given)</p>
+    <p><b>Step 2: Find lim<sub>x→0</sub> f(x)</b></p>
+    <p class="indent">At x=0: Numerator = (27)^(1/3) − 3 = 3 − 3 = 0</p>
+    <p class="indent">Denominator = 9 − 3(243)^(1/5) = 9 − 3(3) = 0 → 0/0 form</p>
+    <p class="indent">Let 27 − 2x = t³ &nbsp;⟹&nbsp; t → 3 as x → 0, and 2x = 27 − t³</p>
+    <p class="indent">For denominator: 243 + 5x → use linear approximation</p>
+    <p class="indent">Using derivative approach (L'Hôpital or expansion):</p>
+    <p class="indent">d/dx[(27−2x)^(1/3)] at x=0 = (1/3)(27)^(−2/3)(−2) = −2/27</p>
+    <p class="indent">d/dx[9 − 3(243+5x)^(1/5)] at x=0 = −3·(1/5)(243)^(−4/5)·5 = −3·(1/5)·(1/81)·5 = −3/81 = −1/27</p>
+    <p class="indent">lim = (−2/27) / (−1/27) = <b>2</b></p>
+    <p><b>Step 3: Check</b></p>
+    <p class="indent">lim = 2 = f(0) ✓</p>
+    <div class="ans-line">∴ f(x) is continuous at x = 0.</div>
+  </div>
+</div>
+
+<!-- Q5(v) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">5(v)</div>
+    <div class="qtext">f(x) = (x²+8x−20)/(2x²−9x+10) for 0&lt;x&lt;3, x≠2 &nbsp;|&nbsp; = 12 for x=2 &nbsp;|&nbsp; = (2−2x−x²)/(x−4) for 3≤x&lt;4, at x=2</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p><b>Step 1: f(2) = 12</b> (given)</p>
+    <p><b>Step 2: Find lim<sub>x→2</sub> (x²+8x−20)/(2x²−9x+10)</b></p>
+    <p class="indent">Factor: x²+8x−20 = (x−2)(x+10)</p>
+    <p class="indent">2x²−9x+10 = (2x−5)(x−2)</p>
+    <p class="indent">lim = lim<sub>x→2</sub> (x+10)/(2x−5) = 12/(−1) = <b>−12</b></p>
+    <p><b>Step 3: Check</b></p>
+    <p class="indent">lim = −12 ≠ 12 = f(2) ✗</p>
+    <div class="ans-line">∴ f(x) is NOT continuous at x = 2.</div>
+  </div>
+</div>
+
+<!-- Q6 -->
+<div class="ex-title">Q.6 — Identify discontinuities as jump or removable</div>
+
+<!-- Q6(i) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">6(i)</div>
+    <div class="qtext">f(x) = (x² − 10x + 21) / (x − 7)</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>f(x) is undefined at x = 7.</p>
+    <p class="indent">lim<sub>x→7</sub> (x²−10x+21)/(x−7) = lim<sub>x→7</sub> (x−3)(x−7)/(x−7) = lim (x−3) = <b>4</b></p>
+    <p>Limit exists but f(7) is not defined.</p>
+    <div class="ans-line">∴ Removable discontinuity at x = 7. Redefine f(7) = 4 to make it continuous.</div>
+  </div>
+</div>
+
+<!-- Q6(ii) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">6(ii)</div>
+    <div class="qtext">f(x) = x² + 3x − 2, for x ≤ 4 &nbsp;|&nbsp; = 5x + 3, for x &gt; 4</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p><b>LHL:</b> lim<sub>x→4⁻</sub> (x²+3x−2) = 16+12−2 = <b>26</b></p>
+    <p><b>RHL:</b> lim<sub>x→4⁺</sub> (5x+3) = 20+3 = <b>23</b></p>
+    <p>LHL ≠ RHL</p>
+    <div class="ans-line">∴ Jump discontinuity at x = 4.</div>
+  </div>
+</div>
+
+<!-- Q6(iii) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">6(iii)</div>
+    <div class="qtext">f(x) = x² − x − 2, for x ≤ −1 &nbsp;|&nbsp; = x + 1, for x &gt; −1</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p><b>LHL:</b> lim<sub>x→−1⁻</sub> (x²−x−2) = 1+1−2 = <b>0</b></p>
+    <p><b>RHL:</b> lim<sub>x→−1⁺</sub> (x+1) = 0</p>
+    <p><b>f(−1)</b> = (−1)² − (−1) − 2 = 1+1−2 = <b>0</b></p>
+    <p>LHL = RHL = f(−1) = 0 ✓</p>
+    <div class="ans-line">∴ f(x) is continuous at x = −1. No discontinuity.</div>
+  </div>
+</div>
+
+<!-- Q6(iv) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">6(iv)</div>
+    <div class="qtext">f(x) = 4 + sin x, for x &lt; π &nbsp;|&nbsp; = 3 − cos x, for x &gt; π</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p><b>LHL:</b> lim<sub>x→π⁻</sub> (4 + sin x) = 4 + sin π = 4 + 0 = <b>4</b></p>
+    <p><b>RHL:</b> lim<sub>x→π⁺</sub> (3 − cos x) = 3 − cos π = 3 − (−1) = <b>4</b></p>
+    <p>LHL = RHL = 4, but f(π) is not defined in the given function.</p>
+    <div class="ans-line">∴ Removable discontinuity at x = π. Define f(π) = 4 to make it continuous.</div>
+  </div>
+</div>
+
+<!-- Q7 -->
+<div class="ex-title">Q.7 — Show continuous extensions &amp; find the extension value</div>
+
+<!-- Q7(i) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">7(i)</div>
+    <div class="qtext">f(x) = (1 − cos 2x) / sin x, for x ≠ 0</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>Find lim<sub>x→0</sub> (1 − cos 2x) / sin x</p>
+    <p class="indent">Use: 1 − cos 2x = 2sin²x</p>
+    <p class="indent">= lim<sub>x→0</sub> 2sin²x / sin x = lim<sub>x→0</sub> 2sin x = 2 × 0 = <b>0</b></p>
+    <div class="ans-line">∴ Define f(0) = 0. The continuous extension value is 0.</div>
+  </div>
+</div>
+
+<!-- Q7(ii) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">7(ii)</div>
+    <div class="qtext">f(x) = (3sin²x + 2cos x(1 − cos 2x)) / (2(1 − cos²x)), for x ≠ 0</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>Simplify numerator: 1 − cos 2x = 2sin²x, 1 − cos²x = sin²x</p>
+    <p class="indent">= lim<sub>x→0</sub> [3sin²x + 2cos x · 2sin²x] / [2sin²x]</p>
+    <p class="indent">= lim<sub>x→0</sub> [3 + 4cos x] / 2</p>
+    <p class="indent">= (3 + 4·1) / 2 = 7/2</p>
+    <div class="ans-line">∴ Define f(0) = 7/2. The continuous extension value is 7/2.</div>
+  </div>
+</div>
+
+<!-- Q7(iii) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">7(iii)</div>
+    <div class="qtext">f(x) = (x² − 1) / (x³ + 1), for x ≠ −1</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>lim<sub>x→−1</sub> (x²−1)/(x³+1)</p>
+    <p class="indent">= lim<sub>x→−1</sub> (x−1)(x+1) / (x+1)(x²−x+1)</p>
+    <p class="indent">= lim<sub>x→−1</sub> (x−1)/(x²−x+1) = (−2)/(1+1+1) = <b>−2/3</b></p>
+    <div class="ans-line">∴ Define f(−1) = −2/3. The continuous extension value is −2/3.</div>
+  </div>
+</div>
+
+<!-- Q8 -->
+<div class="ex-title">Q.8 — Discuss the continuity of the following functions</div>
+
+<!-- Q8(i) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">8(i)</div>
+    <div class="qtext">f(x) = (√3 − tan x) / (π − 3x), x ≠ π/3 &nbsp;|&nbsp; = 3/4, for x = π/3, at x = π/3</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p><b>Step 1: f(π/3) = 3/4</b> (given)</p>
+    <p><b>Step 2: Find lim<sub>x→π/3</sub></b></p>
+    <p class="indent">Let x = π/3 + h, as x → π/3, h → 0</p>
+    <p class="indent">tan x = tan(π/3 + h) = (tan(π/3) + tan h)/(1 − tan(π/3)·tan h)</p>
+    <p class="indent">π − 3x = π − 3(π/3 + h) = π − π − 3h = −3h</p>
+    <p class="indent">√3 − tan x: using tan x ≈ √3 + (1+3)h = √3 + 4h as h→0</p>
+    <p class="indent">= lim<sub>h→0</sub> (√3 − √3 − 4h) / (−3h) = (−4h)/(−3h) = <b>4/3</b></p>
+    <p><b>Step 3: Check</b></p>
+    <p class="indent">lim = 4/3 ≠ 3/4 = f(π/3) ✗</p>
+    <div class="ans-line">∴ f(x) is NOT continuous at x = π/3.</div>
+  </div>
+</div>
+
+<!-- Q8(ii) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">8(ii)</div>
+    <div class="qtext">f(x) = (e^(1/x) − 1) / (e^(1/x) + 1), for x ≠ 0 &nbsp;|&nbsp; = 1, for x = 0, at x = 0</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p><b>Step 1: f(0) = 1</b></p>
+    <p><b>Step 2: LHL (x → 0⁻, i.e. 1/x → −∞)</b></p>
+    <p class="indent">e^(1/x) → e^(−∞) = 0</p>
+    <p class="indent">LHL = (0 − 1)/(0 + 1) = <b>−1</b></p>
+    <p><b>Step 3: RHL (x → 0⁺, i.e. 1/x → +∞)</b></p>
+    <p class="indent">e^(1/x) → +∞</p>
+    <p class="indent">RHL = (∞−1)/(∞+1) → divide by e^(1/x): (1 − 0)/(1 + 0) = <b>1</b></p>
+    <p>LHL = −1 ≠ RHL = 1 → limit doesn't exist</p>
+    <div class="ans-line">∴ f(x) is NOT continuous at x = 0. (Jump discontinuity)</div>
+  </div>
+</div>
+
+<!-- Q8(iii) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">8(iii)</div>
+    <div class="qtext">f(x) = (4ˣ − 2ˣ⁺¹ + 1) / (1 − cos 2x), for x ≠ 0 &nbsp;|&nbsp; = (log 2)²/2, for x = 0, at x = 0</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p><b>Step 1: f(0) = (log 2)²/2</b></p>
+    <p><b>Step 2: Find lim<sub>x→0</sub></b></p>
+    <p class="indent">Numerator: 4ˣ − 2·2ˣ + 1 = (2ˣ)² − 2·2ˣ + 1 = (2ˣ − 1)²</p>
+    <p class="indent">Denominator: 1 − cos 2x = 2sin²x</p>
+    <p class="indent">lim = (2ˣ − 1)² / (2sin²x)</p>
+    <p class="indent">= lim [(2ˣ − 1)/x]² / [2(sin x/x)²] as x → 0</p>
+    <p class="indent">= (log 2)² / (2 × 1) = <b>(log 2)²/2</b></p>
+    <p><b>Step 3: Check</b></p>
+    <p class="indent">lim = (log 2)²/2 = f(0) ✓</p>
+    <div class="ans-line">∴ f(x) is continuous at x = 0.</div>
+  </div>
+</div>
+
+<!-- Q9 -->
+<div class="ex-title">Q.9 — Removable discontinuity? If yes, redefine.</div>
+
+<!-- Q9(i) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">9(i)</div>
+    <div class="qtext">f(x) = (e^(5 sin x) − e^(2x)) / (5 tan x − 3x), for x ≠ 0 &nbsp;|&nbsp; = 3/4, for x = 0, at x = 0</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>Find lim<sub>x→0</sub> (e^(5sin x) − e^(2x)) / (5tan x − 3x)</p>
+    <p class="indent">Divide numerator and denominator by x:</p>
+    <p class="indent">Numerator: e^(2x)(e^(5sin x − 2x) − 1) → as x→0, e^(5sin x − 2x) − 1 ≈ (5sin x − 2x)</p>
+    <p class="indent">lim ≈ (5sin x − 2x) / (5tan x − 3x) divide by x</p>
+    <p class="indent">= (5·1 − 2) / (5·1 − 3) = 3/2</p>
+    <p>lim = 3/2, but f(0) = 3/4 → lim ≠ f(0)</p>
+    <div class="ans-line">∴ Removable discontinuity. Redefine f(0) = 3/2 to make it continuous.</div>
+  </div>
+</div>
+
+<!-- Q9(ii) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">9(ii)</div>
+    <div class="qtext">f(x) = log₍₁₊₃ₓ₎(1 + 5x) for x &gt; 0 &nbsp;|&nbsp; = (3²ˣ − 1)/(8ˣ − 1) for x &lt; 0, at x = 0</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p><b>RHL (x → 0⁺):</b></p>
+    <p class="indent">lim<sub>x→0⁺</sub> log₍₁₊₃ₓ₎(1+5x) = lim ln(1+5x)/ln(1+3x)</p>
+    <p class="indent">≈ 5x/3x = <b>5/3</b></p>
+    <p><b>LHL (x → 0⁻):</b></p>
+    <p class="indent">lim<sub>x→0⁻</sub> (3²ˣ − 1)/(8ˣ − 1) = lim (9ˣ − 1)/(8ˣ − 1)</p>
+    <p class="indent">= log 9 / log 8 = 2 log 3 / 3 log 2</p>
+    <p>LHL ≠ RHL → limit doesn't exist</p>
+    <div class="ans-line">∴ NOT a removable discontinuity (Jump discontinuity at x = 0).</div>
+  </div>
+</div>
+
+<!-- Q9(iii) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">9(iii)</div>
+    <div class="qtext">f(x) = [(3 − 8x)/(3 − 2x)]^(1/x), for x ≠ 0, at x = 0</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>lim<sub>x→0</sub> [(3−8x)/(3−2x)]^(1/x)</p>
+    <p class="indent">= lim exp{(1/x) · ln[(3−8x)/(3−2x)]}</p>
+    <p class="indent">Let L = lim (1/x) · ln(3−8x) − ln(3−2x))</p>
+    <p class="indent">As x→0: ln(3−8x) ≈ ln3 − 8x/3, ln(3−2x) ≈ ln3 − 2x/3</p>
+    <p class="indent">L = lim (1/x)(−8x/3 + 2x/3) = lim (−6x/3)/x = <b>−2</b></p>
+    <p class="indent">lim f(x) = e^(−2)</p>
+    <div class="ans-line">∴ Removable discontinuity. Define f(0) = e^(−2) to make it continuous.</div>
+  </div>
+</div>
+
+<!-- Q9(iv) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">9(iv)</div>
+    <div class="qtext">f(x) = 3x + 2, for −4 ≤ x ≤ −2 &nbsp;|&nbsp; = 2x − 3, for −2 ≤ x ≤ 6</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>Check at x = −2 (junction point):</p>
+    <p><b>LHL:</b> lim<sub>x→−2⁻</sub> (3x+2) = −6+2 = <b>−4</b></p>
+    <p><b>RHL:</b> lim<sub>x→−2⁺</sub> (2x−3) = −4−3 = <b>−7</b></p>
+    <p>LHL ≠ RHL</p>
+    <div class="ans-line">∴ Jump discontinuity at x = −2. Not removable.</div>
+  </div>
+</div>
+
+<!-- Q9(v) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">9(v)</div>
+    <div class="qtext">f(x) = (x³ − 8)/(x² − 4) for x &gt; 2 &nbsp;|&nbsp; = 3 for x = 2 &nbsp;|&nbsp; = (e^(3(x−2)²−1))/(2(x−2)²) for x &lt; 2</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p><b>f(2) = 3</b></p>
+    <p><b>RHL:</b> lim<sub>x→2⁺</sub> (x³−8)/(x²−4) = lim (x−2)(x²+2x+4)/[(x−2)(x+2)]</p>
+    <p class="indent">= lim (x²+2x+4)/(x+2) = 12/4 = <b>3</b></p>
+    <p><b>LHL:</b> lim<sub>x→2⁻</sub> (e^(3(x−2)²) − 1)/(2(x−2)²)</p>
+    <p class="indent">Let t = (x−2)², t→0: lim (eᵗ − 1)/(2t) × 3 → ... = 3/2</p>
+    <p class="indent">= lim<sub>t→0</sub> 3(eᵗ−1)/2t × (1/1) where t = 3(x-2)²:</p>
+    <p class="indent">Actually: lim = lim (e^u − 1)/u × 3/2 where u=3(x-2)² → 0, = 1 × 3/2 = <b>3/2</b></p>
+    <p>LHL = 3/2 ≠ RHL = 3</p>
+    <div class="ans-line">∴ f(x) is NOT continuous at x = 2. Jump discontinuity.</div>
+  </div>
+</div>
+
+<!-- Q10 -->
+<div class="ex-title">Q.10 — Find f(value) if f is continuous</div>
+
+<!-- Q10(i) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">10(i)</div>
+    <div class="qtext">f(x) = (√(2 + sin x) − √3) / cos²x, for x ≠ π/2. Find f(π/2) if continuous.</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>f(π/2) = lim<sub>x→π/2</sub> (√(2+sin x) − √3) / cos²x</p>
+    <p class="indent">Rationalise: multiply by (√(2+sin x) + √3)</p>
+    <p class="indent">= lim (2+sin x − 3) / [cos²x · (√(2+sin x)+√3)]</p>
+    <p class="indent">= lim (sin x − 1) / [(1−sin²x)(√(2+sin x)+√3)]</p>
+    <p class="indent">= lim (sin x − 1) / [(1−sin x)(1+sin x)(√(2+sin x)+√3)]</p>
+    <p class="indent">= lim −1 / [(1+sin x)(√(2+sin x)+√3)]</p>
+    <p class="indent">At x = π/2: = −1 / [(1+1)(√3+√3)] = −1/(2·2√3) = <b>−1/(4√3)</b></p>
+    <div class="ans-line">∴ f(π/2) = −1/(4√3)</div>
+  </div>
+</div>
+
+<!-- Q10(ii) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">10(ii)</div>
+    <div class="qtext">f(x) = (cos²x − sin²x − 1) / (√(3x²+1) − 1), for x ≠ 0. Find f(0) if continuous.</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>f(0) = lim<sub>x→0</sub> (cos²x − sin²x − 1)/(√(3x²+1) − 1)</p>
+    <p class="indent">Numerator: cos2x − 1 = −2sin²x</p>
+    <p class="indent">Rationalise denominator: multiply by (√(3x²+1)+1)</p>
+    <p class="indent">= lim −2sin²x (√(3x²+1)+1) / (3x²+1−1)</p>
+    <p class="indent">= lim −2sin²x (√(3x²+1)+1) / 3x²</p>
+    <p class="indent">= −2(sin x/x)² × (1+1)/3 = −2×1×2/3 = <b>−4/3</b></p>
+    <div class="ans-line">∴ f(0) = −4/3</div>
+  </div>
+</div>
+
+<!-- Q10(iii) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">10(iii)</div>
+    <div class="qtext">f(x) = (4^(x−π) + 4^(π−x) − 2) / (x − π)², for x ≠ π. Find f(π) if continuous.</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>f(π) = lim<sub>x→π</sub> (4^(x−π) + 4^(π−x) − 2) / (x−π)²</p>
+    <p class="indent">Let t = x − π, t → 0</p>
+    <p class="indent">= lim<sub>t→0</sub> (4ᵗ + 4^(−t) − 2) / t²</p>
+    <p class="indent">Let u = 4ᵗ: = lim (u + 1/u − 2)/t² = lim (u−1)²/(u·t²)</p>
+    <p class="indent">= lim [(4ᵗ−1)/t]² / 4ᵗ = (log 4)² / 1 = <b>(log 4)² = (2 log 2)²</b></p>
+    <div class="ans-line">∴ f(π) = (log 4)² = 4(log 2)²</div>
+  </div>
+</div>
+
+<!-- Q11 -->
+<div class="ex-title">Q.11 — Find k if f is continuous at x = 0</div>
+
+<!-- Q11(i) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">11(i)</div>
+    <div class="qtext">f(x) = (24ˣ − 8ˣ − 3ˣ + 1) / (12ˣ − 4ˣ − 3ˣ + 1), for x ≠ 0 &nbsp;|&nbsp; = k, for x = 0</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>For continuity at x = 0: k = lim<sub>x→0</sub> f(x)</p>
+    <p class="indent">Numerator: 24ˣ − 8ˣ − 3ˣ + 1 = (8ˣ − 1)(3ˣ − 1)</p>
+    <p class="indent">Denominator: 12ˣ − 4ˣ − 3ˣ + 1 = (4ˣ − 1)(3ˣ − 1)</p>
+    <p class="indent">lim = lim [(8ˣ−1)/x] / [(4ˣ−1)/x] = log 8 / log 4</p>
+    <p class="indent">= 3 log 2 / 2 log 2 = <b>3/2</b></p>
+    <div class="ans-line">∴ k = 3/2</div>
+  </div>
+</div>
+
+<!-- Q11(ii) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">11(ii)</div>
+    <div class="qtext">f(x) = (5ˣ + 5^(−x) − 2) / x², for x ≠ 0 &nbsp;|&nbsp; = k, for x = 0</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>k = lim<sub>x→0</sub> (5ˣ + 5^(−x) − 2)/x²</p>
+    <p class="indent">Let u = 5ˣ: = lim (u + 1/u − 2)/x² = lim (u−1)²/(u·x²)</p>
+    <p class="indent">= lim [(5ˣ−1)/x]² / 5ˣ = (log 5)² / 1 = <b>(log 5)²</b></p>
+    <div class="ans-line">∴ k = (log 5)²</div>
+  </div>
+</div>
+
+<!-- Q11(iii) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">11(iii)</div>
+    <div class="qtext">f(x) = sin 2x/(5x) − a for x &gt; 0; = 4 for x = 0; = x² + b − 3 for x &lt; 0. Find a and b.</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>For continuity at x = 0:</p>
+    <p><b>RHL = f(0):</b></p>
+    <p class="indent">lim<sub>x→0⁺</sub> [sin 2x/(5x) − a] = (2/5) − a = 4</p>
+    <p class="indent">⟹ a = 2/5 − 4 = 2/5 − 20/5 = <b>−18/5</b></p>
+    <p><b>LHL = f(0):</b></p>
+    <p class="indent">lim<sub>x→0⁻</sub> (x² + b − 3) = b − 3 = 4</p>
+    <p class="indent">⟹ <b>b = 7</b></p>
+    <div class="ans-line">∴ a = −18/5, b = 7</div>
+  </div>
+</div>
+
+<!-- Q11(iv) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">11(iv)</div>
+    <div class="qtext">f(x) = ax + 2b + 18 for x ≤ 0; = x² + 3a − b for 0 &lt; x ≤ 2; = 8x − 2 for x &gt; 2. Find a, b for continuity for all x.</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p><b>At x = 0 (continuity):</b></p>
+    <p class="indent">lim<sub>x→0⁻</sub> (ax+2b+18) = 2b+18</p>
+    <p class="indent">lim<sub>x→0⁺</sub> (x²+3a−b) = 3a−b</p>
+    <p class="indent">f(0) = 2b+18</p>
+    <p class="indent">⟹ 2b + 18 = 3a − b &nbsp;⟹&nbsp; <b>3a − 3b = 18 &nbsp;⟹&nbsp; a − b = 6 …(I)</b></p>
+    <p><b>At x = 2 (continuity):</b></p>
+    <p class="indent">lim<sub>x→2⁻</sub> (x²+3a−b) = 4+3a−b</p>
+    <p class="indent">lim<sub>x→2⁺</sub> (8x−2) = 14</p>
+    <p class="indent">⟹ 4 + 3a − b = 14 &nbsp;⟹&nbsp; <b>3a − b = 10 …(II)</b></p>
+    <p class="indent">From (I): b = a − 6; substitute in (II): 3a−(a−6)=10 → 2a+6=10 → a=2</p>
+    <p class="indent">b = 2 − 6 = −4</p>
+    <div class="ans-line">∴ a = 2, b = −4</div>
+  </div>
+</div>
+
+<!-- Q11(v) -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">11(v)</div>
+    <div class="qtext">f(x) = (x²−4)/(x−2) for x &lt; 2; = ax²−bx+3 for 2≤x&lt;3; = 2x−a+b for x≥3. Find a, b for continuity on ℝ.</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p><b>At x = 2:</b></p>
+    <p class="indent">lim<sub>x→2⁻</sub> (x²−4)/(x−2) = lim (x+2) = 4</p>
+    <p class="indent">f(2) = 4a − 2b + 3</p>
+    <p class="indent">⟹ 4a − 2b + 3 = 4 &nbsp;⟹&nbsp; <b>4a − 2b = 1 …(I)</b></p>
+    <p><b>At x = 3:</b></p>
+    <p class="indent">lim<sub>x→3⁻</sub> (ax²−bx+3) = 9a − 3b + 3</p>
+    <p class="indent">lim<sub>x→3⁺</sub> (2x−a+b) = 6 − a + b</p>
+    <p class="indent">⟹ 9a − 3b + 3 = 6 − a + b &nbsp;⟹&nbsp; <b>10a − 4b = 3 …(II)</b></p>
+    <p class="indent">From (I): 8a − 4b = 2; subtract from (II): 2a = 1 → a = 1/2</p>
+    <p class="indent">b = (4×(1/2) − 1)/2 = (2−1)/2 = 1/2</p>
+    <div class="ans-line">∴ a = 1/2, b = 1/2</div>
+  </div>
+</div>
+
+<!-- Q12 -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">Q.12</div>
+    <div class="qtext">Discuss the continuity of f on its domain: f(x) = |x+1|, for −3≤x≤2 &nbsp;|&nbsp; = |x−5|, for 2&lt;x≤7</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>On [−3, 2]: f(x) = |x+1| is continuous (modulus of a polynomial)</p>
+    <p>On (2, 7]: f(x) = |x−5| is continuous</p>
+    <p><b>Check at x = 2 (junction):</b></p>
+    <p class="indent">LHL = |2+1| = 3</p>
+    <p class="indent">RHL = |2−5| = 3</p>
+    <p class="indent">f(2) = |2+1| = 3</p>
+    <p class="indent">LHL = RHL = f(2) = 3 ✓</p>
+    <div class="ans-line">∴ f(x) is continuous on its entire domain [−3, 7].</div>
+  </div>
+</div>
+
+<!-- Q13 -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">Q.13</div>
+    <div class="qtext">Discuss the continuity of f(x) at x = π/4, where f(x) = [(sin x + cos x)³ − 2√2]/(sin 2x − 1), for x ≠ π/4 &nbsp;|&nbsp; = 3/√2, for x = π/4</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p><b>f(π/4) = 3/√2</b></p>
+    <p>Find lim<sub>x→π/4</sub> f(x):</p>
+    <p class="indent">Let t = sin x + cos x. At x=π/4, t = √2</p>
+    <p class="indent">t² = 1 + sin 2x &nbsp;⟹&nbsp; sin 2x = t² − 1</p>
+    <p class="indent">sin 2x − 1 = t² − 2</p>
+    <p class="indent">lim = lim<sub>t→√2</sub> (t³ − 2√2)/(t² − 2)</p>
+    <p class="indent">= lim (t − √2)(t² + √2t + 2) / [(t−√2)(t+√2)]</p>
+    <p class="indent">= lim (t² + √2t + 2)/(t + √2) = (2 + 2 + 2)/(2√2) = 6/(2√2) = <b>3/√2</b></p>
+    <p>lim = 3/√2 = f(π/4) ✓</p>
+    <div class="ans-line">∴ f(x) is continuous at x = π/4.</div>
+  </div>
+</div>
+
+<!-- Q14 -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">Q.14</div>
+    <div class="qtext">Determine p and q such that f(x) = x+1 for 1&lt;x&lt;3; = x²+px+q for |x−2|≥1 is continuous on ℝ.</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>|x−2| ≥ 1 means x ≤ 1 or x ≥ 3.</p>
+    <p><b>At x = 1 (continuity from right):</b></p>
+    <p class="indent">lim<sub>x→1⁺</sub> (x+1) = 2</p>
+    <p class="indent">f(1) = 1 + p + q (from x²+px+q branch)</p>
+    <p class="indent">⟹ 1 + p + q = 2 &nbsp;⟹&nbsp; <b>p + q = 1 …(I)</b></p>
+    <p><b>At x = 3 (continuity from left):</b></p>
+    <p class="indent">lim<sub>x→3⁻</sub> (x+1) = 4</p>
+    <p class="indent">f(3) = 9 + 3p + q</p>
+    <p class="indent">⟹ 9 + 3p + q = 4 &nbsp;⟹&nbsp; <b>3p + q = −5 …(II)</b></p>
+    <p class="indent">(II) − (I): 2p = −6 → p = −3; q = 1−(−3) = 4</p>
+    <div class="ans-line">∴ p = −3, q = 4</div>
+  </div>
+</div>
+
+<!-- Q15 -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">Q.15</div>
+    <div class="qtext">Show that there is a root for 2x³ − x − 16 = 0 between 2 and 3.</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution (IVT)</div>
+    <p>Let f(x) = 2x³ − x − 16</p>
+    <p>f(x) is a polynomial → continuous everywhere.</p>
+    <p class="indent">f(2) = 2(8) − 2 − 16 = 16 − 2 − 16 = <b>−2 &lt; 0</b></p>
+    <p class="indent">f(3) = 2(27) − 3 − 16 = 54 − 3 − 16 = <b>35 &gt; 0</b></p>
+    <p>f(2) &lt; 0 and f(3) &gt; 0, so by IVT there exists c ∈ (2, 3) such that f(c) = 0.</p>
+    <div class="ans-line">∴ There is a root of 2x³ − x − 16 = 0 between 2 and 3.</div>
+  </div>
+</div>
+
+<!-- Q16 -->
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">Q.16</div>
+    <div class="qtext">Show that there is a root for x³ − 3x = 0 between 1 and 2.</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution (IVT)</div>
+    <p>Let f(x) = x³ − 3x</p>
+    <p>f(x) is a polynomial → continuous everywhere.</p>
+    <p class="indent">f(1) = 1 − 3 = <b>−2 &lt; 0</b></p>
+    <p class="indent">f(2) = 8 − 6 = <b>2 &gt; 0</b></p>
+    <p>f(1) &lt; 0 and f(2) &gt; 0, so by IVT there exists c ∈ (1, 2) such that f(c) = 0.</p>
+    <div class="ans-line">∴ There is a root of x³ − 3x = 0 between 1 and 2.</div>
+  </div>
+</div>
+
+<!-- ══════════════════════ MISCELLANEOUS EXERCISE ══════════════════════ -->
+<div class="sec-title" id="misc"><div class="sn">📋</div> Miscellaneous Exercise 8 — MCQ + Long Answers</div>
+
+<!-- PART I: MCQ -->
+<div class="ex-title">Part (I) — Multiple Choice Questions</div>
+
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">MCQ 1</div>
+    <div class="qtext">f(x) = (2^(cot x) − 1)/(π − 2x), for x ≠ π/2; = log√2 for x = π/2. Nature of f at x = π/2?</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Answer</div>
+    <p>lim<sub>x→π/2</sub> (2^(cot x) − 1)/(π − 2x)</p>
+    <p class="indent">Let t = cot x → 0 as x → π/2, and π−2x → 0</p>
+    <p class="indent">cot x ≈ (π/2 − x) = t near π/2, and π−2x = 2(π/2−x) = 2t</p>
+    <p class="indent">= lim<sub>t→0</sub> (2ᵗ−1)/(2t) = (log 2)/2 = log√2</p>
+    <p>lim = log√2 = f(π/2) ✓</p>
+    <div class="ans-line">Answer: (A) f is continuous at x = π/2</div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">MCQ 2</div>
+    <div class="qtext">f(x) = (1 − √2 sin x)/(π − 4x), for x ≠ π/4, continuous at x = π/4. Find f(π/4).</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Answer</div>
+    <p>lim<sub>x→π/4</sub> (1−√2 sin x)/(π−4x)</p>
+    <p class="indent">Let x = π/4 + h: sin x = sin(π/4+h) = (cos h + sin h)/√2</p>
+    <p class="indent">1 − √2 sin x = 1 − (cos h + sin h) = (1 − cos h) − sin h ≈ h² /2 − h as h→0</p>
+    <p class="indent">π − 4x = π − 4(π/4+h) = −4h</p>
+    <p class="indent">lim = (−h)/(−4h) = <b>1/4</b></p>
+    <div class="ans-line">Answer: (D) f(π/4) = 1/4</div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">MCQ 3</div>
+    <div class="qtext">f(x) = (sin 2x · tan 5x) / (e^(2x) − 1)², continuous at x=0. Find f(0).</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Answer</div>
+    <p>lim<sub>x→0</sub> (sin 2x)(tan 5x)/(e^(2x)−1)²</p>
+    <p class="indent">≈ (2x)(5x)/(2x)² = 10x²/4x² = 10/4 = <b>5/2</b></p>
+    <div class="ans-line">Answer: (D) f(0) = 5/2</div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">MCQ 4</div>
+    <div class="qtext">f(x) = (x² − 7x + 10)/(x² + 2x − 8), for x ∈ [−6, −3]. Where is f discontinuous?</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Answer</div>
+    <p>Denominator: x² + 2x − 8 = (x+4)(x−2) = 0 ⟹ x = −4 or x = 2</p>
+    <p>In [−6, −3]: x = −4 is in range; x = 2 is not.</p>
+    <div class="ans-line">Answer: (B) f is discontinuous at x = −4.</div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">MCQ 5</div>
+    <div class="qtext">f(x) = ax²+bx+1 for |x−1|≥3; = 4x+5 for −2&lt;x&lt;4, is continuous everywhere. Find a, b.</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Answer</div>
+    <p>|x−1| ≥ 3 means x ≤ −2 or x ≥ 4.</p>
+    <p><b>At x = −2:</b> 4(−2)+5 = −3 = a(4)+b(−2)+1 → 4a−2b = −4 → 2a−b = −2 …(I)</p>
+    <p><b>At x = 4:</b> 4(4)+5 = 21 = 16a+4b+1 → 16a+4b = 20 → 4a+b = 5 …(II)</p>
+    <p>(I)+(II): 6a = 3 → a = 1/2; b = 3</p>
+    <div class="ans-line">Answer: (A) a = 1/2, b = 3</div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">MCQ 6</div>
+    <div class="qtext">f(x) = (16ˣ−1)(9ˣ−1) / [(27ˣ−1)(32ˣ−1)], for x≠0; = k, for x=0. Continuous at x=0, find k.</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Answer</div>
+    <p>k = lim<sub>x→0</sub> [(16ˣ−1)/x · (9ˣ−1)/x] / [(27ˣ−1)/x · (32ˣ−1)/x]</p>
+    <p class="indent">= (log16 · log9) / (log27 · log32)</p>
+    <p class="indent">= (4log2 · 2log3) / (3log3 · 5log2)</p>
+    <p class="indent">= 8 log2 · log3 / (15 log3 · log2) = <b>8/15</b></p>
+    <div class="ans-line">Answer: (B) k = 8/15</div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">MCQ 7</div>
+    <div class="qtext">f(x) = (32ˣ − 8ˣ − 4ˣ + 1) / (4ˣ − 2^(x+1) + 1), for x≠0; = k, for x=0. Find k.</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Answer</div>
+    <p>Numerator: (8ˣ−1)(4ˣ−1) &nbsp;|&nbsp; Denominator: (2ˣ−1)²</p>
+    <p class="indent">k = lim [(8ˣ−1)/x · (4ˣ−1)/x] / [(2ˣ−1)/x]²</p>
+    <p class="indent">= (log8 · log4) / (log2)² = (3log2 · 2log2) / (log2)² = <b>6</b></p>
+    <div class="ans-line">Answer: (A) k = 6</div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">MCQ 8</div>
+    <div class="qtext">f(x) = (12ˣ − 4ˣ − 3ˣ + 1)/(1 − cos 2x), for x≠0, continuous at x=0. Find f(0).</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Answer</div>
+    <p>Numerator: (4ˣ−1)(3ˣ−1)</p>
+    <p>Denominator: 1 − cos 2x = 2sin²x</p>
+    <p class="indent">f(0) = lim [(4ˣ−1)/x · (3ˣ−1)/x] / [2(sin x/x)²]</p>
+    <p class="indent">= (log4 · log3) / (2·1) = (log4 · log3)/2 = <b>(log 2 · log 3 · 2)/2 = log 2 · log 3</b></p>
+    <div class="ans-line">Answer: (B) f(0) = log2 · log3</div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">MCQ 9</div>
+    <div class="qtext">f(x) = [(4+5x)/(4−7x)]^(4/x), for x≠0; f(0)=k. Continuous at x=0, find k.</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Answer</div>
+    <p>k = lim<sub>x→0</sub> [(4+5x)/(4−7x)]^(4/x)</p>
+    <p class="indent">= exp{lim (4/x) · ln[(4+5x)/(4−7x)]}</p>
+    <p class="indent">lim (1/x)[ln(4+5x) − ln(4−7x)] = 5/4 + 7/4 = 12/4 = 3</p>
+    <p class="indent">k = e^(4×3) = <b>e¹²</b></p>
+    <div class="ans-line">Answer: (C) k = e¹²</div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">MCQ 10</div>
+    <div class="qtext">f(x) = ⌊x⌋ for x ∈ (−1, 2). Where is f discontinuous?</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Answer</div>
+    <p>⌊x⌋ is discontinuous at every integer in (−1, 2): at x = 0 and x = 1.</p>
+    <div class="ans-line">Answer: (C) x = 0, 1</div>
+  </div>
+</div>
+
+<!-- PART II: Discuss Continuity -->
+<div class="ex-title">Part (II) — Discuss Continuity</div>
+
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">II.1</div>
+    <div class="qtext">f(x) = (x²−3x−10)/(x−5) for 3≤x≤6, x≠5; = 10 for x=5; = (x²−3x−10)/(x−5) for 6&lt;x≤9</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>At x = 5: lim<sub>x→5</sub> (x²−3x−10)/(x−5) = lim (x+2) = 7</p>
+    <p class="indent">f(5) = 10 ≠ 7 → Discontinuous at x = 5.</p>
+    <p>At x = 6 (junction of branches):</p>
+    <p class="indent">Both branches use same formula; lim from left = lim from right → Continuous at x = 6.</p>
+    <div class="ans-line">∴ f is discontinuous at x = 5 only (removable). Continuous elsewhere on [3,9].</div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">II.2</div>
+    <div class="qtext">f(x) = 2x²−2x+5 for 0≤x≤2; = (1−3x−x²)/(1−x) for 2&lt;x&lt;4; = (x²−25)/(x−5) for 4≤x≤7, x≠5; = 7 for x=5</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p><b>At x = 2:</b></p>
+    <p class="indent">LHL: f(2) = 2(4)−2(2)+5 = 9</p>
+    <p class="indent">RHL: lim<sub>x→2⁺</sub> (1−3x−x²)/(1−x) = (1−6−4)/(1−2) = (−9)/(−1) = 9 ✓</p>
+    <p><b>At x = 4:</b></p>
+    <p class="indent">LHL: lim<sub>x→4⁻</sub> (1−3x−x²)/(1−x) = (1−12−16)/(1−4) = (−27)/(−3) = 9</p>
+    <p class="indent">RHL: lim<sub>x→4⁺</sub> (x²−25)/(x−5) = lim (x+5) = 9 ✓</p>
+    <p><b>At x = 5:</b></p>
+    <p class="indent">lim<sub>x→5</sub> (x²−25)/(x−5) = lim (x+5) = 10 ≠ 7 = f(5) ✗</p>
+    <div class="ans-line">∴ f is continuous everywhere on [0,7] except at x = 5 (removable discontinuity).</div>
+  </div>
+</div>
+
+<!-- PART III: Jump or Removable -->
+<div class="ex-title">Part (III) — Identify Discontinuities</div>
+
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">III.1</div>
+    <div class="qtext">f(x) = x²+x−3 for x∈[−5,−2); = x²−5 for x∈(−2,5]</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>LHL at x=−2: lim (x²+x−3) = 4−2−3 = <b>−1</b></p>
+    <p>RHL at x=−2: lim (x²−5) = 4−5 = <b>−1</b></p>
+    <p>f(−2) is not defined (open intervals exclude −2).</p>
+    <div class="ans-line">∴ Removable discontinuity at x = −2. Define f(−2) = −1.</div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">III.2</div>
+    <div class="qtext">f(x) = x²+5x+1 for 0≤x≤3; = x³+x+5 for 3&lt;x≤6</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>LHL at x=3: f(3) = 9+15+1 = <b>25</b></p>
+    <p>RHL at x=3: lim<sub>x→3⁺</sub> (x³+x+5) = 27+3+5 = <b>35</b></p>
+    <p>LHL ≠ RHL</p>
+    <div class="ans-line">∴ Jump discontinuity at x = 3.</div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">III.3</div>
+    <div class="qtext">f(x) = (x²+x+1)/(x+1) for x∈[0,3); = (3x+4)/(x²−5) for x∈[3,6]</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>LHL at x=3: lim (x²+x+1)/(x+1) = (9+3+1)/4 = 13/4 = <b>3.25</b></p>
+    <p>RHL at x=3: (9+4)/(9−5) = 13/4 = <b>3.25</b> ✓</p>
+    <p>f(3) = 13/4</p>
+    <p>Check denominator of 2nd branch: x²−5 = 0 at x = √5 ∉ [3,6] → no issue</p>
+    <div class="ans-line">∴ f is continuous at x = 3. No discontinuity on [0,6].</div>
+  </div>
+</div>
+
+<!-- PART IV: Identify, State, Redefine -->
+<div class="ex-title">Part (IV) — Discuss, Identify Type, Redefine if Removable</div>
+
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">IV.1</div>
+    <div class="qtext">f(x) = (x+3)(x²−6x+8) / (x²−x−12)</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>x²−x−12 = (x−4)(x+3)</p>
+    <p>f(x) = (x+3)(x²−6x+8) / [(x−4)(x+3)] = (x²−6x+8)/(x−4) = (x−4)(x−2)/(x−4) = x−2, x≠4, x≠−3</p>
+    <p><b>At x = −3:</b> lim<sub>x→−3</sub> f(x) = −3−2 = −5 (limit exists, f undefined)</p>
+    <p class="indent">→ Removable. Redefine f(−3) = −5.</p>
+    <p><b>At x = 4:</b> lim<sub>x→4</sub> (x−2) = 2 (limit exists, f undefined)</p>
+    <p class="indent">→ Removable. Redefine f(4) = 2.</p>
+    <div class="ans-line">∴ Removable discontinuities at x = −3 (redefine as −5) and x = 4 (redefine as 2).</div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">IV.2</div>
+    <div class="qtext">f(x) = x²+2x+5 for x≤3; = x³−2x²−5 for x&gt;3</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>LHL at x=3: 9+6+5 = <b>20</b></p>
+    <p>RHL at x=3: 27−18−5 = <b>4</b></p>
+    <p>LHL ≠ RHL</p>
+    <div class="ans-line">∴ Jump discontinuity at x = 3. Not removable.</div>
+  </div>
+</div>
+
+<!-- PART V: Find k -->
+<div class="ex-title">Part (V) — Find k for continuity</div>
+
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">V.1</div>
+    <div class="qtext">f(x) = [(5x−8)/(8−3x)]^(3/(2x−4)), for x≠2; = k, for x=2</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>k = lim<sub>x→2</sub> [(5x−8)/(8−3x)]^(3/(2x−4))</p>
+    <p class="indent">At x=2: base = (10−8)/(8−6) = 2/2 = 1, exponent → ∞ → 1^∞ form</p>
+    <p class="indent">= exp{lim [3/(2x−4)] · ln[(5x−8)/(8−3x)]}</p>
+    <p class="indent">Let x = 2+h: base = (5(2+h)−8)/(8−3(2+h)) = (2+5h)/(2−3h)</p>
+    <p class="indent">ln[(2+5h)/(2−3h)] ≈ 5h/2 + 3h/2 = 4h as h→0</p>
+    <p class="indent">exponent = 3/(2h) · 4h = 6 as h→0</p>
+    <p class="indent">But more carefully: ln(1+5h/2) − ln(1−3h/2) ≈ 5h/2 + 3h/2 = 4h</p>
+    <p class="indent">= exp{(3/2h)·4h} = exp{6} ... Wait: 3/(2x−4) = 3/(2h), so = exp{(3/2h)·4h} = e^6 </p>
+    <p class="indent">Actual: (2+5h)/(2−3h) = 1 + (8h)/(2−3h) ≈ 1 + 4h as h→0</p>
+    <p class="indent">ln base ≈ 4h; exponent = 3/(2h) × 4h = 6</p>
+    <div class="ans-line">∴ k = e⁶</div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">V.2</div>
+    <div class="qtext">f(x) = (45ˣ − 9ˣ − 5ˣ + 1) / [(kˣ−1)(3ˣ−1)], for x≠0; = 2/3, for x=0</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>For continuity: lim<sub>x→0</sub> f(x) = 2/3</p>
+    <p class="indent">Numerator: 45ˣ−9ˣ−5ˣ+1 = (9ˣ−1)(5ˣ−1)</p>
+    <p class="indent">lim = [(9ˣ−1)/x · (5ˣ−1)/x] / [(kˣ−1)/x · (3ˣ−1)/x]</p>
+    <p class="indent">= (log9 · log5) / (log k · log3) = 2/3</p>
+    <p class="indent">= (2log3 · log5) / (log k · log3) = log5 · 2 / log k = 2/3</p>
+    <p class="indent">⟹ log k / log5 = 3 ⟹ log k = 3 log5 ⟹ k = 5³ = <b>125</b></p>
+    <div class="ans-line">∴ k = 125</div>
+  </div>
+</div>
+
+<!-- PART VI: Find a and b -->
+<div class="ex-title">Part (VI) — Find a and b</div>
+
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">VI.1</div>
+    <div class="qtext">f(x) = (4tan x + 5sin x)/(aˣ−1) for x&lt;0; = 9/log2 for x=0; = (11x+7x·cos x)/(bˣ−1) for x&gt;0</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>For continuity, LHL = f(0) = RHL = 9/log2</p>
+    <p><b>LHL:</b> lim<sub>x→0⁻</sub> (4tan x+5sin x)/(aˣ−1)</p>
+    <p class="indent">= lim (4·x + 5·x) / (x·log a) = 9/(log a)</p>
+    <p class="indent">9/log a = 9/log 2 ⟹ <b>a = 2</b></p>
+    <p><b>RHL:</b> lim<sub>x→0⁺</sub> (11x+7x·cos x)/(bˣ−1)</p>
+    <p class="indent">= lim x(11+7cos x)/(x·log b) = (11+7)/log b = 18/log b</p>
+    <p class="indent">18/log b = 9/log 2 ⟹ log b = 2 log 2 = log 4 ⟹ <b>b = 4</b></p>
+    <div class="ans-line">∴ a = 2, b = 4</div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">VI.2</div>
+    <div class="qtext">f(x) = ax²+bx+1 for |2x−3|≥2; = x+2 for 1/2&lt;x&lt;5/2. Find a, b.</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>|2x−3| ≥ 2 means x ≤ 1/2 or x ≥ 5/2.</p>
+    <p><b>At x = 1/2:</b></p>
+    <p class="indent">RHL = lim<sub>x→(1/2)⁺</sub> (x+2) = 5/2</p>
+    <p class="indent">f(1/2) = a/4 + b/2 + 1 = 5/2 ⟹ a + 2b = 6 …(I)</p>
+    <p><b>At x = 5/2:</b></p>
+    <p class="indent">LHL = lim<sub>x→(5/2)⁻</sub> (x+2) = 9/2</p>
+    <p class="indent">f(5/2) = 25a/4 + 5b/2 + 1 = 9/2 ⟹ 25a + 10b = 10 ⟹ 5a+2b=2 …(II)</p>
+    <p>(II)−(I): 4a = −4 → a = −1; b = (6−a)/2 = 7/2</p>
+    <div class="ans-line">∴ a = −1, b = 7/2</div>
+  </div>
+</div>
+
+<!-- PART VII: Find f(a) -->
+<div class="ex-title">Part (VII) — Find f(a) if f is continuous at x = a</div>
+
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">VII.1</div>
+    <div class="qtext">f(x) = (1 + cos(πx)) / [π(1−x)²], for x≠1. Find f(1).</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>f(1) = lim<sub>x→1</sub> (1+cos πx)/[π(1−x)²]</p>
+    <p class="indent">Let x = 1 − h, h→0: cos πx = cos π(1−h) = cos(π−πh) = −cos(πh)</p>
+    <p class="indent">1 + cos πx = 1 − cos πh = 2sin²(πh/2)</p>
+    <p class="indent">= lim<sub>h→0</sub> 2sin²(πh/2) / (πh²)</p>
+    <p class="indent">= lim 2[sin(πh/2)/(πh/2)]² × (π/2)²/π</p>
+    <p class="indent">= 2 × 1 × π²/4 / π = <b>π/2</b></p>
+    <div class="ans-line">∴ f(1) = π/2</div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">VII.2</div>
+    <div class="qtext">f(x) = (1 − cos[7(x−π)]) / [5(x−π)²], for x≠π. Find f(π).</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution</div>
+    <p>f(π) = lim<sub>x→π</sub> [1−cos 7(x−π)] / [5(x−π)²]</p>
+    <p class="indent">Let t = x − π, t→0:</p>
+    <p class="indent">= lim<sub>t→0</sub> (1−cos 7t)/(5t²) = lim 2sin²(7t/2)/(5t²)</p>
+    <p class="indent">= 2[sin(7t/2)/(7t/2)]² × (7/2)²/5 = 2×1×49/4 / 5 = <b>49/10</b></p>
+    <div class="ans-line">∴ f(π) = 49/10</div>
+  </div>
+</div>
+
+<!-- PART VIII: IVT -->
+<div class="ex-title">Part (VIII) — Solve using Intermediate Value Theorem</div>
+
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">VIII.1</div>
+    <div class="qtext">Show that 5ˣ − 6x = 0 has a root in [1, 2].</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution (IVT)</div>
+    <p>Let f(x) = 5ˣ − 6x</p>
+    <p>f is continuous on [1, 2] (exponential and linear functions are continuous).</p>
+    <p class="indent">f(1) = 5 − 6 = <b>−1 &lt; 0</b></p>
+    <p class="indent">f(2) = 25 − 12 = <b>13 &gt; 0</b></p>
+    <p>f(1) &lt; 0 and f(2) &gt; 0 → By IVT, ∃ c ∈ (1, 2) such that f(c) = 0.</p>
+    <div class="ans-line">∴ 5ˣ − 6x = 0 has a root in [1, 2].</div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head">
+    <div class="qnum">VIII.2</div>
+    <div class="qtext">Show that x³ − 5x² + 3x + 6 = 0 has at least two real roots between x = 1 and x = 5.</div>
+  </div>
+  <div class="sol">
+    <div class="sol-lbl">Solution (IVT)</div>
+    <p>Let f(x) = x³ − 5x² + 3x + 6 (polynomial → continuous everywhere)</p>
+    <p class="indent">f(1) = 1 − 5 + 3 + 6 = <b>5 &gt; 0</b></p>
+    <p class="indent">f(2) = 8 − 20 + 6 + 6 = <b>0</b> → x = 2 is itself a root!</p>
+    <p class="indent">f(3) = 27 − 45 + 9 + 6 = <b>−3 &lt; 0</b></p>
+    <p class="indent">f(5) = 125 − 125 + 15 + 6 = <b>21 &gt; 0</b></p>
+    <p>Between 1 and 3: f(1) &gt; 0, f(3) &lt; 0 → root in (1, 3) ← (x=2 confirmed)</p>
+    <p>Between 3 and 5: f(3) &lt; 0, f(5) &gt; 0 → By IVT, ∃ root in (3, 5)</p>
+    <div class="ans-line">∴ x³−5x²+3x+6 = 0 has at least two real roots between x = 1 and x = 5.</div>
+  </div>
+</div>
+
+<!-- ══════════════════════ LET'S REMEMBER ══════════════════════ -->
+<div class="sec-title" id="remember"><div class="sn">📌</div> Let's Remember — Quick Revision Summary</div>
+
+<div class="formula-box">
+  <h3>✅ 3 Conditions for Continuity at x = a</h3>
+  <div class="f">① f(a) is defined</div>
+  <div class="f">② lim<sub>x→a</sub> f(x) exists (LHL = RHL)</div>
+  <div class="f">③ lim<sub>x→a</sub> f(x) = f(a)</div>
+</div>
+
+<div class="formula-box">
+  <h3>⚠️ Types of Discontinuity</h3>
+  <table style="width:100%;border-collapse:collapse;font-size:.88rem;margin-top:8px;">
+    <tr style="background:#2e7d32;color:#fff;"><th style="padding:7px">Type</th><th style="padding:7px">Condition</th><th style="padding:7px">Fix?</th></tr>
+    <tr><td style="padding:6px;border-bottom:1px solid #c8e6c9"><b>Removable</b></td><td style="padding:6px;border-bottom:1px solid #c8e6c9">Limit exists but ≠ f(a) or f(a) undefined</td><td style="padding:6px;border-bottom:1px solid #c8e6c9">Yes — redefine f(a)</td></tr>
+    <tr><td style="padding:6px;border-bottom:1px solid #c8e6c9"><b>Jump</b></td><td style="padding:6px;border-bottom:1px solid #c8e6c9">LHL ≠ RHL (both exist)</td><td style="padding:6px;border-bottom:1px solid #c8e6c9">No</td></tr>
+    <tr><td style="padding:6px"><b>Infinite</b></td><td style="padding:6px">Limit = ±∞</td><td style="padding:6px">No</td></tr>
+  </table>
+</div>
+
+<div class="formula-box">
+  <h3>📈 Intermediate Value Theorem</h3>
+  If f is continuous on [a, b] and k is any value between f(a) and f(b), then<br/>
+  <div class="f">∃ c ∈ [a, b] such that f(c) = k</div>
+  <b>Use for root-finding:</b> If f(a) and f(b) have opposite signs, f has a root in (a, b).
+</div>
+
+<div class="formula-box">
+  <h3>💡 Key Standard Limits Used</h3>
+  <div class="f">lim<sub>x→0</sub> (sin x)/x = 1</div>
+  <div class="f">lim<sub>x→0</sub> (tan x)/x = 1</div>
+  <div class="f">lim<sub>x→0</sub> (aˣ−1)/x = log a</div>
+  <div class="f">lim<sub>x→0</sub> (1−cos x)/x² = 1/2</div>
+  <div class="f">lim<sub>x→1</sub> (xⁿ−1)/(x−1) = n</div>
+</div>
+
+</div><!-- end .wrap -->
+
+<footer>
+  <p>📚 Visions Classes · Class 11 Maths Paper 2 · Chapter 8 — Continuity</p>
+  <p>Maharashtra State Board | SSC | Complete Exercise Solutions</p>
+  <p style="margin-top:6px;"><a href="notes-class11.html" style="color:#2e7d32;font-weight:700;">← Back to Class 11 Notes</a></p>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const ham = document.getElementById('hamburger');
+  const nav = document.getElementById('navLinks');
+  if(ham) ham.addEventListener('click', () => nav && nav.classList.toggle('open'));
+</script>
+</body>
+</html>
