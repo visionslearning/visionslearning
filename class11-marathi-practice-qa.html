@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css"/>
   <link rel="icon" href="logo.png" type="image/png"/>
   <style>
-    body{background:#fff8f0;font-family:'Segoe UI',sans-serif;color:#1a1a2e;line-height:1.8;}
+    body{background:#fff8f0;font-family:'Segoe UI',sans-serif;color:#1a1a2e;line-height:1.85;}
 
     .ch-hero{background:linear-gradient(135deg,#b71c1c,#c62828,#e53935);color:#fff;padding:90px 20px 36px;text-align:center;}
     .ch-hero .badge{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 16px;font-size:.78rem;font-weight:700;letter-spacing:1px;margin-bottom:12px;}
@@ -26,31 +26,27 @@
     .note-box{background:#fff3e0;border-left:5px solid #f57c00;border-radius:0 8px 8px 0;padding:12px 16px;margin-bottom:18px;font-size:.88rem;color:#5d4037;line-height:1.8;}
     .note-box strong{color:#e65100;}
 
-    /* QUESTION CARD */
-    .qcard{background:#fff;border:1px solid #e0e0e0;border-radius:10px;margin-bottom:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.07);}
-    .qhead{background:#fff5f5;border-bottom:2px solid #ffcdd2;padding:11px 14px;display:flex;align-items:flex-start;gap:10px;}
-    .qnum{min-width:38px;height:22px;background:#c62828;color:#fff;font-size:.68rem;font-weight:800;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;padding:0 6px;}
-    .qtext{font-size:.93rem;font-weight:700;color:#1a1a2e;line-height:1.55;}
-    .marks{background:#fde68a;color:#92400e;font-size:.68rem;font-weight:800;padding:2px 8px;border-radius:10px;white-space:nowrap;margin-left:6px;flex-shrink:0;}
+    /* QUESTION CARD — Board style */
+    .qcard{background:#fff;border:1px solid #e0e0e0;border-radius:10px;margin-bottom:16px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.07);}
+    .qhead{background:#b71c1c;padding:11px 16px;display:flex;align-items:flex-start;gap:10px;}
+    .qnum{min-width:34px;height:22px;background:rgba(255,255,255,.25);color:#fff;font-size:.7rem;font-weight:800;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;padding:0 6px;}
+    .qtext{font-size:.93rem;font-weight:700;color:#fff;line-height:1.5;}
+    .marks{background:#fbbf24;color:#1a1a1a;font-size:.68rem;font-weight:800;padding:2px 8px;border-radius:10px;white-space:nowrap;margin-left:6px;flex-shrink:0;}
 
-    /* Vertical Shaalaa style */
-    .sol{padding:0;}
-    .sol-row{display:flex;align-items:flex-start;border-bottom:1px solid #ffebee;padding:8px 14px;gap:10px;font-size:.89rem;color:#374151;line-height:1.85;}
-    .sol-row:last-child{border-bottom:none;}
-    .lbl{min-width:90px;font-weight:700;font-size:.75rem;letter-spacing:.3px;flex-shrink:0;padding-top:2px;}
-    .lbl.muddaa{color:#b71c1c;}
-    .lbl.step{color:#c62828;}
-    .lbl.note{color:#e65100;}
-    .lbl.ans{color:#1b5e20;}
-    .lbl.given{color:#1565c0;}
-    .cnt{flex:1;}
-    .cnt ul{padding-left:16px;margin:4px 0;}
-    .cnt ul li{margin-bottom:4px;}
-    .ans-row{background:#f0fdf4;border-top:2px solid #43a047;padding:9px 14px;font-weight:700;color:#1b5e20;font-size:.89rem;display:flex;align-items:flex-start;gap:8px;}
-    .ans-row .lbl{color:#1b5e20;}
+    /* Board answer style */
+    .ans-body{padding:14px 18px;}
+    .ans-label{font-size:.72rem;font-weight:800;color:#b71c1c;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;}
 
-    .muddaa-box{background:#fff3e0;border:1px solid #ffcc80;border-radius:6px;padding:8px 12px;margin:5px 0;font-size:.87rem;color:#5d4037;}
-    .muddaa-box strong{color:#e65100;display:block;margin-bottom:3px;}
+    /* Muddaa list — numbered board style */
+    .muddaa-list{list-style:none;padding:0;margin:0;}
+    .muddaa-list li{display:flex;gap:10px;padding:6px 0;border-bottom:1px solid #ffebee;font-size:.9rem;color:#374151;line-height:1.75;}
+    .muddaa-list li:last-child{border-bottom:none;}
+    .muddaa-list li .num{min-width:24px;height:24px;background:#b71c1c;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;flex-shrink:0;margin-top:2px;}
+    .muddaa-list li .text{}
+    .muddaa-list li .text strong{color:#b71c1c;}
+
+    .ans-intro{font-size:.9rem;color:#374151;margin-bottom:10px;line-height:1.8;background:#fff5f5;border-left:4px solid #ef9a9a;padding:8px 12px;border-radius:0 6px 6px 0;}
+    .ans-conclusion{font-size:.88rem;color:#1b5e20;background:#f0fdf4;border-left:4px solid #43a047;padding:8px 12px;border-radius:0 6px 6px 0;margin-top:10px;font-weight:600;}
 
     footer{text-align:center;padding:22px;color:#888;font-size:.82rem;border-top:1px solid #eee;margin-top:30px;}
   </style>
@@ -75,233 +71,168 @@
 </nav>
 
 <div class="ch-hero">
-  <div class="badge">इयत्ता ११ वी · मराठी · सराव प्रश्न</div>
-  <h1>📖 मराठी — सराव प्रश्न व सविस्तर उत्तरे</h1>
-  <p>सूत्रसंचालन · मुद्रितशोधन · नाटक · व्यावसायिक / संगीत नाटक</p>
-  <p style="margin-top:8px;font-size:.8rem;opacity:.75;">पाठांतरासाठी मुद्देनिहाय उत्तरे — महाराष्ट्र राज्य मंडळ</p>
+  <div class="badge">इयत्ता ११ वी · मराठी · Maharashtra Board</div>
+  <h1>📖 मराठी — सराव प्रश्न व उत्तरे</h1>
+  <p>सूत्रसंचालन · मुद्रितशोधन · नाटक · Maharashtra Board Pattern</p>
 </div>
 
 <div class="qnav">
   <a href="#set1">📋 सराव सेट १</a>
   <a href="#set2">📋 सराव सेट २</a>
-  <a href="#tips">💡 पाठांतर टिप्स</a>
 </div>
 
 <div class="wrap">
 
 <div class="note-box">
-  <strong>📢 शिक्षकांची सूचना:</strong> वरील सर्व प्रश्न उद्या तासाला <strong>न बघता फुलस्केपवर लिहायचे आहेत.</strong> रोज असाच सराव होणार आहे. कोणीही घरी राहू नका!
+  <strong>📢 सूचना :</strong> वरील सर्व प्रश्न उद्या तासाला <strong>न बघता फुलस्केपवर लिहायचे आहेत.</strong> कोणीही घरी राहू नका!
 </div>
 
-<!-- ═══════ सराव सेट १ ═══════ -->
+<!-- ════ सराव सेट १ ════ -->
 <div class="sec-title" id="set1"><div class="sn">📋</div> सराव सेट १ — सूत्रसंचालन व मुद्रितशोधन</div>
 
 <!-- Q1 -->
 <div class="qcard">
   <div class="qhead">
-    <div class="qnum">प्र. १</div>
+    <div class="qnum">प्र.१</div>
     <div class="qtext">उत्तम सूत्रसंचालनासाठी आवश्यक असलेली कौशल्ये स्पष्ट करा.</div>
     <div class="marks">५ गुण</div>
   </div>
-  <div class="sol">
-    <div class="sol-row"><div class="lbl given">प्रस्तावना</div><div class="cnt">सूत्रसंचालन म्हणजे कार्यक्रमाचे सुसूत्र संचालन करणे. एक उत्तम सूत्रसंचालक कार्यक्रम जिवंत व प्रभावी बनवतो. त्यासाठी अनेक महत्त्वाची कौशल्ये आवश्यक असतात.</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">मुद्दा १</div><div class="cnt"><strong>भाषेवर प्रभुत्व:</strong> सूत्रसंचालकाची भाषा शुद्ध, स्पष्ट व प्रवाही असावी. योग्य शब्दांचा वापर करणे आवश्यक आहे.</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">मुद्दा २</div><div class="cnt"><strong>वाणी व उच्चारस्पष्टता:</strong> आवाज घोगरा, कापरा न होता स्पष्ट, ठाम आणि आत्मविश्वासपूर्ण असावा. श्रोत्यांपर्यंत शब्द स्पष्टपणे पोहोचले पाहिजेत.</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">मुद्दा ३</div><div class="cnt"><strong>पूर्वतयारी व माहिती:</strong> कार्यक्रमाची पूर्ण माहिती असणे गरजेचे आहे. वक्त्यांची माहिती, कार्यक्रमाचा क्रम व वेळापत्रक आधीच तयार करावे.</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">मुद्दा ४</div><div class="cnt"><strong>प्रसंगावधान व तत्परता:</strong> अचानक उद्भवणाऱ्या परिस्थितींना धीराने तोंड देण्याची क्षमता असावी. कार्यक्रमात काहीही बिघडले तरी शांत राहावे.</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">मुद्दा ५</div><div class="cnt"><strong>वेळेचे व्यवस्थापन:</strong> कार्यक्रम वेळेत पूर्ण होईल याची दक्षता घ्यावी. वक्त्यांना योग्य वेळी थांबवण्याचे कौशल्य असावे.</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">मुद्दा ६</div><div class="cnt"><strong>सभ्य व्यक्तिमत्त्व:</strong> सूट-बुटातील, नीटनेटके आणि प्रसन्न व्यक्तिमत्त्व असणे आवश्यक आहे. आत्मविश्वास व विनम्रता यांचा समतोल असावा.</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">मुद्दा ७</div><div class="cnt"><strong>श्रोत्यांशी संपर्क:</strong> श्रोत्यांना कार्यक्रमात गुंतवून ठेवण्याची कला असावी. हास्यविनोदाचा सुयोग्य वापर करावा.</div></div>
-
-    <div class="ans-row"><div class="lbl ans">∴ निष्कर्ष</div><div class="cnt">थोडक्यात, भाषाप्रभुत्व, स्पष्ट वाणी, पूर्वतयारी, प्रसंगावधान, वेळव्यवस्थापन व आत्मविश्वास ही उत्तम सूत्रसंचालनाची महत्त्वाची कौशल्ये आहेत.</div></div>
+  <div class="ans-body">
+    <div class="ans-label">✍️ उत्तर</div>
+    <p class="ans-intro">उत्तम सूत्रसंचालनासाठी पुढील कौशल्ये आवश्यक आहेत :</p>
+    <ul class="muddaa-list">
+      <li><div class="num">१</div><div class="text"><strong>भाषाप्रभुत्व :</strong> सूत्रसंचालकाची भाषा शुद्ध, स्पष्ट व प्रवाही असावी.</div></li>
+      <li><div class="num">२</div><div class="text"><strong>वाणीचा स्पष्टपणा :</strong> आवाज ठाम, आत्मविश्वासपूर्ण व स्पष्ट असावा. श्रोत्यांपर्यंत शब्द नीट पोहोचले पाहिजेत.</div></li>
+      <li><div class="num">३</div><div class="text"><strong>पूर्वतयारी :</strong> कार्यक्रमाचा क्रम, वक्त्यांची माहिती आधीच तयार असावी.</div></li>
+      <li><div class="num">४</div><div class="text"><strong>प्रसंगावधान :</strong> अचानक उद्भवणाऱ्या परिस्थितींना शांतपणे तोंड देण्याची क्षमता असावी.</div></li>
+      <li><div class="num">५</div><div class="text"><strong>वेळेचे व्यवस्थापन :</strong> कार्यक्रम वेळेत पूर्ण होईल याची दक्षता घ्यावी.</div></li>
+      <li><div class="num">६</div><div class="text"><strong>सभ्य व्यक्तिमत्त्व :</strong> नीटनेटके रूप, आत्मविश्वास व विनम्रता यांचा समतोल असावा.</div></li>
+      <li><div class="num">७</div><div class="text"><strong>श्रोत्यांशी संपर्क :</strong> श्रोत्यांना कार्यक्रमात गुंतवून ठेवण्याची कला असावी.</div></li>
+    </ul>
+    <p class="ans-conclusion">∴ थोडक्यात, भाषाप्रभुत्व, स्पष्ट वाणी, पूर्वतयारी, प्रसंगावधान व आत्मविश्वास ही उत्तम सूत्रसंचालनाची महत्त्वाची कौशल्ये आहेत.</p>
   </div>
 </div>
 
 <!-- Q2 -->
 <div class="qcard">
   <div class="qhead">
-    <div class="qnum">प्र. २</div>
+    <div class="qnum">प्र.२</div>
     <div class="qtext">'सूत्रसंचालकाने व्यवस्थित पूर्वतयारी केली तरच सूत्रसंचालन उत्तम होऊ शकते' — या विधानाची सत्यता पटवून द्या.</div>
     <div class="marks">५ गुण</div>
   </div>
-  <div class="sol">
-    <div class="sol-row"><div class="lbl given">विधान</div><div class="cnt">सूत्रसंचालन हे एका कार्यक्रमाचा आत्मा असतो. पूर्वतयारी नसेल तर सूत्रसंचालन अपयशी होते. हे विधान सत्य आहे कारण —</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">कारण १</div><div class="cnt"><strong>कार्यक्रमाचा क्रम:</strong> आगाऊ माहिती नसेल तर कार्यक्रमाचा योग्य क्रम ठरवता येत नाही. चुकीच्या क्रमाने कार्यक्रम विस्कळीत होतो.</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">कारण २</div><div class="cnt"><strong>वक्त्यांची माहिती:</strong> सूत्रसंचालकाला वक्त्यांची पार्श्वभूमी माहीत नसल्यास योग्य परिचय देता येत नाही. यामुळे वक्त्यांचा व कार्यक्रमाचा दर्जा कमी होतो.</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">कारण ३</div><div class="cnt"><strong>संभाव्य अडचणींची तयारी:</strong> पूर्वतयारीमुळे अडचणी आगाऊ ओळखता येतात व त्यावर उपाय योजता येतो. अचानक उद्भवणाऱ्या समस्यांना तोंड देण्याची क्षमता वाढते.</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">कारण ४</div><div class="cnt"><strong>आत्मविश्वास वाढतो:</strong> पूर्वतयारीमुळे मनात भीती नसते. सूत्रसंचालक आत्मविश्वासाने बोलू शकतो.</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">कारण ५</div><div class="cnt"><strong>वेळेचे व्यवस्थापन:</strong> आगाऊ नियोजन केल्यास कार्यक्रम ठरलेल्या वेळेत पूर्ण होतो. वेळेचा अपव्यय टळतो.</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">कारण ६</div><div class="cnt"><strong>भाषेची पूर्वतयारी:</strong> आगाऊ टिपणे, शब्दसंग्रह तयार करणे, काही वाक्ये मनाशी ठरवणे यामुळे बोलणे सहज व प्रभावी होते.</div></div>
-
-    <div class="ans-row"><div class="lbl ans">∴ निष्कर्ष</div><div class="cnt">म्हणूनच म्हटले जाते की — <em>"पूर्वतयारी हीच यशाची गुरुकिल्ली आहे."</em> सूत्रसंचालकाने पूर्वतयारी केली नाही तर कार्यक्रम विस्कळीत, निरुत्साही व अयशस्वी होतो. त्यामुळे वरील विधान पूर्णतः सत्य आहे.</div></div>
+  <div class="ans-body">
+    <div class="ans-label">✍️ उत्तर</div>
+    <p class="ans-intro">हे विधान पूर्णतः सत्य आहे. पूर्वतयारी हीच यशाची गुरुकिल्ली आहे. पुढील मुद्द्यांवरून हे सिद्ध होते :</p>
+    <ul class="muddaa-list">
+      <li><div class="num">१</div><div class="text"><strong>कार्यक्रमाचा योग्य क्रम :</strong> आगाऊ माहिती असल्यास कार्यक्रम विस्कळीत होत नाही.</div></li>
+      <li><div class="num">२</div><div class="text"><strong>वक्त्यांचा योग्य परिचय :</strong> वक्त्यांची पार्श्वभूमी माहीत असल्यास योग्य परिचय देता येतो.</div></li>
+      <li><div class="num">३</div><div class="text"><strong>संभाव्य अडचणींवर उपाय :</strong> पूर्वतयारीमुळे अडचणी आगाऊ ओळखता येतात व त्यावर उपाय करता येतो.</div></li>
+      <li><div class="num">४</div><div class="text"><strong>आत्मविश्वास वाढतो :</strong> पूर्वतयारीमुळे मनात भीती नसते; सूत्रसंचालक ठामपणे बोलू शकतो.</div></li>
+      <li><div class="num">५</div><div class="text"><strong>वेळेचे व्यवस्थापन :</strong> आगाऊ नियोजनामुळे कार्यक्रम ठरलेल्या वेळेत पूर्ण होतो.</div></li>
+      <li><div class="num">६</div><div class="text"><strong>भाषेची तयारी :</strong> आगाऊ टिपणे व शब्दसंग्रह तयार केल्यास बोलणे प्रवाही व प्रभावी होते.</div></li>
+    </ul>
+    <p class="ans-conclusion">∴ म्हणूनच, सूत्रसंचालकाने पूर्वतयारी केली नाही तर कार्यक्रम अयशस्वी होतो. त्यामुळे वरील विधान सत्य आहे.</p>
   </div>
 </div>
 
 <!-- Q3 -->
 <div class="qcard">
   <div class="qhead">
-    <div class="qnum">प्र. ३</div>
+    <div class="qnum">प्र.३</div>
     <div class="qtext">मुद्रितशोधन प्रक्रिया थोडक्यात वर्णन करा.</div>
     <div class="marks">५ गुण</div>
   </div>
-  <div class="sol">
-    <div class="sol-row"><div class="lbl given">व्याख्या</div><div class="cnt"><strong>मुद्रितशोधन म्हणजे:</strong> छपाईपूर्वी मुद्रित प्रत तपासून त्यातील चुका दुरुस्त करण्याची प्रक्रिया होय. हे काम करणाऱ्याला <em>मुद्रितशोधक (Proofreader)</em> म्हणतात.</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">टप्पा १</div><div class="cnt"><strong>प्रत तयार करणे:</strong> लेखकाने लिहिलेली हस्तलिखित प्रत छपाईसाठी कम्पोज (टाईप) केली जाते. या छापील प्रतीला 'पहिली प्रत' म्हणतात.</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">टप्पा २</div><div class="cnt"><strong>तुलनात्मक वाचन:</strong> मुद्रितशोधक मूळ हस्तलिखिताशी छापील प्रत ओळ-ओळ, शब्द-शब्द तुलना करतो. कोणतेही अक्षर, शब्द, विरामचिन्ह यांच्या चुका शोधतो.</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">टप्पा ३</div><div class="cnt"><strong>चुका नोंदवणे:</strong> आढळलेल्या चुका ठरलेल्या खुणांनी (Proofreading symbols) नोंदवल्या जातात. उदा. — चुकीचे शब्द, जादा अक्षरे, गाळलेले शब्द, विरामचिन्हे.</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">टप्पा ४</div><div class="cnt"><strong>दुरुस्ती करणे:</strong> नोंदवलेल्या चुकांनुसार कम्पोझिटर दुरुस्ती करतो. दुसऱ्यांदा प्रत छापून दिली जाते.</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">टप्पा ५</div><div class="cnt"><strong>पुन्हा तपासणी:</strong> दुरुस्त प्रत पुन्हा एकदा तपासली जाते. सर्व चुका योग्य रीतीने दुरुस्त झाल्या का हे पाहिले जाते.</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">टप्पा ६</div><div class="cnt"><strong>अंतिम मान्यता:</strong> सर्व चुका दुरुस्त झाल्यानंतर प्रत छपाईसाठी अंतिम मान्यता दिली जाते. या प्रतीला 'पास फॉर प्रेस' म्हणतात.</div></div>
-
-    <div class="sol-row"><div class="lbl note">महत्त्व</div><div class="cnt">मुद्रितशोधनामुळे —  चुकांशिवाय दर्जेदार मजकूर प्रकाशित होतो; लेखकाच्या आशयाशी न्याय होतो; वाचकांना योग्य माहिती मिळते.</div></div>
-
-    <div class="ans-row"><div class="lbl ans">∴ निष्कर्ष</div><div class="cnt">मुद्रितशोधन ही एक काळजीपूर्वक, जबाबदारीने करण्याची प्रक्रिया आहे. ती छपाई उद्योगाचा अत्यंत महत्त्वाचा भाग आहे.</div></div>
+  <div class="ans-body">
+    <div class="ans-label">✍️ उत्तर</div>
+    <p class="ans-intro"><strong>मुद्रितशोधन म्हणजे</strong> छपाईपूर्वी मुद्रित प्रत तपासून त्यातील चुका दुरुस्त करण्याची प्रक्रिया. हे काम करणाऱ्याला <em>मुद्रितशोधक</em> म्हणतात. मुद्रितशोधनाचे पुढील टप्पे असतात :</p>
+    <ul class="muddaa-list">
+      <li><div class="num">१</div><div class="text"><strong>प्रत तयार करणे :</strong> लेखकाची हस्तलिखित प्रत कम्पोज (टाईप) केली जाते. या छापील प्रतीला 'पहिली प्रत' म्हणतात.</div></li>
+      <li><div class="num">२</div><div class="text"><strong>तुलनात्मक वाचन :</strong> मुद्रितशोधक मूळ हस्तलिखिताशी छापील प्रत ओळ-ओळ तपासतो. चुकीचे शब्द, गाळलेले अक्षर, विरामचिन्हे यांच्या चुका शोधतो.</div></li>
+      <li><div class="num">३</div><div class="text"><strong>चुका नोंदवणे :</strong> ठरलेल्या खुणांनी (Proofreading symbols) चुका नोंदवल्या जातात.</div></li>
+      <li><div class="num">४</div><div class="text"><strong>दुरुस्ती करणे :</strong> नोंदवलेल्या चुकांनुसार कम्पोझिटर दुरुस्ती करतो.</div></li>
+      <li><div class="num">५</div><div class="text"><strong>पुन्हा तपासणी :</strong> दुरुस्त प्रत पुन्हा एकदा तपासली जाते. सर्व चुका नीट दुरुस्त झाल्या का ते पाहिले जाते.</div></li>
+      <li><div class="num">६</div><div class="text"><strong>अंतिम मान्यता :</strong> सर्व चुका दुरुस्त झाल्यानंतर प्रत छपाईसाठी 'पास फॉर प्रेस' केली जाते.</div></li>
+    </ul>
+    <p class="ans-conclusion">∴ मुद्रितशोधनामुळे चुकांशिवाय दर्जेदार मजकूर प्रकाशित होतो व वाचकांना योग्य माहिती मिळते.</p>
   </div>
 </div>
 
-<!-- ═══════ सराव सेट २ ═══════ -->
+<!-- ════ सराव सेट २ ════ -->
 <div class="sec-title" id="set2"><div class="sn">📋</div> सराव सेट २ — नाटक</div>
 
 <!-- Q4 -->
 <div class="qcard">
   <div class="qhead">
-    <div class="qnum">प्र. १</div>
+    <div class="qnum">प्र.१</div>
     <div class="qtext">व्यावसायिक नाटकाचे स्वरूप आणि वैशिष्ट्ये लिहा.</div>
     <div class="marks">५ गुण</div>
   </div>
-  <div class="sol">
-    <div class="sol-row"><div class="lbl given">व्याख्या</div><div class="cnt">व्यावसायिक नाटक म्हणजे नफा मिळवण्याच्या उद्देशाने व्यावसायिक पातळीवर सादर केले जाणारे नाटक. तिकीट काढून प्रेक्षक हे नाटक पाहतात.</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">स्वरूप</div><div class="cnt">
-      <ul>
-        <li>व्यावसायिक नाटके नाट्यगृहात / नाट्यमंदिरात सादर केली जातात.</li>
-        <li>निर्मात्या, दिग्दर्शक व कलाकार यांना मोबदला दिला जातो.</li>
-        <li>प्रेक्षकांना तिकीट विकत घेऊन पाहावे लागते.</li>
-        <li>व्यापारी तत्त्वावर संपूर्ण संघटन केले जाते.</li>
-      </ul>
-    </div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">वैशिष्ट्ये</div><div class="cnt">
-      <ul>
-        <li><strong>मनोरंजनप्रधान:</strong> प्रेक्षकांना खूश ठेवणे हा मुख्य हेतू असतो.</li>
-        <li><strong>भव्य सादरीकरण:</strong> भव्य नेपथ्य, वेशभूषा, प्रकाशयोजना असते.</li>
-        <li><strong>लोकप्रिय विषय:</strong> सामाजिक, कौटुंबिक, विनोदी विषय निवडले जातात.</li>
-        <li><strong>प्रसिद्ध कलाकार:</strong> नामवंत अभिनेत्यांची उपस्थिती असते.</li>
-        <li><strong>जास्त प्रयोग:</strong> यशस्वी नाटकांचे शेकडो प्रयोग होतात.</li>
-        <li><strong>जाहिरात:</strong> व्यापक जाहिरातबाजी केली जाते.</li>
-      </ul>
-    </div></div>
-
-    <div class="sol-row"><div class="lbl note">उदाहरण</div><div class="cnt">'वस्त्रहरण', 'तू तू मी मी', 'घराबाहेर' ही मराठी व्यावसायिक नाटके आहेत.</div></div>
-
-    <div class="ans-row"><div class="lbl ans">∴ निष्कर्ष</div><div class="cnt">व्यावसायिक नाटक हे मनोरंजन, कला आणि व्यापार यांचे एक अनोखे मिश्रण आहे. मराठी रंगभूमीच्या विकासात त्याचे मोठे योगदान आहे.</div></div>
+  <div class="ans-body">
+    <div class="ans-label">✍️ उत्तर</div>
+    <p class="ans-intro"><strong>व्यावसायिक नाटक म्हणजे</strong> नफा मिळवण्याच्या उद्देशाने व्यावसायिक पातळीवर तिकीट काढून पाहण्यासाठी सादर केले जाणारे नाटक. त्याचे स्वरूप व वैशिष्ट्ये पुढीलप्रमाणे :</p>
+    <ul class="muddaa-list">
+      <li><div class="num">१</div><div class="text"><strong>मनोरंजनप्रधान :</strong> प्रेक्षकांना खूश ठेवणे हा मुख्य हेतू असतो.</div></li>
+      <li><div class="num">२</div><div class="text"><strong>तिकीट विक्री :</strong> प्रेक्षकांना तिकीट विकत घेऊन नाटक पाहावे लागते.</div></li>
+      <li><div class="num">३</div><div class="text"><strong>भव्य सादरीकरण :</strong> भव्य नेपथ्य, वेशभूषा व प्रकाशयोजना असते.</div></li>
+      <li><div class="num">४</div><div class="text"><strong>लोकप्रिय विषय :</strong> सामाजिक, कौटुंबिक व विनोदी विषय निवडले जातात.</div></li>
+      <li><div class="num">५</div><div class="text"><strong>नामवंत कलाकार :</strong> प्रसिद्ध अभिनेत्यांचा सहभाग असतो.</div></li>
+      <li><div class="num">६</div><div class="text"><strong>जाहिरातबाजी :</strong> नाटकाची व्यापक जाहिरात केली जाते.</div></li>
+      <li><div class="num">७</div><div class="text"><strong>जास्त प्रयोग :</strong> यशस्वी नाटकांचे शेकडो प्रयोग होतात.</div></li>
+    </ul>
+    <p class="ans-conclusion">∴ व्यावसायिक नाटक हे मनोरंजन, कला आणि व्यापार यांचे एक अनोखे मिश्रण आहे.</p>
   </div>
 </div>
 
 <!-- Q5 -->
 <div class="qcard">
   <div class="qhead">
-    <div class="qnum">प्र. २</div>
+    <div class="qnum">प्र.२</div>
     <div class="qtext">संगीत नाटकाचे स्वरूप आणि वैशिष्ट्ये स्पष्ट करा.</div>
     <div class="marks">५ गुण</div>
   </div>
-  <div class="sol">
-    <div class="sol-row"><div class="lbl given">व्याख्या</div><div class="cnt">संगीत नाटक म्हणजे ज्यामध्ये संवाद, अभिनय यांच्या जोडीने संगीत, गायन, वाद्यसंगीत यांचा प्रामुख्याने उपयोग केला जातो असे नाटक. हा मराठी नाट्यसृष्टीचा महत्त्वाचा वाङ्मय प्रकार आहे.</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">स्वरूप</div><div class="cnt">
-      <ul>
-        <li>नाटकात पद्यरूप संवाद व गाणी असतात.</li>
-        <li>पात्रे गाण्याद्वारे भावना व्यक्त करतात.</li>
-        <li>वाद्यवृंद (Orchestra) नाटकाचा अविभाज्य भाग असतो.</li>
-        <li>रागदारी संगीताचा आधार घेतला जातो.</li>
-      </ul>
-    </div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">वैशिष्ट्ये</div><div class="cnt">
-      <ul>
-        <li><strong>संगीतप्रधानता:</strong> संपूर्ण नाटकात संगीत व गायन यांची प्रमुख भूमिका असते.</li>
-        <li><strong>गेयसंवाद:</strong> संवाद पद्यरूपात असतात, गायले जातात.</li>
-        <li><strong>भावनाप्रधानता:</strong> संगीताद्वारे पात्रांच्या भावना अधिक तीव्रतेने मांडल्या जातात.</li>
-        <li><strong>शास्त्रीय संगीत:</strong> हिंदुस्तानी रागदारी संगीताचा वापर होतो.</li>
-        <li><strong>अभिनय व गायन:</strong> कलाकाराला अभिनय आणि गायन दोन्ही येणे आवश्यक असते.</li>
-        <li><strong>भव्यता:</strong> वेशभूषा, नेपथ्य व रंगमंच अत्यंत भव्य असतो.</li>
-      </ul>
-    </div></div>
-
-    <div class="sol-row"><div class="lbl note">उदाहरण</div><div class="cnt">कीर्तनात, संत नाटके — 'संगीत मृच्छकटिक', 'संगीत शारदा', 'संगीत सौभद्र' (बालगंधर्व) ही प्रसिद्ध संगीत नाटके आहेत.</div></div>
-
-    <div class="ans-row"><div class="lbl ans">∴ निष्कर्ष</div><div class="cnt">संगीत नाटक हा मराठी संस्कृतीचा अभिमानास्पद वारसा आहे. बालगंधर्वांनी या प्रकाराला सुवर्णयुग प्राप्त करून दिले.</div></div>
+  <div class="ans-body">
+    <div class="ans-label">✍️ उत्तर</div>
+    <p class="ans-intro"><strong>संगीत नाटक म्हणजे</strong> ज्यामध्ये संवाद व अभिनय यांच्याबरोबर संगीत, गायन व वाद्यसंगीत यांचा प्रामुख्याने उपयोग केला जातो असे नाटक. त्याचे स्वरूप व वैशिष्ट्ये :</p>
+    <ul class="muddaa-list">
+      <li><div class="num">१</div><div class="text"><strong>संगीतप्रधानता :</strong> संपूर्ण नाटकात संगीत व गायन यांची प्रमुख भूमिका असते.</div></li>
+      <li><div class="num">२</div><div class="text"><strong>गेयसंवाद :</strong> संवाद पद्यरूपात असतात; पात्रे गाण्याद्वारे भावना व्यक्त करतात.</div></li>
+      <li><div class="num">३</div><div class="text"><strong>वाद्यवृंद :</strong> वाद्यवृंद (Orchestra) नाटकाचा अविभाज्य भाग असतो.</div></li>
+      <li><div class="num">४</div><div class="text"><strong>शास्त्रीय संगीत :</strong> हिंदुस्तानी रागदारी संगीताचा वापर होतो.</div></li>
+      <li><div class="num">५</div><div class="text"><strong>अभिनय व गायन :</strong> कलाकाराला अभिनय आणि गायन दोन्ही येणे आवश्यक असते.</div></li>
+      <li><div class="num">६</div><div class="text"><strong>भावनाप्रधानता :</strong> संगीताद्वारे पात्रांच्या भावना अधिक तीव्रतेने मांडल्या जातात.</div></li>
+    </ul>
+    <p class="ans-conclusion">∴ संगीत नाटक हा मराठी संस्कृतीचा अभिमानास्पद वारसा आहे. बालगंधर्वांनी या प्रकाराला सुवर्णयुग प्राप्त करून दिले.</p>
   </div>
 </div>
 
 <!-- Q6 -->
 <div class="qcard">
   <div class="qhead">
-    <div class="qnum">प्र. ३</div>
+    <div class="qnum">प्र.३</div>
     <div class="qtext">'नाटक हा वाङ्मय प्रकार इतर वाङ्मय प्रकारापेक्षा वेगळा आहे.' — हे विधान स्पष्ट करा.</div>
     <div class="marks">५ गुण</div>
   </div>
-  <div class="sol">
-    <div class="sol-row"><div class="lbl given">प्रस्तावना</div><div class="cnt">वाङ्मय प्रकारांमध्ये कविता, कथा, कादंबरी, नाटक इत्यादी येतात. परंतु नाटक हा प्रकार इतर सर्व प्रकारांपेक्षा निराळा व वेगळा आहे, कारण —</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">फरक १</div><div class="cnt"><strong>प्रत्यक्ष सादरीकरण:</strong> कविता, कथा वाचल्या जातात; परंतु नाटक रंगमंचावर <em>प्रत्यक्ष सादर केले जाते.</em> त्यात जिवंत पात्रे असतात.</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">फरक २</div><div class="cnt"><strong>एकाधिक कला एकत्र:</strong> नाटकात अभिनय, संवाद, संगीत, नृत्य, नेपथ्य, प्रकाशयोजना, वेशभूषा या सर्व कला एकत्र असतात. इतर वाङ्मय प्रकारांत असे नसते.</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">फरक ३</div><div class="cnt"><strong>प्रेक्षक-कलाकार संवाद:</strong> नाटकात प्रेक्षक व कलाकार यांचा थेट संपर्क असतो. प्रेक्षकांच्या प्रतिक्रिया कलाकारांवर त्वरित परिणाम करतात. हे इतर प्रकारांत नसते.</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">फरक ४</div><div class="cnt"><strong>वेळ-मर्यादा:</strong> नाटक ठरलेल्या वेळेत सादर करावे लागते. त्यात कापाकापी करता येत नाही. परंतु कादंबरी/कविता वाचताना वेळाचे बंधन नसते.</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">फरक ५</div><div class="cnt"><strong>संघकार्य:</strong> नाटक तयार होण्यासाठी अनेक कलाकार, दिग्दर्शक, नेपथ्यकार एकत्र काम करतात. कविता/कथा एकट्या लेखकाची निर्मिती असते.</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">फरक ६</div><div class="cnt"><strong>भाषेचे स्वरूप:</strong> नाटकातील भाषा संवादरूप, नाट्यमय व कृतीशील असते. ती केवळ वाचण्यासाठी नव्हे तर बोलण्यासाठी असते.</div></div>
-
-    <div class="sol-row"><div class="lbl muddaa">फरक ७</div><div class="cnt"><strong>तात्कालिकता:</strong> नाटकाचे प्रयोग क्षणिक असतात — एकदा झाला की संपला. पुस्तकातील कविता किंवा कथा कायम टिकते.</div></div>
-
-    <div class="ans-row"><div class="lbl ans">∴ निष्कर्ष</div><div class="cnt">नाटक हे केवळ वाचण्याचे साहित्य नसून ते <em>पाहण्याचे, अनुभवण्याचे व जगण्याचे</em> साहित्य आहे. म्हणूनच नाटक हा वाङ्मय प्रकार इतर प्रकारांपेक्षा वेगळा व वैशिष्ट्यपूर्ण आहे — हे विधान पूर्णतः सत्य आहे.</div></div>
-  </div>
-</div>
-
-<!-- पाठांतर टिप्स -->
-<div class="sec-title" id="tips"><div class="sn">💡</div> पाठांतर टिप्स — लक्षात ठेवण्यासाठी</div>
-
-<div class="qcard">
-  <div class="qhead"><div class="qnum">टिप</div><div class="qtext">प्रश्न लक्षात ठेवण्याची सोपी पद्धत</div></div>
-  <div class="sol">
-    <div class="sol-row"><div class="lbl muddaa">सूत्रसंचालन</div><div class="cnt"><strong>भाषा-वाणी-माहिती-प्रसंगावधान-वेळ-व्यक्तिमत्त्व</strong> — हे ६ मुद्दे लक्षात ठेवा.</div></div>
-    <div class="sol-row"><div class="lbl muddaa">पूर्वतयारी</div><div class="cnt"><strong>क्रम-माहिती-अडचणी-आत्मविश्वास-वेळ-भाषा</strong> — ६ कारणे लक्षात ठेवा.</div></div>
-    <div class="sol-row"><div class="lbl muddaa">मुद्रितशोधन</div><div class="cnt"><strong>प्रत → तुलना → नोंद → दुरुस्ती → पुन्हा तपासणी → मान्यता</strong> — ६ टप्पे लक्षात ठेवा.</div></div>
-    <div class="sol-row"><div class="lbl muddaa">व्यावसायिक नाटक</div><div class="cnt"><strong>मनोरंजन-भव्यता-लोकप्रिय विषय-नामवंत कलाकार-जाहिरात-तिकीट</strong></div></div>
-    <div class="sol-row"><div class="lbl muddaa">संगीत नाटक</div><div class="cnt"><strong>संगीतप्रधान-गेयसंवाद-भावना-शास्त्रीय संगीत-अभिनय+गायन-भव्यता</strong></div></div>
-    <div class="sol-row"><div class="lbl muddaa">नाटक वेगळे का?</div><div class="cnt"><strong>सादरीकरण-एकाधिक कला-प्रेक्षक संवाद-वेळमर्यादा-संघकार्य-भाषा-तात्कालिकता</strong> — ७ फरक</div></div>
-    <div class="ans-row"><div class="lbl ans">💡 सल्ला</div><div class="cnt">प्रत्येक मुद्दा एकदा मोठ्याने वाचा → नंतर झाकून सांगण्याचा प्रयत्न करा → उद्या फुलस्केपवर लिहा!</div></div>
+  <div class="ans-body">
+    <div class="ans-label">✍️ उत्तर</div>
+    <p class="ans-intro">नाटक हा वाङ्मय प्रकार खालील कारणांमुळे इतर प्रकारांपेक्षा वेगळा आहे :</p>
+    <ul class="muddaa-list">
+      <li><div class="num">१</div><div class="text"><strong>प्रत्यक्ष सादरीकरण :</strong> कविता व कथा वाचल्या जातात; परंतु नाटक रंगमंचावर जिवंत पात्रांद्वारे प्रत्यक्ष सादर केले जाते.</div></li>
+      <li><div class="num">२</div><div class="text"><strong>एकाधिक कलांचा संगम :</strong> नाटकात अभिनय, संगीत, नृत्य, नेपथ्य, प्रकाशयोजना या सर्व कला एकत्र असतात.</div></li>
+      <li><div class="num">३</div><div class="text"><strong>प्रेक्षक-कलाकार थेट संवाद :</strong> नाटकात प्रेक्षक व कलाकार यांचा थेट संपर्क असतो; प्रेक्षकांच्या प्रतिक्रिया तत्काळ जाणवतात.</div></li>
+      <li><div class="num">४</div><div class="text"><strong>वेळ-मर्यादा :</strong> नाटक ठरलेल्या वेळेत सादर करावे लागते. इतर वाङ्मय वाचताना वेळाचे बंधन नसते.</div></li>
+      <li><div class="num">५</div><div class="text"><strong>संघकार्य :</strong> नाटकासाठी दिग्दर्शक, कलाकार, नेपथ्यकार हे एकत्र काम करतात. इतर प्रकार एकट्या लेखकाची निर्मिती असतात.</div></li>
+      <li><div class="num">६</div><div class="text"><strong>नाट्यमय भाषा :</strong> नाटकातील भाषा संवादरूप, जिवंत व कृतिशील असते — ती बोलण्यासाठी असते.</div></li>
+      <li><div class="num">७</div><div class="text"><strong>तात्कालिकता :</strong> नाटकाचा प्रयोग क्षणिक असतो. पुस्तकातील कथा-कविता कायम टिकते.</div></li>
+    </ul>
+    <p class="ans-conclusion">∴ नाटक हे केवळ वाचण्याचे नव्हे तर पाहण्याचे व अनुभवण्याचे साहित्य आहे. म्हणूनच ते इतर वाङ्मय प्रकारांपेक्षा वेगळे व वैशिष्ट्यपूर्ण आहे.</p>
   </div>
 </div>
 
 </div><!-- end .wrap -->
 
 <footer>
-  <p>📚 Visions Classes · इयत्ता ११ वी मराठी · सराव प्रश्न व उत्तरे</p>
-  <p>महाराष्ट्र राज्य मंडळ | सूत्रसंचालन · मुद्रितशोधन · नाटक</p>
+  <p>📚 Visions Classes · इयत्ता ११ वी मराठी · Maharashtra Board Pattern</p>
+  <p>सूत्रसंचालन · मुद्रितशोधन · नाटक — सविस्तर उत्तरे</p>
   <p style="margin-top:6px;"><a href="notes-class11.html" style="color:#b71c1c;font-weight:700;">← परत Class 11 Notes वर जा</a></p>
 </footer>
 
