@@ -8,71 +8,93 @@
   <link rel="icon" href="logo.png" type="image/png"/>
   <style>
     #vlScreenLayer{display:block;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;}
-    #vlPrintLayer{display:none;position:absolute;top:0;left:0;width:100%;pointer-events:none;z-index:9999;}
+    #vlPrintLayer{display:none;}
     @media print{#vlScreenLayer{display:none!important;}#vlPrintLayer{display:block!important;}body{position:relative!important;}}
-    body{background:#f4f6fb;}
+    body{background:#f5f5f5;font-family:'Segoe UI',sans-serif;color:#1a1a2e;}
 
-    .ch-hero{background:linear-gradient(135deg,#4a148c,#6a1b9a,#7b1fa2);color:#fff;padding:28px 20px 24px;text-align:center;}
-    .ch-hero .badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 16px;font-size:.72rem;letter-spacing:1px;margin-bottom:10px;}
+    /* HERO */
+    .ch-hero{background:linear-gradient(135deg,#4a148c,#6a1b9a,#7b1fa2);color:#fff;padding:30px 20px 22px;text-align:center;}
+    .ch-hero .badge{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 16px;font-size:.72rem;letter-spacing:1px;margin-bottom:10px;}
     .ch-hero h1{font-size:clamp(1.3rem,4vw,1.9rem);font-weight:900;margin-bottom:5px;}
     .ch-hero p{font-size:.88rem;opacity:.85;}
 
-    .qnav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:12px 16px;background:#fff;border-bottom:1px solid #e1bee7;position:sticky;top:0;z-index:100;}
-    .qnav a{background:#f3e5f5;color:#6a1b9a;border:1px solid #ce93d8;padding:5px 13px;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;}
+    /* STICKY NAV */
+    .qnav{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;padding:10px 14px;background:#fff;border-bottom:2px solid #e1bee7;position:sticky;top:0;z-index:100;}
+    .qnav a{background:#f3e5f5;color:#6a1b9a;border:1px solid #ce93d8;padding:5px 12px;border-radius:20px;font-size:.74rem;font-weight:700;text-decoration:none;white-space:nowrap;}
     .qnav a:hover{background:#6a1b9a;color:#fff;}
 
-    .wrap{max-width:820px;margin:0 auto;padding:0 16px 40px;}
+    .wrap{max-width:820px;margin:0 auto;padding:0 14px 50px;}
 
-    .sec-title{display:flex;align-items:center;gap:12px;background:linear-gradient(90deg,#4a148c,#6a1b9a);color:#fff;padding:11px 16px;border-radius:10px;margin:26px 0 12px;font-size:1rem;font-weight:800;}
-    .sec-title .sn{min-width:28px;height:28px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:900;}
+    /* SECTION TITLE */
+    .sec-title{display:flex;align-items:center;gap:10px;background:linear-gradient(90deg,#4a148c,#7b1fa2);color:#fff;padding:10px 16px;border-radius:9px;margin:28px 0 12px;font-size:.98rem;font-weight:800;}
+    .sec-title .sn{min-width:26px;height:26px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:900;}
 
-    .formula-box{background:#f3e5f5;border:1px solid #ce93d8;border-radius:8px;padding:12px 16px;margin-bottom:14px;font-size:.9rem;line-height:1.9;}
-    .formula-box h3{color:#6a1b9a;font-size:.92rem;font-weight:800;margin-bottom:6px;}
-    .f{background:#fff;border:1.5px solid #6a1b9a;border-radius:5px;padding:4px 12px;font-size:.9rem;display:inline-block;margin:3px 4px;}
+    /* THEORY BOX */
+    .theory{background:#fff;border-radius:9px;border-left:5px solid #7b1fa2;padding:14px 18px;margin-bottom:13px;box-shadow:0 2px 6px rgba(0,0,0,.06);}
+    .theory h4{color:#4a148c;font-size:.93rem;margin-bottom:7px;}
+    .theory p,.theory li{font-size:.89rem;line-height:1.85;color:#374151;}
+    .theory ul{padding-left:18px;margin:4px 0;}
+    .fbox{background:#f3e5f5;border:1.5px solid #ce93d8;border-radius:6px;padding:7px 14px;font-size:.89rem;display:inline-block;margin:3px 4px;font-family:'Courier New',monospace;color:#4a148c;}
 
-    .def-box{background:#ede7f6;border-left:5px solid #7b1fa2;border-radius:0 8px 8px 0;padding:11px 16px;margin:10px 0 14px;font-size:.9rem;line-height:1.85;}
-    .def-box strong{color:#4a148c;}
+    /* EXERCISE TITLE BAR */
+    .ex-bar{background:#ede7f6;border-left:5px solid #6a1b9a;padding:8px 14px;border-radius:0 7px 7px 0;margin:22px 0 10px;font-weight:800;color:#4a148c;font-size:.94rem;}
 
-    .warn-box{background:#fff8e1;border-left:5px solid #ffa000;border-radius:0 8px 8px 0;padding:10px 16px;margin:10px 0;font-size:.88rem;color:#5d4037;}
+    /* QUESTION CARD — Shaalaa style */
+    .qcard{background:#fff;border:1px solid #e0e0e0;border-radius:9px;margin-bottom:13px;overflow:hidden;box-shadow:0 2px 7px rgba(0,0,0,.07);}
 
-    .qcard{background:#fff;border:1px solid #e2e8f0;border-radius:8px;margin-bottom:12px;overflow:hidden;page-break-inside:avoid;}
-    .qcard-head{background:#faf5ff;border-bottom:1px solid #e2e8f0;padding:9px 14px;display:flex;align-items:flex-start;gap:10px;}
-    .qnum{min-width:38px;height:22px;background:#6a1b9a;color:#fff;font-size:.68rem;font-weight:800;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;padding:0 5px;}
-    .qtext{font-size:.91rem;font-weight:600;color:#1a1a2e;line-height:1.5;}
+    /* Question header */
+    .qhead{background:#f8f4ff;border-bottom:2px solid #e1bee7;padding:10px 14px;display:flex;align-items:flex-start;gap:10px;}
+    .qbadge{min-width:42px;height:22px;background:#6a1b9a;color:#fff;font-size:.67rem;font-weight:800;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;padding:0 6px;white-space:nowrap;}
+    .qtext{font-size:.9rem;font-weight:600;color:#1a1a2e;line-height:1.55;}
 
-    .sol{padding:12px 16px;border-top:2px solid #f3e5f5;}
-    .sol-lbl{font-size:.68rem;font-weight:800;letter-spacing:1px;color:#6a1b9a;text-transform:uppercase;margin-bottom:8px;}
-    .sol p{font-size:.92rem;line-height:1.9;margin-bottom:2px;}
-    .sol .indent{padding-left:20px;}
-    .sol .indent2{padding-left:36px;}
-    .sol .ans-line{background:#f0fdf4;border-left:3px solid #16a34a;padding:4px 10px;border-radius:0 4px 4px 0;font-weight:700;color:#14532d;font-size:.9rem;margin:5px 0;}
-    .sol .note-line{background:#fff7ed;border-left:3px solid #f97316;padding:4px 10px;border-radius:0 4px 4px 0;font-size:.83rem;color:#9a3412;margin:4px 0;}
+    /* Solution body — vertical Shaalaa style */
+    .sol-body{padding:0;}
 
-    .part-lbl{font-weight:700;color:#6a1b9a;font-size:.87rem;margin:10px 0 4px;}
-    .part-divider{border:none;border-top:1px dashed #e1bee7;margin:10px 0;}
-    .ex-title{background:#ede7f6;border-left:5px solid #6a1b9a;padding:8px 14px;border-radius:0 6px 6px 0;margin:20px 0 12px;font-weight:800;color:#4a148c;font-size:.95rem;}
+    /* Each row */
+    .sol-row{display:flex;align-items:flex-start;border-bottom:1px solid #f3e5f5;padding:7px 14px;gap:10px;font-size:.89rem;color:#374151;line-height:1.75;}
+    .sol-row:last-child{border-bottom:none;}
 
-    table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.85rem;}
-    th{background:#6a1b9a;color:#fff;padding:8px 10px;text-align:center;}
-    td{padding:7px 10px;border-bottom:1px solid #e1bee7;text-align:center;}
-    tr:nth-child(even) td{background:#fdf5ff;}
+    /* Label column */
+    .lbl{min-width:88px;font-weight:700;font-size:.78rem;letter-spacing:.3px;flex-shrink:0;padding-top:2px;}
+    .lbl.given{color:#1565c0;}
+    .lbl.tofind{color:#6a1b9a;}
+    .lbl.step{color:#6a1b9a;}
+    .lbl.note{color:#e65100;}
+    .lbl.ans{color:#1b5e20;}
+    .lbl.formula{color:#880e4f;}
+    .lbl.verify{color:#00695c;}
 
-    footer{text-align:center;padding:20px;color:#777;font-size:.82rem;border-top:1px solid #eee;margin-top:40px;}
+    /* Content column */
+    .cnt{flex:1;}
+    .cnt code{background:#f3e5f5;border-radius:3px;padding:1px 5px;font-size:.87rem;color:#4a148c;font-family:'Courier New',monospace;}
+
+    /* Answer highlight row */
+    .ans-row{background:#f0fdf4;border-top:2px solid #43a047;padding:9px 14px;font-weight:700;color:#1b5e20;font-size:.9rem;display:flex;align-items:center;gap:8px;}
+    .ans-row .lbl{color:#1b5e20;}
+
+    /* Sub-part divider */
+    .part-div{border:none;border-top:1px dashed #e1bee7;margin:6px 0;}
+
+    /* Table */
+    table.sol-tbl{width:100%;border-collapse:collapse;margin:6px 0;font-size:.85rem;}
+    table.sol-tbl th{background:#6a1b9a;color:#fff;padding:7px 10px;text-align:center;}
+    table.sol-tbl td{padding:6px 10px;border-bottom:1px solid #e1bee7;text-align:center;}
+    table.sol-tbl tr:nth-child(even) td{background:#fdf5ff;}
+
+    footer{text-align:center;padding:22px;color:#888;font-size:.82rem;border-top:1px solid #eee;margin-top:40px;}
   </style>
 </head>
 <body>
 
 <div id="vlScreenLayer">
-  <svg width="260" height="260" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <svg width="240" height="240" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
     <g transform="rotate(-30,150,150)">
-      <circle cx="150" cy="150" r="140" fill="none" stroke="#c0392b" stroke-opacity="0.25" stroke-width="5"/>
-      <circle cx="150" cy="150" r="128" fill="none" stroke="#1a1a2e" stroke-opacity="0.12" stroke-width="2" stroke-dasharray="6,4"/>
-      <text x="150" y="135" text-anchor="middle" font-family="Arial" font-size="34" font-weight="900" fill="#c0392b" fill-opacity="0.25">VISIONS</text>
-      <text x="150" y="175" text-anchor="middle" font-family="Arial" font-size="34" font-weight="900" fill="#1a1a2e" fill-opacity="0.18">CLASSES</text>
+      <circle cx="150" cy="150" r="140" fill="none" stroke="#c0392b" stroke-opacity="0.22" stroke-width="5"/>
+      <text x="150" y="138" text-anchor="middle" font-family="Arial" font-size="32" font-weight="900" fill="#c0392b" fill-opacity="0.22">VISIONS</text>
+      <text x="150" y="175" text-anchor="middle" font-family="Arial" font-size="32" font-weight="900" fill="#1a1a2e" fill-opacity="0.15">CLASSES</text>
     </g>
   </svg>
 </div>
-<div id="vlPrintLayer"></div>
 
 <nav class="navbar">
   <div class="container nav-inner">
@@ -84,88 +106,65 @@
 <div class="ch-hero">
   <div class="badge">Class 11 · Maths Paper 2 · Maharashtra Board</div>
   <h1>📐 Chapter 6 — Functions</h1>
-  <p>Complete Notes + All Exercises Solved · Ex 6.1 · Ex 6.2 · Miscellaneous Exercise 6</p>
+  <p>Complete Notes + All Exercises Solved Step-by-Step (Shaalaa Style)</p>
 </div>
 
 <div class="qnav">
   <a href="#theory">📚 Theory</a>
-  <a href="#types">Types</a>
   <a href="#basic">Basic Functions</a>
-  <a href="#algebra">Algebra of f</a>
-  <a href="#composition">Composition</a>
-  <a href="#inverse">Inverse</a>
-  <a href="#piecewise">Piecewise</a>
   <a href="#ex61">Ex 6.1</a>
   <a href="#ex62">Ex 6.2</a>
-  <a href="#misc">Misc</a>
+  <a href="#misc1">Misc MCQ</a>
+  <a href="#misc2">Misc II</a>
   <a href="#remember">📌 Remember</a>
 </div>
 
 <div class="wrap">
 
-<!-- ══════════════ THEORY ══════════════ -->
+<!-- ═══════════════ THEORY ═══════════════ -->
 <div class="sec-title" id="theory"><div class="sn">📚</div> Theory — Definitions &amp; Key Concepts</div>
 
-<div class="def-box">
-  <strong>Function (Mapping):</strong> A function f : A → B is a relation that associates for each element x in A, a <em>unique (exactly one)</em> element y in B. Written as y = f(x).<br/><br/>
-  <strong>Domain:</strong> Set A (set of inputs / pre-images)<br/>
-  <strong>Co-domain:</strong> Set B<br/>
-  <strong>Range:</strong> f(A) = {y ∈ B | y = f(x) for some x ∈ A} ⊆ Co-domain
+<div class="theory">
+  <h4>6.1 Function (Mapping)</h4>
+  <p>A function f : A → B associates to each element x ∈ A, a <strong>unique (exactly one)</strong> element y ∈ B.</p>
+  <ul>
+    <li><strong>y = f(x)</strong> — y is the image of x under f</li>
+    <li><strong>Domain</strong> = Set A (all valid inputs)</li>
+    <li><strong>Co-domain</strong> = Set B</li>
+    <li><strong>Range</strong> = f(A) = {y ∈ B | y = f(x) for some x ∈ A} ⊆ Co-domain</li>
+  </ul>
 </div>
 
-<div class="warn-box">
-  <strong>When is a relation NOT a function?</strong><br/>
-  ① If any element in A is <em>not mapped</em> to any element in B.<br/>
-  ② If any element in A is mapped to <em>more than one</em> element in B.
+<div class="theory">
+  <h4>When is a Relation NOT a Function?</h4>
+  <ul>
+    <li>① Any element in A has <em>no image</em> in B → NOT a function</li>
+    <li>② Any element in A has <em>more than one image</em> in B → NOT a function</li>
+  </ul>
 </div>
 
-<!-- ══════════════ TYPES ══════════════ -->
-<div class="sec-title" id="types"><div class="sn">🔢</div> Types of Functions</div>
-
-<div class="formula-box">
-  <h3>One-One (Injective)</h3>
-  Different elements in A have different images in B.<br/>
-  <div class="f">f(a) = f(b) ⟹ a = b</div>
-  <div class="f">a ≠ b ⟹ f(a) ≠ f(b)</div>
-  <br/>Test: <strong>Horizontal Line Test</strong> — no horizontal line crosses graph at more than one point.
+<div class="theory">
+  <h4>6.1.1 Types of Functions</h4>
+  <p><strong>One-One (Injective):</strong> Different elements have different images.</p>
+  <span class="fbox">f(a) = f(b) ⟹ a = b</span>
+  <p style="margin-top:8px;"><strong>Onto (Surjective):</strong> Every element of B is an image of some element of A. Range = Co-domain.</p>
+  <span class="fbox">f(A) = B</span>
+  <p style="margin-top:8px;"><strong>Bijective</strong> = One-One + Onto</p>
+  <p style="margin-top:8px;"><strong>Vertical Line Test</strong> — A graph is a function if no vertical line cuts it at more than one point.</p>
+  <p><strong>Horizontal Line Test</strong> — A function is one-one if no horizontal line cuts it at more than one point.</p>
 </div>
 
-<div class="formula-box">
-  <h3>Onto (Surjective)</h3>
-  Every element y in B has a pre-image x in A. Range = Co-domain.<br/>
-  <div class="f">f(A) = B</div>
+<div class="theory">
+  <h4>6.1.4 Value of Function</h4>
+  <p>f(a) is the value of f(x) at x = a. Substitute x = a into the formula.</p>
 </div>
 
-<div class="formula-box">
-  <h3>Bijective = One-One + Onto</h3>
-  <div class="f">f is bijective ⟺ f is both injective and surjective</div>
-</div>
+<!-- ═══════════════ BASIC FUNCTIONS ═══════════════ -->
+<div class="sec-title" id="basic"><div class="sn">📈</div> 6.1.5 Basic Types of Functions</div>
 
-<div class="formula-box">
-  <h3>6.1.2 Representations of a Function</h3>
-  <table>
-    <tr><th>Form</th><th>Description</th></tr>
-    <tr><td>Verbal</td><td>Described in words (e.g. "output exceeds twice the input by 1")</td></tr>
-    <tr><td>Arrow / Venn Diagram</td><td>Domain: set of pre-images; Range: set of images</td></tr>
-    <tr><td>Ordered Pair</td><td>f = {(2,5),(3,7),(4,9),(5,11)}; Domain = {2,3,4,5}, Range = {5,7,9,11}</td></tr>
-    <tr><td>Rule / Formula</td><td>y = f(x); Domain = values of x for which f(x) is defined</td></tr>
-    <tr><td>Tabular Form</td><td>Table of x and y values</td></tr>
-    <tr><td>Graphical</td><td>Domain = projection on x-axis; Range = projection on y-axis</td></tr>
-  </table>
-</div>
-
-<div class="formula-box">
-  <h3>Graph Tests</h3>
-  <div class="f">Vertical Line Test → checks if graph is a function (no vertical line cuts at 2+ points)</div>
-  <div class="f">Horizontal Line Test → checks if function is one-one (no horizontal line cuts at 2+ points)</div>
-</div>
-
-<!-- ══════════════ BASIC FUNCTIONS ══════════════ -->
-<div class="sec-title" id="basic"><div class="sn">📈</div> Basic Types of Functions</div>
-
-<div class="formula-box">
-  <h3>Summary Table — All Basic Functions</h3>
-  <table>
+<div class="theory">
+  <h4>Summary Table</h4>
+  <table class="sol-tbl">
     <tr><th>Type</th><th>Form</th><th>Domain</th><th>Range</th></tr>
     <tr><td>Constant</td><td>f(x) = k</td><td>ℝ</td><td>{k}</td></tr>
     <tr><td>Identity</td><td>f(x) = x</td><td>ℝ</td><td>ℝ</td></tr>
@@ -173,1162 +172,1202 @@
     <tr><td>Cube</td><td>f(x) = x³</td><td>ℝ</td><td>ℝ</td></tr>
     <tr><td>Linear</td><td>f(x) = ax + b</td><td>ℝ</td><td>ℝ</td></tr>
     <tr><td>Quadratic</td><td>f(x) = ax²+bx+c</td><td>ℝ</td><td>[(4ac−b²)/4a, ∞)</td></tr>
-    <tr><td>Cubic</td><td>f(x) = ax³+bx²+cx+d</td><td>ℝ</td><td>ℝ</td></tr>
     <tr><td>Square Root</td><td>f(x) = √x</td><td>[0, ∞)</td><td>[0, ∞)</td></tr>
     <tr><td>Cube Root</td><td>f(x) = ∛x</td><td>ℝ</td><td>ℝ</td></tr>
-    <tr><td>Rational</td><td>f(x) = p(x)/q(x)</td><td>ℝ − {zeros of q}</td><td>depends on p, q</td></tr>
+    <tr><td>Rational</td><td>f(x) = p(x)/q(x)</td><td>ℝ−{zeros of q}</td><td>depends</td></tr>
     <tr><td>Exponential</td><td>f(x) = aˣ, a&gt;1</td><td>ℝ</td><td>(0, ∞)</td></tr>
-    <tr><td>Logarithmic</td><td>f(x) = logₐx, a&gt;1</td><td>(0, ∞)</td><td>ℝ</td></tr>
-    <tr><td>Absolute Value</td><td>f(x) = |x|</td><td>ℝ</td><td>[0, ∞)</td></tr>
+    <tr><td>Logarithmic</td><td>f(x) = logₐx</td><td>(0, ∞)</td><td>ℝ</td></tr>
+    <tr><td>Absolute</td><td>f(x) = |x|</td><td>ℝ</td><td>[0, ∞)</td></tr>
     <tr><td>Signum</td><td>f(x) = sgn(x)</td><td>ℝ</td><td>{−1, 0, 1}</td></tr>
-    <tr><td>Greatest Integer</td><td>f(x) = [x]</td><td>ℝ</td><td>ℤ (integers)</td></tr>
-    <tr><td>Fractional Part</td><td>f(x) = {x}</td><td>ℝ</td><td>[0, 1)</td></tr>
+    <tr><td>Greatest Integer</td><td>f(x) = [x]</td><td>ℝ</td><td>ℤ</td></tr>
+    <tr><td>Fractional Part</td><td>f(x) = {x}</td><td>ℝ</td><td>[0,1)</td></tr>
   </table>
 </div>
 
-<div class="formula-box">
-  <h3>Key Log Properties</h3>
-  <div class="f">logₐ(bc) = logₐb + logₐc</div>
-  <div class="f">logₐ(b/c) = logₐb − logₐc</div>
-  <div class="f">logₐ(bᶜ) = c·logₐb</div>
-  <div class="f">Change of base: logₐx = log_b(x) / log_b(a)</div>
-  <div class="f">logₐa = 1 &nbsp;&nbsp; logₐ1 = 0</div>
-  <div class="f">b^(logb a) = a</div>
+<div class="theory">
+  <h4>Log Properties</h4>
+  <span class="fbox">logₐ(bc) = logₐb + logₐc</span>
+  <span class="fbox">logₐ(b/c) = logₐb − logₐc</span>
+  <span class="fbox">logₐ(bⁿ) = n·logₐb</span>
+  <span class="fbox">Change of base: logₐx = logᵦx / logᵦa</span>
+  <span class="fbox">logₐa = 1 &nbsp; logₐ1 = 0</span>
 </div>
 
-<div class="def-box">
-  <strong>Greatest Integer Function [x]:</strong> The largest integer ≤ x.<br/>
-  [5.7] = 5 &nbsp;|&nbsp; [−6.3] = −7 &nbsp;|&nbsp; [3] = 3 &nbsp;|&nbsp; [π] = 3 &nbsp;|&nbsp; [e] = 2<br/>
-  f(x) = n, if n ≤ x &lt; n+1 &nbsp;&nbsp; Domain: ℝ, Range: ℤ
+<div class="theory">
+  <h4>6.2 Algebra of Functions</h4>
+  <span class="fbox">(f+g)(x) = f(x)+g(x)</span>
+  <span class="fbox">(f−g)(x) = f(x)−g(x)</span>
+  <span class="fbox">(f·g)(x) = f(x)·g(x)</span>
+  <span class="fbox">(f/g)(x) = f(x)/g(x), g(x)≠0</span>
 </div>
 
-<div class="def-box">
-  <strong>Fractional Part {x}:</strong> {x} = x − [x]<br/>
-  {4.8} = 0.8 &nbsp;|&nbsp; {−7.1} = 0.9 &nbsp;|&nbsp; {8} = 0<br/>
-  Domain: ℝ, Range: [0, 1)
+<div class="theory">
+  <h4>6.2.1 Composition &amp; 6.2.2 Inverse</h4>
+  <span class="fbox">(g∘f)(x) = g[f(x)]</span>
+  <span class="fbox">f⁻¹ exists only if f is one-one and onto</span>
+  <span class="fbox">f[f⁻¹(x)] = f⁻¹[f(x)] = x</span>
 </div>
 
-<div class="def-box">
-  <strong>Signum Function sgn(x):</strong><br/>
-  f(x) = −1 if x &lt; 0 &nbsp;|&nbsp; 0 if x = 0 &nbsp;|&nbsp; 1 if x &gt; 0<br/>
-  Domain: ℝ, Range: {−1, 0, 1}
-</div>
-
-<div class="def-box">
-  <strong>Absolute Value |x|:</strong><br/>
-  |x| = x if x ≥ 0; −x if x &lt; 0 &nbsp;&nbsp; |x| = √(x²) = max{x, −x}<br/>
-  Triangle inequality: |x + y| ≤ |x| + |y|
-</div>
-
-<!-- ══════════════ ALGEBRA ══════════════ -->
-<div class="sec-title" id="algebra"><div class="sn">➕</div> 6.2 Algebra of Functions</div>
-
-<div class="formula-box">
-  <h3>Operations on f and g (defined on A ∩ B)</h3>
-  <div class="f">(f + g)(x) = f(x) + g(x)</div>
-  <div class="f">(f − g)(x) = f(x) − g(x)</div>
-  <div class="f">(f·g)(x) = f(x)·g(x)</div>
-  <div class="f">(f/g)(x) = f(x)/g(x), g(x) ≠ 0</div>
-</div>
-
-<!-- ══════════════ COMPOSITION ══════════════ -->
-<div class="sec-title" id="composition"><div class="sn">🔗</div> 6.2.1 Composition of Functions</div>
-
-<div class="def-box">
-  <strong>Composition:</strong> If f : A→B and g : B→C, then<br/>
-  <strong>(g ∘ f)(x) = g[f(x)]</strong> — read as "g composed with f"<br/><br/>
-  Domain of g∘f ⊆ Domain of f &nbsp;&nbsp; Range of g∘f ⊆ Range of g
-</div>
-
-<!-- ══════════════ INVERSE ══════════════ -->
-<div class="sec-title" id="inverse"><div class="sn">🔄</div> 6.2.2 Inverse Functions</div>
-
-<div class="def-box">
-  <strong>Inverse Function:</strong> If f : A→B is one-one and onto, then f⁻¹ : B→A is defined as:<br/>
-  f⁻¹(y) = x if f(x) = y<br/><br/>
-  f[f⁻¹(x)] = f⁻¹[f(x)] = x<br/>
-  <strong>Note:</strong> f⁻¹(x) ≠ [f(x)]⁻¹ (inverse ≠ reciprocal)
-</div>
-
-<!-- ══════════════ PIECEWISE ══════════════ -->
-<div class="sec-title" id="piecewise"><div class="sn">✂️</div> 6.2.3 Piecewise Defined Functions</div>
+<!-- ═══════════════ EXERCISE 6.1 ═══════════════ -->
+<div class="sec-title" id="ex61"><div class="sn">✏️</div> Exercise 6.1</div>
 
-<div class="def-box">
-  <strong>Piecewise Function:</strong> Defined by two or more formulas on different parts of the domain.<br/><br/>
-  Example: f(x) = x+1 if x&lt;1 ; 4−x if x≥1
-</div>
-
-<!-- ══════════════ EXERCISE 6.1 ══════════════ -->
-<div class="sec-title" id="ex61"><div class="sn">✏️</div> Exercise 6.1 — All Questions Solved</div>
-
-<div class="ex-title">Q.1 — Check if the following relations are functions</div>
+<div class="ex-bar">Q.1 — Check if the following relations are functions</div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">1(a)</div><div class="qtext">Relation with arrows: every element in A maps to exactly one element in B.</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>Each element of A has exactly one image in B.</p>
-    <div class="ans-line">∴ It IS a function.</div>
+  <div class="qhead"><div class="qbadge">Q 1(a)</div><div class="qtext">Relation R₁: Every element of A is mapped to exactly one element in B.</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl given">Observe</div><div class="cnt">Each element in A has exactly one arrow going to B.</div></div>
+    <div class="sol-row"><div class="lbl step">Condition</div><div class="cnt">Every element in domain has a unique image. ✓</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">R₁ IS a function.</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">1(b)</div><div class="qtext">Relation where element p maps to multiple elements in B.</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>p ∈ A maps to more than one element in B (arrows split).</p>
-    <div class="ans-line">∴ It is NOT a function.</div>
+  <div class="qhead"><div class="qbadge">Q 1(b)</div><div class="qtext">Relation R₂: Element p in A maps to multiple elements in B.</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl given">Observe</div><div class="cnt">An element in A has more than one image in B.</div></div>
+    <div class="sol-row"><div class="lbl step">Condition</div><div class="cnt">One element → two images → violates uniqueness. ✗</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">R₂ is NOT a function.</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">1(c)</div><div class="qtext">Relation where arrows from A cross to B with some elements in A having multiple images.</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>Some elements in A have more than one image in B (e.g. 0 maps to both 6 and 3).</p>
-    <div class="ans-line">∴ It is NOT a function.</div>
+  <div class="qhead"><div class="qbadge">Q 1(c)</div><div class="qtext">Relation R₃: Element 0 in A has two images in B.</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl given">Observe</div><div class="cnt">Element 0 ∈ A maps to both 6 and 3 in B.</div></div>
+    <div class="sol-row"><div class="lbl step">Condition</div><div class="cnt">One input has two outputs → violates function definition. ✗</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">R₃ is NOT a function.</div></div>
   </div>
 </div>
 
-<div class="ex-title">Q.2 — Which ordered pairs represent functions from A = {1,2,3,4} to B = {−1,0,1,2,3}?</div>
+<div class="ex-bar">Q.2 — Which ordered pairs represent functions from A = {1,2,3,4} to B = {−1,0,1,2,3}?</div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">2(a)</div><div class="qtext">{(1,0),(3,3),(2,−1),(4,1),(2,2)}</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>Element 2 appears twice: (2,−1) and (2,2) → two images for x=2.</p>
-    <div class="ans-line">∴ NOT a function.</div>
+  <div class="qhead"><div class="qbadge">Q 2(a)</div><div class="qtext">{(1,0), (3,3), (2,−1), (4,1), (2,2)}</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl given">Given</div><div class="cnt">Set of ordered pairs with domain A = {1,2,3,4}</div></div>
+    <div class="sol-row"><div class="lbl step">Check</div><div class="cnt">x = 2 appears twice: (2,−1) and (2,2) → element 2 has two images (−1 and 2).</div></div>
+    <div class="sol-row"><div class="lbl step">Condition</div><div class="cnt">A function requires each element to have exactly one image. ✗</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">NOT a function.</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">2(b)</div><div class="qtext">{(1,2),(2,−1),(3,1),(4,3)}</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>Each of 1,2,3,4 appears exactly once. All images are in B.</p>
-    <div class="ans-line">∴ It IS a function. Domain = {1,2,3,4}, Range = {−1,1,2,3}</div>
+  <div class="qhead"><div class="qbadge">Q 2(b)</div><div class="qtext">{(1,2), (2,−1), (3,1), (4,3)}</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl given">Given</div><div class="cnt">Ordered pairs from A = {1,2,3,4} to B</div></div>
+    <div class="sol-row"><div class="lbl step">Check</div><div class="cnt">Each of 1, 2, 3, 4 appears exactly once as first element.</div></div>
+    <div class="sol-row"><div class="lbl step">Images</div><div class="cnt">1→2, 2→−1, 3→1, 4→3. All images ∈ B = {−1,0,1,2,3} ✓</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">IS a function. Domain = {1,2,3,4}, Range = {−1,1,2,3}</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">2(c)</div><div class="qtext">{(1,3),(4,1),(2,2)}</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>Element 3 ∈ A has no image → not every element of A is mapped.</p>
-    <div class="ans-line">∴ NOT a function.</div>
+  <div class="qhead"><div class="qbadge">Q 2(c)</div><div class="qtext">{(1,3), (4,1), (2,2)}</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl given">Given</div><div class="cnt">Ordered pairs, A = {1,2,3,4}</div></div>
+    <div class="sol-row"><div class="lbl step">Check</div><div class="cnt">Element 3 ∈ A has no image. Every element of A must be mapped. ✗</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">NOT a function (element 3 is unmapped).</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">2(d)</div><div class="qtext">{(1,1),(2,1),(3,1),(4,1)}</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>Each element of A has exactly one image (all map to 1). Valid many-one function.</p>
-    <div class="ans-line">∴ It IS a function. (Constant function) Domain = {1,2,3,4}, Range = {1}</div>
+  <div class="qhead"><div class="qbadge">Q 2(d)</div><div class="qtext">{(1,1), (2,1), (3,1), (4,1)}</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl given">Given</div><div class="cnt">All elements of A map to 1 ∈ B</div></div>
+    <div class="sol-row"><div class="lbl step">Check</div><div class="cnt">Each element 1,2,3,4 appears exactly once and maps to 1. ✓</div></div>
+    <div class="sol-row"><div class="lbl note">Note</div><div class="cnt">This is a constant (many-one) function. Many elements → same image is allowed.</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">IS a function. Domain = {1,2,3,4}, Range = {1}</div></div>
   </div>
 </div>
 
-<div class="ex-title">Q.3 — Check if the equation represents y as a function of x</div>
+<div class="ex-bar">Q.3 — Check if the equation represents y as a function of x</div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">3(a)</div><div class="qtext">2x + 3y = 12</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>y = (12 − 2x)/3 → for each x, exactly one y.</p>
-    <div class="ans-line">∴ YES, y is a function of x.</div>
+  <div class="qhead"><div class="qbadge">Q 3(a)</div><div class="qtext">2x + 3y = 12</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Solve for y</div><div class="cnt">3y = 12 − 2x &nbsp;⟹&nbsp; y = (12 − 2x)/3</div></div>
+    <div class="sol-row"><div class="lbl step">Check</div><div class="cnt">For each value of x, there is exactly one value of y. ✓</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">YES, y is a function of x.</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">3(b)</div><div class="qtext">x + y² = 9</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>y² = 9 − x → y = ±√(9−x) → two values of y for each x (when 9−x &gt; 0).</p>
-    <div class="ans-line">∴ NO, y is NOT a function of x.</div>
+  <div class="qhead"><div class="qbadge">Q 3(b)</div><div class="qtext">x + y² = 9</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Solve for y</div><div class="cnt">y² = 9 − x &nbsp;⟹&nbsp; y = ±√(9 − x)</div></div>
+    <div class="sol-row"><div class="lbl step">Check</div><div class="cnt">For x = 0: y = +3 or y = −3 → two values of y for one x. ✗</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">NO, y is NOT a function of x.</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">3(c)</div><div class="qtext">x² − y = 25</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>y = x² − 25 → for each x, exactly one y.</p>
-    <div class="ans-line">∴ YES, y is a function of x.</div>
+  <div class="qhead"><div class="qbadge">Q 3(c)</div><div class="qtext">x² − y = 25</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Solve for y</div><div class="cnt">y = x² − 25</div></div>
+    <div class="sol-row"><div class="lbl step">Check</div><div class="cnt">For each x, exactly one value of y. ✓</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">YES, y is a function of x.</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">3(d)</div><div class="qtext">2y + 10 = 0</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>y = −5 always → constant function, defined for all x.</p>
-    <div class="ans-line">∴ YES, y is a function of x (constant function y = −5).</div>
+  <div class="qhead"><div class="qbadge">Q 3(d)</div><div class="qtext">2y + 10 = 0</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Solve for y</div><div class="cnt">y = −5 (constant, for all x)</div></div>
+    <div class="sol-row"><div class="lbl step">Check</div><div class="cnt">For every x ∈ ℝ, y = −5. Exactly one output. ✓</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">YES, y is a function of x (constant function y = −5).</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">3(e)</div><div class="qtext">3x − 6 = 21</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>3x = 27 → x = 9. This is an equation in x only, not y.</p>
-    <div class="ans-line">∴ NO, y is not expressed as a function of x here.</div>
+  <div class="qhead"><div class="qbadge">Q 3(e)</div><div class="qtext">3x − 6 = 21</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Solve</div><div class="cnt">3x = 27 ⟹ x = 9. This fixes x, but y is not defined at all.</div></div>
+    <div class="sol-row"><div class="lbl step">Check</div><div class="cnt">The equation has no y — it cannot express y as a function of x. ✗</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">NO, y is NOT a function of x.</div></div>
   </div>
 </div>
 
-<div class="ex-title">Q.4 — If f(m) = m² − 3m + 1, find:</div>
+<div class="ex-bar">Q.4 — If f(m) = m² − 3m + 1, find each value</div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">4(a)</div><div class="qtext">f(0)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>f(0) = 0 − 0 + 1 = <b>1</b></p>
-    <div class="ans-line">f(0) = 1</div>
+  <div class="qhead"><div class="qbadge">Q 4(a)</div><div class="qtext">Find f(0)</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl given">Given</div><div class="cnt">f(m) = m² − 3m + 1</div></div>
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Substitute m = 0</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">f(0) = (0)² − 3(0) + 1 = 0 − 0 + 1 = <strong>1</strong></div></div>
+    <div class="ans-row"><div class="lbl ans">∴ f(0)</div><div class="cnt">= 1</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">4(b)</div><div class="qtext">f(−3)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>f(−3) = (−3)² − 3(−3) + 1 = 9 + 9 + 1 = <b>19</b></p>
-    <div class="ans-line">f(−3) = 19</div>
+  <div class="qhead"><div class="qbadge">Q 4(b)</div><div class="qtext">Find f(−3)</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl given">Given</div><div class="cnt">f(m) = m² − 3m + 1</div></div>
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Substitute m = −3</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">f(−3) = (−3)² − 3(−3) + 1</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">= 9 + 9 + 1 = <strong>19</strong></div></div>
+    <div class="ans-row"><div class="lbl ans">∴ f(−3)</div><div class="cnt">= 19</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">4(c)</div><div class="qtext">f(1/2)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>f(1/2) = (1/4) − 3(1/2) + 1 = 1/4 − 3/2 + 1 = 1/4 − 6/4 + 4/4 = <b>−1/4</b></p>
-    <div class="ans-line">f(1/2) = −1/4</div>
+  <div class="qhead"><div class="qbadge">Q 4(c)</div><div class="qtext">Find f(1/2)</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl given">Given</div><div class="cnt">f(m) = m² − 3m + 1</div></div>
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Substitute m = 1/2</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">f(1/2) = (1/2)² − 3(1/2) + 1 = 1/4 − 3/2 + 1</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">= 1/4 − 6/4 + 4/4 = −1/4</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ f(1/2)</div><div class="cnt">= −1/4</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">4(d)</div><div class="qtext">f(x + 1)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>f(x+1) = (x+1)² − 3(x+1) + 1</p>
-    <p class="indent">= x² + 2x + 1 − 3x − 3 + 1</p>
-    <div class="ans-line">f(x+1) = x² − x − 1</div>
+  <div class="qhead"><div class="qbadge">Q 4(d)</div><div class="qtext">Find f(x + 1)</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl given">Given</div><div class="cnt">f(m) = m² − 3m + 1</div></div>
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Replace m with (x + 1)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">f(x+1) = (x+1)² − 3(x+1) + 1</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">= x² + 2x + 1 − 3x − 3 + 1</div></div>
+    <div class="sol-row"><div class="lbl step">Step 4</div><div class="cnt">= x² − x − 1</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ f(x+1)</div><div class="cnt">= x² − x − 1</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">4(e)</div><div class="qtext">f(−x)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>f(−x) = (−x)² − 3(−x) + 1 = x² + 3x + 1</p>
-    <div class="ans-line">f(−x) = x² + 3x + 1</div>
+  <div class="qhead"><div class="qbadge">Q 4(e)</div><div class="qtext">Find f(−x)</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl given">Given</div><div class="cnt">f(m) = m² − 3m + 1</div></div>
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Replace m with (−x)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">f(−x) = (−x)² − 3(−x) + 1 = x² + 3x + 1</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ f(−x)</div><div class="cnt">= x² + 3x + 1</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">4(f)</div><div class="qtext">[f(2+h) − f(2)] / h, h ≠ 0</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>f(2+h) = (2+h)² − 3(2+h) + 1 = 4 + 4h + h² − 6 − 3h + 1 = h² + h − 1</p>
-    <p>f(2) = 4 − 6 + 1 = −1</p>
-    <p>[f(2+h) − f(2)] / h = (h² + h − 1 − (−1)) / h = (h² + h) / h = h + 1</p>
-    <div class="ans-line">Answer = h + 1</div>
+  <div class="qhead"><div class="qbadge">Q 4(f)</div><div class="qtext">Find [f(2+h) − f(2)] / h, h ≠ 0</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl given">Given</div><div class="cnt">f(m) = m² − 3m + 1</div></div>
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">f(2) = 4 − 6 + 1 = −1</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">f(2+h) = (2+h)² − 3(2+h) + 1</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">= 4 + 4h + h² − 6 − 3h + 1 = h² + h − 1</div></div>
+    <div class="sol-row"><div class="lbl step">Step 4</div><div class="cnt">f(2+h) − f(2) = h² + h − 1 − (−1) = h² + h</div></div>
+    <div class="sol-row"><div class="lbl step">Step 5</div><div class="cnt">[f(2+h) − f(2)] / h = (h² + h)/h = h + 1</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">= h + 1</div></div>
   </div>
 </div>
 
-<div class="ex-title">Q.5 — Find x if g(x) = 0</div>
+<div class="ex-bar">Q.5 — Find x if g(x) = 0</div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">5(a)</div><div class="qtext">g(x) = (5x − 6)/7</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>(5x − 6)/7 = 0 → 5x − 6 = 0 → x = 6/5</p>
-    <div class="ans-line">x = 6/5</div>
+  <div class="qhead"><div class="qbadge">Q 5(a)</div><div class="qtext">g(x) = (5x − 6)/7</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Set g(x) = 0: &nbsp; (5x − 6)/7 = 0</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">5x − 6 = 0 &nbsp;⟹&nbsp; 5x = 6 &nbsp;⟹&nbsp; x = 6/5</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ x</div><div class="cnt">= 6/5</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">5(b)</div><div class="qtext">g(x) = (18 − 2x²)/7</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>18 − 2x² = 0 → x² = 9 → x = ±3</p>
-    <div class="ans-line">x = 3 or x = −3</div>
+  <div class="qhead"><div class="qbadge">Q 5(b)</div><div class="qtext">g(x) = (18 − 2x²)/7</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Set g(x) = 0: &nbsp; 18 − 2x² = 0</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">2x² = 18 &nbsp;⟹&nbsp; x² = 9 &nbsp;⟹&nbsp; x = ±3</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ x</div><div class="cnt">= 3 or x = −3</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">5(c)</div><div class="qtext">g(x) = 6x² + x − 2</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>6x² + x − 2 = 0 → 6x² + 4x − 3x − 2 = 0 → 2x(3x+2) − 1(3x+2) = 0</p>
-    <p>(2x − 1)(3x + 2) = 0</p>
-    <div class="ans-line">x = 1/2 or x = −2/3</div>
+  <div class="qhead"><div class="qbadge">Q 5(c)</div><div class="qtext">g(x) = 6x² + x − 2</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Set 6x² + x − 2 = 0</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">Factorise: 6x² + 4x − 3x − 2 = 0</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">2x(3x + 2) − 1(3x + 2) = 0 &nbsp;⟹&nbsp; (2x − 1)(3x + 2) = 0</div></div>
+    <div class="sol-row"><div class="lbl step">Step 4</div><div class="cnt">x = 1/2 &nbsp; or &nbsp; x = −2/3</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ x</div><div class="cnt">= 1/2 or x = −2/3</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">5(d)</div><div class="qtext">g(x) = x³ − 2x² − 5x + 6</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>Try x=1: 1 − 2 − 5 + 6 = 0 ✓ → (x−1) is a factor</p>
-    <p>x³ − 2x² − 5x + 6 = (x−1)(x² − x − 6) = (x−1)(x−3)(x+2)</p>
-    <div class="ans-line">x = 1, x = 3, or x = −2</div>
+  <div class="qhead"><div class="qbadge">Q 5(d)</div><div class="qtext">g(x) = x³ − 2x² − 5x + 6</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Try x = 1: g(1) = 1 − 2 − 5 + 6 = 0 ✓ → (x − 1) is a factor</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">Divide: x³ − 2x² − 5x + 6 = (x − 1)(x² − x − 6)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">Factorise: x² − x − 6 = (x − 3)(x + 2)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 4</div><div class="cnt">So g(x) = (x−1)(x−3)(x+2) = 0</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ x</div><div class="cnt">= 1 or x = 3 or x = −2</div></div>
   </div>
 </div>
 
-<div class="ex-title">Q.6 — Find x if f(x) = g(x)</div>
+<div class="ex-bar">Q.6 — Find x if f(x) = g(x)</div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">6(a)</div><div class="qtext">f(x) = x⁴ + 2x², g(x) = 11x²</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>x⁴ + 2x² = 11x² → x⁴ − 9x² = 0 → x²(x² − 9) = 0</p>
-    <p>x²(x−3)(x+3) = 0</p>
-    <div class="ans-line">x = 0, x = 3, or x = −3</div>
+  <div class="qhead"><div class="qbadge">Q 6(a)</div><div class="qtext">f(x) = x⁴ + 2x², g(x) = 11x²</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Set f(x) = g(x): &nbsp; x⁴ + 2x² = 11x²</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">x⁴ − 9x² = 0 &nbsp;⟹&nbsp; x²(x² − 9) = 0</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">x²(x − 3)(x + 3) = 0</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ x</div><div class="cnt">= 0 or x = 3 or x = −3</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">6(b)</div><div class="qtext">f(x) = √x − 3, g(x) = 5 − x</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>√x − 3 = 5 − x → √x = 8 − x → Square both sides: x = (8−x)² = 64 − 16x + x²</p>
-    <p>x² − 17x + 64 = 0 → x = (17 ± √(289−256))/2 = (17 ± √33)/2</p>
-    <p>Verify both values in original (reject if √x is negative).</p>
-    <div class="ans-line">x = (17 ± √33)/2 (verify by substitution)</div>
+  <div class="qhead"><div class="qbadge">Q 6(b)</div><div class="qtext">f(x) = √x − 3, g(x) = 5 − x</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Set √x − 3 = 5 − x &nbsp;⟹&nbsp; √x = 8 − x</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">Square both sides: x = (8 − x)² = 64 − 16x + x²</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">x² − 17x + 64 = 0</div></div>
+    <div class="sol-row"><div class="lbl step">Step 4</div><div class="cnt">x = [17 ± √(289 − 256)]/2 = (17 ± √33)/2</div></div>
+    <div class="sol-row"><div class="lbl note">Note</div><div class="cnt">Verify both values: √x must be defined (x ≥ 0) and 8 − x ≥ 0 (x ≤ 8).</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ x</div><div class="cnt">= (17 ± √33)/2 (verify by substitution)</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">Q.7</div><div class="qtext">If f(x) = (a−x)/(b−x), f(2) is undefined, and f(3) = 5. Find a and b.</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>f(2) undefined → denominator = 0 at x=2 → b − 2 = 0 → <b>b = 2</b></p>
-    <p>f(3) = 5 → (a−3)/(2−3) = 5 → (a−3)/(−1) = 5 → a − 3 = −5 → <b>a = −2</b></p>
-    <div class="ans-line">a = −2, b = 2</div>
+  <div class="qhead"><div class="qbadge">Q 7</div><div class="qtext">If f(x) = (a−x)/(b−x), f(2) is undefined, f(3) = 5. Find a and b.</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl given">Given</div><div class="cnt">f(x) = (a−x)/(b−x); f(2) is undefined; f(3) = 5</div></div>
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">f(2) is undefined → denominator = 0 at x = 2</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">b − 2 = 0 &nbsp;⟹&nbsp; <strong>b = 2</strong></div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">f(3) = (a − 3)/(b − 3) = (a − 3)/(2 − 3) = (a − 3)/(−1) = 5</div></div>
+    <div class="sol-row"><div class="lbl step">Step 4</div><div class="cnt">a − 3 = −5 &nbsp;⟹&nbsp; <strong>a = −2</strong></div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">a = −2, b = 2</div></div>
   </div>
 </div>
 
-<div class="ex-title">Q.8 — Find domain and range of the following functions</div>
+<div class="ex-bar">Q.8 — Find domain and range of the following functions</div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">8(a)</div><div class="qtext">f(x) = 7x² + 4x − 1</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>Polynomial → defined for all x.</p>
-    <p>Domain: ℝ | This is quadratic with a=7&gt;0, min at vertex: D = 16+28 = 44</p>
-    <p>Min value = (4ac−b²)/4a = (4·7·(−1)−16)/28 = (−28−16)/28 = −44/28 = −11/7</p>
-    <div class="ans-line">Domain: ℝ &nbsp;&nbsp; Range: [−11/7, ∞)</div>
+  <div class="qhead"><div class="qbadge">Q 8(a)</div><div class="qtext">f(x) = 7x² + 4x − 1</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl given">Given</div><div class="cnt">f(x) = 7x² + 4x − 1 (polynomial)</div></div>
+    <div class="sol-row"><div class="lbl step">Domain</div><div class="cnt">Polynomial is defined for all x ∈ ℝ.</div></div>
+    <div class="sol-row"><div class="lbl step">Range</div><div class="cnt">a = 7 &gt; 0 (upward parabola). Minimum value = (4ac − b²)/4a = (4·7·(−1) − 16)/28 = (−28−16)/28 = −44/28 = −11/7</div></div>
+    <div class="sol-row"><div class="lbl step">Conclusion</div><div class="cnt">f(x) ≥ −11/7 for all x</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">Domain = ℝ, &nbsp; Range = [−11/7, ∞)</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">8(b)</div><div class="qtext">g(x) = (x+4)/(x−2)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>Denominator: x − 2 ≠ 0 → x ≠ 2 → Domain: ℝ − {2}</p>
-    <p>Let y = (x+4)/(x−2) → y(x−2) = x+4 → yx − 2y = x + 4 → x(y−1) = 2y+4 → x = (2y+4)/(y−1)</p>
-    <p>Defined when y ≠ 1.</p>
-    <div class="ans-line">Domain: ℝ − {2} &nbsp;&nbsp; Range: ℝ − {1}</div>
+  <div class="qhead"><div class="qbadge">Q 8(b)</div><div class="qtext">g(x) = (x + 4)/(x − 2)</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Domain</div><div class="cnt">Denominator x − 2 ≠ 0 &nbsp;⟹&nbsp; x ≠ 2</div></div>
+    <div class="sol-row"><div class="lbl step">Range</div><div class="cnt">Let y = (x+4)/(x−2) &nbsp;⟹&nbsp; y(x−2) = x+4 &nbsp;⟹&nbsp; yx − 2y = x + 4</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">x(y − 1) = 2y + 4 &nbsp;⟹&nbsp; x = (2y + 4)/(y − 1)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">x is defined when y ≠ 1. So y = 1 is not in the range.</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">Domain = ℝ − {2}, &nbsp; Range = ℝ − {1}</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">8(c)</div><div class="qtext">h(x) = (√x + 5) / (5 + x)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>√x defined for x ≥ 0; denominator 5+x ≠ 0 → x ≠ −5 (already excluded since x≥0)</p>
-    <p>Domain: [0, ∞)</p>
-    <p>As x → ∞: h(x) = √x/(x+5) → 0; at x=0: h(0) = 5/5 = 1</p>
-    <p>Range: (0, 1]</p>
-    <div class="ans-line">Domain: [0, ∞) &nbsp;&nbsp; Range: (0, 1]</div>
+  <div class="qhead"><div class="qbadge">Q 8(c)</div><div class="qtext">h(x) = (√x + 5)/(5 + x)</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Domain</div><div class="cnt">√x is defined for x ≥ 0. Denominator 5 + x ≠ 0 → x ≠ −5 (already excluded since x ≥ 0)</div></div>
+    <div class="sol-row"><div class="lbl step">Domain</div><div class="cnt">x ≥ 0 → Domain = [0, ∞)</div></div>
+    <div class="sol-row"><div class="lbl step">Range</div><div class="cnt">At x = 0: h = 5/5 = 1. As x → ∞: h = √x/(x+5) → 0</div></div>
+    <div class="sol-row"><div class="lbl step">Conclusion</div><div class="cnt">h(x) is continuous, decreasing from 1 to 0 (not reaching 0).</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">Domain = [0, ∞), &nbsp; Range = (0, 1]</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">8(d)</div><div class="qtext">f(x) = ∛(x+1)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>Cube root defined for all real x.</p>
-    <div class="ans-line">Domain: ℝ &nbsp;&nbsp; Range: ℝ</div>
+  <div class="qhead"><div class="qbadge">Q 8(d)</div><div class="qtext">f(x) = ∛(x + 1)</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Domain</div><div class="cnt">Cube root is defined for all real numbers.</div></div>
+    <div class="sol-row"><div class="lbl step">Range</div><div class="cnt">As x ranges over ℝ, ∛(x+1) also ranges over ℝ.</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">Domain = ℝ, &nbsp; Range = ℝ</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">8(e)</div><div class="qtext">f(x) = √[(x−2)(5−x)]</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>Need (x−2)(5−x) ≥ 0</p>
-    <p>Critical points: x = 2, x = 5. Sign analysis:</p>
-    <p class="indent">x &lt; 2: (−)(+) = − &lt; 0 ✗</p>
-    <p class="indent">2 ≤ x ≤ 5: (+)(+) = + ≥ 0 ✓</p>
-    <p class="indent">x &gt; 5: (+)(−) = − &lt; 0 ✗</p>
-    <p>Range: √[(x−2)(5−x)] max at x = 7/2 (midpoint): (7/2−2)(5−7/2) = (3/2)(3/2) = 9/4 → √(9/4) = 3/2</p>
-    <div class="ans-line">Domain: [2, 5] &nbsp;&nbsp; Range: [0, 3/2]</div>
+  <div class="qhead"><div class="qbadge">Q 8(e)</div><div class="qtext">f(x) = √[(x − 2)(5 − x)]</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Condition</div><div class="cnt">(x − 2)(5 − x) ≥ 0</div></div>
+    <div class="sol-row"><div class="lbl step">Critical pts</div><div class="cnt">x = 2 and x = 5</div></div>
+    <div class="sol-row"><div class="lbl step">Sign test</div><div class="cnt">x &lt; 2: (−)(+) = − ✗ &nbsp;&nbsp; 2 ≤ x ≤ 5: (+)(+) = + ✓ &nbsp;&nbsp; x &gt; 5: (+)(−) = − ✗</div></div>
+    <div class="sol-row"><div class="lbl step">Range</div><div class="cnt">Max at midpoint x = 7/2: (7/2−2)(5−7/2) = (3/2)(3/2) = 9/4 → √(9/4) = 3/2</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">Domain = [2, 5], &nbsp; Range = [0, 3/2]</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">8(f)</div><div class="qtext">f(x) = √[(x−3)/(7−x)]</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>Need (x−3)/(7−x) ≥ 0 and 7−x ≠ 0.</p>
-    <p>Both numerator and denominator same sign:</p>
-    <p class="indent">x ≥ 3 and x &lt; 7: [3, 7)</p>
-    <p class="indent">x ≤ 3 and x &gt; 7: impossible</p>
-    <div class="ans-line">Domain: [3, 7) &nbsp;&nbsp; Range: [0, ∞)</div>
+  <div class="qhead"><div class="qbadge">Q 8(f)</div><div class="qtext">f(x) = √[(x − 3)/(7 − x)]</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Condition</div><div class="cnt">(x − 3)/(7 − x) ≥ 0 and 7 − x ≠ 0</div></div>
+    <div class="sol-row"><div class="lbl step">Analysis</div><div class="cnt">Both numerator and denominator same sign:</div></div>
+    <div class="sol-row"><div class="lbl step">Case 1</div><div class="cnt">x − 3 ≥ 0 and 7 − x &gt; 0 &nbsp;⟹&nbsp; x ≥ 3 and x &lt; 7 &nbsp;⟹&nbsp; 3 ≤ x &lt; 7</div></div>
+    <div class="sol-row"><div class="lbl step">Case 2</div><div class="cnt">x − 3 ≤ 0 and 7 − x &lt; 0 &nbsp;⟹&nbsp; x ≤ 3 and x &gt; 7 → impossible</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">Domain = [3, 7), &nbsp; Range = [0, ∞)</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">8(g)</div><div class="qtext">f(x) = √(16 − x²)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>Need 16 − x² ≥ 0 → x² ≤ 16 → −4 ≤ x ≤ 4</p>
-    <p>Range: √(16−x²), max at x=0: √16 = 4; min at x=±4: 0</p>
-    <div class="ans-line">Domain: [−4, 4] &nbsp;&nbsp; Range: [0, 4]</div>
+  <div class="qhead"><div class="qbadge">Q 8(g)</div><div class="qtext">f(x) = √(16 − x²)</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Condition</div><div class="cnt">16 − x² ≥ 0 &nbsp;⟹&nbsp; x² ≤ 16 &nbsp;⟹&nbsp; −4 ≤ x ≤ 4</div></div>
+    <div class="sol-row"><div class="lbl step">Range</div><div class="cnt">Max at x = 0: √16 = 4. Min at x = ±4: √0 = 0</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">Domain = [−4, 4], &nbsp; Range = [0, 4]</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">Q.9</div><div class="qtext">Express the area A of a square as a function of: (a) side s (b) perimeter P</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>(a) A = s²</p>
-    <p>(b) P = 4s → s = P/4 → A = (P/4)² = P²/16</p>
-    <div class="ans-line">(a) A(s) = s² &nbsp;&nbsp; (b) A(P) = P²/16</div>
+  <div class="qhead"><div class="qbadge">Q 9</div><div class="qtext">Express the area A of a square as a function of: (a) side s, (b) perimeter P</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">(a) by side</div><div class="cnt">Area = side × side &nbsp;⟹&nbsp; A(s) = s²</div></div>
+    <div class="sol-row"><div class="lbl step">(b) by P</div><div class="cnt">P = 4s &nbsp;⟹&nbsp; s = P/4 &nbsp;⟹&nbsp; A = (P/4)² = P²/16</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">(a) A(s) = s² &nbsp;&nbsp;&nbsp; (b) A(P) = P²/16</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">Q.10</div><div class="qtext">Express area A of circle as a function of: (a) radius r (b) diameter d (c) circumference C</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>(a) A = πr²</p>
-    <p>(b) d = 2r → r = d/2 → A = π(d/2)² = πd²/4</p>
-    <p>(c) C = 2πr → r = C/(2π) → A = π(C/2π)² = C²/(4π)</p>
-    <div class="ans-line">(a) A = πr² &nbsp;&nbsp; (b) A = πd²/4 &nbsp;&nbsp; (c) A = C²/(4π)</div>
+  <div class="qhead"><div class="qbadge">Q 10</div><div class="qtext">Express area A of circle as function of: (a) radius r (b) diameter d (c) circumference C</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">(a)</div><div class="cnt">A = πr²</div></div>
+    <div class="sol-row"><div class="lbl step">(b)</div><div class="cnt">d = 2r ⟹ r = d/2 ⟹ A = π(d/2)² = πd²/4</div></div>
+    <div class="sol-row"><div class="lbl step">(c)</div><div class="cnt">C = 2πr ⟹ r = C/2π ⟹ A = π(C/2π)² = C²/4π</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">(a) πr² &nbsp; (b) πd²/4 &nbsp; (c) C²/(4π)</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">Q.11</div><div class="qtext">Open box from 30cm square cardboard: squares of side x cut from corners. Express volume as function of x.</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>After cutting: base side = 30 − 2x, height = x</p>
-    <p>V(x) = x(30−2x)² = x(900 − 120x + 4x²) = 4x³ − 120x² + 900x</p>
-    <p>Domain: x &gt; 0 and 30 − 2x &gt; 0 → x &lt; 15</p>
-    <div class="ans-line">V(x) = 4x³ − 120x² + 900x &nbsp;&nbsp; Domain: (0, 15)</div>
+  <div class="qhead"><div class="qbadge">Q 11</div><div class="qtext">Open box from 30 cm square card: cut squares of side x from corners. Express V as function of x, find domain.</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl given">Given</div><div class="cnt">Square card: 30×30 cm. Squares of side x cut from each corner.</div></div>
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">After folding: base = (30 − 2x) × (30 − 2x), height = x</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">V(x) = x(30 − 2x)²</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">Expand: = x(900 − 120x + 4x²) = 4x³ − 120x² + 900x</div></div>
+    <div class="sol-row"><div class="lbl step">Domain</div><div class="cnt">x &gt; 0 (cut must be positive) and 30 − 2x &gt; 0 ⟹ x &lt; 15</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">V(x) = 4x³ − 120x² + 900x, &nbsp; Domain = (0, 15)</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">Q.12</div><div class="qtext">f = {(ab, a+b) : a, b ∈ ℤ}. Is f a function from ℤ to ℤ?</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>Check: can one value of ab correspond to different values of a+b?</p>
-    <p>ab = 4: (1,4) → sum 5; (2,2) → sum 4; (−1,−4) → sum −5</p>
-    <p>Same input (ab=4) gives different outputs (5, 4, −5).</p>
-    <div class="ans-line">∴ f is NOT a function from ℤ to ℤ.</div>
+  <div class="qhead"><div class="qbadge">Q 12</div><div class="qtext">f = {(ab, a+b) : a, b ∈ ℤ}. Is f a function from ℤ to ℤ?</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Check: can same product ab have different sums a+b?</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">ab = 4: &nbsp; (1,4) → sum 5; &nbsp; (2,2) → sum 4; &nbsp; (−1,−4) → sum −5</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">Same input (ab = 4) gives three different outputs. ✗</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">f is NOT a function from ℤ to ℤ.</div></div>
   </div>
 </div>
 
-<div class="ex-title">Q.14 — Check injectivity and surjectivity</div>
+<div class="ex-bar">Q.14 — Check injectivity and surjectivity</div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">14(a)</div><div class="qtext">f : ℕ → ℕ given by f(x) = x²</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p><b>Injective:</b> f(x₁)=f(x₂) → x₁²=x₂² → x₁=x₂ (since x∈ℕ, positive) ✓ Injective.</p>
-    <p><b>Surjective:</b> Is every n∈ℕ a perfect square? No (e.g. 2,3 not perfect squares) ✗ Not surjective.</p>
-    <div class="ans-line">Injective but NOT surjective.</div>
+  <div class="qhead"><div class="qbadge">Q 14(a)</div><div class="qtext">f : ℕ → ℕ, f(x) = x²</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Injective?</div><div class="cnt">Let f(x₁) = f(x₂) ⟹ x₁² = x₂² ⟹ x₁ = x₂ (since x ∈ ℕ, both positive) ✓</div></div>
+    <div class="sol-row"><div class="lbl step">Surjective?</div><div class="cnt">Is every n ∈ ℕ a perfect square? No. e.g., 2 ∈ ℕ has no preimage in ℕ. ✗</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">Injective but NOT surjective.</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">14(b)</div><div class="qtext">f : ℤ → ℤ given by f(x) = x²</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p><b>Injective:</b> f(2) = f(−2) = 4 but 2 ≠ −2 ✗ Not injective.</p>
-    <p><b>Surjective:</b> −1 ∈ ℤ has no preimage (x²≥0 always) ✗ Not surjective.</p>
-    <div class="ans-line">Neither injective nor surjective.</div>
+  <div class="qhead"><div class="qbadge">Q 14(b)</div><div class="qtext">f : ℤ → ℤ, f(x) = x²</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Injective?</div><div class="cnt">f(2) = 4 = f(−2), but 2 ≠ −2. ✗ Not injective.</div></div>
+    <div class="sol-row"><div class="lbl step">Surjective?</div><div class="cnt">−1 ∈ ℤ has no preimage (x² ≥ 0 always). ✗ Not surjective.</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">Neither injective nor surjective.</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">14(c)</div><div class="qtext">f : ℝ → ℝ given by f(x) = x²</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p><b>Injective:</b> f(2) = f(−2) = 4, 2 ≠ −2 ✗ Not injective.</p>
-    <p><b>Surjective:</b> y = −1 has no real preimage ✗ Not surjective.</p>
-    <div class="ans-line">Neither injective nor surjective.</div>
+  <div class="qhead"><div class="qbadge">Q 14(c)</div><div class="qtext">f : ℝ → ℝ, f(x) = x²</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Injective?</div><div class="cnt">f(2) = f(−2) = 4, but 2 ≠ −2. ✗</div></div>
+    <div class="sol-row"><div class="lbl step">Surjective?</div><div class="cnt">y = −1 has no real preimage. ✗</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">Neither injective nor surjective.</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">14(d)</div><div class="qtext">f : ℕ → ℕ given by f(x) = x³</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p><b>Injective:</b> x₁³=x₂³ → x₁=x₂ ✓ Injective.</p>
-    <p><b>Surjective:</b> 2 ∈ ℕ has no preimage (∛2 ∉ ℕ) ✗ Not surjective.</p>
-    <div class="ans-line">Injective but NOT surjective.</div>
+  <div class="qhead"><div class="qbadge">Q 14(d)</div><div class="qtext">f : ℕ → ℕ, f(x) = x³</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Injective?</div><div class="cnt">x₁³ = x₂³ ⟹ x₁ = x₂ ✓</div></div>
+    <div class="sol-row"><div class="lbl step">Surjective?</div><div class="cnt">2 ∈ ℕ: ∛2 ∉ ℕ. Not every n ∈ ℕ is a perfect cube. ✗</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">Injective but NOT surjective.</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">14(e)</div><div class="qtext">f : ℝ → ℝ given by f(x) = x³</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p><b>Injective:</b> x₁³=x₂³ → x₁=x₂ ✓ Injective.</p>
-    <p><b>Surjective:</b> For every y∈ℝ, x = ∛y ∈ ℝ ✓ Surjective.</p>
-    <div class="ans-line">Bijective (both injective and surjective).</div>
+  <div class="qhead"><div class="qbadge">Q 14(e)</div><div class="qtext">f : ℝ → ℝ, f(x) = x³</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Injective?</div><div class="cnt">x₁³ = x₂³ ⟹ x₁ = x₂ (cube root is unique in ℝ) ✓</div></div>
+    <div class="sol-row"><div class="lbl step">Surjective?</div><div class="cnt">For every y ∈ ℝ, x = ∛y ∈ ℝ exists and f(x) = y. ✓</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">Bijective (both injective and surjective).</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">Q.16</div><div class="qtext">If f(x) = 3(4^(x+1)), find f(−3).</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>f(−3) = 3 · 4^(−3+1) = 3 · 4^(−2) = 3 · (1/16) = 3/16</p>
-    <div class="ans-line">f(−3) = 3/16</div>
+  <div class="qhead"><div class="qbadge">Q 16</div><div class="qtext">If f(x) = 3(4^(x+1)), find f(−3).</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl given">Given</div><div class="cnt">f(x) = 3 · 4^(x+1)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Substitute x = −3: &nbsp; f(−3) = 3 · 4^(−3+1) = 3 · 4^(−2)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">4^(−2) = 1/16 &nbsp;⟹&nbsp; f(−3) = 3 × 1/16 = 3/16</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ f(−3)</div><div class="cnt">= 3/16</div></div>
   </div>
 </div>
 
-<div class="ex-title">Q.17 — Express exponential equations in logarithmic form</div>
+<div class="ex-bar">Q.17 — Express exponential equations in logarithmic form</div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">17</div><div class="qtext">Convert each to log form: (a)2⁵=32 (b)54⁰=1 (c)23¹=23 (d)9^(3/2)=27 (e)3⁻⁴=1/81 (f)10⁻²=0.01 (g)e²=7.39 (h)e^(1/2)=1.6487 (i)e⁻ˣ=6</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>(a) log₂ 32 = 5 &nbsp;&nbsp; (b) log₅₄ 1 = 0</p>
-    <p>(c) log₂₃ 23 = 1 &nbsp;&nbsp; (d) log₉ 27 = 3/2</p>
-    <p>(e) log₃ (1/81) = −4 &nbsp;&nbsp; (f) log₁₀ 0.01 = −2</p>
-    <p>(g) log_e 7.39 = 2 (ln 7.39 = 2) &nbsp;&nbsp; (h) ln 1.6487 = 1/2</p>
-    <p>(i) ln 6 = −x</p>
-    <div class="ans-line">All conversions done using: aˣ = y ⟺ logₐ y = x</div>
+  <div class="qhead"><div class="qbadge">Q 17</div><div class="qtext">Convert: (a) 2⁵=32 (b) 54⁰=1 (c) 23¹=23 (d) 9^(3/2)=27 (e) 3⁻⁴=1/81 (f) 10⁻²=0.01 (g) e²≈7.39 (h) e^(1/2)≈1.6487 (i) e⁻ˣ=6</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl formula">Rule</div><div class="cnt">aˣ = y &nbsp;⟺&nbsp; logₐ y = x</div></div>
+    <div class="sol-row"><div class="lbl step">(a)</div><div class="cnt">2⁵ = 32 &nbsp;⟹&nbsp; log₂ 32 = 5</div></div>
+    <div class="sol-row"><div class="lbl step">(b)</div><div class="cnt">54⁰ = 1 &nbsp;⟹&nbsp; log₅₄ 1 = 0</div></div>
+    <div class="sol-row"><div class="lbl step">(c)</div><div class="cnt">23¹ = 23 &nbsp;⟹&nbsp; log₂₃ 23 = 1</div></div>
+    <div class="sol-row"><div class="lbl step">(d)</div><div class="cnt">9^(3/2) = 27 &nbsp;⟹&nbsp; log₉ 27 = 3/2</div></div>
+    <div class="sol-row"><div class="lbl step">(e)</div><div class="cnt">3⁻⁴ = 1/81 &nbsp;⟹&nbsp; log₃ (1/81) = −4</div></div>
+    <div class="sol-row"><div class="lbl step">(f)</div><div class="cnt">10⁻² = 0.01 &nbsp;⟹&nbsp; log₁₀ 0.01 = −2</div></div>
+    <div class="sol-row"><div class="lbl step">(g)</div><div class="cnt">e² = 7.39 &nbsp;⟹&nbsp; ln 7.39 = 2</div></div>
+    <div class="sol-row"><div class="lbl step">(h)</div><div class="cnt">e^(1/2) = 1.6487 &nbsp;⟹&nbsp; ln 1.6487 = 1/2</div></div>
+    <div class="sol-row"><div class="lbl step">(i)</div><div class="cnt">e⁻ˣ = 6 &nbsp;⟹&nbsp; ln 6 = −x</div></div>
   </div>
 </div>
 
-<div class="ex-title">Q.18 — Express logarithmic equations in exponential form</div>
+<div class="ex-bar">Q.18 — Express logarithmic equations in exponential form</div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">18</div><div class="qtext">(a) log₂ 64=6 (b) log₅(1/25)=−2 (c) log₁₀ 0.001=−3 (d) log_(1/2)(−8)=3 (e) ln 1=0 (f) ln e=1 (g) ln(1/2)=−0.693</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>(a) 2⁶ = 64 &nbsp;&nbsp; (b) 5⁻² = 1/25</p>
-    <p>(c) 10⁻³ = 0.001 &nbsp;&nbsp; (d) (1/2)³ = 1/8 (note: log of negative not defined in real)</p>
-    <p>(e) e⁰ = 1 &nbsp;&nbsp; (f) e¹ = e &nbsp;&nbsp; (g) e^(−0.693) = 1/2</p>
-    <div class="ans-line">All conversions: logₐ y = x ⟺ aˣ = y</div>
+  <div class="qhead"><div class="qbadge">Q 18</div><div class="qtext">(a) log₂64=6 (b) log₅(1/25)=−2 (c) log₁₀0.001=−3 (d) log_(1/2)(−8)=3 (e) ln1=0 (f) lne=1 (g) ln(1/2)=−0.693</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl formula">Rule</div><div class="cnt">logₐ y = x &nbsp;⟺&nbsp; aˣ = y</div></div>
+    <div class="sol-row"><div class="lbl step">(a)</div><div class="cnt">log₂ 64 = 6 &nbsp;⟹&nbsp; 2⁶ = 64</div></div>
+    <div class="sol-row"><div class="lbl step">(b)</div><div class="cnt">log₅ (1/25) = −2 &nbsp;⟹&nbsp; 5⁻² = 1/25</div></div>
+    <div class="sol-row"><div class="lbl step">(c)</div><div class="cnt">log₁₀ 0.001 = −3 &nbsp;⟹&nbsp; 10⁻³ = 0.001</div></div>
+    <div class="sol-row"><div class="lbl step">(e)</div><div class="cnt">ln 1 = 0 &nbsp;⟹&nbsp; e⁰ = 1</div></div>
+    <div class="sol-row"><div class="lbl step">(f)</div><div class="cnt">ln e = 1 &nbsp;⟹&nbsp; e¹ = e</div></div>
+    <div class="sol-row"><div class="lbl step">(g)</div><div class="cnt">ln(1/2) = −0.693 &nbsp;⟹&nbsp; e^(−0.693) = 1/2</div></div>
   </div>
 </div>
 
-<div class="ex-title">Q.19 — Find the domain</div>
+<div class="ex-bar">Q.19 — Find the domain</div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">19(a)</div><div class="qtext">f(x) = ln(x − 5)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>ln defined for positive argument: x − 5 &gt; 0 → x &gt; 5</p>
-    <div class="ans-line">Domain: (5, ∞)</div>
+  <div class="qhead"><div class="qbadge">Q 19(a)</div><div class="qtext">f(x) = ln(x − 5)</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Condition</div><div class="cnt">ln is defined for positive argument: x − 5 &gt; 0</div></div>
+    <div class="sol-row"><div class="lbl step">Solve</div><div class="cnt">x &gt; 5</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Domain</div><div class="cnt">= (5, ∞)</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">19(b)</div><div class="qtext">f(x) = log₁₀(x² − 5x + 6)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>Need x² − 5x + 6 &gt; 0 → (x−2)(x−3) &gt; 0</p>
-    <p>x &lt; 2 or x &gt; 3</p>
-    <div class="ans-line">Domain: (−∞, 2) ∪ (3, ∞)</div>
+  <div class="qhead"><div class="qbadge">Q 19(b)</div><div class="qtext">f(x) = log₁₀(x² − 5x + 6)</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Condition</div><div class="cnt">x² − 5x + 6 &gt; 0</div></div>
+    <div class="sol-row"><div class="lbl step">Factorise</div><div class="cnt">(x − 2)(x − 3) &gt; 0</div></div>
+    <div class="sol-row"><div class="lbl step">Sign test</div><div class="cnt">x &lt; 2: (−)(−) = + ✓ &nbsp;&nbsp; 2 &lt; x &lt; 3: (−)(+) = − ✗ &nbsp;&nbsp; x &gt; 3: (+)(+) = + ✓</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Domain</div><div class="cnt">= (−∞, 2) ∪ (3, ∞)</div></div>
   </div>
 </div>
 
-<div class="ex-title">Q.20 — Write as sum or difference of logarithms</div>
+<div class="ex-bar">Q.20 — Write as sum or difference of logarithms</div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">20(a)</div><div class="qtext">log(pq/rs)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>= log p + log q − log r − log s</p>
-    <div class="ans-line">log p + log q − log r − log s</div>
+  <div class="qhead"><div class="qbadge">Q 20(a)</div><div class="qtext">log(pq/rs)</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Apply quotient rule: log(pq) − log(rs)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">Apply product rule: log p + log q − log r − log s</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">log p + log q − log r − log s</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">20(b)</div><div class="qtext">log(√x · ∛y)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>= log x^(1/2) + log y^(1/3) = (1/2)log x + (1/3)log y</p>
-    <div class="ans-line">(1/2)log x + (1/3)log y</div>
+  <div class="qhead"><div class="qbadge">Q 20(b)</div><div class="qtext">log(√x · ∛y)</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">log(x^(1/2) · y^(1/3))</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">= (1/2) log x + (1/3) log y &nbsp;&nbsp;(Power rule + Product rule)</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">(1/2) log x + (1/3) log y</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">20(c)</div><div class="qtext">ln[a³(a−2)² / √(b²+5)]</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>= ln a³ + ln(a−2)² − ln(b²+5)^(1/2)</p>
-    <p>= 3 ln a + 2 ln(a−2) − (1/2)ln(b²+5)</p>
-    <div class="ans-line">3 ln a + 2 ln(a−2) − (1/2)ln(b²+5)</div>
+  <div class="qhead"><div class="qbadge">Q 20(c)</div><div class="qtext">ln[a³(a−2)² / √(b²+5)]</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">= ln[a³(a−2)²] − ln(b²+5)^(1/2) &nbsp;&nbsp;(Quotient rule)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">= ln a³ + ln(a−2)² − (1/2)ln(b²+5) &nbsp;&nbsp;(Product rule)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">= 3 ln a + 2 ln(a−2) − (1/2)ln(b²+5) &nbsp;&nbsp;(Power rule)</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">3 ln a + 2 ln(a−2) − (1/2)ln(b²+5)</div></div>
   </div>
 </div>
 
-<div class="ex-title">Q.21 — Write as single logarithm</div>
+<div class="ex-bar">Q.21 — Write as single logarithm</div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">21(a)</div><div class="qtext">5 log x + 7 log y − log z</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>= log x⁵ + log y⁷ − log z = log(x⁵y⁷/z)</p>
-    <div class="ans-line">log(x⁵y⁷/z)</div>
+  <div class="qhead"><div class="qbadge">Q 21(a)</div><div class="qtext">5 log x + 7 log y − log z</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Apply power rule: log x⁵ + log y⁷ − log z</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">Apply product rule: log(x⁵y⁷) − log z</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">Apply quotient rule: log(x⁵y⁷/z)</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">log(x⁵y⁷/z)</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">21(b)</div><div class="qtext">(1/3)log(x−1) + (1/2)log(x)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>= log(x−1)^(1/3) + log x^(1/2) = log[∛(x−1) · √x]</p>
-    <div class="ans-line">log[∛(x−1) · √x]</div>
+  <div class="qhead"><div class="qbadge">Q 21(b)</div><div class="qtext">(1/3)log(x−1) + (1/2)log(x)</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">= log(x−1)^(1/3) + log x^(1/2) &nbsp;&nbsp;(Power rule)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">= log[(x−1)^(1/3) · x^(1/2)] &nbsp;&nbsp;(Product rule)</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">log[∛(x−1) · √x]</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">21(c)</div><div class="qtext">ln(x+2) + ln(x−2) − 3ln(x+5)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>= ln[(x+2)(x−2)] − ln(x+5)³ = ln[(x²−4)/(x+5)³]</p>
-    <div class="ans-line">ln[(x²−4)/(x+5)³]</div>
+  <div class="qhead"><div class="qbadge">Q 21(c)</div><div class="qtext">ln(x+2) + ln(x−2) − 3ln(x+5)</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">= ln[(x+2)(x−2)] − ln(x+5)³ &nbsp;&nbsp;(Product + Power rule)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">= ln(x²−4) − ln(x+5)³ &nbsp;&nbsp;(since (x+2)(x−2) = x²−4)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">= ln[(x²−4)/(x+5)³] &nbsp;&nbsp;(Quotient rule)</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">ln[(x²−4)/(x+5)³]</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">Q.22</div><div class="qtext">Given log 2 = a and log 3 = b. Write log √96 in terms of a and b.</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>96 = 2⁵ × 3 → log 96 = 5 log 2 + log 3 = 5a + b</p>
-    <p>log √96 = (1/2) log 96 = (5a + b)/2</p>
-    <div class="ans-line">log √96 = (5a + b)/2</div>
+  <div class="qhead"><div class="qbadge">Q 22</div><div class="qtext">Given log 2 = a and log 3 = b. Write log √96 in terms of a and b.</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl given">Given</div><div class="cnt">log 2 = a, log 3 = b</div></div>
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">96 = 32 × 3 = 2⁵ × 3</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">log 96 = log 2⁵ + log 3 = 5 log 2 + log 3 = 5a + b</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">log √96 = log 96^(1/2) = (1/2) log 96 = (5a + b)/2</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">log √96 = (5a + b)/2</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">Q.24</div><div class="qtext">If f(x) = ax² − bx + 6, f(2) = 3, f(4) = 30. Find a and b.</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>f(2) = 4a − 2b + 6 = 3 → 4a − 2b = −3 …(I)</p>
-    <p>f(4) = 16a − 4b + 6 = 30 → 16a − 4b = 24 → 4a − b = 6 …(II)</p>
-    <p>(II) − (I): (4a − b) − (4a − 2b) = 6 − (−3) → b = 9</p>
-    <p>From (II): 4a = 6 + 9 = 15 → a = 15/4</p>
-    <div class="ans-line">a = 15/4, b = 9</div>
+  <div class="qhead"><div class="qbadge">Q 24</div><div class="qtext">If f(x) = ax² − bx + 6, f(2) = 3, f(4) = 30. Find a and b.</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl given">Given</div><div class="cnt">f(2) = 3 and f(4) = 30</div></div>
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">f(2) = 4a − 2b + 6 = 3 &nbsp;⟹&nbsp; 4a − 2b = −3 &nbsp;…(I)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">f(4) = 16a − 4b + 6 = 30 &nbsp;⟹&nbsp; 16a − 4b = 24 &nbsp;⟹&nbsp; 4a − b = 6 &nbsp;…(II)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">(II) − (I): (4a − b) − (4a − 2b) = 6 − (−3) &nbsp;⟹&nbsp; b = 9</div></div>
+    <div class="sol-row"><div class="lbl step">Step 4</div><div class="cnt">From (II): 4a = 6 + 9 = 15 &nbsp;⟹&nbsp; a = 15/4</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">a = 15/4, b = 9</div></div>
   </div>
 </div>
 
-<div class="ex-title">Q.25 — Solve for x</div>
+<div class="ex-bar">Q.25 — Solve for x (Logarithm equations)</div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">25(a)</div><div class="qtext">log 2 + log(x+3) − log(3x−5) = log 3</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>log[2(x+3)/(3x−5)] = log 3 → 2(x+3) = 3(3x−5)</p>
-    <p>2x + 6 = 9x − 15 → 21 = 7x → x = 3</p>
-    <div class="ans-line">x = 3</div>
+  <div class="qhead"><div class="qbadge">Q 25(a)</div><div class="qtext">log 2 + log(x+3) − log(3x−5) = log 3</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Combine LHS: log[2(x+3)/(3x−5)] = log 3</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">2(x+3)/(3x−5) = 3 &nbsp;⟹&nbsp; 2x + 6 = 9x − 15</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">21 = 7x &nbsp;⟹&nbsp; x = 3</div></div>
+    <div class="sol-row"><div class="lbl verify">Verify</div><div class="cnt">3x−5 = 4 &gt; 0 ✓ &nbsp; x+3 = 6 &gt; 0 ✓</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ x</div><div class="cnt">= 3</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">25(b)</div><div class="qtext">2 log₁₀ x = 1 + log₁₀(x + 11/10)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>log x² − log(x + 11/10) = 1 → log[x²/(x+11/10)] = 1</p>
-    <p>x²/(x + 11/10) = 10 → x² = 10x + 11 → x² − 10x − 11 = 0</p>
-    <p>(x−11)(x+1) = 0 → x = 11 (reject x=−1, log undefined)</p>
-    <div class="ans-line">x = 11</div>
+  <div class="qhead"><div class="qbadge">Q 25(b)</div><div class="qtext">2 log₁₀ x = 1 + log₁₀(x + 11/10)</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">log x² − log(x + 11/10) = 1</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">log[x²/(x + 11/10)] = 1 &nbsp;⟹&nbsp; x²/(x + 11/10) = 10</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">x² = 10x + 11 &nbsp;⟹&nbsp; x² − 10x − 11 = 0</div></div>
+    <div class="sol-row"><div class="lbl step">Step 4</div><div class="cnt">(x − 11)(x + 1) = 0 &nbsp;⟹&nbsp; x = 11 or x = −1</div></div>
+    <div class="sol-row"><div class="lbl verify">Verify</div><div class="cnt">x = −1: log(−1) not defined. Reject. x = 11: valid. ✓</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ x</div><div class="cnt">= 11</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">25(c)</div><div class="qtext">log₂x + log₄x + log₁₆x = 21/4</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>Convert all to log₂: log₄x = log₂x/2; log₁₆x = log₂x/4</p>
-    <p>log₂x + log₂x/2 + log₂x/4 = 21/4</p>
-    <p>log₂x(1 + 1/2 + 1/4) = 21/4 → log₂x · (7/4) = 21/4 → log₂x = 3</p>
-    <p>x = 2³ = 8</p>
-    <div class="ans-line">x = 8</div>
+  <div class="qhead"><div class="qbadge">Q 25(c)</div><div class="qtext">log₂x + log₄x + log₁₆x = 21/4</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Convert all to base 2 using change of base: log₄x = log₂x / log₂4 = log₂x / 2</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">log₁₆x = log₂x / log₂16 = log₂x / 4</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">log₂x + (log₂x)/2 + (log₂x)/4 = 21/4</div></div>
+    <div class="sol-row"><div class="lbl step">Step 4</div><div class="cnt">log₂x · (1 + 1/2 + 1/4) = 21/4 &nbsp;⟹&nbsp; log₂x · (7/4) = 21/4</div></div>
+    <div class="sol-row"><div class="lbl step">Step 5</div><div class="cnt">log₂x = 3 &nbsp;⟹&nbsp; x = 2³ = 8</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ x</div><div class="cnt">= 8</div></div>
   </div>
 </div>
 
-<!-- ══════════════ EXERCISE 6.2 ══════════════ -->
-<div class="sec-title" id="ex62"><div class="sn">✏️</div> Exercise 6.2 — All Questions Solved</div>
+</div><!-- end .wrap, more content below -->
 
-<div class="ex-title">Q.1 — f(x) = 3x + 5, g(x) = 6x − 1, find:</div>
+<div class="wrap">
 
+<!-- ═══════════════ EXERCISE 6.2 ═══════════════ -->
+<div class="sec-title" id="ex62"><div class="sn">✏️</div> Exercise 6.2</div>
+
+<div class="ex-bar">Q.1 — f(x) = 3x + 5, g(x) = 6x − 1, find:</div>
+
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">1(a)</div><div class="qtext">(f+g)(x)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>(f+g)(x) = 3x+5 + 6x−1 = 9x + 4</p>
-    <div class="ans-line">(f+g)(x) = 9x + 4</div>
+  <div class="qhead"><div class="qbadge">Q 1(a)</div><div class="qtext">(f + g)(x)</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">(f+g)(x) = f(x) + g(x)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">= (3x + 5) + (6x − 1) = 9x + 4</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ (f+g)(x)</div><div class="cnt">= 9x + 4</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">1(b)</div><div class="qtext">(f−g)(2)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>(f−g)(x) = (3x+5)−(6x−1) = −3x + 6</p>
-    <p>(f−g)(2) = −6 + 6 = 0</p>
-    <div class="ans-line">(f−g)(2) = 0</div>
+  <div class="qhead"><div class="qbadge">Q 1(b)</div><div class="qtext">(f − g)(2)</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">(f−g)(x) = f(x) − g(x) = (3x+5) − (6x−1) = −3x + 6</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">At x = 2: &nbsp; (f−g)(2) = −3(2) + 6 = −6 + 6 = 0</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ (f−g)(2)</div><div class="cnt">= 0</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">1(c)</div><div class="qtext">(fg)(3)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>f(3) = 9+5 = 14; g(3) = 18−1 = 17</p>
-    <p>(fg)(3) = 14 × 17 = 238</p>
-    <div class="ans-line">(fg)(3) = 238</div>
+  <div class="qhead"><div class="qbadge">Q 1(c)</div><div class="qtext">(fg)(3)</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">f(3) = 3(3) + 5 = 14</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">g(3) = 6(3) − 1 = 17</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">(fg)(3) = f(3) × g(3) = 14 × 17 = 238</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ (fg)(3)</div><div class="cnt">= 238</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">1(d)</div><div class="qtext">(f/g)(x) and its domain</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>(f/g)(x) = (3x+5)/(6x−1)</p>
-    <p>Defined when 6x − 1 ≠ 0 → x ≠ 1/6</p>
-    <div class="ans-line">(f/g)(x) = (3x+5)/(6x−1) &nbsp;&nbsp; Domain: ℝ − {1/6}</div>
+  <div class="qhead"><div class="qbadge">Q 1(d)</div><div class="qtext">(f/g)(x) and its domain</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">(f/g)(x) = f(x)/g(x) = (3x + 5)/(6x − 1)</div></div>
+    <div class="sol-row"><div class="lbl step">Domain</div><div class="cnt">g(x) ≠ 0 &nbsp;⟹&nbsp; 6x − 1 ≠ 0 &nbsp;⟹&nbsp; x ≠ 1/6</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">(f/g)(x) = (3x+5)/(6x−1), &nbsp; Domain = ℝ − {1/6}</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">Q.2</div><div class="qtext">f: {2,4,5} → {2,3,6}, f = {(2,3),(4,6),(5,2)}; g: {2,3,6} → {2,4}, g = {(2,4),(3,4),(6,2)}. Write g∘f.</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>g∘f(2) = g[f(2)] = g(3) = 4</p>
-    <p>g∘f(4) = g[f(4)] = g(6) = 2</p>
-    <p>g∘f(5) = g[f(5)] = g(2) = 4</p>
-    <div class="ans-line">g∘f = {(2,4), (4,2), (5,4)}</div>
+  <div class="qhead"><div class="qbadge">Q 2</div><div class="qtext">f = {(2,3),(4,6),(5,2)}, g = {(2,4),(3,4),(6,2)}. Write g∘f.</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl given">Given</div><div class="cnt">f: {2,4,5} → {2,3,6} and g: {2,3,6} → {2,4}</div></div>
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">g∘f(2) = g[f(2)] = g(3) = 4</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">g∘f(4) = g[f(4)] = g(6) = 2</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">g∘f(5) = g[f(5)] = g(2) = 4</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ g∘f</div><div class="cnt">= {(2,4), (4,2), (5,4)}</div></div>
   </div>
 </div>
 
-<div class="ex-title">Q.3 — f(x) = 2x² + 3, g(x) = 5x − 2, find compositions</div>
+<div class="ex-bar">Q.3 — f(x) = 2x² + 3, g(x) = 5x − 2, find compositions</div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">3(a)</div><div class="qtext">f∘g</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>(f∘g)(x) = f[g(x)] = 2(5x−2)² + 3 = 2(25x²−20x+4) + 3 = 50x² − 40x + 8 + 3</p>
-    <div class="ans-line">(f∘g)(x) = 50x² − 40x + 11</div>
+  <div class="qhead"><div class="qbadge">Q 3(a)</div><div class="qtext">f∘g</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">(f∘g)(x) = f[g(x)] = f(5x−2)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">= 2(5x−2)² + 3 = 2(25x²−20x+4) + 3</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">= 50x² − 40x + 8 + 3</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ (f∘g)(x)</div><div class="cnt">= 50x² − 40x + 11</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">3(b)</div><div class="qtext">g∘f</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>(g∘f)(x) = g[f(x)] = 5(2x²+3) − 2 = 10x² + 15 − 2</p>
-    <div class="ans-line">(g∘f)(x) = 10x² + 13</div>
+  <div class="qhead"><div class="qbadge">Q 3(b)</div><div class="qtext">g∘f</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">(g∘f)(x) = g[f(x)] = g(2x²+3)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">= 5(2x²+3) − 2 = 10x² + 15 − 2</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ (g∘f)(x)</div><div class="cnt">= 10x² + 13</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">3(c)</div><div class="qtext">f∘f</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>(f∘f)(x) = f[f(x)] = 2(2x²+3)² + 3 = 2(4x⁴+12x²+9) + 3 = 8x⁴ + 24x² + 18 + 3</p>
-    <div class="ans-line">(f∘f)(x) = 8x⁴ + 24x² + 21</div>
+  <div class="qhead"><div class="qbadge">Q 3(c)</div><div class="qtext">f∘f</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">(f∘f)(x) = f[f(x)] = f(2x²+3)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">= 2(2x²+3)² + 3 = 2(4x⁴+12x²+9) + 3</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">= 8x⁴ + 24x² + 18 + 3</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ (f∘f)(x)</div><div class="cnt">= 8x⁴ + 24x² + 21</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">3(d)</div><div class="qtext">g∘g</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>(g∘g)(x) = g[g(x)] = 5(5x−2) − 2 = 25x − 10 − 2</p>
-    <div class="ans-line">(g∘g)(x) = 25x − 12</div>
+  <div class="qhead"><div class="qbadge">Q 3(d)</div><div class="qtext">g∘g</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">(g∘g)(x) = g[g(x)] = g(5x−2)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">= 5(5x−2) − 2 = 25x − 10 − 2</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ (g∘g)(x)</div><div class="cnt">= 25x − 12</div></div>
   </div>
 </div>
 
-<div class="ex-title">Q.4 — Verify f and g are inverse functions</div>
+<div class="ex-bar">Q.4 — Verify f and g are inverse functions of each other</div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">4(a)</div><div class="qtext">f(x) = (x−7)/4, g(x) = 4x + 7</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>f[g(x)] = (4x+7−7)/4 = 4x/4 = x ✓</p>
-    <p>g[f(x)] = 4·(x−7)/4 + 7 = x − 7 + 7 = x ✓</p>
-    <div class="ans-line">∴ f and g are inverse functions.</div>
+  <div class="qhead"><div class="qbadge">Q 4(a)</div><div class="qtext">f(x) = (x−7)/4, g(x) = 4x + 7</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Check 1</div><div class="cnt">f[g(x)] = f(4x+7) = (4x+7−7)/4 = 4x/4 = x ✓</div></div>
+    <div class="sol-row"><div class="lbl step">Check 2</div><div class="cnt">g[f(x)] = g((x−7)/4) = 4·(x−7)/4 + 7 = x−7+7 = x ✓</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">f and g are inverse functions of each other.</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">4(b)</div><div class="qtext">f(x) = x³ + 4, g(x) = ∛(x−4)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>f[g(x)] = (∛(x−4))³ + 4 = (x−4) + 4 = x ✓</p>
-    <p>g[f(x)] = ∛(x³+4−4) = ∛(x³) = x ✓</p>
-    <div class="ans-line">∴ f and g are inverse functions.</div>
+  <div class="qhead"><div class="qbadge">Q 4(b)</div><div class="qtext">f(x) = x³ + 4, g(x) = ∛(x−4)</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Check 1</div><div class="cnt">f[g(x)] = f(∛(x−4)) = (∛(x−4))³ + 4 = (x−4)+4 = x ✓</div></div>
+    <div class="sol-row"><div class="lbl step">Check 2</div><div class="cnt">g[f(x)] = g(x³+4) = ∛(x³+4−4) = ∛(x³) = x ✓</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">f and g are inverse functions of each other.</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">4(c)</div><div class="qtext">f(x) = (x+3)/(x−2), g(x) = (2x+3)/(x−1)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>f[g(x)] = [(2x+3)/(x−1) + 3] / [(2x+3)/(x−1) − 2]</p>
-    <p class="indent">= [(2x+3+3x−3)/(x−1)] / [(2x+3−2x+2)/(x−1)]</p>
-    <p class="indent">= (5x)/(5) = x ✓</p>
-    <p>Similarly g[f(x)] = x ✓</p>
-    <div class="ans-line">∴ f and g are inverse functions.</div>
+  <div class="qhead"><div class="qbadge">Q 4(c)</div><div class="qtext">f(x) = (x+3)/(x−2), g(x) = (2x+3)/(x−1)</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Check 1</div><div class="cnt">f[g(x)] = f((2x+3)/(x−1))</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">Num: (2x+3)/(x−1) + 3 = (2x+3+3x−3)/(x−1) = 5x/(x−1)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">Den: (2x+3)/(x−1) − 2 = (2x+3−2x+2)/(x−1) = 5/(x−1)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 4</div><div class="cnt">f[g(x)] = [5x/(x−1)] ÷ [5/(x−1)] = 5x/5 = x ✓</div></div>
+    <div class="sol-row"><div class="lbl step">Check 2</div><div class="cnt">Similarly g[f(x)] = x ✓ (by symmetry)</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">f and g are inverse functions of each other.</div></div>
   </div>
 </div>
 
-<div class="ex-title">Q.5 — Check if inverse exists; find it</div>
+<div class="ex-bar">Q.5 — Check if inverse exists; if yes, find it</div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">5(a)</div><div class="qtext">f(x) = 5x²</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>f(2) = 20 = f(−2) but 2 ≠ −2 → NOT one-one → inverse does NOT exist.</p>
-    <div class="ans-line">Inverse does not exist.</div>
+  <div class="qhead"><div class="qbadge">Q 5(a)</div><div class="qtext">f(x) = 5x²</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Check</div><div class="cnt">f(2) = 20 = f(−2) but 2 ≠ −2 → NOT one-one. Inverse does NOT exist.</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">Inverse does not exist.</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">5(b)</div><div class="qtext">f(x) = 8</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>Constant function — many-to-one → NOT one-one.</p>
-    <div class="ans-line">Inverse does not exist.</div>
+  <div class="qhead"><div class="qbadge">Q 5(b)</div><div class="qtext">f(x) = 8</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Check</div><div class="cnt">Constant function — every element maps to 8 → many-one → NOT injective.</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">Inverse does not exist.</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">5(c)</div><div class="qtext">f(x) = (6x − 7)/3</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>Linear → one-one and onto. Inverse exists.</p>
-    <p>y = (6x−7)/3 → 3y = 6x−7 → x = (3y+7)/6</p>
-    <div class="ans-line">f⁻¹(x) = (3x + 7)/6</div>
+  <div class="qhead"><div class="qbadge">Q 5(c)</div><div class="qtext">f(x) = (6x − 7)/3</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Linear function → one-one and onto → inverse exists.</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">Let y = (6x−7)/3 &nbsp;⟹&nbsp; 3y = 6x−7 &nbsp;⟹&nbsp; x = (3y+7)/6</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ f⁻¹(x)</div><div class="cnt">= (3x + 7)/6</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">5(d)</div><div class="qtext">f(x) = √(4x + 5)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>Domain: 4x+5 ≥ 0 → x ≥ −5/4. Range: [0,∞). f is one-one (increasing). Inverse exists.</p>
-    <p>y = √(4x+5) → y² = 4x+5 → x = (y²−5)/4</p>
-    <div class="ans-line">f⁻¹(x) = (x² − 5)/4, x ≥ 0</div>
+  <div class="qhead"><div class="qbadge">Q 5(d)</div><div class="qtext">f(x) = √(4x + 5)</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Domain: 4x+5 ≥ 0 → x ≥ −5/4. Range: [0,∞). Strictly increasing → one-one.</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">Let y = √(4x+5) &nbsp;⟹&nbsp; y² = 4x+5 &nbsp;⟹&nbsp; x = (y²−5)/4</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ f⁻¹(x)</div><div class="cnt">= (x² − 5)/4, x ≥ 0</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">5(e)</div><div class="qtext">f(x) = 9x³ + 8</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>Strictly increasing → one-one and onto on ℝ. Inverse exists.</p>
-    <p>y = 9x³+8 → x³ = (y−8)/9 → x = ∛[(y−8)/9]</p>
-    <div class="ans-line">f⁻¹(x) = ∛[(x−8)/9]</div>
+  <div class="qhead"><div class="qbadge">Q 5(e)</div><div class="qtext">f(x) = 9x³ + 8</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Strictly increasing → bijective → inverse exists.</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">y = 9x³+8 &nbsp;⟹&nbsp; x³ = (y−8)/9 &nbsp;⟹&nbsp; x = ∛[(y−8)/9]</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ f⁻¹(x)</div><div class="cnt">= ∛[(x − 8)/9]</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">5(f)</div><div class="qtext">f(x) = x+7 for x&lt;0; 8−x for x≥0</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>For x&lt;0: f is increasing. For x≥0: f is decreasing. Check: at x=0, f(0)=8; as x→−∞, f→−∞.</p>
-    <p>Range of first piece: (−∞,7); Range of second: (−∞,8]. Combined range: (−∞,8].</p>
-    <p>Check one-one: f(−1)=6, can any x≥0 give 6? 8−x=6→x=2 ✗ (different input, same output)</p>
-    <div class="ans-line">Inverse does NOT exist (not one-one overall).</div>
+  <div class="qhead"><div class="qbadge">Q 5(f)</div><div class="qtext">f(x) = x+7 for x&lt;0; 8−x for x≥0</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Check</div><div class="cnt">For x&lt;0: f gives values in (−∞,7). For x≥0: f gives values in (−∞,8].</div></div>
+    <div class="sol-row"><div class="lbl step">Counter</div><div class="cnt">f(−1) = 6. Also f(2) = 8−2 = 6. Different inputs, same output → NOT one-one.</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">Inverse does NOT exist (not one-one).</div></div>
   </div>
 </div>
 
-<div class="ex-title">Q.6 — f(x) = x²+3 for x≤2; 5x+7 for x&gt;2, find:</div>
-
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">6</div><div class="qtext">(a) f(3) (b) f(2) (c) f(0)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>(a) x=3 &gt; 2 → f(3) = 5(3)+7 = 22</p>
-    <p>(b) x=2 ≤ 2 → f(2) = 4+3 = 7</p>
-    <p>(c) x=0 ≤ 2 → f(0) = 0+3 = 3</p>
-    <div class="ans-line">f(3) = 22 &nbsp;&nbsp; f(2) = 7 &nbsp;&nbsp; f(0) = 3</div>
+  <div class="qhead"><div class="qbadge">Q 6</div><div class="qtext">f(x) = x²+3 for x≤2; 5x+7 for x&gt;2. Find (a) f(3) (b) f(2) (c) f(0)</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">(a) f(3)</div><div class="cnt">x = 3 &gt; 2 → use 5x+7: &nbsp; f(3) = 15+7 = 22</div></div>
+    <div class="sol-row"><div class="lbl step">(b) f(2)</div><div class="cnt">x = 2 ≤ 2 → use x²+3: &nbsp; f(2) = 4+3 = 7</div></div>
+    <div class="sol-row"><div class="lbl step">(c) f(0)</div><div class="cnt">x = 0 ≤ 2 → use x²+3: &nbsp; f(0) = 0+3 = 3</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">f(3)=22, f(2)=7, f(0)=3</div></div>
   </div>
 </div>
-
-<div class="ex-title">Q.7 — f(x) = 4x−2 for x≤−3; 5 for −3&lt;x&lt;3; x² for x≥3, find:</div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">7</div><div class="qtext">(a) f(−4) (b) f(−3) (c) f(1) (d) f(5)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>(a) x=−4 ≤ −3: f(−4) = 4(−4)−2 = −18</p>
-    <p>(b) x=−3 ≤ −3: f(−3) = 4(−3)−2 = −14</p>
-    <p>(c) −3 &lt; 1 &lt; 3: f(1) = 5</p>
-    <p>(d) x=5 ≥ 3: f(5) = 25</p>
-    <div class="ans-line">f(−4)=−18, f(−3)=−14, f(1)=5, f(5)=25</div>
+  <div class="qhead"><div class="qbadge">Q 7</div><div class="qtext">f(x) = 4x−2 for x≤−3; 5 for −3&lt;x&lt;3; x² for x≥3. Find (a) f(−4) (b) f(−3) (c) f(1) (d) f(5)</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">(a) f(−4)</div><div class="cnt">x = −4 ≤ −3 → use 4x−2: &nbsp; f(−4) = −16−2 = −18</div></div>
+    <div class="sol-row"><div class="lbl step">(b) f(−3)</div><div class="cnt">x = −3 ≤ −3 → use 4x−2: &nbsp; f(−3) = −12−2 = −14</div></div>
+    <div class="sol-row"><div class="lbl step">(c) f(1)</div><div class="cnt">−3 &lt; 1 &lt; 3 → use 5: &nbsp; f(1) = 5</div></div>
+    <div class="sol-row"><div class="lbl step">(d) f(5)</div><div class="cnt">x = 5 ≥ 3 → use x²: &nbsp; f(5) = 25</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">f(−4)=−18, f(−3)=−14, f(1)=5, f(5)=25</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">Q.8</div><div class="qtext">f(x) = 2|x| + 3x. Find (a) f(2) (b) f(−5)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>(a) x=2&gt;0: |x|=2 → f(2) = 4+6 = 10</p>
-    <p>(b) x=−5&lt;0: |x|=5 → f(−5) = 2(5)+3(−5) = 10−15 = −5</p>
-    <div class="ans-line">f(2) = 10 &nbsp;&nbsp; f(−5) = −5</div>
+  <div class="qhead"><div class="qbadge">Q 8</div><div class="qtext">f(x) = 2|x| + 3x. Find (a) f(2) (b) f(−5)</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">(a) f(2)</div><div class="cnt">x = 2 &gt; 0 → |x| = 2 &nbsp;⟹&nbsp; f(2) = 2(2)+3(2) = 4+6 = 10</div></div>
+    <div class="sol-row"><div class="lbl step">(b) f(−5)</div><div class="cnt">x = −5 &lt; 0 → |x| = 5 &nbsp;⟹&nbsp; f(−5) = 2(5)+3(−5) = 10−15 = −5</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">f(2) = 10, f(−5) = −5</div></div>
   </div>
 </div>
 
-<div class="ex-title">Q.9 — f(x) = 4[x] − 3, find using greatest integer function:</div>
-
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">9</div><div class="qtext">(a) f(7.2) (b) f(0.5) (c) f(−5/2) (d) f(2π) where π=3.14</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>(a) [7.2] = 7 → f = 4(7)−3 = 25</p>
-    <p>(b) [0.5] = 0 → f = 4(0)−3 = −3</p>
-    <p>(c) [−5/2] = [−2.5] = −3 → f = 4(−3)−3 = −15</p>
-    <p>(d) [2π] = [6.28] = 6 → f = 4(6)−3 = 21</p>
-    <div class="ans-line">25, −3, −15, 21</div>
+  <div class="qhead"><div class="qbadge">Q 9</div><div class="qtext">f(x) = 4[x] − 3. Find (a) f(7.2) (b) f(0.5) (c) f(−5/2) (d) f(2π), π=3.14</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">(a)</div><div class="cnt">[7.2] = 7 &nbsp;⟹&nbsp; f(7.2) = 4(7)−3 = 28−3 = 25</div></div>
+    <div class="sol-row"><div class="lbl step">(b)</div><div class="cnt">[0.5] = 0 &nbsp;⟹&nbsp; f(0.5) = 4(0)−3 = −3</div></div>
+    <div class="sol-row"><div class="lbl step">(c)</div><div class="cnt">[−2.5] = −3 &nbsp;⟹&nbsp; f(−5/2) = 4(−3)−3 = −12−3 = −15</div></div>
+    <div class="sol-row"><div class="lbl step">(d)</div><div class="cnt">2π = 6.28 → [6.28] = 6 &nbsp;⟹&nbsp; f(2π) = 4(6)−3 = 24−3 = 21</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answers</div><div class="cnt">25, −3, −15, 21</div></div>
   </div>
 </div>
 
-<div class="ex-title">Q.10 — f(x) = 2{x} + 5x, find using fractional part function:</div>
-
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">10</div><div class="qtext">(a) f(−1) (b) f(1/4) (c) f(−1.2) (d) f(−6)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>(a) {−1}=0 → f(−1) = 0+5(−1) = −5</p>
-    <p>(b) {1/4}=1/4 → f = 2(1/4)+5(1/4) = 1/2+5/4 = 7/4</p>
-    <p>(c) {−1.2} = −1.2−[−1.2] = −1.2−(−2) = 0.8 → f = 2(0.8)+5(−1.2) = 1.6−6 = −4.4</p>
-    <p>(d) {−6}=0 → f(−6) = 0+5(−6) = −30</p>
-    <div class="ans-line">−5, 7/4, −4.4, −30</div>
+  <div class="qhead"><div class="qbadge">Q 10</div><div class="qtext">f(x) = 2{x} + 5x. Find (a) f(−1) (b) f(1/4) (c) f(−1.2) (d) f(−6)</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">(a) f(−1)</div><div class="cnt">{−1} = 0 (integer) &nbsp;⟹&nbsp; f(−1) = 2(0)+5(−1) = −5</div></div>
+    <div class="sol-row"><div class="lbl step">(b) f(1/4)</div><div class="cnt">{1/4} = 1/4 &nbsp;⟹&nbsp; f = 2(1/4)+5(1/4) = 1/2+5/4 = 7/4</div></div>
+    <div class="sol-row"><div class="lbl step">(c) f(−1.2)</div><div class="cnt">{−1.2} = −1.2−[−1.2] = −1.2−(−2) = 0.8 &nbsp;⟹&nbsp; f = 2(0.8)+5(−1.2) = 1.6−6 = −4.4</div></div>
+    <div class="sol-row"><div class="lbl step">(d) f(−6)</div><div class="cnt">{−6} = 0 &nbsp;⟹&nbsp; f(−6) = 0+5(−6) = −30</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answers</div><div class="cnt">−5, 7/4, −4.4, −30</div></div>
   </div>
 </div>
 
-<div class="ex-title">Q.11 — Solve for x</div>
+<div class="ex-bar">Q.11 — Solve for x</div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">11(a)</div><div class="qtext">|x + 4| ≥ 5</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>|x+4| ≥ 5 → x+4 ≥ 5 or x+4 ≤ −5 → x ≥ 1 or x ≤ −9</p>
-    <div class="ans-line">x ∈ (−∞, −9] ∪ [1, ∞)</div>
+  <div class="qhead"><div class="qbadge">Q 11(a)</div><div class="qtext">|x + 4| ≥ 5</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Rule</div><div class="cnt">|A| ≥ m &nbsp;⟹&nbsp; A ≥ m or A ≤ −m</div></div>
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">x+4 ≥ 5 or x+4 ≤ −5</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">x ≥ 1 or x ≤ −9</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ x</div><div class="cnt">∈ (−∞, −9] ∪ [1, ∞)</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">11(b)</div><div class="qtext">|x−4| + |x−2| = 3</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>Critical points: x=2, x=4. Three regions:</p>
-    <p><b>x &lt; 2:</b> (4−x)+(2−x)=3 → 6−2x=3 → x=3/2 ✓ (3/2 &lt; 2 ✓)</p>
-    <p><b>2 ≤ x ≤ 4:</b> (4−x)+(x−2)=3 → 2=3 (impossible)</p>
-    <p><b>x &gt; 4:</b> (x−4)+(x−2)=3 → 2x−6=3 → x=9/2 ✓ (9/2 &gt; 4 ✓)</p>
-    <div class="ans-line">x = 3/2 or x = 9/2</div>
+  <div class="qhead"><div class="qbadge">Q 11(b)</div><div class="qtext">|x − 4| + |x − 2| = 3</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Critical points: x = 2, x = 4. Three regions to test.</div></div>
+    <div class="sol-row"><div class="lbl step">Region I: x &lt; 2</div><div class="cnt">−(x−4)−(x−2) = 3 → −2x+6 = 3 → x = 3/2 ✓ (3/2 &lt; 2)</div></div>
+    <div class="sol-row"><div class="lbl step">Region II: 2≤x≤4</div><div class="cnt">−(x−4)+(x−2) = 3 → 2 = 3. Impossible. No solution.</div></div>
+    <div class="sol-row"><div class="lbl step">Region III: x &gt; 4</div><div class="cnt">(x−4)+(x−2) = 3 → 2x−6 = 3 → x = 9/2 ✓ (9/2 &gt; 4)</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ x</div><div class="cnt">= 3/2 or x = 9/2</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">11(c)</div><div class="qtext">x² + 7|x| + 12 = 0</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>Let t = |x| ≥ 0: t² + 7t + 12 = 0 → (t+3)(t+4) = 0 → t = −3 or t = −4</p>
-    <p>Both negative, but t = |x| ≥ 0. No solution.</p>
-    <div class="ans-line">No real solution.</div>
+  <div class="qhead"><div class="qbadge">Q 11(c)</div><div class="qtext">x² + 7|x| + 12 = 0</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Let t = |x| ≥ 0: &nbsp; t² + 7t + 12 = 0</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">(t+3)(t+4) = 0 &nbsp;⟹&nbsp; t = −3 or t = −4</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">But t = |x| ≥ 0 always. Both values negative → impossible.</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">No real solution.</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">11(d)</div><div class="qtext">|x| ≤ 3</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>−3 ≤ x ≤ 3</p>
-    <div class="ans-line">x ∈ [−3, 3]</div>
+  <div class="qhead"><div class="qbadge">Q 11(d)</div><div class="qtext">|x| ≤ 3</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Rule</div><div class="cnt">|x| ≤ m &nbsp;⟹&nbsp; −m ≤ x ≤ m</div></div>
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">−3 ≤ x ≤ 3</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ x</div><div class="cnt">∈ [−3, 3]</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">11(e)</div><div class="qtext">2|x| = 5</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>|x| = 5/2 → x = ±5/2</p>
-    <div class="ans-line">x = 5/2 or x = −5/2</div>
+  <div class="qhead"><div class="qbadge">Q 11(e)</div><div class="qtext">2|x| = 5</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">|x| = 5/2 &nbsp;⟹&nbsp; x = +5/2 or x = −5/2</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ x</div><div class="cnt">= 5/2 or x = −5/2</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">11(f)</div><div class="qtext">[x + [x + [x]]] = 9</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>Let [x] = n (integer). [x+n] = [x]+n = 2n. [x+2n] = [x]+2n = 3n.</p>
-    <p>3n = 9 → n = 3 → [x] = 3 → 3 ≤ x &lt; 4</p>
-    <div class="ans-line">x ∈ [3, 4)</div>
+  <div class="qhead"><div class="qbadge">Q 11(f)</div><div class="qtext">[x + [x + [x]]] = 9</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Let [x] = n (integer). Then [x+n] = [x]+n = 2n</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">[x+2n] = [x]+2n = 3n</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">3n = 9 &nbsp;⟹&nbsp; n = 3 &nbsp;⟹&nbsp; [x] = 3 &nbsp;⟹&nbsp; 3 ≤ x &lt; 4</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ x</div><div class="cnt">∈ [3, 4)</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">11(g)</div><div class="qtext">{x} &gt; 4</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>{x} ∈ [0,1) always, so {x} &gt; 4 is impossible.</p>
-    <div class="ans-line">No solution.</div>
+  <div class="qhead"><div class="qbadge">Q 11(h)</div><div class="qtext">{x} = 0</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">{x} = x − [x] = 0 &nbsp;⟹&nbsp; x = [x] &nbsp;⟹&nbsp; x is an integer.</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ x</div><div class="cnt">∈ ℤ (all integers)</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">11(h)</div><div class="qtext">{x} = 0</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>{x} = 0 means x = [x], i.e. x is an integer.</p>
-    <div class="ans-line">x ∈ ℤ (all integers)</div>
+  <div class="qhead"><div class="qbadge">Q 11(i)</div><div class="qtext">{x} = 0.5</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">x − [x] = 0.5 &nbsp;⟹&nbsp; x = n + 0.5 for any integer n</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ x</div><div class="cnt">= ..., −1.5, −0.5, 0.5, 1.5, 2.5, ... (half-integers)</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">11(i)</div><div class="qtext">{x} = 0.5</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>x − [x] = 0.5 → x = n + 0.5 for any integer n</p>
-    <div class="ans-line">x = n + 0.5 where n ∈ ℤ (i.e., ..., −1.5, −0.5, 0.5, 1.5, ...)</div>
+  <div class="qhead"><div class="qbadge">Q 11(j)</div><div class="qtext">2{x} = x + [x]</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Since x = [x] + {x}: &nbsp; RHS = [x]+{x} + [x] = 2[x]+{x}</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">2{x} = 2[x]+{x} &nbsp;⟹&nbsp; {x} = 2[x]</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">Since 0 ≤ {x} &lt; 1: &nbsp; 0 ≤ 2[x] &lt; 1 &nbsp;⟹&nbsp; 0 ≤ [x] &lt; 1/2 &nbsp;⟹&nbsp; [x] = 0</div></div>
+    <div class="sol-row"><div class="lbl step">Step 4</div><div class="cnt">{x} = 2(0) = 0 &nbsp;⟹&nbsp; x = [x]+{x} = 0+0 = 0</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ x</div><div class="cnt">= 0</div></div>
   </div>
 </div>
+
+<!-- ═══════════════ MISCELLANEOUS EXERCISE 6 ═══════════════ -->
+<div class="sec-title" id="misc1"><div class="sn">📋</div> Miscellaneous Exercise 6 — Part (I) MCQ</div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">11(j)</div><div class="qtext">2{x} = x + [x]</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>Since x = [x] + {x}: 2{x} = [x]+{x} + [x] = 2[x]+{x} → {x} = 2[x]</p>
-    <p>Since 0 ≤ {x} &lt; 1: 0 ≤ 2[x] &lt; 1 → 0 ≤ [x] &lt; 1/2 → [x] = 0</p>
-    <p>Then {x} = 0 → x = 0</p>
-    <div class="ans-line">x = 0</div>
+  <div class="qhead"><div class="qbadge">MCQ 1</div><div class="qtext">log(5x−9) − log(x+3) = log 2. Find x.</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">log[(5x−9)/(x+3)] = log 2</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">(5x−9)/(x+3) = 2 &nbsp;⟹&nbsp; 5x−9 = 2x+6 &nbsp;⟹&nbsp; 3x = 15 &nbsp;⟹&nbsp; x = 5</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">B) x = 5</div></div>
   </div>
 </div>
 
-<!-- ══════════════ MISCELLANEOUS EXERCISE 6 ══════════════ -->
-<div class="sec-title" id="misc"><div class="sn">📋</div> Miscellaneous Exercise 6 — Selected Solutions</div>
-
-<div class="ex-title">Part (I) — MCQ</div>
-
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">MCQ 1</div><div class="qtext">log(5x−9) − log(x+3) = log 2, find x</div></div>
-  <div class="sol"><div class="sol-lbl">Answer</div>
-    <p>log[(5x−9)/(x+3)] = log 2 → (5x−9)/(x+3) = 2 → 5x−9 = 2x+6 → 3x = 15 → x=5</p>
-    <div class="ans-line">Answer: B) x = 5</div>
+  <div class="qhead"><div class="qbadge">MCQ 2</div><div class="qtext">log₁₀(log₁₀(log₁₀ x)) = 0. Find x.</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">log₁₀(log₁₀ x) = 10⁰ = 1</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">log₁₀ x = 10¹ = 10</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">x = 10¹⁰</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">B) x = 10¹⁰</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">MCQ 2</div><div class="qtext">log₁₀(log₁₀(log₁₀ x)) = 0, find x</div></div>
-  <div class="sol"><div class="sol-lbl">Answer</div>
-    <p>log₁₀(log₁₀ x) = 10⁰ = 1 → log₁₀ x = 10¹ = 10 → x = 10¹⁰</p>
-    <div class="ans-line">Answer: B) x = 10¹⁰</div>
+  <div class="qhead"><div class="qbadge">MCQ 3</div><div class="qtext">2 log₂ x = 4. Find x.</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">log₂ x = 4/2 = 2</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">x = 2² = 4. (x must be positive for log → x = 4 only)</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">B) x = 4</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">MCQ 3</div><div class="qtext">2 log₂ x = 4, find x</div></div>
-  <div class="sol"><div class="sol-lbl">Answer</div>
-    <p>log₂ x = 2 → x = 4 (x must be positive in log)</p>
-    <div class="ans-line">Answer: B) x = 4</div>
+  <div class="qhead"><div class="qbadge">MCQ 5</div><div class="qtext">f(x) = 1/(1−x). Find f(f(f(x))).</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">f(x) = 1/(1−x)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">f(f(x)) = f[1/(1−x)] = 1/[1 − 1/(1−x)] = (1−x)/[(1−x)−1] = (1−x)/(−x) = (x−1)/x</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">f(f(f(x))) = f[(x−1)/x] = 1/[1−(x−1)/x] = 1/[(x−x+1)/x] = 1/(1/x) = x</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">C) x</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">MCQ 5</div><div class="qtext">f(x) = 1/(1−x). Find f(f{f(x)})</div></div>
-  <div class="sol"><div class="sol-lbl">Answer</div>
-    <p>f(x) = 1/(1−x)</p>
-    <p>f(f(x)) = 1/[1−1/(1−x)] = (1−x)/(−x) = (x−1)/x</p>
-    <p>f(f(f(x))) = 1/[1−(x−1)/x] = 1/(1/x) = x</p>
-    <div class="ans-line">Answer: C) x</div>
+  <div class="qhead"><div class="qbadge">MCQ 6</div><div class="qtext">f : ℝ→ℝ, f(x) = x³. Find f⁻¹(8).</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">f⁻¹(8) = x where x³ = 8 &nbsp;⟹&nbsp; x = ∛8 = 2</div></div>
+    <div class="sol-row"><div class="lbl step">Note</div><div class="cnt">Over ℝ, cube root is unique → only x = 2.</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">A) {2}</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">MCQ 6</div><div class="qtext">f : ℝ→ℝ, f(x) = x³. Find f⁻¹(8).</div></div>
-  <div class="sol"><div class="sol-lbl">Answer</div>
-    <p>f⁻¹(8) = ∛8 = 2 → {2}</p>
-    <div class="ans-line">Answer: A) {2}</div>
+  <div class="qhead"><div class="qbadge">MCQ 7</div><div class="qtext">f(x) = (2x+1)/(1−3x). Find f⁻¹(x).</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Let y = (2x+1)/(1−3x)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">y(1−3x) = 2x+1 &nbsp;⟹&nbsp; y − 3xy = 2x+1</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">y − 1 = 2x + 3xy = x(2+3y) &nbsp;⟹&nbsp; x = (y−1)/(3y+2)</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ f⁻¹(x)</div><div class="cnt">= (x−1)/(3x+2) &nbsp;&nbsp;&nbsp; Answer: A)</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">MCQ 7</div><div class="qtext">f(x) = (2x+1)/(1−3x). Find f⁻¹(x).</div></div>
-  <div class="sol"><div class="sol-lbl">Answer</div>
-    <p>y = (2x+1)/(1−3x) → y(1−3x) = 2x+1 → y − 3xy = 2x+1 → y−1 = x(2+3y) → x = (y−1)/(3y+2)</p>
-    <div class="ans-line">Answer: A) f⁻¹(x) = (x−1)/(3x+2)</div>
+  <div class="qhead"><div class="qbadge">MCQ 8</div><div class="qtext">f(x) = 2x²+bx+c, f(0)=3, f(2)=1. Find f(1).</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">f(0) = c = 3 &nbsp;⟹&nbsp; c = 3</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">f(2) = 2(4)+2b+3 = 8+2b+3 = 1 &nbsp;⟹&nbsp; 2b = −10 &nbsp;⟹&nbsp; b = −5</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">f(1) = 2(1)+(-5)(1)+3 = 2−5+3 = 0</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">B) f(1) = 0</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">MCQ 8</div><div class="qtext">f(x) = 2x²+bx+c, f(0)=3, f(2)=1. Find f(1).</div></div>
-  <div class="sol"><div class="sol-lbl">Answer</div>
-    <p>f(0)=3 → c=3; f(2)=8+2b+3=1 → 2b=−10 → b=−5</p>
-    <p>f(1) = 2−5+3 = 0</p>
-    <div class="ans-line">Answer: B) f(1) = 0</div>
+  <div class="qhead"><div class="qbadge">MCQ 9</div><div class="qtext">Domain of 1/([x]−x) where [x] is greatest integer function.</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">[x]−x = −{x} (negative of fractional part)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">Function undefined when [x]−x = 0 i.e., {x} = 0 i.e., x is an integer.</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">So domain = ℝ − ℤ</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">C) ℝ − ℤ</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">MCQ 9</div><div class="qtext">Domain of 1/([x]−x) where [x] is greatest integer function</div></div>
-  <div class="sol"><div class="sol-lbl">Answer</div>
-    <p>[x] − x = −{x} (negative fractional part)</p>
-    <p>{x} = 0 when x is integer → [x]−x = 0 → undefined. So domain excludes integers.</p>
-    <div class="ans-line">Answer: C) ℝ − ℤ</div>
+  <div class="qhead"><div class="qbadge">MCQ 10</div><div class="qtext">Domain and range of f(x) = 2 − |x−5|.</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Domain</div><div class="cnt">|x−5| is defined for all x ∈ ℝ.</div></div>
+    <div class="sol-row"><div class="lbl step">Range</div><div class="cnt">|x−5| ≥ 0 &nbsp;⟹&nbsp; −|x−5| ≤ 0 &nbsp;⟹&nbsp; 2−|x−5| ≤ 2. Max value = 2 at x = 5.</div></div>
+    <div class="sol-row"><div class="lbl step">Lower bound</div><div class="cnt">As x→±∞, |x−5|→∞, so f→−∞. No lower bound.</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">B) Domain = ℝ, Range = (−∞, 2]</div></div>
   </div>
 </div>
 
+<!-- PART II -->
+<div class="sec-title" id="misc2"><div class="sn">📋</div> Miscellaneous Exercise 6 — Part (II) Long Answers</div>
+
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">MCQ 10</div><div class="qtext">Domain and range of f(x) = 2 − |x−5|</div></div>
-  <div class="sol"><div class="sol-lbl">Answer</div>
-    <p>Defined for all x → Domain: ℝ</p>
-    <p>|x−5| ≥ 0 → −|x−5| ≤ 0 → 2−|x−5| ≤ 2. Max = 2 at x=5.</p>
-    <div class="ans-line">Answer: B) Domain: ℝ, Range: (−∞, 2]</div>
+  <div class="qhead"><div class="qbadge">II.2(i)</div><div class="qtext">Is f: ℝ→ℝ, f(x) = x²+5 one-one?</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Check: f(2) = 4+5 = 9 and f(−2) = 4+5 = 9</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">f(2) = f(−2) but 2 ≠ −2. ✗</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">NOT one-one.</div></div>
   </div>
 </div>
-
-<div class="ex-title">Part (II) — Long Answer Questions</div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">II.1</div><div class="qtext">Which relations are functions? Find domain and range: (i){(2,1),(4,2),(6,3),(8,4),(10,5),(12,6),(14,7)} (ii){(0,0),(1,1),(1,−1),(4,2),(4,−2),...} (iii){(2,1),(3,1),(5,2)}</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p><b>(i)</b> Each x value unique → IS a function. Domain={2,4,6,8,10,12,14}, Range={1,2,3,4,5,6,7}</p>
-    <p><b>(ii)</b> x=1 maps to both 1 and −1; x=4 maps to 2 and −2 → NOT a function.</p>
-    <p><b>(iii)</b> Each x unique (2,3,5 each appear once) → IS a function. Domain={2,3,5}, Range={1,2}</p>
-    <div class="ans-line">(i) function; (ii) NOT function; (iii) function</div>
+  <div class="qhead"><div class="qbadge">II.2(ii)</div><div class="qtext">Is f: ℝ−{3}→ℝ, f(x) = (5x+7)/(x−3) one-one?</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">Assume f(x₁) = f(x₂): &nbsp; (5x₁+7)/(x₁−3) = (5x₂+7)/(x₂−3)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">Cross multiply: (5x₁+7)(x₂−3) = (5x₂+7)(x₁−3)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">Expand: 5x₁x₂−15x₁+7x₂−21 = 5x₁x₂−15x₂+7x₁−21</div></div>
+    <div class="sol-row"><div class="lbl step">Step 4</div><div class="cnt">−15x₁+7x₂ = −15x₂+7x₁ &nbsp;⟹&nbsp; 22x₂ = 22x₁ &nbsp;⟹&nbsp; x₁ = x₂ ✓</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">IS one-one (injective).</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">II.2</div><div class="qtext">Find whether these functions are one-one: (i) f:ℝ→ℝ, f(x)=x²+5 (ii) f:ℝ−{3}→ℝ, f(x)=(5x+7)/(x−3)</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p><b>(i)</b> f(2)=9=f(−2) but 2≠−2 → NOT one-one.</p>
-    <p><b>(ii)</b> f(x₁)=f(x₂) → (5x₁+7)/(x₁−3)=(5x₂+7)/(x₂−3) → cross multiply → 5x₁x₂−15x₁+7x₂−21 = 5x₁x₂−15x₂+7x₁−21 → −15x₁+7x₂ = −15x₂+7x₁ → 22x₂=22x₁ → x₁=x₂ ✓ One-one.</p>
-    <div class="ans-line">(i) NOT one-one &nbsp;&nbsp; (ii) IS one-one</div>
+  <div class="qhead"><div class="qbadge">II.4</div><div class="qtext">f: ℝ→ℝ, f(x) = 5x³−8. Show one-one, onto. Find f⁻¹.</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">One-one</div><div class="cnt">f(x₁)=f(x₂) → 5x₁³−8=5x₂³−8 → x₁³=x₂³ → x₁=x₂ ✓</div></div>
+    <div class="sol-row"><div class="lbl step">Onto</div><div class="cnt">For any y∈ℝ, x = ∛[(y+8)/5] ∈ ℝ and f(x) = 5·(y+8)/5 − 8 = y ✓</div></div>
+    <div class="sol-row"><div class="lbl step">Inverse</div><div class="cnt">y = 5x³−8 &nbsp;⟹&nbsp; x³ = (y+8)/5 &nbsp;⟹&nbsp; x = ∛[(y+8)/5]</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ f⁻¹(x)</div><div class="cnt">= ∛[(x+8)/5]</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">II.4</div><div class="qtext">Let f:ℝ→ℝ, f(x)=5x³−8. Show f is one-one and onto. Find f⁻¹.</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p><b>One-one:</b> f(x₁)=f(x₂) → 5x₁³−8=5x₂³−8 → x₁³=x₂³ → x₁=x₂ ✓</p>
-    <p><b>Onto:</b> For any y∈ℝ, x = ∛[(y+8)/5] ∈ ℝ → f(x)=y ✓</p>
-    <p><b>Inverse:</b> y=5x³−8 → x³=(y+8)/5 → x=∛[(y+8)/5]</p>
-    <div class="ans-line">f⁻¹(x) = ∛[(x+8)/5]</div>
+  <div class="qhead"><div class="qbadge">II.8</div><div class="qtext">If f(x) = 3x⁴ − 5x² + 7, find f(x−1).</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">(x−1)² = x²−2x+1</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">(x−1)⁴ = (x²−2x+1)² = x⁴−4x³+6x²−4x+1</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">f(x−1) = 3(x⁴−4x³+6x²−4x+1) − 5(x²−2x+1) + 7</div></div>
+    <div class="sol-row"><div class="lbl step">Step 4</div><div class="cnt">= 3x⁴−12x³+18x²−12x+3 − 5x²+10x−5 + 7</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ f(x−1)</div><div class="cnt">= 3x⁴ − 12x³ + 13x² − 2x + 5</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">II.8</div><div class="qtext">If f(x) = 3x⁴ − 5x² + 7, find f(x−1).</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>f(x−1) = 3(x−1)⁴ − 5(x−1)² + 7</p>
-    <p>(x−1)² = x²−2x+1</p>
-    <p>(x−1)⁴ = (x²−2x+1)² = x⁴−4x³+6x²−4x+1</p>
-    <p>f(x−1) = 3(x⁴−4x³+6x²−4x+1) − 5(x²−2x+1) + 7</p>
-    <p>= 3x⁴ − 12x³ + 18x² − 12x + 3 − 5x² + 10x − 5 + 7</p>
-    <div class="ans-line">f(x−1) = 3x⁴ − 12x³ + 13x² − 2x + 5</div>
+  <div class="qhead"><div class="qbadge">II.9</div><div class="qtext">f(x) = 3x + a, f(1) = 7. Find a and f(4).</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">f(1) = 3(1)+a = 3+a = 7 &nbsp;⟹&nbsp; a = 4</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">f(4) = 3(4)+4 = 12+4 = 16</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">a = 4, f(4) = 16</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">II.9</div><div class="qtext">f(x) = 3x + a, f(1) = 7. Find a and f(4).</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>f(1) = 3 + a = 7 → a = 4</p>
-    <p>f(4) = 12 + 4 = 16</p>
-    <div class="ans-line">a = 4, f(4) = 16</div>
+  <div class="qhead"><div class="qbadge">II.10</div><div class="qtext">f(x) = ax²+bx+2, f(1)=3, f(4)=42. Find a and b.</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">f(1) = a+b+2 = 3 &nbsp;⟹&nbsp; a+b = 1 &nbsp;…(I)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">f(4) = 16a+4b+2 = 42 &nbsp;⟹&nbsp; 16a+4b = 40 &nbsp;⟹&nbsp; 4a+b = 10 &nbsp;…(II)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">(II)−(I): 3a = 9 &nbsp;⟹&nbsp; a = 3</div></div>
+    <div class="sol-row"><div class="lbl step">Step 4</div><div class="cnt">From (I): b = 1−3 = −2</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">a = 3, b = −2</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">II.10</div><div class="qtext">f(x) = ax² + bx + 2, f(1) = 3, f(4) = 42. Find a and b.</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p>f(1) = a + b + 2 = 3 → a + b = 1 …(I)</p>
-    <p>f(4) = 16a + 4b + 2 = 42 → 16a + 4b = 40 → 4a + b = 10 …(II)</p>
-    <p>(II)−(I): 3a = 9 → a = 3; b = 1−3 = −2</p>
-    <div class="ans-line">a = 3, b = −2</div>
+  <div class="qhead"><div class="qbadge">II.12(i)</div><div class="qtext">f(x) = x²+5, g(x) = x−8. Find fog and gof.</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">fog</div><div class="cnt">f[g(x)] = f(x−8) = (x−8)²+5 = x²−16x+64+5 = x²−16x+69</div></div>
+    <div class="sol-row"><div class="lbl step">gof</div><div class="cnt">g[f(x)] = g(x²+5) = (x²+5)−8 = x²−3</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">fog = x²−16x+69, &nbsp; gof = x²−3</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">II.12(i)</div><div class="qtext">f(x) = x²+5, g(x) = x−8. Find fog and gof.</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p><b>fog:</b> f[g(x)] = f(x−8) = (x−8)²+5 = x²−16x+64+5 = x²−16x+69</p>
-    <p><b>gof:</b> g[f(x)] = g(x²+5) = (x²+5)−8 = x²−3</p>
-    <div class="ans-line">fog = x²−16x+69 &nbsp;&nbsp; gof = x²−3</div>
+  <div class="qhead"><div class="qbadge">II.12(ii)</div><div class="qtext">f(x) = 3x−2, g(x) = x². Find fog and gof.</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">fog</div><div class="cnt">f[g(x)] = f(x²) = 3x²−2</div></div>
+    <div class="sol-row"><div class="lbl step">gof</div><div class="cnt">g[f(x)] = g(3x−2) = (3x−2)² = 9x²−12x+4</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Answer</div><div class="cnt">fog = 3x²−2, &nbsp; gof = 9x²−12x+4</div></div>
   </div>
 </div>
 
 <div class="qcard">
-  <div class="qcard-head"><div class="qnum">II.12(ii)</div><div class="qtext">f(x) = 3x−2, g(x) = x². Find fog and gof.</div></div>
-  <div class="sol"><div class="sol-lbl">Solution</div>
-    <p><b>fog:</b> f[g(x)] = f(x²) = 3x²−2</p>
-    <p><b>gof:</b> g[f(x)] = g(3x−2) = (3x−2)² = 9x²−12x+4</p>
-    <div class="ans-line">fog = 3x²−2 &nbsp;&nbsp; gof = 9x²−12x+4</div>
+  <div class="qhead"><div class="qbadge">II.13</div><div class="qtext">Show (fof)(x) = x where f(x) = (2x−1)/(5x−2), x ≠ 2/5.</div></div>
+  <div class="sol-body">
+    <div class="sol-row"><div class="lbl step">Step 1</div><div class="cnt">(fof)(x) = f[f(x)] = f[(2x−1)/(5x−2)]</div></div>
+    <div class="sol-row"><div class="lbl step">Step 2</div><div class="cnt">Numerator: 2·(2x−1)/(5x−2) − 1 = (4x−2−5x+2)/(5x−2) = −x/(5x−2)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 3</div><div class="cnt">Denominator: 5·(2x−1)/(5x−2) − 2 = (10x−5−10x+4)/(5x−2) = −1/(5x−2)</div></div>
+    <div class="sol-row"><div class="lbl step">Step 4</div><div class="cnt">(fof)(x) = [−x/(5x−2)] ÷ [−1/(5x−2)] = −x × (5x−2)/(−1·(5x−2)) = x ✓</div></div>
+    <div class="ans-row"><div class="lbl ans">∴ Proved</div><div class="cnt">(fof)(x) = x</div></div>
   </div>
 </div>
 
-<!-- ══════════════ LET'S REMEMBER ══════════════ -->
+<!-- ═══════════════ LET'S REMEMBER ═══════════════ -->
 <div class="sec-title" id="remember"><div class="sn">📌</div> Let's Remember — Quick Revision</div>
 
-<div class="formula-box">
-  <h3>✅ Function Basics</h3>
-  <div class="f">Domain = Set of valid inputs (x values)</div>
-  <div class="f">Range = Set of actual outputs (y values) ⊆ Co-domain</div>
-  <div class="f">f(x₁)=f(x₂) ⟹ x₁=x₂ → One-One</div>
-  <div class="f">Range = Co-domain → Onto</div>
+<div class="theory">
+  <h4>✅ 3 Conditions for a Function f : A → B</h4>
+  <ul>
+    <li>Every element of A has an image in B</li>
+    <li>Each element of A has exactly ONE image in B</li>
+    <li>Range ⊆ Co-domain</li>
+  </ul>
 </div>
 
-<div class="formula-box">
-  <h3>📊 Special Functions Summary</h3>
-  <table>
-    <tr><th>Function</th><th>f(x)</th><th>Domain</th><th>Range</th></tr>
-    <tr><td>Greatest Integer</td><td>[x]</td><td>ℝ</td><td>ℤ</td></tr>
-    <tr><td>Fractional Part</td><td>{x} = x−[x]</td><td>ℝ</td><td>[0,1)</td></tr>
-    <tr><td>Signum</td><td>sgn(x)</td><td>ℝ</td><td>{−1,0,1}</td></tr>
-    <tr><td>Absolute</td><td>|x|</td><td>ℝ</td><td>[0,∞)</td></tr>
-    <tr><td>Exponential</td><td>aˣ, a&gt;1</td><td>ℝ</td><td>(0,∞)</td></tr>
-    <tr><td>Logarithmic</td><td>logₐx, a&gt;1</td><td>(0,∞)</td><td>ℝ</td></tr>
+<div class="theory">
+  <h4>⚡ Key Formulas at a Glance</h4>
+  <table class="sol-tbl">
+    <tr><th>Property</th><th>Condition / Formula</th></tr>
+    <tr><td>One-one</td><td>f(x₁)=f(x₂) ⟹ x₁=x₂</td></tr>
+    <tr><td>Onto</td><td>Range = Co-domain</td></tr>
+    <tr><td>Composition</td><td>(g∘f)(x) = g[f(x)]</td></tr>
+    <tr><td>Inverse</td><td>f⁻¹ exists iff f is bijective; f[f⁻¹(x)]=x</td></tr>
+    <tr><td>Piecewise</td><td>Different formula on different parts of domain</td></tr>
+    <tr><td>[x]</td><td>Greatest integer ≤ x; Domain ℝ, Range ℤ</td></tr>
+    <tr><td>{x}</td><td>x − [x]; Domain ℝ, Range [0,1)</td></tr>
+    <tr><td>|x|</td><td>x if x≥0, −x if x&lt;0; Domain ℝ, Range [0,∞)</td></tr>
   </table>
 </div>
 
-<div class="formula-box">
-  <h3>💡 Key Counting Formulas (if n(A)=m, n(B)=n)</h3>
-  <div class="f">Total functions: nᵐ</div>
-  <div class="f">One-one functions (m≤n): n!/(n−m)!</div>
-  <div class="f">One-one functions (m&gt;n): 0</div>
-  <div class="f">Constant functions: n</div>
-</div>
-
-<div class="formula-box">
-  <h3>🔢 Property Table</h3>
-  <table>
-    <tr><th>Property</th><th>Function type</th></tr>
-    <tr><td>f(x+y) = f(x)+f(y)</td><td>f(x) = kx</td></tr>
-    <tr><td>f(x+y) = f(x)·f(y)</td><td>f(x) = aˣ</td></tr>
-    <tr><td>f(xy) = f(x)·f(y)</td><td>f(x) = xⁿ</td></tr>
-    <tr><td>f(xy) = f(x)+f(y)</td><td>f(x) = log x</td></tr>
-  </table>
+<div class="theory">
+  <h4>💡 Counting Functions (n(A)=m, n(B)=n)</h4>
+  <span class="fbox">Total functions = nᵐ</span>
+  <span class="fbox">One-one (m≤n): n!/(n−m)!</span>
+  <span class="fbox">One-one (m&gt;n): 0</span>
+  <span class="fbox">Constant functions = n</span>
 </div>
 
 </div><!-- end .wrap -->
 
 <footer>
   <p>📚 Visions Classes · Class 11 Maths Paper 2 · Chapter 6 — Functions</p>
-  <p>Maharashtra State Board | SSC | Complete Exercise Solutions</p>
+  <p>Maharashtra State Board | All Exercises Solved Step-by-Step</p>
   <p style="margin-top:6px;"><a href="notes-maths2.html" style="color:#6a1b9a;font-weight:700;">← Back to Maths 2 Notes</a></p>
 </footer>
 
