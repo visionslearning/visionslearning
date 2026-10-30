@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>RKT Chemistry — Paper 1 | Class 11 Sem 1 2026</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#1a1a1a;}
+  .site-header{background:linear-gradient(135deg,#b71c1c,#c62828,#880e4f);padding:14px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 3px 12px rgba(0,0,0,.3);}
+  .site-header a{color:#ffcdd2;text-decoration:none;font-size:.85rem;font-weight:600;}
+  .site-header a:hover{color:#fff;}
+  .header-title{color:#fff;font-size:1.1rem;font-weight:800;}
+  .paper-hero{background:linear-gradient(135deg,#b71c1c 0%,#c62828 40%,#880e4f 100%);padding:36px 20px 28px;text-align:center;color:#fff;}
+  .board-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:5px 18px;font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
+  .paper-hero h1{font-size:1.65rem;font-weight:900;line-height:1.25;margin-bottom:8px;}
+  .paper-hero .sub{font-size:.9rem;color:rgba(255,255,255,.85);margin-bottom:16px;}
+  .marks-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+  .marks-pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:22px;padding:7px 16px;font-size:.82rem;font-weight:700;}
+  .ch-strip{max-width:900px;margin:14px auto 0;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:0 12px;}
+  .ch-tag{background:#fff;color:#b71c1c;font-size:.72rem;font-weight:800;padding:5px 12px;border-radius:14px;border:2px solid #ffcdd2;}
+  .instr{background:#ffebee;border-left:4px solid #c62828;margin:16px auto;max-width:900px;padding:14px 20px;border-radius:8px;font-size:.87rem;line-height:1.7;}
+  .instr strong{color:#b71c1c;}
+  /* Section bands */
+  .sec-band{max-width:900px;margin:18px auto 0;border-radius:12px;padding:12px 20px;display:flex;align-items:center;gap:12px;}
+  .sec-band .sb-badge{font-size:1.1rem;font-weight:900;background:rgba(255,255,255,.25);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;}
+  .sec-band .sb-info{flex:1;}
+  .sec-band .sb-title{font-size:1rem;font-weight:900;color:#fff;}
+  .sec-band .sb-desc{font-size:.8rem;color:rgba(255,255,255,.85);margin-top:2px;}
+  .sec-band .sb-marks{background:rgba(255,255,255,.22);color:#fff;font-size:.82rem;font-weight:700;padding:4px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.3);}
+  .sba{background:linear-gradient(135deg,#b71c1c,#c62828);}
+  .sbb{background:linear-gradient(135deg,#1b5e20,#2e7d32);}
+  .sbc{background:linear-gradient(135deg,#0d47a1,#1565c0);}
+  .sbd{background:linear-gradient(135deg,#e65100,#f57c00);}
+  /* Section */
+  .section{max-width:900px;margin:10px auto;background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden;}
+  .sh{padding:14px 22px;display:flex;align-items:center;gap:12px;}
+  .sh .qno{background:#fff;font-weight:900;font-size:1rem;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .sh .qtitle{color:#fff;font-size:.95rem;font-weight:800;flex:1;line-height:1.3;}
+  .sh .qmarks{background:rgba(255,255,255,.2);color:#fff;font-size:.8rem;font-weight:700;padding:4px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.35);white-space:nowrap;}
+  .h1{background:linear-gradient(135deg,#b71c1c,#c62828);} .h1 .qno{color:#b71c1c;}
+  .h2{background:linear-gradient(135deg,#1b5e20,#2e7d32);} .h2 .qno{color:#1b5e20;}
+  .h3{background:linear-gradient(135deg,#0d47a1,#1565c0);} .h3 .qno{color:#0d47a1;}
+  .h4{background:linear-gradient(135deg,#e65100,#f57c00);} .h4 .qno{color:#e65100;}
+  .sb{padding:20px 24px;}
+  .cl{display:inline-block;font-size:.7rem;font-weight:800;padding:2px 9px;border-radius:8px;margin-bottom:5px;text-transform:uppercase;letter-spacing:.8px;}
+  .c1{background:#fce4ec;color:#880e4f;} .c2{background:#e0f2f1;color:#004d40;} .c4{background:#e8eaf6;color:#1a237e;} .c14{background:#e0f7fa;color:#006064;} .c15{background:#fff3e0;color:#e65100;}
+  /* MCQ */
+  .mcq-item{margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid #f0f4f8;}
+  .mcq-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+  .mcq-q{font-size:.92rem;font-weight:700;margin-bottom:8px;line-height:1.5;}
+  .opts{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+  .opt{background:#f5f7fa;border:1.5px solid #e0e7ef;border-radius:8px;padding:7px 12px;font-size:.85rem;}
+  .opt.c{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700;}
+  .ab{display:inline-block;background:#e8f5e9;color:#1b5e20;font-size:.74rem;font-weight:700;padding:3px 10px;border-radius:10px;margin-top:6px;border:1px solid #a5d6a7;}
+  /* Answers */
+  .ans-item{padding:13px 0;border-bottom:1px solid #f0f4f8;}
+  .ans-item:last-child{border-bottom:none;}
+  .ans-q{font-size:.92rem;font-weight:700;margin-bottom:7px;line-height:1.5;}
+  .sm{font-size:.73rem;color:#888;font-weight:600;margin-left:4px;}
+  .imp{display:inline-block;background:#fff3e0;color:#e65100;font-size:.68rem;font-weight:800;padding:2px 7px;border-radius:6px;margin-left:6px;border:1px solid #ffcc80;}
+  .ans-a{font-size:.86rem;line-height:1.75;background:#f8fafc;border-left:3px solid #c62828;padding:10px 14px;border-radius:0 8px 8px 0;}
+  .ans-a ul{padding-left:17px;margin-top:4px;}
+  .ans-a ul li{margin-bottom:4px;}
+  .ans-a strong{color:#b71c1c;}
+  .fm{font-family:monospace;background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:5px;font-weight:700;display:inline-block;margin:2px 0;}
+  .ns{background:#fff8e1;border-left:3px solid #f9a825;padding:10px 14px;border-radius:0 8px 8px 0;font-size:.86rem;line-height:1.85;margin-top:6px;}
+  .ns .s{margin-bottom:3px;}
+  .nf{font-family:monospace;background:#fff3cd;color:#7c5700;padding:2px 8px;border-radius:5px;font-weight:700;display:inline-block;}
+  .fin{font-weight:800;color:#1b5e20;background:#e8f5e9;padding:4px 12px;border-radius:7px;display:inline-block;margin-top:5px;}
+  .dn{background:#e8eaf6;border:1.5px dashed #5c6bc0;border-radius:8px;padding:9px 13px;font-size:.79rem;color:#3949ab;margin-top:9px;text-align:center;}
+  table.bt{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:8px;}
+  table.bt th{background:#b71c1c;color:#fff;padding:6px 10px;text-align:left;}
+  table.bt td{padding:6px 10px;border-bottom:1px solid #e8edf2;}
+  table.bt tr:nth-child(even) td{background:#fff8f8;}
+  footer{text-align:center;padding:26px 16px;font-size:.8rem;color:#888;}
+  footer a{color:#c62828;text-decoration:none;}
+  @media(max-width:600px){.opts{grid-template-columns:1fr;}.paper-hero h1{font-size:1.2rem;}}
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <a href="notes-class11.html">← Class 11 Notes</a>
+  <span style="color:rgba(255,255,255,.4);">|</span>
+  <span class="header-title">RKT Chemistry — Paper 1</span>
+</div>
+
+<div class="paper-hero">
+  <div class="board-tag">RKT College · XI Sci · Sem 1 · 2026</div>
+  <h1>RKT Chemistry — Paper 1<br>Important Questions with Answers</h1>
+  <div class="sub">Sec A (8M) + Sec B (12M) + Sec C (12M) + Sec D (8M) = 40 Marks</div>
+  <div class="marks-row">
+    <div class="marks-pill">📋 Total: 40 Marks</div>
+    <div class="marks-pill">⏱ Time: 2 Hours</div>
+    <div class="marks-pill">📄 Paper 1 of 2</div>
+    <div class="marks-pill">⭐ Most Important</div>
+  </div>
+</div>
+
+<div class="ch-strip">
+  <span class="ch-tag">Ch1: Basic Concepts</span>
+  <span class="ch-tag">Ch2: Analytical Chemistry</span>
+  <span class="ch-tag">Ch4: Structure of Atom</span>
+  <span class="ch-tag">Ch14: Basic Organic</span>
+  <span class="ch-tag">Ch15: Alkanes</span>
+</div>
+
+<div class="instr" style="margin-top:16px;">
+  <strong>Instructions:</strong> All questions are compulsory. Figures to the right indicate marks. Answers with full explanation are given below each question. <strong>⭐ IMP</strong> = most frequently asked in exams.
+</div>
+
+<!-- ═══════ SECTION A ═══════ -->
+<div class="sec-band sba">
+  <div class="sb-badge">A</div>
+  <div class="sb-info"><div class="sb-title">Section A — MCQ + Very Short Answer</div><div class="sb-desc">Q1 MCQ (4×1M) + Q2 Very Short (4×1M) — All compulsory</div></div>
+  <div class="sb-marks">8 Marks</div>
+</div>
+
+<div class="section">
+  <div class="sh h1"><div class="qno">1</div><div class="qtitle">Q1 — Multiple Choice Questions (MCQ) — 1 mark each</div><div class="qmarks">4 Marks</div></div>
+  <div class="sb">
+
+    <div class="mcq-item">
+      <span class="cl c1">Ch1</span>
+      <div class="mcq-q">i. The number of moles in 180 g of glucose (C₆H₁₂O₆) is ________. (M = 180 g/mol)</div>
+      <div class="opts">
+        <div class="opt">a) 0.5 mol</div>
+        <div class="opt c">b) 1 mol</div>
+        <div class="opt">c) 2 mol</div>
+        <div class="opt">d) 180 mol</div>
+      </div>
+      <span class="ab">✓ (b) 1 mol — n = m/M = 180/180 = 1 mol</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c4">Ch4</span>
+      <div class="mcq-q">ii. The orbital with quantum numbers n=2, l=1 is ________.</div>
+      <div class="opts">
+        <div class="opt">a) 2s</div>
+        <div class="opt c">b) 2p</div>
+        <div class="opt">c) 3p</div>
+        <div class="opt">d) 3d</div>
+      </div>
+      <span class="ab">✓ (b) 2p — n=2 (2nd shell), l=1 (p subshell)</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c14">Ch14</span>
+      <div class="mcq-q">iii. Homolytic cleavage of a bond produces ________.</div>
+      <div class="opts">
+        <div class="opt">a) Carbocations</div>
+        <div class="opt">b) Carbanions</div>
+        <div class="opt c">c) Free radicals</div>
+        <div class="opt">d) Zwitterions</div>
+      </div>
+      <span class="ab">✓ (c) Free radicals — each fragment gets one electron (neutral, unpaired)</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c15">Ch15</span>
+      <div class="mcq-q">iv. Alkanes undergo which type of reaction with halogens in presence of UV light?</div>
+      <div class="opts">
+        <div class="opt">a) Addition</div>
+        <div class="opt c">b) Free radical substitution</div>
+        <div class="opt">c) Elimination</div>
+        <div class="opt">d) Nucleophilic substitution</div>
+      </div>
+      <span class="ab">✓ (b) Free radical substitution — halogen replaces H under UV light</span>
+    </div>
+
+  </div>
+</div>
+
+<div class="section">
+  <div class="sh h1"><div class="qno">2</div><div class="qtitle">Q2 — Very Short Answer — 1 mark each</div><div class="qmarks">4 Marks</div></div>
+  <div class="sb">
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c1">Ch1</span> i. Define empirical formula. <span class="imp">⭐ IMP</span></div>
+      <div class="ans-a">The <strong>empirical formula</strong> of a compound is the simplest whole number ratio of atoms of each element present in the compound. E.g., empirical formula of glucose (C₆H₁₂O₆) is CH₂O.</div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c4">Ch4</span> ii. State Pauli's Exclusion Principle. <span class="imp">⭐ IMP</span></div>
+      <div class="ans-a">No two electrons in the same atom can have the same set of all four quantum numbers (n, l, m, s). An orbital can hold a maximum of two electrons with opposite spins (↑↓).</div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c14">Ch14</span> iii. What is a nucleophile? Give one example. <span class="imp">⭐ IMP</span></div>
+      <div class="ans-a">A <strong>nucleophile</strong> is an electron-rich species that donates an electron pair to an electrophile to form a new bond. Examples: OH⁻, CN⁻, NH₃, H₂O.</div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c15">Ch15</span> iv. Write the IUPAC name of CH₃–CH(CH₃)–CH₂–CH₃. <span class="imp">⭐ IMP</span></div>
+      <div class="ans-a">
+        <ul>
+          <li>Longest chain = 4 carbons (butane); branch = CH₃ at C2</li>
+          <li><strong>IUPAC name: 2-methylbutane</strong> (common: isopentane)</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════ SECTION B ═══════ -->
+<div class="sec-band sbb">
+  <div class="sb-badge">B</div>
+  <div class="sb-info"><div class="sb-title">Section B — Q3 to Q13 (Attempt Any 4) — 3 marks each</div><div class="sb-desc">Short Answer Questions — Ch1, Ch2, Ch4</div></div>
+  <div class="sb-marks">12 Marks</div>
+</div>
+
+<div class="section">
+  <div class="sh h2"><div class="qno">B</div><div class="qtitle">Section B — Important Short Answer Questions (Any 4 × 3M)</div><div class="qmarks">12 Marks</div></div>
+  <div class="sb">
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c1">Ch1</span> Q3. Calculate the molecular formula of a compound with empirical formula CH₂O and molar mass 180 g/mol. <span class="imp">⭐ Most IMP</span> <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <div class="ns">
+          <div class="s">Empirical formula: CH₂O; M(empirical) = 12+2+16 = 30 g/mol</div>
+          <div class="s">n = M(molecular)/M(empirical) = 180/30 = 6</div>
+          <div class="s">Molecular formula = (CH₂O)₆</div>
+          <div class="fin">Molecular formula = C₆H₁₂O₆ (Glucose)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c1">Ch1</span> Q4. A compound contains 75% carbon and 25% hydrogen by mass. Find its empirical formula. If its molar mass is 16 g/mol, find molecular formula. (C=12, H=1) <span class="imp">⭐ IMP</span> <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <div class="ns">
+          <div class="s">C: 75/12 = 6.25 mol; H: 25/1 = 25 mol</div>
+          <div class="s">Ratio — divide by 6.25: C=1, H=4</div>
+          <div class="s"><strong>Empirical formula = CH₄</strong> (M = 12+4 = 16 g/mol)</div>
+          <div class="s">n = 16/16 = 1</div>
+          <div class="fin">Molecular formula = CH₄ (Methane)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c2">Ch2</span> Q5. Calculate the molarity of a solution containing 9.8 g of H₂SO₄ in 500 mL solution. (H=1, S=32, O=16) <span class="imp">⭐ Most IMP</span> <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <div class="ns">
+          <div class="s">M(H₂SO₄) = 2+32+64 = 98 g/mol</div>
+          <div class="s">n = 9.8/98 = 0.1 mol</div>
+          <div class="s">V = 500 mL = 0.5 L</div>
+          <div class="s"><span class="nf">M = n/V = 0.1/0.5</span></div>
+          <div class="fin">Molarity = 0.2 M</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c2">Ch2</span> Q6. For N₂ + 3H₂ → 2NH₃: if 14 g of N₂ reacts with excess H₂, find: (i) moles of N₂ (ii) moles of NH₃ formed (iii) mass of NH₃. (N=14, H=1) <span class="imp">⭐ Most IMP</span> <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <div class="ns">
+          <div class="s">(i) M(N₂) = 28 g/mol; n(N₂) = 14/28 = <strong>0.5 mol</strong></div>
+          <div class="s">(ii) Stoichiometry: 1 mol N₂ → 2 mol NH₃; 0.5 mol N₂ → <strong>1 mol NH₃</strong></div>
+          <div class="s">(iii) M(NH₃) = 14+3 = 17 g/mol; mass = 1 × 17 = <strong>17 g</strong></div>
+          <div class="fin">0.5 mol N₂ → 1 mol NH₃ = 17 g</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c4">Ch4</span> Q7. State and explain Aufbau principle. Write the filling order of orbitals. <span class="imp">⭐ IMP</span> <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <strong>Aufbau Principle ("building up"):</strong> Electrons are added to orbitals in order of increasing energy — the lowest energy orbital is filled first before moving to the next higher energy orbital.
+        <ul>
+          <li><strong>(n+l) rule:</strong> Orbital with lower (n+l) value has lower energy. If two orbitals have the same (n+l), the one with lower n has lower energy.</li>
+          <li><strong>Filling order:</strong> 1s → 2s → 2p → 3s → 3p → 4s → 3d → 4p → 5s → 4d → 5p...</li>
+          <li>Example: n+l values: 4s (4+0=4) &lt; 3d (3+2=5), so 4s fills before 3d.</li>
+          <li>This explains why K (Z=19) has config [Ar] 4s¹ not [Ar] 3d¹.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c4">Ch4</span> Q8. Write electronic configurations of K (Z=19), Ca (Z=20) and Cr (Z=24). <span class="imp">⭐ IMP</span> <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <table class="bt">
+          <tr><th>Element (Z)</th><th>Configuration</th><th>Short Form</th></tr>
+          <tr><td>K (Z=19)</td><td>1s² 2s² 2p⁶ 3s² 3p⁶ 4s¹</td><td>[Ar] 4s¹</td></tr>
+          <tr><td>Ca (Z=20)</td><td>1s² 2s² 2p⁶ 3s² 3p⁶ 4s²</td><td>[Ar] 4s²</td></tr>
+          <tr><td>Cr (Z=24)</td><td>1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁵ 4s¹</td><td>[Ar] 3d⁵ 4s¹</td></tr>
+        </table>
+        <ul style="margin-top:6px;">
+          <li>Cr is an exception: half-filled 3d⁵ + 4s¹ is more stable than 3d⁴ 4s² (extra stability of half-filled subshell).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c4">Ch4</span> Q9. Explain Hund's Rule. Show the orbital diagram for N (Z=7) and O (Z=8). <span class="imp">⭐ IMP</span> <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <strong>Hund's Rule:</strong> In a set of degenerate (equal energy) orbitals, electrons are distributed with one electron per orbital with parallel spin before any orbital gets a second (paired) electron. This maximises total spin multiplicity and minimises electron-electron repulsion.
+        <ul>
+          <li><strong>N (Z=7):</strong> 1s² 2s² 2p³ → each of the 3 p-orbitals gets one ↑ electron: 2p: ↑ ↑ ↑</li>
+          <li><strong>O (Z=8):</strong> 1s² 2s² 2p⁴ → one p-orbital gets a paired electron: 2p: ↑↓ ↑ ↑</li>
+        </ul>
+        <div class="dn">📐 Draw box diagrams: N: [1s: ↑↓] [2s: ↑↓] [2p: ↑|↑|↑]; O: [1s: ↑↓] [2s: ↑↓] [2p: ↑↓|↑|↑]</div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c4">Ch4</span> Q10. Calculate the wavelength of an electron moving with velocity 3×10⁶ m/s. (mass of e⁻ = 9.11×10⁻³¹ kg, h = 6.626×10⁻³⁴ J·s) <span class="imp">⭐ IMP Numerical</span> <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <strong>de Broglie's formula:</strong>
+        <div class="ns">
+          <div class="s"><span class="nf">λ = h/(mv)</span></div>
+          <div class="s">λ = 6.626×10⁻³⁴ / (9.11×10⁻³¹ × 3×10⁶)</div>
+          <div class="s">λ = 6.626×10⁻³⁴ / (27.33×10⁻²⁵)</div>
+          <div class="s">λ = 6.626×10⁻³⁴ / (2.733×10⁻²⁴)</div>
+          <div class="fin">λ ≈ 2.42 × 10⁻¹⁰ m = 2.42 Å</div>
+        </div>
+        This is in the X-ray range — confirms electrons have significant wave character.
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c4">Ch4</span> Q11. What are the differences between orbit (Bohr) and orbital (quantum mechanics)? <span class="imp">⭐ IMP</span> <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <table class="bt">
+          <tr><th>Property</th><th>Orbit (Bohr)</th><th>Orbital (QM)</th></tr>
+          <tr><td>Definition</td><td>Fixed circular path of electron around nucleus</td><td>3D region where probability of finding electron is max</td></tr>
+          <tr><td>Shape</td><td>Always circular</td><td>Can be spherical (s), dumbbell (p), cloverleaf (d)</td></tr>
+          <tr><td>Electrons</td><td>Definite path known</td><td>Probable location only (probability density)</td></tr>
+          <tr><td>Based on</td><td>Classical mechanics</td><td>Wave mechanics/quantum mechanics</td></tr>
+          <tr><td>Max electrons</td><td>2n² (per shell)</td><td>2 per orbital</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c2">Ch2</span> Q12. Define: (i) Molality (ii) Mole fraction. Calculate the mole fraction of NaCl in a solution containing 2 mol NaCl and 8 mol H₂O. <span class="imp">⭐ IMP</span> <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <strong>(i) Molality:</strong> Moles of solute per kg of solvent. <span class="fm">m = n/W_solvent(kg)</span> Unit: mol/kg (temperature independent).
+        <br><strong>(ii) Mole fraction:</strong> Ratio of moles of one component to total moles of all components.
+        <div class="ns">
+          <div class="s">Total moles = 2 + 8 = 10 mol</div>
+          <div class="s"><span class="nf">X(NaCl) = 2/10 = 0.2</span></div>
+          <div class="s">X(H₂O) = 8/10 = 0.8</div>
+          <div class="fin">Mole fraction of NaCl = 0.2; H₂O = 0.8 (sum = 1 ✓)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c1">Ch1</span> Q13. State the law of conservation of mass and law of multiple proportions. Give one example each. <span class="imp">⭐ IMP</span> <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <strong>Law of Conservation of Mass:</strong> In a chemical reaction, total mass of reactants = total mass of products. Matter cannot be created or destroyed.
+        <ul><li>Example: 2H₂ + O₂ → 2H₂O; 4g + 32g = 36g ✓</li></ul>
+        <strong>Law of Multiple Proportions (Dalton):</strong> When two elements combine to form two or more different compounds, the masses of one element that combine with a fixed mass of the other element bear a simple whole number ratio.
+        <ul><li>Example: CO and CO₂ — oxygen combining with 12g C: CO has 16g O; CO₂ has 32g O; ratio = 16:32 = 1:2 (simple whole number ratio) ✓</li></ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════ SECTION C ═══════ -->
+<div class="sec-band sbc">
+  <div class="sb-badge">C</div>
+  <div class="sb-info"><div class="sb-title">Section C — Q14 to Q19 (Attempt Any 4) — 3 marks each</div><div class="sb-desc">Short Answer — Ch4, Ch14, Ch15</div></div>
+  <div class="sb-marks">12 Marks</div>
+</div>
+
+<div class="section">
+  <div class="sh h3"><div class="qno">C</div><div class="qtitle">Section C — Important Questions (Any 4 × 3M)</div><div class="qmarks">12 Marks</div></div>
+  <div class="sb">
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c4">Ch4</span> Q14. State Heisenberg's Uncertainty Principle. Calculate the uncertainty in velocity of an electron if uncertainty in position is 1×10⁻¹⁰ m. (m_e = 9.11×10⁻³¹ kg, h = 6.626×10⁻³⁴ J·s) <span class="imp">⭐ Most IMP</span> <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <strong>Statement:</strong> It is impossible to simultaneously measure the exact position and exact momentum of a subatomic particle.
+        <span class="fm">Δx · Δp ≥ h/4π &nbsp;→&nbsp; Δx · mΔv ≥ h/4π</span>
+        <div class="ns">
+          <div class="s"><span class="nf">Δv ≥ h/(4π × m × Δx)</span></div>
+          <div class="s">Δv ≥ 6.626×10⁻³⁴ / (4 × 3.1416 × 9.11×10⁻³¹ × 1×10⁻¹⁰)</div>
+          <div class="s">Δv ≥ 6.626×10⁻³⁴ / (1.143×10⁻³⁹)</div>
+          <div class="fin">Δv ≥ 5.79 × 10⁵ m/s</div>
+        </div>
+        This enormous uncertainty proves we cannot track electron position — justifying orbital model.
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c4">Ch4</span> Q15. Draw shapes of s, px and dxy orbitals. Give capacity of s, p, d, f subshells. <span class="imp">⭐ IMP</span> <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <ul>
+          <li><strong>s orbital:</strong> Spherically symmetric. 1 orbital. Capacity: 2 electrons.</li>
+          <li><strong>pₓ orbital:</strong> Two lobes along x-axis (dumbbell). One of 3 p-orbitals. Total p capacity: 6 electrons.</li>
+          <li><strong>d_xy orbital:</strong> Four lobes lying between x and y axes (cloverleaf). One of 5 d-orbitals. Total d capacity: 10 electrons.</li>
+        </ul>
+        <table class="bt">
+          <tr><th>Subshell</th><th>l</th><th>Orbitals</th><th>Max electrons</th></tr>
+          <tr><td>s</td><td>0</td><td>1</td><td><strong>2</strong></td></tr>
+          <tr><td>p</td><td>1</td><td>3</td><td><strong>6</strong></td></tr>
+          <tr><td>d</td><td>2</td><td>5</td><td><strong>10</strong></td></tr>
+          <tr><td>f</td><td>3</td><td>7</td><td><strong>14</strong></td></tr>
+        </table>
+        <div class="dn">📐 Draw: (1) s = sphere; (2) pₓ = 2 lobes along x-axis; (3) d_xy = 4 lobes between x and y axes. Label nucleus at centre.</div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c14">Ch14</span> Q16. Explain the inductive effect with –I and +I examples. How does it affect acidity? <span class="imp">⭐ IMP</span> <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <strong>Inductive Effect:</strong> Permanent displacement of electron density along σ-bonds due to electronegativity differences.
+        <ul>
+          <li><strong>–I effect (EW groups):</strong> –Cl, –Br, –NO₂, –CN, –OH pull electrons toward themselves. Increase acidity (stabilise conjugate base).
+            <br>Order of –I: –F &gt; –OH &gt; –Cl &gt; –Br &gt; –I
+          </li>
+          <li><strong>+I effect (ED groups):</strong> Alkyl groups (–CH₃, –C₂H₅) push electrons away from themselves. Decrease acidity (destabilise conjugate base).
+            <br>Order: –C(CH₃)₃ &gt; –CH(CH₃)₂ &gt; –C₂H₅ &gt; –CH₃
+          </li>
+          <li><strong>Effect on acidity:</strong> More –I groups on α-carbon → more stable carboxylate anion → stronger acid.
+            <br>Example: CHCl₂COOH &gt; CH₂ClCOOH &gt; CH₃COOH (acidity decreases)
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c14">Ch14</span> Q17. What is resonance? Explain resonance in benzene (C₆H₆). <span class="imp">⭐ IMP</span> <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <strong>Resonance:</strong> When a molecule cannot be represented by a single Lewis structure, it is represented by two or more structures (resonance structures) and the actual molecule is a resonance hybrid of all of them.
+        <ul>
+          <li>Resonance structures differ only in the positions of π-electrons or lone pairs, not in atom positions.</li>
+          <li>The actual molecule has properties intermediate between all resonance structures — this is <strong>delocalisation</strong> of electrons.</li>
+        </ul>
+        <strong>Resonance in Benzene:</strong>
+        <ul>
+          <li>Benzene (C₆H₆) has two Kekulé structures — alternating C=C and C–C bonds (with C=C at different positions).</li>
+          <li>The actual structure is a resonance hybrid with all C–C bonds equivalent (bond length = 139 pm, between C–C 154 pm and C=C 134 pm).</li>
+          <li>The 6 π-electrons are completely delocalised over the ring → represented as a circle inside the hexagon.</li>
+          <li>This delocalisation gives benzene extra stability (<strong>resonance energy</strong> ≈ 150 kJ/mol).</li>
+        </ul>
+        <div class="dn">📐 Draw two Kekulé structures with double-headed arrow ↔ between them, and the resonance hybrid (hexagon with circle). Label C–C bond length = 139 pm.</div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c14">Ch14</span> Q18. Explain chain isomerism and position isomerism with examples for C₄H₁₀ and C₃H₇Cl. <span class="imp">⭐ IMP</span> <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <strong>Chain Isomerism (C₄H₁₀ — Butane):</strong>
+        <ul>
+          <li>n-butane: <span class="fm">CH₃–CH₂–CH₂–CH₃</span> (straight chain, bp = –0.5°C)</li>
+          <li>Isobutane (2-methylpropane): <span class="fm">CH₃–CH(CH₃)–CH₃</span> (branched chain, bp = –11.7°C)</li>
+          <li>Same molecular formula C₄H₁₀; different carbon skeleton → different physical properties.</li>
+        </ul>
+        <strong>Position Isomerism (C₃H₇Cl — Propyl chloride):</strong>
+        <ul>
+          <li>1-chloropropane: <span class="fm">CH₃–CH₂–CH₂Cl</span> (Cl at C1)</li>
+          <li>2-chloropropane: <span class="fm">CH₃–CHCl–CH₃</span> (Cl at C2)</li>
+          <li>Same molecular formula C₃H₇Cl; same carbon skeleton; Cl at different positions.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c15">Ch15</span> Q19. Explain the halogenation of methane (free radical mechanism) with all three steps. <span class="imp">⭐ Most IMP</span> <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        Halogenation of alkanes occurs by <strong>free radical substitution</strong> mechanism with UV light (hν):
+        <ul>
+          <li><strong>Step 1 — Initiation:</strong> UV light breaks Cl–Cl bond homolytically → 2 Cl• radicals.
+            <span class="fm">Cl₂ → (hν) → 2Cl•</span>
+          </li>
+          <li><strong>Step 2 — Propagation (chain reaction):</strong>
+            <ul>
+              <li>Cl• attacks methane: <span class="fm">CH₄ + Cl• → CH₃• + HCl</span></li>
+              <li>CH₃• attacks Cl₂: <span class="fm">CH₃• + Cl₂ → CH₃Cl + Cl•</span> (regenerates Cl• → chain continues)</li>
+            </ul>
+          </li>
+          <li><strong>Step 3 — Termination:</strong> Two radicals combine → chain ends.
+            <ul>
+              <li><span class="fm">Cl• + Cl• → Cl₂</span></li>
+              <li><span class="fm">CH₃• + Cl• → CH₃Cl</span></li>
+              <li><span class="fm">CH₃• + CH₃• → C₂H₆</span></li>
+            </ul>
+          </li>
+        </ul>
+        Products: CH₃Cl (chloromethane) as main product; CH₂Cl₂, CHCl₃, CCl₄ also formed.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════ SECTION D ═══════ -->
+<div class="sec-band sbd">
+  <div class="sb-badge">D</div>
+  <div class="sb-info"><div class="sb-title">Section D — Q20 to Q23 (Attempt Any 2) — 4 marks each</div><div class="sb-desc">Long Answer — Ch4, Ch14, Ch15</div></div>
+  <div class="sb-marks">8 Marks</div>
+</div>
+
+<div class="section">
+  <div class="sh h4"><div class="qno">D</div><div class="qtitle">Section D — Important Long Answer Questions (Any 2 × 4M)</div><div class="qmarks">8 Marks</div></div>
+  <div class="sb">
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c4">Ch4</span> Q20. Describe Bohr's atomic model for hydrogen. Write all postulates and derive the expression for energy of the nth orbit. Calculate energy of electron in ground state. <span class="imp">⭐ Most IMP Long Answer</span> <span class="sm">(4M)</span></div>
+      <div class="ans-a">
+        <strong>Bohr's Postulates:</strong>
+        <ul>
+          <li>1. Electron revolves in fixed circular orbits (stationary states) without emitting energy.</li>
+          <li>2. Angular momentum is quantised: <span class="fm">mvr = nh/2π</span></li>
+          <li>3. Energy is emitted/absorbed only during transitions: <span class="fm">ΔE = hν = E₂ – E₁</span></li>
+          <li>4. The innermost orbit (n=1) has lowest energy = ground state.</li>
+        </ul>
+        <strong>Energy of nth orbit — derivation:</strong>
+        <ul>
+          <li>Total energy = KE + PE = ½mv² – Ze²/4πε₀r</li>
+          <li>From force balance and angular momentum: v = Ze²/2ε₀nh</li>
+          <li>Substituting gives:
+            <span class="fm">Eₙ = –Z²e⁴m / 8ε₀²n²h² = –13.6Z²/n² eV</span>
+          </li>
+          <li>For hydrogen (Z=1): <span class="fm">Eₙ = –13.6/n² eV</span></li>
+        </ul>
+        <strong>Ground state (n=1):</strong>
+        <div class="ns">
+          <div class="s">E₁ = –13.6/1² = <strong>–13.6 eV</strong></div>
+          <div class="s">E₂ = –13.6/4 = –3.4 eV; E₃ = –13.6/9 = –1.51 eV</div>
+          <div class="fin">Ground state energy of H = –13.6 eV = –2.18 × 10⁻¹⁸ J</div>
+        </div>
+        Negative sign = electron is bound; ionisation energy = +13.6 eV.
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c14">Ch14</span> Q21. Explain IUPAC nomenclature of organic compounds. Name the following: (i) CH₃–CH₂–CH(CH₃)–CH₂–CH₃ (ii) CH₃–CH=CH₂ (iii) HC≡CH (iv) CH₃–CH₂–OH <span class="imp">⭐ Most IMP</span> <span class="sm">(4M)</span></div>
+      <div class="ans-a">
+        <strong>IUPAC Nomenclature Rules:</strong>
+        <ul>
+          <li>1. Select the longest continuous carbon chain as the parent chain → gives base name (meth, eth, prop, but, pent...).</li>
+          <li>2. Number the chain from the end nearest to the substituent/functional group (lowest locant rule).</li>
+          <li>3. Name substituents as prefixes with their position number.</li>
+          <li>4. Suffix: alkane (–ane), alkene (–ene), alkyne (–yne), alcohol (–ol).</li>
+        </ul>
+        <strong>Naming:</strong>
+        <ul>
+          <li>(i) CH₃–CH₂–CH(CH₃)–CH₂–CH₃: Longest chain = 5C (pentane); CH₃ branch at C3. <strong>IUPAC: 3-methylpentane</strong></li>
+          <li>(ii) CH₃–CH=CH₂: 3 carbons, one C=C. <strong>IUPAC: propene (prop-1-ene)</strong></li>
+          <li>(iii) HC≡CH: 2 carbons, one C≡C. <strong>IUPAC: ethyne (acetylene)</strong></li>
+          <li>(iv) CH₃–CH₂–OH: 2 carbons, –OH group. <strong>IUPAC: ethanol</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c15">Ch15</span> Q22. Explain physical and chemical properties of alkanes with equations. Describe cracking and isomerisation. <span class="imp">⭐ IMP Long Answer</span> <span class="sm">(4M)</span></div>
+      <div class="ans-a">
+        <strong>Physical Properties:</strong>
+        <ul>
+          <li>State: CH₄–C₄H₁₀ are gases; C₅–C₁₇ are liquids; C₁₈+ are solids.</li>
+          <li>BP/MP increases with molecular mass; branched isomers have lower BP.</li>
+          <li>Insoluble in water; soluble in organic solvents; density less than water.</li>
+        </ul>
+        <strong>Chemical Properties:</strong>
+        <ul>
+          <li><strong>1. Combustion:</strong>
+            <span class="fm">CH₄ + 2O₂ → CO₂ + 2H₂O + 890 kJ/mol</span>
+            Complete combustion → CO₂ + H₂O; incomplete → CO + soot.
+          </li>
+          <li><strong>2. Halogenation (Free radical substitution):</strong>
+            <span class="fm">CH₄ + Cl₂ → (hν) → CH₃Cl + HCl</span>
+          </li>
+          <li><strong>3. Cracking (Pyrolysis):</strong> High alkanes break into smaller molecules at high temperature with catalyst:
+            <span class="fm">C₈H₁₈ → (500°C, catalyst) → C₄H₁₀ + C₄H₈</span>
+            Used in petroleum industry to increase petrol yield.
+          </li>
+          <li><strong>4. Isomerisation:</strong> Straight chain alkanes convert to branched with AlCl₃/HCl:
+            <span class="fm">n-butane → (AlCl₃/HCl, Δ) → isobutane (2-methylpropane)</span>
+            Increases octane number of petrol.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c4">Ch4</span> Q23. Explain the quantum mechanical model of the atom. What are atomic orbitals? Draw and explain s, p and d orbital shapes. <span class="imp">⭐ IMP Long Answer</span> <span class="sm">(4M)</span></div>
+      <div class="ans-a">
+        <strong>Quantum Mechanical Model:</strong>
+        <ul>
+          <li>Based on Schrödinger equation: <span class="fm">Ĥψ = Eψ</span></li>
+          <li>ψ (wave function) — gives information about electron's state.</li>
+          <li>|ψ|² = probability density — the probability of finding an electron in a small region of space.</li>
+          <li>Electrons do not have fixed paths; they exist in <strong>orbitals</strong> (probability regions).</li>
+          <li>An orbital is the region where the probability of finding the electron is ≥90%.</li>
+        </ul>
+        <strong>Shapes of Orbitals:</strong>
+        <ul>
+          <li><strong>s orbital (l=0):</strong> Spherically symmetric. Non-directional. Size: 1s &lt; 2s &lt; 3s. One s orbital per shell. Capacity: 2e⁻.</li>
+          <li><strong>p orbital (l=1):</strong> Dumbbell shaped with two lobes, separated by a nodal plane through the nucleus. Three orientations: pₓ, p_y, p_z (mutually perpendicular, 90° apart). Capacity: 6e⁻ per subshell.</li>
+          <li><strong>d orbital (l=2):</strong> Five d-orbitals: d_xy, d_xz, d_yz (four lobes between axes), d_x²-y² (four lobes along axes), d_z² (two lobes along z + ring in xy-plane). Capacity: 10e⁻ per subshell.</li>
+        </ul>
+        <div class="dn">📐 Draw: (1) s — sphere around nucleus; (2) p — two-lobed dumbbell in 3 directions; (3) d_xy — four lobes between x and y axes. Label all clearly.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Marks Table -->
+<div style="max-width:900px;margin:18px auto;background:#fff;border-radius:14px;padding:18px 22px;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+  <h3 style="color:#b71c1c;margin-bottom:12px;font-size:.95rem;">📊 RKT Chemistry Paper 1 — Pattern Summary</h3>
+  <table class="bt">
+    <tr><th>Section</th><th>Questions</th><th>Type</th><th>Choice</th><th>Marks</th></tr>
+    <tr><td>A</td><td>Q1 MCQ (4 sub-questions)</td><td>Objective 1M each</td><td>All compulsory</td><td>4</td></tr>
+    <tr><td>A</td><td>Q2 Very Short (4 sub-questions)</td><td>1 sentence 1M each</td><td>All compulsory</td><td>4</td></tr>
+    <tr><td>B</td><td>Q3–Q13 (11 questions)</td><td>Short answer 3M each</td><td>Any 4 of 11</td><td>12</td></tr>
+    <tr><td>C</td><td>Q14–Q19 (6 questions)</td><td>Short answer 3M each</td><td>Any 4 of 6</td><td>12</td></tr>
+    <tr><td>D</td><td>Q20–Q23 (4 questions)</td><td>Long answer 4M each</td><td>Any 2 of 4</td><td>8</td></tr>
+    <tr style="background:#fff3f3;"><td colspan="4"><strong>TOTAL</strong></td><td><strong>40</strong></td></tr>
+  </table>
+</div>
+
+<footer><p>Visions Classes — RKT Chemistry · visionslearning.in · <a href="class11-rkt-chemistry-answerbank.html">← RKT Answer Bank</a> · <a href="notes-class11.html">← Class 11 Notes</a></p></footer>
+
+<!-- Circular Watermark -->
+<div style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;opacity:0.07;user-select:none;">
+  <svg width="340" height="340" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="170" cy="170" r="155" fill="none" stroke="#b71c1c" stroke-width="6"/>
+    <circle cx="170" cy="170" r="138" fill="none" stroke="#b71c1c" stroke-width="2"/>
+    <path id="trp1" fill="none" d="M 40,170 a130,130 0 1,1 260,0"/>
+    <path id="brp1" fill="none" d="M 40,170 a130,130 0 0,0 260,0"/>
+    <text font-size="21" font-weight="900" fill="#b71c1c" font-family="Arial,sans-serif" letter-spacing="5"><textPath href="#trp1" startOffset="10%">VISIONS CLASSES · VISIONSLEARNING.IN ·</textPath></text>
+    <text font-size="17" font-weight="900" fill="#b71c1c" font-family="Arial,sans-serif" letter-spacing="3"><textPath href="#brp1" startOffset="12%">CHEMISTRY · CLASS 11 · RKT COLLEGE</textPath></text>
+    <text x="170" y="158" text-anchor="middle" font-size="26" font-weight="900" fill="#b71c1c" font-family="Arial,sans-serif">VISIONS</text>
+    <text x="170" y="190" text-anchor="middle" font-size="26" font-weight="900" fill="#b71c1c" font-family="Arial,sans-serif">CLASSES</text>
+    <text x="170" y="218" text-anchor="middle" font-size="12" font-weight="700" fill="#b71c1c" font-family="Arial,sans-serif" letter-spacing="2">★ RKT PAPER 1 ★</text>
+  </svg>
+</div>
+
+</body>
+</html>
