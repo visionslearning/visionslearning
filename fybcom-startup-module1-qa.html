@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>FYBCom — Fundamentals of Startup Module 1 Q&A | Visions Classes</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="logo.png" type="image/png"/>
+  <style>
+    body{background:#fff8f0;font-family:'Segoe UI',sans-serif;color:#1a1a2e;line-height:1.85;}
+    .ch-hero{background:linear-gradient(135deg,#4a148c,#6a1b9a,#e65100);color:#fff;padding:90px 20px 36px;text-align:center;}
+    .ch-hero .badge{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 16px;font-size:.78rem;font-weight:700;letter-spacing:1px;margin-bottom:12px;}
+    .ch-hero h1{font-size:clamp(1.4rem,4vw,2rem);font-weight:900;margin-bottom:6px;}
+    .ch-hero p{font-size:.88rem;opacity:.85;}
+    .qnav{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding:10px 12px;background:#fff;border-bottom:2px solid #e1bee7;position:sticky;top:0;z-index:100;}
+    .qnav a{background:#f3e5f5;color:#4a148c;border:1px solid #ce93d8;padding:4px 11px;border-radius:18px;font-size:.73rem;font-weight:700;text-decoration:none;white-space:nowrap;}
+    .qnav a:hover{background:#4a148c;color:#fff;}
+    .wrap{max-width:860px;margin:0 auto;padding:18px 13px 50px;}
+    .sec-title{display:flex;align-items:center;gap:10px;border-radius:9px;padding:12px 16px;margin:26px 0 13px;font-size:.97rem;font-weight:900;color:#fff;}
+    .sec-title .sn{min-width:34px;height:34px;background:rgba(255,255,255,.22);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:900;}
+    .qcard{background:#fff;border-radius:10px;margin-bottom:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.07);}
+    .qhead{padding:10px 14px;display:flex;align-items:flex-start;gap:10px;border-bottom:1px solid #f3e5f5;}
+    .qnum{min-width:44px;height:22px;color:#fff;font-size:.67rem;font-weight:800;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;padding:0 6px;background:#6a1b9a;}
+    .qtext{font-size:.91rem;font-weight:700;color:#1a1a2e;line-height:1.5;flex:1;}
+    .marks-tag{font-size:.68rem;background:#fde68a;color:#92400e;padding:2px 8px;border-radius:10px;white-space:nowrap;margin-left:6px;flex-shrink:0;font-weight:700;}
+    /* Solution rows */
+    .sol-row{display:flex;align-items:flex-start;border-bottom:1px solid #f3e5f5;padding:7px 14px;gap:10px;font-size:.88rem;color:#374151;line-height:1.85;}
+    .sol-row:last-child{border-bottom:none;}
+    .lbl{min-width:82px;font-weight:700;font-size:.74rem;letter-spacing:.3px;flex-shrink:0;padding-top:2px;color:#6a1b9a;}
+    .lbl.hindi{color:#e65100;background:#fff3e0;border-radius:4px;padding:2px 6px;font-size:.72rem;}
+    .lbl.note{color:#1565c0;}
+    .cnt{flex:1;}
+    .cnt ul{padding-left:16px;margin:3px 0;}
+    .cnt ul li{margin-bottom:4px;}
+    .cnt strong{color:#4a148c;}
+    .cnt .hindi-text{background:#fff8f0;border-left:3px solid #e65100;padding:6px 10px;border-radius:0 6px 6px 0;font-size:.86rem;color:#5d4037;margin:5px 0;line-height:1.75;}
+    .ans-row{background:#f0fdf4;border-top:2px solid #43a047;padding:8px 14px;font-weight:700;color:#1b5e20;font-size:.88rem;}
+    /* Table */
+    .tbl{width:100%;border-collapse:collapse;font-size:.84rem;margin:8px 0;}
+    .tbl th{background:#6a1b9a;color:#fff;padding:7px 10px;text-align:left;}
+    .tbl td{padding:6px 10px;border-bottom:1px solid #f3e5f5;}
+    .tbl tr:nth-child(even) td{background:#fdf5ff;}
+    footer{text-align:center;padding:22px;color:#888;font-size:.82rem;border-top:1px solid #eee;margin-top:30px;}
+  </style>
+</head>
+<body>
+<div id="vlScreenLayer" style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;">
+  <svg width="220" height="220" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+    <g transform="rotate(-30,150,150)">
+      <circle cx="150" cy="150" r="140" fill="none" stroke="#6a1b9a" stroke-opacity="0.18" stroke-width="5"/>
+      <text x="150" y="138" text-anchor="middle" font-family="Arial" font-size="30" font-weight="900" fill="#c0392b" fill-opacity="0.18">VISIONS</text>
+      <text x="150" y="174" text-anchor="middle" font-family="Arial" font-size="30" font-weight="900" fill="#1a1a2e" fill-opacity="0.11">CLASSES</text>
+    </g>
+  </svg>
+</div>
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="logo" style="height:32px;"/><span class="logo-text"><span>Visions</span> Classes</span></a>
+    <ul class="nav-links"><li><a href="notes-class12.html">Class 12</a></li></ul>
+  </div>
+</nav>
+
+<div class="ch-hero">
+  <div class="badge">FYBCom · Fundamentals of Startup (SEC) · Module 1</div>
+  <h1>🚀 Startup — सभी प्रश्नों के उत्तर + हिंदी व्याख्या</h1>
+  <p>Unit 1: Exploring Startup Opportunities | English Answer + हिंदी Explanation</p>
+</div>
+
+<div class="qnav">
+  <a href="#u1">New Industrial Rev</a>
+  <a href="#u2">Big Idea</a>
+  <a href="#u3">Startup Process</a>
+  <a href="#u4">Startup Economy</a>
+  <a href="#u5">Govt Initiatives</a>
+  <a href="#u6">Startup Terms</a>
+  <a href="#u7">Digital Startups</a>
+</div>
+
+<div class="wrap">
+
+<!-- ══════ UNIT 1: NEW INDUSTRIAL REVOLUTION ══════ -->
+<div class="sec-title" id="u1" style="background:linear-gradient(135deg,#1a237e,#283593);">
+  <div class="sn">1</div><div>New Industrial Revolution &amp; Changing Business Landscape</div>
+</div>
+
+<div class="qcard">
+  <div class="qhead"><div class="qnum">Q.1</div><div class="qtext">What is the New Industrial Revolution? Explain Industry 4.0 and Industry 5.0.</div><span class="marks-tag">5 Marks</span></div>
+  <div class="sol-row"><div class="lbl">Definition</div><div class="cnt">The New Industrial Revolution (Industry 4.0 and 5.0) represents a shift from traditional manufacturing and manual commerce to an interconnected, intelligence-driven, and human-centric digital ecosystem.</div></div>
+  <div class="sol-row"><div class="lbl">Industry 4.0</div><div class="cnt"><strong>Cyber-Physical Systems (2010):</strong> Merges physical production with digital technologies like AI, IoT, Big Data, and Cloud Computing.</div></div>
+  <div class="sol-row"><div class="lbl">Industry 5.0</div><div class="cnt"><strong>Human-Robot Collaboration (2020):</strong> Focuses on social value, sustainability, and human-centric workflows where humans and smart machines collaborate harmoniously.</div></div>
+  <div class="sol-row"><div class="lbl hindi">हिंदी</div><div class="cnt"><div class="hindi-text">नई औद्योगिक क्रांति का मतलब है — पारंपरिक उत्पादन से डिजिटल, AI और IoT आधारित व्यापार की ओर बदलाव। Industry 4.0 में AI, Cloud Computing और Big Data का उपयोग होता है। Industry 5.0 में मनुष्य और रोबोट मिलकर काम करते हैं।</div></div></div>
+  <div class="ans-row">∴ Industry 4.0 = Digital + Physical integration; Industry 5.0 = Human + Machine collaboration</div>
+</div>
+
+<div class="qcard">
+  <div class="qhead"><div class="qnum">Q.2</div><div class="qtext">Explain the evolution of Industrial Eras (Industry 1.0 to 5.0).</div><span class="marks-tag">5 Marks</span></div>
+  <div class="sol-row"><div class="lbl">1.0 (1784)</div><div class="cnt"><strong>Mechanization:</strong> Driven by steam power and water. Transition from agrarian economies to early factories.</div></div>
+  <div class="sol-row"><div class="lbl">2.0 (1870)</div><div class="cnt"><strong>Mass Production:</strong> Fueled by electricity, internal combustion engines, and assembly lines.</div></div>
+  <div class="sol-row"><div class="lbl">3.0 (1969)</div><div class="cnt"><strong>Automation:</strong> Introduced computers, IT systems, electronics, and early-stage internet connectivity.</div></div>
+  <div class="sol-row"><div class="lbl">4.0 (2010)</div><div class="cnt"><strong>Cyber-Physical Systems:</strong> AI, IoT, Big Data, Cloud Computing merged with physical production.</div></div>
+  <div class="sol-row"><div class="lbl">5.0 (2020)</div><div class="cnt"><strong>Human-Robot Collaboration:</strong> Social value, sustainability, and human-centric AI systems.</div></div>
+  <div class="sol-row"><div class="lbl hindi">हिंदी</div><div class="cnt"><div class="hindi-text">औद्योगिक युग का विकास: 1784 में भाप से कारखाने → 1870 में बिजली से assembly line → 1969 में कंप्यूटर → 2010 में AI और Cloud → 2020 में मनुष्य-रोबोट सहयोग। यह बदलाव startup के लिए नए अवसर लाया।</div></div></div>
+</div>
+
+<div class="qcard">
+  <div class="qhead"><div class="qnum">Q.3</div><div class="qtext">Explain the Pillars of the New Industrial Revolution (5 Technological Pillars).</div><span class="marks-tag">5 Marks</span></div>
+  <div class="sol-row"><div class="lbl">1. AI &amp; ML</div><div class="cnt">Automates analytical tasks, offers hyper-personalised customer experiences, and powers predictive algorithms. Example: Netflix recommendations.</div></div>
+  <div class="sol-row"><div class="lbl">2. IoT</div><div class="cnt">Networks of physical objects embedded with sensors to collect and exchange real-time data. Example: Smart home devices, wearables.</div></div>
+  <div class="sol-row"><div class="lbl">3. Cloud Computing</div><div class="cnt">Democratises infrastructure — startups can rent enterprise-grade servers and software on pay-as-you-go basis. Example: AWS, Google Cloud.</div></div>
+  <div class="sol-row"><div class="lbl">4. Big Data</div><div class="cnt">Transforms raw consumer interactions into actionable insights for strategic decision-making. Example: Zomato uses data to predict demand.</div></div>
+  <div class="sol-row"><div class="lbl">5. 3D Printing</div><div class="cnt">Additive Manufacturing enables rapid prototyping and cost-effective, low-volume custom manufacturing.</div></div>
+  <div class="sol-row"><div class="lbl hindi">हिंदी</div><div class="cnt"><div class="hindi-text">नई औद्योगिक क्रांति के 5 आधार स्तंभ: (1) AI - स्वचालित विश्लेषण (2) IoT - connected devices (3) Cloud - सस्ता infrastructure (4) Big Data - customer insights (5) 3D Printing - तेज prototype बनाना। ये सभी startup को सफल बनाने में मदद करते हैं।</div></div></div>
+</div>
+
+<div class="qcard">
+  <div class="qhead"><div class="qnum">Q.4</div><div class="qtext">Compare Traditional Business with Modern Startup. Explain the changing business landscape.</div><span class="marks-tag">5 Marks</span></div>
+  <div class="sol-row"><div class="lbl">Comparison</div><div class="cnt">
+    <table class="tbl">
+      <tr><th>Traditional Business</th><th>Modern Startup</th></tr>
+      <tr><td>Capital &amp; Asset Heavy</td><td>Asset-Light &amp; Cloud-Driven</td></tr>
+      <tr><td>Local/Regional Reach</td><td>Born Global (Digital Channels)</td></tr>
+      <tr><td>Long, Rigid Product Cycles</td><td>Agile, Iterative Prototyping</td></tr>
+      <tr><td>Product-Centric Sales</td><td>Platform &amp; Subscription Economy</td></tr>
+      <tr><td>Linear, Manual Supply Chains</td><td>Dynamic &amp; Data Driven Network</td></tr>
+    </table>
+  </div></div>
+  <div class="sol-row"><div class="lbl">Key Changes</div><div class="cnt"><ul>
+    <li><strong>Asset-Light Models:</strong> No need to own factories — use cloud platforms</li>
+    <li><strong>Born Global:</strong> Digital channels remove geographical constraints</li>
+    <li><strong>Platform Economy:</strong> SaaS, Peer-to-Peer platforms replace ownership</li>
+    <li><strong>Hyper-Customisation:</strong> Data analytics enables personalised products at scale</li>
+  </ul></div></div>
+  <div class="sol-row"><div class="lbl hindi">हिंदी</div><div class="cnt"><div class="hindi-text">पारंपरिक व्यापार में भारी निवेश चाहिए था, जबकि आज के startup Cloud की मदद से बिना बड़े investment के शुरू हो सकते हैं। Digital channels से वे पहले दिन से ही global customers तक पहुँच सकते हैं।</div></div></div>
+  <div class="ans-row">∴ Modern startups are asset-light, global, agile and platform-driven.</div>
+</div>
+
+<div class="qcard">
+  <div class="qhead"><div class="qnum">Q.5</div><div class="qtext">What are the core implications of the New Industrial Revolution for new entrepreneurs?</div><span class="marks-tag">4 Marks</span></div>
+  <div class="sol-row"><div class="lbl">1. Low Barriers</div><div class="cnt">Lower upfront costs — capital is no longer the definitive bottleneck. Big Idea and execution speed take precedence.</div></div>
+  <div class="sol-row"><div class="lbl">2. Upskilling</div><div class="cnt">Rapid technological evolution means skills degrade quickly. Continuous digital literacy is mandatory.</div></div>
+  <div class="sol-row"><div class="lbl">3. Sustainability</div><div class="cnt">Modern startups must incorporate ESG (Environmental, Social, Governance) factors to secure funding and consumer trust.</div></div>
+  <div class="sol-row"><div class="lbl">4. Govt Support</div><div class="cnt">Startup India Scheme provides tax exemptions, financial support, and streamlined compliance.</div></div>
+  <div class="sol-row"><div class="lbl hindi">हिंदी</div><div class="cnt"><div class="hindi-text">नए उद्यमियों के लिए 4 मुख्य बातें: (1) कम खर्च में startup शुरू हो सकता है (2) नई skills सीखते रहना जरूरी है (3) Environment का ध्यान रखना जरूरी है (4) सरकार Startup India जैसी schemes से मदद करती है।</div></div></div>
+</div>
+
+<!-- ══════ UNIT 2: BIG IDEA ══════ -->
+<div class="sec-title" id="u2" style="background:linear-gradient(135deg,#1b5e20,#2e7d32);">
+  <div class="sn">2</div><div>The Big Idea: Brainstorming and Generating Startup Ideas</div>
+</div>
+
+<div class="qcard">
+  <div class="qhead"><div class="qnum">Q.1</div><div class="qtext">What is Brainstorming? Explain its objectives and characteristics.</div><span class="marks-tag">5 Marks</span></div>
+  <div class="sol-row"><div class="lbl">Definition</div><div class="cnt"><strong>Brainstorming</strong> is a creative thinking technique in which individuals or groups generate as many ideas as possible without immediately judging or criticizing them. It encourages free thinking, creativity, and innovation.</div></div>
+  <div class="sol-row"><div class="lbl">Objectives</div><div class="cnt"><ul>
+    <li>Generate innovative business ideas</li>
+    <li>Encourage creativity and free thinking</li>
+    <li>Solve existing problems</li>
+    <li>Identify market opportunities</li>
+    <li>Improve teamwork and collaboration</li>
+  </ul></div></div>
+  <div class="sol-row"><div class="lbl">Characteristics</div><div class="cnt"><ul>
+    <li><strong>Free Flow of Ideas:</strong> Every idea is welcomed without criticism</li>
+    <li><strong>No Immediate Evaluation:</strong> Ideas evaluated only after session</li>
+    <li><strong>Quantity over Quality:</strong> More ideas = better chances</li>
+    <li><strong>Team Participation:</strong> Everyone contributes equally</li>
+    <li><strong>Build on Others' Ideas:</strong> Improve or combine existing ideas</li>
+  </ul></div></div>
+  <div class="sol-row"><div class="lbl hindi">हिंदी</div><div class="cnt"><div class="hindi-text">Brainstorming एक ऐसी विधि है जिसमें बिना किसी की आलोचना किए ज्यादा से ज्यादा ideas सोचे जाते हैं। इसका उद्देश्य नए business ideas खोजना, problem solve करना और teamwork बढ़ाना है। इसमें सभी को समान अवसर मिलता है।</div></div></div>
+</div>
+
+<div class="qcard">
+  <div class="qhead"><div class="qnum">Q.2</div><div class="qtext">What is a Startup Idea? What are the sources of startup ideas?</div><span class="marks-tag">5 Marks</span></div>
+  <div class="sol-row"><div class="lbl">Definition</div><div class="cnt">A <strong>startup idea</strong> is an innovative solution that solves a specific problem or fulfills an unmet customer need through a new product, service, or business model.</div></div>
+  <div class="sol-row"><div class="lbl">Good idea should</div><div class="cnt">Solve a real problem | Be innovative | Be financially viable | Be scalable | Have market demand</div></div>
+  <div class="sol-row"><div class="lbl">Sources</div><div class="cnt"><ul>
+    <li><strong>Personal Experience:</strong> Own problems inspire solutions (Teacher creates EdTech platform)</li>
+    <li><strong>Customer Problems:</strong> Long restaurant waits → Food delivery app (Zomato)</li>
+    <li><strong>Market Trends:</strong> AI, EVs, Organic food, Health &amp; wellness</li>
+    <li><strong>Technology:</strong> AI, Blockchain, IoT, Cloud Computing, Robotics</li>
+    <li><strong>Govt Policies:</strong> Startup India, Digital India, Skill India</li>
+    <li><strong>Research &amp; Innovation:</strong> Medical devices, Agri innovations</li>
+    <li><strong>Social Problems:</strong> Waste management, Affordable healthcare</li>
+  </ul></div></div>
+  <div class="sol-row"><div class="lbl hindi">हिंदी</div><div class="cnt"><div class="hindi-text">Startup idea एक ऐसा innovative solution है जो किसी real problem को solve करता है। Ideas के स्रोत हैं: अपना अनुभव, customer की परेशानी, market trends, technology, सरकारी योजनाएं, research और social problems। उदाहरण: Restaurant में इंतजार देखकर Zomato जैसा food delivery app बना।</div></div></div>
+</div>
+
+<div class="qcard">
+  <div class="qhead"><div class="qnum">Q.3</div><div class="qtext">Explain any THREE Brainstorming Techniques — Mind Mapping, SCAMPER, SWOT Analysis.</div><span class="marks-tag">6 Marks</span></div>
+  <div class="sol-row"><div class="lbl">1. Mind Mapping</div><div class="cnt">A visual technique where a central idea is connected to related ideas through branches. Example: Central idea "Healthy Food" → branches: Organic snacks, Diet meals, Meal delivery, Nutrition apps.<br/><strong>Advantages:</strong> Organizes ideas visually; Encourages creativity; Shows relationships.</div></div>
+  <div class="sol-row"><div class="lbl">2. SCAMPER</div><div class="cnt">Structured technique using 7 prompts:
+    <table class="tbl">
+      <tr><th>Letter</th><th>Meaning</th><th>Example</th></tr>
+      <tr><td>S</td><td>Substitute</td><td>Replace plastic with paper packaging</td></tr>
+      <tr><td>C</td><td>Combine</td><td>Café + Bookstore</td></tr>
+      <tr><td>A</td><td>Adapt</td><td>Restaurant → Home delivery</td></tr>
+      <tr><td>M</td><td>Modify</td><td>Improve product design</td></tr>
+      <tr><td>P</td><td>Put to another use</td><td>Waste → Furniture</td></tr>
+      <tr><td>E</td><td>Eliminate</td><td>Remove unnecessary features</td></tr>
+      <tr><td>R</td><td>Reverse/Rearrange</td><td>Redesign service process</td></tr>
+    </table>
+  </div></div>
+  <div class="sol-row"><div class="lbl">3. SWOT Analysis</div><div class="cnt"><strong>S</strong>trengths (internal advantages) | <strong>W</strong>eaknesses (internal limitations) | <strong>O</strong>pportunities (external possibilities) | <strong>T</strong>hreats (external risks). Helps evaluate feasibility of startup ideas.</div></div>
+  <div class="sol-row"><div class="lbl hindi">हिंदी</div><div class="cnt"><div class="hindi-text">Mind Mapping: central idea के चारों ओर branches बनाकर ideas organize करें। SCAMPER: 7 तरीकों से पुराने ideas को नए रूप में सोचें (बदलें, जोड़ें, adapt करें आदि)। SWOT: अपने idea की strengths, weaknesses, opportunities और threats देखें।</div></div></div>
+</div>
+
+<div class="qcard">
+  <div class="qhead"><div class="qnum">Q.4</div><div class="qtext">Explain the 7 Steps in Generating Startup Ideas.</div><span class="marks-tag">5 Marks</span></div>
+  <div class="sol-row"><div class="lbl">Step 1</div><div class="cnt"><strong>Identify Problems:</strong> Observe daily life and identify customer pain points.</div></div>
+  <div class="sol-row"><div class="lbl">Step 2</div><div class="cnt"><strong>Collect Information:</strong> Conduct market research and understand customer needs.</div></div>
+  <div class="sol-row"><div class="lbl">Step 3</div><div class="cnt"><strong>Brainstorm Ideas:</strong> Generate as many ideas as possible using creative techniques.</div></div>
+  <div class="sol-row"><div class="lbl">Step 4</div><div class="cnt"><strong>Evaluate Ideas:</strong> Assess feasibility, demand, competition, and profitability.</div></div>
+  <div class="sol-row"><div class="lbl">Step 5</div><div class="cnt"><strong>Develop Business Model:</strong> Decide how the product/service will create value and generate revenue.</div></div>
+  <div class="sol-row"><div class="lbl">Step 6</div><div class="cnt"><strong>Test the Idea (MVP):</strong> Launch Minimum Viable Product and gather customer feedback.</div></div>
+  <div class="sol-row"><div class="lbl">Step 7</div><div class="cnt"><strong>Improve &amp; Launch:</strong> Refine the product based on feedback and enter the market.</div></div>
+  <div class="sol-row"><div class="lbl hindi">हिंदी</div><div class="cnt"><div class="hindi-text">Startup idea generate करने के 7 चरण: (1) समस्या पहचानें (2) जानकारी जुटाएं (3) brainstorm करें (4) ideas को evaluate करें (5) business model बनाएं (6) MVP से test करें (7) feedback के अनुसार सुधार कर launch करें।</div></div></div>
+</div>
+
+<div class="qcard">
+  <div class="qhead"><div class="qnum">Q.5</div><div class="qtext">Explain Mind Mapping — its features, steps, and importance in entrepreneurship.</div><span class="marks-tag">5 Marks</span></div>
+  <div class="sol-row"><div class="lbl">Definition</div><div class="cnt">Mind Mapping is a visual brainstorming technique used to organize ideas, information, and concepts around a central topic. Popularized by <strong>Tony Buzan</strong>. Uses branches radiating from center.</div></div>
+  <div class="sol-row"><div class="lbl">5 Features</div><div class="cnt"><ul>
+    <li><strong>Central Idea:</strong> Main topic written in center</li>
+    <li><strong>Branches:</strong> Major categories radiate outward</li>
+    <li><strong>Keywords:</strong> Short words instead of sentences</li>
+    <li><strong>Visual:</strong> Colors, symbols, images used</li>
+    <li><strong>Hierarchical:</strong> General to specific structure</li>
+  </ul></div></div>
+  <div class="sol-row"><div class="lbl">Importance</div><div class="cnt"><ul>
+    <li>Encourages creativity and generates multiple business ideas</li>
+    <li>Improves problem-solving and better planning</li>
+    <li>Saves time — entire concept visible at a glance</li>
+    <li>Enhances team collaboration during brainstorming</li>
+    <li>Improves memory through visual learning</li>
+  </ul></div></div>
+  <div class="sol-row"><div class="lbl hindi">हिंदी</div><div class="cnt"><div class="hindi-text">Mind Map एक visual diagram है जिसमें बीच में main idea लिखते हैं और उससे branches निकालते हैं। Tony Buzan ने इसे popularize किया। यह creativity बढ़ाता है, time बचाता है और team collaboration में मदद करता है।</div></div></div>
+</div>
+
+<!-- ══════ UNIT 3: STARTUP PROCESS ══════ -->
+<div class="sec-title" id="u3" style="background:linear-gradient(135deg,#bf360c,#e64a19);">
+  <div class="sn">3</div><div>Business Startup Process: Ideation to Opportunity Evaluation</div>
+</div>
+
+<div class="qcard">
+  <div class="qhead"><div class="qnum">Q.1</div><div class="qtext">Explain the Business Startup Process from Ideation to Opportunity Evaluation (6 Steps).</div><span class="marks-tag">6 Marks</span></div>
+  <div class="sol-row"><div class="lbl">Step 1: Self Assessment</div><div class="cnt">Entrepreneur evaluates own skills, interests, strengths, weaknesses using SWOT analysis. Ensures alignment between capabilities and business idea.</div></div>
+  <div class="sol-row"><div class="lbl">Step 2: Market Research</div><div class="cnt">Collecting and analyzing data about customers, competitors, and market trends. Reduces risk by ensuring real market potential.</div></div>
+  <div class="sol-row"><div class="lbl">Step 3: Idea Generation</div><div class="cnt">Generating multiple business ideas using brainstorming, mind mapping, SCAMPER, and design thinking.</div></div>
+  <div class="sol-row"><div class="lbl">Step 4: Idea Evaluation</div><div class="cnt">Critically analyzing ideas based on feasibility, profitability, risk, and resources. Using cost-benefit analysis and feasibility studies.</div></div>
+  <div class="sol-row"><div class="lbl">Step 5: Validation</div><div class="cnt">Testing selected idea through MVP (Minimum Viable Product), surveys, prototypes, or pilot launches. Customer feedback confirms viability.</div></div>
+  <div class="sol-row"><div class="lbl">Step 6: Refinement &amp; Decision</div><div class="cnt">Based on feedback, idea is refined. Final decision taken to proceed with execution.</div></div>
+  <div class="sol-row"><div class="lbl hindi">हिंदी</div><div class="cnt"><div class="hindi-text">Startup process के 6 चरण: (1) खुद का मूल्यांकन करें (2) market research करें (3) ideas generate करें (4) ideas को evaluate करें (5) MVP से validate करें (6) feedback के अनुसार refine कर final decision लें। यह process raw idea को practical business में बदलता है।</div></div></div>
+  <div class="ans-row">∴ Ideation process converts raw idea → practical business opportunity through analysis, testing, and improvement.</div>
+</div>
+
+<div class="qcard">
+  <div class="qhead"><div class="qnum">Q.2</div><div class="qtext">What are the startup opportunities in India? Explain any 5 with examples.</div><span class="marks-tag">5 Marks</span></div>
+  <div class="sol-row"><div class="lbl">1. E-Commerce</div><div class="cnt">Buying/selling online. Wide reach, convenience. Example: Flipkart, Amazon.</div></div>
+  <div class="sol-row"><div class="lbl">2. FinTech</div><div class="cnt">Technology in financial services — payments, lending. Promotes cashless economy. Example: Paytm, PhonePe.</div></div>
+  <div class="sol-row"><div class="lbl">3. EdTech</div><div class="cnt">Online education platforms. Flexible, affordable, skill-based learning. Example: BYJU'S, Unacademy.</div></div>
+  <div class="sol-row"><div class="lbl">4. AgriTech</div><div class="cnt">Technology in agriculture. Helps farmers with data, supply chain, better pricing. Example: DeHaat, Ninjacart.</div></div>
+  <div class="sol-row"><div class="lbl">5. HealthTech</div><div class="cnt">Digital healthcare — telemedicine, online pharmacy. Improves access, reduces cost. Example: Practo, Tata 1mg.</div></div>
+  <div class="sol-row"><div class="lbl hindi">हिंदी</div><div class="cnt"><div class="hindi-text">भारत में startup के 5 प्रमुख अवसर: (1) E-Commerce - online buying/selling (2) FinTech - digital payments, जैसे Paytm (3) EdTech - online शिक्षा, जैसे BYJU'S (4) AgriTech - किसानों के लिए technology (5) HealthTech - online doctor consultation। ये क्षेत्र तेजी से बढ़ रहे हैं।</div></div></div>
+</div>
+
+<!-- ══════ UNIT 4: STARTUP ECONOMY ══════ -->
+<div class="sec-title" id="u4" style="background:linear-gradient(135deg,#006064,#00838f);">
+  <div class="sn">4</div><div>Introduction to Startup Economy and Entrepreneurial Ecosystem</div>
+</div>
+
+<div class="qcard">
+  <div class="qhead"><div class="qnum">Q.1</div><div class="qtext">Discuss the rise of the Startup Economy. Explain its key drivers, impact, and challenges.</div><span class="marks-tag">8 Marks</span></div>
+  <div class="sol-row"><div class="lbl">Introduction</div><div class="cnt">A <strong>startup economy</strong> is an economic system where new and innovative businesses play a significant role in growth and development. Startups are key drivers of innovation, employment, and global competitiveness.</div></div>
+  <div class="sol-row"><div class="lbl">Key Drivers</div><div class="cnt"><ul>
+    <li><strong>Technological Advancements:</strong> AI, internet, digital tools enable global reach with minimal investment</li>
+    <li><strong>Access to Capital:</strong> Venture capital, angel investors, crowdfunding available</li>
+    <li><strong>Smartphone &amp; Internet Penetration:</strong> Expanded market reach, rural inclusion</li>
+    <li><strong>Cultural Shifts:</strong> Youth prefer entrepreneurship over traditional jobs</li>
+    <li><strong>Supportive Ecosystem:</strong> Incubators, accelerators, hubs (Bangalore, Mumbai)</li>
+    <li><strong>Government Policies:</strong> Startup India — tax benefits, funding, regulatory support</li>
+  </ul></div></div>
+  <div class="sol-row"><div class="lbl">Impact on Economy</div><div class="cnt"><ul>
+    <li><strong>Job Creation:</strong> Millions of jobs in fintech, biotech, e-commerce</li>
+    <li><strong>Innovation:</strong> Disrupt traditional industries, increase productivity</li>
+    <li><strong>Economic Growth:</strong> Contribute to GDP, attract foreign investment</li>
+    <li><strong>Global Influence:</strong> Unicorn startups set international standards</li>
+    <li><strong>Social Impact:</strong> Promote creativity and entrepreneurial mindset</li>
+  </ul></div></div>
+  <div class="sol-row"><div class="lbl">Challenges</div><div class="cnt"><ul>
+    <li><strong>High Failure Rate:</strong> Many fail due to lack of planning or funds</li>
+    <li><strong>Economic Inequality:</strong> Benefits concentrated in urban/tech areas</li>
+    <li><strong>Sustainability Issues:</strong> Focus on rapid growth → unsustainable practices</li>
+    <li><strong>Work-Life Balance:</strong> Founders face stress and mental health issues</li>
+  </ul></div></div>
+  <div class="sol-row"><div class="lbl hindi">हिंदी</div><div class="cnt"><div class="hindi-text">Startup Economy वह व्यवस्था है जिसमें नई companies economy को drive करती हैं। इसके प्रमुख कारण हैं: technology का विकास, capital की उपलब्धता, internet का प्रसार, युवाओं की entrepreneurship में रुचि और सरकारी योजनाएं। इसके फायदे: रोजगार सृजन, GDP वृद्धि, innovation। चुनौतियां: अधिकांश startups fail हो जाते हैं, शहरों तक सीमित फायदे।</div></div></div>
+  <div class="ans-row">∴ Startup economy = powerful engine of growth, innovation, and employment despite challenges.</div>
+</div>
+
+<div class="qcard">
+  <div class="qhead"><div class="qnum">Q.2</div><div class="qtext">What is Entrepreneurial Ecosystem? Explain its components and importance with reference to India.</div><span class="marks-tag">6 Marks</span></div>
+  <div class="sol-row"><div class="lbl">Definition</div><div class="cnt">The <strong>entrepreneurial ecosystem</strong> refers to a network of individuals, institutions, resources, and policies that collectively support the creation and growth of startups in a particular region or country.</div></div>
+  <div class="sol-row"><div class="lbl">Components</div><div class="cnt"><ul>
+    <li><strong>Entrepreneurs:</strong> Key drivers — founders of Flipkart, Ola</li>
+    <li><strong>Funding Sources:</strong> Angel investors, VCs, government schemes</li>
+    <li><strong>Educational Institutions:</strong> IITs, IIMs provide knowledge and incubation</li>
+    <li><strong>Incubators &amp; Accelerators:</strong> T-Hub, Startup India hubs</li>
+    <li><strong>Corporate Partnerships:</strong> Reliance Jio supporting digital startups</li>
+    <li><strong>Legal &amp; Regulatory Framework:</strong> Startup India simplifies registration</li>
+    <li><strong>Mentors &amp; Networks:</strong> Experienced professionals guide startups</li>
+    <li><strong>Cultural Factors:</strong> Risk-taking mindset</li>
+  </ul></div></div>
+  <div class="sol-row"><div class="lbl">India's Ecosystem</div><div class="cnt">Startup hubs: Bangalore, Mumbai, Delhi-NCR. High mobile/internet penetration boosted digital startups. Large young population drives creativity.</div></div>
+  <div class="sol-row"><div class="lbl">Importance</div><div class="cnt">Promotes innovation | Economic growth | Employment | Wealth creation | Problem-solving | Global competitiveness</div></div>
+  <div class="sol-row"><div class="lbl hindi">हिंदी</div><div class="cnt"><div class="hindi-text">Entrepreneurial Ecosystem वह नेटवर्क है जिसमें entrepreneurs, investors, educational institutions, incubators, government और mentors मिलकर startup को support करते हैं। भारत में Bangalore, Mumbai, Delhi-NCR प्रमुख startup हubs हैं। यह ecosystem innovation, रोजगार और economic growth को बढ़ावा देता है।</div></div></div>
+</div>
+
+<!-- ══════ UNIT 5: GOVT INITIATIVES ══════ -->
+<div class="sec-title" id="u5" style="background:linear-gradient(135deg,#1a237e,#283593);">
+  <div class="sn">5</div><div>Government Initiatives Supporting Entrepreneurship in India</div>
+</div>
+
+<div class="qcard">
+  <div class="qhead"><div class="qnum">Q.1</div><div class="qtext">Explain any FIVE Government initiatives supporting entrepreneurship in India.</div><span class="marks-tag">5 Marks</span></div>
+  <div class="sol-row"><div class="lbl">1. Startup India (2016)</div><div class="cnt">Promotes innovation and startups. Provides tax benefits, easy registration, funding support, incubation facilities, and patent protection.</div></div>
+  <div class="sol-row"><div class="lbl">2. Make in India (2014)</div><div class="cnt">Boosts manufacturing sector. Encourages domestic and foreign investment. Focus on automobiles, electronics. Generates employment.</div></div>
+  <div class="sol-row"><div class="lbl">3. Atal Innovation Mission</div><div class="cnt">Promotes innovation and entrepreneurship. Establishes Atal Tinkering Labs in schools. Provides incubation support. Encourages problem-solving.</div></div>
+  <div class="sol-row"><div class="lbl">4. PM Mudra Yojana</div><div class="cnt">Provides loans up to ₹10 lakh without collateral. Categories: Shishu (up to ₹50K), Kishor (₹50K-5L), Tarun (₹5L-10L). Supports micro enterprises.</div></div>
+  <div class="sol-row"><div class="lbl">5. Digital India</div><div class="cnt">Creates digitally empowered society. Promotes digital payments and e-governance. Improves internet connectivity. Supports digital businesses.</div></div>
+  <div class="sol-row"><div class="lbl hindi">हिंदी</div><div class="cnt"><div class="hindi-text">भारत सरकार की 5 प्रमुख योजनाएं: (1) Startup India (2016) - tax benefits, easy registration (2) Make in India (2014) - manufacturing बढ़ाना (3) Atal Innovation Mission - school में labs बनाना (4) PM Mudra Yojana - बिना guarantee के ₹10 लाख तक loan (5) Digital India - internet और digital payments को बढ़ावा।</div></div></div>
+  <div class="ans-row">∴ These initiatives provide funding, skills, infrastructure and policy support for entrepreneurs.</div>
+</div>
+
+<!-- ══════ UNIT 6: STARTUP TERMS ══════ -->
+<div class="sec-title" id="u6" style="background:linear-gradient(135deg,#4a148c,#6a1b9a);">
+  <div class="sn">6</div><div>Frequently Used Startup Terms</div>
+</div>
+
+<div class="qcard">
+  <div class="qhead"><div class="qnum">Q.1</div><div class="qtext">Define and explain: Bootstrapping, Venture Capitalist, Angel Investor, Crowdfunding.</div><span class="marks-tag">8 Marks</span></div>
+  <div class="sol-row"><div class="lbl">1. Bootstrapping</div><div class="cnt">Starting and growing a business using personal savings or internal revenue without external funding. Allows full control but slower growth.<br/><strong>Example:</strong> Zoho — fully bootstrapped company.<br/><strong>Features:</strong> Self-financing | Full ownership | Low-cost operations | Gradual growth | Financial discipline.</div></div>
+  <div class="sol-row"><div class="lbl">2. Venture Capitalist</div><div class="cnt">An investor/firm that provides large funding to startups with high growth potential in exchange for equity. Also provides mentorship.<br/><strong>Example:</strong> Sequoia Capital invested in Byju's and Zomato.<br/><strong>Features:</strong> High investment | Equity participation | High risk-high return | Expert guidance | Exit via IPO/acquisition.</div></div>
+  <div class="sol-row"><div class="lbl">3. Angel Investor</div><div class="cnt">Wealthy individuals who invest personal funds in early-stage startups. Smaller amounts, more flexible than VCs.<br/><strong>Example:</strong> Ratan Tata invested in Ola and Paytm.<br/><strong>Features:</strong> Personal investment | Early-stage funding | Smaller amount | Mentorship | Flexible terms.</div></div>
+  <div class="sol-row"><div class="lbl">4. Crowdfunding</div><div class="cnt">Raising small amounts from a large number of people through online platforms.<br/><strong>Example:</strong> Kickstarter, Ketto.<br/><strong>Features:</strong> Mass participation | Online platforms | Small contributions | Wide reach | Multiple models (donation, reward, equity, debt).</div></div>
+  <div class="sol-row"><div class="lbl hindi">हिंदी</div><div class="cnt"><div class="hindi-text">
+    <strong>Bootstrapping:</strong> खुद के पैसे से business चलाना — जैसे Zoho ने किया।<br/>
+    <strong>Venture Capitalist:</strong> बड़ी companies जो startups में बहुत पैसा लगाती हैं बदले में हिस्सेदारी लेकर — जैसे Sequoia Capital।<br/>
+    <strong>Angel Investor:</strong> अमीर व्यक्ति जो early-stage startup में personal पैसा लगाता है — जैसे Ratan Tata।<br/>
+    <strong>Crowdfunding:</strong> online platform के जरिए बहुत से लोगों से थोड़ा-थोड़ा पैसा जुटाना — जैसे Kickstarter।
+  </div></div></div>
+</div>
+
+<div class="qcard">
+  <div class="qhead"><div class="qnum">Q.2</div><div class="qtext">What is Ease of Doing Business in India? Explain its key factors and India's ranking.</div><span class="marks-tag">4 Marks</span></div>
+  <div class="sol-row"><div class="lbl">Definition</div><div class="cnt"><strong>Ease of Doing Business</strong> refers to how easy it is to start and run a business in a country based on government policies and regulations.</div></div>
+  <div class="sol-row"><div class="lbl">India's Progress</div><div class="cnt">India rose 79 ranks — from <strong>142nd (2014)</strong> to <strong>63rd (2019)</strong> in World Bank ratings. Improved through Startup India and Digital India initiatives.</div></div>
+  <div class="sol-row"><div class="lbl">Key Factors</div><div class="cnt"><ul>
+    <li>Starting a Business: Simple online registration</li>
+    <li>Licenses &amp; Permits: Faster approvals</li>
+    <li>Access to Finance: Loans and funding schemes</li>
+    <li>Taxation: GST simplified tax procedures</li>
+    <li>Infrastructure: Better digital &amp; physical</li>
+    <li>Contract Enforcement: Legal protection</li>
+    <li>Insolvency Resolution: Easy exit through bankruptcy laws</li>
+  </ul></div></div>
+  <div class="sol-row"><div class="lbl hindi">हिंदी</div><div class="cnt"><div class="hindi-text">Ease of Doing Business का मतलब है किसी देश में business शुरू करना और चलाना कितना आसान है। भारत 2014 में 142वें स्थान पर था जो 2019 में 63वें स्थान पर आ गया। GST, online registration और Startup India ने इसे आसान बनाया।</div></div></div>
+</div>
+
+<!-- ══════ UNIT 7: DIGITAL STARTUPS ══════ -->
+<div class="sec-title" id="u7" style="background:linear-gradient(135deg,#1b5e20,#2e7d32);">
+  <div class="sn">7</div><div>Digital Startups &amp; Platform-Based Business Models (Meesho, Zomato, Zepto)</div>
+</div>
+
+<div class="qcard">
+  <div class="qhead"><div class="qnum">Q.1</div><div class="qtext">Explain the platform-based business model of Zomato. How does it create value?</div><span class="marks-tag">5 Marks</span></div>
+  <div class="sol-row"><div class="lbl">About Zomato</div><div class="cnt">Zomato is a <strong>two-sided platform</strong> connecting restaurants (supply side) and customers (demand side). It does not own any restaurant but creates value by facilitating transactions between them.</div></div>
+  <div class="sol-row"><div class="lbl">Business Model</div><div class="cnt"><ul>
+    <li>Restaurants list menu on Zomato app</li>
+    <li>Customers browse, order, and pay online</li>
+    <li>Delivery partners execute last-mile delivery</li>
+    <li>Ratings &amp; reviews build trust</li>
+  </ul></div></div>
+  <div class="sol-row"><div class="lbl">Revenue Sources</div><div class="cnt">Commission from restaurants | Delivery charges | Advertising/promotions | Zomato Gold (subscription) | Hyperpure (B2B ingredient supply)</div></div>
+  <div class="sol-row"><div class="lbl">Value Creation</div><div class="cnt">For restaurants: More orders, wider reach. For customers: Convenience, variety, discounts. For delivery partners: Employment.</div></div>
+  <div class="sol-row"><div class="lbl hindi">हिंदी</div><div class="cnt"><div class="hindi-text">Zomato एक two-sided platform है जो restaurants और customers को जोड़ता है। Zomato खुद कोई restaurant नहीं चलाता — वह सिर्फ connection बनाता है। Restaurants को ज्यादा customers मिलते हैं और customers को घर बैठे खाना। Zomato commission, delivery charges और subscription से पैसे कमाता है।</div></div></div>
+</div>
+
+<div class="qcard">
+  <div class="qhead"><div class="qnum">Q.2</div><div class="qtext">Explain Meesho's social commerce model. How does it enable zero-investment entrepreneurship?</div><span class="marks-tag">5 Marks</span></div>
+  <div class="sol-row"><div class="lbl">About Meesho</div><div class="cnt">Meesho is a <strong>social commerce platform</strong> connecting suppliers (manufacturers/wholesalers) with resellers (individuals) who sell through WhatsApp, Facebook, and Instagram.</div></div>
+  <div class="sol-row"><div class="lbl">How it works</div><div class="cnt"><ul>
+    <li>Reseller browses Meesho's product catalog</li>
+    <li>Shares products on WhatsApp/social media</li>
+    <li>Customer places order through reseller</li>
+    <li>Reseller adds profit margin on Meesho's price</li>
+    <li>Meesho handles delivery and payment — reseller earns profit</li>
+  </ul></div></div>
+  <div class="sol-row"><div class="lbl">Zero Investment</div><div class="cnt">No inventory needed | No upfront investment | Work from home | Earn from day one | Technology does the heavy lifting</div></div>
+  <div class="sol-row"><div class="lbl">Stakeholders</div><div class="cnt">Suppliers/Manufacturers | Resellers (homemakers, students) | End customers | Delivery partners</div></div>
+  <div class="sol-row"><div class="lbl hindi">हिंदी</div><div class="cnt"><div class="hindi-text">Meesho एक social commerce platform है जहाँ कोई भी बिना investment के reseller बन सकता है। आपको बस WhatsApp पर product share करना है, जब order आए तो Meesho खुद delivery करता है। आप अपना profit margin जोड़ते हैं। घरेलू महिलाएं और students इससे ₹8000-10000 प्रतिमाह कमा सकते हैं।</div></div></div>
+</div>
+
+<div class="qcard">
+  <div class="qhead"><div class="qnum">Q.3</div><div class="qtext">What is Quick Commerce? Explain Zepto's business model and concept of "dark stores".</div><span class="marks-tag">5 Marks</span></div>
+  <div class="sol-row"><div class="lbl">Quick Commerce</div><div class="cnt">Quick Commerce (Q-Commerce) is an evolution of e-commerce focused on <strong>ultra-fast delivery</strong> (typically under 15 minutes) of everyday essentials like groceries, medicines, etc.</div></div>
+  <div class="sol-row"><div class="lbl">Zepto's Model</div><div class="cnt"><ul>
+    <li>Founded in 2021 by Aadit Palicha and Kaivalya Vohra (both 19 years old)</li>
+    <li>Promises 10-minute delivery of groceries</li>
+    <li>Uses technology to track demand and optimize delivery routes</li>
+    <li>AI-powered inventory management</li>
+  </ul></div></div>
+  <div class="sol-row"><div class="lbl">Dark Stores</div><div class="cnt">Small, strategically located micro-warehouses in residential areas. Not open to public — only for order fulfillment. Stock only fast-moving products. Multiple dark stores in a city ensure fast delivery to every pin code.</div></div>
+  <div class="sol-row"><div class="lbl">vs Traditional</div><div class="cnt">Traditional e-commerce: 1-7 days delivery. Zepto: 10 minutes delivery. Key difference = dark stores + route optimization technology.</div></div>
+  <div class="sol-row"><div class="lbl hindi">हिंदी</div><div class="cnt"><div class="hindi-text">Quick Commerce में बहुत तेज delivery होती है — Zepto 10 मिनट में groceries deliver करता है। इसके लिए "Dark Stores" बनाए जाते हैं — ये छोटे warehouses हैं जो public के लिए नहीं, सिर्फ order fulfillment के लिए होते हैं। Technology demand predict करती है और delivery route optimize करती है।</div></div></div>
+</div>
+
+<div class="qcard">
+  <div class="qhead"><div class="qnum">Q.4</div><div class="qtext">What is an Online Platform? Explain its key features and compare it with traditional business.</div><span class="marks-tag">5 Marks</span></div>
+  <div class="sol-row"><div class="lbl">Definition</div><div class="cnt">An <strong>online platform</strong> is a digital system (website or app) that connects two or more groups of users to interact, buy, sell, or exchange services <strong>without owning the products</strong>.</div></div>
+  <div class="sol-row"><div class="lbl">Key Features</div><div class="cnt"><ul>
+    <li><strong>Multi-Sided Users:</strong> Buyers, sellers, service providers (Zomato: restaurants + customers + delivery)</li>
+    <li><strong>Value without Ownership:</strong> Uber doesn't own cars; connects drivers to riders</li>
+    <li><strong>Network Effect:</strong> More users = More value (cycle of growth)</li>
+    <li><strong>Revenue Models:</strong> Commission, delivery charges, ads, subscription</li>
+    <li><strong>Technology Backbone:</strong> Apps, algorithms, UPI payments</li>
+    <li><strong>Trust &amp; Ratings:</strong> Reviews, verified users, return policies</li>
+    <li><strong>Scalability:</strong> Grow without physical expansion</li>
+  </ul></div></div>
+  <div class="sol-row"><div class="lbl">Comparison</div><div class="cnt">
+    <table class="tbl">
+      <tr><th>Basis</th><th>Traditional Business</th><th>Platform Model</th></tr>
+      <tr><td>Ownership</td><td>Owns goods/services</td><td>Does not own</td></tr>
+      <tr><td>Role</td><td>Produces &amp; sells</td><td>Connects users</td></tr>
+      <tr><td>Growth</td><td>Slow</td><td>Fast (scalable)</td></tr>
+      <tr><td>Example</td><td>Retail shop</td><td>Amazon, Zomato</td></tr>
+    </table>
+  </div></div>
+  <div class="sol-row"><div class="lbl hindi">हिंदी</div><div class="cnt"><div class="hindi-text">Online Platform एक digital system है जो users को connect करता है — जैसे Amazon, Zomato, Uber। Platform खुद कोई product नहीं रखता बस connection बनाता है। जितने ज्यादा users, उतना ज्यादा फायदा (network effect)। पारंपरिक दुकान से अलग — यह बिना physical expansion के global scale पर grow कर सकता है।</div></div></div>
+  <div class="ans-row">∴ Online platforms create value through connections, not ownership — they are the future of business.</div>
+</div>
+
+<!-- VIVA QUESTIONS -->
+<div class="sec-title" style="background:linear-gradient(135deg,#37474f,#546e7a);">
+  <div class="sn">★</div><div>Viva / Short Answer Questions (2 Marks each)</div>
+</div>
+
+<div class="qcard">
+  <div class="qhead"><div class="qnum">Viva</div><div class="qtext">Important 2-mark questions with short answers + हिंदी</div></div>
+  <div class="sol-row"><div class="lbl">Q: What is a startup?</div><div class="cnt">A startup is a newly established business that aims to solve a real problem with an innovative, scalable, and growth-oriented solution. | <em>Startup एक नई company है जो innovative तरीके से किसी problem को solve करती है और तेजी से grow करने का potential रखती है।</em></div></div>
+  <div class="sol-row"><div class="lbl">Q: What is SCAMPER?</div><div class="cnt">SCAMPER stands for Substitute, Combine, Adapt, Modify, Put to another use, Eliminate, Reverse/Rearrange — a structured brainstorming technique. | <em>SCAMPER एक structured brainstorming method है जिसमें 7 तरीकों से नए ideas सोचे जाते हैं।</em></div></div>
+  <div class="sol-row"><div class="lbl">Q: What is MVP?</div><div class="cnt">Minimum Viable Product — a basic version of a product with just enough features to test the idea in the real market and gather customer feedback. | <em>MVP एक basic product है जिसे market में test करने के लिए launch किया जाता है।</em></div></div>
+  <div class="sol-row"><div class="lbl">Q: What is a Unicorn?</div><div class="cnt">A startup that has achieved a valuation of $1 billion or more. India has 100+ unicorns including Ola, Paytm, Swiggy, Byju's. | <em>वह startup जिसकी value $1 billion हो जाए — जैसे Ola, Swiggy, Byju's।</em></div></div>
+  <div class="sol-row"><div class="lbl">Q: What is SaaS?</div><div class="cnt">Software-as-a-Service — providing continuous software access on subscription basis rather than one-time purchase. Example: Zoho, Google Workspace. | <em>SaaS में software खरीदने के बजाय subscription पर use किया जाता है।</em></div></div>
+  <div class="sol-row"><div class="lbl">Q: What is Network Effect?</div><div class="cnt">When more users join a platform, it becomes more valuable for all existing users. Example: More restaurants on Zomato = better for customers. | <em>जितने ज्यादा users, उतना ज्यादा platform useful — यह network effect है।</em></div></div>
+  <div class="sol-row"><div class="lbl">Q: Name 3 types of crowdfunding.</div><div class="cnt">1. Donation-based (no return) 2. Reward-based (product/service in return) 3. Equity-based (shares in company) 4. Debt-based (loan repaid with interest). | <em>Crowdfunding के 3 प्रकार: Donation (कोई return नहीं), Reward (product मिलता है), Equity (company में हिस्सा)।</em></div></div>
+</div>
+
+</div><!-- end .wrap -->
+
+<footer>
+  <p>🚀 Visions Classes · FYBCom · Fundamentals of Startup (SEC) · Module 1</p>
+  <p>Unit 1: Exploring Startup Opportunities | English Answers + हिंदी Explanation</p>
+  <p style="margin-top:6px;"><a href="notes-class12.html" style="color:#6a1b9a;font-weight:700;">← Back to Class 12 Notes</a></p>
+</footer>
+<script>
+  const ham = document.getElementById('hamburger');
+  const nav = document.getElementById('navLinks');
+  if(ham) ham.addEventListener('click', () => nav && nav.classList.toggle('open'));
+</script>
+</body>
+</html>
