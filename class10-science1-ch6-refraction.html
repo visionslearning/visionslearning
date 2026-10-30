@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Class 10 Science 1 — Ch.6 Refraction of Light | Question Paper</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#1a1a1a;min-height:100vh;}
+
+  /* HEADER */
+  .site-header{background:linear-gradient(135deg,#0d47a1,#1565c0,#0277bd);padding:14px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 3px 12px rgba(0,0,0,.3);}
+  .site-header a{color:#90caf9;text-decoration:none;font-size:.85rem;font-weight:600;}
+  .site-header a:hover{color:#fff;}
+  .header-title{color:#fff;font-size:1.1rem;font-weight:800;}
+
+  /* PAPER HERO */
+  .paper-hero{background:linear-gradient(135deg,#0d47a1 0%,#1976d2 50%,#0277bd 100%);padding:36px 20px 30px;text-align:center;color:#fff;}
+  .paper-hero .board-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:5px 18px;font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
+  .paper-hero h1{font-size:1.7rem;font-weight:900;line-height:1.25;margin-bottom:8px;}
+  .paper-hero .sub{font-size:.95rem;color:rgba(255,255,255,.85);margin-bottom:18px;}
+  .marks-row{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;}
+  .marks-pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:22px;padding:7px 18px;font-size:.82rem;font-weight:700;}
+
+  /* INSTRUCTIONS */
+  .instructions{background:#e3f2fd;border-left:4px solid #1565c0;margin:20px auto;max-width:860px;padding:14px 20px;border-radius:8px;font-size:.88rem;line-height:1.7;}
+  .instructions strong{color:#0d47a1;}
+
+  /* SECTION */
+  .section{max-width:860px;margin:20px auto;background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden;}
+  .section-header{background:linear-gradient(135deg,#0d47a1,#1976d2);padding:14px 22px;display:flex;align-items:center;gap:12px;}
+  .section-header .qno{background:#fff;color:#0d47a1;font-weight:900;font-size:1rem;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .section-header .qtitle{color:#fff;font-size:1rem;font-weight:800;}
+  .section-header .qmarks{margin-left:auto;background:rgba(255,255,255,.2);color:#fff;font-size:.8rem;font-weight:700;padding:4px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.35);}
+  .section-body{padding:20px 24px;}
+
+  /* MCQ */
+  .mcq-item{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid #e8edf2;}
+  .mcq-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+  .mcq-q{font-size:.95rem;font-weight:700;color:#1a1a1a;margin-bottom:10px;line-height:1.5;}
+  .mcq-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .opt{background:#f5f7fa;border:1.5px solid #e0e7ef;border-radius:8px;padding:8px 14px;font-size:.88rem;cursor:pointer;transition:all .2s;}
+  .opt:hover{background:#e3f2fd;border-color:#1976d2;}
+  .opt.correct{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700;}
+  .ans-badge{display:inline-block;background:#e8f5e9;color:#1b5e20;font-size:.78rem;font-weight:700;padding:3px 10px;border-radius:10px;margin-top:8px;border:1px solid #a5d6a7;}
+
+  /* TRUE FALSE */
+  .tf-item{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid #f0f4f8;}
+  .tf-item:last-child{border-bottom:none;}
+  .tf-num{font-weight:900;color:#0d47a1;min-width:22px;font-size:.9rem;}
+  .tf-q{font-size:.9rem;line-height:1.5;flex:1;}
+  .tf-ans{font-size:.8rem;font-weight:700;padding:3px 10px;border-radius:10px;white-space:nowrap;flex-shrink:0;}
+  .tf-true{background:#e8f5e9;color:#1b5e20;border:1px solid #a5d6a7;}
+  .tf-false{background:#ffebee;color:#b71c1c;border:1px solid #ef9a9a;}
+
+  /* MATCH */
+  .match-wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .match-col h4{font-size:.82rem;font-weight:800;color:#0d47a1;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
+  .match-row{padding:8px 12px;background:#f5f7fa;border-radius:8px;font-size:.88rem;margin-bottom:6px;border:1px solid #e0e7ef;}
+  .match-key{font-weight:700;color:#0d47a1;}
+  .match-ans-table{margin-top:14px;width:100%;border-collapse:collapse;font-size:.85rem;}
+  .match-ans-table th{background:#0d47a1;color:#fff;padding:7px 12px;text-align:left;}
+  .match-ans-table td{padding:7px 12px;border-bottom:1px solid #e8edf2;}
+  .match-ans-table tr:last-child td{border-bottom:none;}
+  .match-ans-table tr:nth-child(even) td{background:#f0f4f8;}
+
+  /* ONE SENTENCE */
+  .os-item{padding:12px 0;border-bottom:1px solid #f0f4f8;}
+  .os-item:last-child{border-bottom:none;}
+  .os-q{font-size:.92rem;font-weight:700;color:#1a1a1a;margin-bottom:6px;}
+  .os-a{font-size:.88rem;color:#2e7d32;background:#f1f8e9;border-left:3px solid #66bb6a;padding:7px 12px;border-radius:0 8px 8px 0;line-height:1.5;}
+
+  /* SHORT NOTE / BRIEF */
+  .sn-item{padding:14px 0;border-bottom:1px solid #f0f4f8;}
+  .sn-item:last-child{border-bottom:none;}
+  .sn-q{font-size:.93rem;font-weight:700;color:#1a1a1a;margin-bottom:8px;}
+  .sn-marks{font-size:.75rem;color:#888;font-weight:600;margin-left:6px;}
+  .sn-a{font-size:.88rem;color:#1a1a1a;line-height:1.7;background:#f8fafc;border-left:3px solid #1976d2;padding:10px 14px;border-radius:0 8px 8px 0;}
+  .sn-a ul{padding-left:18px;margin-top:4px;}
+  .sn-a ul li{margin-bottom:4px;}
+  .sn-a .formula{font-family:monospace;background:#e3f2fd;color:#0d47a1;padding:2px 8px;border-radius:6px;font-weight:700;display:inline-block;margin:3px 0;}
+
+  /* NUMERICALS */
+  .num-item{padding:14px 0;border-bottom:1px solid #f0f4f8;}
+  .num-item:last-child{border-bottom:none;}
+  .num-q{font-size:.93rem;font-weight:700;color:#1a1a1a;margin-bottom:8px;}
+  .num-marks{font-size:.75rem;color:#888;font-weight:600;margin-left:6px;}
+  .num-solution{background:#fff8e1;border-left:3px solid #f9a825;padding:12px 14px;border-radius:0 8px 8px 0;font-size:.88rem;line-height:1.8;}
+  .num-solution .step{margin-bottom:4px;}
+  .num-solution .formula{font-family:monospace;background:#fff3cd;color:#7c5700;padding:2px 8px;border-radius:6px;font-weight:700;display:inline-block;margin:2px 0;}
+  .num-solution .final{font-weight:800;color:#1b5e20;background:#e8f5e9;padding:6px 12px;border-radius:8px;display:inline-block;margin-top:6px;}
+
+  /* DIAGRAM NOTE */
+  .diagram-note{background:#e8eaf6;border:1.5px dashed #5c6bc0;border-radius:10px;padding:12px 16px;font-size:.83rem;color:#3949ab;margin-top:10px;text-align:center;}
+
+  /* FOOTER */
+  footer{text-align:center;padding:28px 16px;font-size:.8rem;color:#888;margin-top:10px;}
+  footer a{color:#1976d2;text-decoration:none;}
+
+  @media(max-width:600px){
+    .mcq-options{grid-template-columns:1fr;}
+    .match-wrap{grid-template-columns:1fr;}
+    .paper-hero h1{font-size:1.3rem;}
+    .marks-pill{font-size:.75rem;}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="site-header">
+  <a href="notes-class10.html">← Class 10 Notes</a>
+  <span style="color:rgba(255,255,255,.4);">|</span>
+  <span class="header-title">Ch.6 — Refraction of Light</span>
+</div>
+
+<!-- HERO -->
+<div class="paper-hero">
+  <div class="board-tag">Maharashtra State Board · SSC</div>
+  <h1>Chapter 6 — Refraction of Light<br>Question Paper with Answers</h1>
+  <div class="sub">Class 10 · Science Part 1 · Board Pattern</div>
+  <div class="marks-row">
+    <div class="marks-pill">📋 Total Marks: 40</div>
+    <div class="marks-pill">⏱ Time: 2 Hours</div>
+    <div class="marks-pill">📖 Chapter 6 Only</div>
+  </div>
+</div>
+
+<!-- INSTRUCTIONS -->
+<div class="instructions">
+  <strong>General Instructions:</strong>
+  All questions are compulsory. Figures to the right indicate full marks.
+  Answers of all questions are given below each question for reference.
+  Draw neat labelled diagrams wherever necessary.
+</div>
+
+<!-- ══════════════════════════════════════════
+     Q1 — MCQ (5 Marks)
+════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <div class="qno">1</div>
+    <div class="qtitle">Choose the correct alternative and rewrite the statement.</div>
+    <div class="qmarks">5 Marks</div>
+  </div>
+  <div class="section-body">
+
+    <div class="mcq-item">
+      <div class="mcq-q">i. When light travels from a denser medium to a rarer medium, it bends ________.</div>
+      <div class="mcq-options">
+        <div class="opt">a) towards the normal</div>
+        <div class="opt correct">b) away from the normal</div>
+        <div class="opt">c) along the normal</div>
+        <div class="opt">d) does not bend</div>
+      </div>
+      <span class="ans-badge">✓ Answer: (b) away from the normal</span>
+    </div>
+
+    <div class="mcq-item">
+      <div class="mcq-q">ii. The refractive index of a medium is defined as the ratio of speed of light in vacuum to speed of light in the medium. This is called ________.</div>
+      <div class="mcq-options">
+        <div class="opt">a) relative refractive index</div>
+        <div class="opt correct">b) absolute refractive index</div>
+        <div class="opt">c) critical angle</div>
+        <div class="opt">d) angle of deviation</div>
+      </div>
+      <span class="ans-badge">✓ Answer: (b) absolute refractive index</span>
+    </div>
+
+    <div class="mcq-item">
+      <div class="mcq-q">iii. A ray of light is incident on a glass slab at an angle of 0° (along normal). The angle of refraction is ________.</div>
+      <div class="mcq-options">
+        <div class="opt correct">a) 0°</div>
+        <div class="opt">b) 30°</div>
+        <div class="opt">c) 45°</div>
+        <div class="opt">d) 90°</div>
+      </div>
+      <span class="ans-badge">✓ Answer: (a) 0°</span>
+    </div>
+
+    <div class="mcq-item">
+      <div class="mcq-q">iv. The phenomenon due to which a stick partially immersed in water appears bent is ________.</div>
+      <div class="mcq-options">
+        <div class="opt">a) reflection</div>
+        <div class="opt correct">b) refraction</div>
+        <div class="opt">c) dispersion</div>
+        <div class="opt">d) total internal reflection</div>
+      </div>
+      <span class="ans-badge">✓ Answer: (b) refraction</span>
+    </div>
+
+    <div class="mcq-item">
+      <div class="mcq-q">v. Snell's law states that sin i / sin r = ________.</div>
+      <div class="mcq-options">
+        <div class="opt">a) speed of light in medium / speed of light in vacuum</div>
+        <div class="opt correct">b) speed of light in vacuum / speed of light in medium</div>
+        <div class="opt">c) wavelength in vacuum / wavelength in medium</div>
+        <div class="opt">d) both (b) and (c)</div>
+      </div>
+      <span class="ans-badge">✓ Answer: (d) both (b) and (c)</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     Q2 — True or False (5 Marks)
+════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <div class="qno">2</div>
+    <div class="qtitle">State whether the following statements are True or False. If false, rewrite the correct statement.</div>
+    <div class="qmarks">5 Marks</div>
+  </div>
+  <div class="section-body">
+
+    <div class="tf-item">
+      <span class="tf-num">i.</span>
+      <span class="tf-q">Refraction of light occurs because light changes its speed when it travels from one medium to another.</span>
+      <span class="tf-ans tf-true">TRUE</span>
+    </div>
+
+    <div class="tf-item">
+      <span class="tf-num">ii.</span>
+      <span class="tf-q">When light travels from air (rarer) to glass (denser), the angle of refraction is greater than the angle of incidence.</span>
+      <span class="tf-ans tf-false">FALSE</span>
+    </div>
+    <div style="font-size:.82rem;color:#b71c1c;padding:4px 34px 8px;background:#fff3f3;border-radius:6px;margin-bottom:4px;">
+      ✎ Correct: When light travels from air to glass, the angle of refraction is <strong>less</strong> than the angle of incidence.
+    </div>
+
+    <div class="tf-item">
+      <span class="tf-num">iii.</span>
+      <span class="tf-q">The refractive index of water is approximately 1.33.</span>
+      <span class="tf-ans tf-true">TRUE</span>
+    </div>
+
+    <div class="tf-item">
+      <span class="tf-num">iv.</span>
+      <span class="tf-q">The incident ray, refracted ray and normal at the point of incidence all lie in different planes.</span>
+      <span class="tf-ans tf-false">FALSE</span>
+    </div>
+    <div style="font-size:.82rem;color:#b71c1c;padding:4px 34px 8px;background:#fff3f3;border-radius:6px;margin-bottom:4px;">
+      ✎ Correct: The incident ray, refracted ray and normal all lie in the <strong>same plane</strong>.
+    </div>
+
+    <div class="tf-item">
+      <span class="tf-num">v.</span>
+      <span class="tf-q">A medium with a higher refractive index is called an optically denser medium.</span>
+      <span class="tf-ans tf-true">TRUE</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     Q3 — Match the Columns (5 Marks)
+════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <div class="qno">3</div>
+    <div class="qtitle">Match the columns A and B.</div>
+    <div class="qmarks">5 Marks</div>
+  </div>
+  <div class="section-body">
+    <div class="match-wrap">
+      <div>
+        <h4>Column A</h4>
+        <div class="match-row"><span class="match-key">A.</span> Snell's Law</div>
+        <div class="match-row"><span class="match-key">B.</span> Refractive index of glass</div>
+        <div class="match-row"><span class="match-key">C.</span> Cause of refraction</div>
+        <div class="match-row"><span class="match-key">D.</span> Optically rarer medium</div>
+        <div class="match-row"><span class="match-key">E.</span> Angle of incidence = 90° at critical angle</div>
+      </div>
+      <div>
+        <h4>Column B</h4>
+        <div class="match-row">1. Change in speed of light</div>
+        <div class="match-row">2. sin i / sin r = constant</div>
+        <div class="match-row">3. Total internal reflection</div>
+        <div class="match-row">4. Air / Water (lower n)</div>
+        <div class="match-row">5. Approximately 1.5</div>
+      </div>
+    </div>
+    <table class="match-ans-table">
+      <tr><th>Column A</th><th>Match</th><th>Column B</th></tr>
+      <tr><td>A. Snell's Law</td><td>→ 2</td><td>sin i / sin r = constant</td></tr>
+      <tr><td>B. Refractive index of glass</td><td>→ 5</td><td>Approximately 1.5</td></tr>
+      <tr><td>C. Cause of refraction</td><td>→ 1</td><td>Change in speed of light</td></tr>
+      <tr><td>D. Optically rarer medium</td><td>→ 4</td><td>Air / Water (lower n)</td></tr>
+      <tr><td>E. Angle of incidence = 90° at critical angle</td><td>→ 3</td><td>Total internal reflection</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     Q4 — Answer in One Sentence (5 Marks)
+════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <div class="qno">4</div>
+    <div class="qtitle">Answer the following questions in one sentence each.</div>
+    <div class="qmarks">5 Marks</div>
+  </div>
+  <div class="section-body">
+
+    <div class="os-item">
+      <div class="os-q">i. What is refraction of light?</div>
+      <div class="os-a">Refraction of light is the phenomenon of bending of light when it travels obliquely from one transparent medium to another medium of different optical density.</div>
+    </div>
+
+    <div class="os-item">
+      <div class="os-q">ii. Define the refractive index of a medium.</div>
+      <div class="os-a">Refractive index of a medium is the ratio of the speed of light in vacuum (or air) to the speed of light in that medium: n = c/v.</div>
+    </div>
+
+    <div class="os-item">
+      <div class="os-q">iii. State Snell's law of refraction.</div>
+      <div class="os-a">Snell's law states that the ratio of the sine of the angle of incidence to the sine of the angle of refraction is constant for a given pair of media, i.e., sin i / sin r = n (refractive index).</div>
+    </div>
+
+    <div class="os-item">
+      <div class="os-q">iv. What is meant by 'optically denser medium'?</div>
+      <div class="os-a">A medium in which the speed of light is less and whose refractive index is higher compared to another medium is called an optically denser medium.</div>
+    </div>
+
+    <div class="os-item">
+      <div class="os-q">v. Why does a coin placed at the bottom of a water-filled vessel appear raised?</div>
+      <div class="os-a">Due to refraction of light at the water-air interface, the light rays from the coin bend away from the normal as they emerge from water to air, making the coin appear raised (at a shallower position).</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     Q5 — Short Notes (6 Marks)
+════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <div class="qno">5</div>
+    <div class="qtitle">Write short notes. (Any 3)</div>
+    <div class="qmarks">6 Marks</div>
+  </div>
+  <div class="section-body">
+
+    <div class="sn-item">
+      <div class="sn-q">A. Laws of Refraction <span class="sn-marks">(2 marks)</span></div>
+      <div class="sn-a">
+        <ul>
+          <li><strong>First Law:</strong> The incident ray, the refracted ray, and the normal to the refracting surface at the point of incidence all lie in the same plane.</li>
+          <li><strong>Second Law (Snell's Law):</strong> The ratio of the sine of the angle of incidence to the sine of the angle of refraction is constant for a given pair of media.
+            <div class="formula">sin i / sin r = n₂₁ = constant</div>
+          </li>
+          <li>When light goes from a rarer to a denser medium: angle of refraction &lt; angle of incidence.</li>
+          <li>When light goes from a denser to a rarer medium: angle of refraction &gt; angle of incidence.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sn-item">
+      <div class="sn-q">B. Absolute Refractive Index <span class="sn-marks">(2 marks)</span></div>
+      <div class="sn-a">
+        <ul>
+          <li>The absolute refractive index (n) of a medium is the ratio of the speed of light in vacuum (c) to the speed of light in that medium (v).</li>
+          <li><div class="formula">n = c / v</div></li>
+          <li>Speed of light in vacuum: c = 3 × 10⁸ m/s</li>
+          <li>Since v ≤ c always, refractive index n ≥ 1 for all media.</li>
+          <li>Examples: n of air ≈ 1.0003 (≈1), n of water ≈ 1.33, n of glass ≈ 1.5, n of diamond ≈ 2.42</li>
+          <li>Higher the refractive index → slower the light → optically denser medium.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sn-item">
+      <div class="sn-q">C. Refraction through a Glass Slab <span class="sn-marks">(2 marks)</span></div>
+      <div class="sn-a">
+        <ul>
+          <li>When a ray of light passes through a rectangular glass slab, it undergoes refraction at both surfaces (air→glass and glass→air).</li>
+          <li>At the first surface: ray bends towards the normal (denser medium).</li>
+          <li>At the second surface: ray bends away from the normal (rarer medium).</li>
+          <li>The emergent ray is parallel to the incident ray but displaced laterally — this displacement is called <strong>lateral displacement</strong>.</li>
+          <li>Lateral displacement increases as the angle of incidence increases and as the thickness of the slab increases.</li>
+        </ul>
+        <div class="diagram-note">📐 Draw diagram: incident ray → refraction at surface 1 → refraction at surface 2 → emergent ray (parallel, displaced)</div>
+      </div>
+    </div>
+
+    <div class="sn-item">
+      <div class="sn-q">D. Effects of Refraction in Daily Life <span class="sn-marks">(2 marks)</span></div>
+      <div class="sn-a">
+        <ul>
+          <li><strong>Apparent depth:</strong> Objects under water appear shallower than they are (e.g., bottom of a swimming pool appears raised).</li>
+          <li><strong>Bent stick:</strong> A stick partially immersed in water appears bent or broken at the water surface.</li>
+          <li><strong>Twinkling of stars:</strong> Light from stars refracts through layers of atmosphere of varying density, causing twinkling.</li>
+          <li><strong>Mirages:</strong> In hot deserts, layers of air at different temperatures act as different media, causing refraction of light from distant objects — creating illusion of water.</li>
+          <li><strong>Rainbow:</strong> Formed by refraction and total internal reflection of sunlight inside water droplets.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     Q6 — Brief Answer (8 Marks)
+════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <div class="qno">6</div>
+    <div class="qtitle">Answer the following questions in brief. (Any 2)</div>
+    <div class="qmarks">8 Marks</div>
+  </div>
+  <div class="section-body">
+
+    <div class="sn-item">
+      <div class="sn-q">A. Explain refraction of light with the help of a neat labelled diagram. State the laws of refraction. <span class="sn-marks">(4 marks)</span></div>
+      <div class="sn-a">
+        <strong>Refraction of Light:</strong>
+        <ul>
+          <li>When a ray of light travels from one transparent medium to another, it changes its direction at the interface. This bending of light is called <strong>refraction</strong>.</li>
+          <li>It occurs because the speed of light is different in different media.</li>
+          <li>The ray that falls on the surface is the <strong>incident ray</strong>; the ray that enters the second medium is the <strong>refracted ray</strong>; the perpendicular to the surface at the point of incidence is the <strong>normal</strong>.</li>
+          <li>The angle between the incident ray and the normal is the <strong>angle of incidence (i)</strong>.</li>
+          <li>The angle between the refracted ray and the normal is the <strong>angle of refraction (r)</strong>.</li>
+        </ul>
+        <strong>Laws of Refraction:</strong>
+        <ul>
+          <li><strong>First Law:</strong> The incident ray, refracted ray and normal at the point of incidence are all in the same plane.</li>
+          <li><strong>Second Law (Snell's Law):</strong>
+            <div class="formula">sin i / sin r = n₂₁ = n₂/n₁ = v₁/v₂</div>
+            The ratio is constant for a given pair of media and a given colour of light.
+          </li>
+        </ul>
+        <div class="diagram-note">📐 Diagram: Two media (air above, glass below) separated by a horizontal line. Incident ray from air hits the surface; normal shown perpendicular; refracted ray in glass bending toward normal. Label: i (angle of incidence), r (angle of refraction), N (normal), Medium 1 (air), Medium 2 (glass).</div>
+      </div>
+    </div>
+
+    <div class="sn-item">
+      <div class="sn-q">B. What is the refractive index? Derive the relationship between refractive index, speed of light, and wavelength. <span class="sn-marks">(4 marks)</span></div>
+      <div class="sn-a">
+        <strong>Refractive Index:</strong>
+        <ul>
+          <li>The refractive index of medium 2 with respect to medium 1 is defined as:
+            <div class="formula">n₂₁ = speed of light in medium 1 / speed of light in medium 2 = v₁/v₂</div>
+          </li>
+          <li><strong>Absolute refractive index</strong> (medium 1 = vacuum):
+            <div class="formula">n = c / v</div>
+            where c = 3 × 10⁸ m/s (speed of light in vacuum), v = speed in medium.
+          </li>
+          <li>Since speed (v) = frequency (f) × wavelength (λ), and frequency does not change during refraction:
+            <div class="formula">n = c/v = λ₀/λₘ</div>
+            where λ₀ = wavelength in vacuum, λₘ = wavelength in medium.
+          </li>
+          <li>This means: higher refractive index → lower speed → shorter wavelength in that medium.</li>
+        </ul>
+        <strong>Key values of absolute refractive index:</strong>
+        <ul>
+          <li>Air ≈ 1.0003 | Water ≈ 1.33 | Glass ≈ 1.5 | Diamond ≈ 2.42</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sn-item">
+      <div class="sn-q">C. What is total internal reflection? State its conditions and give two applications. <span class="sn-marks">(4 marks)</span></div>
+      <div class="sn-a">
+        <strong>Total Internal Reflection (TIR):</strong>
+        <ul>
+          <li>When a ray of light travels from a <strong>denser medium to a rarer medium</strong>, and the angle of incidence exceeds the critical angle, the light is <strong>completely reflected back</strong> into the denser medium. This is called Total Internal Reflection.</li>
+        </ul>
+        <strong>Conditions for TIR:</strong>
+        <ul>
+          <li>1. Light must travel from a denser medium to a rarer medium.</li>
+          <li>2. The angle of incidence must be greater than the critical angle (C).</li>
+          <li>At critical angle: the refracted ray grazes the surface (angle of refraction = 90°).
+            <div class="formula">sin C = 1/n (n = refractive index of denser medium w.r.t. rarer medium)</div>
+          </li>
+        </ul>
+        <strong>Applications:</strong>
+        <ul>
+          <li><strong>Optical Fibres:</strong> Light travels through glass/plastic fibres by repeated total internal reflection — used in internet cables and medical endoscopes.</li>
+          <li><strong>Sparkling of diamond:</strong> Diamond has a very high refractive index (2.42) and very small critical angle (~24°), causing TIR repeatedly inside, making it sparkle brilliantly.</li>
+          <li><strong>Mirages:</strong> Hot air near ground acts as rarer medium → TIR of light from sky creates mirage effect.</li>
+        </ul>
+        <div class="diagram-note">📐 Diagram: Glass (denser) and air (rarer). Show 3 rays: (i) i &lt; C → refraction, (ii) i = C → grazes surface, (iii) i &gt; C → total internal reflection.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     Q7 — Numericals (6 Marks)
+════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <div class="qno">7</div>
+    <div class="qtitle">Solve the following numericals. (Any 3)</div>
+    <div class="qmarks">6 Marks</div>
+  </div>
+  <div class="section-body">
+
+    <div class="num-item">
+      <div class="num-q">A. A ray of light travels from air into glass. The angle of incidence is 30° and the angle of refraction is 19.47°. Calculate the refractive index of glass. <span class="num-marks">(2 marks)</span></div>
+      <div class="num-solution">
+        <div class="step"><strong>Given:</strong> i = 30°, r = 19.47°</div>
+        <div class="step"><strong>Formula:</strong> <span class="formula">n = sin i / sin r</span></div>
+        <div class="step">sin 30° = 0.5000</div>
+        <div class="step">sin 19.47° = 0.3333</div>
+        <div class="step">n = 0.5000 / 0.3333</div>
+        <div class="final">∴ Refractive index of glass n ≈ 1.50</div>
+      </div>
+    </div>
+
+    <div class="num-item">
+      <div class="num-q">B. The speed of light in vacuum is 3 × 10⁸ m/s. Find the speed of light in water if the refractive index of water is 1.33. <span class="num-marks">(2 marks)</span></div>
+      <div class="num-solution">
+        <div class="step"><strong>Given:</strong> c = 3 × 10⁸ m/s, n = 1.33</div>
+        <div class="step"><strong>Formula:</strong> <span class="formula">n = c / v → v = c / n</span></div>
+        <div class="step">v = (3 × 10⁸) / 1.33</div>
+        <div class="step">v = 2.255 × 10⁸ m/s</div>
+        <div class="final">∴ Speed of light in water ≈ 2.26 × 10⁸ m/s</div>
+      </div>
+    </div>
+
+    <div class="num-item">
+      <div class="num-q">C. The refractive index of glass is 1.5. Calculate the critical angle for glass-air interface. (sin⁻¹(0.667) = 41.8°) <span class="num-marks">(2 marks)</span></div>
+      <div class="num-solution">
+        <div class="step"><strong>Given:</strong> n (glass) = 1.5</div>
+        <div class="step"><strong>Formula:</strong> <span class="formula">sin C = 1/n</span></div>
+        <div class="step">sin C = 1 / 1.5 = 0.6667</div>
+        <div class="step">C = sin⁻¹(0.6667) = 41.8°</div>
+        <div class="final">∴ Critical angle for glass-air = 41.8°</div>
+      </div>
+    </div>
+
+    <div class="num-item">
+      <div class="num-q">D. A ray of light passes from glass (n = 1.5) to water (n = 1.33). The angle of incidence in glass is 45°. Find the angle of refraction in water. (sin 45° = 0.707) <span class="num-marks">(2 marks)</span></div>
+      <div class="num-solution">
+        <div class="step"><strong>Given:</strong> n₁ = 1.5 (glass), n₂ = 1.33 (water), i = 45°</div>
+        <div class="step"><strong>Formula (Snell's Law):</strong> <span class="formula">n₁ sin i = n₂ sin r</span></div>
+        <div class="step">1.5 × sin 45° = 1.33 × sin r</div>
+        <div class="step">1.5 × 0.707 = 1.33 × sin r</div>
+        <div class="step">1.0605 = 1.33 × sin r</div>
+        <div class="step">sin r = 1.0605 / 1.33 = 0.7974</div>
+        <div class="step">r = sin⁻¹(0.7974) ≈ 52.9°</div>
+        <div class="final">∴ Angle of refraction in water ≈ 52.9°</div>
+      </div>
+    </div>
+
+    <div class="num-item">
+      <div class="num-q">E. The wavelength of light in vacuum is 600 nm. Find its wavelength in glass of refractive index 1.5. <span class="num-marks">(2 marks)</span></div>
+      <div class="num-solution">
+        <div class="step"><strong>Given:</strong> λ₀ = 600 nm, n = 1.5</div>
+        <div class="step"><strong>Formula:</strong> <span class="formula">n = λ₀ / λₘ → λₘ = λ₀ / n</span></div>
+        <div class="step">λₘ = 600 / 1.5</div>
+        <div class="step">λₘ = 400 nm</div>
+        <div class="final">∴ Wavelength of light in glass = 400 nm</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MARKS SUMMARY -->
+<div style="max-width:860px;margin:20px auto;background:#fff;border-radius:14px;padding:20px 24px;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+  <h3 style="color:#0d47a1;margin-bottom:14px;font-size:1rem;">📊 Marks Distribution</h3>
+  <table style="width:100%;border-collapse:collapse;font-size:.88rem;">
+    <tr style="background:#0d47a1;color:#fff;">
+      <th style="padding:8px 14px;text-align:left;border-radius:8px 0 0 0;">Question</th>
+      <th style="padding:8px 14px;text-align:left;">Type</th>
+      <th style="padding:8px 14px;text-align:center;border-radius:0 8px 0 0;">Marks</th>
+    </tr>
+    <tr><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">Q1</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">Multiple Choice Questions (MCQ)</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;text-align:center;font-weight:700;">5</td></tr>
+    <tr style="background:#f8fafc;"><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">Q2</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">True or False</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;text-align:center;font-weight:700;">5</td></tr>
+    <tr><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">Q3</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">Match the Columns</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;text-align:center;font-weight:700;">5</td></tr>
+    <tr style="background:#f8fafc;"><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">Q4</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">Answer in One Sentence</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;text-align:center;font-weight:700;">5</td></tr>
+    <tr><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">Q5</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">Short Notes (Any 3 × 2)</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;text-align:center;font-weight:700;">6</td></tr>
+    <tr style="background:#f8fafc;"><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">Q6</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">Brief Answer (Any 2 × 4)</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;text-align:center;font-weight:700;">8</td></tr>
+    <tr><td style="padding:8px 14px;">Q7</td><td style="padding:8px 14px;">Numericals (Any 3 × 2)</td><td style="padding:8px 14px;text-align:center;font-weight:700;">6</td></tr>
+    <tr style="background:#e8f5e9;"><td style="padding:10px 14px;font-weight:900;border-radius:0 0 0 8px;" colspan="2">TOTAL</td><td style="padding:10px 14px;text-align:center;font-weight:900;font-size:1.1rem;color:#1b5e20;border-radius:0 0 8px 0;">40</td></tr>
+  </table>
+</div>
+
+<footer>
+  <p>Visions Classes · visionslearning.in · <a href="notes-class10.html">← Back to Class 10 Notes</a></p>
+</footer>
+
+</body>
+</html>
