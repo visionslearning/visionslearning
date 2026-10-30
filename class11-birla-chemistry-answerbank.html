@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Birla Chemistry — Class 11 Answer Bank | First Semester</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#1a1a1a;}
+
+  /* HEADER */
+  .site-header{background:linear-gradient(135deg,#1a237e,#283593,#0d47a1);padding:14px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 3px 12px rgba(0,0,0,.3);}
+  .site-header a{color:#90caf9;text-decoration:none;font-size:.85rem;font-weight:600;}
+  .site-header a:hover{color:#fff;}
+  .header-title{color:#fff;font-size:1.1rem;font-weight:800;}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#1a237e 0%,#283593 40%,#004d40 100%);padding:36px 20px 28px;text-align:center;color:#fff;}
+  .board-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:5px 18px;font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
+  .hero h1{font-size:1.7rem;font-weight:900;line-height:1.25;margin-bottom:8px;}
+  .hero .sub{font-size:.9rem;color:rgba(255,255,255,.85);margin-bottom:16px;}
+  .pills{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+  .pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:22px;padding:7px 16px;font-size:.82rem;font-weight:700;}
+
+  /* TOC */
+  .toc{max-width:900px;margin:18px auto;background:#fff;border-radius:14px;padding:20px 24px;box-shadow:0 2px 12px rgba(0,0,0,.08);}
+  .toc h3{color:#1a237e;margin-bottom:12px;font-size:1rem;font-weight:800;}
+  .toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;}
+  .toc-item{background:#e8eaf6;border-radius:8px;padding:8px 12px;font-size:.82rem;font-weight:700;color:#1a237e;cursor:pointer;text-decoration:none;display:block;transition:background .2s;}
+  .toc-item:hover{background:#c5cae9;}
+
+  /* CHAPTER BLOCK */
+  .chapter{max-width:900px;margin:18px auto;background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden;}
+  .ch-header{padding:14px 22px;display:flex;align-items:center;gap:12px;}
+  .ch-num{background:#fff;font-weight:900;font-size:.95rem;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .ch-title{color:#fff;font-size:1rem;font-weight:800;flex:1;}
+  /* chapter colours */
+  .bg1{background:linear-gradient(135deg,#1a237e,#3949ab);}  .bg1 .ch-num{color:#1a237e;}
+  .bg2{background:linear-gradient(135deg,#004d40,#00695c);}  .bg2 .ch-num{color:#004d40;}
+  .bg3{background:linear-gradient(135deg,#e65100,#f57c00);}  .bg3 .ch-num{color:#e65100;}
+  .bg4{background:linear-gradient(135deg,#880e4f,#c2185b);}  .bg4 .ch-num{color:#880e4f;}
+  .bg5{background:linear-gradient(135deg,#4a148c,#7b1fa2);}  .bg5 .ch-num{color:#4a148c;}
+  .bg6{background:linear-gradient(135deg,#006064,#00838f);}  .bg6 .ch-num{color:#006064;}
+  .bg7{background:linear-gradient(135deg,#bf360c,#e64a19);}  .bg7 .ch-num{color:#bf360c;}
+  .ch-body{padding:18px 24px;}
+
+  /* Q&A pair */
+  .qa-item{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid #f0f4f8;}
+  .qa-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+  .q-num{display:inline-block;background:#1a237e;color:#fff;font-size:.72rem;font-weight:800;padding:2px 8px;border-radius:6px;margin-bottom:6px;}
+  .q-text{font-size:.92rem;font-weight:700;color:#1a1a1a;margin-bottom:8px;line-height:1.5;}
+  .ans-box{background:#f8fafc;border-left:3px solid #3949ab;padding:10px 14px;border-radius:0 8px 8px 0;font-size:.86rem;line-height:1.75;}
+  .ans-box ul{padding-left:17px;margin-top:4px;}
+  .ans-box ul li{margin-bottom:4px;}
+  .ans-box strong{color:#1a237e;}
+  .fm{font-family:monospace;background:#e8eaf6;color:#1a237e;padding:2px 8px;border-radius:5px;font-weight:700;display:inline-block;margin:2px 0;}
+  .ns{background:#fff8e1;border-left:3px solid #f9a825;padding:10px 14px;border-radius:0 8px 8px 0;font-size:.86rem;line-height:1.8;margin-top:6px;}
+  .ns .s{margin-bottom:3px;}
+  .nf{font-family:monospace;background:#fff3cd;color:#7c5700;padding:2px 8px;border-radius:5px;font-weight:700;display:inline-block;}
+  .fin{font-weight:800;color:#1b5e20;background:#e8f5e9;padding:4px 12px;border-radius:7px;display:inline-block;margin-top:5px;}
+  .dn{background:#e8eaf6;border:1.5px dashed #5c6bc0;border-radius:8px;padding:9px 13px;font-size:.79rem;color:#3949ab;margin-top:9px;text-align:center;}
+  table.bt{width:100%;border-collapse:collapse;font-size:.83rem;margin-top:8px;}
+  table.bt th{background:#1a237e;color:#fff;padding:6px 10px;text-align:left;}
+  table.bt td{padding:6px 10px;border-bottom:1px solid #e8edf2;}
+  table.bt tr:nth-child(even) td{background:#f0f4f8;}
+
+  footer{text-align:center;padding:26px 16px;font-size:.8rem;color:#888;}
+  footer a{color:#3949ab;text-decoration:none;}
+  @media(max-width:600px){.toc-grid{grid-template-columns:1fr 1fr;}.hero h1{font-size:1.3rem;}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="site-header">
+  <a href="notes-class11.html">← Class 11 Notes</a>
+  <span style="color:rgba(255,255,255,.4);">|</span>
+  <span class="header-title">Birla Chemistry — Answer Bank</span>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="board-tag">Birla College · Class 11 · First Semester</div>
+  <h1>XIth Chemistry — First Semester<br>Practice Question Bank with Answers</h1>
+  <div class="sub">Complete Answer Bank · All Chapters · Maharashtra Board</div>
+  <div class="pills">
+    <div class="pill">📖 All Chapters Covered</div>
+    <div class="pill">✅ Full Answers</div>
+    <div class="pill">🔢 Numericals Solved</div>
+  </div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc">
+  <h3>📑 Chapters Covered</h3>
+  <div class="toc-grid">
+    <a class="toc-item" href="#ch1">Ch 1 — Basic Concepts of Chemistry</a>
+    <a class="toc-item" href="#ch3">Ch 3 — Analytical Chemistry (Mole)</a>
+    <a class="toc-item" href="#ch4">Ch 4 — Structure of Atom</a>
+    <a class="toc-item" href="#ch13">Ch 13 — Nuclear Chemistry</a>
+    <a class="toc-item" href="#ch14">Ch 14 — Basic Organic Chemistry</a>
+    <a class="toc-item" href="#ch15">Ch 15 — Alkanes</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     CHAPTER 1 — Basic Concepts
+════════════════════════════════════ -->
+<div class="chapter" id="ch1">
+  <div class="ch-header bg1"><div class="ch-num">1</div><div class="ch-title">Chapter 1 — Basic Concepts of Chemistry (Q. 1–12)</div></div>
+  <div class="ch-body">
+
+    <div class="qa-item">
+      <div class="q-num">Q1</div>
+      <div class="q-text">Write the relations used to convert temperature in Celsius into Kelvin and Kelvin into Celsius.</div>
+      <div class="ans-box">
+        <span class="fm">K = °C + 273.15</span> &nbsp; (Celsius → Kelvin)
+        <br><span class="fm">°C = K − 273.15</span> &nbsp; (Kelvin → Celsius)
+        <ul>
+          <li>0°C = 273.15 K (freezing point of water)</li>
+          <li>100°C = 373.15 K (boiling point of water)</li>
+          <li>Absolute zero = 0 K = −273.15°C</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q2</div>
+      <div class="q-text">State the law of conservation of mass, Avogadro's law, and the law of definite proportions.</div>
+      <div class="ans-box">
+        <ul>
+          <li><strong>Law of Conservation of Mass (Lavoisier):</strong> In a chemical reaction, the total mass of reactants = total mass of products. Matter cannot be created or destroyed.</li>
+          <li><strong>Avogadro's Law:</strong> Equal volumes of all gases at the same temperature and pressure contain equal number of molecules. Also: 1 mole of any substance contains 6.022 × 10²³ particles (Avogadro's number).</li>
+          <li><strong>Law of Definite Proportions (Proust):</strong> A pure chemical compound always contains the same elements combined in the same fixed ratio by mass, regardless of its source or preparation method. E.g., H₂O always has H:O = 1:8 by mass.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q3</div>
+      <div class="q-text">Define atomic mass unit, atomic mass and average atomic mass.</div>
+      <div class="ans-box">
+        <ul>
+          <li><strong>Atomic Mass Unit (u or amu):</strong> 1 u = 1/12 of the mass of one carbon-12 atom = 1.66 × 10⁻²⁴ g. It is the unit used to express atomic and molecular masses.</li>
+          <li><strong>Atomic Mass:</strong> The relative mass of one atom of an element compared to 1/12 of the mass of carbon-12. E.g., H = 1u, O = 16u, Fe = 56u.</li>
+          <li><strong>Average Atomic Mass:</strong> The weighted average of the atomic masses of all naturally occurring isotopes of an element, taking into account their percentage abundance.
+            <span class="fm">Average atomic mass = Σ (isotope mass × fractional abundance)</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q4</div>
+      <div class="q-text">Differentiate between molecular mass and formula mass with one example.</div>
+      <div class="ans-box">
+        <table class="bt">
+          <tr><th>Property</th><th>Molecular Mass</th><th>Formula Mass</th></tr>
+          <tr><td>Definition</td><td>Sum of atomic masses of all atoms in one molecule</td><td>Sum of atomic masses of all atoms in the empirical formula (formula unit)</td></tr>
+          <tr><td>Used for</td><td>Covalent compounds (discrete molecules)</td><td>Ionic compounds (no discrete molecule)</td></tr>
+          <tr><td>Example</td><td>H₂O: 2(1)+16 = 18 u</td><td>NaCl: 23+35.5 = 58.5 u (formula mass)</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q5</div>
+      <div class="q-text">Define mole, molar mass and molar volume.</div>
+      <div class="ans-box">
+        <ul>
+          <li><strong>Mole:</strong> The amount of a substance containing as many elementary particles (atoms, molecules, ions) as there are atoms in exactly 12 g of carbon-12. 1 mole = 6.022 × 10²³ particles.</li>
+          <li><strong>Molar Mass:</strong> The mass of one mole of a substance expressed in grams per mole (g/mol). It is numerically equal to the molecular/atomic mass in u. E.g., molar mass of H₂O = 18 g/mol.</li>
+          <li><strong>Molar Volume:</strong> The volume occupied by one mole of any gas at STP (Standard Temperature and Pressure: 0°C, 1 atm). <span class="fm">Molar volume = 22.4 L/mol at STP</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q6</div>
+      <div class="q-text">Convert 25°C into Kelvin.</div>
+      <div class="ans-box">
+        <div class="ns">
+          <div class="s"><span class="nf">K = °C + 273.15</span></div>
+          <div class="s">K = 25 + 273.15</div>
+          <div class="fin">25°C = 298.15 K</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q7</div>
+      <div class="q-text">Convert 310 K into degrees Celsius.</div>
+      <div class="ans-box">
+        <div class="ns">
+          <div class="s"><span class="nf">°C = K − 273.15</span></div>
+          <div class="s">°C = 310 − 273.15</div>
+          <div class="fin">310 K = 36.85°C ≈ 37°C (normal body temperature)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q8</div>
+      <div class="q-text">Calculate the molecular mass of H₂SO₄. (H=1, S=32, O=16)</div>
+      <div class="ans-box">
+        <div class="ns">
+          <div class="s">H₂SO₄ contains: 2H + 1S + 4O</div>
+          <div class="s">= 2(1) + 1(32) + 4(16)</div>
+          <div class="s">= 2 + 32 + 64</div>
+          <div class="fin">Molecular mass of H₂SO₄ = 98 u (or 98 g/mol)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q9</div>
+      <div class="q-text">Calculate the formula mass of CaCO₃. (Ca=40, C=12, O=16)</div>
+      <div class="ans-box">
+        <div class="ns">
+          <div class="s">CaCO₃ contains: 1Ca + 1C + 3O</div>
+          <div class="s">= 40 + 12 + 3(16)</div>
+          <div class="s">= 40 + 12 + 48</div>
+          <div class="fin">Formula mass of CaCO₃ = 100 u (or 100 g/mol)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q10</div>
+      <div class="q-text">Calculate the number of moles present in 18 g of H₂O. (Molar mass = 18 g mol⁻¹)</div>
+      <div class="ans-box">
+        <div class="ns">
+          <div class="s"><span class="nf">n = m / M</span></div>
+          <div class="s">n = 18 / 18 = 1 mole</div>
+          <div class="fin">1 mole of H₂O is present in 18 g of water.</div>
+        </div>
+        Number of molecules = 1 × 6.022 × 10²³ = 6.022 × 10²³ molecules.
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q11</div>
+      <div class="q-text">Calculate the mass of 0.5 mol of CO₂. (Molar mass = 44 g mol⁻¹)</div>
+      <div class="ans-box">
+        <div class="ns">
+          <div class="s"><span class="nf">m = n × M</span></div>
+          <div class="s">m = 0.5 × 44</div>
+          <div class="fin">Mass of 0.5 mol CO₂ = 22 g</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q12</div>
+      <div class="q-text">An element has two isotopes of masses 10 u and 11 u, present in 20% and 80% abundance respectively. Calculate its average atomic mass.</div>
+      <div class="ans-box">
+        <div class="ns">
+          <div class="s"><span class="nf">Average atomic mass = (m₁×a₁) + (m₂×a₂)</span></div>
+          <div class="s">= (10 × 20/100) + (11 × 80/100)</div>
+          <div class="s">= (10 × 0.20) + (11 × 0.80)</div>
+          <div class="s">= 2.0 + 8.8</div>
+          <div class="fin">Average atomic mass = 10.8 u</div>
+        </div>
+        (This element is Boron — B, average atomic mass ≈ 10.8)
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     CHAPTER 3 — Analytical Chemistry / Mole
+════════════════════════════════════ -->
+<div class="chapter" id="ch3">
+  <div class="ch-header bg2"><div class="ch-num">3</div><div class="ch-title">Chapter 3 — Some Basic Concepts in Analytical Chemistry (Q. 13–22)</div></div>
+  <div class="ch-body">
+
+    <div class="qa-item">
+      <div class="q-num">Q13</div>
+      <div class="q-text">What is stoichiometry? Explain its importance in chemical calculations.</div>
+      <div class="ans-box">
+        <strong>Stoichiometry</strong> is the study of the quantitative relationships between reactants and products in a chemical reaction, based on the balanced chemical equation.
+        <ul>
+          <li>It tells us the exact mole ratios of reactants and products.</li>
+          <li><strong>Importance:</strong>
+            <ul>
+              <li>Predicts the amount of product formed from given reactants.</li>
+              <li>Identifies the limiting reagent and the excess reagent.</li>
+              <li>Calculates percent yield and theoretical yield.</li>
+              <li>Used in industrial processes to minimise waste and cost.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q14</div>
+      <div class="q-text">Define mass percentage, volume percentage and mole fraction.</div>
+      <div class="ans-box">
+        <ul>
+          <li><strong>Mass percentage (w/w%):</strong> Mass of solute per 100 g of solution.
+            <span class="fm">w/w% = (mass of solute / mass of solution) × 100</span>
+          </li>
+          <li><strong>Volume percentage (v/v%):</strong> Volume of solute per 100 mL of solution.
+            <span class="fm">v/v% = (volume of solute / volume of solution) × 100</span>
+          </li>
+          <li><strong>Mole fraction (X):</strong> Ratio of moles of one component to total moles of all components.
+            <span class="fm">Xₐ = nₐ / (nₐ + n_b + ...)</span>
+            Mole fractions are dimensionless; sum = 1.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q15</div>
+      <div class="q-text">Define molarity and molality. State one difference between them.</div>
+      <div class="ans-box">
+        <ul>
+          <li><strong>Molarity (M):</strong> Number of moles of solute per litre of <em>solution</em>.
+            <span class="fm">M = n / V(L)</span> Unit: mol L⁻¹ or M
+          </li>
+          <li><strong>Molality (m):</strong> Number of moles of solute per kilogram of <em>solvent</em>.
+            <span class="fm">m = n / W_solvent(kg)</span> Unit: mol kg⁻¹
+          </li>
+          <li><strong>Difference:</strong> Molarity depends on volume of solution (changes with temperature), while molality depends on mass of solvent (temperature-independent). Molality is preferred for accurate work.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q16</div>
+      <div class="q-text">What is a limiting reagent?</div>
+      <div class="ans-box">
+        <strong>Limiting reagent</strong> (or limiting reactant) is the reactant that is completely consumed first in a chemical reaction, thereby limiting the amount of product that can be formed. Once the limiting reagent is used up, the reaction stops, even if other reactants are still present.
+        <ul>
+          <li>The other reactant present in excess is called the <strong>excess reagent</strong>.</li>
+          <li>To identify: calculate moles of each reactant and compare with stoichiometric ratio. Whichever runs out first is the limiting reagent.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q17</div>
+      <div class="q-text">Calculate the molarity of a solution containing 0.5 mol of solute in 2.0 L of solution.</div>
+      <div class="ans-box">
+        <div class="ns">
+          <div class="s"><span class="nf">M = n / V = 0.5 / 2.0</span></div>
+          <div class="fin">Molarity = 0.25 mol/L = 0.25 M</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q18</div>
+      <div class="q-text">Calculate the mass percentage of a solution containing 10 g of solute dissolved in 90 g of water.</div>
+      <div class="ans-box">
+        <div class="ns">
+          <div class="s">Mass of solution = 10 + 90 = 100 g</div>
+          <div class="s"><span class="nf">w/w% = (10/100) × 100</span></div>
+          <div class="fin">Mass percentage = 10%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q19</div>
+      <div class="q-text">A mixture contains 2 mol of A and 3 mol of B. Calculate the mole fraction of each component.</div>
+      <div class="ans-box">
+        <div class="ns">
+          <div class="s">Total moles = 2 + 3 = 5 mol</div>
+          <div class="s"><span class="nf">Xₐ = 2/5 = 0.4</span></div>
+          <div class="s"><span class="nf">X_b = 3/5 = 0.6</span></div>
+          <div class="fin">Mole fraction of A = 0.4; Mole fraction of B = 0.6</div>
+        </div>
+        Check: Xₐ + X_b = 0.4 + 0.6 = 1 ✓
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q20</div>
+      <div class="q-text">Calculate the molality of a solution containing 1 mol of solute dissolved in 2 kg of solvent.</div>
+      <div class="ans-box">
+        <div class="ns">
+          <div class="s"><span class="nf">m = n / W_solvent(kg) = 1 / 2</span></div>
+          <div class="fin">Molality = 0.5 mol kg⁻¹</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q21</div>
+      <div class="q-text">For 2H₂ + O₂ → 2H₂O, identify the limiting reagent when 4 g of H₂ reacts with 10 g of O₂. Give a reason. (H=1, O=16)</div>
+      <div class="ans-box">
+        <div class="ns">
+          <div class="s">Moles of H₂ = 4/2 = 2 mol</div>
+          <div class="s">Moles of O₂ = 10/32 = 0.3125 mol</div>
+          <div class="s">Stoichiometry: 2H₂ : 1O₂ → ratio = 2:1</div>
+          <div class="s">O₂ needed for 2 mol H₂ = 2/2 = 1 mol O₂ required</div>
+          <div class="s">But only 0.3125 mol O₂ available (less than 1 mol needed)</div>
+          <div class="fin">∴ O₂ is the limiting reagent (it is completely consumed first)</div>
+        </div>
+        H₂O formed = 2 × 0.3125 = 0.625 mol = 0.625 × 18 = 11.25 g
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q22</div>
+      <div class="q-text">For N₂ + 3H₂ → 2NH₃, calculate the moles of NH₃ formed from 2 mol of N₂ reacting with excess H₂.</div>
+      <div class="ans-box">
+        <div class="ns">
+          <div class="s">Stoichiometry: 1 mol N₂ → 2 mol NH₃</div>
+          <div class="s">For 2 mol N₂: NH₃ = 2 × 2 = 4 mol</div>
+          <div class="fin">4 moles of NH₃ are formed (= 4 × 17 = 68 g)</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     CHAPTER 4 — Structure of Atom
+════════════════════════════════════ -->
+<div class="chapter" id="ch4">
+  <div class="ch-header bg4"><div class="ch-num">4</div><div class="ch-title">Chapter 4 — Structure of Atom (Q. 23–30)</div></div>
+  <div class="ch-body">
+
+    <div class="qa-item">
+      <div class="q-num">Q23</div>
+      <div class="q-text">Write the drawbacks of Rutherford's atomic model.</div>
+      <div class="ans-box">
+        <ul>
+          <li><strong>1. Could not explain stability of atom:</strong> According to classical electrodynamics, an accelerating electron should continuously emit radiation and lose energy → spiral into nucleus → atom should collapse in ~10⁻⁸ s. But atoms are stable.</li>
+          <li><strong>2. Could not explain line spectra:</strong> If electrons spiralled inward continuously, they would emit continuous spectrum. But atoms emit discrete line spectra — Rutherford's model had no explanation for this.</li>
+          <li><strong>3. No information about electron arrangement:</strong> It did not specify how electrons were arranged or distributed around the nucleus.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q24</div>
+      <div class="q-text">Write the postulates of Bohr's atomic model and state two drawbacks.</div>
+      <div class="ans-box">
+        <strong>Postulates of Bohr's Model:</strong>
+        <ul>
+          <li>1. Electrons revolve around nucleus in fixed circular paths (orbits/shells) without emitting energy.</li>
+          <li>2. Angular momentum is quantised: <span class="fm">mvr = nh/2π</span></li>
+          <li>3. Energy is absorbed/emitted only when electron jumps between orbits: <span class="fm">ΔE = hν</span></li>
+          <li>4. Orbit with n=1 has lowest energy (ground state).</li>
+        </ul>
+        <strong>Drawbacks:</strong>
+        <ul>
+          <li>1. Cannot explain spectra of multi-electron atoms (only works for hydrogen-like atoms).</li>
+          <li>2. Cannot explain fine structure of spectral lines (Zeeman effect, Stark effect).</li>
+          <li>3. Does not incorporate de Broglie's wave nature of electrons or Heisenberg's uncertainty principle.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q25</div>
+      <div class="q-text">State and explain Pauli's exclusion principle, Aufbau principle and Hund's rule of maximum multiplicity.</div>
+      <div class="ans-box">
+        <ul>
+          <li><strong>Aufbau Principle ("building up"):</strong> Electrons fill orbitals in order of increasing energy. Lower energy orbitals are filled first.
+            Order: 1s → 2s → 2p → 3s → 3p → 4s → 3d → 4p → 5s → 4d → 5p...
+            Rule: n+l rule — lower (n+l) filled first; if equal, lower n filled first.
+          </li>
+          <li><strong>Pauli's Exclusion Principle:</strong> No two electrons in the same atom can have identical values for all four quantum numbers (n, l, m, s). Each orbital holds max 2 electrons with opposite spins (↑↓).</li>
+          <li><strong>Hund's Rule of Maximum Multiplicity:</strong> In a set of degenerate (equal energy) orbitals, electrons first occupy separate orbitals with the same spin (parallel ↑↑) before pairing. This minimises electron-electron repulsion and gives the atom maximum stability.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q26</div>
+      <div class="q-text">Explain the significance of the principal, azimuthal, magnetic and spin quantum numbers.</div>
+      <div class="ans-box">
+        <table class="bt">
+          <tr><th>Quantum Number</th><th>Symbol</th><th>Values</th><th>Significance</th></tr>
+          <tr><td>Principal</td><td>n</td><td>1,2,3,4...</td><td>Shell/energy level; size of orbital; n determines energy of electron</td></tr>
+          <tr><td>Azimuthal (Angular momentum)</td><td>l</td><td>0 to (n–1)</td><td>Subshell; shape of orbital (l=0:s, 1:p, 2:d, 3:f)</td></tr>
+          <tr><td>Magnetic</td><td>mₗ</td><td>–l to +l</td><td>Orientation of orbital in space; number of orbitals in a subshell = (2l+1)</td></tr>
+          <tr><td>Spin</td><td>mₛ</td><td>+½ or –½</td><td>Direction of electron spin (clockwise ↑ or anticlockwise ↓)</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q27</div>
+      <div class="q-text">Draw the shapes of s, px, py and pz orbitals.</div>
+      <div class="ans-box">
+        <ul>
+          <li><strong>s orbital:</strong> Spherically symmetric (sphere) around nucleus. Non-directional. One s orbital per subshell.</li>
+          <li><strong>p orbitals:</strong> Dumbbell shaped — two lobes on either side of the nucleus along the respective axis.
+            <ul>
+              <li>pₓ: lobes along x-axis</li>
+              <li>p_y: lobes along y-axis</li>
+              <li>p_z: lobes along z-axis</li>
+            </ul>
+          </li>
+          <li>Three p orbitals are mutually perpendicular. All have a node at the nucleus.</li>
+        </ul>
+        <div class="dn">📐 Draw: (1) s orbital — a sphere with nucleus at centre. (2) pₓ — two lobes left-right along x-axis. (3) p_y — two lobes up-down along y-axis. (4) p_z — two lobes front-back along z-axis. Label: nucleus, nodal plane, +/– signs on lobes.</div>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q28 & Q29</div>
+      <div class="q-text">Write the electronic configurations of O (Z=8), Mg (Z=12), Na (Z=11), Cl (Z=17) and Ca (Z=20).</div>
+      <div class="ans-box">
+        <table class="bt">
+          <tr><th>Element (Z)</th><th>Electronic Configuration</th><th>Orbital Notation</th></tr>
+          <tr><td>Oxygen (Z=8)</td><td>1s² 2s² 2p⁴</td><td>[He] 2s² 2p⁴</td></tr>
+          <tr><td>Sodium (Z=11)</td><td>1s² 2s² 2p⁶ 3s¹</td><td>[Ne] 3s¹</td></tr>
+          <tr><td>Magnesium (Z=12)</td><td>1s² 2s² 2p⁶ 3s²</td><td>[Ne] 3s²</td></tr>
+          <tr><td>Chlorine (Z=17)</td><td>1s² 2s² 2p⁶ 3s² 3p⁵</td><td>[Ne] 3s² 3p⁵</td></tr>
+          <tr><td>Calcium (Z=20)</td><td>1s² 2s² 2p⁶ 3s² 3p⁶ 4s²</td><td>[Ar] 4s²</td></tr>
+        </table>
+        <ul style="margin-top:8px;">
+          <li>O: 2+2+4 = 8 ✓; Mg: 2+2+6+2 = 12 ✓; Cl: 2+2+6+2+5 = 17 ✓; Ca: 18+2 = 20 ✓</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q30</div>
+      <div class="q-text">Capacity of s, p, d and f subshells to hold electrons.</div>
+      <div class="ans-box">
+        <table class="bt">
+          <tr><th>Subshell</th><th>l value</th><th>No. of orbitals (2l+1)</th><th>Max electrons (2 per orbital)</th></tr>
+          <tr><td>s</td><td>0</td><td>1</td><td><strong>2</strong></td></tr>
+          <tr><td>p</td><td>1</td><td>3</td><td><strong>6</strong></td></tr>
+          <tr><td>d</td><td>2</td><td>5</td><td><strong>10</strong></td></tr>
+          <tr><td>f</td><td>3</td><td>7</td><td><strong>14</strong></td></tr>
+        </table>
+        Formula: Max electrons in a shell = <span class="fm">2n²</span> (n = principal quantum number)
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     CHAPTER 13 — Nuclear Chemistry
+════════════════════════════════════ -->
+<div class="chapter" id="ch13">
+  <div class="ch-header bg5"><div class="ch-num">13</div><div class="ch-title">Chapter 13 — Nuclear Chemistry (Q. 31–34)</div></div>
+  <div class="ch-body">
+
+    <div class="qa-item">
+      <div class="q-num">Q31</div>
+      <div class="q-text">Define isotopes, isobars and isotones with one example of each.</div>
+      <div class="ans-box">
+        <ul>
+          <li><strong>Isotopes:</strong> Atoms of the same element with the same atomic number (Z) but different mass numbers (A). They have the same number of protons but different neutrons.
+            <br>Example: ¹H (protium), ²H (deuterium), ³H (tritium) — all hydrogen (Z=1).
+          </li>
+          <li><strong>Isobars:</strong> Atoms of different elements with the same mass number (A) but different atomic numbers (Z).
+            <br>Example: ⁴⁰Ar (Z=18) and ⁴⁰Ca (Z=20) — same A=40.
+          </li>
+          <li><strong>Isotones:</strong> Atoms of different elements with the same number of neutrons but different atomic numbers and mass numbers.
+            <br>Example: ¹⁴C (Z=6, N=8) and ¹⁵N (Z=7, N=8) — both have 8 neutrons.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q32</div>
+      <div class="q-text">What are nuclear magic numbers? List the commonly accepted magic numbers.</div>
+      <div class="ans-box">
+        <strong>Nuclear Magic Numbers:</strong> Certain numbers of protons or neutrons that confer extra stability to a nucleus (analogous to closed electron shells in chemistry). Nuclei with magic numbers of protons or neutrons are exceptionally stable.
+        <ul>
+          <li><strong>Magic numbers:</strong> 2, 8, 20, 28, 50, 82, 126</li>
+          <li>Examples of "doubly magic" nuclei (magic Z and N): ⁴He (Z=2, N=2), ¹⁶O (Z=8, N=8), ⁴⁰Ca (Z=20, N=20), ²⁰⁸Pb (Z=82, N=126)</li>
+          <li>These nuclei have higher binding energy per nucleon and greater stability.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q33</div>
+      <div class="q-text">What are nuclear magic nuclei? Give one example.</div>
+      <div class="ans-box">
+        Nuclei with protons or neutrons equal to a magic number (2, 8, 20, 28, 50, 82, 126) are called <strong>magic nuclei</strong>. Nuclei with both proton and neutron numbers equal to magic numbers are called <strong>doubly magic nuclei</strong>.
+        <ul>
+          <li><strong>Example:</strong> ²⁰⁸Pb (Lead) — Z=82 (magic), N=126 (magic) → doubly magic nucleus. It is the heaviest stable nuclide.</li>
+          <li>Other example: ⁴He — Z=2, N=2 (doubly magic) — extremely stable (used as alpha particle).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q34</div>
+      <div class="q-text">State the rate law.</div>
+      <div class="ans-box">
+        <strong>Rate Law:</strong> For a reaction aA + bB → products, the rate law states that the rate of reaction is proportional to the product of concentrations of reactants, each raised to the power of their respective <em>experimentally determined</em> order (not necessarily the stoichiometric coefficient):
+        <span class="fm">Rate = k[A]ˣ[B]^y</span>
+        where:
+        <ul>
+          <li>k = rate constant (depends on temperature, not concentration)</li>
+          <li>x = order with respect to A; y = order with respect to B</li>
+          <li>Overall order = x + y</li>
+          <li>The order must be determined experimentally (cannot be deduced from the balanced equation, except for elementary reactions).</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     CHAPTER 14 — Basic Organic Chemistry
+════════════════════════════════════ -->
+<div class="chapter" id="ch14">
+  <div class="ch-header bg6"><div class="ch-num">14</div><div class="ch-title">Chapter 14 — Basic Organic Chemistry (Q. 35–43)</div></div>
+  <div class="ch-body">
+
+    <div class="qa-item">
+      <div class="q-num">Q35</div>
+      <div class="q-text">Draw the structures of: (i) Iso-pentane (ii) Neo-hexane (iii) n-pentane (iv) Iso-butane</div>
+      <div class="ans-box">
+        <strong>(i) Iso-pentane (2-methylbutane) — C₅H₁₂:</strong>
+        <div class="fm">CH₃–CH(CH₃)–CH₂–CH₃</div>
+        Main chain: 4C; branch: CH₃ at C2.
+        <br><br>
+        <strong>(ii) Neo-hexane (2,2-dimethylbutane) — C₆H₁₄:</strong>
+        <div class="fm">CH₃–C(CH₃)₂–CH₂–CH₃</div>
+        Main chain: 4C; two CH₃ groups at C2.
+        <br><br>
+        <strong>(iii) n-pentane — C₅H₁₂:</strong>
+        <div class="fm">CH₃–CH₂–CH₂–CH₂–CH₃</div>
+        Straight chain of 5 carbon atoms.
+        <br><br>
+        <strong>(iv) Iso-butane (2-methylpropane) — C₄H₁₀:</strong>
+        <div class="fm">CH₃–CH(CH₃)–CH₃</div>
+        Main chain: 3C; one CH₃ branch at C2.
+        <div class="dn">📐 Draw full structural formulae showing all C–C and C–H bonds for each compound.</div>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q36</div>
+      <div class="q-text">Explain the classification of organic compounds based on functional group. Draw the structures of: (i) Alcohol (ii) Phenol (iii) Aldehyde (iv) Ketone (v) Carboxylic acid (vi) Amine</div>
+      <div class="ans-box">
+        Organic compounds are classified based on the <strong>functional group</strong> — the atom or group of atoms responsible for the characteristic chemical properties of the compound.
+        <table class="bt">
+          <tr><th>Class</th><th>Functional Group</th><th>Structure</th><th>Example</th></tr>
+          <tr><td>Alcohol</td><td>–OH (hydroxyl)</td><td>R–OH</td><td>CH₃OH (methanol)</td></tr>
+          <tr><td>Phenol</td><td>–OH on benzene</td><td>C₆H₅–OH</td><td>Phenol</td></tr>
+          <tr><td>Aldehyde</td><td>–CHO</td><td>R–CHO</td><td>HCHO (formaldehyde)</td></tr>
+          <tr><td>Ketone</td><td>–CO– (C=O between 2 R)</td><td>R–CO–R'</td><td>CH₃COCH₃ (acetone)</td></tr>
+          <tr><td>Carboxylic acid</td><td>–COOH</td><td>R–COOH</td><td>CH₃COOH (acetic acid)</td></tr>
+          <tr><td>Amine</td><td>–NH₂</td><td>R–NH₂</td><td>CH₃NH₂ (methylamine)</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q37</div>
+      <div class="q-text">Write characteristics of Homologous series (Any four).</div>
+      <div class="ans-box">
+        A <strong>homologous series</strong> is a group of organic compounds with the same functional group and general formula, where each successive member differs by a CH₂ group (14 u).
+        <ul>
+          <li>1. All members have the <strong>same general formula</strong> (e.g., alkanes: CₙH₂ₙ₊₂).</li>
+          <li>2. Successive members differ by <strong>–CH₂– (14 u)</strong>.</li>
+          <li>3. Members show a <strong>gradual change in physical properties</strong> (bp, mp, density increase with molecular mass).</li>
+          <li>4. All members have <strong>similar chemical properties</strong> due to same functional group.</li>
+          <li>5. They can be prepared by <strong>similar methods</strong>.</li>
+          <li>6. Molecular formulae of consecutive members differ by CH₂.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q38</div>
+      <div class="q-text">Explain primary, secondary and tertiary carbon atoms with examples.</div>
+      <div class="ans-box">
+        Carbon atoms in organic compounds are classified based on the number of other carbon atoms directly attached:
+        <ul>
+          <li><strong>Primary (1°) carbon:</strong> Attached to only ONE other carbon. E.g., the CH₃ groups in propane (CH₃–CH₂–CH₃).</li>
+          <li><strong>Secondary (2°) carbon:</strong> Attached to TWO other carbon atoms. E.g., the middle carbon in propane (–CH₂–).</li>
+          <li><strong>Tertiary (3°) carbon:</strong> Attached to THREE other carbon atoms. E.g., the central C in isobutane CH₃–CH(CH₃)–CH₃.</li>
+          <li><strong>Quaternary (4°) carbon:</strong> Attached to FOUR other carbon atoms. E.g., the central C in neopentane C(CH₃)₄ — no H attached.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q39</div>
+      <div class="q-text">What is isomerism? Explain chain isomerism with a suitable example.</div>
+      <div class="ans-box">
+        <strong>Isomerism:</strong> The phenomenon in which two or more compounds have the same molecular formula but different structural formulae (arrangement of atoms) is called isomerism. The compounds are called isomers.
+        <br><br>
+        <strong>Chain Isomerism (Skeletal isomerism):</strong> Isomers that differ in the arrangement of the carbon skeleton (chain). Same molecular formula, different branching of carbon chain.
+        <ul>
+          <li><strong>Example:</strong> C₅H₁₂ (pentane) has three chain isomers:</li>
+          <li>n-pentane: CH₃–CH₂–CH₂–CH₂–CH₃ (straight chain)</li>
+          <li>Isopentane (2-methylbutane): CH₃–CH(CH₃)–CH₂–CH₃</li>
+          <li>Neopentane (2,2-dimethylpropane): C(CH₃)₄</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q40</div>
+      <div class="q-text">Differentiate between homolytic and heterolytic bond cleavage with one example of each.</div>
+      <div class="ans-box">
+        <table class="bt">
+          <tr><th>Property</th><th>Homolytic Cleavage</th><th>Heterolytic Cleavage</th></tr>
+          <tr><td>Bond breaking</td><td>Each atom gets one electron from shared pair (equal split)</td><td>Both electrons go to one atom (unequal split)</td></tr>
+          <tr><td>Species formed</td><td>Free radicals (neutral, unpaired electron)</td><td>Carbocations (R⁺) or carbanions (R⁻)</td></tr>
+          <tr><td>Type of reaction</td><td>Radical reactions (in non-polar solvents, UV light)</td><td>Ionic reactions (in polar solvents)</td></tr>
+          <tr><td>Example</td><td>Cl–Cl → Cl• + Cl• (chlorine radical)</td><td>CH₃–Cl → CH₃⁺ + Cl⁻ (carbocation)</td></tr>
+        </table>
+        <ul style="margin-top:8px;">
+          <li>Homolytic: A:B → A• + B•</li>
+          <li>Heterolytic: A:B → A⁺ + :B⁻ or A:⁻ + B⁺</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q41</div>
+      <div class="q-text">What are electrophiles and nucleophiles? Give one example of each.</div>
+      <div class="ans-box">
+        <ul>
+          <li><strong>Electrophile ("electron lover"):</strong> An electron-deficient species that accepts an electron pair from a nucleophile. It seeks electrons to form a bond.
+            <br>Examples: H⁺, Cl⁺, NO₂⁺, AlCl₃, BF₃, carbocations (R⁺)
+          </li>
+          <li><strong>Nucleophile ("nucleus lover"):</strong> An electron-rich species that donates an electron pair to an electrophile. It seeks a positive centre to attack.
+            <br>Examples: OH⁻, CN⁻, NH₃, H₂O, RNH₂, :CH₂⁻ (carbanion)
+          </li>
+          <li>In a reaction: Nucleophile attacks the electrophile → new bond formed using the nucleophile's lone pair.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q42</div>
+      <div class="q-text">Explain the inductive effect and resonance effect briefly with a suitable example.</div>
+      <div class="ans-box">
+        <strong>Inductive Effect:</strong>
+        <ul>
+          <li>The permanent displacement of electrons along a chain of carbon atoms due to the presence of an electronegative/electropositive atom or group is called the inductive effect.</li>
+          <li>–I effect (electron withdrawing): –Cl, –Br, –NO₂, –CN pull electrons toward themselves.</li>
+          <li>+I effect (electron donating): alkyl groups (–CH₃) push electrons away.</li>
+          <li>Example: In CH₃–CH₂–Cl, Cl pulls electron density from C1 → C1 is slightly δ⁺.</li>
+          <li>Effect decreases with distance and is transmitted through σ bonds.</li>
+        </ul>
+        <strong>Resonance Effect (Mesomeric Effect):</strong>
+        <ul>
+          <li>The delocalisation of π electrons or lone pairs over a conjugated system is called the resonance effect.</li>
+          <li>+M effect: groups that donate electrons into the ring (–OH, –NH₂, –OR).</li>
+          <li>–M effect: groups that withdraw electrons from the ring (–NO₂, –CHO, –COOH).</li>
+          <li>Example: In phenol (C₆H₅–OH), the lone pair of O is delocalised into the benzene ring (+M effect), increasing electron density at ortho and para positions.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q43</div>
+      <div class="q-text">Draw the structures of: (i) Phenol (ii) Aniline (iii) Naphthalene</div>
+      <div class="ans-box">
+        <ul>
+          <li><strong>(i) Phenol (C₆H₅OH):</strong> Benzene ring with –OH group attached directly. Molecular formula: C₆H₅OH.</li>
+          <li><strong>(ii) Aniline (C₆H₅NH₂):</strong> Benzene ring with –NH₂ group attached. Molecular formula: C₆H₇N.</li>
+          <li><strong>(iii) Naphthalene (C₁₀H₈):</strong> Two fused benzene rings sharing one C–C bond. Bicyclic aromatic hydrocarbon.</li>
+        </ul>
+        <div class="dn">📐 Draw: (i) Hexagon with OH group. (ii) Hexagon with NH₂ group. (iii) Two fused hexagons (naphthalene) with alternating double bonds. Label all functional groups.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     CHAPTER 15 — Alkanes
+════════════════════════════════════ -->
+<div class="chapter" id="ch15">
+  <div class="ch-header bg7"><div class="ch-num">15</div><div class="ch-title">Chapter 15 — Alkanes (Q. 44–46)</div></div>
+  <div class="ch-body">
+
+    <div class="qa-item">
+      <div class="q-num">Q44</div>
+      <div class="q-text">Write the general formula of alkanes and the molecular formula of an alkane containing six carbon atoms.</div>
+      <div class="ans-box">
+        <ul>
+          <li><strong>General formula of alkanes:</strong> <span class="fm">CₙH₂ₙ₊₂</span> (saturated hydrocarbons, only C–C and C–H single bonds)</li>
+          <li><strong>For n = 6 (hexane):</strong> C₆H₂(6)+2 = C₆H₁₄</li>
+          <li>Molecular formula of hexane = <strong>C₆H₁₄</strong></li>
+          <li>Structure: CH₃–CH₂–CH₂–CH₂–CH₂–CH₃ (n-hexane)</li>
+          <li>Other common alkanes: methane (CH₄), ethane (C₂H₆), propane (C₃H₈), butane (C₄H₁₀), pentane (C₅H₁₂)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q45</div>
+      <div class="q-text">Describe following methods of preparation of alkanes and write suitable chemical equations: (i) From unsaturated hydrocarbons (ii) What is Grignard's reagent? Write Reaction of CH₃Br with Mg metal in presence of dry ether. (iii) Write Wurtz reaction for 2CH₃–CH₂–Cl + 2Na → dry ether → ?</div>
+      <div class="ans-box">
+        <strong>(i) From Unsaturated Hydrocarbons (Catalytic Hydrogenation):</strong>
+        <ul>
+          <li>Alkenes or alkynes react with hydrogen in presence of Ni/Pt/Pd catalyst (hydrogenation) to give alkanes.</li>
+          <li><span class="fm">CH₂=CH₂ + H₂ → (Ni/Δ) → CH₃–CH₃</span> (ethylene → ethane)</li>
+          <li><span class="fm">CH≡CH + 2H₂ → (Ni/Δ) → CH₃–CH₃</span> (acetylene → ethane)</li>
+        </ul>
+        <strong>(ii) Grignard's Reagent:</strong>
+        <ul>
+          <li>Grignard's reagent is an organomagnesium halide (R–Mg–X) prepared by reacting an alkyl halide with magnesium metal in dry ether.</li>
+          <li>Reaction: <span class="fm">CH₃Br + Mg → (dry ether) → CH₃MgBr</span> (methyl magnesium bromide)</li>
+          <li>It is a very reactive reagent used in organic synthesis.</li>
+        </ul>
+        <strong>(iii) Wurtz Reaction:</strong>
+        <ul>
+          <li>Two molecules of alkyl halide react with sodium metal in dry ether to give a higher alkane.</li>
+          <li><span class="fm">2CH₃–CH₂–Cl + 2Na → (dry ether) → CH₃–CH₂–CH₂–CH₃ + 2NaCl</span></li>
+          <li>2 ethyl chloride + 2Na → butane + 2 sodium chloride</li>
+          <li>Used to prepare symmetric alkanes with even number of carbons.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-num">Q46</div>
+      <div class="q-text">State four uses of alkanes.</div>
+      <div class="ans-box">
+        <ul>
+          <li>1. <strong>Fuel:</strong> Methane (natural gas), propane and butane (LPG) are used as domestic and industrial fuels.</li>
+          <li>2. <strong>Petrol and diesel:</strong> Pentane, hexane, heptane and octane are components of petrol used in motor vehicles.</li>
+          <li>3. <strong>Solvents:</strong> Hexane and heptane are used as solvents in industrial processes (e.g., extraction of vegetable oils).</li>
+          <li>4. <strong>Lubricants:</strong> Higher alkanes (paraffin wax) are used as lubricants, wax for candles, and coating for paper/food packaging.</li>
+          <li>5. <strong>Raw material:</strong> Alkanes serve as starting material (feedstock) for manufacture of other chemicals like alcohols, alkyl halides, etc.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MARKS OVERVIEW -->
+<div style="max-width:900px;margin:18px auto;background:#fff;border-radius:14px;padding:18px 22px;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+  <h3 style="color:#1a237e;margin-bottom:12px;font-size:.95rem;">📚 Chapter-wise Question Distribution</h3>
+  <table class="bt">
+    <tr><th>Chapter</th><th>Topic</th><th>Questions</th></tr>
+    <tr><td>Ch 1</td><td>Basic Concepts of Chemistry</td><td>Q1 – Q12 (12 questions)</td></tr>
+    <tr><td>Ch 3</td><td>Analytical Chemistry — Mole, Molarity, Stoichiometry</td><td>Q13 – Q22 (10 questions)</td></tr>
+    <tr><td>Ch 4</td><td>Structure of Atom — Bohr, Quantum Numbers, Orbitals</td><td>Q23 – Q30 (8 questions)</td></tr>
+    <tr><td>Ch 13</td><td>Nuclear Chemistry — Isotopes, Magic Numbers, Rate Law</td><td>Q31 – Q34 (4 questions)</td></tr>
+    <tr><td>Ch 14</td><td>Basic Organic Chemistry — IUPAC, Isomerism, Effects</td><td>Q35 – Q43 (9 questions)</td></tr>
+    <tr><td>Ch 15</td><td>Alkanes — Preparation, Properties, Uses</td><td>Q44 – Q46 (3 questions)</td></tr>
+    <tr style="background:#e8eaf6;"><td colspan="2"><strong>Total Questions</strong></td><td><strong>46 Questions — Complete Answer Bank</strong></td></tr>
+  </table>
+</div>
+
+<footer>
+  <p>Visions Classes — Birla Chemistry Section · visionslearning.in · <a href="notes-class11.html">← Back to Class 11 Notes</a></p>
+</footer>
+
+<!-- Circular Watermark -->
+<div style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;opacity:0.07;user-select:none;">
+  <svg width="340" height="340" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="170" cy="170" r="155" fill="none" stroke="#1a237e" stroke-width="6"/>
+    <circle cx="170" cy="170" r="138" fill="none" stroke="#1a237e" stroke-width="2"/>
+    <path id="tcb" fill="none" d="M 40,170 a130,130 0 1,1 260,0"/>
+    <path id="bcb" fill="none" d="M 40,170 a130,130 0 0,0 260,0"/>
+    <text font-size="21" font-weight="900" fill="#1a237e" font-family="Arial,sans-serif" letter-spacing="5"><textPath href="#tcb" startOffset="10%">VISIONS CLASSES · VISIONSLEARNING.IN ·</textPath></text>
+    <text font-size="17" font-weight="900" fill="#1a237e" font-family="Arial,sans-serif" letter-spacing="3"><textPath href="#bcb" startOffset="10%">CHEMISTRY · CLASS 11 · BIRLA COLLEGE</textPath></text>
+    <text x="170" y="155" text-anchor="middle" font-size="24" font-weight="900" fill="#1a237e" font-family="Arial,sans-serif">VISIONS</text>
+    <text x="170" y="185" text-anchor="middle" font-size="24" font-weight="900" fill="#1a237e" font-family="Arial,sans-serif">CLASSES</text>
+    <text x="170" y="213" text-anchor="middle" font-size="12" font-weight="700" fill="#1a237e" font-family="Arial,sans-serif" letter-spacing="2">★ BIRLA CHEMISTRY ★</text>
+  </svg>
+</div>
+
+</body>
+</html>
