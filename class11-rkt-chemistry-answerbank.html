@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>RKT Chemistry — Class 11 Answer Bank | Sem 1 2026</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#1a1a1a;}
+
+  .site-header{background:linear-gradient(135deg,#b71c1c,#c62828,#880e4f);padding:14px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 3px 12px rgba(0,0,0,.3);}
+  .site-header a{color:#ffcdd2;text-decoration:none;font-size:.85rem;font-weight:600;}
+  .site-header a:hover{color:#fff;}
+  .header-title{color:#fff;font-size:1.1rem;font-weight:800;}
+
+  .hero{background:linear-gradient(135deg,#b71c1c 0%,#c62828 40%,#880e4f 100%);padding:36px 20px 28px;text-align:center;color:#fff;}
+  .board-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:5px 18px;font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
+  .hero h1{font-size:1.7rem;font-weight:900;line-height:1.25;margin-bottom:8px;}
+  .hero .sub{font-size:.9rem;color:rgba(255,255,255,.85);margin-bottom:16px;}
+  .pills{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+  .pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:22px;padding:7px 16px;font-size:.82rem;font-weight:700;}
+
+  /* Pattern box */
+  .pattern-box{max-width:900px;margin:18px auto;background:#fff;border-radius:14px;padding:20px 24px;box-shadow:0 2px 12px rgba(0,0,0,.08);}
+  .pattern-box h3{color:#b71c1c;margin-bottom:14px;font-size:1rem;font-weight:800;}
+  .pattern-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;}
+  .pat-card{border-radius:10px;padding:12px 14px;text-align:center;}
+  .pa{background:#ffebee;border:2px solid #ef9a9a;}
+  .pb{background:#e8f5e9;border:2px solid #a5d6a7;}
+  .pc{background:#e3f2fd;border:2px solid #90caf9;}
+  .pd{background:#fff3e0;border:2px solid #ffcc80;}
+  .pat-card .sec{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
+  .pat-card .qs{font-size:.85rem;font-weight:700;}
+  .pat-card .mk{font-size:1.2rem;font-weight:900;margin-top:4px;}
+  .pa .sec{color:#b71c1c;} .pa .mk{color:#b71c1c;}
+  .pb .sec{color:#1b5e20;} .pb .mk{color:#1b5e20;}
+  .pc .sec{color:#0d47a1;} .pc .mk{color:#0d47a1;}
+  .pd .sec{color:#e65100;} .pd .mk{color:#e65100;}
+
+  /* TOC */
+  .toc{max-width:900px;margin:14px auto;background:#fff;border-radius:14px;padding:18px 24px;box-shadow:0 2px 12px rgba(0,0,0,.08);}
+  .toc h3{color:#b71c1c;margin-bottom:12px;font-size:.95rem;font-weight:800;}
+  .toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;}
+  .toc-item{background:#ffebee;border-radius:8px;padding:8px 12px;font-size:.82rem;font-weight:700;color:#b71c1c;text-decoration:none;display:block;transition:background .2s;}
+  .toc-item:hover{background:#ffcdd2;}
+
+  /* Section header */
+  .sec-header{max-width:900px;margin:20px auto 0;padding:0 4px;}
+  .sec-band{border-radius:12px;padding:12px 20px;display:flex;align-items:center;gap:12px;margin-bottom:4px;}
+  .sec-band .sec-badge{font-size:1.1rem;font-weight:900;background:rgba(255,255,255,.25);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .sec-band .sec-info{flex:1;}
+  .sec-band .sec-title{font-size:1rem;font-weight:900;color:#fff;}
+  .sec-band .sec-desc{font-size:.8rem;color:rgba(255,255,255,.85);margin-top:2px;}
+  .sec-band .sec-marks{background:rgba(255,255,255,.22);color:#fff;font-size:.82rem;font-weight:700;padding:4px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.3);}
+  .sba{background:linear-gradient(135deg,#b71c1c,#c62828);}
+  .sbb{background:linear-gradient(135deg,#1b5e20,#2e7d32);}
+  .sbc{background:linear-gradient(135deg,#0d47a1,#1565c0);}
+  .sbd{background:linear-gradient(135deg,#e65100,#f57c00);}
+
+  /* Chapter */
+  .chapter{max-width:900px;margin:12px auto;background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden;}
+  .ch-header{padding:12px 22px;display:flex;align-items:center;gap:12px;}
+  .ch-num{background:#fff;font-weight:900;font-size:.9rem;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .ch-title{color:#fff;font-size:.95rem;font-weight:800;flex:1;}
+  .hc1{background:linear-gradient(135deg,#1a237e,#3949ab);} .hc1 .ch-num{color:#1a237e;}
+  .hc2{background:linear-gradient(135deg,#004d40,#00695c);} .hc2 .ch-num{color:#004d40;}
+  .hc4{background:linear-gradient(135deg,#880e4f,#c2185b);} .hc4 .ch-num{color:#880e4f;}
+  .hc14{background:linear-gradient(135deg,#006064,#00838f);} .hc14 .ch-num{color:#006064;}
+  .hc15{background:linear-gradient(135deg,#e65100,#f57c00);} .hc15 .ch-num{color:#e65100;}
+  .ch-body{padding:18px 24px;}
+
+  /* Q&A */
+  .qa-item{margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid #f0f4f8;}
+  .qa-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+  .q-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:7px;}
+  .q-num{display:inline-flex;align-items:center;justify-content:center;background:#b71c1c;color:#fff;font-size:.72rem;font-weight:900;min-width:36px;height:22px;border-radius:6px;flex-shrink:0;padding:0 6px;}
+  .q-text{font-size:.91rem;font-weight:700;color:#1a1a1a;line-height:1.5;flex:1;}
+  .ans-box{font-size:.86rem;line-height:1.75;background:#f8fafc;border-left:3px solid #c62828;padding:10px 14px;border-radius:0 8px 8px 0;}
+  .ans-box ul{padding-left:17px;margin-top:4px;}
+  .ans-box ul li{margin-bottom:4px;}
+  .ans-box strong{color:#b71c1c;}
+  .fm{font-family:monospace;background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:5px;font-weight:700;display:inline-block;margin:2px 0;}
+  .ns{background:#fff8e1;border-left:3px solid #f9a825;padding:10px 14px;border-radius:0 8px 8px 0;font-size:.86rem;line-height:1.85;margin-top:6px;}
+  .ns .s{margin-bottom:3px;}
+  .nf{font-family:monospace;background:#fff3cd;color:#7c5700;padding:2px 8px;border-radius:5px;font-weight:700;display:inline-block;}
+  .fin{font-weight:800;color:#1b5e20;background:#e8f5e9;padding:4px 12px;border-radius:7px;display:inline-block;margin-top:5px;}
+  .dn{background:#e8eaf6;border:1.5px dashed #5c6bc0;border-radius:8px;padding:9px 13px;font-size:.79rem;color:#3949ab;margin-top:9px;text-align:center;}
+  table.bt{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:8px;}
+  table.bt th{background:#b71c1c;color:#fff;padding:6px 10px;text-align:left;}
+  table.bt td{padding:6px 10px;border-bottom:1px solid #e8edf2;}
+  table.bt tr:nth-child(even) td{background:#fff8f8;}
+
+  .sec-divider{max-width:900px;margin:6px auto;}
+
+  footer{text-align:center;padding:26px 16px;font-size:.8rem;color:#888;}
+  footer a{color:#c62828;text-decoration:none;}
+  @media(max-width:600px){.paper-hero h1{font-size:1.2rem;}.pattern-grid{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="site-header">
+  <a href="notes-class11.html">← Class 11 Notes</a>
+  <span style="color:rgba(255,255,255,.4);">|</span>
+  <span class="header-title">RKT Chemistry — Answer Bank</span>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="board-tag">RKT College · XI Sci · Sem 1 · 2026</div>
+  <h1>RKT Chemistry<br>Sem 1 Practice Question Bank with Answers</h1>
+  <div class="sub">Ch 1 · Ch 2 · Ch 4 · Ch 14 · Ch 15 &nbsp;|&nbsp; Maharashtra Board Pattern</div>
+  <div class="pills">
+    <div class="pill">📋 40 Marks Paper</div>
+    <div class="pill">✅ Full Answers</div>
+    <div class="pill">🔢 Numericals Solved</div>
+    <div class="pill">📖 Section A B C D</div>
+  </div>
+</div>
+
+<!-- PAPER PATTERN -->
+<div class="pattern-box">
+  <h3>📄 XI Sci 2 Chemistry — Sem 1 2026 Paper Pattern (SEED)</h3>
+  <div class="pattern-grid">
+    <div class="pat-card pa">
+      <div class="sec">Section A</div>
+      <div class="qs">Q1 MCQ</div>
+      <div class="mk">4 Marks</div>
+    </div>
+    <div class="pat-card pa">
+      <div class="sec">Section A</div>
+      <div class="qs">Q2 Very Short (1 to Vity)</div>
+      <div class="mk">4 Marks</div>
+    </div>
+    <div class="pat-card pb">
+      <div class="sec">Section B</div>
+      <div class="qs">Q3–Q13 (Any 4 of 11)</div>
+      <div class="mk">12 Marks</div>
+    </div>
+    <div class="pat-card pc">
+      <div class="sec">Section C</div>
+      <div class="qs">Q14–Q19 (Any 4 of 6)</div>
+      <div class="mk">12 Marks</div>
+    </div>
+    <div class="pat-card pd">
+      <div class="sec">Section D</div>
+      <div class="qs">Q20–Q23 (Any 2 of 4)</div>
+      <div class="mk">8 Marks</div>
+    </div>
+    <div class="pat-card" style="background:#e8eaf6;border:2px solid #9fa8da;">
+      <div class="sec" style="color:#1a237e;">TOTAL</div>
+      <div class="qs" style="color:#1a237e;">Full Paper</div>
+      <div class="mk" style="color:#1a237e;">40 Marks</div>
+    </div>
+  </div>
+  <div style="margin-top:14px;font-size:.83rem;color:#555;background:#fff8f8;border-radius:8px;padding:10px 14px;">
+    <strong>Portions:</strong>
+    Ch 1 (Basic Concepts) · Ch 2 (Intro to Analytical Chemistry) · Ch 4 (Structure of Atom — 4.1.1 to 4.7.6) · Ch 14 (Basic Organic — 14.5.1, 14.6.1–14.6.5) · Ch 15 (Alkanes — 15.1.1 to 15.1.6)
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <h3>📑 Quick Navigation</h3>
+  <div class="toc-grid">
+    <a class="toc-item" href="#seca">Section A — MCQ & Very Short</a>
+    <a class="toc-item" href="#ch1">Ch 1 — Basic Concepts</a>
+    <a class="toc-item" href="#ch2">Ch 2 — Analytical Chemistry</a>
+    <a class="toc-item" href="#ch4">Ch 4 — Structure of Atom</a>
+    <a class="toc-item" href="#ch14">Ch 14 — Basic Organic</a>
+    <a class="toc-item" href="#ch15">Ch 15 — Alkanes</a>
+    <a class="toc-item" href="#secd">Section D — Long Answers</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════
+     SECTION A
+═══════════════════════ -->
+<div class="sec-header" id="seca">
+  <div class="sec-band sba">
+    <div class="sec-badge">A</div>
+    <div class="sec-info">
+      <div class="sec-title">Section A — Q1 MCQ + Q2 Very Short Answer</div>
+      <div class="sec-desc">All compulsory · 1 mark each</div>
+    </div>
+    <div class="sec-marks">8 Marks</div>
+  </div>
+</div>
+
+<div class="chapter">
+  <div class="ch-header hc1"><div class="ch-num">A</div><div class="ch-title">Q1 — MCQ (4 × 1 = 4 Marks)</div></div>
+  <div class="ch-body">
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q1.1</span><div class="q-text">The maximum number of electrons in the M shell (n = 3) is ________. <em>(Ch4)</em></div></div>
+      <div class="ans-box">Answer: <strong>(c) 18</strong> — Max electrons = 2n² = 2 × 3² = 18.</div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q1.2</span><div class="q-text">The geometry of CH₄ molecule according to VSEPR theory is ________. <em>(Ch4/Ch14)</em></div></div>
+      <div class="ans-box">Answer: <strong>(b) Tetrahedral</strong> — Carbon has 4 bond pairs, 0 lone pairs → regular tetrahedral, bond angle = 109.5°.</div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q1.3</span><div class="q-text">The empirical formula of glucose (C₆H₁₂O₆) is ________. <em>(Ch1)</em></div></div>
+      <div class="ans-box">Answer: <strong>(b) CH₂O</strong> — Divide each subscript by 6 (HCF): C:H:O = 1:2:1 → CH₂O.</div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q1.4</span><div class="q-text">The general formula of alkanes is ________. <em>(Ch15)</em></div></div>
+      <div class="ans-box">Answer: <strong>(a) CₙH₂ₙ₊₂</strong> — Saturated hydrocarbons (all single bonds). E.g., n=1: CH₄, n=2: C₂H₆.</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="chapter">
+  <div class="ch-header hc2"><div class="ch-num">A</div><div class="ch-title">Q2 — Very Short Answer (4 × 1 = 4 Marks)</div></div>
+  <div class="ch-body">
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q2.1</span><div class="q-text">State Heisenberg's Uncertainty Principle. <em>(Ch4 — 4.5.2)</em></div></div>
+      <div class="ans-box">It is impossible to simultaneously and precisely determine both the <strong>position</strong> and <strong>momentum</strong> of a subatomic particle.
+        <span class="fm">Δx · Δp ≥ h/4π</span>
+        where Δx = uncertainty in position, Δp = uncertainty in momentum, h = Planck's constant (6.626 × 10⁻³⁴ J·s).
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q2.2</span><div class="q-text">Define molar mass and give its unit. <em>(Ch1)</em></div></div>
+      <div class="ans-box">The mass of one mole (6.022 × 10²³ particles) of a substance expressed in grams is called <strong>molar mass</strong>. Unit: <strong>g/mol</strong> (or g mol⁻¹). It is numerically equal to the molecular/atomic mass in u.</div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q2.3</span><div class="q-text">What is a functional group? Give one example. <em>(Ch14 — 14.5.1)</em></div></div>
+      <div class="ans-box">A <strong>functional group</strong> is an atom or group of atoms present in an organic molecule that is responsible for its characteristic chemical properties and reactions. Example: <strong>–OH</strong> (hydroxyl group) in alcohols; <strong>–COOH</strong> (carboxyl) in acids.</div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q2.4</span><div class="q-text">Write the molecular formula of butane (n = 4 for alkane). <em>(Ch15)</em></div></div>
+      <div class="ans-box">General formula of alkane: CₙH₂ₙ₊₂
+        <div class="ns">
+          <div class="s">n = 4: C₄H₂(4)+2 = C₄H₁₀</div>
+          <div class="fin">Butane = C₄H₁₀</div>
+        </div>
+        Structure: CH₃–CH₂–CH₂–CH₃ (n-butane)
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════
+     SECTION B
+═══════════════════════ -->
+<div class="sec-header" id="secb">
+  <div class="sec-band sbb">
+    <div class="sec-badge">B</div>
+    <div class="sec-info">
+      <div class="sec-title">Section B — Q3 to Q13 (Any 4 of 11) — 3 marks each</div>
+      <div class="sec-desc">Short Answer Questions</div>
+    </div>
+    <div class="sec-marks">12 Marks</div>
+  </div>
+</div>
+
+<!-- Ch1 Sec B -->
+<div class="chapter" id="ch1">
+  <div class="ch-header hc1"><div class="ch-num">1</div><div class="ch-title">Chapter 1 — Basic Concepts of Chemistry (Sec B)</div></div>
+  <div class="ch-body">
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q3</span><div class="q-text">Calculate the percentage composition of H₂SO₄. (H=1, S=32, O=16) <em>(3M)</em></div></div>
+      <div class="ans-box">
+        <div class="ns">
+          <div class="s">Molar mass of H₂SO₄ = 2(1) + 32 + 4(16) = 2 + 32 + 64 = 98 g/mol</div>
+          <div class="s">% H = (2/98) × 100 = <strong>2.04%</strong></div>
+          <div class="s">% S = (32/98) × 100 = <strong>32.65%</strong></div>
+          <div class="s">% O = (64/98) × 100 = <strong>65.31%</strong></div>
+          <div class="fin">Total = 2.04 + 32.65 + 65.31 = 100% ✓</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q4</span><div class="q-text">A compound contains 40% C, 6.67% H and 53.33% O. Find its empirical formula. (C=12, H=1, O=16) <em>(3M)</em></div></div>
+      <div class="ans-box">
+        <div class="ns">
+          <div class="s">Mole ratio — C: 40/12 = 3.33 | H: 6.67/1 = 6.67 | O: 53.33/16 = 3.33</div>
+          <div class="s">Divide by smallest (3.33): C:1 H:2 O:1</div>
+          <div class="fin">Empirical formula = <strong>CH₂O</strong></div>
+        </div>
+        (This is the empirical formula of glucose, acetic acid, formaldehyde etc.)
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q5</span><div class="q-text">Calculate: (i) moles in 56 g of Fe (ii) mass of 3 moles of CO₂. (Fe=56, C=12, O=16) <em>(3M)</em></div></div>
+      <div class="ans-box">
+        <strong>(i)</strong>
+        <div class="ns">
+          <div class="s">n = m/M = 56/56</div>
+          <div class="fin">Moles of Fe = 1 mol = 6.022 × 10²³ atoms</div>
+        </div>
+        <strong>(ii)</strong>
+        <div class="ns">
+          <div class="s">M(CO₂) = 12 + 2(16) = 44 g/mol</div>
+          <div class="s">m = n × M = 3 × 44</div>
+          <div class="fin">Mass of 3 mol CO₂ = 132 g</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Ch2 Sec B -->
+<div class="chapter" id="ch2">
+  <div class="ch-header hc2"><div class="ch-num">2</div><div class="ch-title">Chapter 2 — Introduction to Analytical Chemistry (Sec B)</div></div>
+  <div class="ch-body">
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q6</span><div class="q-text">Calculate the molarity of a solution prepared by dissolving 4 g of NaOH in 500 mL water. (Na=23, O=16, H=1) <em>(3M)</em></div></div>
+      <div class="ans-box">
+        <div class="ns">
+          <div class="s">M(NaOH) = 23+16+1 = 40 g/mol</div>
+          <div class="s">n = 4/40 = 0.1 mol</div>
+          <div class="s">V = 500 mL = 0.5 L</div>
+          <div class="s"><span class="nf">M = n/V = 0.1/0.5</span></div>
+          <div class="fin">Molarity = 0.2 mol/L = 0.2 M</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q7</span><div class="q-text">Define: (i) Molarity (ii) Normality (iii) Molality. Give the formula for each. <em>(3M)</em></div></div>
+      <div class="ans-box">
+        <ul>
+          <li><strong>Molarity (M):</strong> Moles of solute per litre of solution. <span class="fm">M = n/V(L)</span> Unit: mol/L</li>
+          <li><strong>Normality (N):</strong> Gram equivalents of solute per litre of solution. <span class="fm">N = gram equivalents/V(L) = M × n-factor</span> Unit: N (eq/L)</li>
+          <li><strong>Molality (m):</strong> Moles of solute per kilogram of solvent. <span class="fm">m = n/W_solvent(kg)</span> Unit: mol/kg</li>
+        </ul>
+        Key difference: Molarity depends on volume (temperature-dependent); molality depends on mass (temperature-independent).
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q8</span><div class="q-text">For the reaction 2H₂ + O₂ → 2H₂O, if 4 g H₂ reacts with 32 g O₂, identify the limiting reagent and find the mass of water formed. (H=1, O=16) <em>(3M)</em></div></div>
+      <div class="ans-box">
+        <div class="ns">
+          <div class="s">Moles H₂ = 4/2 = 2 mol; Moles O₂ = 32/32 = 1 mol</div>
+          <div class="s">Stoichiometry: 2 mol H₂ needs 1 mol O₂ ✓ (exactly stoichiometric)</div>
+          <div class="s">Both are completely consumed — neither is in excess.</div>
+          <div class="s">H₂O formed = 2 mol × 18 g/mol</div>
+          <div class="fin">Mass of H₂O = 36 g; Both are limiting reagents</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Ch4 Sec B -->
+<div class="chapter" id="ch4">
+  <div class="ch-header hc4"><div class="ch-num">4</div><div class="ch-title">Chapter 4 — Structure of Atom (Sec B) — Topics 4.1.1 to 4.7.6</div></div>
+  <div class="ch-body">
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q9</span><div class="q-text">State and explain Bohr's postulates for the hydrogen atom. (4.1.1, 4.1.2) <em>(3M)</em></div></div>
+      <div class="ans-box">
+        <ul>
+          <li><strong>Postulate 1:</strong> Electrons revolve around the nucleus in fixed circular paths (orbits/shells) without losing energy. These are called stationary states or allowed orbits.</li>
+          <li><strong>Postulate 2:</strong> Only orbits in which angular momentum (mvr) is an integral multiple of h/2π are allowed:
+            <span class="fm">mvr = nh/2π</span> (n = 1, 2, 3… = principal quantum number)</li>
+          <li><strong>Postulate 3:</strong> Energy is absorbed or emitted only when an electron jumps from one orbit to another:
+            <span class="fm">ΔE = E₂ – E₁ = hν</span></li>
+          <li>The orbit with n=1 is the ground state; higher n = higher energy = larger orbit.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q10</span><div class="q-text">State Aufbau principle, Pauli's exclusion principle and Hund's rule with examples. (4.5.1, 4.7.2, 4.7.3) <em>(3M)</em></div></div>
+      <div class="ans-box">
+        <ul>
+          <li><strong>Aufbau Principle (4.7.2):</strong> Electrons fill orbitals in order of increasing energy. (n+l) rule: lower n+l fills first; equal n+l → lower n first. Order: 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p...
+          </li>
+          <li><strong>Pauli's Exclusion Principle (4.5.1):</strong> No two electrons in the same atom can have the same set of all four quantum numbers. Each orbital accommodates max 2 electrons with opposite spins (↑↓).
+          </li>
+          <li><strong>Hund's Rule of Maximum Multiplicity (4.7.3):</strong> In degenerate orbitals (same energy), electrons first occupy each orbital singly with parallel spin (↑↑) before pairing. Example: Nitrogen (Z=7): 1s² 2s² 2p³ → three 2p orbitals each have one ↑ electron before any pairing.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q11</span><div class="q-text">Write the electronic configurations of: (i) Na (Z=11) (ii) Cl (Z=17) (iii) Fe (Z=26). (4.7.4, 4.7.5) <em>(3M)</em></div></div>
+      <div class="ans-box">
+        <table class="bt">
+          <tr><th>Element (Z)</th><th>Electronic Configuration</th><th>Short form</th></tr>
+          <tr><td>Na (Z=11)</td><td>1s² 2s² 2p⁶ 3s¹</td><td>[Ne] 3s¹</td></tr>
+          <tr><td>Cl (Z=17)</td><td>1s² 2s² 2p⁶ 3s² 3p⁵</td><td>[Ne] 3s² 3p⁵</td></tr>
+          <tr><td>Fe (Z=26)</td><td>1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁶ 4s²</td><td>[Ar] 3d⁶ 4s²</td></tr>
+        </table>
+        <ul style="margin-top:6px;"><li>Na has 1 valence electron → Group 1; Cl has 7 → Group 17 (halogen); Fe is a transition metal.</li></ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q12</span><div class="q-text">Explain the significance of quantum numbers. What are the four quantum numbers and their values? (4.5.1, 4.6.1) <em>(3M)</em></div></div>
+      <div class="ans-box">
+        <table class="bt">
+          <tr><th>Quantum No.</th><th>Symbol</th><th>Allowed Values</th><th>Significance</th></tr>
+          <tr><td>Principal</td><td>n</td><td>1,2,3,4…</td><td>Shell, size, energy of orbital</td></tr>
+          <tr><td>Azimuthal</td><td>l</td><td>0 to (n–1)</td><td>Subshell, shape (s,p,d,f)</td></tr>
+          <tr><td>Magnetic</td><td>mₗ</td><td>–l … 0 … +l</td><td>Orientation of orbital in space</td></tr>
+          <tr><td>Spin</td><td>mₛ</td><td>+½ or –½</td><td>Direction of electron spin ↑↓</td></tr>
+        </table>
+        <ul style="margin-top:6px;"><li>Together these 4 numbers uniquely identify every electron in an atom (Pauli's principle).</li></ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q13</span><div class="q-text">Draw and explain the shapes of s, px, py and pz orbitals. Give the capacity of each subshell. (4.7.6) <em>(3M)</em></div></div>
+      <div class="ans-box">
+        <ul>
+          <li><strong>s orbital (l=0):</strong> Spherically symmetric around nucleus. One s orbital per subshell. Capacity: 2 electrons.</li>
+          <li><strong>p orbitals (l=1):</strong> Dumbbell shaped — two lobes on either side of nucleus.
+            <ul>
+              <li>pₓ — lobes along x-axis; p_y — along y-axis; p_z — along z-axis</li>
+              <li>Three p orbitals are mutually perpendicular (90° to each other)</li>
+              <li>Each has a nodal plane through the nucleus</li>
+            </ul>
+          </li>
+        </ul>
+        <table class="bt">
+          <tr><th>Subshell</th><th>l</th><th>Orbitals (2l+1)</th><th>Max electrons</th></tr>
+          <tr><td>s</td><td>0</td><td>1</td><td>2</td></tr>
+          <tr><td>p</td><td>1</td><td>3</td><td>6</td></tr>
+          <tr><td>d</td><td>2</td><td>5</td><td>10</td></tr>
+          <tr><td>f</td><td>3</td><td>7</td><td>14</td></tr>
+        </table>
+        <div class="dn">📐 Draw: s = sphere; pₓ = dumbbell along x; p_y = dumbbell along y; p_z = dumbbell along z. Label node, +/– lobes, nucleus.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════
+     SECTION C
+═══════════════════════ -->
+<div class="sec-header" id="secc">
+  <div class="sec-band sbc">
+    <div class="sec-badge">C</div>
+    <div class="sec-info">
+      <div class="sec-title">Section C — Q14 to Q19 (Any 4 of 6) — 3 marks each</div>
+      <div class="sec-desc">Short Answer — Ch 4, Ch 14, Ch 15</div>
+    </div>
+    <div class="sec-marks">12 Marks</div>
+  </div>
+</div>
+
+<!-- Ch4 Sec C -->
+<div class="chapter">
+  <div class="ch-header hc4"><div class="ch-num">4</div><div class="ch-title">Chapter 4 — Structure of Atom (Section C)</div></div>
+  <div class="ch-body">
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q14</span><div class="q-text">Explain de Broglie's hypothesis. Write the formula and give its significance. (4.5.2) <em>(3M)</em></div></div>
+      <div class="ans-box">
+        <strong>de Broglie's Hypothesis (1924):</strong>
+        <ul>
+          <li>All moving particles (not just light) exhibit <strong>dual nature</strong> — both particle and wave characteristics.</li>
+          <li>Every moving particle of mass m moving with velocity v has an associated wavelength:
+            <span class="fm">λ = h/mv = h/p</span>
+            where h = Planck's constant, p = mv = momentum.
+          </li>
+          <li>Larger the mass → smaller the wavelength (negligible for macroscopic objects). Electrons have significant wave character.</li>
+        </ul>
+        <strong>Significance:</strong>
+        <ul>
+          <li>Explains why electrons occupy only specific orbits in Bohr's model (standing wave condition: 2πr = nλ).</li>
+          <li>Foundation of quantum mechanics and wave mechanical model.</li>
+          <li>Verified experimentally by Davisson and Germer (electron diffraction, 1927).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q15</span><div class="q-text">What are the drawbacks of Rutherford's model? How did Bohr's model overcome them? (4.1.3) <em>(3M)</em></div></div>
+      <div class="ans-box">
+        <strong>Drawbacks of Rutherford's Model:</strong>
+        <ul>
+          <li>1. <strong>Instability:</strong> Accelerating electron should radiate energy continuously → spiral into nucleus → atom should collapse. But atoms are stable.</li>
+          <li>2. <strong>Line spectra:</strong> Cannot explain why atoms emit discrete spectral lines instead of a continuous spectrum.</li>
+          <li>3. <strong>No electron arrangement:</strong> Did not specify how electrons are distributed around nucleus.</li>
+        </ul>
+        <strong>Bohr's Model overcomes:</strong>
+        <ul>
+          <li>1. Proposed <em>stationary orbits</em> — electrons do not radiate energy while in fixed orbits → atom is stable.</li>
+          <li>2. Explained hydrogen spectrum — emission occurs only during electron transitions between orbits → discrete lines (Lyman, Balmer, Paschen series).</li>
+          <li>3. Defined allowed orbits by quantisation condition: mvr = nh/2π.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Ch14 Sec C -->
+<div class="chapter" id="ch14">
+  <div class="ch-header hc14"><div class="ch-num">14</div><div class="ch-title">Chapter 14 — Basic Organic Chemistry (Section C) — 14.5.1, 14.6.1–14.6.5</div></div>
+  <div class="ch-body">
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q16</span><div class="q-text">Explain the classification of organic compounds based on functional groups. Draw structures of alcohol, aldehyde and carboxylic acid. (14.5.1) <em>(3M)</em></div></div>
+      <div class="ans-box">
+        Organic compounds are classified based on the <strong>functional group</strong> — the atom/group responsible for characteristic chemical behaviour.
+        <table class="bt">
+          <tr><th>Functional Group</th><th>Class</th><th>Structure</th><th>Example</th></tr>
+          <tr><td>–OH (hydroxyl)</td><td>Alcohol</td><td>R–OH</td><td>CH₃OH</td></tr>
+          <tr><td>–CHO (aldehyde)</td><td>Aldehyde</td><td>R–CHO</td><td>HCHO</td></tr>
+          <tr><td>–COOH (carboxyl)</td><td>Carboxylic acid</td><td>R–COOH</td><td>CH₃COOH</td></tr>
+          <tr><td>–CO– (carbonyl)</td><td>Ketone</td><td>R–CO–R'</td><td>CH₃COCH₃</td></tr>
+          <tr><td>–NH₂ (amino)</td><td>Amine</td><td>R–NH₂</td><td>CH₃NH₂</td></tr>
+        </table>
+        <div class="dn">📐 Draw: R–OH (alcohol), R–CHO (aldehyde with C=O at end), R–COOH (carboxylic acid with –C(=O)–OH).</div>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q17</span><div class="q-text">Explain homolytic and heterolytic bond cleavage with one example each. (14.6.1) <em>(3M)</em></div></div>
+      <div class="ans-box">
+        <strong>Homolytic Cleavage:</strong>
+        <ul>
+          <li>The bond breaks so that each fragment gets one electron from the shared pair → forms <strong>free radicals</strong> (neutral species with unpaired electron).</li>
+          <li>A:B → A• + B•</li>
+          <li>Example: Cl–Cl → Cl• + Cl• (under UV light)</li>
+          <li>Occurs in non-polar conditions; leads to free radical reactions.</li>
+        </ul>
+        <strong>Heterolytic Cleavage:</strong>
+        <ul>
+          <li>The bond breaks so that both electrons go to ONE fragment → forms <strong>ions</strong> (carbocation or carbanion).</li>
+          <li>A:B → A⁺ + :B⁻ (or A:⁻ + B⁺)</li>
+          <li>Example: CH₃–Cl → CH₃⁺ (carbocation) + Cl⁻</li>
+          <li>Occurs in polar conditions; leads to ionic reactions (SN1, SN2, etc.).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q18</span><div class="q-text">What are electrophiles and nucleophiles? Explain inductive effect briefly. (14.6.2, 14.6.4) <em>(3M)</em></div></div>
+      <div class="ans-box">
+        <strong>Electrophile:</strong> Electron-deficient species that accepts an electron pair. Examples: H⁺, Cl⁺, NO₂⁺, BF₃, AlCl₃, carbocations (R⁺).
+        <br><strong>Nucleophile:</strong> Electron-rich species that donates an electron pair. Examples: OH⁻, CN⁻, NH₃, H₂O, carbanions (R⁻).
+        <br><br>
+        <strong>Inductive Effect:</strong>
+        <ul>
+          <li>Permanent displacement of electron density along a σ-bond chain due to electronegativity difference between atoms.</li>
+          <li><strong>–I effect (electron withdrawing):</strong> electronegative groups (–Cl, –NO₂, –CN) pull electrons towards them.</li>
+          <li><strong>+I effect (electron donating):</strong> alkyl groups (–CH₃, –C₂H₅) push electrons away.</li>
+          <li>The effect decreases with distance (significant only up to 2–3 carbons).</li>
+          <li>Example: In CH₃–CH₂–Cl, Cl pulls electron density → C1 is δ⁺, C2 is slightly δ⁺.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Ch15 Sec C -->
+<div class="chapter" id="ch15">
+  <div class="ch-header hc15"><div class="ch-num">15</div><div class="ch-title">Chapter 15 — Alkanes (Section C) — 15.1.1 to 15.1.6</div></div>
+  <div class="ch-body">
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q19</span><div class="q-text">Describe the preparation of alkanes by: (i) Catalytic hydrogenation (ii) Wurtz reaction. Give equations. (15.1.3) <em>(3M)</em></div></div>
+      <div class="ans-box">
+        <strong>(i) Catalytic Hydrogenation of Alkenes/Alkynes (15.1.3):</strong>
+        <ul>
+          <li>Unsaturated hydrocarbons react with H₂ in presence of Ni/Pt/Pd catalyst under heat/pressure → saturated alkane.</li>
+          <li><span class="fm">CH₂=CH₂ + H₂ → (Ni, Δ) → CH₃–CH₃</span> (ethene → ethane)</li>
+          <li><span class="fm">CH≡CH + 2H₂ → (Ni, Δ) → CH₃–CH₃</span> (ethyne → ethane)</li>
+        </ul>
+        <strong>(ii) Wurtz Reaction (15.1.3):</strong>
+        <ul>
+          <li>Two moles of alkyl halide react with sodium metal in dry ether to give a higher alkane.</li>
+          <li><span class="fm">2R–X + 2Na → (dry ether) → R–R + 2NaX</span></li>
+          <li>Example: <span class="fm">2CH₃Br + 2Na → (dry ether) → CH₃–CH₃ + 2NaBr</span></li>
+          <li>Limitation: Only useful for symmetric alkanes (both halides same); mixed gives mixture.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════
+     SECTION D
+═══════════════════════ -->
+<div class="sec-header" id="secd">
+  <div class="sec-band sbd">
+    <div class="sec-badge">D</div>
+    <div class="sec-info">
+      <div class="sec-title">Section D — Q20 to Q23 (Any 2 of 4) — 4 marks each</div>
+      <div class="sec-desc">Long Answer / Detail — Ch 4, Ch 14, Ch 15</div>
+    </div>
+    <div class="sec-marks">8 Marks</div>
+  </div>
+</div>
+
+<div class="chapter">
+  <div class="ch-header hc4"><div class="ch-num">D</div><div class="ch-title">Section D — Long Answer Questions (4 marks each)</div></div>
+  <div class="ch-body">
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q20</span><div class="q-text">Describe Bohr's atomic model in detail. Derive the expression for radius of nth orbit and energy of electron in nth orbit for hydrogen. (4.1.1–4.1.3, 4.2) <em>(4M)</em></div></div>
+      <div class="ans-box">
+        <strong>Bohr's Model — Postulates:</strong>
+        <ul>
+          <li>1. Fixed circular orbits (stationary states); electrons don't radiate energy.</li>
+          <li>2. mvr = nh/2π (angular momentum quantisation).</li>
+          <li>3. ΔE = hν (energy emitted/absorbed on orbit change).</li>
+        </ul>
+        <strong>Radius of nth orbit:</strong>
+        <ul>
+          <li>Centripetal force = Electrostatic force: mv²/r = Ze²/4πε₀r²</li>
+          <li>From angular momentum condition: v = nh/2πmr</li>
+          <li>Substituting and solving:
+            <span class="fm">rₙ = n²a₀/Z</span>
+            where a₀ = 0.529 Å (Bohr radius for H, n=1, Z=1)
+          </li>
+          <li>r₁ (H) = 0.529 Å; r₂ = 4×0.529 = 2.116 Å</li>
+        </ul>
+        <strong>Energy of electron in nth orbit:</strong>
+        <ul>
+          <li>Total energy = KE + PE = –13.6 Z²/n² eV (for hydrogen-like atoms)</li>
+          <li><span class="fm">Eₙ = –13.6/n² eV (for H, Z=1)</span></li>
+          <li>E₁ = –13.6 eV (ground state); E₂ = –3.4 eV; E₃ = –1.51 eV</li>
+          <li>Negative energy = electron is bound to nucleus; energy increases (becomes less negative) with n.</li>
+        </ul>
+        <strong>Limitations:</strong> Cannot explain multi-electron spectra, Zeeman effect, dual nature.
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q21</span><div class="q-text">Explain VSEPR theory with examples. Predict shapes of NH₃, H₂O, BF₃ and CO₂. (Ch 4 / Ch 14 bonding) <em>(4M)</em></div></div>
+      <div class="ans-box">
+        <strong>VSEPR Theory:</strong>
+        <ul>
+          <li>Electron pairs (bond pairs + lone pairs) around the central atom repel each other and adopt positions that minimise repulsion → determines molecular shape.</li>
+          <li>Repulsion order: LP–LP &gt; LP–BP &gt; BP–BP</li>
+        </ul>
+        <table class="bt">
+          <tr><th>Molecule</th><th>Bond Pairs</th><th>Lone Pairs</th><th>Shape</th><th>Bond Angle</th></tr>
+          <tr><td>BF₃</td><td>3</td><td>0</td><td>Trigonal planar</td><td>120°</td></tr>
+          <tr><td>NH₃</td><td>3</td><td>1</td><td>Trigonal pyramidal</td><td>107°</td></tr>
+          <tr><td>H₂O</td><td>2</td><td>2</td><td>Bent / V-shape</td><td>104.5°</td></tr>
+          <tr><td>CO₂</td><td>2 (double bonds)</td><td>0</td><td>Linear</td><td>180°</td></tr>
+        </table>
+        <ul style="margin-top:6px;">
+          <li>NH₃: lone pair compresses bond angle from 109.5° to 107°</li>
+          <li>H₂O: 2 lone pairs compress bond angle to 104.5°</li>
+        </ul>
+        <div class="dn">📐 Draw each molecule: BF₃ (flat triangle), NH₃ (pyramid with N at top), H₂O (bent), CO₂ (linear). Show lone pairs as dots on central atom.</div>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q22</span><div class="q-text">Explain isomerism in organic compounds. Define chain, position and functional group isomerism with examples. (14.6.5) <em>(4M)</em></div></div>
+      <div class="ans-box">
+        <strong>Isomerism:</strong> Compounds with the same molecular formula but different structural formulae are called isomers; the phenomenon is isomerism.
+        <br><br>
+        <strong>1. Chain Isomerism (Skeletal):</strong>
+        <ul>
+          <li>Different arrangement of carbon skeleton (branching).</li>
+          <li>Example (C₅H₁₂): n-pentane (straight) vs isopentane (one branch) vs neopentane (two branches)</li>
+        </ul>
+        <strong>2. Position Isomerism:</strong>
+        <ul>
+          <li>Same carbon skeleton and functional group, but the group is at different positions.</li>
+          <li>Example (C₃H₇OH): 1-propanol (OH at C1) vs 2-propanol (OH at C2)</li>
+        </ul>
+        <strong>3. Functional Group Isomerism:</strong>
+        <ul>
+          <li>Same molecular formula but different functional groups.</li>
+          <li>Example (C₂H₆O): Ethanol (CH₃CH₂OH — alcohol) vs dimethyl ether (CH₃–O–CH₃ — ether)</li>
+        </ul>
+        <strong>4. Metamerism:</strong>
+        <ul>
+          <li>Same functional group but different alkyl groups on either side.</li>
+          <li>Example: CH₃–O–C₂H₅ vs C₂H₅–O–C₂H₅ (ethers with same formula)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="q-row"><span class="q-num">Q23</span><div class="q-text">Explain the physical and chemical properties of alkanes. (15.1.4, 15.1.5, 15.1.6) <em>(4M)</em></div></div>
+      <div class="ans-box">
+        <strong>Physical Properties of Alkanes (15.1.4):</strong>
+        <ul>
+          <li><strong>State:</strong> C₁–C₄ = gases; C₅–C₁₇ = liquids; C₁₈+ = solids (at room temperature).</li>
+          <li><strong>Boiling/Melting point:</strong> Increases with increasing molecular mass (more London dispersion forces). Branched isomers have lower bp than straight chain (less surface area).</li>
+          <li><strong>Solubility:</strong> Insoluble in water (non-polar); soluble in organic solvents (like dissolves like).</li>
+          <li><strong>Density:</strong> Less dense than water (float on water).</li>
+        </ul>
+        <strong>Chemical Properties of Alkanes (15.1.5, 15.1.6):</strong>
+        <ul>
+          <li><strong>Combustion (complete):</strong>
+            <span class="fm">CH₄ + 2O₂ → CO₂ + 2H₂O + heat</span>
+            Alkanes are excellent fuels (high calorific value).
+          </li>
+          <li><strong>Halogenation (free radical substitution):</strong> In presence of UV light, H is replaced by halogen.
+            <span class="fm">CH₄ + Cl₂ → (hν) → CH₃Cl + HCl</span>
+            Mechanism: initiation → propagation → termination (free radical chain reaction).
+          </li>
+          <li><strong>Cracking (pyrolysis):</strong> Higher alkanes break down to smaller alkenes and alkanes at high temperature.
+            <span class="fm">C₁₆H₃₄ → (high T) → C₈H₁₈ + C₈H₁₆</span>
+          </li>
+          <li><strong>Isomerisation:</strong> Straight chain alkanes convert to branched isomers using AlCl₃/HCl catalyst (used in petroleum refining to improve octane rating).</li>
+        </ul>
+        <strong>Uses of Alkanes:</strong> Fuels (LPG, petrol, diesel), solvents (hexane), wax (paraffin), petrochemical raw materials.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- SUMMARY -->
+<div style="max-width:900px;margin:18px auto;background:#fff;border-radius:14px;padding:18px 22px;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+  <h3 style="color:#b71c1c;margin-bottom:12px;font-size:.95rem;">📊 RKT Chemistry — Full Paper Pattern Summary</h3>
+  <table class="bt">
+    <tr><th>Section</th><th>Questions</th><th>Type</th><th>Choice</th><th>Marks</th></tr>
+    <tr><td>A</td><td>Q1 (MCQ)</td><td>Objective</td><td>All 4 compulsory</td><td>4</td></tr>
+    <tr><td>A</td><td>Q2 (Very Short)</td><td>1 sentence</td><td>All 4 compulsory</td><td>4</td></tr>
+    <tr><td>B</td><td>Q3–Q13</td><td>Short Answer (3M each)</td><td>Any 4 of 11</td><td>12</td></tr>
+    <tr><td>C</td><td>Q14–Q19</td><td>Short Answer (3M each)</td><td>Any 4 of 6</td><td>12</td></tr>
+    <tr><td>D</td><td>Q20–Q23</td><td>Long Answer (4M each)</td><td>Any 2 of 4</td><td>8</td></tr>
+    <tr style="background:#fff3f3;"><td colspan="4"><strong>TOTAL</strong></td><td><strong>40</strong></td></tr>
+  </table>
+</div>
+
+<footer>
+  <p>Visions Classes — RKT Chemistry Section · visionslearning.in · <a href="notes-class11.html">← Back to Class 11 Notes</a></p>
+</footer>
+
+<!-- Circular Watermark -->
+<div style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;opacity:0.07;user-select:none;">
+  <svg width="340" height="340" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="170" cy="170" r="155" fill="none" stroke="#b71c1c" stroke-width="6"/>
+    <circle cx="170" cy="170" r="138" fill="none" stroke="#b71c1c" stroke-width="2"/>
+    <path id="trkt" fill="none" d="M 40,170 a130,130 0 1,1 260,0"/>
+    <path id="brkt" fill="none" d="M 40,170 a130,130 0 0,0 260,0"/>
+    <text font-size="21" font-weight="900" fill="#b71c1c" font-family="Arial,sans-serif" letter-spacing="5"><textPath href="#trkt" startOffset="10%">VISIONS CLASSES · VISIONSLEARNING.IN ·</textPath></text>
+    <text font-size="17" font-weight="900" fill="#b71c1c" font-family="Arial,sans-serif" letter-spacing="3"><textPath href="#brkt" startOffset="12%">CHEMISTRY · CLASS 11 · RKT COLLEGE</textPath></text>
+    <text x="170" y="155" text-anchor="middle" font-size="26" font-weight="900" fill="#b71c1c" font-family="Arial,sans-serif">VISIONS</text>
+    <text x="170" y="188" text-anchor="middle" font-size="26" font-weight="900" fill="#b71c1c" font-family="Arial,sans-serif">CLASSES</text>
+    <text x="170" y="216" text-anchor="middle" font-size="12" font-weight="700" fill="#b71c1c" font-family="Arial,sans-serif" letter-spacing="2">★ RKT CHEMISTRY ★</text>
+  </svg>
+</div>
+
+</body>
+</html>
