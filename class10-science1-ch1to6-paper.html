@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Class 10 Science 1 — Ch.1 to 6 Question Paper | Maharashtra Board</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#1a1a1a;min-height:100vh;}
+
+  .site-header{background:linear-gradient(135deg,#4a148c,#6a1b9a,#7b1fa2);padding:14px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 3px 12px rgba(0,0,0,.3);}
+  .site-header a{color:#ce93d8;text-decoration:none;font-size:.85rem;font-weight:600;}
+  .site-header a:hover{color:#fff;}
+  .header-title{color:#fff;font-size:1.1rem;font-weight:800;}
+
+  .paper-hero{background:linear-gradient(135deg,#4a148c 0%,#6a1b9a 40%,#0d47a1 100%);padding:36px 20px 30px;text-align:center;color:#fff;}
+  .paper-hero .board-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:5px 18px;font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
+  .paper-hero h1{font-size:1.65rem;font-weight:900;line-height:1.25;margin-bottom:8px;}
+  .paper-hero .sub{font-size:.92rem;color:rgba(255,255,255,.85);margin-bottom:18px;}
+  .marks-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+  .marks-pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:22px;padding:7px 16px;font-size:.82rem;font-weight:700;}
+
+  .chapters-strip{max-width:860px;margin:18px auto 0;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:0 12px;}
+  .ch-tag{background:#fff;color:#4a148c;font-size:.72rem;font-weight:800;padding:5px 12px;border-radius:14px;border:2px solid #ce93d8;}
+
+  .instructions{background:#f3e5f5;border-left:4px solid #6a1b9a;margin:18px auto;max-width:860px;padding:14px 20px;border-radius:8px;font-size:.88rem;line-height:1.7;}
+  .instructions strong{color:#4a148c;}
+
+  .section{max-width:860px;margin:18px auto;background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden;}
+  .section-header{padding:14px 22px;display:flex;align-items:center;gap:12px;}
+  .section-header .qno{background:#fff;font-weight:900;font-size:1rem;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .section-header .qtitle{color:#fff;font-size:1rem;font-weight:800;flex:1;line-height:1.3;}
+  .section-header .qmarks{background:rgba(255,255,255,.2);color:#fff;font-size:.8rem;font-weight:700;padding:4px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.35);white-space:nowrap;}
+
+  /* colour per Q */
+  .hdr-q1{background:linear-gradient(135deg,#1565c0,#1976d2);}
+  .hdr-q1 .qno{color:#1565c0;}
+  .hdr-q2{background:linear-gradient(135deg,#2e7d32,#388e3c);}
+  .hdr-q2 .qno{color:#2e7d32;}
+  .hdr-q3{background:linear-gradient(135deg,#e65100,#f57c00);}
+  .hdr-q3 .qno{color:#e65100;}
+  .hdr-q4{background:linear-gradient(135deg,#6a1b9a,#7b1fa2);}
+  .hdr-q4 .qno{color:#6a1b9a;}
+  .hdr-q5{background:linear-gradient(135deg,#00695c,#00897b);}
+  .hdr-q5 .qno{color:#00695c;}
+  .hdr-q6{background:linear-gradient(135deg,#880e4f,#ad1457);}
+  .hdr-q6 .qno{color:#880e4f;}
+  .hdr-q7{background:linear-gradient(135deg,#e65100,#bf360c);}
+  .hdr-q7 .qno{color:#bf360c;}
+
+  .section-body{padding:20px 24px;}
+
+  /* chapter label */
+  .ch-label{display:inline-block;font-size:.7rem;font-weight:800;padding:2px 9px;border-radius:8px;margin-bottom:6px;text-transform:uppercase;letter-spacing:.8px;}
+  .ch1{background:#e3f2fd;color:#0d47a1;}
+  .ch2{background:#fce4ec;color:#880e4f;}
+  .ch3{background:#e8f5e9;color:#1b5e20;}
+  .ch4{background:#fff3e0;color:#e65100;}
+  .ch5{background:#f3e5f5;color:#4a148c;}
+  .ch6{background:#e0f7fa;color:#006064;}
+
+  /* MCQ */
+  .mcq-item{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid #e8edf2;}
+  .mcq-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+  .mcq-q{font-size:.93rem;font-weight:700;color:#1a1a1a;margin-bottom:10px;line-height:1.5;}
+  .mcq-options{display:grid;grid-template-columns:1fr 1fr;gap:7px;}
+  .opt{background:#f5f7fa;border:1.5px solid #e0e7ef;border-radius:8px;padding:7px 12px;font-size:.86rem;}
+  .opt.correct{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700;}
+  .ans-badge{display:inline-block;background:#e8f5e9;color:#1b5e20;font-size:.76rem;font-weight:700;padding:3px 10px;border-radius:10px;margin-top:7px;border:1px solid #a5d6a7;}
+
+  /* T/F */
+  .tf-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #f0f4f8;}
+  .tf-item:last-child{border-bottom:none;}
+  .tf-num{font-weight:900;color:#2e7d32;min-width:22px;font-size:.88rem;}
+  .tf-q{font-size:.88rem;line-height:1.5;flex:1;}
+  .tf-ans{font-size:.78rem;font-weight:700;padding:3px 10px;border-radius:10px;white-space:nowrap;flex-shrink:0;}
+  .tf-true{background:#e8f5e9;color:#1b5e20;border:1px solid #a5d6a7;}
+  .tf-false{background:#ffebee;color:#b71c1c;border:1px solid #ef9a9a;}
+  .tf-correction{font-size:.8rem;color:#b71c1c;padding:3px 34px 8px;background:#fff3f3;border-radius:6px;}
+
+  /* Match */
+  .match-wrap{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .match-col h4{font-size:.8rem;font-weight:800;color:#e65100;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+  .match-row{padding:7px 11px;background:#f5f7fa;border-radius:7px;font-size:.86rem;margin-bottom:5px;border:1px solid #e0e7ef;}
+  .match-key{font-weight:700;color:#e65100;}
+  .match-ans-table{margin-top:12px;width:100%;border-collapse:collapse;font-size:.83rem;}
+  .match-ans-table th{background:#e65100;color:#fff;padding:7px 12px;text-align:left;}
+  .match-ans-table td{padding:7px 12px;border-bottom:1px solid #e8edf2;}
+  .match-ans-table tr:last-child td{border-bottom:none;}
+  .match-ans-table tr:nth-child(even) td{background:#fff3e0;}
+
+  /* One-sentence */
+  .os-item{padding:11px 0;border-bottom:1px solid #f0f4f8;}
+  .os-item:last-child{border-bottom:none;}
+  .os-q{font-size:.9rem;font-weight:700;color:#1a1a1a;margin-bottom:5px;}
+  .os-a{font-size:.86rem;color:#1b5e20;background:#f1f8e9;border-left:3px solid #66bb6a;padding:7px 11px;border-radius:0 7px 7px 0;line-height:1.55;}
+
+  /* Short / Brief */
+  .sn-item{padding:13px 0;border-bottom:1px solid #f0f4f8;}
+  .sn-item:last-child{border-bottom:none;}
+  .sn-q{font-size:.91rem;font-weight:700;color:#1a1a1a;margin-bottom:7px;}
+  .sn-marks{font-size:.74rem;color:#888;font-weight:600;margin-left:5px;}
+  .sn-a{font-size:.86rem;color:#1a1a1a;line-height:1.7;background:#f8fafc;border-left:3px solid #6a1b9a;padding:10px 13px;border-radius:0 8px 8px 0;}
+  .sn-a ul{padding-left:17px;margin-top:4px;}
+  .sn-a ul li{margin-bottom:4px;}
+  .sn-a .formula{font-family:monospace;background:#e3f2fd;color:#0d47a1;padding:2px 8px;border-radius:6px;font-weight:700;display:inline-block;margin:3px 0;}
+  .diagram-note{background:#e8eaf6;border:1.5px dashed #5c6bc0;border-radius:9px;padding:10px 14px;font-size:.8rem;color:#3949ab;margin-top:10px;text-align:center;}
+
+  /* Numericals */
+  .num-item{padding:13px 0;border-bottom:1px solid #f0f4f8;}
+  .num-item:last-child{border-bottom:none;}
+  .num-q{font-size:.91rem;font-weight:700;color:#1a1a1a;margin-bottom:7px;}
+  .num-solution{background:#fff8e1;border-left:3px solid #f9a825;padding:11px 13px;border-radius:0 8px 8px 0;font-size:.86rem;line-height:1.8;}
+  .num-solution .step{margin-bottom:3px;}
+  .num-solution .formula{font-family:monospace;background:#fff3cd;color:#7c5700;padding:2px 8px;border-radius:6px;font-weight:700;display:inline-block;margin:2px 0;}
+  .num-solution .final{font-weight:800;color:#1b5e20;background:#e8f5e9;padding:5px 12px;border-radius:8px;display:inline-block;margin-top:6px;}
+
+  footer{text-align:center;padding:26px 16px;font-size:.8rem;color:#888;margin-top:8px;}
+  footer a{color:#6a1b9a;text-decoration:none;}
+
+  @media(max-width:600px){
+    .mcq-options{grid-template-columns:1fr;}
+    .match-wrap{grid-template-columns:1fr;}
+    .paper-hero h1{font-size:1.25rem;}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="site-header">
+  <a href="notes-class10.html">← Class 10 Notes</a>
+  <span style="color:rgba(255,255,255,.4);">|</span>
+  <span class="header-title">Science 1 — Ch.1 to 6 Combined Paper</span>
+</div>
+
+<!-- HERO -->
+<div class="paper-hero">
+  <div class="board-tag">Maharashtra State Board · SSC Class 10</div>
+  <h1>Science Part 1<br>Chapter 1 to 6 — Question Paper with Answers</h1>
+  <div class="sub">Board Pattern · 40 Marks · All Questions Compulsory</div>
+  <div class="marks-row">
+    <div class="marks-pill">📋 Total: 40 Marks</div>
+    <div class="marks-pill">⏱ Time: 2 Hours</div>
+    <div class="marks-pill">📖 Ch.1–6 Combined</div>
+  </div>
+</div>
+
+<!-- CHAPTER TAGS -->
+<div class="chapters-strip">
+  <span class="ch-tag">Ch1: Gravitation</span>
+  <span class="ch-tag">Ch2: Periodic Classification</span>
+  <span class="ch-tag">Ch3: Chemical Reactions</span>
+  <span class="ch-tag">Ch4: Effects of Electric Current</span>
+  <span class="ch-tag">Ch5: Heat</span>
+  <span class="ch-tag">Ch6: Refraction of Light</span>
+</div>
+
+<!-- INSTRUCTIONS -->
+<div class="instructions" style="margin-top:16px;">
+  <strong>General Instructions:</strong>
+  All questions are compulsory. Figures to the right indicate marks for each question.
+  Answers are provided below each question for reference and self-evaluation.
+  Draw neat labelled diagrams wherever necessary.
+</div>
+
+<!-- ══════════════════════════════════════════
+     Q1 — MCQ (5 Marks)
+════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header hdr-q1">
+    <div class="qno">1</div>
+    <div class="qtitle">Choose the correct alternative and rewrite the statement.</div>
+    <div class="qmarks">5 Marks</div>
+  </div>
+  <div class="section-body">
+
+    <div class="mcq-item">
+      <span class="ch-label ch1">Ch1 · Gravitation</span>
+      <div class="mcq-q">i. The value of universal gravitational constant G is ________.</div>
+      <div class="mcq-options">
+        <div class="opt correct">a) 6.673 × 10⁻¹¹ N·m²/kg²</div>
+        <div class="opt">b) 9.8 m/s²</div>
+        <div class="opt">c) 6.673 × 10¹¹ N·m²/kg²</div>
+        <div class="opt">d) 6.023 × 10²³</div>
+      </div>
+      <span class="ans-badge">✓ Answer: (a) 6.673 × 10⁻¹¹ N·m²/kg²</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="ch-label ch2">Ch2 · Periodic Classification</span>
+      <div class="mcq-q">ii. The period of an element in the Modern Periodic Table indicates ________.</div>
+      <div class="mcq-options">
+        <div class="opt">a) number of electrons</div>
+        <div class="opt correct">b) number of electron shells (orbits)</div>
+        <div class="opt">c) atomic mass</div>
+        <div class="opt">d) valency</div>
+      </div>
+      <span class="ans-badge">✓ Answer: (b) number of electron shells (orbits)</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="ch-label ch3">Ch3 · Chemical Reactions</span>
+      <div class="mcq-q">iii. The chemical equation for rusting of iron is ________.</div>
+      <div class="mcq-options">
+        <div class="opt">a) 4Fe + 3O₂ → 2Fe₂O₃</div>
+        <div class="opt correct">b) 4Fe + 3O₂ + xH₂O → 2Fe₂O₃.xH₂O</div>
+        <div class="opt">c) Fe + H₂O → FeO + H₂</div>
+        <div class="opt">d) Fe + 2HCl → FeCl₂ + H₂</div>
+      </div>
+      <span class="ans-badge">✓ Answer: (b) 4Fe + 3O₂ + xH₂O → 2Fe₂O₃.xH₂O</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="ch-label ch5">Ch5 · Heat</span>
+      <div class="mcq-q">iv. The SI unit of heat is ________.</div>
+      <div class="mcq-options">
+        <div class="opt">a) Calorie</div>
+        <div class="opt">b) Celsius</div>
+        <div class="opt correct">c) Joule</div>
+        <div class="opt">d) Kelvin</div>
+      </div>
+      <span class="ans-badge">✓ Answer: (c) Joule</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="ch-label ch6">Ch6 · Refraction of Light</span>
+      <div class="mcq-q">v. When a ray of light passes from air to glass (denser medium), it bends ________.</div>
+      <div class="mcq-options">
+        <div class="opt correct">a) towards the normal</div>
+        <div class="opt">b) away from the normal</div>
+        <div class="opt">c) along the normal</div>
+        <div class="opt">d) does not bend</div>
+      </div>
+      <span class="ans-badge">✓ Answer: (a) towards the normal</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     Q2 — True or False (5 Marks)
+════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header hdr-q2">
+    <div class="qno">2</div>
+    <div class="qtitle">State whether the following statements are True or False. If false, rewrite the correct statement.</div>
+    <div class="qmarks">5 Marks</div>
+  </div>
+  <div class="section-body">
+
+    <div class="tf-item">
+      <span class="tf-num">i.</span>
+      <div style="flex:1;">
+        <span class="ch-label ch1">Ch1</span>
+        <div class="tf-q">The acceleration due to gravity (g) on the surface of the Moon is approximately equal to that on Earth.</div>
+      </div>
+      <span class="tf-ans tf-false">FALSE</span>
+    </div>
+    <div class="tf-correction">✎ Correct: g on Moon ≈ 1.63 m/s², which is about 1/6th of g on Earth (9.8 m/s²).</div>
+
+    <div class="tf-item">
+      <span class="tf-num">ii.</span>
+      <div style="flex:1;">
+        <span class="ch-label ch2">Ch2</span>
+        <div class="tf-q">In the Modern Periodic Table, elements are arranged in order of increasing atomic number.</div>
+      </div>
+      <span class="tf-ans tf-true">TRUE</span>
+    </div>
+
+    <div class="tf-item">
+      <span class="tf-num">iii.</span>
+      <div style="flex:1;">
+        <span class="ch-label ch3">Ch3</span>
+        <div class="tf-q">A combination reaction is one in which a single compound breaks down into two or more simpler substances.</div>
+      </div>
+      <span class="tf-ans tf-false">FALSE</span>
+    </div>
+    <div class="tf-correction">✎ Correct: A decomposition reaction breaks a compound into simpler substances; a combination reaction combines substances to form one product.</div>
+
+    <div class="tf-item">
+      <span class="tf-num">iv.</span>
+      <div style="flex:1;">
+        <span class="ch-label ch4">Ch4</span>
+        <div class="tf-q">The heating effect of electric current is used in electric bulbs and electric irons.</div>
+      </div>
+      <span class="tf-ans tf-true">TRUE</span>
+    </div>
+
+    <div class="tf-item">
+      <span class="tf-num">v.</span>
+      <div style="flex:1;">
+        <span class="ch-label ch6">Ch6</span>
+        <div class="tf-q">Refraction of light occurs because light changes its speed when it travels from one medium to another.</div>
+      </div>
+      <span class="tf-ans tf-true">TRUE</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     Q3 — Match the Columns (5 Marks)
+════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header hdr-q3">
+    <div class="qno">3</div>
+    <div class="qtitle">Match the columns A and B.</div>
+    <div class="qmarks">5 Marks</div>
+  </div>
+  <div class="section-body">
+    <div class="match-wrap">
+      <div>
+        <h4>Column A</h4>
+        <div class="match-row"><span class="match-key">A.</span> Gravitational potential energy</div>
+        <div class="match-row"><span class="match-key">B.</span> Mendeleev's Periodic Law</div>
+        <div class="match-row"><span class="match-key">C.</span> Displacement reaction</div>
+        <div class="match-row"><span class="match-key">D.</span> Joule's Law of Heating</div>
+        <div class="match-row"><span class="match-key">E.</span> Snell's Law</div>
+      </div>
+      <div>
+        <h4>Column B</h4>
+        <div class="match-row">1. sin i / sin r = constant</div>
+        <div class="match-row">2. H = I²Rt</div>
+        <div class="match-row">3. mgh</div>
+        <div class="match-row">4. Properties are periodic function of atomic mass</div>
+        <div class="match-row">5. More reactive metal replaces less reactive metal</div>
+      </div>
+    </div>
+    <table class="match-ans-table">
+      <tr><th>Column A</th><th>Match</th><th>Column B</th></tr>
+      <tr><td>A. Gravitational potential energy</td><td>→ 3</td><td>mgh</td></tr>
+      <tr><td>B. Mendeleev's Periodic Law</td><td>→ 4</td><td>Properties are periodic function of atomic mass</td></tr>
+      <tr><td>C. Displacement reaction</td><td>→ 5</td><td>More reactive metal replaces less reactive metal</td></tr>
+      <tr><td>D. Joule's Law of Heating</td><td>→ 2</td><td>H = I²Rt</td></tr>
+      <tr><td>E. Snell's Law</td><td>→ 1</td><td>sin i / sin r = constant</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     Q4 — Answer in One Sentence (5 Marks)
+════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header hdr-q4">
+    <div class="qno">4</div>
+    <div class="qtitle">Answer the following questions in one sentence each.</div>
+    <div class="qmarks">5 Marks</div>
+  </div>
+  <div class="section-body">
+
+    <div class="os-item">
+      <div class="os-q"><span class="ch-label ch1">Ch1</span> i. State Newton's Universal Law of Gravitation.</div>
+      <div class="os-a">Every object in the universe attracts every other object with a force directly proportional to the product of their masses and inversely proportional to the square of the distance between them: F = Gm₁m₂/d².</div>
+    </div>
+
+    <div class="os-item">
+      <div class="os-q"><span class="ch-label ch2">Ch2</span> ii. What is meant by 'periodicity of properties' in the Modern Periodic Table?</div>
+      <div class="os-a">The repetition of similar physical and chemical properties of elements at regular intervals when arranged in order of increasing atomic number is called periodicity of properties.</div>
+    </div>
+
+    <div class="os-item">
+      <div class="os-q"><span class="ch-label ch3">Ch3</span> iii. What is a balanced chemical equation?</div>
+      <div class="os-a">A balanced chemical equation is one in which the number of atoms of each element is equal on both the reactant side and the product side, obeying the law of conservation of mass.</div>
+    </div>
+
+    <div class="os-item">
+      <div class="os-q"><span class="ch-label ch4">Ch4</span> iv. State Joule's law of heating.</div>
+      <div class="os-a">Joule's law states that the heat produced in a conductor is directly proportional to the square of the current (I²), the resistance (R), and the time (t) for which the current flows: H = I²Rt.</div>
+    </div>
+
+    <div class="os-item">
+      <div class="os-q"><span class="ch-label ch6">Ch6</span> v. Define the refractive index of a medium.</div>
+      <div class="os-a">The refractive index of a medium is the ratio of the speed of light in vacuum (c) to the speed of light in that medium (v): n = c/v.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     Q5 — Short Notes (6 Marks — Any 3)
+════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header hdr-q5">
+    <div class="qno">5</div>
+    <div class="qtitle">Write short notes. (Any 3 out of 5)</div>
+    <div class="qmarks">6 Marks</div>
+  </div>
+  <div class="section-body">
+
+    <div class="sn-item">
+      <div class="sn-q"><span class="ch-label ch1">Ch1</span> A. Free fall and acceleration due to gravity <span class="sn-marks">(2 marks)</span></div>
+      <div class="sn-a">
+        <ul>
+          <li><strong>Free fall:</strong> When an object falls only under the influence of gravity (no air resistance), it is said to be in free fall.</li>
+          <li>During free fall, the only force acting is gravitational force.</li>
+          <li><strong>Acceleration due to gravity (g):</strong> The acceleration produced in a freely falling object due to Earth's gravity is g = 9.8 m/s² (near Earth's surface).</li>
+          <li>g is directed downward (towards Earth's centre).</li>
+          <li>Equations of motion apply: v = u + gt; s = ut + ½gt²; v² = u² + 2gs</li>
+          <li>For a freely falling body from rest: u = 0, so v = gt and s = ½gt².</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sn-item">
+      <div class="sn-q"><span class="ch-label ch2">Ch2</span> B. Dobereiner's Triads and Newlands' Octave Law <span class="sn-marks">(2 marks)</span></div>
+      <div class="sn-a">
+        <ul>
+          <li><strong>Dobereiner's Triads (1829):</strong> Dobereiner grouped elements into triads (groups of 3) where the atomic mass of the middle element was approximately the arithmetic mean of the other two. E.g., Li (7), Na (23), K (39) — Na ≈ (7+39)/2 = 23. ✓</li>
+          <li>Limitation: Could not be applied to all known elements.</li>
+          <li><strong>Newlands' Law of Octaves (1866):</strong> When elements are arranged in increasing order of atomic mass, every 8th element has properties similar to the 1st (like musical octaves). E.g., Li, Be, B, C, N, O, F, Na (Na similar to Li).</li>
+          <li>Limitation: Only worked up to Calcium; failed for heavier elements.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sn-item">
+      <div class="sn-q"><span class="ch-label ch3">Ch3</span> C. Types of Chemical Reactions <span class="sn-marks">(2 marks)</span></div>
+      <div class="sn-a">
+        <ul>
+          <li><strong>1. Combination:</strong> Two or more substances combine to form a single product. A + B → AB. E.g., 2H₂ + O₂ → 2H₂O</li>
+          <li><strong>2. Decomposition:</strong> A single compound breaks into two or more simpler substances. AB → A + B. E.g., 2H₂O → 2H₂ + O₂ (electrolysis)</li>
+          <li><strong>3. Displacement:</strong> A more reactive element displaces a less reactive element from its salt solution. E.g., Zn + CuSO₄ → ZnSO₄ + Cu</li>
+          <li><strong>4. Double Displacement:</strong> Exchange of ions between two compounds. E.g., NaCl + AgNO₃ → AgCl↓ + NaNO₃</li>
+          <li><strong>5. Oxidation-Reduction (Redox):</strong> Simultaneous oxidation and reduction. E.g., CuO + H₂ → Cu + H₂O</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sn-item">
+      <div class="sn-q"><span class="ch-label ch4">Ch4</span> D. Magnetic Effect of Electric Current (Electromagnet) <span class="sn-marks">(2 marks)</span></div>
+      <div class="sn-a">
+        <ul>
+          <li>When electric current flows through a conductor, it produces a magnetic field around it. This is the <strong>magnetic effect of electric current</strong> (discovered by Oersted, 1820).</li>
+          <li>A <strong>solenoid</strong> (coil of wire) carrying current acts like a bar magnet — it has N and S poles.</li>
+          <li>An <strong>electromagnet</strong> is made by winding an insulated wire around a soft iron core and passing current through it.</li>
+          <li>Magnetic field strength increases with: more turns in coil, higher current, soft iron core.</li>
+          <li><strong>Applications:</strong> Electric bell, electric motor, loudspeaker, MRI machines, cranes for lifting iron/steel.</li>
+        </ul>
+        <div class="diagram-note">📐 Diagram: Solenoid with soft iron core, battery, switch — label N-pole, S-pole, magnetic field lines.</div>
+      </div>
+    </div>
+
+    <div class="sn-item">
+      <div class="sn-q"><span class="ch-label ch5">Ch5</span> E. Specific Heat Capacity <span class="sn-marks">(2 marks)</span></div>
+      <div class="sn-a">
+        <ul>
+          <li><strong>Definition:</strong> Specific heat capacity of a substance is the amount of heat required to raise the temperature of 1 kg of that substance by 1°C (or 1 K).</li>
+          <li><strong>Symbol:</strong> c (or s) &nbsp; <strong>SI Unit:</strong> J/(kg·K) or J/(kg·°C)</li>
+          <li><strong>Formula:</strong> <span class="formula">Q = mcΔT</span> where m = mass, ΔT = change in temperature.</li>
+          <li>Specific heat of water = 4200 J/(kg·K) — very high, makes water a good coolant.</li>
+          <li>Specific heat of iron = 470 J/(kg·K); copper = 385 J/(kg·K).</li>
+          <li>Higher specific heat → substance heats up and cools down slowly.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     Q6 — Brief Answer (8 Marks — Any 2)
+════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header hdr-q6">
+    <div class="qno">6</div>
+    <div class="qtitle">Answer the following questions in brief. (Any 2 out of 3)</div>
+    <div class="qmarks">8 Marks</div>
+  </div>
+  <div class="section-body">
+
+    <div class="sn-item">
+      <div class="sn-q"><span class="ch-label ch1">Ch1</span> A. State and explain Newton's Law of Gravitation. Derive the expression for gravitational force. <span class="sn-marks">(4 marks)</span></div>
+      <div class="sn-a">
+        <strong>Newton's Universal Law of Gravitation:</strong>
+        <ul>
+          <li>Every object in the universe attracts every other object with a force which is:
+            <br>→ Directly proportional to the product of their masses (m₁ × m₂)
+            <br>→ Inversely proportional to the square of the distance (d²) between them.
+          </li>
+          <li><strong>Mathematical Expression:</strong>
+            <div class="formula">F ∝ m₁ × m₂ / d²</div>
+            <div class="formula">F = G × m₁ × m₂ / d²</div>
+            where G = 6.673 × 10⁻¹¹ N·m²/kg² (Universal Gravitational Constant)
+          </li>
+          <li><strong>Characteristics of Gravitational Force:</strong>
+            <ul>
+              <li>It is always attractive (never repulsive).</li>
+              <li>It acts along the line joining the centres of two objects.</li>
+              <li>It is a long-range force — acts even over very large distances.</li>
+              <li>It does not need any medium — acts through vacuum.</li>
+              <li>It is the weakest of all fundamental forces.</li>
+            </ul>
+          </li>
+          <li><strong>Relationship between g and G:</strong>
+            <div class="formula">g = GM/R²</div>
+            M = mass of Earth, R = radius of Earth, g = 9.8 m/s²
+          </li>
+        </ul>
+        <div class="diagram-note">📐 Diagram: Two masses m₁ and m₂ separated by distance d. Show force F arrows pointing toward each other.</div>
+      </div>
+    </div>
+
+    <div class="sn-item">
+      <div class="sn-q"><span class="ch-label ch3">Ch3</span> B. What is a chemical equation? Explain the importance of balancing a chemical equation with an example. <span class="sn-marks">(4 marks)</span></div>
+      <div class="sn-a">
+        <strong>Chemical Equation:</strong>
+        <ul>
+          <li>A chemical equation is a symbolic representation of a chemical reaction using chemical formulae of reactants and products, separated by an arrow (→).</li>
+          <li>Reactants are written on the left side; products on the right.</li>
+          <li>E.g., Hydrogen + Oxygen → Water: H₂ + O₂ → H₂O (unbalanced)</li>
+        </ul>
+        <strong>Why Balance a Chemical Equation?</strong>
+        <ul>
+          <li>Based on the <strong>Law of Conservation of Mass</strong>: Matter can neither be created nor destroyed in a chemical reaction.</li>
+          <li>The total mass of reactants = total mass of products.</li>
+          <li>Number of atoms of each element must be equal on both sides.</li>
+        </ul>
+        <strong>Example — Balancing H₂ + O₂ → H₂O:</strong>
+        <ul>
+          <li>Unbalanced: H₂ + O₂ → H₂O (Left: 2H, 2O; Right: 2H, 1O — O not balanced)</li>
+          <li>Step 1: Place 2 before H₂O → H₂ + O₂ → 2H₂O (Left: 2H, 2O; Right: 4H, 2O — H not balanced)</li>
+          <li>Step 2: Place 2 before H₂ → 2H₂ + O₂ → 2H₂O (Left: 4H, 2O; Right: 4H, 2O ✓)</li>
+          <li><span class="formula">2H₂ + O₂ → 2H₂O ✓ (Balanced)</span></li>
+        </ul>
+        <strong>Information from a Balanced Equation:</strong>
+        <ul>
+          <li>Reactants and products, their physical states (s, l, g, aq), molar ratios, heat changes (exo/endothermic).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sn-item">
+      <div class="sn-q"><span class="ch-label ch6">Ch6</span> C. Explain refraction of light with laws. What is Total Internal Reflection? State its conditions and one application. <span class="sn-marks">(4 marks)</span></div>
+      <div class="sn-a">
+        <strong>Refraction of Light:</strong>
+        <ul>
+          <li>The bending of light when it travels obliquely from one transparent medium to another of different optical density is called refraction.</li>
+          <li>Occurs because the speed of light differs in different media.</li>
+        </ul>
+        <strong>Laws of Refraction:</strong>
+        <ul>
+          <li><strong>1st Law:</strong> Incident ray, refracted ray and normal at point of incidence are all in the same plane.</li>
+          <li><strong>2nd Law (Snell's):</strong> <span class="formula">sin i / sin r = n = constant</span></li>
+          <li>Air → Glass (denser): angle of refraction &lt; angle of incidence (bends towards normal).</li>
+          <li>Glass → Air (rarer): angle of refraction &gt; angle of incidence (bends away from normal).</li>
+        </ul>
+        <strong>Total Internal Reflection (TIR):</strong>
+        <ul>
+          <li>When light travels from denser to rarer medium and the angle of incidence exceeds the critical angle, light is completely reflected back into the denser medium.</li>
+          <li><strong>Conditions:</strong> (1) Light must go from denser to rarer medium. (2) Angle of incidence must exceed the critical angle C, where <span class="formula">sin C = 1/n</span>.</li>
+          <li><strong>Application:</strong> Optical fibres use TIR to transmit light signals over long distances without loss — used in internet cables and medical endoscopes.</li>
+        </ul>
+        <div class="diagram-note">📐 Diagram: (1) Refraction at glass-air interface with i &lt; C, i = C, i &gt; C. (2) Optical fibre showing repeated TIR.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     Q7 — Numericals (6 Marks — Any 3)
+════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header hdr-q7">
+    <div class="qno">7</div>
+    <div class="qtitle">Solve the following numericals. (Any 3 out of 5)</div>
+    <div class="qmarks">6 Marks</div>
+  </div>
+  <div class="section-body">
+
+    <div class="num-item">
+      <div class="num-q"><span class="ch-label ch1">Ch1</span> A. Find the gravitational force between two objects of masses 50 kg and 80 kg placed 2 m apart. (G = 6.673 × 10⁻¹¹ N·m²/kg²) <span style="font-size:.74rem;color:#888;">(2 marks)</span></div>
+      <div class="num-solution">
+        <div class="step"><strong>Given:</strong> m₁ = 50 kg, m₂ = 80 kg, d = 2 m, G = 6.673 × 10⁻¹¹</div>
+        <div class="step"><strong>Formula:</strong> <span class="formula">F = Gm₁m₂ / d²</span></div>
+        <div class="step">F = (6.673 × 10⁻¹¹ × 50 × 80) / (2)²</div>
+        <div class="step">F = (6.673 × 10⁻¹¹ × 4000) / 4</div>
+        <div class="step">F = 6.673 × 10⁻¹¹ × 1000</div>
+        <div class="final">∴ F = 6.673 × 10⁻⁸ N</div>
+      </div>
+    </div>
+
+    <div class="num-item">
+      <div class="num-q"><span class="ch-label ch1">Ch1</span> B. A stone is dropped from a height of 80 m. Calculate the time taken to reach the ground. (g = 10 m/s²) <span style="font-size:.74rem;color:#888;">(2 marks)</span></div>
+      <div class="num-solution">
+        <div class="step"><strong>Given:</strong> s = 80 m, u = 0 m/s, g = 10 m/s²</div>
+        <div class="step"><strong>Formula:</strong> <span class="formula">s = ut + ½gt²</span></div>
+        <div class="step">80 = 0 + ½ × 10 × t²</div>
+        <div class="step">80 = 5t²</div>
+        <div class="step">t² = 80/5 = 16</div>
+        <div class="step">t = √16</div>
+        <div class="final">∴ Time = 4 seconds</div>
+      </div>
+    </div>
+
+    <div class="num-item">
+      <div class="num-q"><span class="ch-label ch4">Ch4</span> C. A resistor of 20 Ω is connected to a 100 V supply. Calculate the heat produced in 5 minutes. <span style="font-size:.74rem;color:#888;">(2 marks)</span></div>
+      <div class="num-solution">
+        <div class="step"><strong>Given:</strong> R = 20 Ω, V = 100 V, t = 5 min = 300 s</div>
+        <div class="step">Current I = V/R = 100/20 = 5 A</div>
+        <div class="step"><strong>Formula:</strong> <span class="formula">H = I²Rt</span></div>
+        <div class="step">H = (5)² × 20 × 300</div>
+        <div class="step">H = 25 × 20 × 300</div>
+        <div class="final">∴ Heat produced H = 1,50,000 J = 1.5 × 10⁵ J</div>
+      </div>
+    </div>
+
+    <div class="num-item">
+      <div class="num-q"><span class="ch-label ch5">Ch5</span> D. Calculate the heat required to raise the temperature of 2 kg of water from 25°C to 75°C. (Specific heat of water = 4200 J/kg·K) <span style="font-size:.74rem;color:#888;">(2 marks)</span></div>
+      <div class="num-solution">
+        <div class="step"><strong>Given:</strong> m = 2 kg, T₁ = 25°C, T₂ = 75°C, c = 4200 J/kg·K</div>
+        <div class="step">ΔT = T₂ – T₁ = 75 – 25 = 50°C = 50 K</div>
+        <div class="step"><strong>Formula:</strong> <span class="formula">Q = mcΔT</span></div>
+        <div class="step">Q = 2 × 4200 × 50</div>
+        <div class="final">∴ Q = 4,20,000 J = 4.2 × 10⁵ J</div>
+      </div>
+    </div>
+
+    <div class="num-item">
+      <div class="num-q"><span class="ch-label ch6">Ch6</span> E. The speed of light in vacuum is 3 × 10⁸ m/s. The refractive index of glass is 1.5. Find the speed of light in glass. <span style="font-size:.74rem;color:#888;">(2 marks)</span></div>
+      <div class="num-solution">
+        <div class="step"><strong>Given:</strong> c = 3 × 10⁸ m/s, n = 1.5</div>
+        <div class="step"><strong>Formula:</strong> <span class="formula">n = c / v → v = c / n</span></div>
+        <div class="step">v = (3 × 10⁸) / 1.5</div>
+        <div class="final">∴ Speed of light in glass = 2 × 10⁸ m/s</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MARKS TABLE -->
+<div style="max-width:860px;margin:20px auto;background:#fff;border-radius:14px;padding:20px 24px;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+  <h3 style="color:#4a148c;margin-bottom:14px;font-size:1rem;">📊 Marks Distribution</h3>
+  <table style="width:100%;border-collapse:collapse;font-size:.87rem;">
+    <tr style="background:linear-gradient(135deg,#4a148c,#6a1b9a);color:#fff;">
+      <th style="padding:8px 14px;text-align:left;">Q</th>
+      <th style="padding:8px 14px;text-align:left;">Type</th>
+      <th style="padding:8px 14px;text-align:left;">Chapters Covered</th>
+      <th style="padding:8px 14px;text-align:center;">Marks</th>
+    </tr>
+    <tr><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">Q1</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">MCQ</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">Ch1, Ch2, Ch3, Ch5, Ch6</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;text-align:center;font-weight:700;">5</td></tr>
+    <tr style="background:#f8fafc;"><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">Q2</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">True/False</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">Ch1, Ch2, Ch3, Ch4, Ch6</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;text-align:center;font-weight:700;">5</td></tr>
+    <tr><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">Q3</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">Match Columns</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">Ch1, Ch2, Ch3, Ch4, Ch6</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;text-align:center;font-weight:700;">5</td></tr>
+    <tr style="background:#f8fafc;"><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">Q4</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">One Sentence</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">Ch1, Ch2, Ch3, Ch4, Ch6</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;text-align:center;font-weight:700;">5</td></tr>
+    <tr><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">Q5</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">Short Notes (Any 3×2)</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">Ch1, Ch2, Ch3, Ch4, Ch5</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;text-align:center;font-weight:700;">6</td></tr>
+    <tr style="background:#f8fafc;"><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">Q6</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">Brief Answer (Any 2×4)</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;">Ch1, Ch3, Ch6</td><td style="padding:8px 14px;border-bottom:1px solid #e8edf2;text-align:center;font-weight:700;">8</td></tr>
+    <tr><td style="padding:8px 14px;">Q7</td><td style="padding:8px 14px;">Numericals (Any 3×2)</td><td style="padding:8px 14px;">Ch1, Ch1, Ch4, Ch5, Ch6</td><td style="padding:8px 14px;text-align:center;font-weight:700;">6</td></tr>
+    <tr style="background:#f3e5f5;"><td style="padding:10px 14px;font-weight:900;" colspan="3">TOTAL</td><td style="padding:10px 14px;text-align:center;font-weight:900;font-size:1.1rem;color:#4a148c;">40</td></tr>
+  </table>
+</div>
+
+<footer>
+  <p>Visions Classes · visionslearning.in · <a href="notes-class10.html">← Back to Class 10 Notes</a></p>
+</footer>
+
+</body>
+</html>
