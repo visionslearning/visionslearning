@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Class 11 Chemistry — Ch.1–5 Paper 2 | Maharashtra Board</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#1a1a1a;}
+  .site-header{background:linear-gradient(135deg,#004d40,#00695c,#00897b);padding:14px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 3px 12px rgba(0,0,0,.3);}
+  .site-header a{color:#80cbc4;text-decoration:none;font-size:.85rem;font-weight:600;}
+  .site-header a:hover{color:#fff;}
+  .header-title{color:#fff;font-size:1.1rem;font-weight:800;}
+  .paper-hero{background:linear-gradient(135deg,#004d40 0%,#00695c 50%,#1b5e20 100%);padding:36px 20px 28px;text-align:center;color:#fff;}
+  .board-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:5px 18px;font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
+  .paper-hero h1{font-size:1.6rem;font-weight:900;line-height:1.25;margin-bottom:8px;}
+  .paper-hero .sub{font-size:.9rem;color:rgba(255,255,255,.85);margin-bottom:16px;}
+  .marks-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+  .marks-pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:22px;padding:7px 16px;font-size:.82rem;font-weight:700;}
+  .ch-strip{max-width:900px;margin:14px auto 0;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:0 12px;}
+  .ch-tag{background:#fff;color:#004d40;font-size:.72rem;font-weight:800;padding:5px 12px;border-radius:14px;border:2px solid #80cbc4;}
+  .instr{background:#e0f2f1;border-left:4px solid #00695c;margin:16px auto;max-width:900px;padding:14px 20px;border-radius:8px;font-size:.87rem;line-height:1.7;}
+  .instr strong{color:#004d40;}
+  .section{max-width:900px;margin:16px auto;background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden;}
+  .sh{padding:14px 22px;display:flex;align-items:center;gap:12px;}
+  .sh .qno{background:#fff;font-weight:900;font-size:1rem;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .sh .qtitle{color:#fff;font-size:1rem;font-weight:800;flex:1;line-height:1.3;}
+  .sh .qmarks{background:rgba(255,255,255,.2);color:#fff;font-size:.8rem;font-weight:700;padding:4px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.35);white-space:nowrap;}
+  .h1{background:linear-gradient(135deg,#004d40,#00695c);} .h1 .qno{color:#004d40;}
+  .h2{background:linear-gradient(135deg,#1a237e,#283593);} .h2 .qno{color:#1a237e;}
+  .h3{background:linear-gradient(135deg,#bf360c,#e64a19);} .h3 .qno{color:#bf360c;}
+  .h4{background:linear-gradient(135deg,#4a148c,#7b1fa2);} .h4 .qno{color:#4a148c;}
+  .sb{padding:20px 24px;}
+  .cl{display:inline-block;font-size:.7rem;font-weight:800;padding:2px 9px;border-radius:8px;margin-bottom:5px;text-transform:uppercase;letter-spacing:.8px;}
+  .c1{background:#e8eaf6;color:#1a237e;} .c2{background:#e0f2f1;color:#004d40;} .c3{background:#fff3e0;color:#e65100;} .c4{background:#fce4ec;color:#880e4f;} .c5{background:#f3e5f5;color:#4a148c;}
+  .mcq-item{margin-bottom:15px;padding-bottom:15px;border-bottom:1px solid #f0f4f8;}
+  .mcq-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+  .mcq-q{font-size:.92rem;font-weight:700;margin-bottom:8px;line-height:1.5;}
+  .opts{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+  .opt{background:#f5f7fa;border:1.5px solid #e0e7ef;border-radius:8px;padding:7px 12px;font-size:.85rem;}
+  .opt.c{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700;}
+  .ab{display:inline-block;background:#e8f5e9;color:#1b5e20;font-size:.74rem;font-weight:700;padding:3px 10px;border-radius:10px;margin-top:6px;border:1px solid #a5d6a7;}
+  .ans-item{padding:13px 0;border-bottom:1px solid #f0f4f8;}
+  .ans-item:last-child{border-bottom:none;}
+  .ans-q{font-size:.92rem;font-weight:700;margin-bottom:7px;line-height:1.5;}
+  .sm{font-size:.73rem;color:#888;font-weight:600;margin-left:5px;}
+  .ans-a{font-size:.86rem;line-height:1.75;background:#f8fafc;border-left:3px solid #00695c;padding:10px 14px;border-radius:0 8px 8px 0;}
+  .ans-a ul{padding-left:17px;margin-top:4px;}
+  .ans-a ul li{margin-bottom:4px;}
+  .ans-a strong{color:#004d40;}
+  .fm{font-family:monospace;background:#e0f2f1;color:#004d40;padding:3px 9px;border-radius:6px;font-weight:700;display:inline-block;margin:3px 0;}
+  .ns{background:#fff8e1;border-left:3px solid #f9a825;padding:11px 14px;border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.85;margin-top:8px;}
+  .ns .step{margin-bottom:4px;}
+  .nf{font-family:monospace;background:#fff3cd;color:#7c5700;padding:2px 9px;border-radius:6px;font-weight:700;display:inline-block;}
+  .fin{font-weight:800;color:#1b5e20;background:#e8f5e9;padding:5px 12px;border-radius:8px;display:inline-block;margin-top:6px;}
+  .dn{background:#e8eaf6;border:1.5px dashed #5c6bc0;border-radius:9px;padding:10px 14px;font-size:.8rem;color:#3949ab;margin-top:10px;text-align:center;}
+  footer{text-align:center;padding:26px 16px;font-size:.8rem;color:#888;}
+  footer a{color:#00695c;text-decoration:none;}
+  @media(max-width:600px){.opts{grid-template-columns:1fr;}.paper-hero h1{font-size:1.2rem;}}
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <a href="notes-class11.html">← Class 11 Notes</a>
+  <span style="color:rgba(255,255,255,.4);">|</span>
+  <span class="header-title">Class 11 Chemistry — Ch.1–5 Paper 2</span>
+</div>
+
+<div class="paper-hero">
+  <div class="board-tag">Maharashtra State Board · HSC Class 11</div>
+  <h1>Chemistry — Paper 2<br>Chapter 1 to 5 · Question Paper with Answers</h1>
+  <div class="sub">Maharashtra Board Pattern · 40 Marks · All Questions Compulsory</div>
+  <div class="marks-row">
+    <div class="marks-pill">📋 Total: 40 Marks</div>
+    <div class="marks-pill">⏱ Time: 2 Hours</div>
+    <div class="marks-pill">📄 Paper 2 of 2</div>
+  </div>
+</div>
+
+<div class="ch-strip">
+  <span class="ch-tag">Ch1: Basic Concepts of Chemistry</span>
+  <span class="ch-tag">Ch2: Analytical Chemistry</span>
+  <span class="ch-tag">Ch3: Analytical Techniques</span>
+  <span class="ch-tag">Ch4: Structure of Atom</span>
+  <span class="ch-tag">Ch5: Chemical Bonding</span>
+</div>
+
+<div class="instr" style="margin-top:16px;">
+  <strong>General Instructions:</strong>
+  (1) All questions are compulsory. (2) Figures to the right indicate marks.
+  (3) Draw neat, labelled diagrams wherever necessary.
+  (4) Answers are provided below each question for self-evaluation.
+  (5) Use of log tables and calculator is allowed.
+</div>
+
+<!-- Q1 MCQ -->
+<div class="section">
+  <div class="sh h1"><div class="qno">1</div><div class="qtitle">Select and write the most appropriate answer from the given alternatives for each sub-question.</div><div class="qmarks">8 Marks</div></div>
+  <div class="sb">
+
+    <div class="mcq-item">
+      <span class="cl c1">Ch1 · Basic Concepts</span>
+      <div class="mcq-q">i. How many grams are there in 0.5 mol of CaCO₃? (Ca=40, C=12, O=16)</div>
+      <div class="opts">
+        <div class="opt c">a) 50 g</div>
+        <div class="opt">b) 100 g</div>
+        <div class="opt">c) 200 g</div>
+        <div class="opt">d) 25 g</div>
+      </div>
+      <span class="ab">✓ (a) 50 g — M(CaCO₃)=100 g/mol; mass=0.5×100=50 g</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c1">Ch1 · Basic Concepts</span>
+      <div class="mcq-q">ii. The law that states "matter can neither be created nor destroyed in a chemical reaction" is ________.</div>
+      <div class="opts">
+        <div class="opt c">a) Law of Conservation of Mass</div>
+        <div class="opt">b) Law of Definite Proportions</div>
+        <div class="opt">c) Law of Multiple Proportions</div>
+        <div class="opt">d) Avogadro's Law</div>
+      </div>
+      <span class="ab">✓ (a) Law of Conservation of Mass (Lavoisier)</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c2">Ch2 · Analytical Chemistry</span>
+      <div class="mcq-q">iii. In a titration using phenolphthalein indicator, the endpoint is indicated by ________.</div>
+      <div class="opts">
+        <div class="opt">a) blue to colourless change</div>
+        <div class="opt c">b) colourless to pink change (persistent)</div>
+        <div class="opt">c) yellow to orange change</div>
+        <div class="opt">d) red to colourless change</div>
+      </div>
+      <span class="ab">✓ (b) Colourless → pink (for NaOH as titrant with acid in flask)</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c3">Ch3 · Analytical Techniques</span>
+      <div class="mcq-q">iv. Distillation is used to separate ________.</div>
+      <div class="opts">
+        <div class="opt">a) immiscible liquids</div>
+        <div class="opt c">b) miscible liquids with different boiling points</div>
+        <div class="opt">c) solids from liquids</div>
+        <div class="opt">d) coloured substances</div>
+      </div>
+      <span class="ab">✓ (b) Miscible liquids with different boiling points (e.g., water+ethanol)</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c4">Ch4 · Structure of Atom</span>
+      <div class="mcq-q">v. The subshell notation 2p can accommodate a maximum of ________ electrons.</div>
+      <div class="opts">
+        <div class="opt">a) 2</div>
+        <div class="opt c">b) 6</div>
+        <div class="opt">c) 10</div>
+        <div class="opt">d) 14</div>
+      </div>
+      <span class="ab">✓ (b) 6 — p subshell has 3 orbitals × 2 electrons = 6</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c4">Ch4 · Structure of Atom</span>
+      <div class="mcq-q">vi. The de Broglie wavelength of a particle is given by ________.</div>
+      <div class="opts">
+        <div class="opt">a) λ = mv/h</div>
+        <div class="opt c">b) λ = h/mv</div>
+        <div class="opt">c) λ = h/m</div>
+        <div class="opt">d) λ = mv²/h</div>
+      </div>
+      <span class="ab">✓ (b) λ = h/mv = h/p (de Broglie relation)</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c5">Ch5 · Chemical Bonding</span>
+      <div class="mcq-q">vii. Which of the following molecules has a linear geometry?</div>
+      <div class="opts">
+        <div class="opt c">a) CO₂</div>
+        <div class="opt">b) SO₂</div>
+        <div class="opt">c) H₂O</div>
+        <div class="opt">d) NH₃</div>
+      </div>
+      <span class="ab">✓ (a) CO₂ — sp hybridisation, 2 double bonds, 0 lone pairs → linear (180°)</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c5">Ch5 · Chemical Bonding</span>
+      <div class="mcq-q">viii. A sigma (σ) bond is formed by ________.</div>
+      <div class="opts">
+        <div class="opt c">a) head-on (axial) overlap of orbitals</div>
+        <div class="opt">b) lateral (sideways) overlap of orbitals</div>
+        <div class="opt">c) complete transfer of electrons</div>
+        <div class="opt">d) sharing of 4 electrons</div>
+      </div>
+      <span class="ab">✓ (a) Head-on/axial overlap — σ bond (stronger, along internuclear axis)</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- Q2 Very Short Answer -->
+<div class="section">
+  <div class="sh h2"><div class="qno">2</div><div class="qtitle">Answer the following questions in one or two sentences each.</div><div class="qmarks">8 Marks</div></div>
+  <div class="sb">
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c1">Ch1</span> i. State the Law of Definite Proportions (Proust's Law). <span class="sm">(1M)</span></div>
+      <div class="ans-a">A pure chemical compound always contains the same elements combined together in the <strong>same fixed ratio by mass</strong>, regardless of the source or method of preparation. E.g., water always contains H:O = 1:8 by mass.</div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c1">Ch1</span> ii. What is a mole fraction? How is it calculated? <span class="sm">(1M)</span></div>
+      <div class="ans-a"><strong>Mole fraction (X)</strong> = moles of one component / total moles of all components in the mixture.
+        <span class="fm">Xₐ = nₐ / (nₐ + n_b)</span>
+        Mole fractions are dimensionless; sum of all mole fractions = 1.
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c2">Ch2</span> iii. Define normality. What is the n-factor for H₂SO₄ in acid-base reactions? <span class="sm">(1M)</span></div>
+      <div class="ans-a"><strong>Normality (N)</strong> = number of gram equivalents of solute dissolved per litre of solution.
+        <span class="fm">N = gram equivalents / V(L) = M × n-factor</span>
+        For H₂SO₄ in acid-base reactions: n-factor = <strong>2</strong> (it donates 2 H⁺ ions).
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c2">Ch2</span> iv. What is the difference between qualitative and quantitative analysis? <span class="sm">(1M)</span></div>
+      <div class="ans-a">
+        <strong>Qualitative analysis:</strong> Identifies <em>what</em> substances are present in a sample (nature/type of components). E.g., detecting presence of Fe²⁺ ions.
+        <br><strong>Quantitative analysis:</strong> Determines <em>how much</em> of each component is present (amount/concentration). E.g., finding exact concentration of Fe²⁺ by titration.
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c3">Ch3</span> v. What is the principle of solvent extraction? <span class="sm">(1M)</span></div>
+      <div class="ans-a"><strong>Solvent extraction</strong> is based on the principle of differential solubility — a substance is more soluble in one solvent than another. The desired compound preferentially dissolves in the extracting solvent (which is immiscible with the original solvent) and is separated using a separating funnel.</div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c4">Ch4</span> vi. What are quantum numbers? Name all four quantum numbers. <span class="sm">(1M)</span></div>
+      <div class="ans-a">Quantum numbers are sets of numbers that describe the <strong>position and energy</strong> of an electron in an atom. The four quantum numbers are:
+        <ul>
+          <li>(1) Principal quantum number <strong>n</strong> — shell/energy level</li>
+          <li>(2) Azimuthal/Angular momentum <strong>l</strong> — subshell shape</li>
+          <li>(3) Magnetic <strong>m</strong> — orientation of orbital</li>
+          <li>(4) Spin <strong>s</strong> — spin of electron (+½ or –½)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c4">Ch4</span> vii. State de Broglie's hypothesis. Give its significance. <span class="sm">(1M)</span></div>
+      <div class="ans-a">De Broglie proposed that matter (like electrons) has dual nature — both <strong>particle and wave nature</strong>. Every moving particle has an associated wavelength:
+        <span class="fm">λ = h/mv = h/p</span>
+        Significance: Explains why electrons exist in fixed orbits (standing wave condition) and led to wave mechanics/quantum mechanics.
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c5">Ch5</span> viii. Differentiate between sigma (σ) bond and pi (π) bond. <span class="sm">(1M)</span></div>
+      <div class="ans-a">
+        <ul>
+          <li><strong>σ bond:</strong> Formed by head-on/axial overlap of orbitals along the internuclear axis. Stronger, allows free rotation, always the first bond formed.</li>
+          <li><strong>π bond:</strong> Formed by lateral (sideways) overlap of unhybridised p-orbitals, perpendicular to internuclear axis. Weaker, no free rotation, always formed in addition to σ bond (in double/triple bonds).</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Q3 Short Answer I — Any 4 of 6 -->
+<div class="section">
+  <div class="sh h3"><div class="qno">3</div><div class="qtitle">Answer the following questions. (Any 4 out of 6) — 3 marks each</div><div class="qmarks">12 Marks</div></div>
+  <div class="sb">
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c1">Ch1</span> A. State and explain the Law of Conservation of Mass and Law of Constant Proportions with examples. <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <strong>Law of Conservation of Mass (Lavoisier, 1789):</strong>
+        <ul>
+          <li>In a chemical reaction, the total mass of reactants = total mass of products.</li>
+          <li>Matter is neither created nor destroyed.</li>
+          <li>Example: 2H₂ + O₂ → 2H₂O; Mass of H₂ (4g) + O₂ (32g) = Mass of H₂O (36g) ✓</li>
+        </ul>
+        <strong>Law of Definite/Constant Proportions (Proust, 1799):</strong>
+        <ul>
+          <li>A pure compound always contains the same elements in the same fixed ratio by mass.</li>
+          <li>Example: Water always has H:O = 1:8 by mass, whether from rain, river, or laboratory.</li>
+          <li>CO₂ always has C:O = 12:32 = 3:8 by mass.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c1">Ch1</span> B. What is stoichiometry? How many moles of O₂ are needed to burn 2 moles of C₃H₈? (C₃H₈ + 5O₂ → 3CO₂ + 4H₂O) <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <strong>Stoichiometry:</strong> The branch of chemistry that deals with the quantitative relationships between reactants and products in a chemical reaction based on the balanced equation.
+        <div class="ns">
+          <div class="step">Balanced equation: C₃H₈ + 5O₂ → 3CO₂ + 4H₂O</div>
+          <div class="step">From equation: 1 mol C₃H₈ reacts with 5 mol O₂</div>
+          <div class="step">For 2 mol C₃H₈: moles of O₂ = 2 × 5 = <strong>10 mol O₂</strong></div>
+          <div class="step">Mass of O₂ needed = 10 × 32 = <strong>320 g</strong></div>
+          <div class="fin">∴ 10 moles (320 g) of O₂ needed to burn 2 moles of C₃H₈</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c2">Ch2</span> C. Explain back titration. When is it used? Give one example. <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <strong>Back Titration:</strong> A titration technique in which an <em>excess</em> of a reagent is added to a sample, and the unreacted (excess) reagent is then titrated with a second standard solution. Used when:
+        <ul>
+          <li>The analyte does not react directly with the titrant.</li>
+          <li>The reaction is too slow or the endpoint is difficult to detect directly.</li>
+          <li>The sample is insoluble in the titrant.</li>
+        </ul>
+        <strong>Example:</strong> Determining purity of CaCO₃:
+        <ul>
+          <li>Add excess standard HCl (say 50 mL of 0.1M) to CaCO₃.</li>
+          <li>CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂</li>
+          <li>After reaction, back-titrate the excess HCl with standard NaOH.</li>
+          <li>HCl used = total HCl – excess HCl (found by back titration) → moles of CaCO₃ calculated.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c3">Ch3</span> D. Explain fractional distillation with a diagram. Where is it used industrially? <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <strong>Fractional Distillation:</strong> Used to separate a mixture of miscible liquids with close but different boiling points using a fractionating column.
+        <ul>
+          <li><strong>Principle:</strong> The vapours of the mixture rise through a fractionating column and condense at different heights based on boiling points. The more volatile (lower bp) liquid rises higher and distils first.</li>
+          <li><strong>Fractionating column:</strong> Packed with glass beads/plates — provides repeated vaporisation-condensation cycles, giving better separation.</li>
+        </ul>
+        <div class="dn">📐 Diagram: Flask with liquid mixture → fractionating column → condenser → receiver. Label: fractionating column, thermometer, condenser, distillate collector. Show fractions condensing at different heights.</div>
+        <strong>Industrial uses:</strong>
+        <ul>
+          <li>Fractional distillation of petroleum → petrol, kerosene, diesel, lubricating oil, etc.</li>
+          <li>Fractional distillation of liquid air → N₂ (bp –196°C), O₂ (bp –183°C), Ar (bp –186°C).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c4">Ch4</span> E. State and explain the photoelectric effect. How did Einstein explain it? <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <strong>Photoelectric Effect:</strong> When light of suitable frequency is incident on a metal surface, electrons are emitted from the metal. These electrons are called photoelectrons.
+        <ul>
+          <li>Observations: (1) No emission below threshold frequency (ν₀). (2) Emission is instantaneous above ν₀. (3) Number of electrons ∝ intensity of light. (4) KE of electrons depends only on frequency, not intensity.</li>
+        </ul>
+        <strong>Einstein's Explanation (1905):</strong>
+        <ul>
+          <li>Light consists of particles called <strong>photons</strong>, each with energy: <span class="fm">E = hν</span></li>
+          <li>One photon ejects one electron. Energy is used to overcome work function (φ = hν₀) and give KE to electron:
+            <span class="fm">hν = φ + KE_max = hν₀ + ½mv²_max</span>
+          </li>
+          <li>Below threshold frequency, photon energy &lt; φ → no emission.</li>
+          <li>This proved the particle nature of light and earned Einstein the Nobel Prize (1921).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c5">Ch5</span> F. Explain covalent bond formation. Describe the formation of Cl₂ and N₂ molecules with Lewis structures. <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <strong>Covalent Bond:</strong> A chemical bond formed by mutual sharing of electron pairs between two non-metal atoms, both atoms attaining the noble gas configuration (octet).
+        <ul>
+          <li>Proposed by G.N. Lewis; represented by Lewis dot structures.</li>
+        </ul>
+        <strong>Cl₂ (Single bond — 1 shared pair):</strong>
+        <ul>
+          <li>Each Cl has 7 valence electrons (2,8,7). Each needs 1 more → share 1 pair.</li>
+          <li>Cl–Cl: :Cl:Cl: → single σ bond; each Cl has 3 lone pairs + 1 bond pair → octet complete.</li>
+          <li>Bond order = 1</li>
+        </ul>
+        <strong>N₂ (Triple bond — 3 shared pairs):</strong>
+        <ul>
+          <li>Each N has 5 valence electrons. Each needs 3 more → share 3 pairs.</li>
+          <li>:N≡N: → triple bond (1σ + 2π); each N has 1 lone pair + 3 bond pairs → octet complete.</li>
+          <li>Bond order = 3; N₂ is very stable (high bond energy = 945 kJ/mol).</li>
+        </ul>
+        <div class="dn">📐 Lewis structures: Cl:Cl with dots showing 3 lone pairs on each Cl + shared pair. N≡N with dots showing 1 lone pair on each N + triple bond lines.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Q4 Short Answer II — Any 3 of 5 -->
+<div class="section">
+  <div class="sh h4"><div class="qno">4</div><div class="qtitle">Answer the following questions in detail. (Any 3 out of 5) — 4 marks each</div><div class="qmarks">12 Marks</div></div>
+  <div class="sb">
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c1">Ch1</span> A. Iron (II) oxide (FeO) has the formula Fe₀.₉₅O. Calculate the percentage of Fe²⁺ and Fe³⁺ ions. (Fe=56, O=16) <span class="sm">(4M)</span></div>
+      <div class="ans-a">
+        <strong>Given:</strong> Fe₀.₉₅O — 0.95 mol Fe for every 1 mol O.
+        Let x = fraction of Fe²⁺ and (0.95–x) = fraction of Fe³⁺.
+        <div class="ns">
+          <div class="step">Charge balance (oxide has charge –2 for 1 O²⁻):</div>
+          <div class="step">Total positive charge from Fe = 2x + 3(0.95–x) = 2 (from O²⁻)</div>
+          <div class="step">2x + 2.85 – 3x = 2</div>
+          <div class="step">–x = 2 – 2.85 = –0.85</div>
+          <div class="step">x = 0.85 mol Fe²⁺</div>
+          <div class="step">Fe³⁺ = 0.95 – 0.85 = 0.10 mol</div>
+          <div class="step">% Fe²⁺ = (0.85/0.95) × 100 = <strong>89.47%</strong></div>
+          <div class="step">% Fe³⁺ = (0.10/0.95) × 100 = <strong>10.53%</strong></div>
+          <div class="fin">Fe²⁺ = 89.47%; Fe³⁺ = 10.53%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c2">Ch2</span> B. 25 mL of H₂SO₄ solution is neutralised by 50 mL of 0.1 M NaOH. Find the molarity and normality of H₂SO₄. Equation: H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O <span class="sm">(4M)</span></div>
+      <div class="ans-a">
+        <div class="ns">
+          <div class="step"><strong>Moles of NaOH used:</strong> n(NaOH) = 0.1 × 50/1000 = 0.005 mol</div>
+          <div class="step">From equation: H₂SO₄ : NaOH = 1:2</div>
+          <div class="step"><strong>Moles of H₂SO₄:</strong> n = 0.005/2 = 0.0025 mol</div>
+          <div class="step"><strong>Molarity of H₂SO₄:</strong> M = 0.0025 / (25/1000) = 0.0025/0.025</div>
+          <div class="step">M(H₂SO₄) = <strong>0.1 mol/L</strong></div>
+          <div class="step"><strong>Normality:</strong> n-factor of H₂SO₄ = 2 (diprotic acid)</div>
+          <div class="step">N = M × n-factor = 0.1 × 2 = <strong>0.2 N</strong></div>
+          <div class="fin">Molarity of H₂SO₄ = 0.1 M; Normality = 0.2 N</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c4">Ch4</span> C. Explain the quantum mechanical model of atom. What are atomic orbitals? Describe the shapes of s, p, and d orbitals. <span class="sm">(4M)</span></div>
+      <div class="ans-a">
+        <strong>Quantum Mechanical Model (Schrödinger, 1926):</strong>
+        <ul>
+          <li>Based on wave nature of electrons (de Broglie) and Heisenberg uncertainty principle.</li>
+          <li>Schrödinger equation: <span class="fm">Ĥψ = Eψ</span> (ψ = wave function)</li>
+          <li>|ψ|² gives the <strong>probability density</strong> of finding an electron at a point in space.</li>
+          <li>Electrons do not have definite paths; they exist in <strong>probability regions called orbitals</strong>.</li>
+        </ul>
+        <strong>Atomic Orbitals:</strong> A 3-dimensional region in space around the nucleus where the probability of finding an electron is maximum (≥90%).
+        <br><br>
+        <strong>Shapes:</strong>
+        <ul>
+          <li><strong>s orbital (l=0):</strong> Spherically symmetric. 1 orbital per subshell. Size increases with n (1s&lt;2s&lt;3s).</li>
+          <li><strong>p orbital (l=1):</strong> Dumbbell shaped — 2 lobes on either side of nucleus along x, y, z axes. 3 orbitals per subshell (p_x, p_y, p_z).</li>
+          <li><strong>d orbital (l=2):</strong> Double dumbbell / clover-leaf shape. 5 orbitals per subshell (d_xy, d_xz, d_yz, d_x²-y², d_z²).</li>
+        </ul>
+        <div class="dn">📐 Diagram: (1) s orbital — sphere. (2) p_x orbital — two lobes along x-axis. (3) d_xy orbital — four lobes in xy-plane. Label nucleus at centre.</div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c5">Ch5</span> D. Explain hybridisation of carbon in ethylene (C₂H₄) — sp² hybridisation. Include bond angles and diagram. <span class="sm">(4M)</span></div>
+      <div class="ans-a">
+        <strong>sp² Hybridisation in Ethylene (C₂H₄):</strong>
+        <ul>
+          <li>Each C in C₂H₄ undergoes sp² hybridisation.</li>
+          <li>Carbon excited state: 2s¹ 2p³ (4 unpaired electrons)</li>
+          <li>1 s-orbital + 2 p-orbitals mix → 3 sp² hybrid orbitals + 1 unhybridised p-orbital (2pz)</li>
+          <li>3 sp² orbitals lie in a plane, pointing to corners of equilateral triangle → <strong>trigonal planar</strong> arrangement, angle = <strong>120°</strong></li>
+        </ul>
+        <strong>Bonding in C₂H₄:</strong>
+        <ul>
+          <li>Each C forms 2 σ bonds with H (sp²–1s overlap) and 1 σ bond with the other C (sp²–sp² overlap).</li>
+          <li>The 2 unhybridised 2pz orbitals on each C overlap laterally → 1 <strong>π bond</strong> between the two C atoms.</li>
+          <li>C=C double bond = 1σ + 1π</li>
+          <li>Bond angle H–C–H ≈ 120°; C=C bond length = 134 pm (shorter than C–C = 154 pm)</li>
+        </ul>
+        <div class="dn">📐 Diagram: Two C atoms, each with 3 sp² orbitals (triangular). sp²–sp² σ bond between C atoms. Two sp²–H σ bonds on each C. Show π bond (p-orbital lobes above and below the plane). Label: 120°, σ bond, π bond, H atoms.</div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c5">Ch5</span> E. What is hydrogen bonding? Explain inter and intramolecular hydrogen bonding with examples. Why does water have an unusually high boiling point? <span class="sm">(4M)</span></div>
+      <div class="ans-a">
+        <strong>Hydrogen Bonding:</strong> A special type of electrostatic attraction between a hydrogen atom covalently bonded to a highly electronegative atom (F, O, N) and a lone pair of another electronegative atom. It is stronger than van der Waals forces but weaker than covalent/ionic bonds.
+        <br>Represented as: X–H···Y (where X and Y = F, O or N)
+        <br><br>
+        <strong>Intermolecular Hydrogen Bonding:</strong>
+        <ul>
+          <li>Occurs between different molecules of the same or different substances.</li>
+          <li>Example: Water (H₂O)–H···O–H₂O; HF–H···F–HF; NH₃–H···N–NH₃</li>
+          <li>Results in: Higher bp, higher viscosity, surface tension.</li>
+        </ul>
+        <strong>Intramolecular Hydrogen Bonding:</strong>
+        <ul>
+          <li>Occurs within the same molecule — between –H and another electronegative group in the same molecule (forms a ring).</li>
+          <li>Example: ortho-nitrophenol — O–H···O–N forms a 6-membered ring within the molecule.</li>
+          <li>Results in: Lower bp than expected (molecule already "satisfied" internally).</li>
+        </ul>
+        <strong>Why water has high boiling point:</strong>
+        <ul>
+          <li>Each water molecule forms up to 4 hydrogen bonds (2 as donor, 2 as acceptor).</li>
+          <li>These extensive H-bonds create a strong network → more energy needed to break them → unusually high bp (100°C) for a small molecule.</li>
+          <li>Compare: H₂S (no H-bond) has bp = –60°C; H₂O = 100°C — difference due to H-bonding.</li>
+        </ul>
+        <div class="dn">📐 Diagram: Show H₂O molecules linked by H-bonds (dotted lines). Inset: o-nitrophenol intramolecular H-bond forming 6-membered ring.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div style="max-width:900px;margin:18px auto;background:#fff;border-radius:14px;padding:18px 22px;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+  <h3 style="color:#004d40;margin-bottom:12px;font-size:.95rem;">📊 Maharashtra Board Class 11 Chemistry — Paper Pattern</h3>
+  <table style="width:100%;border-collapse:collapse;font-size:.85rem;">
+    <tr style="background:linear-gradient(135deg,#004d40,#00695c);color:#fff;">
+      <th style="padding:7px 14px;text-align:left;">Q</th><th style="padding:7px 14px;text-align:left;">Type</th><th style="padding:7px 14px;text-align:left;">Pattern</th><th style="padding:7px 14px;text-align:center;">Marks</th>
+    </tr>
+    <tr><td style="padding:7px 12px;border-bottom:1px solid #e8edf2;">Q1</td><td style="padding:7px 12px;border-bottom:1px solid #e8edf2;">MCQ</td><td style="padding:7px 12px;border-bottom:1px solid #e8edf2;">8 × 1 mark (all compulsory)</td><td style="padding:7px 12px;text-align:center;font-weight:700;border-bottom:1px solid #e8edf2;">8</td></tr>
+    <tr style="background:#f8fafc;"><td style="padding:7px 12px;border-bottom:1px solid #e8edf2;">Q2</td><td style="padding:7px 12px;border-bottom:1px solid #e8edf2;">Very Short Answer</td><td style="padding:7px 12px;border-bottom:1px solid #e8edf2;">8 × 1 mark (all compulsory)</td><td style="padding:7px 12px;text-align:center;font-weight:700;border-bottom:1px solid #e8edf2;">8</td></tr>
+    <tr><td style="padding:7px 12px;border-bottom:1px solid #e8edf2;">Q3</td><td style="padding:7px 12px;border-bottom:1px solid #e8edf2;">Short Answer I</td><td style="padding:7px 12px;border-bottom:1px solid #e8edf2;">Any 4 of 6 × 3 marks</td><td style="padding:7px 12px;text-align:center;font-weight:700;border-bottom:1px solid #e8edf2;">12</td></tr>
+    <tr style="background:#f8fafc;"><td style="padding:7px 12px;">Q4</td><td style="padding:7px 12px;">Short Answer II</td><td style="padding:7px 12px;">Any 3 of 5 × 4 marks</td><td style="padding:7px 12px;text-align:center;font-weight:700;">12</td></tr>
+    <tr style="background:#e0f2f1;"><td style="padding:9px 14px;font-weight:900;" colspan="3">TOTAL</td><td style="padding:9px 14px;text-align:center;font-weight:900;font-size:1.1rem;color:#004d40;">40</td></tr>
+  </table>
+</div>
+
+<footer><p>Visions Classes · visionslearning.in · <a href="notes-class11.html">← Back to Class 11 Notes</a></p></footer>
+
+<!-- Circular Watermark -->
+<div style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;opacity:0.07;user-select:none;">
+  <svg width="340" height="340" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="170" cy="170" r="155" fill="none" stroke="#004d40" stroke-width="6"/>
+    <circle cx="170" cy="170" r="138" fill="none" stroke="#004d40" stroke-width="2"/>
+    <path id="tc2" fill="none" d="M 40,170 a130,130 0 1,1 260,0"/>
+    <path id="bc2" fill="none" d="M 40,170 a130,130 0 0,0 260,0"/>
+    <text font-size="21" font-weight="900" fill="#004d40" font-family="Arial,sans-serif" letter-spacing="5"><textPath href="#tc2" startOffset="10%">VISIONS CLASSES · VISIONSLEARNING.IN ·</textPath></text>
+    <text font-size="17" font-weight="900" fill="#004d40" font-family="Arial,sans-serif" letter-spacing="3"><textPath href="#bc2" startOffset="10%">CHEMISTRY · CLASS 11 · MAHARASHTRA BOARD</textPath></text>
+    <text x="170" y="158" text-anchor="middle" font-size="28" font-weight="900" fill="#004d40" font-family="Arial,sans-serif">VISIONS</text>
+    <text x="170" y="193" text-anchor="middle" font-size="28" font-weight="900" fill="#004d40" font-family="Arial,sans-serif">CLASSES</text>
+    <text x="170" y="223" text-anchor="middle" font-size="13" font-weight="700" fill="#004d40" font-family="Arial,sans-serif" letter-spacing="2">★ EST. 2024 ★</text>
+  </svg>
+</div>
+
+</body>
+</html>

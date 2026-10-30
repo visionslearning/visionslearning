@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Class 11 Chemistry — Ch.1–5 Paper 1 | Maharashtra Board</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#1a1a1a;}
+  .site-header{background:linear-gradient(135deg,#1a237e,#283593,#0d47a1);padding:14px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 3px 12px rgba(0,0,0,.3);}
+  .site-header a{color:#90caf9;text-decoration:none;font-size:.85rem;font-weight:600;}
+  .site-header a:hover{color:#fff;}
+  .header-title{color:#fff;font-size:1.1rem;font-weight:800;}
+  .paper-hero{background:linear-gradient(135deg,#1a237e 0%,#283593 40%,#1565c0 100%);padding:36px 20px 28px;text-align:center;color:#fff;}
+  .board-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:5px 18px;font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
+  .paper-hero h1{font-size:1.6rem;font-weight:900;line-height:1.25;margin-bottom:8px;}
+  .paper-hero .sub{font-size:.9rem;color:rgba(255,255,255,.85);margin-bottom:16px;}
+  .marks-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+  .marks-pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:22px;padding:7px 16px;font-size:.82rem;font-weight:700;}
+  .ch-strip{max-width:900px;margin:14px auto 0;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:0 12px;}
+  .ch-tag{background:#fff;color:#1a237e;font-size:.72rem;font-weight:800;padding:5px 12px;border-radius:14px;border:2px solid #90caf9;}
+  .instr{background:#e8eaf6;border-left:4px solid #3949ab;margin:16px auto;max-width:900px;padding:14px 20px;border-radius:8px;font-size:.87rem;line-height:1.7;}
+  .instr strong{color:#1a237e;}
+  .section{max-width:900px;margin:16px auto;background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden;}
+  .sh{padding:14px 22px;display:flex;align-items:center;gap:12px;}
+  .sh .qno{background:#fff;font-weight:900;font-size:1rem;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .sh .qtitle{color:#fff;font-size:1rem;font-weight:800;flex:1;line-height:1.3;}
+  .sh .qmarks{background:rgba(255,255,255,.2);color:#fff;font-size:.8rem;font-weight:700;padding:4px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.35);white-space:nowrap;}
+  .h1{background:linear-gradient(135deg,#1a237e,#3949ab);} .h1 .qno{color:#1a237e;}
+  .h2{background:linear-gradient(135deg,#00695c,#00897b);} .h2 .qno{color:#00695c;}
+  .h3{background:linear-gradient(135deg,#e65100,#f57c00);} .h3 .qno{color:#e65100;}
+  .h4{background:linear-gradient(135deg,#880e4f,#c2185b);} .h4 .qno{color:#880e4f;}
+  .sb{padding:20px 24px;}
+  .cl{display:inline-block;font-size:.7rem;font-weight:800;padding:2px 9px;border-radius:8px;margin-bottom:5px;text-transform:uppercase;letter-spacing:.8px;}
+  .c1{background:#e8eaf6;color:#1a237e;} .c2{background:#e0f2f1;color:#004d40;} .c3{background:#fff3e0;color:#e65100;} .c4{background:#fce4ec;color:#880e4f;} .c5{background:#f3e5f5;color:#4a148c;}
+  /* MCQ */
+  .mcq-item{margin-bottom:15px;padding-bottom:15px;border-bottom:1px solid #f0f4f8;}
+  .mcq-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+  .mcq-q{font-size:.92rem;font-weight:700;margin-bottom:8px;line-height:1.5;}
+  .opts{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+  .opt{background:#f5f7fa;border:1.5px solid #e0e7ef;border-radius:8px;padding:7px 12px;font-size:.85rem;}
+  .opt.c{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700;}
+  .ab{display:inline-block;background:#e8f5e9;color:#1b5e20;font-size:.74rem;font-weight:700;padding:3px 10px;border-radius:10px;margin-top:6px;border:1px solid #a5d6a7;}
+  /* Answer items */
+  .ans-item{padding:13px 0;border-bottom:1px solid #f0f4f8;}
+  .ans-item:last-child{border-bottom:none;}
+  .ans-q{font-size:.92rem;font-weight:700;margin-bottom:7px;line-height:1.5;}
+  .sm{font-size:.73rem;color:#888;font-weight:600;margin-left:5px;}
+  .ans-a{font-size:.86rem;line-height:1.75;background:#f8fafc;border-left:3px solid #3949ab;padding:10px 14px;border-radius:0 8px 8px 0;}
+  .ans-a ul{padding-left:17px;margin-top:4px;}
+  .ans-a ul li{margin-bottom:4px;}
+  .ans-a strong{color:#1a237e;}
+  .fm{font-family:monospace;background:#e8eaf6;color:#1a237e;padding:3px 9px;border-radius:6px;font-weight:700;display:inline-block;margin:3px 0;}
+  .ns{background:#fff8e1;border-left:3px solid #f9a825;padding:11px 14px;border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.85;margin-top:8px;}
+  .ns .step{margin-bottom:4px;}
+  .nf{font-family:monospace;background:#fff3cd;color:#7c5700;padding:2px 9px;border-radius:6px;font-weight:700;display:inline-block;}
+  .fin{font-weight:800;color:#1b5e20;background:#e8f5e9;padding:5px 12px;border-radius:8px;display:inline-block;margin-top:6px;}
+  .dn{background:#e8eaf6;border:1.5px dashed #5c6bc0;border-radius:9px;padding:10px 14px;font-size:.8rem;color:#3949ab;margin-top:10px;text-align:center;}
+  footer{text-align:center;padding:26px 16px;font-size:.8rem;color:#888;}
+  footer a{color:#3949ab;text-decoration:none;}
+  @media(max-width:600px){.opts{grid-template-columns:1fr;}.paper-hero h1{font-size:1.2rem;}}
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <a href="notes-class11.html">← Class 11 Notes</a>
+  <span style="color:rgba(255,255,255,.4);">|</span>
+  <span class="header-title">Class 11 Chemistry — Ch.1–5 Paper 1</span>
+</div>
+
+<div class="paper-hero">
+  <div class="board-tag">Maharashtra State Board · HSC Class 11</div>
+  <h1>Chemistry — Paper 1<br>Chapter 1 to 5 · Question Paper with Answers</h1>
+  <div class="sub">Maharashtra Board Pattern · 40 Marks · All Questions Compulsory</div>
+  <div class="marks-row">
+    <div class="marks-pill">📋 Total: 40 Marks</div>
+    <div class="marks-pill">⏱ Time: 2 Hours</div>
+    <div class="marks-pill">📄 Paper 1 of 2</div>
+  </div>
+</div>
+
+<div class="ch-strip">
+  <span class="ch-tag">Ch1: Basic Concepts of Chemistry</span>
+  <span class="ch-tag">Ch2: Analytical Chemistry</span>
+  <span class="ch-tag">Ch3: Analytical Techniques</span>
+  <span class="ch-tag">Ch4: Structure of Atom</span>
+  <span class="ch-tag">Ch5: Chemical Bonding</span>
+</div>
+
+<div class="instr" style="margin-top:16px;">
+  <strong>General Instructions:</strong>
+  (1) All questions are compulsory. (2) Figures to the right indicate marks.
+  (3) Draw neat, labelled diagrams wherever necessary.
+  (4) Answers are provided below each question for self-evaluation.
+  (5) Use of log tables and calculator is allowed.
+</div>
+
+<!-- ══════════════════════════
+     Q1 — MCQ (8 Marks)
+══════════════════════════ -->
+<div class="section">
+  <div class="sh h1"><div class="qno">1</div><div class="qtitle">Select and write the most appropriate answer from the given alternatives for each sub-question.</div><div class="qmarks">8 Marks</div></div>
+  <div class="sb">
+
+    <div class="mcq-item">
+      <span class="cl c1">Ch1 · Basic Concepts</span>
+      <div class="mcq-q">i. The number of moles in 44 g of CO₂ is ________. (M of CO₂ = 44 g/mol)</div>
+      <div class="opts">
+        <div class="opt">a) 0.5 mol</div>
+        <div class="opt c">b) 1 mol</div>
+        <div class="opt">c) 2 mol</div>
+        <div class="opt">d) 44 mol</div>
+      </div>
+      <span class="ab">✓ (b) n = m/M = 44/44 = 1 mol</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c1">Ch1 · Basic Concepts</span>
+      <div class="mcq-q">ii. The empirical formula of a compound with molecular formula C₆H₁₂O₆ is ________.</div>
+      <div class="opts">
+        <div class="opt">a) C₂H₄O₂</div>
+        <div class="opt c">b) CH₂O</div>
+        <div class="opt">c) C₃H₆O₃</div>
+        <div class="opt">d) C₆H₁₂O₆</div>
+      </div>
+      <span class="ab">✓ (b) CH₂O — divide each subscript by 6 (HCF)</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c2">Ch2 · Analytical Chemistry</span>
+      <div class="mcq-q">iii. Which of the following is a primary standard substance?</div>
+      <div class="opts">
+        <div class="opt">a) NaOH</div>
+        <div class="opt c">b) Oxalic acid (H₂C₂O₄·2H₂O)</div>
+        <div class="opt">c) HCl</div>
+        <div class="opt">d) KMnO₄</div>
+      </div>
+      <span class="ab">✓ (b) Oxalic acid — stable, pure, known formula, can be weighed accurately</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c3">Ch3 · Analytical Techniques</span>
+      <div class="mcq-q">iv. Paper chromatography is used to separate components based on their difference in ________.</div>
+      <div class="opts">
+        <div class="opt">a) boiling point</div>
+        <div class="opt">b) melting point</div>
+        <div class="opt c">c) rate of movement on stationary phase</div>
+        <div class="opt">d) density</div>
+      </div>
+      <span class="ab">✓ (c) Rf (retention factor) — rate of movement on stationary phase</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c4">Ch4 · Structure of Atom</span>
+      <div class="mcq-q">v. The maximum number of electrons that can be accommodated in an orbit with n = 3 is ________.</div>
+      <div class="opts">
+        <div class="opt">a) 8</div>
+        <div class="opt">b) 9</div>
+        <div class="opt c">c) 18</div>
+        <div class="opt">d) 32</div>
+      </div>
+      <span class="ab">✓ (c) 18 — max electrons = 2n² = 2×3² = 18</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c4">Ch4 · Structure of Atom</span>
+      <div class="mcq-q">vi. The quantum number that describes the orientation of an orbital in space is ________.</div>
+      <div class="opts">
+        <div class="opt">a) Principal quantum number (n)</div>
+        <div class="opt">b) Azimuthal quantum number (l)</div>
+        <div class="opt c">c) Magnetic quantum number (m)</div>
+        <div class="opt">d) Spin quantum number (s)</div>
+      </div>
+      <span class="ab">✓ (c) Magnetic quantum number (m) — describes orientation in space</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c5">Ch5 · Chemical Bonding</span>
+      <div class="mcq-q">vii. The geometry of a water molecule (H₂O) is ________.</div>
+      <div class="opts">
+        <div class="opt">a) Linear</div>
+        <div class="opt c">b) Bent (V-shape)</div>
+        <div class="opt">c) Trigonal planar</div>
+        <div class="opt">d) Tetrahedral</div>
+      </div>
+      <span class="ab">✓ (b) Bent/V-shape — 2 bond pairs + 2 lone pairs → bent geometry</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c5">Ch5 · Chemical Bonding</span>
+      <div class="mcq-q">viii. Which of the following has the highest bond order?</div>
+      <div class="opts">
+        <div class="opt">a) H₂</div>
+        <div class="opt">b) O₂</div>
+        <div class="opt c">c) N₂</div>
+        <div class="opt">d) F₂</div>
+      </div>
+      <span class="ab">✓ (c) N₂ — triple bond, bond order = 3 (highest among these)</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════
+     Q2 — Very Short Answer (8 Marks)
+══════════════════════════ -->
+<div class="section">
+  <div class="sh h2"><div class="qno">2</div><div class="qtitle">Answer the following questions in one or two sentences each.</div><div class="qmarks">8 Marks</div></div>
+  <div class="sb">
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c1">Ch1</span> i. What is the mole concept? State Avogadro's number. <span class="sm">(1M)</span></div>
+      <div class="ans-a">A <strong>mole</strong> is the amount of substance containing as many elementary particles as there are atoms in exactly 12 g of carbon-12. <strong>Avogadro's number Nₐ = 6.022 × 10²³</strong> particles per mole.</div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c1">Ch1</span> ii. Distinguish between empirical formula and molecular formula. <span class="sm">(1M)</span></div>
+      <div class="ans-a"><strong>Empirical formula:</strong> Simplest whole number ratio of atoms in a compound (e.g., CH₂O for glucose). <strong>Molecular formula:</strong> Actual number of atoms of each element in one molecule (e.g., C₆H₁₂O₆). Molecular formula = n × Empirical formula.</div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c2">Ch2</span> iii. What is molarity? Give its formula and unit. <span class="sm">(1M)</span></div>
+      <div class="ans-a"><strong>Molarity (M):</strong> The number of moles of solute dissolved in 1 litre of solution.
+        <span class="fm">M = n / V(L) = (mass in g) / (M.mass × V in L)</span>
+        Unit: mol/L or mol dm⁻³ (M).
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c2">Ch2</span> iv. What is a standard solution? What are the requirements of a primary standard? <span class="sm">(1M)</span></div>
+      <div class="ans-a">A <strong>standard solution</strong> is a solution of accurately known concentration. A <strong>primary standard</strong> must be: (1) highly pure, (2) stable (not hygroscopic), (3) high molar mass (to reduce weighing error), (4) readily soluble, (5) non-toxic.</div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c3">Ch3</span> v. What is chromatography? Name two types. <span class="sm">(1M)</span></div>
+      <div class="ans-a"><strong>Chromatography</strong> is an analytical technique used to separate, identify and purify components of a mixture based on their different rates of migration through a stationary phase in a mobile phase. Types: (1) Paper chromatography, (2) Thin layer chromatography (TLC), (3) Column chromatography.</div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c4">Ch4</span> vi. State Heisenberg's Uncertainty Principle. <span class="sm">(1M)</span></div>
+      <div class="ans-a">It is impossible to determine simultaneously and precisely both the <strong>position</strong> and <strong>momentum</strong> of a subatomic particle.
+        <span class="fm">Δx · Δp ≥ h/4π</span>
+        where Δx = uncertainty in position, Δp = uncertainty in momentum, h = Planck's constant.
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c4">Ch4</span> vii. Write the electronic configuration of Fe (Z = 26). <span class="sm">(1M)</span></div>
+      <div class="ans-a">Fe (Z = 26): <span class="fm">1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁶ 4s²</span>
+        Or: [Ar] 3d⁶ 4s²<br>
+        (Argon core: 1s²2s²2p⁶3s²3p⁶ = 18 electrons; remaining 8 electrons fill 3d and 4s)
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c5">Ch5</span> viii. Define bond order. What is the bond order of O₂ and N₂? <span class="sm">(1M)</span></div>
+      <div class="ans-a"><strong>Bond order</strong> = (number of bonding electrons – number of antibonding electrons) / 2.
+        Higher bond order → stronger bond → shorter bond length.
+        <ul>
+          <li>O₂: double bond → bond order = <strong>2</strong></li>
+          <li>N₂: triple bond → bond order = <strong>3</strong></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════
+     Q3 — Short Answer I (12 Marks) — Any 4 of 6
+══════════════════════════ -->
+<div class="section">
+  <div class="sh h3"><div class="qno">3</div><div class="qtitle">Answer the following questions. (Any 4 out of 6) — 3 marks each</div><div class="qmarks">12 Marks</div></div>
+  <div class="sb">
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c1">Ch1</span> A. Calculate the percentage composition of water (H₂O). (H=1, O=16) <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <strong>Molar mass of H₂O:</strong>
+        <div class="ns">
+          <div class="step">M(H₂O) = 2(1) + 16 = 18 g/mol</div>
+          <div class="step">% H = (2/18) × 100 = <strong>11.11%</strong></div>
+          <div class="step">% O = (16/18) × 100 = <strong>88.89%</strong></div>
+          <div class="fin">H = 11.11%, O = 88.89% ✓ (total = 100%)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c1">Ch1</span> B. What is limiting reagent? In the reaction N₂ + 3H₂ → 2NH₃, if 28 g of N₂ and 6 g of H₂ are taken, identify the limiting reagent. (N=14, H=1) <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <strong>Limiting reagent:</strong> The reactant that is completely consumed first in a reaction and limits the amount of product formed.
+        <div class="ns">
+          <div class="step">Moles of N₂ = 28/28 = 1 mol; Moles of H₂ = 6/2 = 3 mol</div>
+          <div class="step">Stoichiometry: 1 mol N₂ requires 3 mol H₂</div>
+          <div class="step">Available: 1 mol N₂ and 3 mol H₂ → exactly stoichiometric</div>
+          <div class="step">Both are consumed completely; neither is in excess.</div>
+          <div class="fin">Both are limiting reagents simultaneously (exact stoichiometric ratio). NH₃ produced = 2 mol = 34 g.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c2">Ch2</span> C. What is titration? Explain acid-base titration with an example. <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <strong>Titration:</strong> A quantitative analytical technique in which a solution of known concentration (titrant/standard solution) is added to a solution of unknown concentration until the reaction is just complete (endpoint).
+        <ul>
+          <li><strong>Acid-Base Titration:</strong> Used to determine the concentration of an acid or base.</li>
+          <li>Example: HCl (unknown) vs NaOH (known standard). Indicator: phenolphthalein (colourless → pink at endpoint).</li>
+          <li><span class="fm">HCl + NaOH → NaCl + H₂O</span></li>
+          <li>At equivalence point: moles of acid = moles of base → M₁V₁ = M₂V₂</li>
+          <li>Burette: NaOH; Conical flask: HCl + indicator.</li>
+        </ul>
+        <div class="dn">📐 Diagram: Burette with NaOH → conical flask with HCl + phenolphthalein. Label: burette, clamp, flask, colour change at endpoint.</div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c3">Ch3</span> D. Explain the principle of paper chromatography. Define Rf value. <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <strong>Principle:</strong> Paper chromatography is based on <strong>partition</strong> — components of a mixture distribute themselves between two phases: a stationary phase (water held on paper fibres) and a mobile phase (organic solvent). Components with greater affinity for mobile phase travel faster; those with greater affinity for stationary phase travel slower → separation occurs.
+        <ul>
+          <li>A spot of mixture is placed on the paper. Solvent rises by capillary action, carrying components at different rates.</li>
+        </ul>
+        <strong>Rf value (Retention Factor):</strong>
+        <span class="fm">Rf = Distance travelled by component / Distance travelled by solvent front</span>
+        <ul>
+          <li>Rf is always between 0 and 1; it is characteristic for a compound under fixed conditions.</li>
+          <li>Higher Rf → more soluble in mobile phase → travels farther.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c4">Ch4</span> E. State and explain Aufbau principle, Pauli's exclusion principle, and Hund's rule. <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <ul>
+          <li><strong>Aufbau Principle:</strong> Electrons fill orbitals in order of increasing energy — lower energy orbitals are filled first. Order: 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p... (n+l rule: lower n+l filled first; if equal n+l, lower n first).</li>
+          <li><strong>Pauli's Exclusion Principle:</strong> No two electrons in an atom can have all four quantum numbers identical. An orbital can hold maximum 2 electrons with opposite spins (↑↓).</li>
+          <li><strong>Hund's Rule of Maximum Multiplicity:</strong> In degenerate orbitals (same energy, e.g., 3 p-orbitals), electrons occupy separate orbitals with parallel spins (↑↑) before pairing. This minimises electron repulsion and gives maximum spin multiplicity.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c5">Ch5</span> F. Explain ionic bond formation with the example of NaCl. Draw the electron dot structure. <span class="sm">(3M)</span></div>
+      <div class="ans-a">
+        <strong>Ionic Bond:</strong> A chemical bond formed by the complete transfer of one or more electrons from a metal to a non-metal, resulting in formation of oppositely charged ions attracted by electrostatic force.
+        <ul>
+          <li><strong>Formation of NaCl:</strong></li>
+          <li>Na (2,8,1) → loses 1 electron → Na⁺ (2,8) — achieves noble gas configuration</li>
+          <li>Cl (2,8,7) → gains 1 electron → Cl⁻ (2,8,8) — achieves noble gas configuration</li>
+          <li>Na⁺ + Cl⁻ → NaCl (ionic bond by electrostatic attraction)</li>
+          <li><span class="fm">Na → Na⁺ + e⁻ (ionisation); Cl + e⁻ → Cl⁻ (electron affinity)</span></li>
+        </ul>
+        <strong>Electron dot structure:</strong>
+        <ul>
+          <li>Na• + •Cl: → Na⁺ [:Cl:]⁻ (Na loses its valence electron to Cl)</li>
+        </ul>
+        <div class="dn">📐 Draw Lewis dot structure: Na with 1 dot → Na⁺ (no dots) and [:Cl:]⁻ with 4 pairs of dots around Cl.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════
+     Q4 — Short Answer II (12 Marks) — Any 3 of 5
+══════════════════════════ -->
+<div class="section">
+  <div class="sh h4"><div class="qno">4</div><div class="qtitle">Answer the following questions in detail. (Any 3 out of 5) — 4 marks each</div><div class="qmarks">12 Marks</div></div>
+  <div class="sb">
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c1">Ch1</span> A. A compound contains 40% C, 6.67% H, and 53.33% O by mass. Its molar mass is 180 g/mol. Find its empirical formula and molecular formula. (C=12, H=1, O=16) <span class="sm">(4M)</span></div>
+      <div class="ans-a">
+        <strong>Step 1 — Mole ratio:</strong>
+        <div class="ns">
+          <div class="step">C: 40/12 = 3.33 mol</div>
+          <div class="step">H: 6.67/1 = 6.67 mol</div>
+          <div class="step">O: 53.33/16 = 3.33 mol</div>
+          <div class="step"><strong>Step 2 — Divide by smallest (3.33):</strong></div>
+          <div class="step">C: 3.33/3.33 = 1; H: 6.67/3.33 = 2; O: 3.33/3.33 = 1</div>
+          <div class="step"><strong>Empirical formula: CH₂O</strong> (molar mass of empirical formula = 12+2+16 = 30 g/mol)</div>
+          <div class="step"><strong>Step 3 — Find n:</strong> n = M(molecular)/M(empirical) = 180/30 = 6</div>
+          <div class="fin">Molecular formula = (CH₂O)₆ = <strong>C₆H₁₂O₆</strong> (Glucose)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c2">Ch2</span> B. Calculate the molarity of a solution prepared by dissolving 4 g of NaOH in 500 mL of water. Also find the normality. (Na=23, O=16, H=1) <span class="sm">(4M)</span></div>
+      <div class="ans-a">
+        <div class="ns">
+          <div class="step"><strong>Molar mass of NaOH:</strong> 23+16+1 = 40 g/mol</div>
+          <div class="step"><strong>Moles of NaOH:</strong> n = 4/40 = 0.1 mol</div>
+          <div class="step"><strong>Volume:</strong> V = 500 mL = 0.5 L</div>
+          <div class="step"><strong>Molarity:</strong> M = n/V = 0.1/0.5 = <strong>0.2 mol/L (0.2 M)</strong></div>
+          <div class="step"><strong>Normality:</strong> For NaOH (acid-base), n-factor = 1 (one OH⁻)</div>
+          <div class="step">N = M × n-factor = 0.2 × 1 = <strong>0.2 N</strong></div>
+          <div class="fin">Molarity = 0.2 M; Normality = 0.2 N</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c4">Ch4</span> C. Describe Bohr's model of atom. State Bohr's postulates and derive the expression for radius of nth orbit. <span class="sm">(4M)</span></div>
+      <div class="ans-a">
+        <strong>Bohr's Model (1913):</strong>
+        <ul>
+          <li><strong>Postulate 1:</strong> Electrons revolve around the nucleus in fixed circular paths called <strong>orbits or shells</strong> without radiating energy.</li>
+          <li><strong>Postulate 2:</strong> Only those orbits are allowed in which the angular momentum (mvr) of the electron is an integral multiple of h/2π:
+            <span class="fm">mvr = nh/2π</span> (n = 1,2,3... = principal quantum number)
+          </li>
+          <li><strong>Postulate 3:</strong> Energy is emitted or absorbed as a photon only when an electron jumps from one orbit to another.
+            <span class="fm">ΔE = hν = E₂ – E₁</span>
+          </li>
+        </ul>
+        <strong>Radius of nth orbit:</strong>
+        <ul>
+          <li>Centripetal force = Electrostatic force: mv²/r = Ze²/4πε₀r²</li>
+          <li>From angular momentum: mvr = nh/2π → v = nh/2πmr</li>
+          <li>Substituting and solving: <span class="fm">rₙ = n²a₀/Z</span></li>
+          <li>where a₀ = 0.529 Å (Bohr radius for H, n=1)</li>
+          <li>For Hydrogen (Z=1): r₁ = 0.529 Å, r₂ = 4×0.529 = 2.116 Å</li>
+        </ul>
+        <strong>Limitations:</strong> Cannot explain multi-electron atoms, Zeeman effect, or fine structure of spectra.
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c5">Ch5</span> D. Explain VSEPR theory. Predict the shape of NH₃ and H₂O using VSEPR theory. <span class="sm">(4M)</span></div>
+      <div class="ans-a">
+        <strong>VSEPR Theory (Valence Shell Electron Pair Repulsion):</strong>
+        <ul>
+          <li>Electron pairs (both bond pairs and lone pairs) around the central atom repel each other and arrange themselves to minimise repulsion → determines molecular geometry.</li>
+          <li>Repulsion order: Lone pair–Lone pair &gt; Lone pair–Bond pair &gt; Bond pair–Bond pair</li>
+        </ul>
+        <strong>NH₃ (Ammonia):</strong>
+        <ul>
+          <li>N has 5 valence electrons; forms 3 bonds with H + 1 lone pair</li>
+          <li>Total electron pairs = 4 (3 BP + 1 LP) → tetrahedral electron geometry</li>
+          <li>Molecular shape: <strong>Trigonal pyramidal</strong> (lone pair pushes bonding pairs down)</li>
+          <li>Bond angle ≈ 107° (less than 109.5° due to LP repulsion)</li>
+        </ul>
+        <strong>H₂O (Water):</strong>
+        <ul>
+          <li>O has 6 valence electrons; forms 2 bonds with H + 2 lone pairs</li>
+          <li>Total electron pairs = 4 (2 BP + 2 LP) → tetrahedral electron geometry</li>
+          <li>Molecular shape: <strong>Bent/V-shape</strong></li>
+          <li>Bond angle ≈ 104.5° (reduced further due to 2 LP repulsions)</li>
+        </ul>
+        <div class="dn">📐 Draw: NH₃ with N at top, 3 H atoms at base (pyramid) + lone pair. H₂O with O at centre, 2 H atoms at sides, 2 lone pairs at top.</div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c5">Ch5</span> E. Explain hybridisation. Describe sp³ hybridisation of carbon in methane (CH₄) with diagram. <span class="sm">(4M)</span></div>
+      <div class="ans-a">
+        <strong>Hybridisation:</strong> The process of mixing of atomic orbitals of similar energy to form new hybrid orbitals of equal energy and identical shape is called hybridisation.
+        <ul>
+          <li>Hybridisation explains molecular geometry and bond angles.</li>
+        </ul>
+        <strong>sp³ Hybridisation in Methane (CH₄):</strong>
+        <ul>
+          <li>Carbon ground state: 1s² 2s² 2p²  (only 2 unpaired electrons)</li>
+          <li>Excited state: 1s² 2s¹ 2p³ (promoted: 4 unpaired electrons)</li>
+          <li>1 s-orbital + 3 p-orbitals mix → 4 equivalent <strong>sp³ hybrid orbitals</strong></li>
+          <li>4 sp³ orbitals point to corners of a regular tetrahedron (bond angle = <strong>109.5°</strong>)</li>
+          <li>Each sp³ orbital overlaps with 1s of H → 4 C–H sigma (σ) bonds</li>
+          <li>Shape: <strong>Tetrahedral</strong></li>
+        </ul>
+        <div class="dn">📐 Diagram: C at centre with 4 sp³ lobes pointing to 4 corners of tetrahedron. Each lobe overlapping with H(1s). Label: 109.5° bond angle, sp³ orbital, σ bond.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Marks Table -->
+<div style="max-width:900px;margin:18px auto;background:#fff;border-radius:14px;padding:18px 22px;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+  <h3 style="color:#1a237e;margin-bottom:12px;font-size:.95rem;">📊 Maharashtra Board Class 11 Chemistry — Paper Pattern</h3>
+  <table style="width:100%;border-collapse:collapse;font-size:.85rem;">
+    <tr style="background:linear-gradient(135deg,#1a237e,#3949ab);color:#fff;">
+      <th style="padding:7px 14px;text-align:left;">Q</th><th style="padding:7px 14px;text-align:left;">Type</th><th style="padding:7px 14px;text-align:left;">Pattern</th><th style="padding:7px 14px;text-align:center;">Marks</th>
+    </tr>
+    <tr><td style="padding:7px 12px;border-bottom:1px solid #e8edf2;">Q1</td><td style="padding:7px 12px;border-bottom:1px solid #e8edf2;">MCQ</td><td style="padding:7px 12px;border-bottom:1px solid #e8edf2;">8 × 1 mark (all compulsory)</td><td style="padding:7px 12px;text-align:center;font-weight:700;border-bottom:1px solid #e8edf2;">8</td></tr>
+    <tr style="background:#f8fafc;"><td style="padding:7px 12px;border-bottom:1px solid #e8edf2;">Q2</td><td style="padding:7px 12px;border-bottom:1px solid #e8edf2;">Very Short Answer</td><td style="padding:7px 12px;border-bottom:1px solid #e8edf2;">8 × 1 mark (all compulsory)</td><td style="padding:7px 12px;text-align:center;font-weight:700;border-bottom:1px solid #e8edf2;">8</td></tr>
+    <tr><td style="padding:7px 12px;border-bottom:1px solid #e8edf2;">Q3</td><td style="padding:7px 12px;border-bottom:1px solid #e8edf2;">Short Answer I</td><td style="padding:7px 12px;border-bottom:1px solid #e8edf2;">Any 4 of 6 × 3 marks</td><td style="padding:7px 12px;text-align:center;font-weight:700;border-bottom:1px solid #e8edf2;">12</td></tr>
+    <tr style="background:#f8fafc;"><td style="padding:7px 12px;">Q4</td><td style="padding:7px 12px;">Short Answer II</td><td style="padding:7px 12px;">Any 3 of 5 × 4 marks</td><td style="padding:7px 12px;text-align:center;font-weight:700;">12</td></tr>
+    <tr style="background:#e8eaf6;"><td style="padding:9px 14px;font-weight:900;" colspan="3">TOTAL</td><td style="padding:9px 14px;text-align:center;font-weight:900;font-size:1.1rem;color:#1a237e;">40</td></tr>
+  </table>
+</div>
+
+<footer><p>Visions Classes · visionslearning.in · <a href="notes-class11.html">← Back to Class 11 Notes</a></p></footer>
+
+<!-- Circular Watermark -->
+<div style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;opacity:0.07;user-select:none;">
+  <svg width="340" height="340" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="170" cy="170" r="155" fill="none" stroke="#1a237e" stroke-width="6"/>
+    <circle cx="170" cy="170" r="138" fill="none" stroke="#1a237e" stroke-width="2"/>
+    <path id="tc1" fill="none" d="M 40,170 a130,130 0 1,1 260,0"/>
+    <path id="bc1" fill="none" d="M 40,170 a130,130 0 0,0 260,0"/>
+    <text font-size="21" font-weight="900" fill="#1a237e" font-family="Arial,sans-serif" letter-spacing="5"><textPath href="#tc1" startOffset="10%">VISIONS CLASSES · VISIONSLEARNING.IN ·</textPath></text>
+    <text font-size="17" font-weight="900" fill="#1a237e" font-family="Arial,sans-serif" letter-spacing="3"><textPath href="#bc1" startOffset="10%">CHEMISTRY · CLASS 11 · MAHARASHTRA BOARD</textPath></text>
+    <text x="170" y="158" text-anchor="middle" font-size="28" font-weight="900" fill="#1a237e" font-family="Arial,sans-serif">VISIONS</text>
+    <text x="170" y="193" text-anchor="middle" font-size="28" font-weight="900" fill="#1a237e" font-family="Arial,sans-serif">CLASSES</text>
+    <text x="170" y="223" text-anchor="middle" font-size="13" font-weight="700" fill="#1a237e" font-family="Arial,sans-serif" letter-spacing="2">★ EST. 2024 ★</text>
+  </svg>
+</div>
+
+</body>
+</html>
