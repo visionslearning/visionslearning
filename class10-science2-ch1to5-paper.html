@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Class 10 Science 2 — Ch.1–5 Question Paper | Maharashtra Board</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#1a1a1a;}
+
+  .site-header{background:linear-gradient(135deg,#1b5e20,#2e7d32,#00695c);padding:14px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 3px 12px rgba(0,0,0,.3);}
+  .site-header a{color:#a5d6a7;text-decoration:none;font-size:.85rem;font-weight:600;}
+  .site-header a:hover{color:#fff;}
+  .header-title{color:#fff;font-size:1.1rem;font-weight:800;}
+
+  .paper-hero{background:linear-gradient(135deg,#1b5e20 0%,#2e7d32 45%,#00695c 100%);padding:36px 20px 28px;text-align:center;color:#fff;}
+  .board-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:5px 18px;font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
+  .paper-hero h1{font-size:1.65rem;font-weight:900;line-height:1.25;margin-bottom:8px;}
+  .paper-hero .sub{font-size:.9rem;color:rgba(255,255,255,.85);margin-bottom:16px;}
+  .marks-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+  .marks-pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:22px;padding:7px 16px;font-size:.82rem;font-weight:700;}
+
+  .ch-strip{max-width:880px;margin:14px auto 0;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:0 12px;}
+  .ch-tag{background:#fff;color:#1b5e20;font-size:.72rem;font-weight:800;padding:5px 12px;border-radius:14px;border:2px solid #a5d6a7;}
+
+  .instr{background:#e8f5e9;border-left:4px solid #2e7d32;margin:16px auto;max-width:880px;padding:14px 20px;border-radius:8px;font-size:.87rem;line-height:1.7;}
+  .instr strong{color:#1b5e20;}
+
+  .section{max-width:880px;margin:16px auto;background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden;}
+  .sh{padding:14px 22px;display:flex;align-items:center;gap:12px;}
+  .sh .qno{background:#fff;font-weight:900;font-size:1rem;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .sh .qtitle{color:#fff;font-size:.97rem;font-weight:800;flex:1;line-height:1.3;}
+  .sh .qmarks{background:rgba(255,255,255,.2);color:#fff;font-size:.8rem;font-weight:700;padding:4px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.35);white-space:nowrap;}
+  .h1{background:linear-gradient(135deg,#1b5e20,#2e7d32);} .h1 .qno{color:#1b5e20;}
+  .h2{background:linear-gradient(135deg,#0d47a1,#1565c0);} .h2 .qno{color:#0d47a1;}
+  .h3{background:linear-gradient(135deg,#e65100,#f57c00);} .h3 .qno{color:#e65100;}
+  .h4{background:linear-gradient(135deg,#880e4f,#c2185b);} .h4 .qno{color:#880e4f;}
+  .h5{background:linear-gradient(135deg,#4a148c,#7b1fa2);} .h5 .qno{color:#4a148c;}
+  .h6{background:linear-gradient(135deg,#006064,#00838f);} .h6 .qno{color:#006064;}
+  .h7{background:linear-gradient(135deg,#bf360c,#e64a19);} .h7 .qno{color:#bf360c;}
+  .sb{padding:20px 24px;}
+
+  .cl{display:inline-block;font-size:.7rem;font-weight:800;padding:2px 9px;border-radius:8px;margin-bottom:4px;text-transform:uppercase;letter-spacing:.8px;}
+  .c1{background:#e8f5e9;color:#1b5e20;} .c2{background:#e3f2fd;color:#0d47a1;} .c3{background:#fff3e0;color:#e65100;} .c4{background:#fce4ec;color:#880e4f;} .c5{background:#f3e5f5;color:#4a148c;}
+
+  /* MCQ */
+  .mcq-item{margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid #f0f4f8;}
+  .mcq-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+  .mcq-q{font-size:.92rem;font-weight:700;margin-bottom:8px;line-height:1.5;}
+  .opts{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+  .opt{background:#f5f7fa;border:1.5px solid #e0e7ef;border-radius:8px;padding:7px 12px;font-size:.85rem;}
+  .opt.c{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700;}
+  .ab{display:inline-block;background:#e8f5e9;color:#1b5e20;font-size:.74rem;font-weight:700;padding:3px 10px;border-radius:10px;margin-top:6px;border:1px solid #a5d6a7;}
+
+  /* T/F */
+  .tf-item{display:flex;align-items:flex-start;gap:11px;padding:10px 0;border-bottom:1px solid #f0f4f8;}
+  .tf-item:last-child{border-bottom:none;}
+  .tf-num{font-weight:900;color:#0d47a1;min-width:22px;font-size:.9rem;}
+  .tf-q{font-size:.88rem;line-height:1.5;flex:1;}
+  .t{background:#e8f5e9;color:#1b5e20;border:1px solid #a5d6a7;font-size:.78rem;font-weight:700;padding:3px 10px;border-radius:10px;white-space:nowrap;flex-shrink:0;}
+  .f{background:#ffebee;color:#b71c1c;border:1px solid #ef9a9a;font-size:.78rem;font-weight:700;padding:3px 10px;border-radius:10px;white-space:nowrap;flex-shrink:0;}
+  .fc{font-size:.8rem;color:#b71c1c;padding:3px 34px 8px;background:#fff3f3;border-radius:6px;}
+
+  /* Match */
+  .mw{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .mw h4{font-size:.8rem;font-weight:800;color:#e65100;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+  .mr{padding:7px 11px;background:#f5f7fa;border-radius:7px;font-size:.86rem;margin-bottom:5px;border:1px solid #e0e7ef;}
+  .mk{font-weight:700;color:#e65100;}
+  .mat{margin-top:12px;width:100%;border-collapse:collapse;font-size:.83rem;}
+  .mat th{background:#e65100;color:#fff;padding:7px 12px;text-align:left;}
+  .mat td{padding:7px 12px;border-bottom:1px solid #e8edf2;}
+  .mat tr:last-child td{border-bottom:none;}
+  .mat tr:nth-child(even) td{background:#fff3e0;}
+
+  /* Answer items */
+  .ans-item{padding:13px 0;border-bottom:1px solid #f0f4f8;}
+  .ans-item:last-child{border-bottom:none;}
+  .ans-q{font-size:.92rem;font-weight:700;margin-bottom:7px;line-height:1.5;}
+  .sm{font-size:.73rem;color:#888;font-weight:600;margin-left:5px;}
+  .ans-a{font-size:.86rem;line-height:1.75;background:#f8fafc;border-left:3px solid #2e7d32;padding:10px 14px;border-radius:0 8px 8px 0;}
+  .ans-a ul{padding-left:17px;margin-top:4px;}
+  .ans-a ul li{margin-bottom:4px;}
+  .ans-a strong{color:#1b5e20;}
+  .fm{font-family:monospace;background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:5px;font-weight:700;display:inline-block;margin:2px 0;}
+  .dn{background:#e8eaf6;border:1.5px dashed #5c6bc0;border-radius:9px;padding:10px 14px;font-size:.8rem;color:#3949ab;margin-top:9px;text-align:center;}
+
+  /* Activity box */
+  .activity-box{background:linear-gradient(135deg,#e8f5e9,#f1f8e9);border:2px solid #66bb6a;border-radius:12px;padding:16px 18px;margin-bottom:18px;}
+  .activity-box:last-child{margin-bottom:0;}
+  .act-header{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+  .act-badge{background:linear-gradient(135deg,#2e7d32,#43a047);color:#fff;font-size:.75rem;font-weight:800;padding:4px 12px;border-radius:10px;text-transform:uppercase;letter-spacing:1px;}
+  .act-title{font-size:.95rem;font-weight:800;color:#1b5e20;}
+  .act-q{font-size:.88rem;font-weight:700;color:#1a1a1a;margin-bottom:8px;line-height:1.5;}
+  .act-aim{background:#fff;border-left:3px solid #43a047;padding:8px 12px;border-radius:0 7px 7px 0;font-size:.85rem;margin-bottom:8px;}
+  .act-a{background:#fff;border-left:3px solid #1b5e20;padding:10px 13px;border-radius:0 8px 8px 0;font-size:.86rem;line-height:1.75;}
+  .act-a ul{padding-left:16px;margin-top:4px;}
+  .act-a ul li{margin-bottom:4px;}
+
+  /* Marks table */
+  table.mt{width:100%;border-collapse:collapse;font-size:.85rem;}
+  table.mt th{background:linear-gradient(135deg,#1b5e20,#2e7d32);color:#fff;padding:8px 14px;text-align:left;}
+  table.mt td{padding:8px 12px;border-bottom:1px solid #e8edf2;}
+  table.mt tr:nth-child(even) td{background:#f1f8e9;}
+
+  footer{text-align:center;padding:26px 16px;font-size:.8rem;color:#888;}
+  footer a{color:#2e7d32;text-decoration:none;}
+
+  @media(max-width:600px){.opts{grid-template-columns:1fr;}.mw{grid-template-columns:1fr;}.paper-hero h1{font-size:1.25rem;}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="site-header">
+  <a href="notes-class10.html">← Class 10 Notes</a>
+  <span style="color:rgba(255,255,255,.4);">|</span>
+  <span class="header-title">Science 2 — Ch.1–5 Question Paper</span>
+</div>
+
+<!-- HERO -->
+<div class="paper-hero">
+  <div class="board-tag">Maharashtra State Board · SSC Class 10</div>
+  <h1>Science Part 2 — Question Paper<br>Chapter 1 to 5 with Answers</h1>
+  <div class="sub">Board Pattern · 40 Marks · Activity Based Questions Included</div>
+  <div class="marks-row">
+    <div class="marks-pill">📋 Total: 40 Marks</div>
+    <div class="marks-pill">⏱ Time: 2 Hours</div>
+    <div class="marks-pill">🧪 Activity Based Q Included</div>
+  </div>
+</div>
+
+<div class="ch-strip">
+  <span class="ch-tag">Ch1: Heredity & Evolution</span>
+  <span class="ch-tag">Ch2: Life Processes Part 1</span>
+  <span class="ch-tag">Ch3: Life Processes Part 2</span>
+  <span class="ch-tag">Ch4: Environmental Management</span>
+  <span class="ch-tag">Ch5: Towards Green Energy</span>
+</div>
+
+<div class="instr" style="margin-top:16px;">
+  <strong>General Instructions:</strong>
+  (1) All questions are compulsory. (2) Figures to the right indicate marks.
+  (3) Draw neat labelled diagrams wherever necessary.
+  (4) Answers are provided below each question for reference.
+  (5) Activity-based questions are in Q7 — read carefully and answer.
+</div>
+
+<!-- ══════════════════════════════
+     Q1 — MCQ (4 Marks)
+══════════════════════════════ -->
+<div class="section">
+  <div class="sh h1"><div class="qno">1</div><div class="qtitle">Choose the correct alternative and rewrite the statement.</div><div class="qmarks">4 Marks</div></div>
+  <div class="sb">
+
+    <div class="mcq-item">
+      <span class="cl c1">Ch1 · Heredity & Evolution</span>
+      <div class="mcq-q">i. The physical appearance of an organism determined by its genes is called ________.</div>
+      <div class="opts">
+        <div class="opt">a) Genotype</div>
+        <div class="opt c">b) Phenotype</div>
+        <div class="opt">c) Allele</div>
+        <div class="opt">d) Chromosome</div>
+      </div>
+      <span class="ab">✓ Answer: (b) Phenotype — the observable traits of an organism</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c2">Ch2 · Life Processes Part 1</span>
+      <div class="mcq-q">ii. The enzyme that begins the digestion of starch in the mouth is ________.</div>
+      <div class="opts">
+        <div class="opt">a) Pepsin</div>
+        <div class="opt">b) Lipase</div>
+        <div class="opt c">c) Salivary amylase (Ptyalin)</div>
+        <div class="opt">d) Trypsin</div>
+      </div>
+      <span class="ab">✓ Answer: (c) Salivary amylase — converts starch to maltose in mouth</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c3">Ch3 · Life Processes Part 2</span>
+      <div class="mcq-q">iii. Which of the following is the excretory unit of the kidney?</div>
+      <div class="opts">
+        <div class="opt">a) Nephron</div>
+        <div class="opt c">b) Nephron</div>
+        <div class="opt">c) Neuron</div>
+        <div class="opt">d) Alveolus</div>
+      </div>
+      <span class="ab">✓ Answer: (a) Nephron — the structural and functional unit of kidney</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c5">Ch5 · Green Energy</span>
+      <div class="mcq-q">iv. Which of the following is a renewable source of energy?</div>
+      <div class="opts">
+        <div class="opt">a) Coal</div>
+        <div class="opt">b) Petroleum</div>
+        <div class="opt c">c) Solar energy</div>
+        <div class="opt">d) Natural gas</div>
+      </div>
+      <span class="ab">✓ Answer: (c) Solar energy — inexhaustible, clean renewable source</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     Q2 — True or False (4 Marks)
+══════════════════════════════ -->
+<div class="section">
+  <div class="sh h2"><div class="qno">2</div><div class="qtitle">State whether the following statements are True or False. If false, rewrite the correct statement.</div><div class="qmarks">4 Marks</div></div>
+  <div class="sb">
+
+    <div class="tf-item"><span class="tf-num">i.</span><div style="flex:1;"><span class="cl c1">Ch1</span><div class="tf-q">Mendel's Law of Segregation states that alleles separate during the formation of gametes.</div></div><span class="t">TRUE</span></div>
+
+    <div class="tf-item"><span class="tf-num">ii.</span><div style="flex:1;"><span class="cl c2">Ch2</span><div class="tf-q">Photosynthesis takes place in the mitochondria of plant cells.</div></div><span class="f">FALSE</span></div>
+    <div class="fc">✎ Correct: Photosynthesis takes place in the <strong>chloroplasts</strong> of plant cells.</div>
+
+    <div class="tf-item"><span class="tf-num">iii.</span><div style="flex:1;"><span class="cl c4">Ch4</span><div class="tf-q">Biodiversity hotspots are areas with exceptionally high species richness and endemism that are under threat.</div></div><span class="t">TRUE</span></div>
+
+    <div class="tf-item"><span class="tf-num">iv.</span><div style="flex:1;"><span class="cl c3">Ch3</span><div class="tf-q">Blood flows from the heart to the lungs through the pulmonary vein.</div></div><span class="f">FALSE</span></div>
+    <div class="fc">✎ Correct: Blood flows from the heart to the lungs through the <strong>pulmonary artery</strong>. Pulmonary vein carries oxygenated blood from lungs back to heart.</div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     Q3 — Match the Columns (4 Marks)
+══════════════════════════════ -->
+<div class="section">
+  <div class="sh h3"><div class="qno">3</div><div class="qtitle">Match the columns A and B.</div><div class="qmarks">4 Marks</div></div>
+  <div class="sb">
+    <div class="mw">
+      <div>
+        <h4>Column A</h4>
+        <div class="mr"><span class="mk">A.</span> Stomata</div>
+        <div class="mr"><span class="mk">B.</span> Insulin</div>
+        <div class="mr"><span class="mk">C.</span> Ozone layer</div>
+        <div class="mr"><span class="mk">D.</span> Solar panel</div>
+        <div class="mr"><span class="mk">E.</span> Darwin</div>
+      </div>
+      <div>
+        <h4>Column B</h4>
+        <div class="mr">1. Photovoltaic effect — converts sunlight to electricity</div>
+        <div class="mr">2. Controls blood sugar level</div>
+        <div class="mr">3. Theory of Natural Selection</div>
+        <div class="mr">4. Protects from UV radiation</div>
+        <div class="mr">5. Gas exchange in plants — opening on leaves</div>
+      </div>
+    </div>
+    <table class="mat">
+      <tr><th>Column A</th><th>Match</th><th>Column B</th></tr>
+      <tr><td>A. Stomata</td><td>→ 5</td><td>Gas exchange in plants — opening on leaves</td></tr>
+      <tr><td>B. Insulin</td><td>→ 2</td><td>Controls blood sugar level</td></tr>
+      <tr><td>C. Ozone layer</td><td>→ 4</td><td>Protects from UV radiation</td></tr>
+      <tr><td>D. Solar panel</td><td>→ 1</td><td>Photovoltaic effect — converts sunlight to electricity</td></tr>
+      <tr><td>E. Darwin</td><td>→ 3</td><td>Theory of Natural Selection</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     Q4 — Complete the Sentences (4 Marks)
+══════════════════════════════ -->
+<div class="section">
+  <div class="sh h4"><div class="qno">4</div><div class="qtitle">Complete the following sentences by filling in the blanks with appropriate words.</div><div class="qmarks">4 Marks</div></div>
+  <div class="sb">
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c1">Ch1</span> i. The trait that is expressed in the first filial (F₁) generation is called a ________ trait.</div>
+      <div class="ans-a"><strong>dominant</strong> trait. (The trait that is masked is called recessive.)</div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c2">Ch2</span> ii. The green pigment in plant leaves responsible for absorbing sunlight during photosynthesis is called ________.</div>
+      <div class="ans-a"><strong>chlorophyll</strong>. It absorbs mainly red and blue light and reflects green light.</div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c4">Ch4</span> iii. The process of reusing materials directly without recycling, to reduce waste, is called ________.</div>
+      <div class="ans-a"><strong>reuse</strong>. (Part of the 3R principle — Reduce, Reuse, Recycle)</div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c5">Ch5</span> iv. Energy produced using the force of flowing water by rotating turbines is called ________ energy.</div>
+      <div class="ans-a"><strong>hydroelectric</strong> energy (or hydropower). It is a renewable, clean source of electricity.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     Q5 — Short Notes Any 2 (8 Marks)
+══════════════════════════════ -->
+<div class="section">
+  <div class="sh h5"><div class="qno">5</div><div class="qtitle">Write short notes. (Any 2 out of 4) — 4 marks each</div><div class="qmarks">8 Marks</div></div>
+  <div class="sb">
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c1">Ch1</span> A. Explain Mendel's Law of Segregation with a monohybrid cross. <span class="sm">(4M)</span></div>
+      <div class="ans-a">
+        <strong>Mendel's Law of Segregation:</strong> During the formation of gametes (sex cells), the two alleles of a gene separate (segregate) so that each gamete carries only one allele.
+        <br><br>
+        <strong>Monohybrid Cross (Tall × Dwarf pea plant):</strong>
+        <ul>
+          <li>Parents: TT (Tall) × tt (Dwarf)</li>
+          <li>F₁ generation: All Tt (Tall) — dominant trait expressed</li>
+          <li>F₁ × F₁: Tt × Tt →</li>
+        </ul>
+        <table style="border-collapse:collapse;font-size:.82rem;margin:8px 0;">
+          <tr><th style="padding:5px 10px;background:#2e7d32;color:#fff;"> </th><th style="padding:5px 10px;background:#2e7d32;color:#fff;">T</th><th style="padding:5px 10px;background:#2e7d32;color:#fff;">t</th></tr>
+          <tr><td style="padding:5px 10px;font-weight:700;">T</td><td style="padding:5px 10px;background:#e8f5e9;">TT (Tall)</td><td style="padding:5px 10px;background:#e8f5e9;">Tt (Tall)</td></tr>
+          <tr><td style="padding:5px 10px;font-weight:700;">t</td><td style="padding:5px 10px;background:#e8f5e9;">Tt (Tall)</td><td style="padding:5px 10px;background:#fff3e0;">tt (Dwarf)</td></tr>
+        </table>
+        <ul>
+          <li>F₂ ratio: <strong>3 Tall : 1 Dwarf</strong> (Phenotypic ratio)</li>
+          <li>Genotypic ratio: 1 TT : 2 Tt : 1 tt</li>
+          <li>This proves alleles segregate into separate gametes — Law of Segregation.</li>
+        </ul>
+        <div class="dn">📐 Draw Punnett square showing F₁ × F₁ cross with T and t gametes.</div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c2">Ch2</span> B. Explain the process of photosynthesis. Write the overall equation. <span class="sm">(4M)</span></div>
+      <div class="ans-a">
+        <strong>Photosynthesis:</strong> The process by which green plants prepare their own food using sunlight, water, and carbon dioxide.
+        <br><br>
+        <strong>Overall Equation:</strong>
+        <div class="fm">6CO₂ + 6H₂O → (sunlight, chlorophyll) → C₆H₁₂O₆ + 6O₂</div>
+        <strong>Conditions required:</strong>
+        <ul>
+          <li>Sunlight (energy source)</li>
+          <li>Chlorophyll (green pigment in chloroplasts — absorbs light)</li>
+          <li>Water (absorbed by roots from soil)</li>
+          <li>Carbon dioxide (absorbed through stomata)</li>
+        </ul>
+        <strong>Two stages:</strong>
+        <ul>
+          <li><strong>Light reaction (in thylakoid):</strong> Light energy splits water (photolysis) → releases O₂ → produces ATP and NADPH.</li>
+          <li><strong>Dark reaction / Calvin cycle (in stroma):</strong> CO₂ is fixed using ATP and NADPH → glucose (C₆H₁₂O₆) is produced.</li>
+        </ul>
+        <strong>Importance:</strong>
+        <ul>
+          <li>Produces food for all organisms (base of food chain).</li>
+          <li>Releases O₂ — essential for respiration.</li>
+          <li>Maintains CO₂-O₂ balance in atmosphere.</li>
+        </ul>
+        <div class="dn">📐 Draw a leaf cross-section showing chloroplasts, CO₂ entering through stomata, O₂ released, and sunlight arrows.</div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c4">Ch4</span> C. What is biodiversity? Explain its importance and threats to biodiversity. <span class="sm">(4M)</span></div>
+      <div class="ans-a">
+        <strong>Biodiversity:</strong> The variety of life on Earth — including all species of plants, animals, microorganisms, and the ecosystems they form. It exists at three levels: genetic, species, and ecosystem diversity.
+        <br><br>
+        <strong>Importance of Biodiversity:</strong>
+        <ul>
+          <li>Maintains ecological balance and food chains.</li>
+          <li>Provides food, medicine, raw materials, and oxygen.</li>
+          <li>Helps in soil formation, water purification, and climate regulation.</li>
+          <li>Has aesthetic, cultural, and economic value.</li>
+        </ul>
+        <strong>Threats to Biodiversity:</strong>
+        <ul>
+          <li><strong>Habitat destruction:</strong> Deforestation, urbanisation, agriculture.</li>
+          <li><strong>Pollution:</strong> Air, water, and soil pollution killing species.</li>
+          <li><strong>Overexploitation:</strong> Overhunting, overfishing, overharvesting.</li>
+          <li><strong>Invasive species:</strong> Introduced species competing with native species.</li>
+          <li><strong>Climate change:</strong> Global warming altering habitats.</li>
+        </ul>
+        <strong>Conservation:</strong> Protected areas (national parks, wildlife sanctuaries), biodiversity hotspots protection, ex-situ conservation (zoos, seed banks).
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c5">Ch5</span> D. Explain solar energy as a source of green energy. Describe two devices that use solar energy. <span class="sm">(4M)</span></div>
+      <div class="ans-a">
+        <strong>Solar Energy:</strong>
+        <ul>
+          <li>Energy from the Sun in the form of electromagnetic radiation (light and heat).</li>
+          <li>Renewable, inexhaustible, pollution-free, and available everywhere.</li>
+          <li>India receives ~300 sunny days per year — huge solar potential.</li>
+        </ul>
+        <strong>Two devices using solar energy:</strong>
+        <br><br>
+        <strong>1. Solar Cell (Photovoltaic Cell):</strong>
+        <ul>
+          <li>Converts sunlight directly into electrical energy using the photoelectric effect.</li>
+          <li>Made of semiconductor material (silicon).</li>
+          <li>Multiple cells form a solar panel; panels connected → solar power plant.</li>
+          <li>Uses: calculators, street lights, satellites, rooftop power generation.</li>
+        </ul>
+        <strong>2. Solar Water Heater:</strong>
+        <ul>
+          <li>Uses solar thermal energy to heat water for domestic use.</li>
+          <li>Consists of flat plate collector (absorbs heat), insulated tank, and pipes.</li>
+          <li>Black surface absorbs maximum sunlight → heats water to 60–80°C.</li>
+          <li>Saves electricity; environment-friendly; used in homes, hotels, hospitals.</li>
+        </ul>
+        <div class="dn">📐 Draw: (1) Solar cell — p-n junction semiconductor with sunlight arrows → electric current. (2) Solar water heater — collector + tank + inlet/outlet pipes.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     Q6 — Answer Any 2 (8 Marks)
+══════════════════════════════ -->
+<div class="section">
+  <div class="sh h6"><div class="qno">6</div><div class="qtitle">Answer the following questions in detail. (Any 2 out of 3) — 4 marks each</div><div class="qmarks">8 Marks</div></div>
+  <div class="sb">
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c1">Ch1</span> A. Explain Darwin's Theory of Natural Selection. How does it explain the evolution of long-necked giraffes? <span class="sm">(4M)</span></div>
+      <div class="ans-a">
+        <strong>Darwin's Theory of Natural Selection (1859):</strong>
+        <ul>
+          <li><strong>Variation:</strong> Individuals in a population show natural variation in their traits.</li>
+          <li><strong>Overproduction:</strong> Organisms produce more offspring than can survive (struggle for existence).</li>
+          <li><strong>Survival of the Fittest:</strong> Individuals with favourable variations survive and reproduce; those with unfavourable variations die out.</li>
+          <li><strong>Natural Selection:</strong> Nature "selects" which individuals survive based on their traits and environment.</li>
+          <li><strong>Inheritance:</strong> Favourable traits are passed to offspring → gradually the population changes → evolution occurs.</li>
+          <li><strong>Gradual process:</strong> Evolution happens over many generations, not suddenly.</li>
+        </ul>
+        <strong>Example — Evolution of long-necked giraffes:</strong>
+        <ul>
+          <li>Ancestral giraffes had varying neck lengths (natural variation).</li>
+          <li>Those with longer necks could reach higher leaves → better food access → survived and reproduced.</li>
+          <li>Short-necked giraffes couldn't reach food → less fit → died out.</li>
+          <li>Long-necked trait was inherited by offspring → over many generations → all giraffes became long-necked.</li>
+        </ul>
+        <strong>Evidence:</strong> Fossil record, comparative anatomy (homologous organs), vestigial organs, biogeography.
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c2">Ch2</span> B. Describe the human digestive system with a neat labelled diagram. Explain the role of each organ. <span class="sm">(4M)</span></div>
+      <div class="ans-a">
+        <strong>Human Digestive System:</strong> The system that breaks down food into absorbable nutrients is the digestive system.
+        <ul>
+          <li><strong>Mouth:</strong> Teeth mechanically grind food; salivary amylase begins starch digestion → food becomes bolus.</li>
+          <li><strong>Oesophagus:</strong> Muscular tube that carries food from mouth to stomach by peristalsis.</li>
+          <li><strong>Stomach:</strong> Secretes gastric juice (HCl + pepsin). HCl kills bacteria, pepsin digests proteins → food becomes chyme.</li>
+          <li><strong>Small intestine:</strong> Main site of digestion and absorption. Receives bile (from liver) and pancreatic juice (from pancreas). Bile emulsifies fats; pancreatic enzymes digest carbohydrates, proteins, fats. Villi absorb nutrients into blood.</li>
+          <li><strong>Large intestine:</strong> Absorbs water and minerals; forms faeces.</li>
+          <li><strong>Rectum and Anus:</strong> Stores and expels faeces (egestion).</li>
+          <li><strong>Liver:</strong> Produces bile for fat emulsification; detoxification.</li>
+          <li><strong>Pancreas:</strong> Produces pancreatic juice with enzymes for all food types.</li>
+        </ul>
+        <div class="dn">📐 Draw: Full digestive system diagram. Label: mouth, salivary glands, oesophagus, stomach, liver, gall bladder, pancreas, small intestine (duodenum, jejunum, ileum), large intestine, rectum, anus.</div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c3">Ch3</span> C. Explain the process of excretion in humans. Describe the structure and function of the kidney (nephron). <span class="sm">(4M)</span></div>
+      <div class="ans-a">
+        <strong>Excretion:</strong> The process of removing metabolic waste products from the body. Main excretory product = urea (from protein metabolism).
+        <br><br>
+        <strong>Human Excretory System:</strong>
+        <ul>
+          <li>Two kidneys, two ureters, urinary bladder, urethra.</li>
+        </ul>
+        <strong>Kidney Structure:</strong>
+        <ul>
+          <li>Bean-shaped organs on either side of the vertebral column.</li>
+          <li>Each kidney contains ~1 million nephrons (functional units).</li>
+        </ul>
+        <strong>Nephron — Structure and Function:</strong>
+        <ul>
+          <li><strong>Glomerulus:</strong> A ball of capillaries inside the Bowman's capsule. Blood is filtered under pressure → filtrate enters Bowman's capsule (ultrafiltration). Removes water, urea, glucose, salts from blood.</li>
+          <li><strong>Proximal convoluted tubule (PCT):</strong> Reabsorbs glucose, amino acids, useful salts, and water back into blood.</li>
+          <li><strong>Loop of Henle:</strong> Concentrates urine by reabsorbing more water.</li>
+          <li><strong>Distal convoluted tubule (DCT):</strong> Fine-tunes salt and water balance; selective reabsorption.</li>
+          <li><strong>Collecting duct:</strong> Collects concentrated urine → drains into renal pelvis → ureter → bladder → excreted as urine.</li>
+        </ul>
+        <strong>Composition of urine:</strong> 95% water, 2% urea, salts, uric acid, creatinine.
+        <div class="dn">📐 Draw nephron showing: Bowman's capsule, glomerulus, PCT, Loop of Henle, DCT, collecting duct. Label arrows showing filtration, reabsorption, secretion.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     Q7 — Activity Based Questions (8 Marks)
+══════════════════════════════ -->
+<div class="section">
+  <div class="sh h7">
+    <div class="qno">7</div>
+    <div class="qtitle">🧪 Activity Based Questions — Observe, Analyse and Answer. (Any 2 out of 3) — 4 marks each</div>
+    <div class="qmarks">8 Marks</div>
+  </div>
+  <div class="sb">
+
+    <!-- Activity A -->
+    <div class="activity-box">
+      <div class="act-header">
+        <span class="act-badge">🧪 Activity A</span>
+        <span class="act-title">Ch2 · Life Processes — Photosynthesis Experiment</span>
+      </div>
+      <div class="act-aim"><strong>Setup:</strong> A potted plant is kept in dark for 48 hours (de-starched). Then one leaf is partially covered with black paper and the plant is kept in sunlight for 4–6 hours. The leaf is then tested for starch using iodine solution.</div>
+      <div class="act-q">Answer the following questions based on this activity: <span class="sm">(4M)</span></div>
+      <div class="act-a">
+        <ul>
+          <li><strong>(i) Why is the plant kept in dark for 48 hours?</strong><br>
+          → To de-starch the plant — remove all existing starch so the experiment is not affected by previously stored starch. This ensures any starch detected is newly produced during the experiment.</li>
+
+          <li><strong>(ii) What result do you expect when you test the uncovered part of the leaf with iodine?</strong><br>
+          → The uncovered part turns <strong>blue-black</strong> (positive starch test) because it received sunlight and photosynthesis occurred → starch was produced.</li>
+
+          <li><strong>(iii) What result do you expect for the covered part of the leaf?</strong><br>
+          → The covered part remains <strong>yellow-brown</strong> (no colour change) because it did not receive sunlight → photosynthesis did NOT occur → no starch produced.</li>
+
+          <li><strong>(iv) What is the conclusion of this activity?</strong><br>
+          → <strong>Sunlight is essential for photosynthesis.</strong> Without sunlight, plants cannot make food (starch). The activity proves that light is a necessary condition for photosynthesis to occur in green plants.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Activity B -->
+    <div class="activity-box">
+      <div class="act-header">
+        <span class="act-badge">🧪 Activity B</span>
+        <span class="act-title">Ch1 · Heredity — Coin Toss Probability</span>
+      </div>
+      <div class="act-aim"><strong>Setup:</strong> A student tosses two coins together 100 times and records the results. The results were: both heads (HH) = 26 times; one head one tail (HT or TH) = 49 times; both tails (TT) = 25 times. The student compares this to a Punnett square for a monohybrid cross (Tt × Tt).</div>
+      <div class="act-q">Answer the following questions: <span class="sm">(4M)</span></div>
+      <div class="act-a">
+        <ul>
+          <li><strong>(i) In the Punnett square for Tt × Tt, what is the expected genotypic ratio?</strong><br>
+          → Expected genotypic ratio = <strong>1 TT : 2 Tt : 1 tt</strong> (i.e., 25% TT, 50% Tt, 25% tt).</li>
+
+          <li><strong>(ii) How does the coin toss result compare to the Punnett square ratio?</strong><br>
+          → HH ≈ 26% matches TT (25%); HT+TH ≈ 49% matches 2Tt (50%); TT ≈ 25% matches tt (25%). The observed results are close to expected 1:2:1 ratio — slight differences are due to <strong>chance (probability)</strong>.</li>
+
+          <li><strong>(iii) What does HH, HT, TT represent in genetics terms?</strong><br>
+          → HH = homozygous dominant (TT); HT/TH = heterozygous (Tt); TT = homozygous recessive (tt).</li>
+
+          <li><strong>(iv) What is the conclusion of this activity?</strong><br>
+          → Mendelian genetics follows the laws of <strong>probability</strong>. The coin toss simulates random separation of alleles during gamete formation (Law of Segregation). Ratios are approximate in small samples but approach 1:2:1 with larger sample sizes.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Activity C -->
+    <div class="activity-box">
+      <div class="act-header">
+        <span class="act-badge">🧪 Activity C</span>
+        <span class="act-title">Ch4 & Ch5 · Environmental Management + Green Energy</span>
+      </div>
+      <div class="act-aim"><strong>Setup:</strong> A student surveys a village and observes: (1) People are burning crop residue in open fields. (2) A nearby river is polluted with plastic waste. (3) A solar panel installed on one house is generating electricity. (4) Trees were cut to make a road. The student is asked to analyse these observations.</div>
+      <div class="act-q">Answer the following questions based on this activity: <span class="sm">(4M)</span></div>
+      <div class="act-a">
+        <ul>
+          <li><strong>(i) Identify two harmful practices from the observations and explain their effects.</strong><br>
+          → (a) <strong>Burning crop residue</strong> — causes severe air pollution, releases CO₂, CO, particulate matter → causes respiratory diseases, contributes to greenhouse effect and global warming.<br>
+          → (b) <strong>Plastic pollution in river</strong> — kills aquatic organisms, enters food chain through bioaccumulation, contaminates drinking water, harms fish and birds.</li>
+
+          <li><strong>(ii) How does the solar panel benefit the villager? Name one limitation of solar energy.</strong><br>
+          → <strong>Benefits:</strong> Generates free, clean electricity from sunlight → saves electricity bills, no pollution, no fuel needed, low maintenance.
+          <br>→ <strong>Limitation:</strong> Solar energy is only available during daytime and depends on weather (reduced on cloudy days); initial installation cost is high.</li>
+
+          <li><strong>(iii) What are the effects of deforestation (cutting trees for road)?</strong><br>
+          → Loss of habitat for wildlife → loss of biodiversity; soil erosion and landslides; disruption of water cycle; increase in CO₂ (fewer trees to absorb it) → global warming; loss of shade → local temperature rise.</li>
+
+          <li><strong>(iv) Suggest two eco-friendly alternatives the village can adopt.</strong><br>
+          → (a) Use crop residue as <strong>biogas raw material</strong> (instead of burning) — produces clean cooking fuel.<br>
+          → (b) <strong>Waste management</strong> — segregate dry/wet waste, compost organic waste, ban single-use plastics, use jute/cloth bags.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MARKS DISTRIBUTION -->
+<div style="max-width:880px;margin:20px auto;background:#fff;border-radius:14px;padding:20px 24px;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+  <h3 style="color:#1b5e20;margin-bottom:14px;font-size:.95rem;">📊 Maharashtra Board Class 10 Science 2 — Paper Pattern</h3>
+  <table class="mt">
+    <tr><th>Q</th><th>Type</th><th>Chapters Covered</th><th style="text-align:center;">Marks</th></tr>
+    <tr><td>Q1</td><td>MCQ (4 × 1)</td><td>Ch1, Ch2, Ch3, Ch5</td><td style="text-align:center;font-weight:700;">4</td></tr>
+    <tr><td>Q2</td><td>True or False (4 × 1)</td><td>Ch1, Ch2, Ch3, Ch4</td><td style="text-align:center;font-weight:700;">4</td></tr>
+    <tr><td>Q3</td><td>Match the Columns (5 × 1)</td><td>Ch2, Ch3, Ch4, Ch5, Ch1</td><td style="text-align:center;font-weight:700;">4</td></tr>
+    <tr><td>Q4</td><td>Complete the Sentences (4 × 1)</td><td>Ch1, Ch2, Ch4, Ch5</td><td style="text-align:center;font-weight:700;">4</td></tr>
+    <tr><td>Q5</td><td>Short Notes (Any 2 × 4)</td><td>Ch1, Ch2, Ch4, Ch5</td><td style="text-align:center;font-weight:700;">8</td></tr>
+    <tr><td>Q6</td><td>Detailed Answer (Any 2 × 4)</td><td>Ch1, Ch2, Ch3</td><td style="text-align:center;font-weight:700;">8</td></tr>
+    <tr><td>Q7</td><td>🧪 Activity Based (Any 2 × 4)</td><td>Ch2, Ch1, Ch4+Ch5</td><td style="text-align:center;font-weight:700;">8</td></tr>
+    <tr style="background:#e8f5e9;"><td colspan="3" style="font-weight:900;">TOTAL</td><td style="text-align:center;font-weight:900;font-size:1.1rem;color:#1b5e20;">40</td></tr>
+  </table>
+</div>
+
+<footer>
+  <p>Visions Classes · visionslearning.in · <a href="notes-class10.html">← Back to Class 10 Notes</a></p>
+</footer>
+
+<!-- Circular Watermark -->
+<div style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;opacity:0.07;user-select:none;">
+  <svg width="340" height="340" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="170" cy="170" r="155" fill="none" stroke="#1b5e20" stroke-width="6"/>
+    <circle cx="170" cy="170" r="138" fill="none" stroke="#1b5e20" stroke-width="2"/>
+    <path id="ts2" fill="none" d="M 40,170 a130,130 0 1,1 260,0"/>
+    <path id="bs2" fill="none" d="M 40,170 a130,130 0 0,0 260,0"/>
+    <text font-size="21" font-weight="900" fill="#1b5e20" font-family="Arial,sans-serif" letter-spacing="5"><textPath href="#ts2" startOffset="10%">VISIONS CLASSES · VISIONSLEARNING.IN ·</textPath></text>
+    <text font-size="17" font-weight="900" fill="#1b5e20" font-family="Arial,sans-serif" letter-spacing="3"><textPath href="#bs2" startOffset="10%">SCIENCE 2 · CLASS 10 · MAHARASHTRA BOARD</textPath></text>
+    <text x="170" y="158" text-anchor="middle" font-size="28" font-weight="900" fill="#1b5e20" font-family="Arial,sans-serif">VISIONS</text>
+    <text x="170" y="193" text-anchor="middle" font-size="28" font-weight="900" fill="#1b5e20" font-family="Arial,sans-serif">CLASSES</td>
+    <text x="170" y="223" text-anchor="middle" font-size="13" font-weight="700" fill="#1b5e20" font-family="Arial,sans-serif" letter-spacing="2">★ EST. 2024 ★</text>
+  </svg>
+</div>
+
+</body>
+</html>
