@@ -51,6 +51,8 @@
   .step-row:last-child{border-bottom:none;}
   .step-key{display:block;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;padding:3px 10px;border-radius:5px;width:fit-content;}
   .step-val{display:block;font-size:.92rem;line-height:1.9;color:#1a1a1a;padding:8px 14px;border-left:3px solid #e0e0e0;background:#fafafa;border-radius:0 6px 6px 0;}
+  .line{display:block;padding:3px 0;border-bottom:1px dotted #ececec;line-height:2.1;}
+  .line:last-child{border-bottom:none;}
 
   /* Section labels inside solution */
   .sol-section{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#9e9e9e;margin:14px 0 6px;padding-bottom:3px;border-bottom:2px dashed #e0e0e0;}
@@ -145,8 +147,8 @@
       <div class="step-row row-given">
         <div class="step-key">Given:</div>
         <div class="step-val">
-          x + y + z = 6 &nbsp;…(1)<br>
-          x − y + z = 2 &nbsp;…(2)<br>
+          x + y + z = 6 &nbsp;…(1)</div><div class="line">
+          x − y + z = 2 &nbsp;…(2)</div><div class="line">
           x + 2y − z = 2 &nbsp;…(3)
         </div>
       </div>
@@ -167,8 +169,8 @@
         <div class="step-key">Step 1<br><small>Find D</small></div>
         <div class="step-val">
           <div class="mb">
-D = | 1 &nbsp; 1 &nbsp; 1 |<br>
-&nbsp;&nbsp;&nbsp;&nbsp;| 1 &nbsp;−1 &nbsp; 1 |<br>
+D = | 1 &nbsp; 1 &nbsp; 1 |</div><div class="line">
+&nbsp;&nbsp;&nbsp;&nbsp;| 1 &nbsp;−1 &nbsp; 1 |</div><div class="line">
 &nbsp;&nbsp;&nbsp;&nbsp;| 1 &nbsp; 2 &nbsp;−1 |
           </div>
           = 1[(−1)(−1) − (1)(2)] − 1[(1)(−1) − (1)(1)] + 1[(1)(2) − (−1)(1)]<br>
@@ -184,8 +186,8 @@ D = | 1 &nbsp; 1 &nbsp; 1 |<br>
         <div class="step-val">
           Replace column 1 with constants (6, 2, 2):
           <div class="mb">
-D₁ = | 6 &nbsp; 1 &nbsp; 1 |<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2 &nbsp;−1 &nbsp; 1 |<br>
+D₁ = | 6 &nbsp; 1 &nbsp; 1 |</div><div class="line">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2 &nbsp;−1 &nbsp; 1 |</div><div class="line">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2 &nbsp; 2 &nbsp;−1 |
           </div>
           = 6[(−1)(−1) − (1)(2)] − 1[(2)(−1) − (1)(2)] + 1[(2)(2) − (−1)(2)]<br>
@@ -201,8 +203,8 @@ D₁ = | 6 &nbsp; 1 &nbsp; 1 |<br>
         <div class="step-val">
           Replace column 2 with constants (6, 2, 2):
           <div class="mb">
-D₂ = | 1 &nbsp; 6 &nbsp; 1 |<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1 &nbsp; 2 &nbsp; 1 |<br>
+D₂ = | 1 &nbsp; 6 &nbsp; 1 |</div><div class="line">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1 &nbsp; 2 &nbsp; 1 |</div><div class="line">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1 &nbsp; 2 &nbsp;−1 |
           </div>
           = 1[(2)(−1) − (1)(2)] − 6[(1)(−1) − (1)(1)] + 1[(1)(2) − (2)(1)]<br>
@@ -218,8 +220,8 @@ D₂ = | 1 &nbsp; 6 &nbsp; 1 |<br>
         <div class="step-val">
           Replace column 3 with constants (6, 2, 2):
           <div class="mb">
-D₃ = | 1 &nbsp; 1 &nbsp; 6 |<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1 &nbsp;−1 &nbsp; 2 |<br>
+D₃ = | 1 &nbsp; 1 &nbsp; 6 |</div><div class="line">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1 &nbsp;−1 &nbsp; 2 |</div><div class="line">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1 &nbsp; 2 &nbsp; 2 |
           </div>
           = 1[(−1)(2) − (2)(2)] − 1[(1)(2) − (2)(1)] + 6[(1)(2) − (−1)(1)]<br>
@@ -232,8 +234,8 @@ D₃ = | 1 &nbsp; 1 &nbsp; 6 |<br>
       <div class="step-row row-step">
         <div class="step-key">Step 5<br><small>Apply Rule</small></div>
         <div class="step-val">
-          x = D₁/D = 4/4 = <strong>1</strong><br>
-          y = D₂/D = 8/4 = <strong>2</strong><br>
+          x = D₁/D = 4/4 = <strong>1</strong></div><div class="line">
+          y = D₂/D = 8/4 = <strong>2</strong></div><div class="line">
           z = D₃/D = 12/4 = <strong>3</strong>
         </div>
       </div>
@@ -258,8 +260,8 @@ D₃ = | 1 &nbsp; 1 &nbsp; 6 |<br>
       <div class="step-row row-given">
         <div class="step-key">Given:</div>
         <div class="step-val">
-          x + 0y + z = 1 &nbsp;…(1)<br>
-          0x + y + z = 1 &nbsp;…(2)<br>
+          x + 0y + z = 1 &nbsp;…(1)</div><div class="line">
+          0x + y + z = 1 &nbsp;…(2)</div><div class="line">
           x + y + 0z = 4 &nbsp;…(3)
         </div>
       </div>
@@ -268,8 +270,8 @@ D₃ = | 1 &nbsp; 1 &nbsp; 6 |<br>
         <div class="step-key">Step 1<br><small>Find D</small></div>
         <div class="step-val">
           <div class="mb">
-D = | 1 &nbsp; 0 &nbsp; 1 |<br>
-&nbsp;&nbsp;&nbsp;&nbsp;| 0 &nbsp; 1 &nbsp; 1 |<br>
+D = | 1 &nbsp; 0 &nbsp; 1 |</div><div class="line">
+&nbsp;&nbsp;&nbsp;&nbsp;| 0 &nbsp; 1 &nbsp; 1 |</div><div class="line">
 &nbsp;&nbsp;&nbsp;&nbsp;| 1 &nbsp; 1 &nbsp; 0 |
           </div>
           = 1[(1)(0) − (1)(1)] − 0 + 1[(0)(1) − (1)(1)]<br>
@@ -283,8 +285,8 @@ D = | 1 &nbsp; 0 &nbsp; 1 |<br>
         <div class="step-key">Step 2<br><small>Find D₁</small></div>
         <div class="step-val">
           <div class="mb">
-D₁ = | 1 &nbsp; 0 &nbsp; 1 |<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1 &nbsp; 1 &nbsp; 1 |<br>
+D₁ = | 1 &nbsp; 0 &nbsp; 1 |</div><div class="line">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1 &nbsp; 1 &nbsp; 1 |</div><div class="line">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 4 &nbsp; 1 &nbsp; 0 |
           </div>
           = 1[(1)(0) − (1)(1)] − 0 + 1[(1)(1) − (1)(4)]<br>
@@ -298,8 +300,8 @@ D₁ = | 1 &nbsp; 0 &nbsp; 1 |<br>
         <div class="step-key">Step 3<br><small>Find D₂</small></div>
         <div class="step-val">
           <div class="mb">
-D₂ = | 1 &nbsp; 1 &nbsp; 1 |<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 0 &nbsp; 1 &nbsp; 1 |<br>
+D₂ = | 1 &nbsp; 1 &nbsp; 1 |</div><div class="line">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 0 &nbsp; 1 &nbsp; 1 |</div><div class="line">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1 &nbsp; 4 &nbsp; 0 |
           </div>
           = 1[(1)(0) − (1)(4)] − 1[(0)(0) − (1)(1)] + 1[(0)(4) − (1)(1)]<br>
@@ -313,8 +315,8 @@ D₂ = | 1 &nbsp; 1 &nbsp; 1 |<br>
         <div class="step-key">Step 4<br><small>Find D₃</small></div>
         <div class="step-val">
           <div class="mb">
-D₃ = | 1 &nbsp; 0 &nbsp; 1 |<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 0 &nbsp; 1 &nbsp; 1 |<br>
+D₃ = | 1 &nbsp; 0 &nbsp; 1 |</div><div class="line">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 0 &nbsp; 1 &nbsp; 1 |</div><div class="line">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1 &nbsp; 1 &nbsp; 4 |
           </div>
           = 1[(1)(4) − (1)(1)] − 0 + 1[(0)(1) − (1)(1)]<br>
@@ -327,8 +329,8 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |<br>
       <div class="step-row row-step">
         <div class="step-key">Step 5<br><small>Apply Rule</small></div>
         <div class="step-val">
-          x = D₁/D = −4/−2 = <strong>2</strong><br>
-          y = D₂/D = −4/−2 = <strong>2</strong><br>
+          x = D₁/D = −4/−2 = <strong>2</strong></div><div class="line">
+          y = D₂/D = −4/−2 = <strong>2</strong></div><div class="line">
           z = D₃/D = 2/−2 = <strong>−1</strong>
         </div>
       </div>
@@ -381,7 +383,7 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |<br>
       <div class="step-row row-step">
         <div class="step-key">Step 1</div>
         <div class="step-val">
-          Substituting values:<br>
+          Substituting values:</div><div class="line">
           A = ½ |5(0 − 0) + 5(0 − 8) + 1(8 − 0)|
         </div>
       </div>
@@ -389,9 +391,9 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |<br>
       <div class="step-row row-step">
         <div class="step-key">Step 2</div>
         <div class="step-val">
-          = ½ |5(0) + 5(−8) + 1(8)|<br>
-          = ½ |0 − 40 + 8|<br>
-          = ½ |−32|<br>
+          = ½ |5(0) + 5(−8) + 1(8)|</div><div class="line">
+          = ½ |0 − 40 + 8|</div><div class="line">
+          = ½ |−32|</div><div class="line">
           = ½ × 32
         </div>
       </div>
@@ -431,8 +433,8 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |<br>
       <div class="step-row row-step">
         <div class="step-key">Step 2</div>
         <div class="step-val">
-          = ½ |0(7) + (−2)(−9) + 1(2)|<br>
-          = ½ |0 + 18 + 2|<br>
+          = ½ |0(7) + (−2)(−9) + 1(2)|</div><div class="line">
+          = ½ |0 + 18 + 2|</div><div class="line">
           = ½ × 20
         </div>
       </div>
@@ -464,7 +466,10 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |<br>
 
       <div class="step-row row-given">
         <div class="step-key">Given:</div>
-        <div class="step-val">x = 3 sec θ &nbsp;…(1)&nbsp;&nbsp;&nbsp; y = 4 tan θ &nbsp;…(2)</div>
+        <div class="step-val">
+          <div class="line">x = 3 sec θ &nbsp;…(1)</div>
+          <div class="line">y = 4 tan θ &nbsp;…(2)</div>
+        </div>
       </div>
 
       <div class="step-row row-formula">
@@ -509,7 +514,10 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |<br>
 
       <div class="step-row row-given">
         <div class="step-key">Given:</div>
-        <div class="step-val">x = 6 cosec θ &nbsp;…(1)&nbsp;&nbsp;&nbsp; y = 8 cot θ &nbsp;…(2)</div>
+        <div class="step-val">
+          <div class="line">x = 6 cosec θ &nbsp;…(1)</div>
+          <div class="line">y = 8 cot θ &nbsp;…(2)</div>
+        </div>
       </div>
 
       <div class="step-row row-formula">
@@ -674,7 +682,7 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |<br>
       <div class="step-row row-formula">
         <div class="step-key">Formula:</div>
         <div class="step-val">
-          Minor Mᵢⱼ = Det of 2×2 matrix after deleting row i and column j<br>
+          Minor Mᵢⱼ = Det of 2×2 matrix after deleting row i and column j</div><div class="line">
           Cofactor Cᵢⱼ = (−1)^(i+j) × Mᵢⱼ
         </div>
       </div>
@@ -684,7 +692,7 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |<br>
       <div class="step-row row-step">
         <div class="step-key">M₁₁</div>
         <div class="step-val">
-          Delete row 1, col 1 → <span class="m">|2 −1; 7 2|</span><br>
+          Delete row 1, col 1 → <span class="m">|2 −1; 7 2|</span></div><div class="line">
           = (2×2) − (−1×7) = 4 + 7 = <strong>11</strong>
         </div>
       </div>
@@ -692,7 +700,7 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |<br>
       <div class="step-row row-step">
         <div class="step-key">M₁₂</div>
         <div class="step-val">
-          Delete row 1, col 2 → <span class="m">|1 −1; 5 2|</span><br>
+          Delete row 1, col 2 → <span class="m">|1 −1; 5 2|</span></div><div class="line">
           = (1×2) − (−1×5) = 2 + 5 = <strong>7</strong>
         </div>
       </div>
@@ -700,7 +708,7 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |<br>
       <div class="step-row row-step">
         <div class="step-key">M₁₃</div>
         <div class="step-val">
-          Delete row 1, col 3 → <span class="m">|1 2; 5 7|</span><br>
+          Delete row 1, col 3 → <span class="m">|1 2; 5 7|</span></div><div class="line">
           = (1×7) − (2×5) = 7 − 10 = <strong>−3</strong>
         </div>
       </div>
@@ -708,7 +716,7 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |<br>
       <div class="step-row row-step">
         <div class="step-key">M₂₁</div>
         <div class="step-val">
-          Delete row 2, col 1 → <span class="m">|−1 3; 7 2|</span><br>
+          Delete row 2, col 1 → <span class="m">|−1 3; 7 2|</span></div><div class="line">
           = (−1×2) − (3×7) = −2 − 21 = <strong>−23</strong>
         </div>
       </div>
@@ -716,7 +724,7 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |<br>
       <div class="step-row row-step">
         <div class="step-key">M₂₂</div>
         <div class="step-val">
-          Delete row 2, col 2 → <span class="m">|2 3; 5 2|</span><br>
+          Delete row 2, col 2 → <span class="m">|2 3; 5 2|</span></div><div class="line">
           = (2×2) − (3×5) = 4 − 15 = <strong>−11</strong>
         </div>
       </div>
@@ -724,7 +732,7 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |<br>
       <div class="step-row row-step">
         <div class="step-key">M₂₃</div>
         <div class="step-val">
-          Delete row 2, col 3 → <span class="m">|2 −1; 5 7|</span><br>
+          Delete row 2, col 3 → <span class="m">|2 −1; 5 7|</span></div><div class="line">
           = (2×7) − (−1×5) = 14 + 5 = <strong>19</strong>
         </div>
       </div>
@@ -732,7 +740,7 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |<br>
       <div class="step-row row-step">
         <div class="step-key">M₃₁</div>
         <div class="step-val">
-          Delete row 3, col 1 → <span class="m">|−1 3; 2 −1|</span><br>
+          Delete row 3, col 1 → <span class="m">|−1 3; 2 −1|</span></div><div class="line">
           = (−1×−1) − (3×2) = 1 − 6 = <strong>−5</strong>
         </div>
       </div>
@@ -740,7 +748,7 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |<br>
       <div class="step-row row-step">
         <div class="step-key">M₃₂</div>
         <div class="step-val">
-          Delete row 3, col 2 → <span class="m">|2 3; 1 −1|</span><br>
+          Delete row 3, col 2 → <span class="m">|2 3; 1 −1|</span></div><div class="line">
           = (2×−1) − (3×1) = −2 − 3 = <strong>−5</strong>
         </div>
       </div>
@@ -748,7 +756,7 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |<br>
       <div class="step-row row-step">
         <div class="step-key">M₃₃</div>
         <div class="step-val">
-          Delete row 3, col 3 → <span class="m">|2 −1; 1 2|</span><br>
+          Delete row 3, col 3 → <span class="m">|2 −1; 1 2|</span></div><div class="line">
           = (2×2) − (−1×1) = 4 + 1 = <strong>5</strong>
         </div>
       </div>
@@ -984,7 +992,7 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |<br>
       <div class="step-row row-given">
         <div class="step-key">Given:</div>
         <div class="step-val">
-          A = {1,2,3,4} &nbsp;|&nbsp; B = {3,4,5,6}<br>
+          A = {1,2,3,4} &nbsp;|&nbsp; B = {3,4,5,6}</div><div class="line">
           X = {1,2,3,4,5,6,7,8,9,10}
         </div>
       </div>
@@ -1088,7 +1096,7 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |<br>
       <div class="step-row row-formula">
         <div class="step-key">Formula:</div>
         <div class="step-val">
-          Modulus: <span class="m">|z| = √(a² + b²)</span><br>
+          Modulus: <span class="m">|z| = √(a² + b²)</span></div><div class="line">
           Amplitude: <span class="m">θ = tan⁻¹(b/a)</span> (adjusted for quadrant)
         </div>
       </div>
