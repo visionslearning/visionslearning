@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Class 11 Maths Part 1 — Important Questions | Shaalaa Style</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size:15px;}
+
+  .site-header{background:linear-gradient(135deg,#4a148c,#6a1b9a,#1a237e);padding:14px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 3px 12px rgba(0,0,0,.3);}
+  .site-header a{color:#ce93d8;text-decoration:none;font-size:.85rem;font-weight:600;}
+  .site-header a:hover{color:#fff;}
+  .header-title{color:#fff;font-size:1.05rem;font-weight:800;}
+
+  .hero{background:linear-gradient(135deg,#4a148c 0%,#6a1b9a 45%,#1a237e 100%);padding:30px 20px 24px;text-align:center;color:#fff;}
+  .board-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:5px 18px;font-size:.73rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;}
+  .hero h1{font-size:1.55rem;font-weight:900;line-height:1.25;margin-bottom:6px;}
+  .hero .sub{font-size:.88rem;color:rgba(255,255,255,.85);margin-bottom:14px;}
+  .pills{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
+  .pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:6px 14px;font-size:.8rem;font-weight:700;}
+
+  /* TOC */
+  .toc{max-width:900px;margin:14px auto;background:#fff;border-radius:10px;padding:16px 20px;box-shadow:0 2px 8px rgba(0,0,0,.08);}
+  .toc h3{color:#4a148c;margin-bottom:10px;font-size:.9rem;font-weight:800;}
+  .toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:7px;}
+  .toc-a{background:#f3e5f5;border-radius:7px;padding:8px 12px;font-size:.8rem;font-weight:700;color:#4a148c;text-decoration:none;display:block;border-left:3px solid #9c27b0;}
+  .toc-a:hover{background:#e1bee7;}
+
+  /* CHAPTER DIVIDER */
+  .ch-divider{max-width:900px;margin:20px auto 10px;border-radius:10px;padding:13px 22px;display:flex;align-items:center;gap:12px;color:#fff;}
+  .ch-divider .ch-icon{font-size:1.8rem;}
+  .ch-divider .ch-info h2{font-size:1.05rem;font-weight:900;margin-bottom:2px;}
+  .ch-divider .ch-info p{font-size:.8rem;opacity:.9;}
+  .ch1-bg{background:linear-gradient(135deg,#1b5e20,#2e7d32);}
+  .ch2-bg{background:linear-gradient(135deg,#0d47a1,#1565c0);}
+  .ch3-bg{background:linear-gradient(135deg,#880e4f,#c2185b);}
+  .ch4-bg{background:linear-gradient(135deg,#e65100,#f57c00);}
+
+  /* QUESTION CARD */
+  .q-card{max-width:900px;margin:10px auto;background:#fff;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.09);overflow:hidden;}
+  .q-title-bar{display:flex;align-items:center;gap:10px;padding:11px 20px;border-bottom:2px solid #f3e5f5;}
+  .q-num{background:#4a148c;color:#fff;font-size:.8rem;font-weight:900;padding:4px 11px;border-radius:20px;white-space:nowrap;}
+  .q-title{font-size:.95rem;font-weight:700;color:#1a1a1a;flex:1;line-height:1.4;}
+  .q-chip{background:#f3e5f5;color:#4a148c;font-size:.72rem;font-weight:800;padding:3px 10px;border-radius:10px;white-space:nowrap;}
+  .imp-tag{background:#b71c1c;color:#fff;font-size:.68rem;font-weight:800;padding:2px 8px;border-radius:8px;margin-left:6px;}
+
+  /* SUB QUESTION */
+  .sub{border-bottom:1px solid #f5f5f5;padding:16px 22px;}
+  .sub:last-child{border-bottom:none;}
+  .sub-label{font-size:.85rem;font-weight:800;color:#4a148c;margin-bottom:10px;background:#f3e5f5;padding:7px 12px;border-radius:7px;display:inline-block;}
+
+  /* SHAALAA VERTICAL SOLUTION */
+  .solution{margin-top:8px;}
+  .step-row{display:flex;align-items:flex-start;gap:0;margin-bottom:2px;}
+  .step-key{min-width:140px;font-size:.84rem;font-weight:700;color:#555;padding:5px 12px 5px 0;flex-shrink:0;line-height:1.5;}
+  .step-val{font-size:.88rem;line-height:1.75;color:#1a1a1a;padding:5px 0 5px 14px;border-left:2px solid #e8eaf6;flex:1;}
+  .sol-section{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#9e9e9e;margin:10px 0 4px;padding-bottom:3px;border-bottom:1px dashed #e0e0e0;}
+
+  .row-given .step-key{color:#0d47a1;}
+  .row-tofind .step-key{color:#1b5e20;}
+  .row-formula .step-key{color:#880e4f;}
+  .row-step .step-key{color:#555;}
+  .row-ans .step-key{color:#b71c1c;font-size:.9rem;font-weight:900;}
+  .row-ans .step-val{font-weight:700;color:#b71c1c;border-left-color:#ef9a9a;}
+
+  .m{font-family:'Courier New',monospace;background:#f3f4f6;border:1px solid #e0e0e0;border-radius:4px;padding:1px 6px;font-size:.88rem;color:#1a237e;}
+  .mb{font-family:'Courier New',monospace;background:#f8f9ff;border:1.5px solid #c5cae9;border-radius:6px;padding:10px 16px;margin:6px 0;font-size:.9rem;color:#1a237e;display:block;line-height:1.9;overflow-x:auto;}
+  .ans-box{background:#e8f5e9;border:2px solid #66bb6a;border-radius:8px;padding:9px 16px;margin-top:8px;font-size:.92rem;font-weight:700;color:#1b5e20;display:inline-block;}
+  .verify{background:#e3f2fd;border-left:3px solid #1976d2;border-radius:0 6px 6px 0;padding:7px 12px;margin-top:8px;font-size:.82rem;color:#0d47a1;}
+  .note{background:#fff8e1;border-left:3px solid #f9a825;border-radius:0 6px 6px 0;padding:7px 12px;margin-top:8px;font-size:.82rem;color:#e65100;}
+
+  /* Trig ref table */
+  table.tr{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:8px;}
+  table.tr th{background:#4a148c;color:#fff;padding:6px 10px;text-align:center;}
+  table.tr td{padding:6px 10px;border-bottom:1px solid #e8edf2;text-align:center;}
+  table.tr tr:nth-child(even) td{background:#f3e5f5;}
+
+  footer{text-align:center;padding:24px 16px;font-size:.8rem;color:#888;}
+  footer a{color:#6a1b9a;text-decoration:none;}
+  @media(max-width:600px){.step-key{min-width:90px;font-size:.79rem;}.q-title{font-size:.86rem;}}
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <a href="notes-class11.html">← Class 11 Notes</a>
+  <span style="color:rgba(255,255,255,.4);">|</span>
+  <span class="header-title">Class 11 Maths 1 — Important Questions</span>
+</div>
+
+<div class="hero">
+  <div class="board-tag">Maharashtra Board · Class 11 · Maths Part 1</div>
+  <h1>📐 Important Questions — Maths Part 1<br>Shaalaa-Style Step-by-Step Solutions</h1>
+  <div class="sub">Ch1 Angle & Measurement · Ch2 Trigonometry-I · Ch3 Trigonometry-II · Ch4 Determinants & Matrices</div>
+  <div class="pills">
+    <div class="pill">⭐ Most Asked in Exam</div>
+    <div class="pill">📋 Vertical Format</div>
+    <div class="pill">✅ All Steps Shown</div>
+  </div>
+</div>
+
+<div class="toc">
+  <h3>📑 Quick Navigation</h3>
+  <div class="toc-grid">
+    <a class="toc-a" href="#ch1">Ch 1 — Angle & Measurement</a>
+    <a class="toc-a" href="#ch1q1">Q1 — Degrees ↔ Radians</a>
+    <a class="toc-a" href="#ch1q2">Q2 — Arc Length & Area</a>
+    <a class="toc-a" href="#ch1q3">Q3 — Minute/Second conversion</a>
+    <a class="toc-a" href="#ch2">Ch 2 — Trigonometry I</a>
+    <a class="toc-a" href="#ch2q1">Q4 — Trig ratios of standard angles</a>
+    <a class="toc-a" href="#ch2q2">Q5 — Trig identities prove</a>
+    <a class="toc-a" href="#ch2q3">Q6 — Allied angles</a>
+    <a class="toc-a" href="#ch3">Ch 3 — Trigonometry II</a>
+    <a class="toc-a" href="#ch3q1">Q7 — Sum & Product formulae</a>
+    <a class="toc-a" href="#ch3q2">Q8 — Multiple angle formulae</a>
+    <a class="toc-a" href="#ch3q3">Q9 — Inverse trig values</a>
+    <a class="toc-a" href="#ch4">Ch 4 — Determinants & Matrices</a>
+    <a class="toc-a" href="#ch4q1">Q10 — Value of determinant</a>
+    <a class="toc-a" href="#ch4q2">Q11 — Matrix operations</a>
+    <a class="toc-a" href="#ch4q3">Q12 — Cramer's Rule</a>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     CHAPTER 1 — ANGLE AND ITS MEASUREMENT
+════════════════════════════════════════════════════ -->
+<div class="ch-divider ch1-bg" id="ch1">
+  <div class="ch-icon">📐</div>
+  <div class="ch-info">
+    <h2>Chapter 1 — Angle and its Measurement</h2>
+    <p>Degrees, Radians, Arc Length, Area of Sector — Most repeated in exams</p>
+  </div>
+</div>
+
+<!-- Q1 -->
+<div class="q-card" id="ch1q1">
+  <div class="q-title-bar">
+    <span class="q-num">Q 1</span>
+    <span class="q-title">Convert the following angles: <span class="imp-tag">⭐ Most IMP</span></span>
+    <span class="q-chip">Degree ↔ Radian</span>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(i) Convert 240° into radians</div>
+    <div class="solution">
+      <div class="step-row row-given"><div class="step-key">Given:</div><div class="step-val">Angle = 240°</div></div>
+      <div class="step-row row-formula"><div class="step-key">Formula:</div><div class="step-val"><span class="m">Radians = Degrees × π/180</span></div></div>
+      <div class="sol-section">Solution</div>
+      <div class="step-row row-step"><div class="step-key">Step 1</div><div class="step-val">= 240 × π/180</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 2</div><div class="step-val">= 4π/3</div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ Answer:</div><div class="step-val"><span class="ans-box">4π/3 radians</span></div></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(ii) Convert 570° into radians</div>
+    <div class="solution">
+      <div class="step-row row-given"><div class="step-key">Given:</div><div class="step-val">Angle = 570°</div></div>
+      <div class="step-row row-formula"><div class="step-key">Formula:</div><div class="step-val"><span class="m">Radians = Degrees × π/180</span></div></div>
+      <div class="sol-section">Solution</div>
+      <div class="step-row row-step"><div class="step-key">Step 1</div><div class="step-val">= 570 × π/180</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 2</div><div class="step-val">= 19π/6</div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ Answer:</div><div class="step-val"><span class="ans-box">19π/6 radians</span></div></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(iii) Convert 5π/3 radians into degrees</div>
+    <div class="solution">
+      <div class="step-row row-given"><div class="step-key">Given:</div><div class="step-val">Angle = 5π/3 radians</div></div>
+      <div class="step-row row-formula"><div class="step-key">Formula:</div><div class="step-val"><span class="m">Degrees = Radians × 180/π</span></div></div>
+      <div class="sol-section">Solution</div>
+      <div class="step-row row-step"><div class="step-key">Step 1</div><div class="step-val">= (5π/3) × (180/π)</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 2</div><div class="step-val">= 5 × 60 = 300°</div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ Answer:</div><div class="step-val"><span class="ans-box">300°</span></div></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(iv) Convert −11π/18 radians into degrees</div>
+    <div class="solution">
+      <div class="step-row row-given"><div class="step-key">Given:</div><div class="step-val">Angle = −11π/18 radians</div></div>
+      <div class="sol-section">Solution</div>
+      <div class="step-row row-step"><div class="step-key">Step 1</div><div class="step-val">= (−11π/18) × (180/π)</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 2</div><div class="step-val">= −11 × 10 = −110°</div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ Answer:</div><div class="step-val"><span class="ans-box">−110°</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q2 -->
+<div class="q-card" id="ch1q2">
+  <div class="q-title-bar">
+    <span class="q-num">Q 2</span>
+    <span class="q-title">Arc Length and Area of Sector <span class="imp-tag">⭐ Most IMP</span></span>
+    <span class="q-chip">Arc & Sector</span>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(i) A circle of radius 6 cm has an arc of length 5π cm. Find the angle subtended at the centre in degrees.</div>
+    <div class="solution">
+      <div class="step-row row-given"><div class="step-key">Given:</div><div class="step-val">Radius r = 6 cm, Arc length l = 5π cm</div></div>
+      <div class="step-row row-tofind"><div class="step-key">To Find:</div><div class="step-val">Angle θ subtended at centre (in degrees)</div></div>
+      <div class="step-row row-formula"><div class="step-key">Formula:</div><div class="step-val"><span class="m">l = rθ &nbsp; (θ in radians)</span></div></div>
+      <div class="sol-section">Solution</div>
+      <div class="step-row row-step"><div class="step-key">Step 1</div><div class="step-val">θ = l/r = 5π/6 radians</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 2<br><small>Convert to degrees</small></div><div class="step-val">= (5π/6) × (180/π) = 5 × 30 = 150°</div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ Answer:</div><div class="step-val"><span class="ans-box">θ = 150°</span></div></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(ii) Find the area of a sector whose radius is 7 cm and angle is 60°.</div>
+    <div class="solution">
+      <div class="step-row row-given"><div class="step-key">Given:</div><div class="step-val">r = 7 cm, θ = 60° = 60 × π/180 = π/3 radians</div></div>
+      <div class="step-row row-formula"><div class="step-key">Formula:</div><div class="step-val"><span class="m">Area = ½ r²θ &nbsp; (θ in radians)</span></div></div>
+      <div class="sol-section">Solution</div>
+      <div class="step-row row-step"><div class="step-key">Step 1</div><div class="step-val">Area = ½ × 7² × π/3</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 2</div><div class="step-val">= ½ × 49 × π/3</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 3</div><div class="step-val">= 49π/6</div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ Answer:</div><div class="step-val"><span class="ans-box">Area = 49π/6 cm²</span></div></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(iii) In a circle of radius 12 cm, a chord subtends an angle of 120° at the centre. Find the arc length and area of sector.</div>
+    <div class="solution">
+      <div class="step-row row-given"><div class="step-key">Given:</div><div class="step-val">r = 12 cm, θ = 120° = 2π/3 radians</div></div>
+      <div class="sol-section">Solution</div>
+      <div class="step-row row-step"><div class="step-key">Arc length</div><div class="step-val">l = rθ = 12 × 2π/3 = 8π cm</div></div>
+      <div class="step-row row-step"><div class="step-key">Area of sector</div><div class="step-val">= ½r²θ = ½ × 144 × 2π/3 = 48π cm²</div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ Answer:</div><div class="step-val"><span class="ans-box">Arc = 8π cm &nbsp;|&nbsp; Area = 48π cm²</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q3 -->
+<div class="q-card" id="ch1q3">
+  <div class="q-title-bar">
+    <span class="q-num">Q 3</span>
+    <span class="q-title">Convert the following into degrees, minutes, and seconds. <span class="imp-tag">⭐ IMP</span></span>
+    <span class="q-chip">D° M' S"</span>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(i) Convert 45.4° into degrees, minutes, seconds</div>
+    <div class="solution">
+      <div class="step-row row-given"><div class="step-key">Given:</div><div class="step-val">45.4°</div></div>
+      <div class="step-row row-formula"><div class="step-key">Formula:</div><div class="step-val">1° = 60', &nbsp; 1' = 60" &nbsp;|&nbsp; 0.4° = 0.4 × 60' = 24'</div></div>
+      <div class="sol-section">Solution</div>
+      <div class="step-row row-step"><div class="step-key">Step 1</div><div class="step-val">Integer part = 45°</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 2</div><div class="step-val">Decimal part = 0.4 × 60 = 24' (minutes)</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 3</div><div class="step-val">No remaining decimal</div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ Answer:</div><div class="step-val"><span class="ans-box">45° 24' 0"</span></div></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(ii) Two angles of a triangle are 54°30' and 72°45'. Find the third angle in radians.</div>
+    <div class="solution">
+      <div class="step-row row-given"><div class="step-key">Given:</div><div class="step-val">A = 54°30' = 54.5°, &nbsp; B = 72°45' = 72.75°</div></div>
+      <div class="step-row row-formula"><div class="step-key">Formula:</div><div class="step-val">A + B + C = 180°</div></div>
+      <div class="sol-section">Solution</div>
+      <div class="step-row row-step"><div class="step-key">Step 1</div><div class="step-val">C = 180° − 54.5° − 72.75°</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 2</div><div class="step-val">C = 180° − 127.25° = 52.75°</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 3<br><small>To radians</small></div><div class="step-val">= 52.75 × π/180 = 211π/720 radians</div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ Answer:</div><div class="step-val"><span class="ans-box">C = 52°45' = 211π/720 radians</span></div></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     CHAPTER 2 — TRIGONOMETRY I
+════════════════════════════════════════════════════ -->
+<div class="ch-divider ch2-bg" id="ch2">
+  <div class="ch-icon">📊</div>
+  <div class="ch-info">
+    <h2>Chapter 2 — Trigonometry - I</h2>
+    <p>Signs, Fundamental identities, Allied angles — appears every year</p>
+  </div>
+</div>
+
+<!-- Q4 -->
+<div class="q-card" id="ch2q1">
+  <div class="q-title-bar">
+    <span class="q-num">Q 4</span>
+    <span class="q-title">If sin θ = 3/5 and θ lies in 2nd quadrant, find the remaining trig ratios. <span class="imp-tag">⭐ Most IMP</span></span>
+    <span class="q-chip">Trig Ratios</span>
+  </div>
+
+  <div class="sub">
+    <div class="solution">
+      <div class="step-row row-given"><div class="step-key">Given:</div><div class="step-val">sin θ = 3/5, θ ∈ 2nd quadrant</div></div>
+      <div class="step-row row-tofind"><div class="step-key">To Find:</div><div class="step-val">cos θ, tan θ, cot θ, sec θ, cosec θ</div></div>
+      <div class="step-row row-formula"><div class="step-key">Identity:</div><div class="step-val"><span class="m">sin²θ + cos²θ = 1</span></div></div>
+      <div class="sol-section">Solution</div>
+      <div class="step-row row-step"><div class="step-key">Step 1</div><div class="step-val">cos²θ = 1 − sin²θ = 1 − (3/5)² = 1 − 9/25 = 16/25</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 2</div><div class="step-val">cos θ = ±4/5<br>In 2nd quadrant, cos is negative → <strong>cos θ = −4/5</strong></div></div>
+      <div class="step-row row-step"><div class="step-key">Step 3</div><div class="step-val">tan θ = sin θ/cos θ = (3/5)/(−4/5) = <strong>−3/4</strong></div></div>
+      <div class="step-row row-step"><div class="step-key">Step 4</div><div class="step-val">
+        cot θ = 1/tan θ = <strong>−4/3</strong><br>
+        sec θ = 1/cos θ = <strong>−5/4</strong><br>
+        cosec θ = 1/sin θ = <strong>5/3</strong>
+      </div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ Answer:</div><div class="step-val">
+        <span class="ans-box">cos θ = −4/5 &nbsp;|&nbsp; tan θ = −3/4 &nbsp;|&nbsp; cot θ = −4/3 &nbsp;|&nbsp; sec θ = −5/4 &nbsp;|&nbsp; cosec θ = 5/3</span>
+      </div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q5 -->
+<div class="q-card" id="ch2q2">
+  <div class="q-title-bar">
+    <span class="q-num">Q 5</span>
+    <span class="q-title">Prove the following trigonometric identities. <span class="imp-tag">⭐ Most IMP</span></span>
+    <span class="q-chip">Trig Identities</span>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(i) Prove: (1 − sin²θ) sec²θ = 1</div>
+    <div class="solution">
+      <div class="sol-section">Proof — LHS to RHS</div>
+      <div class="step-row row-step"><div class="step-key">LHS</div><div class="step-val">= (1 − sin²θ) sec²θ</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 1</div><div class="step-val">= cos²θ × sec²θ &nbsp;&nbsp;&nbsp; [∵ 1 − sin²θ = cos²θ]</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 2</div><div class="step-val">= cos²θ × (1/cos²θ) &nbsp;&nbsp;&nbsp; [∵ sec θ = 1/cos θ]</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 3</div><div class="step-val">= 1</div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ LHS = RHS</div><div class="step-val"><span class="ans-box">Proved ✓</span></div></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(ii) Prove: tan θ + cot θ = sec θ · cosec θ</div>
+    <div class="solution">
+      <div class="sol-section">Proof — LHS to RHS</div>
+      <div class="step-row row-step"><div class="step-key">LHS</div><div class="step-val">= tan θ + cot θ</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 1</div><div class="step-val">= sin θ/cos θ + cos θ/sin θ</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 2</div><div class="step-val">= (sin²θ + cos²θ) / (cos θ · sin θ)</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 3</div><div class="step-val">= 1 / (cos θ · sin θ) &nbsp;&nbsp;&nbsp; [∵ sin²θ + cos²θ = 1]</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 4</div><div class="step-val">= (1/cos θ) × (1/sin θ) = sec θ · cosec θ = RHS</div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ LHS = RHS</div><div class="step-val"><span class="ans-box">Proved ✓</span></div></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(iii) Prove: (sec θ − tan θ)² = (1 − sin θ)/(1 + sin θ)</div>
+    <div class="solution">
+      <div class="sol-section">Proof — LHS</div>
+      <div class="step-row row-step"><div class="step-key">LHS</div><div class="step-val">= (sec θ − tan θ)²</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 1</div><div class="step-val">= (1/cos θ − sin θ/cos θ)²</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 2</div><div class="step-val">= ((1 − sin θ)/cos θ)²</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 3</div><div class="step-val">= (1 − sin θ)² / cos²θ</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 4</div><div class="step-val">= (1 − sin θ)² / (1 − sin²θ) &nbsp;&nbsp;&nbsp; [∵ cos²θ = 1−sin²θ]</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 5</div><div class="step-val">= (1 − sin θ)² / [(1 − sin θ)(1 + sin θ)]</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 6</div><div class="step-val">= (1 − sin θ) / (1 + sin θ) = RHS</div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ LHS = RHS</div><div class="step-val"><span class="ans-box">Proved ✓</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q6 — Allied angles -->
+<div class="q-card" id="ch2q3">
+  <div class="q-title-bar">
+    <span class="q-num">Q 6</span>
+    <span class="q-title">Evaluate using allied angles / co-functions. <span class="imp-tag">⭐ IMP</span></span>
+    <span class="q-chip">Allied Angles</span>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(i) Evaluate: sin 150° + cos 300° − tan 135°</div>
+    <div class="solution">
+      <div class="step-row row-formula"><div class="step-key">Values:</div><div class="step-val">
+        sin 150° = sin(180°−30°) = sin 30° = 1/2<br>
+        cos 300° = cos(360°−60°) = cos 60° = 1/2<br>
+        tan 135° = tan(180°−45°) = −tan 45° = −1
+      </div></div>
+      <div class="sol-section">Solution</div>
+      <div class="step-row row-step"><div class="step-key">Step 1</div><div class="step-val">= 1/2 + 1/2 − (−1)</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 2</div><div class="step-val">= 1/2 + 1/2 + 1 = 1 + 1 = 2</div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ Answer:</div><div class="step-val"><span class="ans-box">2</span></div></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(ii) Prove: sin(90°+θ) · cos(180°−θ) = −sin θ cos θ</div>
+    <div class="solution">
+      <div class="step-row row-formula"><div class="step-key">Allied values:</div><div class="step-val">
+        sin(90°+θ) = cos θ &nbsp;|&nbsp; cos(180°−θ) = −cos θ
+      </div></div>
+      <div class="sol-section">Solution</div>
+      <div class="step-row row-step"><div class="step-key">LHS</div><div class="step-val">= sin(90°+θ) · cos(180°−θ)</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 1</div><div class="step-val">= cos θ · (−cos θ)</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 2</div><div class="step-val">= −cos²θ</div></div>
+      <div class="note">Note: The expected RHS is −sin θ cos θ which requires different given. Directly: LHS = −cos²θ.</div>
+      <div class="step-row row-ans"><div class="step-key">∴ Result:</div><div class="step-val"><span class="ans-box">= −cos²θ</span></div></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     CHAPTER 3 — TRIGONOMETRY II
+════════════════════════════════════════════════════ -->
+<div class="ch-divider ch3-bg" id="ch3">
+  <div class="ch-icon">🔢</div>
+  <div class="ch-info">
+    <h2>Chapter 3 — Trigonometry - II</h2>
+    <p>Sum/Product formulae, Multiple angles, Factorisation — highest marks in exam</p>
+  </div>
+</div>
+
+<!-- Q7 — Sum and Product formulae -->
+<div class="q-card" id="ch3q1">
+  <div class="q-title-bar">
+    <span class="q-num">Q 7</span>
+    <span class="q-title">Prove using sum / difference formulae. <span class="imp-tag">⭐ Most IMP</span></span>
+    <span class="q-chip">Sum Formulae</span>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(i) Prove: sin(A+B) · sin(A−B) = sin²A − sin²B</div>
+    <div class="solution">
+      <div class="step-row row-formula"><div class="step-key">Formulae:</div><div class="step-val">
+        sin(A+B) = sin A cos B + cos A sin B<br>
+        sin(A−B) = sin A cos B − cos A sin B
+      </div></div>
+      <div class="sol-section">Solution</div>
+      <div class="step-row row-step"><div class="step-key">LHS</div><div class="step-val">= sin(A+B) · sin(A−B)</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 1</div><div class="step-val">= (sin A cos B + cos A sin B)(sin A cos B − cos A sin B)</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 2<br><small>Use (a+b)(a−b) = a²−b²</small></div><div class="step-val">= (sin A cos B)² − (cos A sin B)²</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 3</div><div class="step-val">= sin²A cos²B − cos²A sin²B</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 4</div><div class="step-val">= sin²A(1−sin²B) − (1−sin²A)sin²B</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 5</div><div class="step-val">= sin²A − sin²A sin²B − sin²B + sin²A sin²B</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 6</div><div class="step-val">= sin²A − sin²B = RHS</div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ LHS = RHS</div><div class="step-val"><span class="ans-box">Proved ✓</span></div></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(ii) Prove: tan(A+B) = (tan A + tan B)/(1 − tan A tan B)</div>
+    <div class="solution">
+      <div class="sol-section">Proof</div>
+      <div class="step-row row-step"><div class="step-key">LHS</div><div class="step-val">= tan(A+B) = sin(A+B)/cos(A+B)</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 1</div><div class="step-val">= (sin A cos B + cos A sin B) / (cos A cos B − sin A sin B)</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 2<br><small>Divide num & denom by cos A cos B</small></div><div class="step-val">= (tan A + tan B) / (1 − tan A tan B) = RHS</div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ LHS = RHS</div><div class="step-val"><span class="ans-box">Proved ✓</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q8 — Multiple angle formulae -->
+<div class="q-card" id="ch3q2">
+  <div class="q-title-bar">
+    <span class="q-num">Q 8</span>
+    <span class="q-title">Multiple angle — find values / prove identities. <span class="imp-tag">⭐ Most IMP</span></span>
+    <span class="q-chip">Multiple Angles</span>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(i) If sin A = 3/5, find sin 2A, cos 2A, tan 2A (A in 1st quadrant)</div>
+    <div class="solution">
+      <div class="step-row row-given"><div class="step-key">Given:</div><div class="step-val">sin A = 3/5, A ∈ 1st quadrant → cos A = 4/5</div></div>
+      <div class="step-row row-formula"><div class="step-key">Formulae:</div><div class="step-val">
+        sin 2A = 2 sin A cos A &nbsp;|&nbsp;
+        cos 2A = 1 − 2sin²A &nbsp;|&nbsp;
+        tan 2A = sin 2A / cos 2A
+      </div></div>
+      <div class="sol-section">Solution</div>
+      <div class="step-row row-step"><div class="step-key">sin 2A</div><div class="step-val">= 2 × (3/5) × (4/5) = 24/25</div></div>
+      <div class="step-row row-step"><div class="step-key">cos 2A</div><div class="step-val">= 1 − 2(3/5)² = 1 − 18/25 = 7/25</div></div>
+      <div class="step-row row-step"><div class="step-key">tan 2A</div><div class="step-val">= (24/25) / (7/25) = 24/7</div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ Answer:</div><div class="step-val"><span class="ans-box">sin 2A = 24/25 &nbsp;|&nbsp; cos 2A = 7/25 &nbsp;|&nbsp; tan 2A = 24/7</span></div></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(ii) Prove: sin 3A = 3 sin A − 4 sin³A</div>
+    <div class="solution">
+      <div class="sol-section">Proof</div>
+      <div class="step-row row-step"><div class="step-key">LHS</div><div class="step-val">= sin 3A = sin(2A + A)</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 1</div><div class="step-val">= sin 2A cos A + cos 2A sin A</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 2</div><div class="step-val">= (2 sin A cos A) cos A + (1 − 2sin²A) sin A</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 3</div><div class="step-val">= 2 sin A cos²A + sin A − 2sin³A</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 4</div><div class="step-val">= 2 sin A(1 − sin²A) + sin A − 2sin³A</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 5</div><div class="step-val">= 2 sin A − 2sin³A + sin A − 2sin³A</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 6</div><div class="step-val">= 3 sin A − 4sin³A = RHS</div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ LHS = RHS</div><div class="step-val"><span class="ans-box">Proved ✓</span></div></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(iii) Find the value of sin 75° and cos 75° using compound angle formula.</div>
+    <div class="solution">
+      <div class="step-row row-given"><div class="step-key">Given:</div><div class="step-val">75° = 45° + 30°</div></div>
+      <div class="sol-section">sin 75°</div>
+      <div class="step-row row-step"><div class="step-key">Step 1</div><div class="step-val">sin 75° = sin(45° + 30°)</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 2</div><div class="step-val">= sin 45° cos 30° + cos 45° sin 30°</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 3</div><div class="step-val">= (1/√2)(√3/2) + (1/√2)(1/2)</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 4</div><div class="step-val">= √3/(2√2) + 1/(2√2) = (√3 + 1)/(2√2)</div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ sin 75°</div><div class="step-val"><span class="ans-box">(√3 + 1) / (2√2) = (√6 + √2)/4</span></div></div>
+      <div class="sol-section">cos 75°</div>
+      <div class="step-row row-step"><div class="step-key">Step 1</div><div class="step-val">cos 75° = cos(45° + 30°)</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 2</div><div class="step-val">= cos 45° cos 30° − sin 45° sin 30°</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 3</div><div class="step-val">= (1/√2)(√3/2) − (1/√2)(1/2)</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 4</div><div class="step-val">= (√3 − 1)/(2√2)</div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ cos 75°</div><div class="step-val"><span class="ans-box">(√3 − 1) / (2√2) = (√6 − √2)/4</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q9 — Factorisation -->
+<div class="q-card" id="ch3q3">
+  <div class="q-title-bar">
+    <span class="q-num">Q 9</span>
+    <span class="q-title">Factorise / Prove using sum-to-product formulae. <span class="imp-tag">⭐ IMP</span></span>
+    <span class="q-chip">Sum to Product</span>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(i) Prove: (cos A − cos B)/(sin A − sin B) = −tan((A+B)/2)</div>
+    <div class="solution">
+      <div class="step-row row-formula"><div class="step-key">Sum-to-Product:</div><div class="step-val">
+        cos A − cos B = −2 sin((A+B)/2) sin((A−B)/2)<br>
+        sin A − sin B = 2 cos((A+B)/2) sin((A−B)/2)
+      </div></div>
+      <div class="sol-section">Solution</div>
+      <div class="step-row row-step"><div class="step-key">LHS</div><div class="step-val">= (cos A − cos B) / (sin A − sin B)</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 1</div><div class="step-val">= [−2 sin((A+B)/2) sin((A−B)/2)] / [2 cos((A+B)/2) sin((A−B)/2)]</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 2<br><small>Cancel 2 sin((A−B)/2)</small></div><div class="step-val">= −sin((A+B)/2) / cos((A+B)/2)</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 3</div><div class="step-val">= −tan((A+B)/2) = RHS</div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ LHS = RHS</div><div class="step-val"><span class="ans-box">Proved ✓</span></div></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(ii) Prove: sin 20° sin 40° sin 80° = (√3)/8</div>
+    <div class="solution">
+      <div class="step-row row-formula"><div class="step-key">Used:</div><div class="step-val">sin A · sin(60°−A) · sin(60°+A) = (1/4) sin 3A</div></div>
+      <div class="sol-section">Solution</div>
+      <div class="step-row row-step"><div class="step-key">Step 1</div><div class="step-val">sin 20° · sin 40° · sin 80°<br>= sin 20° · sin(60°−20°) · sin(60°+20°)</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 2</div><div class="step-val">= (1/4) sin(3 × 20°) = (1/4) sin 60°</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 3</div><div class="step-val">= (1/4) × (√3/2) = √3/8</div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ Answer:</div><div class="step-val"><span class="ans-box">sin 20° sin 40° sin 80° = √3/8 &nbsp; Proved ✓</span></div></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     CHAPTER 4 — DETERMINANTS AND MATRICES
+════════════════════════════════════════════════════ -->
+<div class="ch-divider ch4-bg" id="ch4">
+  <div class="ch-icon">🔣</div>
+  <div class="ch-info">
+    <h2>Chapter 4 — Determinants and Matrices</h2>
+    <p>Value of determinant, Matrix operations, Inverse, Cramer's rule — heavy weightage</p>
+  </div>
+</div>
+
+<!-- Q10 — Determinant value -->
+<div class="q-card" id="ch4q1">
+  <div class="q-title-bar">
+    <span class="q-num">Q 10</span>
+    <span class="q-title">Find the value of the following determinants. <span class="imp-tag">⭐ Most IMP</span></span>
+    <span class="q-chip">Determinants</span>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(i) Find the value of |3 −1; 4 2|</div>
+    <div class="solution">
+      <div class="step-row row-given"><div class="step-key">Given:</div><div class="step-val">2×2 determinant: top row [3, −1], bottom row [4, 2]</div></div>
+      <div class="step-row row-formula"><div class="step-key">Formula:</div><div class="step-val"><span class="m">|a b; c d| = ad − bc</span></div></div>
+      <div class="sol-section">Solution</div>
+      <div class="step-row row-step"><div class="step-key">Step 1</div><div class="step-val">= (3)(2) − (−1)(4)</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 2</div><div class="step-val">= 6 + 4 = 10</div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ Answer:</div><div class="step-val"><span class="ans-box">D = 10</span></div></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(ii) Evaluate the 3×3 determinant:<br>D = |1 2 3; 2 −1 1; 3 1 −2|</div>
+    <div class="solution">
+      <div class="step-row row-given"><div class="step-key">Given:</div><div class="step-val">3×3 matrix — expand along first row</div></div>
+      <div class="step-row row-formula"><div class="step-key">Formula:</div><div class="step-val">Expand along R₁: D = a₁₁M₁₁ − a₁₂M₁₂ + a₁₃M₁₃</div></div>
+      <div class="sol-section">Solution</div>
+      <div class="step-row row-step"><div class="step-key">Step 1</div><div class="step-val">D = 1·|−1 1; 1 −2| − 2·|2 1; 3 −2| + 3·|2 −1; 3 1|</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 2</div><div class="step-val">= 1·[(−1)(−2) − (1)(1)] − 2·[(2)(−2) − (1)(3)] + 3·[(2)(1) − (−1)(3)]</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 3</div><div class="step-val">= 1·[2 − 1] − 2·[−4 − 3] + 3·[2 + 3]</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 4</div><div class="step-val">= 1(1) − 2(−7) + 3(5)</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 5</div><div class="step-val">= 1 + 14 + 15 = 30</div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ Answer:</div><div class="step-val"><span class="ans-box">D = 30</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q11 — Matrix operations -->
+<div class="q-card" id="ch4q2">
+  <div class="q-title-bar">
+    <span class="q-num">Q 11</span>
+    <span class="q-title">Matrix operations — Addition, Multiplication, Transpose. <span class="imp-tag">⭐ Most IMP</span></span>
+    <span class="q-chip">Matrices</span>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(i) If A = [1 2; 3 4] and B = [5 6; 7 8], find A + B, A − B and 2A.</div>
+    <div class="solution">
+      <div class="step-row row-formula"><div class="step-key">Formula:</div><div class="step-val">Add/subtract corresponding elements. Scalar multiply each element.</div></div>
+      <div class="sol-section">Solution</div>
+      <div class="step-row row-step"><div class="step-key">A + B</div><div class="step-val">
+        = [1+5  2+6; 3+7  4+8]<br>
+        = <span class="m">[6 8; 10 12]</span>
+      </div></div>
+      <div class="step-row row-step"><div class="step-key">A − B</div><div class="step-val">
+        = [1−5  2−6; 3−7  4−8]<br>
+        = <span class="m">[−4 −4; −4 −4]</span>
+      </div></div>
+      <div class="step-row row-step"><div class="step-key">2A</div><div class="step-val">
+        = [2×1  2×2; 2×3  2×4]<br>
+        = <span class="m">[2 4; 6 8]</span>
+      </div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ Answer:</div><div class="step-val">
+        <span class="ans-box">A+B = [6 8; 10 12] &nbsp;|&nbsp; A−B = [−4 −4; −4 −4] &nbsp;|&nbsp; 2A = [2 4; 6 8]</span>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(ii) If A = [1 2 3; 0 1 4] (2×3) and B = [1 0; 2 1; 3 2] (3×2), find AB.</div>
+    <div class="solution">
+      <div class="step-row row-given"><div class="step-key">Given:</div><div class="step-val">A is 2×3, B is 3×2 → AB will be 2×2</div></div>
+      <div class="step-row row-formula"><div class="step-key">Formula:</div><div class="step-val">(AB)ᵢⱼ = sum of products of row i of A × column j of B</div></div>
+      <div class="sol-section">Solution</div>
+      <div class="step-row row-step"><div class="step-key">(AB)₁₁</div><div class="step-val">= (1)(1) + (2)(2) + (3)(3) = 1 + 4 + 9 = 14</div></div>
+      <div class="step-row row-step"><div class="step-key">(AB)₁₂</div><div class="step-val">= (1)(0) + (2)(1) + (3)(2) = 0 + 2 + 6 = 8</div></div>
+      <div class="step-row row-step"><div class="step-key">(AB)₂₁</div><div class="step-val">= (0)(1) + (1)(2) + (4)(3) = 0 + 2 + 12 = 14</div></div>
+      <div class="step-row row-step"><div class="step-key">(AB)₂₂</div><div class="step-val">= (0)(0) + (1)(1) + (4)(2) = 0 + 1 + 8 = 9</div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ AB =</div><div class="step-val"><span class="ans-box">[14 8; 14 9]</span></div></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(iii) Find the inverse of A = [2 1; 5 3]</div>
+    <div class="solution">
+      <div class="step-row row-formula"><div class="step-key">Formula:</div><div class="step-val">
+        <span class="m">A⁻¹ = (1/det A) × adj A</span><br>
+        For 2×2: if A=[a b;c d], adj A = [d −b; −c a]
+      </div></div>
+      <div class="sol-section">Solution</div>
+      <div class="step-row row-step"><div class="step-key">Step 1<br><small>Find det A</small></div><div class="step-val">det A = (2)(3) − (1)(5) = 6 − 5 = 1</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 2<br><small>Find adj A</small></div><div class="step-val">adj A = [3 −1; −5 2]</div></div>
+      <div class="step-row row-step"><div class="step-key">Step 3</div><div class="step-val">A⁻¹ = (1/1) × [3 −1; −5 2] = [3 −1; −5 2]</div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ A⁻¹ =</div><div class="step-val"><span class="ans-box">[3 −1; −5 2]</span></div></div>
+      <div class="verify">✓ Check: A × A⁻¹ = [2 1; 5 3][3 −1; −5 2] = [6−5  −2+2; 15−15  −5+6] = [1 0; 0 1] = I ✓</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q12 — Cramer's rule -->
+<div class="q-card" id="ch4q3">
+  <div class="q-title-bar">
+    <span class="q-num">Q 12</span>
+    <span class="q-title">Solve using Cramer's Rule. <span class="imp-tag">⭐ Most IMP</span></span>
+    <span class="q-chip">Cramer's Rule</span>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(i) 3x − y = 5 &nbsp;&nbsp; 2x + 3y = 12</div>
+    <div class="solution">
+      <div class="step-row row-given"><div class="step-key">Given:</div><div class="step-val">3x − y = 5 &nbsp;…(1) &nbsp;&nbsp;&nbsp; 2x + 3y = 12 &nbsp;…(2)</div></div>
+      <div class="step-row row-formula"><div class="step-key">Formula:</div><div class="step-val"><span class="m">x = Dx/D, &nbsp; y = Dy/D</span></div></div>
+      <div class="sol-section">Solution</div>
+      <div class="step-row row-step"><div class="step-key">Step 1<br><small>Find D</small></div><div class="step-val">
+        D = |3 −1; 2 3| = (3)(3) − (−1)(2) = 9 + 2 = <strong>11</strong>
+      </div></div>
+      <div class="step-row row-step"><div class="step-key">Step 2<br><small>Find Dx</small></div><div class="step-val">
+        Dx = |5 −1; 12 3| = (5)(3) − (−1)(12) = 15 + 12 = <strong>27</strong>
+      </div></div>
+      <div class="step-row row-step"><div class="step-key">Step 3<br><small>Find Dy</small></div><div class="step-val">
+        Dy = |3 5; 2 12| = (3)(12) − (5)(2) = 36 − 10 = <strong>26</strong>
+      </div></div>
+      <div class="step-row row-step"><div class="step-key">Step 4</div><div class="step-val">x = Dx/D = 27/11 &nbsp;&nbsp;&nbsp; y = Dy/D = 26/11</div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ Answer:</div><div class="step-val"><span class="ans-box">x = 27/11, &nbsp; y = 26/11</span></div></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <div class="sub-label">(ii) 2x + 3y + 3z = 5 &nbsp;&nbsp; x − 2y + z = −4 &nbsp;&nbsp; 3x − y − 2z = 3</div>
+    <div class="solution">
+      <div class="step-row row-given"><div class="step-key">Given:</div><div class="step-val">System of 3 equations</div></div>
+      <div class="sol-section">Solution</div>
+      <div class="step-row row-step"><div class="step-key">Step 1<br><small>Find D</small></div><div class="step-val">
+        D = |2 3 3; 1 −2 1; 3 −1 −2|<br>
+        = 2[(−2)(−2)−(1)(−1)] − 3[(1)(−2)−(1)(3)] + 3[(1)(−1)−(−2)(3)]<br>
+        = 2[4+1] − 3[−2−3] + 3[−1+6]<br>
+        = 2(5) − 3(−5) + 3(5) = 10+15+15 = <strong>40</strong>
+      </div></div>
+      <div class="step-row row-step"><div class="step-key">Step 2<br><small>Find Dx</small></div><div class="step-val">
+        Dx = |5 3 3; −4 −2 1; 3 −1 −2|<br>
+        = 5[(−2)(−2)−(1)(−1)] − 3[(−4)(−2)−(1)(3)] + 3[(−4)(−1)−(−2)(3)]<br>
+        = 5(5) − 3(8−3) + 3(4+6) = 25−15+30 = <strong>40</strong>
+      </div></div>
+      <div class="step-row row-step"><div class="step-key">Step 3</div><div class="step-val">
+        x = Dx/D = 40/40 = <strong>1</strong>
+      </div></div>
+      <div class="step-row row-step"><div class="step-key">Step 4<br><small>Find Dy</small></div><div class="step-val">
+        Dy = |2 5 3; 1 −4 1; 3 3 −2|<br>
+        = 2[(−4)(−2)−(1)(3)] − 5[(1)(−2)−(1)(3)] + 3[(1)(3)−(−4)(3)]<br>
+        = 2(8−3) − 5(−2−3) + 3(3+12) = 10+25+45 = <strong>80</strong><br>
+        y = Dy/D = 80/40 = <strong>2</strong>
+      </div></div>
+      <div class="step-row row-step"><div class="step-key">Step 5<br><small>Find Dz</small></div><div class="step-val">
+        Dz = |2 3 5; 1 −2 −4; 3 −1 3|<br>
+        = 2[(−2)(3)−(−4)(−1)] − 3[(1)(3)−(−4)(3)] + 5[(1)(−1)−(−2)(3)]<br>
+        = 2(−6−4) − 3(3+12) + 5(−1+6) = −20−45+25 = <strong>−40</strong><br>
+        z = Dz/D = −40/40 = <strong>−1</strong>
+      </div></div>
+      <div class="step-row row-ans"><div class="step-key">∴ Answer:</div><div class="step-val"><span class="ans-box">x = 1, &nbsp; y = 2, &nbsp; z = −1</span></div></div>
+      <div class="verify">✓ Check eq(1): 2(1)+3(2)+3(−1) = 2+6−3 = 5 ✓ &nbsp;|&nbsp; eq(2): 1−4+(−1) = −4 ✓</div>
+    </div>
+  </div>
+</div>
+
+<!-- TRIG REFERENCE TABLE -->
+<div style="max-width:900px;margin:16px auto;background:#fff;border-radius:10px;padding:16px 20px;box-shadow:0 2px 8px rgba(0,0,0,.08);">
+  <h3 style="color:#4a148c;margin-bottom:12px;font-size:.9rem;font-weight:800;">📐 Standard Trigonometric Values — Quick Reference</h3>
+  <table class="tr">
+    <tr><th>θ</th><th>0°</th><th>30°</th><th>45°</th><th>60°</th><th>90°</th><th>120°</th><th>180°</th><th>270°</th><th>360°</th></tr>
+    <tr><td><strong>sin</strong></td><td>0</td><td>½</td><td>1/√2</td><td>√3/2</td><td>1</td><td>√3/2</td><td>0</td><td>−1</td><td>0</td></tr>
+    <tr><td><strong>cos</strong></td><td>1</td><td>√3/2</td><td>1/√2</td><td>½</td><td>0</td><td>−½</td><td>−1</td><td>0</td><td>1</td></tr>
+    <tr><td><strong>tan</strong></td><td>0</td><td>1/√3</td><td>1</td><td>√3</td><td>∞</td><td>−√3</td><td>0</td><td>∞</td><td>0</td></tr>
+  </table>
+  <p style="font-size:.8rem;color:#666;margin-top:10px;">Signs by quadrant: &nbsp;<strong>Q1</strong> all +ve &nbsp;|&nbsp; <strong>Q2</strong> sin, cosec +ve &nbsp;|&nbsp; <strong>Q3</strong> tan, cot +ve &nbsp;|&nbsp; <strong>Q4</strong> cos, sec +ve</p>
+</div>
+
+<footer>
+  <p>Visions Classes · visionslearning.in · <a href="notes-class11.html">← Back to Class 11 Notes</a></p>
+</footer>
+
+<!-- Circular Watermark -->
+<div style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;opacity:0.07;user-select:none;">
+  <svg width="340" height="340" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="170" cy="170" r="155" fill="none" stroke="#4a148c" stroke-width="6"/>
+    <circle cx="170" cy="170" r="138" fill="none" stroke="#4a148c" stroke-width="2"/>
+    <path id="tm1" fill="none" d="M 40,170 a130,130 0 1,1 260,0"/>
+    <path id="bm1" fill="none" d="M 40,170 a130,130 0 0,0 260,0"/>
+    <text font-size="21" font-weight="900" fill="#4a148c" font-family="Arial,sans-serif" letter-spacing="5"><textPath href="#tm1" startOffset="10%">VISIONS CLASSES · VISIONSLEARNING.IN ·</textPath></text>
+    <text font-size="17" font-weight="900" fill="#4a148c" font-family="Arial,sans-serif" letter-spacing="3"><textPath href="#bm1" startOffset="8%">MATHS 1 · CLASS 11 · MAHARASHTRA BOARD</textPath></text>
+    <text x="170" y="158" text-anchor="middle" font-size="26" font-weight="900" fill="#4a148c" font-family="Arial,sans-serif">VISIONS</text>
+    <text x="170" y="190" text-anchor="middle" font-size="26" font-weight="900" fill="#4a148c" font-family="Arial,sans-serif">CLASSES</text>
+    <text x="170" y="218" text-anchor="middle" font-size="12" font-weight="700" fill="#4a148c" font-family="Arial,sans-serif" letter-spacing="2">★ MATHS PART 1 ★</text>
+  </svg>
+</div>
+
+</body>
+</html>
