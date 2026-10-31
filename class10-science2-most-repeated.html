@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Class 10 Science 2 — Most Repeated Questions (Last 5 Years) | Maharashtra Board</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#1a1a1a;}
+
+  .site-header{background:linear-gradient(135deg,#e65100,#f57c00,#bf360c);padding:14px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 3px 12px rgba(0,0,0,.3);}
+  .site-header a{color:#ffccbc;text-decoration:none;font-size:.85rem;font-weight:600;}
+  .site-header a:hover{color:#fff;}
+  .header-title{color:#fff;font-size:1.1rem;font-weight:800;}
+
+  .hero{background:linear-gradient(135deg,#bf360c 0%,#e64a19 40%,#e65100 100%);padding:36px 20px 28px;text-align:center;color:#fff;}
+  .board-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:5px 18px;font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
+  .hero h1{font-size:1.7rem;font-weight:900;line-height:1.25;margin-bottom:8px;}
+  .hero .sub{font-size:.9rem;color:rgba(255,255,255,.85);margin-bottom:16px;}
+  .pills{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+  .pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:22px;padding:7px 16px;font-size:.82rem;font-weight:700;}
+
+  /* year badges */
+  .year-strip{max-width:900px;margin:16px auto 0;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:0 12px;}
+  .yr{background:#fff;color:#bf360c;font-size:.75rem;font-weight:800;padding:5px 14px;border-radius:20px;border:2px solid #ffccbc;}
+
+  .instr{background:#fbe9e7;border-left:4px solid #e64a19;margin:16px auto;max-width:900px;padding:14px 20px;border-radius:8px;font-size:.87rem;line-height:1.7;}
+  .instr strong{color:#bf360c;}
+
+  /* CHAPTER block */
+  .ch-block{max-width:900px;margin:20px auto;}
+  .ch-header{border-radius:14px 14px 0 0;padding:14px 22px;display:flex;align-items:center;gap:12px;}
+  .ch-header .icon{font-size:1.8rem;}
+  .ch-header .info{flex:1;}
+  .ch-header .ch-title{font-size:1rem;font-weight:900;color:#fff;}
+  .ch-header .ch-sub{font-size:.8rem;color:rgba(255,255,255,.85);margin-top:2px;}
+  .ch-header .freq{background:rgba(255,255,255,.22);color:#fff;font-size:.78rem;font-weight:800;padding:4px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.3);}
+  .hc1{background:linear-gradient(135deg,#1b5e20,#2e7d32);}
+  .hc2{background:linear-gradient(135deg,#0d47a1,#1565c0);}
+  .hc3{background:linear-gradient(135deg,#880e4f,#c2185b);}
+  .hc4{background:linear-gradient(135deg,#4a148c,#7b1fa2);}
+  .hc5{background:linear-gradient(135deg,#006064,#00838f);}
+
+  .ch-body{background:#fff;border-radius:0 0 14px 14px;padding:20px 24px;box-shadow:0 4px 16px rgba(0,0,0,.09);}
+
+  /* Q item */
+  .q-item{margin-bottom:20px;padding-bottom:20px;border-bottom:1.5px solid #f0f4f8;}
+  .q-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+  .q-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;}
+  .q-badge{display:inline-flex;align-items:center;gap:5px;background:#bf360c;color:#fff;font-size:.72rem;font-weight:800;padding:3px 10px;border-radius:6px;flex-shrink:0;}
+  .rep-badge{display:inline-flex;align-items:center;gap:3px;font-size:.7rem;font-weight:800;padding:3px 9px;border-radius:10px;margin-left:6px;flex-shrink:0;}
+  .r5{background:#b71c1c;color:#fff;border:1px solid #ef9a9a;}
+  .r4{background:#e65100;color:#fff;border:1px solid #ffcc80;}
+  .r3{background:#1b5e20;color:#fff;border:1px solid #a5d6a7;}
+  .q-text{font-size:.92rem;font-weight:700;color:#1a1a1a;line-height:1.5;flex:1;}
+  .year-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px;}
+  .ytag{background:#fff3e0;color:#e65100;font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:8px;border:1px solid #ffcc80;}
+  .ans-a{font-size:.86rem;line-height:1.75;background:#f8fafc;border-left:3px solid #e64a19;padding:10px 14px;border-radius:0 8px 8px 0;}
+  .ans-a ul{padding-left:17px;margin-top:4px;}
+  .ans-a ul li{margin-bottom:4px;}
+  .ans-a strong{color:#bf360c;}
+  .fm{font-family:monospace;background:#fbe9e7;color:#bf360c;padding:2px 8px;border-radius:5px;font-weight:700;display:inline-block;margin:2px 0;}
+  .ns{background:#fff8e1;border-left:3px solid #f9a825;padding:10px 13px;border-radius:0 8px 8px 0;font-size:.86rem;line-height:1.85;margin-top:6px;}
+  .ns .s{margin-bottom:3px;}
+  .nf{font-family:monospace;background:#fff3cd;color:#7c5700;padding:2px 8px;border-radius:5px;font-weight:700;display:inline-block;}
+  .fin{font-weight:800;color:#1b5e20;background:#e8f5e9;padding:4px 12px;border-radius:7px;display:inline-block;margin-top:5px;}
+  .dn{background:#e8eaf6;border:1.5px dashed #5c6bc0;border-radius:8px;padding:9px 13px;font-size:.79rem;color:#3949ab;margin-top:9px;text-align:center;}
+  table.bt{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:8px;}
+  table.bt th{background:#bf360c;color:#fff;padding:6px 10px;text-align:left;}
+  table.bt td{padding:6px 10px;border-bottom:1px solid #e8edf2;}
+  table.bt tr:nth-child(even) td{background:#fff8f5;}
+
+  /* activity */
+  .act-box{background:#f1f8e9;border:2px solid #66bb6a;border-radius:10px;padding:14px 16px;margin-top:8px;}
+  .act-label{font-size:.75rem;font-weight:800;color:#1b5e20;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
+
+  /* summary table */
+  .sum-box{max-width:900px;margin:20px auto;background:#fff;border-radius:14px;padding:20px 24px;box-shadow:0 2px 12px rgba(0,0,0,.08);}
+  .sum-box h3{color:#bf360c;margin-bottom:14px;font-size:1rem;font-weight:800;}
+  table.st{width:100%;border-collapse:collapse;font-size:.84rem;}
+  table.st th{background:linear-gradient(135deg,#bf360c,#e64a19);color:#fff;padding:8px 12px;text-align:left;}
+  table.st td{padding:8px 12px;border-bottom:1px solid #e8edf2;}
+  table.st tr:nth-child(even) td{background:#fff8f5;}
+  .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px;}
+  .d5{background:#b71c1c;} .d4{background:#e65100;} .d3{background:#1b5e20;}
+
+  footer{text-align:center;padding:26px 16px;font-size:.8rem;color:#888;}
+  footer a{color:#e64a19;text-decoration:none;}
+  @media(max-width:600px){.paper-hero h1{font-size:1.3rem;}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="site-header">
+  <a href="notes-class10.html">← Class 10 Notes</a>
+  <span style="color:rgba(255,255,255,.4);">|</span>
+  <span class="header-title">Science 2 — Most Repeated Questions (Last 5 Years)</span>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="board-tag">Maharashtra SSC Board · Last 5 Years Analysis</div>
+  <h1>Class 10 Science Part 2<br>Most Repeated Questions with Answers</h1>
+  <div class="sub">Ch1 Heredity · Ch2 Life Processes 1 · Ch3 Life Processes 2 · Ch4 Environment · Ch5 Green Energy</div>
+  <div class="pills">
+    <div class="pill">🔁 Repeated 5 Times = <span style="background:#b71c1c;padding:2px 7px;border-radius:6px;margin-left:4px;">MUST DO</span></div>
+    <div class="pill">🔁 Repeated 4 Times = <span style="background:#e65100;padding:2px 7px;border-radius:6px;margin-left:4px;">VERY IMP</span></div>
+    <div class="pill">🔁 Repeated 3 Times = <span style="background:#1b5e20;padding:2px 7px;border-radius:6px;margin-left:4px;">IMP</span></div>
+  </div>
+</div>
+
+<div class="year-strip">
+  <span class="yr">📅 2019</span>
+  <span class="yr">📅 2020</span>
+  <span class="yr">📅 2021</span>
+  <span class="yr">📅 2022</span>
+  <span class="yr">📅 2023</span>
+  <span class="yr">📅 2024</span>
+</div>
+
+<div class="instr" style="margin-top:16px;">
+  <strong>How to use this sheet:</strong> These questions have appeared most frequently in the last 5 years of Maharashtra Board SSC exams.
+  <span style="display:inline-block;background:#b71c1c;color:#fff;font-size:.72rem;font-weight:800;padding:2px 8px;border-radius:6px;margin:0 3px;">🔴 5× MUST DO</span>
+  <span style="display:inline-block;background:#e65100;color:#fff;font-size:.72rem;font-weight:800;padding:2px 8px;border-radius:6px;margin:0 3px;">🟠 4× VERY IMP</span>
+  <span style="display:inline-block;background:#1b5e20;color:#fff;font-size:.72rem;font-weight:800;padding:2px 8px;border-radius:6px;margin:0 3px;">🟢 3× IMP</span>
+  — prioritise accordingly.
+</div>
+
+<!-- ═══════════════════════════════════
+     CHAPTER 1 — HEREDITY & EVOLUTION
+════════════════════════════════════ -->
+<div class="ch-block" id="ch1">
+  <div class="ch-header hc1">
+    <div class="icon">🧬</div>
+    <div class="info">
+      <div class="ch-title">Chapter 1 — Heredity and Evolution</div>
+      <div class="ch-sub">Most repeated questions from last 5 years of SSC exam</div>
+    </div>
+    <div class="freq">7 Repeated Questions</div>
+  </div>
+  <div class="ch-body">
+
+    <div class="q-item">
+      <div class="q-row">
+        <span class="q-badge">Q1</span>
+        <span class="rep-badge r5">🔴 5× MUST DO</span>
+        <div class="q-text">Explain Mendel's monohybrid cross with a Punnett square. State the Law of Segregation. What is the phenotypic ratio in F₂ generation?</div>
+      </div>
+      <div class="year-tags"><span class="ytag">2019</span><span class="ytag">2020</span><span class="ytag">2021</span><span class="ytag">2022</span><span class="ytag">2024</span></div>
+      <div class="ans-a">
+        <strong>Monohybrid Cross (Tall × Dwarf — TT × tt):</strong>
+        <ul>
+          <li><strong>P generation:</strong> TT (Tall) × tt (Dwarf)</li>
+          <li><strong>Gametes:</strong> T and t</li>
+          <li><strong>F₁ generation:</strong> All Tt (Tall) — dominant trait expressed</li>
+          <li><strong>F₁ × F₁:</strong> Tt × Tt</li>
+        </ul>
+        <strong>F₂ Punnett Square:</strong>
+        <table class="bt" style="max-width:260px;margin:8px 0;">
+          <tr><th></th><th>T (from Tt)</th><th>t (from Tt)</th></tr>
+          <tr><td><strong>T</strong></td><td>TT (Tall)</td><td>Tt (Tall)</td></tr>
+          <tr><td><strong>t</strong></td><td>Tt (Tall)</td><td>tt (Dwarf)</td></tr>
+        </table>
+        <ul>
+          <li><strong>Phenotypic ratio: 3 Tall : 1 Dwarf</strong></li>
+          <li><strong>Genotypic ratio: 1 TT : 2 Tt : 1 tt</strong></li>
+          <li><strong>Law of Segregation:</strong> The two alleles for each character separate (segregate) during gamete formation so that each gamete receives only one allele of each gene pair.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-row">
+        <span class="q-badge">Q2</span>
+        <span class="rep-badge r5">🔴 5× MUST DO</span>
+        <div class="q-text">Explain Darwin's Theory of Natural Selection. How does it explain evolution? Give an example. What are the limitations of this theory?</div>
+      </div>
+      <div class="year-tags"><span class="ytag">2019</span><span class="ytag">2020</span><span class="ytag">2021</span><span class="ytag">2023</span><span class="ytag">2024</span></div>
+      <div class="ans-a">
+        <strong>Darwin's Theory of Natural Selection (1859):</strong>
+        <ul>
+          <li><strong>1. Overproduction:</strong> All organisms produce more offspring than can survive.</li>
+          <li><strong>2. Variation:</strong> Individuals show natural heritable variations in traits.</li>
+          <li><strong>3. Struggle for existence:</strong> Organisms compete for limited food, space, and mates.</li>
+          <li><strong>4. Survival of the Fittest:</strong> Individuals with favourable variations survive and reproduce; others die out.</li>
+          <li><strong>5. Natural Selection:</strong> Nature selects individuals with advantageous traits.</li>
+          <li><strong>6. Inheritance:</strong> Favourable traits are passed to offspring → population gradually changes → evolution.</li>
+        </ul>
+        <strong>Example — Long neck of Giraffe:</strong>
+        <ul>
+          <li>Ancestral giraffes had varying neck lengths.</li>
+          <li>Long-necked ones reached more food → survived and reproduced more.</li>
+          <li>Short-necked ones couldn't compete → died out.</li>
+          <li>Over generations → all giraffes became long-necked.</li>
+        </ul>
+        <strong>Limitations:</strong>
+        <ul>
+          <li>Does not explain the origin of variations (Mendel's genetics explains this).</li>
+          <li>Does not explain sudden large changes (mutations).</li>
+          <li>Does not consider genetics and molecular biology.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-row">
+        <span class="q-badge">Q3</span>
+        <span class="rep-badge r4">🟠 4× VERY IMP</span>
+        <div class="q-text">What are homologous and analogous organs? Give two examples of each. What do they indicate about evolution?</div>
+      </div>
+      <div class="year-tags"><span class="ytag">2019</span><span class="ytag">2021</span><span class="ytag">2022</span><span class="ytag">2023</span></div>
+      <div class="ans-a">
+        <table class="bt">
+          <tr><th>Feature</th><th>Homologous Organs</th><th>Analogous Organs</th></tr>
+          <tr><td>Definition</td><td>Same basic structure/origin but different functions</td><td>Different structure/origin but same function</td></tr>
+          <tr><td>Indicates</td><td>Divergent evolution (common ancestor)</td><td>Convergent evolution (different ancestry)</td></tr>
+          <tr><td>Example 1</td><td>Forelimbs of human, bat, whale, horse</td><td>Wings of bird and butterfly</td></tr>
+          <tr><td>Example 2</td><td>Thorns (rose) and tendrils (cucumber) — modified stem</td><td>Eyes of octopus and human</td></tr>
+        </table>
+        <ul style="margin-top:8px;">
+          <li><strong>Homologous organs</strong> provide evidence for <strong>common ancestry</strong> — different organisms evolved from the same ancestor.</li>
+          <li><strong>Analogous organs</strong> show that unrelated organisms can evolve similar structures due to similar environmental pressures (convergent evolution).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-row">
+        <span class="q-badge">Q4</span>
+        <span class="rep-badge r4">🟠 4× VERY IMP</span>
+        <div class="q-text">Explain the dihybrid cross performed by Mendel. State the Law of Independent Assortment. What is the F₂ phenotypic ratio?</div>
+      </div>
+      <div class="year-tags"><span class="ytag">2020</span><span class="ytag">2021</span><span class="ytag">2023</span><span class="ytag">2024</span></div>
+      <div class="ans-a">
+        <strong>Dihybrid Cross (Round Yellow × Wrinkled Green seeds):</strong>
+        <ul>
+          <li>P generation: RRYY × rryy</li>
+          <li>F₁: All RrYy (Round Yellow — both dominant)</li>
+          <li>F₁ × F₁: RrYy × RrYy → 16 combinations in F₂</li>
+        </ul>
+        <strong>F₂ Phenotypic ratio: 9 Round Yellow : 3 Round Green : 3 Wrinkled Yellow : 1 Wrinkled Green (9:3:3:1)</strong>
+        <br><br>
+        <strong>Law of Independent Assortment:</strong>
+        <ul>
+          <li>When two pairs of contrasting traits are present together, the factors (alleles) of one pair assort (separate) independently of the factors of the other pair during gamete formation.</li>
+          <li>This means the inheritance of one trait does not affect the inheritance of another trait (when genes are on different chromosomes).</li>
+        </ul>
+        <div class="dn">📐 Draw 4×4 Punnett square for RrYy × RrYy showing all 16 combinations. Count: 9 R_Y_ : 3 R_yy : 3 rrY_ : 1 rryy = 9:3:3:1</div>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-row">
+        <span class="q-badge">Q5</span>
+        <span class="rep-badge r3">🟢 3× IMP</span>
+        <div class="q-text">What is speciation? Explain the role of geographical isolation in speciation with an example.</div>
+      </div>
+      <div class="year-tags"><span class="ytag">2020</span><span class="ytag">2022</span><span class="ytag">2023</span></div>
+      <div class="ans-a">
+        <strong>Speciation:</strong> The process by which new species are formed from an existing species over time due to accumulation of genetic differences is called speciation.
+        <ul>
+          <li><strong>Geographical Isolation:</strong> When a population is separated by a physical barrier (mountain, river, ocean), the two groups no longer interbreed → mutations and natural selection act independently on each group → over thousands of generations they become so different that they can no longer interbreed → new species formed.</li>
+          <li><strong>Example:</strong> Darwin's finches in the Galápagos Islands — a single ancestral finch species from mainland South America spread to different islands. Each island had different food sources → beaks evolved differently → 14 new species of finches with different beak shapes formed.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-row">
+        <span class="q-badge">Q6</span>
+        <span class="rep-badge r3">🟢 3× IMP</span>
+        <div class="q-text">🧪 ACTIVITY: A student collects skulls of modern humans, Homo habilis and Homo erectus. Arrange them in evolutionary order and describe how brain size changed. What does this indicate about human evolution?</div>
+      </div>
+      <div class="year-tags"><span class="ytag">2021</span><span class="ytag">2022</span><span class="ytag">2024</span></div>
+      <div class="act-box">
+        <div class="act-label">🧪 Activity Based Answer</div>
+        <div class="ans-a" style="border-left-color:#2e7d32;background:#f1f8e9;">
+          <strong>Evolutionary Order (oldest → newest):</strong>
+          <table class="bt">
+            <tr><th>Ancestor</th><th>Brain Capacity</th><th>Features</th></tr>
+            <tr><td>Homo habilis (~2.5 MYA)</td><td>~650–800 cc</td><td>Used simple stone tools; bipedal; small brain</td></tr>
+            <tr><td>Homo erectus (~1.8 MYA)</td><td>~900–1100 cc</td><td>Used fire, more complex tools; migrated out of Africa</td></tr>
+            <tr><td>Homo sapiens (modern, ~0.3 MYA)</td><td>~1350 cc</td><td>Large brain, language, complex culture, art</td></tr>
+          </table>
+          <ul style="margin-top:8px;">
+            <li><strong>Brain size increased</strong> from ~650 cc (Homo habilis) to ~1350 cc (Homo sapiens) over millions of years.</li>
+            <li><strong>Significance:</strong> Larger brain → more complex thinking, tool use, language, social behaviour → better survival → natural selection favoured larger brain size.</li>
+            <li><strong>Conclusion:</strong> Human evolution involved gradual increase in brain capacity and bipedalism — supporting Darwin's theory of evolution by natural selection.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     CHAPTER 2 — LIFE PROCESSES PART 1
+════════════════════════════════════ -->
+<div class="ch-block" id="ch2">
+  <div class="ch-header hc2">
+    <div class="icon">🌿</div>
+    <div class="info">
+      <div class="ch-title">Chapter 2 — Life Processes in Living Organisms Part 1</div>
+      <div class="ch-sub">Nutrition, Photosynthesis, Digestion</div>
+    </div>
+    <div class="freq">6 Repeated Questions</div>
+  </div>
+  <div class="ch-body">
+
+    <div class="q-item">
+      <div class="q-row">
+        <span class="q-badge">Q7</span>
+        <span class="rep-badge r5">🔴 5× MUST DO</span>
+        <div class="q-text">Explain the process of photosynthesis. Write the overall chemical equation. What are the raw materials, products and conditions required? Explain the two stages.</div>
+      </div>
+      <div class="year-tags"><span class="ytag">2019</span><span class="ytag">2020</span><span class="ytag">2021</span><span class="ytag">2022</span><span class="ytag">2023</span></div>
+      <div class="ans-a">
+        <strong>Photosynthesis:</strong> Process by which green plants convert CO₂ and H₂O into glucose using sunlight and chlorophyll.
+        <div class="fm">6CO₂ + 6H₂O → (light + chlorophyll) → C₆H₁₂O₆ + 6O₂</div>
+        <table class="bt">
+          <tr><th>Aspect</th><th>Detail</th></tr>
+          <tr><td>Raw materials</td><td>CO₂ (from air), H₂O (from soil), sunlight (energy), chlorophyll (pigment)</td></tr>
+          <tr><td>Products</td><td>Glucose (C₆H₁₂O₆) + Oxygen (O₂)</td></tr>
+          <tr><td>Site</td><td>Chloroplasts (contain chlorophyll)</td></tr>
+        </table>
+        <strong>Two Stages:</strong>
+        <ul>
+          <li><strong>1. Light Reaction (Thylakoid membrane):</strong> Sunlight is absorbed by chlorophyll → water is split (photolysis): 2H₂O → 4H⁺ + 4e⁻ + O₂; produces ATP and NADPH; O₂ is released.</li>
+          <li><strong>2. Dark Reaction / Calvin Cycle (Stroma):</strong> CO₂ is fixed using ATP and NADPH → glucose (C₆H₁₂O₆) is synthesised. Does not directly need light.</li>
+        </ul>
+        <div class="dn">📐 Draw: Chloroplast with thylakoid (light reaction) and stroma (dark reaction). Show inputs and outputs of each stage.</div>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-row">
+        <span class="q-badge">Q8</span>
+        <span class="rep-badge r5">🔴 5× MUST DO</span>
+        <div class="q-text">🧪 ACTIVITY: A student takes two test tubes. In tube A she puts a water plant (Hydrilla) in water in sunlight. In tube B she puts the same plant covered with black paper. After 2 hours she observes gas bubbles in tube A but not in tube B. What gas is produced? Write the reaction. What is the conclusion?</div>
+      </div>
+      <div class="year-tags"><span class="ytag">2019</span><span class="ytag">2020</span><span class="ytag">2022</span><span class="ytag">2023</span><span class="ytag">2024</span></div>
+      <div class="act-box">
+        <div class="act-label">🧪 Activity Based Answer</div>
+        <div class="ans-a" style="border-left-color:#1565c0;background:#e3f2fd;">
+          <ul>
+            <li><strong>(i) Gas produced in Tube A:</strong> <strong>Oxygen (O₂)</strong> — produced during photosynthesis when water is split (photolysis).</li>
+            <li><strong>(ii) Reaction:</strong> <span class="fm">6CO₂ + 6H₂O → (sunlight + chlorophyll) → C₆H₁₂O₆ + 6O₂↑</span></li>
+            <li><strong>(iii) Why no bubbles in Tube B:</strong> Black paper blocked sunlight → photosynthesis could not occur → no O₂ produced → no bubbles.</li>
+            <li><strong>(iv) How to confirm O₂:</strong> Insert a glowing splint near the bubbles in Tube A — it relights (O₂ supports combustion).</li>
+            <li><strong>(v) Conclusion:</strong> <strong>Sunlight is essential for photosynthesis.</strong> Without light, no glucose or oxygen is produced. This experiment proves that light energy drives the photosynthesis reaction in green plants.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-row">
+        <span class="q-badge">Q9</span>
+        <span class="rep-badge r4">🟠 4× VERY IMP</span>
+        <div class="q-text">Describe the human digestive system with a diagram. Explain the digestion of carbohydrates, proteins and fats step by step.</div>
+      </div>
+      <div class="year-tags"><span class="ytag">2019</span><span class="ytag">2021</span><span class="ytag">2022</span><span class="ytag">2024</span></div>
+      <div class="ans-a">
+        <strong>Digestion of Carbohydrates:</strong>
+        <ul>
+          <li><strong>Mouth:</strong> Salivary amylase converts starch → maltose.</li>
+          <li><strong>Small intestine:</strong> Pancreatic amylase converts remaining starch → maltose; maltase converts maltose → glucose (absorbed into blood).</li>
+        </ul>
+        <strong>Digestion of Proteins:</strong>
+        <ul>
+          <li><strong>Stomach:</strong> Pepsin (activated by HCl) converts proteins → peptides.</li>
+          <li><strong>Small intestine:</strong> Trypsin and chymotrypsin → peptides → amino acids (absorbed into blood).</li>
+        </ul>
+        <strong>Digestion of Fats:</strong>
+        <ul>
+          <li><strong>Small intestine:</strong> Bile salts emulsify fats (break into droplets); pancreatic lipase → fatty acids + glycerol (absorbed into lymph vessels/lacteals).</li>
+        </ul>
+        <strong>Absorption:</strong> Villi and microvilli in small intestine increase surface area for absorption of glucose, amino acids, fatty acids into blood/lymph.
+        <div class="dn">📐 Draw: Digestive system — label mouth, oesophagus, stomach, liver, gall bladder, pancreas, small intestine, large intestine. Show arrows for peristalsis.</div>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-row">
+        <span class="q-badge">Q10</span>
+        <span class="rep-badge r4">🟠 4× VERY IMP</span>
+        <div class="q-text">What is respiration? Distinguish between aerobic and anaerobic respiration. Write chemical equations for each. Give examples of organisms that use anaerobic respiration.</div>
+      </div>
+      <div class="year-tags"><span class="ytag">2020</span><span class="ytag">2021</span><span class="ytag">2022</span><span class="ytag">2023</span></div>
+      <div class="ans-a">
+        <strong>Respiration:</strong> The process of breaking down food (glucose) to release energy (ATP) in cells.
+        <table class="bt">
+          <tr><th>Feature</th><th>Aerobic Respiration</th><th>Anaerobic Respiration</th></tr>
+          <tr><td>O₂ needed?</td><td>Yes (O₂ required)</td><td>No (without O₂)</td></tr>
+          <tr><td>Site</td><td>Cytoplasm + Mitochondria</td><td>Cytoplasm only</td></tr>
+          <tr><td>Products</td><td>CO₂ + H₂O + ATP (38 ATP)</td><td>Lactic acid or Ethanol + CO₂ (2 ATP)</td></tr>
+          <tr><td>Energy yield</td><td>High (complete oxidation)</td><td>Low (incomplete)</td></tr>
+          <tr><td>Equation</td><td>C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + 38ATP</td><td>C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂ + 2ATP (yeast)</td></tr>
+        </table>
+        <ul style="margin-top:8px;">
+          <li><strong>In muscles (exercise):</strong> C₆H₁₂O₆ → 2C₃H₆O₃ (lactic acid) + 2ATP</li>
+          <li><strong>Organisms using anaerobic respiration:</strong> Yeast (fermentation), bacteria (lactobacillus), muscle cells during intense exercise.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-row">
+        <span class="q-badge">Q11</span>
+        <span class="rep-badge r3">🟢 3× IMP</span>
+        <div class="q-text">What are the different modes of nutrition? Explain autotrophic and heterotrophic nutrition with examples.</div>
+      </div>
+      <div class="year-tags"><span class="ytag">2019</span><span class="ytag">2022</span><span class="ytag">2024</span></div>
+      <div class="ans-a">
+        <strong>Modes of Nutrition:</strong>
+        <ul>
+          <li><strong>Autotrophic Nutrition:</strong> Organisms that prepare their own food from simple inorganic substances (CO₂, H₂O) using energy.
+            <ul>
+              <li><strong>Photoautotrophic:</strong> Use sunlight — green plants, algae, cyanobacteria. (Photosynthesis)</li>
+              <li><strong>Chemoautotrophic:</strong> Use chemical energy — nitrifying bacteria (Nitrosomonas).</li>
+            </ul>
+          </li>
+          <li><strong>Heterotrophic Nutrition:</strong> Organisms that depend on other organisms for food.
+            <ul>
+              <li><strong>Holozoic:</strong> Ingest solid food (animals, amoeba)</li>
+              <li><strong>Saprophytic:</strong> Absorb nutrients from dead organic matter (fungi, bacteria)</li>
+              <li><strong>Parasitic:</strong> Live on/in host and absorb food (tapeworm, Cuscuta)</li>
+              <li><strong>Symbiotic:</strong> Mutual benefit (Rhizobium bacteria in root nodules)</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-row">
+        <span class="q-badge">Q12</span>
+        <span class="rep-badge r3">🟢 3× IMP</span>
+        <div class="q-text">🧪 ACTIVITY: Iodine test for starch — A leaf was boiled in water, then in alcohol, and then dipped in iodine. It turned blue-black. What does this indicate? Why was it boiled in alcohol?</div>
+      </div>
+      <div class="year-tags"><span class="ytag">2020</span><span class="ytag">2022</span><span class="ytag">2023</span></div>
+      <div class="act-box">
+        <div class="act-label">🧪 Activity Based Answer</div>
+        <div class="ans-a" style="border-left-color:#1565c0;background:#e3f2fd;">
+          <ul>
+            <li><strong>(i) Blue-black colour indicates:</strong> Presence of <strong>starch</strong> in the leaf. Iodine reacts with starch to form a blue-black complex.</li>
+            <li><strong>(ii) Why boiled in water first?</strong> To soften the leaf and kill the cells (stop enzymatic activity).</li>
+            <li><strong>(iii) Why boiled in alcohol?</strong> To dissolve and remove the green chlorophyll pigment from the leaf — if chlorophyll is present, it masks the colour change with iodine. Alcohol is a solvent for chlorophyll.</li>
+            <li><strong>(iv) After bleaching (decolourised leaf):</strong> The leaf is white/pale. When dipped in iodine — blue-black colour confirms starch is present (photosynthesis occurred).</li>
+            <li><strong>(v) Conclusion:</strong> The leaf has undergone photosynthesis and stored starch as a product of glucose polymerisation.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     CHAPTER 3 — LIFE PROCESSES PART 2
+════════════════════════════════════ -->
+<div class="ch-block" id="ch3">
+  <div class="ch-header hc3">
+    <div class="icon">❤️</div>
+    <div class="info">
+      <div class="ch-title">Chapter 3 — Life Processes in Living Organisms Part 2</div>
+      <div class="ch-sub">Circulation, Excretion, Nervous System, Reproduction</div>
+    </div>
+    <div class="freq">6 Repeated Questions</div>
+  </div>
+  <div class="ch-body">
+
+    <div class="q-item">
+      <div class="q-row">
+        <span class="q-badge">Q13</span>
+        <span class="rep-badge r5">🔴 5× MUST DO</span>
+        <div class="q-text">Draw a neat labelled diagram of the human heart. Explain the double circulation. What is the role of valves in the heart?</div>
+      </div>
+      <div class="year-tags"><span class="ytag">2019</span><span class="ytag">2020</span><span class="ytag">2021</span><span class="ytag">2022</span><span class="ytag">2023</span></div>
+      <div class="ans-a">
+        <strong>Double Circulation:</strong> In humans, blood passes through the heart twice for each complete circuit — this is called double circulation.
+        <ul>
+          <li><strong>Pulmonary circulation:</strong> Right side of heart → Pulmonary artery → Lungs (oxygenated) → Pulmonary vein → Left side of heart.</li>
+          <li><strong>Systemic circulation:</strong> Left side of heart → Aorta → All body organs (deoxygenated blood collected) → Vena cava → Right side of heart.</li>
+        </ul>
+        <strong>Structure of Human Heart:</strong>
+        <ul>
+          <li>4 chambers: Right Auricle (RA), Right Ventricle (RV), Left Auricle (LA), Left Ventricle (LV).</li>
+          <li>LA and LV receive and pump oxygenated blood; RA and RV receive and pump deoxygenated blood.</li>
+        </ul>
+        <strong>Role of Valves:</strong>
+        <ul>
+          <li><strong>Tricuspid valve</strong> (between RA and RV): Prevents backflow from RV to RA.</li>
+          <li><strong>Bicuspid (Mitral) valve</strong> (between LA and LV): Prevents backflow from LV to LA.</li>
+          <li><strong>Semilunar valves</strong> (in aorta and pulmonary artery): Prevent backflow into ventricles.</li>
+        </ul>
+        <div class="dn">📐 Draw heart showing 4 chambers, valves, pulmonary artery, pulmonary vein, aorta, vena cava. Use red for oxygenated blood and blue for deoxygenated blood.</div>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-row">
+        <span class="q-badge">Q14</span>
+        <span class="rep-badge r5">🔴 5× MUST DO</span>
+        <div class="q-text">Explain the structure and function of a nephron with a neat labelled diagram. What is dialysis? When is it needed?</div>
+      </div>
+      <div class="year-tags"><span class="ytag">2019</span><span class="ytag">2020</span><span class="ytag">2022</span><span class="ytag">2023</span><span class="ytag">2024</span></div>
+      <div class="ans-a">
+        <strong>Nephron — Structure and Function:</strong>
+        <ul>
+          <li><strong>Bowman's capsule + Glomerulus:</strong> Afferent arteriole brings blood under pressure → blood is ultrafiltered → filtrate (water, urea, glucose, salts) enters Bowman's capsule → blood cells and proteins remain in blood.</li>
+          <li><strong>Proximal Convoluted Tubule (PCT):</strong> Reabsorbs glucose, amino acids, salts, 75% of water back into blood.</li>
+          <li><strong>Loop of Henle:</strong> Concentrates urine by further water reabsorption; maintains salt balance.</li>
+          <li><strong>Distal Convoluted Tubule (DCT):</strong> Fine regulation of salt, water, pH; secretion of excess H⁺ and K⁺.</li>
+          <li><strong>Collecting Duct:</strong> Final water reabsorption; concentrated urine drains into renal pelvis → ureter → bladder.</li>
+        </ul>
+        <strong>Dialysis (Artificial kidney):</strong>
+        <ul>
+          <li>When kidneys fail to filter waste from blood, dialysis is used as an artificial filtration process.</li>
+          <li>Patient's blood is passed through a dialysis machine with a semi-permeable membrane that removes urea and waste products.</li>
+          <li>Needed in: kidney failure, chronic kidney disease (CKD), poisoning.</li>
+        </ul>
+        <div class="dn">📐 Draw nephron: Bowman's capsule, glomerulus, PCT, Loop of Henle, DCT, collecting duct. Label arrows: filtration, reabsorption, secretion.</div>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-row">
+        <span class="q-badge">Q15</span>
+        <span class="rep-badge r4">🟠 4× VERY IMP</span>
+        <div class="q-text">Explain the nervous system in humans. Draw a labelled diagram of a neuron. Explain how a nerve impulse is transmitted.</div>
+      </div>
+      <div class="year-tags"><span class="ytag">2019</span><span class="ytag">2021</span><span class="ytag">2022</span><span class="ytag">2024</span></div>
+      <div class="ans-a">
+        <strong>Human Nervous System:</strong>
+        <ul>
+          <li><strong>Central Nervous System (CNS):</strong> Brain + Spinal cord — processes information and controls body.</li>
+          <li><strong>Peripheral Nervous System (PNS):</strong> Nerves from CNS to all body parts.
+            <ul>
+              <li>Sensory (afferent) nerves — carry impulses from sense organs to CNS.</li>
+              <li>Motor (efferent) nerves — carry impulses from CNS to muscles/glands.</li>
+            </ul>
+          </li>
+          <li><strong>Autonomic Nervous System:</strong> Controls involuntary functions (heart rate, digestion).</li>
+        </ul>
+        <strong>Neuron Structure:</strong>
+        <ul>
+          <li><strong>Dendrites:</strong> Branch-like extensions receive signals from other neurons.</li>
+          <li><strong>Cell body (soma):</strong> Contains nucleus; maintains cell.</li>
+          <li><strong>Axon:</strong> Long fibre transmits impulse away from cell body.</li>
+          <li><strong>Myelin sheath:</strong> Fatty covering that insulates axon and speeds transmission.</li>
+          <li><strong>Synapse:</strong> Junction between two neurons; impulse transmitted by neurotransmitters.</li>
+        </ul>
+        <strong>Nerve Impulse Transmission:</strong>
+        <ul>
+          <li>Stimulus → Dendrites receive signal → Electrochemical impulse travels along axon → Reaches synapse → Neurotransmitters released → Bind to next neuron's receptor → New impulse generated → Reaches effector (muscle/gland) → Response.</li>
+        </ul>
+        <div class="dn">📐 Draw neuron: dendrites, cell body (nucleus), axon, myelin sheath (Schwann cells), nodes of Ranvier, axon terminals. Label direction of impulse with arrow.</div>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-row">
+        <span class="q-badge">Q16</span>
+        <span class="rep-badge r4">🟠 4× VERY IMP</span>
+        <div class="q-text">🧪 ACTIVITY: A student pricks their finger with a pin. They jerk their hand away before feeling pain. Explain this with a reflex arc diagram. What is the difference between reflex action and voluntary action?</div>
+      </div>
+      <div class="year-tags"><span class="ytag">2020</span><span class="ytag">2021</span><span class="ytag">2023</span><span class="ytag">2024</span></div>
+      <div class="act-box">
+        <div class="act-label">🧪 Activity Based Answer</div>
+        <div class="ans-a" style="border-left-color:#c2185b;background:#fce4ec;">
+          <strong>Reflex Arc:</strong>
+          <ul>
+            <li>Stimulus (pin prick) → Sensory receptor in skin → Sensory neuron → Spinal cord (relay neuron interprets) → Motor neuron → Effector muscle (hand jerks away) → Response (withdrawal).</li>
+            <li>Pain signal then travels up to brain → Person feels pain — this happens AFTER the reflex response because the spinal cord responds faster.</li>
+          </ul>
+          <div class="dn">📐 Draw reflex arc: finger → sensory neuron → spinal cord → motor neuron → muscle. Label: receptor, sensory neuron, relay neuron in spinal cord, motor neuron, effector.</div>
+          <strong>Reflex vs Voluntary Action:</strong>
+          <table class="bt" style="margin-top:8px;">
+            <tr><th>Feature</th><th>Reflex Action</th><th>Voluntary Action</th></tr>
+            <tr><td>Control</td><td>Spinal cord (no brain involvement)</td><td>Brain (conscious control)</td></tr>
+            <tr><td>Speed</td><td>Very fast (automatic)</td><td>Slower (requires thinking)</td></tr>
+            <tr><td>Consciousness</td><td>Involuntary — no thinking needed</td><td>Voluntary — deliberate</td></tr>
+            <tr><td>Example</td><td>Knee jerk, blinking, withdrawing hand from hot object</td><td>Writing, walking, talking</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-row">
+        <span class="q-badge">Q17</span>
+        <span class="rep-badge r3">🟢 3× IMP</span>
+        <div class="q-text">What are hormones? Name and explain the hormones secreted by the pancreas and their functions. What happens when insulin is not produced?</div>
+      </div>
+      <div class="year-tags"><span class="ytag">2020</span><span class="ytag">2022</span><span class="ytag">2024</span></div>
+      <div class="ans-a">
+        <strong>Hormones:</strong> Chemical messengers secreted by endocrine glands directly into the blood to regulate body functions.
+        <br><strong>Pancreatic Hormones:</strong>
+        <table class="bt">
+          <tr><th>Hormone</th><th>Secreted by</th><th>Function</th></tr>
+          <tr><td>Insulin</td><td>β (beta) cells of Islets of Langerhans</td><td>Decreases blood glucose level — promotes uptake of glucose by cells; promotes glycogen storage</td></tr>
+          <tr><td>Glucagon</td><td>α (alpha) cells of Islets of Langerhans</td><td>Increases blood glucose level — converts glycogen back to glucose when blood sugar is low</td></tr>
+        </table>
+        <strong>If insulin is not produced → Diabetes Mellitus:</strong>
+        <ul>
+          <li>Blood glucose level rises (hyperglycaemia).</li>
+          <li>Excess glucose excreted in urine (glycosuria).</li>
+          <li>Symptoms: frequent urination, excessive thirst, weakness, slow wound healing.</li>
+          <li>Treatment: Insulin injections (Type 1) or oral medication + diet control (Type 2).</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     CHAPTER 4 — ENVIRONMENTAL MANAGEMENT
+════════════════════════════════════ -->
+<div class="ch-block" id="ch4">
+  <div class="ch-header hc4">
+    <div class="icon">🌍</div>
+    <div class="info">
+      <div class="ch-title">Chapter 4 — Environmental Management</div>
+      <div class="ch-sub">Pollution, Biodiversity, Conservation, Waste Management</div>
+    </div>
+    <div class="freq">5 Repeated Questions</div>
+  </div>
+  <div class="ch-body">
+
+    <div class="q-item">
+      <div class="q-row">
+        <span class="q-badge">Q18</span>
+        <span class="rep-badge r5">🔴 5× MUST DO</span>
+        <div class="q-text">What is pollution? Explain air pollution — its causes, effects and control measures. What is global warming and what causes it?</div>
+      </div>
+      <div class="year-tags"><span class="ytag">2019</span><span class="ytag">2020</span><span class="ytag">2021</span><span class="ytag">2022</span><span class="ytag">2024</span></div>
+      <div class="ans-a">
+        <strong>Pollution:</strong> Introduction of harmful substances (pollutants) into the environment causing damage to living organisms and ecosystems.
+        <br><br>
+        <strong>Air Pollution:</strong>
+        <table class="bt">
+          <tr><th>Causes</th><th>Effects</th><th>Control</th></tr>
+          <tr><td>Burning fossil fuels (factories, vehicles)</td><td>Respiratory diseases (asthma, bronchitis)</td><td>Use of CNG, electric vehicles</td></tr>
+          <tr><td>Industrial emissions (SO₂, NOₓ)</td><td>Acid rain (damages crops, buildings)</td><td>Install scrubbers in chimneys</td></tr>
+          <tr><td>Burning crop residue</td><td>Smog — reduces visibility</td><td>Use of biogas from crop waste</td></tr>
+          <tr><td>CFCs (refrigerants)</td><td>Ozone layer depletion → UV radiation increase → skin cancer</td><td>Ban CFCs (Montreal Protocol)</td></tr>
+          <tr><td>CO₂, CH₄ emissions</td><td>Global warming, climate change</td><td>Reduce fossil fuel use, plant trees</td></tr>
+        </table>
+        <strong>Global Warming:</strong>
+        <ul>
+          <li>Rise in average global temperature due to increased greenhouse gases (CO₂, CH₄, N₂O, H₂O vapour).</li>
+          <li><strong>Greenhouse effect:</strong> These gases trap outgoing infrared radiation from Earth's surface → temperature rises.</li>
+          <li><strong>Effects:</strong> Melting of polar ice → rising sea levels; extreme weather events; species extinction; coral bleaching.</li>
+          <li><strong>Control:</strong> Reduce fossil fuel use, reforestation, renewable energy, international agreements (Paris Agreement).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-row">
+        <span class="q-badge">Q19</span>
+        <span class="rep-badge r4">🟠 4× VERY IMP</span>
+        <div class="q-text">What is biodiversity? Explain the importance of biodiversity and the methods of conservation (in-situ and ex-situ).</div>
+      </div>
+      <div class="year-tags"><span class="ytag">2019</span><span class="ytag">2021</span><span class="ytag">2022</span><span class="ytag">2023</span></div>
+      <div class="ans-a">
+        <strong>Biodiversity:</strong> The variety and variability of life on Earth — includes genetic diversity, species diversity and ecosystem diversity.
+        <strong>India's biodiversity:</strong> One of the 17 megadiverse countries; Western Ghats and Eastern Himalayas are biodiversity hotspots.
+        <br><br>
+        <strong>Importance of Biodiversity:</strong>
+        <ul>
+          <li>Provides food, medicine (80% of medicines from plants), raw materials.</li>
+          <li>Maintains ecological balance and food chains.</li>
+          <li>Soil formation, water purification, climate regulation.</li>
+          <li>Economic value — agriculture, tourism, forestry.</li>
+        </ul>
+        <strong>Conservation:</strong>
+        <table class="bt">
+          <tr><th>In-situ Conservation</th><th>Ex-situ Conservation</th></tr>
+          <tr><td>Protection in natural habitat</td><td>Protection outside natural habitat</td></tr>
+          <tr><td>National Parks (Jim Corbett, Sanjay Gandhi)</td><td>Zoos and aquaria</td></tr>
+          <tr><td>Wildlife Sanctuaries</td><td>Botanical gardens</td></tr>
+          <tr><td>Biosphere Reserves</td><td>Seed banks (Svalbard Global Seed Vault)</td></tr>
+          <tr><td>Sacred groves (Devrais)</td><td>Gene banks, tissue culture</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-row">
+        <span class="q-badge">Q20</span>
+        <span class="rep-badge r4">🟠 4× VERY IMP</span>
+        <div class="q-text">Explain water pollution — causes, effects and prevention. What is eutrophication?</div>
+      </div>
+      <div class="year-tags"><span class="ytag">2020</span><span class="ytag">2021</span><span class="ytag">2022</span><span class="ytag">2024</span></div>
+      <div class="ans-a">
+        <strong>Water Pollution:</strong> Addition of harmful substances to water bodies making it unfit for use.
+        <ul>
+          <li><strong>Causes:</strong> Industrial effluents (heavy metals, chemicals); sewage; agricultural runoff (pesticides, fertilisers); oil spills; plastic waste; religious offerings.</li>
+          <li><strong>Effects:</strong> Death of aquatic organisms; spread of waterborne diseases (cholera, typhoid); bioaccumulation of toxins in food chain; loss of drinking water; coral reef damage.</li>
+          <li><strong>Prevention:</strong> Sewage treatment plants (STPs); industrial effluent treatment before discharge; banning plastic near water bodies; organic farming; river conservation projects (Namami Gange).</li>
+        </ul>
+        <strong>Eutrophication:</strong>
+        <ul>
+          <li>Excessive growth of algae (algal bloom) in water due to excess nutrients (nitrates, phosphates) from agricultural runoff and sewage.</li>
+          <li>Algae cover the water surface → block sunlight → submerged plants die → algae decompose → bacteria consume all O₂ → aquatic animals suffocate and die (dead zone).</li>
+          <li>The water becomes foul-smelling and unfit for drinking.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-row">
+        <span class="q-badge">Q21</span>
+        <span class="rep-badge r3">🟢 3× IMP</span>
+        <div class="q-text">🧪 ACTIVITY: A student visits a municipal waste area and observes: biodegradable waste (vegetable peels, food) and non-biodegradable waste (plastic, glass, metal). What are the 3R principles? How should each type be managed?</div>
+      </div>
+      <div class="year-tags"><span class="ytag">2021</span><span class="ytag">2022</span><span class="ytag">2023</span></div>
+      <div class="act-box">
+        <div class="act-label">🧪 Activity Based Answer</div>
+        <div class="ans-a" style="border-left-color:#7b1fa2;background:#f3e5f5;">
+          <strong>3R Principles:</strong>
+          <ul>
+            <li><strong>Reduce:</strong> Decrease the amount of waste generated. Use less plastic, avoid over-packaging.</li>
+            <li><strong>Reuse:</strong> Use items multiple times before discarding. E.g., refillable bottles, cloth bags instead of plastic.</li>
+            <li><strong>Recycle:</strong> Process waste materials to make new products. E.g., recycling paper, glass, metal, plastic.</li>
+          </ul>
+          <strong>Waste Management:</strong>
+          <table class="bt">
+            <tr><th>Type</th><th>Examples</th><th>Management</th></tr>
+            <tr><td>Biodegradable</td><td>Food waste, vegetable peels, paper</td><td>Composting (vermicomposting), biogas production, manure</td></tr>
+            <tr><td>Non-biodegradable</td><td>Plastic, glass, metal, chemicals</td><td>Recycling, incineration, landfill (last resort)</td></tr>
+            <tr><td>Hazardous</td><td>E-waste, batteries, hospital waste</td><td>Special disposal sites; never mix with regular waste</td></tr>
+          </table>
+          <strong>Conclusion:</strong> Proper segregation of waste at source (dry/wet) and following 3R principles significantly reduces environmental pollution and conserves natural resources.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     CHAPTER 5 — TOWARDS GREEN ENERGY
+════════════════════════════════════ -->
+<div class="ch-block" id="ch5">
+  <div class="ch-header hc5">
+    <div class="icon">⚡</div>
+    <div class="info">
+      <div class="ch-title">Chapter 5 — Towards Green Energy</div>
+      <div class="ch-sub">Solar, Wind, Tidal, Biogas, Hydroelectric Energy</div>
+    </div>
+    <div class="freq">4 Repeated Questions</div>
+  </div>
+  <div class="ch-body">
+
+    <div class="q-item">
+      <div class="q-row">
+        <span class="q-badge">Q22</span>
+        <span class="rep-badge r5">🔴 5× MUST DO</span>
+        <div class="q-text">What are renewable and non-renewable sources of energy? Explain solar energy and wind energy as green energy sources with their advantages and disadvantages.</div>
+      </div>
+      <div class="year-tags"><span class="ytag">2019</span><span class="ytag">2020</span><span class="ytag">2021</span><span class="ytag">2022</span><span class="ytag">2023</span></div>
+      <div class="ans-a">
+        <table class="bt">
+          <tr><th>Feature</th><th>Renewable Energy</th><th>Non-Renewable Energy</th></tr>
+          <tr><td>Definition</td><td>Inexhaustible; naturally replenished</td><td>Limited; formed over millions of years</td></tr>
+          <tr><td>Examples</td><td>Solar, wind, water, biogas, tidal</td><td>Coal, petroleum, natural gas, nuclear</td></tr>
+          <tr><td>Pollution</td><td>Low/no pollution</td><td>High pollution (CO₂, SO₂)</td></tr>
+          <tr><td>Future</td><td>Sustainable</td><td>Will be exhausted</td></tr>
+        </table>
+        <strong>Solar Energy:</strong>
+        <ul>
+          <li><strong>Source:</strong> Sun's electromagnetic radiation.</li>
+          <li><strong>Uses:</strong> Solar cells (photovoltaic) — convert light → electricity; solar water heater; solar cooker; solar street lights.</li>
+          <li><strong>Advantages:</strong> Free, inexhaustible, pollution-free, low maintenance, available everywhere.</li>
+          <li><strong>Disadvantages:</strong> Only available in daytime; reduced on cloudy days; high initial cost; large area needed.</li>
+        </ul>
+        <strong>Wind Energy:</strong>
+        <ul>
+          <li><strong>Source:</strong> Kinetic energy of wind moves turbine blades → generator → electricity.</li>
+          <li><strong>Locations:</strong> Coastal areas, open plains, mountain passes (e.g., Jaisalmer, Tamil Nadu).</li>
+          <li><strong>Advantages:</strong> Renewable, no fuel cost, no pollution, can be installed offshore.</li>
+          <li><strong>Disadvantages:</strong> Depends on wind speed; noisy; can harm birds; requires large land area.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-row">
+        <span class="q-badge">Q23</span>
+        <span class="rep-badge r4">🟠 4× VERY IMP</span>
+        <div class="q-text">Explain biogas as a source of energy. How is biogas produced? What are its components and uses? Why is biogas considered a green energy source?</div>
+      </div>
+      <div class="year-tags"><span class="ytag">2019</span><span class="ytag">2020</span><span class="ytag">2022</span><span class="ytag">2023</span></div>
+      <div class="ans-a">
+        <strong>Biogas:</strong> A mixture of gases produced by the anaerobic decomposition (fermentation) of organic waste (animal dung, plant waste, kitchen waste) by microorganisms.
+        <br><br>
+        <strong>Components of Biogas:</strong>
+        <ul>
+          <li><strong>Methane (CH₄):</strong> ~55–70% (main combustible component)</li>
+          <li>CO₂: ~25–40%; traces of H₂S, N₂, H₂</li>
+        </ul>
+        <strong>Production (Biogas Plant):</strong>
+        <ul>
+          <li>Organic waste (dung + water in 1:1 ratio) fed into the digester (airtight tank).</li>
+          <li>Anaerobic bacteria decompose the organic matter → biogas produced in dome.</li>
+          <li>Slurry (spent material) comes out → used as organic fertiliser.</li>
+          <li>Biogas stored in dome → piped to kitchen for cooking.</li>
+        </ul>
+        <strong>Uses of Biogas:</strong>
+        <ul>
+          <li>Cooking fuel (replaces LPG/firewood); electricity generation; street lighting.</li>
+        </ul>
+        <strong>Why Green Energy?</strong>
+        <ul>
+          <li>Uses waste materials → waste management solution.</li>
+          <li>Produces no net CO₂ (the CO₂ released was recently fixed by plants → carbon neutral).</li>
+          <li>Reduces use of firewood → prevents deforestation.</li>
+          <li>Slurry is better fertiliser than raw dung → improves soil health.</li>
+        </ul>
+        <div class="dn">📐 Draw biogas plant: inlet → mixing tank → digester (airtight) → gas holder (dome) → outlet pipe to stove → slurry outlet.</div>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-row">
+        <span class="q-badge">Q24</span>
+        <span class="rep-badge r3">🟢 3× IMP</span>
+        <div class="q-text">🧪 ACTIVITY: A class observes a solar cooker being used during a school science fair. Explain the working principle of a solar cooker. What are its advantages and limitations? Under what conditions does it work best?</div>
+      </div>
+      <div class="year-tags"><span class="ytag">2021</span><span class="ytag">2022</span><span class="ytag">2024</span></div>
+      <div class="act-box">
+        <div class="act-label">🧪 Activity Based Answer</div>
+        <div class="ans-a" style="border-left-color:#00838f;background:#e0f7fa;">
+          <strong>Solar Cooker — Working Principle:</strong>
+          <ul>
+            <li>Uses solar thermal energy (heat from sunlight) to cook food.</li>
+            <li>A flat plate collector with a reflective mirror concentrates sunlight into the cooking box.</li>
+            <li>The inner box is black (black absorbs maximum radiation).</li>
+            <li>Glass cover traps heat inside (greenhouse effect).</li>
+            <li>Temperature inside can reach 100–140°C — enough to cook food, boil water.</li>
+          </ul>
+          <strong>Advantages:</strong>
+          <ul>
+            <li>Uses free solar energy — no fuel cost.</li>
+            <li>No pollution, no CO₂ emissions.</li>
+            <li>Nutrients in food are preserved (slow cooking).</li>
+            <li>Simple construction, low maintenance.</li>
+          </ul>
+          <strong>Limitations:</strong>
+          <ul>
+            <li>Can only be used during daytime and in clear, sunny weather.</li>
+            <li>Cannot be used for frying (does not reach high enough temperatures).</li>
+            <li>Cooking is slow compared to conventional stove.</li>
+            <li>Requires direct sunlight — does not work in rain or heavy clouds.</li>
+          </ul>
+          <strong>Best conditions:</strong> Clear sunny day, maximum solar radiation, cooker oriented towards the Sun.
+        </div>
+      </div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-row">
+        <span class="q-badge">Q25</span>
+        <span class="rep-badge r3">🟢 3× IMP</span>
+        <div class="q-text">Explain hydroelectric power generation. What are its advantages and effects on environment? Name two major hydroelectric projects in India.</div>
+      </div>
+      <div class="year-tags"><span class="ytag">2020</span><span class="ytag">2021</span><span class="ytag">2023</span></div>
+      <div class="ans-a">
+        <strong>Hydroelectric Power Generation:</strong>
+        <ul>
+          <li>Uses potential energy of water stored at a height (dam) — when water falls, KE rotates turbines → generator produces electricity.</li>
+          <li><strong>Working:</strong> Dam → reservoir (stores water) → water released through penstocks (pipes) → turbine rotated → generator → electricity transmitted through power lines.</li>
+        </ul>
+        <strong>Advantages:</strong>
+        <ul>
+          <li>Renewable — water cycle continuously replenishes the source.</li>
+          <li>No air pollution, no fuel cost.</li>
+          <li>Dams also help in flood control and irrigation.</li>
+          <li>Long lifespan — dams last 50–100 years.</li>
+        </ul>
+        <strong>Environmental Effects:</strong>
+        <ul>
+          <li>Large area of forest and agricultural land submerged → loss of biodiversity.</li>
+          <li>Displacement of tribal communities (rehabilitation issues).</li>
+          <li>Disruption of aquatic ecosystem — fish migration blocked.</li>
+          <li>Risk of dam failure → massive flooding.</li>
+        </ul>
+        <strong>Major Projects in India:</strong>
+        <ul>
+          <li>Bhakra Nangal Dam (Himachal Pradesh / Punjab) — on Sutlej River</li>
+          <li>Tehri Dam (Uttarakhand) — on Bhagirathi River (largest in India)</li>
+          <li>Koyna Dam (Maharashtra) — on Koyna River</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- SUMMARY TABLE -->
+<div class="sum-box">
+  <h3>📊 Most Repeated Questions — Priority Summary</h3>
+  <table class="st">
+    <tr><th>Q No.</th><th>Chapter</th><th>Topic</th><th>Frequency</th><th>Priority</th></tr>
+    <tr><td>Q1</td><td>Ch1</td><td>Monohybrid cross + Law of Segregation</td><td>5×</td><td><span class="dot d5"></span><strong>MUST DO</strong></td></tr>
+    <tr><td>Q2</td><td>Ch1</td><td>Darwin's Natural Selection</td><td>5×</td><td><span class="dot d5"></span><strong>MUST DO</strong></td></tr>
+    <tr><td>Q7</td><td>Ch2</td><td>Photosynthesis — equation + stages</td><td>5×</td><td><span class="dot d5"></span><strong>MUST DO</strong></td></tr>
+    <tr><td>Q8</td><td>Ch2</td><td>🧪 Hydrilla activity (O₂ from photosynthesis)</td><td>5×</td><td><span class="dot d5"></span><strong>MUST DO</strong></td></tr>
+    <tr><td>Q13</td><td>Ch3</td><td>Human heart diagram + double circulation</td><td>5×</td><td><span class="dot d5"></span><strong>MUST DO</strong></td></tr>
+    <tr><td>Q14</td><td>Ch3</td><td>Nephron structure + dialysis</td><td>5×</td><td><span class="dot d5"></span><strong>MUST DO</strong></td></tr>
+    <tr><td>Q18</td><td>Ch4</td><td>Air pollution + Global warming</td><td>5×</td><td><span class="dot d5"></span><strong>MUST DO</strong></td></tr>
+    <tr><td>Q22</td><td>Ch5</td><td>Renewable vs non-renewable + Solar + Wind</td><td>5×</td><td><span class="dot d5"></span><strong>MUST DO</strong></td></tr>
+    <tr><td>Q3</td><td>Ch1</td><td>Homologous vs analogous organs</td><td>4×</td><td><span class="dot d4"></span>VERY IMP</td></tr>
+    <tr><td>Q4</td><td>Ch1</td><td>Dihybrid cross 9:3:3:1 ratio</td><td>4×</td><td><span class="dot d4"></span>VERY IMP</td></tr>
+    <tr><td>Q9</td><td>Ch2</td><td>Human digestive system + enzyme action</td><td>4×</td><td><span class="dot d4"></span>VERY IMP</td></tr>
+    <tr><td>Q10</td><td>Ch2</td><td>Aerobic vs anaerobic respiration</td><td>4×</td><td><span class="dot d4"></span>VERY IMP</td></tr>
+    <tr><td>Q15</td><td>Ch3</td><td>Nervous system + neuron diagram</td><td>4×</td><td><span class="dot d4"></span>VERY IMP</td></tr>
+    <tr><td>Q16</td><td>Ch3</td><td>🧪 Reflex arc activity</td><td>4×</td><td><span class="dot d4"></span>VERY IMP</td></tr>
+    <tr><td>Q19</td><td>Ch4</td><td>Biodiversity + conservation methods</td><td>4×</td><td><span class="dot d4"></span>VERY IMP</td></tr>
+    <tr><td>Q20</td><td>Ch4</td><td>Water pollution + eutrophication</td><td>4×</td><td><span class="dot d4"></span>VERY IMP</td></tr>
+    <tr><td>Q23</td><td>Ch5</td><td>Biogas production + uses</td><td>4×</td><td><span class="dot d4"></span>VERY IMP</td></tr>
+  </table>
+  <p style="margin-top:12px;font-size:.83rem;color:#666;">⚠️ Focus on all <strong>5× MUST DO</strong> questions first. These 8 questions cover approximately <strong>24–28 marks</strong> of any board paper.</p>
+</div>
+
+<footer>
+  <p>Visions Classes · visionslearning.in · <a href="class10-science2-ch1to5-paper.html">← Science 2 Paper</a> · <a href="notes-class10.html">← Class 10 Notes</a></p>
+</footer>
+
+<!-- Circular Watermark -->
+<div style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;opacity:0.07;user-select:none;">
+  <svg width="340" height="340" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="170" cy="170" r="155" fill="none" stroke="#e65100" stroke-width="6"/>
+    <circle cx="170" cy="170" r="138" fill="none" stroke="#e65100" stroke-width="2"/>
+    <path id="trep" fill="none" d="M 40,170 a130,130 0 1,1 260,0"/>
+    <path id="brep" fill="none" d="M 40,170 a130,130 0 0,0 260,0"/>
+    <text font-size="20" font-weight="900" fill="#e65100" font-family="Arial,sans-serif" letter-spacing="4"><textPath href="#trep" startOffset="8%">VISIONS CLASSES · VISIONSLEARNING.IN ·</textPath></text>
+    <text font-size="16" font-weight="900" fill="#e65100" font-family="Arial,sans-serif" letter-spacing="3"><textPath href="#brep" startOffset="8%">SCIENCE 2 · CLASS 10 · MAHARASHTRA BOARD</textPath></text>
+    <text x="170" y="158" text-anchor="middle" font-size="26" font-weight="900" fill="#e65100" font-family="Arial,sans-serif">VISIONS</text>
+    <text x="170" y="190" text-anchor="middle" font-size="26" font-weight="900" fill="#e65100" font-family="Arial,sans-serif">CLASSES</text>
+    <text x="170" y="218" text-anchor="middle" font-size="12" font-weight="700" fill="#e65100" font-family="Arial,sans-serif" letter-spacing="2">★ EST. 2024 ★</text>
+  </svg>
+</div>
+
+</body>
+</html>
