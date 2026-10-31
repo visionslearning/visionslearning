@@ -46,30 +46,35 @@
   /* THE KEY: Shaalaa-style vertical solution */
   .solution{margin-top:6px;}
 
-  /* Each step row */
-  .step-row{display:flex;align-items:flex-start;gap:0;margin-bottom:0;}
-  .step-key{min-width:130px;font-size:.85rem;font-weight:700;color:#555;padding:5px 12px 5px 0;flex-shrink:0;}
-  .step-val{font-size:.88rem;line-height:1.7;color:#1a1a1a;padding:5px 0;border-left:2px solid #e8eaf6;padding-left:14px;flex:1;}
+  /* ── PURE VERTICAL SHAALAA SOLUTION STYLE ── */
+  .step-row{display:block;margin-bottom:12px;padding-bottom:12px;border-bottom:1px dashed #f0f0f0;}
+  .step-row:last-child{border-bottom:none;}
+  .step-key{display:block;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;padding:3px 10px;border-radius:5px;width:fit-content;}
+  .step-val{display:block;font-size:.92rem;line-height:1.9;color:#1a1a1a;padding:8px 14px;border-left:3px solid #e0e0e0;background:#fafafa;border-radius:0 6px 6px 0;}
 
   /* Section labels inside solution */
-  .sol-section{font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#888;margin:10px 0 4px;padding-bottom:3px;border-bottom:1px dashed #e0e0e0;}
+  .sol-section{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#9e9e9e;margin:14px 0 6px;padding-bottom:3px;border-bottom:2px dashed #e0e0e0;}
 
-  /* "Given", "To find", "Solution", "∴" special rows */
-  .row-given .step-key{color:#0d47a1;}
-  .row-tofind .step-key{color:#1b5e20;}
-  .row-formula .step-key{color:#880e4f;}
-  .row-step .step-key{color:#555;}
-  .row-ans .step-key{color:#b71c1c;font-size:.9rem;}
-  .row-ans .step-val{font-weight:700;color:#b71c1c;border-left-color:#ef9a9a;}
+  /* Row colours */
+  .row-given   .step-key{background:#e3f2fd;color:#0d47a1;}
+  .row-given   .step-val{border-left-color:#1976d2;background:#f0f8ff;}
+  .row-tofind  .step-key{background:#e8f5e9;color:#1b5e20;}
+  .row-tofind  .step-val{border-left-color:#2e7d32;background:#f1fbf1;}
+  .row-formula .step-key{background:#fce4ec;color:#880e4f;}
+  .row-formula .step-val{border-left-color:#c2185b;background:#fff5f8;}
+  .row-step    .step-key{background:#e8eaf6;color:#1a237e;}
+  .row-step    .step-val{border-left-color:#3949ab;background:#f8f9ff;}
+  .row-ans     .step-key{background:#ffebee;color:#b71c1c;}
+  .row-ans     .step-val{border-left-color:#e53935;background:#fff5f5;font-weight:700;color:#b71c1c;font-size:.95rem;}
 
-  /* Math inline — monospace box */
-  .m{font-family:'Courier New',monospace;background:#f3f4f6;border:1px solid #e0e0e0;border-radius:4px;padding:1px 6px;font-size:.9rem;color:#1a237e;display:inline-block;}
+  /* Math inline */
+  .m{font-family:'Courier New',monospace;background:#f3f4f6;border:1px solid #e0e0e0;border-radius:4px;padding:2px 8px;font-size:.9rem;color:#1a237e;display:inline-block;}
 
-  /* Math block — full width centred box (like Shaalaa) */
-  .mb{font-family:'Courier New',monospace;background:#f8f9ff;border:1.5px solid #c5cae9;border-radius:6px;padding:10px 16px;margin:6px 0;font-size:.92rem;color:#1a237e;display:block;line-height:1.9;overflow-x:auto;}
+  /* Math block */
+  .mb{font-family:'Courier New',monospace;background:#f8f9ff;border:1.5px solid #c5cae9;border-radius:6px;padding:10px 16px;margin:6px 0;font-size:.9rem;color:#1a237e;display:block;line-height:2;overflow-x:auto;white-space:pre;}
 
-  /* Answer highlight box */
-  .ans-box{background:#e8f5e9;border:2px solid #66bb6a;border-radius:8px;padding:10px 16px;margin-top:10px;font-size:.92rem;font-weight:700;color:#1b5e20;display:inline-block;}
+  /* Answer box */
+  .ans-box{display:block;background:#e8f5e9;border:2px solid #43a047;border-radius:8px;padding:10px 16px;margin-top:6px;font-size:.95rem;font-weight:800;color:#1b5e20;line-height:1.8;}
 
   /* Determinant display */
   .det{display:inline-block;position:relative;padding:6px 18px;text-align:center;font-family:'Courier New',monospace;font-size:.9rem;vertical-align:middle;}
@@ -78,8 +83,8 @@
   .det::after{right:4px;border-left:none;}
   .det table td{padding:3px 10px;text-align:center;}
 
-  /* Verification row */
-  .verify{background:#e3f2fd;border-left:3px solid #1976d2;border-radius:0 6px 6px 0;padding:7px 12px;margin-top:8px;font-size:.83rem;color:#0d47a1;}
+  /* Verification */
+  .verify{display:block;background:#e3f2fd;border-left:3px solid #1976d2;border-radius:0 6px 6px 0;padding:8px 14px;margin-top:8px;font-size:.84rem;color:#0d47a1;line-height:1.6;}
 
   /* Trig table */
   table.trig{width:100%;border-collapse:collapse;font-size:.84rem;margin-top:8px;}
@@ -89,7 +94,7 @@
 
   footer{text-align:center;padding:26px 16px;font-size:.8rem;color:#888;}
   footer a{color:#3949ab;text-decoration:none;}
-  @media(max-width:600px){.step-key{min-width:90px;font-size:.8rem;}.q-title{font-size:.88rem;}}
+  @media(max-width:600px){.q-title{font-size:.88rem;}}
 </style>
 </head>
 <body>
