@@ -7,96 +7,60 @@
 <style>
   *{box-sizing:border-box;margin:0;padding:0;}
   body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size:15px;}
-
-  /* HEADER */
   .site-header{background:linear-gradient(135deg,#1a237e,#283593,#1b5e20);padding:14px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 3px 12px rgba(0,0,0,.3);}
   .site-header a{color:#90caf9;text-decoration:none;font-size:.85rem;font-weight:600;}
   .site-header a:hover{color:#fff;}
   .header-title{color:#fff;font-size:1.05rem;font-weight:800;}
-
-  /* HERO */
-  .hero{background:linear-gradient(135deg,#1a237e 0%,#283593 50%,#1b5e20 100%);padding:30px 20px 24px;text-align:center;color:#fff;}
+  .hero{background:linear-gradient(135deg,#1a237e 0%,#283593 50%,#1b5e20 100%);padding:28px 20px 22px;text-align:center;color:#fff;}
   .board-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:5px 18px;font-size:.73rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;}
   .hero h1{font-size:1.5rem;font-weight:900;line-height:1.25;margin-bottom:6px;}
   .hero .sub{font-size:.88rem;color:rgba(255,255,255,.85);}
-
-  /* TOC */
-  .toc{max-width:860px;margin:16px auto;background:#fff;border-radius:10px;padding:16px 20px;box-shadow:0 2px 8px rgba(0,0,0,.08);}
+  .toc{max-width:900px;margin:14px auto;background:#fff;border-radius:10px;padding:16px 20px;box-shadow:0 2px 8px rgba(0,0,0,.08);}
   .toc h3{color:#1a237e;margin-bottom:10px;font-size:.9rem;font-weight:800;}
   .toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:7px;}
   .toc-a{background:#e8eaf6;border-radius:7px;padding:7px 11px;font-size:.8rem;font-weight:700;color:#1a237e;text-decoration:none;display:block;}
   .toc-a:hover{background:#c5cae9;}
-
-  /* ── SHAALAA-STYLE QUESTION CARD ── */
-  .q-card{max-width:860px;margin:14px auto;background:#fff;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.09);overflow:hidden;}
-
-  /* Question number + title bar */
+  /* QUESTION CARD */
+  .q-card{max-width:900px;margin:14px auto;background:#fff;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.09);overflow:hidden;}
   .q-title-bar{display:flex;align-items:center;gap:10px;padding:12px 20px;border-bottom:2px solid #e8eaf6;}
   .q-num{background:#1a237e;color:#fff;font-size:.82rem;font-weight:900;padding:4px 12px;border-radius:20px;white-space:nowrap;}
   .q-title{font-size:.97rem;font-weight:700;color:#1a237e;flex:1;line-height:1.4;}
   .q-chip{background:#e8eaf6;color:#1a237e;font-size:.72rem;font-weight:800;padding:3px 10px;border-radius:10px;white-space:nowrap;}
-
-  /* Sub-question wrapper */
-  .sub{border-bottom:1px solid #f0f0f0;padding:18px 22px;}
+  .sub{border-bottom:1px solid #f0f0f0;padding:16px 22px;}
   .sub:last-child{border-bottom:none;}
-
-  /* Sub-question roman label */
-  .sub-label{font-size:.85rem;font-weight:800;color:#1a237e;margin-bottom:10px;}
-
-  /* THE KEY: Shaalaa-style vertical solution */
-  .solution{margin-top:6px;}
-
-  /* ── PURE VERTICAL SHAALAA SOLUTION STYLE ── */
-  .step-row{display:block;margin-bottom:12px;padding-bottom:12px;border-bottom:1px dashed #f0f0f0;}
-  .step-row:last-child{border-bottom:none;}
-  .step-key{display:block;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;padding:3px 10px;border-radius:5px;width:fit-content;}
-  .step-val{display:block;font-size:.92rem;line-height:1.9;color:#1a1a1a;padding:8px 14px;border-left:3px solid #e0e0e0;background:#fafafa;border-radius:0 6px 6px 0;}
-  .line{display:block;padding:3px 0;border-bottom:1px dotted #ececec;line-height:2.1;}
-  .line:last-child{border-bottom:none;}
-
-  /* Section labels inside solution */
-  .sol-section{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#9e9e9e;margin:14px 0 6px;padding-bottom:3px;border-bottom:2px dashed #e0e0e0;}
-
-  /* Row colours */
-  .row-given   .step-key{background:#e3f2fd;color:#0d47a1;}
-  .row-given   .step-val{border-left-color:#1976d2;background:#f0f8ff;}
-  .row-tofind  .step-key{background:#e8f5e9;color:#1b5e20;}
-  .row-tofind  .step-val{border-left-color:#2e7d32;background:#f1fbf1;}
-  .row-formula .step-key{background:#fce4ec;color:#880e4f;}
-  .row-formula .step-val{border-left-color:#c2185b;background:#fff5f8;}
-  .row-step    .step-key{background:#e8eaf6;color:#1a237e;}
-  .row-step    .step-val{border-left-color:#3949ab;background:#f8f9ff;}
-  .row-ans     .step-key{background:#ffebee;color:#b71c1c;}
-  .row-ans     .step-val{border-left-color:#e53935;background:#fff5f5;font-weight:700;color:#b71c1c;font-size:.95rem;}
-
-  /* Math inline */
-  .m{font-family:'Courier New',monospace;background:#f3f4f6;border:1px solid #e0e0e0;border-radius:4px;padding:2px 8px;font-size:.9rem;color:#1a237e;display:inline-block;}
-
-  /* Math block */
-  .mb{font-family:'Courier New',monospace;background:#f8f9ff;border:1.5px solid #c5cae9;border-radius:6px;padding:10px 16px;margin:6px 0;font-size:.9rem;color:#1a237e;display:block;line-height:2;overflow-x:auto;white-space:pre;}
-
-  /* Answer box */
-  .ans-box{display:block;background:#e8f5e9;border:2px solid #43a047;border-radius:8px;padding:10px 16px;margin-top:6px;font-size:.95rem;font-weight:800;color:#1b5e20;line-height:1.8;}
-
-  /* Determinant display */
-  .det{display:inline-block;position:relative;padding:6px 18px;text-align:center;font-family:'Courier New',monospace;font-size:.9rem;vertical-align:middle;}
-  .det::before,.det::after{content:'';position:absolute;top:0;bottom:0;width:3px;border:2px solid #1a237e;}
-  .det::before{left:4px;border-right:none;}
-  .det::after{right:4px;border-left:none;}
-  .det table td{padding:3px 10px;text-align:center;}
-
-  /* Verification */
-  .verify{display:block;background:#e3f2fd;border-left:3px solid #1976d2;border-radius:0 6px 6px 0;padding:8px 14px;margin-top:8px;font-size:.84rem;color:#0d47a1;line-height:1.6;}
-
-  /* Trig table */
-  table.trig{width:100%;border-collapse:collapse;font-size:.84rem;margin-top:8px;}
-  table.trig th{background:#1a237e;color:#fff;padding:7px 10px;text-align:center;}
+  .sub-label{font-size:.88rem;font-weight:800;color:#1a237e;margin-bottom:12px;background:#e8eaf6;padding:8px 14px;border-radius:7px;display:block;}
+  /* ══ SHAALAA TABLE SOLUTION ══ */
+  .sol-table{width:100%;border-collapse:collapse;margin-top:4px;}
+  .sol-table tr{vertical-align:top;}
+  .sol-table td{padding:10px 14px;border-bottom:1px solid #f0f0f0;font-size:.92rem;line-height:1.9;}
+  .sol-table tr:last-child td{border-bottom:none;}
+  .td-label{width:110px;white-space:nowrap;padding-right:8px !important;}
+  .lbl{display:inline-block;font-size:.73rem;font-weight:900;text-transform:uppercase;letter-spacing:.8px;padding:3px 10px;border-radius:20px;}
+  .lbl-given  {background:#dbeafe;color:#1d4ed8;}
+  .lbl-tofind {background:#dcfce7;color:#15803d;}
+  .lbl-formula{background:#fce7f3;color:#9d174d;}
+  .lbl-step   {background:#f3e8ff;color:#6d28d9;}
+  .lbl-ans    {background:#fee2e2;color:#b91c1c;}
+  .lbl-proof  {background:#fff7ed;color:#c2410c;}
+  .lbl-verify {background:#ecfdf5;color:#065f46;}
+  .td-content{background:#fafafa;border-left:3px solid #e5e7eb;}
+  .td-content.c-given  {border-left-color:#3b82f6;background:#eff6ff;}
+  .td-content.c-tofind {border-left-color:#22c55e;background:#f0fdf4;}
+  .td-content.c-formula{border-left-color:#ec4899;background:#fdf2f8;}
+  .td-content.c-step   {border-left-color:#a855f7;background:#faf5ff;}
+  .td-content.c-ans    {border-left-color:#ef4444;background:#fff5f5;font-weight:700;color:#b91c1c;font-size:.95rem;}
+  .td-content.c-proof  {border-left-color:#f97316;background:#fff7ed;}
+  .td-content.c-verify {border-left-color:#10b981;background:#ecfdf5;font-size:.85rem;color:#065f46;}
+  .m{font-family:'Courier New',monospace;background:#f1f5f9;border:1px solid #cbd5e1;border-radius:4px;padding:2px 8px;font-size:.9rem;color:#1e3a5f;}
+  .mb{font-family:'Courier New',monospace;background:#f1f5f9;border:1.5px solid #94a3b8;border-radius:6px;padding:10px 16px;margin:4px 0;font-size:.9rem;color:#1e3a5f;display:block;line-height:2.1;overflow-x:auto;white-space:pre;}
+  .ans-box{display:inline-block;background:#dcfce7;border:2px solid #16a34a;border-radius:8px;padding:10px 18px;font-size:.95rem;font-weight:800;color:#166534;}
+  table.trig{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:8px;}
+  table.trig th{background:#1a237e;color:#fff;padding:6px 10px;text-align:center;}
   table.trig td{padding:6px 10px;border-bottom:1px solid #e8edf2;text-align:center;}
   table.trig tr:nth-child(even) td{background:#f0f4f8;}
-
   footer{text-align:center;padding:26px 16px;font-size:.8rem;color:#888;}
   footer a{color:#3949ab;text-decoration:none;}
-  @media(max-width:600px){.q-title{font-size:.88rem;}}
+  @media(max-width:600px){.td-label{width:70px;}.lbl{font-size:.65rem;padding:2px 6px;}.q-title{font-size:.88rem;}}
 </style>
 </head>
 <body>
@@ -143,32 +107,25 @@
   <div class="sub">
     <div class="sub-label">(i) x + y + z = 6,&nbsp;&nbsp; x − y + z = 2,&nbsp;&nbsp; x + 2y − z = 2</div>
     <div class="solution">
-
-      <div class="step-row row-given">
-        <div class="step-key">Given:</div>
-        <div class="step-val">
-          x + y + z = 6 &nbsp;…(1)</div><div class="line">
+      <table class="sol-table">
+      <table class="sol-table">
+      <tr>
+        <td class="td-label"><span class="lbl lbl-given">Given</span></td>
+        <td class="td-content c-given">x + y + z = 6 &nbsp;…(1)</div><div class="line">
           x − y + z = 2 &nbsp;…(2)</div><div class="line">
-          x + 2y − z = 2 &nbsp;…(3)
-        </div>
-      </div>
-
-      <div class="step-row row-tofind">
-        <div class="step-key">To Find:</div>
-        <div class="step-val">Values of x, y, z using Cramer's Rule</div>
-      </div>
-
-      <div class="step-row row-formula">
-        <div class="step-key">Formula:</div>
-        <div class="step-val"><span class="m">x = D₁/D,&nbsp; y = D₂/D,&nbsp; z = D₃/D</span></div>
-      </div>
-
-      <div class="sol-section">Solution</div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 1<br><small>Find D</small></div>
-        <div class="step-val">
-          <div class="mb">
+          x + 2y − z = 2 &nbsp;…(3)</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-tofind">To Find</span></td>
+        <td class="td-content c-tofind">Values of x, y, z using Cramer's Rule</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-formula">Formula</span></td>
+        <td class="td-content c-formula"><span class="m">x = D₁/D,&nbsp; y = D₂/D,&nbsp; z = D₃/D</span></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 1<br><small>Find D</small></span></td>
+        <td class="td-content c-step"><div class="mb">
 D = | 1 &nbsp; 1 &nbsp; 1 |</div><div class="line">
 &nbsp;&nbsp;&nbsp;&nbsp;| 1 &nbsp;−1 &nbsp; 1 |</div><div class="line">
 &nbsp;&nbsp;&nbsp;&nbsp;| 1 &nbsp; 2 &nbsp;−1 |
@@ -177,14 +134,11 @@ D = | 1 &nbsp; 1 &nbsp; 1 |</div><div class="line">
           = 1[1 − 2] − 1[−1 − 1] + 1[2 + 1]<br>
           = 1(−1) − 1(−2) + 1(3)<br>
           = −1 + 2 + 3<br>
-          <strong>∴ D = 4</strong>
-        </div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 2<br><small>Find D₁</small></div>
-        <div class="step-val">
-          Replace column 1 with constants (6, 2, 2):
+          <strong>∴ D = 4</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 2<br><small>Find D₁</small></span></td>
+        <td class="td-content c-step">Replace column 1 with constants (6, 2, 2):
           <div class="mb">
 D₁ = | 6 &nbsp; 1 &nbsp; 1 |</div><div class="line">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2 &nbsp;−1 &nbsp; 1 |</div><div class="line">
@@ -194,14 +148,11 @@ D₁ = | 6 &nbsp; 1 &nbsp; 1 |</div><div class="line">
           = 6[1 − 2] − 1[−2 − 2] + 1[4 + 2]<br>
           = 6(−1) − 1(−4) + 1(6)<br>
           = −6 + 4 + 6<br>
-          <strong>∴ D₁ = 4</strong>
-        </div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 3<br><small>Find D₂</small></div>
-        <div class="step-val">
-          Replace column 2 with constants (6, 2, 2):
+          <strong>∴ D₁ = 4</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 3<br><small>Find D₂</small></span></td>
+        <td class="td-content c-step">Replace column 2 with constants (6, 2, 2):
           <div class="mb">
 D₂ = | 1 &nbsp; 6 &nbsp; 1 |</div><div class="line">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1 &nbsp; 2 &nbsp; 1 |</div><div class="line">
@@ -211,14 +162,11 @@ D₂ = | 1 &nbsp; 6 &nbsp; 1 |</div><div class="line">
           = 1[−2 − 2] − 6[−1 − 1] + 1[2 − 2]<br>
           = 1(−4) − 6(−2) + 0<br>
           = −4 + 12<br>
-          <strong>∴ D₂ = 8</strong>
-        </div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 4<br><small>Find D₃</small></div>
-        <div class="step-val">
-          Replace column 3 with constants (6, 2, 2):
+          <strong>∴ D₂ = 8</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 4<br><small>Find D₃</small></span></td>
+        <td class="td-content c-step">Replace column 3 with constants (6, 2, 2):
           <div class="mb">
 D₃ = | 1 &nbsp; 1 &nbsp; 6 |</div><div class="line">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1 &nbsp;−1 &nbsp; 2 |</div><div class="line">
@@ -227,49 +175,37 @@ D₃ = | 1 &nbsp; 1 &nbsp; 6 |</div><div class="line">
           = 1[(−1)(2) − (2)(2)] − 1[(1)(2) − (2)(1)] + 6[(1)(2) − (−1)(1)]<br>
           = 1[−2 − 4] − 1[2 − 2] + 6[2 + 1]<br>
           = −6 − 0 + 18<br>
-          <strong>∴ D₃ = 12</strong>
-        </div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 5<br><small>Apply Rule</small></div>
-        <div class="step-val">
-          x = D₁/D = 4/4 = <strong>1</strong></div><div class="line">
+          <strong>∴ D₃ = 12</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 5<br><small>Apply Rule</small></span></td>
+        <td class="td-content c-step">x = D₁/D = 4/4 = <strong>1</strong></div><div class="line">
           y = D₂/D = 8/4 = <strong>2</strong></div><div class="line">
-          z = D₃/D = 12/4 = <strong>3</strong>
-        </div>
-      </div>
-
-      <div class="step-row row-ans">
-        <div class="step-key">∴ Answer:</div>
-        <div class="step-val">
-          <span class="ans-box">x = 1,&nbsp; y = 2,&nbsp; z = 3</span>
-        </div>
-      </div>
-
-      <div class="verify">✓ Verification: x+y+z = 1+2+3 = 6 ✓ &nbsp;|&nbsp; x−y+z = 1−2+3 = 2 ✓ &nbsp;|&nbsp; x+2y−z = 1+4−3 = 2 ✓</div>
-
+          z = D₃/D = 12/4 = <strong>3</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-ans">∴ Answer</span></td>
+        <td class="td-content c-ans"><span class="ans-box">x = 1,&nbsp; y = 2,&nbsp; z = 3</span></td>
+      </tr>
+      </table>
+      </table>
     </div>
-  </div>
 
   <!-- Q1 (ii) -->
   <div class="sub">
     <div class="sub-label">(ii) x + z = 1,&nbsp;&nbsp; y + z = 1,&nbsp;&nbsp; x + y = 4</div>
     <div class="solution">
-
-      <div class="step-row row-given">
-        <div class="step-key">Given:</div>
-        <div class="step-val">
-          x + 0y + z = 1 &nbsp;…(1)</div><div class="line">
+      <table class="sol-table">
+      <table class="sol-table">
+      <tr>
+        <td class="td-label"><span class="lbl lbl-given">Given</span></td>
+        <td class="td-content c-given">x + 0y + z = 1 &nbsp;…(1)</div><div class="line">
           0x + y + z = 1 &nbsp;…(2)</div><div class="line">
-          x + y + 0z = 4 &nbsp;…(3)
-        </div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 1<br><small>Find D</small></div>
-        <div class="step-val">
-          <div class="mb">
+          x + y + 0z = 4 &nbsp;…(3)</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 1<br><small>Find D</small></span></td>
+        <td class="td-content c-step"><div class="mb">
 D = | 1 &nbsp; 0 &nbsp; 1 |</div><div class="line">
 &nbsp;&nbsp;&nbsp;&nbsp;| 0 &nbsp; 1 &nbsp; 1 |</div><div class="line">
 &nbsp;&nbsp;&nbsp;&nbsp;| 1 &nbsp; 1 &nbsp; 0 |
@@ -277,14 +213,11 @@ D = | 1 &nbsp; 0 &nbsp; 1 |</div><div class="line">
           = 1[(1)(0) − (1)(1)] − 0 + 1[(0)(1) − (1)(1)]<br>
           = 1[0 − 1] + 1[0 − 1]<br>
           = −1 + (−1)<br>
-          <strong>∴ D = −2</strong>
-        </div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 2<br><small>Find D₁</small></div>
-        <div class="step-val">
-          <div class="mb">
+          <strong>∴ D = −2</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 2<br><small>Find D₁</small></span></td>
+        <td class="td-content c-step"><div class="mb">
 D₁ = | 1 &nbsp; 0 &nbsp; 1 |</div><div class="line">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1 &nbsp; 1 &nbsp; 1 |</div><div class="line">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 4 &nbsp; 1 &nbsp; 0 |
@@ -292,14 +225,11 @@ D₁ = | 1 &nbsp; 0 &nbsp; 1 |</div><div class="line">
           = 1[(1)(0) − (1)(1)] − 0 + 1[(1)(1) − (1)(4)]<br>
           = 1[−1] + 1[1 − 4]<br>
           = −1 + (−3)<br>
-          <strong>∴ D₁ = −4</strong>
-        </div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 3<br><small>Find D₂</small></div>
-        <div class="step-val">
-          <div class="mb">
+          <strong>∴ D₁ = −4</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 3<br><small>Find D₂</small></span></td>
+        <td class="td-content c-step"><div class="mb">
 D₂ = | 1 &nbsp; 1 &nbsp; 1 |</div><div class="line">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 0 &nbsp; 1 &nbsp; 1 |</div><div class="line">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1 &nbsp; 4 &nbsp; 0 |
@@ -307,14 +237,11 @@ D₂ = | 1 &nbsp; 1 &nbsp; 1 |</div><div class="line">
           = 1[(1)(0) − (1)(4)] − 1[(0)(0) − (1)(1)] + 1[(0)(4) − (1)(1)]<br>
           = 1[−4] − 1[−1] + 1[−1]<br>
           = −4 + 1 − 1<br>
-          <strong>∴ D₂ = −4</strong>
-        </div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 4<br><small>Find D₃</small></div>
-        <div class="step-val">
-          <div class="mb">
+          <strong>∴ D₂ = −4</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 4<br><small>Find D₃</small></span></td>
+        <td class="td-content c-step"><div class="mb">
 D₃ = | 1 &nbsp; 0 &nbsp; 1 |</div><div class="line">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 0 &nbsp; 1 &nbsp; 1 |</div><div class="line">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1 &nbsp; 1 &nbsp; 4 |
@@ -322,27 +249,21 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |</div><div class="line">
           = 1[(1)(4) − (1)(1)] − 0 + 1[(0)(1) − (1)(1)]<br>
           = 1[4 − 1] + 1[0 − 1]<br>
           = 3 − 1<br>
-          <strong>∴ D₃ = 2</strong>
-        </div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 5<br><small>Apply Rule</small></div>
-        <div class="step-val">
-          x = D₁/D = −4/−2 = <strong>2</strong></div><div class="line">
+          <strong>∴ D₃ = 2</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 5<br><small>Apply Rule</small></span></td>
+        <td class="td-content c-step">x = D₁/D = −4/−2 = <strong>2</strong></div><div class="line">
           y = D₂/D = −4/−2 = <strong>2</strong></div><div class="line">
-          z = D₃/D = 2/−2 = <strong>−1</strong>
-        </div>
-      </div>
-
-      <div class="step-row row-ans">
-        <div class="step-key">∴ Answer:</div>
-        <div class="step-val"><span class="ans-box">x = 2,&nbsp; y = 2,&nbsp; z = −1</span></div>
-      </div>
-      <div class="verify">✓ x+z = 2+(−1) = 1 ✓ &nbsp;|&nbsp; y+z = 2+(−1) = 1 ✓ &nbsp;|&nbsp; x+y = 2+2 = 4 ✓</div>
-
+          z = D₃/D = 2/−2 = <strong>−1</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-ans">∴ Answer</span></td>
+        <td class="td-content c-ans"><span class="ans-box">x = 2,&nbsp; y = 2,&nbsp; z = −1</span></td>
+      </tr>
+      </table>
+      </table>
     </div>
-  </div>
 </div>
 
 
@@ -360,49 +281,34 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |</div><div class="line">
   <div class="sub">
     <div class="sub-label">(i) A(5, 8),&nbsp; B(5, 0),&nbsp; C(1, 0)</div>
     <div class="solution">
-
-      <div class="step-row row-given">
-        <div class="step-key">Given:</div>
-        <div class="step-val">A(x₁, y₁) = (5, 8),&nbsp; B(x₂, y₂) = (5, 0),&nbsp; C(x₃, y₃) = (1, 0)</div>
-      </div>
-
-      <div class="step-row row-tofind">
-        <div class="step-key">To Find:</div>
-        <div class="step-val">Area of triangle ABC</div>
-      </div>
-
-      <div class="step-row row-formula">
-        <div class="step-key">Formula:</div>
-        <div class="step-val">
-          <span class="m">A = ½ |x₁(y₂ − y₃) + x₂(y₃ − y₁) + x₃(y₁ − y₂)|</span>
-        </div>
-      </div>
-
-      <div class="sol-section">Solution</div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 1</div>
-        <div class="step-val">
-          Substituting values:</div><div class="line">
-          A = ½ |5(0 − 0) + 5(0 − 8) + 1(8 − 0)|
-        </div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 2</div>
-        <div class="step-val">
-          = ½ |5(0) + 5(−8) + 1(8)|</div><div class="line">
+      <table class="sol-table">
+      <table class="sol-table">
+      <tr>
+        <td class="td-label"><span class="lbl lbl-given">Given</span></td>
+        <td class="td-content c-given">A(x₁, y₁) = (5, 8),&nbsp; B(x₂, y₂) = (5, 0),&nbsp; C(x₃, y₃) = (1, 0)</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-tofind">To Find</span></td>
+        <td class="td-content c-tofind">Area of triangle ABC</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-formula">Formula</span></td>
+        <td class="td-content c-formula"><span class="m">A = ½ |x₁(y₂ − y₃) + x₂(y₃ − y₁) + x₃(y₁ − y₂)|</span></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 1</span></td>
+        <td class="td-content c-step">Substituting values:</div><div class="line">
+          A = ½ |5(0 − 0) + 5(0 − 8) + 1(8 − 0)|</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 2</span></td>
+        <td class="td-content c-step">= ½ |5(0) + 5(−8) + 1(8)|</div><div class="line">
           = ½ |0 − 40 + 8|</div><div class="line">
           = ½ |−32|</div><div class="line">
-          = ½ × 32
-        </div>
-      </div>
-
-      <div class="step-row row-ans">
-        <div class="step-key">∴ Answer:</div>
-        <div class="step-val"><span class="ans-box">Area = 16 sq. units</span></div>
-      </div>
-
+          = ½ × 32</td>
+      </tr>
+      </table>
+      </table>
     </div>
   </div>
 
@@ -410,40 +316,28 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |</div><div class="line">
   <div class="sub">
     <div class="sub-label">(ii) M(0, 5),&nbsp; N(−2, 3),&nbsp; T(1, −4)</div>
     <div class="solution">
-
-      <div class="step-row row-given">
-        <div class="step-key">Given:</div>
-        <div class="step-val">M(x₁, y₁) = (0, 5),&nbsp; N(x₂, y₂) = (−2, 3),&nbsp; T(x₃, y₃) = (1, −4)</div>
-      </div>
-
-      <div class="step-row row-formula">
-        <div class="step-key">Formula:</div>
-        <div class="step-val"><span class="m">A = ½ |x₁(y₂ − y₃) + x₂(y₃ − y₁) + x₃(y₁ − y₂)|</span></div>
-      </div>
-
-      <div class="sol-section">Solution</div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 1</div>
-        <div class="step-val">
-          = ½ |0(3 − (−4)) + (−2)(−4 − 5) + 1(5 − 3)|
-        </div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 2</div>
-        <div class="step-val">
-          = ½ |0(7) + (−2)(−9) + 1(2)|</div><div class="line">
+      <table class="sol-table">
+      <table class="sol-table">
+      <tr>
+        <td class="td-label"><span class="lbl lbl-given">Given</span></td>
+        <td class="td-content c-given">M(x₁, y₁) = (0, 5),&nbsp; N(x₂, y₂) = (−2, 3),&nbsp; T(x₃, y₃) = (1, −4)</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-formula">Formula</span></td>
+        <td class="td-content c-formula"><span class="m">A = ½ |x₁(y₂ − y₃) + x₂(y₃ − y₁) + x₃(y₁ − y₂)|</span></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 1</span></td>
+        <td class="td-content c-step">= ½ |0(3 − (−4)) + (−2)(−4 − 5) + 1(5 − 3)|</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 2</span></td>
+        <td class="td-content c-step">= ½ |0(7) + (−2)(−9) + 1(2)|</div><div class="line">
           = ½ |0 + 18 + 2|</div><div class="line">
-          = ½ × 20
-        </div>
-      </div>
-
-      <div class="step-row row-ans">
-        <div class="step-key">∴ Answer:</div>
-        <div class="step-val"><span class="ans-box">Area = 10 sq. units</span></div>
-      </div>
-
+          = ½ × 20</td>
+      </tr>
+      </table>
+      </table>
     </div>
   </div>
 </div>
@@ -463,46 +357,44 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |</div><div class="line">
   <div class="sub">
     <div class="sub-label">(i) x = 3 sec θ,&nbsp;&nbsp; y = 4 tan θ</div>
     <div class="solution">
+      
 
-      <div class="step-row row-given">
-        <div class="step-key">Given:</div>
-        <div class="step-val">
-          <div class="line">x = 3 sec θ &nbsp;…(1)</div>
-          <div class="line">y = 4 tan θ &nbsp;…(2)</div>
-        </div>
-      </div>
+      <table class="sol-table">
+      <tr>
+        <td class="td-label"><span class="lbl lbl-given">Given</span></td>
+        <td class="td-content c-given"><div class="line">x = 3 sec θ &nbsp;…(1)</div>
+          <div class="line">y = 4 tan θ &nbsp;…(2)
+    </div>
 
-      <div class="step-row row-formula">
-        <div class="step-key">Identity:</div>
-        <div class="step-val"><span class="m">sec²θ − tan²θ = 1</span></div>
-      </div>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-formula">Identity</span></td>
+        <td class="td-content c-formula"><span class="m">sec²θ − tan²θ = 1</span></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">From (1)</span></td>
+        <td class="td-content c-step">sec θ = x/3 &nbsp;⟹&nbsp; sec²θ = x²/9</td>
+      </tr>
 
-      <div class="sol-section">Solution</div>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">From (2)</span></td>
+        <td class="td-content c-step">tan θ = y/4 &nbsp;⟹&nbsp; tan²θ = y²/16</td>
+      </tr>
 
-      <div class="step-row row-step">
-        <div class="step-key">From (1):</div>
-        <div class="step-val">sec θ = x/3 &nbsp;⟹&nbsp; sec²θ = x²/9</div>
-      </div>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Substituting</span></td>
+        <td class="td-content c-step">sec²θ − tan²θ = 1</td>
+      </tr>
 
-      <div class="step-row row-step">
-        <div class="step-key">From (2):</div>
-        <div class="step-val">tan θ = y/4 &nbsp;⟹&nbsp; tan²θ = y²/16</div>
-      </div>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step</span></td>
+        <td class="td-content c-step">x²/9 − y²/16 = 1</td>
+      </tr>
 
-      <div class="step-row row-step">
-        <div class="step-key">Substituting:</div>
-        <div class="step-val">sec²θ − tan²θ = 1</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step:</div>
-        <div class="step-val">x²/9 − y²/16 = 1</div>
-      </div>
-
-      <div class="step-row row-ans">
-        <div class="step-key">∴ Answer:</div>
-        <div class="step-val"><span class="ans-box">x²/9 − y²/16 = 1</span></div>
-      </div>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-ans">∴ Answer</span></td>
+        <td class="td-content c-ans"><span class="ans-box">x²/9 − y²/16 = 1</span></td>
+      </tr>
+      </table>
 
     </div>
   </div>
@@ -511,46 +403,44 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |</div><div class="line">
   <div class="sub">
     <div class="sub-label">(ii) x = 6 cosec θ,&nbsp;&nbsp; y = 8 cot θ</div>
     <div class="solution">
+      
 
-      <div class="step-row row-given">
-        <div class="step-key">Given:</div>
-        <div class="step-val">
-          <div class="line">x = 6 cosec θ &nbsp;…(1)</div>
-          <div class="line">y = 8 cot θ &nbsp;…(2)</div>
-        </div>
-      </div>
+      <table class="sol-table">
+      <tr>
+        <td class="td-label"><span class="lbl lbl-given">Given</span></td>
+        <td class="td-content c-given"><div class="line">x = 6 cosec θ &nbsp;…(1)</div>
+          <div class="line">y = 8 cot θ &nbsp;…(2)
+    </div>
 
-      <div class="step-row row-formula">
-        <div class="step-key">Identity:</div>
-        <div class="step-val"><span class="m">cosec²θ − cot²θ = 1</span></div>
-      </div>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-formula">Identity</span></td>
+        <td class="td-content c-formula"><span class="m">cosec²θ − cot²θ = 1</span></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">From (1)</span></td>
+        <td class="td-content c-step">cosec θ = x/6 &nbsp;⟹&nbsp; cosec²θ = x²/36</td>
+      </tr>
 
-      <div class="sol-section">Solution</div>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">From (2)</span></td>
+        <td class="td-content c-step">cot θ = y/8 &nbsp;⟹&nbsp; cot²θ = y²/64</td>
+      </tr>
 
-      <div class="step-row row-step">
-        <div class="step-key">From (1):</div>
-        <div class="step-val">cosec θ = x/6 &nbsp;⟹&nbsp; cosec²θ = x²/36</div>
-      </div>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Substituting</span></td>
+        <td class="td-content c-step">cosec²θ − cot²θ = 1</td>
+      </tr>
 
-      <div class="step-row row-step">
-        <div class="step-key">From (2):</div>
-        <div class="step-val">cot θ = y/8 &nbsp;⟹&nbsp; cot²θ = y²/64</div>
-      </div>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step</span></td>
+        <td class="td-content c-step">x²/36 − y²/64 = 1</td>
+      </tr>
 
-      <div class="step-row row-step">
-        <div class="step-key">Substituting:</div>
-        <div class="step-val">cosec²θ − cot²θ = 1</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step:</div>
-        <div class="step-val">x²/36 − y²/64 = 1</div>
-      </div>
-
-      <div class="step-row row-ans">
-        <div class="step-key">∴ Answer:</div>
-        <div class="step-val"><span class="ans-box">x²/36 − y²/64 = 1</span></div>
-      </div>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-ans">∴ Answer</span></td>
+        <td class="td-content c-ans"><span class="ans-box">x²/36 − y²/64 = 1</span></td>
+      </tr>
+      </table>
 
     </div>
   </div>
@@ -571,41 +461,30 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |</div><div class="line">
   <div class="sub">
     <div class="sub-label">(i) sin 30° + cos 45° + tan 180°</div>
     <div class="solution">
-
-      <div class="step-row row-given">
-        <div class="step-key">Standard Values:</div>
-        <div class="step-val">
-          sin 30° = 1/2 &nbsp;|&nbsp; cos 45° = 1/√2 = √2/2 &nbsp;|&nbsp; tan 180° = 0
-        </div>
-      </div>
-
-      <div class="sol-section">Solution</div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 1</div>
-        <div class="step-val">= sin 30° + cos 45° + tan 180°</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 2</div>
-        <div class="step-val">= 1/2 + 1/√2 + 0</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 3</div>
-        <div class="step-val">= 1/2 + √2/2</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 4</div>
-        <div class="step-val">= (1 + √2) / 2</div>
-      </div>
-
-      <div class="step-row row-ans">
-        <div class="step-key">∴ Answer:</div>
-        <div class="step-val"><span class="ans-box">(1 + √2) / 2</span></div>
-      </div>
-
+      <table class="sol-table">
+      <table class="sol-table">
+      <tr>
+        <td class="td-label"><span class="lbl lbl-given">Standard Values</span></td>
+        <td class="td-content c-given">sin 30° = 1/2 &nbsp;|&nbsp; cos 45° = 1/√2 = √2/2 &nbsp;|&nbsp; tan 180° = 0</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 1</span></td>
+        <td class="td-content c-step">= sin 30° + cos 45° + tan 180°</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 2</span></td>
+        <td class="td-content c-step">= 1/2 + 1/√2 + 0</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 3</span></td>
+        <td class="td-content c-step">= 1/2 + √2/2</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 4</span></td>
+        <td class="td-content c-step">= (1 + √2) / 2</td>
+      </tr>
+      </table>
+      </table>
     </div>
   </div>
 
@@ -613,36 +492,26 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |</div><div class="line">
   <div class="sub">
     <div class="sub-label">(ii) cosec 45° + cot 45° + tan 0°</div>
     <div class="solution">
-
-      <div class="step-row row-given">
-        <div class="step-key">Standard Values:</div>
-        <div class="step-val">
-          cosec 45° = √2 &nbsp;|&nbsp; cot 45° = 1 &nbsp;|&nbsp; tan 0° = 0
-        </div>
-      </div>
-
-      <div class="sol-section">Solution</div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 1</div>
-        <div class="step-val">= cosec 45° + cot 45° + tan 0°</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 2</div>
-        <div class="step-val">= √2 + 1 + 0</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 3</div>
-        <div class="step-val">= √2 + 1</div>
-      </div>
-
-      <div class="step-row row-ans">
-        <div class="step-key">∴ Answer:</div>
-        <div class="step-val"><span class="ans-box">1 + √2</span></div>
-      </div>
-
+      <table class="sol-table">
+      <table class="sol-table">
+      <tr>
+        <td class="td-label"><span class="lbl lbl-given">Standard Values</span></td>
+        <td class="td-content c-given">cosec 45° = √2 &nbsp;|&nbsp; cot 45° = 1 &nbsp;|&nbsp; tan 0° = 0</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 1</span></td>
+        <td class="td-content c-step">= cosec 45° + cot 45° + tan 0°</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 2</span></td>
+        <td class="td-content c-step">= √2 + 1 + 0</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 3</span></td>
+        <td class="td-content c-step">= √2 + 1</td>
+      </tr>
+      </table>
+      </table>
     </div>
   </div>
 </div>
@@ -668,138 +537,100 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |</div><div class="line">
       </span>
     </div>
     <div class="solution">
-
-      <div class="step-row row-given">
-        <div class="step-key">Given:</div>
-        <div class="step-val">3×3 determinant with rows [2,−1,3], [1,2,−1], [5,7,2]</div>
-      </div>
-
-      <div class="step-row row-tofind">
-        <div class="step-key">To Find:</div>
-        <div class="step-val">All 9 Minors (Mᵢⱼ) and 9 Cofactors (Cᵢⱼ)</div>
-      </div>
-
-      <div class="step-row row-formula">
-        <div class="step-key">Formula:</div>
-        <div class="step-val">
-          Minor Mᵢⱼ = Det of 2×2 matrix after deleting row i and column j</div><div class="line">
-          Cofactor Cᵢⱼ = (−1)^(i+j) × Mᵢⱼ
-        </div>
-      </div>
-
-      <div class="sol-section">Minors</div>
-
-      <div class="step-row row-step">
-        <div class="step-key">M₁₁</div>
-        <div class="step-val">
-          Delete row 1, col 1 → <span class="m">|2 −1; 7 2|</span></div><div class="line">
-          = (2×2) − (−1×7) = 4 + 7 = <strong>11</strong>
-        </div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">M₁₂</div>
-        <div class="step-val">
-          Delete row 1, col 2 → <span class="m">|1 −1; 5 2|</span></div><div class="line">
-          = (1×2) − (−1×5) = 2 + 5 = <strong>7</strong>
-        </div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">M₁₃</div>
-        <div class="step-val">
-          Delete row 1, col 3 → <span class="m">|1 2; 5 7|</span></div><div class="line">
-          = (1×7) − (2×5) = 7 − 10 = <strong>−3</strong>
-        </div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">M₂₁</div>
-        <div class="step-val">
-          Delete row 2, col 1 → <span class="m">|−1 3; 7 2|</span></div><div class="line">
-          = (−1×2) − (3×7) = −2 − 21 = <strong>−23</strong>
-        </div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">M₂₂</div>
-        <div class="step-val">
-          Delete row 2, col 2 → <span class="m">|2 3; 5 2|</span></div><div class="line">
-          = (2×2) − (3×5) = 4 − 15 = <strong>−11</strong>
-        </div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">M₂₃</div>
-        <div class="step-val">
-          Delete row 2, col 3 → <span class="m">|2 −1; 5 7|</span></div><div class="line">
-          = (2×7) − (−1×5) = 14 + 5 = <strong>19</strong>
-        </div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">M₃₁</div>
-        <div class="step-val">
-          Delete row 3, col 1 → <span class="m">|−1 3; 2 −1|</span></div><div class="line">
-          = (−1×−1) − (3×2) = 1 − 6 = <strong>−5</strong>
-        </div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">M₃₂</div>
-        <div class="step-val">
-          Delete row 3, col 2 → <span class="m">|2 3; 1 −1|</span></div><div class="line">
-          = (2×−1) − (3×1) = −2 − 3 = <strong>−5</strong>
-        </div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">M₃₃</div>
-        <div class="step-val">
-          Delete row 3, col 3 → <span class="m">|2 −1; 1 2|</span></div><div class="line">
-          = (2×2) − (−1×1) = 4 + 1 = <strong>5</strong>
-        </div>
-      </div>
-
-      <div class="sol-section">Cofactors — Cᵢⱼ = (−1)^(i+j) × Mᵢⱼ &nbsp;|&nbsp; Sign pattern: + − + / − + − / + − +</div>
-
-      <div class="step-row row-step">
-        <div class="step-key">C₁₁</div>
-        <div class="step-val">(−1)^(1+1) × M₁₁ = (+1) × 11 = <strong>11</strong></div>
-      </div>
-      <div class="step-row row-step">
-        <div class="step-key">C₁₂</div>
-        <div class="step-val">(−1)^(1+2) × M₁₂ = (−1) × 7 = <strong>−7</strong></div>
-      </div>
-      <div class="step-row row-step">
-        <div class="step-key">C₁₃</div>
-        <div class="step-val">(−1)^(1+3) × M₁₃ = (+1) × (−3) = <strong>−3</strong></div>
-      </div>
-      <div class="step-row row-step">
-        <div class="step-key">C₂₁</div>
-        <div class="step-val">(−1)^(2+1) × M₂₁ = (−1) × (−23) = <strong>23</strong></div>
-      </div>
-      <div class="step-row row-step">
-        <div class="step-key">C₂₂</div>
-        <div class="step-val">(−1)^(2+2) × M₂₂ = (+1) × (−11) = <strong>−11</strong></div>
-      </div>
-      <div class="step-row row-step">
-        <div class="step-key">C₂₃</div>
-        <div class="step-val">(−1)^(2+3) × M₂₃ = (−1) × 19 = <strong>−19</strong></div>
-      </div>
-      <div class="step-row row-step">
-        <div class="step-key">C₃₁</div>
-        <div class="step-val">(−1)^(3+1) × M₃₁ = (+1) × (−5) = <strong>−5</strong></div>
-      </div>
-      <div class="step-row row-step">
-        <div class="step-key">C₃₂</div>
-        <div class="step-val">(−1)^(3+2) × M₃₂ = (−1) × (−5) = <strong>5</strong></div>
-      </div>
-      <div class="step-row row-step">
-        <div class="step-key">C₃₃</div>
-        <div class="step-val">(−1)^(3+3) × M₃₃ = (+1) × 5 = <strong>5</strong></div>
-      </div>
-
+      <table class="sol-table">
+      <table class="sol-table">
+      <tr>
+        <td class="td-label"><span class="lbl lbl-given">Given</span></td>
+        <td class="td-content c-given">3×3 determinant with rows [2,−1,3], [1,2,−1], [5,7,2]</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-tofind">To Find</span></td>
+        <td class="td-content c-tofind">All 9 Minors (Mᵢⱼ) and 9 Cofactors (Cᵢⱼ)</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-formula">Formula</span></td>
+        <td class="td-content c-formula">Minor Mᵢⱼ = Det of 2×2 matrix after deleting row i and column j</div><div class="line">
+          Cofactor Cᵢⱼ = (−1)^(i+j) × Mᵢⱼ</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">M₁₁</span></td>
+        <td class="td-content c-step">Delete row 1, col 1 → <span class="m">|2 −1; 7 2|</span></div><div class="line">
+          = (2×2) − (−1×7) = 4 + 7 = <strong>11</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">M₁₂</span></td>
+        <td class="td-content c-step">Delete row 1, col 2 → <span class="m">|1 −1; 5 2|</span></div><div class="line">
+          = (1×2) − (−1×5) = 2 + 5 = <strong>7</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">M₁₃</span></td>
+        <td class="td-content c-step">Delete row 1, col 3 → <span class="m">|1 2; 5 7|</span></div><div class="line">
+          = (1×7) − (2×5) = 7 − 10 = <strong>−3</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">M₂₁</span></td>
+        <td class="td-content c-step">Delete row 2, col 1 → <span class="m">|−1 3; 7 2|</span></div><div class="line">
+          = (−1×2) − (3×7) = −2 − 21 = <strong>−23</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">M₂₂</span></td>
+        <td class="td-content c-step">Delete row 2, col 2 → <span class="m">|2 3; 5 2|</span></div><div class="line">
+          = (2×2) − (3×5) = 4 − 15 = <strong>−11</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">M₂₃</span></td>
+        <td class="td-content c-step">Delete row 2, col 3 → <span class="m">|2 −1; 5 7|</span></div><div class="line">
+          = (2×7) − (−1×5) = 14 + 5 = <strong>19</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">M₃₁</span></td>
+        <td class="td-content c-step">Delete row 3, col 1 → <span class="m">|−1 3; 2 −1|</span></div><div class="line">
+          = (−1×−1) − (3×2) = 1 − 6 = <strong>−5</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">M₃₂</span></td>
+        <td class="td-content c-step">Delete row 3, col 2 → <span class="m">|2 3; 1 −1|</span></div><div class="line">
+          = (2×−1) − (3×1) = −2 − 3 = <strong>−5</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">M₃₃</span></td>
+        <td class="td-content c-step">Delete row 3, col 3 → <span class="m">|2 −1; 1 2|</span></div><div class="line">
+          = (2×2) − (−1×1) = 4 + 1 = <strong>5</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">C₁₁</span></td>
+        <td class="td-content c-step">(−1)^(1+1) × M₁₁ = (+1) × 11 = <strong>11</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">C₁₂</span></td>
+        <td class="td-content c-step">(−1)^(1+2) × M₁₂ = (−1) × 7 = <strong>−7</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">C₁₃</span></td>
+        <td class="td-content c-step">(−1)^(1+3) × M₁₃ = (+1) × (−3) = <strong>−3</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">C₂₁</span></td>
+        <td class="td-content c-step">(−1)^(2+1) × M₂₁ = (−1) × (−23) = <strong>23</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">C₂₂</span></td>
+        <td class="td-content c-step">(−1)^(2+2) × M₂₂ = (+1) × (−11) = <strong>−11</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">C₂₃</span></td>
+        <td class="td-content c-step">(−1)^(2+3) × M₂₃ = (−1) × 19 = <strong>−19</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">C₃₁</span></td>
+        <td class="td-content c-step">(−1)^(3+1) × M₃₁ = (+1) × (−5) = <strong>−5</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">C₃₂</span></td>
+        <td class="td-content c-step">(−1)^(3+2) × M₃₂ = (−1) × (−5) = <strong>5</strong></td>
+      </tr>
+      </table>
+      </table>
     </div>
   </div>
 </div>
@@ -819,49 +650,38 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |</div><div class="line">
   <div class="sub">
     <div class="sub-label">(i) 3 + 33 + 333 + 3333 + ...</div>
     <div class="solution">
-
-      <div class="step-row row-given">
-        <div class="step-key">Given:</div>
-        <div class="step-val">Sₙ = 3 + 33 + 333 + ... up to n terms</div>
-      </div>
-
-      <div class="sol-section">Solution</div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 1</div>
-        <div class="step-val">Sₙ = 3(1 + 11 + 111 + ... n terms)</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 2<br><small>Multiply & divide by 9</small></div>
-        <div class="step-val">= (3/9)(9 + 99 + 999 + ... n terms)</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 3</div>
-        <div class="step-val">= (1/3)[(10−1) + (100−1) + (1000−1) + ... n terms]</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 4</div>
-        <div class="step-val">= (1/3)[(10 + 10² + 10³ + ... 10ⁿ) − n]</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 5<br><small>GP sum = a(rⁿ−1)/(r−1)</small></div>
-        <div class="step-val">= (1/3)[10(10ⁿ − 1)/(10 − 1) − n]</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 6</div>
-        <div class="step-val">= (1/3)[10(10ⁿ − 1)/9 − n]</div>
-      </div>
-
-      <div class="step-row row-ans">
-        <div class="step-key">∴ Sₙ =</div>
-        <div class="step-val"><span class="ans-box">10(10ⁿ − 1) / 27 − n/3</span></div>
-      </div>
-
+      <table class="sol-table">
+      <table class="sol-table">
+      <tr>
+        <td class="td-label"><span class="lbl lbl-given">Given</span></td>
+        <td class="td-content c-given">Sₙ = 3 + 33 + 333 + ... up to n terms</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 1</span></td>
+        <td class="td-content c-step">Sₙ = 3(1 + 11 + 111 + ... n terms)</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 2<br><small>Multiply & divide by 9</small></span></td>
+        <td class="td-content c-step">= (3/9)(9 + 99 + 999 + ... n terms)</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 3</span></td>
+        <td class="td-content c-step">= (1/3)[(10−1) + (100−1) + (1000−1) + ... n terms]</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 4</span></td>
+        <td class="td-content c-step">= (1/3)[(10 + 10² + 10³ + ... 10ⁿ) − n]</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 5<br><small>GP sum = a(rⁿ−1)/(r−1)</small></span></td>
+        <td class="td-content c-step">= (1/3)[10(10ⁿ − 1)/(10 − 1) − n]</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 6</span></td>
+        <td class="td-content c-step">= (1/3)[10(10ⁿ − 1)/9 − n]</td>
+      </tr>
+      </table>
+      </table>
     </div>
   </div>
 
@@ -869,39 +689,30 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |</div><div class="line">
   <div class="sub">
     <div class="sub-label">(ii) 8 + 88 + 888 + 8888 + ...</div>
     <div class="solution">
-
-      <div class="step-row row-given">
-        <div class="step-key">Given:</div>
-        <div class="step-val">Sₙ = 8 + 88 + 888 + ... up to n terms</div>
-      </div>
-
-      <div class="sol-section">Solution</div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 1</div>
-        <div class="step-val">Sₙ = 8(1 + 11 + 111 + ... n terms)</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 2</div>
-        <div class="step-val">= (8/9)(9 + 99 + 999 + ... n terms)</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 3</div>
-        <div class="step-val">= (8/9)[(10 + 10² + ... + 10ⁿ) − n]</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 4</div>
-        <div class="step-val">= (8/9)[10(10ⁿ − 1)/9 − n]</div>
-      </div>
-
-      <div class="step-row row-ans">
-        <div class="step-key">∴ Sₙ =</div>
-        <div class="step-val"><span class="ans-box">80(10ⁿ − 1) / 81 − 8n/9</span></div>
-      </div>
-
+      <table class="sol-table">
+      <table class="sol-table">
+      <tr>
+        <td class="td-label"><span class="lbl lbl-given">Given</span></td>
+        <td class="td-content c-given">Sₙ = 8 + 88 + 888 + ... up to n terms</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 1</span></td>
+        <td class="td-content c-step">Sₙ = 8(1 + 11 + 111 + ... n terms)</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 2</span></td>
+        <td class="td-content c-step">= (8/9)(9 + 99 + 999 + ... n terms)</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 3</span></td>
+        <td class="td-content c-step">= (8/9)[(10 + 10² + ... + 10ⁿ) − n]</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 4</span></td>
+        <td class="td-content c-step">= (8/9)[10(10ⁿ − 1)/9 − n]</td>
+      </tr>
+      </table>
+      </table>
     </div>
   </div>
 </div>
@@ -919,58 +730,47 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |</div><div class="line">
 
   <div class="sub">
     <div class="solution">
-
-      <div class="step-row row-given">
-        <div class="step-key">Given:</div>
-        <div class="step-val">Common ratio r = 2/3 &nbsp;|&nbsp; Sum to infinity S∞ = 12</div>
-      </div>
-
-      <div class="step-row row-tofind">
-        <div class="step-key">To Find:</div>
-        <div class="step-val">First term (a)</div>
-      </div>
-
-      <div class="step-row row-formula">
-        <div class="step-key">Formula:</div>
-        <div class="step-val"><span class="m">S∞ = a / (1 − r)&nbsp;&nbsp; (valid when |r| &lt; 1)</span></div>
-      </div>
-
-      <div class="sol-section">Solution</div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 1</div>
-        <div class="step-val">S∞ = a / (1 − r)</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 2</div>
-        <div class="step-val">12 = a / (1 − 2/3)</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 3</div>
-        <div class="step-val">12 = a / (1/3)</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 4</div>
-        <div class="step-val">12 = 3a</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 5</div>
-        <div class="step-val">a = 12/3 = 4</div>
-      </div>
-
-      <div class="step-row row-ans">
-        <div class="step-key">∴ Answer:</div>
-        <div class="step-val"><span class="ans-box">First term a = 4</span></div>
-      </div>
-
-      <div class="verify">✓ Check: S∞ = 4 / (1 − 2/3) = 4 / (1/3) = 4 × 3 = 12 ✓</div>
-
+      <table class="sol-table">
+      <table class="sol-table">
+      <tr>
+        <td class="td-label"><span class="lbl lbl-given">Given</span></td>
+        <td class="td-content c-given">Common ratio r = 2/3 &nbsp;|&nbsp; Sum to infinity S∞ = 12</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-tofind">To Find</span></td>
+        <td class="td-content c-tofind">First term (a)</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-formula">Formula</span></td>
+        <td class="td-content c-formula"><span class="m">S∞ = a / (1 − r)&nbsp;&nbsp; (valid when |r| &lt; 1)</span></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 1</span></td>
+        <td class="td-content c-step">S∞ = a / (1 − r)</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 2</span></td>
+        <td class="td-content c-step">12 = a / (1 − 2/3)</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 3</span></td>
+        <td class="td-content c-step">12 = a / (1/3)</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 4</span></td>
+        <td class="td-content c-step">12 = 3a</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 5</span></td>
+        <td class="td-content c-step">a = 12/3 = 4</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-ans">∴ Answer</span></td>
+        <td class="td-content c-ans"><span class="ans-box">First term a = 4</span></td>
+      </tr>
+      </table>
+      </table>
     </div>
-  </div>
 </div>
 
 
@@ -988,49 +788,35 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |</div><div class="line">
   <div class="sub">
     <div class="sub-label">(i) (A ∪ B)' = A' ∩ B' &nbsp;&nbsp; [De Morgan's First Law]</div>
     <div class="solution">
-
-      <div class="step-row row-given">
-        <div class="step-key">Given:</div>
-        <div class="step-val">
-          A = {1,2,3,4} &nbsp;|&nbsp; B = {3,4,5,6}</div><div class="line">
-          X = {1,2,3,4,5,6,7,8,9,10}
-        </div>
-      </div>
-
-      <div class="sol-section">LHS — (A ∪ B)'</div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 1</div>
-        <div class="step-val">A ∪ B = {1,2,3,4} ∪ {3,4,5,6} = {1,2,3,4,5,6}</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 2</div>
-        <div class="step-val">(A ∪ B)' = X − {1,2,3,4,5,6} = <strong>{7,8,9,10}</strong></div>
-      </div>
-
-      <div class="sol-section">RHS — A' ∩ B'</div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 3</div>
-        <div class="step-val">A' = X − A = {5,6,7,8,9,10}</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 4</div>
-        <div class="step-val">B' = X − B = {1,2,7,8,9,10}</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 5</div>
-        <div class="step-val">A' ∩ B' = {5,6,7,8,9,10} ∩ {1,2,7,8,9,10} = <strong>{7,8,9,10}</strong></div>
-      </div>
-
-      <div class="step-row row-ans">
-        <div class="step-key">∴ LHS = RHS</div>
-        <div class="step-val"><span class="ans-box">(A ∪ B)' = A' ∩ B' = {7,8,9,10} &nbsp; ✓ Verified</span></div>
-      </div>
-
+      <table class="sol-table">
+      <table class="sol-table">
+      <tr>
+        <td class="td-label"><span class="lbl lbl-given">Given</span></td>
+        <td class="td-content c-given">A = {1,2,3,4} &nbsp;|&nbsp; B = {3,4,5,6}</div><div class="line">
+          X = {1,2,3,4,5,6,7,8,9,10}</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 1</span></td>
+        <td class="td-content c-step">A ∪ B = {1,2,3,4} ∪ {3,4,5,6} = {1,2,3,4,5,6}</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 2</span></td>
+        <td class="td-content c-step">(A ∪ B)' = X − {1,2,3,4,5,6} = <strong>{7,8,9,10}</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 3</span></td>
+        <td class="td-content c-step">A' = X − A = {5,6,7,8,9,10}</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 4</span></td>
+        <td class="td-content c-step">B' = X − B = {1,2,7,8,9,10}</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 5</span></td>
+        <td class="td-content c-step">A' ∩ B' = {5,6,7,8,9,10} ∩ {1,2,7,8,9,10} = <strong>{7,8,9,10}</strong></td>
+      </tr>
+      </table>
+      </table>
     </div>
   </div>
 
@@ -1038,36 +824,26 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |</div><div class="line">
   <div class="sub">
     <div class="sub-label">(ii) (A ∩ B)' = A' ∪ B' &nbsp;&nbsp; [De Morgan's Second Law]</div>
     <div class="solution">
-
-      <div class="sol-section">LHS — (A ∩ B)'</div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 1</div>
-        <div class="step-val">A ∩ B = {1,2,3,4} ∩ {3,4,5,6} = {3,4}</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 2</div>
-        <div class="step-val">(A ∩ B)' = X − {3,4} = <strong>{1,2,5,6,7,8,9,10}</strong></div>
-      </div>
-
-      <div class="sol-section">RHS — A' ∪ B'</div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 3</div>
-        <div class="step-val">A' = {5,6,7,8,9,10} &nbsp;|&nbsp; B' = {1,2,7,8,9,10}</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 4</div>
-        <div class="step-val">A' ∪ B' = {5,6,7,8,9,10} ∪ {1,2,7,8,9,10} = <strong>{1,2,5,6,7,8,9,10}</strong></div>
-      </div>
-
-      <div class="step-row row-ans">
-        <div class="step-key">∴ LHS = RHS</div>
-        <div class="step-val"><span class="ans-box">(A ∩ B)' = A' ∪ B' = {1,2,5,6,7,8,9,10} &nbsp; ✓ Verified</span></div>
-      </div>
-
+      <table class="sol-table">
+      <table class="sol-table">
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 1</span></td>
+        <td class="td-content c-step">A ∩ B = {1,2,3,4} ∩ {3,4,5,6} = {3,4}</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 2</span></td>
+        <td class="td-content c-step">(A ∩ B)' = X − {3,4} = <strong>{1,2,5,6,7,8,9,10}</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 3</span></td>
+        <td class="td-content c-step">A' = {5,6,7,8,9,10} &nbsp;|&nbsp; B' = {1,2,7,8,9,10}</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 4</span></td>
+        <td class="td-content c-step">A' ∪ B' = {5,6,7,8,9,10} ∪ {1,2,7,8,9,10} = <strong>{1,2,5,6,7,8,9,10}</strong></td>
+      </tr>
+      </table>
+      </table>
     </div>
   </div>
 </div>
@@ -1087,59 +863,43 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |</div><div class="line">
   <div class="sub">
     <div class="sub-label">(i) z = 7 − 5i</div>
     <div class="solution">
-
-      <div class="step-row row-given">
-        <div class="step-key">Given:</div>
-        <div class="step-val">z = 7 − 5i &nbsp;⟹&nbsp; a = 7, b = −5</div>
-      </div>
-
-      <div class="step-row row-formula">
-        <div class="step-key">Formula:</div>
-        <div class="step-val">
-          Modulus: <span class="m">|z| = √(a² + b²)</span></div><div class="line">
-          Amplitude: <span class="m">θ = tan⁻¹(b/a)</span> (adjusted for quadrant)
-        </div>
-      </div>
-
-      <div class="sol-section">Modulus</div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 1</div>
-        <div class="step-val">|z| = √(7² + (−5)²)</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 2</div>
-        <div class="step-val">= √(49 + 25) = √74</div>
-      </div>
-
-      <div class="step-row row-ans">
-        <div class="step-key">∴ |z| =</div>
-        <div class="step-val"><span class="ans-box">√74</span></div>
-      </div>
-
-      <div class="sol-section">Amplitude (Argument)</div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 3</div>
-        <div class="step-val">a = 7 &gt; 0, b = −5 &lt; 0 → Point lies in <strong>4th quadrant</strong></div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 4</div>
-        <div class="step-val">Reference angle α = tan⁻¹(|b|/|a|) = tan⁻¹(5/7)</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 5</div>
-        <div class="step-val">4th quadrant → amplitude is negative</div>
-      </div>
-
-      <div class="step-row row-ans">
-        <div class="step-key">∴ Amplitude =</div>
-        <div class="step-val"><span class="ans-box">−tan⁻¹(5/7)</span></div>
-      </div>
-
+      <table class="sol-table">
+      <table class="sol-table">
+      <tr>
+        <td class="td-label"><span class="lbl lbl-given">Given</span></td>
+        <td class="td-content c-given">z = 7 − 5i &nbsp;⟹&nbsp; a = 7, b = −5</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-formula">Formula</span></td>
+        <td class="td-content c-formula">Modulus: <span class="m">|z| = √(a² + b²)</span></div><div class="line">
+          Amplitude: <span class="m">θ = tan⁻¹(b/a)</span> (adjusted for quadrant)</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 1</span></td>
+        <td class="td-content c-step">|z| = √(7² + (−5)²)</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 2</span></td>
+        <td class="td-content c-step">= √(49 + 25) = √74</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-ans">∴ |z| =</span></td>
+        <td class="td-content c-ans"><span class="ans-box">√74</span></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 3</span></td>
+        <td class="td-content c-step">a = 7 &gt; 0, b = −5 &lt; 0 → Point lies in <strong>4th quadrant</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 4</span></td>
+        <td class="td-content c-step">Reference angle α = tan⁻¹(|b|/|a|) = tan⁻¹(5/7)</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 5</span></td>
+        <td class="td-content c-step">4th quadrant → amplitude is negative</td>
+      </tr>
+      </table>
+      </table>
     </div>
   </div>
 
@@ -1147,51 +907,38 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |</div><div class="line">
   <div class="sub">
     <div class="sub-label">(ii) z = −4 − 4i</div>
     <div class="solution">
-
-      <div class="step-row row-given">
-        <div class="step-key">Given:</div>
-        <div class="step-val">z = −4 − 4i &nbsp;⟹&nbsp; a = −4, b = −4</div>
-      </div>
-
-      <div class="sol-section">Modulus</div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 1</div>
-        <div class="step-val">|z| = √((−4)² + (−4)²)</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 2</div>
-        <div class="step-val">= √(16 + 16) = √32 = 4√2</div>
-      </div>
-
-      <div class="step-row row-ans">
-        <div class="step-key">∴ |z| =</div>
-        <div class="step-val"><span class="ans-box">4√2</span></div>
-      </div>
-
-      <div class="sol-section">Amplitude (Argument)</div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 3</div>
-        <div class="step-val">a = −4 &lt; 0, b = −4 &lt; 0 → Point lies in <strong>3rd quadrant</strong></div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 4</div>
-        <div class="step-val">Reference angle α = tan⁻¹(|−4|/|−4|) = tan⁻¹(1) = 45° = π/4</div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Step 5</div>
-        <div class="step-val">3rd quadrant → amplitude = −(π − π/4) = −(3π/4)</div>
-      </div>
-
-      <div class="step-row row-ans">
-        <div class="step-key">∴ Amplitude =</div>
-        <div class="step-val"><span class="ans-box">−3π/4 &nbsp; (= −135°)</span></div>
-      </div>
-
+      <table class="sol-table">
+      <table class="sol-table">
+      <tr>
+        <td class="td-label"><span class="lbl lbl-given">Given</span></td>
+        <td class="td-content c-given">z = −4 − 4i &nbsp;⟹&nbsp; a = −4, b = −4</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 1</span></td>
+        <td class="td-content c-step">|z| = √((−4)² + (−4)²)</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 2</span></td>
+        <td class="td-content c-step">= √(16 + 16) = √32 = 4√2</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-ans">∴ |z| =</span></td>
+        <td class="td-content c-ans"><span class="ans-box">4√2</span></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 3</span></td>
+        <td class="td-content c-step">a = −4 &lt; 0, b = −4 &lt; 0 → Point lies in <strong>3rd quadrant</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 4</span></td>
+        <td class="td-content c-step">Reference angle α = tan⁻¹(|−4|/|−4|) = tan⁻¹(1) = 45° = π/4</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Step 5</span></td>
+        <td class="td-content c-step">3rd quadrant → amplitude = −(π − π/4) = −(3π/4)</td>
+      </tr>
+      </table>
+      </table>
     </div>
   </div>
 </div>
@@ -1211,70 +958,57 @@ D₃ = | 1 &nbsp; 0 &nbsp; 1 |</div><div class="line">
   <div class="sub">
     <div class="sub-label">(i) If A = {a,b,c}, B = {x,y}, find A×B, B×A, A×A, B×B.</div>
     <div class="solution">
-
-      <div class="step-row row-given">
-        <div class="step-key">Given:</div>
-        <div class="step-val">A = {a, b, c} &nbsp;|&nbsp; B = {x, y}</div>
-      </div>
-
-      <div class="step-row row-formula">
-        <div class="step-key">Definition:</div>
-        <div class="step-val">A × B = {(p, q) : p ∈ A and q ∈ B} &nbsp;|&nbsp; n(A×B) = n(A) × n(B)</div>
-      </div>
-
-      <div class="sol-section">Solution</div>
-
-      <div class="step-row row-step">
-        <div class="step-key">A × B</div>
-        <div class="step-val">= {(a,x), (a,y), (b,x), (b,y), (c,x), (c,y)} &nbsp;→ <strong>6 ordered pairs</strong></div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">B × A</div>
-        <div class="step-val">= {(x,a), (x,b), (x,c), (y,a), (y,b), (y,c)} &nbsp;→ <strong>6 ordered pairs</strong></div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">A × A</div>
-        <div class="step-val">= {(a,a),(a,b),(a,c),(b,a),(b,b),(b,c),(c,a),(c,b),(c,c)} &nbsp;→ <strong>9 ordered pairs</strong></div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">B × B</div>
-        <div class="step-val">= {(x,x), (x,y), (y,x), (y,y)} &nbsp;→ <strong>4 ordered pairs</strong></div>
-      </div>
-
-      <div class="verify">Note: A×B ≠ B×A (order of pairs matters). n(A)=3, n(B)=2 → n(A×B) = 6 ✓</div>
-
+      <table class="sol-table">
+      <table class="sol-table">
+      <tr>
+        <td class="td-label"><span class="lbl lbl-given">Given</span></td>
+        <td class="td-content c-given">A = {a, b, c} &nbsp;|&nbsp; B = {x, y}</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-formula">Definition</span></td>
+        <td class="td-content c-formula">A × B = {(p, q) : p ∈ A and q ∈ B} &nbsp;|&nbsp; n(A×B) = n(A) × n(B)</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">A × B</span></td>
+        <td class="td-content c-step">= {(a,x), (a,y), (b,x), (b,y), (c,x), (c,y)} &nbsp;→ <strong>6 ordered pairs</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">B × A</span></td>
+        <td class="td-content c-step">= {(x,a), (x,b), (x,c), (y,a), (y,b), (y,c)} &nbsp;→ <strong>6 ordered pairs</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">A × A</span></td>
+        <td class="td-content c-step">= {(a,a),(a,b),(a,c),(b,a),(b,b),(b,c),(c,a),(c,b),(c,c)} &nbsp;→ <strong>9 ordered pairs</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">B × B</span></td>
+        <td class="td-content c-step">= {(x,x), (x,y), (y,x), (y,y)} &nbsp;→ <strong>4 ordered pairs</strong></td>
+      </tr>
+      </table>
+      </table>
     </div>
-  </div>
 
   <!-- Q10 (ii) -->
   <div class="sub">
     <div class="sub-label">(ii) If P = {1,2,3} and Q = {1,4}, find P×Q and Q×P.</div>
     <div class="solution">
-
-      <div class="step-row row-given">
-        <div class="step-key">Given:</div>
-        <div class="step-val">P = {1, 2, 3} &nbsp;|&nbsp; Q = {1, 4}</div>
-      </div>
-
-      <div class="sol-section">Solution</div>
-
-      <div class="step-row row-step">
-        <div class="step-key">P × Q</div>
-        <div class="step-val">= {(1,1), (1,4), (2,1), (2,4), (3,1), (3,4)} &nbsp;→ <strong>6 ordered pairs</strong></div>
-      </div>
-
-      <div class="step-row row-step">
-        <div class="step-key">Q × P</div>
-        <div class="step-val">= {(1,1), (1,2), (1,3), (4,1), (4,2), (4,3)} &nbsp;→ <strong>6 ordered pairs</strong></div>
-      </div>
-
-      <div class="verify">Note: P×Q ≠ Q×P. E.g., (1,4) ∈ P×Q but (1,4) ∉ Q×P (since 4 ∉ P)</div>
-
+      <table class="sol-table">
+      <table class="sol-table">
+      <tr>
+        <td class="td-label"><span class="lbl lbl-given">Given</span></td>
+        <td class="td-content c-given">P = {1, 2, 3} &nbsp;|&nbsp; Q = {1, 4}</td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">P × Q</span></td>
+        <td class="td-content c-step">= {(1,1), (1,4), (2,1), (2,4), (3,1), (3,4)} &nbsp;→ <strong>6 ordered pairs</strong></td>
+      </tr>
+      <tr>
+        <td class="td-label"><span class="lbl lbl-step">Q × P</span></td>
+        <td class="td-content c-step">= {(1,1), (1,2), (1,3), (4,1), (4,2), (4,3)} &nbsp;→ <strong>6 ordered pairs</strong></td>
+      </tr>
+      </table>
+      </table>
     </div>
-  </div>
 </div>
 
 
