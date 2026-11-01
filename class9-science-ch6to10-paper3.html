@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Class 9 Science — Ch.6–10 Paper 3 Most IMP | Maharashtra Board</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size:15px;}
+  .site-header{background:linear-gradient(135deg,#880e4f,#c2185b,#ad1457);padding:14px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 3px 12px rgba(0,0,0,.3);}
+  .site-header a{color:#f48fb1;text-decoration:none;font-size:.85rem;font-weight:600;}
+  .site-header a:hover{color:#fff;}
+  .header-title{color:#fff;font-size:1.05rem;font-weight:800;}
+
+  .hero{background:linear-gradient(135deg,#880e4f 0%,#c2185b 40%,#1a237e 100%);padding:30px 20px 24px;text-align:center;color:#fff;}
+  .board-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:5px 18px;font-size:.73rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;}
+  .hero h1{font-size:1.55rem;font-weight:900;line-height:1.25;margin-bottom:6px;}
+  .hero .sub{font-size:.88rem;color:rgba(255,255,255,.85);}
+  .imp-strip{max-width:900px;margin:12px auto 0;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:0 12px;}
+  .imp-tag{background:#fbbf24;color:#1a1a1a;font-size:.72rem;font-weight:900;padding:5px 14px;border-radius:14px;}
+
+  .instr{background:#fce4ec;border-left:4px solid #c2185b;margin:16px auto;max-width:900px;padding:14px 20px;border-radius:8px;font-size:.87rem;line-height:1.7;}
+  .instr strong{color:#880e4f;}
+
+  .section{max-width:900px;margin:12px auto;background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.09);overflow:hidden;}
+  .sh{padding:13px 22px;display:flex;align-items:center;gap:12px;}
+  .sh .qno{background:#fff;font-weight:900;font-size:.95rem;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .sh .qtitle{color:#fff;font-size:.95rem;font-weight:800;flex:1;line-height:1.3;}
+  .sh .qmarks{background:rgba(255,255,255,.2);color:#fff;font-size:.8rem;font-weight:700;padding:4px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.35);white-space:nowrap;}
+  .h1{background:linear-gradient(135deg,#880e4f,#c2185b);} .h1 .qno{color:#880e4f;}
+  .h2{background:linear-gradient(135deg,#1b5e20,#2e7d32);} .h2 .qno{color:#1b5e20;}
+  .h3{background:linear-gradient(135deg,#e65100,#f57c00);} .h3 .qno{color:#e65100;}
+  .h4{background:linear-gradient(135deg,#1a237e,#283593);} .h4 .qno{color:#1a237e;}
+  .h5{background:linear-gradient(135deg,#4a148c,#7b1fa2);} .h5 .qno{color:#4a148c;}
+  .h6{background:linear-gradient(135deg,#006064,#00838f);} .h6 .qno{color:#006064;}
+  .h7{background:linear-gradient(135deg,#bf360c,#e64a19);} .h7 .qno{color:#bf360c;}
+  .sb{padding:18px 24px;}
+
+  .cl{display:inline-block;font-size:.68rem;font-weight:800;padding:2px 8px;border-radius:7px;margin-right:5px;text-transform:uppercase;letter-spacing:.8px;}
+  .c6{background:#e8f5e9;color:#1b5e20;} .c7{background:#e3f2fd;color:#0d47a1;} .c8{background:#fff3e0;color:#e65100;} .c9{background:#fce4ec;color:#880e4f;} .c10{background:#f3e5f5;color:#4a148c;}
+  .itag{display:inline-block;background:#b71c1c;color:#fff;font-size:.65rem;font-weight:900;padding:2px 7px;border-radius:6px;margin-left:5px;}
+
+  .mcq-item{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid #f0f4f8;}
+  .mcq-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+  .mcq-q{font-size:.92rem;font-weight:700;margin-bottom:8px;line-height:1.5;}
+  .opts{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+  .opt{background:#f5f7fa;border:1.5px solid #e0e7ef;border-radius:8px;padding:7px 12px;font-size:.85rem;}
+  .opt.c{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700;}
+  .ab{display:inline-block;background:#e8f5e9;color:#1b5e20;font-size:.74rem;font-weight:700;padding:3px 10px;border-radius:10px;margin-top:6px;border:1px solid #a5d6a7;}
+
+  .tf-item{display:flex;align-items:flex-start;gap:11px;padding:10px 0;border-bottom:1px solid #f0f4f8;}
+  .tf-item:last-child{border-bottom:none;}
+  .tf-q{font-size:.88rem;line-height:1.5;flex:1;}
+  .t{background:#e8f5e9;color:#1b5e20;border:1px solid #a5d6a7;font-size:.77rem;font-weight:700;padding:3px 10px;border-radius:10px;white-space:nowrap;flex-shrink:0;}
+  .f{background:#ffebee;color:#b71c1c;border:1px solid #ef9a9a;font-size:.77rem;font-weight:700;padding:3px 10px;border-radius:10px;white-space:nowrap;flex-shrink:0;}
+  .fc{font-size:.8rem;color:#b71c1c;padding:3px 34px 8px;background:#fff3f3;border-radius:6px;}
+
+  .mw{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .mw h4{font-size:.8rem;font-weight:800;color:#e65100;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+  .mr{padding:7px 11px;background:#f5f7fa;border-radius:7px;font-size:.86rem;margin-bottom:5px;border:1px solid #e0e7ef;}
+  .mk{font-weight:700;color:#e65100;}
+  .mat{margin-top:12px;width:100%;border-collapse:collapse;font-size:.83rem;}
+  .mat th{background:#c2185b;color:#fff;padding:7px 12px;text-align:left;}
+  .mat td{padding:7px 12px;border-bottom:1px solid #e8edf2;}
+  .mat tr:nth-child(even) td{background:#fce4ec;}
+
+  .ans-item{padding:12px 0;border-bottom:1px solid #f0f4f8;}
+  .ans-item:last-child{border-bottom:none;}
+  .ans-q{font-size:.92rem;font-weight:700;margin-bottom:7px;line-height:1.5;}
+  .sm{font-size:.73rem;color:#888;font-weight:600;margin-left:4px;}
+
+  .sol{padding:0;margin-top:6px;}
+  .sline{display:block;font-size:.92rem;line-height:1;padding:8px 0;border-bottom:1px solid #f5f5f5;}
+  .sline:last-child{border-bottom:none;}
+  .tag{display:inline-block;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;padding:2px 8px;border-radius:8px;margin-right:8px;vertical-align:middle;}
+  .tag-ans{background:#e8f5e9;color:#1b5e20;}
+  .sline-ans{display:block;background:#f0fdf4;border-left:4px solid #16a34a;padding:10px 16px;border-radius:0 8px 8px 0;margin-top:5px;font-size:.92rem;font-weight:700;color:#166534;}
+  .dn{background:#e8eaf6;border:1.5px dashed #5c6bc0;border-radius:8px;padding:9px 13px;font-size:.79rem;color:#3949ab;margin-top:8px;text-align:center;}
+
+  table.bt{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:8px;}
+  table.bt th{background:#880e4f;color:#fff;padding:6px 10px;text-align:left;}
+  table.bt td{padding:6px 10px;border-bottom:1px solid #e8edf2;}
+  table.bt tr:nth-child(even) td{background:#fce4ec;}
+
+  table.mt{width:100%;border-collapse:collapse;font-size:.84rem;}
+  table.mt th{background:linear-gradient(135deg,#880e4f,#c2185b);color:#fff;padding:7px 12px;text-align:left;}
+  table.mt td{padding:7px 12px;border-bottom:1px solid #e8edf2;}
+  table.mt tr:nth-child(even) td{background:#fce4ec;}
+
+  footer{text-align:center;padding:24px 16px;font-size:.8rem;color:#888;}
+  footer a{color:#c2185b;text-decoration:none;}
+  @media(max-width:600px){.opts{grid-template-columns:1fr;}.mw{grid-template-columns:1fr;}.hero h1{font-size:1.2rem;}}
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <a href="notes-class9.html">← Class 9 Notes</a>
+  <span style="color:rgba(255,255,255,.4);">|</span>
+  <span class="header-title">Class 9 Science — Ch.6–10 Most IMP Paper 3</span>
+</div>
+
+<div class="hero">
+  <div class="board-tag">Maharashtra Board · Class 9 · Science · Most Important</div>
+  <h1>⭐ Science Paper 3 — Most Important Questions<br>Ch. 6 to 10 with Answers</h1>
+  <div class="sub">All questions most likely to come in exam · 40 Marks · Board Pattern</div>
+</div>
+
+<div class="imp-strip">
+  <span class="imp-tag">⭐ Most Likely in Exam</span>
+  <span class="imp-tag">📋 40 Marks</span>
+  <span class="imp-tag">✅ Full Answers</span>
+  <span class="imp-tag">🧪 Activity Based</span>
+</div>
+
+<div class="instr" style="margin-top:14px;">
+  <strong>General Instructions:</strong> All questions are compulsory. Every question in this paper is <strong>most frequently asked in Maharashtra Board Class 9 Science exams</strong>. Study these thoroughly. Answers are provided after each question.
+</div>
+
+<!-- Q1 MCQ -->
+<div class="section">
+  <div class="sh h1"><div class="qno">1</div><div class="qtitle">Choose the correct alternative. (MCQ)</div><div class="qmarks">5 Marks</div></div>
+  <div class="sb">
+
+    <div class="mcq-item">
+      <span class="cl c7">Ch7</span><span class="itag">⭐ MOST IMP</span>
+      <div class="mcq-q">i. Which of the following correctly represents a food chain?</div>
+      <div class="opts">
+        <div class="opt c">a) Grass → Grasshopper → Frog → Snake → Eagle</div>
+        <div class="opt">b) Eagle → Snake → Frog → Grasshopper → Grass</div>
+        <div class="opt">c) Frog → Grass → Snake → Eagle</div>
+        <div class="opt">d) Grasshopper → Grass → Frog → Snake</div>
+      </div>
+      <span class="ab">✓ (a) Grass → Grasshopper → Frog → Snake → Eagle — starts from producer (grass), goes to top predator</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c6">Ch6</span><span class="itag">⭐ MOST IMP</span>
+      <div class="mcq-q">ii. Which group of plants is called 'amphibians of the plant kingdom'?</div>
+      <div class="opts">
+        <div class="opt">a) Thallophyta</div><div class="opt c">b) Bryophyta</div>
+        <div class="opt">c) Pteridophyta</div><div class="opt">d) Gymnosperms</div>
+      </div>
+      <span class="ab">✓ (b) Bryophyta (mosses, liverworts) — need water for reproduction but live on land, like amphibians</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c8">Ch8</span><span class="itag">⭐ MOST IMP</span>
+      <div class="mcq-q">iii. Which bacteria is used to make curd from milk?</div>
+      <div class="opts">
+        <div class="opt">a) Rhizobium</div><div class="opt c">b) Lactobacillus</div>
+        <div class="opt">c) E. coli</div><div class="opt">d) Azotobacter</div>
+      </div>
+      <span class="ab">✓ (b) Lactobacillus — converts lactose in milk to lactic acid → milk curdles to form curd</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c9">Ch9</span><span class="itag">⭐ MOST IMP</span>
+      <div class="mcq-q">iv. Which of the following is a biodegradable waste?</div>
+      <div class="opts">
+        <div class="opt c">a) Vegetable peels and food scraps</div><div class="opt">b) Plastic bags</div>
+        <div class="opt">c) Glass bottles</div><div class="opt">d) Aluminium cans</div>
+      </div>
+      <span class="ab">✓ (a) Vegetable peels — decomposed by microbes; plastic, glass, aluminium are non-biodegradable</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c10">Ch10</span><span class="itag">⭐ IMP</span>
+      <div class="mcq-q">v. The process of sending and receiving messages electronically using the internet is called ________.</div>
+      <div class="opts">
+        <div class="opt c">a) E-mail</div><div class="opt">b) SMS</div>
+        <div class="opt">c) Telegram</div><div class="opt">d) Fax</div>
+      </div>
+      <span class="ab">✓ (a) E-mail (Electronic mail) — instant digital messaging over the internet</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- Q2 TRUE/FALSE -->
+<div class="section">
+  <div class="sh h2"><div class="qno">2</div><div class="qtitle">State whether True or False. If false, rewrite the correct statement.</div><div class="qmarks">5 Marks</div></div>
+  <div class="sb">
+
+    <div class="tf-item"><div style="flex:1;"><span class="cl c6">Ch6</span><span class="itag">⭐ IMP</span>
+      <div class="tf-q">i. Angiosperms have seeds enclosed in a fruit and are the most evolved group of plants.</div></div><span class="t">TRUE</span>
+    </div>
+
+    <div class="tf-item"><div style="flex:1;"><span class="cl c7">Ch7</span><span class="itag">⭐ MOST IMP</span>
+      <div class="tf-q">ii. In a food chain, energy flows from consumers to producers.</div></div><span class="f">FALSE</span>
+    </div>
+    <div class="fc">✎ Correct: Energy flows from <strong>producers to consumers</strong> (from plants → herbivores → carnivores). It always flows in one direction — from lower to higher trophic levels.</div>
+
+    <div class="tf-item"><div style="flex:1;"><span class="cl c8">Ch8</span><span class="itag">⭐ MOST IMP</span>
+      <div class="tf-q">iii. Yeast is used in the preparation of bread because it produces CO₂ during fermentation which makes the dough rise.</div></div><span class="t">TRUE</span>
+    </div>
+
+    <div class="tf-item"><div style="flex:1;"><span class="cl c9">Ch9</span><span class="itag">⭐ MOST IMP</span>
+      <div class="tf-q">iv. Deforestation increases rainfall and reduces soil erosion.</div></div><span class="f">FALSE</span>
+    </div>
+    <div class="fc">✎ Correct: Deforestation <strong>decreases rainfall</strong> (fewer trees = less transpiration) and <strong>increases</strong> soil erosion (no roots to hold soil). It also increases CO₂ and causes global warming.</div>
+
+    <div class="tf-item"><div style="flex:1;"><span class="cl c10">Ch10</span><span class="itag">⭐ IMP</span>
+      <div class="tf-q">v. The Internet is a global network that connects millions of computers and devices worldwide.</div></div><span class="t">TRUE</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- Q3 MATCH -->
+<div class="section">
+  <div class="sh h3"><div class="qno">3</div><div class="qtitle">Match the columns A and B.</div><div class="qmarks">5 Marks</div></div>
+  <div class="sb">
+    <div class="mw">
+      <div>
+        <h4>Column A</h4>
+        <div class="mr"><span class="mk">A.</span> Pteridophyta <span class="itag">⭐</span></div>
+        <div class="mr"><span class="mk">B.</span> 10% Law</div>
+        <div class="mr"><span class="mk">C.</span> Penicillin <span class="itag">⭐</span></div>
+        <div class="mr"><span class="mk">D.</span> Chipko Movement <span class="itag">⭐</span></div>
+        <div class="mr"><span class="mk">E.</span> RAM</div>
+      </div>
+      <div>
+        <h4>Column B</h4>
+        <div class="mr">1. Temporary memory of computer</div>
+        <div class="mr">2. Movement to save trees — 'hug the trees'</div>
+        <div class="mr">3. First antibiotic — from Penicillium fungus</div>
+        <div class="mr">4. Energy transfer between trophic levels</div>
+        <div class="mr">5. First vascular land plants — ferns</div>
+      </div>
+    </div>
+    <table class="mat">
+      <tr><th>Column A</th><th>Match</th><th>Column B</th></tr>
+      <tr><td>A. Pteridophyta</td><td>→ 5</td><td>First vascular land plants — ferns</td></tr>
+      <tr><td>B. 10% Law</td><td>→ 4</td><td>Energy transfer between trophic levels</td></tr>
+      <tr><td>C. Penicillin</td><td>→ 3</td><td>First antibiotic — from Penicillium fungus</td></tr>
+      <tr><td>D. Chipko Movement</td><td>→ 2</td><td>Movement to save trees — 'hug the trees'</td></tr>
+      <tr><td>E. RAM</td><td>→ 1</td><td>Temporary memory of computer</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Q4 ONE SENTENCE -->
+<div class="section">
+  <div class="sh h4"><div class="qno">4</div><div class="qtitle">Answer the following in one sentence each.</div><div class="qmarks">5 Marks</div></div>
+  <div class="sb">
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c6">Ch6</span><span class="itag">⭐</span> i. Distinguish between monocots and dicots (one point each).</div>
+      <div class="sol">
+        <span class="sline"><span class="tag tag-ans">Answer</span> Monocots have <strong>one cotyledon</strong> and <strong>parallel leaf venation</strong> (e.g., wheat, maize), while dicots have <strong>two cotyledons</strong> and <strong>reticulate (network) leaf venation</strong> (e.g., mango, rose).</span>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c7">Ch7</span><span class="itag">⭐ MOST IMP</span> ii. What is meant by the term 'trophic level'?</div>
+      <div class="sol">
+        <span class="sline"><span class="tag tag-ans">Answer</span> Each feeding level or step in a food chain is called a trophic level — producers occupy the 1st trophic level, primary consumers (herbivores) occupy the 2nd, secondary consumers the 3rd, and so on.</span>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c8">Ch8</span><span class="itag">⭐ MOST IMP</span> iii. What is vaccination? How does it protect us from diseases?</div>
+      <div class="sol">
+        <span class="sline"><span class="tag tag-ans">Answer</span> Vaccination is the process of introducing a weakened or dead pathogen (vaccine) into the body to stimulate the immune system to produce antibodies, so that the person becomes immune and protected from that disease in the future without actually getting sick.</span>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c9">Ch9</span><span class="itag">⭐ MOST IMP</span> iv. What is the full form of CFC? How does it affect the environment?</div>
+      <div class="sol">
+        <span class="sline"><span class="tag tag-ans">Answer</span> CFC stands for <strong>Chlorofluorocarbon</strong> — a chemical used in refrigerants and aerosol sprays; when released into the atmosphere, CFCs rise to the stratosphere and destroy the ozone (O₃) layer, allowing harmful UV radiation to reach Earth's surface, causing skin cancer and eye damage.</span>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c10">Ch10</span><span class="itag">⭐ IMP</span> v. What is a computer virus? How is it different from a biological virus?</div>
+      <div class="sol">
+        <span class="sline"><span class="tag tag-ans">Answer</span> A computer virus is a malicious software program that can copy itself, spread to other files/computers, and damage or destroy data; unlike a biological virus (which infects living cells), a computer virus infects computer programs and data files but cannot harm living organisms.</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Q5 SHORT NOTES -->
+<div class="section">
+  <div class="sh h5"><div class="qno">5</div><div class="qtitle">Write short notes. (Any 2 out of 4) — 4 marks each</div><div class="qmarks">8 Marks</div></div>
+  <div class="sb">
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c6">Ch6</span><span class="itag">⭐ MOST IMP</span> A. Write the distinguishing features of Gymnosperms with 3 examples and draw their classification position. <span class="sm">(4M)</span></div>
+      <div class="sol">
+        <span class="sline"><strong>Gymnosperms — Features:</strong></span>
+        <span class="sline" style="padding-left:20px;">• The word means 'naked seed' (Gymno = naked, sperma = seed)</span>
+        <span class="sline" style="padding-left:20px;">• Seeds are <strong>not enclosed in a fruit</strong> — they are exposed/naked on cone scales</span>
+        <span class="sline" style="padding-left:20px;">• Do <strong>not produce flowers</strong>; produce cones (strobili)</span>
+        <span class="sline" style="padding-left:20px;">• Mostly <strong>evergreen trees</strong> with needle-like or scale-like leaves</span>
+        <span class="sline" style="padding-left:20px;">• Have <strong>well-developed vascular tissue</strong> (xylem and phloem)</span>
+        <span class="sline" style="padding-left:20px;">• Reproduction by seeds — seeds not in fruit, just on cone</span>
+        <span class="sline" style="padding-left:20px;">• Examples: <strong>Pine (Pinus), Cycas (Sago palm), Cedar (Cedrus), Fir (Abies), Deodar</strong></span>
+        <span class="sline"><strong>Position in classification:</strong></span>
+        <span class="sline" style="padding-left:20px;">Plantae → Phanerogams → <strong>Gymnosperms</strong> (naked seeds) → vs Angiosperms (enclosed seeds)</span>
+        <div class="dn">📐 Draw: Pine cone and Cycas showing naked seeds on scales. Also draw: needle-like leaves of pine tree.</div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c7">Ch7</span><span class="itag">⭐ MOST IMP</span> B. Explain the energy pyramid. Why does the energy decrease at each trophic level? <span class="sm">(4M)</span></div>
+      <div class="sol">
+        <span class="sline"><strong>Ecological/Energy Pyramid:</strong></span>
+        <span class="sline" style="padding-left:20px;">A graphical representation showing the amount of energy at each trophic level — it is widest at the base (producers) and narrows at the top (top predators).</span>
+        <span class="sline"><strong>Lindemann's 10% Law:</strong></span>
+        <span class="sline" style="padding-left:20px;">Only <strong>10%</strong> of energy at one trophic level is transferred to the next level.</span>
+        <span class="sline" style="padding-left:20px;"><strong>90% is lost</strong> due to:</span>
+        <span class="sline" style="padding-left:30px;">• Respiration — energy used for life activities</span>
+        <span class="sline" style="padding-left:30px;">• Heat loss to environment</span>
+        <span class="sline" style="padding-left:30px;">• Excretion — energy lost in wastes</span>
+        <span class="sline" style="padding-left:30px;">• Not all parts of an organism are eaten (bones, shells)</span>
+        <span class="sline"><strong>Example:</strong></span>
+        <span class="sline" style="padding-left:20px;">Grass: 10,000 J → Grasshopper: 1,000 J → Frog: 100 J → Snake: 10 J → Eagle: 1 J</span>
+        <span class="sline"><strong>Significance:</strong> Explains why food chains are short (3–5 levels) and why there are fewer top predators in nature.</span>
+        <div class="dn">📐 Draw pyramid with 4 levels: Producers (10,000 J) at base, then 1,000 J, 100 J, 10 J at top. Label each trophic level and show 90% loss arrows.</div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c8">Ch8</span><span class="itag">⭐ MOST IMP</span> C. Explain harmful microbes — types of diseases caused by bacteria, virus, fungi and protozoa. <span class="sm">(4M)</span></div>
+      <div class="sol">
+        <span class="sline"><strong>Harmful Microbes and Diseases:</strong></span>
+        <table class="bt">
+          <tr><th>Type of Microbe</th><th>Disease</th><th>Affected Organ</th><th>Prevention/Treatment</th></tr>
+          <tr><td><strong>Bacteria</strong></td><td>Tuberculosis, Cholera, Typhoid</td><td>Lungs, Intestine</td><td>Antibiotics, Vaccination (BCG)</td></tr>
+          <tr><td><strong>Virus</strong></td><td>COVID-19, Influenza, Polio, Measles</td><td>Lungs, Nerves</td><td>Vaccination, antiviral drugs</td></tr>
+          <tr><td><strong>Fungi</strong></td><td>Ringworm, Athlete's foot</td><td>Skin</td><td>Antifungal creams</td></tr>
+          <tr><td><strong>Protozoa</strong></td><td>Malaria, Amoebic dysentery</td><td>Blood, Intestine</td><td>Anti-malarial drugs, clean water</td></tr>
+        </table>
+        <span class="sline" style="margin-top:8px;"><strong>General Prevention:</strong></span>
+        <span class="sline" style="padding-left:20px;">• Proper vaccination schedule</span>
+        <span class="sline" style="padding-left:20px;">• Personal hygiene — wash hands regularly</span>
+        <span class="sline" style="padding-left:20px;">• Drink clean, boiled/filtered water</span>
+        <span class="sline" style="padding-left:20px;">• Mosquito control — eliminate stagnant water</span>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c9">Ch9</span><span class="itag">⭐ MOST IMP</span> D. Explain the causes and effects of air pollution. Name three air pollutants. <span class="sm">(4M)</span></div>
+      <div class="sol">
+        <span class="sline"><strong>Air Pollution:</strong> Addition of harmful gases, dust, smoke, and chemicals into the atmosphere that make it unhealthy for living organisms.</span>
+        <span class="sline"><strong>Three Major Air Pollutants:</strong></span>
+        <span class="sline" style="padding-left:20px;">1. <strong>Carbon dioxide (CO₂)</strong> — burning fossil fuels → greenhouse effect</span>
+        <span class="sline" style="padding-left:20px;">2. <strong>Sulphur dioxide (SO₂)</strong> — factories, power plants → acid rain</span>
+        <span class="sline" style="padding-left:20px;">3. <strong>Carbon monoxide (CO)</strong> — vehicle exhaust → poisonous gas, reduces O₂ in blood</span>
+        <span class="sline"><strong>Causes:</strong></span>
+        <span class="sline" style="padding-left:20px;">• Burning fossil fuels (coal, petrol, diesel) in vehicles and industries</span>
+        <span class="sline" style="padding-left:20px;">• Crop burning, waste burning in open</span>
+        <span class="sline" style="padding-left:20px;">• Industrial chimneys releasing toxic gases</span>
+        <span class="sline" style="padding-left:20px;">• Deforestation (fewer trees to absorb CO₂)</span>
+        <span class="sline"><strong>Effects:</strong></span>
+        <span class="sline" style="padding-left:20px;">• Respiratory diseases — asthma, bronchitis, lung cancer</span>
+        <span class="sline" style="padding-left:20px;">• Acid rain — damages crops, buildings, aquatic life</span>
+        <span class="sline" style="padding-left:20px;">• Global warming — melting ice, rising sea levels</span>
+        <span class="sline" style="padding-left:20px;">• Ozone depletion — UV radiation reaches Earth → skin cancer</span>
+        <span class="sline"><strong>Control:</strong> Use CNG/electric vehicles; plant trees; industrial filters; solar energy instead of coal.</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Q6 DETAILED -->
+<div class="section">
+  <div class="sh h6"><div class="qno">6</div><div class="qtitle">Answer the following in detail. (Any 2 out of 3) — 4 marks each</div><div class="qmarks">8 Marks</div></div>
+  <div class="sb">
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c7">Ch7</span><span class="itag">⭐ MOST IMP</span> A. Draw and explain a neat labelled diagram of a pond ecosystem. Name the biotic and abiotic components. <span class="sm">(4M)</span></div>
+      <div class="sol">
+        <span class="sline"><strong>Pond Ecosystem — a natural aquatic ecosystem:</strong></span>
+        <span class="sline"><strong>Abiotic Components:</strong></span>
+        <span class="sline" style="padding-left:20px;">• <strong>Sunlight</strong> — energy source for photosynthesis</span>
+        <span class="sline" style="padding-left:20px;">• <strong>Water</strong> — medium for all life processes</span>
+        <span class="sline" style="padding-left:20px;">• <strong>Temperature, pH, dissolved gases</strong> (O₂, CO₂)</span>
+        <span class="sline" style="padding-left:20px;">• <strong>Minerals/nutrients</strong> in water (nitrates, phosphates)</span>
+        <span class="sline"><strong>Biotic Components:</strong></span>
+        <span class="sline" style="padding-left:20px;">• <strong>Producers:</strong> Algae, aquatic plants (Hydrilla, Lotus) — photosynthesis</span>
+        <span class="sline" style="padding-left:20px;">• <strong>Primary Consumers:</strong> Zooplankton, small insects, tadpoles — eat algae</span>
+        <span class="sline" style="padding-left:20px;">• <strong>Secondary Consumers:</strong> Small fish — eat insects/tadpoles</span>
+        <span class="sline" style="padding-left:20px;">• <strong>Tertiary Consumers:</strong> Large fish, frogs — eat small fish</span>
+        <span class="sline" style="padding-left:20px;">• <strong>Decomposers:</strong> Bacteria, fungi — break down dead matter at pond bottom</span>
+        <span class="sline"><strong>Energy Flow:</strong> Sunlight → Algae → Zooplankton → Small fish → Large fish → Decomposers → Nutrients → Algae (cycle continues)</span>
+        <span class="sline"><strong>Feature:</strong> A pond is a self-sustaining ecosystem — it maintains its own balance as long as human interference is minimal.</span>
+        <div class="dn">📐 Draw pond cross-section: Sunlight at top → Lotus/algae (floating) → Small fish → Large fish → Mud at bottom (decomposers). Label all biotic and abiotic components with arrows showing energy flow.</div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c8">Ch8</span><span class="itag">⭐ MOST IMP</span> B. Explain the role of microbes in agriculture. How do they help in increasing soil fertility? <span class="sm">(4M)</span></div>
+      <div class="sol">
+        <span class="sline"><strong>Role of Microbes in Agriculture:</strong></span>
+        <span class="sline" style="padding-left:20px;"><strong>1. Nitrogen Fixation:</strong></span>
+        <span class="sline" style="padding-left:30px;">• Rhizobium bacteria live in root nodules of leguminous plants (peas, beans, groundnut)</span>
+        <span class="sline" style="padding-left:30px;">• Convert atmospheric N₂ → ammonia (NH₃) → nitrates → absorbed by plants as protein</span>
+        <span class="sline" style="padding-left:30px;">• Farmers grow legumes to naturally enrich the soil (biofertiliser)</span>
+        <span class="sline" style="padding-left:20px;"><strong>2. Decomposition:</strong></span>
+        <span class="sline" style="padding-left:30px;">• Bacteria and fungi break down dead plant/animal matter → humus</span>
+        <span class="sline" style="padding-left:30px;">• Humus improves soil structure, water retention, and mineral content</span>
+        <span class="sline" style="padding-left:20px;"><strong>3. Biofertilisers:</strong></span>
+        <span class="sline" style="padding-left:30px;">• Azotobacter, Cyanobacteria (blue-green algae) — free-living nitrogen fixers in soil</span>
+        <span class="sline" style="padding-left:30px;">• Mycorrhizal fungi help plant roots absorb water and minerals</span>
+        <span class="sline" style="padding-left:20px;"><strong>4. Biopesticides:</strong></span>
+        <span class="sline" style="padding-left:30px;">• Bacillus thuringiensis (Bt) bacteria — produces toxins that kill insect pests</span>
+        <span class="sline" style="padding-left:30px;">• Safer than chemical pesticides — no environmental harm</span>
+        <span class="sline" style="padding-left:20px;"><strong>5. Composting:</strong></span>
+        <span class="sline" style="padding-left:30px;">• Microbes decompose organic waste (kitchen waste, crop residue) → compost manure</span>
+        <span class="sline" style="padding-left:30px;">• Enriches soil with organic matter — better than chemical fertilisers</span>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c9">Ch9</span><span class="itag">⭐ MOST IMP</span> C. What is environmental management? Explain the need for conservation and the 3R principle. Give the role of government and citizens. <span class="sm">(4M)</span></div>
+      <div class="sol">
+        <span class="sline"><strong>Environmental Management:</strong> The process of taking steps to protect, conserve and sustainably use the natural environment — air, water, soil, forests, and wildlife — for present and future generations.</span>
+        <span class="sline"><strong>Need for Conservation:</strong></span>
+        <span class="sline" style="padding-left:20px;">• Natural resources (forests, water, fossil fuels) are limited and being overused</span>
+        <span class="sline" style="padding-left:20px;">• Pollution and habitat destruction threaten biodiversity</span>
+        <span class="sline" style="padding-left:20px;">• Climate change affects food security and human health</span>
+        <span class="sline" style="padding-left:20px;">• Future generations need these resources</span>
+        <span class="sline"><strong>3R Principle:</strong></span>
+        <span class="sline" style="padding-left:20px;">• <strong>Reduce:</strong> Use less — buy only what you need; avoid over-packaging; save water and electricity</span>
+        <span class="sline" style="padding-left:20px;">• <strong>Reuse:</strong> Use items multiple times — cloth bags instead of plastic, refillable bottles</span>
+        <span class="sline" style="padding-left:20px;">• <strong>Recycle:</strong> Convert waste into new products — paper, glass, metals, e-waste recycling</span>
+        <span class="sline"><strong>Role of Government:</strong></span>
+        <span class="sline" style="padding-left:20px;">• Pass and enforce environmental laws (Environment Protection Act 1986)</span>
+        <span class="sline" style="padding-left:20px;">• Create national parks, wildlife sanctuaries, biosphere reserves</span>
+        <span class="sline" style="padding-left:20px;">• Ban on plastic, pollution control regulations</span>
+        <span class="sline"><strong>Role of Citizens:</strong></span>
+        <span class="sline" style="padding-left:20px;">• Plant trees; save water; use public transport</span>
+        <span class="sline" style="padding-left:20px;">• Segregate waste; avoid burning garbage; report pollution</span>
+        <span class="sline" style="padding-left:20px;">• Participate in environmental campaigns (World Environment Day, Swachh Bharat)</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Q7 ACTIVITY BASED -->
+<div class="section">
+  <div class="sh h7"><div class="qno">7</div><div class="qtitle">🧪 Activity Based Question — Most Important <span class="itag">⭐ MOST IMP</span></div><div class="qmarks">4 Marks</div></div>
+  <div class="sb">
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c8">Ch8</span> A student is given a slide under the microscope. She sees tiny, rod-shaped structures with no nucleus. Answer the following questions: <span class="sm">(4M)</span></div>
+      <div class="sol">
+        <span class="sline"><span class="tag tag-ans">i.</span> <strong>What type of microorganism is the student observing?</strong></span>
+        <span class="sline" style="padding-left:20px;">The student is observing <strong>Bacteria</strong> — rod-shaped bacteria are called <strong>bacilli</strong> (singular: bacillus). They are prokaryotes — no membrane-bound nucleus.</span>
+
+        <span class="sline"><span class="tag tag-ans">ii.</span> <strong>Name the structural features that confirm this is a bacterium and not a plant cell or animal cell.</strong></span>
+        <span class="sline" style="padding-left:20px;">• <strong>No nucleus</strong> (prokaryote) — DNA is in the cytoplasm as a nucleoid</span>
+        <span class="sline" style="padding-left:20px;">• <strong>Cell wall</strong> present (made of peptidoglycan, not cellulose)</span>
+        <span class="sline" style="padding-left:20px;">• <strong>No membrane-bound organelles</strong> (no mitochondria, ER, Golgi)</span>
+        <span class="sline" style="padding-left:20px;">• Very small size (1–10 micrometres)</span>
+
+        <span class="sline"><span class="tag tag-ans">iii.</span> <strong>Name one harmful and one useful rod-shaped bacterium.</strong></span>
+        <span class="sline" style="padding-left:20px;"><strong>Harmful:</strong> Mycobacterium tuberculosis (causes Tuberculosis / TB)</span>
+        <span class="sline" style="padding-left:20px;"><strong>Useful:</strong> Lactobacillus acidophilus (converts milk to curd; used in probiotics)</span>
+
+        <span class="sline"><span class="tag tag-ans">iv.</span> <strong>How do bacteria reproduce? How fast can they multiply?</strong></span>
+        <span class="sline" style="padding-left:20px;">Bacteria reproduce by <strong>binary fission</strong> — one bacterium splits into two identical cells. Under favourable conditions, they can divide every 20–30 minutes. So in 10 hours, one bacterium can give rise to millions of bacteria! This is why infections spread rapidly.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MARKS TABLE -->
+<div style="max-width:900px;margin:16px auto;background:#fff;border-radius:12px;padding:18px 22px;box-shadow:0 2px 10px rgba(0,0,0,.08);">
+  <h3 style="color:#880e4f;margin-bottom:12px;font-size:.95rem;font-weight:800;">📊 Paper Pattern Summary</h3>
+  <table class="mt">
+    <tr><th>Q</th><th>Type</th><th>Most Important Topics</th><th style="text-align:center;">Marks</th></tr>
+    <tr><td>Q1</td><td>MCQ</td><td>Food chain, Bryophyta, Lactobacillus, Biodegradable waste, E-mail</td><td style="text-align:center;font-weight:700;">5</td></tr>
+    <tr><td>Q2</td><td>True/False</td><td>Angiosperms, Energy flow direction, Yeast-bread, Deforestation, Internet</td><td style="text-align:center;font-weight:700;">5</td></tr>
+    <tr><td>Q3</td><td>Match</td><td>Pteridophyta, 10% Law, Penicillin, Chipko Movement, RAM</td><td style="text-align:center;font-weight:700;">5</td></tr>
+    <tr><td>Q4</td><td>One Sentence</td><td>Monocot-Dicot, Trophic level, Vaccination, CFC-Ozone, Computer virus</td><td style="text-align:center;font-weight:700;">5</td></tr>
+    <tr><td>Q5</td><td>Short Notes (Any 2×4)</td><td>Gymnosperms, Energy pyramid 10% law, Diseases table, Air pollution</td><td style="text-align:center;font-weight:700;">8</td></tr>
+    <tr><td>Q6</td><td>Detail (Any 2×4)</td><td>Pond ecosystem diagram, Microbes in agriculture, 3R principle</td><td style="text-align:center;font-weight:700;">8</td></tr>
+    <tr><td>Q7</td><td>🧪 Activity</td><td>Bacteria — structure, identification, reproduction (binary fission)</td><td style="text-align:center;font-weight:700;">4</td></tr>
+    <tr style="background:#fce4ec;"><td colspan="3"><strong>TOTAL</strong></td><td style="text-align:center;font-weight:900;font-size:1.05rem;color:#880e4f;">40</td></tr>
+  </table>
+</div>
+
+<footer><p>Visions Classes · visionslearning.in · <a href="notes-class9.html">← Back to Class 9 Notes</a></p></footer>
+
+<div style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;opacity:0.07;user-select:none;">
+  <svg width="320" height="320" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="160" cy="160" r="145" fill="none" stroke="#880e4f" stroke-width="6"/>
+    <circle cx="160" cy="160" r="130" fill="none" stroke="#880e4f" stroke-width="2"/>
+    <path id="tp3" fill="none" d="M 30,160 a130,130 0 1,1 260,0"/>
+    <path id="bp3" fill="none" d="M 30,160 a130,130 0 0,0 260,0"/>
+    <text font-size="18" font-weight="900" fill="#880e4f" font-family="Arial,sans-serif" letter-spacing="4"><textPath href="#tp3" startOffset="8%">VISIONS CLASSES · VISIONSLEARNING.IN ·</textPath></text>
+    <text font-size="15" font-weight="900" fill="#880e4f" font-family="Arial,sans-serif" letter-spacing="3"><textPath href="#bp3" startOffset="8%">SCIENCE · CLASS 9 · MAHARASHTRA BOARD</textPath></text>
+    <text x="160" y="150" text-anchor="middle" font-size="22" font-weight="900" fill="#880e4f" font-family="Arial,sans-serif">VISIONS</text>
+    <text x="160" y="178" text-anchor="middle" font-size="22" font-weight="900" fill="#880e4f" font-family="Arial,sans-serif">CLASSES</text>
+    <text x="160" y="204" text-anchor="middle" font-size="11" font-weight="700" fill="#880e4f" font-family="Arial,sans-serif" letter-spacing="1">★ MOST IMP ★</text>
+  </svg>
+</div>
+</body>
+</html>
