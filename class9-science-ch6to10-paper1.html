@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Class 9 Science — Ch.6–10 Paper 1 | Maharashtra Board</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size:15px;}
+  .site-header{background:linear-gradient(135deg,#1b5e20,#2e7d32,#00695c);padding:14px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 3px 12px rgba(0,0,0,.3);}
+  .site-header a{color:#a5d6a7;text-decoration:none;font-size:.85rem;font-weight:600;}
+  .site-header a:hover{color:#fff;}
+  .header-title{color:#fff;font-size:1.05rem;font-weight:800;}
+  .hero{background:linear-gradient(135deg,#1b5e20 0%,#2e7d32 45%,#00695c 100%);padding:30px 20px 24px;text-align:center;color:#fff;}
+  .board-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:5px 18px;font-size:.73rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;}
+  .hero h1{font-size:1.55rem;font-weight:900;line-height:1.25;margin-bottom:6px;}
+  .hero .sub{font-size:.88rem;color:rgba(255,255,255,.85);}
+  .ch-strip{max-width:900px;margin:14px auto 0;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:0 12px;}
+  .ch-tag{background:#fff;color:#1b5e20;font-size:.72rem;font-weight:800;padding:5px 12px;border-radius:14px;border:2px solid #a5d6a7;}
+  .instr{background:#e8f5e9;border-left:4px solid #2e7d32;margin:16px auto;max-width:900px;padding:14px 20px;border-radius:8px;font-size:.87rem;line-height:1.7;}
+  .instr strong{color:#1b5e20;}
+  /* SECTION CARD */
+  .section{max-width:900px;margin:12px auto;background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.09);overflow:hidden;}
+  .sh{padding:13px 22px;display:flex;align-items:center;gap:12px;}
+  .sh .qno{background:#fff;font-weight:900;font-size:.95rem;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .sh .qtitle{color:#fff;font-size:.95rem;font-weight:800;flex:1;line-height:1.3;}
+  .sh .qmarks{background:rgba(255,255,255,.2);color:#fff;font-size:.8rem;font-weight:700;padding:4px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.35);white-space:nowrap;}
+  .h1{background:linear-gradient(135deg,#1b5e20,#2e7d32);} .h1 .qno{color:#1b5e20;}
+  .h2{background:linear-gradient(135deg,#0d47a1,#1565c0);} .h2 .qno{color:#0d47a1;}
+  .h3{background:linear-gradient(135deg,#e65100,#f57c00);} .h3 .qno{color:#e65100;}
+  .h4{background:linear-gradient(135deg,#880e4f,#c2185b);} .h4 .qno{color:#880e4f;}
+  .h5{background:linear-gradient(135deg,#4a148c,#7b1fa2);} .h5 .qno{color:#4a148c;}
+  .h6{background:linear-gradient(135deg,#006064,#00838f);} .h6 .qno{color:#006064;}
+  .h7{background:linear-gradient(135deg,#bf360c,#e64a19);} .h7 .qno{color:#bf360c;}
+  .sb{padding:18px 24px;}
+  .cl{display:inline-block;font-size:.68rem;font-weight:800;padding:2px 8px;border-radius:7px;margin-right:5px;text-transform:uppercase;letter-spacing:.8px;}
+  .c6{background:#e8f5e9;color:#1b5e20;} .c7{background:#e3f2fd;color:#0d47a1;} .c8{background:#fff3e0;color:#e65100;} .c9{background:#fce4ec;color:#880e4f;} .c10{background:#f3e5f5;color:#4a148c;}
+  /* MCQ */
+  .mcq-item{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid #f0f4f8;}
+  .mcq-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+  .mcq-q{font-size:.92rem;font-weight:700;margin-bottom:8px;line-height:1.5;}
+  .opts{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+  .opt{background:#f5f7fa;border:1.5px solid #e0e7ef;border-radius:8px;padding:7px 12px;font-size:.85rem;}
+  .opt.c{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700;}
+  .ab{display:inline-block;background:#e8f5e9;color:#1b5e20;font-size:.74rem;font-weight:700;padding:3px 10px;border-radius:10px;margin-top:6px;border:1px solid #a5d6a7;}
+  /* T/F */
+  .tf-item{display:flex;align-items:flex-start;gap:11px;padding:10px 0;border-bottom:1px solid #f0f4f8;}
+  .tf-item:last-child{border-bottom:none;}
+  .tf-q{font-size:.88rem;line-height:1.5;flex:1;}
+  .t{background:#e8f5e9;color:#1b5e20;border:1px solid #a5d6a7;font-size:.77rem;font-weight:700;padding:3px 10px;border-radius:10px;white-space:nowrap;flex-shrink:0;}
+  .f{background:#ffebee;color:#b71c1c;border:1px solid #ef9a9a;font-size:.77rem;font-weight:700;padding:3px 10px;border-radius:10px;white-space:nowrap;flex-shrink:0;}
+  .fc{font-size:.8rem;color:#b71c1c;padding:3px 34px 8px;background:#fff3f3;border-radius:6px;}
+  /* Match */
+  .mw{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .mw h4{font-size:.8rem;font-weight:800;color:#e65100;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+  .mr{padding:7px 11px;background:#f5f7fa;border-radius:7px;font-size:.86rem;margin-bottom:5px;border:1px solid #e0e7ef;}
+  .mk{font-weight:700;color:#e65100;}
+  .mat{margin-top:12px;width:100%;border-collapse:collapse;font-size:.83rem;}
+  .mat th{background:#e65100;color:#fff;padding:7px 12px;text-align:left;}
+  .mat td{padding:7px 12px;border-bottom:1px solid #e8edf2;}
+  .mat tr:nth-child(even) td{background:#fff3e0;}
+  /* Answers */
+  .ans-item{padding:12px 0;border-bottom:1px solid #f0f4f8;}
+  .ans-item:last-child{border-bottom:none;}
+  .ans-q{font-size:.92rem;font-weight:700;margin-bottom:7px;line-height:1.5;}
+  .sm{font-size:.73rem;color:#888;font-weight:600;margin-left:4px;}
+  /* SLINE vertical format */
+  .sol{padding:0;margin-top:6px;}
+  .sline{display:block;font-size:.92rem;line-height:1;padding:8px 0;border-bottom:1px solid #f5f5f5;}
+  .sline:last-child{border-bottom:none;}
+  .tag{display:inline-block;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;padding:2px 8px;border-radius:8px;margin-right:8px;vertical-align:middle;}
+  .tag-ans{background:#e8f5e9;color:#1b5e20;}
+  .tag-exp{background:#e3f2fd;color:#0d47a1;}
+  .sline-ans{display:block;background:#f0fdf4;border-left:4px solid #16a34a;padding:10px 16px;border-radius:0 8px 8px 0;margin-top:5px;font-size:.92rem;font-weight:700;color:#166534;}
+  .dn{background:#e8eaf6;border:1.5px dashed #5c6bc0;border-radius:8px;padding:9px 13px;font-size:.79rem;color:#3949ab;margin-top:8px;text-align:center;}
+  /* marks table */
+  table.mt{width:100%;border-collapse:collapse;font-size:.84rem;}
+  table.mt th{background:linear-gradient(135deg,#1b5e20,#2e7d32);color:#fff;padding:7px 12px;text-align:left;}
+  table.mt td{padding:7px 12px;border-bottom:1px solid #e8edf2;}
+  table.mt tr:nth-child(even) td{background:#f1fbf1;}
+  footer{text-align:center;padding:24px 16px;font-size:.8rem;color:#888;}
+  footer a{color:#2e7d32;text-decoration:none;}
+  @media(max-width:600px){.opts{grid-template-columns:1fr;}.mw{grid-template-columns:1fr;}.hero h1{font-size:1.2rem;}}
+</style>
+</head>
+<body>
+<div class="site-header">
+  <a href="notes-class9.html">← Class 9 Notes</a>
+  <span style="color:rgba(255,255,255,.4);">|</span>
+  <span class="header-title">Class 9 Science — Ch.6–10 Paper 1</span>
+</div>
+
+<div class="hero">
+  <div class="board-tag">Maharashtra State Board · Class 9 · Science</div>
+  <h1>Science — Paper 1 (Ch. 6 to 10)<br>Most Important Questions with Answers</h1>
+  <div class="sub">Maharashtra Board Pattern · 40 Marks · All Questions Compulsory</div>
+</div>
+
+<div class="ch-strip">
+  <span class="ch-tag">Ch6: Classification of Plants</span>
+  <span class="ch-tag">Ch7: Energy Flow in Ecosystem</span>
+  <span class="ch-tag">Ch8: Useful & Harmful Microbes</span>
+  <span class="ch-tag">Ch9: Environmental Management</span>
+  <span class="ch-tag">Ch10: ICT</span>
+</div>
+
+<div class="instr" style="margin-top:14px;">
+  <strong>General Instructions:</strong> All questions are compulsory. Figures to the right indicate marks.
+  Answers are provided below each question for self-evaluation. Draw neat labelled diagrams wherever necessary.
+</div>
+
+<!-- Q1 MCQ -->
+<div class="section">
+  <div class="sh h1"><div class="qno">1</div><div class="qtitle">Choose the correct alternative and rewrite the statement.</div><div class="qmarks">5 Marks</div></div>
+  <div class="sb">
+
+    <div class="mcq-item">
+      <span class="cl c6">Ch6</span>
+      <div class="mcq-q">i. Which of the following is a non-flowering plant (cryptogam)?</div>
+      <div class="opts">
+        <div class="opt">a) Mango</div><div class="opt c">b) Fern</div>
+        <div class="opt">c) Rose</div><div class="opt">d) Wheat</div>
+      </div>
+      <span class="ab">✓ (b) Fern — Pteridophyte; reproduces by spores, no flowers or seeds</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c7">Ch7</span>
+      <div class="mcq-q">ii. Which of the following organisms is a decomposer in an ecosystem?</div>
+      <div class="opts">
+        <div class="opt">a) Grass</div><div class="opt">b) Deer</div>
+        <div class="opt c">c) Fungi</div><div class="opt">d) Lion</div>
+      </div>
+      <span class="ab">✓ (c) Fungi — breaks down dead organic matter, returns nutrients to soil</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c8">Ch8</span>
+      <div class="mcq-q">iii. Penicillin antibiotic is obtained from ________.</div>
+      <div class="opts">
+        <div class="opt c">a) Penicillium fungus</div><div class="opt">b) Bacteria</div>
+        <div class="opt">c) Virus</div><div class="opt">d) Algae</div>
+      </div>
+      <span class="ab">✓ (a) Penicillium notatum fungus — discovered by Alexander Fleming (1928)</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c9">Ch9</span>
+      <div class="mcq-q">iv. Which gas is mainly responsible for global warming?</div>
+      <div class="opts">
+        <div class="opt">a) Oxygen (O₂)</div><div class="opt">b) Nitrogen (N₂)</div>
+        <div class="opt c">c) Carbon dioxide (CO₂)</div><div class="opt">d) Hydrogen (H₂)</div>
+      </div>
+      <span class="ab">✓ (c) CO₂ — main greenhouse gas responsible for global warming</span>
+    </div>
+
+    <div class="mcq-item">
+      <span class="cl c10">Ch10</span>
+      <div class="mcq-q">v. The full form of 'ICT' is ________.</div>
+      <div class="opts">
+        <div class="opt c">a) Information Communication Technology</div><div class="opt">b) International Computer Technology</div>
+        <div class="opt">c) Internet and Computer Tools</div><div class="opt">d) Integrated Circuit Technology</div>
+      </div>
+      <span class="ab">✓ (a) Information Communication Technology</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- Q2 TRUE/FALSE -->
+<div class="section">
+  <div class="sh h2"><div class="qno">2</div><div class="qtitle">State whether the following statements are True or False. If false, rewrite the correct statement.</div><div class="qmarks">5 Marks</div></div>
+  <div class="sb">
+
+    <div class="tf-item"><div style="flex:1;"><span class="cl c6">Ch6</span><div class="tf-q">i. Gymnosperms are plants that bear naked seeds not enclosed in a fruit.</div></div><span class="t">TRUE</span></div>
+
+    <div class="tf-item"><div style="flex:1;"><span class="cl c7">Ch7</span><div class="tf-q">ii. Producers in an ecosystem are animals that feed on plants.</div></div><span class="f">FALSE</span></div>
+    <div class="fc">✎ Correct: Producers are <strong>green plants (autotrophs)</strong> that prepare their own food through photosynthesis. Animals that eat plants are called primary consumers/herbivores.</div>
+
+    <div class="tf-item"><div style="flex:1;"><span class="cl c8">Ch8</span><div class="tf-q">iii. Viruses can grow and reproduce outside a living host cell.</div></div><span class="f">FALSE</span></div>
+    <div class="fc">✎ Correct: Viruses are <strong>obligate intracellular parasites</strong> — they can only reproduce inside a living host cell. Outside a host, they are non-living.</div>
+
+    <div class="tf-item"><div style="flex:1;"><span class="cl c9">Ch9</span><div class="tf-q">iv. The 3R principle stands for Reduce, Reuse, and Recycle.</div></div><span class="t">TRUE</span></div>
+
+    <div class="tf-item"><div style="flex:1;"><span class="cl c10">Ch10</span><div class="tf-q">v. E-mail can be used to send messages, images, and documents instantly over the internet.</div></div><span class="t">TRUE</span></div>
+
+  </div>
+</div>
+
+<!-- Q3 MATCH -->
+<div class="section">
+  <div class="sh h3"><div class="qno">3</div><div class="qtitle">Match the columns A and B.</div><div class="qmarks">5 Marks</div></div>
+  <div class="sb">
+    <div class="mw">
+      <div>
+        <h4>Column A</h4>
+        <div class="mr"><span class="mk">A.</span> Bryophytes</div>
+        <div class="mr"><span class="mk">B.</span> Food chain</div>
+        <div class="mr"><span class="mk">C.</span> Lactobacillus</div>
+        <div class="mr"><span class="mk">D.</span> Ozone layer</div>
+        <div class="mr"><span class="mk">E.</span> Internet</div>
+      </div>
+      <div>
+        <h4>Column B</h4>
+        <div class="mr">1. Global network of computers</div>
+        <div class="mr">2. Protects from UV radiation</div>
+        <div class="mr">3. Grass → Grasshopper → Frog → Snake</div>
+        <div class="mr">4. Used in making curd/yoghurt</div>
+        <div class="mr">5. Amphibians of plant kingdom (Mosses)</div>
+      </div>
+    </div>
+    <table class="mat">
+      <tr><th>Column A</th><th>Match</th><th>Column B</th></tr>
+      <tr><td>A. Bryophytes</td><td>→ 5</td><td>Amphibians of plant kingdom (Mosses)</td></tr>
+      <tr><td>B. Food chain</td><td>→ 3</td><td>Grass → Grasshopper → Frog → Snake</td></tr>
+      <tr><td>C. Lactobacillus</td><td>→ 4</td><td>Used in making curd/yoghurt</td></tr>
+      <tr><td>D. Ozone layer</td><td>→ 2</td><td>Protects from UV radiation</td></tr>
+      <tr><td>E. Internet</td><td>→ 1</td><td>Global network of computers</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Q4 ONE SENTENCE -->
+<div class="section">
+  <div class="sh h4"><div class="qno">4</div><div class="qtitle">Answer the following questions in one sentence each.</div><div class="qmarks">5 Marks</div></div>
+  <div class="sb">
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c6">Ch6</span> i. What are angiosperms?</div>
+      <div class="sol">
+        <span class="sline"><span class="tag tag-ans">Answer</span> Angiosperms are flowering plants whose seeds are enclosed within a fruit (angiosperm = enclosed seed); they are the most advanced and largest group of plants. Examples: mango, rose, wheat, sunflower.</span>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c7">Ch7</span> ii. What is a food web?</div>
+      <div class="sol">
+        <span class="sline"><span class="tag tag-ans">Answer</span> A food web is an interconnected network of multiple overlapping food chains in an ecosystem where an organism may feed on more than one type of organism and may also be eaten by multiple predators.</span>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c8">Ch8</span> iii. What is pasteurisation?</div>
+      <div class="sol">
+        <span class="sline"><span class="tag tag-ans">Answer</span> Pasteurisation is the process of heating milk or other food to a specific temperature (72°C for 15 seconds or 63°C for 30 minutes) to kill harmful microbes without completely sterilising the food; named after Louis Pasteur.</span>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c9">Ch9</span> iv. Define biodiversity.</div>
+      <div class="sol">
+        <span class="sline"><span class="tag tag-ans">Answer</span> Biodiversity refers to the variety of all living organisms (plants, animals, microorganisms) and their ecosystems on Earth, including genetic diversity, species diversity, and ecosystem diversity.</span>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c10">Ch10</span> v. What is a search engine? Give one example.</div>
+      <div class="sol">
+        <span class="sline"><span class="tag tag-ans">Answer</span> A search engine is a software program that searches the internet for information based on keywords entered by the user and displays a list of relevant websites. Examples: Google, Bing, Yahoo.</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Q5 SHORT NOTES -->
+<div class="section">
+  <div class="sh h5"><div class="qno">5</div><div class="qtitle">Write short notes. (Any 2 out of 4) — 4 marks each</div><div class="qmarks">8 Marks</div></div>
+  <div class="sb">
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c6">Ch6</span> A. Classification of plants — Cryptogams and Phanerogams. <span class="sm">(4M)</span></div>
+      <div class="sol">
+        <span class="sline"><span class="tag tag-ans">Plant Kingdom</span> Plants are classified into two main groups:</span>
+        <span class="sline" style="padding-left:20px;">1. <strong>Cryptogams</strong> (hidden reproductive organs, no seeds):</span>
+        <span class="sline" style="padding-left:30px;">• <strong>Thallophyta:</strong> Simple body, no roots/stem/leaves. E.g., Algae (Spirogyra, Ulva)</span>
+        <span class="sline" style="padding-left:30px;">• <strong>Bryophyta:</strong> 'Amphibians of plant kingdom'; grow in moist places; no vascular tissue. E.g., Moss (Funaria), Liverworts (Marchantia)</span>
+        <span class="sline" style="padding-left:30px;">• <strong>Pteridophyta:</strong> First vascular plants; reproduce by spores; no seeds. E.g., Fern, Horsetail (Equisetum)</span>
+        <span class="sline" style="padding-left:20px;">2. <strong>Phanerogams</strong> (visible reproductive organs, bear seeds):</span>
+        <span class="sline" style="padding-left:30px;">• <strong>Gymnosperms:</strong> Naked seeds (not in fruit). E.g., Pine, Cycas, Pinus</span>
+        <span class="sline" style="padding-left:30px;">• <strong>Angiosperms:</strong> Seeds enclosed in fruit (most evolved). E.g., Mango, Wheat</span>
+        <div class="dn">📐 Draw classification chart: Kingdom Plantae → Cryptogams (Thallophyta, Bryophyta, Pteridophyta) and Phanerogams (Gymnosperms, Angiosperms)</div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c7">Ch7</span> B. Energy flow in an ecosystem — food chain and 10% law. <span class="sm">(4M)</span></div>
+      <div class="sol">
+        <span class="sline"><span class="tag tag-ans">Energy Flow</span></span>
+        <span class="sline" style="padding-left:20px;"><strong>Food Chain:</strong> A linear sequence showing how energy is transferred from one organism to another through feeding.</span>
+        <span class="sline" style="padding-left:20px;">Example: Grass → Grasshopper → Frog → Snake → Eagle</span>
+        <span class="sline" style="padding-left:20px;"><strong>Trophic levels:</strong> Each feeding level. Producers = 1st trophic level; Primary consumers = 2nd; Secondary consumers = 3rd.</span>
+        <span class="sline" style="padding-left:20px;"><strong>10% Law (Lindemann's Law):</strong> Only 10% of the energy at one trophic level is transferred to the next trophic level. 90% is lost as heat, respiration, excretion.</span>
+        <span class="sline" style="padding-left:20px;">If grass has 10,000 J → Grasshopper gets 1,000 J → Frog gets 100 J → Snake gets 10 J → Eagle gets 1 J.</span>
+        <span class="sline" style="padding-left:20px;"><strong>Significance:</strong> Explains why food chains are short (3-4 levels) and why large predators are few in number.</span>
+        <div class="dn">📐 Draw energy pyramid showing 10,000 J → 1,000 J → 100 J → 10 J at each trophic level.</div>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c8">Ch8</span> C. Useful microbes — explain with examples how microbes help humans. <span class="sm">(4M)</span></div>
+      <div class="sol">
+        <span class="sline"><span class="tag tag-ans">Useful Microbes</span></span>
+        <span class="sline" style="padding-left:20px;"><strong>1. In Food Production:</strong></span>
+        <span class="sline" style="padding-left:30px;">• Lactobacillus → converts milk to curd (yoghurt)</span>
+        <span class="sline" style="padding-left:30px;">• Yeast (Saccharomyces) → fermentation → bread making (CO₂ makes bread rise), alcohol production</span>
+        <span class="sline" style="padding-left:30px;">• Acetobacter → vinegar from alcohol</span>
+        <span class="sline" style="padding-left:20px;"><strong>2. In Medicine:</strong></span>
+        <span class="sline" style="padding-left:30px;">• Penicillium → Penicillin antibiotic (kills bacteria)</span>
+        <span class="sline" style="padding-left:30px;">• Bacteria used to produce insulin (for diabetes treatment)</span>
+        <span class="sline" style="padding-left:20px;"><strong>3. In Agriculture:</strong></span>
+        <span class="sline" style="padding-left:30px;">• Rhizobium bacteria in root nodules → fix nitrogen from air → fertilise soil</span>
+        <span class="sline" style="padding-left:30px;">• Decomposers break dead matter → enrich soil with nutrients</span>
+        <span class="sline" style="padding-left:20px;"><strong>4. In Environment:</strong></span>
+        <span class="sline" style="padding-left:30px;">• Bacteria decompose sewage in biogas plants → produce methane fuel</span>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c9">Ch9</span> D. Explain global warming — causes, effects and control measures. <span class="sm">(4M)</span></div>
+      <div class="sol">
+        <span class="sline"><span class="tag tag-ans">Global Warming</span></span>
+        <span class="sline" style="padding-left:20px;"><strong>Definition:</strong> Rise in the average global temperature due to the increased concentration of greenhouse gases (CO₂, CH₄, N₂O, H₂O vapour) in the atmosphere — they trap outgoing infrared radiation.</span>
+        <span class="sline" style="padding-left:20px;"><strong>Causes:</strong></span>
+        <span class="sline" style="padding-left:30px;">• Burning fossil fuels → CO₂ increase</span>
+        <span class="sline" style="padding-left:30px;">• Deforestation → less CO₂ absorbed</span>
+        <span class="sline" style="padding-left:30px;">• Industrial emissions, cattle farming (CH₄)</span>
+        <span class="sline" style="padding-left:20px;"><strong>Effects:</strong></span>
+        <span class="sline" style="padding-left:30px;">• Melting of polar ice caps and glaciers</span>
+        <span class="sline" style="padding-left:30px;">• Rise in sea level → flooding of coastal areas</span>
+        <span class="sline" style="padding-left:30px;">• Extreme weather events (droughts, floods, cyclones)</span>
+        <span class="sline" style="padding-left:30px;">• Loss of biodiversity; extinction of species</span>
+        <span class="sline" style="padding-left:20px;"><strong>Control:</strong></span>
+        <span class="sline" style="padding-left:30px;">• Reduce fossil fuel use → switch to renewable energy</span>
+        <span class="sline" style="padding-left:30px;">• Afforestation (plant more trees)</span>
+        <span class="sline" style="padding-left:30px;">• International agreements (Kyoto Protocol, Paris Agreement)</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Q6 DETAILED ANSWER -->
+<div class="section">
+  <div class="sh h6"><div class="qno">6</div><div class="qtitle">Answer the following questions in detail. (Any 2 out of 3) — 4 marks each</div><div class="qmarks">8 Marks</div></div>
+  <div class="sb">
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c6">Ch6</span> A. Explain the characteristics of Gymnosperms and Angiosperms with two examples of each. Also distinguish between monocots and dicots. <span class="sm">(4M)</span></div>
+      <div class="sol">
+        <span class="sline"><strong>Gymnosperms (Naked seed plants):</strong></span>
+        <span class="sline" style="padding-left:20px;">• Seeds are not enclosed in a fruit (naked/exposed seeds)</span>
+        <span class="sline" style="padding-left:20px;">• Do not produce flowers; produce cones</span>
+        <span class="sline" style="padding-left:20px;">• Perennial, mostly evergreen trees</span>
+        <span class="sline" style="padding-left:20px;">• Examples: Pine (Pinus), Cycas, Cedar (Cedrus), Fir</span>
+        <span class="sline"><strong>Angiosperms (Enclosed seed plants):</strong></span>
+        <span class="sline" style="padding-left:20px;">• Seeds enclosed within a fruit (most evolved plants)</span>
+        <span class="sline" style="padding-left:20px;">• Produce flowers and fruits; most diverse plant group</span>
+        <span class="sline" style="padding-left:20px;">• Examples: Mango, Rose, Wheat, Sunflower, Coconut</span>
+        <span class="sline"><strong>Monocots vs Dicots:</strong></span>
+        <span class="sline" style="padding-left:20px;">• Monocots: 1 cotyledon, parallel venation, fibrous roots. E.g., Wheat, Maize, Grass, Bamboo</span>
+        <span class="sline" style="padding-left:20px;">• Dicots: 2 cotyledons, reticulate (network) venation, tap roots. E.g., Mango, Rose, Pea, Sunflower</span>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c8">Ch8</span> B. Explain harmful effects of microbes on human health. Name the disease, causative organism and mode of transmission for any four diseases. <span class="sm">(4M)</span></div>
+      <div class="sol">
+        <span class="sline"><strong>Harmful Microbes — Diseases:</strong></span>
+        <table style="width:100%;border-collapse:collapse;font-size:.83rem;margin-top:8px;">
+          <tr style="background:#0d47a1;color:#fff;"><th style="padding:6px 10px;">Disease</th><th style="padding:6px 10px;">Causative Organism</th><th style="padding:6px 10px;">Mode of Transmission</th></tr>
+          <tr><td style="padding:6px 10px;border-bottom:1px solid #e8edf2;">Tuberculosis (TB)</td><td style="padding:6px 10px;border-bottom:1px solid #e8edf2;">Mycobacterium tuberculosis (Bacteria)</td><td style="padding:6px 10px;border-bottom:1px solid #e8edf2;">Air (coughing, sneezing)</td></tr>
+          <tr style="background:#f8fafc;"><td style="padding:6px 10px;border-bottom:1px solid #e8edf2;">Malaria</td><td style="padding:6px 10px;border-bottom:1px solid #e8edf2;">Plasmodium (Protozoan)</td><td style="padding:6px 10px;border-bottom:1px solid #e8edf2;">Bite of female Anopheles mosquito</td></tr>
+          <tr><td style="padding:6px 10px;border-bottom:1px solid #e8edf2;">Influenza (Flu)</td><td style="padding:6px 10px;border-bottom:1px solid #e8edf2;">Influenza virus</td><td style="padding:6px 10px;border-bottom:1px solid #e8edf2;">Air / contact with infected person</td></tr>
+          <tr style="background:#f8fafc;"><td style="padding:6px 10px;">Cholera</td><td style="padding:6px 10px;">Vibrio cholerae (Bacteria)</td><td style="padding:6px 10px;">Contaminated water and food</td></tr>
+        </table>
+        <span class="sline" style="margin-top:8px;"><strong>Prevention:</strong> Vaccination, clean water, personal hygiene, mosquito control, proper food handling.</span>
+      </div>
+    </div>
+
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c9">Ch9</span> C. What is environmental management? Explain the importance of conservation of biodiversity and methods used. <span class="sm">(4M)</span></div>
+      <div class="sol">
+        <span class="sline"><strong>Environmental Management:</strong> The process of protecting and sustainably managing the environment — its air, water, soil, and biodiversity — so that natural resources are available for present and future generations.</span>
+        <span class="sline"><strong>Importance of Biodiversity Conservation:</strong></span>
+        <span class="sline" style="padding-left:20px;">• Maintains ecological balance and food chains</span>
+        <span class="sline" style="padding-left:20px;">• Provides food, medicine, oxygen, raw materials</span>
+        <span class="sline" style="padding-left:20px;">• Prevents soil erosion and regulates climate</span>
+        <span class="sline" style="padding-left:20px;">• Each species plays a role in the ecosystem; loss of one affects others</span>
+        <span class="sline"><strong>Methods of Conservation:</strong></span>
+        <span class="sline" style="padding-left:20px;">1. <strong>In-situ (on-site):</strong> Protect species in their natural habitat</span>
+        <span class="sline" style="padding-left:30px;">• Wildlife sanctuaries (e.g., Sanjay Gandhi NP)</span>
+        <span class="sline" style="padding-left:30px;">• National parks, Biosphere reserves</span>
+        <span class="sline" style="padding-left:30px;">• Sacred groves (Devrai in Maharashtra)</span>
+        <span class="sline" style="padding-left:20px;">2. <strong>Ex-situ (off-site):</strong> Protect species outside natural habitat</span>
+        <span class="sline" style="padding-left:30px;">• Zoos, botanical gardens, aquaria</span>
+        <span class="sline" style="padding-left:30px;">• Seed banks, gene banks</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Q7 ACTIVITY BASED -->
+<div class="section">
+  <div class="sh h7"><div class="qno">7</div><div class="qtitle">🧪 Activity Based Question — Observe and Answer.</div><div class="qmarks">4 Marks</div></div>
+  <div class="sb">
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c7">Ch7</span> A student collected data from a forest ecosystem and drew the following food chain:<br><br>
+      <strong>Grass → Rabbit → Fox → Tiger</strong><br><br>
+      Answer the following questions: <span class="sm">(4M)</span></div>
+      <div class="sol">
+        <span class="sline"><span class="tag tag-ans">i.</span> <strong>Identify the producer and consumers:</strong></span>
+        <span class="sline" style="padding-left:20px;">Producer: <strong>Grass</strong> (makes its own food by photosynthesis)</span>
+        <span class="sline" style="padding-left:20px;">Primary consumer: <strong>Rabbit</strong> (herbivore, eats grass)</span>
+        <span class="sline" style="padding-left:20px;">Secondary consumer: <strong>Fox</strong> (carnivore, eats rabbit)</span>
+        <span class="sline" style="padding-left:20px;">Tertiary consumer: <strong>Tiger</strong> (carnivore, top predator)</span>
+
+        <span class="sline"><span class="tag tag-ans">ii.</span> <strong>If grass has 10,000 J of energy, how much energy does the tiger receive?</strong></span>
+        <span class="sline" style="padding-left:20px;">Using 10% Law: Grass (10,000 J) → Rabbit (1,000 J) → Fox (100 J) → Tiger (<strong>10 J</strong>)</span>
+
+        <span class="sline"><span class="tag tag-ans">iii.</span> <strong>What happens if all foxes are removed from this ecosystem?</strong></span>
+        <span class="sline" style="padding-left:20px;">Rabbit population increases rapidly (no predator) → Rabbits overgraze grass → Grass decreases → Less food for tigers too → Ecosystem becomes unbalanced.</span>
+
+        <span class="sline"><span class="tag tag-ans">iv.</span> <strong>What is the role of decomposers in this food chain?</strong></span>
+        <span class="sline" style="padding-left:20px;">Decomposers (bacteria, fungi) break down dead organisms at every level → return nutrients to soil → grass and other plants absorb these nutrients → energy cycle continues.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MARKS TABLE -->
+<div style="max-width:900px;margin:16px auto;background:#fff;border-radius:12px;padding:18px 22px;box-shadow:0 2px 10px rgba(0,0,0,.08);">
+  <h3 style="color:#1b5e20;margin-bottom:12px;font-size:.95rem;font-weight:800;">📊 Maharashtra Board Class 9 Science — Paper Pattern</h3>
+  <table class="mt">
+    <tr><th>Q</th><th>Type</th><th>Chapters</th><th style="text-align:center;">Marks</th></tr>
+    <tr><td>Q1</td><td>MCQ (5×1)</td><td>Ch6,7,8,9,10</td><td style="text-align:center;font-weight:700;">5</td></tr>
+    <tr><td>Q2</td><td>True/False</td><td>Ch6,7,8,9,10</td><td style="text-align:center;font-weight:700;">5</td></tr>
+    <tr><td>Q3</td><td>Match Columns</td><td>Ch6,7,8,9,10</td><td style="text-align:center;font-weight:700;">5</td></tr>
+    <tr><td>Q4</td><td>One Sentence Answer</td><td>Ch6,7,8,9,10</td><td style="text-align:center;font-weight:700;">5</td></tr>
+    <tr><td>Q5</td><td>Short Notes (Any 2×4)</td><td>Ch6,7,8,9</td><td style="text-align:center;font-weight:700;">8</td></tr>
+    <tr><td>Q6</td><td>Detailed Answer (Any 2×4)</td><td>Ch6,8,9</td><td style="text-align:center;font-weight:700;">8</td></tr>
+    <tr><td>Q7</td><td>🧪 Activity Based</td><td>Ch7</td><td style="text-align:center;font-weight:700;">4</td></tr>
+    <tr style="background:#e8f5e9;"><td colspan="3"><strong>TOTAL</strong></td><td style="text-align:center;font-weight:900;font-size:1.05rem;color:#1b5e20;">40</td></tr>
+  </table>
+</div>
+
+<footer><p>Visions Classes · visionslearning.in · <a href="notes-class9.html">← Back to Class 9 Notes</a></p></footer>
+
+<div style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;opacity:0.07;user-select:none;">
+  <svg width="320" height="320" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="160" cy="160" r="145" fill="none" stroke="#1b5e20" stroke-width="6"/>
+    <circle cx="160" cy="160" r="130" fill="none" stroke="#1b5e20" stroke-width="2"/>
+    <path id="tp1" fill="none" d="M 30,160 a130,130 0 1,1 260,0"/>
+    <path id="bp1" fill="none" d="M 30,160 a130,130 0 0,0 260,0"/>
+    <text font-size="18" font-weight="900" fill="#1b5e20" font-family="Arial,sans-serif" letter-spacing="4"><textPath href="#tp1" startOffset="8%">VISIONS CLASSES · VISIONSLEARNING.IN ·</textPath></text>
+    <text font-size="15" font-weight="900" fill="#1b5e20" font-family="Arial,sans-serif" letter-spacing="3"><textPath href="#bp1" startOffset="8%">SCIENCE · CLASS 9 · MAHARASHTRA BOARD</textPath></text>
+    <text x="160" y="150" text-anchor="middle" font-size="22" font-weight="900" fill="#1b5e20" font-family="Arial,sans-serif">VISIONS</text>
+    <text x="160" y="178" text-anchor="middle" font-size="22" font-weight="900" fill="#1b5e20" font-family="Arial,sans-serif">CLASSES</text>
+    <text x="160" y="204" text-anchor="middle" font-size="11" font-weight="700" fill="#1b5e20" font-family="Arial,sans-serif" letter-spacing="1">★ EST. 2024 ★</text>
+  </svg>
+</div>
+</body>
+</html>
