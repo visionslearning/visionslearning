@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>RKT Biology — Class 11 Sem 1 Question Paper | Maharashtra Board</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size:15px;}
+
+  .site-header{background:linear-gradient(135deg,#1b5e20,#2e7d32,#1a237e);padding:14px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 3px 12px rgba(0,0,0,.3);}
+  .site-header a{color:#a5d6a7;text-decoration:none;font-size:.85rem;font-weight:600;}
+  .site-header a:hover{color:#fff;}
+  .header-title{color:#fff;font-size:1.05rem;font-weight:800;}
+
+  .hero{background:linear-gradient(135deg,#1b5e20 0%,#2e7d32 40%,#1a237e 100%);padding:30px 20px 24px;text-align:center;color:#fff;}
+  .board-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:5px 18px;font-size:.73rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;}
+  .hero h1{font-size:1.55rem;font-weight:900;line-height:1.25;margin-bottom:6px;}
+  .hero .sub{font-size:.88rem;color:rgba(255,255,255,.85);margin-bottom:14px;}
+  .pills{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
+  .pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:6px 14px;font-size:.8rem;font-weight:700;}
+
+  /* pattern strip */
+  .pat-strip{max-width:900px;margin:14px auto;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:0 12px;}
+  .pat-card{background:#fff;border-radius:10px;padding:12px 14px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.07);}
+  .pat-card .sec{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
+  .pat-card .desc{font-size:.78rem;color:#555;margin-bottom:4px;}
+  .pat-card .mk{font-size:1.2rem;font-weight:900;}
+  .pa{border-top:3px solid #1b5e20;} .pa .sec{color:#1b5e20;} .pa .mk{color:#1b5e20;}
+  .pb{border-top:3px solid #0d47a1;} .pb .sec{color:#0d47a1;} .pb .mk{color:#0d47a1;}
+  .pc{border-top:3px solid #880e4f;} .pc .sec{color:#880e4f;} .pc .mk{color:#880e4f;}
+  .pd{border-top:3px solid #e65100;} .pd .sec{color:#e65100;} .pd .mk{color:#e65100;}
+
+  .ch-strip{max-width:900px;margin:0 auto 14px;display:flex;flex-wrap:wrap;gap:7px;justify-content:center;padding:0 12px;}
+  .ch-tag{background:#fff;color:#1b5e20;font-size:.72rem;font-weight:800;padding:5px 12px;border-radius:14px;border:2px solid #a5d6a7;}
+
+  .instr{background:#e8f5e9;border-left:4px solid #2e7d32;margin:12px auto;max-width:900px;padding:12px 18px;border-radius:8px;font-size:.87rem;line-height:1.7;}
+  .instr strong{color:#1b5e20;}
+
+  /* SECTION BAND */
+  .sec-band{max-width:900px;margin:18px auto 0;border-radius:12px;padding:12px 20px;display:flex;align-items:center;gap:12px;color:#fff;}
+  .sb-badge{font-size:1.1rem;font-weight:900;background:rgba(255,255,255,.25);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .sb-info{flex:1;}
+  .sb-title{font-size:1rem;font-weight:900;}
+  .sb-desc{font-size:.8rem;opacity:.9;margin-top:2px;}
+  .sb-marks{background:rgba(255,255,255,.22);font-size:.82rem;font-weight:700;padding:4px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.3);}
+  .sA{background:linear-gradient(135deg,#1b5e20,#2e7d32);}
+  .sB{background:linear-gradient(135deg,#0d47a1,#1565c0);}
+  .sC{background:linear-gradient(135deg,#880e4f,#c2185b);}
+  .sD{background:linear-gradient(135deg,#e65100,#f57c00);}
+
+  /* QUESTION CARD */
+  .q-card{max-width:900px;margin:10px auto;background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.09);overflow:hidden;}
+  .q-title-bar{display:flex;align-items:center;gap:10px;padding:12px 20px;background:#fafafa;border-bottom:2px solid #f0f0f0;}
+  .q-num{background:#1b5e20;color:#fff;font-size:.8rem;font-weight:900;padding:4px 12px;border-radius:20px;white-space:nowrap;}
+  .q-title{font-size:.95rem;font-weight:700;color:#1a1a1a;flex:1;line-height:1.4;}
+  .q-chip{background:#e8f5e9;color:#1b5e20;font-size:.72rem;font-weight:800;padding:3px 10px;border-radius:10px;white-space:nowrap;}
+
+  .sub{border-bottom:1px solid #f0f0f0;padding:16px 22px;}
+  .sub:last-child{border-bottom:none;}
+  .sub-q{font-size:.9rem;font-weight:800;color:#1b5e20;background:#e8f5e9;padding:8px 14px;border-radius:7px;margin-bottom:14px;display:block;}
+
+  /* VERTICAL SLINE */
+  .sol{margin:0;}
+  .sline{display:block;font-size:.92rem;line-height:1;padding:8px 0;border-bottom:1px solid #f5f5f5;}
+  .sline:last-child{border-bottom:none;}
+  .tag{display:inline-block;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;padding:2px 8px;border-radius:8px;margin-right:8px;vertical-align:middle;}
+  .tans{background:#dcfce7;color:#166534;}
+  .texp{background:#e3f2fd;color:#0d47a1;}
+  .sline-ans{display:block;background:#f0fdf4;border-left:4px solid #16a34a;padding:10px 16px;border-radius:0 8px 8px 0;margin-top:5px;font-size:.92rem;font-weight:700;color:#166534;}
+
+  .cl{display:inline-block;font-size:.68rem;font-weight:800;padding:2px 8px;border-radius:7px;margin-right:5px;text-transform:uppercase;}
+  .c1{background:#e8f5e9;color:#1b5e20;} .c2{background:#e3f2fd;color:#0d47a1;} .c4{background:#fce4ec;color:#880e4f;} .c5{background:#fff3e0;color:#e65100;} .c7{background:#f3e5f5;color:#4a148c;}
+
+  .dn{background:#e8eaf6;border:1.5px dashed #5c6bc0;border-radius:8px;padding:9px 13px;font-size:.79rem;color:#3949ab;margin-top:8px;text-align:center;}
+
+  table.ref{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:8px;}
+  table.ref th{background:#1b5e20;color:#fff;padding:6px 10px;text-align:left;}
+  table.ref td{padding:6px 10px;border-bottom:1px solid #e8edf2;}
+  table.ref tr:nth-child(even) td{background:#f1fbf1;}
+
+  footer{text-align:center;padding:24px 16px;font-size:.8rem;color:#888;}
+  footer a{color:#2e7d32;text-decoration:none;}
+  @media(max-width:600px){.pat-strip{grid-template-columns:1fr 1fr;}.hero h1{font-size:1.2rem;}}
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <a href="notes-class11.html">← Class 11 Notes</a>
+  <span style="color:rgba(255,255,255,.4);">|</span>
+  <span class="header-title">RKT Biology — Sem 1 Question Paper</span>
+</div>
+
+<div class="hero">
+  <div class="board-tag">RKT College · XI Science · Sem 1 · Biology</div>
+  <h1>⭐ RKT Biology<br>1st Semester Question Paper with Answers</h1>
+  <div class="sub">Living World · Systematics · Biomolecules · Cell Division · Cell Structure · Kingdom Animalia</div>
+  <div class="pills">
+    <div class="pill">📋 Total: 50 Marks</div>
+    <div class="pill">⏱ Time: 2 Hours</div>
+    <div class="pill">✅ Full Answers</div>
+  </div>
+</div>
+
+<!-- PATTERN CARDS -->
+<div class="pat-strip">
+  <div class="pat-card pa"><div class="sec">Section A</div><div class="desc">MCQ×7 + VSA×7</div><div class="mk">14 M</div></div>
+  <div class="pat-card pb"><div class="sec">Section B</div><div class="desc">Any 8 × 2M</div><div class="mk">16 M</div></div>
+  <div class="pat-card pc"><div class="sec">Section C</div><div class="desc">Any 4 × 3M</div><div class="mk">12 M</div></div>
+  <div class="pat-card pd"><div class="sec">Section D</div><div class="desc">Any 2 × 4M</div><div class="mk">8 M</div></div>
+</div>
+
+<div class="ch-strip">
+  <span class="ch-tag">Ch1: Living World</span>
+  <span class="ch-tag">Ch2: Systematics & Classification</span>
+  <span class="ch-tag">Ch5: Biomolecules</span>
+  <span class="ch-tag">Ch7: Cell Division</span>
+  <span class="ch-tag">Ch5: Cell Structure & Organisation</span>
+  <span class="ch-tag">Ch4: Kingdom Animalia (Non-Chordata)</span>
+</div>
+
+<div class="instr">
+  <strong>General Instructions:</strong> (1) All questions in Section A are compulsory.
+  (2) Section B — Attempt any 8 out of 10. (3) Section C — Attempt any 4 out of 6.
+  (4) Section D — Attempt any 2 out of 3. (5) Draw neat labelled diagrams wherever asked.
+</div>
+
+
+<!-- ══════════════ SECTION A ══════════════ -->
+<div class="sec-band sA">
+  <div class="sb-badge">A</div>
+  <div class="sb-info"><div class="sb-title">Section A — MCQ + Very Short Answer</div><div class="sb-desc">Q1 MCQ (7×1M) + Q2 Very Short Answer (7×1M) — All compulsory</div></div>
+  <div class="sb-marks">14 Marks</div>
+</div>
+
+<div class="q-card">
+  <div class="q-title-bar"><span class="q-num">Q 1</span><span class="q-title">Multiple Choice Questions — 1 mark each</span><span class="q-chip">7 Marks</span></div>
+  <div class="sub">
+    <span class="sub-q">(i) <span class="cl c1">Ch1</span> The binomial nomenclature system was given by ________.</span>
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Answer</span> (b) Carolus Linnaeus — introduced the two-name (genus + species) system in "Systema Naturae" (1758).</span>
+    </div>
+  </div>
+  <div class="sub">
+    <span class="sub-q">(ii) <span class="cl c2">Ch2</span> Which of the following is the correct hierarchy of taxonomic categories?</span>
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Answer</span> (c) Kingdom → Phylum → Class → Order → Family → Genus → Species</span>
+      <span class="sline" style="padding-left:20px;">Mnemonic: <strong>K</strong>ing <strong>P</strong>hillip <strong>C</strong>ame <strong>O</strong>ver <strong>F</strong>or <strong>G</strong>ood <strong>S</strong>oup</span>
+    </div>
+  </div>
+  <div class="sub">
+    <span class="sub-q">(iii) <span class="cl c5">Ch5</span> The most abundant protein in the world is ________.</span>
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Answer</span> (a) RuBisCO (Ribulose bisphosphate carboxylase/oxygenase) — enzyme involved in carbon fixation in photosynthesis.</span>
+    </div>
+  </div>
+  <div class="sub">
+    <span class="sub-q">(iv) <span class="cl c7">Ch7</span> During which phase of mitosis do chromosomes align at the equatorial plate?</span>
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Answer</span> (b) Metaphase — chromosomes are maximally condensed and align at the metaphase plate (cell equator).</span>
+    </div>
+  </div>
+  <div class="sub">
+    <span class="sub-q">(v) <span class="cl c5">Cell Structure</span> The powerhouse of the cell is ________.</span>
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Answer</span> (c) Mitochondria — site of aerobic respiration and ATP production.</span>
+    </div>
+  </div>
+  <div class="sub">
+    <span class="sub-q">(vi) <span class="cl c4">Ch4</span> Flame cells are the excretory organs of ________.</span>
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Answer</span> (b) Platyhelminthes (flatworms) — flame cells are protonephridia that regulate water and excrete wastes.</span>
+    </div>
+  </div>
+  <div class="sub">
+    <span class="sub-q">(vii) <span class="cl c5">Ch5</span> DNA is made up of monomers called ________.</span>
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Answer</span> (d) Deoxyribonucleotides — each nucleotide has deoxyribose sugar + phosphate group + nitrogenous base (A, T, G or C).</span>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-title-bar"><span class="q-num">Q 2</span><span class="q-title">Very Short Answer Questions — 1 mark each</span><span class="q-chip">7 Marks</span></div>
+  <div class="sub">
+    <span class="sub-q">(i) <span class="cl c1">Ch1</span> Define metabolism.</span>
+    <div class="sol">
+      <span class="sline-ans">Metabolism is the sum total of all chemical reactions occurring in a living organism — it includes anabolism (building up molecules, e.g., photosynthesis) and catabolism (breaking down molecules, e.g., respiration).</span>
+    </div>
+  </div>
+  <div class="sub">
+    <span class="sub-q">(ii) <span class="cl c2">Ch2</span> What is a species?</span>
+    <div class="sol">
+      <span class="sline-ans">A species is the basic unit of classification — a group of organisms that share common characteristics, can interbreed naturally, and produce fertile offspring. E.g., Homo sapiens (humans).</span>
+    </div>
+  </div>
+  <div class="sub">
+    <span class="sub-q">(iii) <span class="cl c5">Ch5</span> Name two types of nucleic acids.</span>
+    <div class="sol">
+      <span class="sline-ans">DNA (Deoxyribonucleic acid) — carries genetic information; RNA (Ribonucleic acid) — involved in protein synthesis (mRNA, tRNA, rRNA).</span>
+    </div>
+  </div>
+  <div class="sub">
+    <span class="sub-q">(iv) <span class="cl c7">Ch7</span> What is cytokinesis?</span>
+    <div class="sol">
+      <span class="sline-ans">Cytokinesis is the division of the cytoplasm that follows karyokinesis (nuclear division), resulting in two separate daughter cells. In animals it occurs by cleavage furrow; in plants by cell plate formation.</span>
+    </div>
+  </div>
+  <div class="sub">
+    <span class="sub-q">(v) <span class="cl c5">Cell Structure</span> What is the function of the ribosome?</span>
+    <div class="sol">
+      <span class="sline-ans">Ribosomes are the sites of protein synthesis (translation). They read mRNA codons and assemble amino acids into polypeptide chains. 80S in eukaryotes; 70S in prokaryotes.</span>
+    </div>
+  </div>
+  <div class="sub">
+    <span class="sub-q">(vi) <span class="cl c4">Ch4</span> Name the phylum to which earthworm belongs.</span>
+    <div class="sol">
+      <span class="sline-ans">Earthworm (Pheretima) belongs to Phylum Annelida. Features: segmented body, true coelom, closed circulatory system, nephridia for excretion.</span>
+    </div>
+  </div>
+  <div class="sub">
+    <span class="sub-q">(vii) <span class="cl c1">Ch1</span> What is the significance of the scientific name?</span>
+    <div class="sol">
+      <span class="sline-ans">Scientific names (binomial nomenclature) are universally accepted, written in Latin/Greek, unique for each organism, and understood by scientists worldwide regardless of language — avoiding confusion caused by local common names.</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════ SECTION B ══════════════ -->
+<div class="sec-band sB">
+  <div class="sb-badge">B</div>
+  <div class="sb-info"><div class="sb-title">Section B — Answer in Short (Any 8 of 10)</div><div class="sb-desc">2 marks each</div></div>
+  <div class="sb-marks">16 Marks</div>
+</div>
+
+<div class="q-card">
+  <div class="q-title-bar"><span class="q-num">Q 3</span><span class="q-title">Answer in Short. (Attempt any 8 out of 10) — 2 marks each</span><span class="q-chip">16 Marks</span></div>
+
+  <div class="sub">
+    <span class="sub-q"><span class="cl c1">Ch1</span> 1. What are the two defining characteristics of all living organisms?</span>
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Answer</span> The two defining characteristics of ALL living organisms are:</span>
+      <span class="sline" style="padding-left:20px;">1. <strong>Metabolism</strong> — all living organisms carry out chemical reactions (anabolism + catabolism). This is the most reliable criterion of life.</span>
+      <span class="sline" style="padding-left:20px;">2. <strong>Cellular organisation</strong> — all living things are made of one or more cells (cell theory). Viruses are an exception — they have metabolic reactions only inside host cells.</span>
+    </div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q"><span class="cl c2">Ch2</span> 2. What is the Five Kingdom Classification? Who proposed it?</span>
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Answer</span> <strong>R.H. Whittaker (1969)</strong> proposed the Five Kingdom Classification:</span>
+      <span class="sline" style="padding-left:20px;">1. <strong>Monera</strong> — prokaryotes (bacteria, cyanobacteria)</span>
+      <span class="sline" style="padding-left:20px;">2. <strong>Protista</strong> — unicellular eukaryotes (Amoeba, Paramecium)</span>
+      <span class="sline" style="padding-left:20px;">3. <strong>Fungi</strong> — heterotrophic, absorptive nutrition (mushroom, yeast)</span>
+      <span class="sline" style="padding-left:20px;">4. <strong>Plantae</strong> — autotrophic multicellular eukaryotes</span>
+      <span class="sline" style="padding-left:20px;">5. <strong>Animalia</strong> — heterotrophic multicellular eukaryotes</span>
+    </div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q"><span class="cl c5">Ch5</span> 3. What are enzymes? Give two properties.</span>
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Answer</span> Enzymes are biological catalysts — proteins that speed up biochemical reactions without being consumed.</span>
+      <span class="sline" style="padding-left:20px;"><strong>Properties:</strong></span>
+      <span class="sline" style="padding-left:20px;">1. <strong>Highly specific</strong> — each enzyme acts on a specific substrate (lock and key model)</span>
+      <span class="sline" style="padding-left:20px;">2. <strong>Reusable</strong> — not consumed in the reaction; can catalyse the same reaction repeatedly</span>
+      <span class="sline" style="padding-left:20px;">3. <strong>Affected by pH and temperature</strong> — denatured at extreme conditions</span>
+    </div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q"><span class="cl c7">Ch7</span> 4. Distinguish between mitosis and meiosis (any two points).</span>
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Answer</span></span>
+      <table class="ref" style="margin-top:6px;">
+        <tr><th>Feature</th><th>Mitosis</th><th>Meiosis</th></tr>
+        <tr><td>Number of divisions</td><td>One</td><td>Two (Meiosis I + II)</td></tr>
+        <tr><td>Daughter cells</td><td>2 diploid (2n)</td><td>4 haploid (n)</td></tr>
+        <tr><td>Occurs in</td><td>Somatic cells</td><td>Germ cells (gonads)</td></tr>
+        <tr><td>Purpose</td><td>Growth, repair</td><td>Gamete formation (sexual repro)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q"><span class="cl c5">Cell Structure</span> 5. What is the difference between prokaryotic and eukaryotic cells?</span>
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Answer</span></span>
+      <table class="ref" style="margin-top:6px;">
+        <tr><th>Feature</th><th>Prokaryotic</th><th>Eukaryotic</th></tr>
+        <tr><td>Nucleus</td><td>Absent (nucleoid)</td><td>Present (membrane-bound)</td></tr>
+        <tr><td>Size</td><td>1–10 µm (small)</td><td>10–100 µm (large)</td></tr>
+        <tr><td>Organelles</td><td>No membrane-bound organelles</td><td>Membrane-bound organelles present</td></tr>
+        <tr><td>Examples</td><td>Bacteria, Archaea</td><td>Plants, animals, fungi</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q"><span class="cl c4">Ch4</span> 6. What are the main features of Phylum Porifera?</span>
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Answer</span> Phylum Porifera (sponges) — characteristics:</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Simplest multicellular animals</strong> — no tissues, no organs</span>
+      <span class="sline" style="padding-left:20px;">• Body has <strong>pores (ostia)</strong> and channels for water circulation</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Choanocytes</strong> (collar cells) line the inner body and create water current</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Sessile</strong> (attached to substrate), mostly marine</span>
+      <span class="sline" style="padding-left:20px;">• Skeleton of <strong>spicules</strong> (CaCO₃ or SiO₂) or spongin fibres</span>
+      <span class="sline" style="padding-left:20px;">• Examples: Sycon, Spongilla, Euspongia</span>
+    </div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q"><span class="cl c5">Ch5</span> 7. What are carbohydrates? Classify them with examples.</span>
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Answer</span> Carbohydrates are organic compounds made of C, H, O with general formula (CH₂O)n. They are the primary energy source for cells.</span>
+      <span class="sline" style="padding-left:20px;"><strong>Classification:</strong></span>
+      <span class="sline" style="padding-left:20px;">• <strong>Monosaccharides</strong> — simplest; glucose, fructose, galactose</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Disaccharides</strong> — 2 monosaccharides; sucrose (glucose+fructose), lactose, maltose</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Polysaccharides</strong> — many units; starch, glycogen, cellulose, chitin</span>
+    </div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q"><span class="cl c7">Ch7</span> 8. Name and explain the stages of interphase.</span>
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Answer</span> Interphase is the period between two divisions — the cell prepares for division.</span>
+      <span class="sline" style="padding-left:20px;"><strong>Three stages:</strong></span>
+      <span class="sline" style="padding-left:20px;">1. <strong>G₁ phase (Gap 1):</strong> Cell grows in size; RNA and proteins synthesised; intense metabolic activity</span>
+      <span class="sline" style="padding-left:20px;">2. <strong>S phase (Synthesis):</strong> DNA replication occurs; chromosome number doubles (2C → 4C)</span>
+      <span class="sline" style="padding-left:20px;">3. <strong>G₂ phase (Gap 2):</strong> Cell continues to grow; organelles duplicated; spindle proteins synthesised; cell prepares for division</span>
+    </div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q"><span class="cl c4">Ch4</span> 9. What are the distinguishing features of Phylum Annelida?</span>
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Answer</span> Phylum Annelida (segmented worms) — features:</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Segmented body</strong> (metameric segmentation) — each segment (metamere) is similar</span>
+      <span class="sline" style="padding-left:20px;">• <strong>True coelom</strong> (eucoelomate)</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Closed circulatory system</strong> — blood remains in vessels</span>
+      <span class="sline" style="padding-left:20px;">• Excretion by <strong>nephridia</strong></span>
+      <span class="sline" style="padding-left:20px;">• Locomotion by <strong>setae</strong> (chaetae)</span>
+      <span class="sline" style="padding-left:20px;">• Examples: Earthworm (Pheretima), Leech (Hirudinaria), Nereis</span>
+    </div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q"><span class="cl c5">Cell Structure</span> 10. What is the role of the Golgi apparatus?</span>
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Answer</span> The Golgi apparatus (Golgi complex/body) — functions:</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Post-translational modification</strong> — modifies proteins received from ER (glycosylation, phosphorylation)</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Sorting and packaging</strong> — packages proteins into vesicles for secretion or delivery to organelles</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Forms lysosomes</strong> — packages digestive enzymes</span>
+      <span class="sline" style="padding-left:20px;">• Called the <strong>"traffic police" or "post office"</strong> of the cell</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════ SECTION C ══════════════ -->
+<div class="sec-band sC">
+  <div class="sb-badge">C</div>
+  <div class="sb-info"><div class="sb-title">Section C — Answer in Brief (Any 4 of 6)</div><div class="sb-desc">3 marks each</div></div>
+  <div class="sb-marks">12 Marks</div>
+</div>
+
+<div class="q-card">
+  <div class="q-title-bar"><span class="q-num">Q 4</span><span class="q-title">Answer in Brief. (Attempt any 4 out of 6) — 3 marks each</span><span class="q-chip">12 Marks</span></div>
+
+  <div class="sub">
+    <span class="sub-q"><span class="cl c1">Ch1</span> 1. Explain the properties of living organisms. (Any 3)</span>
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Answer</span> Properties of living organisms:</span>
+      <span class="sline" style="padding-left:20px;">1. <strong>Growth:</strong> Increase in mass and number of cells. In organisms: intrinsic (from inside); in non-living: extrinsic (added from outside). Both can show growth but method differs.</span>
+      <span class="sline" style="padding-left:20px;">2. <strong>Reproduction:</strong> Ability to produce offspring, ensuring continuation of species. Not a universal property (sterile mules, worker bees cannot reproduce) but characteristic of living things.</span>
+      <span class="sline" style="padding-left:20px;">3. <strong>Metabolism:</strong> Sum of all chemical reactions. Catabolism (breakdown) + Anabolism (synthesis). ONLY living organisms have this; viruses only inside host.</span>
+      <span class="sline" style="padding-left:20px;">4. <strong>Cellular organisation:</strong> All living things made of cells — from unicellular bacteria to multicellular humans.</span>
+      <span class="sline" style="padding-left:20px;">5. <strong>Response to stimuli:</strong> All organisms respond to environmental changes (tropisms in plants, behaviour in animals).</span>
+    </div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q"><span class="cl c2">Ch2</span> 2. Explain the concept of taxonomic hierarchy with an example using Homo sapiens.</span>
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Answer</span> Taxonomic hierarchy (Linnaean hierarchy) — arrangement of organisms in ranked groups:</span>
+      <table class="ref" style="margin-top:6px;">
+        <tr><th>Rank</th><th>Example (Human)</th><th>Significance</th></tr>
+        <tr><td>Kingdom</td><td>Animalia</td><td>Broadest/highest rank</td></tr>
+        <tr><td>Phylum</td><td>Chordata</td><td>Major body plan</td></tr>
+        <tr><td>Class</td><td>Mammalia</td><td>Hair, mammary glands</td></tr>
+        <tr><td>Order</td><td>Primates</td><td>Hands, eyes forward</td></tr>
+        <tr><td>Family</td><td>Hominidae</td><td>Great apes</td></tr>
+        <tr><td>Genus</td><td>Homo</td><td>Erect posture, large brain</td></tr>
+        <tr><td>Species</td><td>sapiens</td><td>Modern humans</td></tr>
+      </table>
+      <span class="sline" style="margin-top:6px;">Scientific name: <strong>Homo sapiens</strong> (Genus species — italicised, genus capitalised)</span>
+    </div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q"><span class="cl c5">Ch5</span> 3. Describe the structure of a DNA molecule (Watson-Crick model).</span>
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Answer</span> Watson and Crick (1953) proposed the double helix model of DNA:</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Two polynucleotide chains</strong> wound around each other in a right-handed double helix</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Sugar-phosphate backbone</strong> on the outside (alternating deoxyribose + phosphate)</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Nitrogenous bases</strong> face inward and pair by hydrogen bonds:</span>
+      <span class="sline" style="padding-left:30px;">• Adenine (A) pairs with Thymine (T) — 2 hydrogen bonds</span>
+      <span class="sline" style="padding-left:30px;">• Guanine (G) pairs with Cytosine (C) — 3 hydrogen bonds</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Anti-parallel strands</strong> — one runs 5'→3', the other 3'→5'</span>
+      <span class="sline" style="padding-left:20px;">• Pitch = 3.4 nm; 10 base pairs per turn; diameter = 2 nm</span>
+      <div class="dn">📐 Draw double helix showing sugar-phosphate backbone, base pairs (A-T and G-C), hydrogen bonds, and anti-parallel orientation (5'→3' and 3'→5').</div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q"><span class="cl c7">Ch7</span> 4. Explain the phases of mitosis with diagrams.</span>
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Answer</span> Mitosis — 4 phases (PMAT):</span>
+      <span class="sline" style="padding-left:20px;"><strong>1. Prophase:</strong> Chromatin condenses into visible chromosomes; nuclear envelope breaks down; spindle fibres form from centrioles (in animals)</span>
+      <span class="sline" style="padding-left:20px;"><strong>2. Metaphase:</strong> Chromosomes align at the equatorial plate (metaphase plate); spindle fibres attach to centromeres; chromosomes are most condensed (best for karyotyping)</span>
+      <span class="sline" style="padding-left:20px;"><strong>3. Anaphase:</strong> Centromeres split; sister chromatids pulled to opposite poles by spindle fibres; cell elongates</span>
+      <span class="sline" style="padding-left:20px;"><strong>4. Telophase:</strong> Chromosomes reach poles and decondense; nuclear envelope reforms; nucleolus reappears; followed by cytokinesis</span>
+      <span class="sline" style="padding-left:20px;"><strong>Result:</strong> 2 daughter cells, each with same chromosome number as parent (2n→2n)</span>
+      <div class="dn">📐 Draw 4 diagrams: Prophase (condensed chromosomes), Metaphase (aligned at equator), Anaphase (separating), Telophase (two nuclei forming).</div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q"><span class="cl c5">Cell Structure</span> 5. Describe the structure and functions of the cell membrane (plasma membrane).</span>
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Answer</span></span>
+      <span class="sline" style="padding-left:20px;"><strong>Structure (Fluid Mosaic Model — Singer & Nicolson, 1972):</strong></span>
+      <span class="sline" style="padding-left:20px;">• <strong>Phospholipid bilayer</strong> — two layers of phospholipids with hydrophilic heads (outside) and hydrophobic tails (inside)</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Proteins</strong> — integral (transmembrane) and peripheral proteins embedded/attached</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Cholesterol</strong> — regulates fluidity</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Carbohydrates</strong> — as glycoproteins and glycolipids on outer surface (cell recognition)</span>
+      <span class="sline" style="padding-left:20px;"><strong>Functions:</strong></span>
+      <span class="sline" style="padding-left:20px;">• Selectively permeable barrier — controls what enters/exits cell</span>
+      <span class="sline" style="padding-left:20px;">• Cell recognition and signalling (receptors)</span>
+      <span class="sline" style="padding-left:20px;">• Endocytosis (taking in) and exocytosis (secretion)</span>
+      <div class="dn">📐 Draw Fluid Mosaic Model: bilayer with heads facing out, tails inside, integral proteins, glycoproteins on outer surface, cholesterol between lipids.</div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q"><span class="cl c4">Ch4</span> 6. Describe the general characters of Phylum Arthropoda. Why is it the most successful phylum?</span>
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Answer</span> Phylum Arthropoda — largest phylum in animal kingdom (>80% of all animal species):</span>
+      <span class="sline" style="padding-left:20px;"><strong>General Characters:</strong></span>
+      <span class="sline" style="padding-left:20px;">• <strong>Jointed appendages</strong> (arthro = joint, poda = leg) — for locomotion, feeding, reproduction</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Exoskeleton of chitin</strong> — protection + support; moulted (ecdysis) for growth</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Segmented body</strong> — head, thorax, abdomen (fused in different classes)</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Open circulatory system</strong> — blood (haemolymph) in body cavity (haemocoel)</span>
+      <span class="sline" style="padding-left:20px;">• Respiration by gills (aquatic), book lungs, tracheae (terrestrial)</span>
+      <span class="sline" style="padding-left:20px;">• Examples: Cockroach (Periplaneta), Prawn (Palaemon), Butterfly, Scorpion, Crab</span>
+      <span class="sline" style="padding-left:20px;"><strong>Why most successful:</strong> Jointed legs enable diverse locomotion; exoskeleton provides protection; diverse respiration allows land colonisation; rapid reproduction; small size reduces resource needs.</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════ SECTION D ══════════════ -->
+<div class="sec-band sD">
+  <div class="sb-badge">D</div>
+  <div class="sb-info"><div class="sb-title">Section D — Long Answer Type (Any 2 of 3)</div><div class="sb-desc">4 marks each</div></div>
+  <div class="sb-marks">8 Marks</div>
+</div>
+
+<div class="q-card">
+  <div class="q-title-bar"><span class="q-num">Q 5</span><span class="q-title">Long Answer Type. (Attempt any 2 out of 3) — 4 marks each</span><span class="q-chip">8 Marks</span></div>
+
+  <div class="sub">
+    <span class="sub-q"><span class="cl c2">Ch2</span> 1. Explain the classification of Kingdom Animalia with phyla Non-Chordata and their key features. Describe any three phyla with examples.</span>
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Answer</span> <strong>Kingdom Animalia — Non-Chordata (invertebrates — no notochord/backbone):</strong></span>
+      <span class="sline" style="padding-left:20px;"><strong>1. Phylum Porifera:</strong></span>
+      <span class="sline" style="padding-left:30px;">• Simplest animals; no true tissues; body full of pores</span>
+      <span class="sline" style="padding-left:30px;">• Choanocytes; sessile; mostly marine; asexual by budding/gemmules</span>
+      <span class="sline" style="padding-left:30px;">• Examples: Sycon, Spongilla (freshwater sponge), Euspongia (bath sponge)</span>
+      <span class="sline" style="padding-left:20px;"><strong>2. Phylum Cnidaria (Coelenterata):</strong></span>
+      <span class="sline" style="padding-left:30px;">• Two body forms: polyp (sessile) and medusa (free-swimming)</span>
+      <span class="sline" style="padding-left:30px;">• Stinging cells — <strong>cnidocytes/nematocysts</strong> for defence and prey capture</span>
+      <span class="sline" style="padding-left:30px;">• Diploblastic (ectoderm + endoderm); gastrovascular cavity</span>
+      <span class="sline" style="padding-left:30px;">• Examples: Hydra, Aurelia (jellyfish), Corals, Obelia</span>
+      <span class="sline" style="padding-left:20px;"><strong>3. Phylum Platyhelminthes:</strong></span>
+      <span class="sline" style="padding-left:30px;">• Flat, ribbon-like body (platys = flat); triploblastic, acoelomate</span>
+      <span class="sline" style="padding-left:30px;">• Excretion by <strong>flame cells</strong> (protonephridia)</span>
+      <span class="sline" style="padding-left:30px;">• Many are parasitic (Taenia, Fasciola); free-living Planaria</span>
+      <span class="sline" style="padding-left:30px;">• Examples: Planaria, Tapeworm (Taenia solium), Liver fluke (Fasciola)</span>
+      <span class="sline" style="padding-left:20px;"><strong>4. Phylum Nematoda:</strong></span>
+      <span class="sline" style="padding-left:30px;">• Round/thread-like worms; pseudocoelomate</span>
+      <span class="sline" style="padding-left:30px;">• Parasitic — cause diseases: Ascaris (roundworm), Wuchereria (filariasis)</span>
+      <span class="sline" style="padding-left:30px;">• Bilateral symmetry; complete digestive system</span>
+    </div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q"><span class="cl c5">Ch5</span> 2. Describe the structure and types of proteins. What is the significance of proteins in living organisms?</span>
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Answer</span></span>
+      <span class="sline" style="padding-left:20px;"><strong>Proteins:</strong> Polymers of amino acids linked by peptide bonds. 20 types of amino acids. Most abundant biomolecule in dry weight of cells.</span>
+      <span class="sline" style="padding-left:20px;"><strong>Structure (levels of organisation):</strong></span>
+      <span class="sline" style="padding-left:20px;">• <strong>Primary:</strong> Linear sequence of amino acids (polypeptide chain)</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Secondary:</strong> α-helix or β-pleated sheet formed by hydrogen bonds</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Tertiary:</strong> 3D folding — functional shape; stabilised by disulphide bonds, hydrophobic interactions</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Quaternary:</strong> Two or more polypeptide chains together. E.g., haemoglobin (4 subunits)</span>
+      <span class="sline" style="padding-left:20px;"><strong>Types of Proteins:</strong></span>
+      <span class="sline" style="padding-left:20px;">• <strong>Structural:</strong> Collagen (skin, tendons), Keratin (hair, nails)</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Enzymatic:</strong> Pepsin, Amylase, RuBisCO</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Transport:</strong> Haemoglobin (O₂), Albumin (fatty acids in blood)</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Hormonal:</strong> Insulin, Growth hormone</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Immunological:</strong> Antibodies (immunoglobulins)</span>
+      <span class="sline" style="padding-left:20px;"><strong>Significance:</strong> Catalyse reactions, provide structure, transport molecules, regulate processes, defend against pathogens, enable movement (actin, myosin in muscles).</span>
+    </div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q"><span class="cl c5">Cell Structure</span> 3. Describe the structure and functions of mitochondria. Why is it called the 'powerhouse of the cell'?</span>
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Answer</span></span>
+      <span class="sline" style="padding-left:20px;"><strong>Structure of Mitochondria:</strong></span>
+      <span class="sline" style="padding-left:20px;">• <strong>Double membrane</strong> organelle — outer membrane (smooth) and inner membrane (folded)</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Cristae</strong> — folds of inner membrane; increase surface area for ATP synthesis</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Matrix</strong> — fluid-filled inner space; contains mitochondrial DNA (circular), ribosomes (70S), enzymes of Krebs cycle</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Intermembrane space</strong> — between outer and inner membranes; site of proton gradient (chemiosmosis)</span>
+      <span class="sline" style="padding-left:20px;">• <strong>ATP synthase</strong> (F₀F₁ particles) on inner membrane — synthesises ATP</span>
+      <span class="sline" style="padding-left:20px;"><strong>Functions:</strong></span>
+      <span class="sline" style="padding-left:20px;">• Site of <strong>aerobic respiration</strong>:</span>
+      <span class="sline" style="padding-left:30px;">— Krebs cycle in matrix</span>
+      <span class="sline" style="padding-left:30px;">— Electron transport chain (ETC) on inner membrane</span>
+      <span class="sline" style="padding-left:30px;">— ATP synthesis by oxidative phosphorylation</span>
+      <span class="sline" style="padding-left:20px;">• Produces <strong>36–38 ATP</strong> per glucose molecule</span>
+      <span class="sline" style="padding-left:20px;">• Involved in calcium signalling, apoptosis (programmed cell death)</span>
+      <span class="sline" style="padding-left:20px;"><strong>Why 'powerhouse':</strong> Generates most of the cell's ATP (energy currency) through oxidative phosphorylation — hence called the powerhouse or energy factory of the cell.</span>
+      <span class="sline" style="padding-left:20px;"><strong>Semi-autonomous:</strong> Has own DNA and ribosomes → supports endosymbiotic theory (mitochondria evolved from ancient bacteria).</span>
+      <div class="dn">📐 Draw mitochondria — label: outer membrane, inner membrane, cristae, matrix, intermembrane space, ATP synthase particles, mitochondrial DNA.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- MARKS TABLE -->
+<div style="max-width:900px;margin:16px auto;background:#fff;border-radius:12px;padding:18px 22px;box-shadow:0 2px 10px rgba(0,0,0,.08);">
+  <h3 style="color:#1b5e20;margin-bottom:12px;font-size:.95rem;font-weight:800;">📊 RKT Biology — Sem 1 Paper Pattern</h3>
+  <table class="ref">
+    <tr><th>Section</th><th>Type</th><th>Questions</th><th>Marks Each</th><th>Total</th></tr>
+    <tr><td>A</td><td>MCQ</td><td>7 (all compulsory)</td><td>1</td><td>7</td></tr>
+    <tr><td>A</td><td>Very Short Answer</td><td>7 (all compulsory)</td><td>1</td><td>7</td></tr>
+    <tr><td>B</td><td>Answer in Short</td><td>Any 8 of 10</td><td>2</td><td>16</td></tr>
+    <tr><td>C</td><td>Answer in Brief</td><td>Any 4 of 6</td><td>3</td><td>12</td></tr>
+    <tr><td>D</td><td>Long Answer</td><td>Any 2 of 3</td><td>4</td><td>8</td></tr>
+    <tr style="background:#e8f5e9;"><td colspan="4"><strong>TOTAL</strong></td><td><strong>50</strong></td></tr>
+  </table>
+</div>
+
+<footer><p>Visions Classes — RKT Biology Section · visionslearning.in · <a href="notes-class11.html">← Back to Class 11 Notes</a></p></footer>
+
+<!-- Circular Watermark -->
+<div style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;opacity:0.07;user-select:none;">
+  <svg width="320" height="320" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="160" cy="160" r="145" fill="none" stroke="#1b5e20" stroke-width="6"/>
+    <circle cx="160" cy="160" r="130" fill="none" stroke="#1b5e20" stroke-width="2"/>
+    <path id="trb" fill="none" d="M 30,160 a130,130 0 1,1 260,0"/>
+    <path id="brb" fill="none" d="M 30,160 a130,130 0 0,0 260,0"/>
+    <text font-size="18" font-weight="900" fill="#1b5e20" font-family="Arial,sans-serif" letter-spacing="4"><textPath href="#trb" startOffset="8%">VISIONS CLASSES · VISIONSLEARNING.IN ·</textPath></text>
+    <text font-size="15" font-weight="900" fill="#1b5e20" font-family="Arial,sans-serif" letter-spacing="3"><textPath href="#brb" startOffset="8%">BIOLOGY · CLASS 11 · RKT COLLEGE</textPath></text>
+    <text x="160" y="152" text-anchor="middle" font-size="22" font-weight="900" fill="#1b5e20" font-family="Arial,sans-serif">VISIONS</text>
+    <text x="160" y="180" text-anchor="middle" font-size="22" font-weight="900" fill="#1b5e20" font-family="Arial,sans-serif">CLASSES</text>
+    <text x="160" y="206" text-anchor="middle" font-size="11" font-weight="700" fill="#1b5e20" font-family="Arial,sans-serif" letter-spacing="1">★ RKT BIOLOGY ★</text>
+  </svg>
+</div>
+
+</body>
+</html>
