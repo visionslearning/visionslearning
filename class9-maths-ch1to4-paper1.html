@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Class 9 Maths — Ch.1–4 Paper 1 | Maharashtra Board</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size:15px;}
+  .site-header{background:linear-gradient(135deg,#1a237e,#283593,#880e4f);padding:14px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 3px 12px rgba(0,0,0,.3);}
+  .site-header a{color:#90caf9;text-decoration:none;font-size:.85rem;font-weight:600;}
+  .site-header a:hover{color:#fff;}
+  .header-title{color:#fff;font-size:1.05rem;font-weight:800;}
+  .hero{background:linear-gradient(135deg,#1a237e 0%,#283593 45%,#880e4f 100%);padding:30px 20px 24px;text-align:center;color:#fff;}
+  .board-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:5px 18px;font-size:.73rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;}
+  .hero h1{font-size:1.55rem;font-weight:900;line-height:1.25;margin-bottom:6px;}
+  .hero .sub{font-size:.88rem;color:rgba(255,255,255,.85);}
+  .ch-strip{max-width:900px;margin:12px auto 0;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:0 12px;}
+  .ch-tag{background:#fff;color:#1a237e;font-size:.72rem;font-weight:800;padding:5px 12px;border-radius:14px;border:2px solid #90caf9;}
+  .instr{background:#e8eaf6;border-left:4px solid #3949ab;margin:14px auto;max-width:900px;padding:13px 18px;border-radius:8px;font-size:.87rem;line-height:1.7;}
+  .instr strong{color:#1a237e;}
+  .section{max-width:900px;margin:12px auto;background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.09);overflow:hidden;}
+  .sh{padding:13px 22px;display:flex;align-items:center;gap:12px;}
+  .sh .qno{background:#fff;font-weight:900;font-size:.95rem;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .sh .qtitle{color:#fff;font-size:.95rem;font-weight:800;flex:1;line-height:1.3;}
+  .sh .qmarks{background:rgba(255,255,255,.2);color:#fff;font-size:.8rem;font-weight:700;padding:4px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.35);white-space:nowrap;}
+  .h1{background:linear-gradient(135deg,#1a237e,#3949ab);} .h1 .qno{color:#1a237e;}
+  .h2{background:linear-gradient(135deg,#1b5e20,#2e7d32);} .h2 .qno{color:#1b5e20;}
+  .h3{background:linear-gradient(135deg,#e65100,#f57c00);} .h3 .qno{color:#e65100;}
+  .h4{background:linear-gradient(135deg,#880e4f,#c2185b);} .h4 .qno{color:#880e4f;}
+  .h5{background:linear-gradient(135deg,#006064,#00838f);} .h5 .qno{color:#006064;}
+  .h6{background:linear-gradient(135deg,#4a148c,#7b1fa2);} .h6 .qno{color:#4a148c;}
+  .sb{padding:18px 24px;}
+  .cl{display:inline-block;font-size:.68rem;font-weight:800;padding:2px 8px;border-radius:7px;margin-right:5px;text-transform:uppercase;letter-spacing:.8px;}
+  .c1{background:#e8eaf6;color:#1a237e;} .c2{background:#e8f5e9;color:#1b5e20;} .c3{background:#fff3e0;color:#e65100;} .c4{background:#fce4ec;color:#880e4f;}
+  .ans-item{padding:13px 0;border-bottom:1px solid #f0f4f8;}
+  .ans-item:last-child{border-bottom:none;}
+  .ans-q{font-size:.92rem;font-weight:700;margin-bottom:8px;line-height:1.5;}
+  .sol{padding:0;margin-top:6px;}
+  .sline{display:block;font-size:.92rem;line-height:1;padding:8px 0;border-bottom:1px solid #f5f5f5;}
+  .sline:last-child{border-bottom:none;}
+  .tag{display:inline-block;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;padding:2px 8px;border-radius:8px;margin-right:8px;vertical-align:middle;}
+  .tg{background:#f3e8ff;color:#6d28d9;}
+  .tf{background:#fce7f3;color:#9d174d;}
+  .ta{background:#dcfce7;color:#166534;}
+  .sline-ans{display:block;background:#f0fdf4;border-left:4px solid #16a34a;padding:10px 16px;border-radius:0 8px 8px 0;margin-top:5px;font-size:.95rem;font-weight:700;color:#166534;}
+  table.mt{width:100%;border-collapse:collapse;font-size:.84rem;}
+  table.mt th{background:linear-gradient(135deg,#1a237e,#3949ab);color:#fff;padding:7px 12px;text-align:left;}
+  table.mt td{padding:7px 12px;border-bottom:1px solid #e8edf2;}
+  table.mt tr:nth-child(even) td{background:#e8eaf6;}
+  footer{text-align:center;padding:24px 16px;font-size:.8rem;color:#888;}
+  footer a{color:#3949ab;text-decoration:none;}
+  @media(max-width:600px){.hero h1{font-size:1.2rem;}}
+</style>
+</head>
+<body>
+<div class="site-header">
+  <a href="notes-class9.html">← Class 9 Notes</a>
+  <span style="color:rgba(255,255,255,.4);">|</span>
+  <span class="header-title">Class 9 Maths — Ch.1–4 Paper 1</span>
+</div>
+<div class="hero">
+  <div class="board-tag">Maharashtra Board · Class 9 · Maths</div>
+  <h1>Maths — Paper 1 (Ch.1 to 4)<br>Most Important Questions with Answers</h1>
+  <div class="sub">Sets · Real Numbers · Polynomials · Ratio & Proportion · 40 Marks</div>
+</div>
+<div class="ch-strip">
+  <span class="ch-tag">Ch1: Sets</span>
+  <span class="ch-tag">Ch2: Real Numbers</span>
+  <span class="ch-tag">Ch3: Polynomials</span>
+  <span class="ch-tag">Ch4: Ratio & Proportion</span>
+</div>
+<div class="instr" style="margin-top:14px;">
+  <strong>Instructions:</strong> All questions are compulsory. Figures to the right indicate marks. Solutions are given below each question in vertical step-by-step format.
+</div>
+
+<!-- Q1: MCQ 5M -->
+<div class="section">
+  <div class="sh h1"><div class="qno">1</div><div class="qtitle">Choose the correct alternative. (MCQ)</div><div class="qmarks">5 Marks</div></div>
+  <div class="sb">
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c1">Ch1</span> i. If A = {1,2,3} and B = {2,3,4}, then A ∩ B = ________.</div>
+      <div class="sol">
+        <span class="sline"><span class="tag ta">Answer</span> A ∩ B = {2, 3}</span>
+        <span class="sline" style="padding-left:20px;">Common elements of A and B are 2 and 3.</span>
+      </div>
+    </div>
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c2">Ch2</span> ii. Which of the following is an irrational number?</div>
+      <div class="sol">
+        <span class="sline"><span class="tag ta">Answer</span> √2 is an irrational number.</span>
+        <span class="sline" style="padding-left:20px;">√2 = 1.41421356... (non-terminating, non-repeating decimal) → irrational.</span>
+        <span class="sline" style="padding-left:20px;">Note: 0.5, 1/3, and −4 are all rational numbers.</span>
+      </div>
+    </div>
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c3">Ch3</span> iii. The degree of the polynomial 5x³ − 2x² + x − 7 is ________.</div>
+      <div class="sol">
+        <span class="sline"><span class="tag ta">Answer</span> Degree = 3</span>
+        <span class="sline" style="padding-left:20px;">The highest power of x in the polynomial is 3 (in the term 5x³).</span>
+      </div>
+    </div>
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c4">Ch4</span> iv. If a : b = 3 : 4, then b : a = ________.</div>
+      <div class="sol">
+        <span class="sline"><span class="tag ta">Answer</span> b : a = 4 : 3</span>
+        <span class="sline" style="padding-left:20px;">Inverse ratio of 3:4 is 4:3.</span>
+      </div>
+    </div>
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c2">Ch2</span> v. Every integer is a ________ number.</div>
+      <div class="sol">
+        <span class="sline"><span class="tag ta">Answer</span> Every integer is a <strong>rational</strong> number.</span>
+        <span class="sline" style="padding-left:20px;">Every integer n can be written as n/1, which is of the form p/q (q ≠ 0) → rational.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q2: True/False 4M -->
+<div class="section">
+  <div class="sh h2"><div class="qno">2</div><div class="qtitle">State whether True or False. Correct the false statements.</div><div class="qmarks">4 Marks</div></div>
+  <div class="sb">
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c1">Ch1</span> i. The empty set is a subset of every set.</div>
+      <div class="sol">
+        <span class="sline-ans">TRUE ✓ — Empty set (∅) is a subset of every set by definition.</span>
+      </div>
+    </div>
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c3">Ch3</span> ii. x² − 4 = (x − 2)(x − 2)</div>
+      <div class="sol">
+        <span class="sline-ans">FALSE ✗ — Correct: x² − 4 = (x−2)(x+2) &nbsp; [∵ a²−b² = (a−b)(a+b)]</span>
+      </div>
+    </div>
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c2">Ch2</span> iii. √4 is an irrational number.</div>
+      <div class="sol">
+        <span class="sline-ans">FALSE ✗ — Correct: √4 = 2, which is a rational number (integer).</span>
+      </div>
+    </div>
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c4">Ch4</span> iv. If a/b = c/d then ad = bc.</div>
+      <div class="sol">
+        <span class="sline-ans">TRUE ✓ — Cross multiplication: a/b = c/d ⟹ ad = bc (fundamental property of proportion).</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q3: Fill in blanks 4M -->
+<div class="section">
+  <div class="sh h3"><div class="qno">3</div><div class="qtitle">Fill in the blanks.</div><div class="qmarks">4 Marks</div></div>
+  <div class="sb">
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c1">Ch1</span> i. The set which has no elements is called ________.</div>
+      <div class="sol"><span class="sline-ans">Empty set (∅ or { }) / Null set / Void set</span></div>
+    </div>
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c3">Ch3</span> ii. If p(x) = x² − 5x + 6, then p(2) = ________.</div>
+      <div class="sol">
+        <span class="sline"><span class="tag tg">Step 1</span> p(2) = (2)² − 5(2) + 6</span>
+        <span class="sline"><span class="tag tg">Step 2</span> = 4 − 10 + 6 = 0</span>
+        <span class="sline-ans">p(2) = 0 &nbsp;(so x = 2 is a zero of the polynomial)</span>
+      </div>
+    </div>
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c4">Ch4</span> iii. The ratio 25 : 75 in simplest form is ________.</div>
+      <div class="sol">
+        <span class="sline"><span class="tag tg">Step 1</span> HCF of 25 and 75 = 25</span>
+        <span class="sline"><span class="tag tg">Step 2</span> 25÷25 : 75÷25 = 1 : 3</span>
+        <span class="sline-ans">1 : 3</span>
+      </div>
+    </div>
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c2">Ch2</span> iv. The decimal expansion of 1/3 is ________.</div>
+      <div class="sol"><span class="sline-ans">0.333... = 0.3̄ (non-terminating, repeating → rational)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q4: Short answer 8M -->
+<div class="section">
+  <div class="sh h4"><div class="qno">4</div><div class="qtitle">Solve the following. (Any 4 of 5) — 2 marks each</div><div class="qmarks">8 Marks</div></div>
+  <div class="sb">
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c1">Ch1</span> A. If A = {1,2,3,4,5} and B = {4,5,6,7}, find A∪B, A∩B and A−B.</div>
+      <div class="sol">
+        <span class="sline"><span class="tag tg">A ∪ B</span> = {1,2,3,4,5,6,7} (all elements of A and B)</span>
+        <span class="sline"><span class="tag tg">A ∩ B</span> = {4,5} (elements common to both)</span>
+        <span class="sline"><span class="tag tg">A − B</span> = {1,2,3} (elements in A but not in B)</span>
+        <span class="sline-ans">A∪B={1,2,3,4,5,6,7} &nbsp; A∩B={4,5} &nbsp; A−B={1,2,3}</span>
+      </div>
+    </div>
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c2">Ch2</span> B. Represent √5 on the number line.</div>
+      <div class="sol">
+        <span class="sline"><span class="tag tg">Step 1</span> Draw a number line. Mark O (origin) and A at point 2 (so OA = 2 units).</span>
+        <span class="sline"><span class="tag tg">Step 2</span> Draw AB ⊥ OA at A, with AB = 1 unit.</span>
+        <span class="sline"><span class="tag tg">Step 3</span> Join OB. By Pythagoras: OB = √(OA² + AB²) = √(4+1) = √5.</span>
+        <span class="sline"><span class="tag tg">Step 4</span> With O as centre and OB as radius, draw an arc cutting the number line at point P.</span>
+        <span class="sline-ans">P represents √5 on the number line. ✓</span>
+      </div>
+    </div>
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c3">Ch3</span> C. Find the zeros of the polynomial p(x) = x² − 5x + 6.</div>
+      <div class="sol">
+        <span class="sline"><span class="tag tg">Step 1</span> Factorise: x² − 5x + 6 = 0</span>
+        <span class="sline"><span class="tag tg">Step 2</span> Find two numbers whose product = 6 and sum = −5: they are −2 and −3.</span>
+        <span class="sline"><span class="tag tg">Step 3</span> x² − 2x − 3x + 6 = x(x−2) − 3(x−2) = (x−2)(x−3) = 0</span>
+        <span class="sline"><span class="tag tg">Step 4</span> x − 2 = 0 ⟹ x = 2 &nbsp;&nbsp; OR &nbsp;&nbsp; x − 3 = 0 ⟹ x = 3</span>
+        <span class="sline-ans">Zeros of p(x) = 2 and 3</span>
+      </div>
+    </div>
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c4">Ch4</span> D. Divide ₹800 in the ratio 3 : 5.</div>
+      <div class="sol">
+        <span class="sline"><span class="tag tg">Step 1</span> Total parts = 3 + 5 = 8 parts</span>
+        <span class="sline"><span class="tag tg">Step 2</span> Value of 1 part = 800 ÷ 8 = ₹100</span>
+        <span class="sline"><span class="tag tg">Step 3</span> First share = 3 × 100 = ₹300</span>
+        <span class="sline"><span class="tag tg">Step 4</span> Second share = 5 × 100 = ₹500</span>
+        <span class="sline-ans">₹300 and ₹500</span>
+      </div>
+    </div>
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c3">Ch3</span> E. Expand using identity: (2x + 3)²</div>
+      <div class="sol">
+        <span class="sline"><span class="tag tf">Identity</span> (a + b)² = a² + 2ab + b²</span>
+        <span class="sline"><span class="tag tg">Step 1</span> Here a = 2x, b = 3</span>
+        <span class="sline"><span class="tag tg">Step 2</span> = (2x)² + 2(2x)(3) + (3)²</span>
+        <span class="sline"><span class="tag tg">Step 3</span> = 4x² + 12x + 9</span>
+        <span class="sline-ans">(2x + 3)² = 4x² + 12x + 9</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q5: Solve 8M -->
+<div class="section">
+  <div class="sh h5"><div class="qno">5</div><div class="qtitle">Solve the following. (Any 2 of 3) — 4 marks each</div><div class="qmarks">8 Marks</div></div>
+  <div class="sb">
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c1">Ch1</span> A. In a group of 60 students, 35 study Maths, 25 study Science, and 15 study both. Using sets, find: (i) students who study only Maths (ii) students who study only Science (iii) students who study neither.</div>
+      <div class="sol">
+        <span class="sline"><span class="tag tg">Given</span> n(M) = 35, n(S) = 25, n(M∩S) = 15, Total = 60</span>
+        <span class="sline"><span class="tag tg">Step 1</span> Only Maths = n(M) − n(M∩S) = 35 − 15 = 20</span>
+        <span class="sline"><span class="tag tg">Step 2</span> Only Science = n(S) − n(M∩S) = 25 − 15 = 10</span>
+        <span class="sline"><span class="tag tg">Step 3</span> n(M∪S) = 35 + 25 − 15 = 45</span>
+        <span class="sline"><span class="tag tg">Step 4</span> Neither = Total − n(M∪S) = 60 − 45 = 15</span>
+        <span class="sline-ans">(i) Only Maths = 20 &nbsp; (ii) Only Science = 10 &nbsp; (iii) Neither = 15</span>
+      </div>
+    </div>
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c3">Ch3</span> B. Divide: (x³ − 6x² + 11x − 6) by (x − 1) and find the quotient and remainder.</div>
+      <div class="sol">
+        <span class="sline"><span class="tag tf">Remainder Theorem</span> p(1) = (1)³ − 6(1)² + 11(1) − 6 = 1−6+11−6 = 0</span>
+        <span class="sline"><span class="tag tg">So (x−1) is a factor. Perform long division:</span></span>
+        <span class="sline"><span class="tag tg">Step 1</span> x³ ÷ x = x² &nbsp; → &nbsp; x²(x−1) = x³−x² &nbsp; Remainder: −5x²+11x−6</span>
+        <span class="sline"><span class="tag tg">Step 2</span> −5x² ÷ x = −5x &nbsp; → &nbsp; −5x(x−1) = −5x²+5x &nbsp; Remainder: 6x−6</span>
+        <span class="sline"><span class="tag tg">Step 3</span> 6x ÷ x = 6 &nbsp; → &nbsp; 6(x−1) = 6x−6 &nbsp; Remainder: 0</span>
+        <span class="sline-ans">Quotient = x² − 5x + 6, &nbsp; Remainder = 0</span>
+        <span class="sline" style="padding-left:20px;">Further: x²−5x+6 = (x−2)(x−3) &nbsp; ∴ All zeros: x = 1, 2, 3</span>
+      </div>
+    </div>
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c4">Ch4</span> C. If 4 : x = x : 16, find x. Also verify that the terms are in proportion.</div>
+      <div class="sol">
+        <span class="sline"><span class="tag tg">Given</span> 4 : x :: x : 16 (means proportion)</span>
+        <span class="sline"><span class="tag tf">Formula</span> Mean × Mean = Extreme × Extreme: x² = 4 × 16</span>
+        <span class="sline"><span class="tag tg">Step 1</span> x² = 64</span>
+        <span class="sline"><span class="tag tg">Step 2</span> x = √64 = 8</span>
+        <span class="sline"><span class="tag tg">Verify</span> 4:8 = 1:2 &nbsp;&amp;&amp;&nbsp; 8:16 = 1:2 ✓ (both equal)</span>
+        <span class="sline-ans">x = 8 &nbsp; (8 is the geometric mean / mean proportional of 4 and 16)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q6: Long answer 11M -->
+<div class="section">
+  <div class="sh h6"><div class="qno">6</div><div class="qtitle">Answer in detail. (Any 1 of 2) — 4 marks + compulsory numerical 3+4 marks</div><div class="qmarks">11 Marks</div></div>
+  <div class="sb">
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c2">Ch2</span> A. (i) Define rational and irrational numbers. Prove that √2 is irrational. (4M)</div>
+      <div class="sol">
+        <span class="sline"><strong>Rational Number:</strong> A number that can be expressed as p/q where p, q are integers and q ≠ 0. Decimal expansion: terminating or non-terminating repeating. E.g., 1/2, 0.333..., −5.</span>
+        <span class="sline"><strong>Irrational Number:</strong> Cannot be expressed as p/q. Decimal expansion: non-terminating and non-repeating. E.g., √2, π, √3.</span>
+        <span class="sline"><strong>Proof that √2 is irrational (by contradiction):</strong></span>
+        <span class="sline"><span class="tag tg">Assume</span> √2 is rational. Then √2 = p/q where p, q ∈ Z, q ≠ 0, and p/q is in lowest terms (HCF of p,q = 1).</span>
+        <span class="sline"><span class="tag tg">Step 1</span> Squaring both sides: 2 = p²/q² &nbsp;⟹&nbsp; p² = 2q²</span>
+        <span class="sline"><span class="tag tg">Step 2</span> So p² is even &nbsp;⟹&nbsp; p is even. Let p = 2k.</span>
+        <span class="sline"><span class="tag tg">Step 3</span> (2k)² = 2q² &nbsp;⟹&nbsp; 4k² = 2q² &nbsp;⟹&nbsp; q² = 2k²</span>
+        <span class="sline"><span class="tag tg">Step 4</span> So q² is even &nbsp;⟹&nbsp; q is even.</span>
+        <span class="sline"><span class="tag tg">Step 5</span> Both p and q are even → HCF ≥ 2 → contradicts HCF(p,q) = 1.</span>
+        <span class="sline-ans">∴ Our assumption is wrong. √2 is irrational. ✓ Proved.</span>
+      </div>
+    </div>
+    <div class="ans-item">
+      <div class="ans-q"><span class="cl c3">Ch3</span> B. Using algebraic identities, expand and simplify: (i) (x+2)(x+3) &nbsp; (ii) (3a+2b)³ (3M + 4M)</div>
+      <div class="sol">
+        <span class="sline"><strong>(i) (x+2)(x+3):</strong></span>
+        <span class="sline"><span class="tag tf">Identity</span> (x+a)(x+b) = x² + (a+b)x + ab</span>
+        <span class="sline"><span class="tag tg">Step 1</span> a = 2, b = 3 &nbsp; → &nbsp; a+b = 5, ab = 6</span>
+        <span class="sline-ans">(x+2)(x+3) = x² + 5x + 6</span>
+        <span class="sline"><strong>(ii) (3a+2b)³:</strong></span>
+        <span class="sline"><span class="tag tf">Identity</span> (x+y)³ = x³ + 3x²y + 3xy² + y³</span>
+        <span class="sline"><span class="tag tg">Step 1</span> x = 3a, y = 2b</span>
+        <span class="sline"><span class="tag tg">Step 2</span> = (3a)³ + 3(3a)²(2b) + 3(3a)(2b)² + (2b)³</span>
+        <span class="sline"><span class="tag tg">Step 3</span> = 27a³ + 3(9a²)(2b) + 3(3a)(4b²) + 8b³</span>
+        <span class="sline"><span class="tag tg">Step 4</span> = 27a³ + 54a²b + 36ab² + 8b³</span>
+        <span class="sline-ans">(3a+2b)³ = 27a³ + 54a²b + 36ab² + 8b³</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="max-width:900px;margin:16px auto;background:#fff;border-radius:12px;padding:18px 22px;box-shadow:0 2px 10px rgba(0,0,0,.08);">
+  <h3 style="color:#1a237e;margin-bottom:12px;font-size:.95rem;font-weight:800;">📊 Paper Pattern</h3>
+  <table class="mt">
+    <tr><th>Q</th><th>Type</th><th>Marks</th></tr>
+    <tr><td>Q1</td><td>MCQ (5×1)</td><td>5</td></tr>
+    <tr><td>Q2</td><td>True/False (4×1)</td><td>4</td></tr>
+    <tr><td>Q3</td><td>Fill in blanks (4×1)</td><td>4</td></tr>
+    <tr><td>Q4</td><td>Short answer (Any 4×2)</td><td>8</td></tr>
+    <tr><td>Q5</td><td>Solve (Any 2×4)</td><td>8</td></tr>
+    <tr><td>Q6</td><td>Long answer</td><td>11</td></tr>
+    <tr style="background:#e8eaf6;"><td colspan="2"><strong>TOTAL</strong></td><td><strong>40</strong></td></tr>
+  </table>
+</div>
+
+<footer><p>Visions Classes · visionslearning.in · <a href="notes-class9.html">← Class 9 Notes</a></p></footer>
+
+<div style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;opacity:0.07;user-select:none;">
+  <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="150" cy="150" r="135" fill="none" stroke="#1a237e" stroke-width="6"/>
+    <circle cx="150" cy="150" r="120" fill="none" stroke="#1a237e" stroke-width="2"/>
+    <path id="ta" fill="none" d="M 25,150 a125,125 0 1,1 250,0"/>
+    <path id="ba" fill="none" d="M 25,150 a125,125 0 0,0 250,0"/>
+    <text font-size="17" font-weight="900" fill="#1a237e" font-family="Arial,sans-serif" letter-spacing="4"><textPath href="#ta" startOffset="8%">VISIONS CLASSES · VISIONSLEARNING.IN ·</textPath></text>
+    <text font-size="14" font-weight="900" fill="#1a237e" font-family="Arial,sans-serif" letter-spacing="3"><textPath href="#ba" startOffset="8%">MATHS · CLASS 9 · MAHARASHTRA BOARD</textPath></text>
+    <text x="150" y="142" text-anchor="middle" font-size="20" font-weight="900" fill="#1a237e" font-family="Arial,sans-serif">VISIONS</text>
+    <text x="150" y="168" text-anchor="middle" font-size="20" font-weight="900" fill="#1a237e" font-family="Arial,sans-serif">CLASSES</text>
+    <text x="150" y="193" text-anchor="middle" font-size="10" font-weight="700" fill="#1a237e" font-family="Arial,sans-serif" letter-spacing="1">★ MATHS PAPER 1 ★</text>
+  </svg>
+</div>
+</body>
+</html>
