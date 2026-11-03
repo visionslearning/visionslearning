@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Class 11 IT — Question Bank with Answers | Maharashtra Board</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size:15px;}
+
+  .site-header{background:linear-gradient(135deg,#0d47a1,#1565c0,#4a148c);padding:14px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 3px 12px rgba(0,0,0,.3);}
+  .site-header a{color:#90caf9;text-decoration:none;font-size:.85rem;font-weight:600;}
+  .site-header a:hover{color:#fff;}
+  .header-title{color:#fff;font-size:1.05rem;font-weight:800;}
+
+  .hero{background:linear-gradient(135deg,#0d47a1 0%,#1565c0 40%,#4a148c 100%);padding:30px 20px 24px;text-align:center;color:#fff;}
+  .board-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:5px 18px;font-size:.73rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;}
+  .hero h1{font-size:1.55rem;font-weight:900;line-height:1.25;margin-bottom:6px;}
+  .hero .sub{font-size:.88rem;color:rgba(255,255,255,.85);margin-bottom:14px;}
+  .pills{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
+  .pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:6px 14px;font-size:.8rem;font-weight:700;}
+
+  /* TOC */
+  .toc{max-width:900px;margin:14px auto;background:#fff;border-radius:10px;padding:16px 20px;box-shadow:0 2px 8px rgba(0,0,0,.07);}
+  .toc h3{color:#0d47a1;margin-bottom:10px;font-size:.9rem;font-weight:800;}
+  .toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:7px;}
+  .toc-a{background:#e3f2fd;border-radius:7px;padding:8px 12px;font-size:.8rem;font-weight:700;color:#0d47a1;text-decoration:none;display:block;border-left:3px solid #1976d2;}
+  .toc-a:hover{background:#bbdefb;}
+
+  /* Chapter divider */
+  .ch-div{max-width:900px;margin:20px auto 8px;border-radius:10px;padding:13px 22px;display:flex;align-items:center;gap:12px;color:#fff;}
+  .ch-icon{font-size:1.8rem;}
+  .ch-info h2{font-size:1.05rem;font-weight:900;margin-bottom:2px;}
+  .ch-info p{font-size:.8rem;opacity:.9;}
+  .bg1{background:linear-gradient(135deg,#0d47a1,#1565c0);}
+  .bg2{background:linear-gradient(135deg,#1b5e20,#2e7d32);}
+  .bg3{background:linear-gradient(135deg,#e65100,#f57c00);}
+  .bg4{background:linear-gradient(135deg,#880e4f,#c2185b);}
+
+  /* Q Card */
+  .q-card{max-width:900px;margin:10px auto;background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.09);overflow:hidden;}
+  .q-title-bar{display:flex;align-items:center;gap:10px;padding:11px 20px;background:#fafafa;border-bottom:2px solid #e3f2fd;}
+  .q-num{background:#0d47a1;color:#fff;font-size:.8rem;font-weight:900;padding:4px 12px;border-radius:20px;white-space:nowrap;}
+  .q-title{font-size:.95rem;font-weight:700;color:#1a1a1a;flex:1;line-height:1.4;}
+  .q-chip{background:#e3f2fd;color:#0d47a1;font-size:.72rem;font-weight:800;padding:3px 10px;border-radius:10px;white-space:nowrap;}
+  .itag{display:inline-block;background:#b71c1c;color:#fff;font-size:.65rem;font-weight:900;padding:2px 7px;border-radius:6px;margin-left:5px;}
+
+  .sub{border-bottom:1px solid #f0f0f0;padding:15px 22px;}
+  .sub:last-child{border-bottom:none;}
+  .sub-q{font-size:.9rem;font-weight:800;color:#0d47a1;background:#e3f2fd;padding:8px 14px;border-radius:7px;margin-bottom:12px;display:block;}
+
+  /* Vertical sline */
+  .sol{margin:0;}
+  .sline{display:block;font-size:.92rem;line-height:1;padding:7px 0;border-bottom:1px solid #f5f5f5;}
+  .sline:last-child{border-bottom:none;}
+  .tag{display:inline-block;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;padding:2px 8px;border-radius:8px;margin-right:8px;vertical-align:middle;}
+  .tans{background:#dcfce7;color:#166534;}
+  .texp{background:#e3f2fd;color:#0d47a1;}
+  .sline-ans{display:block;background:#f0fdf4;border-left:4px solid #16a34a;padding:10px 16px;border-radius:0 8px 8px 0;margin-top:5px;font-size:.92rem;font-weight:700;color:#166534;}
+
+  .cl{display:inline-block;font-size:.68rem;font-weight:800;padding:2px 8px;border-radius:7px;margin-right:5px;text-transform:uppercase;}
+  .c1{background:#e3f2fd;color:#0d47a1;}
+  .c2{background:#e8f5e9;color:#1b5e20;}
+  .c3{background:#fff3e0;color:#e65100;}
+  .c4{background:#fce4ec;color:#880e4f;}
+
+  table.ref{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:8px;}
+  table.ref th{background:#0d47a1;color:#fff;padding:6px 10px;text-align:left;}
+  table.ref td{padding:6px 10px;border-bottom:1px solid #e8edf2;}
+  table.ref tr:nth-child(even) td{background:#e3f2fd;}
+
+  footer{text-align:center;padding:24px 16px;font-size:.8rem;color:#888;}
+  footer a{color:#1565c0;text-decoration:none;}
+  @media(max-width:600px){.hero h1{font-size:1.2rem;}}
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <a href="notes-class11.html">← Class 11 Notes</a>
+  <span style="color:rgba(255,255,255,.4);">|</span>
+  <span class="header-title">Class 11 IT — Question Bank</span>
+</div>
+
+<div class="hero">
+  <div class="board-tag">Maharashtra Board · Class 11 · Information Technology</div>
+  <h1>💻 Class 11 IT — Complete Question Bank<br>All 4 Chapters with Answers</h1>
+  <div class="sub">Basics of IT · DBMS · Web Designing · Cyber Law</div>
+  <div class="pills">
+    <div class="pill">📖 All Chapters</div>
+    <div class="pill">✅ Full Answers</div>
+    <div class="pill">⭐ Most IMP</div>
+    <div class="pill">🎯 Exam Ready</div>
+  </div>
+</div>
+
+<div class="toc">
+  <h3>📑 Quick Navigation</h3>
+  <div class="toc-grid">
+    <a class="toc-a" href="#ch1">Ch 1 — Basics of IT</a>
+    <a class="toc-a" href="#ch1q1">Q — Hardware & Software</a>
+    <a class="toc-a" href="#ch1q2">Q — Input/Output Devices</a>
+    <a class="toc-a" href="#ch1q3">Q — Memory & Storage</a>
+    <a class="toc-a" href="#ch1q4">Q — Operating System</a>
+    <a class="toc-a" href="#ch2">Ch 2 — DBMS</a>
+    <a class="toc-a" href="#ch2q1">Q — Database Concepts</a>
+    <a class="toc-a" href="#ch2q2">Q — SQL Commands</a>
+    <a class="toc-a" href="#ch2q3">Q — Keys & Relations</a>
+    <a class="toc-a" href="#ch3">Ch 3 — Web Designing</a>
+    <a class="toc-a" href="#ch3q1">Q — HTML Basics</a>
+    <a class="toc-a" href="#ch3q2">Q — HTML Tags</a>
+    <a class="toc-a" href="#ch3q3">Q — Internet Concepts</a>
+    <a class="toc-a" href="#ch4">Ch 4 — Cyber Law</a>
+    <a class="toc-a" href="#ch4q1">Q — Cyber Crimes</a>
+    <a class="toc-a" href="#ch4q2">Q — IT Act 2000</a>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════
+     CHAPTER 1 — BASICS OF IT
+════════════════════════ -->
+<div class="ch-div bg1" id="ch1">
+  <div class="ch-icon">💻</div>
+  <div class="ch-info">
+    <h2>Chapter 1 — Basics of Information Technology</h2>
+    <p>Hardware · Software · Memory · Input/Output · OS · Networking</p>
+  </div>
+</div>
+
+<div class="q-card" id="ch1q1">
+  <div class="q-title-bar"><span class="q-num">Q 1</span><span class="q-title">Define and distinguish Hardware and Software. Give examples. <span class="itag">⭐ Most IMP</span></span><span class="q-chip">Ch1</span></div>
+  <div class="sub">
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Hardware</span> Physical, tangible components of a computer that you can touch and see.</span>
+      <span class="sline" style="padding-left:20px;">Examples: Monitor, Keyboard, Mouse, CPU, RAM, Hard disk, Printer, Scanner</span>
+      <span class="sline"><span class="tag tans">Software</span> Set of programs/instructions that tell the hardware what to do. Cannot be touched.</span>
+      <span class="sline" style="padding-left:20px;">Examples: Windows OS, MS Word, Chrome browser, Antivirus</span>
+      <table class="ref" style="margin-top:8px;">
+        <tr><th>Hardware</th><th>Software</th></tr>
+        <tr><td>Physical/tangible</td><td>Non-physical/intangible</td></tr>
+        <tr><td>Can be touched</td><td>Cannot be touched</td></tr>
+        <tr><td>Permanent (durable)</td><td>Can be copied/modified</td></tr>
+        <tr><td>E.g. Monitor, RAM</td><td>E.g. MS Office, Windows</td></tr>
+      </table>
+      <span class="sline-ans">∴ Hardware = Physical components; Software = Programs/Instructions</span>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-title-bar"><span class="q-num">Q 2</span><span class="q-title">What are the types of Software? Explain each with examples. <span class="itag">⭐ Most IMP</span></span><span class="q-chip">Ch1</span></div>
+  <div class="sub">
+    <div class="sol">
+      <span class="sline"><span class="tag tans">1. System Software</span> Manages and controls hardware; provides platform for other software.</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Operating System (OS):</strong> Windows, Linux, Android, macOS</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Device Drivers:</strong> Software for printer, graphics card</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Utility programs:</strong> Antivirus, Disk Cleanup, WinZip</span>
+      <span class="sline"><span class="tag tans">2. Application Software</span> Designed for specific tasks for end users.</span>
+      <span class="sline" style="padding-left:20px;">• <strong>General purpose:</strong> MS Word, Excel, PowerPoint</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Specific purpose:</strong> Tally (accounting), AutoCAD (design)</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Web-based:</strong> Google Docs, Gmail, YouTube</span>
+      <span class="sline"><span class="tag tans">3. Language Translators</span> Convert programs into machine code.</span>
+      <span class="sline" style="padding-left:20px;">• Compiler, Interpreter, Assembler</span>
+      <span class="sline-ans">∴ Software types: System Software, Application Software, Language Translators</span>
+    </div>
+  </div>
+</div>
+
+<div class="q-card" id="ch1q2">
+  <div class="q-title-bar"><span class="q-num">Q 3</span><span class="q-title">Classify input and output devices with examples. <span class="itag">⭐ IMP</span></span><span class="q-chip">Ch1</span></div>
+  <div class="sub">
+    <div class="sol">
+      <table class="ref">
+        <tr><th>Input Devices</th><th>Output Devices</th></tr>
+        <tr><td>Keyboard — text input</td><td>Monitor (VDU) — display</td></tr>
+        <tr><td>Mouse — pointing device</td><td>Printer — hard copy</td></tr>
+        <tr><td>Scanner — image/doc input</td><td>Speaker — audio output</td></tr>
+        <tr><td>Microphone — voice input</td><td>Projector — display on screen</td></tr>
+        <tr><td>Joystick — gaming/control</td><td>Plotter — drawing/diagrams</td></tr>
+        <tr><td>Webcam — video input</td><td>Headphones — audio</td></tr>
+        <tr><td>Touchscreen — touch input</td><td>Touchscreen — also output</td></tr>
+      </table>
+      <span class="sline" style="margin-top:8px;"><strong>I/O Devices (Both):</strong> Touchscreen, Modem, Network card</span>
+    </div>
+  </div>
+</div>
+
+<div class="q-card" id="ch1q3">
+  <div class="q-title-bar"><span class="q-num">Q 4</span><span class="q-title">Explain types of computer memory. Distinguish between RAM and ROM. <span class="itag">⭐ Most IMP</span></span><span class="q-chip">Ch1</span></div>
+  <div class="sub">
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Primary Memory (Main Memory)</span> Directly accessible by CPU:</span>
+      <span class="sline" style="padding-left:20px;">• <strong>RAM (Random Access Memory):</strong> Volatile (data lost when power off); temporary working memory. E.g., 8 GB RAM in laptop</span>
+      <span class="sline" style="padding-left:20px;">• <strong>ROM (Read Only Memory):</strong> Non-volatile (data permanent); stores BIOS/boot instructions. Cannot be modified by user.</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Cache Memory:</strong> Fastest, smallest — between CPU and RAM; stores frequently used data</span>
+      <span class="sline"><span class="tag tans">Secondary Memory (Auxiliary Storage)</span> Permanent storage, not directly accessible by CPU:</span>
+      <span class="sline" style="padding-left:20px;">Hard disk (HDD/SSD), Pen drive (USB), CD/DVD, Memory card</span>
+      <table class="ref" style="margin-top:8px;">
+        <tr><th>RAM</th><th>ROM</th></tr>
+        <tr><td>Volatile (data lost on power off)</td><td>Non-volatile (data permanent)</td></tr>
+        <tr><td>Read and Write</td><td>Read only (generally)</td></tr>
+        <tr><td>Temporary — working memory</td><td>Permanent — stores BIOS</td></tr>
+        <tr><td>Larger capacity (8-32 GB)</td><td>Small (few MB)</td></tr>
+        <tr><td>E.g., DDR4 RAM</td><td>E.g., BIOS ROM chip</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="q-card" id="ch1q4">
+  <div class="q-title-bar"><span class="q-num">Q 5</span><span class="q-title">What is an Operating System? State its functions. <span class="itag">⭐ Most IMP</span></span><span class="q-chip">Ch1</span></div>
+  <div class="sub">
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Definition</span> An Operating System (OS) is system software that acts as an interface between the user and the computer hardware. It manages all hardware and software resources.</span>
+      <span class="sline"><strong>Functions of OS:</strong></span>
+      <span class="sline" style="padding-left:20px;">1. <strong>Process Management:</strong> Manages running programs (processes); CPU scheduling</span>
+      <span class="sline" style="padding-left:20px;">2. <strong>Memory Management:</strong> Allocates and deallocates RAM to programs</span>
+      <span class="sline" style="padding-left:20px;">3. <strong>File Management:</strong> Creates, organises, stores, retrieves files and folders</span>
+      <span class="sline" style="padding-left:20px;">4. <strong>Device Management:</strong> Controls input/output devices through drivers</span>
+      <span class="sline" style="padding-left:20px;">5. <strong>Security:</strong> Password protection, user authentication, access control</span>
+      <span class="sline" style="padding-left:20px;">6. <strong>User Interface:</strong> GUI (Windows) or CLI (Linux terminal)</span>
+      <span class="sline"><strong>Examples of OS:</strong> Windows 10/11, Linux (Ubuntu), Android, iOS, macOS</span>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-title-bar"><span class="q-num">Q 6</span><span class="q-title">Explain generations of computers with their features. <span class="itag">⭐ IMP</span></span><span class="q-chip">Ch1</span></div>
+  <div class="sub">
+    <div class="sol">
+      <table class="ref">
+        <tr><th>Generation</th><th>Period</th><th>Technology</th><th>Features</th><th>Example</th></tr>
+        <tr><td>1st</td><td>1940–56</td><td>Vacuum tubes</td><td>Very large, slow, high power, unreliable</td><td>ENIAC, UNIVAC</td></tr>
+        <tr><td>2nd</td><td>1956–63</td><td>Transistors</td><td>Smaller, faster, less heat, more reliable</td><td>IBM 1401</td></tr>
+        <tr><td>3rd</td><td>1964–71</td><td>IC (Integrated Circuit)</td><td>Even smaller, faster, cheaper, multi-tasking</td><td>IBM 360</td></tr>
+        <tr><td>4th</td><td>1971–present</td><td>Microprocessor (VLSI)</td><td>Personal computers, GUI, internet, portable</td><td>Intel PCs, Laptops</td></tr>
+        <tr><td>5th</td><td>Present–future</td><td>AI / Parallel processing</td><td>Artificial Intelligence, Natural Language, robotics</td><td>Deep Blue, AI assistants</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-title-bar"><span class="q-num">Q 7</span><span class="q-title">What is a Network? Explain types of networks — LAN, WAN, MAN. <span class="itag">⭐ IMP</span></span><span class="q-chip">Ch1</span></div>
+  <div class="sub">
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Network</span> A group of two or more computers connected together to share resources (data, hardware, internet) is called a Computer Network.</span>
+      <table class="ref" style="margin-top:8px;">
+        <tr><th>Type</th><th>Full Form</th><th>Coverage Area</th><th>Example</th></tr>
+        <tr><td>LAN</td><td>Local Area Network</td><td>Small area — one building/room</td><td>School computer lab, office</td></tr>
+        <tr><td>MAN</td><td>Metropolitan Area Network</td><td>City-wide</td><td>Cable TV network in a city</td></tr>
+        <tr><td>WAN</td><td>Wide Area Network</td><td>Country/worldwide</td><td>Internet, banking networks</td></tr>
+      </table>
+      <span class="sline" style="margin-top:8px;"><strong>Topologies:</strong> Bus, Star, Ring, Mesh — arrangement of computers in a network.</span>
+      <span class="sline-ans">Internet = largest WAN connecting millions of computers worldwide.</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════
+     CHAPTER 2 — DBMS
+════════════════════════ -->
+<div class="ch-div bg2" id="ch2">
+  <div class="ch-icon">🗄️</div>
+  <div class="ch-info">
+    <h2>Chapter 2 — Introduction to DBMS</h2>
+    <p>Database · DBMS · SQL · Keys · Tables · Queries</p>
+  </div>
+</div>
+
+<div class="q-card" id="ch2q1">
+  <div class="q-title-bar"><span class="q-num">Q 8</span><span class="q-title">What is a Database? Define DBMS and state its advantages. <span class="itag">⭐ Most IMP</span></span><span class="q-chip">Ch2</span></div>
+  <div class="sub">
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Database</span> An organised collection of related data stored in a structured format so it can be easily accessed, managed, and updated. Example: Student records, library catalogue.</span>
+      <span class="sline"><span class="tag tans">DBMS</span> Database Management System — software that creates, manages, and controls access to databases.</span>
+      <span class="sline" style="padding-left:20px;">Examples: MySQL, Oracle, MS Access, PostgreSQL, SQLite</span>
+      <span class="sline"><strong>Advantages of DBMS:</strong></span>
+      <span class="sline" style="padding-left:20px;">1. <strong>Reduced data redundancy</strong> — no duplicate data</span>
+      <span class="sline" style="padding-left:20px;">2. <strong>Data integrity</strong> — accurate and consistent data</span>
+      <span class="sline" style="padding-left:20px;">3. <strong>Data security</strong> — password protection, access control</span>
+      <span class="sline" style="padding-left:20px;">4. <strong>Easy data sharing</strong> — multiple users can access simultaneously</span>
+      <span class="sline" style="padding-left:20px;">5. <strong>Backup and recovery</strong> — data can be restored after failure</span>
+      <span class="sline" style="padding-left:20px;">6. <strong>Data independence</strong> — changing structure doesn't affect applications</span>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-title-bar"><span class="q-num">Q 9</span><span class="q-title">Define: Table, Field, Record, Primary Key, Foreign Key. <span class="itag">⭐ Most IMP</span></span><span class="q-chip">Ch2</span></div>
+  <div class="sub">
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Table (Relation)</span> A collection of data arranged in rows and columns. Example: Student table with columns RollNo, Name, Marks.</span>
+      <span class="sline"><span class="tag tans">Field (Column/Attribute)</span> A single piece of information in a table — one column. Example: 'Name' is a field in Student table.</span>
+      <span class="sline"><span class="tag tans">Record (Row/Tuple)</span> A complete set of related fields — one row of a table. Example: (101, Ravi, 85) is one record.</span>
+      <span class="sline"><span class="tag tans">Primary Key</span> A field (or combination) that uniquely identifies each record in a table. Must be unique and NOT NULL. Example: RollNo in Student table.</span>
+      <span class="sline"><span class="tag tans">Foreign Key</span> A field in one table that refers to the Primary Key of another table — used to link two tables. Example: DeptID in Employee table links to DeptID in Department table.</span>
+      <span class="sline"><span class="tag tans">Candidate Key</span> Any field that can be a Primary Key. E.g., both RollNo and AadharNo can uniquely identify a student.</span>
+    </div>
+  </div>
+</div>
+
+<div class="q-card" id="ch2q2">
+  <div class="q-title-bar"><span class="q-num">Q 10</span><span class="q-title">Write SQL commands — DDL, DML, DCL with examples. <span class="itag">⭐ Most IMP</span></span><span class="q-chip">Ch2</span></div>
+  <div class="sub">
+    <div class="sol">
+      <span class="sline"><span class="tag tans">DDL — Data Definition Language</span> Defines database structure (schema).</span>
+      <span class="sline" style="padding-left:20px;font-family:monospace;background:#f1f5f9;padding:6px 12px;border-radius:6px;margin-top:4px;">CREATE TABLE Student (RollNo INT PRIMARY KEY, Name VARCHAR(50), Marks INT);</span>
+      <span class="sline" style="padding-left:20px;font-family:monospace;background:#f1f5f9;padding:6px 12px;border-radius:6px;margin-top:4px;">ALTER TABLE Student ADD Email VARCHAR(100);</span>
+      <span class="sline" style="padding-left:20px;font-family:monospace;background:#f1f5f9;padding:6px 12px;border-radius:6px;margin-top:4px;">DROP TABLE Student;</span>
+      <span class="sline"><span class="tag tans">DML — Data Manipulation Language</span> Manipulates data in tables.</span>
+      <span class="sline" style="padding-left:20px;font-family:monospace;background:#f1f5f9;padding:6px 12px;border-radius:6px;margin-top:4px;">INSERT INTO Student VALUES (101, 'Ravi', 85);</span>
+      <span class="sline" style="padding-left:20px;font-family:monospace;background:#f1f5f9;padding:6px 12px;border-radius:6px;margin-top:4px;">UPDATE Student SET Marks=90 WHERE RollNo=101;</span>
+      <span class="sline" style="padding-left:20px;font-family:monospace;background:#f1f5f9;padding:6px 12px;border-radius:6px;margin-top:4px;">DELETE FROM Student WHERE RollNo=101;</span>
+      <span class="sline" style="padding-left:20px;font-family:monospace;background:#f1f5f9;padding:6px 12px;border-radius:6px;margin-top:4px;">SELECT * FROM Student WHERE Marks > 75;</span>
+      <span class="sline"><span class="tag tans">DCL — Data Control Language</span> Controls access permissions.</span>
+      <span class="sline" style="padding-left:20px;font-family:monospace;background:#f1f5f9;padding:6px 12px;border-radius:6px;margin-top:4px;">GRANT SELECT ON Student TO user1;</span>
+      <span class="sline" style="padding-left:20px;font-family:monospace;background:#f1f5f9;padding:6px 12px;border-radius:6px;margin-top:4px;">REVOKE SELECT ON Student FROM user1;</span>
+    </div>
+  </div>
+</div>
+
+<div class="q-card" id="ch2q3">
+  <div class="q-title-bar"><span class="q-num">Q 11</span><span class="q-title">Write SQL SELECT queries with WHERE, ORDER BY, GROUP BY. <span class="itag">⭐ Most IMP</span></span><span class="q-chip">Ch2</span></div>
+  <div class="sub">
+    <div class="sol">
+      <span class="sline"><strong>Table: Student (RollNo, Name, Class, Marks, City)</strong></span>
+      <span class="sline"><span class="tag tans">Q1</span> Display all students with marks above 80:</span>
+      <span class="sline" style="padding-left:20px;font-family:monospace;background:#f1f5f9;padding:6px 12px;border-radius:6px;">SELECT * FROM Student WHERE Marks > 80;</span>
+      <span class="sline"><span class="tag tans">Q2</span> Display names in alphabetical order:</span>
+      <span class="sline" style="padding-left:20px;font-family:monospace;background:#f1f5f9;padding:6px 12px;border-radius:6px;">SELECT Name FROM Student ORDER BY Name ASC;</span>
+      <span class="sline"><span class="tag tans">Q3</span> Count students in each city:</span>
+      <span class="sline" style="padding-left:20px;font-family:monospace;background:#f1f5f9;padding:6px 12px;border-radius:6px;">SELECT City, COUNT(*) FROM Student GROUP BY City;</span>
+      <span class="sline"><span class="tag tans">Q4</span> Find maximum marks:</span>
+      <span class="sline" style="padding-left:20px;font-family:monospace;background:#f1f5f9;padding:6px 12px;border-radius:6px;">SELECT MAX(Marks) FROM Student;</span>
+      <span class="sline"><span class="tag tans">Q5</span> Display students from Mumbai with marks > 70:</span>
+      <span class="sline" style="padding-left:20px;font-family:monospace;background:#f1f5f9;padding:6px 12px;border-radius:6px;">SELECT * FROM Student WHERE City='Mumbai' AND Marks > 70;</span>
+      <span class="sline"><span class="tag tans">Q6</span> Display distinct cities:</span>
+      <span class="sline" style="padding-left:20px;font-family:monospace;background:#f1f5f9;padding:6px 12px;border-radius:6px;">SELECT DISTINCT City FROM Student;</span>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-title-bar"><span class="q-num">Q 12</span><span class="q-title">What are aggregate functions in SQL? Explain with examples. <span class="itag">⭐ IMP</span></span><span class="q-chip">Ch2</span></div>
+  <div class="sub">
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Aggregate Functions</span> Functions that perform calculations on a group of values and return a single result.</span>
+      <table class="ref">
+        <tr><th>Function</th><th>Description</th><th>Example</th></tr>
+        <tr><td>COUNT()</td><td>Count number of rows</td><td>SELECT COUNT(*) FROM Student;</td></tr>
+        <tr><td>SUM()</td><td>Sum of values</td><td>SELECT SUM(Marks) FROM Student;</td></tr>
+        <tr><td>AVG()</td><td>Average of values</td><td>SELECT AVG(Marks) FROM Student;</td></tr>
+        <tr><td>MAX()</td><td>Maximum value</td><td>SELECT MAX(Marks) FROM Student;</td></tr>
+        <tr><td>MIN()</td><td>Minimum value</td><td>SELECT MIN(Marks) FROM Student;</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════
+     CHAPTER 3 — WEB DESIGNING
+════════════════════════ -->
+<div class="ch-div bg3" id="ch3">
+  <div class="ch-icon">🌐</div>
+  <div class="ch-info">
+    <h2>Chapter 3 — Impressive Web Designing</h2>
+    <p>HTML · Tags · Attributes · CSS · Internet · Website</p>
+  </div>
+</div>
+
+<div class="q-card" id="ch3q1">
+  <div class="q-title-bar"><span class="q-num">Q 13</span><span class="q-title">What is HTML? Explain basic structure of an HTML page. <span class="itag">⭐ Most IMP</span></span><span class="q-chip">Ch3</span></div>
+  <div class="sub">
+    <div class="sol">
+      <span class="sline"><span class="tag tans">HTML</span> HyperText Markup Language — the standard language used to create web pages. It uses tags (like labels) to define the structure and content of a web page.</span>
+      <span class="sline"><strong>Basic structure of HTML page:</strong></span>
+      <span class="sline" style="font-family:monospace;background:#1e1e1e;color:#d4d4d4;padding:14px 16px;border-radius:8px;margin:8px 0;display:block;line-height:1.8;font-size:.85rem;">
+&lt;!DOCTYPE html&gt;<br>
+&lt;html&gt;<br>
+&nbsp;&nbsp;&lt;head&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My First Page&lt;/title&gt;<br>
+&nbsp;&nbsp;&lt;/head&gt;<br>
+&nbsp;&nbsp;&lt;body&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Welcome to My Website&lt;/h1&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a paragraph.&lt;/p&gt;<br>
+&nbsp;&nbsp;&lt;/body&gt;<br>
+&lt;/html&gt;
+      </span>
+      <span class="sline"><span class="tag tans">&lt;!DOCTYPE&gt;</span> Declares document type (HTML5)</span>
+      <span class="sline"><span class="tag tans">&lt;html&gt;</span> Root element — contains entire page</span>
+      <span class="sline"><span class="tag tans">&lt;head&gt;</span> Contains metadata — title, CSS links, scripts</span>
+      <span class="sline"><span class="tag tans">&lt;body&gt;</span> Contains visible content of the page</span>
+    </div>
+  </div>
+</div>
+
+<div class="q-card" id="ch3q2">
+  <div class="q-title-bar"><span class="q-num">Q 14</span><span class="q-title">Explain important HTML tags with examples. <span class="itag">⭐ Most IMP</span></span><span class="q-chip">Ch3</span></div>
+  <div class="sub">
+    <div class="sol">
+      <table class="ref">
+        <tr><th>Tag</th><th>Purpose</th><th>Example</th></tr>
+        <tr><td>&lt;h1&gt;–&lt;h6&gt;</td><td>Headings (h1=largest, h6=smallest)</td><td>&lt;h1&gt;Title&lt;/h1&gt;</td></tr>
+        <tr><td>&lt;p&gt;</td><td>Paragraph</td><td>&lt;p&gt;Hello World&lt;/p&gt;</td></tr>
+        <tr><td>&lt;br&gt;</td><td>Line break (self-closing)</td><td>Line1&lt;br&gt;Line2</td></tr>
+        <tr><td>&lt;b&gt; / &lt;strong&gt;</td><td>Bold text</td><td>&lt;b&gt;Bold&lt;/b&gt;</td></tr>
+        <tr><td>&lt;i&gt; / &lt;em&gt;</td><td>Italic text</td><td>&lt;i&gt;Italic&lt;/i&gt;</td></tr>
+        <tr><td>&lt;a href=""&gt;</td><td>Hyperlink</td><td>&lt;a href="google.com"&gt;Google&lt;/a&gt;</td></tr>
+        <tr><td>&lt;img src=""&gt;</td><td>Insert image</td><td>&lt;img src="pic.jpg" alt="Photo"&gt;</td></tr>
+        <tr><td>&lt;ul&gt;&lt;li&gt;</td><td>Unordered list</td><td>&lt;ul&gt;&lt;li&gt;Apple&lt;/li&gt;&lt;/ul&gt;</td></tr>
+        <tr><td>&lt;ol&gt;&lt;li&gt;</td><td>Ordered list</td><td>&lt;ol&gt;&lt;li&gt;First&lt;/li&gt;&lt;/ol&gt;</td></tr>
+        <tr><td>&lt;table&gt;&lt;tr&gt;&lt;td&gt;</td><td>Table</td><td>&lt;table&gt;&lt;tr&gt;&lt;td&gt;Cell&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</td></tr>
+        <tr><td>&lt;form&gt;</td><td>Input form</td><td>&lt;form action="submit.php"&gt;...&lt;/form&gt;</td></tr>
+        <tr><td>&lt;input&gt;</td><td>Input field</td><td>&lt;input type="text" name="name"&gt;</td></tr>
+        <tr><td>&lt;div&gt;</td><td>Block container</td><td>&lt;div style="color:red"&gt;Text&lt;/div&gt;</td></tr>
+        <tr><td>&lt;span&gt;</td><td>Inline container</td><td>&lt;span style="color:blue"&gt;Blue&lt;/span&gt;</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-title-bar"><span class="q-num">Q 15</span><span class="q-title">Write HTML code to create a table showing student details. <span class="itag">⭐ Most IMP</span></span><span class="q-chip">Ch3</span></div>
+  <div class="sub">
+    <div class="sol">
+      <span class="sline" style="font-family:monospace;background:#1e1e1e;color:#d4d4d4;padding:14px 16px;border-radius:8px;margin:8px 0;display:block;line-height:1.8;font-size:.85rem;">
+&lt;table border="1" cellpadding="5" cellspacing="0"&gt;<br>
+&nbsp;&nbsp;&lt;tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Roll No&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Name&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Marks&lt;/th&gt;<br>
+&nbsp;&nbsp;&lt;/tr&gt;<br>
+&nbsp;&nbsp;&lt;tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;101&lt;/td&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Ravi&lt;/td&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;85&lt;/td&gt;<br>
+&nbsp;&nbsp;&lt;/tr&gt;<br>
+&nbsp;&nbsp;&lt;tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;102&lt;/td&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Priya&lt;/td&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;90&lt;/td&gt;<br>
+&nbsp;&nbsp;&lt;/tr&gt;<br>
+&lt;/table&gt;
+      </span>
+      <span class="sline"><span class="tag tans">border</span> = adds border; <span class="tag tans">&lt;th&gt;</span> = header cell (bold+centre); <span class="tag tans">&lt;td&gt;</span> = data cell; <span class="tag tans">&lt;tr&gt;</span> = table row</span>
+    </div>
+  </div>
+</div>
+
+<div class="q-card" id="ch3q3">
+  <div class="q-title-bar"><span class="q-num">Q 16</span><span class="q-title">Explain Internet concepts — WWW, URL, HTTP, Browser, Search Engine, Email. <span class="itag">⭐ Most IMP</span></span><span class="q-chip">Ch3</span></div>
+  <div class="sub">
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Internet</span> A global network connecting millions of computers worldwide for communication and information sharing.</span>
+      <span class="sline"><span class="tag tans">WWW (World Wide Web)</span> A system of interlinked web pages (hypertext) accessed via the Internet. Created by Tim Berners-Lee (1991). Not the same as Internet — WWW runs on the Internet.</span>
+      <span class="sline"><span class="tag tans">URL (Uniform Resource Locator)</span> The address of a web page. Example: https://www.google.com</span>
+      <span class="sline" style="padding-left:20px;">Structure: Protocol://Domain/Path → https://visionslearning.in/notes.html</span>
+      <span class="sline"><span class="tag tans">HTTP/HTTPS</span> HyperText Transfer Protocol — rules for transferring web pages. HTTPS = Secure (encrypted) version.</span>
+      <span class="sline"><span class="tag tans">Browser</span> Software to access and display web pages. Examples: Chrome, Firefox, Edge, Safari.</span>
+      <span class="sline"><span class="tag tans">Search Engine</span> Tool that searches and indexes web content. Examples: Google, Bing, Yahoo, DuckDuckGo.</span>
+      <span class="sline"><span class="tag tans">Email (Electronic Mail)</span> Digital messages sent over the internet. Structure: username@domain.com. Example: student@gmail.com</span>
+      <span class="sline"><span class="tag tans">IP Address</span> Unique numerical address assigned to each device on a network. Example: 192.168.1.1</span>
+      <span class="sline"><span class="tag tans">DNS (Domain Name System)</span> Translates domain names (google.com) to IP addresses (142.250.195.238).</span>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-title-bar"><span class="q-num">Q 17</span><span class="q-title">What is CSS? Write a CSS example to style a webpage. <span class="itag">⭐ IMP</span></span><span class="q-chip">Ch3</span></div>
+  <div class="sub">
+    <div class="sol">
+      <span class="sline"><span class="tag tans">CSS</span> Cascading Style Sheets — used to control the appearance (style) of HTML elements — colour, font, size, layout.</span>
+      <span class="sline"><strong>3 Ways to apply CSS:</strong></span>
+      <span class="sline" style="padding-left:20px;">1. <strong>Inline:</strong> &lt;p style="color:red;"&gt;</span>
+      <span class="sline" style="padding-left:20px;">2. <strong>Internal:</strong> Inside &lt;style&gt; tag in &lt;head&gt;</span>
+      <span class="sline" style="padding-left:20px;">3. <strong>External:</strong> Separate .css file linked with &lt;link&gt;</span>
+      <span class="sline" style="font-family:monospace;background:#1e1e1e;color:#d4d4d4;padding:14px 16px;border-radius:8px;margin:8px 0;display:block;line-height:1.8;font-size:.85rem;">
+&lt;style&gt;<br>
+&nbsp;&nbsp;body { background-color: lightblue; }<br>
+&nbsp;&nbsp;h1 { color: navy; font-family: Arial; }<br>
+&nbsp;&nbsp;p { font-size: 16px; color: black; }<br>
+&lt;/style&gt;
+      </span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════
+     CHAPTER 4 — CYBER LAW
+════════════════════════ -->
+<div class="ch-div bg4" id="ch4">
+  <div class="ch-icon">⚖️</div>
+  <div class="ch-info">
+    <h2>Chapter 4 — Cyber Law</h2>
+    <p>Cyber Crime · IT Act 2000 · Digital Signature · Privacy · Security</p>
+  </div>
+</div>
+
+<div class="q-card" id="ch4q1">
+  <div class="q-title-bar"><span class="q-num">Q 18</span><span class="q-title">What is Cyber Crime? Classify cyber crimes with examples. <span class="itag">⭐ Most IMP</span></span><span class="q-chip">Ch4</span></div>
+  <div class="sub">
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Cyber Crime</span> Any illegal or criminal activity that involves a computer, network, or the internet as a tool, target, or place of the crime.</span>
+      <span class="sline"><strong>Types of Cyber Crimes:</strong></span>
+      <span class="sline" style="padding-left:20px;">1. <strong>Hacking:</strong> Unauthorised access to a computer/network. E.g., breaking into a bank's server.</span>
+      <span class="sline" style="padding-left:20px;">2. <strong>Phishing:</strong> Fake emails/websites to steal passwords and financial info. E.g., fake bank email.</span>
+      <span class="sline" style="padding-left:20px;">3. <strong>Identity Theft:</strong> Stealing someone's personal information to commit fraud.</span>
+      <span class="sline" style="padding-left:20px;">4. <strong>Cyberbullying:</strong> Harassment, threats, or intimidation online — via social media, messages.</span>
+      <span class="sline" style="padding-left:20px;">5. <strong>Virus/Malware Attack:</strong> Spreading harmful software to damage systems. E.g., ransomware.</span>
+      <span class="sline" style="padding-left:20px;">6. <strong>Online Fraud/Scam:</strong> Fake lottery, investment schemes, UPI fraud.</span>
+      <span class="sline" style="padding-left:20px;">7. <strong>Cyber Stalking:</strong> Repeatedly following/harassing someone online.</span>
+      <span class="sline" style="padding-left:20px;">8. <strong>Data Theft:</strong> Stealing confidential data from a company/individual.</span>
+      <span class="sline" style="padding-left:20px;">9. <strong>Child Pornography:</strong> Creating/distributing illegal content involving minors.</span>
+      <span class="sline" style="padding-left:20px;">10. <strong>Denial of Service (DoS) Attack:</strong> Overloading a server to crash a website.</span>
+    </div>
+  </div>
+</div>
+
+<div class="q-card" id="ch4q2">
+  <div class="q-title-bar"><span class="q-num">Q 19</span><span class="q-title">What is the IT Act 2000? State its important sections and penalties. <span class="itag">⭐ Most IMP</span></span><span class="q-chip">Ch4</span></div>
+  <div class="sub">
+    <div class="sol">
+      <span class="sline"><span class="tag tans">IT Act 2000</span> The Information Technology Act 2000 is India's primary law governing digital commerce, electronic transactions, cyber crimes, and data protection. Amended in 2008 to include more cyber crimes.</span>
+      <span class="sline"><strong>Objective:</strong> To provide legal recognition to electronic transactions, prevent cyber crimes, and regulate digital communication.</span>
+      <table class="ref" style="margin-top:8px;">
+        <tr><th>Section</th><th>Offence</th><th>Punishment</th></tr>
+        <tr><td>Sec 43</td><td>Unauthorised access, damage to computer</td><td>Compensation up to ₹1 crore</td></tr>
+        <tr><td>Sec 65</td><td>Tampering with computer source code</td><td>3 years imprisonment or ₹2 lakh fine</td></tr>
+        <tr><td>Sec 66</td><td>Hacking/Computer related offences</td><td>3 years imprisonment or ₹5 lakh fine</td></tr>
+        <tr><td>Sec 66C</td><td>Identity theft</td><td>3 years imprisonment and ₹1 lakh fine</td></tr>
+        <tr><td>Sec 66D</td><td>Cheating by impersonation (online)</td><td>3 years imprisonment and ₹1 lakh fine</td></tr>
+        <tr><td>Sec 66E</td><td>Violation of privacy (publishing private images)</td><td>3 years imprisonment or ₹2 lakh fine</td></tr>
+        <tr><td>Sec 67</td><td>Publishing obscene material online</td><td>5 years imprisonment and ₹10 lakh fine</td></tr>
+        <tr><td>Sec 72</td><td>Breach of confidentiality and privacy</td><td>2 years imprisonment or ₹1 lakh fine</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-title-bar"><span class="q-num">Q 20</span><span class="q-title">What is a Digital Signature? How does it work? <span class="itag">⭐ IMP</span></span><span class="q-chip">Ch4</span></div>
+  <div class="sub">
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Digital Signature</span> A mathematical technique used to validate the authenticity and integrity of a digital document or message — the electronic equivalent of a handwritten signature.</span>
+      <span class="sline"><strong>How it works:</strong></span>
+      <span class="sline" style="padding-left:20px;">1. <strong>Sender</strong> creates the document and applies their <strong>private key</strong> to create a digital signature (encrypted hash).</span>
+      <span class="sline" style="padding-left:20px;">2. The digitally signed document is sent to the <strong>receiver</strong>.</span>
+      <span class="sline" style="padding-left:20px;">3. <strong>Receiver</strong> uses the sender's <strong>public key</strong> to decrypt and verify the signature.</span>
+      <span class="sline" style="padding-left:20px;">4. If signature matches → document is authentic and unaltered.</span>
+      <span class="sline"><strong>Benefits:</strong></span>
+      <span class="sline" style="padding-left:20px;">• Authentication — confirms sender's identity</span>
+      <span class="sline" style="padding-left:20px;">• Integrity — ensures document was not modified</span>
+      <span class="sline" style="padding-left:20px;">• Non-repudiation — sender cannot deny sending</span>
+      <span class="sline"><strong>Used in:</strong> Income tax filing, banking, e-commerce, government documents (Aadhaar, PAN).</span>
+      <span class="sline"><strong>Certificate Authority (CA):</strong> Certifying Authorities (like Infosys, NIC) issue Digital Signature Certificates. Under IT Act 2000, digital signatures are legally valid in India.</span>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-title-bar"><span class="q-num">Q 21</span><span class="q-title">Explain cyber security — threats and prevention measures. <span class="itag">⭐ IMP</span></span><span class="q-chip">Ch4</span></div>
+  <div class="sub">
+    <div class="sol">
+      <span class="sline"><span class="tag tans">Cyber Security</span> The practice of protecting computers, networks, programs, and data from digital attacks, unauthorized access, damage, or theft.</span>
+      <span class="sline"><strong>Common Threats:</strong></span>
+      <span class="sline" style="padding-left:20px;">• <strong>Virus:</strong> Self-replicating malware that attaches to programs</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Worm:</strong> Spreads across network without attaching to files</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Trojan Horse:</strong> Disguised as legitimate software; opens backdoor</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Spyware:</strong> Secretly monitors user activity and sends data</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Ransomware:</strong> Encrypts files and demands money for decryption</span>
+      <span class="sline" style="padding-left:20px;">• <strong>Phishing:</strong> Fake emails/sites to steal credentials</span>
+      <span class="sline"><strong>Prevention Measures:</strong></span>
+      <span class="sline" style="padding-left:20px;">✅ Use strong, unique passwords (minimum 8 characters with symbols)</span>
+      <span class="sline" style="padding-left:20px;">✅ Install and update antivirus/anti-malware software</span>
+      <span class="sline" style="padding-left:20px;">✅ Keep OS and software updated (security patches)</span>
+      <span class="sline" style="padding-left:20px;">✅ Use HTTPS websites for online transactions</span>
+      <span class="sline" style="padding-left:20px;">✅ Enable 2-Factor Authentication (2FA)</span>
+      <span class="sline" style="padding-left:20px;">✅ Use Firewall to monitor network traffic</span>
+      <span class="sline" style="padding-left:20px;">✅ Don't click suspicious links or download unknown attachments</span>
+      <span class="sline" style="padding-left:20px;">✅ Regular data backups</span>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-title-bar"><span class="q-num">Q 22</span><span class="q-title">What is Intellectual Property Rights (IPR) in the digital world? Explain Copyright, Trademark, and Patent. <span class="itag">⭐ IMP</span></span><span class="q-chip">Ch4</span></div>
+  <div class="sub">
+    <div class="sol">
+      <span class="sline"><span class="tag tans">IPR</span> Intellectual Property Rights protect creations of the human mind — giving creators exclusive rights to use, sell, or license their work.</span>
+      <table class="ref" style="margin-top:8px;">
+        <tr><th>Type</th><th>Protects</th><th>Duration</th><th>Example</th></tr>
+        <tr><td>Copyright ©</td><td>Literary, artistic, musical works</td><td>Life + 60 years (India)</td><td>Books, songs, software code, films</td></tr>
+        <tr><td>Trademark ™/®</td><td>Brand names, logos, symbols</td><td>10 years (renewable)</td><td>Apple logo, Coca-Cola name</td></tr>
+        <tr><td>Patent</td><td>Inventions, processes</td><td>20 years</td><td>New drug formula, new machine</td></tr>
+      </table>
+      <span class="sline" style="margin-top:8px;"><strong>Digital Copyright Issues:</strong> Piracy (illegal copying of software/music/films), plagiarism, unauthorised sharing — all violate copyright law.</span>
+      <span class="sline"><strong>Open Source Software:</strong> Free to use, modify, distribute — licensed under GPL, MIT. E.g., Linux, Firefox, VLC.</span>
+    </div>
+  </div>
+</div>
+
+<!-- SUMMARY TABLE -->
+<div style="max-width:900px;margin:16px auto;background:#fff;border-radius:12px;padding:18px 22px;box-shadow:0 2px 10px rgba(0,0,0,.08);">
+  <h3 style="color:#0d47a1;margin-bottom:14px;font-size:.95rem;font-weight:800;">📋 Chapter-wise Question Summary</h3>
+  <table class="ref">
+    <tr><th>Chapter</th><th>Topic</th><th>Key Questions</th></tr>
+    <tr><td>Ch 1</td><td>Basics of IT</td><td>Hardware vs Software · Types of Software · Input/Output devices · RAM vs ROM · OS functions · Generations of computers · LAN/WAN/MAN</td></tr>
+    <tr><td>Ch 2</td><td>DBMS</td><td>Database & DBMS · Table/Field/Record/PK/FK · DDL/DML/DCL SQL commands · SELECT with WHERE/ORDER BY/GROUP BY · Aggregate functions</td></tr>
+    <tr><td>Ch 3</td><td>Web Designing</td><td>HTML structure · HTML tags table · HTML table code · WWW/URL/HTTP/Browser/Email · CSS basics</td></tr>
+    <tr><td>Ch 4</td><td>Cyber Law</td><td>Types of Cyber Crime · IT Act 2000 sections & penalties · Digital Signature · Cyber Security threats & prevention · IPR (Copyright/Trademark/Patent)</td></tr>
+  </table>
+</div>
+
+<footer><p>Visions Classes · visionslearning.in · <a href="notes-class11.html">← Back to Class 11 Notes</a></p></footer>
+
+<div style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;opacity:0.07;user-select:none;">
+  <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="150" cy="150" r="135" fill="none" stroke="#0d47a1" stroke-width="6"/>
+    <circle cx="150" cy="150" r="120" fill="none" stroke="#0d47a1" stroke-width="2"/>
+    <path id="tw" fill="none" d="M 25,150 a125,125 0 1,1 250,0"/>
+    <path id="bw" fill="none" d="M 25,150 a125,125 0 0,0 250,0"/>
+    <text font-size="17" font-weight="900" fill="#0d47a1" font-family="Arial,sans-serif" letter-spacing="4"><textPath href="#tw" startOffset="8%">VISIONS CLASSES · VISIONSLEARNING.IN ·</textPath></text>
+    <text font-size="14" font-weight="900" fill="#0d47a1" font-family="Arial,sans-serif" letter-spacing="3"><textPath href="#bw" startOffset="10%">IT · CLASS 11 · MAHARASHTRA BOARD</textPath></text>
+    <text x="150" y="142" text-anchor="middle" font-size="20" font-weight="900" fill="#0d47a1" font-family="Arial,sans-serif">VISIONS</text>
+    <text x="150" y="168" text-anchor="middle" font-size="20" font-weight="900" fill="#0d47a1" font-family="Arial,sans-serif">CLASSES</text>
+    <text x="150" y="193" text-anchor="middle" font-size="10" font-weight="700" fill="#0d47a1" font-family="Arial,sans-serif">★ IT QUESTION BANK ★</text>
+  </svg>
+</div>
+</body>
+</html>
