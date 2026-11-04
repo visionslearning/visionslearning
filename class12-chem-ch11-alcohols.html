@@ -63,8 +63,13 @@
   .rxn{font-family:'Courier New',monospace;font-size:.9rem;color:#1a237e;background:#fff;border:1px solid #90caf9;border-radius:6px;padding:8px 14px;margin:5px 0;display:block;line-height:1.8;}
   .rxn-note{font-size:.78rem;color:#0d47a1;margin-top:4px;font-style:italic;}
 
-  /* STRUCTURE BOX */
-  .struct-box{background:#f3e5f5;border:1.5px solid #9c27b0;border-radius:8px;padding:10px 14px;margin:6px 0;font-family:'Courier New',monospace;font-size:.88rem;color:#4a148c;line-height:1.8;}
+  /* STRUCTURE DISPLAY — proper vertical structural formula */
+  .struct-box{background:#f3e5f5;border:1.5px solid #9c27b0;border-radius:8px;padding:12px 16px;margin:8px 0;font-family:'Courier New',monospace;font-size:.88rem;color:#4a148c;line-height:2;}
+  .struct-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:8px 0;}
+  .struct-card{background:#f8f5ff;border:1.5px solid #9c27b0;border-radius:8px;padding:12px 14px;text-align:center;}
+  .struct-card .struct-name{font-size:.78rem;font-weight:800;color:#4a148c;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;}
+  .struct-card .struct-formula{font-family:'Courier New',monospace;font-size:.85rem;color:#1a237e;line-height:1.9;white-space:pre;display:inline-block;text-align:left;}
+  .struct-card .struct-iupac{font-size:.75rem;color:#880e4f;font-weight:700;margin-top:6px;}
 
   table.ref{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:8px;}
   table.ref th{background:#880e4f;color:#fff;padding:6px 10px;text-align:left;}
@@ -135,17 +140,93 @@
   <div class="sub">
     <div class="sol">
       <span class="sline"><strong>ALCOHOLS — Classification based on OH group position:</strong></span>
-      <span class="sline"><span class="tag tans">Primary (1°)</span> –OH attached to C bonded to ONE other C. E.g., CH₃CH₂OH (ethanol), CH₃OH (methanol)</span>
-      <span class="sline"><span class="tag tans">Secondary (2°)</span> –OH attached to C bonded to TWO other C's. E.g., CH₃CH(OH)CH₃ (isopropanol)</span>
-      <span class="sline"><span class="tag tans">Tertiary (3°)</span> –OH attached to C bonded to THREE other C's. E.g., (CH₃)₃COH (tert-butanol)</span>
+      <div class="struct-grid">
+        <div class="struct-card">
+          <div class="struct-name">Primary (1°) Alcohol</div>
+          <div class="struct-formula">    H
+    |
+H–C–O–H
+    |
+    H
+(Methanol)</div>
+          <div class="struct-iupac">CH₃OH | Methanol</div>
+        </div>
+        <div class="struct-card">
+          <div class="struct-name">Secondary (2°) Alcohol</div>
+          <div class="struct-formula">  CH₃
+   |
+H₃C–C–OH
+   |
+   H
+(Propan-2-ol)</div>
+          <div class="struct-iupac">CH₃CH(OH)CH₃</div>
+        </div>
+        <div class="struct-card">
+          <div class="struct-name">Tertiary (3°) Alcohol</div>
+          <div class="struct-formula">  CH₃
+   |
+H₃C–C–OH
+   |
+  CH₃
+(tert-butanol)</div>
+          <div class="struct-iupac">(CH₃)₃COH</div>
+        </div>
+      </div>
       <span class="sline"><strong>Based on number of –OH groups:</strong></span>
-      <span class="sline" style="padding-left:20px;">• Monohydric: 1 –OH (ethanol)</span>
-      <span class="sline" style="padding-left:20px;">• Dihydric: 2 –OH (ethylene glycol — HOCH₂CH₂OH)</span>
-      <span class="sline" style="padding-left:20px;">• Trihydric: 3 –OH (glycerol — HOCH₂CH(OH)CH₂OH)</span>
-      <span class="sline"><strong>PHENOLS:</strong> –OH directly attached to benzene ring. E.g., C₆H₅OH (phenol)</span>
-      <span class="sline"><strong>ETHERS:</strong> Two organic groups linked by –O–. R–O–R'. E.g., C₂H₅–O–C₂H₅ (diethyl ether)</span>
-      <span class="sline" style="padding-left:20px;">• Symmetrical (simple): R–O–R (both groups same). E.g., CH₃–O–CH₃</span>
-      <span class="sline" style="padding-left:20px;">• Asymmetrical (mixed): R–O–R' (different groups). E.g., CH₃–O–C₂H₅</span>
+      <div class="struct-grid">
+        <div class="struct-card">
+          <div class="struct-name">Monohydric (1 –OH)</div>
+          <div class="struct-formula">H H
+| |
+H–C–C–OH
+| |
+H H</div>
+          <div class="struct-iupac">Ethanol C₂H₅OH</div>
+        </div>
+        <div class="struct-card">
+          <div class="struct-name">Dihydric (2 –OH)</div>
+          <div class="struct-formula">H H
+| |
+HO–C–C–OH
+| |
+H H</div>
+          <div class="struct-iupac">Ethylene glycol<br>HOCH₂CH₂OH</div>
+        </div>
+        <div class="struct-card">
+          <div class="struct-name">Trihydric (3 –OH)</div>
+          <div class="struct-formula">H H H
+| | |
+HO–C–C–C–OH
+| | |
+H OH H</div>
+          <div class="struct-iupac">Glycerol<br>Propane-1,2,3-triol</div>
+        </div>
+      </div>
+      <span class="sline"><strong>PHENOL — –OH directly on benzene ring:</strong></span>
+      <div class="struct-grid">
+        <div class="struct-card">
+          <div class="struct-name">Phenol</div>
+          <div class="struct-formula">    OH
+    |
+  [benzene]
+  C₆H₅–OH</div>
+          <div class="struct-iupac">Phenol | pKa = 10</div>
+        </div>
+        <div class="struct-card">
+          <div class="struct-name">Symmetrical Ether</div>
+          <div class="struct-formula">C₂H₅–O–C₂H₅
+
+ Et – O – Et</div>
+          <div class="struct-iupac">Diethyl ether<br>Ethoxyethane</div>
+        </div>
+        <div class="struct-card">
+          <div class="struct-name">Asymmetrical Ether</div>
+          <div class="struct-formula">CH₃–O–C₂H₅
+
+ Me – O – Et</div>
+          <div class="struct-iupac">Methoxyethane<br>Mixed ether</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -156,19 +237,118 @@
   <div class="sub">
     <div class="sol">
       <span class="sline"><strong>ALCOHOLS:</strong> Replace –e of alkane with –ol. Longest chain containing –OH = parent chain.</span>
-      <table class="ref" style="margin-top:6px;">
-        <tr><th>Structure</th><th>IUPAC Name</th><th>Common Name</th></tr>
-        <tr><td>CH₃OH</td><td>Methanol</td><td>Methyl alcohol / Wood spirit</td></tr>
-        <tr><td>C₂H₅OH</td><td>Ethanol</td><td>Ethyl alcohol / Grain alcohol</td></tr>
-        <tr><td>CH₃CH(OH)CH₃</td><td>Propan-2-ol</td><td>Isopropanol</td></tr>
-        <tr><td>(CH₃)₃COH</td><td>2-methylpropan-2-ol</td><td>tert-butanol</td></tr>
-        <tr><td>HOCH₂CH₂OH</td><td>Ethane-1,2-diol</td><td>Ethylene glycol</td></tr>
-        <tr><td>HOCH₂CH(OH)CH₂OH</td><td>Propane-1,2,3-triol</td><td>Glycerol</td></tr>
-      </table>
+      <div class="struct-grid">
+        <div class="struct-card">
+          <div class="struct-name">Methanol</div>
+          <div class="struct-formula">H
+|
+H–C–O–H
+|
+H</div>
+          <div class="struct-iupac">CH₃OH | Methanol<br>Common: Wood spirit</div>
+        </div>
+        <div class="struct-card">
+          <div class="struct-name">Ethanol</div>
+          <div class="struct-formula">H H
+| |
+H–C–C–O–H
+| |
+H H</div>
+          <div class="struct-iupac">C₂H₅OH | Ethanol<br>Common: Grain alcohol</div>
+        </div>
+        <div class="struct-card">
+          <div class="struct-name">Propan-2-ol</div>
+          <div class="struct-formula">H OH H
+| |  |
+H–C–C–C–H
+| |  |
+H H  H</div>
+          <div class="struct-iupac">CH₃CH(OH)CH₃<br>Isopropanol (2°)</div>
+        </div>
+        <div class="struct-card">
+          <div class="struct-name">Ethane-1,2-diol</div>
+          <div class="struct-formula">HO OH
+|   |
+H₂C–CH₂</div>
+          <div class="struct-iupac">HOCH₂CH₂OH<br>Ethylene glycol</div>
+        </div>
+        <div class="struct-card">
+          <div class="struct-name">Propane-1,2,3-triol</div>
+          <div class="struct-formula">HO OH OH
+|   |   |
+H₂C–CH–CH₂</div>
+          <div class="struct-iupac">Glycerol<br>Trihydric alcohol</div>
+        </div>
+        <div class="struct-card">
+          <div class="struct-name">2-methylpropan-2-ol</div>
+          <div class="struct-formula">   CH₃
+    |
+H₃C–C–OH
+    |
+   CH₃</div>
+          <div class="struct-iupac">(CH₃)₃COH<br>tert-Butanol (3°)</div>
+        </div>
+      </div>
       <span class="sline" style="margin-top:8px;"><strong>PHENOLS:</strong> Numbered from C bearing –OH.</span>
-      <span class="sline" style="padding-left:20px;">C₆H₅OH = Phenol; ortho-OH = 2-methylphenol (o-cresol); meta = 3-; para = 4-</span>
+      <div class="struct-grid">
+        <div class="struct-card">
+          <div class="struct-name">Phenol</div>
+          <div class="struct-formula">   OH
+   |
+   C
+  / \
+HC   CH
+|     |
+HC   CH
+  \ /
+   C
+  H</div>
+          <div class="struct-iupac">C₆H₅–OH<br>Phenol (pKa = 10)</div>
+        </div>
+        <div class="struct-card">
+          <div class="struct-name">o-Cresol (ortho)</div>
+          <div class="struct-formula">  OH CH₃
+  |   |
+2-methylphenol
+C₆H₄(OH)(CH₃)</div>
+          <div class="struct-iupac">2-methylphenol<br>(OH at C1, CH₃ at C2)</div>
+        </div>
+        <div class="struct-card">
+          <div class="struct-name">p-Nitrophenol</div>
+          <div class="struct-formula">   OH
+   |
+[benzene]
+   |
+  NO₂</div>
+          <div class="struct-iupac">4-nitrophenol<br>More acidic than phenol</div>
+        </div>
+      </div>
       <span class="sline"><strong>ETHERS:</strong> Named as alkoxy alkanes.</span>
-      <span class="sline" style="padding-left:20px;">CH₃–O–CH₃ = Methoxymethane; C₂H₅–O–CH₃ = Methoxyethane; C₂H₅–O–C₂H₅ = Ethoxyethane (diethyl ether)</span>
+      <div class="struct-grid">
+        <div class="struct-card">
+          <div class="struct-name">Methoxymethane</div>
+          <div class="struct-formula">H   H
+|   |
+H–C–O–C–H
+|   |
+H   H</div>
+          <div class="struct-iupac">CH₃–O–CH₃<br>Dimethyl ether</div>
+        </div>
+        <div class="struct-card">
+          <div class="struct-name">Ethoxyethane</div>
+          <div class="struct-formula">C₂H₅–O–C₂H₅
+
+Et – O – Et</div>
+          <div class="struct-iupac">Diethyl ether<br>Anaesthetic solvent</div>
+        </div>
+        <div class="struct-card">
+          <div class="struct-name">Methoxyethane</div>
+          <div class="struct-formula">CH₃–O–C₂H₅
+
+Me – O – Et</div>
+          <div class="struct-iupac">Asymmetric ether<br>Mixed ether</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -223,6 +403,35 @@
   <div class="sub">
     <div class="sol">
       <span class="sline"><strong>Acidity comparison: Carboxylic acid > Phenol > Water > Alcohol</strong></span>
+      <div class="struct-grid">
+        <div class="struct-card">
+          <div class="struct-name">Alcohol (least acidic)</div>
+          <div class="struct-formula">R–O–H
+pKa ≈ 16–18
+
+No resonance
+stabilisation</div>
+          <div class="struct-iupac">RO⁻ — unstable<br>alkoxide ion</div>
+        </div>
+        <div class="struct-card">
+          <div class="struct-name">Phenol (more acidic)</div>
+          <div class="struct-formula">  [C₆H₅–O⁻]
+Resonance:
+O⁻ ↔ ortho ↔ para
+pKa = 10</div>
+          <div class="struct-iupac">Phenoxide ion<br>resonance stabilised</div>
+        </div>
+        <div class="struct-card">
+          <div class="struct-name">RCOOH (most acidic)</div>
+          <div class="struct-formula">   O⁻      O
+   ‖        ‖
+R–C  ↔  R–C
+   |        |
+   O        O⁻
+pKa ≈ 4–5</div>
+          <div class="struct-iupac">Carboxylate ion<br>2 equivalent structures</div>
+        </div>
+      </div>
       <span class="sline"><span class="tag tans">Phenol > Alcohol</span></span>
       <span class="sline" style="padding-left:20px;">• Phenoxide ion (C₆H₅O⁻) is stabilised by <strong>resonance</strong> — lone pair on O delocalised into benzene ring → 5 resonance structures</span>
       <span class="sline" style="padding-left:20px;">• Alkoxide ion (RO⁻) has no such resonance stabilisation</span>
@@ -299,13 +508,36 @@
 
   <div class="sub">
     <span class="sub-q">3. Reactions with Phosphorus Halides (OH → X)</span>
+    <div class="struct-grid">
+      <div class="struct-card">
+        <div class="struct-name">With PCl₅</div>
+        <div class="struct-formula">R–O–H + PCl₅
+→ R–Cl + POCl₃ + HCl
+
+OH replaced by Cl</div>
+        <div class="struct-iupac">e.g., C₂H₅OH + PCl₅<br>→ C₂H₅Cl + POCl₃ + HCl</div>
+      </div>
+      <div class="struct-card">
+        <div class="struct-name">With SOCl₂ (Best)</div>
+        <div class="struct-formula">R–O–H + SOCl₂
+→ R–Cl + SO₂↑ + HCl↑
+
+Gaseous byproducts
+→ pure product</div>
+        <div class="struct-iupac">Best reagent — byproducts<br>escape as gases</div>
+      </div>
+      <div class="struct-card">
+        <div class="struct-name">With PCl₃</div>
+        <div class="struct-formula">3R–OH + PCl₃
+→ 3R–Cl + H₃PO₃</div>
+        <div class="struct-iupac">Phosphorous acid<br>byproduct</div>
+      </div>
+    </div>
     <div class="rxn-box">
-      <div class="rxn-title">With PCl₅</div>
+      <div class="rxn-title">Equations</div>
       <span class="rxn">R–OH + PCl₅ → R–Cl + POCl₃ + HCl</span>
-      <div class="rxn-title">With PCl₃</div>
+      <span class="rxn">R–OH + SOCl₂ → R–Cl + SO₂↑ + HCl↑</span>
       <span class="rxn">3R–OH + PCl₃ → 3R–Cl + H₃PO₃</span>
-      <div class="rxn-title">With SOCl₂ (thionyl chloride) — best method</div>
-      <span class="rxn">R–OH + SOCl₂ → R–Cl + SO₂ + HCl</span>
       <div class="rxn-note">SOCl₂ is best because byproducts SO₂ and HCl are gases → pure product obtained</div>
     </div>
   </div>
@@ -322,16 +554,57 @@
 
   <div class="sub">
     <span class="sub-q">5. Oxidation of Alcohols</span>
+    <div class="struct-grid">
+      <div class="struct-card">
+        <div class="struct-name">1° Alcohol → Aldehyde</div>
+        <div class="struct-formula">H H          H O
+| |          | ‖
+H–C–C–OH  → H–C–C–H
+| |          |
+H H          H
+(Ethanol)   (Ethanal)</div>
+        <div class="struct-iupac">[O] = K₂Cr₂O₇/H⁺<br>Mild oxidation</div>
+      </div>
+      <div class="struct-card">
+        <div class="struct-name">1° Alcohol → Acid</div>
+        <div class="struct-formula">      H O
+      | ‖
+H–C–C–OH
+      |
+      H
+(excess [O])
+→ CH₃COOH</div>
+        <div class="struct-iupac">Further oxidation<br>of aldehyde → acid</div>
+      </div>
+      <div class="struct-card">
+        <div class="struct-name">2° Alcohol → Ketone</div>
+        <div class="struct-formula">H OH H       H O H
+| |  |       | ‖ |
+H–C–C–C–H → H–C–C–C–H
+| |  |       |   |
+H H  H       H   H
+(Propan-2-ol) (Propanone)</div>
+        <div class="struct-iupac">[O] = K₂Cr₂O₇/H⁺<br>→ Ketone only</div>
+      </div>
+      <div class="struct-card">
+        <div class="struct-name">3° Alcohol</div>
+        <div class="struct-formula">   CH₃
+    |
+H₃C–C–OH
+    |
+   CH₃
+
+No α–H atom
+→ No oxidation</div>
+        <div class="struct-iupac">Resistant to mild<br>oxidising agents</div>
+      </div>
+    </div>
     <div class="rxn-box">
-      <div class="rxn-title">Primary alcohol → Aldehyde → Carboxylic acid</div>
-      <span class="rxn">RCH₂OH → [O] (K₂Cr₂O₇/H⁺) → RCHO → [O] → RCOOH</span>
-      <span class="rxn">C₂H₅OH → [O] → CH₃CHO → [O] → CH₃COOH</span>
-      <div class="rxn-title">Secondary alcohol → Ketone</div>
-      <span class="rxn">R₂CHOH → [O] (K₂Cr₂O₇/H⁺) → R₂C=O</span>
-      <span class="rxn">CH₃CH(OH)CH₃ → [O] → CH₃COCH₃ (acetone)</span>
-      <div class="rxn-title">Tertiary alcohol — resistant to oxidation</div>
-      <span class="rxn">3° Alcohol → No reaction with mild oxidising agents (no α-H)</span>
-      <div class="rxn-note">Victor Meyer test distinguishes 1°, 2°, 3° alcohols</div>
+      <div class="rxn-title">Oxidation equations</div>
+      <span class="rxn">RCH₂OH → [O] → RCHO → [O] → RCOOH &nbsp; (1° alcohol)</span>
+      <span class="rxn">R₂CHOH → [O] → R₂C=O &nbsp; (2° alcohol → ketone)</span>
+      <span class="rxn">C₂H₅OH → [O] K₂Cr₂O₇/H⁺ → CH₃CHO → [O] → CH₃COOH</span>
+      <span class="rxn">CH₃CH(OH)CH₃ → [O] → CH₃COCH₃ (acetone/propanone)</span>
     </div>
   </div>
 
@@ -365,6 +638,37 @@
 
   <div class="sub">
     <span class="sub-q">2. Electrophilic Substitution Reactions (EAS) — OH is ortho/para directing</span>
+    <div class="struct-grid">
+      <div class="struct-card">
+        <div class="struct-name">Phenol + dil HNO₃</div>
+        <div class="struct-formula">   OH           OH      OH
+   |            |       |
+[benzene]  → [benz] + [benz]
+              NO₂       NO₂
+             (ortho)   (para)</div>
+        <div class="struct-iupac">o-nitrophenol + p-nitrophenol</div>
+      </div>
+      <div class="struct-card">
+        <div class="struct-name">Phenol + conc. HNO₃</div>
+        <div class="struct-formula">    OH
+    |
+O₂N–[benz]–NO₂
+    |
+   NO₂
+(2,4,6-positions)</div>
+        <div class="struct-iupac">2,4,6-trinitrophenol<br>(Picric acid) — yellow</div>
+      </div>
+      <div class="struct-card">
+        <div class="struct-name">Phenol + Br₂/H₂O</div>
+        <div class="struct-formula">    OH
+    |
+Br–[benz]–Br
+    |
+   Br
+(2,4,6-positions)</div>
+        <div class="struct-iupac">2,4,6-tribromophenol<br>White precipitate ✓</div>
+      </div>
+    </div>
     <div class="rxn-box">
       <div class="rxn-title">Nitration — with dilute HNO₃</div>
       <span class="rxn">C₆H₅OH + dilute HNO₃ → o-nitrophenol + p-nitrophenol</span>
