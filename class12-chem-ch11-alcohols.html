@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Class 12 Chemistry Ch11 — Alcohols, Phenols & Ethers | Board Exam IMP</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size:15px;}
+
+  .site-header{background:linear-gradient(135deg,#880e4f,#c2185b,#ad1457);padding:14px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 3px 12px rgba(0,0,0,.3);}
+  .site-header a{color:#f48fb1;text-decoration:none;font-size:.85rem;font-weight:600;}
+  .site-header a:hover{color:#fff;}
+  .header-title{color:#fff;font-size:1.05rem;font-weight:800;}
+
+  .hero{background:linear-gradient(135deg,#880e4f 0%,#c2185b 40%,#4a148c 100%);padding:30px 20px 24px;text-align:center;color:#fff;}
+  .board-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:5px 18px;font-size:.73rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;}
+  .hero h1{font-size:1.55rem;font-weight:900;line-height:1.25;margin-bottom:6px;}
+  .hero .sub{font-size:.88rem;color:rgba(255,255,255,.85);margin-bottom:14px;}
+  .pills{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
+  .pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:6px 14px;font-size:.8rem;font-weight:700;}
+
+  /* TOC */
+  .toc{max-width:920px;margin:14px auto;background:#fff;border-radius:10px;padding:16px 20px;box-shadow:0 2px 8px rgba(0,0,0,.07);}
+  .toc h3{color:#880e4f;margin-bottom:10px;font-size:.9rem;font-weight:800;}
+  .toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:7px;}
+  .toc-a{background:#fce4ec;border-radius:7px;padding:8px 12px;font-size:.8rem;font-weight:700;color:#880e4f;text-decoration:none;display:block;border-left:3px solid #e91e63;}
+  .toc-a:hover{background:#f8bbd0;}
+
+  /* SECTION DIVIDERS */
+  .sec-div{max-width:920px;margin:22px auto 8px;border-radius:10px;padding:13px 22px;display:flex;align-items:center;gap:12px;color:#fff;}
+  .sec-icon{font-size:1.8rem;}
+  .sec-info h2{font-size:1.05rem;font-weight:900;margin-bottom:2px;}
+  .sec-info p{font-size:.8rem;opacity:.9;}
+  .bg-theory{background:linear-gradient(135deg,#880e4f,#c2185b);}
+  .bg-reactions{background:linear-gradient(135deg,#0d47a1,#1565c0);}
+  .bg-mcq{background:linear-gradient(135deg,#1b5e20,#2e7d32);}
+
+  /* Q Card */
+  .q-card{max-width:920px;margin:10px auto;background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.09);overflow:hidden;}
+  .q-title-bar{display:flex;align-items:center;gap:10px;padding:11px 20px;background:#fafafa;border-bottom:2px solid #fce4ec;}
+  .q-num{background:#880e4f;color:#fff;font-size:.8rem;font-weight:900;padding:4px 12px;border-radius:20px;white-space:nowrap;}
+  .q-title{font-size:.95rem;font-weight:700;color:#1a1a1a;flex:1;line-height:1.4;}
+  .q-chip{background:#fce4ec;color:#880e4f;font-size:.72rem;font-weight:800;padding:3px 10px;border-radius:10px;white-space:nowrap;}
+  .itag{display:inline-block;background:#b71c1c;color:#fff;font-size:.65rem;font-weight:900;padding:2px 7px;border-radius:6px;margin-left:5px;}
+
+  .sub{border-bottom:1px solid #f0f0f0;padding:15px 22px;}
+  .sub:last-child{border-bottom:none;}
+  .sub-q{font-size:.9rem;font-weight:800;color:#880e4f;background:#fce4ec;padding:8px 14px;border-radius:7px;margin-bottom:12px;display:block;}
+
+  /* Sline */
+  .sol{margin:0;}
+  .sline{display:block;font-size:.92rem;line-height:1;padding:7px 0;border-bottom:1px solid #f5f5f5;}
+  .sline:last-child{border-bottom:none;}
+  .tag{display:inline-block;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;padding:2px 8px;border-radius:8px;margin-right:8px;vertical-align:middle;}
+  .tans{background:#dcfce7;color:#166534;}
+  .texp{background:#e3f2fd;color:#0d47a1;}
+  .sline-ans{display:block;background:#f0fdf4;border-left:4px solid #16a34a;padding:10px 16px;border-radius:0 8px 8px 0;margin-top:5px;font-size:.92rem;font-weight:700;color:#166534;}
+
+  /* REACTION BOX — blue themed */
+  .rxn-box{background:#e3f2fd;border:2px solid #1565c0;border-radius:10px;padding:14px 18px;margin:8px 0;}
+  .rxn-title{font-size:.78rem;font-weight:800;color:#0d47a1;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+  .rxn{font-family:'Courier New',monospace;font-size:.9rem;color:#1a237e;background:#fff;border:1px solid #90caf9;border-radius:6px;padding:8px 14px;margin:5px 0;display:block;line-height:1.8;}
+  .rxn-note{font-size:.78rem;color:#0d47a1;margin-top:4px;font-style:italic;}
+
+  /* STRUCTURE BOX */
+  .struct-box{background:#f3e5f5;border:1.5px solid #9c27b0;border-radius:8px;padding:10px 14px;margin:6px 0;font-family:'Courier New',monospace;font-size:.88rem;color:#4a148c;line-height:1.8;}
+
+  table.ref{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:8px;}
+  table.ref th{background:#880e4f;color:#fff;padding:6px 10px;text-align:left;}
+  table.ref td{padding:6px 10px;border-bottom:1px solid #e8edf2;}
+  table.ref tr:nth-child(even) td{background:#fce4ec;}
+
+  .dn{background:#e8eaf6;border:1.5px dashed #5c6bc0;border-radius:8px;padding:9px 13px;font-size:.79rem;color:#3949ab;margin-top:8px;text-align:center;}
+
+  footer{text-align:center;padding:24px 16px;font-size:.8rem;color:#888;}
+  footer a{color:#c2185b;text-decoration:none;}
+  @media(max-width:600px){.hero h1{font-size:1.2rem;}}
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <a href="notes-class12.html">← Class 12 Notes</a>
+  <span style="color:rgba(255,255,255,.4);">|</span>
+  <span class="header-title">Ch11 — Alcohols, Phenols & Ethers | Most IMP</span>
+</div>
+
+<div class="hero">
+  <div class="board-tag">Maharashtra Board · Class 12 · Chemistry · Chapter 11</div>
+  <h1>⚗️ Ch11 — Alcohols, Phenols and Ethers<br>Most Important Board Exam Questions</h1>
+  <div class="sub">Theory Section + Chemical Reactions/Formulae Section — Separately organised</div>
+  <div class="pills">
+    <div class="pill">📖 Theory Part</div>
+    <div class="pill">⚗️ Reactions & Formulae</div>
+    <div class="pill">⭐ Most IMP</div>
+    <div class="pill">📋 Board Pattern</div>
+  </div>
+</div>
+
+<div class="toc">
+  <h3>📑 Quick Navigation</h3>
+  <div class="toc-grid">
+    <a class="toc-a" href="#theory">📖 THEORY SECTION</a>
+    <a class="toc-a" href="#t1">Classification & Structure</a>
+    <a class="toc-a" href="#t2">Nomenclature</a>
+    <a class="toc-a" href="#t3">Preparation of Alcohols</a>
+    <a class="toc-a" href="#t4">Properties of Alcohols</a>
+    <a class="toc-a" href="#t5">Phenols — Theory</a>
+    <a class="toc-a" href="#t6">Ethers — Theory</a>
+    <a class="toc-a" href="#reactions">⚗️ REACTIONS SECTION</a>
+    <a class="toc-a" href="#r1">Reactions of Alcohols</a>
+    <a class="toc-a" href="#r2">Reactions of Phenols</a>
+    <a class="toc-a" href="#r3">Reactions of Ethers</a>
+    <a class="toc-a" href="#r4">Name Reactions</a>
+    <a class="toc-a" href="#mcq">✅ MCQ Section</a>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     PART 1 — THEORY SECTION
+════════════════════════════════════════ -->
+<div class="sec-div bg-theory" id="theory">
+  <div class="sec-icon">📖</div>
+  <div class="sec-info">
+    <h2>PART 1 — THEORY SECTION</h2>
+    <p>Classification · Structure · Nomenclature · Properties · Acidity — All definition & explanation questions</p>
+  </div>
+</div>
+
+<!-- T1 Classification -->
+<div class="q-card" id="t1">
+  <div class="q-title-bar"><span class="q-num">T 1</span><span class="q-title">Classify alcohols, phenols and ethers. Give examples. <span class="itag">⭐ Most IMP</span></span><span class="q-chip">3-4 Marks</span></div>
+  <div class="sub">
+    <div class="sol">
+      <span class="sline"><strong>ALCOHOLS — Classification based on OH group position:</strong></span>
+      <span class="sline"><span class="tag tans">Primary (1°)</span> –OH attached to C bonded to ONE other C. E.g., CH₃CH₂OH (ethanol), CH₃OH (methanol)</span>
+      <span class="sline"><span class="tag tans">Secondary (2°)</span> –OH attached to C bonded to TWO other C's. E.g., CH₃CH(OH)CH₃ (isopropanol)</span>
+      <span class="sline"><span class="tag tans">Tertiary (3°)</span> –OH attached to C bonded to THREE other C's. E.g., (CH₃)₃COH (tert-butanol)</span>
+      <span class="sline"><strong>Based on number of –OH groups:</strong></span>
+      <span class="sline" style="padding-left:20px;">• Monohydric: 1 –OH (ethanol)</span>
+      <span class="sline" style="padding-left:20px;">• Dihydric: 2 –OH (ethylene glycol — HOCH₂CH₂OH)</span>
+      <span class="sline" style="padding-left:20px;">• Trihydric: 3 –OH (glycerol — HOCH₂CH(OH)CH₂OH)</span>
+      <span class="sline"><strong>PHENOLS:</strong> –OH directly attached to benzene ring. E.g., C₆H₅OH (phenol)</span>
+      <span class="sline"><strong>ETHERS:</strong> Two organic groups linked by –O–. R–O–R'. E.g., C₂H₅–O–C₂H₅ (diethyl ether)</span>
+      <span class="sline" style="padding-left:20px;">• Symmetrical (simple): R–O–R (both groups same). E.g., CH₃–O–CH₃</span>
+      <span class="sline" style="padding-left:20px;">• Asymmetrical (mixed): R–O–R' (different groups). E.g., CH₃–O–C₂H₅</span>
+    </div>
+  </div>
+</div>
+
+<!-- T2 Nomenclature -->
+<div class="q-card" id="t2">
+  <div class="q-title-bar"><span class="q-num">T 2</span><span class="q-title">IUPAC Nomenclature of Alcohols, Phenols and Ethers. <span class="itag">⭐ Most IMP</span></span><span class="q-chip">3 Marks</span></div>
+  <div class="sub">
+    <div class="sol">
+      <span class="sline"><strong>ALCOHOLS:</strong> Replace –e of alkane with –ol. Longest chain containing –OH = parent chain.</span>
+      <table class="ref" style="margin-top:6px;">
+        <tr><th>Structure</th><th>IUPAC Name</th><th>Common Name</th></tr>
+        <tr><td>CH₃OH</td><td>Methanol</td><td>Methyl alcohol / Wood spirit</td></tr>
+        <tr><td>C₂H₅OH</td><td>Ethanol</td><td>Ethyl alcohol / Grain alcohol</td></tr>
+        <tr><td>CH₃CH(OH)CH₃</td><td>Propan-2-ol</td><td>Isopropanol</td></tr>
+        <tr><td>(CH₃)₃COH</td><td>2-methylpropan-2-ol</td><td>tert-butanol</td></tr>
+        <tr><td>HOCH₂CH₂OH</td><td>Ethane-1,2-diol</td><td>Ethylene glycol</td></tr>
+        <tr><td>HOCH₂CH(OH)CH₂OH</td><td>Propane-1,2,3-triol</td><td>Glycerol</td></tr>
+      </table>
+      <span class="sline" style="margin-top:8px;"><strong>PHENOLS:</strong> Numbered from C bearing –OH.</span>
+      <span class="sline" style="padding-left:20px;">C₆H₅OH = Phenol; ortho-OH = 2-methylphenol (o-cresol); meta = 3-; para = 4-</span>
+      <span class="sline"><strong>ETHERS:</strong> Named as alkoxy alkanes.</span>
+      <span class="sline" style="padding-left:20px;">CH₃–O–CH₃ = Methoxymethane; C₂H₅–O–CH₃ = Methoxyethane; C₂H₅–O–C₂H₅ = Ethoxyethane (diethyl ether)</span>
+    </div>
+  </div>
+</div>
+
+<!-- T3 Preparation -->
+<div class="q-card" id="t3">
+  <div class="q-title-bar"><span class="q-num">T 3</span><span class="q-title">Methods of Preparation of Alcohols. <span class="itag">⭐ Most IMP</span></span><span class="q-chip">4 Marks</span></div>
+  <div class="sub">
+    <div class="sol">
+      <span class="sline"><strong>1. Hydration of Alkenes (Industrial method):</strong></span>
+      <span class="sline" style="padding-left:20px;">Alkene + H₂O → Alcohol (H₂SO₄ catalyst, follows Markovnikov's rule)</span>
+      <span class="sline"><strong>2. Hydroboration-Oxidation (anti-Markovnikov):</strong></span>
+      <span class="sline" style="padding-left:20px;">Alkene + B₂H₆ → Trialkylborane → H₂O₂/NaOH → Primary alcohol (syn addition)</span>
+      <span class="sline"><strong>3. Reduction of Aldehydes/Ketones:</strong></span>
+      <span class="sline" style="padding-left:20px;">Aldehyde + H₂ → (LiAlH₄ or NaBH₄) → Primary alcohol</span>
+      <span class="sline" style="padding-left:20px;">Ketone + H₂ → (LiAlH₄ or NaBH₄) → Secondary alcohol</span>
+      <span class="sline"><strong>4. Reduction of Carboxylic Acids:</strong></span>
+      <span class="sline" style="padding-left:20px;">RCOOH + LiAlH₄ → RCH₂OH (Primary alcohol)</span>
+      <span class="sline"><strong>5. Grignard Reagent:</strong></span>
+      <span class="sline" style="padding-left:20px;">HCHO + RMgX → (i) dry ether (ii) H₃O⁺ → Primary alcohol</span>
+      <span class="sline" style="padding-left:20px;">RCHO + R'MgX → (i) dry ether (ii) H₃O⁺ → Secondary alcohol</span>
+      <span class="sline" style="padding-left:20px;">R₂CO + R'MgX → (i) dry ether (ii) H₃O⁺ → Tertiary alcohol</span>
+      <span class="sline"><strong>6. Fermentation (ethanol only):</strong></span>
+      <span class="sline" style="padding-left:20px;">C₆H₁₂O₆ → (yeast/zymase) → 2C₂H₅OH + 2CO₂</span>
+    </div>
+  </div>
+</div>
+
+<!-- T4 Physical Properties -->
+<div class="q-card" id="t4">
+  <div class="q-title-bar"><span class="q-num">T 4</span><span class="q-title">Physical properties and acidity of Alcohols. Why do alcohols have higher boiling points? <span class="itag">⭐ Most IMP</span></span><span class="q-chip">3 Marks</span></div>
+  <div class="sub">
+    <div class="sol">
+      <span class="sline"><strong>Physical Properties of Alcohols:</strong></span>
+      <span class="sline"><span class="tag tans">Boiling Point</span> Alcohols have <strong>higher boiling points</strong> than alkanes/ethers of similar MW due to <strong>intermolecular hydrogen bonding</strong> (O–H···O). More energy needed to break H-bonds.</span>
+      <span class="sline" style="padding-left:20px;">BP: CH₃OH (65°C) > CH₃OCH₃ (−24°C) for same MW</span>
+      <span class="sline"><span class="tag tans">Solubility</span> Lower alcohols (C1–C4) are miscible with water due to H-bonding with water. Solubility decreases with increase in carbon chain (hydrophobic part increases).</span>
+      <span class="sline"><strong>Acidity of Alcohols:</strong></span>
+      <span class="sline" style="padding-left:20px;">R–O–H ⇌ R–O⁻ + H⁺ &nbsp;(pKa ≈ 16–18)</span>
+      <span class="sline" style="padding-left:20px;"><strong>Order of acidity:</strong> CH₃OH > 1° > 2° > 3°</span>
+      <span class="sline" style="padding-left:20px;">Reason: Alkyl groups (+I effect) increase electron density on O → less tendency to release H⁺ → less acidic.</span>
+      <span class="sline" style="padding-left:20px;"><strong>Alcohols less acidic than water and phenols.</strong></span>
+      <span class="sline"><strong>Acidity order:</strong> H₂O > ROH; &nbsp; Phenol (pKa 10) >> Alcohol (pKa 16)</span>
+      <span class="sline"><span class="tag tans">Reason phenol more acidic</span> Phenoxide ion (C₆H₅O⁻) is stabilised by resonance with benzene ring → more stable → equilibrium shifts toward dissociation → more acidic.</span>
+    </div>
+  </div>
+</div>
+
+<!-- T5 Phenols Theory -->
+<div class="q-card" id="t5">
+  <div class="q-title-bar"><span class="q-num">T 5</span><span class="q-title">Why is phenol more acidic than alcohol but less acidic than carboxylic acid? <span class="itag">⭐ Most IMP</span></span><span class="q-chip">3 Marks</span></div>
+  <div class="sub">
+    <div class="sol">
+      <span class="sline"><strong>Acidity comparison: Carboxylic acid > Phenol > Water > Alcohol</strong></span>
+      <span class="sline"><span class="tag tans">Phenol > Alcohol</span></span>
+      <span class="sline" style="padding-left:20px;">• Phenoxide ion (C₆H₅O⁻) is stabilised by <strong>resonance</strong> — lone pair on O delocalised into benzene ring → 5 resonance structures</span>
+      <span class="sline" style="padding-left:20px;">• Alkoxide ion (RO⁻) has no such resonance stabilisation</span>
+      <span class="sline" style="padding-left:20px;">• More stable conjugate base → stronger acid → phenol more acidic than alcohol</span>
+      <span class="sline"><span class="tag tans">Carboxylic acid > Phenol</span></span>
+      <span class="sline" style="padding-left:20px;">• Carboxylate ion (RCOO⁻) has <strong>two equivalent resonance structures</strong> — charge delocalised equally over two O atoms → more stable than phenoxide</span>
+      <span class="sline" style="padding-left:20px;">• Phenoxide: resonance with ring — not as effective (charge goes on ring carbons, not on electronegative O)</span>
+      <span class="sline"><strong>Effect of substituents on acidity of phenol:</strong></span>
+      <span class="sline" style="padding-left:20px;">• Electron-withdrawing groups (–NO₂, –Cl) at ortho/para increase acidity (stabilise phenoxide)</span>
+      <span class="sline" style="padding-left:20px;">• Electron-donating groups (–CH₃, –OCH₃) decrease acidity</span>
+      <div class="dn">📐 Draw resonance structures of phenoxide ion showing negative charge on O, ortho and para carbons. 5 structures total.</div>
+    </div>
+  </div>
+</div>
+
+<!-- T6 Ethers Theory -->
+<div class="q-card" id="t6">
+  <div class="q-title-bar"><span class="q-num">T 6</span><span class="q-title">Structure and properties of Ethers. Why are ethers good solvents? <span class="itag">⭐ IMP</span></span><span class="q-chip">3 Marks</span></div>
+  <div class="sub">
+    <div class="sol">
+      <span class="sline"><strong>Structure of Ethers (R–O–R'):</strong></span>
+      <span class="sline" style="padding-left:20px;">• C–O–C bond angle ≈ 111.7° (slightly more than tetrahedral due to lone pairs on O)</span>
+      <span class="sline" style="padding-left:20px;">• Oxygen has 2 lone pairs; C–O bond is polar but molecule may be non-polar (symmetrical ether)</span>
+      <span class="sline"><strong>Physical Properties:</strong></span>
+      <span class="sline" style="padding-left:20px;">• <strong>Lower boiling points</strong> than alcohols (no O–H bond → no H-bonding between ether molecules)</span>
+      <span class="sline" style="padding-left:20px;">• Diethyl ether BP = 34.6°C (highly volatile and flammable)</span>
+      <span class="sline" style="padding-left:20px;">• Slightly soluble in water (lone pairs on O can H-bond with water)</span>
+      <span class="sline"><strong>Why ethers are good solvents:</strong></span>
+      <span class="sline" style="padding-left:20px;">1. Low boiling point → easy to remove by evaporation after reaction</span>
+      <span class="sline" style="padding-left:20px;">2. Chemically inert (do not react with most reagents)</span>
+      <span class="sline" style="padding-left:20px;">3. Dissolve both polar and non-polar organic compounds</span>
+      <span class="sline" style="padding-left:20px;">4. Used as solvent for Grignard reactions, extraction</span>
+      <span class="sline"><strong>Limitations:</strong> Highly flammable (flash point −45°C); peroxides form on long storage (explosive).</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     PART 2 — CHEMICAL REACTIONS & FORMULAE
+════════════════════════════════════════ -->
+<div class="sec-div bg-reactions" id="reactions">
+  <div class="sec-icon">⚗️</div>
+  <div class="sec-info">
+    <h2>PART 2 — CHEMICAL REACTIONS & FORMULAE</h2>
+    <p>All reactions with equations — Alcohols · Phenols · Ethers · Name Reactions</p>
+  </div>
+</div>
+
+<!-- R1 Reactions of Alcohols -->
+<div class="q-card" id="r1">
+  <div class="q-title-bar"><span class="q-num">R 1</span><span class="q-title">Chemical Reactions of Alcohols <span class="itag">⭐ Most IMP</span></span><span class="q-chip">Board</span></div>
+
+  <div class="sub">
+    <span class="sub-q">1. Reactions with Active Metals (Acidic nature)</span>
+    <div class="rxn-box">
+      <div class="rxn-title">Reaction with Na metal</div>
+      <span class="rxn">2R–OH + 2Na → 2R–O⁻Na⁺ + H₂↑</span>
+      <span class="rxn">2C₂H₅OH + 2Na → 2C₂H₅ONa + H₂↑</span>
+      <div class="rxn-note">Sodium ethoxide formed; H₂ evolved; confirms acidic –OH group</div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q">2. Dehydration Reactions</span>
+    <div class="rxn-box">
+      <div class="rxn-title">Intramolecular dehydration (high temp → alkene)</div>
+      <span class="rxn">CH₃CH₂OH → (conc. H₂SO₄, 443K) → CH₂=CH₂ + H₂O</span>
+      <div class="rxn-title">Intermolecular dehydration (low temp → ether)</div>
+      <span class="rxn">2C₂H₅OH → (conc. H₂SO₄, 413K) → C₂H₅–O–C₂H₅ + H₂O</span>
+      <div class="rxn-note">413K → ether; 443K → alkene</div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q">3. Reactions with Phosphorus Halides (OH → X)</span>
+    <div class="rxn-box">
+      <div class="rxn-title">With PCl₅</div>
+      <span class="rxn">R–OH + PCl₅ → R–Cl + POCl₃ + HCl</span>
+      <div class="rxn-title">With PCl₃</div>
+      <span class="rxn">3R–OH + PCl₃ → 3R–Cl + H₃PO₃</span>
+      <div class="rxn-title">With SOCl₂ (thionyl chloride) — best method</div>
+      <span class="rxn">R–OH + SOCl₂ → R–Cl + SO₂ + HCl</span>
+      <div class="rxn-note">SOCl₂ is best because byproducts SO₂ and HCl are gases → pure product obtained</div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q">4. Esterification (with carboxylic acids)</span>
+    <div class="rxn-box">
+      <div class="rxn-title">Fischer Esterification</div>
+      <span class="rxn">RCOOH + R'OH ⇌ (H⁺ catalyst, Δ) ⇌ RCOOR' + H₂O</span>
+      <span class="rxn">CH₃COOH + C₂H₅OH ⇌ CH₃COOC₂H₅ + H₂O</span>
+      <div class="rxn-note">Reversible reaction; equilibrium reaction; H₂SO₄ catalyst; fragrant ester ethyl acetate formed</div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q">5. Oxidation of Alcohols</span>
+    <div class="rxn-box">
+      <div class="rxn-title">Primary alcohol → Aldehyde → Carboxylic acid</div>
+      <span class="rxn">RCH₂OH → [O] (K₂Cr₂O₇/H⁺) → RCHO → [O] → RCOOH</span>
+      <span class="rxn">C₂H₅OH → [O] → CH₃CHO → [O] → CH₃COOH</span>
+      <div class="rxn-title">Secondary alcohol → Ketone</div>
+      <span class="rxn">R₂CHOH → [O] (K₂Cr₂O₇/H⁺) → R₂C=O</span>
+      <span class="rxn">CH₃CH(OH)CH₃ → [O] → CH₃COCH₃ (acetone)</span>
+      <div class="rxn-title">Tertiary alcohol — resistant to oxidation</div>
+      <span class="rxn">3° Alcohol → No reaction with mild oxidising agents (no α-H)</span>
+      <div class="rxn-note">Victor Meyer test distinguishes 1°, 2°, 3° alcohols</div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q">6. Lucas Test (distinguish 1°, 2°, 3° alcohols)</span>
+    <div class="rxn-box">
+      <div class="rxn-title">Lucas Reagent = anhydrous ZnCl₂ + conc. HCl</div>
+      <span class="rxn">3° alcohol + Lucas reagent → Immediate turbidity (cloudiness at room temp)</span>
+      <span class="rxn">2° alcohol + Lucas reagent → Turbidity after 5 min</span>
+      <span class="rxn">1° alcohol + Lucas reagent → No turbidity at room temp (reacts on heating)</span>
+      <div class="rxn-note">Turbidity = alkyl chloride (RCl) forms, insoluble in reagent</div>
+    </div>
+  </div>
+</div>
+
+<!-- R2 Reactions of Phenols -->
+<div class="q-card" id="r2">
+  <div class="q-title-bar"><span class="q-num">R 2</span><span class="q-title">Chemical Reactions of Phenols <span class="itag">⭐ Most IMP</span></span><span class="q-chip">Board</span></div>
+
+  <div class="sub">
+    <span class="sub-q">1. Acidic nature of Phenol</span>
+    <div class="rxn-box">
+      <div class="rxn-title">With NaOH (phenol is acidic — reacts with base)</div>
+      <span class="rxn">C₆H₅OH + NaOH → C₆H₅ONa + H₂O</span>
+      <span class="rxn">(Sodium phenoxide formed)</span>
+      <div class="rxn-title">With Na₂CO₃ (stronger acid displaces weaker)</div>
+      <span class="rxn">2C₆H₅OH + Na₂CO₃ → 2C₆H₅ONa + H₂O + CO₂↑</span>
+      <div class="rxn-note">Phenol is acidic enough to react with Na₂CO₃ but NOT with NaHCO₃ (phenol pKa ≈ 10; carbonic acid pKa₁ = 6.3)</div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q">2. Electrophilic Substitution Reactions (EAS) — OH is ortho/para directing</span>
+    <div class="rxn-box">
+      <div class="rxn-title">Nitration — with dilute HNO₃</div>
+      <span class="rxn">C₆H₅OH + dilute HNO₃ → o-nitrophenol + p-nitrophenol</span>
+      <div class="rxn-title">Nitration — with conc. HNO₃ + conc. H₂SO₄</div>
+      <span class="rxn">C₆H₅OH + 3HNO₃ → 2,4,6-trinitrophenol (picric acid) + 3H₂O</span>
+      <div class="rxn-title">Bromination (Br₂/water — no catalyst needed!)</div>
+      <span class="rxn">C₆H₅OH + 3Br₂(aq) → 2,4,6-tribromophenol (white ppt) + 3HBr</span>
+      <div class="rxn-note">Phenol reacts with Br₂ water WITHOUT catalyst (unlike benzene needs FeBr₃) — used as test for phenol</div>
+      <div class="rxn-title">Sulphonation — with conc. H₂SO₄</div>
+      <span class="rxn">C₆H₅OH + H₂SO₄ → o-hydroxybenzenesulphonic acid + p-hydroxybenzenesulphonic acid</span>
+      <div class="rxn-title">Friedel-Crafts Alkylation</div>
+      <span class="rxn">C₆H₅OH + CH₃Cl → (AlCl₃) → o-cresol + p-cresol</span>
+    </div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q">3. Kolbe-Schmitt Reaction <span class="itag">⭐ Name Reaction</span></span>
+    <div class="rxn-box">
+      <div class="rxn-title">Phenol → Sodium phenoxide → Salicylic acid (aspirin precursor)</div>
+      <span class="rxn">C₆H₅OH + NaOH → C₆H₅ONa (sodium phenoxide)</span>
+      <span class="rxn">C₆H₅ONa + CO₂ → (300K, 4-7 atm) → sodium salicylate</span>
+      <span class="rxn">Sodium salicylate + HCl → 2-hydroxybenzoic acid (salicylic acid) + NaCl</span>
+      <div class="rxn-note">Used in manufacture of aspirin (acetylsalicylic acid)</div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q">4. Reimer-Tiemann Reaction <span class="itag">⭐ Name Reaction</span></span>
+    <div class="rxn-box">
+      <div class="rxn-title">Phenol → Salicylaldehyde (2-hydroxybenzaldehyde)</div>
+      <span class="rxn">C₆H₅OH + CHCl₃ + 3KOH → (aq, 340K) → 2-hydroxybenzaldehyde (salicylaldehyde) + 3KCl + 3H₂O</span>
+      <div class="rxn-note">CHCl₃ acts as electrophile (via :CCl₂ dichlorocarbene intermediate); –CHO introduced at ortho position</div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q">5. FeCl₃ Test for Phenol</span>
+    <div class="rxn-box">
+      <span class="rxn">C₆H₅OH + FeCl₃(aq) → Violet/purple colour complex</span>
+      <div class="rxn-note">Characteristic test for phenols — purple/violet colour confirms phenolic –OH group</div>
+    </div>
+  </div>
+</div>
+
+<!-- R3 Reactions of Ethers -->
+<div class="q-card" id="r3">
+  <div class="q-title-bar"><span class="q-num">R 3</span><span class="q-title">Chemical Reactions of Ethers <span class="itag">⭐ IMP</span></span><span class="q-chip">Board</span></div>
+
+  <div class="sub">
+    <span class="sub-q">1. Cleavage by HI (or HBr) — most important reaction of ethers</span>
+    <div class="rxn-box">
+      <div class="rxn-title">With excess HI (for dialkyl ether)</div>
+      <span class="rxn">R–O–R' + HI → R–OH + R'–I (less HI)</span>
+      <span class="rxn">C₂H₅–O–C₂H₅ + HI → C₂H₅OH + C₂H₅I</span>
+      <div class="rxn-title">With excess HI (both groups become iodides)</div>
+      <span class="rxn">C₂H₅–O–C₂H₅ + 2HI → 2C₂H₅I + H₂O</span>
+      <div class="rxn-note">Reactivity: HI > HBr > HCl for ether cleavage. SN2 mechanism for 1° ether; SN1 for 3° ether.</div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q">2. Preparation of Ethers — Williamson Synthesis <span class="itag">⭐ Name Reaction</span></span>
+    <div class="rxn-box">
+      <div class="rxn-title">Alkyl halide + Sodium alkoxide → Ether (SN2)</div>
+      <span class="rxn">R–O⁻Na⁺ + R'–X → R–O–R' + NaX</span>
+      <span class="rxn">C₂H₅ONa + CH₃I → C₂H₅–O–CH₃ + NaI</span>
+      <span class="rxn">(Methoxyethane formed)</span>
+      <div class="rxn-note">Use primary alkyl halide (SN2); tertiary halide → elimination instead. Best for asymmetric ethers.</div>
+    </div>
+  </div>
+</div>
+
+<!-- R4 Summary of Name Reactions -->
+<div class="q-card" id="r4">
+  <div class="q-title-bar"><span class="q-num">R 4</span><span class="q-title">All Name Reactions — Summary <span class="itag">⭐ Most IMP Board</span></span><span class="q-chip">Board Exam</span></div>
+  <div class="sub">
+    <table class="ref">
+      <tr><th>Name Reaction</th><th>Reactants</th><th>Product</th><th>Conditions</th></tr>
+      <tr><td><strong>Kolbe-Schmitt</strong></td><td>Sodium phenoxide + CO₂</td><td>Salicylic acid</td><td>300K, 4-7 atm pressure</td></tr>
+      <tr><td><strong>Reimer-Tiemann</strong></td><td>Phenol + CHCl₃ + KOH</td><td>Salicylaldehyde (2-OHC₆H₄CHO)</td><td>Aqueous KOH, 340K</td></tr>
+      <tr><td><strong>Williamson Synthesis</strong></td><td>Sodium alkoxide + Alkyl halide</td><td>Ether (R–O–R')</td><td>SN2 reaction</td></tr>
+      <tr><td><strong>Lucas Test</strong></td><td>Alcohol + ZnCl₂ + HCl</td><td>Alkyl chloride (turbidity)</td><td>Room temperature</td></tr>
+      <tr><td><strong>Esterification</strong></td><td>RCOOH + ROH</td><td>Ester (RCOOR') + H₂O</td><td>H⁺ catalyst, heat, reversible</td></tr>
+    </table>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     MCQ SECTION
+════════════════════════════════════════ -->
+<div class="sec-div bg-mcq" id="mcq">
+  <div class="sec-icon">✅</div>
+  <div class="sec-info">
+    <h2>MCQ SECTION — Most Repeated Board Questions</h2>
+    <p>1 mark each — all from previous board papers</p>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-title-bar"><span class="q-num">MCQ</span><span class="q-title">Most Repeated MCQs from Board Papers <span class="itag">⭐ All IMP</span></span><span class="q-chip">1M each</span></div>
+
+  <div class="sub">
+    <span class="sub-q">1. Which reagent is used to distinguish 1°, 2° and 3° alcohols?</span>
+    <div class="sol"><span class="sline-ans">Lucas reagent (anhydrous ZnCl₂ + conc. HCl). 3° → immediate turbidity; 2° → 5 min; 1° → no turbidity at room temp.</span></div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q">2. What product is formed when ethanol reacts with conc. H₂SO₄ at 443K?</span>
+    <div class="sol"><span class="sline-ans">Ethylene (CH₂=CH₂) — intramolecular dehydration at 443K (170°C). At 413K → diethyl ether.</span></div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q">3. Phenol reacts with Br₂ water to give ________.</span>
+    <div class="sol"><span class="sline-ans">2,4,6-tribromophenol (white precipitate) — phenol undergoes electrophilic substitution at ortho and para positions without any catalyst.</span></div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q">4. The reagent used in Williamson synthesis is ________.</span>
+    <div class="sol"><span class="sline-ans">Sodium alkoxide (R–ONa) + Alkyl halide (R'–X) → Ether. SN2 mechanism. Best method for preparing asymmetric ethers.</span></div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q">5. Which of the following gives a positive FeCl₃ test? Alcohol / Phenol / Ether</span>
+    <div class="sol"><span class="sline-ans">Phenol — gives violet/purple colour with neutral FeCl₃ solution. Alcohol and ether do NOT give this test.</span></div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q">6. Kolbe-Schmitt reaction is used to prepare ________.</span>
+    <div class="sol"><span class="sline-ans">Salicylic acid (2-hydroxybenzoic acid) — from sodium phenoxide + CO₂ at 300K and 4-7 atm. Used to make aspirin.</span></div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q">7. Arrange in increasing order of acidity: Ethanol, Phenol, Water</span>
+    <div class="sol"><span class="sline-ans">Ethanol < Water < Phenol<br>pKa: Ethanol (16) > Water (15.7) > Phenol (10). Phenol most acidic due to resonance stabilisation of phenoxide ion.</span></div>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q">8. Which alcohol cannot be oxidised to aldehyde/ketone?</span>
+    <div class="sol"><span class="sline-ans">Tertiary (3°) alcohol — has no α-hydrogen atom on the carbon bearing –OH, so cannot be oxidised by mild oxidising agents like K₂Cr₂O₇/H⁺.</span></div>
+  </div>
+</div>
+
+<!-- KEY FORMULAE SUMMARY -->
+<div style="max-width:920px;margin:16px auto;background:#fff;border-radius:12px;padding:20px 24px;box-shadow:0 2px 10px rgba(0,0,0,.08);">
+  <h3 style="color:#880e4f;margin-bottom:14px;font-size:.95rem;font-weight:800;">📋 Key Formulae & Structures — Quick Reference</h3>
+  <table class="ref">
+    <tr><th>Compound</th><th>Molecular Formula</th><th>IUPAC Name</th><th>Key Feature</th></tr>
+    <tr><td>Methanol</td><td>CH₃OH</td><td>Methanol</td><td>Wood spirit; poisonous</td></tr>
+    <tr><td>Ethanol</td><td>C₂H₅OH</td><td>Ethanol</td><td>Grain alcohol; drinking alcohol</td></tr>
+    <tr><td>Glycerol</td><td>HOCH₂CH(OH)CH₂OH</td><td>Propane-1,2,3-triol</td><td>Trihydric alcohol; in soaps</td></tr>
+    <tr><td>Ethylene glycol</td><td>HOCH₂CH₂OH</td><td>Ethane-1,2-diol</td><td>Antifreeze agent</td></tr>
+    <tr><td>Phenol</td><td>C₆H₅OH</td><td>Phenol</td><td>Carbolic acid; antiseptic</td></tr>
+    <tr><td>Diethyl ether</td><td>C₂H₅–O–C₂H₅</td><td>Ethoxyethane</td><td>Anaesthetic; good solvent</td></tr>
+    <tr><td>Picric acid</td><td>2,4,6-(NO₂)₃C₆H₂OH</td><td>2,4,6-trinitrophenol</td><td>Explosive; yellow dye</td></tr>
+    <tr><td>Salicylic acid</td><td>2-HOC₆H₄COOH</td><td>2-hydroxybenzoic acid</td><td>Aspirin precursor; Kolbe product</td></tr>
+    <tr><td>Salicylaldehyde</td><td>2-HOC₆H₄CHO</td><td>2-hydroxybenzaldehyde</td><td>Reimer-Tiemann product</td></tr>
+    <tr><td>Cresols</td><td>CH₃C₆H₄OH</td><td>Methylphenols</td><td>o, m, p-cresol; disinfectants</td></tr>
+  </table>
+</div>
+
+<footer><p>Visions Classes · visionslearning.in · <a href="notes-class12.html">← Back to Class 12 Notes</a></p></footer>
+
+<div style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;opacity:0.07;user-select:none;">
+  <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="150" cy="150" r="135" fill="none" stroke="#880e4f" stroke-width="6"/>
+    <circle cx="150" cy="150" r="120" fill="none" stroke="#880e4f" stroke-width="2"/>
+    <path id="tc12" fill="none" d="M 25,150 a125,125 0 1,1 250,0"/>
+    <path id="bc12" fill="none" d="M 25,150 a125,125 0 0,0 250,0"/>
+    <text font-size="17" font-weight="900" fill="#880e4f" font-family="Arial,sans-serif" letter-spacing="4"><textPath href="#tc12" startOffset="8%">VISIONS CLASSES · VISIONSLEARNING.IN ·</textPath></text>
+    <text font-size="14" font-weight="900" fill="#880e4f" font-family="Arial,sans-serif" letter-spacing="3"><textPath href="#bc12" startOffset="8%">CHEMISTRY 12 · ALCOHOLS PHENOLS ETHERS</textPath></text>
+    <text x="150" y="142" text-anchor="middle" font-size="20" font-weight="900" fill="#880e4f" font-family="Arial,sans-serif">VISIONS</text>
+    <text x="150" y="168" text-anchor="middle" font-size="20" font-weight="900" fill="#880e4f" font-family="Arial,sans-serif">CLASSES</text>
+    <text x="150" y="193" text-anchor="middle" font-size="10" font-weight="700" fill="#880e4f" font-family="Arial,sans-serif">★ CH 11 ★</text>
+  </svg>
+</div>
+</body>
+</html>
