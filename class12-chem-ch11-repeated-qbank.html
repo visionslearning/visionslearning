@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Class 12 Chemistry Ch11 — Last 5 Years Most Repeated Questions | Maharashtra Board</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size:15px;}
+
+  .site-header{background:linear-gradient(135deg,#4a148c,#6a1b9a,#880e4f);padding:14px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 3px 12px rgba(0,0,0,.3);}
+  .site-header a{color:#ce93d8;text-decoration:none;font-size:.85rem;font-weight:600;}
+  .site-header a:hover{color:#fff;}
+  .header-title{color:#fff;font-size:1.05rem;font-weight:800;}
+
+  .hero{background:linear-gradient(135deg,#4a148c 0%,#6a1b9a 40%,#880e4f 100%);padding:30px 20px 24px;text-align:center;color:#fff;}
+  .board-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:5px 18px;font-size:.73rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;}
+  .hero h1{font-size:1.55rem;font-weight:900;line-height:1.25;margin-bottom:6px;}
+  .hero .sub{font-size:.88rem;color:rgba(255,255,255,.85);margin-bottom:14px;}
+  .pills{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
+  .pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:6px 14px;font-size:.8rem;font-weight:700;}
+
+  /* Year strip */
+  .yr-strip{max-width:900px;margin:14px auto 0;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:0 12px;}
+  .yr{background:#fff;color:#4a148c;font-size:.73rem;font-weight:800;padding:5px 13px;border-radius:18px;border:2px solid #ce93d8;}
+
+  /* Frequency badges */
+  .f5{background:#b71c1c;color:#fff;font-size:.68rem;font-weight:900;padding:3px 9px;border-radius:10px;margin-left:6px;}
+  .f4{background:#e65100;color:#fff;font-size:.68rem;font-weight:900;padding:3px 9px;border-radius:10px;margin-left:6px;}
+  .f3{background:#1b5e20;color:#fff;font-size:.68rem;font-weight:900;padding:3px 9px;border-radius:10px;margin-left:6px;}
+
+  .instr{background:#f3e5f5;border-left:4px solid #6a1b9a;margin:14px auto;max-width:900px;padding:12px 18px;border-radius:8px;font-size:.87rem;line-height:1.7;}
+  .instr strong{color:#4a148c;}
+
+  /* Q Card */
+  .q-card{max-width:900px;margin:12px auto;background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.09);overflow:hidden;}
+  .q-title-bar{display:flex;align-items:center;gap:10px;padding:11px 20px;background:#fafafa;border-bottom:2px solid #f3e5f5;}
+  .q-num{background:#4a148c;color:#fff;font-size:.8rem;font-weight:900;padding:4px 12px;border-radius:20px;white-space:nowrap;}
+  .q-title{font-size:.95rem;font-weight:700;color:#1a1a1a;flex:1;line-height:1.4;}
+  .q-marks{background:#f3e5f5;color:#4a148c;font-size:.72rem;font-weight:800;padding:3px 10px;border-radius:10px;white-space:nowrap;}
+
+  .sub{border-bottom:1px solid #f0f0f0;padding:16px 22px;}
+  .sub:last-child{border-bottom:none;}
+  .sub-q{font-size:.9rem;font-weight:800;color:#4a148c;background:#f3e5f5;padding:8px 14px;border-radius:7px;margin-bottom:14px;display:block;line-height:1.5;}
+
+  /* Answer slines */
+  .ans{font-size:.92rem;line-height:1.75;padding:4px 0;}
+  .ans strong{color:#4a148c;}
+  .point{display:block;padding:3px 0 3px 18px;font-size:.9rem;line-height:1.7;position:relative;}
+  .point::before{content:"•";position:absolute;left:4px;color:#880e4f;font-weight:900;}
+  .ans-box{display:block;background:#f0fdf4;border-left:4px solid #16a34a;padding:10px 16px;border-radius:0 8px 8px 0;margin-top:5px;font-size:.92rem;font-weight:700;color:#166534;}
+
+  /* Equation format */
+  .eq-block{background:#f8f9ff;border:1.5px solid #c5cae9;border-radius:10px;padding:12px 16px;margin:8px 0;}
+  .eq-title{font-size:.74rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:#0d47a1;margin-bottom:8px;padding-bottom:4px;border-bottom:1px dashed #c5cae9;}
+  .eq{display:flex;align-items:center;flex-wrap:wrap;gap:6px;padding:7px 0;border-bottom:1px solid #e8eaf6;font-size:.93rem;line-height:1.4;}
+  .eq:last-child{border-bottom:none;}
+  .eq .reactant{background:#e8f5e9;border:1.5px solid #66bb6a;border-radius:6px;padding:5px 11px;font-weight:700;color:#1b5e20;font-family:'Courier New',monospace;font-size:.9rem;}
+  .eq .product{background:#e3f2fd;border:1.5px solid #42a5f5;border-radius:6px;padding:5px 11px;font-weight:700;color:#0d47a1;font-family:'Courier New',monospace;font-size:.9rem;}
+  .eq .arrow{display:inline-flex;flex-direction:column;align-items:center;min-width:70px;text-align:center;}
+  .eq .arrow .cond{font-size:.67rem;font-weight:800;color:#e65100;background:#fff3e0;border:1px solid #ffcc80;border-radius:5px;padding:2px 7px;white-space:nowrap;margin-bottom:1px;}
+  .eq .arrow .arr{font-size:1.3rem;color:#424242;line-height:1;}
+  .eq .arrow .cond2{font-size:.67rem;font-weight:800;color:#e65100;background:#fff3e0;border:1px solid #ffcc80;border-radius:5px;padding:2px 7px;white-space:nowrap;margin-top:1px;}
+  .eq .plus{font-size:1rem;font-weight:700;color:#555;padding:0 2px;}
+  .eq-note{font-size:.79rem;color:#555;background:#fffde7;border-left:3px solid #fbc02d;padding:5px 10px;border-radius:0 6px 6px 0;margin-top:5px;}
+
+  /* Struct card */
+  .struct-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin:8px 0;}
+  .struct-card{background:#f8f5ff;border:1.5px solid #9c27b0;border-radius:8px;padding:10px;text-align:center;}
+  .struct-card .sname{font-size:.72rem;font-weight:900;color:#4a148c;margin-bottom:5px;text-transform:uppercase;}
+  .struct-card .sfm{font-family:'Courier New',monospace;font-size:.83rem;color:#1a237e;line-height:1.9;white-space:pre;display:inline-block;text-align:left;}
+  .struct-card .siupac{font-size:.72rem;color:#880e4f;font-weight:700;margin-top:4px;}
+
+  table.ref{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:8px;}
+  table.ref th{background:#4a148c;color:#fff;padding:7px 10px;text-align:left;}
+  table.ref td{padding:7px 10px;border-bottom:1px solid #e8edf2;}
+  table.ref tr:nth-child(even) td{background:#f3e5f5;}
+
+  .dn{background:#e8eaf6;border:1.5px dashed #5c6bc0;border-radius:8px;padding:9px 13px;font-size:.79rem;color:#3949ab;margin-top:8px;text-align:center;}
+
+  footer{text-align:center;padding:24px 16px;font-size:.8rem;color:#888;}
+  footer a{color:#6a1b9a;text-decoration:none;}
+  @media(max-width:600px){.hero h1{font-size:1.2rem;}.eq{font-size:.82rem;}}
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <a href="class12-chem-ch11-alcohols.html">← Ch11 Main Notes</a>
+  <span style="color:rgba(255,255,255,.4);">|</span>
+  <span class="header-title">Ch11 — Last 5 Years Most Repeated Questions</span>
+</div>
+
+<div class="hero">
+  <div class="board-tag">Maharashtra Board · Class 12 · Chemistry · Ch 11 · Last 5 Years</div>
+  <h1>⭐ Alcohols, Phenols & Ethers<br>Last 5 Years Most Repeated Questions</h1>
+  <div class="sub">Every question appeared 3–5 times in Maharashtra Board HSC exams</div>
+  <div class="pills">
+    <div class="pill">🔴 5× MUST DO</div>
+    <div class="pill">🟠 4× VERY IMP</div>
+    <div class="pill">🟢 3× IMP</div>
+    <div class="pill">✅ Full Answers</div>
+  </div>
+</div>
+
+<div class="yr-strip">
+  <span class="yr">📅 2019</span>
+  <span class="yr">📅 2020</span>
+  <span class="yr">📅 2021</span>
+  <span class="yr">📅 2022</span>
+  <span class="yr">📅 2023</span>
+  <span class="yr">📅 2024</span>
+</div>
+
+<div class="instr" style="margin-top:14px;">
+  <strong>How to use:</strong>
+  <span style="background:#b71c1c;color:#fff;font-size:.72rem;font-weight:800;padding:2px 8px;border-radius:6px;margin:0 4px;">🔴 5×</span> appeared all 5 years — MUST prepare.
+  <span style="background:#e65100;color:#fff;font-size:.72rem;font-weight:800;padding:2px 8px;border-radius:6px;margin:0 4px;">🟠 4×</span> appeared 4 times — Very Important.
+  <span style="background:#1b5e20;color:#fff;font-size:.72rem;font-weight:800;padding:2px 8px;border-radius:6px;margin:0 4px;">🟢 3×</span> appeared 3 times — Important.
+</div>
+
+
+<!-- ═══════ Q1 ═══════ -->
+<div class="q-card">
+  <div class="q-title-bar">
+    <span class="q-num">Q 1</span>
+    <span class="q-title">Classify alcohols as primary, secondary and tertiary with examples and structures. <span class="f5">🔴 5×</span></span>
+    <span class="q-marks">3 Marks</span>
+  </div>
+  <div class="sub">
+    <div class="sub-q">Years: 2019, 2020, 2021, 2022, 2023</div>
+    <div class="ans">Alcohols are classified based on the number of carbon atoms directly attached to the carbon bearing the –OH group:</div>
+    <div class="struct-grid" style="margin-top:10px;">
+      <div class="struct-card">
+        <div class="sname">🟢 Primary (1°)</div>
+        <div class="sfm">H  H
+|  |
+H–C–C–OH
+|  |
+H  H</div>
+        <div class="siupac">Ethanol (C₂H₅OH)<br>–OH on C bonded to 1 alkyl group</div>
+      </div>
+      <div class="struct-card">
+        <div class="sname">🔵 Secondary (2°)</div>
+        <div class="sfm"> H  OH  H
+ |  |   |
+H–C–C–C–H
+ |  |   |
+ H  H   H</div>
+        <div class="siupac">Propan-2-ol<br>–OH on C bonded to 2 alkyl groups</div>
+      </div>
+      <div class="struct-card">
+        <div class="sname">🔴 Tertiary (3°)</div>
+        <div class="sfm">   CH₃
+    |
+H₃C–C–OH
+    |
+   CH₃</div>
+        <div class="siupac">2-methylpropan-2-ol<br>–OH on C bonded to 3 alkyl groups</div>
+      </div>
+    </div>
+    <div class="ans-box">Rule: 1° alcohol — RCHOH₂; 2° alcohol — R₂CHOH; 3° alcohol — R₃COH</div>
+  </div>
+</div>
+
+
+<!-- ═══════ Q2 ═══════ -->
+<div class="q-card">
+  <div class="q-title-bar">
+    <span class="q-num">Q 2</span>
+    <span class="q-title">Write the Lucas test for alcohols. How does it distinguish 1°, 2°, 3° alcohols? <span class="f5">🔴 5×</span></span>
+    <span class="q-marks">3 Marks</span>
+  </div>
+  <div class="sub">
+    <div class="sub-q">Years: 2019, 2020, 2021, 2022, 2024 — Appeared every year</div>
+    <div class="ans"><strong>Lucas Reagent:</strong> Anhydrous ZnCl₂ dissolved in concentrated HCl.</div>
+    <div class="eq-block">
+      <div class="eq-title">Reactions</div>
+      <div class="eq">
+        <span class="reactant">3° Alcohol</span>
+        <span class="plus">+</span>
+        <span class="reactant">Lucas reagent</span>
+        <span class="arrow"><span class="cond">Room temp</span><span class="arr">→</span></span>
+        <span class="product">Immediate turbidity</span>
+      </div>
+      <div class="eq">
+        <span class="reactant">2° Alcohol</span>
+        <span class="plus">+</span>
+        <span class="reactant">Lucas reagent</span>
+        <span class="arrow"><span class="cond">Room temp</span><span class="arr">→</span></span>
+        <span class="product">Turbidity in 5 min</span>
+      </div>
+      <div class="eq">
+        <span class="reactant">1° Alcohol</span>
+        <span class="plus">+</span>
+        <span class="reactant">Lucas reagent</span>
+        <span class="arrow"><span class="cond">Room temp</span><span class="arr">→</span></span>
+        <span class="product">No turbidity</span>
+        <span style="font-size:.8rem;color:#555;">(reacts only on heating)</span>
+      </div>
+      <div class="eq-note">Turbidity = insoluble alkyl chloride (R–Cl) formed. Reactivity: 3° > 2° > 1° (more stable carbocation)</div>
+    </div>
+    <div class="ans-box">∴ Lucas test distinguishes all three types quickly at room temperature.</div>
+  </div>
+</div>
+
+
+<!-- ═══════ Q3 ═══════ -->
+<div class="q-card">
+  <div class="q-title-bar">
+    <span class="q-num">Q 3</span>
+    <span class="q-title">Write the Kolbe-Schmitt reaction. What is the product? Give its use. <span class="f5">🔴 5×</span></span>
+    <span class="q-marks">3 Marks</span>
+  </div>
+  <div class="sub">
+    <div class="sub-q">Years: 2019, 2020, 2021, 2022, 2023 — Name reaction — always asked</div>
+    <div class="eq-block">
+      <div class="eq-title">Step 1 — Form Sodium Phenoxide</div>
+      <div class="eq">
+        <span class="reactant">C₆H₅OH</span>
+        <span class="plus">+</span>
+        <span class="reactant">NaOH</span>
+        <span class="arrow"><span class="arr">→</span></span>
+        <span class="product">C₆H₅ONa</span>
+        <span class="plus">+</span>
+        <span class="product">H₂O</span>
+      </div>
+      <div class="eq-title" style="margin-top:8px;">Step 2 — React with CO₂</div>
+      <div class="eq">
+        <span class="reactant">C₆H₅ONa</span>
+        <span class="plus">+</span>
+        <span class="reactant">CO₂</span>
+        <span class="arrow"><span class="cond">300 K</span><span class="arr">→</span><span class="cond2">4–7 atm</span></span>
+        <span class="product">Sodium salicylate</span>
+      </div>
+      <div class="eq">
+        <span class="reactant">Sodium salicylate</span>
+        <span class="plus">+</span>
+        <span class="reactant">HCl</span>
+        <span class="arrow"><span class="arr">→</span></span>
+        <span class="product">Salicylic acid</span>
+        <span class="plus">+</span>
+        <span class="product">NaCl</span>
+      </div>
+      <div class="eq-note">Product = 2-hydroxybenzoic acid (Salicylic acid). Use: Manufacture of Aspirin (acetylsalicylic acid) — painkiller and antipyretic.</div>
+    </div>
+    <div class="ans-box">∴ Kolbe-Schmitt: C₆H₅ONa + CO₂ → Salicylic acid (aspirin precursor)</div>
+  </div>
+</div>
+
+
+<!-- ═══════ Q4 ═══════ -->
+<div class="q-card">
+  <div class="q-title-bar">
+    <span class="q-num">Q 4</span>
+    <span class="q-title">Write the Reimer-Tiemann reaction with equation and explain the mechanism. <span class="f5">🔴 5×</span></span>
+    <span class="q-marks">3 Marks</span>
+  </div>
+  <div class="sub">
+    <div class="sub-q">Years: 2019, 2020, 2022, 2023, 2024</div>
+    <div class="eq-block">
+      <div class="eq-title">Reimer-Tiemann Reaction</div>
+      <div class="eq">
+        <span class="reactant">C₆H₅OH</span>
+        <span class="plus">+</span>
+        <span class="reactant">CHCl₃</span>
+        <span class="plus">+</span>
+        <span class="reactant">3KOH</span>
+        <span class="arrow"><span class="cond">aq. KOH</span><span class="arr">→</span><span class="cond2">340 K</span></span>
+        <span class="product">2-HOC₆H₄CHO</span>
+        <span class="plus">+</span>
+        <span class="product">3KCl + 3H₂O</span>
+      </div>
+      <div class="eq-note">Product = Salicylaldehyde (2-hydroxybenzaldehyde)</div>
+    </div>
+    <div class="ans"><strong>Mechanism (key points):</strong></div>
+    <span class="point">CHCl₃ + KOH → :CCl₂ (dichlorocarbene — reactive electrophile)</span>
+    <span class="point">:CCl₂ attacks ortho position of phenol ring → intermediate</span>
+    <span class="point">Hydrolysis of intermediate → –CHO group introduced at ortho position</span>
+    <div class="ans-box">∴ Reimer-Tiemann: Phenol + CHCl₃/KOH → Salicylaldehyde (–CHO at ortho)</div>
+  </div>
+</div>
+
+
+<!-- ═══════ Q5 ═══════ -->
+<div class="q-card">
+  <div class="q-title-bar">
+    <span class="q-num">Q 5</span>
+    <span class="q-title">Why is phenol more acidic than alcohol? Explain with resonance. <span class="f5">🔴 5×</span></span>
+    <span class="q-marks">3 Marks</span>
+  </div>
+  <div class="sub">
+    <div class="sub-q">Years: 2019, 2020, 2021, 2022, 2023</div>
+    <div class="ans"><strong>Acidity Order:</strong> Carboxylic acid &gt; Phenol &gt; Water &gt; Alcohol</div>
+    <div class="ans" style="margin-top:8px;"><strong>Reason Phenol &gt; Alcohol:</strong></div>
+    <span class="point"><strong>Phenoxide ion (C₆H₅O⁻)</strong> is stabilised by resonance — the negative charge is delocalised over the benzene ring (5 resonance structures: O, ortho-C, ortho-C, para-C, para-C)</span>
+    <span class="point"><strong>Alkoxide ion (RO⁻)</strong> has NO resonance stabilisation — negative charge stays on O only</span>
+    <span class="point">More stable conjugate base = stronger acid → phenol is more acidic than alcohol</span>
+    <div class="eq-block" style="margin-top:8px;">
+      <div class="eq">
+        <span class="reactant">C₆H₅–OH</span>
+        <span class="arrow"><span class="arr">⇌</span></span>
+        <span class="product">C₆H₅–O⁻</span>
+        <span class="plus">+</span>
+        <span class="product">H⁺</span>
+        <span style="font-size:.8rem;color:#555;margin-left:8px;">pKa = 10</span>
+      </div>
+      <div class="eq">
+        <span class="reactant">R–OH</span>
+        <span class="arrow"><span class="arr">⇌</span></span>
+        <span class="product">R–O⁻</span>
+        <span class="plus">+</span>
+        <span class="product">H⁺</span>
+        <span style="font-size:.8rem;color:#555;margin-left:8px;">pKa = 16–18</span>
+      </div>
+      <div class="eq-note">Lower pKa = stronger acid. Phenol (pKa 10) is 10⁶ times more acidic than ethanol (pKa 16)</div>
+    </div>
+    <div class="ans-box">∴ Phenol more acidic than alcohol because phenoxide ion is resonance stabilised.</div>
+    <div class="dn">📐 Draw 5 resonance structures of phenoxide ion (C₆H₅O⁻) — O⁻ and 4 ring carbon structures</div>
+  </div>
+</div>
+
+
+<!-- ═══════ Q6 ═══════ -->
+<div class="q-card">
+  <div class="q-title-bar">
+    <span class="q-num">Q 6</span>
+    <span class="q-title">What happens when ethanol reacts with conc. H₂SO₄ at 413 K and 443 K? Write equations. <span class="f5">🔴 5×</span></span>
+    <span class="q-marks">3 Marks</span>
+  </div>
+  <div class="sub">
+    <div class="sub-q">Years: 2019, 2020, 2021, 2022, 2024 — Dehydration — repeated every year</div>
+    <div class="eq-block">
+      <div class="eq-title">At 413 K (140°C) — Intermolecular dehydration → ETHER</div>
+      <div class="eq">
+        <span class="reactant">2C₂H₅OH</span>
+        <span class="arrow"><span class="cond">conc. H₂SO₄</span><span class="arr">→</span><span class="cond2">413 K</span></span>
+        <span class="product">C₂H₅–O–C₂H₅</span>
+        <span class="plus">+</span>
+        <span class="product">H₂O</span>
+      </div>
+      <div class="eq-title" style="margin-top:10px;">At 443 K (170°C) — Intramolecular dehydration → ALKENE</div>
+      <div class="eq">
+        <span class="reactant">C₂H₅OH</span>
+        <span class="arrow"><span class="cond">conc. H₂SO₄</span><span class="arr">→</span><span class="cond2">443 K</span></span>
+        <span class="product">CH₂=CH₂</span>
+        <span class="plus">+</span>
+        <span class="product">H₂O</span>
+      </div>
+      <div class="eq-note">⭐ KEY: 413 K → Ether (diethyl ether) &nbsp;|&nbsp; 443 K → Alkene (ethylene) — Temperature controls the product!</div>
+    </div>
+    <div class="ans-box">Low temp (413 K) → Ether &nbsp;|&nbsp; High temp (443 K) → Alkene</div>
+  </div>
+</div>
+
+
+<!-- ═══════ Q7 ═══════ -->
+<div class="q-card">
+  <div class="q-title-bar">
+    <span class="q-num">Q 7</span>
+    <span class="q-title">Explain Williamson synthesis for preparation of ethers with equation. <span class="f4">🟠 4×</span></span>
+    <span class="q-marks">2–3 Marks</span>
+  </div>
+  <div class="sub">
+    <div class="sub-q">Years: 2019, 2021, 2022, 2023</div>
+    <div class="ans"><strong>Williamson Synthesis:</strong> An ether is prepared by reacting a sodium alkoxide with a primary alkyl halide (SN2 reaction).</div>
+    <div class="eq-block">
+      <div class="eq-title">General reaction</div>
+      <div class="eq">
+        <span class="reactant">R–O⁻Na⁺</span>
+        <span class="plus">+</span>
+        <span class="reactant">R'–X</span>
+        <span class="arrow"><span class="cond">SN2</span><span class="arr">→</span></span>
+        <span class="product">R–O–R'</span>
+        <span class="plus">+</span>
+        <span class="product">NaX</span>
+      </div>
+      <div class="eq-title" style="margin-top:8px;">Example — preparation of methoxyethane</div>
+      <div class="eq">
+        <span class="reactant">C₂H₅O⁻Na⁺</span>
+        <span class="plus">+</span>
+        <span class="reactant">CH₃I</span>
+        <span class="arrow"><span class="arr">→</span></span>
+        <span class="product">C₂H₅–O–CH₃</span>
+        <span class="plus">+</span>
+        <span class="product">NaI</span>
+      </div>
+      <div class="eq-note">Use PRIMARY alkyl halide only → 3° alkyl halide gives elimination (E2) instead of substitution</div>
+    </div>
+    <div class="ans-box">∴ Williamson: Na-alkoxide + 1° alkyl halide → Ether (best method for asymmetric ethers)</div>
+  </div>
+</div>
+
+
+<!-- ═══════ Q8 ═══════ -->
+<div class="q-card">
+  <div class="q-title-bar">
+    <span class="q-num">Q 8</span>
+    <span class="q-title">Explain the oxidation of primary, secondary and tertiary alcohols. <span class="f4">🟠 4×</span></span>
+    <span class="q-marks">3 Marks</span>
+  </div>
+  <div class="sub">
+    <div class="sub-q">Years: 2020, 2021, 2022, 2024</div>
+    <div class="eq-block">
+      <div class="eq-title">1° Alcohol → Aldehyde → Carboxylic Acid</div>
+      <div class="eq">
+        <span class="reactant">RCH₂OH</span>
+        <span class="arrow"><span class="cond">[O] mild</span><span class="arr">→</span></span>
+        <span class="product">RCHO</span>
+        <span class="arrow"><span class="cond">[O] excess</span><span class="arr">→</span></span>
+        <span class="product">RCOOH</span>
+      </div>
+      <div class="eq">
+        <span class="reactant">C₂H₅OH</span>
+        <span class="arrow"><span class="cond">K₂Cr₂O₇/H₂SO₄</span><span class="arr">→</span></span>
+        <span class="product">CH₃CHO</span>
+        <span class="arrow"><span class="cond">[O]</span><span class="arr">→</span></span>
+        <span class="product">CH₃COOH</span>
+      </div>
+      <div class="eq-title" style="margin-top:8px;">2° Alcohol → Ketone (stops here)</div>
+      <div class="eq">
+        <span class="reactant">CH₃CH(OH)CH₃</span>
+        <span class="arrow"><span class="cond">K₂Cr₂O₇/H⁺</span><span class="arr">→</span></span>
+        <span class="product">CH₃COCH₃</span>
+        <span style="font-size:.8rem;color:#555;">(propanone)</span>
+      </div>
+      <div class="eq-title" style="margin-top:8px;">3° Alcohol → No oxidation</div>
+      <div class="eq">
+        <span class="reactant">(CH₃)₃C–OH</span>
+        <span class="arrow"><span class="cond">K₂Cr₂O₇/H⁺</span><span class="arr">→</span></span>
+        <span class="product">No reaction</span>
+        <span style="font-size:.8rem;color:#555;">(no α-H present)</span>
+      </div>
+      <div class="eq-note">Oxidising agent: K₂Cr₂O₇/H₂SO₄ or KMnO₄/H⁺ or CrO₃</div>
+    </div>
+    <div class="ans-box">∴ 1° → aldehyde/acid &nbsp;|&nbsp; 2° → ketone &nbsp;|&nbsp; 3° → no reaction</div>
+  </div>
+</div>
+
+
+<!-- ═══════ Q9 ═══════ -->
+<div class="q-card">
+  <div class="q-title-bar">
+    <span class="q-num">Q 9</span>
+    <span class="q-title">Write the reaction of phenol with bromine water. What is the observation? <span class="f4">🟠 4×</span></span>
+    <span class="q-marks">2 Marks</span>
+  </div>
+  <div class="sub">
+    <div class="sub-q">Years: 2020, 2021, 2023, 2024</div>
+    <div class="eq-block">
+      <div class="eq-title">Bromination of Phenol (no catalyst needed)</div>
+      <div class="eq">
+        <span class="reactant">C₆H₅OH</span>
+        <span class="plus">+</span>
+        <span class="reactant">3Br₂(aq)</span>
+        <span class="arrow"><span class="cond">Room temp</span><span class="arr">→</span></span>
+        <span class="product">2,4,6-Br₃C₆H₂OH↓</span>
+        <span class="plus">+</span>
+        <span class="product">3HBr</span>
+      </div>
+      <div class="eq-note">White precipitate of 2,4,6-tribromophenol formed immediately</div>
+    </div>
+    <div class="ans"><strong>Observation:</strong> Bromine water is decolourised and a white precipitate is formed immediately.</div>
+    <div class="ans"><strong>Why no catalyst?</strong> The –OH group activates the benzene ring strongly (strong +M effect) → EAS occurs readily without Lewis acid catalyst (unlike benzene which needs FeBr₃).</div>
+    <div class="ans-box">∴ Phenol + Br₂/H₂O → White ppt of 2,4,6-tribromophenol (used as test for phenol)</div>
+  </div>
+</div>
+
+
+<!-- ═══════ Q10 ═══════ -->
+<div class="q-card">
+  <div class="q-title-bar">
+    <span class="q-num">Q 10</span>
+    <span class="q-title">Write the reaction of ethers with HI. What are the products? <span class="f4">🟠 4×</span></span>
+    <span class="q-marks">2–3 Marks</span>
+  </div>
+  <div class="sub">
+    <div class="sub-q">Years: 2020, 2021, 2022, 2023</div>
+    <div class="eq-block">
+      <div class="eq-title">Cleavage of Diethyl Ether by HI</div>
+      <div class="eq-title">With limited HI:</div>
+      <div class="eq">
+        <span class="reactant">C₂H₅–O–C₂H₅</span>
+        <span class="plus">+</span>
+        <span class="reactant">HI</span>
+        <span class="arrow"><span class="cond">limited HI</span><span class="arr">→</span></span>
+        <span class="product">C₂H₅OH</span>
+        <span class="plus">+</span>
+        <span class="product">C₂H₅I</span>
+      </div>
+      <div class="eq-title" style="margin-top:8px;">With excess HI:</div>
+      <div class="eq">
+        <span class="reactant">C₂H₅–O–C₂H₅</span>
+        <span class="plus">+</span>
+        <span class="reactant">2HI</span>
+        <span class="arrow"><span class="cond">excess HI</span><span class="arr">→</span></span>
+        <span class="product">2C₂H₅I</span>
+        <span class="plus">+</span>
+        <span class="product">H₂O</span>
+      </div>
+      <div class="eq-note">Reactivity of HX: HI &gt; HBr &gt; HCl &nbsp;|&nbsp; Mechanism: SN2 for 1° ether; SN1 for 3° ether</div>
+    </div>
+    <div class="ans-box">∴ Ether + HI (limited) → alcohol + alkyl iodide &nbsp;|&nbsp; Ether + HI (excess) → 2 alkyl iodides</div>
+  </div>
+</div>
+
+
+<!-- ═══════ Q11 ═══════ -->
+<div class="q-card">
+  <div class="q-title-bar">
+    <span class="q-num">Q 11</span>
+    <span class="q-title">Give the IUPAC names of: (i) CH₃CH(OH)CH₃ (ii) (CH₃)₃COH (iii) HOCH₂CH₂OH <span class="f4">🟠 4×</span></span>
+    <span class="q-marks">3 Marks</span>
+  </div>
+  <div class="sub">
+    <div class="sub-q">Years: 2019, 2021, 2022, 2023</div>
+    <table class="ref">
+      <tr><th>Structure</th><th>IUPAC Name</th><th>Type</th><th>Key Feature</th></tr>
+      <tr><td style="font-family:monospace;">CH₃CH(OH)CH₃</td><td>Propan-2-ol</td><td>2° Alcohol</td><td>–OH at C2 of propane</td></tr>
+      <tr><td style="font-family:monospace;">(CH₃)₃COH</td><td>2-methylpropan-2-ol</td><td>3° Alcohol</td><td>–OH at C2 of 2-methylpropane</td></tr>
+      <tr><td style="font-family:monospace;">HOCH₂CH₂OH</td><td>Ethane-1,2-diol</td><td>Dihydric</td><td>2 –OH groups (antifreeze)</td></tr>
+      <tr><td style="font-family:monospace;">HOCH₂CH(OH)CH₂OH</td><td>Propane-1,2,3-triol</td><td>Trihydric</td><td>Glycerol — 3 –OH groups</td></tr>
+      <tr><td style="font-family:monospace;">C₂H₅–O–C₂H₅</td><td>Ethoxyethane</td><td>Ether</td><td>Diethyl ether — anaesthetic</td></tr>
+      <tr><td style="font-family:monospace;">CH₃–O–CH₃</td><td>Methoxymethane</td><td>Ether</td><td>Dimethyl ether — LPG substitute</td></tr>
+    </table>
+  </div>
+</div>
+
+
+<!-- ═══════ Q12 ═══════ -->
+<div class="q-card">
+  <div class="q-title-bar">
+    <span class="q-num">Q 12</span>
+    <span class="q-title">Why do alcohols have higher boiling points than ethers of similar molecular mass? <span class="f3">🟢 3×</span></span>
+    <span class="q-marks">2 Marks</span>
+  </div>
+  <div class="sub">
+    <div class="sub-q">Years: 2020, 2022, 2023</div>
+    <div class="ans"><strong>Reason:</strong> Alcohols form <strong>intermolecular hydrogen bonds</strong> (O–H···O) between molecules due to the O–H group.</div>
+    <div class="struct-grid">
+      <div class="struct-card">
+        <div class="sname">Alcohol — H-bonding</div>
+        <div class="sfm">R–O–H···O–R
+        |
+        H···O–R
+(Strong H-bonds)
+BP: HIGH</div>
+        <div class="siupac">C₂H₅OH BP = 78°C</div>
+      </div>
+      <div class="struct-card">
+        <div class="sname">Ether — No H-bonding</div>
+        <div class="sfm">R–O–R'
+No O–H bond
+No H-bonding
+between molecules
+BP: LOW</div>
+        <div class="siupac">C₂H₅OC₂H₅ BP = 35°C</div>
+      </div>
+    </div>
+    <div class="ans-box">∴ Alcohols have higher BP than ethers because alcohols form intermolecular H-bonds; ethers cannot (no O–H).</div>
+  </div>
+</div>
+
+
+<!-- ═══════ Q13 ═══════ -->
+<div class="q-card">
+  <div class="q-title-bar">
+    <span class="q-num">Q 13</span>
+    <span class="q-title">Write the reaction of phenol with NaOH and Na₂CO₃. What do these reactions show? <span class="f3">🟢 3×</span></span>
+    <span class="q-marks">2–3 Marks</span>
+  </div>
+  <div class="sub">
+    <div class="sub-q">Years: 2020, 2021, 2024</div>
+    <div class="eq-block">
+      <div class="eq-title">With NaOH — phenol is acidic</div>
+      <div class="eq">
+        <span class="reactant">C₆H₅OH</span>
+        <span class="plus">+</span>
+        <span class="reactant">NaOH</span>
+        <span class="arrow"><span class="arr">→</span></span>
+        <span class="product">C₆H₅ONa</span>
+        <span class="plus">+</span>
+        <span class="product">H₂O</span>
+      </div>
+      <div class="eq-title" style="margin-top:8px;">With Na₂CO₃ — phenol is stronger than carbonic acid</div>
+      <div class="eq">
+        <span class="reactant">2C₆H₅OH</span>
+        <span class="plus">+</span>
+        <span class="reactant">Na₂CO₃</span>
+        <span class="arrow"><span class="arr">→</span></span>
+        <span class="product">2C₆H₅ONa</span>
+        <span class="plus">+</span>
+        <span class="product">H₂O + CO₂↑</span>
+      </div>
+      <div class="eq-note">⭐ Phenol reacts with Na₂CO₃ but NOT with NaHCO₃ (pKa phenol = 10 &gt; pKa H₂CO₃ = 6.3 but &lt; pKa HCO₃⁻ = 10.3)</div>
+    </div>
+    <div class="ans"><strong>Significance:</strong> These reactions prove the <strong>acidic nature</strong> of phenol. The –OH in phenol ionises to give H⁺, unlike alcohols which do not react with Na₂CO₃.</div>
+    <div class="ans-box">∴ Phenol is acidic enough to react with Na₂CO₃ but NOT with NaHCO₃</div>
+  </div>
+</div>
+
+
+<!-- ═══════ Q14 ═══════ -->
+<div class="q-card">
+  <div class="q-title-bar">
+    <span class="q-num">Q 14</span>
+    <span class="q-title">What is esterification? Write the reaction of ethanol with acetic acid. <span class="f3">🟢 3×</span></span>
+    <span class="q-marks">2 Marks</span>
+  </div>
+  <div class="sub">
+    <div class="sub-q">Years: 2019, 2022, 2024</div>
+    <div class="ans"><strong>Esterification:</strong> The reaction between a carboxylic acid and an alcohol (in presence of H⁺ catalyst) to form an ester and water. It is a reversible (equilibrium) reaction.</div>
+    <div class="eq-block">
+      <div class="eq-title">Fischer Esterification</div>
+      <div class="eq">
+        <span class="reactant">CH₃COOH</span>
+        <span class="plus">+</span>
+        <span class="reactant">C₂H₅OH</span>
+        <span class="arrow"><span class="cond">conc. H₂SO₄</span><span class="arr">⇌</span><span class="cond2">Δ</span></span>
+        <span class="product">CH₃COOC₂H₅</span>
+        <span class="plus">+</span>
+        <span class="product">H₂O</span>
+      </div>
+      <div class="eq-note">Acetic acid + Ethanol ⇌ Ethyl acetate (fruity smell) + Water · Reversible reaction · H₂SO₄ = catalyst</div>
+    </div>
+    <div class="ans-box">∴ Esterification: RCOOH + ROH ⇌ RCOOR' + H₂O (H⁺ catalyst, reversible)</div>
+  </div>
+</div>
+
+
+<!-- ═══════ Q15 MCQ ═══════ -->
+<div class="q-card">
+  <div class="q-title-bar">
+    <span class="q-num">MCQ</span>
+    <span class="q-title">Most Repeated 1-Mark Questions from Board Papers <span class="f5">🔴 All Repeated</span></span>
+    <span class="q-marks">1M each</span>
+  </div>
+
+  <div class="sub">
+    <span class="sub-q">1. Which gives an immediate turbidity with Lucas reagent? (2019,2020,2022,2023,2024)</span>
+    <div class="ans-box">Tertiary (3°) alcohol — forms 3° carbocation (most stable) immediately → R–Cl (insoluble, turbid)</div>
+  </div>
+  <div class="sub">
+    <span class="sub-q">2. What is formed when ethanol reacts with conc. H₂SO₄ at 170°C (443 K)? (2019,2020,2021,2022,2023)</span>
+    <div class="ans-box">Ethylene (CH₂=CH₂) — intramolecular dehydration (elimination)</div>
+  </div>
+  <div class="sub">
+    <span class="sub-q">3. The product of Kolbe-Schmitt reaction is ________. (2019,2021,2022,2023,2024)</span>
+    <div class="ans-box">Salicylic acid (2-hydroxybenzoic acid) — used to make Aspirin</div>
+  </div>
+  <div class="sub">
+    <span class="sub-q">4. Phenol + Br₂/H₂O → what product? (2020,2021,2022,2024)</span>
+    <div class="ans-box">2,4,6-tribromophenol (white precipitate) — no catalyst required</div>
+  </div>
+  <div class="sub">
+    <span class="sub-q">5. Which test distinguishes phenol from alcohol? (2019,2020,2023,2024)</span>
+    <div class="ans-box">FeCl₃ test — phenol gives violet/purple colour; alcohol gives no colour</div>
+  </div>
+  <div class="sub">
+    <span class="sub-q">6. Acidity order: Ethanol, Phenol, Acetic acid (2020,2021,2022,2023)</span>
+    <div class="ans-box">Ethanol &lt; Phenol &lt; Acetic acid &nbsp;|&nbsp; pKa: 16 > 10 > 4.8</div>
+  </div>
+  <div class="sub">
+    <span class="sub-q">7. The reagent used in Williamson synthesis is ________. (2021,2022,2023,2024)</span>
+    <div class="ans-box">Sodium alkoxide (R–ONa) + Primary alkyl halide → Ether (SN2)</div>
+  </div>
+  <div class="sub">
+    <span class="sub-q">8. Why can tertiary alcohol not be oxidised by K₂Cr₂O₇/H⁺? (2020,2022,2023)</span>
+    <div class="ans-box">Tertiary alcohol has no α-hydrogen (no H on carbon bearing –OH) → oxidation not possible</div>
+  </div>
+</div>
+
+
+<!-- SUMMARY TABLE -->
+<div style="max-width:900px;margin:16px auto;background:#fff;border-radius:12px;padding:20px 24px;box-shadow:0 2px 10px rgba(0,0,0,.08);">
+  <h3 style="color:#4a148c;margin-bottom:14px;font-size:.95rem;font-weight:800;">📊 Frequency Summary — Last 5 Years</h3>
+  <table class="ref">
+    <tr><th>Q</th><th>Topic</th><th>Marks</th><th>Frequency</th><th>Priority</th></tr>
+    <tr><td>Q1</td><td>Classification of alcohols (1°,2°,3°)</td><td>3M</td><td>5×</td><td><span class="f5">🔴 MUST</span></td></tr>
+    <tr><td>Q2</td><td>Lucas test</td><td>3M</td><td>5×</td><td><span class="f5">🔴 MUST</span></td></tr>
+    <tr><td>Q3</td><td>Kolbe-Schmitt reaction</td><td>3M</td><td>5×</td><td><span class="f5">🔴 MUST</span></td></tr>
+    <tr><td>Q4</td><td>Reimer-Tiemann reaction</td><td>3M</td><td>5×</td><td><span class="f5">🔴 MUST</span></td></tr>
+    <tr><td>Q5</td><td>Phenol more acidic than alcohol — resonance</td><td>3M</td><td>5×</td><td><span class="f5">🔴 MUST</span></td></tr>
+    <tr><td>Q6</td><td>Dehydration — 413 K vs 443 K</td><td>3M</td><td>5×</td><td><span class="f5">🔴 MUST</span></td></tr>
+    <tr><td>Q7</td><td>Williamson synthesis</td><td>3M</td><td>4×</td><td><span class="f4">🟠 V.IMP</span></td></tr>
+    <tr><td>Q8</td><td>Oxidation of alcohols</td><td>3M</td><td>4×</td><td><span class="f4">🟠 V.IMP</span></td></tr>
+    <tr><td>Q9</td><td>Bromination of phenol (Br₂/H₂O)</td><td>2M</td><td>4×</td><td><span class="f4">🟠 V.IMP</span></td></tr>
+    <tr><td>Q10</td><td>Ether cleavage by HI</td><td>3M</td><td>4×</td><td><span class="f4">🟠 V.IMP</span></td></tr>
+    <tr><td>Q11</td><td>IUPAC nomenclature</td><td>3M</td><td>4×</td><td><span class="f4">🟠 V.IMP</span></td></tr>
+    <tr><td>Q12</td><td>BP of alcohol vs ether (H-bonding)</td><td>2M</td><td>3×</td><td><span class="f3">🟢 IMP</span></td></tr>
+    <tr><td>Q13</td><td>Phenol + NaOH / Na₂CO₃</td><td>3M</td><td>3×</td><td><span class="f3">🟢 IMP</span></td></tr>
+    <tr><td>Q14</td><td>Esterification</td><td>2M</td><td>3×</td><td><span class="f3">🟢 IMP</span></td></tr>
+  </table>
+  <p style="margin-top:10px;font-size:.82rem;color:#666;background:#f3e5f5;padding:10px 14px;border-radius:8px;">
+    ⚠️ Questions Q1–Q6 (🔴 MUST) have appeared every single year. Preparing these 6 questions thoroughly can secure <strong>15–18 marks</strong> from this chapter alone.
+  </p>
+</div>
+
+<footer><p>Visions Classes · visionslearning.in · <a href="class12-chem-ch11-alcohols.html">← Ch11 Main Notes</a> · <a href="notes-class12.html">← Class 12 Notes</a></p></footer>
+
+<div style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;opacity:0.07;user-select:none;">
+  <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="150" cy="150" r="135" fill="none" stroke="#4a148c" stroke-width="6"/>
+    <circle cx="150" cy="150" r="120" fill="none" stroke="#4a148c" stroke-width="2"/>
+    <path id="tw" fill="none" d="M 25,150 a125,125 0 1,1 250,0"/>
+    <path id="bw" fill="none" d="M 25,150 a125,125 0 0,0 250,0"/>
+    <text font-size="17" font-weight="900" fill="#4a148c" font-family="Arial,sans-serif" letter-spacing="4"><textPath href="#tw" startOffset="8%">VISIONS CLASSES · VISIONSLEARNING.IN ·</textPath></text>
+    <text font-size="14" font-weight="900" fill="#4a148c" font-family="Arial,sans-serif" letter-spacing="3"><textPath href="#bw" startOffset="8%">CHEMISTRY 12 · CH11 · 5 YEARS REPEATED</textPath></text>
+    <text x="150" y="142" text-anchor="middle" font-size="20" font-weight="900" fill="#4a148c" font-family="Arial,sans-serif">VISIONS</text>
+    <text x="150" y="168" text-anchor="middle" font-size="20" font-weight="900" fill="#4a148c" font-family="Arial,sans-serif">CLASSES</text>
+    <text x="150" y="193" text-anchor="middle" font-size="10" font-weight="700" fill="#4a148c" font-family="Arial,sans-serif">★ 5 YEARS REPEATED ★</text>
+  </svg>
+</div>
+</body>
+</html>
