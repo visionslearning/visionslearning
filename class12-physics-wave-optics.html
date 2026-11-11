@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 12 Physics — Wave Optics IMP Notes + 5 Years Q&A | Visions Classes</title>
+<style>
+  :root {
+    --p1: #4a148c;
+    --p2: #7b1fa2;
+    --p3: #9c27b0;
+    --acc: #f59e0b;
+    --green: #15803d;
+    --red: #c0392b;
+    --blue: #0d47a1;
+    --bg: #f5f0ff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); color: #1a1a1a; }
+
+  /* HEADER */
+  .page-header {
+    background: linear-gradient(135deg, #1a0533, #4a148c, #7b1fa2);
+    color: #fff;
+    padding: 26px 20px 20px;
+    text-align: center;
+  }
+  .badge {
+    display: inline-block;
+    background: var(--acc);
+    color: #1a1a1a;
+    font-size: .72rem;
+    font-weight: 900;
+    padding: 4px 14px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .page-header h1 { font-size: 1.5rem; font-weight: 900; margin-bottom: 5px; }
+  .page-header p { font-size: .88rem; opacity: .85; }
+  .wmark {
+    background: rgba(255,255,255,.12);
+    text-align: center;
+    padding: 6px;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,.75);
+  }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 7px;
+    color: rgba(255,255,255,.85); text-decoration: none;
+    font-size: .82rem; font-weight: 700;
+    padding: 7px 14px; background: rgba(255,255,255,.15);
+    border-radius: 20px; margin-bottom: 12px;
+  }
+
+  /* TABS */
+  .tab-bar {
+    display: flex; overflow-x: auto; gap: 0;
+    background: #3a0070; padding: 0 10px;
+    position: sticky; top: 0; z-index: 100;
+    scrollbar-width: none;
+  }
+  .tab-bar::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex-shrink: 0; background: none; border: none;
+    color: rgba(255,255,255,.75); padding: 11px 16px;
+    font-size: .8rem; font-weight: 700; cursor: pointer;
+    border-bottom: 3px solid transparent; white-space: nowrap;
+    transition: all .2s;
+  }
+  .tab-btn.active, .tab-btn:hover { color: #fff; border-bottom-color: var(--acc); }
+
+  /* WRAP */
+  .wrap { max-width: 860px; margin: 0 auto; padding: 20px 14px 70px; }
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* CONCEPT BLOCK */
+  .con-block {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(74,20,140,.1);
+    margin-bottom: 22px;
+    border-left: 5px solid var(--p2);
+  }
+  .con-head {
+    background: linear-gradient(135deg, var(--p1), var(--p2));
+    color: #fff;
+    padding: 13px 18px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .con-head .tag {
+    background: rgba(255,255,255,.2);
+    border-radius: 8px; padding: 3px 10px;
+    font-size: .72rem; font-weight: 900; letter-spacing: 1px;
+  }
+  .con-head h2 { font-size: 1rem; font-weight: 800; }
+  .con-body { padding: 16px 18px; }
+
+  .kp-title {
+    font-size: .75rem; font-weight: 900; color: var(--p1);
+    text-transform: uppercase; letter-spacing: 1px;
+    margin: 0 0 8px; padding-bottom: 4px;
+    border-bottom: 2px solid #ede7f6;
+  }
+  .kp-list { list-style: none; padding: 0; margin-bottom: 14px; }
+  .kp-list li {
+    padding: 5px 0 5px 20px; position: relative;
+    font-size: .88rem; line-height: 1.6;
+    border-bottom: 1px solid #f3f0ff;
+  }
+  .kp-list li::before { content: "▸"; position: absolute; left: 0; color: var(--p2); font-weight: 900; }
+  .kp-list li strong { color: var(--p1); }
+
+  /* FORMULA BOX */
+  .fgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 10px; margin: 10px 0 14px;
+  }
+  .fbox {
+    background: linear-gradient(135deg, #ede7f6, #e8eaf6);
+    border: 1px solid #ce93d8; border-radius: 10px;
+    padding: 10px 12px; text-align: center;
+  }
+  .fbox .fl { font-size: .68rem; font-weight: 700; color: #666; margin-bottom: 4px; text-transform: uppercase; }
+  .fbox .feq { font-size: 1rem; font-weight: 900; color: var(--p1); font-family: 'Courier New', monospace; }
+
+  /* DIAGRAM STYLE BOXES */
+  .diag-wrap {
+    background: #1a0533; border-radius: 12px; padding: 16px;
+    margin: 10px 0; overflow-x: auto;
+  }
+  .diag-wrap pre {
+    color: #e1bee7; font-family: 'Courier New', monospace;
+    font-size: .82rem; line-height: 1.7; white-space: pre;
+  }
+
+  /* TOPIC DIVIDER */
+  .tdiv {
+    display: flex; align-items: center; gap: 10px;
+    margin: 24px 0 14px;
+  }
+  .tdiv .tlab {
+    background: linear-gradient(135deg, var(--p1), var(--blue));
+    color: #fff; padding: 5px 16px; border-radius: 20px;
+    font-size: .75rem; font-weight: 900; letter-spacing: 1px;
+    text-transform: uppercase; white-space: nowrap;
+  }
+  .tdiv .tline { flex: 1; height: 2px; background: #d1c4e9; }
+
+  /* Q CARDS */
+  .qcard {
+    background: #fff; border-radius: 13px;
+    margin-bottom: 18px; overflow: hidden;
+    box-shadow: 0 2px 10px rgba(74,20,140,.1);
+  }
+  .qcard-h {
+    background: linear-gradient(135deg, #1a0533, #4a148c);
+    color: #fff; padding: 13px 16px;
+    display: flex; align-items: flex-start; gap: 12px;
+  }
+  .qno {
+    background: var(--acc); color: #1a1a1a;
+    font-size: .72rem; font-weight: 900;
+    padding: 3px 9px; border-radius: 10px;
+    white-space: nowrap; flex-shrink: 0; margin-top: 2px;
+  }
+  .qtxt { font-size: .9rem; font-weight: 700; line-height: 1.5; }
+  .ftags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+  .ftag {
+    font-size: .65rem; font-weight: 800;
+    padding: 2px 8px; border-radius: 10px; text-transform: uppercase;
+  }
+  .fhigh { background: #fee2e2; color: #c0392b; }
+  .fmed { background: #fef3c7; color: #d97706; }
+  .fch { background: #ede7f6; color: var(--p1); }
+  .fmark { background: #dbeafe; color: var(--blue); }
+  .fyear { background: #dcfce7; color: var(--green); }
+
+  .ans-body { padding: 14px 16px; }
+  .ans-lbl {
+    font-size: .72rem; font-weight: 900; color: var(--green);
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
+  }
+  .ans-txt { font-size: .88rem; line-height: 1.65; color: #2d2d2d; }
+  .ans-txt p { margin-bottom: 8px; }
+  .ans-txt strong { color: var(--p1); }
+
+  .a-eq {
+    background: #ede7f6; border-left: 4px solid var(--p2);
+    padding: 8px 14px; border-radius: 0 8px 8px 0;
+    font-family: monospace; font-size: .93rem; font-weight: 700;
+    color: var(--p1); margin: 8px 0;
+  }
+  .a-step {
+    display: block;
+    background: #f3f0ff; border-radius: 8px;
+    padding: 7px 12px; font-family: monospace;
+    font-size: .88rem; color: var(--p1);
+    margin: 5px 0; font-weight: 700;
+  }
+
+  /* NUMERICALS */
+  .num-block {
+    background: linear-gradient(135deg, #1a0533, #2d0057);
+    border-radius: 13px; padding: 16px 18px;
+    margin-bottom: 16px; color: #fff;
+  }
+  .num-q { font-size: .9rem; font-weight: 700; margin-bottom: 10px; }
+  .num-given {
+    background: rgba(255,255,255,.1); border-radius: 8px;
+    padding: 8px 12px; margin: 8px 0; font-size: .85rem;
+    font-family: monospace; line-height: 1.8;
+  }
+  .num-sol {
+    background: rgba(245,158,11,.15); border-left: 3px solid var(--acc);
+    border-radius: 0 8px 8px 0; padding: 8px 12px; margin: 8px 0;
+    font-size: .85rem; font-family: monospace; line-height: 1.9;
+  }
+  .num-ans {
+    background: var(--acc); color: #1a1a1a;
+    border-radius: 8px; padding: 7px 14px;
+    font-size: .88rem; font-weight: 900; display: inline-block; margin-top: 8px;
+  }
+
+  /* MCQ */
+  .mcq-block {
+    background: #fff; border-radius: 12px;
+    margin-bottom: 14px; padding: 14px 16px;
+    box-shadow: 0 2px 8px rgba(74,20,140,.08);
+    border-left: 4px solid var(--acc);
+  }
+  .mcq-q { font-size: .9rem; font-weight: 700; margin-bottom: 10px; }
+  .mcq-opts { list-style: none; padding: 0; }
+  .mcq-opts li {
+    padding: 5px 10px; border-radius: 6px;
+    font-size: .85rem; margin-bottom: 4px; border: 1px solid #e9d5ff;
+  }
+  .mcq-opts li.correct {
+    background: #dcfce7; border-color: #86efac;
+    font-weight: 700; color: var(--green);
+  }
+  .mcq-opts li.correct::before { content: "✅ "; }
+
+  /* SUMMARY TABLE */
+  .sum-tbl { width: 100%; border-collapse: collapse; font-size: .83rem; }
+  .sum-tbl th {
+    background: var(--p1); color: #fff; padding: 8px 10px; text-align: left; font-weight: 800;
+  }
+  .sum-tbl td { padding: 7px 10px; border-bottom: 1px solid #ede7f6; vertical-align: top; }
+  .sum-tbl tr:nth-child(even) td { background: #f5f0ff; }
+
+  @media (max-width: 600px) {
+    .fgrid { grid-template-columns: 1fr 1fr; }
+    .page-header h1 { font-size: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="page-header">
+  <a href="notes-class12.html" class="back-link">← Class 12 Notes</a>
+  <div class="badge">🔮 Chapter 7 · Maharashtra Board HSC</div>
+  <h1>🌈 Wave Optics</h1>
+  <p>IMP Notes · Last 5 Years Q&amp;A · Numericals · MCQs · 2020–2024</p>
+</div>
+<div class="wmark">VISIONS CLASSES · SHASHIKANT SIR · AMBARNATH</div>
+
+<!-- TAB BAR -->
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab('notes',this)">📖 IMP Notes</button>
+  <button class="tab-btn" onclick="showTab('qbank',this)">🔴 5 Yrs Q&amp;A</button>
+  <button class="tab-btn" onclick="showTab('numericals',this)">🔢 Numericals</button>
+  <button class="tab-btn" onclick="showTab('mcq',this)">🔵 MCQs</button>
+  <button class="tab-btn" onclick="showTab('formulas',this)">📐 Formulas</button>
+</div>
+
+<div class="wrap">
+
+<!-- ══════════════════════ IMP NOTES ══════════════════════ -->
+<div class="section active" id="tab-notes">
+
+  <!-- 7.1 HUYGENS PRINCIPLE -->
+  <div class="con-block">
+    <div class="con-head">
+      <span class="tag">7.1</span>
+      <h2>🌊 Huygens' Principle &amp; Wave Theory of Light</h2>
+    </div>
+    <div class="con-body">
+      <div class="kp-title">🔑 Key Points</div>
+      <ul class="kp-list">
+        <li><strong>Wave theory</strong> was proposed by Christiaan Huygens in 1678 — light travels as waves</li>
+        <li><strong>Huygens' Principle (Statement)</strong>: Every point on a wavefront acts as a secondary source of light and emits spherical secondary wavelets in all directions with the same speed as the original wave. The new wavefront at any later instant is the common tangent (envelope) to all these secondary wavelets.</li>
+        <li><strong>Wavefront</strong>: locus of all points which are in the same phase of vibration. Types: spherical (point source), cylindrical (line source), plane (very far source)</li>
+        <li><strong>Ray of light</strong>: perpendicular to the wavefront, represents direction of propagation</li>
+        <li><strong>Corpuscular theory</strong> (Newton): predicted v<sub>glass</sub> > v<sub>air</sub> — WRONG; Huygens predicts v<sub>glass</sub> &lt; v<sub>air</sub> — CORRECT</li>
+        <li><strong>Speed of light</strong> in medium: v = c/n; n = refractive index</li>
+      </ul>
+      <div class="kp-title">📐 Verification of Laws using Huygens' Principle</div>
+      <ul class="kp-list">
+        <li><strong>Law of Reflection (Huygens)</strong>: incident wavefront AB hits mirror; Huygens construction shows angle of incidence = angle of reflection (∠i = ∠r)</li>
+        <li><strong>Law of Refraction (Snell's Law from Huygens)</strong>: incident wavefront from medium 1 hits surface; using secondary wavelets in medium 2 — sin i / sin r = v₁/v₂ = n₂/n₁</li>
+      </ul>
+      <div class="diag-wrap">
+<pre>
+  Incident wavefront        Refracted wavefront
+         \  \  \                 /  /  /
+          \  \  \               /  /  /
+    medium 1 \ \ \             / / /
+   ───────────A──────────────────────── interface
+    medium 2            B
+              secondary wavelets in medium 2
+
+  sin i / sin r  =  v₁ / v₂  =  n₂ / n₁   (Snell's Law)
+</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7.2 INTERFERENCE -->
+  <div class="con-block">
+    <div class="con-head">
+      <span class="tag">7.2</span>
+      <h2>✨ Interference of Light</h2>
+    </div>
+    <div class="con-body">
+      <div class="kp-title">🔑 Key Points</div>
+      <ul class="kp-list">
+        <li><strong>Interference</strong>: superposition of two coherent light waves producing alternating bright and dark regions</li>
+        <li><strong>Coherent sources</strong>: same frequency, same wavelength, constant phase difference — required for sustained interference</li>
+        <li><strong>Constructive interference</strong> (bright fringe): path difference = nλ (n = 0, 1, 2 …); waves in phase; amplitude doubles, intensity becomes 4I₀</li>
+        <li><strong>Destructive interference</strong> (dark fringe): path difference = (2n−1)λ/2; waves exactly out of phase; amplitude = 0, intensity = 0</li>
+        <li><strong>Intensity formula</strong>: I = I₁ + I₂ + 2√(I₁I₂)cosδ; for equal sources: I = 4I₀cos²(δ/2)</li>
+      </ul>
+
+      <div class="kp-title">📌 Young's Double Slit Experiment (YDSE)</div>
+      <ul class="kp-list">
+        <li><strong>Setup</strong>: monochromatic light → single slit S → two slits S₁, S₂ (separation d) → screen at distance D</li>
+        <li><strong>Path difference</strong> at point P (distance y from centre): Δ = yd/D</li>
+        <li><strong>Bright fringe position</strong>: y<sub>n</sub> = nλD/d (n = 0, ±1, ±2 …)</li>
+        <li><strong>Dark fringe position</strong>: y<sub>n</sub> = (2n−1)λD/2d</li>
+        <li><strong>Fringe width</strong>: β = λD/d (distance between consecutive bright or dark fringes)</li>
+        <li>Fringe width is <strong>same for bright and dark</strong> fringes</li>
+        <li>Central fringe (n=0) is always <strong>bright</strong></li>
+      </ul>
+
+      <div class="diag-wrap">
+<pre>
+      S₁ ──────────────────────── P (y from centre)
+       |          D               |
+  S ───|                          | screen
+       |                          |
+      S₂ ─────────────────────── O (centre)
+
+  Path diff: Δ = S₂P − S₁P = yd/D
+  Bright: yd/D = nλ  →  y = nλD/d
+  Fringe width: β = λD/d
+</pre>
+      </div>
+
+      <div class="kp-title">📐 Effect on Fringe Width</div>
+      <ul class="kp-list">
+        <li>β = λD/d — fringe width <strong>increases</strong> if λ increases, D increases, or d decreases</li>
+        <li>If <strong>d is doubled</strong>: β becomes half (fringes closer)</li>
+        <li>If <strong>D is doubled</strong>: β becomes double (fringes wider)</li>
+        <li>In a <strong>denser medium</strong> (water): λ → λ/n, so β → β/n (fringes become narrower)</li>
+        <li>If <strong>white light</strong> used: central fringe is white; coloured fringes on sides (violet closest to centre, red furthest)</li>
+      </ul>
+
+      <div class="fgrid">
+        <div class="fbox"><div class="fl">Fringe Width</div><div class="feq">β = λD/d</div></div>
+        <div class="fbox"><div class="fl">Bright y_n</div><div class="feq">y = nλD/d</div></div>
+        <div class="fbox"><div class="fl">Dark y_n</div><div class="feq">y = (2n−1)λD/2d</div></div>
+        <div class="fbox"><div class="fl">Path diff (bright)</div><div class="feq">Δ = nλ</div></div>
+        <div class="fbox"><div class="fl">Path diff (dark)</div><div class="feq">Δ = (2n−1)λ/2</div></div>
+        <div class="fbox"><div class="fl">Intensity (equal src)</div><div class="feq">I = 4I₀cos²(δ/2)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7.3 DIFFRACTION -->
+  <div class="con-block">
+    <div class="con-head">
+      <span class="tag">7.3</span>
+      <h2>🌀 Diffraction of Light</h2>
+    </div>
+    <div class="con-body">
+      <div class="kp-title">🔑 Key Points</div>
+      <ul class="kp-list">
+        <li><strong>Diffraction</strong>: bending of light around the edges of an obstacle or through a slit; occurs when slit width ≈ wavelength of light</li>
+        <li><strong>Single slit diffraction</strong>: central bright maximum (widest &amp; brightest); secondary maxima become progressively dimmer</li>
+        <li><strong>Minima condition</strong> (single slit): a sinθ = nλ (n = ±1, ±2 …); a = slit width</li>
+        <li><strong>Width of central maximum</strong>: 2λD/a (between first minima on both sides)</li>
+        <li><strong>Angular half-width</strong> of central maximum: θ = λ/a</li>
+        <li>As slit width <strong>decreases</strong>, diffraction increases and central maximum becomes wider</li>
+        <li><strong>Interference vs Diffraction</strong>: interference — two separate coherent sources; diffraction — single slit (secondary wavelets from same wavefront interfere)</li>
+      </ul>
+
+      <div class="diag-wrap">
+<pre>
+              ──────── secondary max (dim)
+     single   ──────── 1st minimum : a·sinθ = λ
+     slit  →  ════════ CENTRAL MAX (brightest, widest)
+      (a)     ──────── 1st minimum
+              ──────── secondary max (dim)
+
+  Width of central max = 2λD/a
+  Position of minima: a sinθ = nλ
+</pre>
+      </div>
+
+      <div class="kp-title">📌 Resolving Power</div>
+      <ul class="kp-list">
+        <li><strong>Resolving power</strong>: ability of an optical instrument to distinguish two nearby objects/points as separate</li>
+        <li><strong>Rayleigh criterion</strong>: two images are just resolved when central maximum of one falls on first minimum of other</li>
+        <li><strong>Limit of resolution</strong> (telescope): θ_min = 1.22λ/D (D = diameter of objective)</li>
+        <li>Resolving power of telescope: 1/θ_min = D/1.22λ — larger aperture → better resolution</li>
+        <li>Resolving power of microscope: RP = 2μ sinθ / λ (μ = refractive index of medium)</li>
+        <li>Use <strong>smaller λ</strong> (blue/UV light) for better resolving power</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 7.4 POLARISATION -->
+  <div class="con-block">
+    <div class="con-head">
+      <span class="tag">7.4</span>
+      <h2>🔮 Polarisation of Light</h2>
+    </div>
+    <div class="con-body">
+      <div class="kp-title">🔑 Key Points</div>
+      <ul class="kp-list">
+        <li><strong>Polarisation</strong>: restricting the vibration of light to one plane; proves transverse nature of light</li>
+        <li><strong>Unpolarised light</strong>: vibrations in all planes perpendicular to direction of propagation</li>
+        <li><strong>Plane polarised light</strong>: vibrations confined to one plane only</li>
+        <li><strong>Polariser</strong>: device that produces plane polarised light (e.g., Polaroid)</li>
+        <li><strong>Analyser</strong>: device used to detect plane polarised light</li>
+        <li>When polariser and analyser are <strong>parallel</strong> (θ=0°): maximum transmission (I = I₀)</li>
+        <li>When polariser and analyser are <strong>perpendicular</strong> (θ=90°): zero transmission (I = 0) — "crossed polaroids"</li>
+      </ul>
+
+      <div class="kp-title">📌 Malus' Law</div>
+      <ul class="kp-list">
+        <li><strong>Statement</strong>: When plane polarised light is incident on an analyser, the intensity of transmitted light is proportional to the square of the cosine of the angle (θ) between the plane of polarisation and the transmission axis of the analyser.</li>
+        <li><strong>Formula</strong>: I = I₀ cos²θ</li>
+        <li>Discovered by Etienne Louis Malus in 1809</li>
+        <li>At θ=0°: I = I₀ (max); at θ=90°: I = 0 (min); at θ=45°: I = I₀/2</li>
+      </ul>
+
+      <div class="kp-title">📌 Brewster's Law</div>
+      <ul class="kp-list">
+        <li><strong>Brewster's angle (i_B)</strong>: specific angle of incidence at which reflected ray is completely plane polarised (vibrations parallel to surface only)</li>
+        <li>At Brewster's angle, reflected ray ⊥ refracted ray: i_B + r = 90°, so r = 90° − i_B</li>
+        <li><strong>Derivation of Brewster's Law</strong>: n = sin i_B / sin r = sin i_B / sin(90°−i_B) = sin i_B / cos i_B</li>
+        <li><strong>Formula</strong>: tan i_B = n (n = refractive index of second medium)</li>
+        <li>Refracted ray is <strong>partially polarised</strong>; reflected ray is <strong>fully polarised</strong></li>
+        <li><strong>Example</strong>: for glass (n=1.5), i_B = tan⁻¹(1.5) ≈ 56.3°</li>
+      </ul>
+
+      <div class="kp-title">📌 Methods to Produce Polarised Light</div>
+      <ul class="kp-list">
+        <li><strong>Reflection</strong>: at Brewster's angle — reflected ray is plane polarised</li>
+        <li><strong>Refraction</strong>: stack of glass plates at Brewster's angle — transmitted light becomes polarised after multiple refractions</li>
+        <li><strong>Double refraction (Birefringence)</strong>: in crystals like calcite, Iceland spar — splits into ordinary (o-ray) and extraordinary (e-ray)</li>
+        <li><strong>Scattering</strong>: light scattered by small particles (Rayleigh scattering) is partially polarised — explains blue sky</li>
+      </ul>
+
+      <div class="fgrid">
+        <div class="fbox"><div class="fl">Malus' Law</div><div class="feq">I = I₀cos²θ</div></div>
+        <div class="fbox"><div class="fl">Brewster's Law</div><div class="feq">tan i_B = n</div></div>
+        <div class="fbox"><div class="fl">θ = 0° (parallel)</div><div class="feq">I = I₀ (max)</div></div>
+        <div class="fbox"><div class="fl">θ = 90° (crossed)</div><div class="feq">I = 0 (min)</div></div>
+        <div class="fbox"><div class="fl">θ = 45°</div><div class="feq">I = I₀/2</div></div>
+        <div class="fbox"><div class="fl">Reflected + Refracted</div><div class="feq">i_B + r = 90°</div></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end notes -->
+
+<!-- ══════════════════════ LAST 5 YEARS Q&A ══════════════════════ -->
+<div class="section" id="tab-qbank">
+
+  <!-- FREQUENCY TABLE -->
+  <div style="background:#fff;border-radius:12px;padding:16px;margin-bottom:20px;overflow-x:auto;box-shadow:0 2px 8px rgba(74,20,140,.1);">
+    <div class="kp-title">📊 Last 5 Years — Topic Frequency Table</div>
+    <table class="sum-tbl">
+      <tr><th>Topic</th><th>2024</th><th>2023</th><th>2022</th><th>2021</th><th>2020</th><th>Marks</th></tr>
+      <tr><td>Huygens' Principle / Derivation of Snell's Law</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>4M</td></tr>
+      <tr><td>YDSE — Fringe width derivation</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>4M</td></tr>
+      <tr><td>Malus' Law — statement + I = I₀cos²θ</td><td>✅</td><td>✅</td><td>–</td><td>✅</td><td>✅</td><td>2–3M</td></tr>
+      <tr><td>Brewster's Law — tan i_B = n</td><td>✅</td><td>–</td><td>✅</td><td>✅</td><td>–</td><td>2–3M</td></tr>
+      <tr><td>Interference — constructive/destructive conditions</td><td>✅</td><td>✅</td><td>✅</td><td>–</td><td>✅</td><td>2M</td></tr>
+      <tr><td>Single slit diffraction — minima condition</td><td>–</td><td>✅</td><td>✅</td><td>✅</td><td>–</td><td>2–3M</td></tr>
+      <tr><td>Numerical — YDSE fringe width/wavelength</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>2–3M</td></tr>
+      <tr><td>Numerical — Malus' Law / intensity</td><td>✅</td><td>–</td><td>✅</td><td>✅</td><td>–</td><td>2–3M</td></tr>
+    </table>
+  </div>
+
+  <div class="tdiv"><div class="tline"></div><div class="tlab">🌊 Huygens' Principle</div><div class="tline"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q1</span>
+      <div>
+        <div class="qtxt">State Huygens' principle. Using it, derive the law of refraction (Snell's Law).</div>
+        <div class="ftags">
+          <span class="ftag fhigh">🔴 Every Year</span>
+          <span class="ftag fmark">4 Marks</span>
+          <span class="ftag fyear">2024, 2023, 2022, 2021, 2020</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Huygens' Principle:</strong></p>
+        <p>(i) Every point on a given wavefront acts as a secondary source and emits spherical secondary wavelets in all directions with the same speed as the original wave.</p>
+        <p>(ii) The new wavefront at any later instant is the common tangent (envelope) to all these secondary wavelets.</p>
+        <p><strong>Derivation of Snell's Law:</strong></p>
+        <p>Let AB be the incident plane wavefront in medium 1 (speed v₁, refractive index n₁). The wavefront makes angle ∠i with the interface.</p>
+        <p>At t=0, wavefront touches interface at point A. By the time the wavefront reaches B (distance BC from A along interface), the secondary wavelet from A has travelled to distance AE = v₂τ in medium 2.</p>
+        <span class="a-step">BC = v₁τ (remaining part of incident wavefront travels in medium 1)</span>
+        <span class="a-step">AE = v₂τ (secondary wavelet from A travels in medium 2)</span>
+        <p>From triangle ABC: sin i = BC/AC = v₁τ/AC</p>
+        <p>From triangle AEC: sin r = AE/AC = v₂τ/AC</p>
+        <span class="a-step">sin i / sin r = v₁/v₂</span>
+        <p>Since v₁ = c/n₁ and v₂ = c/n₂:</p>
+        <div class="a-eq">sin i / sin r = v₁/v₂ = n₂/n₁  →  n₁ sin i = n₂ sin r  (Snell's Law) ✓</div>
+        <p><strong>Conclusion</strong>: Since n₂ > n₁ for glass, v₂ &lt; v₁ — light slows down in denser medium. This is consistent with experiment (unlike Newton's corpuscular theory).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q2</span>
+      <div>
+        <div class="qtxt">State Huygens' principle. Using it, verify the law of reflection of light.</div>
+        <div class="ftags">
+          <span class="ftag fhigh">🔴 High Freq</span>
+          <span class="ftag fmark">3–4 Marks</span>
+          <span class="ftag fyear">2023, 2021</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p>Let AB be the incident plane wavefront hitting mirror surface MM'. The wavefront makes angle ∠i with the mirror surface.</p>
+        <p>At t=0, point A touches the mirror; at time t=τ, point B reaches the mirror.</p>
+        <span class="a-step">BC = vτ — distance B travels to reach mirror</span>
+        <span class="a-step">AE = vτ — secondary wavelet from A reflects (same medium, same speed)</span>
+        <p>Since AE = BC = vτ, the reflected wavefront CE makes angle ∠r with the mirror.</p>
+        <p>From triangles ABC and AEC (right-angled, AE=BC, AC common):</p>
+        <div class="a-eq">∠i = ∠r  (angle of incidence = angle of reflection) ✓</div>
+        <p>Both incident and reflected rays lie in the same plane as the normal — law of reflection verified.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tdiv"><div class="tline"></div><div class="tlab">✨ Interference — YDSE</div><div class="tline"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q3</span>
+      <div>
+        <div class="qtxt">In Young's Double Slit Experiment, derive the formula for fringe width. What is the effect on fringe width if: (i) wavelength is increased, (ii) distance between slits is doubled?</div>
+        <div class="ftags">
+          <span class="ftag fhigh">🔴 Every Year</span>
+          <span class="ftag fmark">4 Marks</span>
+          <span class="ftag fyear">2024, 2023, 2022, 2021, 2020</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Setup:</strong> Two slits S₁ and S₂ separated by distance d; screen at distance D; P is at height y from centre O.</p>
+        <p><strong>Path difference:</strong></p>
+        <span class="a-step">S₂P² − S₁P² = (D² + (y + d/2)²) − (D² + (y − d/2)²) = 2yd</span>
+        <span class="a-step">(S₂P − S₁P)(S₂P + S₁P) = 2yd</span>
+        <span class="a-step">Since S₁P ≈ S₂P ≈ D:  Δ = S₂P − S₁P = yd/D</span>
+        <p><strong>Bright fringe</strong> (constructive): Δ = nλ → y<sub>n</sub> = nλD/d</p>
+        <p><strong>Fringe width</strong> β = y<sub>n+1</sub> − y<sub>n</sub>:</p>
+        <div class="a-eq">β = (n+1)λD/d − nλD/d = λD/d</div>
+        <p><strong>Effects:</strong></p>
+        <p>(i) If λ increases → β = λD/d increases — fringes become wider ✓</p>
+        <p>(ii) If d is doubled → β = λD/2d = β/2 — fringe width becomes half, fringes become narrower ✓</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q4</span>
+      <div>
+        <div class="qtxt">State the conditions for constructive and destructive interference. What is the ratio of maximum to minimum intensity if the two slits have intensity ratio 4:1?</div>
+        <div class="ftags">
+          <span class="ftag fhigh">🔴 High Freq</span>
+          <span class="ftag fmark">3 Marks</span>
+          <span class="ftag fyear">2024, 2022, 2020</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Constructive interference</strong> (bright fringe): Path difference Δ = nλ (n = 0, 1, 2 …); phase difference δ = 2nπ. Resultant amplitude = A₁ + A₂; Intensity is maximum.</p>
+        <p><strong>Destructive interference</strong> (dark fringe): Path difference Δ = (2n−1)λ/2; phase difference δ = (2n−1)π. Resultant amplitude = |A₁ − A₂|; Intensity is minimum.</p>
+        <p><strong>Intensity ratio calculation:</strong></p>
+        <span class="a-step">I₁/I₂ = 4/1  →  A₁/A₂ = 2/1</span>
+        <span class="a-step">I_max = (A₁ + A₂)² = (2+1)² = 9</span>
+        <span class="a-step">I_min = (A₁ − A₂)² = (2−1)² = 1</span>
+        <div class="a-eq">I_max : I_min = 9 : 1</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q5</span>
+      <div>
+        <div class="qtxt">What is the difference between interference and diffraction?</div>
+        <div class="ftags">
+          <span class="ftag fmed">🟠 Medium Freq</span>
+          <span class="ftag fmark">2 Marks</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <table style="width:100%;border-collapse:collapse;font-size:.85rem;">
+          <tr style="background:#ede7f6;">
+            <th style="padding:7px;border:1px solid #d1c4e9;text-align:left;">Interference</th>
+            <th style="padding:7px;border:1px solid #d1c4e9;text-align:left;">Diffraction</th>
+          </tr>
+          <tr><td style="padding:7px;border:1px solid #d1c4e9;">Two separate coherent sources</td><td style="padding:7px;border:1px solid #d1c4e9;">Single slit (wavelets from same wavefront)</td></tr>
+          <tr style="background:#f5f0ff;"><td style="padding:7px;border:1px solid #d1c4e9;">All bright fringes have equal intensity</td><td style="padding:7px;border:1px solid #d1c4e9;">Central max is brightest; side bands dim progressively</td></tr>
+          <tr><td style="padding:7px;border:1px solid #d1c4e9;">All dark fringes have zero intensity</td><td style="padding:7px;border:1px solid #d1c4e9;">Dark fringes not perfectly dark</td></tr>
+          <tr style="background:#f5f0ff;"><td style="padding:7px;border:1px solid #d1c4e9;">Fringe width is uniform (β = λD/d)</td><td style="padding:7px;border:1px solid #d1c4e9;">Central band is twice as wide as secondary bands</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="tdiv"><div class="tline"></div><div class="tlab">🔮 Polarisation</div><div class="tline"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q6</span>
+      <div>
+        <div class="qtxt">State Malus' Law. A plane polarised light of intensity I₀ is passed through an analyser. For what angle of the analyser will the intensity of transmitted light be (i) maximum (ii) zero (iii) half of I₀?</div>
+        <div class="ftags">
+          <span class="ftag fhigh">🔴 High Freq</span>
+          <span class="ftag fmark">3 Marks</span>
+          <span class="ftag fyear">2024, 2023, 2021, 2020</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Malus' Law:</strong> When a beam of plane polarised light of intensity I₀ is incident on an analyser, the intensity of the transmitted light is:</p>
+        <div class="a-eq">I = I₀ cos²θ</div>
+        <p>where θ is the angle between the plane of polarisation of the incident light and the transmission axis of the analyser.</p>
+        <p><strong>(i) Maximum intensity:</strong> I = I₀ when cos²θ = 1 → <strong>θ = 0°</strong> (analyser parallel to polariser)</p>
+        <p><strong>(ii) Zero intensity:</strong> I = 0 when cos²θ = 0 → <strong>θ = 90°</strong> (analyser perpendicular to polariser — "crossed polaroids")</p>
+        <p><strong>(iii) Half of I₀:</strong> I = I₀/2 → cos²θ = 1/2 → cosθ = 1/√2 → <strong>θ = 45°</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q7</span>
+      <div>
+        <div class="qtxt">State Brewster's Law. Derive the relation tan i_B = n. What is the significance of Brewster's angle?</div>
+        <div class="ftags">
+          <span class="ftag fhigh">🔴 High Freq</span>
+          <span class="ftag fmark">3–4 Marks</span>
+          <span class="ftag fyear">2024, 2022, 2021</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Brewster's Law:</strong> When unpolarised light is incident on the boundary between two media at a particular angle called Brewster's angle (i_B), the reflected ray is completely plane polarised. The vibrations in the reflected ray are perpendicular to the plane of incidence.</p>
+        <p><strong>Derivation of tan i_B = n:</strong></p>
+        <p>At Brewster's angle, the reflected and refracted rays are perpendicular to each other:</p>
+        <span class="a-step">∠(reflected) + ∠(refracted) = 90°</span>
+        <span class="a-step">i_B + r = 90°  →  r = 90° − i_B</span>
+        <p>Applying Snell's Law at the interface:</p>
+        <span class="a-step">n = sin i_B / sin r = sin i_B / sin(90° − i_B)</span>
+        <span class="a-step">n = sin i_B / cos i_B</span>
+        <div class="a-eq">∴ tan i_B = n</div>
+        <p><strong>Significance:</strong> At i_B, reflected light is 100% plane polarised. The refracted beam is partially polarised. Using a stack of glass plates at Brewster's angle, fully polarised transmitted light can be obtained. Used in photography (Polaroid filters), LCD screens, anti-glare glasses.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q8</span>
+      <div>
+        <div class="qtxt">What is polarisation? How does it prove the transverse nature of light? Name any two methods of producing plane polarised light.</div>
+        <div class="ftags">
+          <span class="ftag fhigh">🔴 High Freq</span>
+          <span class="ftag fmark">3 Marks</span>
+          <span class="ftag fyear">2023, 2022, 2020</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Polarisation:</strong> The phenomenon of restricting the vibration of a light wave to a single plane perpendicular to the direction of propagation is called polarisation.</p>
+        <p><strong>Proof of transverse nature:</strong> Polarisation is only possible in transverse waves (where displacement is perpendicular to propagation). In longitudinal waves (like sound), vibrations are along the direction of propagation, so polarisation is impossible. Since light can be polarised, it must be a transverse wave.</p>
+        <p><strong>Two methods of producing plane polarised light:</strong></p>
+        <p>1. <strong>Reflection</strong> — When unpolarised light is reflected from a surface at Brewster's angle (i_B = tan⁻¹n), the reflected light is completely plane polarised.</p>
+        <p>2. <strong>By using Polaroids</strong> — A Polaroid is a sheet containing aligned molecules (e.g., iodoquinine sulphate crystals). When unpolarised light passes through it, only vibrations in one direction are transmitted.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q9</span>
+      <div>
+        <div class="qtxt">Explain the phenomenon of diffraction at a single slit. What are the conditions for minima?</div>
+        <div class="ftags">
+          <span class="ftag fhigh">🔴 High Freq</span>
+          <span class="ftag fmark">3 Marks</span>
+          <span class="ftag fyear">2023, 2022, 2021</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Diffraction at a single slit:</strong> When monochromatic light passes through a narrow slit of width 'a', Huygens' secondary wavelets from different parts of the same wavefront interfere with each other, producing alternating bright and dark bands on the screen.</p>
+        <p><strong>Pattern:</strong> Central maximum — widest and brightest band. On either side — alternating dark (minima) and dim bright (secondary maxima).</p>
+        <p><strong>Condition for minima:</strong> The slit of width 'a' is divided into pairs of strips. Each strip in one half has a corresponding strip in the other half that contributes a path difference of λ/2 → destructive interference.</p>
+        <div class="a-eq">a sin θ = nλ  (n = ±1, ±2, ±3 …)  — condition for minima</div>
+        <p><strong>Width of central maximum</strong> = 2λD/a (between 1st minima on both sides)</p>
+        <p>As slit width 'a' decreases → central maximum becomes wider → more diffraction</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end qbank -->
+
+<!-- ══════════════════════ NUMERICALS ══════════════════════ -->
+<div class="section" id="tab-numericals">
+
+  <div class="tdiv"><div class="tline"></div><div class="tlab">🔢 YDSE Numericals</div><div class="tline"></div></div>
+
+  <div class="num-block">
+    <div class="num-q">N1. In YDSE, two slits are separated by 0.5 mm and the screen is 1.5 m away. If the fringe width is 1.5 mm, find the wavelength of light used. <span style="color:#fbbf24;font-size:.78rem;">[2024 Board]</span></div>
+    <div class="num-given">
+      Given: d = 0.5 mm = 0.5 × 10⁻³ m<br>
+      D = 1.5 m<br>
+      β = 1.5 mm = 1.5 × 10⁻³ m<br>
+      Find: λ = ?
+    </div>
+    <div class="num-sol">
+      β = λD/d<br>
+      λ = βd/D<br>
+      λ = (1.5 × 10⁻³ × 0.5 × 10⁻³) / 1.5<br>
+      λ = (0.75 × 10⁻⁶) / 1.5<br>
+      λ = 0.5 × 10⁻⁶ m
+    </div>
+    <span class="num-ans">∴ λ = 5 × 10⁻⁷ m = 500 nm ✓</span>
+  </div>
+
+  <div class="num-block">
+    <div class="num-q">N2. Two slits are 1 mm apart and screen is placed 1 m away. Find the fringe width if wavelength = 589 nm. How many fringes will be formed in 1 cm width? <span style="color:#fbbf24;font-size:.78rem;">[2023 Board]</span></div>
+    <div class="num-given">
+      Given: d = 1 mm = 1 × 10⁻³ m<br>
+      D = 1 m<br>
+      λ = 589 nm = 589 × 10⁻⁹ m<br>
+      Width = 1 cm = 10⁻² m
+    </div>
+    <div class="num-sol">
+      β = λD/d = (589 × 10⁻⁹ × 1) / (1 × 10⁻³)<br>
+      β = 589 × 10⁻⁶ m = 0.589 mm<br>
+      <br>
+      No. of fringes = total width / β<br>
+      N = 10⁻² / (589 × 10⁻⁶) = 10⁻² / 5.89 × 10⁻⁴ ≈ 16.98
+    </div>
+    <span class="num-ans">∴ β = 0.589 mm; Number of fringes ≈ 17 ✓</span>
+  </div>
+
+  <div class="num-block">
+    <div class="num-q">N3. The 10th bright fringe in a YDSE is at a distance of 2 cm from the central fringe. The slits are 1 mm apart and screen is 80 cm away. Find the wavelength of light. <span style="color:#fbbf24;font-size:.78rem;">[2022 Board]</span></div>
+    <div class="num-given">
+      Given: n = 10, y₁₀ = 2 cm = 2 × 10⁻² m<br>
+      d = 1 mm = 1 × 10⁻³ m<br>
+      D = 80 cm = 0.80 m
+    </div>
+    <div class="num-sol">
+      y_n = nλD/d<br>
+      λ = y_n × d / (n × D)<br>
+      λ = (2 × 10⁻² × 1 × 10⁻³) / (10 × 0.80)<br>
+      λ = (2 × 10⁻⁵) / 8<br>
+      λ = 2.5 × 10⁻⁶ m
+    </div>
+    <span class="num-ans">∴ λ = 2.5 × 10⁻⁶ m = 2500 nm ✓</span>
+  </div>
+
+  <div class="num-block">
+    <div class="num-q">N4. In YDSE, slits are 0.2 mm apart, screen is 2 m away, wavelength = 600 nm. Find: (i) fringe width, (ii) position of 3rd bright fringe, (iii) position of 2nd dark fringe. <span style="color:#fbbf24;font-size:.78rem;">[2021, 2020 type]</span></div>
+    <div class="num-given">
+      Given: d = 0.2 mm = 2 × 10⁻⁴ m<br>
+      D = 2 m<br>
+      λ = 600 nm = 6 × 10⁻⁷ m
+    </div>
+    <div class="num-sol">
+      (i) β = λD/d = (6×10⁻⁷ × 2) / (2×10⁻⁴) = 6×10⁻³ m = 6 mm<br>
+      <br>
+      (ii) y₃ = 3λD/d = 3 × 6 mm = 18 mm = 1.8 cm<br>
+      <br>
+      (iii) y_dark = (2n−1)λD/2d<br>
+           n = 2: y₂ = (2×2−1) × 6/2 = 3 × 3 mm = 9 mm = 0.9 cm
+    </div>
+    <span class="num-ans">∴ β = 6 mm; 3rd bright = 18 mm; 2nd dark = 9 mm ✓</span>
+  </div>
+
+  <div class="tdiv"><div class="tline"></div><div class="tlab">🔮 Malus' Law / Polarisation Numericals</div><div class="tline"></div></div>
+
+  <div class="num-block">
+    <div class="num-q">N5. Plane polarised light of intensity 32 W/m² is incident on an analyser. The analyser is rotated until the intensity becomes 8 W/m². Find the angle between the polariser and analyser. <span style="color:#fbbf24;font-size:.78rem;">[2024 Board type]</span></div>
+    <div class="num-given">
+      Given: I₀ = 32 W/m²<br>
+      I = 8 W/m²<br>
+      Find: θ = ?
+    </div>
+    <div class="num-sol">
+      I = I₀ cos²θ<br>
+      cos²θ = I/I₀ = 8/32 = 1/4<br>
+      cosθ = 1/2<br>
+      θ = 60°
+    </div>
+    <span class="num-ans">∴ θ = 60° ✓</span>
+  </div>
+
+  <div class="num-block">
+    <div class="num-q">N6. The critical angle for a glass-air interface is 42°. Find: (i) refractive index of glass, (ii) Brewster's angle for the glass surface. <span style="color:#fbbf24;font-size:.78rem;">[2023 Board type]</span></div>
+    <div class="num-given">
+      Given: Critical angle θ_c = 42°<br>
+      Find: n, i_B
+    </div>
+    <div class="num-sol">
+      (i) n = 1/sin θ_c = 1/sin 42° = 1/0.6691 = 1.494 ≈ 1.5<br>
+      <br>
+      (ii) tan i_B = n = 1.5<br>
+           i_B = tan⁻¹(1.5) = 56.3°
+    </div>
+    <span class="num-ans">∴ n ≈ 1.5; i_B ≈ 56.3° ✓</span>
+  </div>
+
+  <div class="num-block">
+    <div class="num-q">N7. Unpolarised light passes through two polaroids. The transmitted intensity is I₀/4. Find the angle between their transmission axes. <span style="color:#fbbf24;font-size:.78rem;">[2022, 2021 type]</span></div>
+    <div class="num-given">
+      Given: After first polaroid, intensity = I₀/2 (always)<br>
+      After second polaroid, intensity = I₀/4<br>
+      Find: θ = ?
+    </div>
+    <div class="num-sol">
+      After first polaroid: intensity = I₀/2<br>
+      After second (Malus): I = (I₀/2) cos²θ<br>
+      I₀/4 = (I₀/2) cos²θ<br>
+      cos²θ = (I₀/4)/(I₀/2) = 1/2<br>
+      cosθ = 1/√2<br>
+      θ = 45°
+    </div>
+    <span class="num-ans">∴ θ = 45° ✓</span>
+  </div>
+
+  <div class="num-block">
+    <div class="num-q">N8. In YDSE, when light of wavelength 4500 Å is used, 20 fringes are observed in a certain region of screen. If wavelength is changed to 6000 Å, how many fringes will be observed in the same region? <span style="color:#fbbf24;font-size:.78rem;">[2020 Board type]</span></div>
+    <div class="num-given">
+      Given: λ₁ = 4500 Å, n₁ = 20 fringes<br>
+      λ₂ = 6000 Å, find n₂<br>
+      Width of region = same = n₁β₁ = n₂β₂
+    </div>
+    <div class="num-sol">
+      Width = n₁ × λ₁D/d = n₂ × λ₂D/d<br>
+      n₁λ₁ = n₂λ₂<br>
+      n₂ = n₁ × λ₁/λ₂ = 20 × 4500/6000<br>
+      n₂ = 20 × 3/4 = 15
+    </div>
+    <span class="num-ans">∴ 15 fringes will be observed ✓</span>
+  </div>
+
+</div><!-- end numericals -->
+
+<!-- ══════════════════════ MCQs ══════════════════════ -->
+<div class="section" id="tab-mcq">
+
+  <div class="mcq-block">
+    <div class="mcq-q">1. According to Huygens' principle, the new wavefront is the ______ to all secondary wavelets.</div>
+    <ul class="mcq-opts">
+      <li>a) Perpendicular</li>
+      <li class="correct">b) Common tangent (envelope)</li>
+      <li>c) Normal</li>
+      <li>d) Parallel line</li>
+    </ul>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">2. In Young's double slit experiment, if the distance between the slits is halved and the distance to the screen is doubled, the fringe width will become:</div>
+    <ul class="mcq-opts">
+      <li>a) Half</li>
+      <li>b) Double</li>
+      <li>c) Same</li>
+      <li class="correct">d) Four times</li>
+    </ul>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">3. When YDSE is performed in water (n=1.33), the fringe width compared to air:</div>
+    <ul class="mcq-opts">
+      <li>a) Increases 1.33 times</li>
+      <li class="correct">b) Decreases to 1/1.33 times</li>
+      <li>c) Remains the same</li>
+      <li>d) Becomes zero</li>
+    </ul>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">4. In single slit diffraction, the condition for the first minimum is:</div>
+    <ul class="mcq-opts">
+      <li>a) a sinθ = λ/2</li>
+      <li class="correct">b) a sinθ = λ</li>
+      <li>c) a sinθ = 2λ</li>
+      <li>d) a sinθ = 3λ/2</li>
+    </ul>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">5. Polarisation proves that light is a:</div>
+    <ul class="mcq-opts">
+      <li>a) Longitudinal wave</li>
+      <li>b) Electromagnetic wave</li>
+      <li class="correct">c) Transverse wave</li>
+      <li>d) Mechanical wave</li>
+    </ul>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">6. When two polaroids are crossed (θ = 90°), the intensity of transmitted light is:</div>
+    <ul class="mcq-opts">
+      <li>a) I₀</li>
+      <li>b) I₀/2</li>
+      <li>c) I₀/4</li>
+      <li class="correct">d) Zero</li>
+    </ul>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">7. For a glass slab with refractive index 1.732, Brewster's angle is:</div>
+    <ul class="mcq-opts">
+      <li>a) 45°</li>
+      <li>b) 56°</li>
+      <li class="correct">c) 60°</li>
+      <li>d) 30°</li>
+    </ul>
+    <div style="font-size:.8rem;color:#555;padding:6px 10px;">💡 tan i_B = 1.732 = √3 → i_B = 60°</div>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">8. The central fringe in YDSE using white light is:</div>
+    <ul class="mcq-opts">
+      <li class="correct">a) White</li>
+      <li>b) Violet</li>
+      <li>c) Red</li>
+      <li>d) Dark</li>
+    </ul>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">9. Huygens' wave theory successfully explains which of the following? (Select all correct)</div>
+    <ul class="mcq-opts">
+      <li class="correct">a) Reflection and refraction ✅</li>
+      <li class="correct">b) Interference and diffraction ✅</li>
+      <li>c) Photoelectric effect ❌</li>
+      <li>d) Compton effect ❌</li>
+    </ul>
+    <div style="font-size:.8rem;color:#555;padding:6px 10px;">💡 Photoelectric effect needs quantum (photon) theory, not wave theory</div>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">10. Plane polarised light of intensity I₀ passes through an analyser at θ = 60°. The transmitted intensity is:</div>
+    <ul class="mcq-opts">
+      <li>a) I₀/4</li>
+      <li class="correct">b) I₀/4</li>
+      <li>c) I₀/2</li>
+      <li>d) I₀√3/2</li>
+    </ul>
+    <div style="font-size:.8rem;color:#555;padding:6px 10px;">💡 I = I₀cos²60° = I₀ × (1/2)² = I₀/4</div>
+  </div>
+
+</div><!-- end mcq -->
+
+<!-- ══════════════════════ ALL FORMULAS ══════════════════════ -->
+<div class="section" id="tab-formulas">
+
+  <div style="background:#fff;border-radius:14px;padding:18px;box-shadow:0 2px 10px rgba(74,20,140,.1);">
+
+    <div class="kp-title">🌊 Huygens' Principle</div>
+    <ul class="kp-list" style="margin-bottom:16px;">
+      <li>Speed of light: <strong>v = c/n</strong> (c = 3×10⁸ m/s, n = refractive index)</li>
+      <li>Snell's Law: <strong>n₁ sin i = n₂ sin r</strong></li>
+      <li>Huygens: <strong>sin i / sin r = v₁/v₂ = n₂/n₁</strong></li>
+    </ul>
+
+    <div class="kp-title">✨ Interference — YDSE</div>
+    <div class="fgrid" style="margin-bottom:16px;">
+      <div class="fbox"><div class="fl">Fringe width</div><div class="feq">β = λD/d</div></div>
+      <div class="fbox"><div class="fl">Bright fringe y_n</div><div class="feq">y = nλD/d</div></div>
+      <div class="fbox"><div class="fl">Dark fringe y_n</div><div class="feq">y = (2n−1)λD/2d</div></div>
+      <div class="fbox"><div class="fl">Path diff (bright)</div><div class="feq">Δ = nλ</div></div>
+      <div class="fbox"><div class="fl">Path diff (dark)</div><div class="feq">Δ = (2n−1)λ/2</div></div>
+      <div class="fbox"><div class="fl">Phase diff</div><div class="feq">δ = 2πΔ/λ</div></div>
+      <div class="fbox"><div class="fl">Intensity</div><div class="feq">I = 4I₀cos²(δ/2)</div></div>
+      <div class="fbox"><div class="fl">I_max : I_min</div><div class="feq">(A₁+A₂)² : (A₁−A₂)²</div></div>
+    </div>
+
+    <div class="kp-title">🌀 Diffraction</div>
+    <div class="fgrid" style="margin-bottom:16px;">
+      <div class="fbox"><div class="fl">Minima condition</div><div class="feq">a sinθ = nλ</div></div>
+      <div class="fbox"><div class="fl">Central max width</div><div class="feq">2λD/a</div></div>
+      <div class="fbox"><div class="fl">Angular half-width</div><div class="feq">θ = λ/a</div></div>
+      <div class="fbox"><div class="fl">Telescope RP</div><div class="feq">θ_min = 1.22λ/D</div></div>
+    </div>
+
+    <div class="kp-title">🔮 Polarisation</div>
+    <div class="fgrid" style="margin-bottom:16px;">
+      <div class="fbox"><div class="fl">Malus' Law</div><div class="feq">I = I₀cos²θ</div></div>
+      <div class="fbox"><div class="fl">Brewster's Law</div><div class="feq">tan i_B = n</div></div>
+      <div class="fbox"><div class="fl">θ = 0° (parallel)</div><div class="feq">I = I₀</div></div>
+      <div class="fbox"><div class="fl">θ = 90° (crossed)</div><div class="feq">I = 0</div></div>
+      <div class="fbox"><div class="fl">θ = 45°</div><div class="feq">I = I₀/2</div></div>
+      <div class="fbox"><div class="fl">i_B + r = 90°</div><div class="feq">reflected ⊥ refracted</div></div>
+    </div>
+
+    <div class="kp-title">⚡ Important Constants &amp; Values</div>
+    <ul class="kp-list">
+      <li>Speed of light: <strong>c = 3 × 10⁸ m/s</strong></li>
+      <li>Visible spectrum: 400 nm (violet) → 700 nm (red)</li>
+      <li>Sodium light: λ = 589 nm (yellow)</li>
+      <li>For glass: n ≈ 1.5; i_B ≈ 56.3°; θ_c ≈ 42°</li>
+      <li>For water: n ≈ 1.33; i_B ≈ 53°</li>
+    </ul>
+
+    <div style="background:linear-gradient(135deg,#1a0533,#4a148c);color:#fff;border-radius:12px;padding:16px;margin-top:14px;">
+      <div style="font-size:.8rem;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#e1bee7;margin-bottom:10px;">📋 Quick Revision — What to Remember for Board</div>
+      <ul style="list-style:none;padding:0;font-size:.88rem;line-height:2;">
+        <li>✅ Huygens' Principle — 2 lines + derivation of Snell's Law (draw diagram)</li>
+        <li>✅ YDSE fringe width derivation β = λD/d (must draw diagram)</li>
+        <li>✅ Malus' Law: I = I₀cos²θ + all 3 angle cases (0°, 45°, 90°)</li>
+        <li>✅ Brewster's Law: tan i_B = n + derivation (i_B + r = 90° → Snell's Law)</li>
+        <li>✅ Interference vs Diffraction table (2 marks question)</li>
+        <li>✅ YDSE numericals: use β = λD/d to find any one of β, λ, D, d</li>
+        <li>✅ Malus' Law numericals: use I = I₀cos²θ to find θ or I</li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- end formulas -->
+
+</div><!-- wrap -->
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>
