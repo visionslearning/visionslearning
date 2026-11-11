@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 12 Physics — IMP Notes + Last 5 Years Q&A | Visions Classes</title>
+<style>
+  :root {
+    --phys: #0d47a1;
+    --phys2: #1565c0;
+    --phys3: #1976d2;
+    --acc: #e65100;
+    --gold: #f59e0b;
+    --green: #15803d;
+    --red: #c0392b;
+    --bg: #f0f4ff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); color: #1a1a1a; }
+
+  /* HEADER */
+  .page-header {
+    background: linear-gradient(135deg, #0a1628, #0d47a1, #1565c0);
+    color: #fff;
+    padding: 28px 20px 22px;
+    text-align: center;
+  }
+  .page-header .badge {
+    display: inline-block;
+    background: var(--gold);
+    color: #1a1a1a;
+    font-size: .72rem;
+    font-weight: 900;
+    padding: 4px 14px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .page-header h1 { font-size: 1.5rem; font-weight: 900; margin-bottom: 6px; }
+  .page-header p { font-size: .88rem; opacity: .85; }
+  .watermark-bar {
+    background: rgba(255,255,255,.12);
+    text-align: center;
+    padding: 6px;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,.75);
+  }
+
+  /* NAV TABS */
+  .tab-bar {
+    display: flex;
+    overflow-x: auto;
+    gap: 0;
+    background: #0d47a1;
+    padding: 0 10px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    scrollbar-width: none;
+  }
+  .tab-bar::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    color: rgba(255,255,255,.75);
+    padding: 11px 14px;
+    font-size: .78rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+    transition: all .2s;
+  }
+  .tab-btn.active, .tab-btn:hover {
+    color: #fff;
+    border-bottom-color: var(--gold);
+  }
+
+  /* CONTENT */
+  .content-wrap { max-width: 900px; margin: 0 auto; padding: 18px 14px 60px; }
+
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* CHAPTER BLOCKS */
+  .ch-block {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+    margin-bottom: 22px;
+    border-left: 5px solid var(--phys);
+  }
+  .ch-header {
+    background: linear-gradient(135deg, var(--phys), var(--phys3));
+    color: #fff;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .ch-header .ch-num {
+    background: rgba(255,255,255,.2);
+    border-radius: 8px;
+    padding: 4px 10px;
+    font-size: .78rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+  }
+  .ch-header h2 { font-size: 1rem; font-weight: 800; }
+  .ch-body { padding: 16px 18px; }
+
+  /* KEY POINTS */
+  .kp-title {
+    font-size: .78rem;
+    font-weight: 900;
+    color: var(--phys);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid #e3eaff;
+  }
+  .kp-list { list-style: none; padding: 0; margin-bottom: 14px; }
+  .kp-list li {
+    padding: 5px 0 5px 20px;
+    position: relative;
+    font-size: .88rem;
+    line-height: 1.55;
+    border-bottom: 1px solid #f0f4ff;
+  }
+  .kp-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--phys3);
+    font-weight: 900;
+  }
+  .kp-list li strong { color: var(--phys); }
+
+  /* FORMULA BOX */
+  .formula-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin: 10px 0 14px;
+  }
+  .formula-box {
+    background: linear-gradient(135deg, #e3eaff, #dbeafe);
+    border: 1px solid #93c5fd;
+    border-radius: 10px;
+    padding: 10px 12px;
+    text-align: center;
+  }
+  .formula-box .f-label {
+    font-size: .7rem;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+  }
+  .formula-box .f-eq {
+    font-size: 1rem;
+    font-weight: 900;
+    color: var(--phys);
+    font-family: 'Courier New', monospace;
+  }
+
+  /* REACTION-STYLE EQUATION (for optics) */
+  .eq-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 8px 0;
+  }
+  .eq-box {
+    background: #e3eaff;
+    border: 2px solid #93c5fd;
+    border-radius: 8px;
+    padding: 7px 14px;
+    font-size: .9rem;
+    font-weight: 800;
+    color: var(--phys);
+    font-family: monospace;
+  }
+  .eq-arrow {
+    font-size: 1.2rem;
+    color: var(--acc);
+    font-weight: 900;
+  }
+
+  /* 5 YEAR Q&A SECTION */
+  .qcard {
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,.07);
+  }
+  .qcard-header {
+    background: linear-gradient(135deg, #0a1628, #0d47a1);
+    color: #fff;
+    padding: 12px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .q-num {
+    background: var(--gold);
+    color: #1a1a1a;
+    font-size: .72rem;
+    font-weight: 900;
+    padding: 3px 9px;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .q-text { font-size: .9rem; font-weight: 700; line-height: 1.5; }
+  .freq-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+  .freq-tag {
+    font-size: .65rem;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 10px;
+    text-transform: uppercase;
+  }
+  .freq-high { background: #fee2e2; color: #c0392b; }
+  .freq-med { background: #fef3c7; color: #d97706; }
+  .freq-ch { background: #dcfce7; color: #15803d; }
+  .marks-tag { background: #dbeafe; color: var(--phys); }
+
+  .ans-body { padding: 14px 16px; }
+  .ans-label {
+    font-size: .72rem;
+    font-weight: 900;
+    color: var(--green);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .ans-text {
+    font-size: .88rem;
+    line-height: 1.65;
+    color: #2d2d2d;
+  }
+  .ans-text p { margin-bottom: 8px; }
+  .ans-text strong { color: var(--phys); }
+
+  /* Equation in answer */
+  .a-eq {
+    background: #e3eaff;
+    border-left: 4px solid var(--phys3);
+    padding: 8px 14px;
+    border-radius: 0 8px 8px 0;
+    font-family: monospace;
+    font-size: .93rem;
+    font-weight: 700;
+    color: var(--phys);
+    margin: 8px 0;
+  }
+
+  /* TOPIC DIVIDER */
+  .topic-divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 24px 0 14px;
+  }
+  .topic-divider .td-label {
+    background: linear-gradient(135deg, var(--phys), var(--acc));
+    color: #fff;
+    padding: 5px 16px;
+    border-radius: 20px;
+    font-size: .78rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .topic-divider .td-line { flex: 1; height: 2px; background: #d1d5db; }
+
+  /* SUMMARY TABLE */
+  .sum-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .83rem; }
+  .sum-table th {
+    background: var(--phys);
+    color: #fff;
+    padding: 8px 10px;
+    text-align: left;
+    font-weight: 800;
+  }
+  .sum-table td {
+    padding: 7px 10px;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: top;
+  }
+  .sum-table tr:nth-child(even) td { background: #f0f4ff; }
+  .mark-pill {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 10px;
+    font-size: .7rem;
+    font-weight: 800;
+  }
+  .m2 { background: #dcfce7; color: #15803d; }
+  .m3 { background: #fef3c7; color: #d97706; }
+  .m4 { background: #fee2e2; color: #c0392b; }
+
+  /* MCQ SECTION */
+  .mcq-block {
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    padding: 14px 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.07);
+    border-left: 4px solid var(--gold);
+  }
+  .mcq-q { font-size: .9rem; font-weight: 700; margin-bottom: 10px; }
+  .mcq-opts { list-style: none; padding: 0; }
+  .mcq-opts li {
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: .85rem;
+    margin-bottom: 4px;
+    border: 1px solid #e5e7eb;
+  }
+  .mcq-opts li.correct {
+    background: #dcfce7;
+    border-color: #86efac;
+    font-weight: 700;
+    color: #15803d;
+  }
+  .mcq-opts li.correct::before { content: "✅ "; }
+
+  /* BACK LINK */
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,.85);
+    text-decoration: none;
+    font-size: .82rem;
+    font-weight: 700;
+    padding: 8px 16px;
+    background: rgba(255,255,255,.12);
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .back-link:hover { background: rgba(255,255,255,.22); }
+
+  @media (max-width: 600px) {
+    .formula-grid { grid-template-columns: 1fr 1fr; }
+    .ch-header h2 { font-size: .9rem; }
+    .page-header h1 { font-size: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="page-header">
+  <a href="notes-class12.html" class="back-link">← Class 12 Notes</a>
+  <div class="badge">⭐ Most Important · Maharashtra Board</div>
+  <h1>⚡ Class 12 Physics</h1>
+  <p>IMP Notes · All Chapters · Last 5 Years Repeated Q&amp;A · 2024–2020</p>
+</div>
+<div class="watermark-bar">VISIONS CLASSES · SHASHIKANT SIR · AMBARNATH</div>
+
+<!-- TAB BAR -->
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab('notes')">📖 IMP Notes</button>
+  <button class="tab-btn" onclick="showTab('qbank')">🔴 Last 5 Yrs Q&amp;A</button>
+  <button class="tab-btn" onclick="showTab('mcq')">🔵 MCQs</button>
+  <button class="tab-btn" onclick="showTab('formulas')">📐 All Formulas</button>
+</div>
+
+<div class="content-wrap">
+
+<!-- ============================= IMP NOTES ============================= -->
+<div class="section active" id="tab-notes">
+
+  <!-- CH1 ROTATIONAL DYNAMICS -->
+  <div class="ch-block">
+    <div class="ch-header">
+      <span class="ch-num">CH 1</span>
+      <h2>⚙️ Rotational Dynamics</h2>
+    </div>
+    <div class="ch-body">
+      <div class="kp-title">🔑 Key Concepts</div>
+      <ul class="kp-list">
+        <li><strong>Moment of Inertia (I)</strong> — rotational analogue of mass; I = Σmr²</li>
+        <li><strong>Radius of Gyration (K)</strong> — I = MK²; distance from axis where total mass is concentrated</li>
+        <li><strong>Theorem of Parallel Axes</strong>: I = I_cm + Mh² (h = distance from CM to new axis)</li>
+        <li><strong>Theorem of Perpendicular Axes</strong>: I_z = I_x + I_y (for lamina only)</li>
+        <li><strong>Torque (τ)</strong> = r × F = Iα; SI unit: N·m</li>
+        <li><strong>Angular Momentum (L)</strong> = Iω = r × p</li>
+        <li><strong>Law of Conservation of Angular Momentum</strong>: If net torque = 0, then L = constant (Iω = constant)</li>
+        <li><strong>Rolling Motion</strong>: Total KE = ½Iω² + ½mv²; for sphere: KE<sub>rot</sub> = 2/7 × Total KE</li>
+      </ul>
+      <div class="kp-title">📐 Important Formulas</div>
+      <div class="formula-grid">
+        <div class="formula-box"><div class="f-label">Torque</div><div class="f-eq">τ = Iα = r×F</div></div>
+        <div class="formula-box"><div class="f-label">Angular Momentum</div><div class="f-eq">L = Iω = mvr</div></div>
+        <div class="formula-box"><div class="f-label">Ring (axis)</div><div class="f-eq">I = MR²</div></div>
+        <div class="formula-box"><div class="f-label">Disc (axis)</div><div class="f-eq">I = ½MR²</div></div>
+        <div class="formula-box"><div class="f-label">Solid Sphere</div><div class="f-eq">I = 2/5 MR²</div></div>
+        <div class="formula-box"><div class="f-label">Hollow Sphere</div><div class="f-eq">I = 2/3 MR²</div></div>
+        <div class="formula-box"><div class="f-label">Rod (centre)</div><div class="f-eq">I = ML²/12</div></div>
+        <div class="formula-box"><div class="f-label">Rod (end)</div><div class="f-eq">I = ML²/3</div></div>
+      </div>
+      <div class="kp-title">⭐ Exam Tips</div>
+      <ul class="kp-list">
+        <li>Always state the axis while writing MOI; examiners deduct marks if axis is missing</li>
+        <li>Rolling on incline: compare <em>acceleration = g sinθ / (1 + I/mr²)</em> — sphere rolls fastest, ring slowest</li>
+        <li>Diver/skater question = conservation of angular momentum example</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CH2 MECHANICAL PROPERTIES OF FLUIDS -->
+  <div class="ch-block">
+    <div class="ch-header">
+      <span class="ch-num">CH 2</span>
+      <h2>💧 Mechanical Properties of Fluids</h2>
+    </div>
+    <div class="ch-body">
+      <div class="kp-title">🔑 Key Concepts</div>
+      <ul class="kp-list">
+        <li><strong>Pressure</strong> P = F/A = ρgh; Pascal's law: pressure transmitted equally in all directions</li>
+        <li><strong>Archimedes' Principle</strong>: Buoyant force = weight of fluid displaced</li>
+        <li><strong>Continuity equation</strong>: A₁v₁ = A₂v₂ (mass conservation)</li>
+        <li><strong>Bernoulli's equation</strong>: P + ½ρv² + ρgh = constant (energy conservation)</li>
+        <li><strong>Viscosity (η)</strong>: internal friction between fluid layers; η = F·d / (A·v)</li>
+        <li><strong>Stokes' Law</strong>: F = 6πηrv; terminal velocity v_T = 2r²(ρ−σ)g / 9η</li>
+        <li><strong>Surface Tension (T)</strong>: T = F/L; Work done = T × ΔA</li>
+        <li><strong>Excess pressure</strong> in bubble: 2T/r (soap: 4T/r — two surfaces)</li>
+        <li><strong>Capillary rise</strong>: h = 2T cosθ / (ρgr)</li>
+      </ul>
+      <div class="formula-grid">
+        <div class="formula-box"><div class="f-label">Bernoulli</div><div class="f-eq">P+½ρv²+ρgh = C</div></div>
+        <div class="formula-box"><div class="f-label">Terminal vel.</div><div class="f-eq">vT = 2r²(ρ-σ)g/9η</div></div>
+        <div class="formula-box"><div class="f-label">Capillary rise</div><div class="f-eq">h = 2Tcosθ/ρgr</div></div>
+        <div class="formula-box"><div class="f-label">Excess P (bubble)</div><div class="f-eq">P = 4T/r</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CH3 KINETIC THEORY OF GASES -->
+  <div class="ch-block">
+    <div class="ch-header">
+      <span class="ch-num">CH 3</span>
+      <h2>🌡️ Kinetic Theory of Gases &amp; Radiation</h2>
+    </div>
+    <div class="ch-body">
+      <div class="kp-title">🔑 Key Concepts</div>
+      <ul class="kp-list">
+        <li><strong>Ideal Gas equation</strong>: PV = nRT = NkT; k = R/Nₐ = 1.38×10⁻²³ J/K</li>
+        <li><strong>Kinetic energy of gas</strong>: (1/2)mv²<sub>rms</sub> = (3/2)kT per molecule; total = (3/2)nRT</li>
+        <li><strong>RMS speed</strong>: v<sub>rms</sub> = √(3RT/M) = √(3kT/m)</li>
+        <li><strong>Mean speed</strong>: v̄ = √(8RT/πM); Most probable: v<sub>p</sub> = √(2RT/M)</li>
+        <li><strong>Degrees of freedom</strong>: f; Mean KE per molecule = (f/2)kT</li>
+        <li><strong>Cp − Cv = R</strong> (Mayer's relation); γ = Cp/Cv</li>
+        <li><strong>Stefan's Law</strong>: E = σT⁴; σ = 5.67×10⁻⁸ W/m²K⁴</li>
+        <li><strong>Wien's displacement law</strong>: λ_m · T = 2.898×10⁻³ m·K</li>
+        <li><strong>Newton's Law of Cooling</strong>: dT/dt = −bA(T−T₀)</li>
+      </ul>
+      <div class="formula-grid">
+        <div class="formula-box"><div class="f-label">RMS speed</div><div class="f-eq">v_rms = √(3RT/M)</div></div>
+        <div class="formula-box"><div class="f-label">KE per molecule</div><div class="f-eq">KE = (3/2)kT</div></div>
+        <div class="formula-box"><div class="f-label">Stefan's Law</div><div class="f-eq">E = σT⁴</div></div>
+        <div class="formula-box"><div class="f-label">Wien's Law</div><div class="f-eq">λ_m·T = b</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CH4 THERMODYNAMICS -->
+  <div class="ch-block">
+    <div class="ch-header">
+      <span class="ch-num">CH 4</span>
+      <h2>🔥 Thermodynamics</h2>
+    </div>
+    <div class="ch-body">
+      <div class="kp-title">🔑 Key Concepts</div>
+      <ul class="kp-list">
+        <li><strong>First Law</strong>: ΔU = Q − W; heat added = change in internal energy + work done by system</li>
+        <li><strong>Isothermal</strong>: T = const; ΔU = 0; Q = W; PV = const</li>
+        <li><strong>Adiabatic</strong>: Q = 0; ΔU = −W; PV^γ = const; TV^(γ−1) = const</li>
+        <li><strong>Isochoric</strong>: V = const; W = 0; Q = ΔU = nCvΔT</li>
+        <li><strong>Isobaric</strong>: P = const; W = PΔV; Q = nCpΔT</li>
+        <li><strong>Carnot efficiency</strong>: η = 1 − T₂/T₁ = (T₁−T₂)/T₁ × 100%</li>
+        <li><strong>Second Law</strong>: Heat flows spontaneously from hot to cold; entropy of universe always increases</li>
+        <li><strong>Refrigerator COP</strong>: β = T₂/(T₁−T₂)</li>
+      </ul>
+      <div class="formula-grid">
+        <div class="formula-box"><div class="f-label">First Law</div><div class="f-eq">ΔU = Q − W</div></div>
+        <div class="formula-box"><div class="f-label">Carnot η</div><div class="f-eq">η = 1 − T₂/T₁</div></div>
+        <div class="formula-box"><div class="f-label">Work (isothermal)</div><div class="f-eq">W = nRT ln(V₂/V₁)</div></div>
+        <div class="formula-box"><div class="f-label">Work (adiabatic)</div><div class="f-eq">W = (P₁V₁−P₂V₂)/(γ−1)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CH5 OSCILLATIONS -->
+  <div class="ch-block">
+    <div class="ch-header">
+      <span class="ch-num">CH 5</span>
+      <h2>🌀 Oscillations</h2>
+    </div>
+    <div class="ch-body">
+      <div class="kp-title">🔑 Key Concepts</div>
+      <ul class="kp-list">
+        <li><strong>SHM condition</strong>: a = −ω²x; restoring force ∝ displacement, opposite direction</li>
+        <li><strong>Equation of SHM</strong>: x = A sin(ωt + φ); v = Aω cos(ωt+φ); a = −ω²x</li>
+        <li><strong>Period</strong>: T = 2π/ω; f = ω/2π</li>
+        <li><strong>Simple pendulum</strong>: T = 2π√(L/g); depends only on L and g</li>
+        <li><strong>Spring-mass</strong>: T = 2π√(m/k); k = spring constant</li>
+        <li><strong>Energy</strong>: KE = ½mω²(A²−x²); PE = ½mω²x²; Total E = ½mω²A² = constant</li>
+        <li><strong>Resonance</strong>: when driving frequency = natural frequency; amplitude is maximum</li>
+        <li><strong>Damped oscillation</strong>: amplitude decreases exponentially; x = Ae^(−bt/2m) cos(ω't+φ)</li>
+      </ul>
+      <div class="formula-grid">
+        <div class="formula-box"><div class="f-label">Displacement</div><div class="f-eq">x = A sin(ωt+φ)</div></div>
+        <div class="formula-box"><div class="f-label">Total Energy</div><div class="f-eq">E = ½mω²A²</div></div>
+        <div class="formula-box"><div class="f-label">Pendulum T</div><div class="f-eq">T = 2π√(L/g)</div></div>
+        <div class="formula-box"><div class="f-label">Spring T</div><div class="f-eq">T = 2π√(m/k)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CH6 SUPERPOSITION OF WAVES -->
+  <div class="ch-block">
+    <div class="ch-header">
+      <span class="ch-num">CH 6</span>
+      <h2>🌊 Superposition of Waves</h2>
+    </div>
+    <div class="ch-body">
+      <div class="kp-title">🔑 Key Concepts</div>
+      <ul class="kp-list">
+        <li><strong>Principle of Superposition</strong>: resultant displacement = algebraic sum of individual displacements</li>
+        <li><strong>Stationary waves</strong>: formed by superposition of two identical waves travelling in opposite directions</li>
+        <li><strong>Node</strong>: point of zero displacement; <strong>Antinode</strong>: point of max displacement</li>
+        <li><strong>String</strong> (both ends fixed): λₙ = 2L/n; fₙ = n·v/2L; fundamental: f₁ = v/2L</li>
+        <li><strong>Open pipe</strong> (both ends open): fₙ = n·v/2L (all harmonics present)</li>
+        <li><strong>Closed pipe</strong> (one end closed): fₙ = (2n−1)v/4L (only odd harmonics)</li>
+        <li><strong>Beats</strong>: produced by two slightly different frequencies; beat frequency = |f₁ − f₂|</li>
+        <li><strong>Doppler effect</strong>: v<sub>observed</sub> = v × (v±v_O) / (v∓v_S)</li>
+      </ul>
+      <div class="formula-grid">
+        <div class="formula-box"><div class="f-label">String fundamental</div><div class="f-eq">f = v/2L</div></div>
+        <div class="formula-box"><div class="f-label">Closed pipe</div><div class="f-eq">f = v/4L (fund.)</div></div>
+        <div class="formula-box"><div class="f-label">Beat frequency</div><div class="f-eq">f_beat = |f₁ − f₂|</div></div>
+        <div class="formula-box"><div class="f-label">Doppler (source)</div><div class="f-eq">f' = f·v/(v−vs)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CH7 WAVE OPTICS -->
+  <div class="ch-block" style="border-left-color:#7b1fa2;">
+    <div class="ch-header" style="background:linear-gradient(135deg,#4a148c,#7b1fa2,#9c27b0);">
+      <span class="ch-num">CH 7</span>
+      <h2>🔮 Wave Optics</h2>
+    </div>
+    <div class="ch-body">
+      <div class="kp-title">🔑 Key Concepts</div>
+      <ul class="kp-list">
+        <li><strong>Huygens' Principle</strong>: Every point on wavefront acts as secondary source; new wavefront = common tangent to secondary wavelets</li>
+        <li><strong>Interference</strong>: Coherent sources required; path diff = nλ (bright), (2n−1)λ/2 (dark)</li>
+        <li><strong>Young's Double Slit</strong>: fringe width β = λD/d; central bright fringe at centre</li>
+        <li><strong>Diffraction</strong>: bending of light around edges; single slit — minima at a sinθ = nλ</li>
+        <li><strong>Resolving power</strong>: ability to distinguish two close objects; RP ∝ 1/λ</li>
+        <li><strong>Polarisation</strong>: only transverse waves can be polarised; Malus' law: I = I₀ cos²θ</li>
+        <li><strong>Brewster's angle</strong>: tan i<sub>B</sub> = n (reflected ray fully polarised)</li>
+      </ul>
+      <div class="formula-grid">
+        <div class="formula-box"><div class="f-label">Fringe width</div><div class="f-eq">β = λD/d</div></div>
+        <div class="formula-box"><div class="f-label">Bright fringe pos.</div><div class="f-eq">y_n = nλD/d</div></div>
+        <div class="formula-box"><div class="f-label">Malus' Law</div><div class="f-eq">I = I₀cos²θ</div></div>
+        <div class="formula-box"><div class="f-label">Brewster's angle</div><div class="f-eq">tan iB = n</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CH8 ELECTROSTATICS -->
+  <div class="ch-block" style="border-left-color:#e65100;">
+    <div class="ch-header" style="background:linear-gradient(135deg,#b71c1c,#e53935,#e65100);">
+      <span class="ch-num">CH 8</span>
+      <h2>⚡ Electrostatics</h2>
+    </div>
+    <div class="ch-body">
+      <div class="kp-title">🔑 Key Concepts</div>
+      <ul class="kp-list">
+        <li><strong>Coulomb's Law</strong>: F = kq₁q₂/r²; k = 9×10⁹ N·m²/C²</li>
+        <li><strong>Electric field</strong>: E = F/q = kQ/r²; direction away from +ve charge</li>
+        <li><strong>Gauss's Law</strong>: φ = Q_enc/ε₀; for sphere E = Q/4πε₀r²</li>
+        <li><strong>Electric potential</strong>: V = kQ/r; work done = qV; V = W/q</li>
+        <li><strong>Potential energy</strong>: U = kq₁q₂/r</li>
+        <li><strong>Capacitance</strong>: C = Q/V; parallel plate: C = ε₀A/d</li>
+        <li><strong>Dielectric</strong>: C = Kε₀A/d; K = dielectric constant (K ≥ 1)</li>
+        <li><strong>Energy stored</strong> in capacitor: U = ½CV² = Q²/2C = QV/2</li>
+        <li><strong>Series capacitors</strong>: 1/C = 1/C₁ + 1/C₂; <strong>Parallel</strong>: C = C₁ + C₂</li>
+      </ul>
+      <div class="formula-grid">
+        <div class="formula-box"><div class="f-label">Coulomb's Law</div><div class="f-eq">F = kq₁q₂/r²</div></div>
+        <div class="formula-box"><div class="f-label">Electric field</div><div class="f-eq">E = kQ/r²</div></div>
+        <div class="formula-box"><div class="f-label">Capacitance</div><div class="f-eq">C = ε₀A/d</div></div>
+        <div class="formula-box"><div class="f-label">Energy in C</div><div class="f-eq">U = ½CV²</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CH9 CURRENT ELECTRICITY -->
+  <div class="ch-block" style="border-left-color:#1b5e20;">
+    <div class="ch-header" style="background:linear-gradient(135deg,#1b5e20,#2e7d32,#388e3c);">
+      <span class="ch-num">CH 9</span>
+      <h2>🔋 Current Electricity</h2>
+    </div>
+    <div class="ch-body">
+      <div class="kp-title">🔑 Key Concepts</div>
+      <ul class="kp-list">
+        <li><strong>Ohm's Law</strong>: V = IR; Resistance R = ρL/A</li>
+        <li><strong>Drift velocity</strong>: v<sub>d</sub> = eEτ/m = I/nAe</li>
+        <li><strong>Kirchhoff's Laws</strong>: KCL — sum of currents at junction = 0; KVL — sum of EMFs = sum of IR drops in a loop</li>
+        <li><strong>Wheatstone bridge</strong>: P/Q = R/S at balance; galvanometer reads zero</li>
+        <li><strong>Metre bridge</strong>: R/S = l/(100−l)</li>
+        <li><strong>Potentiometer</strong>: EMF comparison — E₁/E₂ = l₁/l₂; measures internal resistance</li>
+        <li><strong>Internal resistance</strong>: r = (E−V)/I = R(l₁−l₂)/l₂</li>
+        <li><strong>Electric power</strong>: P = VI = I²R = V²/R</li>
+      </ul>
+      <div class="formula-grid">
+        <div class="formula-box"><div class="f-label">Ohm's Law</div><div class="f-eq">V = IR</div></div>
+        <div class="formula-box"><div class="f-label">Resistivity</div><div class="f-eq">R = ρL/A</div></div>
+        <div class="formula-box"><div class="f-label">Drift velocity</div><div class="f-eq">vd = I/nAe</div></div>
+        <div class="formula-box"><div class="f-label">Power</div><div class="f-eq">P = VI = I²R</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CH10 MAGNETIC FIELDS -->
+  <div class="ch-block" style="border-left-color:#880e4f;">
+    <div class="ch-header" style="background:linear-gradient(135deg,#880e4f,#c2185b,#e91e63);">
+      <span class="ch-num">CH 10</span>
+      <h2>🧲 Magnetic Fields Due to Electric Current</h2>
+    </div>
+    <div class="ch-body">
+      <div class="kp-title">🔑 Key Concepts</div>
+      <ul class="kp-list">
+        <li><strong>Biot-Savart Law</strong>: dB = μ₀I dl sinθ / 4πr²; direction by right-hand rule</li>
+        <li><strong>B at centre of circular loop</strong>: B = μ₀I/2r</li>
+        <li><strong>Ampere's Law</strong>: ∮B·dl = μ₀I<sub>enc</sub></li>
+        <li><strong>Solenoid</strong>: B = μ₀nI (n = turns per unit length)</li>
+        <li><strong>Toroid</strong>: B = μ₀NI/2πr</li>
+        <li><strong>Force on current in B</strong>: F = BIL sinθ; F = qvB sinθ for charge</li>
+        <li><strong>Galvanometer to Ammeter</strong>: low resistance shunt in parallel; S = IgG/(I−Ig)</li>
+        <li><strong>Galvanometer to Voltmeter</strong>: high resistance in series; R = V/Ig − G</li>
+      </ul>
+      <div class="formula-grid">
+        <div class="formula-box"><div class="f-label">Centre of loop</div><div class="f-eq">B = μ₀I/2r</div></div>
+        <div class="formula-box"><div class="f-label">Solenoid</div><div class="f-eq">B = μ₀nI</div></div>
+        <div class="formula-box"><div class="f-label">Force on wire</div><div class="f-eq">F = BILsinθ</div></div>
+        <div class="formula-box"><div class="f-label">Shunt (ammeter)</div><div class="f-eq">S = IgG/(I-Ig)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CH11 MAGNETIC MATERIALS -->
+  <div class="ch-block" style="border-left-color:#4a148c;">
+    <div class="ch-header" style="background:linear-gradient(135deg,#311b92,#4527a0,#512da8);">
+      <span class="ch-num">CH 11</span>
+      <h2>🔮 Magnetic Materials</h2>
+    </div>
+    <div class="ch-body">
+      <div class="kp-title">🔑 Key Concepts</div>
+      <ul class="kp-list">
+        <li><strong>Magnetisation</strong> (M): magnetic moment per unit volume; M = I·n (n = no. of dipoles)</li>
+        <li><strong>Magnetic Intensity</strong> (H): H = B/μ₀ − M</li>
+        <li><strong>Magnetic susceptibility</strong> (χ): M = χH; large χ → ferromagnetic</li>
+        <li><strong>Diamagnetic</strong>: χ < 0; weakly repelled; examples: Cu, Bi, water</li>
+        <li><strong>Paramagnetic</strong>: χ small positive; weakly attracted; examples: Al, O₂</li>
+        <li><strong>Ferromagnetic</strong>: χ very large; strongly attracted; examples: Fe, Co, Ni</li>
+        <li><strong>Curie's Law</strong>: χ = C/T (paramagnetic); susceptibility ∝ 1/T</li>
+        <li><strong>Hysteresis</strong>: loss of energy in magnetisation cycle; retentivity and coercivity</li>
+        <li><strong>Permanent magnet</strong>: high retentivity, high coercivity (steel)</li>
+        <li><strong>Electromagnet core</strong>: high permeability, low retentivity (soft iron)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CH12 ELECTROMAGNETIC INDUCTION -->
+  <div class="ch-block">
+    <div class="ch-header">
+      <span class="ch-num">CH 12</span>
+      <h2>⚡ Electromagnetic Induction</h2>
+    </div>
+    <div class="ch-body">
+      <div class="kp-title">🔑 Key Concepts</div>
+      <ul class="kp-list">
+        <li><strong>Faraday's Laws</strong>: EMF = −dΦ/dt; magnitude proportional to rate of change of flux</li>
+        <li><strong>Lenz's Law</strong>: induced current opposes the cause (change in flux); energy conservation</li>
+        <li><strong>Magnetic flux</strong>: Φ = B·A cosθ = NBA (for N turns)</li>
+        <li><strong>Motional EMF</strong>: ε = Blv (rod moving in field)</li>
+        <li><strong>Self-induction</strong>: L = NΦ/I; ε = −L dI/dt</li>
+        <li><strong>Mutual induction</strong>: M = NΦ/I; ε₂ = −M dI₁/dt; M = μ₀N₁N₂A/l</li>
+        <li><strong>Energy stored in inductor</strong>: U = ½LI²</li>
+        <li><strong>AC generator</strong>: ε = NBAω sin(ωt) = ε₀ sinωt</li>
+      </ul>
+      <div class="formula-grid">
+        <div class="formula-box"><div class="f-label">Faraday's Law</div><div class="f-eq">ε = −dΦ/dt</div></div>
+        <div class="formula-box"><div class="f-label">Motional EMF</div><div class="f-eq">ε = Blv</div></div>
+        <div class="formula-box"><div class="f-label">Self induction</div><div class="f-eq">ε = −L·dI/dt</div></div>
+        <div class="formula-box"><div class="f-label">Inductor energy</div><div class="f-eq">U = ½LI²</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CH13 AC CIRCUITS -->
+  <div class="ch-block" style="border-left-color:#e65100;">
+    <div class="ch-header" style="background:linear-gradient(135deg,#e65100,#f4511e,#ff7043);">
+      <span class="ch-num">CH 13</span>
+      <h2>🔄 AC Circuits</h2>
+    </div>
+    <div class="ch-body">
+      <div class="kp-title">🔑 Key Concepts</div>
+      <ul class="kp-list">
+        <li><strong>Phasors</strong>: rotating vectors represent AC quantities; phase difference between V and I</li>
+        <li><strong>Resistance (R)</strong>: V and I in phase; Z = R</li>
+        <li><strong>Inductance (L)</strong>: V leads I by 90°; X<sub>L</sub> = ωL = 2πfL</li>
+        <li><strong>Capacitance (C)</strong>: I leads V by 90°; X<sub>C</sub> = 1/ωC = 1/2πfC</li>
+        <li><strong>Series LCR</strong>: Z = √(R² + (X<sub>L</sub>−X<sub>C</sub>)²); tan φ = (X<sub>L</sub>−X<sub>C</sub>)/R</li>
+        <li><strong>Resonance</strong>: X<sub>L</sub> = X<sub>C</sub> → ω₀ = 1/√LC; Z = R (minimum); I = maximum</li>
+        <li><strong>Power in AC</strong>: P = Vrms·Irms·cosφ; cosφ = power factor</li>
+        <li><strong>Transformer</strong>: V₁/V₂ = N₁/N₂; ideal: V₁I₁ = V₂I₂</li>
+        <li><strong>RMS values</strong>: V<sub>rms</sub> = V₀/√2; I<sub>rms</sub> = I₀/√2</li>
+      </ul>
+      <div class="formula-grid">
+        <div class="formula-box"><div class="f-label">Impedance LCR</div><div class="f-eq">Z = √(R²+(XL-XC)²)</div></div>
+        <div class="formula-box"><div class="f-label">Resonance</div><div class="f-eq">ω₀ = 1/√(LC)</div></div>
+        <div class="formula-box"><div class="f-label">Power factor</div><div class="f-eq">cosφ = R/Z</div></div>
+        <div class="formula-box"><div class="f-label">Transformer</div><div class="f-eq">V₁/V₂ = N₁/N₂</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CH14 DUAL NATURE -->
+  <div class="ch-block">
+    <div class="ch-header">
+      <span class="ch-num">CH 14</span>
+      <h2>🌟 Dual Nature of Radiation &amp; Matter</h2>
+    </div>
+    <div class="ch-body">
+      <div class="kp-title">🔑 Key Concepts</div>
+      <ul class="kp-list">
+        <li><strong>Photoelectric effect</strong>: emission of electrons by metal when light falls on it; explained by Einstein</li>
+        <li><strong>Threshold frequency</strong> (ν₀): minimum frequency needed; φ = hν₀ (work function)</li>
+        <li><strong>Einstein's equation</strong>: KE<sub>max</sub> = hν − φ = hν − hν₀</li>
+        <li><strong>Stopping potential</strong>: V₀ = KE<sub>max</sub>/e</li>
+        <li><strong>de Broglie hypothesis</strong>: matter has wave nature; λ = h/p = h/mv</li>
+        <li><strong>Davisson-Germer experiment</strong>: confirmed wave nature of electrons (electron diffraction)</li>
+        <li><strong>Photon energy</strong>: E = hν = hc/λ; momentum p = h/λ = E/c</li>
+      </ul>
+      <div class="formula-grid">
+        <div class="formula-box"><div class="f-label">Photoelectric</div><div class="f-eq">KEmax = hν − φ</div></div>
+        <div class="formula-box"><div class="f-label">de Broglie</div><div class="f-eq">λ = h/mv</div></div>
+        <div class="formula-box"><div class="f-label">Photon energy</div><div class="f-eq">E = hν = hc/λ</div></div>
+        <div class="formula-box"><div class="f-label">Stopping V</div><div class="f-eq">eV₀ = KEmax</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CH15 STRUCTURE OF ATOM -->
+  <div class="ch-block">
+    <div class="ch-header">
+      <span class="ch-num">CH 15</span>
+      <h2>⚛️ Structure of Atoms &amp; Nuclei</h2>
+    </div>
+    <div class="ch-body">
+      <div class="kp-title">🔑 Key Concepts</div>
+      <ul class="kp-list">
+        <li><strong>Bohr's model</strong>: electrons in stable circular orbits; quantized angular momentum L = nh/2π</li>
+        <li><strong>Bohr radius</strong>: r<sub>n</sub> = n² × 0.529 Å; r ∝ n²</li>
+        <li><strong>Energy levels</strong>: E<sub>n</sub> = −13.6/n² eV; ground state = −13.6 eV</li>
+        <li><strong>Spectral series</strong>: Lyman (UV, n→1), Balmer (visible, n→2), Paschen (IR, n→3)</li>
+        <li><strong>Rydberg formula</strong>: 1/λ = R(1/n₁² − 1/n₂²)</li>
+        <li><strong>Nuclear radius</strong>: R = R₀A^(1/3); R₀ = 1.2 fm</li>
+        <li><strong>Mass defect</strong>: Δm = Z·mp + (A−Z)·mn − M<sub>nucleus</sub></li>
+        <li><strong>Binding energy</strong>: BE = Δm × c² = Δm × 931.5 MeV/u</li>
+        <li><strong>Radioactive decay</strong>: N = N₀e^(−λt); T½ = 0.693/λ</li>
+      </ul>
+      <div class="formula-grid">
+        <div class="formula-box"><div class="f-label">Bohr radius</div><div class="f-eq">rn = n² × 0.529 Å</div></div>
+        <div class="formula-box"><div class="f-label">Energy level</div><div class="f-eq">En = −13.6/n² eV</div></div>
+        <div class="formula-box"><div class="f-label">Radioactive decay</div><div class="f-eq">N = N₀e^(−λt)</div></div>
+        <div class="formula-box"><div class="f-label">Half-life</div><div class="f-eq">T½ = 0.693/λ</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CH16 SEMICONDUCTOR DEVICES -->
+  <div class="ch-block" style="border-left-color:#1b5e20;">
+    <div class="ch-header" style="background:linear-gradient(135deg,#1b5e20,#2e7d32);">
+      <span class="ch-num">CH 16</span>
+      <h2>💻 Semiconductor Devices</h2>
+    </div>
+    <div class="ch-body">
+      <div class="kp-title">🔑 Key Concepts</div>
+      <ul class="kp-list">
+        <li><strong>n-type</strong>: pentavalent impurity (P, As); majority = electrons; minority = holes</li>
+        <li><strong>p-type</strong>: trivalent impurity (B, Al); majority = holes; minority = electrons</li>
+        <li><strong>p-n junction</strong>: depletion region forms; potential barrier ≈ 0.3V (Ge), 0.7V (Si)</li>
+        <li><strong>Forward bias</strong>: reduces barrier; current flows; minority carriers suppressed</li>
+        <li><strong>Reverse bias</strong>: increases barrier; very small reverse current; breakdown at high V</li>
+        <li><strong>Half-wave rectifier</strong>: conducts during positive half; output = pulsating DC</li>
+        <li><strong>Full-wave rectifier</strong>: conducts both halves; uses 2 diodes (or 4 in bridge)</li>
+        <li><strong>Zener diode</strong>: used as voltage regulator; works in reverse breakdown</li>
+        <li><strong>Transistor</strong>: NPN or PNP; CE configuration — current gain β = IC/IB</li>
+        <li><strong>Logic gates</strong>: AND, OR, NOT, NAND, NOR, XOR — know truth tables</li>
+      </ul>
+      <div class="formula-grid">
+        <div class="formula-box"><div class="f-label">Current gain</div><div class="f-eq">β = IC/IB = hFE</div></div>
+        <div class="formula-box"><div class="f-label">Transistor relation</div><div class="f-eq">IE = IB + IC</div></div>
+        <div class="formula-box"><div class="f-label">Voltage gain</div><div class="f-eq">Av = β × RC/Ri</div></div>
+        <div class="formula-box"><div class="f-label">α (CB config)</div><div class="f-eq">α = IC/IE ≈ 0.99</div></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end notes section -->
+
+<!-- ============================= LAST 5 YEARS Q&A ============================= -->
+<div class="section" id="tab-qbank">
+
+  <div class="topic-divider">
+    <div class="td-line"></div>
+    <div class="td-label">⚙️ Rotational Dynamics</div>
+    <div class="td-line"></div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-header">
+      <span class="q-num">Q1</span>
+      <div>
+        <div class="q-text">State and explain the theorem of parallel axes for moment of inertia.</div>
+        <div class="freq-tags">
+          <span class="freq-tag freq-high">🔴 Very High Freq</span>
+          <span class="freq-tag marks-tag">3 Marks</span>
+          <span class="freq-tag freq-ch">Ch 1</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-label">✅ Model Answer</div>
+      <div class="ans-text">
+        <p><strong>Statement:</strong> The moment of inertia of a body about any axis is equal to the sum of the moment of inertia about a parallel axis passing through the centre of mass and the product of the mass of the body and the square of the perpendicular distance between the two axes.</p>
+        <div class="a-eq">I = I<sub>cm</sub> + Mh²</div>
+        <p>where I<sub>cm</sub> = MOI about CM axis, M = mass of body, h = perpendicular distance between the two parallel axes.</p>
+        <p><strong>Example:</strong> For a thin rod of mass M, length L about one end: I = ML²/12 + M(L/2)² = ML²/12 + ML²/4 = ML²/3</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-header">
+      <span class="q-num">Q2</span>
+      <div>
+        <div class="q-text">State and prove the law of conservation of angular momentum. Give one example.</div>
+        <div class="freq-tags">
+          <span class="freq-tag freq-high">🔴 Very High Freq</span>
+          <span class="freq-tag marks-tag">4 Marks</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-label">✅ Model Answer</div>
+      <div class="ans-text">
+        <p><strong>Statement:</strong> If no external torque acts on a system, the total angular momentum of the system remains constant (conserved).</p>
+        <p><strong>Proof:</strong> Torque τ = dL/dt. If τ = 0, then dL/dt = 0, so L = Iω = constant.</p>
+        <p>Therefore, if I decreases, ω increases proportionally to keep Iω constant.</p>
+        <p><strong>Example:</strong> A figure skater pulling her arms in during a spin — reduces MOI (I), increases angular velocity (ω). Iω = constant. Same applies to a diver tucking in mid-air to rotate faster before entering water.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-header">
+      <span class="q-num">Q3</span>
+      <div>
+        <div class="q-text">Derive an expression for the kinetic energy of a body rolling without slipping.</div>
+        <div class="freq-tags">
+          <span class="freq-tag freq-high">🔴 High Freq</span>
+          <span class="freq-tag marks-tag">3 Marks</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-label">✅ Model Answer</div>
+      <div class="ans-text">
+        <p>For a body rolling without slipping, there are two components of KE:</p>
+        <p><strong>Translational KE</strong> = ½mv²</p>
+        <p><strong>Rotational KE</strong> = ½Iω²</p>
+        <p>Since v = Rω for rolling without slipping: ω = v/R</p>
+        <div class="a-eq">Total KE = ½mv² + ½Iω² = ½mv² + ½I(v/R)² = ½mv²(1 + I/mR²)</div>
+        <p>For a solid sphere: I = 2mR²/5, so Total KE = ½mv²(1 + 2/5) = 7/10 mv²</p>
+        <p>Rotational KE = 2/7 of total; Translational KE = 5/7 of total.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-divider">
+    <div class="td-line"></div>
+    <div class="td-label">🌊 Wave Optics</div>
+    <div class="td-line"></div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-header">
+      <span class="q-num">Q4</span>
+      <div>
+        <div class="q-text">State Huygens' principle. Using it, derive the laws of refraction of light (Snell's Law).</div>
+        <div class="freq-tags">
+          <span class="freq-tag freq-high">🔴 Very High Freq</span>
+          <span class="freq-tag marks-tag">4 Marks</span>
+          <span class="freq-tag freq-ch">Ch 7</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-label">✅ Model Answer</div>
+      <div class="ans-text">
+        <p><strong>Huygens' Principle:</strong> (i) Every point on a wavefront acts as a secondary source of light, emitting spherical secondary wavelets in all directions. (ii) The new wavefront at any instant is the common tangent (envelope) to all the secondary wavelets.</p>
+        <p><strong>Derivation of Snell's Law:</strong></p>
+        <p>Let AB be incident wavefront. Ray hits A at time t=0 and B at t=τ. Speed in medium 1 = v₁, medium 2 = v₂.</p>
+        <p>Distance BC = v₁τ (secondary wavelet from B in medium 1)</p>
+        <p>Distance AE = v₂τ (secondary wavelet from A in medium 2)</p>
+        <p>From triangles: sin i = BC/AC = v₁τ/AC and sin r = AE/AC = v₂τ/AC</p>
+        <div class="a-eq">sin i / sin r = v₁/v₂ = n₂/n₁ → n₁ sin i = n₂ sin r (Snell's Law)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-header">
+      <span class="q-num">Q5</span>
+      <div>
+        <div class="q-text">In Young's double slit experiment, derive the formula for fringe width. What happens to fringe width if distance between slits is doubled?</div>
+        <div class="freq-tags">
+          <span class="freq-tag freq-high">🔴 Very High Freq</span>
+          <span class="freq-tag marks-tag">4 Marks</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-label">✅ Model Answer</div>
+      <div class="ans-text">
+        <p>Path difference for point P at distance y from centre: Δ = yd/D</p>
+        <p>For bright fringe: Δ = nλ → y<sub>n</sub> = nλD/d</p>
+        <p>Fringe width β = y<sub>n+1</sub> − y<sub>n</sub></p>
+        <div class="a-eq">β = λD/d</div>
+        <p>where λ = wavelength, D = distance from slits to screen, d = slit separation.</p>
+        <p><strong>If d is doubled:</strong> β = λD/(2d) → fringe width becomes half. Fringes become narrower.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-header">
+      <span class="q-num">Q6</span>
+      <div>
+        <div class="q-text">State Malus' Law. What is Brewster's angle? Derive the relation tan i_B = n.</div>
+        <div class="freq-tags">
+          <span class="freq-tag freq-med">🟠 Medium Freq</span>
+          <span class="freq-tag marks-tag">3 Marks</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-label">✅ Model Answer</div>
+      <div class="ans-text">
+        <p><strong>Malus' Law:</strong> When a plane polarised light beam of intensity I₀ is incident on an analyser, the intensity of the transmitted light is I = I₀ cos²θ, where θ is the angle between the polariser and analyser axes.</p>
+        <p><strong>Brewster's Angle:</strong> When light is incident at Brewster's angle i_B, the reflected ray is completely plane polarised (parallel to surface). Refracted ray is partially polarised.</p>
+        <p><strong>Derivation:</strong> At Brewster's angle, reflected and refracted rays are perpendicular: i_B + r = 90°, so r = 90° − i_B.</p>
+        <p>By Snell's Law: n = sin i_B / sin r = sin i_B / sin(90°−i_B) = sin i_B / cos i_B</p>
+        <div class="a-eq">∴ tan i_B = n</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-divider">
+    <div class="td-line"></div>
+    <div class="td-label">⚡ Electrostatics &amp; Current Electricity</div>
+    <div class="td-line"></div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-header">
+      <span class="q-num">Q7</span>
+      <div>
+        <div class="q-text">State and prove Gauss's Law in electrostatics. Apply it to find electric field due to an infinite line charge.</div>
+        <div class="freq-tags">
+          <span class="freq-tag freq-high">🔴 Very High Freq</span>
+          <span class="freq-tag marks-tag">4 Marks</span>
+          <span class="freq-tag freq-ch">Ch 8</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-label">✅ Model Answer</div>
+      <div class="ans-text">
+        <p><strong>Gauss's Law:</strong> The total electric flux through any closed surface (Gaussian surface) is equal to 1/ε₀ times the total charge enclosed.</p>
+        <div class="a-eq">φ = ∮ E·dA = Q<sub>enc</sub>/ε₀</div>
+        <p><strong>Application — infinite line charge:</strong></p>
+        <p>Consider a Gaussian cylindrical surface of radius r and length L around the line charge (linear charge density λ).</p>
+        <p>Flux through curved surface = E × 2πrL (E uniform and ⊥ to surface)</p>
+        <p>Q<sub>enc</sub> = λL</p>
+        <p>By Gauss's Law: E × 2πrL = λL/ε₀</p>
+        <div class="a-eq">∴ E = λ / (2πε₀r)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-header">
+      <span class="q-num">Q8</span>
+      <div>
+        <div class="q-text">Derive an expression for energy stored in a parallel plate capacitor. What is energy density?</div>
+        <div class="freq-tags">
+          <span class="freq-tag freq-high">🔴 High Freq</span>
+          <span class="freq-tag marks-tag">3 Marks</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-label">✅ Model Answer</div>
+      <div class="ans-text">
+        <p>When a capacitor is charged from 0 to Q, small work is done against repulsion.</p>
+        <p>Work done = dW = V dq = (q/C) dq</p>
+        <p>Total energy stored:</p>
+        <div class="a-eq">U = ∫₀^Q (q/C) dq = Q²/2C = ½CV² = ½QV</div>
+        <p><strong>Energy density</strong> (energy per unit volume between plates):</p>
+        <p>V = Ed, A·d = volume</p>
+        <div class="a-eq">u = U/(Ad) = ½ε₀E²</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-header">
+      <span class="q-num">Q9</span>
+      <div>
+        <div class="q-text">Explain the working of a potentiometer. How is it used to compare EMFs of two cells?</div>
+        <div class="freq-tags">
+          <span class="freq-tag freq-high">🔴 Very High Freq</span>
+          <span class="freq-tag marks-tag">4 Marks</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-label">✅ Model Answer</div>
+      <div class="ans-text">
+        <p><strong>Principle:</strong> When a steady current flows through a uniform resistance wire, the potential drop across any length is directly proportional to that length. V ∝ l</p>
+        <p><strong>Construction:</strong> A long resistance wire AB connected to a battery (driver cell) through a rheostat. A jockey slides along the wire. The cell to be measured is connected between A and the jockey through a galvanometer.</p>
+        <p><strong>Comparison of EMFs:</strong> Connect cell E₁; find balancing length l₁ (G reads zero). Then connect cell E₂; find balancing length l₂.</p>
+        <div class="a-eq">E₁/E₂ = l₁/l₂</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-divider">
+    <div class="td-line"></div>
+    <div class="td-label">🧲 Magnetism &amp; Electromagnetic Induction</div>
+    <div class="td-line"></div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-header">
+      <span class="q-num">Q10</span>
+      <div>
+        <div class="q-text">State and explain Faraday's laws of electromagnetic induction. State Lenz's law.</div>
+        <div class="freq-tags">
+          <span class="freq-tag freq-high">🔴 Very High Freq</span>
+          <span class="freq-tag marks-tag">4 Marks</span>
+          <span class="freq-tag freq-ch">Ch 12</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-label">✅ Model Answer</div>
+      <div class="ans-text">
+        <p><strong>Faraday's First Law:</strong> Whenever magnetic flux linked with a closed circuit changes, an EMF is induced in the circuit. The EMF lasts as long as the flux is changing.</p>
+        <p><strong>Faraday's Second Law:</strong> The magnitude of the induced EMF is directly proportional to the rate of change of magnetic flux.</p>
+        <div class="a-eq">ε = −dΦ/dt = −N · d(BA cosθ)/dt</div>
+        <p><strong>Lenz's Law:</strong> The direction of induced current is such that it opposes the change in magnetic flux that causes it. This is consistent with energy conservation — work must be done to change the flux.</p>
+        <p><strong>Example:</strong> When N pole of a magnet approaches a coil, induced current in coil creates N pole facing the magnet (opposing approach).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-header">
+      <span class="q-num">Q11</span>
+      <div>
+        <div class="q-text">Derive an expression for self-inductance of a solenoid.</div>
+        <div class="freq-tags">
+          <span class="freq-tag freq-high">🔴 High Freq</span>
+          <span class="freq-tag marks-tag">3 Marks</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-label">✅ Model Answer</div>
+      <div class="ans-text">
+        <p>For a solenoid of length l, N turns, cross-sectional area A, carrying current I:</p>
+        <p>Magnetic field inside: B = μ₀nI = μ₀(N/l)I</p>
+        <p>Flux through one turn: Φ₁ = BA = μ₀NIA/l</p>
+        <p>Total flux linkage: NΦ₁ = μ₀N²IA/l</p>
+        <p>By definition, L = NΦ/I:</p>
+        <div class="a-eq">L = μ₀N²A/l = μ₀n²Al</div>
+        <p>Where n = N/l is turns per unit length. L depends only on geometry and permeability of core material.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-divider">
+    <div class="td-line"></div>
+    <div class="td-label">🔄 AC Circuits &amp; Modern Physics</div>
+    <div class="td-line"></div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-header">
+      <span class="q-num">Q12</span>
+      <div>
+        <div class="q-text">Explain resonance in a series LCR circuit. Derive the condition for resonance and expression for resonant frequency.</div>
+        <div class="freq-tags">
+          <span class="freq-tag freq-high">🔴 Very High Freq</span>
+          <span class="freq-tag marks-tag">4 Marks</span>
+          <span class="freq-tag freq-ch">Ch 13</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-label">✅ Model Answer</div>
+      <div class="ans-text">
+        <p>In series LCR circuit, impedance Z = √[R² + (X_L − X_C)²]</p>
+        <p>At resonance, impedance is minimum and current is maximum. This occurs when X_L = X_C:</p>
+        <div class="a-eq">ωL = 1/ωC → ω₀² = 1/LC → ω₀ = 1/√(LC)</div>
+        <div class="a-eq">f₀ = 1 / (2π√LC)</div>
+        <p><strong>At resonance:</strong> Z = R (purely resistive), current I = V/R (maximum), phase difference φ = 0 (V and I in phase).</p>
+        <p><strong>Sharpness of resonance / Q-factor</strong>: Q = ω₀L/R = 1/ω₀CR = (1/R)√(L/C). Higher Q = sharper resonance.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-header">
+      <span class="q-num">Q13</span>
+      <div>
+        <div class="q-text">Explain Einstein's photoelectric equation. What are the conclusions drawn from the photoelectric effect experiment?</div>
+        <div class="freq-tags">
+          <span class="freq-tag freq-high">🔴 Very High Freq</span>
+          <span class="freq-tag marks-tag">4 Marks</span>
+          <span class="freq-tag freq-ch">Ch 14</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-label">✅ Model Answer</div>
+      <div class="ans-text">
+        <p><strong>Einstein's Photoelectric Equation:</strong> A photon of energy hν is absorbed by an electron in the metal. Part of this energy is used to do work against the work function φ (minimum energy to liberate electron), and remaining becomes KE of electron.</p>
+        <div class="a-eq">KE<sub>max</sub> = hν − φ = hν − hν₀ = h(ν − ν₀)</div>
+        <p><strong>Conclusions:</strong></p>
+        <p>1. Threshold frequency ν₀: If ν &lt; ν₀, no emission regardless of intensity.</p>
+        <p>2. KE<sub>max</sub> depends on frequency, not on intensity — confirmed by equation.</p>
+        <p>3. Increasing intensity increases number of photons → more electrons emitted → more photocurrent.</p>
+        <p>4. Stopping potential V₀ = KE<sub>max</sub>/e = h(ν−ν₀)/e</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-header">
+      <span class="q-num">Q14</span>
+      <div>
+        <div class="q-text">State Bohr's postulates for hydrogen atom. Derive an expression for the radius of nth orbit.</div>
+        <div class="freq-tags">
+          <span class="freq-tag freq-high">🔴 Very High Freq</span>
+          <span class="freq-tag marks-tag">4 Marks</span>
+          <span class="freq-tag freq-ch">Ch 15</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-label">✅ Model Answer</div>
+      <div class="ans-text">
+        <p><strong>Bohr's Postulates:</strong></p>
+        <p>1. Electrons revolve around nucleus in certain allowed circular orbits without radiating energy.</p>
+        <p>2. Only those orbits are allowed where angular momentum is an integral multiple of h/2π: L = mvr = nh/2π</p>
+        <p>3. When electron jumps from higher to lower orbit, energy is emitted: hν = E<sub>n₂</sub> − E<sub>n₁</sub></p>
+        <p><strong>Derivation of r<sub>n</sub>:</strong></p>
+        <p>Centripetal force = Coulomb force: mv²/r = e²/4πε₀r²</p>
+        <p>Bohr condition: mvr = nh/2π → v = nh/2πmr</p>
+        <p>Substituting: m(nh/2πmr)²/r = e²/4πε₀r²</p>
+        <div class="a-eq">r<sub>n</sub> = n²h²ε₀ / πme² = n² × 0.529 Å = n² × a₀</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-header">
+      <span class="q-num">Q15</span>
+      <div>
+        <div class="q-text">What is a transistor? Explain how a transistor works as a switch (in CE configuration).</div>
+        <div class="freq-tags">
+          <span class="freq-tag freq-med">🟠 Medium Freq</span>
+          <span class="freq-tag marks-tag">3 Marks</span>
+          <span class="freq-tag freq-ch">Ch 16</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-label">✅ Model Answer</div>
+      <div class="ans-text">
+        <p><strong>Transistor:</strong> A three-terminal semiconductor device (Emitter, Base, Collector). NPN: two n-type layers with p-type base. PNP: reverse.</p>
+        <p><strong>Transistor as Switch (CE configuration):</strong></p>
+        <p><strong>Cut-off (OFF) state:</strong> V<sub>in</sub> = 0 V; base-emitter junction not forward biased; I_B = 0; I_C = 0; V<sub>out</sub> = V<sub>CC</sub> (HIGH). Transistor is OFF.</p>
+        <p><strong>Saturation (ON) state:</strong> V<sub>in</sub> = high; base-emitter forward biased; I_B is large; I_C = β·I_B saturates; V<sub>CE</sub> ≈ 0; V<sub>out</sub> ≈ 0 (LOW). Transistor is ON.</p>
+        <p>Thus it acts as ON/OFF switch — input HIGH → output LOW (inverted). This is also an NOT gate.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUMMARY TABLE -->
+  <div class="topic-divider">
+    <div class="td-line"></div>
+    <div class="td-label">📊 Frequency Summary</div>
+    <div class="td-line"></div>
+  </div>
+  <div style="background:#fff;border-radius:12px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.07);overflow-x:auto;">
+    <table class="sum-table">
+      <tr><th>Chapter</th><th>Most Repeated Topics</th><th>Marks</th><th>Frequency</th></tr>
+      <tr><td>Ch 1 Rotational Dynamics</td><td>Parallel axis theorem, Conservation of L, Rolling KE</td><td><span class="mark-pill m3">3–4</span></td><td>🔴 Every year</td></tr>
+      <tr><td>Ch 7 Wave Optics</td><td>Huygens' principle, YDSE fringe width, Brewster's angle</td><td><span class="mark-pill m4">4</span></td><td>🔴 Every year</td></tr>
+      <tr><td>Ch 8 Electrostatics</td><td>Gauss's Law, Energy in capacitor, Potential</td><td><span class="mark-pill m3">3–4</span></td><td>🔴 Every year</td></tr>
+      <tr><td>Ch 9 Current Electricity</td><td>Potentiometer, Kirchhoff's Laws, Drift velocity</td><td><span class="mark-pill m3">3–4</span></td><td>🔴 Every year</td></tr>
+      <tr><td>Ch 12 EMI</td><td>Faraday's Laws, Self-inductance, AC generator</td><td><span class="mark-pill m4">4</span></td><td>🔴 Every year</td></tr>
+      <tr><td>Ch 13 AC Circuits</td><td>Resonance, Power factor, Transformer</td><td><span class="mark-pill m4">4</span></td><td>🔴 Every year</td></tr>
+      <tr><td>Ch 14 Dual Nature</td><td>Photoelectric equation, de Broglie</td><td><span class="mark-pill m3">3–4</span></td><td>🔴 Every year</td></tr>
+      <tr><td>Ch 15 Atoms &amp; Nuclei</td><td>Bohr's postulates, radius, Radioactive decay</td><td><span class="mark-pill m4">4</span></td><td>🔴 Every year</td></tr>
+      <tr><td>Ch 10 Magnetic Fields</td><td>Biot-Savart, Galvanometer conversion</td><td><span class="mark-pill m3">3</span></td><td>🟠 Most years</td></tr>
+      <tr><td>Ch 16 Semiconductors</td><td>p-n junction, Transistor as switch, Logic gates</td><td><span class="mark-pill m3">3</span></td><td>🟠 Most years</td></tr>
+    </table>
+  </div>
+
+</div><!-- end qbank section -->
+
+<!-- ============================= MCQ SECTION ============================= -->
+<div class="section" id="tab-mcq">
+
+  <div class="topic-divider"><div class="td-line"></div><div class="td-label">MCQs — Last 5 Years Pattern</div><div class="td-line"></div></div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">1. The moment of inertia of a solid sphere of mass M and radius R about its diameter is:</div>
+    <ul class="mcq-opts">
+      <li>a) MR²</li>
+      <li>b) 2/3 MR²</li>
+      <li class="correct">c) 2/5 MR²</li>
+      <li>d) 1/2 MR²</li>
+    </ul>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">2. In Young's double slit experiment, if wavelength is increased, fringe width will:</div>
+    <ul class="mcq-opts">
+      <li>a) Decrease</li>
+      <li class="correct">b) Increase</li>
+      <li>c) Remain same</li>
+      <li>d) First increase then decrease</li>
+    </ul>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">3. When a dielectric is inserted between plates of a capacitor with the battery still connected, which quantity increases?</div>
+    <ul class="mcq-opts">
+      <li>a) Voltage across the capacitor</li>
+      <li class="correct">b) Charge stored</li>
+      <li>c) Electric field between plates</li>
+      <li>d) Distance between plates</li>
+    </ul>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">4. The resonant frequency of a series LCR circuit is 500 Hz. If capacitance is made 4 times, the new resonant frequency will be:</div>
+    <ul class="mcq-opts">
+      <li>a) 1000 Hz</li>
+      <li>b) 2000 Hz</li>
+      <li class="correct">c) 250 Hz</li>
+      <li>d) 125 Hz</li>
+    </ul>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">5. The photoelectric work function of a metal is 4 eV. Light of wavelength 2000 Å falls on it. The maximum kinetic energy of emitted photoelectrons is: (h = 6.63×10⁻³⁴ J·s, c = 3×10⁸ m/s)</div>
+    <ul class="mcq-opts">
+      <li>a) 1.5 eV</li>
+      <li class="correct">b) 2.2 eV</li>
+      <li>c) 3.4 eV</li>
+      <li>d) 4.0 eV</li>
+    </ul>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">6. In Bohr's model, the radius of nth orbit is proportional to:</div>
+    <ul class="mcq-opts">
+      <li>a) n</li>
+      <li>b) 1/n</li>
+      <li class="correct">c) n²</li>
+      <li>d) 1/n²</li>
+    </ul>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">7. Which type of material is used for the core of an electromagnet?</div>
+    <ul class="mcq-opts">
+      <li>a) Steel — high retentivity, high coercivity</li>
+      <li class="correct">b) Soft iron — high permeability, low retentivity</li>
+      <li>c) Aluminium — paramagnetic</li>
+      <li>d) Bismuth — diamagnetic</li>
+    </ul>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">8. The rms speed of gas molecules is proportional to:</div>
+    <ul class="mcq-opts">
+      <li>a) T</li>
+      <li>b) T²</li>
+      <li class="correct">c) √T</li>
+      <li>d) 1/T</li>
+    </ul>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">9. For an adiabatic process, the correct relation is:</div>
+    <ul class="mcq-opts">
+      <li>a) PV = constant</li>
+      <li class="correct">b) PV^γ = constant</li>
+      <li>c) P/T = constant</li>
+      <li>d) VT = constant</li>
+    </ul>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">10. NAND gate output is 0 when:</div>
+    <ul class="mcq-opts">
+      <li>a) Both inputs are 0</li>
+      <li>b) Any one input is 1</li>
+      <li class="correct">c) Both inputs are 1</li>
+      <li>d) Both inputs are 0 and 1</li>
+    </ul>
+  </div>
+
+</div><!-- end MCQ section -->
+
+<!-- ============================= ALL FORMULAS ============================= -->
+<div class="section" id="tab-formulas">
+
+  <div style="background:#fff;border-radius:14px;padding:18px;box-shadow:0 2px 10px rgba(0,0,0,.08);margin-bottom:20px;">
+    <div class="kp-title">⚙️ Ch 1 — Rotational Dynamics</div>
+    <div class="formula-grid">
+      <div class="formula-box"><div class="f-label">Torque</div><div class="f-eq">τ = Iα = r×F</div></div>
+      <div class="formula-box"><div class="f-label">Angular Momentum</div><div class="f-eq">L = Iω</div></div>
+      <div class="formula-box"><div class="f-label">Ring MOI</div><div class="f-eq">I = MR²</div></div>
+      <div class="formula-box"><div class="f-label">Disc MOI</div><div class="f-eq">I = ½MR²</div></div>
+      <div class="formula-box"><div class="f-label">Solid sphere</div><div class="f-eq">I = 2/5 MR²</div></div>
+      <div class="formula-box"><div class="f-label">Hollow sphere</div><div class="f-eq">I = 2/3 MR²</div></div>
+      <div class="formula-box"><div class="f-label">Parallel axes</div><div class="f-eq">I = Icm + Mh²</div></div>
+      <div class="formula-box"><div class="f-label">Rolling KE total</div><div class="f-eq">KE = 7/10 mv²</div></div>
+    </div>
+
+    <div class="kp-title" style="margin-top:16px;">💧 Ch 2 — Fluids</div>
+    <div class="formula-grid">
+      <div class="formula-box"><div class="f-label">Bernoulli</div><div class="f-eq">P+½ρv²+ρgh = C</div></div>
+      <div class="formula-box"><div class="f-label">Terminal velocity</div><div class="f-eq">vT = 2r²(ρ-σ)g/9η</div></div>
+      <div class="formula-box"><div class="f-label">Surface tension</div><div class="f-eq">T = F/L</div></div>
+      <div class="formula-box"><div class="f-label">Capillary</div><div class="f-eq">h = 2Tcosθ/ρgr</div></div>
+    </div>
+
+    <div class="kp-title" style="margin-top:16px;">🌀 Ch 5 — Oscillations</div>
+    <div class="formula-grid">
+      <div class="formula-box"><div class="f-label">SHM displacement</div><div class="f-eq">x = Asin(ωt+φ)</div></div>
+      <div class="formula-box"><div class="f-label">SHM velocity</div><div class="f-eq">v = ω√(A²−x²)</div></div>
+      <div class="formula-box"><div class="f-label">Total Energy</div><div class="f-eq">E = ½mω²A²</div></div>
+      <div class="formula-box"><div class="f-label">Spring period</div><div class="f-eq">T = 2π√(m/k)</div></div>
+      <div class="formula-box"><div class="f-label">Pendulum period</div><div class="f-eq">T = 2π√(L/g)</div></div>
+      <div class="formula-box"><div class="f-label">ω</div><div class="f-eq">ω = 2π/T = 2πf</div></div>
+    </div>
+
+    <div class="kp-title" style="margin-top:16px;">🌊 Ch 6 &amp; 7 — Waves &amp; Optics</div>
+    <div class="formula-grid">
+      <div class="formula-box"><div class="f-label">String fundamental</div><div class="f-eq">f = v/2L</div></div>
+      <div class="formula-box"><div class="f-label">Closed pipe f₁</div><div class="f-eq">f = v/4L</div></div>
+      <div class="formula-box"><div class="f-label">Beat frequency</div><div class="f-eq">f_beat = |f₁−f₂|</div></div>
+      <div class="formula-box"><div class="f-label">Fringe width</div><div class="f-eq">β = λD/d</div></div>
+      <div class="formula-box"><div class="f-label">Malus' Law</div><div class="f-eq">I = I₀cos²θ</div></div>
+      <div class="formula-box"><div class="f-label">Brewster</div><div class="f-eq">tan iB = n</div></div>
+    </div>
+
+    <div class="kp-title" style="margin-top:16px;">⚡ Ch 8 &amp; 9 — Electrostatics &amp; Current</div>
+    <div class="formula-grid">
+      <div class="formula-box"><div class="f-label">Coulomb</div><div class="f-eq">F = kq₁q₂/r²</div></div>
+      <div class="formula-box"><div class="f-label">Gauss's Law</div><div class="f-eq">φ = Qenc/ε₀</div></div>
+      <div class="formula-box"><div class="f-label">Capacitance</div><div class="f-eq">C = ε₀KA/d</div></div>
+      <div class="formula-box"><div class="f-label">Energy in C</div><div class="f-eq">U = ½CV² = Q²/2C</div></div>
+      <div class="formula-box"><div class="f-label">Ohm's law</div><div class="f-eq">V = IR</div></div>
+      <div class="formula-box"><div class="f-label">Drift velocity</div><div class="f-eq">vd = I/nAe</div></div>
+      <div class="formula-box"><div class="f-label">Power</div><div class="f-eq">P = VI = I²R</div></div>
+      <div class="formula-box"><div class="f-label">Metre bridge</div><div class="f-eq">R/S = l/(100-l)</div></div>
+    </div>
+
+    <div class="kp-title" style="margin-top:16px;">🧲 Ch 10–13 — Magnetism &amp; AC</div>
+    <div class="formula-grid">
+      <div class="formula-box"><div class="f-label">Solenoid B</div><div class="f-eq">B = μ₀nI</div></div>
+      <div class="formula-box"><div class="f-label">Force on wire</div><div class="f-eq">F = BILsinθ</div></div>
+      <div class="formula-box"><div class="f-label">Faraday</div><div class="f-eq">ε = −dΦ/dt</div></div>
+      <div class="formula-box"><div class="f-label">Self inductance</div><div class="f-eq">L = μ₀N²A/l</div></div>
+      <div class="formula-box"><div class="f-label">Impedance LCR</div><div class="f-eq">Z = √(R²+(XL-XC)²)</div></div>
+      <div class="formula-box"><div class="f-label">Resonance f</div><div class="f-eq">f₀ = 1/2π√(LC)</div></div>
+      <div class="formula-box"><div class="f-label">Transformer</div><div class="f-eq">V₁/V₂ = N₁/N₂</div></div>
+      <div class="formula-box"><div class="f-label">RMS</div><div class="f-eq">Vrms = V₀/√2</div></div>
+    </div>
+
+    <div class="kp-title" style="margin-top:16px;">⚛️ Ch 14–15 — Modern Physics</div>
+    <div class="formula-grid">
+      <div class="formula-box"><div class="f-label">Photoelectric</div><div class="f-eq">KEmax = hν − φ</div></div>
+      <div class="formula-box"><div class="f-label">de Broglie</div><div class="f-eq">λ = h/mv</div></div>
+      <div class="formula-box"><div class="f-label">Bohr radius</div><div class="f-eq">rn = n²×0.529 Å</div></div>
+      <div class="formula-box"><div class="f-label">Energy level H</div><div class="f-eq">En = −13.6/n² eV</div></div>
+      <div class="formula-box"><div class="f-label">Radioactive decay</div><div class="f-eq">N = N₀e^(−λt)</div></div>
+      <div class="formula-box"><div class="f-label">Half-life</div><div class="f-eq">T½ = 0.693/λ</div></div>
+      <div class="formula-box"><div class="f-label">Binding energy</div><div class="f-eq">BE = Δm × 931.5 MeV</div></div>
+      <div class="formula-box"><div class="f-label">Stefan's Law</div><div class="f-eq">E = σT⁴</div></div>
+    </div>
+  </div>
+
+</div><!-- end formulas section -->
+
+</div><!-- end content-wrap -->
+
+<script>
+function showTab(tabId) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tabId).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo(0, 0);
+}
+</script>
+
+</body>
+</html>
