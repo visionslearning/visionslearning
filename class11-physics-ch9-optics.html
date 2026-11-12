@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 11 Physics — Chapter 9: Optics | Visions Classes</title>
+<style>
+  :root {
+    --p1: #0d47a1;
+    --p2: #1565c0;
+    --p3: #1976d2;
+    --acc: #f59e0b;
+    --green: #15803d;
+    --red: #c0392b;
+    --bg: #f0f4ff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); color: #1a1a1a; }
+
+  .page-header {
+    background: linear-gradient(135deg, #0a1628, #0d47a1, #1565c0);
+    color: #fff; padding: 26px 20px 20px; text-align: center;
+  }
+  .badge {
+    display: inline-block; background: var(--acc); color: #1a1a1a;
+    font-size: .72rem; font-weight: 900; padding: 4px 14px;
+    border-radius: 20px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px;
+  }
+  .page-header h1 { font-size: 1.5rem; font-weight: 900; margin-bottom: 5px; }
+  .page-header p { font-size: .88rem; opacity: .85; }
+  .wmark {
+    background: rgba(255,255,255,.12); text-align: center; padding: 6px;
+    font-size: .75rem; font-weight: 700; letter-spacing: 2px; color: rgba(255,255,255,.75);
+  }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 7px;
+    color: rgba(255,255,255,.85); text-decoration: none;
+    font-size: .82rem; font-weight: 700; padding: 7px 14px;
+    background: rgba(255,255,255,.15); border-radius: 20px; margin-bottom: 12px;
+  }
+
+  /* TABS */
+  .tab-bar {
+    display: flex; overflow-x: auto; gap: 0;
+    background: #0a2a6e; padding: 0 10px;
+    position: sticky; top: 0; z-index: 100; scrollbar-width: none;
+  }
+  .tab-bar::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex-shrink: 0; background: none; border: none;
+    color: rgba(255,255,255,.75); padding: 11px 15px;
+    font-size: .78rem; font-weight: 700; cursor: pointer;
+    border-bottom: 3px solid transparent; white-space: nowrap; transition: all .2s;
+  }
+  .tab-btn.active, .tab-btn:hover { color: #fff; border-bottom-color: var(--acc); }
+
+  .wrap { max-width: 880px; margin: 0 auto; padding: 20px 14px 70px; }
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* CONCEPT BLOCK */
+  .cb {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 10px rgba(13,71,161,.1);
+    margin-bottom: 22px; border-left: 5px solid var(--p2);
+  }
+  .cb-head {
+    background: linear-gradient(135deg, var(--p1), var(--p2));
+    color: #fff; padding: 13px 18px; display: flex; align-items: center; gap: 12px;
+  }
+  .cb-head .tag {
+    background: rgba(255,255,255,.2); border-radius: 8px;
+    padding: 3px 10px; font-size: .72rem; font-weight: 900; letter-spacing: 1px; white-space: nowrap;
+  }
+  .cb-head h2 { font-size: .98rem; font-weight: 800; }
+  .cb-body { padding: 16px 18px; }
+
+  .kp-title {
+    font-size: .74rem; font-weight: 900; color: var(--p1);
+    text-transform: uppercase; letter-spacing: 1px;
+    margin: 0 0 8px; padding-bottom: 4px; border-bottom: 2px solid #dbeafe;
+  }
+  .kp-list { list-style: none; padding: 0; margin-bottom: 14px; }
+  .kp-list li {
+    padding: 5px 0 5px 20px; position: relative;
+    font-size: .88rem; line-height: 1.6; border-bottom: 1px solid #f0f4ff;
+  }
+  .kp-list li::before { content: "▸"; position: absolute; left: 0; color: var(--p3); font-weight: 900; }
+  .kp-list li strong { color: var(--p1); }
+
+  /* FORMULA GRID */
+  .fgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(185px, 1fr)); gap: 10px; margin: 10px 0 14px; }
+  .fbox { background: linear-gradient(135deg, #dbeafe, #e0e7ff); border: 1px solid #93c5fd; border-radius: 10px; padding: 10px 12px; text-align: center; }
+  .fbox .fl { font-size: .68rem; font-weight: 700; color: #555; margin-bottom: 4px; text-transform: uppercase; }
+  .fbox .feq { font-size: .95rem; font-weight: 900; color: var(--p1); font-family: 'Courier New', monospace; }
+
+  /* DIAGRAM */
+  .diag {
+    background: #0a1628; border-radius: 10px; padding: 14px 16px;
+    margin: 10px 0; overflow-x: auto;
+  }
+  .diag pre { color: #bfdbfe; font-family: 'Courier New', monospace; font-size: .8rem; line-height: 1.7; white-space: pre; }
+
+  /* TOPIC DIVIDER */
+  .tdiv { display: flex; align-items: center; gap: 10px; margin: 24px 0 14px; }
+  .tdiv .tlab {
+    background: linear-gradient(135deg, var(--p1), #7b1fa2);
+    color: #fff; padding: 5px 16px; border-radius: 20px;
+    font-size: .74rem; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap;
+  }
+  .tdiv .tline { flex: 1; height: 2px; background: #c7d2fe; }
+
+  /* Q CARDS */
+  .qcard { background: #fff; border-radius: 13px; margin-bottom: 18px; overflow: hidden; box-shadow: 0 2px 10px rgba(13,71,161,.1); }
+  .qcard-h { background: linear-gradient(135deg, #0a1628, #0d47a1); color: #fff; padding: 13px 16px; display: flex; align-items: flex-start; gap: 12px; }
+  .qno { background: var(--acc); color: #1a1a1a; font-size: .72rem; font-weight: 900; padding: 3px 9px; border-radius: 10px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
+  .qtxt { font-size: .9rem; font-weight: 700; line-height: 1.5; }
+  .ftags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 7px; }
+  .ftag { font-size: .65rem; font-weight: 800; padding: 2px 8px; border-radius: 10px; text-transform: uppercase; }
+  .fhigh { background: #fee2e2; color: #c0392b; }
+  .fmed { background: #fef3c7; color: #d97706; }
+  .fmark { background: #dbeafe; color: var(--p1); }
+
+  .ans-body { padding: 14px 16px; }
+  .ans-lbl { font-size: .72rem; font-weight: 900; color: var(--green); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .ans-txt { font-size: .88rem; line-height: 1.65; color: #2d2d2d; }
+  .ans-txt p { margin-bottom: 8px; }
+  .ans-txt strong { color: var(--p1); }
+  .a-eq {
+    background: #dbeafe; border-left: 4px solid var(--p2);
+    padding: 8px 14px; border-radius: 0 8px 8px 0;
+    font-family: monospace; font-size: .93rem; font-weight: 700; color: var(--p1); margin: 8px 0;
+  }
+  .a-step { display: block; background: #f0f4ff; border-radius: 7px; padding: 6px 12px; font-family: monospace; font-size: .86rem; color: var(--p1); margin: 4px 0; font-weight: 700; }
+
+  /* NUMERICALS */
+  .num-block { background: linear-gradient(135deg, #0a1628, #0d47a1); border-radius: 13px; padding: 16px 18px; margin-bottom: 16px; color: #fff; }
+  .num-q { font-size: .9rem; font-weight: 700; margin-bottom: 10px; }
+  .num-given { background: rgba(255,255,255,.1); border-radius: 8px; padding: 8px 12px; margin: 8px 0; font-size: .85rem; font-family: monospace; line-height: 1.8; }
+  .num-sol { background: rgba(245,158,11,.15); border-left: 3px solid var(--acc); border-radius: 0 8px 8px 0; padding: 8px 12px; margin: 8px 0; font-size: .85rem; font-family: monospace; line-height: 1.9; }
+  .num-ans { background: var(--acc); color: #1a1a1a; border-radius: 8px; padding: 7px 14px; font-size: .88rem; font-weight: 900; display: inline-block; margin-top: 8px; }
+
+  /* MCQ */
+  .mcq-block { background: #fff; border-radius: 12px; margin-bottom: 14px; padding: 14px 16px; box-shadow: 0 2px 8px rgba(13,71,161,.08); border-left: 4px solid var(--acc); }
+  .mcq-q { font-size: .9rem; font-weight: 700; margin-bottom: 10px; }
+  .mcq-opts { list-style: none; padding: 0; }
+  .mcq-opts li { padding: 5px 10px; border-radius: 6px; font-size: .85rem; margin-bottom: 4px; border: 1px solid #dbeafe; }
+  .mcq-opts li.correct { background: #dcfce7; border-color: #86efac; font-weight: 700; color: var(--green); }
+  .mcq-opts li.correct::before { content: "✅ "; }
+
+  /* TABLE */
+  .sum-tbl { width: 100%; border-collapse: collapse; font-size: .83rem; }
+  .sum-tbl th { background: var(--p1); color: #fff; padding: 8px 10px; text-align: left; font-weight: 800; }
+  .sum-tbl td { padding: 7px 10px; border-bottom: 1px solid #dbeafe; vertical-align: top; }
+  .sum-tbl tr:nth-child(even) td { background: #f0f4ff; }
+
+  @media (max-width: 600px) {
+    .fgrid { grid-template-columns: 1fr 1fr; }
+    .page-header h1 { font-size: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <a href="notes-class11.html" class="back-link">← Class 11 Notes</a>
+  <div class="badge">⚡ Chapter 9 · Class 11 · Maharashtra Board</div>
+  <h1>🔬 Optics</h1>
+  <p>IMP Notes · Ray Optics · Mirrors · Lenses · TIR · Prism · Optical Instruments · Q&amp;A</p>
+</div>
+<div class="wmark">VISIONS CLASSES · SHASHIKANT SIR · AMBARNATH</div>
+
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab('notes',this)">📖 IMP Notes</button>
+  <button class="tab-btn" onclick="showTab('qbank',this)">🔴 IMP Q&amp;A</button>
+  <button class="tab-btn" onclick="showTab('numericals',this)">🔢 Numericals</button>
+  <button class="tab-btn" onclick="showTab('mcq',this)">🔵 MCQs</button>
+  <button class="tab-btn" onclick="showTab('formulas',this)">📐 Formulas</button>
+</div>
+
+<div class="wrap">
+
+<!-- ═══════════════════════ NOTES ═══════════════════════ -->
+<div class="section active" id="tab-notes">
+
+  <!-- 9.1 NATURE OF LIGHT -->
+  <div class="cb">
+    <div class="cb-head"><span class="tag">9.1 & 9.2</span><h2>🌟 Nature of Light &amp; Introduction</h2></div>
+    <div class="cb-body">
+      <div class="kp-title">🔑 Key Points</div>
+      <ul class="kp-list">
+        <li><strong>Optics</strong> = science of light (like acoustics is science of sound)</li>
+        <li><strong>Speed of light in vacuum</strong>: c = 3 × 10⁸ m/s (exact: 299792458 m/s) — maximum possible speed (Einstein's relativity)</li>
+        <li><strong>Speed in medium</strong>: v = c/n; where n = absolute refractive index of medium</li>
+        <li><strong>Dual nature of light</strong>: light is energy-carrier photons guided by EM wave rules — established by experiment</li>
+        <li><strong>Three categories of light phenomena</strong>:</li>
+        <li>→ <strong>Ray (Geometrical) Optics</strong>: reflection, refraction, TIR, double refraction — uses ray model</li>
+        <li>→ <strong>Wave (Physical) Optics</strong>: interference, diffraction, polarization, Doppler effect — uses EM wave model</li>
+        <li>→ <strong>Particle (Quantum) Optics</strong>: photoelectric effect, Compton effect, spectral lines — uses photon/quantum model</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 9.3 RAY OPTICS -->
+  <div class="cb">
+    <div class="cb-head"><span class="tag">9.3</span><h2>🔭 Ray Optics — Fundamental Laws</h2></div>
+    <div class="cb-body">
+      <div class="kp-title">🔑 Four Fundamental Principles</div>
+      <ul class="kp-list">
+        <li><strong>(i)</strong> Light travels in a straight line in a homogeneous and isotropic medium</li>
+        <li><strong>(ii) Law of Reflection</strong>: ∠i = ∠r; incident ray, reflected ray, and normal are coplanar</li>
+        <li><strong>(iii) Law of Refraction (Snell's Law)</strong>: n₁ sin i = n₂ sin r; incident ray, refracted ray and normal are coplanar</li>
+        <li><strong>(iv)</strong> Principle of reversibility — if direction of light ray is reversed, it retraces original path</li>
+        <li><strong>Homogeneous medium</strong>: same properties everywhere in the medium</li>
+        <li><strong>Isotropic medium</strong>: same properties in all directions</li>
+        <li><strong>Refractive index</strong> n = c/v = sin i / sin r (Snell's law form)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- REFLECTION — MIRRORS -->
+  <div class="cb">
+    <div class="cb-head"><span class="tag">9.4</span><h2>🪞 Reflection at Curved Surfaces (Mirrors)</h2></div>
+    <div class="cb-body">
+      <div class="kp-title">🔑 Key Terms</div>
+      <ul class="kp-list">
+        <li><strong>Pole (P)</strong>: centre of reflecting surface of mirror</li>
+        <li><strong>Centre of curvature (C)</strong>: centre of sphere of which mirror is a part</li>
+        <li><strong>Radius of curvature (R)</strong>: radius of that sphere; R = 2f</li>
+        <li><strong>Principal focus (F)</strong>: point where parallel rays meet (concave) or appear to diverge from (convex) after reflection</li>
+        <li><strong>Focal length (f)</strong>: distance PF; f = R/2</li>
+        <li><strong>Concave mirror</strong>: converging; centre of curvature in front of mirror</li>
+        <li><strong>Convex mirror</strong>: diverging; centre of curvature behind mirror; always forms virtual, erect, diminished image</li>
+      </ul>
+
+      <div class="kp-title">📐 Mirror Formula &amp; Magnification</div>
+      <div class="fgrid">
+        <div class="fbox"><div class="fl">Mirror Formula</div><div class="feq">1/f = 1/v + 1/u</div></div>
+        <div class="fbox"><div class="fl">Focal length</div><div class="feq">f = R/2</div></div>
+        <div class="fbox"><div class="fl">Magnification</div><div class="feq">m = −v/u = h'/h</div></div>
+        <div class="fbox"><div class="fl">If m negative</div><div class="feq">real, inverted image</div></div>
+        <div class="fbox"><div class="fl">If m positive</div><div class="feq">virtual, erect image</div></div>
+        <div class="fbox"><div class="fl">|m| &gt; 1</div><div class="feq">magnified image</div></div>
+      </div>
+
+      <div class="kp-title">📋 Cartesian Sign Convention</div>
+      <ul class="kp-list">
+        <li>All distances measured from pole P</li>
+        <li>Distances in direction of incident light (usually left → right) are <strong>positive</strong></li>
+        <li>Distances opposite to incident light are <strong>negative</strong></li>
+        <li>Heights above principal axis are <strong>positive</strong>; below are <strong>negative</strong></li>
+        <li>For concave mirror: f &lt; 0, R &lt; 0 (focus in front)</li>
+        <li>For convex mirror: f &gt; 0, R &gt; 0 (focus behind)</li>
+      </ul>
+
+      <div class="kp-title">🗺️ Image Formation by Concave Mirror</div>
+      <div class="diag">
+<pre>
+  Object position     Image position        Nature
+  ─────────────────────────────────────────────────
+  At infinity         At F                  Real, inverted, point size
+  Beyond C            Between F and C       Real, inverted, diminished
+  At C                At C                  Real, inverted, same size
+  Between F and C     Beyond C              Real, inverted, magnified
+  At F                At infinity           Real, inverted, highly magnified
+  Between F and P     Behind mirror         Virtual, erect, magnified
+  ─────────────────────────────────────────────────
+  Convex mirror: Always virtual, erect, diminished (all positions)
+</pre>
+      </div>
+
+      <div class="kp-title">⭐ Uses</div>
+      <ul class="kp-list">
+        <li><strong>Concave mirror</strong>: shaving/makeup mirror, solar furnace, headlights, ophthalmoscope, search lights</li>
+        <li><strong>Convex mirror</strong>: rear-view mirror in vehicles (wider field of view), security mirrors in shops</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- REFRACTION -->
+  <div class="cb">
+    <div class="cb-head"><span class="tag">9.5</span><h2>🌊 Refraction of Light</h2></div>
+    <div class="cb-body">
+      <div class="kp-title">🔑 Key Points</div>
+      <ul class="kp-list">
+        <li><strong>Refraction</strong>: bending of light when it passes from one medium to another due to change in speed</li>
+        <li><strong>Snell's Law</strong>: n₁ sin i = n₂ sin r</li>
+        <li><strong>Denser medium</strong> (larger n): light bends towards normal; speed decreases</li>
+        <li><strong>Rarer medium</strong> (smaller n): light bends away from normal; speed increases</li>
+        <li><strong>Lateral displacement</strong>: a ray through a glass slab emerges parallel to incident ray but displaced sideways; d = t sin(i − r) / cos r</li>
+        <li><strong>Apparent depth</strong>: object in denser medium appears closer; n = real depth / apparent depth</li>
+        <li>Fish underwater sees objects outside at apparent depth; monkey sees fish at apparent depth = real depth / n</li>
+      </ul>
+      <div class="fgrid">
+        <div class="fbox"><div class="fl">Snell's Law</div><div class="feq">n₁ sin i = n₂ sin r</div></div>
+        <div class="fbox"><div class="fl">Refractive index</div><div class="feq">n = c/v = sin i/sin r</div></div>
+        <div class="fbox"><div class="fl">Apparent depth</div><div class="feq">n = d_real / d_app</div></div>
+        <div class="fbox"><div class="fl">Lateral displacement</div><div class="feq">d = t·sin(i−r)/cosr</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOTAL INTERNAL REFLECTION -->
+  <div class="cb" style="border-left-color:#c0392b;">
+    <div class="cb-head" style="background:linear-gradient(135deg,#7f0000,#c0392b);">
+      <span class="tag">9.6</span><h2>💎 Total Internal Reflection (TIR)</h2>
+    </div>
+    <div class="cb-body">
+      <div class="kp-title">🔑 Key Points</div>
+      <ul class="kp-list">
+        <li><strong>TIR</strong>: when light travels from denser to rarer medium and angle of incidence exceeds the critical angle — light is totally reflected back</li>
+        <li><strong>Conditions for TIR</strong>: (i) light must go from denser → rarer medium; (ii) angle of incidence must be greater than critical angle (i &gt; θ_c)</li>
+        <li><strong>Critical angle (θ_c)</strong>: angle of incidence for which angle of refraction = 90°</li>
+        <li><strong>Formula</strong>: sin θ_c = n₂/n₁ = 1/n (for glass-air: sin θ_c = 1/n_glass)</li>
+        <li>Higher refractive index → smaller critical angle → TIR easier</li>
+      </ul>
+
+      <div class="kp-title">⭐ Applications of TIR</div>
+      <ul class="kp-list">
+        <li><strong>Optical fibre</strong>: light undergoes repeated TIR inside glass fibre; used in internet cables, endoscopy, communication</li>
+        <li><strong>Diamond</strong>: high n (≈2.42) → very small θ_c (≈24°) → brilliant sparkle due to TIR from many facets</li>
+        <li><strong>Mirage</strong>: in hot desert, air near ground has lower n (less dense) → TIR of sky light → appears like water pool</li>
+        <li><strong>Rainbow</strong>: TIR + dispersion inside water droplets</li>
+        <li><strong>Prism as reflector</strong>: totally reflecting prisms (45°-45°-90°) used in periscopes, binoculars instead of mirrors</li>
+      </ul>
+
+      <div class="fgrid">
+        <div class="fbox"><div class="fl">Critical angle</div><div class="feq">sin θ_c = 1/n</div></div>
+        <div class="fbox"><div class="fl">Glass (n=1.5)</div><div class="feq">θ_c = 41.8°</div></div>
+        <div class="fbox"><div class="fl">Diamond (n=2.42)</div><div class="feq">θ_c ≈ 24.4°</div></div>
+        <div class="fbox"><div class="fl">Water (n=1.33)</div><div class="feq">θ_c ≈ 48.8°</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REFRACTION AT SPHERICAL SURFACE -->
+  <div class="cb">
+    <div class="cb-head"><span class="tag">9.7</span><h2>🔵 Refraction at Spherical Surface &amp; Lenses</h2></div>
+    <div class="cb-body">
+      <div class="kp-title">🔑 Refraction at Spherical Surface Formula</div>
+      <ul class="kp-list">
+        <li>For refraction at single spherical surface separating media n₁ and n₂:</li>
+        <li><strong>Formula</strong>: n₂/v − n₁/u = (n₂ − n₁)/R</li>
+        <li>R is positive if centre of curvature is on the transmission side (right)</li>
+      </ul>
+
+      <div class="kp-title">🔑 Lenses</div>
+      <ul class="kp-list">
+        <li><strong>Convex (converging) lens</strong>: thicker at centre; converges parallel rays to real focus; f &gt; 0</li>
+        <li><strong>Concave (diverging) lens</strong>: thinner at centre; diverges parallel rays; virtual focus; f &lt; 0</li>
+        <li><strong>Lens Maker's Formula</strong>: 1/f = (n−1)[1/R₁ − 1/R₂]; n = refractive index of lens material</li>
+        <li><strong>Lens Formula</strong>: 1/f = 1/v − 1/u</li>
+        <li><strong>Magnification</strong>: m = v/u = h'/h</li>
+        <li><strong>Power of lens</strong>: P = 1/f (in metres); unit = dioptre (D)</li>
+        <li><strong>Lenses in contact</strong>: P = P₁ + P₂; 1/f = 1/f₁ + 1/f₂</li>
+      </ul>
+
+      <div class="kp-title">🗺️ Image by Convex Lens</div>
+      <div class="diag">
+<pre>
+  Object position      Image position         Nature
+  ──────────────────────────────────────────────────────
+  At infinity          At F₂                  Real, inverted, point
+  Beyond 2F₁           Between F₂ and 2F₂     Real, inverted, diminished
+  At 2F₁               At 2F₂                 Real, inverted, same size
+  Between F₁ and 2F₁   Beyond 2F₂             Real, inverted, magnified
+  At F₁                At infinity            Real, inverted, highly magnified
+  Between F₁ and O     Same side as object    Virtual, erect, magnified
+  ──────────────────────────────────────────────────────
+  Concave lens: Always virtual, erect, diminished
+</pre>
+      </div>
+
+      <div class="fgrid">
+        <div class="fbox"><div class="fl">Lens formula</div><div class="feq">1/f = 1/v − 1/u</div></div>
+        <div class="fbox"><div class="fl">Lens Maker's</div><div class="feq">1/f=(n−1)(1/R₁−1/R₂)</div></div>
+        <div class="fbox"><div class="fl">Power</div><div class="feq">P = 1/f (metres)</div></div>
+        <div class="fbox"><div class="fl">Magnification</div><div class="feq">m = v/u</div></div>
+        <div class="fbox"><div class="fl">Combined lenses</div><div class="feq">P = P₁ + P₂</div></div>
+        <div class="fbox"><div class="fl">Concave lens</div><div class="feq">f < 0, P < 0</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRISM -->
+  <div class="cb" style="border-left-color:#15803d;">
+    <div class="cb-head" style="background:linear-gradient(135deg,#14532d,#15803d);">
+      <span class="tag">9.8</span><h2>🔺 Prism — Refraction &amp; Dispersion</h2>
+    </div>
+    <div class="cb-body">
+      <div class="kp-title">🔑 Key Points</div>
+      <ul class="kp-list">
+        <li><strong>Prism</strong>: triangular transparent block; angle of prism = A (apex angle)</li>
+        <li><strong>Angle of deviation (d)</strong>: angle between original incident ray and final emergent ray</li>
+        <li><strong>d = i + e − A</strong> (where i = angle of incidence, e = angle of emergence)</li>
+        <li><strong>Minimum deviation (D_m)</strong>: when i = e (ray passes symmetrically); r = A/2; i = (A + D_m)/2</li>
+        <li><strong>Refractive index formula</strong>: n = sin[(A + D_m)/2] / sin(A/2)</li>
+        <li><strong>Dispersion</strong>: splitting of white light into its component colours (VIBGYOR) by prism due to different n for different λ</li>
+        <li><strong>Angular dispersion</strong>: δ_v − δ_r (difference in deviation of violet and red)</li>
+        <li><strong>Dispersive power</strong>: ω = (n_v − n_r)/(n_y − 1); n_y = refractive index for yellow (mean)</li>
+        <li>Violet deviates most (highest n, shortest λ); Red deviates least (lowest n, longest λ)</li>
+      </ul>
+
+      <div class="diag">
+<pre>
+        A (apex)
+       /\
+      /  \
+     / r  r\
+  --/i      e\--
+  incident    emergent
+  ray         ray
+         |
+    angle of deviation d = i + e - A
+    At min. deviation: i = e, r₁ = r₂ = A/2
+    n = sin[(A+Dm)/2] / sin(A/2)
+</pre>
+      </div>
+
+      <div class="fgrid">
+        <div class="fbox"><div class="fl">Deviation</div><div class="feq">d = i + e − A</div></div>
+        <div class="fbox"><div class="fl">Min. deviation</div><div class="feq">r = A/2 when i=e</div></div>
+        <div class="fbox"><div class="fl">Refractive index</div><div class="feq">n=sin[(A+Dm)/2]/sin(A/2)</div></div>
+        <div class="fbox"><div class="fl">Dispersive power</div><div class="feq">ω=(nv−nr)/(ny−1)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPTICAL INSTRUMENTS -->
+  <div class="cb" style="border-left-color:#7b1fa2;">
+    <div class="cb-head" style="background:linear-gradient(135deg,#4a148c,#7b1fa2);">
+      <span class="tag">9.9–9.11</span><h2>🔭 Optical Instruments</h2>
+    </div>
+    <div class="cb-body">
+      <div class="kp-title">👁️ The Eye</div>
+      <ul class="kp-list">
+        <li><strong>Least distance of distinct vision (D)</strong>: 25 cm for normal eye</li>
+        <li><strong>Far point</strong>: infinity (normal eye); near point: 25 cm</li>
+        <li><strong>Myopia</strong> (short-sightedness): cannot see far; image forms in front of retina; corrected by <strong>concave lens</strong></li>
+        <li><strong>Hypermetropia</strong> (long-sightedness): cannot see near; image behind retina; corrected by <strong>convex lens</strong></li>
+        <li><strong>Presbyopia</strong>: age-related, loss of near vision; corrected by bifocal lenses</li>
+        <li><strong>Astigmatism</strong>: unequal curvature of eye lens; corrected by cylindrical lenses</li>
+      </ul>
+
+      <div class="kp-title">🔍 Simple Microscope (Magnifying Glass)</div>
+      <ul class="kp-list">
+        <li>Single convex lens; object placed between F and lens</li>
+        <li><strong>Magnifying power</strong> (image at D): M = 1 + D/f</li>
+        <li><strong>Magnifying power</strong> (image at infinity): M = D/f</li>
+        <li>Shorter focal length → greater magnification</li>
+      </ul>
+
+      <div class="kp-title">🔬 Compound Microscope</div>
+      <ul class="kp-list">
+        <li>Two convex lenses: <strong>objective</strong> (short f, small) + <strong>eyepiece</strong> (longer f, acts as magnifier)</li>
+        <li>Object placed just beyond F_o; objective forms real, magnified intermediate image</li>
+        <li>Eyepiece magnifies that intermediate image further</li>
+        <li><strong>Magnifying power</strong>: M = m_o × M_e = (L/f_o) × (D/f_e) [image at infinity]</li>
+        <li>L = tube length (distance between F_o and F_e); shorter f_o and f_e → more magnification</li>
+      </ul>
+
+      <div class="kp-title">🔭 Astronomical Telescope</div>
+      <ul class="kp-list">
+        <li>Two convex lenses: <strong>objective</strong> (large f, large aperture) + <strong>eyepiece</strong> (small f)</li>
+        <li>Objective collects light from distant object; eyepiece magnifies it</li>
+        <li><strong>Magnifying power</strong> (normal adjustment): M = f_o / f_e</li>
+        <li><strong>Length of telescope</strong> (normal adjustment): L = f_o + f_e</li>
+        <li>Large objective aperture → more light gathered → brighter, clearer image of faint objects</li>
+        <li>Large f_o, small f_e → higher magnification</li>
+      </ul>
+
+      <div class="kp-title">🔭 Reflecting Telescope (Cassegrain)</div>
+      <ul class="kp-list">
+        <li>Uses concave mirror as objective instead of lens</li>
+        <li>Advantages: no chromatic aberration; can be made very large; lighter than refracting telescope</li>
+        <li>Largest telescopes in world are all reflecting type</li>
+      </ul>
+
+      <div class="fgrid">
+        <div class="fbox"><div class="fl">Simple microscope</div><div class="feq">M = 1 + D/f</div></div>
+        <div class="fbox"><div class="fl">Compound microscope</div><div class="feq">M = (L/fo)×(D/fe)</div></div>
+        <div class="fbox"><div class="fl">Telescope M</div><div class="feq">M = fo/fe</div></div>
+        <div class="fbox"><div class="fl">Telescope length</div><div class="feq">L = fo + fe</div></div>
+        <div class="fbox"><div class="fl">Near point</div><div class="feq">D = 25 cm</div></div>
+        <div class="fbox"><div class="fl">Myopia fix</div><div class="feq">concave lens</div></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end notes -->
+
+<!-- ═══════════════════════ IMP Q&A ═══════════════════════ -->
+<div class="section" id="tab-qbank">
+
+  <div class="tdiv"><div class="tline"></div><div class="tlab">🪞 Reflection &amp; Mirrors</div><div class="tline"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q1</span>
+      <div>
+        <div class="qtxt">State the mirror formula. A concave mirror of focal length 20 cm forms an image at 60 cm. Find the object distance and magnification.</div>
+        <div class="ftags"><span class="ftag fhigh">🔴 Very IMP</span><span class="ftag fmark">4 Marks</span></div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Mirror Formula:</strong> The relation between object distance (u), image distance (v) and focal length (f) for a spherical mirror is:</p>
+        <div class="a-eq">1/f = 1/v + 1/u</div>
+        <p><strong>Solution:</strong> f = −20 cm (concave), v = −60 cm (real image, in front)</p>
+        <span class="a-step">1/u = 1/f − 1/v = 1/(−20) − 1/(−60) = −1/20 + 1/60</span>
+        <span class="a-step">1/u = −3/60 + 1/60 = −2/60 = −1/30</span>
+        <span class="a-step">∴ u = −30 cm</span>
+        <p><strong>Magnification:</strong> m = −v/u = −(−60)/(−30) = −2</p>
+        <p>Image is real, inverted and twice the size of object (magnified).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q2</span>
+      <div>
+        <div class="qtxt">Explain with diagram the use of concave and convex mirrors. State two uses of each.</div>
+        <div class="ftags"><span class="ftag fhigh">🔴 Very IMP</span><span class="ftag fmark">3 Marks</span></div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Concave Mirror:</strong> Converging mirror. Reflects parallel rays to meet at focus F in front of the mirror.</p>
+        <p><strong>Uses of Concave Mirror:</strong></p>
+        <p>1. <strong>Shaving/makeup mirror</strong> — object (face) placed between F and P; forms virtual, erect, magnified image</p>
+        <p>2. <strong>Headlights of vehicles / searchlights</strong> — bulb placed at focus; reflects parallel beam of light</p>
+        <p>3. Solar furnace, ophthalmoscope (also valid)</p>
+        <p><strong>Convex Mirror:</strong> Diverging mirror. Always forms virtual, erect, diminished image irrespective of object position.</p>
+        <p><strong>Uses of Convex Mirror:</strong></p>
+        <p>1. <strong>Rear-view mirror in vehicles</strong> — provides wider field of view; driver sees more of road behind</p>
+        <p>2. <strong>Security/surveillance mirrors</strong> in shops, banks — wide angle view covers large area</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tdiv"><div class="tline"></div><div class="tlab">💎 Total Internal Reflection</div><div class="tline"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q3</span>
+      <div>
+        <div class="qtxt">What is total internal reflection? State the conditions for TIR. Derive the relation between critical angle and refractive index.</div>
+        <div class="ftags"><span class="ftag fhigh">🔴 Every Year</span><span class="ftag fmark">4 Marks</span></div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Total Internal Reflection:</strong> When a ray of light travels from an optically denser medium to a rarer medium, and the angle of incidence exceeds the critical angle, the ray is completely reflected back into the denser medium. This is called total internal reflection.</p>
+        <p><strong>Conditions for TIR:</strong></p>
+        <p>1. Light must travel from a <strong>denser medium to a rarer medium</strong> (e.g., glass to air)</p>
+        <p>2. The angle of incidence must be <strong>greater than the critical angle</strong> (i &gt; θ_c)</p>
+        <p><strong>Derivation of sin θ_c = 1/n:</strong></p>
+        <p>At critical angle θ_c, the refracted ray grazes along the interface (r = 90°).</p>
+        <p>Applying Snell's Law at the denser (n) to rarer (air, n=1) interface:</p>
+        <span class="a-step">n sin θ_c = 1 × sin 90°</span>
+        <span class="a-step">n sin θ_c = 1</span>
+        <div class="a-eq">∴ sin θ_c = 1/n  OR  θ_c = sin⁻¹(1/n)</div>
+        <p>For glass (n = 1.5): sin θ_c = 1/1.5 = 2/3 → θ_c = 41.8°</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q4</span>
+      <div>
+        <div class="qtxt">Explain the working of an optical fibre. State its applications.</div>
+        <div class="ftags"><span class="ftag fhigh">🔴 Very IMP</span><span class="ftag fmark">3 Marks</span></div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Optical Fibre:</strong> A thin, flexible glass or plastic fibre consisting of a dense core surrounded by a less dense cladding material.</p>
+        <p><strong>Working:</strong> When light enters the core at one end at an angle greater than the critical angle (of core-cladding interface), it undergoes repeated total internal reflections along the length of the fibre. No light escapes through the sides — all light travels through to the other end.</p>
+        <div class="diag">
+<pre>
+  ══════════════════════════════════════
+  → ⟋ ⟋ ⟋ ⟋ ⟋ ⟋ ⟋ ⟋ ⟋ ⟋ ⟋ →  (light ray)
+  ══════════════════════════════════════
+   core (dense) surrounded by cladding (rarer)
+   TIR at each reflection — no energy loss
+</pre>
+        </div>
+        <p><strong>Applications:</strong></p>
+        <p>1. <strong>Internet/communication cables</strong> — carry data as light pulses; much faster than copper cables</p>
+        <p>2. <strong>Medical endoscopy</strong> — examine internal organs without surgery</p>
+        <p>3. <strong>Decorative lighting</strong>, illuminated signs</p>
+        <p>4. <strong>Sensors</strong> in aircraft and automobiles</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tdiv"><div class="tline"></div><div class="tlab">🔵 Lenses</div><div class="tline"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q5</span>
+      <div>
+        <div class="qtxt">Derive the lens maker's formula: 1/f = (n−1)(1/R₁ − 1/R₂)</div>
+        <div class="ftags"><span class="ftag fhigh">🔴 Very IMP</span><span class="ftag fmark">4 Marks</span></div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p>Consider a thin convex lens of refractive index n, radii R₁ and R₂, in air (n₁ = 1).</p>
+        <p><strong>Step 1:</strong> Refraction at first surface (centre of curvature C₁, radius R₁):</p>
+        <span class="a-step">n/v₁ − 1/u = (n−1)/R₁  ... (i)</span>
+        <p><strong>Step 2:</strong> Refraction at second surface (the image I₁ from step 1 acts as object):</p>
+        <span class="a-step">1/v − n/v₁ = (1−n)/R₂ = −(n−1)/R₂  ... (ii)</span>
+        <p><strong>Step 3:</strong> Add equations (i) and (ii):</p>
+        <span class="a-step">1/v − 1/u = (n−1)[1/R₁ − 1/R₂]</span>
+        <p>For object at infinity (u → ∞), v = f (focal length):</p>
+        <div class="a-eq">∴ 1/f = (n−1)[1/R₁ − 1/R₂]  — Lens Maker's Formula</div>
+        <p>This gives the focal length of a lens in terms of its geometry and refractive index.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q6</span>
+      <div>
+        <div class="qtxt">What is power of a lens? Two lenses of power +3D and −1D are placed in contact. Find combined focal length.</div>
+        <div class="ftags"><span class="ftag fhigh">🔴 IMP</span><span class="ftag fmark">3 Marks</span></div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Power of a Lens:</strong> The power of a lens is defined as the reciprocal of its focal length in metres. It represents the ability of the lens to converge or diverge light.</p>
+        <div class="a-eq">P = 1/f (metres);  Unit: dioptre (D)</div>
+        <p>Positive power → converging (convex) lens</p>
+        <p>Negative power → diverging (concave) lens</p>
+        <p><strong>Solution:</strong></p>
+        <span class="a-step">P₁ = +3D, P₂ = −1D</span>
+        <span class="a-step">P = P₁ + P₂ = 3 + (−1) = +2D</span>
+        <span class="a-step">f = 1/P = 1/2 = 0.5 m = 50 cm</span>
+        <p>Combined focal length = 50 cm (converging lens)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tdiv"><div class="tline"></div><div class="tlab">🔺 Prism &amp; Dispersion</div><div class="tline"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q7</span>
+      <div>
+        <div class="qtxt">Derive the formula for refractive index of a prism: n = sin[(A+Dm)/2] / sin(A/2)</div>
+        <div class="ftags"><span class="ftag fhigh">🔴 Every Year</span><span class="ftag fmark">4 Marks</span></div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p>For a prism of apex angle A with angle of incidence i and angle of emergence e:</p>
+        <p><strong>Relation 1:</strong> r₁ + r₂ = A (sum of angles of refraction inside prism = apex angle)</p>
+        <p><strong>Relation 2:</strong> d = i + e − A (angle of deviation)</p>
+        <p>At <strong>minimum deviation D_m</strong>: i = e, so r₁ = r₂ = r</p>
+        <span class="a-step">From relation 1: r + r = A  →  r = A/2</span>
+        <span class="a-step">From relation 2: D_m = 2i − A  →  i = (A + D_m)/2</span>
+        <p>Applying Snell's law at first surface (air to prism):</p>
+        <span class="a-step">n = sin i / sin r</span>
+        <div class="a-eq">n = sin[(A + D_m)/2] / sin(A/2)</div>
+        <p>This is the standard formula to find refractive index of prism material by measuring apex angle A and minimum deviation D_m.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q8</span>
+      <div>
+        <div class="qtxt">What is dispersion of light? Why does a prism produce a spectrum? Name the colours of the spectrum in order.</div>
+        <div class="ftags"><span class="ftag fhigh">🔴 IMP</span><span class="ftag fmark">3 Marks</span></div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Dispersion of Light:</strong> The phenomenon of splitting of white light into its component colours on passing through a prism (or any refracting medium) is called dispersion.</p>
+        <p><strong>Reason:</strong> The refractive index of a medium is different for different wavelengths (colours) of light. Violet light has the highest refractive index (shortest λ) and red has the lowest (longest λ). Therefore, each colour bends through a different angle in the prism, causing them to separate.</p>
+        <p><strong>Spectrum colours (VIBGYOR)</strong> in increasing order of wavelength:</p>
+        <p><strong>V</strong>iolet → <strong>I</strong>ndigo → <strong>B</strong>lue → <strong>G</strong>reen → <strong>Y</strong>ellow → <strong>O</strong>range → <strong>R</strong>ed</p>
+        <p>Violet deviates most (highest n), Red deviates least (lowest n).</p>
+        <p><strong>Rainbow</strong>: formed by dispersion + TIR inside water droplets in atmosphere after rain.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tdiv"><div class="tline"></div><div class="tlab">🔭 Optical Instruments</div><div class="tline"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q9</span>
+      <div>
+        <div class="qtxt">With a neat diagram, explain the construction and working of a compound microscope. Derive the formula for magnifying power.</div>
+        <div class="ftags"><span class="ftag fhigh">🔴 Very IMP</span><span class="ftag fmark">4 Marks</span></div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Construction:</strong> Two convex lenses — objective lens (O) of short focal length f_o and small diameter, and eyepiece (E) of slightly longer focal length f_e, separated by a tube of length L.</p>
+        <div class="diag">
+<pre>
+  Object → [Objective O] → intermediate image → [Eyepiece E] → Final image (at D)
+  |___f_o__|____L (tube length)___|____f_e___|
+</pre>
+        </div>
+        <p><strong>Working:</strong></p>
+        <p>1. Object AB placed just beyond F_o of objective</p>
+        <p>2. Objective forms real, inverted, magnified intermediate image A'B' just inside F_e of eyepiece</p>
+        <p>3. Eyepiece acts as a simple microscope; magnifies A'B' to give final virtual, magnified image at D (25 cm)</p>
+        <p><strong>Magnifying Power:</strong></p>
+        <span class="a-step">M = magnification by objective × magnification by eyepiece</span>
+        <span class="a-step">m_o = L/f_o  (for image at tube length L from objective)</span>
+        <span class="a-step">M_e = D/f_e  (eyepiece, image at infinity)</span>
+        <div class="a-eq">M = (L/f_o) × (D/f_e)  where D = 25 cm</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q10</span>
+      <div>
+        <div class="qtxt">Explain the construction and working of an astronomical telescope. Derive the formula for magnifying power under normal adjustment.</div>
+        <div class="ftags"><span class="ftag fhigh">🔴 Very IMP</span><span class="ftag fmark">4 Marks</span></div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Construction:</strong> Two convex lenses — objective (large aperture, long focal length f_o) and eyepiece (small aperture, short focal length f_e).</p>
+        <div class="diag">
+<pre>
+  Distant object → [Objective f_o large] → image at F_o = F_e → [Eyepiece f_e small] → Final image at ∞
+  |___________f_o__________|__f_e__|
+  Total length L = f_o + f_e (normal adjustment)
+</pre>
+        </div>
+        <p><strong>Working:</strong></p>
+        <p>1. Objective collects light from distant object; forms real, inverted, diminished image at its focal plane</p>
+        <p>2. Eyepiece is adjusted so its focal plane coincides with objective's focal plane (normal adjustment)</p>
+        <p>3. Eyepiece acts as magnifier; final image is at infinity — eye is relaxed</p>
+        <p><strong>Magnifying Power (normal adjustment):</strong></p>
+        <span class="a-step">M = angle subtended by final image / angle subtended by object at unaided eye</span>
+        <span class="a-step">M = β/α = (h/f_e) / (h/f_o)</span>
+        <div class="a-eq">M = f_o / f_e</div>
+        <p>Length of telescope: L = f_o + f_e</p>
+        <p>To increase M: use large f_o (large objective) and small f_e (short eyepiece).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q11</span>
+      <div>
+        <div class="qtxt">What are the defects of vision? How are they corrected? Name the type of lens used for each.</div>
+        <div class="ftags"><span class="ftag fhigh">🔴 IMP</span><span class="ftag fmark">3 Marks</span></div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <table style="width:100%;border-collapse:collapse;font-size:.85rem;">
+          <tr style="background:#dbeafe;">
+            <th style="padding:7px;border:1px solid #93c5fd;">Defect</th>
+            <th style="padding:7px;border:1px solid #93c5fd;">Problem</th>
+            <th style="padding:7px;border:1px solid #93c5fd;">Cause</th>
+            <th style="padding:7px;border:1px solid #93c5fd;">Correction</th>
+          </tr>
+          <tr>
+            <td style="padding:7px;border:1px solid #dbeafe;"><strong>Myopia</strong> (short-sight)</td>
+            <td style="padding:7px;border:1px solid #dbeafe;">Cannot see far objects clearly</td>
+            <td style="padding:7px;border:1px solid #dbeafe;">Image forms in front of retina; eyeball too long</td>
+            <td style="padding:7px;border:1px solid #dbeafe;"><strong>Concave lens</strong> (diverging)</td>
+          </tr>
+          <tr style="background:#f0f4ff;">
+            <td style="padding:7px;border:1px solid #dbeafe;"><strong>Hypermetropia</strong> (long-sight)</td>
+            <td style="padding:7px;border:1px solid #dbeafe;">Cannot see near objects clearly</td>
+            <td style="padding:7px;border:1px solid #dbeafe;">Image forms behind retina; eyeball too short</td>
+            <td style="padding:7px;border:1px solid #dbeafe;"><strong>Convex lens</strong> (converging)</td>
+          </tr>
+          <tr>
+            <td style="padding:7px;border:1px solid #dbeafe;"><strong>Presbyopia</strong></td>
+            <td style="padding:7px;border:1px solid #dbeafe;">Age-related; loses near vision</td>
+            <td style="padding:7px;border:1px solid #dbeafe;">Ciliary muscles weaken with age</td>
+            <td style="padding:7px;border:1px solid #dbeafe;"><strong>Bifocal lenses</strong></td>
+          </tr>
+          <tr style="background:#f0f4ff;">
+            <td style="padding:7px;border:1px solid #dbeafe;"><strong>Astigmatism</strong></td>
+            <td style="padding:7px;border:1px solid #dbeafe;">Blurred vision in one direction</td>
+            <td style="padding:7px;border:1px solid #dbeafe;">Unequal curvature of cornea/lens</td>
+            <td style="padding:7px;border:1px solid #dbeafe;"><strong>Cylindrical lenses</strong></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q12</span>
+      <div>
+        <div class="qtxt">Why is the sky blue? Why does the sun appear reddish at sunrise and sunset?</div>
+        <div class="ftags"><span class="ftag fmed">🟠 IMP</span><span class="ftag fmark">2 Marks</span></div>
+      </div>
+    </div>
+    <div class="ans-body">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Blue Sky:</strong> Sunlight (white light) passes through the atmosphere. Air molecules scatter light. Shorter wavelengths (blue, violet) scatter much more than longer wavelengths (Rayleigh scattering: intensity ∝ 1/λ⁴). Blue light is scattered in all directions reaching our eyes → sky appears blue.</p>
+        <p><strong>Reddish Sun at sunrise/sunset:</strong> When the Sun is near the horizon, its light travels through a greater thickness of atmosphere. Blue light is scattered away. Only the longer wavelengths — red and orange — reach the observer's eye → Sun appears red/orange.</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end qbank -->
+
+<!-- ═══════════════════════ NUMERICALS ═══════════════════════ -->
+<div class="section" id="tab-numericals">
+
+  <div class="num-block">
+    <div class="num-q">N1. A concave mirror has focal length 15 cm. Where should an object be placed to get an image 3 times the size of the object (real, inverted)?</div>
+    <div class="num-given">f = −15 cm (concave); m = −3 (real, inverted, magnified)</div>
+    <div class="num-sol">
+      m = −v/u  →  −3 = −v/u  →  v = 3u<br>
+      Mirror formula: 1/f = 1/v + 1/u<br>
+      1/(−15) = 1/(3u) + 1/u = 1/(3u) + 3/(3u) = 4/(3u)<br>
+      3u = 4 × (−15) = −60<br>
+      u = −20 cm
+    </div>
+    <span class="num-ans">∴ Object should be placed 20 cm in front of mirror ✓</span>
+  </div>
+
+  <div class="num-block">
+    <div class="num-q">N2. A ray of light passes from glass (n = 1.5) to water (n = 1.33). Find the critical angle.</div>
+    <div class="num-given">n_glass = 1.5, n_water = 1.33</div>
+    <div class="num-sol">
+      sin θ_c = n_water / n_glass = 1.33 / 1.5 = 0.887<br>
+      θ_c = sin⁻¹(0.887) = 62.5°
+    </div>
+    <span class="num-ans">∴ Critical angle = 62.5° ✓</span>
+  </div>
+
+  <div class="num-block">
+    <div class="num-q">N3. A convex lens of focal length 10 cm forms a real image of an object placed 15 cm from the lens. Find the image distance and magnification.</div>
+    <div class="num-given">f = +10 cm, u = −15 cm (object on left)</div>
+    <div class="num-sol">
+      Lens formula: 1/f = 1/v − 1/u<br>
+      1/10 = 1/v − 1/(−15) = 1/v + 1/15<br>
+      1/v = 1/10 − 1/15 = 3/30 − 2/30 = 1/30<br>
+      v = +30 cm (real image, on right)<br>
+      m = v/u = 30/(−15) = −2 (inverted, magnified)
+    </div>
+    <span class="num-ans">∴ v = 30 cm (real); m = −2 (inverted, twice size) ✓</span>
+  </div>
+
+  <div class="num-block">
+    <div class="num-q">N4. A glass prism of angle 60° produces minimum deviation of 40°. Find the refractive index of glass.</div>
+    <div class="num-given">A = 60°, D_m = 40°</div>
+    <div class="num-sol">
+      n = sin[(A + D_m)/2] / sin(A/2)<br>
+      n = sin[(60 + 40)/2] / sin(60/2)<br>
+      n = sin(50°) / sin(30°)<br>
+      n = 0.766 / 0.5<br>
+      n = 1.532
+    </div>
+    <span class="num-ans">∴ n = 1.532 ✓</span>
+  </div>
+
+  <div class="num-block">
+    <div class="num-q">N5. An astronomical telescope has objective of focal length 100 cm and eyepiece of focal length 5 cm. Find: (i) magnifying power, (ii) length of telescope under normal adjustment.</div>
+    <div class="num-given">f_o = 100 cm = 1 m, f_e = 5 cm = 0.05 m</div>
+    <div class="num-sol">
+      (i) M = f_o / f_e = 100 / 5 = 20<br>
+      (ii) L = f_o + f_e = 100 + 5 = 105 cm = 1.05 m
+    </div>
+    <span class="num-ans">∴ M = 20; Length = 1.05 m ✓</span>
+  </div>
+
+  <div class="num-block">
+    <div class="num-q">N6. A lens has power of +2.5 D. Find its focal length and type. If another lens of −1.5 D is placed in contact, find the combined power and focal length.</div>
+    <div class="num-given">P₁ = +2.5 D, P₂ = −1.5 D</div>
+    <div class="num-sol">
+      f₁ = 1/P₁ = 1/2.5 = 0.4 m = 40 cm (convex lens)<br>
+      P = P₁ + P₂ = 2.5 + (−1.5) = +1.0 D<br>
+      f = 1/P = 1/1.0 = 1 m = 100 cm
+    </div>
+    <span class="num-ans">∴ f₁ = 40 cm (convex); Combined P = +1D; f = 100 cm ✓</span>
+  </div>
+
+  <div class="num-block">
+    <div class="num-q">N7. A simple microscope has focal length 5 cm. Find its magnifying power when image is formed at (i) least distance of distinct vision (25 cm), (ii) infinity.</div>
+    <div class="num-given">f = 5 cm, D = 25 cm</div>
+    <div class="num-sol">
+      (i) M = 1 + D/f = 1 + 25/5 = 1 + 5 = 6<br>
+      (ii) M = D/f = 25/5 = 5
+    </div>
+    <span class="num-ans">∴ M = 6 (at D); M = 5 (at ∞) ✓</span>
+  </div>
+
+</div><!-- end numericals -->
+
+<!-- ═══════════════════════ MCQs ═══════════════════════ -->
+<div class="section" id="tab-mcq">
+
+  <div class="mcq-block">
+    <div class="mcq-q">1. As per recent understanding, light consists of:</div>
+    <ul class="mcq-opts">
+      <li>a) Rays</li>
+      <li>b) Waves</li>
+      <li>c) Corpuscles</li>
+      <li class="correct">d) Photons obeying the rules of waves</li>
+    </ul>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">2. A concave mirror of curvature 40 cm used for shaving produces an image of double the size of object. Object distance must be:</div>
+    <ul class="mcq-opts">
+      <li>a) 10 cm only</li>
+      <li>b) 20 cm only</li>
+      <li>c) 30 cm only</li>
+      <li class="correct">d) 10 cm or 30 cm</li>
+    </ul>
+    <div style="font-size:.8rem;color:#555;padding:6px 10px;">💡 f = R/2 = 20 cm. For m=+2 (virtual): u=10 cm. For m=−2 (real): u=30 cm. Both valid.</div>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">3. Two plane mirrors are inclined at 40° between them. Number of images of an object kept between them is:</div>
+    <ul class="mcq-opts">
+      <li>a) Only 8</li>
+      <li>b) Only 9</li>
+      <li class="correct">c) 8 or 9</li>
+      <li>d) 9 or 10</li>
+    </ul>
+    <div style="font-size:.8rem;color:#555;padding:6px 10px;">💡 n = 360/θ = 360/40 = 9. If object is on bisector → 8 images; otherwise → 9 images.</div>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">4. Total internal reflection is involved in which of these phenomena? P) Mirage, Q) Rainbow, R) Optical fibre, S) Glittering of diamond</div>
+    <ul class="mcq-opts">
+      <li>a) Only R and S</li>
+      <li>b) Only R</li>
+      <li>c) Only P, R and S</li>
+      <li class="correct">d) All the four (P, Q, R, S)</li>
+    </ul>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">5. A student uses spectacles of number −2 for seeing distant objects. The lenses used are:</div>
+    <ul class="mcq-opts">
+      <li class="correct">a) Bi-concave</li>
+      <li>b) Double concave</li>
+      <li>c) Concavo-convex</li>
+      <li>d) Convexo-concave</li>
+    </ul>
+    <div style="font-size:.8rem;color:#555;padding:6px 10px;">💡 −2D = concave (diverging) lens. Bi-concave = both surfaces concave.</div>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">6. Which aberration does NOT occur for spherical mirrors?</div>
+    <ul class="mcq-opts">
+      <li class="correct">a) Chromatic aberration</li>
+      <li>b) Coma</li>
+      <li>c) Distortion</li>
+      <li>d) Spherical aberration</li>
+    </ul>
+    <div style="font-size:.8rem;color:#555;padding:6px 10px;">💡 Chromatic aberration is caused by dispersion in lenses (different n for different λ). Mirrors reflect all wavelengths equally — no chromatic aberration.</div>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">7. For a fish underwater, the apparent height of a monkey sitting 2.5 m above water surface appears as 2.5 × n. The refractive index of that water (Proxima b problem) is:</div>
+    <ul class="mcq-opts">
+      <li>a) 6/5</li>
+      <li>b) 5/4</li>
+      <li class="correct">c) 4/3</li>
+      <li>d) 7/5</li>
+    </ul>
+    <div style="font-size:.8rem;color:#555;padding:6px 10px;">💡 Monkey at h, fish at depth h. Fish sees monkey at apparent height = nh. Monkey sees fish at apparent depth = h/n. Cross-matching: n = 4/3.</div>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">8. The magnifying power of an astronomical telescope under normal adjustment is 10. If focal length of objective is 100 cm, the focal length of eyepiece is:</div>
+    <ul class="mcq-opts">
+      <li>a) 1000 cm</li>
+      <li class="correct">b) 10 cm</li>
+      <li>c) 110 cm</li>
+      <li>d) 90 cm</li>
+    </ul>
+    <div style="font-size:.8rem;color:#555;padding:6px 10px;">💡 M = fo/fe → 10 = 100/fe → fe = 10 cm</div>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">9. A convex lens with positive focal length is best described as:</div>
+    <ul class="mcq-opts">
+      <li class="correct">a) Converging lens — brings parallel rays to a real focus</li>
+      <li>b) Diverging lens — spreads parallel rays out</li>
+      <li>c) Lens that always forms a virtual image</li>
+      <li>d) Lens with both surfaces concave</li>
+    </ul>
+  </div>
+
+  <div class="mcq-block">
+    <div class="mcq-q">10. When white light passes through a prism, which colour deviates the LEAST?</div>
+    <ul class="mcq-opts">
+      <li>a) Violet</li>
+      <li>b) Blue</li>
+      <li>c) Green</li>
+      <li class="correct">d) Red</li>
+    </ul>
+    <div style="font-size:.8rem;color:#555;padding:6px 10px;">💡 Red has longest wavelength → lowest refractive index → least deviation. Violet deviates most.</div>
+  </div>
+
+</div><!-- end mcq -->
+
+<!-- ═══════════════════════ FORMULAS ═══════════════════════ -->
+<div class="section" id="tab-formulas">
+  <div style="background:#fff;border-radius:14px;padding:18px;box-shadow:0 2px 10px rgba(13,71,161,.1);">
+
+    <div class="kp-title">🪞 Mirrors</div>
+    <div class="fgrid" style="margin-bottom:16px;">
+      <div class="fbox"><div class="fl">Mirror formula</div><div class="feq">1/f = 1/v + 1/u</div></div>
+      <div class="fbox"><div class="fl">Focal length</div><div class="feq">f = R/2</div></div>
+      <div class="fbox"><div class="fl">Magnification</div><div class="feq">m = −v/u</div></div>
+      <div class="fbox"><div class="fl">No. of images (2 mirrors)</div><div class="feq">n = 360/θ − 1</div></div>
+    </div>
+
+    <div class="kp-title">🌊 Refraction</div>
+    <div class="fgrid" style="margin-bottom:16px;">
+      <div class="fbox"><div class="fl">Snell's Law</div><div class="feq">n₁ sin i = n₂ sin r</div></div>
+      <div class="fbox"><div class="fl">Refractive index</div><div class="feq">n = c/v</div></div>
+      <div class="fbox"><div class="fl">Apparent depth</div><div class="feq">n = real/apparent</div></div>
+      <div class="fbox"><div class="fl">Lateral displacement</div><div class="feq">d = t sin(i-r)/cos r</div></div>
+    </div>
+
+    <div class="kp-title">💎 Total Internal Reflection</div>
+    <div class="fgrid" style="margin-bottom:16px;">
+      <div class="fbox"><div class="fl">Critical angle</div><div class="feq">sin θ_c = n₂/n₁</div></div>
+      <div class="fbox"><div class="fl">Glass-air</div><div class="feq">sin θ_c = 1/n</div></div>
+      <div class="fbox"><div class="fl">Glass (n=1.5)</div><div class="feq">θ_c = 41.8°</div></div>
+      <div class="fbox"><div class="fl">Diamond (n=2.42)</div><div class="feq">θ_c = 24.4°</div></div>
+    </div>
+
+    <div class="kp-title">🔵 Lenses</div>
+    <div class="fgrid" style="margin-bottom:16px;">
+      <div class="fbox"><div class="fl">Lens formula</div><div class="feq">1/f = 1/v − 1/u</div></div>
+      <div class="fbox"><div class="fl">Lens Maker's</div><div class="feq">1/f=(n-1)(1/R₁-1/R₂)</div></div>
+      <div class="fbox"><div class="fl">Power</div><div class="feq">P = 1/f (metres)</div></div>
+      <div class="fbox"><div class="fl">Combined</div><div class="feq">P = P₁ + P₂</div></div>
+      <div class="fbox"><div class="fl">Magnification</div><div class="feq">m = v/u</div></div>
+      <div class="fbox"><div class="fl">Convex lens f</div><div class="feq">f > 0, P > 0</div></div>
+    </div>
+
+    <div class="kp-title">🔺 Prism</div>
+    <div class="fgrid" style="margin-bottom:16px;">
+      <div class="fbox"><div class="fl">Deviation</div><div class="feq">d = i + e − A</div></div>
+      <div class="fbox"><div class="fl">r₁ + r₂</div><div class="feq">r₁ + r₂ = A</div></div>
+      <div class="fbox"><div class="fl">At min deviation</div><div class="feq">r = A/2; i=(A+Dm)/2</div></div>
+      <div class="fbox"><div class="fl">Refractive index</div><div class="feq">n=sin[(A+Dm)/2]/sin(A/2)</div></div>
+    </div>
+
+    <div class="kp-title">🔭 Optical Instruments</div>
+    <div class="fgrid" style="margin-bottom:16px;">
+      <div class="fbox"><div class="fl">Simple microscope</div><div class="feq">M = 1 + D/f</div></div>
+      <div class="fbox"><div class="fl">Simple microscope ∞</div><div class="feq">M = D/f</div></div>
+      <div class="fbox"><div class="fl">Compound microscope</div><div class="feq">M = (L/fo)×(D/fe)</div></div>
+      <div class="fbox"><div class="fl">Telescope M</div><div class="feq">M = fo/fe</div></div>
+      <div class="fbox"><div class="fl">Telescope length</div><div class="feq">L = fo + fe</div></div>
+      <div class="fbox"><div class="fl">Near point D</div><div class="feq">D = 25 cm</div></div>
+    </div>
+
+    <div style="background:linear-gradient(135deg,#0a1628,#0d47a1);color:#fff;border-radius:12px;padding:16px;margin-top:14px;">
+      <div style="font-size:.78rem;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#bfdbfe;margin-bottom:10px;">📋 Board Exam Checklist</div>
+      <ul style="list-style:none;padding:0;font-size:.87rem;line-height:2.1;">
+        <li>✅ Mirror formula derivation + sign convention</li>
+        <li>✅ TIR — conditions + critical angle derivation (sin θ_c = 1/n)</li>
+        <li>✅ Optical fibre — working + applications</li>
+        <li>✅ Lens Maker's formula derivation</li>
+        <li>✅ Prism — refractive index formula derivation at minimum deviation</li>
+        <li>✅ Dispersion — VIBGYOR order, reason violet deviates most</li>
+        <li>✅ Compound microscope — diagram + M = (L/fo)×(D/fe)</li>
+        <li>✅ Astronomical telescope — diagram + M = fo/fe</li>
+        <li>✅ Defects of vision — table with cause + correction + lens type</li>
+        <li>✅ Blue sky + red sunset — Rayleigh scattering reason</li>
+      </ul>
+    </div>
+  </div>
+</div><!-- end formulas -->
+
+</div><!-- wrap -->
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>
