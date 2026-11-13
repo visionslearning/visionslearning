@@ -109,6 +109,7 @@
   <button class="tpill" onclick="show('vcm',this)">🎡 Vertical Circular</button>
   <button class="tpill" onclick="show('banked',this)">🚗 Banked Road</button>
   <button class="tpill" onclick="show('rolling',this)">🎯 Rolling Motion</button>
+  <button class="tpill" onclick="show('ucm',this)">⚡ UCM Applications</button>
   <button class="tpill" onclick="show('numericals',this)">🔢 Numericals</button>
   <button class="tpill" onclick="show('mcq',this)">🔵 MCQs</button>
 </div>
@@ -173,6 +174,38 @@
       <div class="dot n">–</div><div class="dot y">✓</div><div class="dot y">✓</div><div class="dot y">✓</div><div class="dot n">–</div>
     </div>
     <div class="freq-marks">3M · 3/5 years</div>
+  </div>
+
+  <div class="freq-row">
+    <div class="freq-topic">Centripetal vs Centrifugal Force</div>
+    <div class="freq-dots">
+      <div class="dot y">✓</div><div class="dot y">✓</div><div class="dot y">✓</div><div class="dot n">–</div><div class="dot y">✓</div>
+    </div>
+    <div class="freq-marks">3M · 4/5 years</div>
+  </div>
+
+  <div class="freq-row">
+    <div class="freq-topic">Well of Death — v_min = √(rg/μ)</div>
+    <div class="freq-dots">
+      <div class="dot y">✓</div><div class="dot y">✓</div><div class="dot y">✓</div><div class="dot y">✓</div><div class="dot n">–</div>
+    </div>
+    <div class="freq-marks">3–4M · 4/5 years</div>
+  </div>
+
+  <div class="freq-row">
+    <div class="freq-topic">Cyclist lean angle — tan θ = v²/rg</div>
+    <div class="freq-dots">
+      <div class="dot y">✓</div><div class="dot n">–</div><div class="dot y">✓</div><div class="dot n">–</div><div class="dot y">✓</div>
+    </div>
+    <div class="freq-marks">3M · 3/5 years</div>
+  </div>
+
+  <div class="freq-row">
+    <div class="freq-topic">MOI of uniform disc derivation</div>
+    <div class="freq-dots">
+      <div class="dot y">✓</div><div class="dot n">–</div><div class="dot y">✓</div><div class="dot y">✓</div><div class="dot y">✓</div>
+    </div>
+    <div class="freq-marks">3M · 4/5 years</div>
   </div>
 
   <div style="font-size:.72rem;color:rgba(255,255,255,.6);margin-top:8px;">Left to right: 2024 · 2023 · 2022 · 2021 · 2020</div>
@@ -549,9 +582,184 @@
       </div>
     </div>
   </div>
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q13</span>
+      <div class="qinfo">
+        <div class="qtxt">Derive the expression for the moment of inertia of a uniform disc about its central axis (own axis). I = ½MR²</div>
+        <div class="qtags">
+          <span class="qtag t-high">🔴 High Freq</span>
+          <span class="qtag t-mark">3 Marks</span>
+          <span class="qtag t-year">2024 · 2022 · 2021 · 2020</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-wrap">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p>Consider a uniform disc of mass M, radius R, rotating about its own axis. Surface density σ = M/πR².</p>
+        <p>Imagine the disc as consisting of many concentric rings. Consider one ring of radius r and width dr.</p>
+        <span class="step">Area of ring = 2πr·dr</span>
+        <span class="step">Mass of ring: dm = σ × 2πr·dr = (M/πR²) × 2πr·dr = (2M/R²)·r·dr</span>
+        <p>As it is a ring at radius r, its MOI about the central axis:</p>
+        <span class="step">dI = dm·r² = (2M/R²)·r³·dr</span>
+        <p>Total MOI by integrating from r = 0 to r = R:</p>
+        <span class="step">I = ∫₀ᴿ (2M/R²)·r³·dr = (2M/R²) × [r⁴/4]₀ᴿ = (2M/R²) × R⁴/4</span>
+        <div class="eq">I = ½MR²  ✓</div>
+      </div>
+    </div>
+  </div>
 
 </div><!-- end rolling inner -->
 </div><!-- end sec-all -->
+
+<!-- ══════════ EXTRA TOPIC: UCM APPLICATIONS ══════════ -->
+<div class="q-section" id="sec-ucm">
+  <div class="sec-title"><div class="stline"></div><div class="stlab">🚗 UCM Applications</div><div class="stline"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q14</span>
+      <div class="qinfo">
+        <div class="qtxt">What is centripetal force? What provides centripetal force in the case of: (i) car on horizontal road, (ii) satellite around earth, (iii) electron around nucleus?</div>
+        <div class="qtags">
+          <span class="qtag t-high">🔴 High Freq</span>
+          <span class="qtag t-mark">3 Marks</span>
+          <span class="qtag t-year">2024 · 2023 · 2021</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-wrap">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Centripetal Force:</strong> The resultant of all real forces acting on a body performing circular motion, directed towards the centre of the circular path, is called centripetal force.</p>
+        <div class="eq">CPF = mω²r = mv²/r</div>
+        <p><strong>Important:</strong> "Centripetal" is NOT the name of a new force — it is an adjective describing the direction (centre-seeking) of the resultant real force.</p>
+        <p><strong>What provides CPF in different cases:</strong></p>
+        <p>(i) <strong>Car on horizontal road:</strong> Force of <strong>static friction</strong> between tyres and road provides centripetal force.</p>
+        <p>(ii) <strong>Satellite around earth:</strong> <strong>Gravitational force</strong> of earth on the satellite provides centripetal force.</p>
+        <p>(iii) <strong>Electron around nucleus:</strong> <strong>Electrostatic (Coulomb) force</strong> of attraction between electron and nucleus provides centripetal force.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q15</span>
+      <div class="qinfo">
+        <div class="qtxt">What is centrifugal force? Is it a real force? Explain with merry-go-round example.</div>
+        <div class="qtags">
+          <span class="qtag t-high">🔴 High Freq</span>
+          <span class="qtag t-mark">3 Marks</span>
+          <span class="qtag t-year">2023 · 2022 · 2020</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-wrap">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Centrifugal Force:</strong> When observed from a rotating (non-inertial) frame of reference, a body appears to experience a force directed away from the centre of rotation. This outward pseudo force is called centrifugal force.</p>
+        <div class="eq">CFF = +mω²r  (directed outward, away from centre)</div>
+        <p><strong>Is it real?</strong> Centrifugal force is a <strong>non-real (pseudo) force</strong>, but it is NOT imaginary — it can be measured by instruments. It arises due to the centripetal acceleration of the rotating frame of reference.</p>
+        <p><strong>Merry-go-round example:</strong></p>
+        <p>When sitting on a merry-go-round with eyes closed, you feel a push outward (centrifugal force). This is because you are in the rotating frame. In the inertial (ground) frame, only centripetal force (inward) exists. In the rotating frame, centrifugal force (outward) balances centripetal force → you appear at rest.</p>
+        <p><strong>Two ways to write force equation:</strong></p>
+        <span class="step">Inertial frame: Resultant force = −mω²r (toward centre)</span>
+        <span class="step">Rotating frame: mω²r + Σreal forces = 0 (pseudo force balances real)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q16</span>
+      <div class="qinfo">
+        <div class="qtxt">What is the "Well of Death" (मौत का कुआं)? Derive the expression for minimum speed of a vehicle inside it.</div>
+        <div class="qtags">
+          <span class="qtag t-high">🔴 High Freq</span>
+          <span class="qtag t-mark">3–4 Marks</span>
+          <span class="qtag t-year">2024 · 2023 · 2022 · 2021</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-wrap">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Well of Death:</strong> A vertical cylindrical wall of radius r inside which a vehicle (motorcycle) is driven in horizontal circles. It is a popular circus stunt.</p>
+        <p><strong>Forces on the vehicle:</strong></p>
+        <p>(i) Normal reaction N — acts horizontally toward centre (centripetal direction)</p>
+        <p>(ii) Weight mg — acts vertically downward</p>
+        <p>(iii) Static friction f_s — acts vertically upward (prevents vehicle from sliding down)</p>
+        <p><strong>Equations:</strong></p>
+        <span class="step">N = mv²/r  (centripetal force equation)</span>
+        <span class="step">f_s = mg  (vertical balance — friction supports weight)</span>
+        <p>Condition: f_s ≤ μ_s N (friction cannot exceed its maximum value)</p>
+        <span class="step">mg ≤ μ_s × mv²/r</span>
+        <span class="step">g ≤ μ_s v²/r → v² ≥ rg/μ_s</span>
+        <div class="eq">v_min = √(rg / μ_s)</div>
+        <p>Vehicle must maintain at least this speed, otherwise friction cannot support its weight → vehicle slides down.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q17</span>
+      <div class="qinfo">
+        <div class="qtxt">Why does a cyclist lean inward while taking a turn on an unbanked road? Derive the angle of inclination with the vertical.</div>
+        <div class="qtags">
+          <span class="qtag t-high">🔴 High Freq</span>
+          <span class="qtag t-mark">3 Marks</span>
+          <span class="qtag t-year">2024 · 2022 · 2020</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-wrap">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Why lean inward:</strong> When a two-wheeler takes a turn, friction provides centripetal force (horizontal). But the centrifugal force (in rotating frame) and weight create a torque that tends to topple the vehicle outward. To prevent toppling, the rider must lean inward so that the net torque about the contact point is zero.</p>
+        <p><strong>Derivation of lean angle:</strong></p>
+        <p>Forces on rider+cycle (treated as particle): Weight mg downward, Normal reaction N upward, Friction f = mv²/r inward.</p>
+        <p>At equilibrium in rotating frame, taking torques about contact point = 0:</p>
+        <span class="step">In rotating frame: centrifugal force = mv²/r (outward, horizontal)</span>
+        <span class="step">Weight = mg (downward)</span>
+        <span class="step">The resultant of these two must pass through the contact point.</span>
+        <span class="step">tan θ = (mv²/r) / mg = v²/rg</span>
+        <div class="eq">θ = tan⁻¹(v²/rg)</div>
+        <p>θ is the angle of inclination of the cycle with the vertical. This is the same formula as banking angle — a two-wheeler leans in lieu of banking.</p>
+        <p><strong>Four-wheeler:</strong> Does not need to lean because its wide base and four contact points create a restoring torque that prevents toppling.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q18</span>
+      <div class="qinfo">
+        <div class="qtxt">What is the maximum speed of a vehicle on an unbanked circular road? Derive the expression v_max = √(μ_s·r·g).</div>
+        <div class="qtags">
+          <span class="qtag t-med">🟠 Medium Freq</span>
+          <span class="qtag t-mark">2–3 Marks</span>
+          <span class="qtag t-year">2023 · 2021 · 2020</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-wrap">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p>On a horizontal circular road of radius r, the centripetal force is provided by static friction between tyres and road.</p>
+        <span class="step">f_s = mv²/r  (friction = centripetal force)</span>
+        <span class="step">N = mg  (normal reaction balances weight)</span>
+        <p>Maximum friction: f_s(max) = μ_s × N = μ_s × mg</p>
+        <p>At maximum speed v_max, friction is at its limit:</p>
+        <span class="step">μ_s·mg = mv_max²/r</span>
+        <div class="eq">v_max = √(μ_s·r·g)</div>
+        <p>Beyond this speed, friction cannot provide enough centripetal force → vehicle skids outward.</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end sec-ucm -->
 
 <!-- ══════ NUMERICALS ══════ -->
 <div class="q-section" id="sec-numericals">
@@ -692,15 +900,18 @@ function show(topic, btn) {
   btn.classList.add('active');
 
   const allSec = document.getElementById('sec-all');
+  const ucmSec = document.getElementById('sec-ucm');
   const numSec = document.getElementById('sec-numericals');
   const mcqSec = document.getElementById('sec-mcq');
 
   allSec.style.display = 'none';
+  ucmSec.style.display = 'none';
   numSec.style.display = 'none';
   mcqSec.style.display = 'none';
 
   if (topic === 'numericals') { numSec.style.display = 'block'; }
   else if (topic === 'mcq') { mcqSec.style.display = 'block'; }
+  else if (topic === 'ucm') { ucmSec.style.display = 'block'; }
   else {
     allSec.style.display = 'block';
     const moi = document.getElementById('sec-moi-inner');
