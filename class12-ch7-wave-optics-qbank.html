@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 12 Physics Ch 7 Wave Optics — Last 5 Years Q&A | Visions Classes</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f0ff; color: #1a1a1a; }
+
+  .header {
+    background: linear-gradient(135deg, #1a0533, #4a148c, #7b1fa2);
+    color: #fff; padding: 24px 16px 18px; text-align: center;
+  }
+  .header .badge {
+    display: inline-block; background: #f59e0b; color: #1a1a1a;
+    font-size: .7rem; font-weight: 900; padding: 4px 14px;
+    border-radius: 20px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px;
+  }
+  .header h1 { font-size: 1.35rem; font-weight: 900; margin-bottom: 4px; }
+  .header p { font-size: .85rem; opacity: .85; }
+  .wmark {
+    background: rgba(255,255,255,.12); text-align: center; padding: 5px;
+    font-size: .72rem; font-weight: 700; letter-spacing: 2px; color: rgba(255,255,255,.7);
+  }
+  .back {
+    display: inline-flex; align-items: center; gap: 7px;
+    color: rgba(255,255,255,.85); text-decoration: none; font-size: .8rem;
+    font-weight: 700; padding: 6px 14px; background: rgba(255,255,255,.15);
+    border-radius: 20px; margin-bottom: 12px;
+  }
+
+  /* TOPIC PILLS */
+  .topic-bar {
+    display: flex; overflow-x: auto; gap: 8px; padding: 12px 14px;
+    background: #3a0070; scrollbar-width: none;
+  }
+  .topic-bar::-webkit-scrollbar { display: none; }
+  .tpill {
+    flex-shrink: 0; background: rgba(255,255,255,.15); border: none;
+    color: #fff; padding: 7px 14px; border-radius: 20px;
+    font-size: .75rem; font-weight: 700; cursor: pointer; white-space: nowrap;
+    transition: background .2s;
+  }
+  .tpill.active, .tpill:hover { background: #f59e0b; color: #1a1a1a; }
+
+  .wrap { max-width: 820px; margin: 0 auto; padding: 16px 14px 70px; }
+
+  /* FREQUENCY BANNER */
+  .freq-banner {
+    background: linear-gradient(135deg, #1a0533, #4a148c);
+    border-radius: 12px; padding: 14px 16px; margin-bottom: 20px; color: #fff;
+  }
+  .freq-banner h3 { font-size: .9rem; font-weight: 900; margin-bottom: 10px; color: #f59e0b; }
+  .freq-row { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; flex-wrap: wrap; }
+  .freq-topic { font-size: .82rem; font-weight: 700; color: #e1bee7; flex: 1; min-width: 160px; }
+  .freq-dots { display: flex; gap: 4px; }
+  .dot { width: 18px; height: 18px; border-radius: 50%; font-size: .6rem; font-weight: 900; display: flex; align-items: center; justify-content: center; }
+  .dot.y { background: #f59e0b; color: #1a1a1a; }
+  .dot.n { background: rgba(255,255,255,.15); color: transparent; }
+  .freq-marks { font-size: .72rem; background: rgba(255,255,255,.15); padding: 2px 8px; border-radius: 10px; white-space: nowrap; }
+
+  /* Q SECTION */
+  .q-section { display: none; }
+  .q-section.active { display: block; }
+
+  .sec-title {
+    display: flex; align-items: center; gap: 10px; margin: 6px 0 16px;
+  }
+  .sec-title .stlab {
+    background: linear-gradient(135deg, #4a148c, #0d47a1);
+    color: #fff; padding: 6px 18px; border-radius: 20px;
+    font-size: .78rem; font-weight: 900; letter-spacing: 1px; text-transform: uppercase;
+  }
+  .sec-title .stline { flex: 1; height: 2px; background: #d1c4e9; }
+
+  /* Q CARD */
+  .qcard {
+    background: #fff; border-radius: 13px; margin-bottom: 20px;
+    overflow: hidden; box-shadow: 0 2px 12px rgba(74,20,140,.12);
+  }
+  .qcard-top {
+    background: linear-gradient(135deg, #1a0533, #4a148c);
+    color: #fff; padding: 13px 16px;
+    display: flex; align-items: flex-start; gap: 12px;
+  }
+  .qno {
+    background: #f59e0b; color: #1a1a1a; font-size: .72rem; font-weight: 900;
+    padding: 4px 10px; border-radius: 10px; white-space: nowrap; flex-shrink: 0; margin-top: 1px;
+  }
+  .qinfo { flex: 1; }
+  .qtxt { font-size: .92rem; font-weight: 700; line-height: 1.5; }
+  .qtags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+  .qtag {
+    font-size: .65rem; font-weight: 800; padding: 2px 9px;
+    border-radius: 10px; text-transform: uppercase;
+  }
+  .t-high  { background: #fee2e2; color: #c0392b; }
+  .t-med   { background: #fef3c7; color: #d97706; }
+  .t-mark  { background: #ede7f6; color: #4a148c; }
+  .t-year  { background: #dcfce7; color: #15803d; }
+  .t-num   { background: #dbeafe; color: #0d47a1; }
+
+  .ans-wrap { padding: 14px 16px; }
+  .ans-lbl {
+    font-size: .7rem; font-weight: 900; color: #15803d;
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .ans-lbl::after { content: ''; flex: 1; height: 1px; background: #d1fae5; }
+
+  .ans-txt { font-size: .88rem; line-height: 1.7; color: #2d2d2d; }
+  .ans-txt p { margin-bottom: 8px; }
+  .ans-txt strong { color: #4a148c; }
+
+  .eq {
+    background: #ede7f6; border-left: 4px solid #7b1fa2;
+    padding: 9px 14px; border-radius: 0 8px 8px 0;
+    font-family: 'Courier New', monospace; font-size: .95rem;
+    font-weight: 700; color: #4a148c; margin: 10px 0;
+  }
+  .step {
+    display: block; background: #f5f0ff; border-radius: 8px;
+    padding: 7px 12px; font-family: monospace; font-size: .86rem;
+    color: #4a148c; margin: 5px 0; font-weight: 700;
+  }
+  .diag {
+    background: #1a0533; border-radius: 10px; padding: 14px;
+    margin: 10px 0; overflow-x: auto;
+  }
+  .diag pre {
+    color: #e1bee7; font-family: 'Courier New', monospace;
+    font-size: .78rem; line-height: 1.8; white-space: pre;
+  }
+
+  /* NUMERICAL */
+  .num-box {
+    background: linear-gradient(135deg, #1a0533, #2d0057);
+    border-radius: 12px; padding: 15px 16px; margin-bottom: 18px; color: #fff;
+  }
+  .num-q { font-size: .9rem; font-weight: 700; margin-bottom: 10px; }
+  .num-given {
+    background: rgba(255,255,255,.1); border-radius: 8px;
+    padding: 8px 12px; margin: 8px 0; font-family: monospace;
+    font-size: .84rem; line-height: 1.9;
+  }
+  .num-sol {
+    background: rgba(245,158,11,.15); border-left: 3px solid #f59e0b;
+    border-radius: 0 8px 8px 0; padding: 8px 12px; margin: 8px 0;
+    font-family: monospace; font-size: .84rem; line-height: 2;
+  }
+  .num-ans {
+    background: #f59e0b; color: #1a1a1a; border-radius: 8px;
+    padding: 7px 14px; font-size: .88rem; font-weight: 900;
+    display: inline-block; margin-top: 8px;
+  }
+
+  /* MCQ */
+  .mcq-box {
+    background: #fff; border-radius: 12px; margin-bottom: 14px;
+    padding: 14px 16px; box-shadow: 0 2px 8px rgba(74,20,140,.08);
+    border-left: 4px solid #f59e0b;
+  }
+  .mcq-q { font-size: .9rem; font-weight: 700; margin-bottom: 10px; }
+  .mcq-opts { list-style: none; padding: 0; }
+  .mcq-opts li {
+    padding: 5px 10px; border-radius: 6px; font-size: .85rem;
+    margin-bottom: 4px; border: 1px solid #e9d5ff;
+  }
+  .mcq-opts li.ok { background: #dcfce7; border-color: #86efac; font-weight: 700; color: #15803d; }
+  .mcq-opts li.ok::before { content: "✅ "; }
+  .mcq-hint { font-size: .78rem; color: #666; padding: 5px 10px; }
+
+  /* FORMULA SHEET */
+  .fsheet { background: #fff; border-radius: 14px; padding: 18px; box-shadow: 0 2px 10px rgba(74,20,140,.1); }
+  .ftitle { font-size: .74rem; font-weight: 900; color: #4a148c; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 10px; padding-bottom: 4px; border-bottom: 2px solid #ede7f6; }
+  .fgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); gap: 10px; margin-bottom: 16px; }
+  .fbox { background: linear-gradient(135deg,#ede7f6,#e8eaf6); border: 1px solid #ce93d8; border-radius: 10px; padding: 10px; text-align: center; }
+  .fbox .fl { font-size: .67rem; font-weight: 700; color: #666; margin-bottom: 4px; text-transform: uppercase; }
+  .fbox .feq { font-size: .95rem; font-weight: 900; color: #4a148c; font-family: monospace; }
+
+  @media(max-width:600px){ .fgrid{grid-template-columns:1fr 1fr;} .header h1{font-size:1.1rem;} }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <a href="notes-class12.html" class="back">← Class 12 Notes</a>
+  <div class="badge">🔮 Chapter 7 · Class 12 · HSC Maharashtra Board</div>
+  <h1>🌈 Wave Optics — Q&amp;A Bank</h1>
+  <p>Most Repeated Questions · Last 5 Years (2020–2024) · With Full Answers</p>
+</div>
+<div class="wmark">VISIONS CLASSES · SHASHIKANT SIR · AMBARNATH</div>
+
+<!-- TOPIC BAR -->
+<div class="topic-bar">
+  <button class="tpill active" onclick="show('all',this)">📋 All Questions</button>
+  <button class="tpill" onclick="show('huygens',this)">🌊 Huygens</button>
+  <button class="tpill" onclick="show('interference',this)">✨ Interference</button>
+  <button class="tpill" onclick="show('diffraction',this)">🌀 Diffraction</button>
+  <button class="tpill" onclick="show('polarisation',this)">🔮 Polarisation</button>
+  <button class="tpill" onclick="show('numericals',this)">🔢 Numericals</button>
+  <button class="tpill" onclick="show('mcq',this)">🔵 MCQs</button>
+  <button class="tpill" onclick="show('formulas',this)">📐 Formulas</button>
+</div>
+
+<div class="wrap">
+
+<!-- FREQUENCY TABLE -->
+<div class="freq-banner">
+  <h3>📊 Last 5 Years — Topic Frequency (2020–2024)</h3>
+
+  <div class="freq-row">
+    <div class="freq-topic">Huygens' Principle + Snell's Law derivation</div>
+    <div class="freq-dots">
+      <div class="dot y">✓</div><div class="dot y">✓</div><div class="dot y">✓</div><div class="dot y">✓</div><div class="dot y">✓</div>
+    </div>
+    <div class="freq-marks">4M · Every year</div>
+  </div>
+
+  <div class="freq-row">
+    <div class="freq-topic">YDSE — Fringe width derivation</div>
+    <div class="freq-dots">
+      <div class="dot y">✓</div><div class="dot y">✓</div><div class="dot y">✓</div><div class="dot y">✓</div><div class="dot y">✓</div>
+    </div>
+    <div class="freq-marks">4M · Every year</div>
+  </div>
+
+  <div class="freq-row">
+    <div class="freq-topic">Malus' Law — I = I₀cos²θ</div>
+    <div class="freq-dots">
+      <div class="dot y">✓</div><div class="dot y">✓</div><div class="dot n">–</div><div class="dot y">✓</div><div class="dot y">✓</div>
+    </div>
+    <div class="freq-marks">2–3M · 4/5 years</div>
+  </div>
+
+  <div class="freq-row">
+    <div class="freq-topic">Brewster's Law — tan i_B = n</div>
+    <div class="freq-dots">
+      <div class="dot y">✓</div><div class="dot n">–</div><div class="dot y">✓</div><div class="dot y">✓</div><div class="dot n">–</div>
+    </div>
+    <div class="freq-marks">3M · 3/5 years</div>
+  </div>
+
+  <div class="freq-row">
+    <div class="freq-topic">YDSE Numerical (find λ or β)</div>
+    <div class="freq-dots">
+      <div class="dot y">✓</div><div class="dot y">✓</div><div class="dot y">✓</div><div class="dot y">✓</div><div class="dot y">✓</div>
+    </div>
+    <div class="freq-marks">3M · Every year</div>
+  </div>
+
+  <div class="freq-row">
+    <div class="freq-topic">Single slit diffraction — minima condition</div>
+    <div class="freq-dots">
+      <div class="dot n">–</div><div class="dot y">✓</div><div class="dot y">✓</div><div class="dot y">✓</div><div class="dot n">–</div>
+    </div>
+    <div class="freq-marks">3M · 3/5 years</div>
+  </div>
+
+  <div class="freq-row">
+    <div class="freq-topic">Malus' Law Numerical</div>
+    <div class="freq-dots">
+      <div class="dot y">✓</div><div class="dot n">–</div><div class="dot y">✓</div><div class="dot y">✓</div><div class="dot n">–</div>
+    </div>
+    <div class="freq-marks">2–3M · 3/5 years</div>
+  </div>
+
+  <div style="font-size:.72rem;color:rgba(255,255,255,.6);margin-top:8px;">Left to right: 2024 · 2023 · 2022 · 2021 · 2020</div>
+</div>
+
+<!-- ══════ ALL / HUYGENS ══════ -->
+<div class="q-section active" id="sec-all">
+<div class="q-section active" id="sec-huygens-inner">
+
+  <div class="sec-title"><div class="stline"></div><div class="stlab">🌊 Huygens' Principle</div><div class="stline"></div></div>
+
+  <!-- Q1 -->
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q1</span>
+      <div class="qinfo">
+        <div class="qtxt">State Huygens' principle. Using it, derive Snell's law of refraction (law of refraction).</div>
+        <div class="qtags">
+          <span class="qtag t-high">🔴 Every Year</span>
+          <span class="qtag t-mark">4 Marks</span>
+          <span class="qtag t-year">2024 · 2023 · 2022 · 2021 · 2020</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-wrap">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Huygens' Principle (2 points — both must be written):</strong></p>
+        <p>1. Every point on a given wavefront acts as a secondary source of light and emits spherical secondary wavelets in all directions with the same speed as the original wave.</p>
+        <p>2. The new wavefront at any later instant is the common tangent (envelope) to all these secondary wavelets.</p>
+        <p><strong>Derivation of Snell's Law using Huygens' Principle:</strong></p>
+        <div class="diag">
+<pre>
+  Medium 1 (n₁, speed v₁)
+  ────────A──────────────────── interface
+           \  r₁  r₂
+  Medium 2  \ B→→→→E (refracted wavefront CE)
+  (n₂, v₂)  \
+              C
+
+  At t=0: wavefront touches interface at A
+  At t=τ: other end of wavefront reaches B
+  BC = v₁τ (in medium 1)
+  AE = v₂τ (secondary wavelet from A in medium 2)
+</pre>
+        </div>
+        <p>From triangle ABC:</p>
+        <span class="step">sin i = BC / AC = v₁τ / AC</span>
+        <p>From triangle AEC:</p>
+        <span class="step">sin r = AE / AC = v₂τ / AC</span>
+        <p>Dividing:</p>
+        <span class="step">sin i / sin r = v₁ / v₂</span>
+        <p>Since v = c/n → v₁ = c/n₁ and v₂ = c/n₂:</p>
+        <div class="eq">sin i / sin r = v₁/v₂ = n₂/n₁  →  <strong>n₁ sin i = n₂ sin r</strong>  ✓ (Snell's Law)</div>
+        <p><strong>Conclusion:</strong> Since v₂ &lt; v₁ for glass, light slows down in denser medium — consistent with experiment. Newton's corpuscular theory wrongly predicted v₂ &gt; v₁.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q2</span>
+      <div class="qinfo">
+        <div class="qtxt">State Huygens' principle. Using it, verify the law of reflection of light.</div>
+        <div class="qtags">
+          <span class="qtag t-high">🔴 High Freq</span>
+          <span class="qtag t-mark">3–4 Marks</span>
+          <span class="qtag t-year">2023 · 2021</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-wrap">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Huygens' Principle:</strong> (State same as Q1 above)</p>
+        <p><strong>Verification of Law of Reflection:</strong></p>
+        <p>Let AB be the incident plane wavefront hitting mirror MM'. At t=0, point A touches the mirror. By time t=τ, point B reaches the mirror at C (BC = vτ). Secondary wavelet from A has also travelled distance AE = vτ in the same medium (same speed).</p>
+        <span class="step">BC = vτ  and  AE = vτ  (same medium, same speed v)</span>
+        <p>Since AE = BC, triangles ABC and AEC are congruent (AE=BC, AC common, right angles at B and E):</p>
+        <div class="eq">∠BAC = ∠ECA  →  ∠i = ∠r  ✓</div>
+        <p>Both incident and reflected rays lie in the same plane as the normal — law of reflection verified.</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end huygens inner -->
+
+<!-- ══════ INTERFERENCE ══════ -->
+<div class="q-section active" id="sec-interference-inner">
+  <div class="sec-title"><div class="stline"></div><div class="stlab">✨ Interference — YDSE</div><div class="stline"></div></div>
+
+  <!-- Q3 -->
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q3</span>
+      <div class="qinfo">
+        <div class="qtxt">In Young's Double Slit Experiment, derive an expression for fringe width. What is the effect on fringe width if: (i) wavelength is increased, (ii) distance between slits is doubled, (iii) experiment is performed in water?</div>
+        <div class="qtags">
+          <span class="qtag t-high">🔴 Every Year</span>
+          <span class="qtag t-mark">4 Marks</span>
+          <span class="qtag t-year">2024 · 2023 · 2022 · 2021 · 2020</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-wrap">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Setup:</strong> Two slits S₁ and S₂, separation = d. Screen at distance D. P at height y from centre O.</p>
+        <div class="diag">
+<pre>
+      S₁ ─────────────────── P (y above centre)
+       |         D           |
+  S ───|                     | screen
+       |                     |
+      S₂ ─────────────────── O (centre)
+      |←── d ──→|
+
+  Path difference: Δ = S₂P − S₁P = yd/D
+</pre>
+        </div>
+        <p><strong>Derivation:</strong></p>
+        <span class="step">S₂P² − S₁P² = [D²+(y+d/2)²] − [D²+(y−d/2)²] = 2yd</span>
+        <span class="step">(S₂P − S₁P)(S₂P + S₁P) = 2yd</span>
+        <span class="step">Since S₁P ≈ S₂P ≈ D:  Δ = yd/D</span>
+        <p><strong>Bright fringe</strong>: Δ = nλ → y_n = nλD/d</p>
+        <p><strong>Fringe width</strong>: β = y_(n+1) − y_n</p>
+        <div class="eq">β = λD/d</div>
+        <p><strong>Effects:</strong></p>
+        <p>(i) <strong>λ increases</strong> → β = λD/d increases — fringes become wider ✓</p>
+        <p>(ii) <strong>d doubled</strong> → β = λD/2d = β/2 — fringe width becomes <strong>half</strong> ✓</p>
+        <p>(iii) <strong>In water</strong> (n=1.33): λ_water = λ_air/n → β_water = λD/nd = β/n — fringe width <strong>decreases</strong> ✓</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q4</span>
+      <div class="qinfo">
+        <div class="qtxt">State the conditions for constructive and destructive interference. What is the ratio of maximum to minimum intensity if the two sources have intensity ratio 4:1?</div>
+        <div class="qtags">
+          <span class="qtag t-high">🔴 High Freq</span>
+          <span class="qtag t-mark">3 Marks</span>
+          <span class="qtag t-year">2024 · 2022 · 2020</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-wrap">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Constructive Interference (Bright Fringe):</strong></p>
+        <p>Path difference Δ = nλ (n = 0, 1, 2 …); phase difference δ = 2nπ</p>
+        <p>Resultant amplitude = A₁ + A₂; Intensity = maximum = I_max</p>
+        <p><strong>Destructive Interference (Dark Fringe):</strong></p>
+        <p>Path difference Δ = (2n−1)λ/2; phase difference δ = (2n−1)π</p>
+        <p>Resultant amplitude = |A₁ − A₂|; Intensity = minimum = I_min</p>
+        <p><strong>Intensity ratio calculation:</strong></p>
+        <span class="step">I₁/I₂ = 4/1  →  A₁/A₂ = 2/1  (since I ∝ A²)</span>
+        <span class="step">I_max = (A₁ + A₂)² = (2+1)² = 9</span>
+        <span class="step">I_min = (A₁ − A₂)² = (2−1)² = 1</span>
+        <div class="eq">I_max : I_min = 9 : 1</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q5</span>
+      <div class="qinfo">
+        <div class="qtxt">What are coherent sources? Why are coherent sources necessary for sustained interference?</div>
+        <div class="qtags">
+          <span class="qtag t-med">🟠 Medium Freq</span>
+          <span class="qtag t-mark">2 Marks</span>
+          <span class="qtag t-year">2023 · 2021</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-wrap">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Coherent Sources:</strong> Two sources of light are said to be coherent if they emit light waves of the <strong>same frequency</strong>, <strong>same wavelength</strong>, and maintain a <strong>constant phase difference</strong> between them at all times.</p>
+        <p><strong>Why necessary:</strong> For a stable (sustained) interference pattern, the positions of bright and dark fringes must remain fixed on the screen. This is only possible if the phase difference between the two sources remains constant. If phase difference changes randomly (incoherent sources), bright and dark fringes shift rapidly and the pattern averages out — no visible fringes are seen.</p>
+        <p><strong>In YDSE:</strong> The two slits S₁ and S₂ act as coherent sources because they are derived from the same single slit S (same source), so they always have a constant phase relationship.</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end interference inner -->
+
+<!-- ══════ DIFFRACTION ══════ -->
+<div class="q-section active" id="sec-diffraction-inner">
+  <div class="sec-title"><div class="stline"></div><div class="stlab">🌀 Diffraction</div><div class="stline"></div></div>
+
+  <!-- Q6 -->
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q6</span>
+      <div class="qinfo">
+        <div class="qtxt">Explain diffraction at a single slit. State the condition for minima. Draw the intensity distribution graph.</div>
+        <div class="qtags">
+          <span class="qtag t-high">🔴 High Freq</span>
+          <span class="qtag t-mark">3 Marks</span>
+          <span class="qtag t-year">2023 · 2022 · 2021</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-wrap">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Diffraction at a single slit:</strong> When monochromatic light passes through a narrow slit of width 'a' (a ≈ λ), secondary wavelets from different parts of the same wavefront interfere to produce alternating bright and dark bands on a screen.</p>
+        <div class="diag">
+<pre>
+  Intensity pattern:
+        |
+  I_max |   ████
+        |  ██████
+        | █████████
+  dim   |░░ ████████░░░
+  ──────|────────────────→ position
+        O  (central maximum — widest &amp; brightest)
+        secondary maxima are progressively dimmer
+</pre>
+        </div>
+        <p><strong>Condition for minima:</strong> The slit of width 'a' is divided into pairs of strips. Each pair has path difference = λ → destructive interference.</p>
+        <div class="eq">a sin θ = nλ  (n = ±1, ±2, ±3 …) — condition for minima</div>
+        <p><strong>Width of central maximum</strong> = 2λD/a (between 1st minima on both sides)</p>
+        <p>As slit width 'a' decreases → central maximum becomes wider → more diffraction occurs.</p>
+        <p><strong>Difference — Interference vs Diffraction:</strong></p>
+        <p>Interference: two separate coherent sources; all bright fringes equal intensity; all dark fringes zero intensity.</p>
+        <p>Diffraction: single slit; central max brightest; secondary maxima get progressively dimmer.</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end diffraction inner -->
+
+<!-- ══════ POLARISATION ══════ -->
+<div class="q-section active" id="sec-polarisation-inner">
+  <div class="sec-title"><div class="stline"></div><div class="stlab">🔮 Polarisation</div><div class="stline"></div></div>
+
+  <!-- Q7 -->
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q7</span>
+      <div class="qinfo">
+        <div class="qtxt">State Malus' Law. A plane polarised light of intensity I₀ passes through an analyser. Find the angle when transmitted intensity is (i) maximum (ii) zero (iii) I₀/2.</div>
+        <div class="qtags">
+          <span class="qtag t-high">🔴 Every Year</span>
+          <span class="qtag t-mark">3 Marks</span>
+          <span class="qtag t-year">2024 · 2023 · 2021 · 2020</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-wrap">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Malus' Law:</strong> When a beam of plane polarised light of intensity I₀ is incident on an analyser, the intensity of transmitted light is:</p>
+        <div class="eq">I = I₀ cos²θ</div>
+        <p>where θ = angle between plane of polarisation of incident light and transmission axis of the analyser.</p>
+        <p>(i) <strong>Maximum intensity:</strong> I = I₀ when cos²θ = 1</p>
+        <div class="eq">θ = 0°  (analyser axis parallel to polariser)</div>
+        <p>(ii) <strong>Zero intensity:</strong> I = 0 when cos²θ = 0</p>
+        <div class="eq">θ = 90°  (analyser ⊥ polariser — "crossed polaroids")</div>
+        <p>(iii) <strong>Half intensity:</strong> I = I₀/2 → cos²θ = 1/2 → cosθ = 1/√2</p>
+        <div class="eq">θ = 45°</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q8</span>
+      <div class="qinfo">
+        <div class="qtxt">State Brewster's Law. Derive the relation tan i_B = n. What is the significance of Brewster's angle?</div>
+        <div class="qtags">
+          <span class="qtag t-high">🔴 High Freq</span>
+          <span class="qtag t-mark">3–4 Marks</span>
+          <span class="qtag t-year">2024 · 2022 · 2021</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-wrap">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Brewster's Law:</strong> When unpolarised light is incident at a specific angle called Brewster's angle (i_B), the reflected ray is completely plane polarised. The vibrations in the reflected ray are perpendicular to the plane of incidence.</p>
+        <p><strong>Derivation of tan i_B = n:</strong></p>
+        <p>At Brewster's angle, the reflected ray and refracted ray are perpendicular to each other:</p>
+        <span class="step">i_B + r = 90°  →  r = 90° − i_B</span>
+        <p>Applying Snell's Law (air to medium of refractive index n):</p>
+        <span class="step">1 × sin i_B = n × sin r = n × sin(90° − i_B) = n cos i_B</span>
+        <span class="step">sin i_B / cos i_B = n</span>
+        <div class="eq">tan i_B = n  ✓</div>
+        <p><strong>Significance:</strong></p>
+        <p>At i_B, the <strong>reflected ray is 100% plane polarised</strong>. The refracted ray is only partially polarised. Used in: photography (Polaroid filters to reduce glare), LCD screens, anti-glare sunglasses, optical instruments.</p>
+        <p><strong>Example:</strong> For glass (n = 1.5): i_B = tan⁻¹(1.5) ≈ 56.3°</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q9 -->
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q9</span>
+      <div class="qinfo">
+        <div class="qtxt">What is polarisation of light? How does it prove the transverse nature of light? Name two methods of producing plane polarised light.</div>
+        <div class="qtags">
+          <span class="qtag t-high">🔴 High Freq</span>
+          <span class="qtag t-mark">3 Marks</span>
+          <span class="qtag t-year">2023 · 2022 · 2020</span>
+        </div>
+      </div>
+    </div>
+    <div class="ans-wrap">
+      <div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Polarisation:</strong> The phenomenon of restricting the vibration of a light wave to a single plane perpendicular to the direction of propagation is called polarisation.</p>
+        <p>Unpolarised light — vibrations in all planes. Plane polarised light — vibrations in one plane only.</p>
+        <p><strong>Proof of transverse nature:</strong> Polarisation is only possible in <strong>transverse waves</strong> (displacement ⊥ direction of propagation). Sound waves are longitudinal — cannot be polarised. Since light <em>can</em> be polarised, it must be a transverse wave.</p>
+        <p><strong>Two methods of producing plane polarised light:</strong></p>
+        <p><strong>1. Reflection (Brewster's method):</strong> Unpolarised light incident at Brewster's angle → reflected ray is completely plane polarised.</p>
+        <p><strong>2. By Polaroids:</strong> Sheet of aligned molecular crystals (e.g., iodoquinine sulphate). Transmits vibrations in only one direction. Widely used method.</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end polarisation inner -->
+</div><!-- end sec-all -->
+
+<!-- ══════ NUMERICALS SECTION ══════ -->
+<div class="q-section" id="sec-numericals">
+  <div class="sec-title"><div class="stline"></div><div class="stlab">🔢 Board Numericals — Last 5 Years</div><div class="stline"></div></div>
+
+  <div class="num-box">
+    <div class="num-q">N1. In YDSE, two slits are 0.5 mm apart and the screen is 1.5 m away. If fringe width is 1.5 mm, find the wavelength of light. <span style="color:#f59e0b;font-size:.75rem;">[2024]</span></div>
+    <div class="num-given">d = 0.5 mm = 5×10⁻⁴ m | D = 1.5 m | β = 1.5 mm = 1.5×10⁻³ m | λ = ?</div>
+    <div class="num-sol">β = λD/d  →  λ = βd/D<br>λ = (1.5×10⁻³ × 5×10⁻⁴) / 1.5<br>λ = 7.5×10⁻⁷ / 1.5 = 5×10⁻⁷ m</div>
+    <span class="num-ans">∴ λ = 5×10⁻⁷ m = 500 nm ✓</span>
+  </div>
+
+  <div class="num-box">
+    <div class="num-q">N2. In YDSE, slits are 1 mm apart, screen is 1 m away, λ = 589 nm. Find: (i) fringe width, (ii) number of fringes in 1 cm. <span style="color:#f59e0b;font-size:.75rem;">[2023]</span></div>
+    <div class="num-given">d = 1×10⁻³ m | D = 1 m | λ = 589×10⁻⁹ m | width = 1 cm = 10⁻² m</div>
+    <div class="num-sol">(i) β = λD/d = (589×10⁻⁹ × 1) / 10⁻³ = 589×10⁻⁶ m = 0.589 mm<br>(ii) N = 10⁻² / 589×10⁻⁶ = 10⁻² / 5.89×10⁻⁴ ≈ 16.98 ≈ 17</div>
+    <span class="num-ans">∴ β = 0.589 mm; N ≈ 17 fringes ✓</span>
+  </div>
+
+  <div class="num-box">
+    <div class="num-q">N3. The 10th bright fringe is 2 cm from centre. Slits are 1 mm apart, screen is 80 cm away. Find λ. <span style="color:#f59e0b;font-size:.75rem;">[2022]</span></div>
+    <div class="num-given">n = 10 | y₁₀ = 2×10⁻² m | d = 10⁻³ m | D = 0.80 m</div>
+    <div class="num-sol">y_n = nλD/d  →  λ = y_n·d / (n·D)<br>λ = (2×10⁻² × 10⁻³) / (10 × 0.80)<br>λ = 2×10⁻⁵ / 8 = 2.5×10⁻⁶ m</div>
+    <span class="num-ans">∴ λ = 2.5×10⁻⁶ m = 2500 nm ✓</span>
+  </div>
+
+  <div class="num-box">
+    <div class="num-q">N4. In YDSE with λ = 4500 Å, 20 fringes are seen in a region. If λ is changed to 6000 Å, how many fringes in same region? <span style="color:#f59e0b;font-size:.75rem;">[2020]</span></div>
+    <div class="num-given">λ₁ = 4500 Å, n₁ = 20 | λ₂ = 6000 Å, n₂ = ?</div>
+    <div class="num-sol">Same region width: n₁β₁ = n₂β₂<br>n₁(λ₁D/d) = n₂(λ₂D/d)<br>n₂ = n₁λ₁/λ₂ = 20 × 4500/6000 = 20 × 3/4 = 15</div>
+    <span class="num-ans">∴ 15 fringes ✓</span>
+  </div>
+
+  <div class="num-box">
+    <div class="num-q">N5. Plane polarised light of intensity 32 W/m² passes through analyser. Intensity becomes 8 W/m². Find angle between polariser and analyser. <span style="color:#f59e0b;font-size:.75rem;">[2024]</span></div>
+    <div class="num-given">I₀ = 32 W/m² | I = 8 W/m² | θ = ?</div>
+    <div class="num-sol">I = I₀cos²θ<br>cos²θ = 8/32 = 1/4<br>cosθ = 1/2<br>θ = 60°</div>
+    <span class="num-ans">∴ θ = 60° ✓</span>
+  </div>
+
+  <div class="num-box">
+    <div class="num-q">N6. Unpolarised light passes through two polaroids. Transmitted intensity = I₀/4. Find angle between their axes. <span style="color:#f59e0b;font-size:.75rem;">[2022 · 2021]</span></div>
+    <div class="num-given">After 1st polaroid: I₀/2 (always) | After 2nd: I₀/4</div>
+    <div class="num-sol">I₀/4 = (I₀/2) cos²θ<br>cos²θ = 1/2<br>cosθ = 1/√2<br>θ = 45°</div>
+    <span class="num-ans">∴ θ = 45° ✓</span>
+  </div>
+
+  <div class="num-box">
+    <div class="num-q">N7. Critical angle of glass is 42°. Find: (i) refractive index, (ii) Brewster's angle. <span style="color:#f59e0b;font-size:.75rem;">[2023]</span></div>
+    <div class="num-given">θ_c = 42° | find n and i_B</div>
+    <div class="num-sol">(i) n = 1/sin θ_c = 1/sin 42° = 1/0.6691 ≈ 1.5<br>(ii) tan i_B = n = 1.5<br>    i_B = tan⁻¹(1.5) ≈ 56.3°</div>
+    <span class="num-ans">∴ n ≈ 1.5; i_B ≈ 56.3° ✓</span>
+  </div>
+
+</div><!-- end numericals -->
+
+<!-- ══════ MCQ SECTION ══════ -->
+<div class="q-section" id="sec-mcq">
+  <div class="sec-title"><div class="stline"></div><div class="stlab">🔵 MCQs — Last 5 Years Pattern</div><div class="stline"></div></div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">1. According to Huygens' principle, the new wavefront is the ______ to all secondary wavelets.</div>
+    <ul class="mcq-opts">
+      <li>a) Perpendicular</li>
+      <li class="ok">b) Common tangent (envelope)</li>
+      <li>c) Normal</li>
+      <li>d) Parallel line</li>
+    </ul>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">2. In YDSE, if distance between slits is halved and distance to screen is doubled, fringe width becomes:</div>
+    <ul class="mcq-opts">
+      <li>a) Half</li>
+      <li>b) Double</li>
+      <li>c) Same</li>
+      <li class="ok">d) Four times (β = λD/d → λ·2D / (d/2) = 4λD/d)</li>
+    </ul>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">3. When YDSE is performed in water (n=1.33), fringe width compared to air:</div>
+    <ul class="mcq-opts">
+      <li>a) Increases 1.33 times</li>
+      <li class="ok">b) Decreases to 1/1.33 times</li>
+      <li>c) Remains the same</li>
+      <li>d) Becomes zero</li>
+    </ul>
+    <div class="mcq-hint">💡 λ_water = λ_air/n → β_water = β_air/n</div>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">4. Condition for first minimum in single slit diffraction (slit width = a) is:</div>
+    <ul class="mcq-opts">
+      <li>a) a sinθ = λ/2</li>
+      <li class="ok">b) a sinθ = λ</li>
+      <li>c) a sinθ = 2λ</li>
+      <li>d) a sinθ = 3λ/2</li>
+    </ul>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">5. Polarisation proves that light is a:</div>
+    <ul class="mcq-opts">
+      <li>a) Longitudinal wave</li>
+      <li>b) Electromagnetic wave</li>
+      <li class="ok">c) Transverse wave</li>
+      <li>d) Mechanical wave</li>
+    </ul>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">6. When two polaroids are crossed (θ=90°), transmitted intensity is:</div>
+    <ul class="mcq-opts">
+      <li>a) I₀</li>
+      <li>b) I₀/2</li>
+      <li>c) I₀/4</li>
+      <li class="ok">d) Zero  (cos²90° = 0)</li>
+    </ul>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">7. For glass n = 1.732 (= √3), Brewster's angle is:</div>
+    <ul class="mcq-opts">
+      <li>a) 45°</li>
+      <li>b) 56°</li>
+      <li class="ok">c) 60°  (tan 60° = √3 = 1.732)</li>
+      <li>d) 30°</li>
+    </ul>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">8. Central fringe in YDSE using white light is:</div>
+    <ul class="mcq-opts">
+      <li class="ok">a) White  (all colours have zero path difference at centre)</li>
+      <li>b) Violet</li>
+      <li>c) Red</li>
+      <li>d) Dark</li>
+    </ul>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">9. Intensity of transmitted light through analyser at θ=60° (I = I₀cos²θ):</div>
+    <ul class="mcq-opts">
+      <li class="ok">a) I₀/4  (cos²60° = (1/2)² = 1/4)</li>
+      <li>b) I₀/2</li>
+      <li>c) I₀√3/2</li>
+      <li>d) 3I₀/4</li>
+    </ul>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">10. Huygens' wave theory fails to explain:</div>
+    <ul class="mcq-opts">
+      <li>a) Reflection</li>
+      <li>b) Refraction</li>
+      <li>c) Interference</li>
+      <li class="ok">d) Photoelectric effect  (needs quantum/photon theory)</li>
+    </ul>
+  </div>
+
+</div><!-- end mcq -->
+
+<!-- ══════ FORMULAS SECTION ══════ -->
+<div class="q-section" id="sec-formulas">
+  <div class="fsheet">
+    <div class="ftitle">🌊 Huygens</div>
+    <div class="fgrid">
+      <div class="fbox"><div class="fl">Speed in medium</div><div class="feq">v = c/n</div></div>
+      <div class="fbox"><div class="fl">Snell's Law</div><div class="feq">n₁ sin i = n₂ sin r</div></div>
+      <div class="fbox"><div class="fl">Huygens form</div><div class="feq">sin i/sin r = v₁/v₂</div></div>
+    </div>
+
+    <div class="ftitle">✨ Interference — YDSE</div>
+    <div class="fgrid">
+      <div class="fbox"><div class="fl">Fringe width</div><div class="feq">β = λD/d</div></div>
+      <div class="fbox"><div class="fl">Bright y_n</div><div class="feq">y = nλD/d</div></div>
+      <div class="fbox"><div class="fl">Dark y_n</div><div class="feq">y = (2n−1)λD/2d</div></div>
+      <div class="fbox"><div class="fl">Path diff (bright)</div><div class="feq">Δ = nλ</div></div>
+      <div class="fbox"><div class="fl">Path diff (dark)</div><div class="feq">Δ = (2n−1)λ/2</div></div>
+      <div class="fbox"><div class="fl">Intensity</div><div class="feq">I = 4I₀cos²(δ/2)</div></div>
+      <div class="fbox"><div class="fl">I_max : I_min</div><div class="feq">(A₁+A₂)²:(A₁−A₂)²</div></div>
+      <div class="fbox"><div class="fl">In water</div><div class="feq">β' = β/n</div></div>
+    </div>
+
+    <div class="ftitle">🌀 Diffraction</div>
+    <div class="fgrid">
+      <div class="fbox"><div class="fl">Minima condition</div><div class="feq">a sinθ = nλ</div></div>
+      <div class="fbox"><div class="fl">Central max width</div><div class="feq">W = 2λD/a</div></div>
+      <div class="fbox"><div class="fl">Angular half-width</div><div class="feq">θ = λ/a</div></div>
+    </div>
+
+    <div class="ftitle">🔮 Polarisation</div>
+    <div class="fgrid">
+      <div class="fbox"><div class="fl">Malus' Law</div><div class="feq">I = I₀cos²θ</div></div>
+      <div class="fbox"><div class="fl">θ=0° (parallel)</div><div class="feq">I = I₀ (max)</div></div>
+      <div class="fbox"><div class="fl">θ=90° (crossed)</div><div class="feq">I = 0</div></div>
+      <div class="fbox"><div class="fl">θ=45°</div><div class="feq">I = I₀/2</div></div>
+      <div class="fbox"><div class="fl">Brewster's Law</div><div class="feq">tan i_B = n</div></div>
+      <div class="fbox"><div class="fl">At Brewster's</div><div class="feq">i_B + r = 90°</div></div>
+    </div>
+
+    <div style="background:linear-gradient(135deg,#1a0533,#4a148c);color:#fff;border-radius:12px;padding:16px;margin-top:14px;">
+      <div style="font-size:.78rem;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#e1bee7;margin-bottom:10px;">📋 Must Write in Board Exam</div>
+      <ul style="list-style:none;padding:0;font-size:.87rem;line-height:2.1;">
+        <li>✅ Huygens' Principle — write both points + draw wavefront diagram</li>
+        <li>✅ Snell's Law derivation — draw diagram, show BC=v₁τ, AE=v₂τ</li>
+        <li>✅ YDSE fringe width — draw diagram + show path diff = yd/D step</li>
+        <li>✅ Malus' Law — write formula + 3 angle cases (0°, 45°, 90°)</li>
+        <li>✅ Brewster's Law — derive tan i_B = n using i_B + r = 90°</li>
+        <li>✅ Numerical — β = λD/d  rearrange to find any missing quantity</li>
+      </ul>
+    </div>
+  </div>
+</div><!-- end formulas -->
+
+</div><!-- wrap -->
+
+<script>
+  function show(topic, btn) {
+    // Update pill buttons
+    document.querySelectorAll('.tpill').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const allSec = document.getElementById('sec-all');
+    const numSec = document.getElementById('sec-numericals');
+    const mcqSec = document.getElementById('sec-mcq');
+    const frmSec = document.getElementById('sec-formulas');
+
+    // Hide all
+    allSec.style.display = 'none';
+    numSec.style.display = 'none';
+    mcqSec.style.display = 'none';
+    frmSec.style.display = 'none';
+
+    if (topic === 'numericals') { numSec.style.display = 'block'; }
+    else if (topic === 'mcq') { mcqSec.style.display = 'block'; }
+    else if (topic === 'formulas') { frmSec.style.display = 'block'; }
+    else {
+      allSec.style.display = 'block';
+      // Show/hide sub-sections
+      const huy = document.getElementById('sec-huygens-inner');
+      const inf = document.getElementById('sec-interference-inner');
+      const dif = document.getElementById('sec-diffraction-inner');
+      const pol = document.getElementById('sec-polarisation-inner');
+      if (topic === 'all') {
+        [huy, inf, dif, pol].forEach(s => s.style.display = 'block');
+      } else if (topic === 'huygens') {
+        huy.style.display='block'; inf.style.display='none'; dif.style.display='none'; pol.style.display='none';
+      } else if (topic === 'interference') {
+        huy.style.display='none'; inf.style.display='block'; dif.style.display='none'; pol.style.display='none';
+      } else if (topic === 'diffraction') {
+        huy.style.display='none'; inf.style.display='none'; dif.style.display='block'; pol.style.display='none';
+      } else if (topic === 'polarisation') {
+        huy.style.display='none'; inf.style.display='none'; dif.style.display='none'; pol.style.display='block';
+      }
+    }
+    window.scrollTo(0, 0);
+  }
+</script>
+</body>
+</html>
