@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Question Bank — All Classes & Subjects | Visions Classes</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4ff; color: #1a1a1a; }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #0a1628, #1a237e, #283593);
+    color: #fff; padding: 28px 16px 22px; text-align: center;
+  }
+  .header .badge {
+    display: inline-block; background: #f59e0b; color: #1a1a1a;
+    font-size: .72rem; font-weight: 900; padding: 4px 16px;
+    border-radius: 20px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px;
+  }
+  .header h1 { font-size: 1.6rem; font-weight: 900; margin-bottom: 6px; }
+  .header p { font-size: .88rem; opacity: .85; }
+  .wmark {
+    background: rgba(255,255,255,.1); text-align: center; padding: 6px;
+    font-size: .72rem; font-weight: 700; letter-spacing: 2px; color: rgba(255,255,255,.7);
+  }
+  .back {
+    display: inline-flex; align-items: center; gap: 7px;
+    color: rgba(255,255,255,.85); text-decoration: none;
+    font-size: .8rem; font-weight: 700; padding: 7px 14px;
+    background: rgba(255,255,255,.15); border-radius: 20px; margin-bottom: 14px;
+  }
+
+  /* CLASS FILTER TABS */
+  .class-tabs {
+    display: flex; overflow-x: auto; gap: 8px;
+    padding: 14px 16px; background: #0d1b4a;
+    position: sticky; top: 0; z-index: 100; scrollbar-width: none;
+  }
+  .class-tabs::-webkit-scrollbar { display: none; }
+  .ctab {
+    flex-shrink: 0; border: none; cursor: pointer;
+    padding: 9px 20px; border-radius: 25px;
+    font-size: .82rem; font-weight: 800; white-space: nowrap;
+    transition: all .2s; background: rgba(255,255,255,.12); color: #fff;
+  }
+  .ctab.active { color: #1a1a1a; }
+  .ctab[data-class="all"].active  { background: #f59e0b; }
+  .ctab[data-class="12"].active   { background: #ef4444; }
+  .ctab[data-class="11"].active   { background: #8b5cf6; }
+  .ctab[data-class="10"].active   { background: #10b981; }
+  .ctab[data-class="9"].active    { background: #f97316; }
+
+  /* WRAP */
+  .wrap { max-width: 960px; margin: 0 auto; padding: 20px 14px 70px; }
+
+  /* CLASS SECTION */
+  .class-section { display: none; }
+  .class-section.active { display: block; }
+
+  /* CLASS HEADER BANNER */
+  .class-banner {
+    border-radius: 14px; padding: 16px 20px; margin-bottom: 20px;
+    display: flex; align-items: center; gap: 14px; color: #fff;
+  }
+  .class-banner .cb-icon { font-size: 2.2rem; }
+  .class-banner h2 { font-size: 1.1rem; font-weight: 900; }
+  .class-banner p { font-size: .82rem; opacity: .85; margin-top: 3px; }
+
+  /* SUBJECT SECTION */
+  .subj-section { margin-bottom: 28px; }
+  .subj-title {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+  }
+  .subj-title .slab {
+    font-size: .78rem; font-weight: 900; letter-spacing: 1px;
+    text-transform: uppercase; color: #fff;
+    padding: 5px 16px; border-radius: 20px; white-space: nowrap;
+  }
+  .subj-title .sline { flex: 1; height: 2px; }
+
+  /* CARD GRID */
+  .qb-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+  }
+
+  /* Q BANK CARD */
+  .qb-card {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+    transition: transform .2s, box-shadow .2s;
+    text-decoration: none;
+    color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+  }
+  .qb-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,.14); }
+
+  .qb-card-top {
+    padding: 14px 16px;
+    display: flex; align-items: center; gap: 12px;
+    color: #fff;
+  }
+  .qb-card-top .icon { font-size: 1.6rem; flex-shrink: 0; }
+  .qb-card-top .info { flex: 1; }
+  .qb-card-top .ch-label {
+    font-size: .65rem; font-weight: 800; opacity: .85;
+    letter-spacing: 1px; text-transform: uppercase; margin-bottom: 3px;
+  }
+  .qb-card-top h3 { font-size: .88rem; font-weight: 800; line-height: 1.4; }
+  .qb-badge {
+    font-size: .62rem; font-weight: 900; padding: 3px 8px;
+    border-radius: 10px; background: #f59e0b; color: #1a1a1a;
+    text-transform: uppercase; white-space: nowrap; flex-shrink: 0;
+  }
+
+  .qb-card-body {
+    padding: 12px 16px; flex: 1;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .qb-tag-row { display: flex; gap: 6px; flex-wrap: wrap; }
+  .qb-tag {
+    font-size: .68rem; font-weight: 700; padding: 2px 8px;
+    border-radius: 8px;
+  }
+  .tag-q { background: #dbeafe; color: #1d4ed8; }
+  .tag-n { background: #dcfce7; color: #15803d; }
+  .tag-m { background: #fef3c7; color: #d97706; }
+  .tag-5y { background: #fee2e2; color: #c0392b; }
+
+  .qb-open-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: inherit; color: #fff;
+    padding: 9px 16px; border-radius: 25px;
+    text-decoration: none; font-size: .8rem; font-weight: 800;
+    margin-top: 10px; border: none; cursor: pointer;
+    transition: opacity .2s;
+  }
+  .qb-open-btn:hover { opacity: .88; }
+
+  /* STATS BAR */
+  .stats-bar {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 10px; margin-bottom: 24px;
+  }
+  .stat-box {
+    background: #fff; border-radius: 12px; padding: 14px;
+    text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,.07);
+  }
+  .stat-box .s-num { font-size: 1.6rem; font-weight: 900; }
+  .stat-box .s-lbl { font-size: .72rem; color: #666; font-weight: 700; margin-top: 2px; }
+
+  /* EMPTY */
+  .coming-soon {
+    background: #fff; border-radius: 12px; padding: 28px;
+    text-align: center; color: #888; border: 2px dashed #d1d5db;
+  }
+  .coming-soon .cs-icon { font-size: 2rem; margin-bottom: 10px; }
+  .coming-soon p { font-size: .88rem; }
+
+  @media (max-width: 600px) {
+    .qb-grid { grid-template-columns: 1fr; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+    .header h1 { font-size: 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <a href="index.html" class="back">← Home</a>
+  <div class="badge">📚 All Classes · All Subjects</div>
+  <h1>📚 Question Bank Hub</h1>
+  <p>Last 5 Years Repeated Q&amp;A · Subject-wise · Chapter-wise · Class 9 to 12</p>
+</div>
+<div class="wmark">VISIONS CLASSES · SHASHIKANT SIR · AMBARNATH</div>
+
+<!-- CLASS FILTER TABS -->
+<div class="class-tabs">
+  <button class="ctab active" data-class="all" onclick="showClass('all',this)">📋 All Classes</button>
+  <button class="ctab" data-class="12" onclick="showClass('12',this)">🔴 Class 12</button>
+  <button class="ctab" data-class="11" onclick="showClass('11',this)">🟣 Class 11</button>
+  <button class="ctab" data-class="10" onclick="showClass('10',this)">🟢 Class 10</button>
+  <button class="ctab" data-class="9" onclick="showClass('9',this)">🟠 Class 9</button>
+</div>
+
+<div class="wrap">
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-box"><div class="s-num" style="color:#ef4444;">30+</div><div class="s-lbl">Q&A Banks</div></div>
+  <div class="stat-box"><div class="s-num" style="color:#8b5cf6;">200+</div><div class="s-lbl">Questions</div></div>
+  <div class="stat-box"><div class="s-num" style="color:#10b981;">4</div><div class="s-lbl">Classes</div></div>
+  <div class="stat-box"><div class="s-num" style="color:#f59e0b;">8+</div><div class="s-lbl">Subjects</div></div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     ALL CLASSES VIEW
+═══════════════════════════════════════════ -->
+<div class="class-section active" id="cls-all">
+
+  <!-- CLASS 12 PREVIEW -->
+  <div class="subj-section">
+    <div class="subj-title">
+      <div class="slab" style="background:#ef4444;">🔴 Class 12</div>
+      <div class="sline" style="background:#fecaca;"></div>
+    </div>
+    <div class="qb-grid">
+
+      <a class="qb-card" href="class12-ch1-rotational-qbank.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#0a1628,#0d47a1);">
+          <span class="icon">⚙️</span>
+          <div class="info">
+            <div class="ch-label">Physics · Chapter 1</div>
+            <h3>Rotational Dynamics Q&amp;A Bank</h3>
+          </div>
+          <span class="qb-badge">18 Q</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Last 5 Years</span>
+            <span class="qb-tag tag-q">18 Questions</span>
+            <span class="qb-tag tag-n">5 Numericals</span>
+          </div>
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-m">MCQs + Answers</span>
+          </div>
+          <a href="class12-ch1-rotational-qbank.html" class="qb-open-btn" style="background:linear-gradient(135deg,#0d47a1,#1565c0);">Open Q&amp;A Bank →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class12-ch7-wave-optics-qbank.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#1a0533,#4a148c);">
+          <span class="icon">🌈</span>
+          <div class="info">
+            <div class="ch-label">Physics · Chapter 7</div>
+            <h3>Wave Optics Q&amp;A Bank</h3>
+          </div>
+          <span class="qb-badge">18 Q</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Last 5 Years</span>
+            <span class="qb-tag tag-q">18 Questions</span>
+            <span class="qb-tag tag-n">7 Numericals</span>
+          </div>
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-m">MCQs + Formulas</span>
+          </div>
+          <a href="class12-ch7-wave-optics-qbank.html" class="qb-open-btn" style="background:linear-gradient(135deg,#4a148c,#7b1fa2);">Open Q&amp;A Bank →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class12-chem-ch11-repeated-qbank.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#4a148c,#c2185b);">
+          <span class="icon">⚗️</span>
+          <div class="info">
+            <div class="ch-label">Chemistry · Chapter 11</div>
+            <h3>Alcohols, Phenols &amp; Ethers Q&amp;A</h3>
+          </div>
+          <span class="qb-badge">15+ Q</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Last 5 Years</span>
+            <span class="qb-tag tag-q">15 Questions</span>
+            <span class="qb-tag tag-m">8 MCQs</span>
+          </div>
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-n">Grignard Reagent</span>
+          </div>
+          <a href="class12-chem-ch11-repeated-qbank.html" class="qb-open-btn" style="background:linear-gradient(135deg,#880e4f,#c2185b);">Open Q&amp;A Bank →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class12-physics-wave-optics.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#1a0533,#6a1b9a);">
+          <span class="icon">🔮</span>
+          <div class="info">
+            <div class="ch-label">Physics · Chapter 7</div>
+            <h3>Wave Optics — Full Notes + Q&amp;A</h3>
+          </div>
+          <span class="qb-badge">Notes</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Board Q&amp;A</span>
+            <span class="qb-tag tag-n">8 Numericals</span>
+            <span class="qb-tag tag-m">MCQs</span>
+          </div>
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-q">Huygens · YDSE · Polarisation</span>
+          </div>
+          <a href="class12-physics-wave-optics.html" class="qb-open-btn" style="background:linear-gradient(135deg,#4a148c,#6a1b9a);">Open Notes →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class12-physics-imp-notes.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#0a1628,#0d47a1,#1565c0);">
+          <span class="icon">⚡</span>
+          <div class="info">
+            <div class="ch-label">Physics · All 16 Chapters</div>
+            <h3>IMP Notes + Last 5 Years Q&amp;A</h3>
+          </div>
+          <span class="qb-badge">All Ch</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 15 Board Q&amp;A</span>
+            <span class="qb-tag tag-n">10 MCQs</span>
+          </div>
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-q">All Formulas Sheet</span>
+          </div>
+          <a href="class12-physics-imp-notes.html" class="qb-open-btn" style="background:linear-gradient(135deg,#0d47a1,#1565c0);">Open Notes →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class12-chemistry-imp-qa.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#1a237e,#283593,#3949ab);">
+          <span class="icon">🧪</span>
+          <div class="info">
+            <div class="ch-label">Chemistry · IMP Q&amp;A</div>
+            <h3>Chemistry Important Q&amp;A</h3>
+          </div>
+          <span class="qb-badge">IMP</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Board Level</span>
+            <span class="qb-tag tag-q">All Topics</span>
+          </div>
+          <a href="class12-chemistry-imp-qa.html" class="qb-open-btn" style="background:linear-gradient(135deg,#1a237e,#3949ab);">Open Q&amp;A →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class12-biology-imp-questions.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#1b5e20,#2e7d32,#388e3c);">
+          <span class="icon">🌿</span>
+          <div class="info">
+            <div class="ch-label">Biology · IMP Q&amp;A</div>
+            <h3>Biology Important Questions</h3>
+          </div>
+          <span class="qb-badge">IMP</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Board Level</span>
+            <span class="qb-tag tag-q">All Topics</span>
+          </div>
+          <a href="class12-biology-imp-questions.html" class="qb-open-btn" style="background:linear-gradient(135deg,#1b5e20,#2e7d32);">Open Q&amp;A →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class12-english-novel-qa.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#1a1a2e,#7b1c1c);">
+          <span class="icon">📚</span>
+          <div class="info">
+            <div class="ch-label">English · Novel Q&amp;A</div>
+            <h3>Class 12 Novel Section Q&amp;A</h3>
+          </div>
+          <span class="qb-badge">Q&amp;A</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Board Level</span>
+            <span class="qb-tag tag-q">All 4 Novels</span>
+          </div>
+          <a href="class12-english-novel-qa.html" class="qb-open-btn" style="background:linear-gradient(135deg,#7b1c1c,#c0392b);">Open Q&amp;A →</a>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- CLASS 11 PREVIEW -->
+  <div class="subj-section">
+    <div class="subj-title">
+      <div class="slab" style="background:#8b5cf6;">🟣 Class 11</div>
+      <div class="sline" style="background:#ddd6fe;"></div>
+    </div>
+    <div class="qb-grid">
+
+      <a class="qb-card" href="class11-physics-ch9-optics.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#0a1628,#0d47a1);">
+          <span class="icon">🔬</span>
+          <div class="info">
+            <div class="ch-label">Physics · Chapter 9</div>
+            <h3>Optics — Notes + Q&amp;A + Numericals</h3>
+          </div>
+          <span class="qb-badge">12 Q</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Board Q&amp;A</span>
+            <span class="qb-tag tag-n">7 Numericals</span>
+            <span class="qb-tag tag-m">10 MCQs</span>
+          </div>
+          <a href="class11-physics-ch9-optics.html" class="qb-open-btn" style="background:linear-gradient(135deg,#0a1628,#0d47a1);">Open Notes →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class11-maths1-imp-questions.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#0d47a1,#1976d2);">
+          <span class="icon">📐</span>
+          <div class="info">
+            <div class="ch-label">Maths 1 · IMP Questions</div>
+            <h3>Class 11 Maths 1 — All IMP Q&amp;A</h3>
+          </div>
+          <span class="qb-badge">IMP</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Board Level</span>
+            <span class="qb-tag tag-q">All 4 Chapters</span>
+          </div>
+          <a href="class11-maths1-imp-questions.html" class="qb-open-btn" style="background:linear-gradient(135deg,#0d47a1,#1976d2);">Open Q&amp;A →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class11-maths2-ch1-ch2-qbank.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#1565c0,#1976d2);">
+          <span class="icon">🔢</span>
+          <div class="info">
+            <div class="ch-label">Maths 2 · Ch 1 &amp; Ch 2</div>
+            <h3>Maths 2 — Ch 1 &amp; 2 Question Bank</h3>
+          </div>
+          <span class="qb-badge">Q Bank</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Board Level</span>
+            <span class="qb-tag tag-q">Complex Numbers + Sequences</span>
+          </div>
+          <a href="class11-maths2-ch1-ch2-qbank.html" class="qb-open-btn" style="background:linear-gradient(135deg,#1565c0,#1976d2);">Open Q&amp;A →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class11-rkt-chemistry-answerbank.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#b71c1c,#d32f2f);">
+          <span class="icon">⚗️</span>
+          <div class="info">
+            <div class="ch-label">Chemistry · RKT Answer Bank</div>
+            <h3>RKT Chemistry — Answer Bank</h3>
+          </div>
+          <span class="qb-badge">Ans Bank</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 RKT College</span>
+            <span class="qb-tag tag-q">All Questions Solved</span>
+          </div>
+          <a href="class11-rkt-chemistry-answerbank.html" class="qb-open-btn" style="background:linear-gradient(135deg,#b71c1c,#d32f2f);">Open Answers →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class11-birla-chemistry-answerbank.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#0c2461,#1565c0);">
+          <span class="icon">⚗️</span>
+          <div class="info">
+            <div class="ch-label">Chemistry · Birla Answer Bank</div>
+            <h3>Birla Chemistry — 46 Q&amp;A Solved</h3>
+          </div>
+          <span class="qb-badge">46 Q</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Birla College</span>
+            <span class="qb-tag tag-q">46 Questions</span>
+          </div>
+          <a href="class11-birla-chemistry-answerbank.html" class="qb-open-btn" style="background:linear-gradient(135deg,#0c2461,#1565c0);">Open Answers →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class11-biology-qb-ch1-7.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#1b5e20,#2e7d32);">
+          <span class="icon">🌿</span>
+          <div class="info">
+            <div class="ch-label">Biology · Ch 1–7</div>
+            <h3>Biology Question Bank Ch 1–7</h3>
+          </div>
+          <span class="qb-badge">Q Bank</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Board Level</span>
+            <span class="qb-tag tag-q">All Chapters</span>
+          </div>
+          <a href="class11-biology-qb-ch1-7.html" class="qb-open-btn" style="background:linear-gradient(135deg,#1b5e20,#2e7d32);">Open Q&amp;A →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class11-it-question-bank.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#0d47a1,#1976d2);">
+          <span class="icon">💻</span>
+          <div class="info">
+            <div class="ch-label">IT · Ch 1–4</div>
+            <h3>IT Question Bank — All 4 Chapters</h3>
+          </div>
+          <span class="qb-badge">Q Bank</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Board Level</span>
+            <span class="qb-tag tag-q">Ch 1, 2, 3, 4</span>
+          </div>
+          <a href="class11-it-question-bank.html" class="qb-open-btn" style="background:linear-gradient(135deg,#0d47a1,#1976d2);">Open Q&amp;A →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class11-physics-imp-ch1-2-6-8-10-12.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#0d47a1,#1976d2);">
+          <span class="icon">⚡</span>
+          <div class="info">
+            <div class="ch-label">Physics · Vedanta College</div>
+            <h3>Physics IMP Q — 6 Chapters</h3>
+          </div>
+          <span class="qb-badge">IMP</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Vedanta College</span>
+            <span class="qb-tag tag-q">Ch 1,2,6,8,10,12</span>
+          </div>
+          <a href="class11-physics-imp-ch1-2-6-8-10-12.html" class="qb-open-btn" style="background:linear-gradient(135deg,#0d47a1,#1976d2);">Open Q&amp;A →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class11-geography-imp-qa.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#c2410c,#ea580c);">
+          <span class="icon">🌍</span>
+          <div class="info">
+            <div class="ch-label">Geography · IMP Q&amp;A</div>
+            <h3>Geography Important Q&amp;A</h3>
+          </div>
+          <span class="qb-badge">IMP</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Board Level</span>
+            <span class="qb-tag tag-q">All Topics</span>
+          </div>
+          <a href="class11-geography-imp-qa.html" class="qb-open-btn" style="background:linear-gradient(135deg,#c2410c,#ea580c);">Open Q&amp;A →</a>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- CLASS 10 PREVIEW -->
+  <div class="subj-section">
+    <div class="subj-title">
+      <div class="slab" style="background:#10b981;">🟢 Class 10</div>
+      <div class="sline" style="background:#a7f3d0;"></div>
+    </div>
+    <div class="qb-grid">
+
+      <a class="qb-card" href="class10-science2-most-repeated.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#064e3b,#065f46,#047857);">
+          <span class="icon">🔬</span>
+          <div class="info">
+            <div class="ch-label">Science 2 · Most Repeated</div>
+            <h3>Last 5 Years — Most Repeated Q&amp;A</h3>
+          </div>
+          <span class="qb-badge">25 Q</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Last 5 Years</span>
+            <span class="qb-tag tag-q">25 Questions</span>
+          </div>
+          <a href="class10-science2-most-repeated.html" class="qb-open-btn" style="background:linear-gradient(135deg,#047857,#065f46);">Open Q&amp;A →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class10-science2-repeated-paper.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#064e3b,#065f46);">
+          <span class="icon">📝</span>
+          <div class="info">
+            <div class="ch-label">Science 2 · Repeated Paper</div>
+            <h3>Science 2 — Repeated Questions Paper</h3>
+          </div>
+          <span class="qb-badge">40M</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Board Pattern</span>
+            <span class="qb-tag tag-q">40 Marks Paper</span>
+          </div>
+          <a href="class10-science2-repeated-paper.html" class="qb-open-btn" style="background:linear-gradient(135deg,#064e3b,#065f46);">Open Paper →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class10-science1-ch6-refraction.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#0369a1,#0284c7);">
+          <span class="icon">🔭</span>
+          <div class="info">
+            <div class="ch-label">Science 1 · Chapter 6</div>
+            <h3>Refraction of Light — Q&amp;A</h3>
+          </div>
+          <span class="qb-badge">Q&amp;A</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Board Level</span>
+            <span class="qb-tag tag-q">Ch 6 Refraction</span>
+          </div>
+          <a href="class10-science1-ch6-refraction.html" class="qb-open-btn" style="background:linear-gradient(135deg,#0369a1,#0284c7);">Open Q&amp;A →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class10-hindi-grammar.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#92400e,#b45309);">
+          <span class="icon">📖</span>
+          <div class="info">
+            <div class="ch-label">Hindi · Grammar</div>
+            <h3>Hindi Grammar Q&amp;A</h3>
+          </div>
+          <span class="qb-badge">Q&amp;A</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Board Level</span>
+            <span class="qb-tag tag-q">Grammar Topics</span>
+          </div>
+          <a href="class10-hindi-grammar.html" class="qb-open-btn" style="background:linear-gradient(135deg,#92400e,#b45309);">Open Q&amp;A →</a>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- CLASS 9 PREVIEW -->
+  <div class="subj-section">
+    <div class="subj-title">
+      <div class="slab" style="background:#f97316;">🟠 Class 9</div>
+      <div class="sline" style="background:#fed7aa;"></div>
+    </div>
+    <div class="qb-grid">
+
+      <a class="qb-card" href="class9-maths-ch1to4-paper1.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#c2410c,#ea580c);">
+          <span class="icon">📐</span>
+          <div class="info">
+            <div class="ch-label">Maths · Ch 1–4</div>
+            <h3>Maths Ch 1–4 Question Paper 1</h3>
+          </div>
+          <span class="qb-badge">Paper</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Board Pattern</span>
+            <span class="qb-tag tag-q">Ch 1–4 Maths</span>
+          </div>
+          <a href="class9-maths-ch1to4-paper1.html" class="qb-open-btn" style="background:linear-gradient(135deg,#c2410c,#ea580c);">Open Paper →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class9-science-ch6to10-paper1.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#065f46,#047857);">
+          <span class="icon">🔬</span>
+          <div class="info">
+            <div class="ch-label">Science · Ch 6–10</div>
+            <h3>Science Ch 6–10 Question Paper</h3>
+          </div>
+          <span class="qb-badge">Paper</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Board Pattern</span>
+            <span class="qb-tag tag-q">Ch 6–10 Science</span>
+          </div>
+          <a href="class9-science-ch6to10-paper1.html" class="qb-open-btn" style="background:linear-gradient(135deg,#065f46,#047857);">Open Paper →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class9-geography-question-paper.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#b45309,#d97706);">
+          <span class="icon">🌍</span>
+          <div class="info">
+            <div class="ch-label">Geography · Question Paper</div>
+            <h3>Geography Question Paper</h3>
+          </div>
+          <span class="qb-badge">Paper</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Board Pattern</span>
+            <span class="qb-tag tag-q">All Topics</span>
+          </div>
+          <a href="class9-geography-question-paper.html" class="qb-open-btn" style="background:linear-gradient(135deg,#b45309,#d97706);">Open Paper →</a>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+</div><!-- end cls-all -->
+
+<!-- ═══════════════════════════════════════════
+     CLASS 12 ONLY VIEW
+═══════════════════════════════════════════ -->
+<div class="class-section" id="cls-12">
+
+  <div class="class-banner" style="background:linear-gradient(135deg,#7f0000,#c62828,#ef5350);">
+    <span class="cb-icon">🎓</span>
+    <div>
+      <h2>Class 12 — Question Banks</h2>
+      <p>HSC Maharashtra Board · Last 5 Years Repeated Q&amp;A · Subject-wise</p>
+    </div>
+  </div>
+
+  <!-- PHYSICS -->
+  <div class="subj-section">
+    <div class="subj-title">
+      <div class="slab" style="background:#0d47a1;">⚡ Physics</div>
+      <div class="sline" style="background:#bfdbfe;"></div>
+    </div>
+    <div class="qb-grid">
+
+      <a class="qb-card" href="class12-ch1-rotational-qbank.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#0a1628,#0d47a1);">
+          <span class="icon">⚙️</span>
+          <div class="info">
+            <div class="ch-label">Chapter 1</div>
+            <h3>Rotational Dynamics — Last 5 Years Q&amp;A</h3>
+          </div>
+          <span class="qb-badge">18 Q</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Every Year</span>
+            <span class="qb-tag tag-q">18 Questions</span>
+            <span class="qb-tag tag-n">5 Numericals</span>
+          </div>
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-m">Parallel Axis · Angular Momentum · Vertical Circular · Banked Road · Rolling</span>
+          </div>
+          <a href="class12-ch1-rotational-qbank.html" class="qb-open-btn" style="background:linear-gradient(135deg,#0d47a1,#1565c0);">Open Q&amp;A Bank →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class12-ch7-wave-optics-qbank.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#1a0533,#4a148c);">
+          <span class="icon">🌈</span>
+          <div class="info">
+            <div class="ch-label">Chapter 7</div>
+            <h3>Wave Optics — Last 5 Years Q&amp;A</h3>
+          </div>
+          <span class="qb-badge">18 Q</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Every Year</span>
+            <span class="qb-tag tag-q">18 Questions</span>
+            <span class="qb-tag tag-n">7 Numericals</span>
+          </div>
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-m">Huygens · YDSE · Malus · Brewster · Diffraction · Polarisation</span>
+          </div>
+          <a href="class12-ch7-wave-optics-qbank.html" class="qb-open-btn" style="background:linear-gradient(135deg,#4a148c,#7b1fa2);">Open Q&amp;A Bank →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class12-physics-wave-optics.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#1a0533,#6a1b9a);">
+          <span class="icon">🔮</span>
+          <div class="info">
+            <div class="ch-label">Chapter 7 · Full Notes</div>
+            <h3>Wave Optics — Notes + Q&amp;A + Numericals</h3>
+          </div>
+          <span class="qb-badge">Notes</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Board Q&amp;A</span>
+            <span class="qb-tag tag-n">8 Numericals</span>
+            <span class="qb-tag tag-m">10 MCQs</span>
+          </div>
+          <a href="class12-physics-wave-optics.html" class="qb-open-btn" style="background:linear-gradient(135deg,#4a148c,#6a1b9a);">Open Notes →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class12-physics-imp-notes.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#0a1628,#0d47a1,#1565c0);">
+          <span class="icon">⚡</span>
+          <div class="info">
+            <div class="ch-label">All 16 Chapters</div>
+            <h3>Physics IMP Notes + Last 5 Years Q&amp;A</h3>
+          </div>
+          <span class="qb-badge">All Ch</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 15 Board Q&amp;A</span>
+            <span class="qb-tag tag-q">All Formulas</span>
+            <span class="qb-tag tag-m">10 MCQs</span>
+          </div>
+          <a href="class12-physics-imp-notes.html" class="qb-open-btn" style="background:linear-gradient(135deg,#0d47a1,#1565c0);">Open Notes →</a>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- CHEMISTRY -->
+  <div class="subj-section">
+    <div class="subj-title">
+      <div class="slab" style="background:#880e4f;">⚗️ Chemistry</div>
+      <div class="sline" style="background:#f8bbd9;"></div>
+    </div>
+    <div class="qb-grid">
+
+      <a class="qb-card" href="class12-chem-ch11-repeated-qbank.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#4a148c,#c2185b);">
+          <span class="icon">⚗️</span>
+          <div class="info">
+            <div class="ch-label">Chapter 11 · Last 5 Years</div>
+            <h3>Alcohols, Phenols &amp; Ethers Q&amp;A</h3>
+          </div>
+          <span class="qb-badge">15+ Q</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Last 5 Years</span>
+            <span class="qb-tag tag-q">15 Questions</span>
+            <span class="qb-tag tag-m">8 MCQs</span>
+          </div>
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-n">Grignard + All Reactions</span>
+          </div>
+          <a href="class12-chem-ch11-repeated-qbank.html" class="qb-open-btn" style="background:linear-gradient(135deg,#880e4f,#c2185b);">Open Q&amp;A Bank →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class12-chemistry-imp-qa.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#1a237e,#283593);">
+          <span class="icon">🧪</span>
+          <div class="info">
+            <div class="ch-label">Chemistry · IMP Q&amp;A</div>
+            <h3>Chemistry — All Important Q&amp;A</h3>
+          </div>
+          <span class="qb-badge">IMP</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Board Level</span>
+            <span class="qb-tag tag-q">All Topics</span>
+          </div>
+          <a href="class12-chemistry-imp-qa.html" class="qb-open-btn" style="background:linear-gradient(135deg,#1a237e,#283593);">Open Q&amp;A →</a>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- BIOLOGY -->
+  <div class="subj-section">
+    <div class="subj-title">
+      <div class="slab" style="background:#1b5e20;">🌿 Biology</div>
+      <div class="sline" style="background:#a7f3d0;"></div>
+    </div>
+    <div class="qb-grid">
+
+      <a class="qb-card" href="class12-biology-imp-questions.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#1b5e20,#2e7d32);">
+          <span class="icon">🌿</span>
+          <div class="info">
+            <div class="ch-label">Biology · IMP Q&amp;A</div>
+            <h3>Biology — Important Questions Solved</h3>
+          </div>
+          <span class="qb-badge">IMP</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Board Level</span>
+            <span class="qb-tag tag-q">All Topics</span>
+          </div>
+          <a href="class12-biology-imp-questions.html" class="qb-open-btn" style="background:linear-gradient(135deg,#1b5e20,#2e7d32);">Open Q&amp;A →</a>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ENGLISH -->
+  <div class="subj-section">
+    <div class="subj-title">
+      <div class="slab" style="background:#7b1c1c;">📚 English</div>
+      <div class="sline" style="background:#fecaca;"></div>
+    </div>
+    <div class="qb-grid">
+
+      <a class="qb-card" href="class12-english-novel-qa.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#1a1a2e,#7b1c1c);">
+          <span class="icon">📚</span>
+          <div class="info">
+            <div class="ch-label">English · Novel Q&amp;A</div>
+            <h3>Novel Section — All 4 Novels Q&amp;A</h3>
+          </div>
+          <span class="qb-badge">Q&amp;A</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Board Level</span>
+            <span class="qb-tag tag-q">To Sir With Love + 3 more</span>
+          </div>
+          <a href="class12-english-novel-qa.html" class="qb-open-btn" style="background:linear-gradient(135deg,#7b1c1c,#c0392b);">Open Q&amp;A →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class12-english-board-2026.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#7b1c1c,#c0392b);">
+          <span class="icon">📋</span>
+          <div class="info">
+            <div class="ch-label">English · 2026 Board Paper</div>
+            <h3>HSC English Board Paper 2026 — Q&amp;A</h3>
+          </div>
+          <span class="qb-badge">2026</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row">
+            <span class="qb-tag tag-5y">🔴 Feb 2026 Paper</span>
+            <span class="qb-tag tag-q">Full Q&amp;A</span>
+          </div>
+          <a href="class12-english-board-2026.html" class="qb-open-btn" style="background:linear-gradient(135deg,#7b1c1c,#c0392b);">Open Paper →</a>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+</div><!-- end cls-12 -->
+
+<!-- ═══════════════════════════════════════════
+     CLASS 11 ONLY VIEW
+═══════════════════════════════════════════ -->
+<div class="class-section" id="cls-11">
+
+  <div class="class-banner" style="background:linear-gradient(135deg,#4c1d95,#6d28d9,#7c3aed);">
+    <span class="cb-icon">🎓</span>
+    <div>
+      <h2>Class 11 — Question Banks</h2>
+      <p>Maharashtra Board · Subject-wise Q&amp;A Banks</p>
+    </div>
+  </div>
+
+  <!-- PHYSICS -->
+  <div class="subj-section">
+    <div class="subj-title">
+      <div class="slab" style="background:#0d47a1;">⚡ Physics</div>
+      <div class="sline" style="background:#bfdbfe;"></div>
+    </div>
+    <div class="qb-grid">
+
+      <a class="qb-card" href="class11-physics-ch9-optics.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#0a1628,#0d47a1);">
+          <span class="icon">🔬</span>
+          <div class="info"><div class="ch-label">Chapter 9</div><h3>Optics — IMP Notes + Q&amp;A + Numericals</h3></div>
+          <span class="qb-badge">12 Q</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row"><span class="qb-tag tag-5y">🔴 Board Q&amp;A</span><span class="qb-tag tag-n">7 Numericals</span><span class="qb-tag tag-m">10 MCQs</span></div>
+          <a href="class11-physics-ch9-optics.html" class="qb-open-btn" style="background:linear-gradient(135deg,#0a1628,#0d47a1);">Open →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class11-physics-imp-ch1-2-6-8-10-12.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#0d47a1,#1976d2);">
+          <span class="icon">⚡</span>
+          <div class="info"><div class="ch-label">Vedanta · 6 Chapters</div><h3>Physics IMP Q — Ch 1,2,6,8,10,12</h3></div>
+          <span class="qb-badge">IMP</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row"><span class="qb-tag tag-5y">🔴 Vedanta College</span><span class="qb-tag tag-q">6 Chapters</span></div>
+          <a href="class11-physics-imp-ch1-2-6-8-10-12.html" class="qb-open-btn" style="background:linear-gradient(135deg,#0d47a1,#1976d2);">Open →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class11-physics-birla-qb.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#1a237e,#3949ab);">
+          <span class="icon">⚡</span>
+          <div class="info"><div class="ch-label">Birla College</div><h3>Birla Physics Question Bank</h3></div>
+          <span class="qb-badge">35 Q</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row"><span class="qb-tag tag-5y">🔴 Birla College</span><span class="qb-tag tag-q">35 Questions</span></div>
+          <a href="class11-physics-birla-qb.html" class="qb-open-btn" style="background:linear-gradient(135deg,#1a237e,#3949ab);">Open →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class11-physics-rkt-qa.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#bf360c,#e64a19);">
+          <span class="icon">⚡</span>
+          <div class="info"><div class="ch-label">RKT College</div><h3>RKT Physics — First Semester Q&amp;A</h3></div>
+          <span class="qb-badge">Q&amp;A</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row"><span class="qb-tag tag-5y">🔴 RKT College</span><span class="qb-tag tag-q">All Topics</span></div>
+          <a href="class11-physics-rkt-qa.html" class="qb-open-btn" style="background:linear-gradient(135deg,#bf360c,#e64a19);">Open →</a>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- CHEMISTRY -->
+  <div class="subj-section">
+    <div class="subj-title">
+      <div class="slab" style="background:#b71c1c;">⚗️ Chemistry</div>
+      <div class="sline" style="background:#fecaca;"></div>
+    </div>
+    <div class="qb-grid">
+
+      <a class="qb-card" href="class11-rkt-chemistry-answerbank.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#b71c1c,#d32f2f);">
+          <span class="icon">⚗️</span>
+          <div class="info"><div class="ch-label">RKT Chemistry</div><h3>RKT Chemistry Answer Bank</h3></div>
+          <span class="qb-badge">Ans Bank</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row"><span class="qb-tag tag-5y">🔴 RKT College</span><span class="qb-tag tag-q">All Questions</span></div>
+          <a href="class11-rkt-chemistry-answerbank.html" class="qb-open-btn" style="background:linear-gradient(135deg,#b71c1c,#d32f2f);">Open →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class11-birla-chemistry-answerbank.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#0c2461,#1565c0);">
+          <span class="icon">⚗️</span>
+          <div class="info"><div class="ch-label">Birla Chemistry</div><h3>Birla Chemistry — 46 Q&amp;A</h3></div>
+          <span class="qb-badge">46 Q</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row"><span class="qb-tag tag-5y">🔴 Birla College</span><span class="qb-tag tag-q">46 Questions</span></div>
+          <a href="class11-birla-chemistry-answerbank.html" class="qb-open-btn" style="background:linear-gradient(135deg,#0c2461,#1565c0);">Open →</a>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- MATHS -->
+  <div class="subj-section">
+    <div class="subj-title">
+      <div class="slab" style="background:#0369a1;">📐 Mathematics</div>
+      <div class="sline" style="background:#bfdbfe;"></div>
+    </div>
+    <div class="qb-grid">
+
+      <a class="qb-card" href="class11-maths1-imp-questions.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#0d47a1,#1976d2);">
+          <span class="icon">📐</span>
+          <div class="info"><div class="ch-label">Maths 1 · IMP</div><h3>Maths 1 — All IMP Questions</h3></div>
+          <span class="qb-badge">IMP</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row"><span class="qb-tag tag-5y">🔴 Board Level</span><span class="qb-tag tag-q">All 4 Chapters</span></div>
+          <a href="class11-maths1-imp-questions.html" class="qb-open-btn" style="background:linear-gradient(135deg,#0d47a1,#1976d2);">Open →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class11-maths2-ch1-ch2-qbank.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#1565c0,#1976d2);">
+          <span class="icon">🔢</span>
+          <div class="info"><div class="ch-label">Maths 2 · Ch 1 &amp; 2</div><h3>Maths 2 — Ch 1 &amp; 2 Q Bank</h3></div>
+          <span class="qb-badge">Q Bank</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row"><span class="qb-tag tag-5y">🔴 Board Level</span><span class="qb-tag tag-q">Complex + Sequences</span></div>
+          <a href="class11-maths2-ch1-ch2-qbank.html" class="qb-open-btn" style="background:linear-gradient(135deg,#1565c0,#1976d2);">Open →</a>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- BIOLOGY -->
+  <div class="subj-section">
+    <div class="subj-title">
+      <div class="slab" style="background:#15803d;">🌿 Biology</div>
+      <div class="sline" style="background:#a7f3d0;"></div>
+    </div>
+    <div class="qb-grid">
+
+      <a class="qb-card" href="class11-biology-qb-ch1-7.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#1b5e20,#2e7d32);">
+          <span class="icon">🌿</span>
+          <div class="info"><div class="ch-label">Biology · Ch 1–7</div><h3>Biology Question Bank Ch 1–7</h3></div>
+          <span class="qb-badge">Q Bank</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row"><span class="qb-tag tag-5y">🔴 Board Level</span><span class="qb-tag tag-q">All Chapters</span></div>
+          <a href="class11-biology-qb-ch1-7.html" class="qb-open-btn" style="background:linear-gradient(135deg,#1b5e20,#2e7d32);">Open →</a>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- IT -->
+  <div class="subj-section">
+    <div class="subj-title">
+      <div class="slab" style="background:#0369a1;">💻 IT</div>
+      <div class="sline" style="background:#bfdbfe;"></div>
+    </div>
+    <div class="qb-grid">
+
+      <a class="qb-card" href="class11-it-question-bank.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#0d47a1,#1976d2);">
+          <span class="icon">💻</span>
+          <div class="info"><div class="ch-label">IT · Ch 1–4</div><h3>IT Question Bank — All 4 Chapters</h3></div>
+          <span class="qb-badge">Q Bank</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row"><span class="qb-tag tag-5y">🔴 Board Level</span><span class="qb-tag tag-q">Ch 1, 2, 3, 4</span></div>
+          <a href="class11-it-question-bank.html" class="qb-open-btn" style="background:linear-gradient(135deg,#0d47a1,#1976d2);">Open →</a>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+</div><!-- end cls-11 -->
+
+<!-- ═══════════════════════════════════════════
+     CLASS 10 ONLY VIEW
+═══════════════════════════════════════════ -->
+<div class="class-section" id="cls-10">
+
+  <div class="class-banner" style="background:linear-gradient(135deg,#064e3b,#065f46,#047857);">
+    <span class="cb-icon">🎓</span>
+    <div>
+      <h2>Class 10 — Question Banks</h2>
+      <p>Maharashtra Board · Subject-wise Q&amp;A Banks</p>
+    </div>
+  </div>
+
+  <div class="subj-section">
+    <div class="subj-title">
+      <div class="slab" style="background:#047857;">🔬 Science</div>
+      <div class="sline" style="background:#a7f3d0;"></div>
+    </div>
+    <div class="qb-grid">
+
+      <a class="qb-card" href="class10-science2-most-repeated.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#064e3b,#065f46);">
+          <span class="icon">🔬</span>
+          <div class="info"><div class="ch-label">Science 2 · Most Repeated</div><h3>Last 5 Years Most Repeated Q&amp;A</h3></div>
+          <span class="qb-badge">25 Q</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row"><span class="qb-tag tag-5y">🔴 Last 5 Years</span><span class="qb-tag tag-q">25 Questions</span></div>
+          <a href="class10-science2-most-repeated.html" class="qb-open-btn" style="background:linear-gradient(135deg,#047857,#065f46);">Open Q&amp;A →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class10-science2-repeated-paper.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#065f46,#047857);">
+          <span class="icon">📝</span>
+          <div class="info"><div class="ch-label">Science 2 · Board Pattern</div><h3>Science 2 Repeated Questions Paper</h3></div>
+          <span class="qb-badge">40M</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row"><span class="qb-tag tag-5y">🔴 Board Pattern</span><span class="qb-tag tag-q">40 Marks</span></div>
+          <a href="class10-science2-repeated-paper.html" class="qb-open-btn" style="background:linear-gradient(135deg,#065f46,#047857);">Open Paper →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class10-science1-ch6-refraction.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#0369a1,#0284c7);">
+          <span class="icon">🔭</span>
+          <div class="info"><div class="ch-label">Science 1 · Chapter 6</div><h3>Refraction of Light — Q&amp;A</h3></div>
+          <span class="qb-badge">Q&amp;A</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row"><span class="qb-tag tag-5y">🔴 Board Level</span><span class="qb-tag tag-q">Ch 6</span></div>
+          <a href="class10-science1-ch6-refraction.html" class="qb-open-btn" style="background:linear-gradient(135deg,#0369a1,#0284c7);">Open →</a>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="subj-section">
+    <div class="subj-title">
+      <div class="slab" style="background:#b45309;">📖 Hindi / English</div>
+      <div class="sline" style="background:#fed7aa;"></div>
+    </div>
+    <div class="qb-grid">
+
+      <a class="qb-card" href="class10-hindi-grammar.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#92400e,#b45309);">
+          <span class="icon">📖</span>
+          <div class="info"><div class="ch-label">Hindi · Grammar</div><h3>Hindi Grammar Q&amp;A</h3></div>
+          <span class="qb-badge">Q&amp;A</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row"><span class="qb-tag tag-5y">🔴 Board Level</span></div>
+          <a href="class10-hindi-grammar.html" class="qb-open-btn" style="background:linear-gradient(135deg,#92400e,#b45309);">Open →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="english-grammar-cards-class9-10.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#1e3a5f,#2563eb);">
+          <span class="icon">📚</span>
+          <div class="info"><div class="ch-label">English · Grammar</div><h3>English Grammar Cards Class 9–10</h3></div>
+          <span class="qb-badge">Q&amp;A</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row"><span class="qb-tag tag-5y">🔴 Board Level</span></div>
+          <a href="english-grammar-cards-class9-10.html" class="qb-open-btn" style="background:linear-gradient(135deg,#1e3a5f,#2563eb);">Open →</a>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+</div><!-- end cls-10 -->
+
+<!-- ═══════════════════════════════════════════
+     CLASS 9 ONLY VIEW
+═══════════════════════════════════════════ -->
+<div class="class-section" id="cls-9">
+
+  <div class="class-banner" style="background:linear-gradient(135deg,#c2410c,#ea580c,#f97316);">
+    <span class="cb-icon">🎓</span>
+    <div>
+      <h2>Class 9 — Question Banks</h2>
+      <p>Maharashtra Board · Subject-wise Q&amp;A Banks</p>
+    </div>
+  </div>
+
+  <div class="subj-section">
+    <div class="subj-title">
+      <div class="slab" style="background:#c2410c;">📐 Mathematics</div>
+      <div class="sline" style="background:#fed7aa;"></div>
+    </div>
+    <div class="qb-grid">
+
+      <a class="qb-card" href="class9-maths-ch1to4-paper1.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#c2410c,#ea580c);">
+          <span class="icon">📐</span>
+          <div class="info"><div class="ch-label">Maths · Ch 1–4 · Paper 1</div><h3>Maths Ch 1–4 Question Paper 1</h3></div>
+          <span class="qb-badge">Paper</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row"><span class="qb-tag tag-5y">🔴 Board Pattern</span></div>
+          <a href="class9-maths-ch1to4-paper1.html" class="qb-open-btn" style="background:linear-gradient(135deg,#c2410c,#ea580c);">Open →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class9-maths-ch1to4-paper2.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#9a3412,#c2410c);">
+          <span class="icon">📐</span>
+          <div class="info"><div class="ch-label">Maths · Ch 1–4 · Paper 2</div><h3>Maths Ch 1–4 Question Paper 2</h3></div>
+          <span class="qb-badge">Paper</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row"><span class="qb-tag tag-5y">🔴 Board Pattern</span></div>
+          <a href="class9-maths-ch1to4-paper2.html" class="qb-open-btn" style="background:linear-gradient(135deg,#9a3412,#c2410c);">Open →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class9-maths-ch1to4-paper3.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#7c2d12,#9a3412);">
+          <span class="icon">📐</span>
+          <div class="info"><div class="ch-label">Maths · Ch 1–4 · Paper 3</div><h3>Maths Ch 1–4 Question Paper 3</h3></div>
+          <span class="qb-badge">Paper</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row"><span class="qb-tag tag-5y">🔴 Board Pattern</span></div>
+          <a href="class9-maths-ch1to4-paper3.html" class="qb-open-btn" style="background:linear-gradient(135deg,#7c2d12,#9a3412);">Open →</a>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="subj-section">
+    <div class="subj-title">
+      <div class="slab" style="background:#15803d;">🔬 Science</div>
+      <div class="sline" style="background:#a7f3d0;"></div>
+    </div>
+    <div class="qb-grid">
+
+      <a class="qb-card" href="class9-science-ch6to10-paper1.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#064e3b,#065f46);">
+          <span class="icon">🔬</span>
+          <div class="info"><div class="ch-label">Science · Ch 6–10 · Paper 1</div><h3>Science Ch 6–10 Paper 1</h3></div>
+          <span class="qb-badge">Paper</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row"><span class="qb-tag tag-5y">🔴 Board Pattern</span></div>
+          <a href="class9-science-ch6to10-paper1.html" class="qb-open-btn" style="background:linear-gradient(135deg,#064e3b,#065f46);">Open →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class9-science-ch6to10-paper2.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#065f46,#047857);">
+          <span class="icon">🔬</span>
+          <div class="info"><div class="ch-label">Science · Ch 6–10 · Paper 2</div><h3>Science Ch 6–10 Paper 2</h3></div>
+          <span class="qb-badge">Paper</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row"><span class="qb-tag tag-5y">🔴 Board Pattern</span></div>
+          <a href="class9-science-ch6to10-paper2.html" class="qb-open-btn" style="background:linear-gradient(135deg,#065f46,#047857);">Open →</a>
+        </div>
+      </a>
+
+      <a class="qb-card" href="class9-science1-ch1to5-paper1.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#1b5e20,#2e7d32);">
+          <span class="icon">🔬</span>
+          <div class="info"><div class="ch-label">Science 1 · Ch 1–5</div><h3>Science 1 Ch 1–5 Paper 1</h3></div>
+          <span class="qb-badge">Paper</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row"><span class="qb-tag tag-5y">🔴 Board Pattern</span></div>
+          <a href="class9-science1-ch1to5-paper1.html" class="qb-open-btn" style="background:linear-gradient(135deg,#1b5e20,#2e7d32);">Open →</a>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="subj-section">
+    <div class="subj-title">
+      <div class="slab" style="background:#b45309;">🌍 Geography</div>
+      <div class="sline" style="background:#fed7aa;"></div>
+    </div>
+    <div class="qb-grid">
+
+      <a class="qb-card" href="class9-geography-question-paper.html">
+        <div class="qb-card-top" style="background:linear-gradient(135deg,#b45309,#d97706);">
+          <span class="icon">🌍</span>
+          <div class="info"><div class="ch-label">Geography</div><h3>Geography Question Paper</h3></div>
+          <span class="qb-badge">Paper</span>
+        </div>
+        <div class="qb-card-body">
+          <div class="qb-tag-row"><span class="qb-tag tag-5y">🔴 Board Pattern</span></div>
+          <a href="class9-geography-question-paper.html" class="qb-open-btn" style="background:linear-gradient(135deg,#b45309,#d97706);">Open →</a>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+</div><!-- end cls-9 -->
+
+</div><!-- wrap -->
+
+<script>
+function showClass(cls, btn) {
+  document.querySelectorAll('.ctab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.class-section').forEach(s => s.classList.remove('active'));
+  document.getElementById('cls-' + cls).classList.add('active');
+  window.scrollTo(0, 60);
+}
+</script>
+</body>
+</html>
