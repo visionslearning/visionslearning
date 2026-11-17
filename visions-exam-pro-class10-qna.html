@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visions Exam Pro — Class 10 IMP Q&A + Activity | Visions Classes</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #0a0a1a; color: #fff; }
+
+  .header { background: linear-gradient(135deg, #0a0a1a, #1a0533, #0d47a1); padding: 24px 16px 18px; text-align: center; border-bottom: 2px solid #f59e0b; }
+  .pro-badge { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg,#f59e0b,#ef4444); color: #fff; font-size: .72rem; font-weight: 900; padding: 4px 14px; border-radius: 20px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
+  .header h1 { font-size: 1.4rem; font-weight: 900; margin-bottom: 4px; }
+  .header h1 span { color: #f59e0b; }
+  .header p { font-size: .84rem; color: rgba(255,255,255,.75); }
+  .wmark { background: rgba(255,255,255,.07); text-align: center; padding: 5px; font-size: .7rem; font-weight: 700; letter-spacing: 2px; color: rgba(255,255,255,.5); }
+  .back { display: inline-flex; align-items: center; gap: 7px; color: rgba(255,255,255,.8); text-decoration: none; font-size: .78rem; font-weight: 700; padding: 6px 12px; background: rgba(255,255,255,.1); border-radius: 20px; margin-bottom: 12px; }
+
+  /* SUBJECT TABS */
+  .tab-bar { display: flex; overflow-x: auto; gap: 6px; padding: 12px 14px; background: #0d0d20; position: sticky; top: 0; z-index: 100; scrollbar-width: none; border-bottom: 1px solid rgba(255,255,255,.1); }
+  .tab-bar::-webkit-scrollbar { display: none; }
+  .tpill { flex-shrink: 0; border: 1px solid rgba(255,255,255,.15); cursor: pointer; padding: 7px 16px; border-radius: 25px; font-size: .76rem; font-weight: 800; white-space: nowrap; transition: all .2s; background: rgba(255,255,255,.07); color: rgba(255,255,255,.75); }
+  .tpill.active, .tpill:hover { background: #f59e0b; color: #0a0a1a; border-color: #f59e0b; }
+
+  .wrap { max-width: 900px; margin: 0 auto; padding: 18px 14px 70px; }
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* CHAPTER HEADER */
+  .ch-head { display: flex; align-items: center; gap: 10px; margin: 22px 0 14px; }
+  .ch-head .ch-line { flex: 1; height: 1px; background: rgba(255,255,255,.12); }
+  .ch-head .ch-label { font-size: .78rem; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; white-space: nowrap; }
+
+  /* Q CARD */
+  .qcard { background: linear-gradient(135deg,#0d0d25,#111130); border: 1px solid rgba(255,255,255,.1); border-radius: 13px; margin-bottom: 14px; overflow: hidden; }
+  .qcard-top { padding: 12px 15px; display: flex; align-items: flex-start; gap: 10px; border-bottom: 1px solid rgba(255,255,255,.07); }
+  .qno { background: #f59e0b; color: #0a0a1a; font-size: .68rem; font-weight: 900; padding: 3px 9px; border-radius: 9px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
+  .qtxt { font-size: .88rem; font-weight: 700; line-height: 1.5; flex: 1; }
+  .qtags { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 6px; }
+  .qtag { font-size: .62rem; font-weight: 800; padding: 2px 7px; border-radius: 8px; text-transform: uppercase; }
+  .t5 { background: rgba(239,68,68,.2); color: #fca5a5; border: 1px solid rgba(239,68,68,.3); }
+  .tm { background: rgba(245,158,11,.2); color: #fcd34d; border: 1px solid rgba(245,158,11,.3); }
+  .ta { background: rgba(16,185,129,.2); color: #6ee7b7; border: 1px solid rgba(16,185,129,.3); }
+  .tb { background: rgba(96,165,250,.2); color: #93c5fd; border: 1px solid rgba(96,165,250,.3); }
+
+  .ans-wrap { padding: 12px 15px; }
+  .ans-lbl { font-size: .68rem; font-weight: 900; color: #34d399; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+  .ans-lbl::after { content:''; flex:1; height:1px; background: rgba(52,211,153,.2); }
+  .ans-txt { font-size: .86rem; line-height: 1.7; color: rgba(255,255,255,.85); }
+  .ans-txt p { margin-bottom: 7px; }
+  .ans-txt strong { color: #93c5fd; }
+  .eq { background: rgba(13,71,161,.4); border-left: 3px solid #60a5fa; padding: 7px 12px; border-radius: 0 8px 8px 0; font-family: monospace; font-size: .88rem; color: #93c5fd; font-weight: 700; margin: 6px 0; }
+  .step { display: block; background: rgba(255,255,255,.06); border-radius: 7px; padding: 5px 11px; font-family: monospace; font-size: .84rem; color: #c4b5fd; margin: 4px 0; font-weight: 600; }
+
+  /* MCQ */
+  .mcq-box { background: linear-gradient(135deg,#0d0d25,#111130); border: 1px solid rgba(245,158,11,.2); border-radius: 13px; margin-bottom: 14px; padding: 14px 15px; }
+  .mcq-q { font-size: .88rem; font-weight: 700; margin-bottom: 10px; color: #fde68a; }
+  .mcq-opts { list-style: none; padding: 0; }
+  .mcq-opts li { padding: 6px 11px; border-radius: 7px; font-size: .84rem; margin-bottom: 5px; border: 1px solid rgba(255,255,255,.08); color: rgba(255,255,255,.8); }
+  .mcq-opts li.ok { background: rgba(52,211,153,.15); border-color: rgba(52,211,153,.4); font-weight: 700; color: #34d399; }
+  .mcq-opts li.ok::before { content: "✅ "; }
+  .mcq-hint { font-size: .76rem; color: rgba(255,255,255,.5); padding: 5px 0 0; }
+
+  /* ACTIVITY BOX */
+  .act-box { background: linear-gradient(135deg,rgba(245,158,11,.12),rgba(239,68,68,.08)); border: 1px solid rgba(245,158,11,.3); border-radius: 13px; margin-bottom: 14px; padding: 14px 15px; }
+  .act-title { font-size: .72rem; font-weight: 900; color: #f59e0b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .act-q { font-size: .88rem; font-weight: 700; margin-bottom: 8px; }
+  .act-steps { list-style: none; padding: 0; counter-reset: step; }
+  .act-steps li { counter-increment: step; padding: 5px 0 5px 28px; position: relative; font-size: .86rem; line-height: 1.6; color: rgba(255,255,255,.85); border-bottom: 1px solid rgba(255,255,255,.05); }
+  .act-steps li::before { content: counter(step); position: absolute; left: 0; background: #f59e0b; color: #0a0a1a; width: 20px; height: 20px; border-radius: 50%; font-size: .68rem; font-weight: 900; display: flex; align-items: center; justify-content: center; top: 7px; }
+  .act-obs { background: rgba(255,255,255,.06); border-radius: 8px; padding: 9px 12px; margin-top: 8px; font-size: .84rem; color: rgba(255,255,255,.8); }
+  .act-obs strong { color: #fcd34d; }
+
+  /* SECTION COUNT */
+  .sec-info { background: rgba(245,158,11,.1); border: 1px solid rgba(245,158,11,.2); border-radius: 10px; padding: 10px 14px; margin-bottom: 18px; font-size: .82rem; color: rgba(255,255,255,.75); display: flex; gap: 14px; flex-wrap: wrap; }
+  .sec-info span { display: flex; align-items: center; gap: 5px; }
+
+  @media(max-width:600px){ .header h1{font-size:1.1rem;} }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a href="visions-exam-pro-class10.html" class="back">← One Shots</a>
+  <div class="pro-badge">⚡ Visions Exam Pro · Class 10</div>
+  <h1>🎯 IMP Q&A + <span>Activity Questions</span></h1>
+  <p>Most Repeated Board Questions · Activity Based · MCQs · All Subjects</p>
+</div>
+<div class="wmark">VISIONS CLASSES · SHASHIKANT SIR · AMBARNATH</div>
+
+<div class="tab-bar">
+  <button class="tpill active" onclick="show('sci1',this)">⚗️ Science 1</button>
+  <button class="tpill" onclick="show('sci2',this)">🧬 Science 2</button>
+  <button class="tpill" onclick="show('maths',this)">📐 Maths</button>
+  <button class="tpill" onclick="show('sst',this)">🌍 SST</button>
+  <button class="tpill" onclick="show('english',this)">📚 English</button>
+</div>
+
+<div class="wrap">
+
+<!-- ═══════════════════════ SCIENCE 1 ═══════════════════════ -->
+<div class="section active" id="tab-sci1">
+  <div class="sec-info">
+    <span>📋 25 IMP Questions</span>
+    <span>🧪 4 Activity Questions</span>
+    <span>🔵 10 MCQs</span>
+    <span>⭐ Board Exam Pattern</span>
+  </div>
+
+  <!-- CH 1: CHEMICAL REACTIONS -->
+  <div class="ch-head"><div class="ch-line"></div><div class="ch-label" style="background:linear-gradient(135deg,#b91c1c,#dc2626);color:#fff;">Ch 1 — Chemical Reactions & Equations</div><div class="ch-line"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q1</span>
+      <div><div class="qtxt">What is a chemical reaction? Write any 4 characteristics of a chemical reaction.</div>
+      <div class="qtags"><span class="qtag t5">🔴 Every Year</span><span class="qtag tb">3 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <p><strong>Chemical Reaction:</strong> A process in which one or more substances (reactants) are converted into one or more new substances (products) with different properties is called a chemical reaction.</p>
+        <p><strong>Characteristics:</strong></p>
+        <p>1. <strong>Change in colour</strong> — e.g., iron rusts from grey to reddish-brown</p>
+        <p>2. <strong>Evolution of gas</strong> — e.g., Zn + H₂SO₄ → ZnSO₄ + H₂↑</p>
+        <p>3. <strong>Change in temperature</strong> — exothermic (heat released) or endothermic (heat absorbed)</p>
+        <p>4. <strong>Formation of precipitate</strong> — e.g., AgNO₃ + NaCl → AgCl↓ + NaNO₃</p>
+        <p>5. Change in smell / state</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q2</span>
+      <div><div class="qtxt">What is a balanced chemical equation? Balance the following: Fe + H₂O → Fe₃O₄ + H₂</div>
+      <div class="qtags"><span class="qtag t5">🔴 High Freq</span><span class="qtag tb">2 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <p><strong>Balanced equation:</strong> An equation in which the number of atoms of each element is equal on both sides (reactants = products), following the Law of Conservation of Mass.</p>
+        <div class="eq">3Fe + 4H₂O → Fe₃O₄ + 4H₂</div>
+        <p>Check: Fe = 3, H = 8, O = 4 on both sides ✓</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q3</span>
+      <div><div class="qtxt">Explain the types of chemical reactions with one example each: (i) Combination (ii) Decomposition (iii) Displacement (iv) Double Displacement</div>
+      <div class="qtags"><span class="qtag t5">🔴 Every Year</span><span class="qtag tb">4 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <p><strong>(i) Combination:</strong> Two or more substances combine to form one product.</p>
+        <div class="eq">CaO + H₂O → Ca(OH)₂</div>
+        <p><strong>(ii) Decomposition:</strong> One substance breaks into two or more simpler substances.</p>
+        <div class="eq">2H₂O → 2H₂ + O₂ (electrolysis)</div>
+        <p><strong>(iii) Displacement:</strong> More reactive element displaces less reactive element from its compound.</p>
+        <div class="eq">Fe + CuSO₄ → FeSO₄ + Cu</div>
+        <p><strong>(iv) Double Displacement:</strong> Exchange of ions between two compounds; often forms precipitate.</p>
+        <div class="eq">AgNO₃ + NaCl → AgCl↓ + NaNO₃</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q4</span>
+      <div><div class="qtxt">What is oxidation and reduction? Give one example of a redox reaction. What is a reducing agent?</div>
+      <div class="qtags"><span class="qtag t5">🔴 High Freq</span><span class="qtag tb">3 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <p><strong>Oxidation:</strong> Loss of electrons OR gain of oxygen OR loss of hydrogen.</p>
+        <p><strong>Reduction:</strong> Gain of electrons OR loss of oxygen OR gain of hydrogen.</p>
+        <p><strong>Redox reaction example:</strong></p>
+        <div class="eq">CuO + H₂ → Cu + H₂O</div>
+        <p>CuO is <strong>reduced</strong> (loses O); H₂ is <strong>oxidised</strong> (gains O)</p>
+        <p><strong>Reducing agent:</strong> A substance that causes reduction in another substance while itself getting oxidised. In above: H₂ is the reducing agent.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY Q -->
+  <div class="act-box">
+    <div class="act-title">🧪 Activity Based Question — Ch 1</div>
+    <div class="act-q">Q: Describe an activity to show that burning of magnesium ribbon in air is a combination reaction. What is observed? Write the equation.</div>
+    <ol class="act-steps">
+      <li>Take a small piece of magnesium ribbon. Clean it with sandpaper to remove oxide layer.</li>
+      <li>Hold it with tongs and bring it near a flame (Bunsen burner).</li>
+      <li>Observe what happens when the ribbon catches fire.</li>
+    </ol>
+    <div class="act-obs">
+      <strong>Observation:</strong> Magnesium burns with a dazzling white flame and produces a white powder (magnesium oxide).<br>
+      <strong>Equation:</strong> 2Mg + O₂ → 2MgO (Combination reaction — two substances combine to form one product)<br>
+      <strong>Conclusion:</strong> This is an exothermic combination reaction.
+    </div>
+  </div>
+
+  <!-- CH 3: METALS AND NON-METALS -->
+  <div class="ch-head"><div class="ch-line"></div><div class="ch-label" style="background:linear-gradient(135deg,#c2410c,#ea580c);color:#fff;">Ch 3 — Metals & Non-Metals</div><div class="ch-line"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q5</span>
+      <div><div class="qtxt">Write 4 physical properties and 4 chemical properties of metals.</div>
+      <div class="qtags"><span class="qtag t5">🔴 Every Year</span><span class="qtag tb">4 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <p><strong>Physical Properties of Metals:</strong></p>
+        <p>1. Lustrous (shiny) — 2. Good conductor of heat and electricity — 3. Malleable (can be beaten into sheets) — 4. Ductile (can be drawn into wires) — 5. High melting and boiling points (except Na, K, Hg)</p>
+        <p><strong>Chemical Properties of Metals:</strong></p>
+        <p>1. React with oxygen: 4Na + O₂ → 2Na₂O</p>
+        <p>2. React with water: 2Na + 2H₂O → 2NaOH + H₂↑</p>
+        <p>3. React with acids: Zn + H₂SO₄ → ZnSO₄ + H₂↑</p>
+        <p>4. React with salt solutions (displacement): Fe + CuSO₄ → FeSO₄ + Cu</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q6</span>
+      <div><div class="qtxt">What is the reactivity series? Write 5 metals in order of decreasing reactivity. What is its importance?</div>
+      <div class="qtags"><span class="qtag t5">🔴 High Freq</span><span class="qtag tb">3 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <p><strong>Reactivity Series:</strong> An arrangement of metals in decreasing order of their chemical reactivity (ability to lose electrons / react with water, acid, salt solutions).</p>
+        <p><strong>Order (decreasing reactivity):</strong></p>
+        <div class="eq">K > Na > Ca > Mg > Al > Zn > Fe > Pb > H > Cu > Ag > Au</div>
+        <p><strong>Importance:</strong></p>
+        <p>1. Predicts whether a displacement reaction will occur (more reactive displaces less reactive)</p>
+        <p>2. Helps choose suitable metals for extraction methods</p>
+        <p>3. Determines which metals can react with water/acids</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q7</span>
+      <div><div class="qtxt">What is corrosion? What is rusting of iron? Write the chemical equation. How can rusting be prevented?</div>
+      <div class="qtags"><span class="qtag t5">🔴 Every Year</span><span class="qtag tb">3 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <p><strong>Corrosion:</strong> Gradual deterioration of a metal by chemical reaction with its environment (air, water, acids). It is a slow oxidation process.</p>
+        <p><strong>Rusting of Iron:</strong> When iron is exposed to oxygen and moisture (water), it slowly forms a reddish-brown coating of iron oxide (rust).</p>
+        <div class="eq">4Fe + 3O₂ + xH₂O → 2Fe₂O₃·xH₂O (rust)</div>
+        <p><strong>Prevention of Rusting:</strong></p>
+        <p>1. Painting/varnishing — 2. Galvanizing (coating with zinc) — 3. Electroplating — 4. Alloying (stainless steel) — 5. Applying oil/grease</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="act-box">
+    <div class="act-title">🧪 Activity Based — Ch 3: Metals</div>
+    <div class="act-q">Q: Describe an activity to show that iron is more reactive than copper.</div>
+    <ol class="act-steps">
+      <li>Take some copper sulphate (CuSO₄) solution in a beaker — it appears blue.</li>
+      <li>Place a clean iron nail in the copper sulphate solution.</li>
+      <li>Leave it for 20–30 minutes and observe the nail and the solution.</li>
+    </ol>
+    <div class="act-obs">
+      <strong>Observation:</strong> The iron nail becomes coated with a reddish-brown deposit of copper. The blue colour of the solution fades (turns light green).<br>
+      <strong>Equation:</strong> Fe + CuSO₄ → FeSO₄ + Cu<br>
+      <strong>Conclusion:</strong> Iron displaces copper from copper sulphate solution, proving iron is more reactive than copper.
+    </div>
+  </div>
+
+  <!-- CH 4: CARBON COMPOUNDS -->
+  <div class="ch-head"><div class="ch-line"></div><div class="ch-label" style="background:linear-gradient(135deg,#047857,#065f46);color:#fff;">Ch 4 — Carbon & its Compounds</div><div class="ch-line"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q8</span>
+      <div><div class="qtxt">What is covalent bond? Why does carbon form covalent bonds? Explain with example.</div>
+      <div class="qtags"><span class="qtag t5">🔴 High Freq</span><span class="qtag tb">3 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <p><strong>Covalent Bond:</strong> A chemical bond formed by the sharing of electron pairs between two atoms.</p>
+        <p><strong>Why carbon forms covalent bonds:</strong></p>
+        <p>1. Carbon has 4 valence electrons — it would need to gain or lose 4 electrons to achieve noble gas configuration, which requires too much energy.</p>
+        <p>2. It is easier for carbon to share 4 electrons with other atoms — forming 4 covalent bonds.</p>
+        <p><strong>Example:</strong> Methane (CH₄) — carbon shares one electron each with 4 hydrogen atoms. Each H provides 1 electron → 4 C-H bonds formed.</p>
+        <div class="eq">C + 4H → CH₄ (4 covalent bonds)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q9</span>
+      <div><div class="qtxt">What is saponification? Write the reaction for the preparation of soap. What are the differences between soap and detergent?</div>
+      <div class="qtags"><span class="qtag t5">🔴 Every Year</span><span class="qtag tb">3 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <p><strong>Saponification:</strong> The process of making soap by heating vegetable oil or animal fat with sodium hydroxide (NaOH) solution is called saponification.</p>
+        <div class="eq">Fat/Oil + NaOH → Soap + Glycerol</div>
+        <p><strong>Differences — Soap vs Detergent:</strong></p>
+        <table style="width:100%;border-collapse:collapse;font-size:.82rem;margin-top:8px;">
+          <tr style="background:rgba(255,255,255,.1);"><th style="padding:6px;text-align:left;border:1px solid rgba(255,255,255,.1);">Soap</th><th style="padding:6px;text-align:left;border:1px solid rgba(255,255,255,.1);">Detergent</th></tr>
+          <tr><td style="padding:6px;border:1px solid rgba(255,255,255,.08);">Made from natural fats/oils</td><td style="padding:6px;border:1px solid rgba(255,255,255,.08);">Made from petrochemicals</td></tr>
+          <tr><td style="padding:6px;border:1px solid rgba(255,255,255,.08);">Ineffective in hard water (forms scum)</td><td style="padding:6px;border:1px solid rgba(255,255,255,.08);">Effective in hard water</td></tr>
+          <tr><td style="padding:6px;border:1px solid rgba(255,255,255,.08);">Biodegradable</td><td style="padding:6px;border:1px solid rgba(255,255,255,.08);">May be non-biodegradable</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- CH 5: LIFE PROCESSES -->
+  <div class="ch-head"><div class="ch-line"></div><div class="ch-label" style="background:linear-gradient(135deg,#0369a1,#0284c7);color:#fff;">Ch 6 — Refraction of Light</div><div class="ch-line"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q10</span>
+      <div><div class="qtxt">State the laws of refraction. What is the refractive index? Give the formula and unit.</div>
+      <div class="qtags"><span class="qtag t5">🔴 Every Year</span><span class="qtag tb">3 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <p><strong>Laws of Refraction:</strong></p>
+        <p>1. The incident ray, refracted ray and normal all lie in the same plane.</p>
+        <p>2. <strong>Snell's Law:</strong> The ratio of sin of angle of incidence to sin of angle of refraction is constant for a given pair of media.</p>
+        <div class="eq">n = sin i / sin r = c / v = n₂/n₁</div>
+        <p><strong>Refractive Index (n):</strong> The ratio of speed of light in vacuum (c) to speed of light in the medium (v).</p>
+        <div class="eq">n = c / v</div>
+        <p><strong>Unit:</strong> No unit (dimensionless). n > 1 for all optical media.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q11</span>
+      <div><div class="qtxt">What is total internal reflection? State conditions for TIR. Give two applications.</div>
+      <div class="qtags"><span class="qtag t5">🔴 High Freq</span><span class="qtag tb">3 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <p><strong>Total Internal Reflection (TIR):</strong> When light travels from a denser medium to a rarer medium and the angle of incidence exceeds the critical angle, light is completely reflected back into the denser medium — no refraction occurs.</p>
+        <p><strong>Conditions for TIR:</strong></p>
+        <p>1. Light must travel from denser to rarer medium (e.g., glass to air)</p>
+        <p>2. Angle of incidence must be greater than the critical angle (i &gt; θc)</p>
+        <p><strong>Applications:</strong></p>
+        <p>1. <strong>Optical fibre</strong> — used in internet cables and medical endoscopes</p>
+        <p>2. <strong>Diamond</strong> sparkles due to TIR from many internal surfaces</p>
+        <p>3. Mirage in deserts — TIR of sky light in hot air layers</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCIENCE 1 MCQs -->
+  <div class="ch-head"><div class="ch-line"></div><div class="ch-label" style="background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;">🔵 Science 1 — MCQs</div><div class="ch-line"></div></div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">1. When iron reacts with copper sulphate solution, the colour of the solution changes from:</div>
+    <ul class="mcq-opts">
+      <li>a) Colourless to blue</li>
+      <li class="ok">b) Blue to light green</li>
+      <li>c) Green to blue</li>
+      <li>d) Blue to colourless</li>
+    </ul>
+    <div class="mcq-hint">💡 FeSO₄ formed is light green; CuSO₄ is blue. Fe displaces Cu.</div>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">2. The process of coating iron with zinc to prevent rusting is called:</div>
+    <ul class="mcq-opts">
+      <li>a) Electroplating</li>
+      <li class="ok">b) Galvanization</li>
+      <li>c) Alloying</li>
+      <li>d) Anodizing</li>
+    </ul>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">3. Which of the following is an exothermic reaction?</div>
+    <ul class="mcq-opts">
+      <li>a) Photosynthesis</li>
+      <li>b) Electrolysis of water</li>
+      <li class="ok">c) Burning of coal</li>
+      <li>d) Decomposition of CaCO₃</li>
+    </ul>
+    <div class="mcq-hint">💡 Combustion releases energy → exothermic. Photosynthesis absorbs energy → endothermic.</div>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">4. The refractive index of water is 1.33. The speed of light in water is: (c = 3×10⁸ m/s)</div>
+    <ul class="mcq-opts">
+      <li>a) 3×10⁸ m/s</li>
+      <li class="ok">b) 2.26×10⁸ m/s</li>
+      <li>c) 1.33×10⁸ m/s</li>
+      <li>d) 4×10⁸ m/s</li>
+    </ul>
+    <div class="mcq-hint">💡 v = c/n = 3×10⁸/1.33 = 2.26×10⁸ m/s</div>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">5. Carbon has atomic number 6. The number of covalent bonds it can form is:</div>
+    <ul class="mcq-opts">
+      <li>a) 2</li>
+      <li>b) 3</li>
+      <li class="ok">c) 4</li>
+      <li>d) 6</li>
+    </ul>
+    <div class="mcq-hint">💡 Carbon has 4 valence electrons → forms 4 covalent bonds.</div>
+  </div>
+
+</div><!-- end sci1 -->
+
+<!-- ═══════════════════════ SCIENCE 2 ═══════════════════════ -->
+<div class="section" id="tab-sci2">
+  <div class="sec-info">
+    <span>📋 20 IMP Questions</span>
+    <span>🧪 4 Activity Questions</span>
+    <span>🔵 10 MCQs</span>
+  </div>
+
+  <div class="ch-head"><div class="ch-line"></div><div class="ch-label" style="background:linear-gradient(135deg,#15803d,#166534);color:#fff;">Ch 1 — Life Processes: Nutrition</div><div class="ch-line"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q1</span>
+      <div><div class="qtxt">What is photosynthesis? Write the equation. What are the conditions necessary for photosynthesis?</div>
+      <div class="qtags"><span class="qtag t5">🔴 Every Year</span><span class="qtag tb">3 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <p><strong>Photosynthesis:</strong> The process by which green plants use sunlight, water and carbon dioxide to produce glucose (food) and release oxygen as a by-product.</p>
+        <div class="eq">6CO₂ + 6H₂O + Light energy → C₆H₁₂O₆ + 6O₂</div>
+        <p><strong>Conditions necessary:</strong></p>
+        <p>1. <strong>Sunlight</strong> — source of energy for the reaction</p>
+        <p>2. <strong>Chlorophyll</strong> — green pigment in leaves that absorbs sunlight</p>
+        <p>3. <strong>CO₂</strong> — enters through stomata in leaves</p>
+        <p>4. <strong>Water</strong> — absorbed from soil through roots; transported to leaves</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="act-box">
+    <div class="act-title">🧪 Activity — Ch 1: Photosynthesis</div>
+    <div class="act-q">Q: Describe an activity to show that chlorophyll is necessary for photosynthesis.</div>
+    <ol class="act-steps">
+      <li>Take a variegated leaf (partly green, partly yellow/white) from a plant kept in sunlight for a few hours.</li>
+      <li>Boil it in water for 2 minutes to soften; then boil in alcohol to remove chlorophyll.</li>
+      <li>Wash with water, spread on petri dish and add iodine solution.</li>
+    </ol>
+    <div class="act-obs">
+      <strong>Observation:</strong> Green parts of the leaf turn blue-black (starch present). White/yellow parts remain brown (no starch).<br>
+      <strong>Conclusion:</strong> Starch (food) is produced only in green parts that have chlorophyll. Chlorophyll is essential for photosynthesis.
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q2</span>
+      <div><div class="qtxt">What is aerobic and anaerobic respiration? Compare them in a table. Where does each occur in the cell?</div>
+      <div class="qtags"><span class="qtag t5">🔴 Every Year</span><span class="qtag tb">4 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <div class="eq">Aerobic: C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + 36–38 ATP</div>
+        <div class="eq">Anaerobic (yeast): C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂ + 2 ATP</div>
+        <div class="eq">Anaerobic (muscle): C₆H₁₂O₆ → 2C₃H₆O₃ (lactic acid) + 2 ATP</div>
+        <table style="width:100%;border-collapse:collapse;font-size:.82rem;margin-top:8px;">
+          <tr style="background:rgba(255,255,255,.1);"><th style="padding:6px;border:1px solid rgba(255,255,255,.1);">Aerobic</th><th style="padding:6px;border:1px solid rgba(255,255,255,.1);">Anaerobic</th></tr>
+          <tr><td style="padding:6px;border:1px solid rgba(255,255,255,.08);">Requires oxygen</td><td style="padding:6px;border:1px solid rgba(255,255,255,.08);">No oxygen needed</td></tr>
+          <tr><td style="padding:6px;border:1px solid rgba(255,255,255,.08);">Occurs in mitochondria</td><td style="padding:6px;border:1px solid rgba(255,255,255,.08);">Occurs in cytoplasm</td></tr>
+          <tr><td style="padding:6px;border:1px solid rgba(255,255,255,.08);">Produces 36–38 ATP</td><td style="padding:6px;border:1px solid rgba(255,255,255,.08);">Produces only 2 ATP</td></tr>
+          <tr><td style="padding:6px;border:1px solid rgba(255,255,255,.08);">Products: CO₂ + H₂O</td><td style="padding:6px;border:1px solid rgba(255,255,255,.08);">Products: ethanol/lactic acid + CO₂</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="ch-head"><div class="ch-line"></div><div class="ch-label" style="background:linear-gradient(135deg,#b45309,#d97706);color:#fff;">Ch 2 — Life Processes: Transportation</div><div class="ch-line"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q3</span>
+      <div><div class="qtxt">Draw and label the structure of the human heart. Explain double circulation.</div>
+      <div class="qtags"><span class="qtag t5">🔴 Every Year</span><span class="qtag tb">4 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <p><strong>Human Heart:</strong> 4-chambered organ — Right Atrium (RA), Right Ventricle (RV), Left Atrium (LA), Left Ventricle (LV).</p>
+        <p><strong>Double Circulation:</strong> Blood passes through the heart twice in one complete circuit.</p>
+        <p><strong>Pulmonary circulation:</strong> Right side of heart → lungs (for oxygenation) → Left side of heart</p>
+        <p><strong>Systemic circulation:</strong> Left side → entire body → Right side</p>
+        <p><strong>Key points:</strong></p>
+        <p>• Left side carries oxygenated blood; Right side carries deoxygenated blood</p>
+        <p>• Left ventricle has thicker walls (pumps blood to entire body under high pressure)</p>
+        <p>• Valves prevent backflow of blood</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q4</span>
+      <div><div class="qtxt">What is the nephron? Explain the process of urine formation in the nephron with a labelled diagram.</div>
+      <div class="qtags"><span class="qtag t5">🔴 Every Year</span><span class="qtag tb">4 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <p><strong>Nephron:</strong> The functional unit of the kidney. Each kidney has about 1 million nephrons. It filters blood and forms urine.</p>
+        <p><strong>Process of urine formation:</strong></p>
+        <p><strong>Step 1 — Filtration:</strong> Blood enters glomerulus (capillary knot). High pressure forces water, glucose, amino acids, urea, salts into Bowman's capsule → forms filtrate.</p>
+        <p><strong>Step 2 — Reabsorption:</strong> As filtrate passes through tubule, useful substances (glucose, amino acids, water, salts) are reabsorbed back into blood.</p>
+        <p><strong>Step 3 — Secretion:</strong> Remaining waste (urea, excess salts) stays in tubule and forms urine.</p>
+        <p><strong>Urine:</strong> Water + urea + salts → flows to ureter → bladder → excreted through urethra.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ch-head"><div class="ch-line"></div><div class="ch-label" style="background:linear-gradient(135deg,#9333ea,#7c3aed);color:#fff;">Ch 4 — Heredity & Evolution</div><div class="ch-line"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q5</span>
+      <div><div class="qtxt">State Mendel's laws of inheritance. Explain monohybrid cross with a suitable example and Punnett square.</div>
+      <div class="qtags"><span class="qtag t5">🔴 Every Year</span><span class="qtag tb">4 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <p><strong>Mendel's Laws:</strong></p>
+        <p>1. <strong>Law of Segregation:</strong> Each trait is controlled by two alleles; during gamete formation, the alleles separate so each gamete carries only one allele.</p>
+        <p>2. <strong>Law of Independent Assortment:</strong> Genes for different traits are inherited independently of each other (when on different chromosomes).</p>
+        <p><strong>Monohybrid Cross</strong> (Tall × Dwarf pea plant):</p>
+        <p>T = Tall (dominant); t = dwarf (recessive)</p>
+        <p>Parents: TT × tt → F1: all Tt (Tall)</p>
+        <p>F1 × F1: Tt × Tt</p>
+        <div class="eq">Punnett square: TT : Tt : tt = 1:2:1 (genotypic); Tall:Dwarf = 3:1 (phenotypic)</div>
+        <p><strong>Conclusion:</strong> Dominant trait (Tall) appears 3× more than recessive trait (Dwarf) in F2 generation.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q6</span>
+      <div><div class="qtxt">How is the sex of a child determined in human beings? Who is responsible for the sex of a child?</div>
+      <div class="qtags"><span class="qtag t5">🔴 High Freq</span><span class="qtag tb">3 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <p><strong>Sex chromosomes in humans:</strong> Females have XX chromosomes; Males have XY chromosomes.</p>
+        <p><strong>Gametes formed:</strong></p>
+        <p>• Mother (XX) produces only X-type eggs.</p>
+        <p>• Father (XY) produces X-type sperm (50%) and Y-type sperm (50%).</p>
+        <p><strong>Sex determination:</strong></p>
+        <p>• If X sperm fertilises egg → XX → <strong>Girl</strong></p>
+        <p>• If Y sperm fertilises egg → XY → <strong>Boy</strong></p>
+        <div class="eq">Ratio: 50% boys : 50% girls</div>
+        <p><strong>Conclusion:</strong> The sex of a child is determined by the <strong>father's sperm</strong>, not the mother. The mother always contributes X chromosome.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ch-head"><div class="ch-line"></div><div class="ch-label" style="background:linear-gradient(135deg,#0369a1,#1d4ed8);color:#fff;">Ch 5 — Magnetic Effects of Current</div><div class="ch-line"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q7</span>
+      <div><div class="qtxt">State Fleming's Left Hand Rule. When is it used? Explain the working of an electric motor with a labelled diagram.</div>
+      <div class="qtags"><span class="qtag t5">🔴 Every Year</span><span class="qtag tb">4 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <p><strong>Fleming's Left Hand Rule:</strong> Stretch the thumb, index finger and middle finger of the left hand mutually perpendicular. If the index finger points in the direction of the magnetic field (B) and the middle finger points in the direction of current (I), then the thumb points in the direction of the force (F) on the conductor.</p>
+        <p><strong>Used for:</strong> Finding the direction of force on a current-carrying conductor in a magnetic field (used in motors).</p>
+        <p><strong>Electric Motor:</strong> A device that converts electrical energy into mechanical (rotational) energy.</p>
+        <p><strong>Working:</strong></p>
+        <p>1. A rectangular coil (ABCD) is placed in a magnetic field between N and S poles.</p>
+        <p>2. When current flows, force acts on arms AB and CD (by Fleming's LHR) in opposite directions → coil rotates.</p>
+        <p>3. Split ring commutator reverses current every half rotation → coil continues to rotate in same direction.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="act-box">
+    <div class="act-title">🧪 Activity — Ch 5: Magnetic Effect of Current</div>
+    <div class="act-q">Q: Describe an activity to show that a current-carrying conductor experiences a force in a magnetic field.</div>
+    <ol class="act-steps">
+      <li>Place a small aluminium rod AB horizontally across two rails connected to a battery and switch.</li>
+      <li>Place a horseshoe magnet so that the rod AB lies between its poles.</li>
+      <li>Close the switch and pass current through the rod. Observe the rod.</li>
+      <li>Reverse the direction of current and observe again.</li>
+    </ol>
+    <div class="act-obs">
+      <strong>Observation:</strong> When current flows, the rod jumps in one direction. When current is reversed, the rod jumps in the opposite direction.<br>
+      <strong>Conclusion:</strong> A current-carrying conductor in a magnetic field experiences a force (Lorentz force). Direction determined by Fleming's Left Hand Rule.
+    </div>
+  </div>
+
+  <!-- SCIENCE 2 MCQs -->
+  <div class="ch-head"><div class="ch-line"></div><div class="ch-label" style="background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;">🔵 Science 2 — MCQs</div><div class="ch-line"></div></div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">1. Which organ produces bile juice in the human digestive system?</div>
+    <ul class="mcq-opts">
+      <li>a) Stomach</li>
+      <li>b) Pancreas</li>
+      <li class="ok">c) Liver</li>
+      <li>d) Small intestine</li>
+    </ul>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">2. The energy currency of the cell is:</div>
+    <ul class="mcq-opts">
+      <li>a) ADP</li>
+      <li class="ok">b) ATP</li>
+      <li>c) DNA</li>
+      <li>d) Glucose</li>
+    </ul>
+    <div class="mcq-hint">💡 ATP (Adenosine Triphosphate) stores and releases energy for cellular work.</div>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">3. The functional unit of the kidney is:</div>
+    <ul class="mcq-opts">
+      <li>a) Neuron</li>
+      <li>b) Alveolus</li>
+      <li class="ok">c) Nephron</li>
+      <li>d) Villus</li>
+    </ul>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">4. In Mendel's monohybrid cross, the phenotypic ratio in F2 generation is:</div>
+    <ul class="mcq-opts">
+      <li>a) 1:2:1</li>
+      <li class="ok">b) 3:1</li>
+      <li>c) 9:3:3:1</li>
+      <li>d) 1:1</li>
+    </ul>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">5. A device that converts electrical energy into mechanical energy is:</div>
+    <ul class="mcq-opts">
+      <li>a) Generator</li>
+      <li>b) Transformer</li>
+      <li class="ok">c) Electric motor</li>
+      <li>d) Galvanometer</li>
+    </ul>
+  </div>
+
+</div><!-- end sci2 -->
+
+<!-- ═══════════════════════ MATHS ═══════════════════════ -->
+<div class="section" id="tab-maths">
+  <div class="sec-info">
+    <span>📋 20 IMP Questions</span>
+    <span>🔢 Solved Numericals</span>
+    <span>🔵 10 MCQs</span>
+  </div>
+
+  <div class="ch-head"><div class="ch-line"></div><div class="ch-label" style="background:linear-gradient(135deg,#1e3a8a,#1d4ed8);color:#fff;">Algebra — Quadratic Equations</div><div class="ch-line"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q1</span>
+      <div><div class="qtxt">Solve: 2x² − 5x + 3 = 0 by factorisation method.</div>
+      <div class="qtags"><span class="qtag t5">🔴 Every Year</span><span class="qtag tb">2 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <span class="step">2x² − 5x + 3 = 0</span>
+        <span class="step">Split middle term: −5x = −2x − 3x (product = 2×3 = 6)</span>
+        <span class="step">2x² − 2x − 3x + 3 = 0</span>
+        <span class="step">2x(x − 1) − 3(x − 1) = 0</span>
+        <span class="step">(2x − 3)(x − 1) = 0</span>
+        <div class="eq">x = 3/2  or  x = 1</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q2</span>
+      <div><div class="qtxt">Find the discriminant of x² − 4x + 4 = 0 and determine the nature of roots.</div>
+      <div class="qtags"><span class="qtag t5">🔴 High Freq</span><span class="qtag tb">2 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <span class="step">a = 1, b = −4, c = 4</span>
+        <span class="step">D = b² − 4ac = (−4)² − 4(1)(4) = 16 − 16 = 0</span>
+        <div class="eq">D = 0 → Two equal real roots</div>
+        <span class="step">x = −b/2a = 4/2 = 2</span>
+        <p>Both roots are equal: x = 2, x = 2</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q3</span>
+      <div><div class="qtxt">The sum of a number and its reciprocal is 10/3. Find the number.</div>
+      <div class="qtags"><span class="qtag t5">🔴 Word Problem</span><span class="qtag tb">3 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <span class="step">Let the number = x; reciprocal = 1/x</span>
+        <span class="step">x + 1/x = 10/3</span>
+        <span class="step">3(x² + 1) = 10x  →  3x² − 10x + 3 = 0</span>
+        <span class="step">3x² − 9x − x + 3 = 0</span>
+        <span class="step">3x(x − 3) − 1(x − 3) = 0  →  (3x − 1)(x − 3) = 0</span>
+        <div class="eq">x = 3  or  x = 1/3</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ch-head"><div class="ch-line"></div><div class="ch-label" style="background:linear-gradient(135deg,#0f766e,#0d9488);color:#fff;">Statistics — Mean, Median, Mode</div><div class="ch-line"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q4</span>
+      <div><div class="qtxt">Find the mean of the following data using direct method: Class: 10–20, 20–30, 30–40, 40–50; Freq: 5, 8, 12, 5</div>
+      <div class="qtags"><span class="qtag t5">🔴 Every Year</span><span class="qtag tb">3 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <span class="step">Midpoints (x): 15, 25, 35, 45</span>
+        <span class="step">fx: 5×15=75; 8×25=200; 12×35=420; 5×45=225</span>
+        <span class="step">Σf = 5+8+12+5 = 30</span>
+        <span class="step">Σfx = 75+200+420+225 = 920</span>
+        <div class="eq">Mean = Σfx/Σf = 920/30 = 30.67</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q5</span>
+      <div><div class="qtxt">Find the median from the following data: Class: 0–10, 10–20, 20–30, 30–40, 40–50; Frequency: 4, 6, 10, 8, 2</div>
+      <div class="qtags"><span class="qtag t5">🔴 Every Year</span><span class="qtag tb">3 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <span class="step">CF: 4, 10, 20, 28, 30 | Total n = 30</span>
+        <span class="step">n/2 = 15 → median class = 20–30 (CF before = 10, f = 10)</span>
+        <span class="step">L = 20, cf = 10, f = 10, h = 10</span>
+        <div class="eq">Median = L + [(n/2 − cf)/f] × h = 20 + [(15−10)/10] × 10</div>
+        <div class="eq">= 20 + 5 = 25</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ch-head"><div class="ch-line"></div><div class="ch-label" style="background:linear-gradient(135deg,#9d174d,#be185d);color:#fff;">Geometry — Circle Theorems</div><div class="ch-line"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q6</span>
+      <div><div class="qtxt">State and prove the theorem: "The tangent at any point of a circle is perpendicular to the radius through the point of contact."</div>
+      <div class="qtags"><span class="qtag t5">🔴 Every Year</span><span class="qtag tb">3 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <p><strong>Statement:</strong> The tangent drawn at any point of a circle is perpendicular to the radius drawn to the point of tangency.</p>
+        <p><strong>Given:</strong> Circle with centre O, tangent AB at point P; OP is radius.</p>
+        <p><strong>To Prove:</strong> OP ⊥ AB</p>
+        <p><strong>Proof:</strong> Let Q be any other point on tangent AB. Since AB is a tangent, it touches the circle only at P. So Q lies outside the circle → OQ &gt; OP (radius is shortest distance from centre to tangent line). This is true for every point Q on AB except P. Therefore, OP is the shortest distance from O to AB. The shortest distance from a point to a line is perpendicular. Hence OP ⊥ AB. ∎</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q7</span>
+      <div><div class="qtxt">From an external point, two tangents are drawn to a circle. Prove that they are equal in length.</div>
+      <div class="qtags"><span class="qtag t5">🔴 Every Year</span><span class="qtag tb">3 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <p><strong>Given:</strong> External point P; tangents PA and PB to circle with centre O, touching at A and B.</p>
+        <p><strong>To Prove:</strong> PA = PB</p>
+        <p><strong>Proof:</strong> In triangles OAP and OBP:</p>
+        <p>OA = OB (radii of same circle)</p>
+        <p>OP = OP (common side)</p>
+        <p>∠OAP = ∠OBP = 90° (radius ⊥ tangent)</p>
+        <p>By RHS congruence: △OAP ≅ △OBP</p>
+        <div class="eq">∴ PA = PB (CPCT) ✓</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MATHS MCQs -->
+  <div class="ch-head"><div class="ch-line"></div><div class="ch-label" style="background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;">🔵 Maths — MCQs</div><div class="ch-line"></div></div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">1. If the discriminant of a quadratic equation is negative, the roots are:</div>
+    <ul class="mcq-opts">
+      <li>a) Real and equal</li>
+      <li>b) Real and distinct</li>
+      <li class="ok">c) Not real (imaginary)</li>
+      <li>d) Rational</li>
+    </ul>
+    <div class="mcq-hint">💡 D &lt; 0 → no real roots; D = 0 → equal roots; D &gt; 0 → distinct real roots</div>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">2. The sum of roots of ax² + bx + c = 0 is:</div>
+    <ul class="mcq-opts">
+      <li>a) c/a</li>
+      <li>b) b/a</li>
+      <li class="ok">c) −b/a</li>
+      <li>d) −c/a</li>
+    </ul>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">3. The relationship between Mean, Median and Mode is:</div>
+    <ul class="mcq-opts">
+      <li>a) Mode = 2 Mean − 3 Median</li>
+      <li class="ok">b) Mode = 3 Median − 2 Mean</li>
+      <li>c) Mean = 3 Mode − 2 Median</li>
+      <li>d) Median = 3 Mode − 2 Mean</li>
+    </ul>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">4. The number of tangents that can be drawn from an external point to a circle is:</div>
+    <ul class="mcq-opts">
+      <li>a) 1</li>
+      <li class="ok">b) 2</li>
+      <li>c) 3</li>
+      <li>d) Infinite</li>
+    </ul>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">5. If in a right-angled triangle, the sides are 5 cm, 12 cm and 13 cm, the hypotenuse is:</div>
+    <ul class="mcq-opts">
+      <li>a) 5 cm</li>
+      <li>b) 12 cm</li>
+      <li class="ok">c) 13 cm</li>
+      <li>d) 7 cm</li>
+    </ul>
+    <div class="mcq-hint">💡 Check: 5² + 12² = 25 + 144 = 169 = 13² ✓ Pythagoras theorem</div>
+  </div>
+
+</div><!-- end maths -->
+
+<!-- ═══════════════════════ SST ═══════════════════════ -->
+<div class="section" id="tab-sst">
+  <div class="sec-info">
+    <span>📋 18 IMP Questions</span>
+    <span>🌍 History + Geography + Civics + Economics</span>
+    <span>🔵 8 MCQs</span>
+  </div>
+
+  <div class="ch-head"><div class="ch-line"></div><div class="ch-label" style="background:linear-gradient(135deg,#b45309,#d97706);color:#fff;">History — Nationalism in India</div><div class="ch-line"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q1</span>
+      <div><div class="qtxt">What was the Non-Cooperation Movement? When was it launched? What were its main features?</div>
+      <div class="qtags"><span class="qtag t5">🔴 High Freq</span><span class="qtag tb">3 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <p><strong>Non-Cooperation Movement:</strong> A mass movement launched by Mahatma Gandhi in 1920 against British rule, calling upon Indians to withdraw cooperation from the British government.</p>
+        <p><strong>Main Features:</strong></p>
+        <p>1. Surrender of titles and honorary offices given by British</p>
+        <p>2. Boycott of government schools, colleges, law courts</p>
+        <p>3. Boycott of foreign goods — use of Swadeshi goods</p>
+        <p>4. Resignation from government jobs</p>
+        <p>5. Boycott of elections</p>
+        <p><strong>End:</strong> Withdrawn by Gandhi in February 1922 after Chauri Chaura incident (police station set on fire by mob).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q2</span>
+      <div><div class="qtxt">What was the Civil Disobedience Movement? Explain the Salt March (Dandi March) with its significance.</div>
+      <div class="qtags"><span class="qtag t5">🔴 Every Year</span><span class="qtag tb">4 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <p><strong>Civil Disobedience Movement (1930):</strong> A movement in which Indians refused to follow unjust laws of the British government. Launched by Gandhi with the specific demand to abolish the salt tax.</p>
+        <p><strong>Dandi March (12 March – 6 April 1930):</strong></p>
+        <p>Gandhi walked 240 miles from Sabarmati Ashram to Dandi (a coastal village in Gujarat) with 78 followers. On reaching Dandi, he made salt from seawater — thus breaking the Salt Law which gave the British monopoly over salt production.</p>
+        <p><strong>Significance:</strong></p>
+        <p>1. First mass movement involving all sections of society including women</p>
+        <p>2. Attracted worldwide attention to India's freedom struggle</p>
+        <p>3. Showed that Indians could challenge British laws non-violently</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ch-head"><div class="ch-line"></div><div class="ch-label" style="background:linear-gradient(135deg,#15803d,#166534);color:#fff;">Geography — Resources & Agriculture</div><div class="ch-line"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q3</span>
+      <div><div class="qtxt">What is soil erosion? Write 4 causes and 4 methods of soil conservation.</div>
+      <div class="qtags"><span class="qtag t5">🔴 Every Year</span><span class="qtag tb">3 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <p><strong>Soil Erosion:</strong> The removal of the top fertile layer of soil by agents like wind, water, or human activities.</p>
+        <p><strong>Causes:</strong> 1. Deforestation — 2. Overgrazing — 3. Heavy rainfall — 4. Construction activities</p>
+        <p><strong>Methods of Soil Conservation:</strong></p>
+        <p>1. <strong>Afforestation</strong> — planting trees to bind soil</p>
+        <p>2. <strong>Contour ploughing</strong> — ploughing along contour lines to reduce runoff</p>
+        <p>3. <strong>Terrace farming</strong> — cutting hillsides into steps</p>
+        <p>4. <strong>Crop rotation</strong> — growing different crops alternately</p>
+        <p>5. Check dams, shelter belts (rows of trees to block wind)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ch-head"><div class="ch-line"></div><div class="ch-label" style="background:linear-gradient(135deg,#0369a1,#1d4ed8);color:#fff;">Economics — Development</div><div class="ch-line"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q4</span>
+      <div><div class="qtxt">What is development? Explain two important aspects of development. Why do different countries have different development goals?</div>
+      <div class="qtags"><span class="qtag t5">🔴 High Freq</span><span class="qtag tb">3 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <p><strong>Development:</strong> Improvement in the quality of life and standard of living of people. It is not just about income but includes education, health, freedom, security and equality.</p>
+        <p><strong>Two important aspects:</strong></p>
+        <p>1. <strong>Economic development</strong> — increase in per capita income, industrialisation</p>
+        <p>2. <strong>Human development</strong> — improvement in education, health, life expectancy, freedom</p>
+        <p><strong>Different development goals:</strong> Different people have different needs, aspirations and situations. A landless labourer wants regular employment; a farmer wants better crop prices; a student wants good education. Hence, development goals differ based on individual and social needs.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SST MCQs -->
+  <div class="ch-head"><div class="ch-line"></div><div class="ch-label" style="background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;">🔵 SST — MCQs</div><div class="ch-line"></div></div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">1. The Non-Cooperation Movement was withdrawn by Gandhi after which incident?</div>
+    <ul class="mcq-opts">
+      <li>a) Jallianwala Bagh massacre</li>
+      <li class="ok">b) Chauri Chaura incident</li>
+      <li>c) Dandi March</li>
+      <li>d) Quit India Movement</li>
+    </ul>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">2. The Dandi March began on:</div>
+    <ul class="mcq-opts">
+      <li>a) 12 March 1919</li>
+      <li class="ok">b) 12 March 1930</li>
+      <li>c) 12 March 1942</li>
+      <li>d) 12 March 1947</li>
+    </ul>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">3. Human Development Index (HDI) includes which of the following indicators?</div>
+    <ul class="mcq-opts">
+      <li>a) GDP only</li>
+      <li>b) Income and Literacy</li>
+      <li class="ok">c) Life expectancy, Education, and Per capita income</li>
+      <li>d) Population and Income</li>
+    </ul>
+  </div>
+
+</div><!-- end sst -->
+
+<!-- ═══════════════════════ ENGLISH ═══════════════════════ -->
+<div class="section" id="tab-english">
+  <div class="sec-info">
+    <span>📋 15 IMP Questions</span>
+    <span>✍️ Grammar + Writing + Literature</span>
+    <span>🔵 8 MCQs</span>
+  </div>
+
+  <div class="ch-head"><div class="ch-line"></div><div class="ch-label" style="background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;">Grammar — Tenses, Voice, Narration</div><div class="ch-line"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q1</span>
+      <div><div class="qtxt">Change the following sentences from Active to Passive voice: (a) She writes a letter. (b) They were playing cricket. (c) The teacher has corrected the papers.</div>
+      <div class="qtags"><span class="qtag t5">🔴 Every Year</span><span class="qtag tb">3 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <div class="eq">(a) A letter is written by her. (Simple Present → is/am/are + V3)</div>
+        <div class="eq">(b) Cricket was being played by them. (Past Continuous → was/were + being + V3)</div>
+        <div class="eq">(c) The papers have been corrected by the teacher. (Present Perfect → has/have + been + V3)</div>
+        <p><strong>Rule:</strong> Object → Subject | is/are/was/were/been + V3 | by + Old Subject</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q2</span>
+      <div><div class="qtxt">Change to Indirect Speech: (a) He said, "I am going to school." (b) She said to me, "Have you finished your work?" (c) The teacher said, "Be quiet."</div>
+      <div class="qtags"><span class="qtag t5">🔴 Every Year</span><span class="qtag tb">3 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Answer</div>
+      <div class="ans-txt">
+        <div class="eq">(a) He said that he was going to school. (am → was; I → he)</div>
+        <div class="eq">(b) She asked me if I had finished my work. (Have → Had; you → I)</div>
+        <div class="eq">(c) The teacher ordered us to be quiet. (Command → ordered + to + V1)</div>
+        <p><strong>Rules:</strong> Present → Past | "that" for statements | "if/whether" for questions | "ordered/told/asked to" for commands</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q3</span>
+      <div><div class="qtxt">Write a letter to your friend describing your experience of a school excursion. (Informal letter format)</div>
+      <div class="qtags"><span class="qtag t5">🔴 Every Year</span><span class="qtag tb">5 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Model Answer Format</div>
+      <div class="ans-txt">
+        <div class="eq">Address: 12, Green Park, Ambarnath – 421501</div>
+        <div class="eq">Date: 15th November 2026</div>
+        <div class="eq">Salutation: Dear Rahul,</div>
+        <p>How are you? I hope you are keeping well. I am writing to tell you about our school excursion to Lonavala last week.</p>
+        <p>We left school at 6 a.m. in two buses. The journey was full of fun and singing. We visited Bhushi Dam, Karla Caves and Tiger's Leap. The view from Tiger's Leap was breathtaking. We also had a bonfire and cooked food together.</p>
+        <p>It was truly an unforgettable experience. I wish you were there with us! Do write back soon.</p>
+        <div class="eq">Yours lovingly, [Your Name]</div>
+        <p><strong>Format marks:</strong> Address + Date + Salutation + Body (3 paras) + Closing = 5 marks</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-top">
+      <span class="qno">Q4</span>
+      <div><div class="qtxt">Write a summary/precis of the following passage in 1/3 of its length. Give a suitable title. (Passage on importance of reading — board type)</div>
+      <div class="qtags"><span class="qtag t5">🔴 Every Year</span><span class="qtag tb">4 Marks</span></div></div>
+    </div>
+    <div class="ans-wrap"><div class="ans-lbl">✅ Tips for Precis Writing</div>
+      <div class="ans-txt">
+        <p><strong>Steps to write a precis:</strong></p>
+        <p>1. Read the passage carefully 2–3 times.</p>
+        <p>2. Identify the main idea and key points.</p>
+        <p>3. Write in your own words — no direct copying.</p>
+        <p>4. Use 1/3 word count of original.</p>
+        <p>5. Write in third person, past tense, continuous prose.</p>
+        <p>6. Give a short, meaningful title (2–4 words).</p>
+        <p><strong>Common titles:</strong> "The Value of Reading", "Importance of Books", "Books and Knowledge"</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENGLISH MCQs -->
+  <div class="ch-head"><div class="ch-line"></div><div class="ch-label" style="background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;">🔵 English — Grammar MCQs</div><div class="ch-line"></div></div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">1. Choose the correct passive voice: "The students completed the project."</div>
+    <ul class="mcq-opts">
+      <li>a) The project is completed by the students.</li>
+      <li class="ok">b) The project was completed by the students.</li>
+      <li>c) The project has been completed by students.</li>
+      <li>d) The project were completed by the students.</li>
+    </ul>
+    <div class="mcq-hint">💡 Simple Past → was/were + V3</div>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">2. She said, "I will come tomorrow." In indirect speech, this becomes:</div>
+    <ul class="mcq-opts">
+      <li>a) She said that she will come the next day.</li>
+      <li class="ok">b) She said that she would come the next day.</li>
+      <li>c) She said that I would come tomorrow.</li>
+      <li>d) She told that she will come tomorrow.</li>
+    </ul>
+    <div class="mcq-hint">💡 will → would; tomorrow → the next day; I → she</div>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">3. "Yours faithfully" is used when you write to:</div>
+    <ul class="mcq-opts">
+      <li>a) A friend</li>
+      <li class="ok">b) Someone whose name you don't know (Sir/Madam)</li>
+      <li>c) A relative</li>
+      <li>d) Your teacher by name</li>
+    </ul>
+  </div>
+
+</div><!-- end english -->
+
+</div><!-- wrap -->
+
+<script>
+function show(id, btn) {
+  document.querySelectorAll('.tpill').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>
