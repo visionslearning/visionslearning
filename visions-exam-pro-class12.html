@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visions Exam Pro — One Shots Class 12 | Visions Classes</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #0a0a1a; color: #fff; min-height: 100vh; }
+
+  .header { background: linear-gradient(135deg, #0a0a1a, #1a0533, #7f0000); padding: 28px 16px 22px; text-align: center; border-bottom: 2px solid #f59e0b; }
+  .back { display: inline-flex; align-items: center; gap: 7px; color: rgba(255,255,255,.8); text-decoration: none; font-size: .8rem; font-weight: 700; padding: 6px 14px; background: rgba(255,255,255,.1); border-radius: 20px; margin-bottom: 14px; }
+  .pro-badge { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #f59e0b, #ef4444); color: #fff; font-size: .78rem; font-weight: 900; padding: 5px 16px; border-radius: 20px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+  .header h1 { font-size: 1.7rem; font-weight: 900; margin-bottom: 6px; }
+  .header h1 span { color: #f59e0b; }
+  .header p { font-size: .88rem; color: rgba(255,255,255,.75); }
+  .wmark { background: rgba(255,255,255,.07); text-align: center; padding: 5px; font-size: .72rem; font-weight: 700; letter-spacing: 2px; color: rgba(255,255,255,.5); }
+
+  .tab-bar { display: flex; overflow-x: auto; gap: 8px; padding: 14px 14px; background: #0d0d20; position: sticky; top: 0; z-index: 100; scrollbar-width: none; border-bottom: 1px solid rgba(255,255,255,.1); }
+  .tab-bar::-webkit-scrollbar { display: none; }
+  .tpill { flex-shrink: 0; border: none; cursor: pointer; padding: 8px 18px; border-radius: 25px; font-size: .78rem; font-weight: 800; white-space: nowrap; transition: all .2s; background: rgba(255,255,255,.08); color: rgba(255,255,255,.75); border: 1px solid rgba(255,255,255,.1); }
+  .tpill.active, .tpill:hover { background: #f59e0b; color: #0a0a1a; border-color: #f59e0b; }
+
+  .wrap { max-width: 900px; margin: 0 auto; padding: 20px 14px 70px; }
+  .section { display: none; }
+  .section.active { display: block; }
+
+  .os-card { background: linear-gradient(135deg, #0d0d25, #111130); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; margin-bottom: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.4); }
+  .os-card-head { padding: 16px 18px; display: flex; align-items: center; gap: 14px; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .os-icon { font-size: 2rem; flex-shrink: 0; }
+  .os-info { flex: 1; }
+  .os-ch { font-size: .68rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; opacity: .7; margin-bottom: 4px; }
+  .os-title { font-size: 1rem; font-weight: 900; line-height: 1.4; }
+  .os-marks { font-size: .68rem; font-weight: 900; padding: 4px 10px; border-radius: 10px; background: rgba(245,158,11,.2); color: #f59e0b; border: 1px solid rgba(245,158,11,.3); white-space: nowrap; flex-shrink: 0; }
+  .os-body { padding: 16px 18px; }
+
+  .topic-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 8px; margin-bottom: 14px; }
+  .topic-pill { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 8px; padding: 7px 12px; font-size: .82rem; color: rgba(255,255,255,.85); display: flex; align-items: center; gap: 6px; }
+  .topic-pill .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+
+  .kp-title { font-size: .7rem; font-weight: 900; color: #f59e0b; text-transform: uppercase; letter-spacing: 1px; margin: 12px 0 8px; }
+  .kp-list { list-style: none; padding: 0; margin-bottom: 10px; }
+  .kp-list li { padding: 5px 0 5px 18px; position: relative; font-size: .86rem; line-height: 1.6; color: rgba(255,255,255,.85); border-bottom: 1px solid rgba(255,255,255,.05); }
+  .kp-list li::before { content: "▸"; position: absolute; left: 0; color: #f59e0b; font-weight: 900; }
+  .kp-list li strong { color: #60a5fa; }
+
+  .fgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(165px,1fr)); gap: 8px; margin: 10px 0 14px; }
+  .fbox { background: rgba(13,71,161,.3); border: 1px solid rgba(96,165,250,.3); border-radius: 10px; padding: 10px; text-align: center; }
+  .fbox .fl { font-size: .64rem; font-weight: 700; color: rgba(255,255,255,.6); margin-bottom: 4px; text-transform: uppercase; }
+  .fbox .feq { font-size: .88rem; font-weight: 900; color: #93c5fd; font-family: monospace; }
+
+  .tip-box { background: linear-gradient(135deg, rgba(245,158,11,.15), rgba(239,68,68,.1)); border: 1px solid rgba(245,158,11,.3); border-radius: 10px; padding: 12px 14px; margin-top: 12px; }
+  .tip-box .tip-title { font-size: .72rem; font-weight: 900; color: #f59e0b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .tip-box p { font-size: .84rem; color: rgba(255,255,255,.8); line-height: 1.6; }
+
+  .sec-head { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+  .sec-head .sh-line { flex: 1; height: 1px; background: rgba(255,255,255,.1); }
+  .sec-head .sh-label { font-size: .78rem; font-weight: 900; color: #f59e0b; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
+
+  .eq { background: rgba(13,71,161,.4); border-left: 3px solid #60a5fa; padding: 8px 12px; border-radius: 0 8px 8px 0; font-family: monospace; font-size: .9rem; color: #93c5fd; font-weight: 700; margin: 6px 0; }
+
+  @media(max-width:600px){ .fgrid{grid-template-columns:1fr 1fr;} .header h1{font-size:1.3rem;} .topic-grid{grid-template-columns:1fr 1fr;} }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a href="notes-class12.html" class="back">← Class 12 Notes</a>
+  <div class="pro-badge">⚡ Visions Exam Pro · Class 12 · HSC</div>
+  <h1>🎯 <span>One Shots</span></h1>
+  <p>Complete Chapter Revision · Last 5 Years Board Topics · HSC Maharashtra Board</p>
+</div>
+<div class="wmark">VISIONS CLASSES · SHASHIKANT SIR · AMBARNATH</div>
+
+<div class="tab-bar">
+  <button class="tpill active" onclick="show('all',this)">📋 All</button>
+  <button class="tpill" onclick="show('physics',this)">⚡ Physics</button>
+  <button class="tpill" onclick="show('chemistry',this)">⚗️ Chemistry</button>
+  <button class="tpill" onclick="show('biology',this)">🌿 Biology</button>
+  <button class="tpill" onclick="show('maths',this)">📐 Maths</button>
+</div>
+
+<div class="wrap">
+<div class="section active" id="sec-all">
+
+<!-- ═══ PHYSICS ═══ -->
+<div id="sec-physics-inner">
+  <div class="sec-head"><div class="sh-line"></div><div class="sh-label">⚡ Physics</div><div class="sh-line"></div></div>
+
+  <div class="os-card">
+    <div class="os-card-head">
+      <span class="os-icon">⚙️</span>
+      <div class="os-info">
+        <div class="os-ch">Chapter 1 · Physics</div>
+        <div class="os-title">Rotational Dynamics — One Shot</div>
+      </div>
+      <span class="os-marks">⭐ Every Year</span>
+    </div>
+    <div class="os-body">
+      <div class="topic-grid">
+        <div class="topic-pill"><span class="dot" style="background:#ef4444;"></span>Moment of Inertia</div>
+        <div class="topic-pill"><span class="dot" style="background:#f59e0b;"></span>Parallel Axis Theorem</div>
+        <div class="topic-pill"><span class="dot" style="background:#10b981;"></span>Angular Momentum</div>
+        <div class="topic-pill"><span class="dot" style="background:#60a5fa;"></span>Vertical Circular Motion</div>
+        <div class="topic-pill"><span class="dot" style="background:#a78bfa;"></span>Banked Road</div>
+        <div class="topic-pill"><span class="dot" style="background:#f59e0b;"></span>Rolling Motion</div>
+      </div>
+      <div class="kp-title">🔑 Must Know</div>
+      <ul class="kp-list">
+        <li><strong>I = Σmr²;</strong> Ring = MR²; Disc = ½MR²; Solid sphere = 2/5 MR²</li>
+        <li><strong>Parallel axis:</strong> I₀ = Iₒ + Mh²</li>
+        <li><strong>Perpendicular axis:</strong> Iᵤ = Ix + Iy (laminar objects only)</li>
+        <li><strong>Angular momentum:</strong> L = Iω; Conservation: I₁ω₁ = I₂ω₂</li>
+        <li><strong>Vertical circle:</strong> v_top(min) = √(rg); v_bottom(min) = √(5rg); T_B − T_A = 6mg</li>
+        <li><strong>Banking:</strong> tan θ = v²/rg; safe speed = √(rg tanθ)</li>
+        <li><strong>Rolling KE:</strong> E = ½Mv²(1 + K²/R²)</li>
+      </ul>
+      <div class="fgrid">
+        <div class="fbox"><div class="fl">Torque</div><div class="feq">τ = Iα</div></div>
+        <div class="fbox"><div class="fl">Angular mom.</div><div class="feq">L = Iω</div></div>
+        <div class="fbox"><div class="fl">v_top min</div><div class="feq">√(rg)</div></div>
+        <div class="fbox"><div class="fl">v_bottom min</div><div class="feq">√(5rg)</div></div>
+        <div class="fbox"><div class="fl">T_B − T_A</div><div class="feq">= 6mg</div></div>
+        <div class="fbox"><div class="fl">Rolling KE</div><div class="feq">½Mv²(1+K²/R²)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="os-card">
+    <div class="os-card-head">
+      <span class="os-icon">💧</span>
+      <div class="os-info">
+        <div class="os-ch">Chapter 2 · Physics</div>
+        <div class="os-title">Mechanical Properties of Fluids — One Shot</div>
+      </div>
+      <span class="os-marks">⭐ High Weightage</span>
+    </div>
+    <div class="os-body">
+      <div class="topic-grid">
+        <div class="topic-pill"><span class="dot" style="background:#ef4444;"></span>Bernoulli's Theorem</div>
+        <div class="topic-pill"><span class="dot" style="background:#f59e0b;"></span>Stokes' Law</div>
+        <div class="topic-pill"><span class="dot" style="background:#10b981;"></span>Surface Tension</div>
+        <div class="topic-pill"><span class="dot" style="background:#60a5fa;"></span>Capillary Rise</div>
+        <div class="topic-pill"><span class="dot" style="background:#a78bfa;"></span>Pascal's Law</div>
+        <div class="topic-pill"><span class="dot" style="background:#f59e0b;"></span>Terminal Velocity</div>
+      </div>
+      <div class="kp-title">🔑 Must Know</div>
+      <ul class="kp-list">
+        <li><strong>Bernoulli:</strong> P + ½ρv² + ρgh = constant</li>
+        <li><strong>Torricelli:</strong> v = √(2gh) (efflux speed)</li>
+        <li><strong>Terminal velocity:</strong> v_T = 2r²(ρ−σ)g / 9η</li>
+        <li><strong>Excess pressure:</strong> Drop = 2T/r; Soap bubble = 4T/r</li>
+        <li><strong>Capillary rise:</strong> h = 2T cosθ / ρgr</li>
+        <li><strong>Stokes' Law:</strong> F = 6πηrv</li>
+      </ul>
+      <div class="fgrid">
+        <div class="fbox"><div class="fl">Bernoulli</div><div class="feq">P+½ρv²+ρgh=C</div></div>
+        <div class="fbox"><div class="fl">Terminal v</div><div class="feq">2r²(ρ-σ)g/9η</div></div>
+        <div class="fbox"><div class="fl">Bubble ΔP</div><div class="feq">4T/r</div></div>
+        <div class="fbox"><div class="fl">Capillary</div><div class="feq">h=2Tcosθ/ρgr</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="os-card">
+    <div class="os-card-head">
+      <span class="os-icon">🌈</span>
+      <div class="os-info">
+        <div class="os-ch">Chapter 7 · Physics</div>
+        <div class="os-title">Wave Optics — One Shot</div>
+      </div>
+      <span class="os-marks">⭐ Every Year</span>
+    </div>
+    <div class="os-body">
+      <div class="topic-grid">
+        <div class="topic-pill"><span class="dot" style="background:#ef4444;"></span>Huygens' Principle</div>
+        <div class="topic-pill"><span class="dot" style="background:#f59e0b;"></span>YDSE Fringe width</div>
+        <div class="topic-pill"><span class="dot" style="background:#10b981;"></span>Malus' Law</div>
+        <div class="topic-pill"><span class="dot" style="background:#60a5fa;"></span>Brewster's Law</div>
+        <div class="topic-pill"><span class="dot" style="background:#a78bfa;"></span>Diffraction</div>
+        <div class="topic-pill"><span class="dot" style="background:#f59e0b;"></span>Polarisation</div>
+      </div>
+      <div class="kp-title">🔑 Must Know</div>
+      <ul class="kp-list">
+        <li><strong>Huygens:</strong> Every point on wavefront = secondary source; new wavefront = common tangent</li>
+        <li><strong>Snell's (Huygens):</strong> n₁ sin i = n₂ sin r; sin i/sin r = v₁/v₂</li>
+        <li><strong>YDSE fringe width:</strong> β = λD/d</li>
+        <li><strong>Bright:</strong> Δ = nλ; <strong>Dark:</strong> Δ = (2n−1)λ/2</li>
+        <li><strong>Malus' Law:</strong> I = I₀ cos²θ</li>
+        <li><strong>Brewster's Law:</strong> tan i_B = n; at i_B, reflected = fully polarised</li>
+        <li><strong>Single slit minima:</strong> a sinθ = nλ</li>
+      </ul>
+      <div class="fgrid">
+        <div class="fbox"><div class="fl">Fringe width</div><div class="feq">β = λD/d</div></div>
+        <div class="fbox"><div class="fl">Malus' Law</div><div class="feq">I = I₀cos²θ</div></div>
+        <div class="fbox"><div class="fl">Brewster</div><div class="feq">tan i_B = n</div></div>
+        <div class="fbox"><div class="fl">Efflux</div><div class="feq">a sinθ = nλ</div></div>
+      </div>
+      <div class="tip-box">
+        <div class="tip-title">⚡ Board Exam Tip</div>
+        <p>Huygens + Snell's Law derivation = 4M every year. YDSE fringe width derivation = 4M every year. Malus' Law 3 angle cases (0°, 45°, 90°) = 2M. Numericals: β = λD/d, I = I₀cos²θ.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="os-card">
+    <div class="os-card-head">
+      <span class="os-icon">⚛️</span>
+      <div class="os-info">
+        <div class="os-ch">Chapter 15 · Physics</div>
+        <div class="os-title">Structure of Atoms &amp; Nuclei — One Shot</div>
+      </div>
+      <span class="os-marks">⭐ Every Year</span>
+    </div>
+    <div class="os-body">
+      <div class="kp-title">🔑 Must Know</div>
+      <ul class="kp-list">
+        <li><strong>Bohr's postulates:</strong> stable orbits; L = nh/2π; hν = E₂ − E₁</li>
+        <li><strong>Bohr radius:</strong> rₙ = n² × 0.529 Å</li>
+        <li><strong>Energy level:</strong> Eₙ = −13.6/n² eV</li>
+        <li><strong>Spectral series:</strong> Lyman (UV, n→1), Balmer (visible, n→2), Paschen (IR, n→3)</li>
+        <li><strong>Radioactive decay:</strong> N = N₀e^(−λt); T½ = 0.693/λ</li>
+        <li><strong>Binding energy:</strong> BE = Δm × 931.5 MeV/u</li>
+      </ul>
+      <div class="fgrid">
+        <div class="fbox"><div class="fl">Bohr radius</div><div class="feq">rn = n²×0.529Å</div></div>
+        <div class="fbox"><div class="fl">Energy level</div><div class="feq">En = −13.6/n² eV</div></div>
+        <div class="fbox"><div class="fl">Half life</div><div class="feq">T½ = 0.693/λ</div></div>
+        <div class="fbox"><div class="fl">Decay law</div><div class="feq">N = N₀e^(−λt)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="os-card">
+    <div class="os-card-head">
+      <span class="os-icon">🔄</span>
+      <div class="os-info">
+        <div class="os-ch">Chapter 13 · Physics</div>
+        <div class="os-title">AC Circuits — One Shot</div>
+      </div>
+      <span class="os-marks">⭐ Every Year</span>
+    </div>
+    <div class="os-body">
+      <div class="kp-title">🔑 Must Know</div>
+      <ul class="kp-list">
+        <li><strong>Impedance LCR:</strong> Z = √[R² + (X_L − X_C)²]</li>
+        <li><strong>Resonance:</strong> X_L = X_C; ω₀ = 1/√LC; Z = R (minimum); I = maximum</li>
+        <li><strong>Power factor:</strong> cosφ = R/Z; Power P = Vrms·Irms·cosφ</li>
+        <li><strong>Transformer:</strong> V₁/V₂ = N₁/N₂; Step up: N₂ &gt; N₁</li>
+        <li><strong>RMS values:</strong> Vrms = V₀/√2; Irms = I₀/√2</li>
+      </ul>
+      <div class="fgrid">
+        <div class="fbox"><div class="fl">Impedance</div><div class="feq">Z=√(R²+(XL-XC)²)</div></div>
+        <div class="fbox"><div class="fl">Resonance f₀</div><div class="feq">1/2π√(LC)</div></div>
+        <div class="fbox"><div class="fl">Power factor</div><div class="feq">cosφ = R/Z</div></div>
+        <div class="fbox"><div class="fl">Transformer</div><div class="feq">V₁/V₂ = N₁/N₂</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CHEMISTRY ═══ -->
+<div id="sec-chemistry-inner">
+  <div class="sec-head"><div class="sh-line"></div><div class="sh-label">⚗️ Chemistry</div><div class="sh-line"></div></div>
+
+  <div class="os-card">
+    <div class="os-card-head">
+      <span class="os-icon">⚗️</span>
+      <div class="os-info">
+        <div class="os-ch">Chapter 11 · Chemistry</div>
+        <div class="os-title">Alcohols, Phenols &amp; Ethers — One Shot</div>
+      </div>
+      <span class="os-marks">⭐ Every Year</span>
+    </div>
+    <div class="os-body">
+      <div class="topic-grid">
+        <div class="topic-pill"><span class="dot" style="background:#ef4444;"></span>Classification</div>
+        <div class="topic-pill"><span class="dot" style="background:#f59e0b;"></span>Nomenclature</div>
+        <div class="topic-pill"><span class="dot" style="background:#10b981;"></span>Reactions of alcohols</div>
+        <div class="topic-pill"><span class="dot" style="background:#60a5fa;"></span>Kolbe-Schmitt reaction</div>
+        <div class="topic-pill"><span class="dot" style="background:#a78bfa;"></span>Williamson synthesis</div>
+        <div class="topic-pill"><span class="dot" style="background:#f59e0b;"></span>Grignard reagent</div>
+      </div>
+      <div class="kp-title">🔑 Must Know Reactions</div>
+      <ul class="kp-list">
+        <li><strong>Dehydration of alcohol:</strong> ROH → alkene + H₂O (conc. H₂SO₄, 170°C)</li>
+        <li><strong>Oxidation:</strong> 1° alcohol → aldehyde → acid; 2° → ketone; 3° → no oxidation</li>
+        <li><strong>Kolbe-Schmitt:</strong> Sodium phenoxide + CO₂ → sodium salicylate → salicylic acid</li>
+        <li><strong>Reimer-Tiemann:</strong> Phenol + CHCl₃ + KOH → salicylaldehyde</li>
+        <li><strong>Williamson synthesis:</strong> R−ONa + R'X → R−O−R' (ether)</li>
+        <li><strong>Grignard + Aldehyde:</strong> R−MgX + RCHO → 2° alcohol; + Ketone → 3° alcohol</li>
+      </ul>
+      <div class="tip-box">
+        <div class="tip-title">⚡ Board Exam Tip</div>
+        <p>Write equations with structural formulae. Grignard reagent — write all 4 reactions. Mechanism questions need arrow-pushing steps.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="os-card">
+    <div class="os-card-head">
+      <span class="os-icon">⚡</span>
+      <div class="os-info">
+        <div class="os-ch">Chapter 3 · Chemistry</div>
+        <div class="os-title">Electrochemistry — One Shot</div>
+      </div>
+      <span class="os-marks">⭐ Every Year</span>
+    </div>
+    <div class="os-body">
+      <div class="kp-title">🔑 Must Know</div>
+      <ul class="kp-list">
+        <li><strong>Galvanic cell:</strong> spontaneous redox → electrical energy; Daniell cell example</li>
+        <li><strong>EMF of cell:</strong> E°cell = E°cathode − E°anode</li>
+        <li><strong>Nernst equation:</strong> E = E° − (RT/nF)ln Q</li>
+        <li><strong>Faraday's 1st law:</strong> m = ZIt (mass deposited ∝ charge passed)</li>
+        <li><strong>Faraday's 2nd law:</strong> masses deposited ∝ equivalent weight</li>
+        <li><strong>1 Faraday = 96500 C</strong> = charge of 1 mole of electrons</li>
+        <li><strong>Kohlrausch law:</strong> Λ°m = ν₊λ₊° + ν₋λ₋°</li>
+      </ul>
+      <div class="fgrid">
+        <div class="fbox"><div class="fl">EMF of cell</div><div class="feq">E° = E°c − E°a</div></div>
+        <div class="fbox"><div class="fl">Faraday's law</div><div class="feq">m = ZIt</div></div>
+        <div class="fbox"><div class="fl">1 Faraday</div><div class="feq">96500 C</div></div>
+        <div class="fbox"><div class="fl">Nernst eq.</div><div class="feq">E = E°−(RT/nF)lnQ</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="os-card">
+    <div class="os-card-head">
+      <span class="os-icon">🔗</span>
+      <div class="os-info">
+        <div class="os-ch">Chapter 15 · Chemistry</div>
+        <div class="os-title">Coordination Compounds — One Shot</div>
+      </div>
+      <span class="os-marks">⭐ High Weightage</span>
+    </div>
+    <div class="os-body">
+      <div class="kp-title">🔑 Must Know</div>
+      <ul class="kp-list">
+        <li><strong>Ligands:</strong> Lewis base; donates electron pair; monodentate, bidentate, polydentate</li>
+        <li><strong>EDTA:</strong> hexadentate; forms chelate; used in water softening</li>
+        <li><strong>Coordination number:</strong> number of ligands directly bonded to central metal</li>
+        <li><strong>IUPAC naming:</strong> ligands (alphabetical) + metal + oxidation state in Roman</li>
+        <li><strong>Werner's theory:</strong> primary valency (ionisable) + secondary valency (non-ionisable)</li>
+        <li><strong>Crystal field theory:</strong> d orbital splitting in octahedral = t₂g and eg sets</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ BIOLOGY ═══ -->
+<div id="sec-biology-inner">
+  <div class="sec-head"><div class="sh-line"></div><div class="sh-label">🌿 Biology</div><div class="sh-line"></div></div>
+
+  <div class="os-card">
+    <div class="os-card-head">
+      <span class="os-icon">🧬</span>
+      <div class="os-info">
+        <div class="os-ch">Chapter 2 · Biology</div>
+        <div class="os-title">Genetics — Mendel's Laws &amp; Inheritance — One Shot</div>
+      </div>
+      <span class="os-marks">⭐ Every Year</span>
+    </div>
+    <div class="os-body">
+      <div class="topic-grid">
+        <div class="topic-pill"><span class="dot" style="background:#ef4444;"></span>Mendel's laws</div>
+        <div class="topic-pill"><span class="dot" style="background:#f59e0b;"></span>Monohybrid cross</div>
+        <div class="topic-pill"><span class="dot" style="background:#10b981;"></span>Dihybrid cross</div>
+        <div class="topic-pill"><span class="dot" style="background:#60a5fa;"></span>Incomplete dominance</div>
+        <div class="topic-pill"><span class="dot" style="background:#a78bfa;"></span>Blood groups</div>
+        <div class="topic-pill"><span class="dot" style="background:#f59e0b;"></span>Sex determination</div>
+      </div>
+      <div class="kp-title">🔑 Must Know</div>
+      <ul class="kp-list">
+        <li><strong>Law of segregation:</strong> alleles separate during gamete formation</li>
+        <li><strong>Law of independent assortment:</strong> genes on different chromosomes assort independently</li>
+        <li><strong>Monohybrid ratio:</strong> 3:1 (phenotypic); 1:2:1 (genotypic)</li>
+        <li><strong>Dihybrid ratio:</strong> 9:3:3:1 (phenotypic)</li>
+        <li><strong>Incomplete dominance:</strong> 1:2:1 (e.g., red × white → pink)</li>
+        <li><strong>ABO blood groups:</strong> codominance; I^A I^B = AB (universal recipient); ii = O</li>
+        <li><strong>Sex determination:</strong> XX (female); XY (male); sperm determines sex</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="os-card">
+    <div class="os-card-head">
+      <span class="os-icon">🔬</span>
+      <div class="os-info">
+        <div class="os-ch">Chapter 4 · Biology</div>
+        <div class="os-title">Molecular Basis of Inheritance (DNA) — One Shot</div>
+      </div>
+      <span class="os-marks">⭐ Every Year</span>
+    </div>
+    <div class="os-body">
+      <div class="kp-title">🔑 Must Know</div>
+      <ul class="kp-list">
+        <li><strong>DNA structure:</strong> double helix; antiparallel strands; A-T, G-C base pairs; Chargaff's rule</li>
+        <li><strong>Replication:</strong> semi-conservative; DNA polymerase; leading &amp; lagging strand</li>
+        <li><strong>Transcription:</strong> DNA → mRNA; RNA polymerase; template strand</li>
+        <li><strong>Translation:</strong> mRNA → Protein; ribosome; tRNA anticodon; codon = 3 bases</li>
+        <li><strong>Genetic code:</strong> 64 codons; 61 sense + 3 stop (UAA, UAG, UGA)</li>
+        <li><strong>AUG:</strong> start codon (Methionine); universal genetic code</li>
+      </ul>
+      <div class="tip-box">
+        <div class="tip-title">⚡ Board Exam Tip</div>
+        <p>Draw diagram of DNA double helix with base pairs. Write central dogma: DNA → RNA → Protein. Label parts of ribosome during translation.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="os-card">
+    <div class="os-card-head">
+      <span class="os-icon">🌱</span>
+      <div class="os-info">
+        <div class="os-ch">Chapter 7 · Biology</div>
+        <div class="os-title">Plant Physiology — Photosynthesis &amp; Respiration — One Shot</div>
+      </div>
+      <span class="os-marks">⭐ High Weightage</span>
+    </div>
+    <div class="os-body">
+      <div class="kp-title">🔑 Must Know</div>
+      <ul class="kp-list">
+        <li><strong>Photosynthesis:</strong> 6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂</li>
+        <li><strong>Light reaction:</strong> in thylakoid; produces ATP, NADPH, O₂</li>
+        <li><strong>Dark reaction (Calvin cycle):</strong> in stroma; uses CO₂; produces glucose</li>
+        <li><strong>C3 plants:</strong> first product = 3-PGA (3 carbon); wheat, rice, oats</li>
+        <li><strong>C4 plants:</strong> first product = OAA (4 carbon); sugarcane, maize</li>
+        <li><strong>Cellular respiration:</strong> Glycolysis (cytoplasm) → Krebs cycle (mitochondria)</li>
+        <li><strong>ATP yield:</strong> aerobic = 36–38 ATP; anaerobic = 2 ATP</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MATHS ═══ -->
+<div id="sec-maths-inner">
+  <div class="sec-head"><div class="sh-line"></div><div class="sh-label">📐 Mathematics</div><div class="sh-line"></div></div>
+
+  <div class="os-card">
+    <div class="os-card-head">
+      <span class="os-icon">∫</span>
+      <div class="os-info">
+        <div class="os-ch">Chapter 5 · Maths · Part 1</div>
+        <div class="os-title">Integration — One Shot</div>
+      </div>
+      <span class="os-marks">⭐ Every Year</span>
+    </div>
+    <div class="os-body">
+      <div class="kp-title">🔑 Must Know Formulas</div>
+      <ul class="kp-list">
+        <li><strong>∫xⁿ dx</strong> = xⁿ⁺¹/(n+1) + C (n ≠ −1)</li>
+        <li><strong>∫1/x dx</strong> = ln|x| + C</li>
+        <li><strong>∫eˣ dx</strong> = eˣ + C; <strong>∫aˣ dx</strong> = aˣ/ln a + C</li>
+        <li><strong>∫sin x dx</strong> = −cos x + C; <strong>∫cos x dx</strong> = sin x + C</li>
+        <li><strong>Integration by parts:</strong> ∫u dv = uv − ∫v du (ILATE rule)</li>
+        <li><strong>Definite integral:</strong> ∫ₐᵇ f(x)dx = F(b) − F(a)</li>
+      </ul>
+      <div class="fgrid">
+        <div class="fbox"><div class="fl">Power rule</div><div class="feq">xⁿ⁺¹/(n+1)+C</div></div>
+        <div class="fbox"><div class="fl">∫eˣ</div><div class="feq">eˣ + C</div></div>
+        <div class="fbox"><div class="fl">∫sinx</div><div class="feq">−cosx + C</div></div>
+        <div class="fbox"><div class="fl">By parts</div><div class="feq">uv − ∫v du</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="os-card">
+    <div class="os-card-head">
+      <span class="os-icon">📊</span>
+      <div class="os-info">
+        <div class="os-ch">Chapter 2 · Maths · Part 2</div>
+        <div class="os-title">Matrices — One Shot</div>
+      </div>
+      <span class="os-marks">⭐ Every Year</span>
+    </div>
+    <div class="os-body">
+      <div class="kp-title">🔑 Must Know</div>
+      <ul class="kp-list">
+        <li><strong>Matrix multiplication:</strong> (m×n) × (n×p) = (m×p); rows × columns</li>
+        <li><strong>Transpose:</strong> (Aᵀ)ᵀ = A; (AB)ᵀ = BᵀAᵀ</li>
+        <li><strong>Determinant 2×2:</strong> |A| = ad − bc</li>
+        <li><strong>Inverse:</strong> A⁻¹ = (1/|A|) × adj(A)</li>
+        <li><strong>Cramer's rule:</strong> x = D₁/D; y = D₂/D; z = D₃/D</li>
+        <li><strong>Singular matrix:</strong> |A| = 0 (inverse does not exist)</li>
+      </ul>
+      <div class="fgrid">
+        <div class="fbox"><div class="fl">Determinant</div><div class="feq">ad − bc</div></div>
+        <div class="fbox"><div class="fl">Inverse</div><div class="feq">adj(A)/|A|</div></div>
+        <div class="fbox"><div class="fl">Cramer's x</div><div class="feq">x = D₁/D</div></div>
+        <div class="fbox"><div class="fl">(AB)ᵀ</div><div class="feq">BᵀAᵀ</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="os-card">
+    <div class="os-card-head">
+      <span class="os-icon">📈</span>
+      <div class="os-info">
+        <div class="os-ch">Chapter 2 · Maths · Part 1</div>
+        <div class="os-title">Differentiation &amp; Applications — One Shot</div>
+      </div>
+      <span class="os-marks">⭐ Every Year</span>
+    </div>
+    <div class="os-body">
+      <div class="kp-title">🔑 Must Know</div>
+      <ul class="kp-list">
+        <li><strong>d/dx(xⁿ)</strong> = nxⁿ⁻¹; <strong>d/dx(eˣ)</strong> = eˣ; <strong>d/dx(ln x)</strong> = 1/x</li>
+        <li><strong>Chain rule:</strong> dy/dx = (dy/du)·(du/dx)</li>
+        <li><strong>Product rule:</strong> d(uv)/dx = u·dv/dx + v·du/dx</li>
+        <li><strong>Maxima/Minima:</strong> f'(x) = 0; check f''(x): &lt; 0 maxima, &gt; 0 minima</li>
+        <li><strong>Increasing:</strong> f'(x) &gt; 0; <strong>Decreasing:</strong> f'(x) &lt; 0</li>
+        <li><strong>Tangent slope:</strong> m = dy/dx at given point</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</div><!-- end sec-all -->
+
+<!-- FILTER SECTIONS -->
+<div class="section" id="sec-physics"><p style="color:rgba(255,255,255,.5);text-align:center;padding:30px;">Showing Physics chapters — scroll to see all</p></div>
+<div class="section" id="sec-chemistry"><p style="color:rgba(255,255,255,.5);text-align:center;padding:30px;">Showing Chemistry chapters</p></div>
+<div class="section" id="sec-biology"><p style="color:rgba(255,255,255,.5);text-align:center;padding:30px;">Showing Biology chapters</p></div>
+<div class="section" id="sec-maths"><p style="color:rgba(255,255,255,.5);text-align:center;padding:30px;">Showing Maths chapters</p></div>
+
+</div><!-- wrap -->
+
+<script>
+function show(topic, btn) {
+  document.querySelectorAll('.tpill').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById('sec-all').classList.add('active');
+
+  const subjects = ['physics','chemistry','biology','maths'];
+  if (topic === 'all') {
+    subjects.forEach(id => {
+      const el = document.getElementById('sec-' + id + '-inner');
+      if (el) el.style.display = 'block';
+    });
+  } else {
+    subjects.forEach(id => {
+      const el = document.getElementById('sec-' + id + '-inner');
+      if (el) el.style.display = (id === topic) ? 'block' : 'none';
+    });
+  }
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>

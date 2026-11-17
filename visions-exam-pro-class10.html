@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visions Exam Pro — One Shots Class 10 | Visions Classes</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #0a0a1a; color: #fff; min-height: 100vh; }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #0a0a1a, #1a0533, #0d47a1);
+    padding: 28px 16px 22px; text-align: center;
+    border-bottom: 2px solid #f59e0b;
+  }
+  .back { display: inline-flex; align-items: center; gap: 7px; color: rgba(255,255,255,.8); text-decoration: none; font-size: .8rem; font-weight: 700; padding: 6px 14px; background: rgba(255,255,255,.1); border-radius: 20px; margin-bottom: 14px; }
+  .pro-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: linear-gradient(135deg, #f59e0b, #ef4444);
+    color: #fff; font-size: .78rem; font-weight: 900;
+    padding: 5px 16px; border-radius: 20px; letter-spacing: 1px;
+    text-transform: uppercase; margin-bottom: 12px;
+  }
+  .header h1 { font-size: 1.7rem; font-weight: 900; margin-bottom: 6px; }
+  .header h1 span { color: #f59e0b; }
+  .header p { font-size: .88rem; color: rgba(255,255,255,.75); }
+  .wmark { background: rgba(255,255,255,.07); text-align: center; padding: 5px; font-size: .72rem; font-weight: 700; letter-spacing: 2px; color: rgba(255,255,255,.5); }
+
+  /* SUBJECT TABS */
+  .tab-bar { display: flex; overflow-x: auto; gap: 8px; padding: 14px 14px; background: #0d0d20; position: sticky; top: 0; z-index: 100; scrollbar-width: none; border-bottom: 1px solid rgba(255,255,255,.1); }
+  .tab-bar::-webkit-scrollbar { display: none; }
+  .tpill { flex-shrink: 0; border: none; cursor: pointer; padding: 8px 18px; border-radius: 25px; font-size: .78rem; font-weight: 800; white-space: nowrap; transition: all .2s; background: rgba(255,255,255,.08); color: rgba(255,255,255,.75); border: 1px solid rgba(255,255,255,.1); }
+  .tpill.active, .tpill:hover { background: #f59e0b; color: #0a0a1a; border-color: #f59e0b; }
+
+  .wrap { max-width: 900px; margin: 0 auto; padding: 20px 14px 70px; }
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* ONE SHOT CARD */
+  .os-card {
+    background: linear-gradient(135deg, #0d0d25, #111130);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 16px; margin-bottom: 20px; overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,.4);
+  }
+  .os-card-head {
+    padding: 16px 18px; display: flex; align-items: center; gap: 14px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+  .os-icon { font-size: 2rem; flex-shrink: 0; }
+  .os-info { flex: 1; }
+  .os-ch { font-size: .68rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; opacity: .7; margin-bottom: 4px; }
+  .os-title { font-size: 1rem; font-weight: 900; line-height: 1.4; }
+  .os-marks { font-size: .68rem; font-weight: 900; padding: 4px 10px; border-radius: 10px; background: rgba(245,158,11,.2); color: #f59e0b; border: 1px solid rgba(245,158,11,.3); white-space: nowrap; flex-shrink: 0; }
+  .os-body { padding: 16px 18px; }
+
+  /* TOPIC GRID */
+  .topic-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 8px; margin-bottom: 14px; }
+  .topic-pill {
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+    border-radius: 8px; padding: 7px 12px; font-size: .82rem; color: rgba(255,255,255,.85);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .topic-pill .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+
+  /* KEY POINTS */
+  .kp-title { font-size: .7rem; font-weight: 900; color: #f59e0b; text-transform: uppercase; letter-spacing: 1px; margin: 12px 0 8px; }
+  .kp-list { list-style: none; padding: 0; }
+  .kp-list li { padding: 5px 0 5px 18px; position: relative; font-size: .86rem; line-height: 1.6; color: rgba(255,255,255,.85); border-bottom: 1px solid rgba(255,255,255,.05); }
+  .kp-list li::before { content: "▸"; position: absolute; left: 0; color: #f59e0b; font-weight: 900; }
+  .kp-list li strong { color: #60a5fa; }
+
+  /* FORMULA BOX */
+  .fgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px,1fr)); gap: 8px; margin: 10px 0 14px; }
+  .fbox { background: rgba(13,71,161,.3); border: 1px solid rgba(96,165,250,.3); border-radius: 10px; padding: 10px; text-align: center; }
+  .fbox .fl { font-size: .64rem; font-weight: 700; color: rgba(255,255,255,.6); margin-bottom: 4px; text-transform: uppercase; }
+  .fbox .feq { font-size: .92rem; font-weight: 900; color: #93c5fd; font-family: monospace; }
+
+  /* EXAM TIPS */
+  .tip-box {
+    background: linear-gradient(135deg, rgba(245,158,11,.15), rgba(239,68,68,.1));
+    border: 1px solid rgba(245,158,11,.3); border-radius: 10px;
+    padding: 12px 14px; margin-top: 12px;
+  }
+  .tip-box .tip-title { font-size: .72rem; font-weight: 900; color: #f59e0b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .tip-box p { font-size: .84rem; color: rgba(255,255,255,.8); line-height: 1.6; }
+
+  /* SECTION HEADER */
+  .sec-head { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+  .sec-head .sh-line { flex: 1; height: 1px; background: rgba(255,255,255,.1); }
+  .sec-head .sh-label { font-size: .78rem; font-weight: 900; color: #f59e0b; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
+
+  @media(max-width:600px){ .fgrid{grid-template-columns:1fr 1fr;} .header h1{font-size:1.3rem;} .topic-grid{grid-template-columns:1fr 1fr;} }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a href="notes-class10.html" class="back">← Class 10 Notes</a>
+  <div class="pro-badge">⚡ Visions Exam Pro · Class 10</div>
+  <h1>🎯 <span>One Shots</span></h1>
+  <p>Complete Chapter Revision in One Go · Last 5 Years Topics · Board Exam Ready</p>
+</div>
+<div class="wmark">VISIONS CLASSES · SHASHIKANT SIR · AMBARNATH</div>
+
+<!-- SUBJECT TABS -->
+<div class="tab-bar">
+  <button class="tpill active" onclick="show('all',this)">📋 All</button>
+  <button class="tpill" onclick="show('sci1',this)">⚗️ Science 1</button>
+  <button class="tpill" onclick="show('sci2',this)">🧬 Science 2</button>
+  <button class="tpill" onclick="show('maths',this)">📐 Maths</button>
+  <button class="tpill" onclick="show('english',this)">📚 English</button>
+  <button class="tpill" onclick="show('sst',this)">🌍 SST</button>
+</div>
+
+<div class="wrap">
+
+<!-- ═══ SCIENCE 1 ═══ -->
+<div class="section active" id="sec-all">
+<div class="section active" id="sec-sci1-inner">
+  <div class="sec-head"><div class="sh-line"></div><div class="sh-label">⚗️ Science 1</div><div class="sh-line"></div></div>
+
+  <div class="os-card">
+    <div class="os-card-head">
+      <span class="os-icon">🔬</span>
+      <div class="os-info">
+        <div class="os-ch">Chapter 1 · Science 1</div>
+        <div class="os-title">Chemical Reactions &amp; Equations</div>
+      </div>
+      <span class="os-marks">⭐ High Weightage</span>
+    </div>
+    <div class="os-body">
+      <div class="topic-grid">
+        <div class="topic-pill"><span class="dot" style="background:#ef4444;"></span>Types of reactions</div>
+        <div class="topic-pill"><span class="dot" style="background:#f59e0b;"></span>Balancing equations</div>
+        <div class="topic-pill"><span class="dot" style="background:#10b981;"></span>Oxidation &amp; Reduction</div>
+        <div class="topic-pill"><span class="dot" style="background:#60a5fa;"></span>Exothermic / Endothermic</div>
+        <div class="topic-pill"><span class="dot" style="background:#a78bfa;"></span>Corrosion &amp; Rancidity</div>
+        <div class="topic-pill"><span class="dot" style="background:#f59e0b;"></span>Displacement reactions</div>
+      </div>
+      <div class="kp-title">🔑 Must Know</div>
+      <ul class="kp-list">
+        <li><strong>Combination:</strong> A + B → AB (CaO + H₂O → Ca(OH)₂)</li>
+        <li><strong>Decomposition:</strong> AB → A + B (2H₂O → 2H₂ + O₂)</li>
+        <li><strong>Displacement:</strong> Fe + CuSO₄ → FeSO₄ + Cu (more reactive displaces less)</li>
+        <li><strong>Double displacement:</strong> AgNO₃ + NaCl → AgCl↓ + NaNO₃ (precipitate)</li>
+        <li><strong>Oxidation:</strong> Loss of electrons / gain of oxygen</li>
+        <li><strong>Reduction:</strong> Gain of electrons / loss of oxygen</li>
+        <li><strong>Corrosion:</strong> Fe + O₂ + H₂O → Fe₂O₃·xH₂O (rust)</li>
+      </ul>
+      <div class="tip-box">
+        <div class="tip-title">⚡ Board Exam Tip</div>
+        <p>Balance equations by hit-and-trial. Write state symbols (s), (l), (g), (aq). Identify type of reaction — 2 marks asked every year.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="os-card">
+    <div class="os-card-head">
+      <span class="os-icon">⚡</span>
+      <div class="os-info">
+        <div class="os-ch">Chapter 3 · Science 1</div>
+        <div class="os-title">Electricity — Current, Resistance &amp; Circuits</div>
+      </div>
+      <span class="os-marks">⭐ Every Year</span>
+    </div>
+    <div class="os-body">
+      <div class="topic-grid">
+        <div class="topic-pill"><span class="dot" style="background:#ef4444;"></span>Ohm's Law</div>
+        <div class="topic-pill"><span class="dot" style="background:#f59e0b;"></span>Series &amp; Parallel circuits</div>
+        <div class="topic-pill"><span class="dot" style="background:#10b981;"></span>Electric power</div>
+        <div class="topic-pill"><span class="dot" style="background:#60a5fa;"></span>Heating effect</div>
+        <div class="topic-pill"><span class="dot" style="background:#a78bfa;"></span>Resistivity</div>
+        <div class="topic-pill"><span class="dot" style="background:#f59e0b;"></span>Joule's Law</div>
+      </div>
+      <div class="kp-title">🔑 Must Know</div>
+      <ul class="kp-list">
+        <li><strong>Ohm's Law:</strong> V = IR; R = V/I; unit of resistance = Ohm (Ω)</li>
+        <li><strong>Series:</strong> R = R₁ + R₂ + R₃; same current; different voltage</li>
+        <li><strong>Parallel:</strong> 1/R = 1/R₁ + 1/R₂; same voltage; different current</li>
+        <li><strong>Power:</strong> P = VI = I²R = V²/R; unit = Watt (W)</li>
+        <li><strong>Joule's Law:</strong> H = I²Rt (heating effect)</li>
+        <li><strong>Resistivity:</strong> R = ρL/A; unit of ρ = Ω·m</li>
+      </ul>
+      <div class="fgrid">
+        <div class="fbox"><div class="fl">Ohm's Law</div><div class="feq">V = IR</div></div>
+        <div class="fbox"><div class="fl">Power</div><div class="feq">P = VI = I²R</div></div>
+        <div class="fbox"><div class="fl">Joule's Law</div><div class="feq">H = I²Rt</div></div>
+        <div class="fbox"><div class="fl">Series R</div><div class="feq">R = R₁+R₂+R₃</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="os-card">
+    <div class="os-card-head">
+      <span class="os-icon">🔭</span>
+      <div class="os-info">
+        <div class="os-ch">Chapter 6 · Science 1</div>
+        <div class="os-title">Refraction of Light — Lenses &amp; Human Eye</div>
+      </div>
+      <span class="os-marks">⭐ Every Year</span>
+    </div>
+    <div class="os-body">
+      <div class="topic-grid">
+        <div class="topic-pill"><span class="dot" style="background:#ef4444;"></span>Snell's Law</div>
+        <div class="topic-pill"><span class="dot" style="background:#f59e0b;"></span>Convex &amp; Concave lens</div>
+        <div class="topic-pill"><span class="dot" style="background:#10b981;"></span>Lens formula</div>
+        <div class="topic-pill"><span class="dot" style="background:#60a5fa;"></span>Power of lens</div>
+        <div class="topic-pill"><span class="dot" style="background:#a78bfa;"></span>Defects of vision</div>
+        <div class="topic-pill"><span class="dot" style="background:#f59e0b;"></span>Dispersion / Rainbow</div>
+      </div>
+      <div class="kp-title">🔑 Must Know</div>
+      <ul class="kp-list">
+        <li><strong>Snell's Law:</strong> n₁ sinθ₁ = n₂ sinθ₂; n = c/v</li>
+        <li><strong>Lens formula:</strong> 1/f = 1/v − 1/u</li>
+        <li><strong>Power of lens:</strong> P = 1/f (metres); unit = Dioptre (D)</li>
+        <li><strong>Magnification:</strong> m = v/u = h'/h</li>
+        <li><strong>Myopia (short sight):</strong> corrected by concave lens</li>
+        <li><strong>Hypermetropia (long sight):</strong> corrected by convex lens</li>
+        <li><strong>Dispersion:</strong> VIBGYOR — Violet bends most, Red bends least</li>
+      </ul>
+      <div class="fgrid">
+        <div class="fbox"><div class="fl">Lens formula</div><div class="feq">1/f = 1/v − 1/u</div></div>
+        <div class="fbox"><div class="fl">Power</div><div class="feq">P = 1/f (metres)</div></div>
+        <div class="fbox"><div class="fl">Magnification</div><div class="feq">m = v/u</div></div>
+        <div class="fbox"><div class="fl">Refractive index</div><div class="feq">n = c/v</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SCIENCE 2 ═══ -->
+<div class="section active" id="sec-sci2-inner">
+  <div class="sec-head"><div class="sh-line"></div><div class="sh-label">🧬 Science 2</div><div class="sh-line"></div></div>
+
+  <div class="os-card">
+    <div class="os-card-head">
+      <span class="os-icon">🧬</span>
+      <div class="os-info">
+        <div class="os-ch">Chapter 2 · Science 2</div>
+        <div class="os-title">Life Processes — Nutrition, Respiration, Transport</div>
+      </div>
+      <span class="os-marks">⭐ Every Year</span>
+    </div>
+    <div class="os-body">
+      <div class="topic-grid">
+        <div class="topic-pill"><span class="dot" style="background:#10b981;"></span>Photosynthesis</div>
+        <div class="topic-pill"><span class="dot" style="background:#f59e0b;"></span>Respiration</div>
+        <div class="topic-pill"><span class="dot" style="background:#ef4444;"></span>Blood circulation</div>
+        <div class="topic-pill"><span class="dot" style="background:#60a5fa;"></span>Excretion</div>
+        <div class="topic-pill"><span class="dot" style="background:#a78bfa;"></span>Nephron / Kidney</div>
+        <div class="topic-pill"><span class="dot" style="background:#f59e0b;"></span>Digestive system</div>
+      </div>
+      <div class="kp-title">🔑 Must Know</div>
+      <ul class="kp-list">
+        <li><strong>Photosynthesis:</strong> 6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂ (chloroplast)</li>
+        <li><strong>Aerobic respiration:</strong> C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + 38 ATP</li>
+        <li><strong>Anaerobic (yeast):</strong> glucose → ethanol + CO₂</li>
+        <li><strong>Anaerobic (muscle):</strong> glucose → lactic acid (cramps)</li>
+        <li><strong>Heart:</strong> 4 chambers; double circulation; left = oxygenated, right = deoxygenated</li>
+        <li><strong>Kidney/Nephron:</strong> Filtration → reabsorption → secretion → urine</li>
+      </ul>
+      <div class="tip-box">
+        <div class="tip-title">⚡ Board Exam Tip</div>
+        <p>Draw labelled diagram of nephron and human heart — 3 marks each. Write equations for photosynthesis and respiration with conditions.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="os-card">
+    <div class="os-card-head">
+      <span class="os-icon">🧪</span>
+      <div class="os-info">
+        <div class="os-ch">Chapter 3 · Science 2</div>
+        <div class="os-title">Acids, Bases &amp; Salts</div>
+      </div>
+      <span class="os-marks">⭐ High Weightage</span>
+    </div>
+    <div class="os-body">
+      <div class="topic-grid">
+        <div class="topic-pill"><span class="dot" style="background:#ef4444;"></span>pH scale</div>
+        <div class="topic-pill"><span class="dot" style="background:#f59e0b;"></span>Indicators</div>
+        <div class="topic-pill"><span class="dot" style="background:#10b981;"></span>Neutralisation</div>
+        <div class="topic-pill"><span class="dot" style="background:#60a5fa;"></span>Salts &amp; their uses</div>
+        <div class="topic-pill"><span class="dot" style="background:#a78bfa;"></span>NaOH · HCl reactions</div>
+        <div class="topic-pill"><span class="dot" style="background:#f59e0b;"></span>Bleaching powder · Baking soda</div>
+      </div>
+      <div class="kp-list">
+        <li><strong>pH &lt; 7:</strong> Acid; <strong>pH = 7:</strong> Neutral; <strong>pH &gt; 7:</strong> Base</li>
+        <li><strong>Acid + Base → Salt + Water</strong> (neutralisation)</li>
+        <li><strong>Baking soda:</strong> NaHCO₃; used in cooking, antacids</li>
+        <li><strong>Washing soda:</strong> Na₂CO₃·10H₂O; used in glass, soap making</li>
+        <li><strong>Bleaching powder:</strong> Ca(OCl)Cl; used for disinfection</li>
+        <li><strong>Plaster of Paris:</strong> CaSO₄·½H₂O; used in casts, moulds</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="os-card">
+    <div class="os-card-head">
+      <span class="os-icon">🧲</span>
+      <div class="os-info">
+        <div class="os-ch">Chapter 5 · Science 2</div>
+        <div class="os-title">Magnetic Effects of Current</div>
+      </div>
+      <span class="os-marks">⭐ Every Year</span>
+    </div>
+    <div class="os-body">
+      <div class="topic-grid">
+        <div class="topic-pill"><span class="dot" style="background:#ef4444;"></span>Oersted's experiment</div>
+        <div class="topic-pill"><span class="dot" style="background:#f59e0b;"></span>Fleming's rules</div>
+        <div class="topic-pill"><span class="dot" style="background:#10b981;"></span>Electric motor</div>
+        <div class="topic-pill"><span class="dot" style="background:#60a5fa;"></span>Electromagnetic induction</div>
+        <div class="topic-pill"><span class="dot" style="background:#a78bfa;"></span>AC vs DC generator</div>
+        <div class="topic-pill"><span class="dot" style="background:#f59e0b;"></span>Transformer</div>
+      </div>
+      <div class="kp-list">
+        <li><strong>Oersted:</strong> current-carrying wire produces magnetic field (right-hand rule)</li>
+        <li><strong>Fleming's Left Hand Rule:</strong> for force on current in magnetic field (motor)</li>
+        <li><strong>Fleming's Right Hand Rule:</strong> for induced current direction (generator)</li>
+        <li><strong>Electric motor:</strong> electrical energy → mechanical energy</li>
+        <li><strong>Generator:</strong> mechanical energy → electrical energy</li>
+        <li><strong>Transformer formula:</strong> V₁/V₂ = N₁/N₂</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MATHS ═══ -->
+<div class="section active" id="sec-maths-inner">
+  <div class="sec-head"><div class="sh-line"></div><div class="sh-label">📐 Mathematics</div><div class="sh-line"></div></div>
+
+  <div class="os-card">
+    <div class="os-card-head">
+      <span class="os-icon">📐</span>
+      <div class="os-info">
+        <div class="os-ch">Algebra · Class 10 Maths</div>
+        <div class="os-title">Quadratic Equations — One Shot</div>
+      </div>
+      <span class="os-marks">⭐ Every Year</span>
+    </div>
+    <div class="os-body">
+      <div class="kp-title">🔑 Must Know</div>
+      <ul class="kp-list">
+        <li><strong>Standard form:</strong> ax² + bx + c = 0 (a ≠ 0)</li>
+        <li><strong>Quadratic formula:</strong> x = [−b ± √(b²−4ac)] / 2a</li>
+        <li><strong>Discriminant (D):</strong> D = b²−4ac; D &gt; 0: 2 real roots; D = 0: equal roots; D &lt; 0: no real roots</li>
+        <li><strong>Sum of roots:</strong> α + β = −b/a</li>
+        <li><strong>Product of roots:</strong> αβ = c/a</li>
+        <li><strong>Factorisation method:</strong> split middle term → group → factor</li>
+      </ul>
+      <div class="fgrid">
+        <div class="fbox"><div class="fl">Quadratic formula</div><div class="feq">x = (−b±√D)/2a</div></div>
+        <div class="fbox"><div class="fl">Discriminant</div><div class="feq">D = b²−4ac</div></div>
+        <div class="fbox"><div class="fl">Sum of roots</div><div class="feq">α+β = −b/a</div></div>
+        <div class="fbox"><div class="fl">Product of roots</div><div class="feq">αβ = c/a</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="os-card">
+    <div class="os-card-head">
+      <span class="os-icon">📊</span>
+      <div class="os-info">
+        <div class="os-ch">Statistics · Class 10 Maths</div>
+        <div class="os-title">Mean, Median, Mode — One Shot</div>
+      </div>
+      <span class="os-marks">⭐ Every Year</span>
+    </div>
+    <div class="os-body">
+      <div class="kp-title">🔑 Must Know</div>
+      <ul class="kp-list">
+        <li><strong>Mean (direct):</strong> x̄ = Σfx / Σf</li>
+        <li><strong>Median:</strong> L + [(n/2 − cf)/f] × h</li>
+        <li><strong>Mode:</strong> L + [(f₁−f₀)/(2f₁−f₀−f₂)] × h</li>
+        <li><strong>Relationship:</strong> Mode = 3 Median − 2 Mean</li>
+        <li>Always find cumulative frequency (cf) for median</li>
+        <li>Modal class = class with highest frequency</li>
+      </ul>
+      <div class="fgrid">
+        <div class="fbox"><div class="fl">Mean</div><div class="feq">Σfx / Σf</div></div>
+        <div class="fbox"><div class="fl">Median</div><div class="feq">L+(n/2−cf)/f × h</div></div>
+        <div class="fbox"><div class="fl">Mode</div><div class="feq">L+(f₁−f₀)/(2f₁−f₀−f₂)×h</div></div>
+        <div class="fbox"><div class="fl">Relation</div><div class="feq">Mo = 3Md − 2Me</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="os-card">
+    <div class="os-card-head">
+      <span class="os-icon">🔺</span>
+      <div class="os-info">
+        <div class="os-ch">Geometry · Class 10 Maths</div>
+        <div class="os-title">Triangles — Similarity &amp; Pythagoras</div>
+      </div>
+      <span class="os-marks">⭐ High Weightage</span>
+    </div>
+    <div class="os-body">
+      <div class="kp-list">
+        <li><strong>AA criterion:</strong> Two triangles are similar if two angles are equal</li>
+        <li><strong>SAS criterion:</strong> Two sides proportional + included angle equal</li>
+        <li><strong>SSS criterion:</strong> All three sides proportional</li>
+        <li><strong>Pythagoras theorem:</strong> (Hypotenuse)² = (Base)² + (Height)²</li>
+        <li><strong>BPT (Basic Proportionality):</strong> If DE ∥ BC → AD/DB = AE/EC</li>
+        <li>Area ratio of similar triangles = (ratio of sides)²</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ ENGLISH ═══ -->
+<div class="section active" id="sec-english-inner">
+  <div class="sec-head"><div class="sh-line"></div><div class="sh-label">📚 English</div><div class="sh-line"></div></div>
+
+  <div class="os-card">
+    <div class="os-card-head">
+      <span class="os-icon">✍️</span>
+      <div class="os-info">
+        <div class="os-ch">English · Class 10</div>
+        <div class="os-title">Grammar — One Shot (Tenses, Voice, Narration)</div>
+      </div>
+      <span class="os-marks">⭐ Every Year</span>
+    </div>
+    <div class="os-body">
+      <div class="kp-list">
+        <li><strong>Active to Passive:</strong> Object + is/are/was/were + V3 + by + Subject</li>
+        <li><strong>Direct to Indirect:</strong> Change pronoun, tense, time words</li>
+        <li><strong>Simple Present → Simple Past</strong> in indirect speech</li>
+        <li><strong>Future tense:</strong> will/shall → would/should</li>
+        <li><strong>Can → Could, May → Might, Must → Had to</strong></li>
+        <li>Remove inverted commas; add "that/if/whether"</li>
+      </ul>
+      <div class="tip-box">
+        <div class="tip-title">⚡ Board Exam Tip</div>
+        <p>Grammar = 8 marks. Do tenses table, active-passive rules, and reporting verbs (said, told, asked, ordered). Practise 5 sentences daily.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SST ═══ -->
+<div class="section active" id="sec-sst-inner">
+  <div class="sec-head"><div class="sh-line"></div><div class="sh-label">🌍 Social Science</div><div class="sh-line"></div></div>
+
+  <div class="os-card">
+    <div class="os-card-head">
+      <span class="os-icon">🌍</span>
+      <div class="os-info">
+        <div class="os-ch">Geography · Class 10</div>
+        <div class="os-title">Resources &amp; Development — One Shot</div>
+      </div>
+      <span class="os-marks">⭐ High Weightage</span>
+    </div>
+    <div class="os-body">
+      <div class="kp-list">
+        <li><strong>Resources:</strong> Natural (renewable/non-renewable), Human, man-made</li>
+        <li><strong>Soil types:</strong> Alluvial (most fertile), Black (cotton), Red (iron), Laterite</li>
+        <li><strong>Land use:</strong> Forest, agriculture, wasteland, settlement</li>
+        <li><strong>Conservation:</strong> Afforestation, crop rotation, contour ploughing</li>
+        <li><strong>Biodiversity hotspots:</strong> Western Ghats, Eastern Himalayas</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</div><!-- end sec-all -->
+
+<!-- SEPARATE SECTIONS FOR FILTER -->
+<div class="section" id="sec-sci1">
+  <div class="sec-head"><div class="sh-line"></div><div class="sh-label">⚗️ Science 1 — One Shots</div><div class="sh-line"></div></div>
+  <p style="color:rgba(255,255,255,.6);font-size:.88rem;text-align:center;padding:20px;">👆 All Science 1 chapters shown above in "All" view</p>
+</div>
+<div class="section" id="sec-sci2">
+  <div class="sec-head"><div class="sh-line"></div><div class="sh-label">🧬 Science 2 — One Shots</div><div class="sh-line"></div></div>
+  <p style="color:rgba(255,255,255,.6);font-size:.88rem;text-align:center;padding:20px;">👆 All Science 2 chapters shown above in "All" view</p>
+</div>
+<div class="section" id="sec-maths"><p style="color:rgba(255,255,255,.6);font-size:.88rem;text-align:center;padding:20px;">👆 All Maths chapters shown in "All" view</p></div>
+<div class="section" id="sec-english"><p style="color:rgba(255,255,255,.6);font-size:.88rem;text-align:center;padding:20px;">👆 All English chapters shown in "All" view</p></div>
+<div class="section" id="sec-sst"><p style="color:rgba(255,255,255,.6);font-size:.88rem;text-align:center;padding:20px;">👆 All SST chapters shown in "All" view</p></div>
+
+</div><!-- wrap -->
+
+<script>
+function show(topic, btn) {
+  document.querySelectorAll('.tpill').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  if (topic === 'all') {
+    document.getElementById('sec-all').classList.add('active');
+  } else {
+    document.getElementById('sec-' + topic).classList.add('active');
+    // Show sub-sections inside sec-all by rebuilding
+    document.getElementById('sec-all').classList.add('active');
+    ['sci1','sci2','maths','english','sst'].forEach(id => {
+      const el = document.getElementById('sec-' + id + '-inner');
+      if (el) el.style.display = (id === topic) ? 'block' : 'none';
+    });
+    return;
+  }
+  // All — show everything
+  ['sci1','sci2','maths','english','sst'].forEach(id => {
+    const el = document.getElementById('sec-' + id + '-inner');
+    if (el) el.style.display = 'block';
+  });
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>
