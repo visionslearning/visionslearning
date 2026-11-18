@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 12 Physics Ch 2 — Mechanical Properties of Fluids | Visions Classes</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f8ff;color:#1a1a1a;}
+.header{background:linear-gradient(135deg,#0a2a4a,#01579b,#0288d1);color:#fff;padding:24px 16px 18px;text-align:center;border-bottom:3px solid #f59e0b;}
+.badge{display:inline-block;background:#f59e0b;color:#1a1a1a;font-size:.7rem;font-weight:900;padding:4px 14px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;}
+.header h1{font-size:1.4rem;font-weight:900;margin-bottom:4px;}
+.header p{font-size:.84rem;opacity:.85;}
+.wmark{background:rgba(255,255,255,.12);text-align:center;padding:5px;font-size:.72rem;font-weight:700;letter-spacing:2px;color:rgba(255,255,255,.7);}
+.back{display:inline-flex;align-items:center;gap:7px;color:rgba(255,255,255,.85);text-decoration:none;font-size:.78rem;font-weight:700;padding:6px 12px;background:rgba(255,255,255,.15);border-radius:20px;margin-bottom:10px;}
+
+/* TABS */
+.tab-bar{display:flex;overflow-x:auto;gap:0;background:#01579b;position:sticky;top:0;z-index:100;scrollbar-width:none;}
+.tab-bar::-webkit-scrollbar{display:none;}
+.tpill{flex-shrink:0;border:none;border-bottom:3px solid transparent;cursor:pointer;padding:11px 16px;font-size:.78rem;font-weight:800;white-space:nowrap;background:none;color:rgba(255,255,255,.75);transition:all .2s;}
+.tpill.active,.tpill:hover{color:#fff;border-bottom-color:#f59e0b;}
+
+.wrap{max-width:880px;margin:0 auto;padding:18px 14px 70px;}
+.section{display:none;}
+.section.active{display:block;}
+
+/* BOARD EXAM NOTICE */
+.board-notice{background:linear-gradient(135deg,#c62828,#f59e0b);color:#fff;border-radius:10px;padding:10px 14px;margin-bottom:16px;font-size:.82rem;font-weight:800;text-align:center;letter-spacing:.5px;}
+
+/* CONCEPT BLOCK */
+.cb{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(1,87,155,.1);margin-bottom:20px;border-left:5px solid #0288d1;}
+.cb-head{background:linear-gradient(135deg,#01579b,#0288d1);color:#fff;padding:13px 18px;display:flex;align-items:center;gap:12px;}
+.cb-head .tag{background:rgba(255,255,255,.2);border-radius:8px;padding:3px 10px;font-size:.72rem;font-weight:900;letter-spacing:1px;white-space:nowrap;}
+.cb-head h2{font-size:.98rem;font-weight:800;}
+.cb-body{padding:15px 18px;}
+
+.kp-title{font-size:.74rem;font-weight:900;color:#01579b;text-transform:uppercase;letter-spacing:1px;margin:0 0 8px;padding-bottom:4px;border-bottom:2px solid #b3e5fc;}
+.kp-list{list-style:none;padding:0;margin-bottom:12px;}
+.kp-list li{padding:5px 0 5px 20px;position:relative;font-size:.88rem;line-height:1.6;border-bottom:1px solid #f0f8ff;}
+.kp-list li::before{content:"▸";position:absolute;left:0;color:#0288d1;font-weight:900;}
+.kp-list li strong{color:#01579b;}
+
+.fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:10px;margin:10px 0 12px;}
+.fbox{background:linear-gradient(135deg,#e1f5fe,#e3f2fd);border:1px solid #81d4fa;border-radius:10px;padding:10px;text-align:center;}
+.fbox .fl{font-size:.67rem;font-weight:700;color:#555;margin-bottom:4px;text-transform:uppercase;}
+.fbox .feq{font-size:.93rem;font-weight:900;color:#01579b;font-family:monospace;}
+
+/* DERIVATION BOX */
+.deriv-box{background:#e1f5fe;border-left:4px solid #0288d1;border-radius:0 10px 10px 0;padding:12px 14px;margin:10px 0;}
+.deriv-box .step{display:block;background:#fff;border-radius:7px;padding:6px 12px;font-family:monospace;font-size:.88rem;color:#01579b;margin:4px 0;font-weight:700;}
+.deriv-box .result{background:#0288d1;color:#fff;border-radius:8px;padding:8px 14px;font-family:monospace;font-size:.95rem;font-weight:900;margin-top:8px;text-align:center;}
+
+/* Q CARDS */
+.tdiv{display:flex;align-items:center;gap:10px;margin:22px 0 14px;}
+.tdiv .tlab{background:linear-gradient(135deg,#01579b,#c62828);color:#fff;padding:5px 16px;border-radius:20px;font-size:.74rem;font-weight:900;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;}
+.tdiv .tline{flex:1;height:2px;background:#b3e5fc;}
+
+.qcard{background:#fff;border-radius:13px;margin-bottom:18px;overflow:hidden;box-shadow:0 2px 10px rgba(1,87,155,.1);}
+.qcard-h{background:linear-gradient(135deg,#0a2a4a,#01579b);color:#fff;padding:13px 16px;display:flex;align-items:flex-start;gap:12px;}
+.qno{background:#f59e0b;color:#1a1a1a;font-size:.72rem;font-weight:900;padding:4px 10px;border-radius:10px;white-space:nowrap;flex-shrink:0;margin-top:1px;}
+.qtxt{font-size:.9rem;font-weight:700;line-height:1.5;flex:1;}
+.qtags{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px;}
+.qtag{font-size:.65rem;font-weight:800;padding:2px 8px;border-radius:8px;text-transform:uppercase;}
+.t5{background:#fee2e2;color:#c0392b;border:1px solid #fca5a5;}
+.tm{background:#fef3c7;color:#d97706;border:1px solid #fde047;}
+.tb{background:#e1f5fe;color:#01579b;border:1px solid #81d4fa;}
+.te{background:#dcfce7;color:#15803d;border:1px solid #86efac;}
+
+.ans-body{padding:14px 16px;}
+.ans-lbl{font-size:.7rem;font-weight:900;color:#15803d;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:6px;}
+.ans-lbl::after{content:'';flex:1;height:1px;background:#d1fae5;}
+.ans-txt{font-size:.88rem;line-height:1.7;color:#2d2d2d;}
+.ans-txt p{margin-bottom:8px;}
+.ans-txt strong{color:#01579b;}
+.eq{background:#e1f5fe;border-left:4px solid #0288d1;padding:8px 14px;border-radius:0 8px 8px 0;font-family:monospace;font-size:.93rem;font-weight:700;color:#01579b;margin:8px 0;}
+.step{display:block;background:#f0f8ff;border-radius:7px;padding:5px 11px;font-family:monospace;font-size:.86rem;color:#01579b;margin:4px 0;font-weight:700;}
+
+/* NUM */
+.num-block{background:linear-gradient(135deg,#0a2a4a,#01579b);border-radius:13px;padding:14px 16px;margin-bottom:16px;color:#fff;}
+.num-q{font-size:.9rem;font-weight:700;margin-bottom:8px;}
+.num-given{background:rgba(255,255,255,.1);border-radius:8px;padding:8px 12px;margin:8px 0;font-family:monospace;font-size:.84rem;line-height:1.9;}
+.num-sol{background:rgba(245,158,11,.15);border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:8px 12px;margin:8px 0;font-family:monospace;font-size:.84rem;line-height:2;}
+.num-ans{background:#f59e0b;color:#1a1a1a;border-radius:8px;padding:7px 14px;font-size:.88rem;font-weight:900;display:inline-block;margin-top:8px;}
+
+/* MCQ */
+.mcq-box{background:#fff;border-radius:12px;margin-bottom:14px;padding:14px 16px;box-shadow:0 2px 8px rgba(1,87,155,.08);border-left:4px solid #f59e0b;}
+.mcq-q{font-size:.9rem;font-weight:700;margin-bottom:10px;}
+.mcq-opts{list-style:none;padding:0;}
+.mcq-opts li{padding:5px 10px;border-radius:6px;font-size:.85rem;margin-bottom:4px;border:1px solid #b3e5fc;}
+.mcq-opts li.ok{background:#dcfce7;border-color:#86efac;font-weight:700;color:#15803d;}
+.mcq-opts li.ok::before{content:"✅ ";}
+.mcq-hint{font-size:.78rem;color:#555;padding:5px 10px;}
+
+/* EXTRA IMP */
+.extra-box{background:linear-gradient(135deg,#c62828,#1a237e);color:#fff;border-radius:12px;padding:14px 16px;margin-bottom:16px;}
+.extra-title{font-size:.78rem;font-weight:900;color:#f59e0b;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
+.extra-q{font-size:.9rem;font-weight:700;margin-bottom:8px;}
+.extra-a{font-size:.86rem;line-height:1.7;color:rgba(255,255,255,.9);}
+.extra-eq{background:rgba(255,255,255,.12);border-left:3px solid #f59e0b;padding:7px 12px;border-radius:0 8px 8px 0;font-family:monospace;font-size:.88rem;color:#fde68a;font-weight:700;margin:6px 0;}
+
+@media(max-width:600px){.fgrid{grid-template-columns:1fr 1fr;}.header h1{font-size:1.1rem;}}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a href="notes-class12.html" class="back">← Class 12 Notes</a>
+  <div class="badge">💧 Chapter 2 · Class 12 · HSC Physics</div>
+  <h1>💧 Mechanical Properties of Fluids</h1>
+  <p>IMP Notes · Last 5 Years HSC Q&A · Extra Board Questions · 2020–2024</p>
+</div>
+<div class="wmark">VISIONS CLASSES · SHASHIKANT SIR · AMBARNATH</div>
+
+<div class="tab-bar">
+  <button class="tpill active" onclick="show('notes',this)">📖 IMP Notes</button>
+  <button class="tpill" onclick="show('qbank',this)">🔴 Last 5 Yrs Q&A</button>
+  <button class="tpill" onclick="show('extra',this)">⭐ Extra IMP Q</button>
+  <button class="tpill" onclick="show('numericals',this)">🔢 Numericals</button>
+  <button class="tpill" onclick="show('mcq',this)">🔵 MCQs</button>
+  <button class="tpill" onclick="show('formulas',this)">📐 Formulas</button>
+</div>
+
+<div class="wrap">
+
+<!-- ═══════════════ NOTES ═══════════════ -->
+<div class="section active" id="tab-notes">
+  <div class="board-notice">📋 ALL topics below appeared in HSC Board Exam 2020–2024 — Study each one carefully!</div>
+
+  <!-- PRESSURE -->
+  <div class="cb">
+    <div class="cb-head"><span class="tag">2.1</span><h2>🌊 Pressure in Fluids — Pascal's Law</h2></div>
+    <div class="cb-body">
+      <div class="kp-title">🔑 Key Points</div>
+      <ul class="kp-list">
+        <li><strong>Pressure:</strong> P = F/A; force per unit area; SI unit: N/m² = Pascal (Pa)</li>
+        <li><strong>Pressure in liquid at depth h:</strong> P = P₀ + ρgh (ρ = density, g = 9.8 m/s²)</li>
+        <li><strong>Pressure is a scalar</strong> — acts equally in all directions in a static fluid</li>
+        <li><strong>Pascal's Law:</strong> Pressure applied to an enclosed fluid is transmitted equally and undiminished to every part of the fluid and walls of container</li>
+        <li><strong>Hydraulic lift:</strong> F₁/A₁ = F₂/A₂ → small force on small piston creates large force on large piston</li>
+        <li><strong>1 atm = 1.013 × 10⁵ Pa = 760 mm of Hg = 76 cm of Hg</strong></li>
+        <li><strong>Gauge pressure:</strong> P_gauge = P − P₀ = ρgh (pressure above atmospheric)</li>
+      </ul>
+      <div class="fgrid">
+        <div class="fbox"><div class="fl">Pressure</div><div class="feq">P = F/A</div></div>
+        <div class="fbox"><div class="fl">Hydrostatic</div><div class="feq">P = P₀ + ρgh</div></div>
+        <div class="fbox"><div class="fl">Pascal's Law</div><div class="feq">F₁/A₁ = F₂/A₂</div></div>
+        <div class="fbox"><div class="fl">1 atm</div><div class="feq">1.013×10⁵ Pa</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARCHIMEDES -->
+  <div class="cb">
+    <div class="cb-head"><span class="tag">2.2</span><h2>🏊 Archimedes' Principle &amp; Buoyancy</h2></div>
+    <div class="cb-body">
+      <div class="kp-title">🔑 Key Points</div>
+      <ul class="kp-list">
+        <li><strong>Buoyant force:</strong> upward force on submerged object = weight of fluid displaced</li>
+        <li><strong>Archimedes' Principle:</strong> When body is partially or fully immersed in fluid, it experiences upward buoyant force = weight of fluid displaced</li>
+        <li><strong>Floats if:</strong> ρ_object ≤ ρ_fluid; <strong>Sinks if:</strong> ρ_object &gt; ρ_fluid</li>
+        <li><strong>Apparent weight</strong> = True weight − Buoyant force = mg − ρ_fluid·V·g</li>
+        <li><strong>Relative density:</strong> = W_air / (W_air − W_liquid)</li>
+      </ul>
+      <div class="fgrid">
+        <div class="fbox"><div class="fl">Buoyant force</div><div class="feq">F_B = ρ_f·V·g</div></div>
+        <div class="fbox"><div class="fl">Apparent weight</div><div class="feq">W_app = W − F_B</div></div>
+        <div class="fbox"><div class="fl">Float condition</div><div class="feq">ρ_obj ≤ ρ_fluid</div></div>
+        <div class="fbox"><div class="fl">Relative density</div><div class="feq">W/(W−W_liq)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTINUITY -->
+  <div class="cb">
+    <div class="cb-head"><span class="tag">2.3</span><h2>🌀 Equation of Continuity</h2></div>
+    <div class="cb-body">
+      <div class="kp-title">🔑 Key Points</div>
+      <ul class="kp-list">
+        <li><strong>Steady flow (streamline flow):</strong> velocity at any point is constant in time</li>
+        <li><strong>Equation of Continuity:</strong> A₁v₁ = A₂v₂ = constant (conservation of mass for incompressible fluid)</li>
+        <li>Narrow pipe → <strong>faster flow</strong>; Wider pipe → <strong>slower flow</strong></li>
+        <li><strong>Reynolds number:</strong> Re = ρvd/η; Re &lt; 1000: laminar; Re &gt; 2000: turbulent</li>
+        <li><strong>Volume flow rate:</strong> Q = Av = constant throughout pipe</li>
+      </ul>
+      <div class="fgrid">
+        <div class="fbox"><div class="fl">Continuity</div><div class="feq">A₁v₁ = A₂v₂</div></div>
+        <div class="fbox"><div class="fl">Flow rate</div><div class="feq">Q = Av = const</div></div>
+        <div class="fbox"><div class="fl">Reynolds no.</div><div class="feq">Re = ρvd/η</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BERNOULLI -->
+  <div class="cb" style="border-left-color:#c62828;">
+    <div class="cb-head" style="background:linear-gradient(135deg,#7f0000,#c62828);">
+      <span class="tag">2.4</span><h2>⚡ Bernoulli's Theorem — MOST IMP</h2>
+    </div>
+    <div class="cb-body">
+      <div class="kp-title">🔑 Statement</div>
+      <ul class="kp-list">
+        <li>For <strong>steady, non-viscous, incompressible</strong> flow along a streamline, the sum of pressure energy, kinetic energy and potential energy per unit volume is constant</li>
+      </ul>
+      <div class="deriv-box">
+        <div class="step">P + ½ρv² + ρgh = constant</div>
+        <div class="result">P₁ + ½ρv₁² + ρgh₁ = P₂ + ½ρv₂² + ρgh₂</div>
+      </div>
+      <div class="kp-title">📌 Applications of Bernoulli's Theorem</div>
+      <ul class="kp-list">
+        <li><strong>1. Torricelli's theorem (Speed of efflux):</strong> v = √(2gh) — speed of liquid emerging from hole at depth h in a large tank (P₀ same on both sides, v₁≈0)</li>
+        <li><strong>2. Venturi meter:</strong> measures flow speed using pressure difference between wide and narrow sections</li>
+        <li><strong>3. Aerofoil / Aircraft lift:</strong> curved upper surface → air moves faster over top → lower pressure on top → net upward lift force</li>
+        <li><strong>4. Spray gun / Atomiser:</strong> fast air over narrow tube → low pressure → liquid sucked up and sprayed</li>
+        <li><strong>5. Magnus effect:</strong> spinning ball curves due to pressure difference (swing bowling, tennis topspin)</li>
+        <li><strong>6. Blowing between papers:</strong> fast air → low pressure → papers come together</li>
+      </ul>
+      <div class="kp-title">📐 Derivation of Torricelli's Theorem</div>
+      <div class="deriv-box">
+        <div class="step">Apply Bernoulli between surface (1) and hole (2):</div>
+        <div class="step">P₀ + ½ρ(0)² + ρgh = P₀ + ½ρv² + 0</div>
+        <div class="step">ρgh = ½ρv²</div>
+        <div class="result">∴ v = √(2gh) — Torricelli's theorem ✓</div>
+      </div>
+      <div class="fgrid">
+        <div class="fbox"><div class="fl">Bernoulli</div><div class="feq">P+½ρv²+ρgh=C</div></div>
+        <div class="fbox"><div class="fl">Torricelli</div><div class="feq">v = √(2gh)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VISCOSITY -->
+  <div class="cb" style="border-left-color:#15803d;">
+    <div class="cb-head" style="background:linear-gradient(135deg,#14532d,#15803d);">
+      <span class="tag">2.5</span><h2>🌿 Viscosity &amp; Stokes' Law — MOST IMP</h2>
+    </div>
+    <div class="cb-body">
+      <div class="kp-title">🔑 Key Points</div>
+      <ul class="kp-list">
+        <li><strong>Viscosity (η):</strong> internal friction between adjacent layers of a moving fluid; resists relative motion</li>
+        <li>SI unit of viscosity: <strong>N·s/m² = Pa·s</strong> (CGS: Poise)</li>
+        <li><strong>Liquids:</strong> viscosity <strong>decreases</strong> with temperature increase (honey flows easily when hot)</li>
+        <li><strong>Gases:</strong> viscosity <strong>increases</strong> with temperature increase</li>
+        <li><strong>Stokes' Law:</strong> viscous drag force on sphere: F = 6πηrv</li>
+        <li><strong>Terminal velocity:</strong> constant velocity when net force = 0 (weight = buoyancy + viscous drag)</li>
+      </ul>
+      <div class="kp-title">📐 Derivation of Terminal Velocity</div>
+      <div class="deriv-box">
+        <div class="step">At terminal velocity v_T: W = F_B + F_v</div>
+        <div class="step">(4/3)πr³ρg = (4/3)πr³σg + 6πηrv_T</div>
+        <div class="step">6πηrv_T = (4/3)πr³(ρ−σ)g</div>
+        <div class="result">∴ v_T = 2r²(ρ−σ)g / 9η ✓</div>
+      </div>
+      <ul class="kp-list">
+        <li>v_T <strong>∝ r²</strong> → larger sphere, higher terminal velocity</li>
+        <li>v_T <strong>∝ 1/η</strong> → more viscous fluid, lower terminal velocity</li>
+        <li>v_T <strong>∝ (ρ−σ)</strong> → denser object in lighter fluid, higher v_T</li>
+      </ul>
+      <div class="fgrid">
+        <div class="fbox"><div class="fl">Stokes' Law</div><div class="feq">F = 6πηrv</div></div>
+        <div class="fbox"><div class="fl">Terminal v</div><div class="feq">2r²(ρ−σ)g/9η</div></div>
+        <div class="fbox"><div class="fl">v_T ∝</div><div class="feq">r², 1/η, (ρ−σ)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SURFACE TENSION -->
+  <div class="cb" style="border-left-color:#7b1fa2;">
+    <div class="cb-head" style="background:linear-gradient(135deg,#4a148c,#7b1fa2);">
+      <span class="tag">2.6</span><h2>🔮 Surface Tension — MOST IMP</h2>
+    </div>
+    <div class="cb-body">
+      <div class="kp-title">🔑 Key Points</div>
+      <ul class="kp-list">
+        <li><strong>Surface tension (T):</strong> force per unit length acting tangentially along liquid surface; T = F/L</li>
+        <li>SI unit: <strong>N/m</strong>; arises due to cohesive forces between surface molecules</li>
+        <li>Surface acts like a <strong>stretched elastic membrane</strong></li>
+        <li><strong>Surface energy:</strong> W = T × ΔA (work done to increase surface area by ΔA)</li>
+        <li><strong>T decreases</strong> with increase in temperature; becomes zero at critical temperature</li>
+        <li><strong>Excess pressure inside a drop:</strong> ΔP = 2T/r (one surface)</li>
+        <li><strong>Excess pressure inside soap bubble:</strong> ΔP = 4T/r (two surfaces — inner and outer)</li>
+      </ul>
+      <div class="kp-title">📐 Derivation — Excess Pressure in Soap Bubble (ΔP = 4T/r)</div>
+      <div class="deriv-box">
+        <div class="step">Consider soap bubble of radius r split into 2 halves</div>
+        <div class="step">Force due to surface tension on each half = T × 2πr (along rim)</div>
+        <div class="step">Soap bubble has 2 surfaces → net force = T × 2πr × 2 = 4πrT</div>
+        <div class="step">Force due to excess pressure = ΔP × πr²</div>
+        <div class="step">At equilibrium: ΔP × πr² = 4πrT</div>
+        <div class="result">∴ ΔP = 4T/r (soap bubble) ✓; ΔP = 2T/r (liquid drop)</div>
+      </div>
+
+      <div class="kp-title">📐 Capillarity &amp; Capillary Rise: h = 2T cosθ / ρgr</div>
+      <ul class="kp-list">
+        <li><strong>Capillarity:</strong> rise or fall of liquid in a narrow tube due to surface tension</li>
+        <li><strong>Rise:</strong> wetting liquid (θ &lt; 90°) — e.g., water in glass</li>
+        <li><strong>Fall:</strong> non-wetting liquid (θ &gt; 90°) — e.g., mercury in glass</li>
+      </ul>
+      <div class="deriv-box">
+        <div class="step">Upward force = T × 2πr × cosθ (surface tension along contact line)</div>
+        <div class="step">Weight of liquid column = ρ × πr²h × g</div>
+        <div class="step">Equate: T × 2πr cosθ = ρπr²hg</div>
+        <div class="result">∴ h = 2T cosθ / (ρgr) ✓</div>
+      </div>
+      <ul class="kp-list">
+        <li>Thinner tube (smaller r) → greater capillary rise</li>
+        <li>Used in: plants (xylem vessels), pen nib, soil water movement, towels</li>
+      </ul>
+      <div class="fgrid">
+        <div class="fbox"><div class="fl">Surface tension</div><div class="feq">T = F/L</div></div>
+        <div class="fbox"><div class="fl">Surface energy</div><div class="feq">W = T·ΔA</div></div>
+        <div class="fbox"><div class="fl">Drop ΔP</div><div class="feq">ΔP = 2T/r</div></div>
+        <div class="fbox"><div class="fl">Bubble ΔP</div><div class="feq">ΔP = 4T/r</div></div>
+        <div class="fbox"><div class="fl">Capillary rise</div><div class="feq">h = 2Tcosθ/ρgr</div></div>
+        <div class="fbox"><div class="fl">T vs Temp</div><div class="feq">T↓ as T↑</div></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end notes -->
+
+<!-- ═══════════════ LAST 5 YEARS Q&A ═══════════════ -->
+<div class="section" id="tab-qbank">
+  <div class="board-notice">📋 ALL questions below ACTUALLY appeared in HSC Maharashtra Board 2020–2024</div>
+
+  <div class="tdiv"><div class="tline"></div><div class="tlab">⚡ Bernoulli's Theorem</div><div class="tline"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q1</span>
+      <div>
+        <div class="qtxt">State Bernoulli's theorem. Derive Bernoulli's equation. Give two applications.</div>
+        <div class="qtags"><span class="qtag t5">🔴 HSC 2024·2023·2022·2020</span><span class="qtag tb">4 Marks</span></div>
+      </div>
+    </div>
+    <div class="ans-body"><div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Statement:</strong> For steady, non-viscous, incompressible fluid flow along a streamline, the total energy (pressure + kinetic + potential) per unit volume remains constant.</p>
+        <div class="eq">P + ½ρv² + ρgh = constant</div>
+        <p><strong>Derivation using Work-Energy theorem:</strong></p>
+        <span class="step">Consider fluid element of volume ΔV flowing from (1) to (2)</span>
+        <span class="step">Work done by pressure: W = (P₁ − P₂)ΔV</span>
+        <span class="step">Change in KE = ½ρΔV(v₂² − v₁²)</span>
+        <span class="step">Change in PE = ρΔVg(h₂ − h₁)</span>
+        <span class="step">By work-energy theorem: W = ΔKE + ΔPE</span>
+        <span class="step">(P₁−P₂)ΔV = ½ρΔV(v₂²−v₁²) + ρΔVg(h₂−h₁)</span>
+        <div class="eq">P₁ + ½ρv₁² + ρgh₁ = P₂ + ½ρv₂² + ρgh₂  ✓</div>
+        <p><strong>Applications:</strong></p>
+        <p>1. <strong>Aerofoil (aircraft lift):</strong> Curved upper surface → air moves faster over top → lower pressure on top → net upward lift force (F = ΔP × A)</p>
+        <p>2. <strong>Spray gun / Atomiser:</strong> Fast-moving air over tube opening creates low pressure → liquid sucked up and sprayed as fine droplets.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q2</span>
+      <div>
+        <div class="qtxt">Derive an expression for the speed of efflux (Torricelli's theorem): v = √(2gh).</div>
+        <div class="qtags"><span class="qtag t5">🔴 HSC 2024·2023·2022</span><span class="qtag tb">3 Marks</span></div>
+      </div>
+    </div>
+    <div class="ans-body"><div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p>Consider a large tank with a small hole at depth h below free surface.</p>
+        <p>At free surface (1): P = P₀, v₁ ≈ 0 (large tank), height = h</p>
+        <p>At hole (2): P = P₀ (open to atmosphere), v₂ = v (efflux speed), height = 0</p>
+        <p>Applying Bernoulli's equation between (1) and (2):</p>
+        <span class="step">P₀ + ½ρ(0)² + ρgh = P₀ + ½ρv² + 0</span>
+        <span class="step">ρgh = ½ρv²</span>
+        <div class="eq">∴ v = √(2gh)  — Torricelli's theorem ✓</div>
+        <p><strong>Note:</strong> This is the same speed as a body falling freely through height h — the liquid behaves as if it fell freely from the surface level to the hole.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tdiv"><div class="tline"></div><div class="tlab">🔮 Surface Tension</div><div class="tline"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q3</span>
+      <div>
+        <div class="qtxt">Derive an expression for excess pressure inside a soap bubble: ΔP = 4T/r. How does it differ for a liquid drop?</div>
+        <div class="qtags"><span class="qtag t5">🔴 HSC 2024·2023·2022·2021·2020</span><span class="qtag tb">3–4 Marks</span></div>
+      </div>
+    </div>
+    <div class="ans-body"><div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Excess pressure in a liquid drop:</strong></p>
+        <p>Split the drop into two halves. Surface tension acts along the circular rim (circumference 2πr).</p>
+        <span class="step">Force due to surface tension = T × 2πr (pulling halves together)</span>
+        <span class="step">Force due to excess pressure = ΔP × πr² (pushing outward)</span>
+        <span class="step">At equilibrium: ΔP × πr² = T × 2πr</span>
+        <div class="eq">ΔP = 2T/r  (liquid drop — 1 surface)</div>
+        <p><strong>Excess pressure in a soap bubble:</strong></p>
+        <p>Soap bubble has TWO surfaces (inner and outer). Each surface contributes pressure 2T/r:</p>
+        <div class="eq">ΔP = 2 × (2T/r) = 4T/r  (soap bubble — 2 surfaces) ✓</div>
+        <p><strong>Conclusion:</strong> Soap bubble has greater excess pressure than a liquid drop of the same radius. A smaller bubble has higher internal pressure than a larger bubble (ΔP ∝ 1/r).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q4</span>
+      <div>
+        <div class="qtxt">What is capillarity? Derive the expression for capillary rise: h = 2T cosθ / ρgr.</div>
+        <div class="qtags"><span class="qtag t5">🔴 HSC 2024·2023·2022·2021·2020</span><span class="qtag tb">3–4 Marks</span></div>
+      </div>
+    </div>
+    <div class="ans-body"><div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Capillarity:</strong> The phenomenon of rise or fall of a liquid in a narrow (capillary) tube due to surface tension is called capillarity.</p>
+        <p><strong>Rise:</strong> Wetting liquid (θ &lt; 90°) — e.g., water in glass capillary</p>
+        <p><strong>Fall:</strong> Non-wetting liquid (θ &gt; 90°) — e.g., mercury in glass capillary</p>
+        <p><strong>Derivation:</strong></p>
+        <p>For capillary tube of radius r, surface tension T acts at angle θ (angle of contact) along the glass surface.</p>
+        <span class="step">Upward force due to surface tension: F_up = T × 2πr × cosθ</span>
+        <span class="step">Weight of liquid column of height h: W = ρ × πr²h × g</span>
+        <span class="step">At equilibrium: F_up = W</span>
+        <span class="step">T × 2πr cosθ = ρπr²hg</span>
+        <div class="eq">∴ h = 2T cosθ / (ρgr)  ✓</div>
+        <p><strong>Conclusion:</strong> h ∝ 1/r — thinner tube → greater capillary rise. This explains water transport in plants through narrow xylem vessels.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tdiv"><div class="tline"></div><div class="tlab">🌿 Viscosity &amp; Stokes' Law</div><div class="tline"></div></div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q5</span>
+      <div>
+        <div class="qtxt">State Stokes' Law. Derive the expression for terminal velocity: v_T = 2r²(ρ−σ)g / 9η.</div>
+        <div class="qtags"><span class="qtag t5">🔴 HSC 2024·2023·2022·2021·2020</span><span class="qtag tb">4 Marks</span></div>
+      </div>
+    </div>
+    <div class="ans-body"><div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Stokes' Law:</strong> When a sphere of radius r moves with velocity v through a fluid of viscosity η, the viscous drag force is:</p>
+        <div class="eq">F = 6πηrv</div>
+        <p><strong>Derivation of terminal velocity:</strong></p>
+        <p>Forces on sphere (density ρ, radius r) falling through fluid (density σ):</p>
+        <span class="step">(i) Weight W = (4/3)πr³ρg (downward)</span>
+        <span class="step">(ii) Buoyant force F_B = (4/3)πr³σg (upward)</span>
+        <span class="step">(iii) Viscous drag F_v = 6πηrv_T (upward, at terminal velocity)</span>
+        <p><strong>At terminal velocity v_T:</strong> net force = 0</p>
+        <span class="step">W = F_B + F_v</span>
+        <span class="step">(4/3)πr³ρg = (4/3)πr³σg + 6πηrv_T</span>
+        <span class="step">6πηrv_T = (4/3)πr³(ρ−σ)g</span>
+        <div class="eq">∴ v_T = 2r²(ρ−σ)g / 9η  ✓</div>
+        <p><strong>Conclusions:</strong> v_T ∝ r² (double radius → 4× v_T); v_T ∝ 1/η (more viscous → smaller v_T)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q6</span>
+      <div>
+        <div class="qtxt">State Archimedes' Principle. How is it used to find relative density of a solid?</div>
+        <div class="qtags"><span class="qtag t5">🔴 HSC 2023·2022·2021</span><span class="qtag tb">3 Marks</span></div>
+      </div>
+    </div>
+    <div class="ans-body"><div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Archimedes' Principle:</strong> When a body is partially or fully immersed in a fluid, it experiences an upward buoyant force equal to the weight of the fluid displaced by it.</p>
+        <div class="eq">F_B = ρ_fluid × V_submerged × g</div>
+        <p><strong>Relative density:</strong></p>
+        <p>Let W₁ = weight in air, W₂ = apparent weight in water (W₂ = W₁ − F_B)</p>
+        <span class="step">Loss in weight in water = W₁ − W₂ = weight of water displaced = F_B</span>
+        <span class="step">Relative density = density of solid / density of water</span>
+        <span class="step">= mass of solid / mass of equal volume of water</span>
+        <div class="eq">Relative density = W₁ / (W₁ − W₂)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q7</span>
+      <div>
+        <div class="qtxt">What is the difference between viscosity of liquids and gases on heating? Explain with reason.</div>
+        <div class="qtags"><span class="qtag t5">🔴 HSC 2024·2023·2021</span><span class="qtag tb">2 Marks</span></div>
+      </div>
+    </div>
+    <div class="ans-body"><div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Liquids:</strong> Viscosity <strong>decreases</strong> with increase in temperature.</p>
+        <p><strong>Reason:</strong> Viscosity in liquids is due to cohesive forces between molecules. When temperature increases, cohesive forces weaken → molecules slide past each other more easily → less internal friction → lower viscosity.</p>
+        <p><strong>Example:</strong> Honey flows easily when heated.</p>
+        <p><strong>Gases:</strong> Viscosity <strong>increases</strong> with increase in temperature.</p>
+        <p><strong>Reason:</strong> Viscosity in gases is due to momentum transfer between gas molecules. At higher temperatures, molecules move faster → more momentum exchange between layers → greater resistance to flow → higher viscosity.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qcard-h">
+      <span class="qno">Q8</span>
+      <div>
+        <div class="qtxt">State Pascal's Law. Explain the working of a hydraulic lift with formula.</div>
+        <div class="qtags"><span class="qtag t5">🔴 HSC 2023·2022·2020</span><span class="qtag tb">3 Marks</span></div>
+      </div>
+    </div>
+    <div class="ans-body"><div class="ans-lbl">✅ Model Answer</div>
+      <div class="ans-txt">
+        <p><strong>Pascal's Law:</strong> Pressure applied to an enclosed fluid is transmitted equally and undiminished to every part of the fluid and to the walls of the container, in all directions.</p>
+        <p><strong>Hydraulic Lift:</strong></p>
+        <p>Two pistons of areas A₁ (small) and A₂ (large) connected by fluid-filled pipe.</p>
+        <p>Apply small force F₁ on small piston → pressure P = F₁/A₁ transmitted everywhere.</p>
+        <span class="step">Pressure on large piston = F₁/A₁ = F₂/A₂</span>
+        <div class="eq">F₂ = F₁ × A₂/A₁  (mechanical advantage = A₂/A₁)</div>
+        <p>Since A₂ >> A₁ → F₂ >> F₁. A small force lifts a heavy car!</p>
+        <p><strong>Application:</strong> Hydraulic press, brakes, lifts in garages</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end qbank -->
+
+<!-- ═══════════════ EXTRA IMP QUESTIONS ═══════════════ -->
+<div class="section" id="tab-extra">
+  <div class="board-notice">⭐ These extra questions are VERY IMPORTANT for HSC board — frequently asked in 2–3 marks section</div>
+
+  <div class="extra-box">
+    <div class="extra-title">⭐ Extra IMP Q1 — 2 Marks</div>
+    <div class="extra-q">What is surface energy? Derive the relation between surface energy and surface tension: W = T × ΔA.</div>
+    <div class="extra-a">
+      <strong>Surface energy:</strong> The potential energy stored per unit area of the liquid surface. When surface area increases, work is done against cohesive forces.<br><br>
+      <strong>Derivation:</strong> Consider a rectangular frame with a sliding wire. Move wire by dx → surface area increases by ΔA = L × dx (film has 2 surfaces → ΔA = 2L·dx)<br>
+      Work done: W = F × dx = (T × 2L) × dx
+    </div>
+    <div class="extra-eq">W = T × ΔA ✓</div>
+    <div class="extra-a">Surface energy = T × surface area. When drops merge → surface area decreases → energy released (exothermic).</div>
+  </div>
+
+  <div class="extra-box">
+    <div class="extra-title">⭐ Extra IMP Q2 — 2 Marks</div>
+    <div class="extra-q">Write 4 factors affecting surface tension of a liquid.</div>
+    <div class="extra-a">
+      1. <strong>Temperature:</strong> T decreases as temperature increases; zero at critical temperature<br>
+      2. <strong>Impurities:</strong> Soluble impurities (soap, detergent) decrease T; insoluble impurities may increase T<br>
+      3. <strong>Electrification:</strong> Surface tension decreases when liquid is electrically charged<br>
+      4. <strong>Nature of medium above liquid:</strong> T of water in contact with air ≠ T in contact with other liquids
+    </div>
+  </div>
+
+  <div class="extra-box">
+    <div class="extra-title">⭐ Extra IMP Q3 — 3 Marks</div>
+    <div class="extra-q">Explain why a small bubble has higher internal pressure than a large bubble. What happens when two soap bubbles of different sizes are connected?</div>
+    <div class="extra-a">
+      From ΔP = 4T/r: excess pressure is inversely proportional to radius.<br>
+      Smaller bubble (small r) → higher ΔP<br>
+      Larger bubble (large r) → lower ΔP<br><br>
+      <strong>When connected:</strong> Air flows from small bubble (high pressure) to large bubble (low pressure). Small bubble shrinks and large bubble grows — until small bubble disappears or both are in equilibrium. This is a beautiful demonstration of Bernoulli's principle and surface tension.
+    </div>
+  </div>
+
+  <div class="extra-box">
+    <div class="extra-title">⭐ Extra IMP Q4 — 3 Marks</div>
+    <div class="extra-q">Explain the application of Bernoulli's theorem to explain lift on an aeroplane wing (aerofoil).</div>
+    <div class="extra-a">
+      An aerofoil is curved on the upper surface and flat (or less curved) on the lower surface.<br><br>
+      When the wing moves through air:<br>
+      • Air over the curved upper surface must travel a longer path → moves FASTER<br>
+      • Air under the flat lower surface moves SLOWER<br>
+      By Bernoulli's theorem: P + ½ρv² = constant<br>
+      • Upper surface: v_upper↑ → P_upper↓<br>
+      • Lower surface: v_lower↓ → P_lower↑<br>
+    </div>
+    <div class="extra-eq">Lift force F = (P_lower − P_upper) × A</div>
+    <div class="extra-a">This net upward force (lift) supports the aircraft. Greater speed → greater lift. Angle of attack also increases lift.</div>
+  </div>
+
+  <div class="extra-box">
+    <div class="extra-title">⭐ Extra IMP Q5 — 3 Marks</div>
+    <div class="extra-q">Explain 4 everyday applications of capillarity.</div>
+    <div class="extra-a">
+      1. <strong>Plants:</strong> Water absorbed by roots rises through narrow xylem vessels to leaves by capillary action<br>
+      2. <strong>Pen/fountain pen:</strong> Ink rises in narrow capillary channel in pen nib to the writing tip<br>
+      3. <strong>Towel/sponge:</strong> Absorbs water by capillary action through the spaces between cloth fibres<br>
+      4. <strong>Soil water:</strong> Water rises from deep soil layers to the surface through narrow pores in soil (important for plant growth)<br>
+      5. Candle wick draws molten wax by capillary action
+    </div>
+  </div>
+
+  <div class="extra-box">
+    <div class="extra-title">⭐ Extra IMP Q6 — 2 Marks</div>
+    <div class="extra-q">What is angle of contact? When does liquid rise and when does it fall in a capillary tube?</div>
+    <div class="extra-a">
+      <strong>Angle of contact (θ):</strong> The angle between the tangent to the liquid surface at the point of contact and the solid surface, measured inside the liquid.<br><br>
+      <strong>θ &lt; 90° (acute):</strong> Liquid wets the solid → concave meniscus → liquid RISES (e.g., water in glass, h positive)<br>
+      <strong>θ &gt; 90° (obtuse):</strong> Liquid does not wet solid → convex meniscus → liquid FALLS (e.g., mercury in glass, h negative)<br>
+      <strong>θ = 0°:</strong> Perfect wetting (cosθ = 1 → maximum rise)<br>
+      <strong>θ = 90°:</strong> No capillary effect (cosθ = 0 → h = 0)
+    </div>
+  </div>
+
+  <div class="extra-box">
+    <div class="extra-title">⭐ Extra IMP Q7 — 3 Marks</div>
+    <div class="extra-q">Write short note on streamline flow, turbulent flow and Reynolds number.</div>
+    <div class="extra-a">
+      <strong>Streamline (Laminar) flow:</strong> Smooth, ordered flow in parallel layers; each fluid particle follows a definite path; no mixing of layers. Occurs at low speeds.<br><br>
+      <strong>Turbulent flow:</strong> Irregular, chaotic flow; eddies, whirls and vortices form; energy wasted as heat. Occurs at high speeds.<br><br>
+      <strong>Reynolds number (Re):</strong> Dimensionless number that predicts type of flow:
+    </div>
+    <div class="extra-eq">Re = ρvd/η</div>
+    <div class="extra-a">
+      Re &lt; 1000 → <strong>Laminar flow</strong><br>
+      1000 &lt; Re &lt; 2000 → Transitional<br>
+      Re &gt; 2000 → <strong>Turbulent flow</strong><br>
+      Used by engineers to design pipes, aircraft and ships.
+    </div>
+  </div>
+
+  <div class="extra-box">
+    <div class="extra-title">⭐ Extra IMP Q8 — 2 Marks</div>
+    <div class="extra-q">Write differences between ideal fluid and real fluid.</div>
+    <div class="extra-a">
+      <table style="width:100%;border-collapse:collapse;font-size:.82rem;color:#fff;margin-top:8px;">
+        <tr style="background:rgba(255,255,255,.15);"><th style="padding:5px;border:1px solid rgba(255,255,255,.2);">Ideal Fluid</th><th style="padding:5px;border:1px solid rgba(255,255,255,.2);">Real Fluid</th></tr>
+        <tr><td style="padding:5px;border:1px solid rgba(255,255,255,.1);">No viscosity (η=0)</td><td style="padding:5px;border:1px solid rgba(255,255,255,.1);">Has viscosity</td></tr>
+        <tr><td style="padding:5px;border:1px solid rgba(255,255,255,.1);">Incompressible</td><td style="padding:5px;border:1px solid rgba(255,255,255,.1);">Slightly compressible</td></tr>
+        <tr><td style="padding:5px;border:1px solid rgba(255,255,255,.1);">Steady flow always</td><td style="padding:5px;border:1px solid rgba(255,255,255,.1);">Can be turbulent</td></tr>
+        <tr><td style="padding:5px;border:1px solid rgba(255,255,255,.1);">Bernoulli applies exactly</td><td style="padding:5px;border:1px solid rgba(255,255,255,.1);">Bernoulli is approximate</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="extra-box">
+    <div class="extra-title">⭐ Extra IMP Q9 — 3 Marks</div>
+    <div class="extra-q">Explain the phenomenon of Magnus effect with an example.</div>
+    <div class="extra-a">
+      <strong>Magnus effect:</strong> When a spinning ball moves through air, the spinning motion drags air around it. The resulting pressure difference creates a force perpendicular to the direction of motion — causing the ball to curve.<br><br>
+      <strong>Explanation:</strong> On one side, air movement due to spin adds to the air velocity → lower pressure (Bernoulli). On the other side, they oppose → higher pressure. Net force pushes ball towards low-pressure side.<br><br>
+      <strong>Examples:</strong><br>
+      • Swing bowling in cricket — ball swings in air<br>
+      • Topspin in tennis — ball dips down<br>
+      • Banana kick in football — ball curves around wall<br>
+      • Spin of a golf ball affecting trajectory
+    </div>
+  </div>
+
+  <div class="extra-box">
+    <div class="extra-title">⭐ Extra IMP Q10 — 2 Marks</div>
+    <div class="extra-q">What is Venturi meter? Write the principle on which it works.</div>
+    <div class="extra-a">
+      <strong>Venturi meter:</strong> A device used to measure the flow speed (velocity) of a fluid in a pipe. It consists of a wide section (A₁) connected to a narrow constriction (A₂).<br><br>
+      <strong>Principle:</strong> Based on Bernoulli's theorem — when fluid flows through the narrow section, its speed increases and pressure decreases. By measuring the pressure difference (using a manometer), the flow speed can be calculated:
+    </div>
+    <div class="extra-eq">v₁ = A₂√(2ΔP/ρ(A₁²−A₂²))</div>
+    <div class="extra-a"><strong>Use:</strong> Measuring water flow in pipes, air speed measurement, carburettors in engines.</div>
+  </div>
+
+</div><!-- end extra -->
+
+<!-- ═══════════════ NUMERICALS ═══════════════ -->
+<div class="section" id="tab-numericals">
+  <div class="board-notice">📋 Numericals from HSC Board 2020–2024 — solve all with units</div>
+
+  <div class="num-block">
+    <div class="num-q">N1. A spherical ball (r = 2×10⁻³ m, ρ = 1500 kg/m³) falls through glycerin (η = 0.9 Pa·s, σ = 1260 kg/m³). Find terminal velocity. (g = 10 m/s²) <span style="color:#f59e0b;font-size:.75rem;">🔴 HSC 2024·2023·2022</span></div>
+    <div class="num-given">r = 2×10⁻³ m | ρ = 1500 kg/m³ | σ = 1260 kg/m³ | η = 0.9 Pa·s</div>
+    <div class="num-sol">v_T = 2r²(ρ−σ)g / 9η<br>= 2×(2×10⁻³)²×(1500−1260)×10 / (9×0.9)<br>= 2×4×10⁻⁶×240×10 / 8.1<br>= 19200×10⁻⁶ / 8.1</div>
+    <span class="num-ans">∴ v_T ≈ 2.37×10⁻³ m/s = 2.37 mm/s ✓</span>
+  </div>
+
+  <div class="num-block">
+    <div class="num-q">N2. Water flows through a pipe of diameter 4 cm at 2 m/s. It enters a narrow section of diameter 2 cm. Find speed in narrow section. <span style="color:#f59e0b;font-size:.75rem;">🔴 HSC 2024·2023·2021</span></div>
+    <div class="num-given">d₁ = 4 cm → r₁ = 0.02 m | v₁ = 2 m/s | d₂ = 2 cm → r₂ = 0.01 m</div>
+    <div class="num-sol">A₁v₁ = A₂v₂ (continuity)<br>πr₁²v₁ = πr₂²v₂<br>v₂ = v₁×(r₁/r₂)² = 2×(0.02/0.01)² = 2×4 = 8 m/s</div>
+    <span class="num-ans">∴ v₂ = 8 m/s ✓</span>
+  </div>
+
+  <div class="num-block">
+    <div class="num-q">N3. Water rises to 3 cm in a capillary tube. Surface tension T = 0.073 N/m, θ = 0°, ρ = 1000 kg/m³, g = 9.8 m/s². Find the radius of tube. <span style="color:#f59e0b;font-size:.75rem;">🔴 HSC 2024·2023·2022·2021</span></div>
+    <div class="num-given">h = 0.03 m | T = 0.073 N/m | θ = 0° (cosθ=1) | ρ = 1000 kg/m³</div>
+    <div class="num-sol">h = 2T cosθ / (ρgr) → r = 2T cosθ / (ρgh)<br>r = 2×0.073×1 / (1000×9.8×0.03)<br>= 0.146 / 294 = 4.97×10⁻⁴ m</div>
+    <span class="num-ans">∴ r ≈ 0.5 mm ✓</span>
+  </div>
+
+  <div class="num-block">
+    <div class="num-q">N4. A soap bubble has radius 2 cm. T = 0.025 N/m. Find: (i) excess pressure (ii) surface energy. <span style="color:#f59e0b;font-size:.75rem;">🔴 HSC 2024·2023·2022·2021·2020</span></div>
+    <div class="num-given">r = 0.02 m | T = 0.025 N/m</div>
+    <div class="num-sol">(i) ΔP = 4T/r = 4×0.025/0.02 = 5 Pa<br>(ii) Surface area (2 surfaces) = 2×4πr² = 8π×(0.02)² = 8π×4×10⁻⁴ = 10.05×10⁻³ m²<br>Surface energy = T×A = 0.025×10.05×10⁻³ = 2.51×10⁻⁴ J</div>
+    <span class="num-ans">∴ ΔP = 5 Pa; Surface energy = 2.51×10⁻⁴ J ✓</span>
+  </div>
+
+  <div class="num-block">
+    <div class="num-q">N5. A hole is at 20 m depth in a large water tank. Find speed of efflux. If the hole area = 2 cm², find volume flow rate. (g = 10 m/s²) <span style="color:#f59e0b;font-size:.75rem;">🔴 HSC 2023·2022</span></div>
+    <div class="num-given">h = 20 m | g = 10 m/s² | A = 2×10⁻⁴ m²</div>
+    <div class="num-sol">v = √(2gh) = √(2×10×20) = √400 = 20 m/s<br>Volume flow rate Q = Av = 2×10⁻⁴×20 = 4×10⁻³ m³/s</div>
+    <span class="num-ans">∴ v = 20 m/s; Q = 4×10⁻³ m³/s = 4 L/s ✓</span>
+  </div>
+
+  <div class="num-block">
+    <div class="num-q">N6. A hydraulic lift has piston areas A₁ = 5 cm² and A₂ = 200 cm². Force on small piston = 50 N. Find force on large piston and pressure in fluid. <span style="color:#f59e0b;font-size:.75rem;">🔴 HSC 2022·2021·2020</span></div>
+    <div class="num-given">A₁ = 5×10⁻⁴ m² | A₂ = 200×10⁻⁴ m² = 0.02 m² | F₁ = 50 N</div>
+    <div class="num-sol">Pascal's Law: P₁ = P₂ → F₁/A₁ = F₂/A₂<br>F₂ = F₁×A₂/A₁ = 50×(200/5) = 50×40 = 2000 N<br>Pressure P = F₁/A₁ = 50/(5×10⁻⁴) = 1×10⁵ Pa</div>
+    <span class="num-ans">∴ F₂ = 2000 N; P = 1×10⁵ Pa ✓</span>
+  </div>
+
+  <div class="num-block">
+    <div class="num-q">N7. Surface tension of water = 0.073 N/m. Find the work done in blowing a soap bubble of radius 5 cm. (Soap surface tension = 0.03 N/m) <span style="color:#f59e0b;font-size:.75rem;">🔴 HSC 2023·2021</span></div>
+    <div class="num-given">r = 0.05 m | T = 0.03 N/m | Soap bubble has 2 surfaces</div>
+    <div class="num-sol">W = T × ΔA = T × (2×4πr²) [2 surfaces]<br>= 0.03 × 2×4π×(0.05)²<br>= 0.03 × 8π×0.0025<br>= 0.03 × 0.06283 = 1.885×10⁻³ J</div>
+    <span class="num-ans">∴ W ≈ 1.88×10⁻³ J ✓</span>
+  </div>
+
+</div><!-- end numericals -->
+
+<!-- ═══════════════ MCQs ═══════════════ -->
+<div class="section" id="tab-mcq">
+  <div class="board-notice">📋 MCQs from HSC Board 2020–2024 — Every question has year tag and hint</div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">1. As velocity of fluid increases (Bernoulli), pressure:</div>
+    <ul class="mcq-opts"><li>a) Increases</li><li class="ok">b) Decreases</li><li>c) Stays constant</li><li>d) Becomes zero</li></ul>
+    <div class="mcq-hint">🔴 HSC 2024·2023·2022·2020 | P + ½ρv² = C → v↑ means P↓</div>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">2. Excess pressure inside a soap bubble of radius r, surface tension T is:</div>
+    <ul class="mcq-opts"><li>a) T/r</li><li>b) 2T/r</li><li class="ok">c) 4T/r</li><li>d) 8T/r</li></ul>
+    <div class="mcq-hint">🔴 HSC 2024·2023·2022·2021·2020 | 2 surfaces → 2×(2T/r) = 4T/r. Drop = 2T/r.</div>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">3. Terminal velocity v_T is proportional to:</div>
+    <ul class="mcq-opts"><li>a) r</li><li class="ok">b) r²</li><li>c) r³</li><li>d) 1/r</li></ul>
+    <div class="mcq-hint">🔴 HSC 2023·2022·2021 | v_T = 2r²(ρ−σ)g/9η → v_T ∝ r²</div>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">4. Speed of efflux from hole at depth h (Torricelli's theorem):</div>
+    <ul class="mcq-opts"><li>a) √(gh)</li><li class="ok">b) √(2gh)</li><li>c) 2√(gh)</li><li>d) √(gh/2)</li></ul>
+    <div class="mcq-hint">🔴 HSC 2024·2023·2022 | Bernoulli: ρgh = ½ρv² → v = √(2gh)</div>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">5. Capillary rise h = 2Tcosθ/ρgr. If radius r is doubled, h becomes:</div>
+    <ul class="mcq-opts"><li>a) Same</li><li>b) Double</li><li class="ok">c) Half</li><li>d) Four times</li></ul>
+    <div class="mcq-hint">🔴 HSC 2024·2023·2021 | h ∝ 1/r. Double r → half h.</div>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">6. Viscosity of liquids on heating:</div>
+    <ul class="mcq-opts"><li class="ok">a) Decreases</li><li>b) Increases</li><li>c) Remains same</li><li>d) First increases then decreases</li></ul>
+    <div class="mcq-hint">🔴 HSC 2023·2022·2021 | Liquid viscosity ↓ with T↑. Gas viscosity ↑ with T↑.</div>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">7. Pascal's Law: Hydraulic lift has areas A₁=5cm², A₂=50cm². Force F₁=10N. F₂=</div>
+    <ul class="mcq-opts"><li>a) 10 N</li><li>b) 50 N</li><li class="ok">c) 100 N</li><li>d) 500 N</li></ul>
+    <div class="mcq-hint">🔴 HSC 2023·2022·2020 | F₂ = F₁×A₂/A₁ = 10×50/5 = 100 N</div>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">8. Surface tension decreases with temperature because:</div>
+    <ul class="mcq-opts"><li class="ok">a) Cohesive forces between molecules weaken</li><li>b) Density decreases</li><li>c) Viscosity increases</li><li>d) Pressure increases</li></ul>
+    <div class="mcq-hint">🔴 HSC 2023·2022·2021 | High T → weak cohesion → less surface tension. T→0 at critical temperature.</div>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">9. Bernoulli's equation is based on conservation of:</div>
+    <ul class="mcq-opts"><li>a) Mass</li><li>b) Momentum</li><li class="ok">c) Energy</li><li>d) Charge</li></ul>
+    <div class="mcq-hint">🟠 HSC 2023·2022 | Bernoulli = work-energy theorem applied to fluid flow.</div>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">10. Stokes' Law: Viscous force on sphere = 6πηrv. If radius doubles (same v, η), force becomes:</div>
+    <ul class="mcq-opts"><li>a) Same</li><li class="ok">b) Double</li><li>c) Four times</li><li>d) Eight times</li></ul>
+    <div class="mcq-hint">🔴 HSC 2023·2022·2021 | F = 6πηrv ∝ r. Double r → double F.</div>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">11. Equation of continuity A₁v₁ = A₂v₂ is based on conservation of:</div>
+    <ul class="mcq-opts"><li>a) Energy</li><li>b) Momentum</li><li class="ok">c) Mass</li><li>d) Volume</li></ul>
+    <div class="mcq-hint">🔴 HSC 2024·2023·2021 | A₁v₁=A₂v₂ comes from mass conservation for incompressible fluid.</div>
+  </div>
+
+  <div class="mcq-box">
+    <div class="mcq-q">12. Reynolds number Re &lt; 1000 indicates:</div>
+    <ul class="mcq-opts"><li class="ok">a) Laminar (streamline) flow</li><li>b) Turbulent flow</li><li>c) Transitional flow</li><li>d) No flow</li></ul>
+    <div class="mcq-hint">🟠 HSC 2022·2021·2020 | Re&lt;1000=laminar; Re&gt;2000=turbulent; Re=1000-2000=transitional.</div>
+  </div>
+
+</div><!-- end mcq -->
+
+<!-- ═══════════════ FORMULAS ═══════════════ -->
+<div class="section" id="tab-formulas">
+  <div class="board-notice">📐 All formulas for Chapter 2 — Mechanical Properties of Fluids</div>
+
+  <div class="cb">
+    <div class="cb-head"><span class="tag">All</span><h2>📐 Complete Formula Sheet — Ch 2</h2></div>
+    <div class="cb-body">
+
+      <div class="kp-title">🌊 Pressure</div>
+      <div class="fgrid" style="margin-bottom:16px;">
+        <div class="fbox"><div class="fl">Pressure</div><div class="feq">P = F/A</div></div>
+        <div class="fbox"><div class="fl">Hydrostatic P</div><div class="feq">P = P₀ + ρgh</div></div>
+        <div class="fbox"><div class="fl">Pascal's Law</div><div class="feq">F₁/A₁ = F₂/A₂</div></div>
+        <div class="fbox"><div class="fl">1 atm</div><div class="feq">1.013×10⁵ Pa</div></div>
+      </div>
+
+      <div class="kp-title">🏊 Archimedes' Principle</div>
+      <div class="fgrid" style="margin-bottom:16px;">
+        <div class="fbox"><div class="fl">Buoyant force</div><div class="feq">F_B = ρ_f·V·g</div></div>
+        <div class="fbox"><div class="fl">Apparent weight</div><div class="feq">W_app = W − F_B</div></div>
+        <div class="fbox"><div class="fl">Relative density</div><div class="feq">W/(W−W_liq)</div></div>
+      </div>
+
+      <div class="kp-title">⚡ Bernoulli's Equation</div>
+      <div class="fgrid" style="margin-bottom:16px;">
+        <div class="fbox"><div class="fl">Bernoulli</div><div class="feq">P+½ρv²+ρgh=C</div></div>
+        <div class="fbox"><div class="fl">Continuity</div><div class="feq">A₁v₁ = A₂v₂</div></div>
+        <div class="fbox"><div class="fl">Efflux speed</div><div class="feq">v = √(2gh)</div></div>
+        <div class="fbox"><div class="fl">Reynolds no.</div><div class="feq">Re = ρvd/η</div></div>
+      </div>
+
+      <div class="kp-title">🌿 Viscosity &amp; Stokes' Law</div>
+      <div class="fgrid" style="margin-bottom:16px;">
+        <div class="fbox"><div class="fl">Stokes' force</div><div class="feq">F = 6πηrv</div></div>
+        <div class="fbox"><div class="fl">Terminal v</div><div class="feq">2r²(ρ−σ)g/9η</div></div>
+        <div class="fbox"><div class="fl">v_T ∝</div><div class="feq">r², 1/η, (ρ−σ)</div></div>
+      </div>
+
+      <div class="kp-title">🔮 Surface Tension</div>
+      <div class="fgrid" style="margin-bottom:16px;">
+        <div class="fbox"><div class="fl">Surface tension</div><div class="feq">T = F/L</div></div>
+        <div class="fbox"><div class="fl">Surface energy</div><div class="feq">W = T·ΔA</div></div>
+        <div class="fbox"><div class="fl">Drop ΔP</div><div class="feq">ΔP = 2T/r</div></div>
+        <div class="fbox"><div class="fl">Bubble ΔP</div><div class="feq">ΔP = 4T/r</div></div>
+        <div class="fbox"><div class="fl">Capillary rise</div><div class="feq">h = 2Tcosθ/ρgr</div></div>
+        <div class="fbox"><div class="fl">T and temp</div><div class="feq">T↓ as temp↑</div></div>
+      </div>
+
+      <div style="background:linear-gradient(135deg,#0a2a4a,#01579b);color:#fff;border-radius:12px;padding:16px;margin-top:14px;">
+        <div style="font-size:.78rem;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#b3e5fc;margin-bottom:10px;">📋 Board Exam Checklist — Ch 2</div>
+        <ul style="list-style:none;padding:0;font-size:.87rem;line-height:2.1;">
+          <li>✅ Bernoulli's equation derivation + 2 applications — <span style="color:#f59e0b;">4M · Every Year</span></li>
+          <li>✅ Torricelli's theorem v = √(2gh) derivation — <span style="color:#f59e0b;">3M · Every Year</span></li>
+          <li>✅ Excess pressure in drop (2T/r) and bubble (4T/r) with proof — <span style="color:#f59e0b;">3–4M · Every Year</span></li>
+          <li>✅ Capillary rise derivation h = 2Tcosθ/ρgr — <span style="color:#f59e0b;">3–4M · Every Year</span></li>
+          <li>✅ Stokes' Law + terminal velocity derivation v_T = 2r²(ρ−σ)g/9η — <span style="color:#f59e0b;">4M · Every Year</span></li>
+          <li>✅ Archimedes' Principle + relative density — <span style="color:#f59e0b;">3M · High Freq</span></li>
+          <li>✅ Pascal's Law + hydraulic lift — <span style="color:#f59e0b;">2–3M · High Freq</span></li>
+          <li>✅ 2 Numericals — terminal velocity / capillary rise / excess pressure — <span style="color:#f59e0b;">3M each</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div><!-- end formulas -->
+
+</div><!-- wrap -->
+
+<script>
+function show(id,btn){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tpill').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo(0,60);
+}
+</script>
+</body>
+</html>
