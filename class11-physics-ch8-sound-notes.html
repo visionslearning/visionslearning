@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Class 11 Physics Ch 8 — Sound | Visions Classes</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',sans-serif;background:#0f172a;color:#e2e8f0;min-height:100vh;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#1a0533,#4a148c,#1565c0);padding:26px 16px 18px;text-align:center;}
+.hero .chip{display:inline-block;background:#f59e0b;color:#1a0a00;font-size:.68rem;font-weight:900;padding:4px 14px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;}
+.hero h1{font-size:1.45rem;font-weight:900;color:#fff;margin-bottom:5px;}
+.hero p{font-size:.83rem;color:#c4b5fd;margin-bottom:12px;}
+.back-btn{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.12);color:#c4b5fd;padding:7px 15px;border-radius:8px;text-decoration:none;font-size:.8rem;font-weight:700;margin-bottom:12px;}
+
+/* TABS */
+.tabs{display:flex;overflow-x:auto;gap:0;background:#1e1b4b;border-bottom:2px solid #4c1d95;scrollbar-width:none;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab{flex-shrink:0;padding:11px 18px;font-size:.8rem;font-weight:800;color:#a5b4fc;cursor:pointer;border-bottom:3px solid transparent;transition:.2s;white-space:nowrap;}
+.tab.active{color:#f59e0b;border-bottom-color:#f59e0b;background:rgba(245,158,11,.08);}
+.tab:hover{color:#fff;}
+
+/* PANELS */
+.panel{display:none;max-width:900px;margin:0 auto;padding:18px 14px 60px;}
+.panel.active{display:block;}
+
+/* SECTION CARDS */
+.sec{background:#1e293b;border-radius:14px;margin-bottom:16px;overflow:hidden;border:1px solid #334155;}
+.sec-head{background:linear-gradient(135deg,#4a148c,#6a1b9a);padding:14px 18px;display:flex;align-items:center;gap:10px;}
+.sec-head h2{font-size:1rem;font-weight:900;color:#fff;}
+.sec-icon{font-size:1.4rem;}
+.sec-body{padding:16px 18px;}
+
+/* TEXT */
+.defn{background:#0d1b2e;border-left:4px solid #7c3aed;border-radius:0 10px 10px 0;padding:12px 14px;margin:10px 0;font-size:.87rem;line-height:1.65;color:#c4b5fd;}
+.defn strong{color:#f59e0b;}
+.formula-box{background:linear-gradient(135deg,#1e1b4b,#1e3a5f);border:1px solid #4c1d95;border-radius:10px;padding:12px 16px;margin:10px 0;text-align:center;}
+.formula{font-family:monospace;font-size:1.05rem;color:#7dd3fc;font-weight:900;letter-spacing:.5px;}
+.formula-label{font-size:.72rem;color:#94a3b8;margin-top:4px;}
+.key-point{background:#1a2744;border-left:4px solid #f59e0b;padding:10px 14px;border-radius:0 8px 8px 0;margin:8px 0;font-size:.86rem;line-height:1.6;color:#fde68a;}
+.key-point strong{color:#fff;}
+.note{background:#1a2e1a;border-left:4px solid #22c55e;padding:10px 14px;border-radius:0 8px 8px 0;margin:8px 0;font-size:.84rem;color:#bbf7d0;}
+.warn{background:#2d1515;border-left:4px solid #ef4444;padding:10px 14px;border-radius:0 8px 8px 0;margin:8px 0;font-size:.84rem;color:#fca5a5;}
+
+/* COMPARE TABLE */
+.compare{width:100%;border-collapse:collapse;margin:12px 0;font-size:.83rem;}
+.compare th{background:#4a148c;color:#fff;padding:10px 12px;text-align:left;}
+.compare td{padding:9px 12px;border-bottom:1px solid #334155;vertical-align:top;}
+.compare tr:nth-child(even) td{background:#1a2240;}
+.compare tr:hover td{background:#243050;}
+
+/* DIAGRAMS */
+.diag-wrap{background:#0f172a;border:1px solid #334155;border-radius:12px;padding:12px;margin:14px 0;text-align:center;}
+.diag-title{font-size:.75rem;font-weight:800;color:#a5b4fc;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+
+/* QA */
+.qa-item{background:#0f172a;border-radius:10px;margin-bottom:10px;overflow:hidden;border:1px solid #334155;}
+.qa-q{padding:12px 14px;cursor:pointer;font-size:.88rem;font-weight:700;color:#e2e8f0;display:flex;justify-content:space-between;gap:8px;}
+.qa-q:hover{background:#1e293b;}
+.qa-a{display:none;padding:12px 14px;background:#0d1b2e;border-top:1px solid #334155;font-size:.85rem;line-height:1.65;color:#cbd5e1;}
+.qa-a.open{display:block;}
+.qa-a strong{color:#93c5fd;}
+
+/* NUMERICALS */
+.num{background:linear-gradient(135deg,#0a1628,#1565c0);border-radius:12px;padding:14px 16px;margin-bottom:12px;}
+.num-q{font-size:.88rem;font-weight:700;color:#fff;margin-bottom:8px;}
+.num-given{background:rgba(255,255,255,.08);border-radius:7px;padding:8px 12px;font-family:monospace;font-size:.83rem;color:#93c5fd;line-height:1.9;margin:6px 0;}
+.num-sol{background:rgba(245,158,11,.12);border-left:3px solid #f59e0b;padding:8px 12px;border-radius:0 7px 7px 0;font-family:monospace;font-size:.83rem;color:#fde68a;line-height:2;margin:5px 0;}
+.num-ans{display:inline-block;background:#f59e0b;color:#1a0a00;border-radius:7px;padding:5px 14px;font-size:.88rem;font-weight:900;margin-top:6px;}
+
+/* TOPIC TAGS */
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
+.tag{font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:12px;background:#4c1d95;color:#e9d5ff;}
+.tag.imp{background:#7c3aed;}
+
+ul.points{padding-left:18px;margin:8px 0;}
+ul.points li{margin-bottom:5px;font-size:.86rem;line-height:1.6;color:#cbd5e1;}
+ul.points li strong{color:#93c5fd;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <a href="notes-class11.html" class="back-btn">← Class 11 Notes</a>
+  <div class="chip">Class 11 · Physics · Chapter 8</div>
+  <h1>🔊 Sound</h1>
+  <p>Maharashtra Board | Complete Notes · Diagrams · Q&A · Numericals</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:8px;">
+    <span style="background:rgba(255,255,255,.12);color:#e9d5ff;font-size:.7rem;font-weight:800;padding:3px 10px;border-radius:12px;">📐 All Concepts</span>
+    <span style="background:rgba(255,255,255,.12);color:#e9d5ff;font-size:.7rem;font-weight:800;padding:3px 10px;border-radius:12px;">📊 SVG Diagrams</span>
+    <span style="background:rgba(255,255,255,.12);color:#e9d5ff;font-size:.7rem;font-weight:800;padding:3px 10px;border-radius:12px;">📝 Q&A</span>
+    <span style="background:rgba(255,255,255,.12);color:#e9d5ff;font-size:.7rem;font-weight:800;padding:3px 10px;border-radius:12px;">🔢 Numericals</span>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+  <div class="tab active" onclick="showTab('notes',this)">📖 Notes</div>
+  <div class="tab" onclick="showTab('diagrams',this)">📊 Diagrams</div>
+  <div class="tab" onclick="showTab('qa',this)">❓ Q&A</div>
+  <div class="tab" onclick="showTab('numericals',this)">🔢 Numericals</div>
+</div>
+
+<!-- ==================== NOTES TAB ==================== -->
+<div class="panel active" id="tab-notes">
+
+  <!-- 8.1 Introduction -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">🌊</span><h2>8.1 Introduction — Types of Waves</h2></div>
+    <div class="sec-body">
+      <div class="defn"><strong>Wave:</strong> A periodic and regular disturbance in a medium which does not cause any flow of material but causes the <strong>flow of energy and momentum</strong> from one point to another.</div>
+
+      <div class="tags">
+        <span class="tag imp">Mechanical</span>
+        <span class="tag imp">EM Waves</span>
+        <span class="tag imp">Matter Waves</span>
+      </div>
+
+      <table class="compare">
+        <tr><th>Type</th><th>Definition</th><th>Medium needed?</th><th>Examples</th></tr>
+        <tr><td><strong>Mechanical</strong></td><td>Needs material medium for propagation</td><td>✅ Yes</td><td>Sound, water waves, seismic, string waves</td></tr>
+        <tr><td><strong>EM Waves</strong></td><td>Periodic vibrations in electric &amp; magnetic fields</td><td>❌ No</td><td>Light, radio, X-rays, UV rays</td></tr>
+        <tr><td><strong>Matter Waves</strong></td><td>Wave associated with any moving object</td><td>❌ No</td><td>Electron waves (quantum mechanics)</td></tr>
+      </table>
+
+      <div class="key-point"><strong>Travelling (Progressive) Wave:</strong> A disturbance created at one place travels to distant points. Energy is transferred from one point to another. Example: water ripples, sound in air.</div>
+    </div>
+  </div>
+
+  <!-- 8.2 Common Properties -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">📐</span><h2>8.2 Common Properties of All Waves</h2></div>
+    <div class="sec-body">
+
+      <div class="defn"><strong>1. Amplitude (A):</strong> Largest displacement of a particle of the medium from its rest (mean) position.<br/>Unit: <strong>metre (m)</strong></div>
+
+      <div class="defn"><strong>2. Wavelength (λ):</strong> Distance between two successive particles which are in the <strong>same state of vibration</strong> (same phase).<br/>Unit: <strong>metre (m)</strong></div>
+
+      <div class="defn"><strong>3. Period (T):</strong> Time required to complete <strong>one vibration</strong> by a particle of the medium.<br/>Unit: <strong>seconds (s)</strong></div>
+
+      <div class="defn"><strong>4. Double Periodicity:</strong> Wave motion is periodic in <strong>both time and space</strong>.
+        <ul class="points">
+          <li>Periodic in time: at every location, motion repeats at equal time intervals</li>
+          <li>Periodic in space: at any instant, the wave pattern repeats at equal distances</li>
+        </ul>
+      </div>
+
+      <div class="defn"><strong>5. Frequency (n or f):</strong> Number of vibrations performed by a particle per second.<br/>Unit: <strong>Hertz (Hz)</strong></div>
+
+      <div class="formula-box">
+        <div class="formula">n = 1/T</div>
+        <div class="formula-label">Frequency = 1 / Time Period</div>
+      </div>
+
+      <div class="defn"><strong>6. Velocity of wave (v):</strong> Distance travelled by the wave per unit time.</div>
+
+      <div class="formula-box">
+        <div class="formula">v = nλ = λ/T</div>
+        <div class="formula-label">Wave velocity = frequency × wavelength</div>
+      </div>
+
+      <div class="key-point"><strong>Remember:</strong> v = nλ is the most important relation in wave motion. It connects velocity, frequency and wavelength.</div>
+    </div>
+  </div>
+
+  <!-- 8.3 Transverse vs Longitudinal -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">↔️</span><h2>8.3 Transverse and Longitudinal Waves</h2></div>
+    <div class="sec-body">
+
+      <table class="compare">
+        <tr><th>Property</th><th>Transverse Wave</th><th>Longitudinal Wave</th></tr>
+        <tr><td><strong>Particle motion</strong></td><td>Perpendicular (⊥) to wave direction</td><td>Parallel (‖) to wave direction</td></tr>
+        <tr><td><strong>Formation</strong></td><td>Crests and Troughs</td><td>Compressions and Rarefactions</td></tr>
+        <tr><td><strong>Medium needed</strong></td><td>Solids and surface of liquids</td><td>Solids, liquids and gases</td></tr>
+        <tr><td><strong>Examples</strong></td><td>Light waves, waves on string</td><td>Sound waves, seismic P-waves</td></tr>
+        <tr><td><strong>Can polarise?</strong></td><td>✅ Yes</td><td>❌ No</td></tr>
+      </table>
+
+      <div class="note">Sound is a <strong>longitudinal mechanical wave</strong>. Particles vibrate parallel to the direction of propagation. Sound CANNOT travel in vacuum.</div>
+
+      <div class="key-point"><strong>Compression:</strong> Region where particles are close together (high pressure, high density).<br/>
+      <strong>Rarefaction:</strong> Region where particles are spread apart (low pressure, low density).</div>
+    </div>
+  </div>
+
+  <!-- 8.4 Speed of Sound -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">⚡</span><h2>8.4 Speed of Sound — Newton's Formula &amp; Laplace's Correction</h2></div>
+    <div class="sec-body">
+
+      <div class="defn"><strong>Newton's Formula:</strong> Newton assumed sound propagation in air is an <strong>isothermal</strong> process (constant temperature). He used Boyle's law: PV = constant → bulk modulus B = P</div>
+
+      <div class="formula-box">
+        <div class="formula">v = √(P/ρ)</div>
+        <div class="formula-label">Newton's formula for speed of sound | P = pressure, ρ = density</div>
+      </div>
+
+      <div class="warn"><strong>Limitation of Newton's Formula:</strong> At STP, v = √(101325/1.293) ≈ 280 m/s. But experimental value is 332 m/s. <strong>Error ≈ 16%</strong> — too low!</div>
+
+      <div class="defn"><strong>Laplace's Correction:</strong> Laplace argued sound propagation is an <strong>adiabatic</strong> process (no heat exchange — happens too fast). He replaced P with γP (γ = Cp/Cv).</div>
+
+      <div class="formula-box">
+        <div class="formula">v = √(γP/ρ)</div>
+        <div class="formula-label">Laplace's corrected formula | γ = 1.4 for air</div>
+      </div>
+
+      <div class="note">With Laplace: v = √(1.4 × 101325/1.293) ≈ <strong>332 m/s</strong> ✅ — matches experimental value!</div>
+
+      <div class="key-point"><strong>Factors affecting speed of sound:</strong>
+        <ul class="points">
+          <li><strong>Temperature:</strong> v ∝ √T (increases with temperature). v_T = v₀ + 0.61t (m/s per °C)</li>
+          <li><strong>Humidity:</strong> Moist air → lower density → higher speed (sound faster in humid air)</li>
+          <li><strong>Pressure:</strong> No effect at constant temperature (P/ρ = constant)</li>
+          <li><strong>Wind:</strong> Increases speed in direction of wind, decreases against wind</li>
+        </ul>
+      </div>
+
+      <div class="formula-box">
+        <div class="formula">v_T / v₀ = √(T/273)</div>
+        <div class="formula-label">Variation of speed with absolute temperature T</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8.5 Principle of Superposition -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">🌀</span><h2>8.5 Principle of Superposition of Waves</h2></div>
+    <div class="sec-body">
+
+      <div class="defn"><strong>Statement:</strong> When two or more waves travel simultaneously through the same medium, the resultant displacement of any particle at any instant is equal to the <strong>algebraic sum</strong> of the displacements due to individual waves.</div>
+
+      <div class="formula-box">
+        <div class="formula">y = y₁ + y₂ + y₃ + ...</div>
+        <div class="formula-label">Resultant displacement = sum of individual displacements</div>
+      </div>
+
+      <div class="key-point"><strong>Applications of Superposition:</strong>
+        <ul class="points">
+          <li><strong>Interference</strong> — constructive (loud) and destructive (silent)</li>
+          <li><strong>Beats</strong> — periodic loud and soft sounds</li>
+          <li><strong>Stationary waves</strong> — standing waves in strings and pipes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8.6 Beats -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">🥁</span><h2>8.6 Beats</h2></div>
+    <div class="sec-body">
+
+      <div class="defn"><strong>Beats:</strong> The periodic variation in intensity (loudness) of sound when two sound waves of slightly different frequencies are superimposed. The alternating loud and soft sounds are called <strong>beats</strong>.</div>
+
+      <div class="formula-box">
+        <div class="formula">Beat frequency = n₁ − n₂</div>
+        <div class="formula-label">Number of beats per second = difference in frequencies (n₁ &gt; n₂)</div>
+      </div>
+
+      <div class="key-point">
+        <ul class="points">
+          <li><strong>One beat</strong> = one loud + one soft sound</li>
+          <li>Beats are audible only if the frequency difference is <strong>less than about 10 Hz</strong></li>
+          <li><strong>Time between beats</strong> = 1/(n₁ − n₂) seconds</li>
+          <li>Application: Tuning musical instruments</li>
+        </ul>
+      </div>
+
+      <div class="note"><strong>Example:</strong> Tuning forks of 450 Hz and 454 Hz → Beat frequency = 454 − 450 = <strong>4 beats/second</strong>. Time between beats = 1/4 = <strong>0.25 s</strong>.</div>
+    </div>
+  </div>
+
+  <!-- 8.7 Doppler Effect -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">🚑</span><h2>8.7 Doppler Effect</h2></div>
+    <div class="sec-body">
+
+      <div class="defn"><strong>Doppler Effect:</strong> The apparent change in frequency (pitch) of sound heard by an observer due to relative motion between the <strong>source of sound</strong> and the <strong>observer</strong>.</div>
+
+      <div class="key-point"><strong>Key Rule:</strong>
+        <ul class="points">
+          <li>When source and observer move <strong>towards each other</strong> → apparent frequency <strong>increases</strong> (higher pitch)</li>
+          <li>When source and observer move <strong>away from each other</strong> → apparent frequency <strong>decreases</strong> (lower pitch)</li>
+        </ul>
+      </div>
+
+      <div style="margin-top:12px;">
+        <div class="defn"><strong>General Doppler Formula:</strong></div>
+        <div class="formula-box">
+          <div class="formula">n' = n × (v ± v_L) / (v ∓ v_S)</div>
+          <div class="formula-label">n' = apparent frequency | n = original frequency | v = speed of sound | v_L = speed of listener | v_S = speed of source</div>
+        </div>
+
+        <div class="warn"><strong>Sign Convention:</strong>
+          <ul class="points">
+            <li>Numerator: + if listener moves <strong>towards</strong> source; − if moves <strong>away</strong></li>
+            <li>Denominator: − if source moves <strong>towards</strong> listener; + if moves <strong>away</strong></li>
+          </ul>
+        </div>
+
+        <table class="compare" style="margin-top:12px;">
+          <tr><th>Situation</th><th>Formula</th></tr>
+          <tr><td>Source moves towards stationary listener</td><td class="formula" style="font-size:.8rem;">n' = n × v/(v − v_S)</td></tr>
+          <tr><td>Source moves away from stationary listener</td><td class="formula" style="font-size:.8rem;">n' = n × v/(v + v_S)</td></tr>
+          <tr><td>Listener moves towards stationary source</td><td class="formula" style="font-size:.8rem;">n' = n × (v + v_L)/v</td></tr>
+          <tr><td>Listener moves away from stationary source</td><td class="formula" style="font-size:.8rem;">n' = n × (v − v_L)/v</td></tr>
+          <tr><td>Both moving towards each other</td><td class="formula" style="font-size:.8rem;">n' = n × (v + v_L)/(v − v_S)</td></tr>
+          <tr><td>Both moving away from each other</td><td class="formula" style="font-size:.8rem;">n' = n × (v − v_L)/(v + v_S)</td></tr>
+        </table>
+
+        <div class="note"><strong>Applications:</strong> Radar, sonar, ultrasound (medical), police speed gun, astronomical measurements (redshift/blueshift).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8.8 Echo -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">🏔️</span><h2>8.8 Echo and Reverberation</h2></div>
+    <div class="sec-body">
+
+      <div class="defn"><strong>Echo:</strong> Repetition of sound due to reflection from a distant surface. For echo to be heard separately, the reflecting surface must be at least <strong>17 m away</strong> (at 20°C) so that the reflected sound reaches after 0.1 s (persistence of hearing).</div>
+
+      <div class="formula-box">
+        <div class="formula">d = v × t / 2</div>
+        <div class="formula-label">d = distance to reflecting surface | v = speed of sound | t = time to hear echo</div>
+      </div>
+
+      <div class="defn"><strong>Reverberation:</strong> Multiple reflections of sound that persist after the original sound has stopped. Causes prolonged sound in halls and large rooms.</div>
+
+      <div class="key-point">
+        <ul class="points">
+          <li>Echo requires minimum distance of <strong>17 m</strong></li>
+          <li>Persistence of hearing = <strong>0.1 second</strong></li>
+          <li>Reverberation is undesirable in concert halls — controlled by acoustic design (soft materials, curtains, carpets)</li>
+          <li>Application of echo: <strong>SONAR</strong> (sound navigation and ranging) — used in finding depth of sea, detecting submarines</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Revision -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">⚡</span><h2>Quick Revision — All Formulas</h2></div>
+    <div class="sec-body">
+      <table class="compare">
+        <tr><th>Formula</th><th>Meaning</th></tr>
+        <tr><td class="formula">v = nλ</td><td>Wave velocity = frequency × wavelength</td></tr>
+        <tr><td class="formula">n = 1/T</td><td>Frequency = 1/Period</td></tr>
+        <tr><td class="formula">v = √(γP/ρ)</td><td>Speed of sound (Laplace)</td></tr>
+        <tr><td class="formula">v_T = v₀√(T/273)</td><td>Speed at temperature T</td></tr>
+        <tr><td class="formula">Beat freq = n₁ − n₂</td><td>Beats per second</td></tr>
+        <tr><td class="formula">n' = n(v ± v_L)/(v ∓ v_S)</td><td>Doppler formula</td></tr>
+        <tr><td class="formula">d = vt/2</td><td>Echo — distance to reflector</td></tr>
+      </table>
+    </div>
+  </div>
+
+</div><!-- end notes panel -->
+
+<!-- ==================== DIAGRAMS TAB ==================== -->
+<div class="panel" id="tab-diagrams">
+
+  <!-- Diagram 1: Transverse Wave -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">📊</span><h2>Diagram 1 — Transverse Wave</h2></div>
+    <div class="sec-body">
+      <div class="diag-wrap">
+        <div class="diag-title">Transverse Wave — Crests and Troughs</div>
+        <svg viewBox="0 0 500 180" style="width:100%;max-width:500px;">
+          <!-- Axes -->
+          <line x1="20" y1="90" x2="480" y2="90" stroke="#475569" stroke-width="1.5"/>
+          <line x1="30" y1="20" x2="30" y2="160" stroke="#475569" stroke-width="1.5"/>
+          <!-- Wave -->
+          <path d="M30,90 Q80,20 130,90 Q180,160 230,90 Q280,20 330,90 Q380,160 430,90" fill="none" stroke="#7c3aed" stroke-width="3"/>
+          <!-- Labels -->
+          <text x="130" y="15" fill="#f59e0b" font-size="11" text-anchor="middle" font-weight="bold">CREST</text>
+          <line x1="130" y1="20" x2="130" y2="90" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4"/>
+          <text x="230" y="170" fill="#ef4444" font-size="11" text-anchor="middle" font-weight="bold">TROUGH</text>
+          <line x1="230" y1="160" x2="230" y2="90" stroke="#ef4444" stroke-width="1" stroke-dasharray="4"/>
+          <!-- Amplitude arrow -->
+          <line x1="80" y1="55" x2="80" y2="90" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arr)"/>
+          <text x="58" y="72" fill="#22c55e" font-size="10" font-weight="bold">A</text>
+          <!-- Wavelength arrow -->
+          <line x1="30" y1="145" x2="230" y2="145" stroke="#60a5fa" stroke-width="1.5"/>
+          <line x1="30" y1="140" x2="30" y2="150" stroke="#60a5fa" stroke-width="1.5"/>
+          <line x1="230" y1="140" x2="230" y2="150" stroke="#60a5fa" stroke-width="1.5"/>
+          <text x="130" y="158" fill="#60a5fa" font-size="11" text-anchor="middle" font-weight="bold">λ (Wavelength)</text>
+          <!-- Direction arrow -->
+          <text x="440" y="85" fill="#94a3b8" font-size="10">→ wave direction</text>
+          <!-- Y axis label -->
+          <text x="8" y="94" fill="#94a3b8" font-size="10" transform="rotate(-90,15,90)">displacement</text>
+          <!-- particle arrow -->
+          <text x="300" y="40" fill="#c4b5fd" font-size="10">↕ particle vibrates</text>
+          <text x="300" y="52" fill="#c4b5fd" font-size="10">⊥ to wave direction</text>
+          <defs>
+            <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+              <path d="M0,0 L6,3 L0,6 Z" fill="#22c55e"/>
+            </marker>
+          </defs>
+        </svg>
+      </div>
+      <div class="note">Particle vibrates <strong>perpendicular (⊥)</strong> to the direction of wave propagation. Crests = max positive displacement. Troughs = max negative displacement.</div>
+    </div>
+  </div>
+
+  <!-- Diagram 2: Longitudinal Wave -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">📊</span><h2>Diagram 2 — Longitudinal Wave (Sound)</h2></div>
+    <div class="sec-body">
+      <div class="diag-wrap">
+        <div class="diag-title">Longitudinal Wave — Compressions (C) and Rarefactions (R)</div>
+        <svg viewBox="0 0 500 140" style="width:100%;max-width:500px;">
+          <!-- Background strips -->
+          <rect x="30" y="40" width="60" height="60" fill="#312e81" opacity="0.8" rx="4"/>
+          <rect x="90" y="40" width="30" height="60" fill="#1e1b4b" opacity="0.4" rx="2"/>
+          <rect x="120" y="40" width="60" height="60" fill="#312e81" opacity="0.8" rx="4"/>
+          <rect x="180" y="40" width="30" height="60" fill="#1e1b4b" opacity="0.4" rx="2"/>
+          <rect x="210" y="40" width="60" height="60" fill="#312e81" opacity="0.8" rx="4"/>
+          <rect x="270" y="40" width="30" height="60" fill="#1e1b4b" opacity="0.4" rx="2"/>
+          <rect x="300" y="40" width="60" height="60" fill="#312e81" opacity="0.8" rx="4"/>
+          <rect x="360" y="40" width="30" height="60" fill="#1e1b4b" opacity="0.4" rx="2"/>
+          <rect x="390" y="40" width="60" height="60" fill="#312e81" opacity="0.8" rx="4"/>
+          <!-- Dots in C -->
+          <g fill="#7c3aed">
+            <circle cx="45" cy="58" r="3"/><circle cx="52" cy="68" r="3"/><circle cx="60" cy="58" r="3"/>
+            <circle cx="68" cy="68" r="3"/><circle cx="75" cy="58" r="3"/>
+            <circle cx="45" cy="78" r="3"/><circle cx="55" cy="88" r="3"/><circle cx="65" cy="78" r="3"/>
+            <circle cx="75" cy="88" r="3"/>
+          </g>
+          <g fill="#7c3aed">
+            <circle cx="135" cy="58" r="3"/><circle cx="145" cy="68" r="3"/><circle cx="155" cy="58" r="3"/>
+            <circle cx="165" cy="68" r="3"/><circle cx="170" cy="58" r="3"/>
+            <circle cx="135" cy="78" r="3"/><circle cx="148" cy="88" r="3"/><circle cx="160" cy="78" r="3"/>
+          </g>
+          <!-- Dots in R (sparse) -->
+          <g fill="#4c1d95" opacity="0.6">
+            <circle cx="102" cy="65" r="2.5"/><circle cx="112" cy="80" r="2.5"/>
+          </g>
+          <g fill="#4c1d95" opacity="0.6">
+            <circle cx="192" cy="65" r="2.5"/><circle cx="202" cy="80" r="2.5"/>
+          </g>
+          <!-- Labels -->
+          <text x="60" y="30" fill="#f59e0b" font-size="12" text-anchor="middle" font-weight="bold">C</text>
+          <text x="105" y="30" fill="#60a5fa" font-size="12" text-anchor="middle" font-weight="bold">R</text>
+          <text x="150" y="30" fill="#f59e0b" font-size="12" text-anchor="middle" font-weight="bold">C</text>
+          <text x="195" y="30" fill="#60a5fa" font-size="12" text-anchor="middle" font-weight="bold">R</text>
+          <text x="240" y="30" fill="#f59e0b" font-size="12" text-anchor="middle" font-weight="bold">C</text>
+          <!-- Direction -->
+          <text x="440" y="75" fill="#94a3b8" font-size="10">→ wave</text>
+          <text x="440" y="87" fill="#94a3b8" font-size="10">→ particles</text>
+          <!-- Legend -->
+          <rect x="30" y="115" width="12" height="12" fill="#312e81" rx="2"/>
+          <text x="46" y="125" fill="#f59e0b" font-size="10" font-weight="bold">C = Compression (high density)</text>
+          <rect x="230" y="115" width="12" height="12" fill="#1e1b4b" rx="2" opacity="0.5"/>
+          <text x="246" y="125" fill="#60a5fa" font-size="10" font-weight="bold">R = Rarefaction (low density)</text>
+        </svg>
+      </div>
+      <div class="note">Particle vibrates <strong>parallel (‖)</strong> to the direction of wave propagation. Sound is a longitudinal wave.</div>
+    </div>
+  </div>
+
+  <!-- Diagram 3: Beats -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">📊</span><h2>Diagram 3 — Formation of Beats</h2></div>
+    <div class="sec-body">
+      <div class="diag-wrap">
+        <div class="diag-title">Two waves of slightly different frequencies produce Beats</div>
+        <svg viewBox="0 0 500 220" style="width:100%;max-width:500px;">
+          <!-- Wave 1: n₁ -->
+          <text x="10" y="30" fill="#7dd3fc" font-size="10" font-weight="bold">Wave 1 (n₁)</text>
+          <path d="M30,45 Q52,25 74,45 Q96,65 118,45 Q140,25 162,45 Q184,65 206,45 Q228,25 250,45 Q272,65 294,45 Q316,25 338,45 Q360,65 382,45 Q404,25 426,45 Q448,65 470,45" fill="none" stroke="#7dd3fc" stroke-width="2"/>
+          <!-- Wave 2: n₂ (slightly different) -->
+          <text x="10" y="100" fill="#f9a8d4" font-size="10" font-weight="bold">Wave 2 (n₂)</text>
+          <path d="M30,115 Q55,95 83,115 Q111,135 139,115 Q167,95 195,115 Q223,135 251,115 Q279,95 307,115 Q335,135 363,115 Q391,95 419,115 Q447,135 470,115" fill="none" stroke="#f9a8d4" stroke-width="2"/>
+          <!-- Resultant: Beats -->
+          <text x="10" y="165" fill="#f59e0b" font-size="10" font-weight="bold">Resultant (Beats)</text>
+          <path d="M30,180 Q60,185 90,180 Q120,170 150,165 Q180,160 210,165 Q240,172 270,180 Q300,185 330,180 Q360,172 390,165 Q420,160 450,165 Q470,172 475,180" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+          <!-- Loud markers -->
+          <text x="148" y="155" fill="#ef4444" font-size="10" font-weight="bold">LOUD</text>
+          <line x1="155" y1="157" x2="155" y2="165" stroke="#ef4444" stroke-width="1.5"/>
+          <!-- Soft markers -->
+          <text x="88" y="175" fill="#22c55e" font-size="9">soft</text>
+          <text x="265" y="175" fill="#22c55e" font-size="9">soft</text>
+          <!-- Beat period -->
+          <line x1="30" y1="210" x2="275" y2="210" stroke="#f59e0b" stroke-width="1.5"/>
+          <line x1="30" y1="205" x2="30" y2="215" stroke="#f59e0b" stroke-width="1.5"/>
+          <line x1="275" y1="205" x2="275" y2="215" stroke="#f59e0b" stroke-width="1.5"/>
+          <text x="152" y="220" fill="#f59e0b" font-size="10" text-anchor="middle" font-weight="bold">T_beat = 1/(n₁−n₂)</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Diagram 4: Doppler Effect -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">📊</span><h2>Diagram 4 — Doppler Effect</h2></div>
+    <div class="sec-body">
+      <div class="diag-wrap">
+        <div class="diag-title">Doppler Effect — Moving Source (Ambulance)</div>
+        <svg viewBox="0 0 500 160" style="width:100%;max-width:500px;">
+          <!-- Road -->
+          <rect x="0" y="90" width="500" height="4" fill="#475569"/>
+          <!-- Ambulance (source) -->
+          <rect x="210" y="62" width="60" height="30" rx="5" fill="#ef4444"/>
+          <rect x="220" y="52" width="40" height="12" rx="3" fill="#dc2626"/>
+          <text x="240" y="78" fill="#fff" font-size="9" text-anchor="middle" font-weight="bold">🚑</text>
+          <!-- Motion arrow -->
+          <text x="240" y="48" fill="#f59e0b" font-size="10" text-anchor="middle">→ v_S</text>
+          <!-- Sound waves - compressed in front -->
+          <ellipse cx="260" cy="77" rx="20" ry="20" fill="none" stroke="#7dd3fc" stroke-width="1.5" stroke-dasharray="4"/>
+          <ellipse cx="265" cy="77" rx="30" ry="28" fill="none" stroke="#7dd3fc" stroke-width="1" stroke-dasharray="3"/>
+          <ellipse cx="270" cy="77" rx="40" ry="35" fill="none" stroke="#7dd3fc" stroke-width="1" stroke-dasharray="3" opacity="0.6"/>
+          <!-- Sound waves - expanded behind -->
+          <ellipse cx="225" cy="77" rx="20" ry="20" fill="none" stroke="#93c5fd" stroke-width="1.5" stroke-dasharray="4" opacity="0.7"/>
+          <ellipse cx="218" cy="77" rx="35" ry="28" fill="none" stroke="#93c5fd" stroke-width="1" stroke-dasharray="3" opacity="0.5"/>
+          <!-- Observers -->
+          <text x="430" y="88" font-size="20" text-anchor="middle">👤</text>
+          <text x="430" y="108" fill="#f59e0b" font-size="9" text-anchor="middle">Higher pitch</text>
+          <text x="430" y="118" fill="#f59e0b" font-size="9" text-anchor="middle">n' &gt; n</text>
+          <text x="60" y="88" font-size="20" text-anchor="middle">👤</text>
+          <text x="60" y="108" fill="#60a5fa" font-size="9" text-anchor="middle">Lower pitch</text>
+          <text x="60" y="118" fill="#60a5fa" font-size="9" text-anchor="middle">n' &lt; n</text>
+          <!-- Labels -->
+          <text x="310" y="45" fill="#7dd3fc" font-size="9">Compressed waves</text>
+          <text x="310" y="55" fill="#7dd3fc" font-size="9">(shorter λ, higher n')</text>
+          <text x="80" y="45" fill="#93c5fd" font-size="9">Stretched waves</text>
+          <text x="80" y="55" fill="#93c5fd" font-size="9">(longer λ, lower n')</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Diagram 5: Echo -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">📊</span><h2>Diagram 5 — Echo</h2></div>
+    <div class="sec-body">
+      <div class="diag-wrap">
+        <div class="diag-title">Echo — Sound reflects from a wall</div>
+        <svg viewBox="0 0 500 120" style="width:100%;max-width:500px;">
+          <!-- Person -->
+          <text x="60" y="75" font-size="28" text-anchor="middle">👤</text>
+          <text x="60" y="100" fill="#94a3b8" font-size="10" text-anchor="middle">Source</text>
+          <!-- Wall -->
+          <rect x="420" y="30" width="20" height="70" fill="#475569" rx="3"/>
+          <text x="430" y="115" fill="#94a3b8" font-size="9" text-anchor="middle">Wall</text>
+          <!-- Sound going -->
+          <path d="M80,65 Q200,55 410,65" fill="none" stroke="#f59e0b" stroke-width="2" marker-end="url(#arr2)"/>
+          <text x="240" y="52" fill="#f59e0b" font-size="10" text-anchor="middle" font-weight="bold">→ Sound goes (d)</text>
+          <!-- Echo coming back -->
+          <path d="M410,75 Q200,85 80,75" fill="none" stroke="#22c55e" stroke-width="2" marker-end="url(#arr3)"/>
+          <text x="240" y="96" fill="#22c55e" font-size="10" text-anchor="middle" font-weight="bold">← Echo returns (d)</text>
+          <!-- Distance label -->
+          <line x1="60" y1="20" x2="420" y2="20" stroke="#60a5fa" stroke-width="1.5"/>
+          <line x1="60" y1="15" x2="60" y2="25" stroke="#60a5fa" stroke-width="1.5"/>
+          <line x1="420" y1="15" x2="420" y2="25" stroke="#60a5fa" stroke-width="1.5"/>
+          <text x="240" y="15" fill="#60a5fa" font-size="10" text-anchor="middle" font-weight="bold">d = vt/2</text>
+          <defs>
+            <marker id="arr2" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#f59e0b"/></marker>
+            <marker id="arr3" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#22c55e"/></marker>
+          </defs>
+        </svg>
+      </div>
+      <div class="note"><strong>d = vt/2</strong> — Total distance = 2d (goes + returns), so d = vt/2. Minimum d = 17 m for echo to be heard separately.</div>
+    </div>
+  </div>
+
+</div><!-- end diagrams panel -->
+
+<!-- ==================== Q&A TAB ==================== -->
+<div class="panel" id="tab-qa">
+
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">❓</span><h2>Short &amp; Long Answer Questions</h2></div>
+    <div class="sec-body">
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">1. What type of wave is a sound wave? <span>▼</span></div>
+        <div class="qa-a">Sound is a <strong>mechanical longitudinal wave</strong>. It is mechanical because it requires a material medium for propagation. It is longitudinal because particles of the medium vibrate parallel to the direction of propagation of the wave.</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">2. Can sound travel in vacuum? Give reason. <span>▼</span></div>
+        <div class="qa-a"><strong>No, sound cannot travel in vacuum.</strong> Sound is a mechanical wave and requires a material medium (solid, liquid, or gas) for its propagation. In vacuum, there are no particles to vibrate and transmit the wave energy.</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">3. Distinguish between transverse and longitudinal waves. <span>▼</span></div>
+        <div class="qa-a">
+          <strong>Transverse wave:</strong> Particles vibrate perpendicular (⊥) to direction of propagation. Forms crests and troughs. Example: light waves, waves on string.<br/><br/>
+          <strong>Longitudinal wave:</strong> Particles vibrate parallel (‖) to direction of propagation. Forms compressions and rarefactions. Example: sound waves. Only longitudinal waves can travel through gases.
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">4. Explain Newton's formula for speed of sound. What is its limitation? <span>▼</span></div>
+        <div class="qa-a">
+          <strong>Newton's formula:</strong> v = √(P/ρ). Newton assumed sound travels isothermally (constant temperature) using Boyle's law, so bulk modulus = P.<br/>
+          At STP: v = √(101325/1.293) ≈ <strong>280 m/s</strong><br/><br/>
+          <strong>Limitation:</strong> Experimental value is <strong>332 m/s</strong>. Newton's formula gives a value about 16% lower than the actual value. This is because Newton's assumption of isothermal process is incorrect.
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">5. Explain Laplace's correction to Newton's formula. <span>▼</span></div>
+        <div class="qa-a">
+          Laplace argued that sound propagation is an <strong>adiabatic process</strong>, not isothermal. Sound travels very fast — there is no time for heat exchange with surroundings.<br/>
+          For adiabatic process: Bulk modulus = γP (where γ = Cp/Cv)<br/>
+          <strong>Laplace's formula: v = √(γP/ρ)</strong><br/>
+          For air: γ = 1.4, so v = √(1.4 × 101325/1.293) ≈ <strong>332 m/s ✅</strong> — matches experimental value!
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">6. State and explain the principle of superposition of waves. <span>▼</span></div>
+        <div class="qa-a">
+          <strong>Statement:</strong> When two or more waves travel simultaneously through the same medium, the resultant displacement of any particle at any instant is equal to the algebraic sum of the displacements due to individual waves.<br/>
+          <strong>y = y₁ + y₂ + y₃ + ...</strong><br/><br/>
+          <strong>Applications:</strong> Interference (constructive/destructive), Beats, Stationary waves.
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">7. What are beats? State the formula for beat frequency. <span>▼</span></div>
+        <div class="qa-a">
+          <strong>Beats:</strong> When two sound waves of slightly different frequencies travel in the same direction, the resultant wave shows periodic variation in amplitude (loudness). This periodic variation is called beats. One beat = one loud + one soft sound.<br/><br/>
+          <strong>Beat frequency = n₁ − n₂</strong> (where n₁ &gt; n₂)<br/>
+          Beats are audible only if frequency difference is less than 10 Hz.<br/>
+          <strong>Application:</strong> Tuning musical instruments.
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">8. Define Doppler effect. State its formula and applications. <span>▼</span></div>
+        <div class="qa-a">
+          <strong>Definition:</strong> The apparent change in frequency (pitch) of sound heard by an observer due to relative motion between the source and the observer is called the Doppler effect.<br/><br/>
+          <strong>Formula:</strong> n' = n × (v ± v_L)/(v ∓ v_S)<br/>
+          where: n' = apparent frequency, n = original frequency, v = speed of sound, v_L = speed of listener, v_S = speed of source.<br/><br/>
+          <strong>Applications:</strong> Radar, SONAR, ultrasound (medical imaging), speed guns (police), astronomical redshift/blueshift.
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">9. What are the factors affecting speed of sound in air? <span>▼</span></div>
+        <div class="qa-a">
+          <strong>1. Temperature:</strong> v ∝ √T — speed increases with temperature. For every 1°C rise, speed increases by 0.61 m/s.<br/>
+          <strong>2. Humidity:</strong> Moist air (water vapour) has lower density than dry air → speed is higher in humid air.<br/>
+          <strong>3. Pressure:</strong> No effect — when pressure increases, density also increases proportionally, keeping P/ρ constant.<br/>
+          <strong>4. Wind:</strong> Increases speed in the direction of wind, decreases speed against wind.
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">10. What is echo? What is reverberation? Give the condition for echo. <span>▼</span></div>
+        <div class="qa-a">
+          <strong>Echo:</strong> Repetition of sound due to reflection from a distant surface. The reflected sound must reach the listener at least 0.1 s after the original sound (persistence of hearing).<br/>
+          <strong>Condition for echo:</strong> Minimum distance of reflecting surface = <strong>17 m</strong> (at 20°C, v ≈ 340 m/s).<br/>
+          d = vt/2 = 340 × 0.1/2 = 17 m<br/><br/>
+          <strong>Reverberation:</strong> Persistence of sound in an enclosed space due to multiple reflections. Undesirable in concert halls — controlled by acoustic design using sound-absorbing materials.
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">11. Define: Amplitude, Wavelength, Frequency, Time Period. <span>▼</span></div>
+        <div class="qa-a">
+          <strong>Amplitude (A):</strong> Maximum displacement of a particle from its mean position. Unit: metre.<br/>
+          <strong>Wavelength (λ):</strong> Distance between two successive particles in the same phase. Unit: metre.<br/>
+          <strong>Frequency (n):</strong> Number of vibrations per second. Unit: Hz (hertz).<br/>
+          <strong>Time Period (T):</strong> Time for one complete vibration. Unit: second. T = 1/n.
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">12. What is meant by double periodicity of waves? <span>▼</span></div>
+        <div class="qa-a">
+          Wave motion is doubly periodic because it is periodic in both <strong>time</strong> and <strong>space</strong>:<br/>
+          <strong>Periodic in time:</strong> At every location, the wave motion repeats itself at equal intervals of time (period T).<br/>
+          <strong>Periodic in space:</strong> At any given instant, the form of the wave repeats at equal distances (wavelength λ).
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div><!-- end qa panel -->
+
+<!-- ==================== NUMERICALS TAB ==================== -->
+<div class="panel" id="tab-numericals">
+
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">🔢</span><h2>Solved Numericals (from Textbook)</h2></div>
+    <div class="sec-body">
+
+      <div class="num">
+        <div class="num-q">1. A certain sound wave in air has speed 340 m/s and wavelength 1.7 m. Calculate: (a) frequency (b) period.</div>
+        <div class="num-given">Given: v = 340 m/s, λ = 1.7 m</div>
+        <div class="num-sol">
+          (a) n = v/λ = 340/1.7 = 200 Hz<br/>
+          (b) T = 1/n = 1/200 = 0.005 s
+        </div>
+        <span class="num-ans">n = 200 Hz, T = 0.005 s</span>
+      </div>
+
+      <div class="num">
+        <div class="num-q">2. A tuning fork of frequency 170 Hz produces sound waves of wavelength 2 m. Calculate speed of sound.</div>
+        <div class="num-given">Given: n = 170 Hz, λ = 2 m</div>
+        <div class="num-sol">v = nλ = 170 × 2 = 340 m/s</div>
+        <span class="num-ans">v = 340 m/s</span>
+      </div>
+
+      <div class="num">
+        <div class="num-q">3. An echo-sounder in a fishing boat receives an echo from a shoal of fish 0.45 s after it was sent. If speed of sound in water is 1500 m/s, how deep is the shoal?</div>
+        <div class="num-given">Given: t = 0.45 s, v = 1500 m/s</div>
+        <div class="num-sol">
+          d = vt/2 = 1500 × 0.45 / 2<br/>
+          d = 675/2 = 337.5 m
+        </div>
+        <span class="num-ans">Depth = 337.5 m</span>
+      </div>
+
+      <div class="num">
+        <div class="num-q">4. A girl stands 170 m away from a high wall and claps at steady rate so each clap coincides with the echo. If she makes 60 claps in 1 minute: (a) speed of sound? (b) If she makes 45 claps/min at new position, find new distance.</div>
+        <div class="num-given">
+          (a) Distance d = 170 m, 60 claps in 60 s → time between claps = 60/60 = 1 s<br/>
+          (b) 45 claps in 60 s → time between claps = 60/45 = 4/3 s
+        </div>
+        <div class="num-sol">
+          (a) Total distance = 2d = 2 × 170 = 340 m in 1 s<br/>
+          v = 340/1 = 340 m/s<br/>
+          (b) d₂ = v × t/2 = 340 × (4/3)/2 = 340 × 2/3 = 226.67 ≈ 255 m
+        </div>
+        <span class="num-ans">(a) v = 340 m/s &nbsp;|&nbsp; (b) d = 255 m</span>
+      </div>
+
+      <div class="num">
+        <div class="num-q">5. Sound wave A has period 0.015 s, sound wave B has period 0.025 s. Which has greater frequency?</div>
+        <div class="num-given">Given: T_A = 0.015 s, T_B = 0.025 s</div>
+        <div class="num-sol">
+          n_A = 1/T_A = 1/0.015 = 66.67 Hz<br/>
+          n_B = 1/T_B = 1/0.025 = 40 Hz<br/>
+          Since n_A > n_B → Wave A has greater frequency
+        </div>
+        <span class="num-ans">Wave A has greater frequency</span>
+      </div>
+
+      <div class="num">
+        <div class="num-q">6. At what temperature will the speed of sound in air be 1.75 times its speed at NTP?</div>
+        <div class="num-given">Given: v_T = 1.75 v₀, T₀ = 273 K</div>
+        <div class="num-sol">
+          v_T/v₀ = √(T/T₀)<br/>
+          1.75 = √(T/273)<br/>
+          (1.75)² = T/273<br/>
+          3.0625 = T/273<br/>
+          T = 3.0625 × 273 = 836.06 K<br/>
+          t = 836.06 − 273 = 563.06°C
+        </div>
+        <span class="num-ans">T = 836.06 K = 563.06°C</span>
+      </div>
+
+      <div class="num">
+        <div class="num-q">7. A man standing between 2 parallel cliffs fires a gun. He hears two echoes: one after 3 s and other after 5 s. The separation between cliffs is 1360 m. Find speed of sound.</div>
+        <div class="num-given">Given: t₁ = 3 s, t₂ = 5 s, total separation = 1360 m<br/>Let man be at distance d₁ from cliff 1, d₂ from cliff 2.</div>
+        <div class="num-sol">
+          d₁ = v × t₁/2 = v × 3/2 = 1.5v<br/>
+          d₂ = v × t₂/2 = v × 5/2 = 2.5v<br/>
+          d₁ + d₂ = 1360<br/>
+          1.5v + 2.5v = 1360<br/>
+          4v = 1360<br/>
+          v = 340 m/s
+        </div>
+        <span class="num-ans">v = 340 m/s</span>
+      </div>
+
+      <div class="num">
+        <div class="num-q">8. A police car travels towards a stationary observer at 15 m/s. Siren emits 250 Hz. Speed of sound = 340 m/s. Calculate recorded frequency.</div>
+        <div class="num-given">Given: n = 250 Hz, v_S = 15 m/s, v_L = 0, v = 340 m/s. Source moving towards listener.</div>
+        <div class="num-sol">
+          n' = n × v/(v − v_S)<br/>
+          n' = 250 × 340/(340 − 15)<br/>
+          n' = 250 × 340/325<br/>
+          n' = 85000/325 = 261.54 Hz
+        </div>
+        <span class="num-ans">n' = 261.54 Hz</span>
+      </div>
+
+      <div class="num">
+        <div class="num-q">9. Ambulance siren: 1500 Hz, v = 340 m/s, ambulance speed = 30 m/s. Find difference in frequencies when ambulance moves towards and away from a stationary observer.</div>
+        <div class="num-given">Given: n = 1500 Hz, v = 340 m/s, v_S = 30 m/s, v_L = 0</div>
+        <div class="num-sol">
+          When approaching: n₁' = 1500 × 340/(340 − 30) = 1500 × 340/310 = 1645.16 Hz<br/>
+          When receding: n₂' = 1500 × 340/(340 + 30) = 1500 × 340/370 = 1378.38 Hz<br/>
+          Difference = 1645.16 − 1378.38 = 266.78 Hz
+        </div>
+        <span class="num-ans">Δn = 266.79 Hz</span>
+      </div>
+
+    </div>
+  </div>
+</div><!-- end numericals panel -->
+
+<script>
+function showTab(id, el){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  el.classList.add('active');
+}
+function toggleQA(el){
+  const ans = el.nextElementSibling;
+  const icon = el.querySelector('span');
+  const isOpen = ans.classList.contains('open');
+  ans.classList.toggle('open', !isOpen);
+  icon.textContent = isOpen ? '▼' : '▲';
+}
+</script>
+</body>
+</html>
