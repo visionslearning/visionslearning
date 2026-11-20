@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Class 11 Physics — Optics Test (20 Marks) | Visions Classes</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',sans-serif;background:#0f172a;color:#e2e8f0;min-height:100vh;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#0a1628,#1a237e,#4a148c);padding:22px 16px 16px;text-align:center;border-bottom:3px solid #f59e0b;}
+.chip{display:inline-block;background:#f59e0b;color:#1a0a00;font-size:.68rem;font-weight:900;padding:4px 14px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
+.hero h1{font-size:1.35rem;font-weight:900;color:#fff;margin-bottom:4px;}
+.hero p{font-size:.82rem;color:#c4b5fd;margin-bottom:10px;}
+.hero-meta{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;}
+.hero-meta span{background:rgba(255,255,255,.12);color:#e2e8f0;font-size:.72rem;font-weight:800;padding:4px 12px;border-radius:12px;}
+.back-btn{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);color:#c4b5fd;padding:7px 14px;border-radius:8px;text-decoration:none;font-size:.78rem;font-weight:700;margin-bottom:10px;}
+
+/* INSTRUCTIONS */
+.instr{background:#1e293b;border:1px solid #f59e0b;border-radius:12px;padding:14px 18px;margin:12px auto;max-width:820px;}
+.instr h3{color:#f59e0b;font-size:.88rem;font-weight:900;margin-bottom:8px;}
+.instr ul{padding-left:18px;}
+.instr li{font-size:.83rem;color:#cbd5e1;margin-bottom:3px;line-height:1.6;}
+
+/* WRAP */
+.wrap{max-width:820px;margin:0 auto;padding:10px 14px 60px;}
+
+/* SECTION HEADER */
+.sec-hd{background:linear-gradient(135deg,#4a148c,#1565c0);color:#fff;padding:11px 16px;border-radius:10px;margin:18px 0 10px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;}
+.sec-hd h2{font-size:.9rem;font-weight:900;}
+.mbadge{background:#f59e0b;color:#1a0a00;font-size:.72rem;font-weight:900;padding:3px 12px;border-radius:10px;}
+.anote{font-size:.72rem;color:#a5b4fc;padding:5px 12px;background:#1e293b;border-radius:8px;border-left:3px solid #7c3aed;margin-bottom:10px;}
+
+/* QUESTION CARDS */
+.qcard{background:#1e293b;border-radius:12px;margin-bottom:10px;overflow:hidden;border:1px solid #334155;}
+.qhead{padding:13px 15px;cursor:pointer;display:flex;align-items:flex-start;gap:10px;}
+.qhead:hover{background:#263447;}
+.qno{font-size:.85rem;font-weight:900;color:#a78bfa;min-width:40px;flex-shrink:0;}
+.qtags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:4px;}
+.ttag{font-size:.63rem;font-weight:800;padding:2px 7px;border-radius:5px;background:#1e1b4b;color:#a5b4fc;}
+.mtag{font-size:.63rem;font-weight:800;padding:2px 7px;border-radius:5px;background:#374151;color:#d1d5db;}
+.qtext{font-size:.87rem;color:#e2e8f0;line-height:1.55;flex:1;}
+.tog-ic{font-size:.78rem;color:#a78bfa;margin-left:auto;padding-left:8px;white-space:nowrap;flex-shrink:0;}
+
+.qans{display:none;padding:13px 15px;background:#0f172a;border-top:1px solid #334155;}
+.qans.open{display:block;}
+.alabel{font-size:.68rem;font-weight:800;color:#34d399;text-transform:uppercase;letter-spacing:1px;margin-bottom:7px;}
+.atext{font-size:.84rem;color:#cbd5e1;line-height:1.7;}
+.atext strong{color:#93c5fd;}
+.atext ul{padding-left:17px;margin:5px 0;}
+.atext li{margin-bottom:4px;}
+.eq{background:#0d1b2e;border-left:3px solid #7c3aed;border-radius:5px;font-family:monospace;font-size:.85rem;color:#c4b5fd;padding:7px 12px;margin:5px 0;}
+.step{display:block;font-family:monospace;font-size:.82rem;color:#93c5fd;padding:4px 10px;background:#0d1b2e;border-radius:5px;margin:3px 0;}
+.numbox{background:linear-gradient(135deg,#0d1b2e,#1a237e);border-radius:8px;padding:12px 14px;margin-top:7px;}
+.given{background:rgba(255,255,255,.06);border-radius:5px;padding:7px 10px;font-family:monospace;font-size:.82rem;color:#7dd3fc;line-height:1.9;margin:5px 0;}
+.sol{font-family:monospace;font-size:.82rem;color:#fde68a;line-height:2;padding:5px 10px;border-left:3px solid #f59e0b;margin:4px 0;background:rgba(245,158,11,.08);border-radius:0 5px 5px 0;}
+.result{display:inline-block;background:#f59e0b;color:#1a0a00;border-radius:5px;padding:4px 14px;font-size:.87rem;font-weight:900;margin-top:5px;}
+.mcq-opts{list-style:none;padding:0;margin:5px 0;}
+.mcq-opts li{padding:5px 10px;border-radius:6px;margin-bottom:3px;font-size:.83rem;border:1px solid #334155;}
+.mcq-opts li.ok{background:#14532d;color:#86efac;font-weight:700;border-color:#22c55e;}
+.mcq-opts li.ok::before{content:"✓ ";}
+
+/* SCORE CARD */
+.score-card{background:linear-gradient(135deg,#1e1b4b,#1a237e);border-radius:14px;padding:18px;margin:20px 0;text-align:center;border:1px solid #4c1d95;}
+.score-card h3{font-size:1rem;font-weight:900;color:#f59e0b;margin-bottom:10px;}
+.score-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-top:10px;}
+.score-item{background:rgba(255,255,255,.08);border-radius:8px;padding:10px;}
+.score-num{font-size:1.4rem;font-weight:900;color:#fff;}
+.score-lbl{font-size:.68rem;color:#a5b4fc;text-transform:uppercase;letter-spacing:.5px;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <a href="notes-class11.html" class="back-btn">← Class 11 Notes</a>
+  <div class="chip">Class 11 · Physics · Chapter 9</div>
+  <h1>🔭 Optics — Class Test</h1>
+  <p>Ray Optics · Mirrors · Refraction · TIR · Lenses · Prism</p>
+  <div class="hero-meta">
+    <span>📋 Total: 20 Marks</span>
+    <span>⏱ Time: 45 Minutes</span>
+    <span>✅ With Answers</span>
+    <span>📖 Chapter 9</span>
+  </div>
+</div>
+
+<div class="instr">
+  <h3>📌 Instructions</h3>
+  <ul>
+    <li><strong>Q.1:</strong> 4 MCQs × 1 Mark = 4 Marks (All compulsory)</li>
+    <li><strong>Q.2:</strong> 4 Very Short Answer × 1 Mark = 4 Marks (All compulsory)</li>
+    <li><strong>Q.3:</strong> Short Answer 2M — Attempt any <strong>2</strong> from 3 = 4 Marks</li>
+    <li><strong>Q.4:</strong> Short Answer 3M — Attempt any <strong>2</strong> from 3 = 6 Marks</li>
+    <li><strong>Q.5:</strong> Long Answer 2M (Numerical) — Attempt <strong>1</strong> = 2 Marks</li>
+    <li>Figures to right indicate full marks. Neat diagrams carry marks.</li>
+    <li>Click any question to reveal the answer.</li>
+  </ul>
+</div>
+
+<div class="score-card">
+  <h3>📊 Marks Distribution</h3>
+  <div class="score-grid">
+    <div class="score-item"><div class="score-num">4</div><div class="score-lbl">MCQ (Q.1)</div></div>
+    <div class="score-item"><div class="score-num">4</div><div class="score-lbl">Very Short (Q.2)</div></div>
+    <div class="score-item"><div class="score-num">4</div><div class="score-lbl">Short 2M (Q.3)</div></div>
+    <div class="score-item"><div class="score-num">6</div><div class="score-lbl">Short 3M (Q.4)</div></div>
+    <div class="score-item"><div class="score-num">2</div><div class="score-lbl">Numerical (Q.5)</div></div>
+    <div class="score-item"><div class="score-num" style="color:#f59e0b;">20</div><div class="score-lbl">Total</div></div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- ═══════ Q.1 MCQ ═══════ -->
+<div class="sec-hd">
+  <h2>📝 Q.1 — Select the correct answer</h2>
+  <span class="mbadge">4 Marks (1M each)</span>
+</div>
+
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">(i)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ttag">Mirrors</span><span class="mtag">1M</span></div>
+      <div class="qtext">Which mirror is used as a rear-view mirror in vehicles and why?</div>
+    </div>
+    <span class="tog-ic">▼ Ans</span>
+  </div>
+  <div class="qans">
+    <div class="alabel">✅ Answer</div>
+    <div class="atext">
+      <ul class="mcq-opts">
+        <li>(a) Concave mirror — converges light</li>
+        <li class="ok">(b) Convex mirror — gives wider field of view</li>
+        <li>(c) Plane mirror — gives exact image</li>
+        <li>(d) Concave mirror — forms enlarged image</li>
+      </ul>
+      <strong>Reason:</strong> Convex mirror always forms a virtual, erect, diminished image and provides a <strong>wider field of view</strong>, so the driver can see more area behind the vehicle.
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">(ii)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ttag">Refraction</span><span class="mtag">1M</span></div>
+      <div class="qtext">The critical angle for glass-air interface is 42°. What is the refractive index of glass?</div>
+    </div>
+    <span class="tog-ic">▼ Ans</span>
+  </div>
+  <div class="qans">
+    <div class="alabel">✅ Answer</div>
+    <div class="atext">
+      <ul class="mcq-opts">
+        <li>(a) 1.33</li>
+        <li class="ok">(b) 1.49</li>
+        <li>(c) 1.60</li>
+        <li>(d) 2.00</li>
+      </ul>
+      <div class="eq">sin θ_c = 1/n  →  n = 1/sin 42° = 1/0.669 ≈ 1.49</div>
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">(iii)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ttag">Lenses</span><span class="mtag">1M</span></div>
+      <div class="qtext">The power of a convex lens is +2 D and a concave lens is −1 D. What is the power of the combination?</div>
+    </div>
+    <span class="tog-ic">▼ Ans</span>
+  </div>
+  <div class="qans">
+    <div class="alabel">✅ Answer</div>
+    <div class="atext">
+      <ul class="mcq-opts">
+        <li class="ok">(a) +1 D</li>
+        <li>(b) −1 D</li>
+        <li>(c) +3 D</li>
+        <li>(d) 2 D</li>
+      </ul>
+      <div class="eq">P = P₁ + P₂ = +2 + (−1) = +1 D</div>
+      Combined power = algebraic sum of individual powers. Positive result → converging combination.
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">(iv)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ttag">TIR</span><span class="mtag">1M</span></div>
+      <div class="qtext">Total internal reflection occurs when light travels from ______.</div>
+    </div>
+    <span class="tog-ic">▼ Ans</span>
+  </div>
+  <div class="qans">
+    <div class="alabel">✅ Answer</div>
+    <div class="atext">
+      <ul class="mcq-opts">
+        <li>(a) rarer to denser medium at any angle</li>
+        <li>(b) denser to rarer medium at any angle</li>
+        <li>(c) rarer to denser at angle greater than critical angle</li>
+        <li class="ok">(d) denser to rarer medium at angle greater than critical angle</li>
+      </ul>
+      <strong>Two conditions for TIR:</strong>
+      <ul>
+        <li>Light must go from <strong>denser → rarer</strong> medium</li>
+        <li>Angle of incidence must be <strong>greater than critical angle</strong> (i &gt; θ_c)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ Q.2 VERY SHORT ═══════ -->
+<div class="sec-hd">
+  <h2>📋 Q.2 — Answer the following (1M each)</h2>
+  <span class="mbadge">4 Marks</span>
+</div>
+
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">(i)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ttag">Mirrors</span><span class="mtag">1M</span></div>
+      <div class="qtext">Write the mirror formula.</div>
+    </div>
+    <span class="tog-ic">▼ Ans</span>
+  </div>
+  <div class="qans">
+    <div class="alabel">✅ Answer</div>
+    <div class="atext">
+      <div class="eq">1/f = 1/v + 1/u</div>
+      where f = focal length, v = image distance, u = object distance (all measured from pole P of mirror).
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">(ii)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ttag">TIR</span><span class="mtag">1M</span></div>
+      <div class="qtext">State any two applications of total internal reflection.</div>
+    </div>
+    <span class="tog-ic">▼ Ans</span>
+  </div>
+  <div class="qans">
+    <div class="alabel">✅ Answer</div>
+    <div class="atext">
+      <ul>
+        <li><strong>Optical fibre:</strong> Light undergoes repeated TIR inside a thin glass fibre. Used in internet cables, endoscopy, and communication.</li>
+        <li><strong>Diamond brilliance:</strong> High refractive index (n ≈ 2.42) gives very small critical angle (≈ 24°). Light undergoes multiple TIR inside the diamond before emerging — produces brilliant sparkle.</li>
+      </ul>
+      Other applications: mirage, prism as reflector, periscope.
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">(iii)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ttag">Lenses</span><span class="mtag">1M</span></div>
+      <div class="qtext">Define power of a lens. Write its SI unit.</div>
+    </div>
+    <span class="tog-ic">▼ Ans</span>
+  </div>
+  <div class="qans">
+    <div class="alabel">✅ Answer</div>
+    <div class="atext">
+      <strong>Power of a lens:</strong> The ability of a lens to converge or diverge a beam of light. It is defined as the reciprocal of the focal length in metres.
+      <div class="eq">P = 1/f (metres)</div>
+      <strong>SI unit:</strong> Dioptre (D). 1 D = 1 m⁻¹<br/>
+      Convex lens: P is positive. Concave lens: P is negative.
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">(iv)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ttag">Prism</span><span class="mtag">1M</span></div>
+      <div class="qtext">What is angle of deviation in a prism?</div>
+    </div>
+    <span class="tog-ic">▼ Ans</span>
+  </div>
+  <div class="qans">
+    <div class="alabel">✅ Answer</div>
+    <div class="atext">
+      <strong>Angle of deviation (d):</strong> The angle between the original direction of the incident ray and the direction of the emergent ray after passing through the prism.
+      <div class="eq">d = i + e − A</div>
+      where i = angle of incidence, e = angle of emergence, A = angle of prism (apex angle).
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ Q.3 SHORT 2M ═══════ -->
+<div class="sec-hd">
+  <h2>📝 Q.3 — Short Answer I (2M each)</h2>
+  <span class="mbadge">4 Marks</span>
+</div>
+<div class="anote">📌 Attempt any TWO of the following three questions.</div>
+
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">(A)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ttag">Refraction</span><span class="mtag">2M</span></div>
+      <div class="qtext">State Snell's law of refraction. A ray of light passes from air into glass (n = 1.5) at an angle of incidence of 30°. Find the angle of refraction.</div>
+    </div>
+    <span class="tog-ic">▼ Ans</span>
+  </div>
+  <div class="qans">
+    <div class="alabel">✅ Answer (2M)</div>
+    <div class="atext">
+      <strong>Snell's Law:</strong> The ratio of the sine of the angle of incidence to the sine of the angle of refraction is constant for a given pair of media and is equal to the refractive index.
+      <div class="eq">n₁ sin i = n₂ sin r  &nbsp;→&nbsp;  sin i / sin r = n₂/n₁ = n</div>
+      <div class="numbox">
+        <div class="given">n₁ = 1 (air), n₂ = 1.5 (glass), i = 30°</div>
+        <div class="sol">
+          n₁ sin i = n₂ sin r<br/>
+          1 × sin 30° = 1.5 × sin r<br/>
+          0.5 = 1.5 × sin r<br/>
+          sin r = 0.5/1.5 = 0.333<br/>
+          r = sin⁻¹(0.333) ≈ 19.47°
+        </div>
+        <span class="result">Angle of refraction ≈ 19.5°</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">(B)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ttag">Mirrors</span><span class="mtag">2M</span></div>
+      <div class="qtext">Distinguish between a concave mirror and a convex mirror. (Any two points each)</div>
+    </div>
+    <span class="tog-ic">▼ Ans</span>
+  </div>
+  <div class="qans">
+    <div class="alabel">✅ Answer (2M)</div>
+    <div class="atext">
+      <table style="width:100%;border-collapse:collapse;font-size:.82rem;margin-top:6px;">
+        <tr style="background:#1a237e;">
+          <th style="padding:7px 10px;text-align:left;color:#fff;">Property</th>
+          <th style="padding:7px 10px;text-align:left;color:#f59e0b;">Concave Mirror</th>
+          <th style="padding:7px 10px;text-align:left;color:#86efac;">Convex Mirror</th>
+        </tr>
+        <tr style="border-bottom:1px solid #334155;">
+          <td style="padding:7px 10px;">Nature</td>
+          <td style="padding:7px 10px;color:#f9a8d4;">Converging</td>
+          <td style="padding:7px 10px;color:#86efac;">Diverging</td>
+        </tr>
+        <tr style="background:#1a2240;border-bottom:1px solid #334155;">
+          <td style="padding:7px 10px;">Focus</td>
+          <td style="padding:7px 10px;color:#f9a8d4;">Real (in front)</td>
+          <td style="padding:7px 10px;color:#86efac;">Virtual (behind)</td>
+        </tr>
+        <tr style="border-bottom:1px solid #334155;">
+          <td style="padding:7px 10px;">Image type</td>
+          <td style="padding:7px 10px;color:#f9a8d4;">Real or virtual depending on position</td>
+          <td style="padding:7px 10px;color:#86efac;">Always virtual, erect, diminished</td>
+        </tr>
+        <tr style="background:#1a2240;">
+          <td style="padding:7px 10px;">Uses</td>
+          <td style="padding:7px 10px;color:#f9a8d4;">Shaving mirror, headlights, solar furnace</td>
+          <td style="padding:7px 10px;color:#86efac;">Rear-view mirror, security mirror</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">(C)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ttag">TIR</span><span class="mtag">2M</span></div>
+      <div class="qtext">What is total internal reflection? State the conditions for it to occur. Give one application.</div>
+    </div>
+    <span class="tog-ic">▼ Ans</span>
+  </div>
+  <div class="qans">
+    <div class="alabel">✅ Answer (2M)</div>
+    <div class="atext">
+      <strong>Total Internal Reflection (TIR):</strong> When light travels from a denser medium to a rarer medium and the angle of incidence exceeds the critical angle, the light is completely reflected back into the denser medium. This is TIR.<br/><br/>
+      <strong>Conditions:</strong>
+      <ul>
+        <li>Light must travel from <strong>denser → rarer</strong> medium (e.g., glass to air)</li>
+        <li>Angle of incidence must be <strong>greater than critical angle</strong> (i &gt; θ_c)</li>
+      </ul>
+      <strong>Critical angle:</strong>
+      <div class="eq">sin θ_c = n₂/n₁ = 1/n &nbsp;(for glass-air)</div>
+      <strong>Application — Optical Fibre:</strong> Light enters one end of a thin glass fibre and undergoes repeated TIR along the length of the fibre without escaping. Used in internet cables, medical endoscopy, and communication systems.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ Q.4 SHORT 3M ═══════ -->
+<div class="sec-hd">
+  <h2>📋 Q.4 — Short Answer II (3M each)</h2>
+  <span class="mbadge">6 Marks</span>
+</div>
+<div class="anote">📌 Attempt any TWO of the following three questions.</div>
+
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">(A)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ttag">Lenses</span><span class="mtag">3M</span></div>
+      <div class="qtext">State the Lens Maker's formula. A convex lens (n = 1.5) has radii of curvature R₁ = 20 cm and R₂ = −20 cm. Find its focal length and power.</div>
+    </div>
+    <span class="tog-ic">▼ Ans</span>
+  </div>
+  <div class="qans">
+    <div class="alabel">✅ Answer (3M)</div>
+    <div class="atext">
+      <strong>Lens Maker's Formula:</strong> Relates focal length of a lens to its refractive index and radii of curvature.
+      <div class="eq">1/f = (n − 1) [1/R₁ − 1/R₂]</div>
+      where n = refractive index of lens material, R₁ = radius of curvature of first surface, R₂ = radius of second surface.<br/><br/>
+      <div class="numbox">
+        <div class="given">n = 1.5, R₁ = +20 cm = +0.20 m, R₂ = −20 cm = −0.20 m</div>
+        <div class="sol">
+          1/f = (1.5 − 1) × [1/0.20 − 1/(−0.20)]<br/>
+          1/f = 0.5 × [5 + 5]<br/>
+          1/f = 0.5 × 10 = 5 m⁻¹<br/>
+          f = 1/5 = 0.20 m = 20 cm<br/>
+          P = 1/f = 1/0.20 = +5 D
+        </div>
+        <span class="result">f = 20 cm | P = +5 D (converging)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">(B)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ttag">Prism</span><span class="mtag">3M</span></div>
+      <div class="qtext">Derive the formula for the refractive index of a prism in terms of angle of prism A and minimum deviation D_m.</div>
+    </div>
+    <span class="tog-ic">▼ Ans</span>
+  </div>
+  <div class="qans">
+    <div class="alabel">✅ Answer (3M)</div>
+    <div class="atext">
+      <strong>Prism:</strong> Triangular transparent medium of apex angle A.<br/>
+      <strong>At minimum deviation D_m:</strong> The ray passes symmetrically through the prism, i.e., angle of incidence = angle of emergence (i = e) and angle of refraction at both surfaces is equal (r₁ = r₂ = r).<br/><br/>
+      From geometry of prism: A = r₁ + r₂ = 2r
+      <span class="step">r = A/2  ...(1)</span>
+      Total deviation: d = i + e − A = 2i − A (at minimum deviation, i = e)
+      <span class="step">D_m = 2i − A  →  i = (A + D_m)/2  ...(2)</span>
+      Applying Snell's law at first surface (n₁ = 1 for air):
+      <span class="step">sin i = n sin r</span>
+      Substituting (1) and (2):
+      <div class="eq">n = sin i / sin r = sin[(A + D_m)/2] / sin(A/2)</div>
+      This is the standard formula for refractive index of a prism.
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">(C)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ttag">Mirrors</span><span class="mtag">3M</span></div>
+      <div class="qtext">Derive the mirror formula 1/f = 1/v + 1/u for a concave mirror.</div>
+    </div>
+    <span class="tog-ic">▼ Ans</span>
+  </div>
+  <div class="qans">
+    <div class="alabel">✅ Answer (3M)</div>
+    <div class="atext">
+      <strong>Setup:</strong> Object AB is placed in front of a concave mirror at distance u from pole P. Image A'B' is formed at distance v. F is principal focus, C is centre of curvature, f is focal length.<br/><br/>
+      <strong>Using similar triangles:</strong><br/>
+      Ray 1: From B parallel to principal axis → reflects through F.<br/>
+      Ray 2: From B through C → reflects back on same path.<br/>
+      By similar triangles ABP and A'B'P:
+      <span class="step">A'B'/AB = PA'/PA = v/u  ...(1)</span>
+      By similar triangles FED and FA'B' (where D is on mirror near P):
+      <span class="step">A'B'/ED = FA'/FD;  Since ED = AB and FD ≈ FP = f:</span>
+      <span class="step">A'B'/AB = (v − f)/f  ...(2)</span>
+      From (1) and (2):
+      <span class="step">v/u = (v − f)/f</span>
+      <span class="step">vf = u(v − f) = uv − uf</span>
+      <span class="step">vf + uf = uv</span>
+      Dividing throughout by uvf:
+      <div class="eq">1/u + 1/v = 1/f   ✓   i.e.   1/f = 1/v + 1/u</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ Q.5 NUMERICAL ═══════ -->
+<div class="sec-hd">
+  <h2>🔢 Q.5 — Solve (Numerical)</h2>
+  <span class="mbadge">2 Marks</span>
+</div>
+<div class="anote">📌 Attempt this question (compulsory).</div>
+
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.5</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ttag">Mirrors</span><span class="ttag">Lenses</span><span class="mtag">2M</span></div>
+      <div class="qtext">An object is placed 30 cm in front of a concave mirror of focal length 10 cm. Find the position and nature of the image. Also find the magnification.</div>
+    </div>
+    <span class="tog-ic">▼ Ans</span>
+  </div>
+  <div class="qans">
+    <div class="alabel">✅ Answer (2M)</div>
+    <div class="atext">
+      <div class="numbox">
+        <div class="given">
+          u = −30 cm (object in front of mirror → negative)<br/>
+          f = −10 cm (concave mirror → negative focal length)<br/>
+          Find: v = ? and m = ?
+        </div>
+        <div class="sol">
+          Using mirror formula: 1/f = 1/v + 1/u<br/>
+          1/(−10) = 1/v + 1/(−30)<br/>
+          1/v = 1/(−10) + 1/30<br/>
+          1/v = −3/30 + 1/30 = −2/30<br/>
+          v = −15 cm<br/>
+          <br/>
+          Magnification: m = −v/u = −(−15)/(−30) = −15/30 = −0.5
+        </div>
+        <span class="result">v = −15 cm (real, in front of mirror) | m = −0.5 (inverted, diminished)</span>
+      </div>
+      <strong>Nature of image:</strong> Real, inverted, diminished (|m| &lt; 1), formed 15 cm in front of the concave mirror.
+    </div>
+  </div>
+</div>
+
+</div><!-- end wrap -->
+
+<script>
+function tog(head){
+  const ans = head.nextElementSibling;
+  const ic = head.querySelector('.tog-ic');
+  const isOpen = ans.classList.contains('open');
+  ans.classList.toggle('open', !isOpen);
+  ic.textContent = isOpen ? '▼ Ans' : '▲ Hide';
+}
+</script>
+</body>
+</html>
