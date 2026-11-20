@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Class 12 Physics — Ch1 & Ch7 Practice Paper 70M | Visions Classes</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',sans-serif;background:#0f172a;color:#e2e8f0;min-height:100vh;}
+
+.hero{background:linear-gradient(135deg,#0a1628,#0d47a1,#1a237e);padding:24px 16px 18px;text-align:center;border-bottom:3px solid #f59e0b;}
+.hero .chip{display:inline-block;background:#f59e0b;color:#1a0a00;font-size:.68rem;font-weight:900;padding:4px 14px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;}
+.hero h1{font-size:1.4rem;font-weight:900;color:#fff;margin-bottom:5px;}
+.hero p{font-size:.82rem;color:#90caf9;margin-bottom:10px;}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:8px;}
+.hero-meta span{background:rgba(255,255,255,.12);color:#e2e8f0;font-size:.72rem;font-weight:800;padding:4px 12px;border-radius:12px;}
+.back-btn{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);color:#90caf9;padding:7px 14px;border-radius:8px;text-decoration:none;font-size:.8rem;font-weight:700;margin-bottom:10px;}
+
+.instr-box{background:#1e293b;border:1px solid #f59e0b;border-radius:12px;padding:14px 18px;margin:14px auto;max-width:860px;font-size:.83rem;line-height:1.7;}
+.instr-box h3{color:#f59e0b;font-size:.9rem;margin-bottom:8px;}
+.instr-box ul{padding-left:18px;}
+.instr-box li{margin-bottom:4px;color:#cbd5e1;}
+
+.wrap{max-width:860px;margin:0 auto;padding:10px 14px 60px;}
+
+.sec-header{background:linear-gradient(135deg,#0d47a1,#1565c0);color:#fff;padding:12px 18px;border-radius:10px;margin:20px 0 12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.sec-header h2{font-size:.95rem;font-weight:900;}
+.sec-header .marks-badge{background:#f59e0b;color:#1a0a00;font-size:.75rem;font-weight:900;padding:4px 12px;border-radius:10px;}
+.attempt-note{font-size:.72rem;color:#90caf9;margin-bottom:12px;padding:6px 14px;background:#1e293b;border-radius:8px;border-left:3px solid #1565c0;}
+
+/* QUESTION CARDS */
+.qcard{background:#1e293b;border-radius:12px;margin-bottom:12px;overflow:hidden;border:1px solid #334155;}
+.qcard-head{padding:14px 16px;cursor:pointer;display:flex;align-items:flex-start;gap:10px;}
+.qcard-head:hover{background:#263447;}
+.qnum{font-size:.85rem;font-weight:900;color:#60a5fa;min-width:36px;flex-shrink:0;}
+.qtags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:5px;}
+.ctag{font-size:.65rem;font-weight:800;padding:2px 8px;border-radius:6px;}
+.ctag.ch1{background:#1a237e;color:#90caf9;}
+.ctag.ch7{background:#1a3300;color:#86efac;}
+.mtag{font-size:.65rem;font-weight:800;padding:2px 8px;border-radius:6px;background:#374151;color:#d1d5db;}
+.qtext{font-size:.88rem;color:#e2e8f0;line-height:1.55;flex:1;}
+.toggle-icon{font-size:.8rem;color:#60a5fa;margin-left:auto;padding-left:8px;white-space:nowrap;flex-shrink:0;}
+
+.qcard-ans{display:none;padding:14px 16px;background:#0f172a;border-top:1px solid #334155;}
+.qcard-ans.open{display:block;}
+.ans-label{font-size:.7rem;font-weight:800;color:#34d399;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+.ans-text{font-size:.85rem;color:#cbd5e1;line-height:1.7;}
+.ans-text strong{color:#93c5fd;}
+.ans-text ul{padding-left:18px;margin:6px 0;}
+.ans-text li{margin-bottom:4px;}
+.eq{background:#0d1b2e;border-left:3px solid #1565c0;padding:8px 12px;border-radius:6px;font-family:monospace;font-size:.85rem;color:#7dd3fc;margin:6px 0;}
+.step{display:block;background:#0d1b2e;border-radius:6px;padding:5px 10px;font-family:monospace;font-size:.83rem;color:#93c5fd;margin:3px 0;}
+.ans-num{background:linear-gradient(135deg,#0d1b2e,#1565c0);border-radius:8px;padding:10px 14px;margin-top:8px;}
+.ans-num .given{background:rgba(255,255,255,.06);border-radius:6px;padding:7px 10px;font-family:monospace;font-size:.82rem;color:#7dd3fc;line-height:1.9;margin:5px 0;}
+.ans-num .sol{font-family:monospace;font-size:.82rem;color:#fde68a;line-height:2;padding:5px 10px;border-left:3px solid #f59e0b;margin:4px 0;background:rgba(245,158,11,.08);border-radius:0 6px 6px 0;}
+.ans-num .result{display:inline-block;background:#f59e0b;color:#1a0a00;border-radius:6px;padding:4px 14px;font-size:.88rem;font-weight:900;margin-top:6px;}
+
+.mcq-opts{list-style:none;padding:0;margin:6px 0;}
+.mcq-opts li{padding:5px 10px;border-radius:6px;margin-bottom:3px;font-size:.84rem;border:1px solid #334155;}
+.mcq-opts li.correct{background:#14532d;color:#86efac;font-weight:700;border-color:#22c55e;}
+.mcq-opts li.correct::before{content:"✓ ";}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <a href="notes-class12.html" class="back-btn">← Class 12 Notes</a>
+  <div class="chip">Class 12 · Physics · Practice Paper</div>
+  <h1>⚡ Physics — Ch 1 &amp; Ch 7 Practice Paper</h1>
+  <p>Chapter 1: Rotational Dynamics &nbsp;|&nbsp; Chapter 7: Wave Optics</p>
+  <div class="hero-meta">
+    <span>📋 Total: 70 Marks</span>
+    <span>⏱ Time: 3 Hours</span>
+    <span>✅ With Full Answers</span>
+    <span>📖 Ch 1 + Ch 7</span>
+  </div>
+</div>
+
+<div class="instr-box">
+  <h3>📌 General Instructions</h3>
+  <ul>
+    <li><strong>Section A Q.1:</strong> 10 MCQs × 1 Mark = 10 Marks (All compulsory)</li>
+    <li><strong>Section A Q.2:</strong> 8 Very Short Answer × 1 Mark = 8 Marks (All compulsory)</li>
+    <li><strong>Section B Q.3–Q.14:</strong> Short Answer 2M each — Attempt any <strong>8</strong> = 16 Marks</li>
+    <li><strong>Section C Q.15–Q.26:</strong> Short Answer 3M each — Attempt any <strong>8</strong> = 24 Marks</li>
+    <li><strong>Section D Q.27–Q.31:</strong> Long Answer 4M each — Attempt any <strong>3</strong> = 12 Marks</li>
+    <li>Use of log table is allowed. Calculator is NOT allowed.</li>
+    <li>Figures to the right indicate full marks.</li>
+    <li>Click on any question to reveal the answer.</li>
+  </ul>
+</div>
+
+<div class="wrap">
+
+<!-- ═══════════════ SECTION A — MCQ ═══════════════ -->
+<div class="sec-header">
+  <h2>📝 Section A — Q.1 : Select the correct answer</h2>
+  <span class="marks-badge">10 Marks (1M each)</span>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.1 (i)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch1">Ch 1</span><span class="mtag">MCQ 1M</span></div>
+      <div class="qtext">The moment of inertia of a thin uniform ring of mass M and radius R about its diameter is ______.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Correct Answer</div>
+    <div class="ans-text">
+      <ul class="mcq-opts">
+        <li>(a) MR²</li>
+        <li class="correct">(b) MR²/2</li>
+        <li>(c) MR²/4</li>
+        <li>(d) 2MR²</li>
+      </ul>
+      <strong>Explanation:</strong> I about central axis (perpendicular) = MR². By perpendicular axes theorem: I_z = I_x + I_y. By symmetry I_x = I_y. So I_diameter = MR²/2.
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.1 (ii)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch1">Ch 1</span><span class="mtag">MCQ 1M</span></div>
+      <div class="qtext">When a ballet dancer pulls in her arms while spinning, her angular velocity ______.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Correct Answer</div>
+    <div class="ans-text">
+      <ul class="mcq-opts">
+        <li>(a) decreases</li>
+        <li class="correct">(b) increases</li>
+        <li>(c) remains same</li>
+        <li>(d) becomes zero</li>
+      </ul>
+      <strong>Explanation:</strong> L = Iω = constant (no external torque). Pulling arms in → I decreases → ω increases to conserve angular momentum.
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.1 (iii)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch1">Ch 1</span><span class="mtag">MCQ 1M</span></div>
+      <div class="qtext">The difference in tension in a string at the bottom (T_B) and top (T_A) of a vertical circle is ______.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Correct Answer</div>
+    <div class="ans-text">
+      <ul class="mcq-opts">
+        <li>(a) 2mg</li>
+        <li>(b) 4mg</li>
+        <li class="correct">(c) 6mg</li>
+        <li>(d) 3mg</li>
+      </ul>
+      <div class="eq">T_B − T_A = 6mg (always, independent of speed and radius)</div>
+      <strong>Derivation:</strong> At bottom: T_B − mg = mv_B²/r. At top: T_A + mg = mv_A²/r. Energy conservation: v_B² − v_A² = 4rg. Subtracting and substituting: T_B − T_A = 6mg.
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.1 (iv)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch1">Ch 1</span><span class="mtag">MCQ 1M</span></div>
+      <div class="qtext">For a solid sphere rolling without slipping, the ratio of rotational KE to total KE is ______.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Correct Answer</div>
+    <div class="ans-text">
+      <ul class="mcq-opts">
+        <li>(a) 5/7</li>
+        <li>(b) 1/5</li>
+        <li class="correct">(c) 2/7</li>
+        <li>(d) 3/7</li>
+      </ul>
+      <strong>Explanation:</strong> For solid sphere K²/R² = 2/5. Total KE = ½Mv²(1 + 2/5) = 7/10 Mv². Rotational KE = ½Iω² = ½ × (2/5)MR² × v²/R² = 1/5 Mv². Ratio = (1/5)/(7/10) = 2/7.
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.1 (v)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch1">Ch 1</span><span class="mtag">MCQ 1M</span></div>
+      <div class="qtext">The banking angle for a curved road is given by tan θ = ______.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Correct Answer</div>
+    <div class="ans-text">
+      <ul class="mcq-opts">
+        <li>(a) v²rg</li>
+        <li class="correct">(b) v²/rg</li>
+        <li>(c) rg/v²</li>
+        <li>(d) v/rg</li>
+      </ul>
+      <div class="eq">tan θ = v²/rg</div>
+      This is the most safe speed condition where no friction is needed.
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.1 (vi)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch7">Ch 7</span><span class="mtag">MCQ 1M</span></div>
+      <div class="qtext">In Young's double slit experiment, the fringe width β is given by ______.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Correct Answer</div>
+    <div class="ans-text">
+      <ul class="mcq-opts">
+        <li>(a) λd/D</li>
+        <li class="correct">(b) λD/d</li>
+        <li>(c) dD/λ</li>
+        <li>(d) λ/dD</li>
+      </ul>
+      <div class="eq">β = λD/d</div>
+      where λ = wavelength, D = distance to screen, d = slit separation.
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.1 (vii)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch7">Ch 7</span><span class="mtag">MCQ 1M</span></div>
+      <div class="qtext">According to Malus' law, when plane polarised light passes through an analyser at angle θ, intensity I = ______.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Correct Answer</div>
+    <div class="ans-text">
+      <ul class="mcq-opts">
+        <li>(a) I₀ sin²θ</li>
+        <li class="correct">(b) I₀ cos²θ</li>
+        <li>(c) I₀ tanθ</li>
+        <li>(d) I₀/cos²θ</li>
+      </ul>
+      <div class="eq">I = I₀ cos²θ</div>
+      <strong>Malus' Law:</strong> Intensity of transmitted polarised light ∝ cos²θ, where θ is angle between polarisation plane and analyser axis.
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.1 (viii)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch7">Ch 7</span><span class="mtag">MCQ 1M</span></div>
+      <div class="qtext">The condition for constructive interference (bright fringe) is that the path difference = ______.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Correct Answer</div>
+    <div class="ans-text">
+      <ul class="mcq-opts">
+        <li class="correct">(a) nλ</li>
+        <li>(b) (2n−1)λ/2</li>
+        <li>(c) (2n+1)λ</li>
+        <li>(d) nλ/2</li>
+      </ul>
+      Path difference = nλ (n = 0, 1, 2 …) → waves in phase → constructive interference → bright fringe.
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.1 (ix)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch7">Ch 7</span><span class="mtag">MCQ 1M</span></div>
+      <div class="qtext">Brewster's law states that the angle of polarisation i_B is related to refractive index n as ______.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Correct Answer</div>
+    <div class="ans-text">
+      <ul class="mcq-opts">
+        <li>(a) sin i_B = n</li>
+        <li>(b) cos i_B = n</li>
+        <li class="correct">(c) tan i_B = n</li>
+        <li>(d) cot i_B = n</li>
+      </ul>
+      <div class="eq">tan i_B = n</div>
+      At Brewster's angle, reflected ray is completely plane polarised. Refracted and reflected rays are perpendicular: i_B + r = 90°.
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.1 (x)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch7">Ch 7</span><span class="mtag">MCQ 1M</span></div>
+      <div class="qtext">In single slit diffraction, the condition for the first minimum is ______. (a = slit width)</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Correct Answer</div>
+    <div class="ans-text">
+      <ul class="mcq-opts">
+        <li class="correct">(a) a sinθ = λ</li>
+        <li>(b) a sinθ = λ/2</li>
+        <li>(c) a sinθ = 2λ</li>
+        <li>(d) a cosθ = λ</li>
+      </ul>
+      <div class="eq">a sinθ = nλ (n = ±1, ±2 …) for minima in single slit diffraction</div>
+      First minimum: a sinθ = λ
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ SECTION A — VERY SHORT ═══════════════ -->
+<div class="sec-header">
+  <h2>📋 Section A — Q.2 : Answer the following</h2>
+  <span class="marks-badge">8 Marks (1M each)</span>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.2 (i)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch1">Ch 1</span><span class="mtag">VSA 1M</span></div>
+      <div class="qtext">State the theorem of parallel axes.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer</div>
+    <div class="ans-text">The moment of inertia of an object about any axis is equal to its moment of inertia about a parallel axis through the centre of mass plus the product of its mass and the square of the perpendicular distance between the two axes.
+      <div class="eq">I_O = I_C + Mh²</div>
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.2 (ii)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch1">Ch 1</span><span class="mtag">VSA 1M</span></div>
+      <div class="qtext">Write the formula for the minimum speed at the top of a vertical circle.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer</div>
+    <div class="ans-text">At the topmost point, for minimum speed the tension T = 0. Gravity provides the centripetal force:
+      <div class="eq">v_min (at top) = √(rg)</div>
+      Corresponding minimum speed at bottom: v_min (at bottom) = √(5rg)
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.2 (iii)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch1">Ch 1</span><span class="mtag">VSA 1M</span></div>
+      <div class="qtext">Define radius of gyration.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer</div>
+    <div class="ans-text"><strong>Radius of gyration (K):</strong> The distance from the axis of rotation at which the entire mass of the body must be concentrated so that its moment of inertia is the same as the actual moment of inertia.
+      <div class="eq">I = MK²  →  K = √(I/M)</div>
+      Unit: metre (m)
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.2 (iv)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch1">Ch 1</span><span class="mtag">VSA 1M</span></div>
+      <div class="qtext">State the law of conservation of angular momentum.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer</div>
+    <div class="ans-text">If the net external torque acting on a system is zero, the total angular momentum of the system remains constant.
+      <div class="eq">If τ_ext = 0, then L = Iω = constant</div>
+      Example: I₁ω₁ = I₂ω₂ (ballet dancer spinning faster when arms pulled in)
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.2 (v)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch7">Ch 7</span><span class="mtag">VSA 1M</span></div>
+      <div class="qtext">State Huygens' principle.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer</div>
+    <div class="ans-text">Every point on a wavefront acts as a secondary source of light and emits spherical secondary wavelets in all directions with the same speed as the original wave. The new wavefront at any later instant is the common tangent (envelope) to all these secondary wavelets.</div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.2 (vi)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch7">Ch 7</span><span class="mtag">VSA 1M</span></div>
+      <div class="qtext">What are coherent sources of light?</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer</div>
+    <div class="ans-text">Two sources of light are said to be coherent if they emit light waves of the <strong>same frequency</strong>, <strong>same wavelength</strong>, and have a <strong>constant phase difference</strong>. Coherent sources are essential for producing sustained interference patterns.</div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.2 (vii)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch7">Ch 7</span><span class="mtag">VSA 1M</span></div>
+      <div class="qtext">State Malus' law.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer</div>
+    <div class="ans-text">When plane polarised light is incident on an analyser, the intensity of transmitted light is proportional to the square of the cosine of the angle (θ) between the plane of polarisation and the transmission axis of the analyser.
+      <div class="eq">I = I₀ cos²θ</div>
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.2 (viii)</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch7">Ch 7</span><span class="mtag">VSA 1M</span></div>
+      <div class="qtext">What is a wavefront? Name its types.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer</div>
+    <div class="ans-text"><strong>Wavefront:</strong> The locus of all points in a medium which are in the same phase of vibration at a given instant.<br/>
+    <strong>Types:</strong>
+    <ul>
+      <li><strong>Spherical wavefront</strong> — from a point source</li>
+      <li><strong>Cylindrical wavefront</strong> — from a line source</li>
+      <li><strong>Plane wavefront</strong> — from a source very far away</li>
+    </ul></div>
+  </div>
+</div>
+
+<!-- ═══════════════ SECTION B — 2 MARKS ═══════════════ -->
+<div class="sec-header">
+  <h2>📝 Section B — Q.3 to Q.14 : Short Answer I</h2>
+  <span class="marks-badge">16 Marks (2M each)</span>
+</div>
+<div class="attempt-note">📌 Attempt any EIGHT of the following questions.</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.3</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch1">Ch 1</span><span class="mtag">2M</span></div>
+      <div class="qtext">Distinguish between centripetal force and centrifugal force.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (2M)</div>
+    <div class="ans-text">
+      <ul>
+        <li><strong>Centripetal force:</strong> Real force directed <strong>towards the centre</strong> of circular path. It is the resultant of all real forces acting on the body. Example: tension, friction, gravity providing centripetal force.</li>
+        <li><strong>Centrifugal force:</strong> Pseudo (fictitious) force experienced in a <strong>rotating (non-inertial) frame</strong>. Directed <strong>away from the centre</strong>. Magnitude = mω²r. It is not a real force but can be measured.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.4</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch1">Ch 1</span><span class="mtag">2M</span></div>
+      <div class="qtext">State the theorem of perpendicular axes. Write its limitations.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (2M)</div>
+    <div class="ans-text">
+      <strong>Statement:</strong> The moment of inertia of a laminar (2D) object about an axis perpendicular to its plane is equal to the sum of its moments of inertia about two mutually perpendicular axes in its plane, all three axes being concurrent.
+      <div class="eq">I_z = I_x + I_y</div>
+      <strong>Limitation:</strong> This theorem is applicable <strong>only to laminar (flat, 2D) objects</strong> like ring, disc, square plate etc. It cannot be applied to 3D objects like sphere, cylinder etc.
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.5</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch1">Ch 1</span><span class="mtag">2M</span></div>
+      <div class="qtext">A flywheel of mass 4 kg and radius of gyration 0.5 m is rotating at 300 rpm. Calculate its kinetic energy.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (2M)</div>
+    <div class="ans-text">
+      <div class="ans-num">
+        <div class="given">M = 4 kg, K = 0.5 m, N = 300 rpm</div>
+        <div class="sol">
+          I = MK² = 4 × (0.5)² = 4 × 0.25 = 1 kg·m²<br/>
+          ω = 2πN/60 = 2π × 300/60 = 10π rad/s<br/>
+          KE = ½Iω² = ½ × 1 × (10π)²<br/>
+          KE = ½ × 100π² = 50π²<br/>
+          KE = 50 × 9.87 = 493.5 J
+        </div>
+        <span class="result">KE ≈ 493.5 J</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.6</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch1">Ch 1</span><span class="mtag">2M</span></div>
+      <div class="qtext">Write the relation between torque and angular momentum. Hence define torque.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (2M)</div>
+    <div class="ans-text">
+      Angular momentum: L = Iω<br/>
+      Differentiating: dL/dt = I(dω/dt) = Iα
+      <div class="eq">τ = dL/dt = Iα</div>
+      <strong>Definition of Torque:</strong> Torque is the rate of change of angular momentum. It is the rotational analogue of force. τ = r × F; magnitude τ = rF sinθ. Unit: N·m.
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.7</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch1">Ch 1</span><span class="mtag">2M</span></div>
+      <div class="qtext">What is the most safe speed for a vehicle on a banked road? Obtain the expression for it.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (2M)</div>
+    <div class="ans-text">
+      The most safe speed (or optimum speed) is the speed at which a vehicle negotiates a banked road <strong>without requiring any friction</strong>.<br/>
+      At this speed: horizontal component of normal reaction provides centripetal force.<br/>
+      N sinθ = mv²/r and N cosθ = mg
+      <div class="eq">tan θ = v²/rg</div>
+      <div class="eq">v_safe = √(rg tanθ)</div>
+      At this speed, there is no tendency to skid inward or outward.
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.8</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch7">Ch 7</span><span class="mtag">2M</span></div>
+      <div class="qtext">What is interference of light? State the conditions for constructive and destructive interference.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (2M)</div>
+    <div class="ans-text">
+      <strong>Interference:</strong> The phenomenon of superposition of two coherent light waves producing alternating bright (constructive) and dark (destructive) regions on a screen.<br/><br/>
+      <strong>Constructive interference (bright fringe):</strong>
+      <div class="eq">Path difference Δ = nλ &nbsp;&nbsp; (n = 0, ±1, ±2 …)</div>
+      Waves are in phase → amplitude doubles → intensity = 4I₀<br/><br/>
+      <strong>Destructive interference (dark fringe):</strong>
+      <div class="eq">Path difference Δ = (2n−1)λ/2 &nbsp;&nbsp; (n = 1, 2, 3 …)</div>
+      Waves are out of phase → amplitude = 0 → intensity = 0
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.9</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch7">Ch 7</span><span class="mtag">2M</span></div>
+      <div class="qtext">In YDSE, the two slits are 1 mm apart and the screen is 1 m away. If the fringe width is 0.5 mm, find the wavelength of light used.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (2M)</div>
+    <div class="ans-text">
+      <div class="ans-num">
+        <div class="given">d = 1 mm = 1×10⁻³ m, D = 1 m, β = 0.5 mm = 5×10⁻⁴ m</div>
+        <div class="sol">
+          β = λD/d<br/>
+          λ = βd/D = (5×10⁻⁴ × 1×10⁻³) / 1<br/>
+          λ = 5×10⁻⁷ m = 500 nm
+        </div>
+        <span class="result">λ = 500 nm (green light)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.10</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch7">Ch 7</span><span class="mtag">2M</span></div>
+      <div class="qtext">What is polarisation of light? What does it prove about the nature of light?</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (2M)</div>
+    <div class="ans-text">
+      <strong>Polarisation:</strong> The phenomenon of restricting the vibration of light waves to a single plane (plane of polarisation) is called polarisation.<br/>
+      <strong>Unpolarised light:</strong> Vibrations in all planes perpendicular to direction of propagation.<br/>
+      <strong>Plane polarised light:</strong> Vibrations confined to only one plane.<br/><br/>
+      <strong>Conclusion about nature of light:</strong> Polarisation is possible only for <strong>transverse waves</strong>. The fact that light can be polarised proves that <strong>light is a transverse wave</strong>. Longitudinal waves (like sound) cannot be polarised.
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.11</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch7">Ch 7</span><span class="mtag">2M</span></div>
+      <div class="qtext">What is diffraction of light? State the condition for diffraction to occur.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (2M)</div>
+    <div class="ans-text">
+      <strong>Diffraction:</strong> The bending of light around the edges of an obstacle or aperture and spreading into the geometrical shadow region is called diffraction.<br/><br/>
+      <strong>Condition for diffraction:</strong> Diffraction is significant when the size of the obstacle or slit is <strong>comparable to the wavelength</strong> of light (slit width ≈ λ).<br/>
+      Single slit minima: <div class="eq">a sinθ = nλ &nbsp;&nbsp; (n = ±1, ±2…)</div>
+      Width of central maximum = 2λD/a
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.12</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch7">Ch 7</span><span class="mtag">2M</span></div>
+      <div class="qtext">The refractive index of glass is 1.5. Find Brewster's angle for glass.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (2M)</div>
+    <div class="ans-text">
+      <div class="ans-num">
+        <div class="given">n = 1.5</div>
+        <div class="sol">
+          tan i_B = n = 1.5<br/>
+          i_B = tan⁻¹(1.5)<br/>
+          i_B ≈ 56.3°
+        </div>
+        <span class="result">Brewster's angle = 56.3°</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.13</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch1">Ch 1</span><span class="mtag">2M</span></div>
+      <div class="qtext">Calculate the moment of inertia of a disc of mass 2 kg and radius 0.3 m about its diameter.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (2M)</div>
+    <div class="ans-text">
+      <div class="ans-num">
+        <div class="given">M = 2 kg, R = 0.3 m</div>
+        <div class="sol">
+          I about central axis = ½MR² = ½ × 2 × (0.3)² = ½ × 2 × 0.09 = 0.09 kg·m²<br/>
+          By perpendicular axes: I_z = I_x + I_y; by symmetry I_x = I_y<br/>
+          I_diameter = I_z/2 = 0.09/2 = 0.045 kg·m²
+        </div>
+        <span class="result">I_diameter = 0.045 kg·m²</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.14</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch7">Ch 7</span><span class="mtag">2M</span></div>
+      <div class="qtext">Distinguish between interference and diffraction of light. (Any two points)</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (2M)</div>
+    <div class="ans-text">
+      <ul>
+        <li><strong>Interference:</strong> Superposition of waves from two <strong>separate coherent sources</strong>. All bright fringes have equal intensity. Fringe width is uniform.</li>
+        <li><strong>Diffraction:</strong> Superposition of secondary wavelets from different parts of the <strong>same wavefront</strong>. Intensity decreases from centre outward. Central maximum is widest and brightest.</li>
+        <li>Interference — requires two slits; Diffraction — requires single slit (or edge).</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ SECTION C — 3 MARKS ═══════════════ -->
+<div class="sec-header">
+  <h2>📋 Section C — Q.15 to Q.26 : Short Answer II</h2>
+  <span class="marks-badge">24 Marks (3M each)</span>
+</div>
+<div class="attempt-note">📌 Attempt any EIGHT of the following questions.</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.15</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch1">Ch 1</span><span class="mtag">3M</span></div>
+      <div class="qtext">State and prove the theorem of parallel axes for moment of inertia.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (3M)</div>
+    <div class="ans-text">
+      <strong>Statement:</strong> The moment of inertia of an object about any axis is equal to the sum of its moment of inertia about a parallel axis passing through the centre of mass, and the product of mass and square of the perpendicular distance between the two axes.
+      <div class="eq">I_O = I_C + Mh²</div>
+      <strong>Proof:</strong> Consider a particle of mass mᵢ at distance rᵢ from axis O and distance r'ᵢ from parallel axis through C (at distance h from O).<br/>
+      <span class="step">I_O = Σmᵢrᵢ²</span>
+      <span class="step">rᵢ = r'ᵢ + h (using geometry)</span>
+      <span class="step">I_O = Σmᵢ(r'ᵢ + h)² = Σmᵢr'ᵢ² + 2hΣmᵢr'ᵢ + h²Σmᵢ</span>
+      Since C is centre of mass, Σmᵢr'ᵢ = 0:
+      <div class="eq">I_O = I_C + 0 + Mh² = I_C + Mh²  ✓</div>
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.16</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch1">Ch 1</span><span class="mtag">3M</span></div>
+      <div class="qtext">Derive an expression for the kinetic energy of a body rotating with uniform angular velocity.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (3M)</div>
+    <div class="ans-text">
+      Consider a rigid body rotating about an axis with angular velocity ω.<br/>
+      Let the body consist of n particles of masses m₁, m₂, ... at distances r₁, r₂, ... from the axis.<br/>
+      <strong>Linear velocity of each particle:</strong> vᵢ = ωrᵢ<br/>
+      <strong>KE of each particle:</strong> KEᵢ = ½mᵢvᵢ² = ½mᵢω²rᵢ²<br/>
+      <strong>Total KE of the body:</strong>
+      <span class="step">KE = Σ½mᵢω²rᵢ² = ½ω² Σmᵢrᵢ²</span>
+      Since Σmᵢrᵢ² = I (moment of inertia):
+      <div class="eq">KE_rot = ½Iω²</div>
+      This is the rotational analogue of translational KE = ½mv².
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.17</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch1">Ch 1</span><span class="mtag">3M</span></div>
+      <div class="qtext">Explain the motion of a vehicle on a banked road. Obtain the expression for the maximum safe speed.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (3M)</div>
+    <div class="ans-text">
+      A banked road is tilted at angle θ to the horizontal. Forces on vehicle: weight mg (down), normal reaction N (perpendicular to road), friction f (along road surface).<br/><br/>
+      <strong>For maximum speed (tendency to skid outward → friction acts inward and down the bank):</strong><br/>
+      Vertically: N cosθ = mg + f sinθ &nbsp;&nbsp;...(1)<br/>
+      Horizontally: N sinθ + f cosθ = mv²/r &nbsp;&nbsp;...(2)<br/>
+      With f = μN, dividing (2) by (1):
+      <div class="eq">v_max = √[rg(tanθ + μ)/(1 − μtanθ)]</div>
+      <strong>For minimum speed (tendency to skid inward → friction acts up the bank):</strong>
+      <div class="eq">v_min = √[rg(tanθ − μ)/(1 + μtanθ)]</div>
+      <strong>Most safe speed (no friction):</strong>
+      <div class="eq">v_safe = √(rg tanθ)</div>
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.18</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch1">Ch 1</span><span class="mtag">3M</span></div>
+      <div class="qtext">A stone of mass 1 kg is whirled in a vertical circle of radius 1 m. Find the minimum speed at the top and bottom. Also find T_B − T_A.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (3M)</div>
+    <div class="ans-text">
+      <div class="ans-num">
+        <div class="given">m = 1 kg, r = 1 m, g = 9.8 m/s²</div>
+        <div class="sol">
+          Minimum speed at top: v_A = √(rg) = √(1 × 9.8) = √9.8 ≈ 3.13 m/s<br/>
+          Minimum speed at bottom: v_B = √(5rg) = √(5 × 1 × 9.8) = √49 = 7 m/s<br/>
+          T_B − T_A = 6mg = 6 × 1 × 9.8 = 58.8 N
+        </div>
+        <span class="result">v_A = 3.13 m/s | v_B = 7 m/s | T_B − T_A = 58.8 N</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.19</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch7">Ch 7</span><span class="mtag">3M</span></div>
+      <div class="qtext">Derive an expression for fringe width in Young's Double Slit Experiment.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (3M)</div>
+    <div class="ans-text">
+      <strong>Setup:</strong> Two slits S₁ and S₂, separation d, screen at distance D. Point P at height y from centre O.<br/>
+      <strong>Path difference:</strong> For D >> d:
+      <div class="eq">Δ = S₂P − S₁P = yd/D</div>
+      <strong>Bright fringes</strong> (Δ = nλ):
+      <span class="step">y_n = nλD/d &nbsp;&nbsp; (n = 0, ±1, ±2 …)</span>
+      <strong>Fringe width</strong> (distance between consecutive bright fringes):
+      <span class="step">β = y_(n+1) − y_n = (n+1)λD/d − nλD/d</span>
+      <div class="eq">β = λD/d</div>
+      <strong>Key results:</strong>
+      <ul>
+        <li>β ∝ λ (increases with wavelength)</li>
+        <li>β ∝ D (increases with screen distance)</li>
+        <li>β ∝ 1/d (decreases with slit separation)</li>
+        <li>Bright and dark fringes have equal width</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.20</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch7">Ch 7</span><span class="mtag">3M</span></div>
+      <div class="qtext">State and prove Brewster's law.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (3M)</div>
+    <div class="ans-text">
+      <strong>Statement:</strong> When unpolarised light is incident at Brewster's angle (i_B) on a surface, the reflected light is completely plane polarised. At Brewster's angle, the reflected and refracted rays are perpendicular to each other.
+      <div class="eq">i_B + r = 90°  →  r = (90° − i_B)</div>
+      <strong>Proof (derivation of formula):</strong><br/>
+      By Snell's law: n = sin i_B / sin r<br/>
+      Substituting r = (90° − i_B):
+      <span class="step">n = sin i_B / sin(90° − i_B) = sin i_B / cos i_B</span>
+      <div class="eq">n = tan i_B  →  i_B = tan⁻¹(n)</div>
+      <strong>Example:</strong> For glass n = 1.5: i_B = tan⁻¹(1.5) ≈ 56.3°
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.21</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch7">Ch 7</span><span class="mtag">3M</span></div>
+      <div class="qtext">In YDSE, λ = 600 nm, d = 0.5 mm, D = 1.5 m. Find: (i) fringe width (ii) position of 3rd bright fringe (iii) position of 2nd dark fringe.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (3M)</div>
+    <div class="ans-text">
+      <div class="ans-num">
+        <div class="given">λ = 600 nm = 6×10⁻⁷ m, d = 0.5 mm = 5×10⁻⁴ m, D = 1.5 m</div>
+        <div class="sol">
+          (i) β = λD/d = (6×10⁻⁷ × 1.5)/(5×10⁻⁴) = 9×10⁻⁷/5×10⁻⁴ = 1.8×10⁻³ m = 1.8 mm<br/>
+          (ii) y₃ = 3λD/d = 3β = 3 × 1.8 = 5.4 mm<br/>
+          (iii) Dark fringe: y = (2n−1)λD/2d<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y₂ = (2×2−1)λD/2d = 3λD/2d = 3β/2 = 3×1.8/2 = 2.7 mm
+        </div>
+        <span class="result">β = 1.8 mm | y₃(bright) = 5.4 mm | y₂(dark) = 2.7 mm</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.22</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch1">Ch 1</span><span class="mtag">3M</span></div>
+      <div class="qtext">State the principle of conservation of angular momentum. Give two examples.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (3M)</div>
+    <div class="ans-text">
+      <strong>Principle:</strong> If the net external torque acting on a system is zero, the total angular momentum of the system remains constant (conserved).
+      <div class="eq">τ_ext = 0  →  L = Iω = constant  →  I₁ω₁ = I₂ω₂</div>
+      <strong>Examples:</strong>
+      <ul>
+        <li><strong>Ballet dancer / ice skater:</strong> Pulls arms in → moment of inertia I decreases → angular velocity ω increases to keep L constant. Extends arms → I increases → ω decreases (slow spin).</li>
+        <li><strong>Diver:</strong> After leaving the springboard, pulls arms and legs close to body → I decreases → spins faster to complete more rotations. Extends body before entering water → ω decreases → smooth entry.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.23</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch7">Ch 7</span><span class="mtag">3M</span></div>
+      <div class="qtext">Explain the construction and working of a Polaroid. State its applications.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (3M)</div>
+    <div class="ans-text">
+      <strong>Polaroid:</strong> A device that produces plane polarised light from unpolarised light.<br/><br/>
+      <strong>Construction:</strong> A large crystal of quinine iodosulphate (herapathite) is embedded in a transparent sheet of nitrocellulose. All crystals are aligned in the same direction. The sheet transmits only light vibrations parallel to its transmission axis and absorbs the perpendicular component.<br/><br/>
+      <strong>Working:</strong> Unpolarised light enters the polaroid → only vibrations parallel to the transmission axis pass through → emergent light is plane polarised. Intensity = I₀/2.<br/><br/>
+      <strong>Applications:</strong>
+      <ul>
+        <li>Polaroid sunglasses — reduce glare from reflected sunlight</li>
+        <li>Camera filters — reduce reflections, enhance contrast</li>
+        <li>LCD screens</li>
+        <li>Stress analysis in transparent materials</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.24</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch1">Ch 1</span><span class="mtag">3M</span></div>
+      <div class="qtext">Obtain expressions for the total KE of a body rolling without slipping. Hence find the acceleration of a disc rolling down an incline.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (3M)</div>
+    <div class="ans-text">
+      Rolling = translation of centre of mass + rotation about CM.<br/>
+      <div class="eq">KE_total = ½Mv² + ½Iω² = ½Mv²(1 + K²/R²)</div>
+      (using v = ωR and I = MK²)<br/><br/>
+      <strong>Acceleration down incline:</strong> Using energy conservation from height h:
+      <span class="step">½Mv²(1 + K²/R²) = Mgh  →  v² = 2gh/(1 + K²/R²)</span>
+      Using v² = 2as (s = h/sinθ):
+      <div class="eq">a = g sinθ / (1 + K²/R²)</div>
+      For disc: K²/R² = 1/2:
+      <div class="eq">a_disc = g sinθ / (1 + ½) = 2g sinθ/3</div>
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.25</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch7">Ch 7</span><span class="mtag">3M</span></div>
+      <div class="qtext">What is resolving power of an optical instrument? State Rayleigh's criterion. Write the formula for limit of resolution of a telescope.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (3M)</div>
+    <div class="ans-text">
+      <strong>Resolving power:</strong> The ability of an optical instrument to distinguish (resolve) two closely placed objects/points as separate and distinct. Higher resolving power = can see finer detail.<br/><br/>
+      <strong>Rayleigh's criterion:</strong> Two images are said to be just resolved when the central maximum of the diffraction pattern of one point object coincides with the first minimum of the diffraction pattern of the other point object.<br/><br/>
+      <strong>Limit of resolution (minimum resolvable angle) for telescope:</strong>
+      <div class="eq">θ_min = 1.22λ/D</div>
+      where λ = wavelength of light used, D = diameter of objective lens/mirror.<br/><br/>
+      <strong>To increase resolving power:</strong> Use smaller λ (blue or UV light), or use larger diameter objective.
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.26</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch7">Ch 7</span><span class="mtag">3M</span></div>
+      <div class="qtext">Plane polarised light of intensity I₀ passes through an analyser. Find the intensity when the analyser is at (i) 0° (ii) 30° (iii) 60° (iv) 90° to the polariser.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (3M)</div>
+    <div class="ans-text">
+      Using Malus' Law: I = I₀ cos²θ
+      <div class="ans-num">
+        <div class="sol">
+          (i) θ = 0°: I = I₀ cos²0° = I₀ × 1 = I₀ (maximum)<br/>
+          (ii) θ = 30°: I = I₀ cos²30° = I₀ × (√3/2)² = 3I₀/4<br/>
+          (iii) θ = 60°: I = I₀ cos²60° = I₀ × (1/2)² = I₀/4<br/>
+          (iv) θ = 90°: I = I₀ cos²90° = I₀ × 0 = 0 (minimum — crossed polaroids)
+        </div>
+        <span class="result">I₀ → 3I₀/4 → I₀/4 → 0</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ SECTION D — 4 MARKS ═══════════════ -->
+<div class="sec-header">
+  <h2>📖 Section D — Q.27 to Q.31 : Long Answer</h2>
+  <span class="marks-badge">12 Marks (4M each)</span>
+</div>
+<div class="attempt-note">📌 Attempt any THREE of the following questions.</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.27</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch1">Ch 1</span><span class="mtag">4M</span></div>
+      <div class="qtext">What is a conical pendulum? Derive expressions for its time period, frequency and tension in the string.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (4M)</div>
+    <div class="ans-text">
+      <strong>Conical pendulum:</strong> A pendulum in which the bob revolves in a horizontal circle while the string traces out a cone. The string makes angle θ with vertical (semi-vertical angle).<br/><br/>
+      <strong>Forces on bob:</strong> Weight mg (downward), Tension T (along string).<br/>
+      <strong>Equations:</strong><br/>
+      Vertically: T cosθ = mg &nbsp;&nbsp;&nbsp;&nbsp; ...(1)<br/>
+      Horizontally (centripetal): T sinθ = mω²r &nbsp;&nbsp; ...(2)<br/>
+      Dividing (2) by (1): tanθ = ω²r/g<br/>
+      Since r = L sinθ: tanθ = ω²L sinθ/g → <strong>ω² = g/(L cosθ)</strong><br/><br/>
+      <strong>Time Period:</strong>
+      <div class="eq">T = 2π/ω = 2π√(L cosθ/g)</div>
+      <strong>Frequency:</strong>
+      <div class="eq">n = 1/T = (1/2π)√(g/L cosθ)</div>
+      <strong>Tension:</strong> From (1):
+      <div class="eq">T_string = mg/cosθ</div>
+      <strong>Key observations:</strong> As θ increases → cosθ decreases → period decreases (faster rotation). T_string always &gt; mg.
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.28</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch1">Ch 1</span><span class="mtag">4M</span></div>
+      <div class="qtext">State and prove the law of conservation of angular momentum. Give two applications. A disc of moment of inertia 2 kg·m² is spinning at 5 rad/s. A mass of 0.5 kg is placed at a distance of 2 m from the centre. Find the new angular velocity.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (4M)</div>
+    <div class="ans-text">
+      <strong>Statement:</strong> If net external torque = 0, angular momentum L = Iω = constant.
+      <div class="eq">I₁ω₁ = I₂ω₂</div>
+      <strong>Proof:</strong> τ = dL/dt. If τ_ext = 0, dL/dt = 0, so L = constant.<br/><br/>
+      <strong>Applications:</strong>
+      <ul>
+        <li>Ballet dancer — pulls arms in → I decreases → ω increases</li>
+        <li>Diver — tucks body → faster spin; extends → slower entry</li>
+      </ul>
+      <strong>Numerical:</strong>
+      <div class="ans-num">
+        <div class="given">I₁ = 2 kg·m², ω₁ = 5 rad/s, m = 0.5 kg, r = 2 m</div>
+        <div class="sol">
+          I₂ = I₁ + mr² = 2 + 0.5 × (2)² = 2 + 2 = 4 kg·m²<br/>
+          By conservation: I₁ω₁ = I₂ω₂<br/>
+          ω₂ = I₁ω₁/I₂ = (2 × 5)/4 = 10/4 = 2.5 rad/s
+        </div>
+        <span class="result">New angular velocity = 2.5 rad/s</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.29</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch7">Ch 7</span><span class="mtag">4M</span></div>
+      <div class="qtext">Explain Young's Double Slit Experiment. Derive the expression for fringe width. What happens to fringe width if: (i) wavelength is doubled (ii) slit separation is halved (iii) screen distance is doubled?</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (4M)</div>
+    <div class="ans-text">
+      <strong>Experiment:</strong> Monochromatic light from source S falls on a single slit, then on two parallel slits S₁ and S₂ (separation d). The two slits act as coherent sources. Light from S₁ and S₂ interferes on a screen at distance D producing alternate bright and dark fringes.<br/><br/>
+      <strong>Theory (path difference):</strong> For point P at height y:
+      <div class="eq">Δ = yd/D</div>
+      Bright (constructive): Δ = nλ → <strong>y_n = nλD/d</strong><br/>
+      Dark (destructive): Δ = (2n-1)λ/2 → <strong>y_n = (2n-1)λD/2d</strong><br/><br/>
+      <strong>Fringe width:</strong>
+      <div class="eq">β = λD/d</div>
+      <strong>Effects on fringe width:</strong>
+      <ul>
+        <li>(i) λ doubled → β doubles: β' = 2β</li>
+        <li>(ii) d halved → β doubles: β' = 2β</li>
+        <li>(iii) D doubled → β doubles: β' = 2β</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.30</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch7">Ch 7</span><span class="mtag">4M</span></div>
+      <div class="qtext">Explain the phenomenon of diffraction of light at a single slit. Obtain the conditions for central maximum, secondary maxima and minima. Draw the intensity distribution graph.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (4M)</div>
+    <div class="ans-text">
+      <strong>Single slit diffraction:</strong> When light passes through a narrow slit of width 'a', secondary wavelets from different parts of the same wavefront interfere to produce a diffraction pattern on the screen.<br/><br/>
+      <strong>Central maximum:</strong> At θ = 0°, all secondary wavelets arrive in phase → maximum intensity. This is the brightest and widest fringe.
+      <div class="eq">Width of central maximum = 2λD/a</div>
+      <strong>Conditions for minima:</strong>
+      <div class="eq">a sinθ = nλ &nbsp;&nbsp; (n = ±1, ±2, ±3 …)</div>
+      <strong>Conditions for secondary maxima:</strong>
+      <div class="eq">a sinθ = (2n+1)λ/2 &nbsp;&nbsp; (n = ±1, ±2 …)</div>
+      <strong>Intensity distribution:</strong>
+      <ul>
+        <li>Central maximum — highest intensity, widest</li>
+        <li>1st secondary maximum — intensity ≈ 4.5% of central</li>
+        <li>2nd secondary maximum — intensity ≈ 1.6% of central</li>
+        <li>Minima on both sides of each maximum — zero intensity</li>
+        <li>Pattern: symmetric about central maximum</li>
+      </ul>
+      <strong>Key fact:</strong> As slit width 'a' decreases, central maximum becomes wider (more diffraction). As 'a' increases, central maximum becomes narrower.
+    </div>
+  </div>
+</div>
+
+<div class="qcard">
+  <div class="qcard-head" onclick="tog(this)">
+    <span class="qnum">Q.31</span>
+    <div style="flex:1">
+      <div class="qtags"><span class="ctag ch1">Ch 1</span><span class="mtag">4M</span></div>
+      <div class="qtext">Define moment of inertia. Derive expressions for MI of a thin uniform rod about: (i) an axis through its centre perpendicular to its length (ii) an axis through one end perpendicular to its length.</div>
+    </div>
+    <span class="toggle-icon">▼ Ans</span>
+  </div>
+  <div class="qcard-ans">
+    <div class="ans-label">✅ Answer (4M)</div>
+    <div class="ans-text">
+      <strong>Moment of Inertia:</strong> The sum of products of mass of each particle and the square of its perpendicular distance from the axis of rotation.
+      <div class="eq">I = Σmᵢrᵢ² = ∫r²dm</div>
+      <strong>(i) Thin rod — axis through centre, ⊥ to length:</strong><br/>
+      Length = L, mass = M, linear mass density λ = M/L<br/>
+      Consider small element dx at distance x from centre: dm = (M/L)dx
+      <span class="step">I_C = ∫₋L/2^(L/2) x²(M/L)dx = (M/L)[x³/3]₋L/2^(L/2)</span>
+      <div class="eq">I_C = ML²/12</div>
+      <strong>(ii) Axis through one end, ⊥ to length:</strong><br/>
+      Using parallel axes theorem (h = L/2):
+      <span class="step">I_end = I_C + M(L/2)² = ML²/12 + ML²/4</span>
+      <div class="eq">I_end = ML²/12 + 3ML²/12 = ML²/3</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end wrap -->
+
+<script>
+function tog(head){
+  const ans = head.nextElementSibling;
+  const icon = head.querySelector('.toggle-icon');
+  const isOpen = ans.classList.contains('open');
+  ans.classList.toggle('open', !isOpen);
+  icon.textContent = isOpen ? '▼ Ans' : '▲ Hide';
+}
+</script>
+</body>
+</html>
