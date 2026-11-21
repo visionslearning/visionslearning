@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Class 11 Physics — Optics Test (20 Marks) | Visions Classes</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Times New Roman',Times,serif;background:#fff;color:#000;font-size:13pt;line-height:1.6;}
+
+/* PRINT BUTTON — hidden on print */
+.print-bar{background:#1a237e;padding:10px 20px;text-align:center;display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;}
+.print-btn{background:#f59e0b;color:#000;border:none;padding:9px 24px;border-radius:8px;font-size:14px;font-weight:900;cursor:pointer;letter-spacing:.5px;}
+.print-btn:hover{background:#fbbf24;}
+.ans-btn{background:#22c55e;color:#000;border:none;padding:9px 24px;border-radius:8px;font-size:14px;font-weight:900;cursor:pointer;}
+.print-bar span{color:#fff;font-size:13px;font-family:sans-serif;}
+
+/* PAGE */
+.page{max-width:800px;margin:0 auto;padding:24px 30px;}
+
+/* HEADER */
+.school-header{text-align:center;border-bottom:3px double #000;padding-bottom:10px;margin-bottom:14px;}
+.school-name{font-size:18pt;font-weight:900;letter-spacing:1px;}
+.school-sub{font-size:10pt;color:#333;margin-top:2px;}
+.paper-title{font-size:14pt;font-weight:900;margin-top:8px;text-transform:uppercase;letter-spacing:1px;}
+.paper-info{display:flex;justify-content:space-between;margin-top:10px;font-size:11pt;border:1px solid #000;padding:7px 12px;border-radius:4px;}
+.paper-info span{font-weight:700;}
+
+/* STUDENT INFO */
+.student-row{display:flex;gap:20px;margin:12px 0;font-size:11pt;}
+.student-field{flex:1;border-bottom:1.5px solid #000;padding-bottom:2px;}
+.student-label{font-size:10pt;color:#333;margin-bottom:2px;}
+
+/* INSTRUCTIONS */
+.instr-box{border:1.5px solid #000;padding:8px 14px;margin:12px 0;border-radius:3px;}
+.instr-box h4{font-size:11pt;font-weight:900;margin-bottom:5px;text-decoration:underline;}
+.instr-box ol{padding-left:20px;font-size:10.5pt;}
+.instr-box li{margin-bottom:3px;}
+
+/* SECTIONS */
+.sec-title{background:#000;color:#fff;padding:5px 12px;font-size:11pt;font-weight:900;margin:16px 0 10px;letter-spacing:.5px;}
+.sec-marks{float:right;}
+.attempt-note{font-size:10pt;font-style:italic;margin-bottom:8px;color:#333;}
+
+/* QUESTIONS */
+.q{margin-bottom:12px;page-break-inside:avoid;}
+.q-row{display:flex;align-items:flex-start;gap:8px;}
+.q-num{font-weight:900;min-width:60px;font-size:12pt;}
+.q-text{flex:1;font-size:12pt;line-height:1.65;}
+.q-marks{font-size:10.5pt;font-weight:700;color:#333;white-space:nowrap;margin-left:8px;}
+
+/* MCQ OPTIONS */
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:3px 20px;margin:5px 0 5px 60px;font-size:11.5pt;}
+.opts span{display:block;}
+
+/* ANSWER LINES */
+.ans-lines{margin:5px 0 5px 60px;}
+.ans-line{border-bottom:1px solid #aaa;height:22px;margin-bottom:4px;}
+
+/* OR divider */
+.or-div{text-align:center;font-weight:900;margin:8px 0;font-size:11pt;position:relative;}
+.or-div::before,.or-div::after{content:'';position:absolute;top:50%;width:42%;height:1px;background:#999;}
+.or-div::before{left:0;}
+.or-div::after{right:0;}
+
+/* PAGE BREAK */
+.pg-break{page-break-after:always;border-top:1px dashed #ccc;margin:20px 0;}
+
+/* FOOTER */
+.footer{text-align:center;font-size:9.5pt;color:#555;margin-top:20px;border-top:1px solid #ccc;padding-top:8px;}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  .print-bar{display:none !important;}
+  body{font-size:12pt;}
+  .page{padding:15px 20px;max-width:100%;}
+  .school-name{font-size:16pt;}
+}
+</style>
+</head>
+<body>
+
+<!-- PRINT BAR -->
+<div class="print-bar">
+  <span>🖨️ Visions Classes — Class Test Paper</span>
+  <button class="print-btn" onclick="window.print()">🖨️ Print Paper</button>
+  <a href="class11-physics-optics-test.html" style="background:#3b82f6;color:#fff;border:none;padding:9px 24px;border-radius:8px;font-size:14px;font-weight:900;text-decoration:none;">✅ View with Answers</a>
+  <a href="notes-class11.html" style="background:rgba(255,255,255,.2);color:#fff;border:none;padding:9px 24px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;">← Back to Notes</a>
+</div>
+
+<div class="page">
+
+  <!-- SCHOOL HEADER -->
+  <div class="school-header">
+    <div class="school-name">🎓 VISIONS CLASSES</div>
+    <div class="school-sub">Ambarnath · Shashikant Sir · visionslearning.in</div>
+    <div class="paper-title">Class Test — Physics (Chapter 9: Optics)</div>
+    <div class="paper-info">
+      <span>Class: XI &nbsp;&nbsp; Subject: Physics</span>
+      <span>Chapter: 9 — Optics</span>
+      <span>Total Marks: 20</span>
+      <span>Time: 45 Minutes</span>
+    </div>
+  </div>
+
+  <!-- STUDENT INFO -->
+  <div class="student-row">
+    <div class="student-field"><div class="student-label">Student Name:</div>&nbsp;</div>
+    <div class="student-field"><div class="student-label">Roll No.:</div>&nbsp;</div>
+    <div class="student-field"><div class="student-label">Date:</div>&nbsp;</div>
+  </div>
+  <div class="student-row">
+    <div class="student-field"><div class="student-label">Division:</div>&nbsp;</div>
+    <div class="student-field"><div class="student-label">Marks Obtained:</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ 20</div>
+    <div class="student-field"><div class="student-label">Teacher Sign:</div>&nbsp;</div>
+  </div>
+
+  <!-- INSTRUCTIONS -->
+  <div class="instr-box">
+    <h4>General Instructions:</h4>
+    <ol>
+      <li>Q.1: 4 MCQs × 1M — All compulsory. Write correct option letter AND the answer.</li>
+      <li>Q.2: 4 Very Short Answer × 1M — All compulsory.</li>
+      <li>Q.3: Short Answer 2M — Attempt any <strong>TWO</strong> from three questions (A, B, C).</li>
+      <li>Q.4: Short Answer 3M — Attempt any <strong>TWO</strong> from three questions (A, B, C).</li>
+      <li>Q.5: Numerical — Compulsory (2M). Show all steps clearly.</li>
+      <li>Neat diagrams carry marks wherever applicable.</li>
+    </ol>
+  </div>
+
+  <!-- ======= Q.1 MCQ ======= -->
+  <div class="sec-title">Q.1 — Select and write the correct answer &nbsp;&nbsp;<span class="sec-marks">[4 Marks — 1M each]</span></div>
+
+  <div class="q">
+    <div class="q-row">
+      <span class="q-num">(i)</span>
+      <span class="q-text">Which mirror is used as a rear-view mirror in vehicles?</span>
+      <span class="q-marks">[1]</span>
+    </div>
+    <div class="opts">
+      <span>(A) Concave mirror</span>
+      <span>(B) Convex mirror</span>
+      <span>(C) Plane mirror</span>
+      <span>(D) Parabolic mirror</span>
+    </div>
+    <div class="ans-lines"><div class="ans-line"></div></div>
+  </div>
+
+  <div class="q">
+    <div class="q-row">
+      <span class="q-num">(ii)</span>
+      <span class="q-text">The critical angle for a glass-air interface is 42°. The refractive index of glass is ______.</span>
+      <span class="q-marks">[1]</span>
+    </div>
+    <div class="opts">
+      <span>(A) 1.33</span>
+      <span>(B) 1.49</span>
+      <span>(C) 1.60</span>
+      <span>(D) 2.00</span>
+    </div>
+    <div class="ans-lines"><div class="ans-line"></div></div>
+  </div>
+
+  <div class="q">
+    <div class="q-row">
+      <span class="q-num">(iii)</span>
+      <span class="q-text">A convex lens has power +2 D and a concave lens has power −1 D. The power of their combination is ______.</span>
+      <span class="q-marks">[1]</span>
+    </div>
+    <div class="opts">
+      <span>(A) +1 D</span>
+      <span>(B) −1 D</span>
+      <span>(C) +3 D</span>
+      <span>(D) +2 D</span>
+    </div>
+    <div class="ans-lines"><div class="ans-line"></div></div>
+  </div>
+
+  <div class="q">
+    <div class="q-row">
+      <span class="q-num">(iv)</span>
+      <span class="q-text">Total internal reflection occurs when light travels from ______.</span>
+      <span class="q-marks">[1]</span>
+    </div>
+    <div class="opts">
+      <span>(A) rarer to denser at any angle</span>
+      <span>(B) denser to rarer at any angle</span>
+      <span>(C) rarer to denser at i &gt; θ_c</span>
+      <span>(D) denser to rarer at i &gt; θ_c</span>
+    </div>
+    <div class="ans-lines"><div class="ans-line"></div></div>
+  </div>
+
+  <!-- ======= Q.2 VERY SHORT ======= -->
+  <div class="sec-title">Q.2 — Answer the following &nbsp;&nbsp;<span class="sec-marks">[4 Marks — 1M each]</span></div>
+
+  <div class="q">
+    <div class="q-row">
+      <span class="q-num">(i)</span>
+      <span class="q-text">Write the mirror formula.</span>
+      <span class="q-marks">[1]</span>
+    </div>
+    <div class="ans-lines"><div class="ans-line"></div><div class="ans-line"></div></div>
+  </div>
+
+  <div class="q">
+    <div class="q-row">
+      <span class="q-num">(ii)</span>
+      <span class="q-text">State any two applications of total internal reflection.</span>
+      <span class="q-marks">[1]</span>
+    </div>
+    <div class="ans-lines"><div class="ans-line"></div><div class="ans-line"></div><div class="ans-line"></div></div>
+  </div>
+
+  <div class="q">
+    <div class="q-row">
+      <span class="q-num">(iii)</span>
+      <span class="q-text">Define power of a lens. Write its SI unit.</span>
+      <span class="q-marks">[1]</span>
+    </div>
+    <div class="ans-lines"><div class="ans-line"></div><div class="ans-line"></div></div>
+  </div>
+
+  <div class="q">
+    <div class="q-row">
+      <span class="q-num">(iv)</span>
+      <span class="q-text">What is the angle of deviation in a prism? Write its formula.</span>
+      <span class="q-marks">[1]</span>
+    </div>
+    <div class="ans-lines"><div class="ans-line"></div><div class="ans-line"></div></div>
+  </div>
+
+  <div class="pg-break"></div>
+
+  <!-- ======= Q.3 SHORT 2M ======= -->
+  <div class="sec-title">Q.3 — Short Answer I (2M each) &nbsp;&nbsp;<span class="sec-marks">[4 Marks — Attempt any TWO]</span></div>
+  <div class="attempt-note">Attempt any TWO of the following (A), (B), (C).</div>
+
+  <div class="q">
+    <div class="q-row">
+      <span class="q-num">(A)</span>
+      <span class="q-text">State Snell's law of refraction. A ray of light passes from air into glass (n = 1.5) at an angle of incidence of 30°. Find the angle of refraction.</span>
+      <span class="q-marks">[2]</span>
+    </div>
+    <div class="ans-lines">
+      <div class="ans-line"></div><div class="ans-line"></div><div class="ans-line"></div>
+      <div class="ans-line"></div><div class="ans-line"></div><div class="ans-line"></div>
+    </div>
+  </div>
+
+  <div class="or-div">— OR —</div>
+
+  <div class="q">
+    <div class="q-row">
+      <span class="q-num">(B)</span>
+      <span class="q-text">Distinguish between a concave mirror and a convex mirror. (Any two points each)</span>
+      <span class="q-marks">[2]</span>
+    </div>
+    <div class="ans-lines">
+      <div class="ans-line"></div><div class="ans-line"></div><div class="ans-line"></div>
+      <div class="ans-line"></div><div class="ans-line"></div><div class="ans-line"></div>
+    </div>
+  </div>
+
+  <div class="or-div">— OR —</div>
+
+  <div class="q">
+    <div class="q-row">
+      <span class="q-num">(C)</span>
+      <span class="q-text">What is total internal reflection? State the two conditions for TIR to occur. Give one application.</span>
+      <span class="q-marks">[2]</span>
+    </div>
+    <div class="ans-lines">
+      <div class="ans-line"></div><div class="ans-line"></div><div class="ans-line"></div>
+      <div class="ans-line"></div><div class="ans-line"></div><div class="ans-line"></div>
+    </div>
+  </div>
+
+  <!-- ======= Q.4 SHORT 3M ======= -->
+  <div class="sec-title">Q.4 — Short Answer II (3M each) &nbsp;&nbsp;<span class="sec-marks">[6 Marks — Attempt any TWO]</span></div>
+  <div class="attempt-note">Attempt any TWO of the following (A), (B), (C).</div>
+
+  <div class="q">
+    <div class="q-row">
+      <span class="q-num">(A)</span>
+      <span class="q-text">State the Lens Maker's formula. A convex lens (n = 1.5) has radii of curvature R₁ = 20 cm and R₂ = −20 cm. Find its focal length and power.</span>
+      <span class="q-marks">[3]</span>
+    </div>
+    <div class="ans-lines">
+      <div class="ans-line"></div><div class="ans-line"></div><div class="ans-line"></div>
+      <div class="ans-line"></div><div class="ans-line"></div><div class="ans-line"></div>
+      <div class="ans-line"></div><div class="ans-line"></div>
+    </div>
+  </div>
+
+  <div class="or-div">— OR —</div>
+
+  <div class="q">
+    <div class="q-row">
+      <span class="q-num">(B)</span>
+      <span class="q-text">Derive the formula for the refractive index of a prism in terms of angle of prism A and angle of minimum deviation D<sub>m</sub>.</span>
+      <span class="q-marks">[3]</span>
+    </div>
+    <div class="ans-lines">
+      <div class="ans-line"></div><div class="ans-line"></div><div class="ans-line"></div>
+      <div class="ans-line"></div><div class="ans-line"></div><div class="ans-line"></div>
+      <div class="ans-line"></div><div class="ans-line"></div>
+    </div>
+  </div>
+
+  <div class="or-div">— OR —</div>
+
+  <div class="q">
+    <div class="q-row">
+      <span class="q-num">(C)</span>
+      <span class="q-text">Derive the mirror formula: 1/f = 1/v + 1/u for a concave mirror. Draw a neat labelled diagram.</span>
+      <span class="q-marks">[3]</span>
+    </div>
+    <div class="ans-lines">
+      <div class="ans-line"></div><div class="ans-line"></div><div class="ans-line"></div>
+      <div class="ans-line"></div><div class="ans-line"></div><div class="ans-line"></div>
+      <div class="ans-line"></div><div class="ans-line"></div>
+    </div>
+  </div>
+
+  <div class="pg-break"></div>
+
+  <!-- ======= Q.5 NUMERICAL ======= -->
+  <div class="sec-title">Q.5 — Solve the following (Compulsory) &nbsp;&nbsp;<span class="sec-marks">[2 Marks]</span></div>
+
+  <div class="q">
+    <div class="q-row">
+      <span class="q-num">Q.5</span>
+      <span class="q-text">An object is placed 30 cm in front of a concave mirror of focal length 10 cm. Find the position and nature of the image. Also find the magnification.</span>
+      <span class="q-marks">[2]</span>
+    </div>
+    <div class="ans-lines">
+      <div class="ans-line"></div><div class="ans-line"></div><div class="ans-line"></div>
+      <div class="ans-line"></div><div class="ans-line"></div><div class="ans-line"></div>
+      <div class="ans-line"></div><div class="ans-line"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    ✦ Visions Classes, Ambarnath · Shashikant Sir · visionslearning.in ✦<br/>
+    "Hard work beats talent when talent doesn't work hard."
+  </div>
+
+</div><!-- end page -->
+</body>
+</html>
