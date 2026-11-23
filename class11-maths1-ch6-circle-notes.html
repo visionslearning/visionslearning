@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Class 11 Maths 1 Ch 6 — Circle Notes | Visions Classes</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',sans-serif;background:#0f172a;color:#e2e8f0;min-height:100vh;}
+
+.hero{background:linear-gradient(135deg,#1a0533,#4a148c,#1a237e);padding:24px 16px 16px;text-align:center;border-bottom:3px solid #f59e0b;}
+.chip{display:inline-block;background:#f59e0b;color:#1a0a00;font-size:.68rem;font-weight:900;padding:4px 14px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
+.hero h1{font-size:1.4rem;font-weight:900;color:#fff;margin-bottom:4px;}
+.hero p{font-size:.82rem;color:#c4b5fd;margin-bottom:10px;}
+.hero-meta{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;}
+.hero-meta span{background:rgba(255,255,255,.12);color:#e2e8f0;font-size:.72rem;font-weight:800;padding:4px 12px;border-radius:12px;}
+.back-btn{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);color:#c4b5fd;padding:7px 14px;border-radius:8px;text-decoration:none;font-size:.78rem;font-weight:700;margin-bottom:10px;}
+
+/* TABS */
+.tabs{display:flex;overflow-x:auto;gap:0;background:#1e1b4b;border-bottom:2px solid #4c1d95;scrollbar-width:none;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab{flex-shrink:0;padding:11px 18px;font-size:.8rem;font-weight:800;color:#a5b4fc;cursor:pointer;border-bottom:3px solid transparent;transition:.2s;white-space:nowrap;}
+.tab.active{color:#f59e0b;border-bottom-color:#f59e0b;background:rgba(245,158,11,.08);}
+.tab:hover{color:#fff;}
+
+/* PANELS */
+.panel{display:none;max-width:900px;margin:0 auto;padding:16px 14px 60px;}
+.panel.active{display:block;}
+
+/* CARDS */
+.sec{background:#1e293b;border-radius:14px;margin-bottom:16px;overflow:hidden;border:1px solid #334155;}
+.sec-head{background:linear-gradient(135deg,#4a148c,#1565c0);padding:13px 18px;display:flex;align-items:center;gap:10px;}
+.sec-head h2{font-size:.98rem;font-weight:900;color:#fff;}
+.sec-icon{font-size:1.3rem;}
+.sec-body{padding:15px 18px;}
+
+/* TEXT STYLES */
+.defn{background:#0d1b2e;border-left:4px solid #7c3aed;border-radius:0 10px 10px 0;padding:11px 14px;margin:8px 0;font-size:.87rem;line-height:1.65;color:#c4b5fd;}
+.defn strong{color:#f59e0b;}
+.formula-box{background:linear-gradient(135deg,#1e1b4b,#1e3a5f);border:1px solid #4c1d95;border-radius:10px;padding:11px 16px;margin:10px 0;text-align:center;}
+.formula{font-family:monospace;font-size:1rem;color:#7dd3fc;font-weight:900;}
+.formula-label{font-size:.72rem;color:#94a3b8;margin-top:4px;}
+.key-point{background:#1a2744;border-left:4px solid #f59e0b;padding:10px 14px;border-radius:0 8px 8px 0;margin:8px 0;font-size:.86rem;line-height:1.6;color:#fde68a;}
+.key-point strong{color:#fff;}
+.note{background:#1a2e1a;border-left:4px solid #22c55e;padding:10px 14px;border-radius:0 8px 8px 0;margin:8px 0;font-size:.84rem;color:#bbf7d0;}
+.warn{background:#2d1515;border-left:4px solid #ef4444;padding:10px 14px;border-radius:0 8px 8px 0;margin:8px 0;font-size:.84rem;color:#fca5a5;}
+
+ul.pts{padding-left:18px;margin:7px 0;}
+ul.pts li{margin-bottom:5px;font-size:.86rem;line-height:1.6;color:#cbd5e1;}
+ul.pts li strong{color:#93c5fd;}
+
+/* TABLE */
+.tbl{width:100%;border-collapse:collapse;margin:10px 0;font-size:.83rem;}
+.tbl th{background:#4a148c;color:#fff;padding:9px 12px;text-align:left;}
+.tbl td{padding:8px 12px;border-bottom:1px solid #334155;vertical-align:top;}
+.tbl tr:nth-child(even) td{background:#1a2240;}
+
+/* SVG DIAGRAM */
+.diag-wrap{background:#0f172a;border:1px solid #334155;border-radius:12px;padding:12px;margin:12px 0;text-align:center;}
+.diag-title{font-size:.74rem;font-weight:800;color:#a5b4fc;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+
+/* QA */
+.qa-item{background:#0f172a;border-radius:10px;margin-bottom:9px;overflow:hidden;border:1px solid #334155;}
+.qa-q{padding:12px 14px;cursor:pointer;font-size:.88rem;font-weight:700;color:#e2e8f0;display:flex;justify-content:space-between;gap:8px;}
+.qa-q:hover{background:#1e293b;}
+.qa-a{display:none;padding:12px 14px;background:#0d1b2e;border-top:1px solid #334155;font-size:.85rem;line-height:1.65;color:#cbd5e1;}
+.qa-a.open{display:block;}
+.qa-a strong{color:#93c5fd;}
+.eq{background:#0d1b2e;border-left:3px solid #7c3aed;border-radius:5px;font-family:monospace;font-size:.85rem;color:#c4b5fd;padding:7px 12px;margin:5px 0;}
+
+/* NUMERICALS */
+.num{background:linear-gradient(135deg,#0a1628,#1565c0);border-radius:12px;padding:13px 15px;margin-bottom:12px;}
+.num-q{font-size:.88rem;font-weight:700;color:#fff;margin-bottom:8px;}
+.given{background:rgba(255,255,255,.07);border-radius:6px;padding:7px 10px;font-family:monospace;font-size:.82rem;color:#7dd3fc;line-height:1.9;margin:5px 0;}
+.sol{font-family:monospace;font-size:.82rem;color:#fde68a;line-height:2;padding:5px 10px;border-left:3px solid #f59e0b;margin:4px 0;background:rgba(245,158,11,.08);border-radius:0 5px 5px 0;}
+.result{display:inline-block;background:#f59e0b;color:#1a0a00;border-radius:6px;padding:4px 14px;font-size:.87rem;font-weight:900;margin-top:5px;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <a href="notes-class11.html" class="back-btn">← Class 11 Notes</a>
+  <div class="chip">Class 11 · Maths 1 · Chapter 6</div>
+  <h1>⭕ Circle</h1>
+  <p>Maharashtra Board | Complete Notes · Diagrams · Q&amp;A · Numericals</p>
+  <div class="hero-meta">
+    <span>📐 All Equations</span>
+    <span>📊 Diagrams</span>
+    <span>❓ Q&amp;A</span>
+    <span>🔢 Numericals</span>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+  <div class="tab active" onclick="showTab('notes',this)">📖 Notes</div>
+  <div class="tab" onclick="showTab('diagrams',this)">📊 Diagrams</div>
+  <div class="tab" onclick="showTab('qa',this)">❓ Q&amp;A</div>
+  <div class="tab" onclick="showTab('numericals',this)">🔢 Numericals</div>
+</div>
+
+<!-- ==================== NOTES TAB ==================== -->
+<div class="panel active" id="tab-notes">
+
+  <!-- Definition -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">⭕</span><h2>Definition of a Circle</h2></div>
+    <div class="sec-body">
+      <div class="defn"><strong>Circle:</strong> A circle is a set of all points in a plane which are equidistant from a fixed point in the plane.</div>
+      <div class="defn"><strong>Centre:</strong> The fixed point is called the centre of the circle.</div>
+      <div class="defn"><strong>Radius:</strong> The distance from the centre to any point on the circle is called the radius.</div>
+      <div class="key-point">
+        <strong>Key terms to remember:</strong>
+        <ul class="pts">
+          <li><strong>Chord:</strong> A line segment joining any two points on the circle</li>
+          <li><strong>Diameter:</strong> A chord passing through the centre (= 2r)</li>
+          <li><strong>Tangent:</strong> A line that touches the circle at exactly one point</li>
+          <li><strong>Secant:</strong> A line that intersects the circle at two points</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6.1 Forms of Equation -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">📐</span><h2>6.1 Different Forms of Equation of a Circle</h2></div>
+    <div class="sec-body">
+
+      <!-- Standard Form -->
+      <div class="defn"><strong>(1) Standard Form</strong> — Centre at origin O(0, 0), radius = r, point P(x, y) on circle.<br/>
+      OP = r → OP² = (x−0)² + (y−0)² = r²</div>
+      <div class="formula-box">
+        <div class="formula">x² + y² = r²</div>
+        <div class="formula-label">Standard form — Centre at origin</div>
+      </div>
+
+      <!-- Centre-Radius Form -->
+      <div class="defn"><strong>(2) Centre-Radius Form</strong> — Centre C(h, k), radius = r, point P(x, y) on circle.<br/>
+      CP = r → CP² = (x−h)² + (y−k)² = r²</div>
+      <div class="formula-box">
+        <div class="formula">(x − h)² + (y − k)² = r²</div>
+        <div class="formula-label">Centre-radius form | Centre C(h,k), radius r</div>
+      </div>
+      <div class="note">Standard form is a special case of centre-radius form with h = 0, k = 0.</div>
+
+      <!-- Diameter Form -->
+      <div class="defn"><strong>(3) Diameter Form</strong> — A(x₁, y₁) and B(x₂, y₂) are endpoints of a diameter. P(x, y) is any point on the circle.<br/>
+      Angle in semicircle = 90° → AP ⊥ BP → product of slopes = −1</div>
+      <div class="formula-box">
+        <div class="formula">(x − x₁)(x − x₂) + (y − y₁)(y − y₂) = 0</div>
+        <div class="formula-label">Diameter form | A(x₁,y₁) and B(x₂,y₂) are ends of diameter</div>
+      </div>
+
+      <!-- General Form -->
+      <div class="defn"><strong>(4) General Form</strong> — Expanding (x−h)² + (y−k)² = r²:</div>
+      <div class="formula-box">
+        <div class="formula">x² + y² + 2gx + 2fy + c = 0</div>
+        <div class="formula-label">General form | g = −h, f = −k, c = h² + k² − r²</div>
+      </div>
+      <div class="key-point">
+        From general form: <strong>Centre = (−g, −f)</strong> &nbsp;&nbsp; <strong>Radius = √(g² + f² − c)</strong><br/>
+        Condition for real circle: g² + f² − c &gt; 0
+      </div>
+    </div>
+  </div>
+
+  <!-- 6.2 Tangent -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">📏</span><h2>6.2 Equation of Tangent to a Circle</h2></div>
+    <div class="sec-body">
+      <div class="defn"><strong>Tangent:</strong> A line that touches the circle at exactly one point (point of contact). The radius to the point of contact is perpendicular to the tangent.</div>
+
+      <div class="key-point"><strong>Tangent to x² + y² = r² at point (x₁, y₁):</strong></div>
+      <div class="formula-box">
+        <div class="formula">xx₁ + yy₁ = r²</div>
+        <div class="formula-label">Tangent to standard circle at point (x₁, y₁) on circle</div>
+      </div>
+
+      <div class="key-point"><strong>Tangent to (x−h)² + (y−k)² = r² at point (x₁, y₁):</strong></div>
+      <div class="formula-box">
+        <div class="formula">(x₁ − h)(x − h) + (y₁ − k)(y − k) = r²</div>
+        <div class="formula-label">Tangent to centre-radius form at point (x₁, y₁)</div>
+      </div>
+
+      <div class="key-point"><strong>Tangent to x² + y² + 2gx + 2fy + c = 0 at point (x₁, y₁):</strong></div>
+      <div class="formula-box">
+        <div class="formula">xx₁ + yy₁ + g(x + x₁) + f(y + y₁) + c = 0</div>
+        <div class="formula-label">Tangent to general form at point (x₁, y₁)</div>
+      </div>
+
+      <div class="key-point"><strong>Condition for line y = mx + c to be tangent to x² + y² = r²:</strong></div>
+      <div class="formula-box">
+        <div class="formula">c² = r²(1 + m²) &nbsp;&nbsp; i.e. &nbsp;&nbsp; c = ± r√(1 + m²)</div>
+        <div class="formula-label">Condition for tangency</div>
+      </div>
+
+      <div class="note"><strong>Length of tangent</strong> from external point P(x₁, y₁) to circle x² + y² + 2gx + 2fy + c = 0:
+        <div class="eq">Length = √(x₁² + y₁² + 2gx₁ + 2fy₁ + c)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6.3 Director Circle -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">🎯</span><h2>6.3 Director Circle</h2></div>
+    <div class="sec-body">
+      <div class="defn"><strong>Director Circle:</strong> The locus of the point from which two tangents drawn to the given circle are perpendicular to each other is called the director circle.</div>
+      <div class="key-point">For circle x² + y² = r², the director circle has equation:</div>
+      <div class="formula-box">
+        <div class="formula">x² + y² = 2r²</div>
+        <div class="formula-label">Director circle of x² + y² = r² | Radius of director circle = r√2</div>
+      </div>
+      <div class="note">The director circle is concentric with the given circle and its radius is <strong>r√2</strong> (√2 times the original radius).</div>
+    </div>
+  </div>
+
+  <!-- 6.4 Position of Point -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">📍</span><h2>6.4 Position of a Point w.r.t. Circle</h2></div>
+    <div class="sec-body">
+      <div class="defn">For circle x² + y² = r² and point P(x₁, y₁):</div>
+      <table class="tbl">
+        <tr><th>Condition</th><th>Position of Point</th></tr>
+        <tr><td><strong>x₁² + y₁² &lt; r²</strong></td><td>Point is INSIDE the circle</td></tr>
+        <tr><td><strong>x₁² + y₁² = r²</strong></td><td>Point is ON the circle</td></tr>
+        <tr><td><strong>x₁² + y₁² &gt; r²</strong></td><td>Point is OUTSIDE the circle</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- 6.5 Two Circles -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">⭕⭕</span><h2>6.5 Relative Position of Two Circles</h2></div>
+    <div class="sec-body">
+      <div class="defn">For two circles with centres C₁, C₂ and radii r₁, r₂, let d = d(C₁C₂) = distance between centres.</div>
+      <table class="tbl">
+        <tr><th>Condition</th><th>Position</th><th>Common Tangents</th></tr>
+        <tr><td><strong>d &gt; r₁ + r₂</strong></td><td>Circles are external (disjoint)</td><td>4 tangents</td></tr>
+        <tr><td><strong>d = r₁ + r₂</strong></td><td>Externally touching</td><td>3 tangents</td></tr>
+        <tr><td><strong>|r₁ − r₂| &lt; d &lt; r₁ + r₂</strong></td><td>Intersecting (2 common points)</td><td>2 tangents</td></tr>
+        <tr><td><strong>d = |r₁ − r₂|</strong></td><td>Internally touching</td><td>1 tangent</td></tr>
+        <tr><td><strong>d &lt; |r₁ − r₂|</strong></td><td>One inside other</td><td>0 tangents</td></tr>
+        <tr><td><strong>d = 0</strong></td><td>Concentric circles</td><td>0 tangents</td></tr>
+      </table>
+      <div class="note"><strong>Radical axis:</strong> The line joining the two points of intersection of two circles is called the radical axis (common chord).</div>
+    </div>
+  </div>
+
+  <!-- Formula Summary -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">⚡</span><h2>Quick Revision — All Formulas</h2></div>
+    <div class="sec-body">
+      <table class="tbl">
+        <tr><th>Formula</th><th>Name / Use</th></tr>
+        <tr><td class="formula" style="font-size:.82rem;">x² + y² = r²</td><td>Standard form (centre at origin)</td></tr>
+        <tr><td class="formula" style="font-size:.82rem;">(x−h)² + (y−k)² = r²</td><td>Centre-radius form, centre C(h,k)</td></tr>
+        <tr><td class="formula" style="font-size:.82rem;">(x−x₁)(x−x₂)+(y−y₁)(y−y₂)=0</td><td>Diameter form, ends A(x₁,y₁), B(x₂,y₂)</td></tr>
+        <tr><td class="formula" style="font-size:.82rem;">x²+y²+2gx+2fy+c=0</td><td>General form, C=(−g,−f), r=√(g²+f²−c)</td></tr>
+        <tr><td class="formula" style="font-size:.82rem;">xx₁+yy₁=r²</td><td>Tangent at (x₁,y₁) to x²+y²=r²</td></tr>
+        <tr><td class="formula" style="font-size:.82rem;">c²=r²(1+m²)</td><td>Condition for tangency of y=mx+c</td></tr>
+        <tr><td class="formula" style="font-size:.82rem;">x²+y²=2r²</td><td>Director circle of x²+y²=r²</td></tr>
+        <tr><td class="formula" style="font-size:.82rem;">√(x₁²+y₁²+2gx₁+2fy₁+c)</td><td>Length of tangent from (x₁,y₁)</td></tr>
+      </table>
+    </div>
+  </div>
+
+</div><!-- end notes -->
+
+<!-- ==================== DIAGRAMS TAB ==================== -->
+<div class="panel" id="tab-diagrams">
+
+  <!-- Standard Form -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">📊</span><h2>Diagram 1 — Standard Form (Centre at Origin)</h2></div>
+    <div class="sec-body">
+      <div class="diag-wrap">
+        <div class="diag-title">x² + y² = r² | Centre O(0,0)</div>
+        <svg viewBox="0 0 320 280" style="width:100%;max-width:320px;">
+          <!-- Axes -->
+          <line x1="10" y1="140" x2="310" y2="140" stroke="#475569" stroke-width="1.5"/>
+          <line x1="160" y1="10" x2="160" y2="270" stroke="#475569" stroke-width="1.5"/>
+          <text x="305" y="135" fill="#94a3b8" font-size="11">X</text>
+          <text x="165" y="18" fill="#94a3b8" font-size="11">Y</text>
+          <!-- Circle -->
+          <circle cx="160" cy="140" r="90" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
+          <!-- Centre -->
+          <circle cx="160" cy="140" r="4" fill="#f59e0b"/>
+          <text x="140" y="158" fill="#f59e0b" font-size="12" font-weight="bold">O(0,0)</text>
+          <!-- Point P -->
+          <circle cx="224" cy="77" r="4" fill="#22c55e"/>
+          <text x="228" y="74" fill="#22c55e" font-size="11" font-weight="bold">P(x,y)</text>
+          <!-- Radius line -->
+          <line x1="160" y1="140" x2="224" y2="77" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5"/>
+          <text x="182" y="100" fill="#f59e0b" font-size="12" font-weight="bold">r</text>
+          <!-- Equation -->
+          <rect x="40" y="220" width="240" height="30" fill="#1e1b4b" rx="6"/>
+          <text x="160" y="240" fill="#7dd3fc" font-size="13" text-anchor="middle" font-weight="bold" font-family="monospace">x² + y² = r²</text>
+        </svg>
+      </div>
+      <div class="note">Centre is at <strong>origin O(0,0)</strong>. Every point P(x,y) on the circle is at distance r from O.</div>
+    </div>
+  </div>
+
+  <!-- Centre-Radius Form -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">📊</span><h2>Diagram 2 — Centre-Radius Form</h2></div>
+    <div class="sec-body">
+      <div class="diag-wrap">
+        <div class="diag-title">(x−h)² + (y−k)² = r² | Centre C(h,k)</div>
+        <svg viewBox="0 0 320 280" style="width:100%;max-width:320px;">
+          <!-- Axes -->
+          <line x1="10" y1="230" x2="310" y2="230" stroke="#475569" stroke-width="1.5"/>
+          <line x1="40" y1="10" x2="40" y2="260" stroke="#475569" stroke-width="1.5"/>
+          <text x="303" y="225" fill="#94a3b8" font-size="11">X</text>
+          <text x="45" y="18" fill="#94a3b8" font-size="11">Y</text>
+          <!-- Circle -->
+          <circle cx="170" cy="130" r="90" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
+          <!-- Centre C(h,k) -->
+          <circle cx="170" cy="130" r="4" fill="#f59e0b"/>
+          <text x="176" y="128" fill="#f59e0b" font-size="11" font-weight="bold">C(h, k)</text>
+          <!-- Point P -->
+          <circle cx="248" cy="80" r="4" fill="#22c55e"/>
+          <text x="252" y="77" fill="#22c55e" font-size="11" font-weight="bold">P(x,y)</text>
+          <!-- Radius -->
+          <line x1="170" y1="130" x2="248" y2="80" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5"/>
+          <text x="202" y="96" fill="#f59e0b" font-size="12" font-weight="bold">r</text>
+          <!-- h and k dashed lines -->
+          <line x1="40" y1="130" x2="170" y2="130" stroke="#60a5fa" stroke-width="1" stroke-dasharray="4"/>
+          <line x1="170" y1="130" x2="170" y2="230" stroke="#60a5fa" stroke-width="1" stroke-dasharray="4"/>
+          <text x="100" y="125" fill="#60a5fa" font-size="10">h</text>
+          <text x="174" y="185" fill="#60a5fa" font-size="10">k</text>
+          <!-- Equation -->
+          <rect x="20" y="244" width="280" height="28" fill="#1e1b4b" rx="6"/>
+          <text x="160" y="262" fill="#7dd3fc" font-size="11" text-anchor="middle" font-weight="bold" font-family="monospace">(x−h)² + (y−k)² = r²</text>
+        </svg>
+      </div>
+      <div class="note">Centre is at <strong>C(h, k)</strong>. Distance CP = r for every point P on circle.</div>
+    </div>
+  </div>
+
+  <!-- Diameter Form -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">📊</span><h2>Diagram 3 — Diameter Form</h2></div>
+    <div class="sec-body">
+      <div class="diag-wrap">
+        <div class="diag-title">Angle in semicircle = 90° → AP ⊥ BP</div>
+        <svg viewBox="0 0 320 260" style="width:100%;max-width:320px;">
+          <!-- Circle -->
+          <circle cx="160" cy="130" r="100" fill="none" stroke="#7c3aed" stroke-width="2"/>
+          <!-- Diameter A-B -->
+          <line x1="60" y1="130" x2="260" y2="130" stroke="#f59e0b" stroke-width="2"/>
+          <circle cx="60" cy="130" r="5" fill="#f59e0b"/>
+          <circle cx="260" cy="130" r="5" fill="#f59e0b"/>
+          <text x="38" y="148" fill="#f59e0b" font-size="12" font-weight="bold">A(x₁,y₁)</text>
+          <text x="246" y="148" fill="#f59e0b" font-size="12" font-weight="bold">B(x₂,y₂)</text>
+          <!-- Centre C -->
+          <circle cx="160" cy="130" r="4" fill="#94a3b8"/>
+          <text x="164" y="127" fill="#94a3b8" font-size="10">C</text>
+          <!-- Point P on circle -->
+          <circle cx="200" cy="43" r="5" fill="#22c55e"/>
+          <text x="204" y="42" fill="#22c55e" font-size="11" font-weight="bold">P(x,y)</text>
+          <!-- AP and BP lines -->
+          <line x1="60" y1="130" x2="200" y2="43" stroke="#60a5fa" stroke-width="1.5"/>
+          <line x1="260" y1="130" x2="200" y2="43" stroke="#ef4444" stroke-width="1.5"/>
+          <!-- Right angle mark -->
+          <text x="195" y="58" fill="#fff" font-size="14">∟</text>
+          <text x="130" y="80" fill="#60a5fa" font-size="10">AP</text>
+          <text x="222" y="80" fill="#ef4444" font-size="10">BP</text>
+          <!-- Equation -->
+          <rect x="20" y="230" width="280" height="24" fill="#1e1b4b" rx="5"/>
+          <text x="160" y="246" fill="#7dd3fc" font-size="10" text-anchor="middle" font-weight="bold" font-family="monospace">(x−x₁)(x−x₂)+(y−y₁)(y−y₂)=0</text>
+        </svg>
+      </div>
+      <div class="note">Angle inscribed in a semicircle = 90°. So AP ⊥ BP → slope(AP) × slope(BP) = −1</div>
+    </div>
+  </div>
+
+  <!-- Two Circles -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">📊</span><h2>Diagram 4 — Relative Positions of Two Circles</h2></div>
+    <div class="sec-body">
+      <div class="diag-wrap">
+        <div class="diag-title">5 cases based on distance between centres</div>
+        <svg viewBox="0 0 500 340" style="width:100%;max-width:500px;">
+          <!-- Case 1: External -->
+          <text x="40" y="18" fill="#f59e0b" font-size="10" font-weight="bold">1. Disjoint (d &gt; r₁+r₂)</text>
+          <circle cx="45" cy="50" r="25" fill="none" stroke="#7c3aed" stroke-width="1.5"/>
+          <circle cx="110" cy="50" r="25" fill="none" stroke="#22c55e" stroke-width="1.5"/>
+          <text x="62" y="54" fill="#94a3b8" font-size="9">4 tangents</text>
+
+          <!-- Case 2: External Touch -->
+          <text x="175" y="18" fill="#f59e0b" font-size="10" font-weight="bold">2. Ext. Touch (d = r₁+r₂)</text>
+          <circle cx="195" cy="50" r="25" fill="none" stroke="#7c3aed" stroke-width="1.5"/>
+          <circle cx="245" cy="50" r="25" fill="none" stroke="#22c55e" stroke-width="1.5"/>
+          <circle cx="220" cy="50" r="3" fill="#f59e0b"/>
+          <text x="202" y="85" fill="#94a3b8" font-size="9">3 tangents</text>
+
+          <!-- Case 3: Intersecting -->
+          <text x="310" y="18" fill="#f59e0b" font-size="10" font-weight="bold">3. Intersecting</text>
+          <circle cx="345" cy="50" r="30" fill="none" stroke="#7c3aed" stroke-width="1.5"/>
+          <circle cx="385" cy="50" r="30" fill="none" stroke="#22c55e" stroke-width="1.5"/>
+          <text x="338" y="97" fill="#94a3b8" font-size="9">2 tangents</text>
+
+          <!-- Case 4: Internal Touch -->
+          <text x="30" y="130" fill="#f59e0b" font-size="10" font-weight="bold">4. Int. Touch (d = |r₁−r₂|)</text>
+          <circle cx="80" cy="175" r="45" fill="none" stroke="#7c3aed" stroke-width="1.5"/>
+          <circle cx="92" cy="175" r="33" fill="none" stroke="#22c55e" stroke-width="1.5"/>
+          <circle cx="125" cy="175" r="3" fill="#f59e0b"/>
+          <text x="62" y="230" fill="#94a3b8" font-size="9">1 tangent</text>
+
+          <!-- Case 5: Concentric -->
+          <text x="220" y="130" fill="#f59e0b" font-size="10" font-weight="bold">5. Concentric (d = 0)</text>
+          <circle cx="300" cy="175" r="50" fill="none" stroke="#7c3aed" stroke-width="1.5"/>
+          <circle cx="300" cy="175" r="25" fill="none" stroke="#22c55e" stroke-width="1.5"/>
+          <circle cx="300" cy="175" r="3" fill="#f59e0b"/>
+          <text x="262" y="236" fill="#94a3b8" font-size="9">0 tangents (same centre)</text>
+
+          <!-- Case 6: One inside other -->
+          <text x="30" y="265" fill="#f59e0b" font-size="10" font-weight="bold">6. One inside other (d &lt; |r₁−r₂|)</text>
+          <circle cx="100" cy="310" r="40" fill="none" stroke="#7c3aed" stroke-width="1.5"/>
+          <circle cx="110" cy="310" r="20" fill="none" stroke="#22c55e" stroke-width="1.5"/>
+          <text x="75" y="336" fill="#94a3b8" font-size="9">0 common tangents</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end diagrams -->
+
+<!-- ==================== Q&A TAB ==================== -->
+<div class="panel" id="tab-qa">
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">❓</span><h2>Short &amp; Long Answer Questions</h2></div>
+    <div class="sec-body">
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">1. Define a circle. What is its standard equation? <span>▼</span></div>
+        <div class="qa-a">A <strong>circle</strong> is a set of all points in a plane equidistant from a fixed point (centre). The fixed distance is the radius r.<br/>
+        Standard equation (centre at origin):
+        <div class="eq">x² + y² = r²</div>
+        Derivation: P(x,y) on circle, O(0,0) centre. OP = r → OP² = x² + y² = r².</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">2. Write the centre-radius form of a circle and derive it. <span>▼</span></div>
+        <div class="qa-a">For centre C(h, k) and radius r, any point P(x, y) on circle satisfies CP = r.
+        <div class="eq">CP = √[(x−h)² + (y−k)²] = r</div>
+        Squaring:
+        <div class="eq">(x − h)² + (y − k)² = r²</div>
+        This is the <strong>centre-radius form</strong>. Standard form is a special case with h = 0, k = 0.</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">3. Derive the diameter form of a circle. <span>▼</span></div>
+        <div class="qa-a">Let A(x₁,y₁) and B(x₂,y₂) be endpoints of diameter. P(x,y) is any point on circle.<br/>
+        Since angle in semicircle = 90°: AP ⊥ BP<br/>
+        Slope of AP × slope of BP = −1
+        <div class="eq">[(y−y₁)/(x−x₁)] × [(y−y₂)/(x−x₂)] = −1</div>
+        <div class="eq">(y−y₁)(y−y₂) = −(x−x₁)(x−x₂)</div>
+        <div class="eq">(x−x₁)(x−x₂) + (y−y₁)(y−y₂) = 0</div></div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">4. Write the general form of a circle. Find its centre and radius. <span>▼</span></div>
+        <div class="qa-a">General form: <strong>x² + y² + 2gx + 2fy + c = 0</strong><br/>
+        Comparing with (x−h)²+(y−k)²=r²:<br/>
+        x²+y²−2hx−2ky+(h²+k²−r²)=0<br/>
+        So: 2g = −2h → h = −g; 2f = −2k → k = −f; c = h²+k²−r²
+        <div class="eq">Centre = (−g, −f)</div>
+        <div class="eq">Radius = √(g² + f² − c)</div>
+        Condition for real circle: g² + f² − c &gt; 0</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">5. What is the equation of tangent to circle x² + y² = r² at point (x₁, y₁)? <span>▼</span></div>
+        <div class="qa-a">The tangent to the circle <strong>x² + y² = r²</strong> at the point (x₁, y₁) on the circle is:
+        <div class="eq">xx₁ + yy₁ = r²</div>
+        <strong>Note:</strong> This is obtained by replacing x² by xx₁ and y² by yy₁ in the equation of the circle.</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">6. State the condition for the line y = mx + c to be tangent to the circle x² + y² = r². <span>▼</span></div>
+        <div class="qa-a">For the line y = mx + c to be a tangent to x² + y² = r², the perpendicular distance from centre (0,0) to the line must equal r.<br/>
+        Distance from (0,0) to line mx − y + c = 0:
+        <div class="eq">d = |c| / √(m² + 1) = r</div>
+        Squaring: c² = r²(1 + m²)<br/>
+        So tangent: <strong>y = mx ± r√(1+m²)</strong></div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">7. What is a director circle? Write its equation. <span>▼</span></div>
+        <div class="qa-a"><strong>Director circle:</strong> The locus of a point from which two tangents drawn to the given circle are perpendicular to each other.<br/>
+        For circle x² + y² = r²:
+        <div class="eq">x² + y² = 2r²</div>
+        The director circle has the <strong>same centre</strong> as the original circle, and its radius is <strong>r√2</strong>.</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">8. How many common tangents can be drawn to two circles? State conditions. <span>▼</span></div>
+        <div class="qa-a">
+          <ul class="pts">
+            <li><strong>4 tangents:</strong> d &gt; r₁ + r₂ (circles are external/disjoint)</li>
+            <li><strong>3 tangents:</strong> d = r₁ + r₂ (circles touch externally)</li>
+            <li><strong>2 tangents:</strong> |r₁−r₂| &lt; d &lt; r₁+r₂ (circles intersect at 2 points)</li>
+            <li><strong>1 tangent:</strong> d = |r₁−r₂| (circles touch internally)</li>
+            <li><strong>0 tangents:</strong> d &lt; |r₁−r₂| or d = 0 (one inside other / concentric)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">9. How do you find the length of the tangent from an external point? <span>▼</span></div>
+        <div class="qa-a">For circle x² + y² + 2gx + 2fy + c = 0 and external point P(x₁, y₁):
+        <div class="eq">Length of tangent = √(x₁² + y₁² + 2gx₁ + 2fy₁ + c)</div>
+        This is the distance from the external point to the point of tangency on the circle.</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">10. What is the position of a point with respect to a circle? <span>▼</span></div>
+        <div class="qa-a">For circle x² + y² = r² and point P(x₁, y₁):<br/>
+        Let S₁ = x₁² + y₁² − r²
+        <ul class="pts">
+          <li><strong>S₁ &lt; 0:</strong> Point is inside the circle</li>
+          <li><strong>S₁ = 0:</strong> Point is on the circle</li>
+          <li><strong>S₁ &gt; 0:</strong> Point is outside the circle</li>
+        </ul></div>
+      </div>
+
+    </div>
+  </div>
+</div><!-- end qa -->
+
+<!-- ==================== NUMERICALS TAB ==================== -->
+<div class="panel" id="tab-numericals">
+  <div class="sec">
+    <div class="sec-head"><span class="sec-icon">🔢</span><h2>Solved Numericals</h2></div>
+    <div class="sec-body">
+
+      <div class="num">
+        <div class="num-q">1. Find the equation of a circle with centre (3, −2) and radius 5.</div>
+        <div class="given">Centre C(h,k) = (3, −2), r = 5</div>
+        <div class="sol">
+          (x − h)² + (y − k)² = r²<br/>
+          (x − 3)² + (y − (−2))² = 5²<br/>
+          (x − 3)² + (y + 2)² = 25<br/>
+          x² − 6x + 9 + y² + 4y + 4 = 25<br/>
+          x² + y² − 6x + 4y + 13 − 25 = 0
+        </div>
+        <span class="result">x² + y² − 6x + 4y − 12 = 0</span>
+      </div>
+
+      <div class="num">
+        <div class="num-q">2. Find the centre and radius of the circle x² + y² − 6x + 4y − 12 = 0.</div>
+        <div class="given">x² + y² − 6x + 4y − 12 = 0 → comparing with x²+y²+2gx+2fy+c=0</div>
+        <div class="sol">
+          2g = −6 → g = −3<br/>
+          2f = 4 → f = 2<br/>
+          c = −12<br/>
+          Centre = (−g, −f) = (3, −2)<br/>
+          Radius = √(g²+f²−c) = √(9+4+12) = √25 = 5
+        </div>
+        <span class="result">Centre = (3, −2) | Radius = 5</span>
+      </div>
+
+      <div class="num">
+        <div class="num-q">3. Find the equation of a circle with diameter endpoints A(1, 2) and B(5, 6).</div>
+        <div class="given">A(x₁,y₁) = (1,2), B(x₂,y₂) = (5,6)</div>
+        <div class="sol">
+          Using diameter form:<br/>
+          (x−x₁)(x−x₂) + (y−y₁)(y−y₂) = 0<br/>
+          (x−1)(x−5) + (y−2)(y−6) = 0<br/>
+          x²−6x+5 + y²−8y+12 = 0
+        </div>
+        <span class="result">x² + y² − 6x − 8y + 17 = 0</span>
+      </div>
+
+      <div class="num">
+        <div class="num-q">4. Find the equation of tangent to circle x² + y² = 25 at point (3, 4).</div>
+        <div class="given">Circle: x²+y²=25 (r=5), Point (x₁,y₁) = (3,4)</div>
+        <div class="sol">
+          First check: 3²+4² = 9+16 = 25 ✓ (point is on circle)<br/>
+          Tangent: xx₁ + yy₁ = r²<br/>
+          x(3) + y(4) = 25
+        </div>
+        <span class="result">3x + 4y = 25</span>
+      </div>
+
+      <div class="num">
+        <div class="num-q">5. Show that the line y = x + 2 is a tangent to the circle x² + y² = 2. Find the point of tangency.</div>
+        <div class="given">Line: y = x + 2 (m=1, c=2), Circle: x²+y²=2 (r=√2)</div>
+        <div class="sol">
+          Condition for tangency: c² = r²(1+m²)<br/>
+          LHS: c² = (2)² = 4<br/>
+          RHS: r²(1+m²) = 2(1+1) = 4<br/>
+          LHS = RHS ✓ → Line is tangent<br/>
+          Point of contact: substitute y = x+2 in x²+y²=2<br/>
+          x² + (x+2)² = 2 → 2x²+4x+4=2 → 2x²+4x+2=0 → x²+2x+1=0 → (x+1)²=0 → x=−1<br/>
+          y = −1+2 = 1
+        </div>
+        <span class="result">Tangent confirmed | Point of contact = (−1, 1)</span>
+      </div>
+
+      <div class="num">
+        <div class="num-q">6. Find the length of the tangent drawn from point (5, 4) to the circle x² + y² − 4x − 6y + 3 = 0.</div>
+        <div class="given">Point P(x₁,y₁) = (5,4), Circle: x²+y²−4x−6y+3=0</div>
+        <div class="sol">
+          Length = √(x₁²+y₁²+2gx₁+2fy₁+c)<br/>
+          Here: 2g=−4→g=−2, 2f=−6→f=−3, c=3<br/>
+          Substituting P(5,4):<br/>
+          = √(25+16+(−4)(5)+(−6)(4)+3)<br/>
+          = √(25+16−20−24+3)<br/>
+          = √0 = 0
+        </div>
+        <span class="result">Length = 0 → Point (5,4) lies ON the circle</span>
+      </div>
+
+      <div class="num">
+        <div class="num-q">7. Find the equation of the director circle of x² + y² = 9.</div>
+        <div class="given">Circle: x²+y²=9, so r²=9, r=3</div>
+        <div class="sol">
+          Director circle: x²+y² = 2r²<br/>
+          x²+y² = 2×9 = 18
+        </div>
+        <span class="result">x² + y² = 18 (radius = 3√2)</span>
+      </div>
+
+    </div>
+  </div>
+</div><!-- end numericals -->
+
+<script>
+function showTab(id,el){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  el.classList.add('active');
+}
+function toggleQA(el){
+  const ans=el.nextElementSibling;
+  const ic=el.querySelector('span');
+  const isOpen=ans.classList.contains('open');
+  ans.classList.toggle('open',!isOpen);
+  ic.textContent=isOpen?'▼':'▲';
+}
+</script>
+</body>
+</html>
