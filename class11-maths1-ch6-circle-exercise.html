@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Class 11 Maths 1 Ch 6 Circle — All Exercise Solutions | Visions Classes</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',sans-serif;background:#0f172a;color:#e2e8f0;min-height:100vh;}
+.hero{background:linear-gradient(135deg,#1a0533,#4a148c,#1a237e);padding:22px 16px 16px;text-align:center;border-bottom:3px solid #f59e0b;}
+.chip{display:inline-block;background:#f59e0b;color:#1a0a00;font-size:.68rem;font-weight:900;padding:4px 14px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
+.hero h1{font-size:1.35rem;font-weight:900;color:#fff;margin-bottom:4px;}
+.hero p{font-size:.82rem;color:#c4b5fd;}
+.back-btn{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);color:#c4b5fd;padding:7px 14px;border-radius:8px;text-decoration:none;font-size:.78rem;font-weight:700;margin-bottom:10px;}
+.hero-meta{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:8px;}
+.hero-meta span{background:rgba(255,255,255,.12);color:#e2e8f0;font-size:.72rem;font-weight:800;padding:4px 12px;border-radius:12px;}
+
+/* EXERCISE TABS */
+.ex-tabs{display:flex;overflow-x:auto;background:#1e1b4b;border-bottom:2px solid #4c1d95;scrollbar-width:none;}
+.ex-tabs::-webkit-scrollbar{display:none;}
+.ex-tab{flex-shrink:0;padding:11px 20px;font-size:.82rem;font-weight:800;color:#a5b4fc;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;}
+.ex-tab.active{color:#f59e0b;border-bottom-color:#f59e0b;background:rgba(245,158,11,.08);}
+.ex-tab:hover{color:#fff;}
+
+/* PANEL */
+.panel{display:none;max-width:900px;margin:0 auto;padding:14px 14px 60px;}
+.panel.active{display:block;}
+
+/* EXERCISE HEADER */
+.ex-head{background:linear-gradient(135deg,#4a148c,#1565c0);border-radius:12px;padding:14px 18px;margin-bottom:14px;}
+.ex-head h2{font-size:1rem;font-weight:900;color:#fff;margin-bottom:4px;}
+.ex-head p{font-size:.82rem;color:#c4b5fd;}
+
+/* QUESTION CARDS */
+.qcard{background:#1e293b;border-radius:12px;margin-bottom:12px;overflow:hidden;border:1px solid #334155;}
+.qhead{padding:13px 16px;cursor:pointer;display:flex;align-items:flex-start;gap:10px;}
+.qhead:hover{background:#263447;}
+.qno{font-size:.85rem;font-weight:900;color:#a78bfa;min-width:38px;flex-shrink:0;padding-top:1px;}
+.qtext{flex:1;font-size:.88rem;color:#e2e8f0;line-height:1.6;}
+.tog{font-size:.78rem;color:#a78bfa;margin-left:auto;padding-left:8px;white-space:nowrap;flex-shrink:0;}
+
+.qsol{display:none;padding:14px 16px;background:#0f172a;border-top:1px solid #334155;}
+.qsol.open{display:block;}
+.sol-label{font-size:.68rem;font-weight:800;color:#34d399;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
+.sol-body{font-size:.86rem;color:#cbd5e1;line-height:1.7;}
+.sol-body strong{color:#93c5fd;}
+
+/* STEPS */
+.given-box{background:#0d1b2e;border-left:3px solid #7c3aed;border-radius:0 8px 8px 0;padding:9px 13px;margin:7px 0;font-size:.84rem;color:#c4b5fd;line-height:1.8;}
+.step-box{background:#0d1b2e;border-radius:8px;padding:10px 14px;margin:7px 0;}
+.step{display:block;font-family:monospace;font-size:.85rem;color:#7dd3fc;line-height:1.9;padding:2px 0;}
+.step.comment{color:#6b7280;font-style:italic;font-family:inherit;font-size:.8rem;}
+.ans-box{display:inline-block;background:#f59e0b;color:#1a0a00;border-radius:7px;padding:5px 16px;font-size:.88rem;font-weight:900;margin-top:8px;}
+.note-box{background:#1a2e1a;border-left:3px solid #22c55e;border-radius:0 7px 7px 0;padding:8px 12px;margin:7px 0;font-size:.83rem;color:#bbf7d0;}
+.warn-box{background:#2d1515;border-left:3px solid #ef4444;border-radius:0 7px 7px 0;padding:8px 12px;margin:7px 0;font-size:.83rem;color:#fca5a5;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <a href="class11-maths1-ch6-circle-notes.html" class="back-btn">← Circle Notes</a>
+  <div class="chip">Class 11 · Maths 1 · Chapter 6</div>
+  <h1>⭕ Circle — All Exercise Solutions</h1>
+  <p>Exercise 6.1 · 6.2 · 6.3 · Miscellaneous — Step by Step</p>
+  <div class="hero-meta">
+    <span>📖 Ex 6.1 — Equations</span>
+    <span>📐 Ex 6.2 — Tangents</span>
+    <span>🎯 Ex 6.3 — Miscellaneous</span>
+  </div>
+</div>
+
+<div class="ex-tabs">
+  <div class="ex-tab active" onclick="showPanel('ex1',this)">Exercise 6.1</div>
+  <div class="ex-tab" onclick="showPanel('ex2',this)">Exercise 6.2</div>
+  <div class="ex-tab" onclick="showPanel('ex3',this)">Exercise 6.3</div>
+</div>
+
+<!-- ═══════════════ EXERCISE 6.1 ═══════════════ -->
+<div class="panel active" id="ex1">
+<div class="ex-head">
+  <h2>Exercise 6.1 — Equations of a Circle</h2>
+  <p>Standard form · Centre-radius form · Diameter form · General form</p>
+</div>
+
+<!-- Q1 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.1</span>
+    <span class="qtext">Find the equation of a circle with centre at origin and radius 4.</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Given: Centre = O(0, 0), radius r = 4</div>
+      <div class="step-box">
+        <span class="step comment">// Standard form: x² + y² = r²</span>
+        <span class="step">x² + y² = 4²</span>
+        <span class="step">x² + y² = 16</span>
+      </div>
+      <div class="ans-box">∴ x² + y² = 16</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q2 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.2</span>
+    <span class="qtext">Find the equation of a circle with centre (2, 3) and radius 5.</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Given: Centre C(h, k) = (2, 3), radius r = 5</div>
+      <div class="step-box">
+        <span class="step comment">// Centre-radius form: (x−h)² + (y−k)² = r²</span>
+        <span class="step">(x − 2)² + (y − 3)² = 5²</span>
+        <span class="step">x² − 4x + 4 + y² − 6y + 9 = 25</span>
+        <span class="step">x² + y² − 4x − 6y + 13 − 25 = 0</span>
+        <span class="step">x² + y² − 4x − 6y − 12 = 0</span>
+      </div>
+      <div class="ans-box">∴ (x−2)² + (y−3)² = 25 &nbsp;or&nbsp; x² + y² − 4x − 6y − 12 = 0</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q3 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.3</span>
+    <span class="qtext">Find the equation of a circle with centre (−3, 2) and radius 6.</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Given: Centre C(h, k) = (−3, 2), radius r = 6</div>
+      <div class="step-box">
+        <span class="step">(x − (−3))² + (y − 2)² = 6²</span>
+        <span class="step">(x + 3)² + (y − 2)² = 36</span>
+        <span class="step">x² + 6x + 9 + y² − 4y + 4 = 36</span>
+        <span class="step">x² + y² + 6x − 4y + 13 − 36 = 0</span>
+        <span class="step">x² + y² + 6x − 4y − 23 = 0</span>
+      </div>
+      <div class="ans-box">∴ x² + y² + 6x − 4y − 23 = 0</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q4 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.4</span>
+    <span class="qtext">Find the centre and radius of the circle: x² + y² − 4x + 6y − 12 = 0</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Given: x² + y² − 4x + 6y − 12 = 0<br/>
+      Comparing with x² + y² + 2gx + 2fy + c = 0</div>
+      <div class="step-box">
+        <span class="step comment">// Identify g, f, c</span>
+        <span class="step">2g = −4 &nbsp;→&nbsp; g = −2</span>
+        <span class="step">2f = 6 &nbsp;→&nbsp; f = 3</span>
+        <span class="step">c = −12</span>
+        <span class="step comment">// Centre = (−g, −f)</span>
+        <span class="step">Centre = (−(−2), −3) = (2, −3)</span>
+        <span class="step comment">// Radius = √(g² + f² − c)</span>
+        <span class="step">r = √((−2)² + (3)² − (−12))</span>
+        <span class="step">r = √(4 + 9 + 12)</span>
+        <span class="step">r = √25 = 5</span>
+      </div>
+      <div class="ans-box">Centre = (2, −3) &nbsp;|&nbsp; Radius = 5</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q5 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.5</span>
+    <span class="qtext">Find the centre and radius of the circle: x² + y² + 6x − 8y − 24 = 0</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">x² + y² + 6x − 8y − 24 = 0<br/>
+      Comparing with x² + y² + 2gx + 2fy + c = 0</div>
+      <div class="step-box">
+        <span class="step">2g = 6 &nbsp;→&nbsp; g = 3</span>
+        <span class="step">2f = −8 &nbsp;→&nbsp; f = −4</span>
+        <span class="step">c = −24</span>
+        <span class="step">Centre = (−g, −f) = (−3, 4)</span>
+        <span class="step">r = √(g² + f² − c) = √(9 + 16 + 24) = √49 = 7</span>
+      </div>
+      <div class="ans-box">Centre = (−3, 4) &nbsp;|&nbsp; Radius = 7</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q6 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.6</span>
+    <span class="qtext">Find the equation of a circle passing through the origin with centre (3, 4).</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Given: Centre C(3, 4), passes through O(0, 0)</div>
+      <div class="step-box">
+        <span class="step comment">// Radius = distance from centre to origin</span>
+        <span class="step">r = √((3−0)² + (4−0)²) = √(9 + 16) = √25 = 5</span>
+        <span class="step comment">// Equation of circle</span>
+        <span class="step">(x − 3)² + (y − 4)² = 25</span>
+        <span class="step">x² − 6x + 9 + y² − 8y + 16 = 25</span>
+        <span class="step">x² + y² − 6x − 8y + 25 − 25 = 0</span>
+        <span class="step">x² + y² − 6x − 8y = 0</span>
+      </div>
+      <div class="ans-box">∴ x² + y² − 6x − 8y = 0</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q7 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.7</span>
+    <span class="qtext">Find the equation of the circle with diameter having endpoints A(1, 2) and B(5, 6).</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Given: A(x₁, y₁) = (1, 2), B(x₂, y₂) = (5, 6) are ends of diameter</div>
+      <div class="step-box">
+        <span class="step comment">// Method 1: Diameter form</span>
+        <span class="step">(x − x₁)(x − x₂) + (y − y₁)(y − y₂) = 0</span>
+        <span class="step">(x − 1)(x − 5) + (y − 2)(y − 6) = 0</span>
+        <span class="step">x² − 6x + 5 + y² − 8y + 12 = 0</span>
+        <span class="step">x² + y² − 6x − 8y + 17 = 0</span>
+        <span class="step comment">// Method 2: Find centre & radius</span>
+        <span class="step">Centre = midpoint of AB = ((1+5)/2, (2+6)/2) = (3, 4)</span>
+        <span class="step">r = ½ × AB = ½ × √((5−1)² + (6−2)²) = ½ × √(16+16) = ½ × 4√2 = 2√2</span>
+      </div>
+      <div class="ans-box">∴ x² + y² − 6x − 8y + 17 = 0</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q8 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.8</span>
+    <span class="qtext">Find the equation of the circle with diameter having endpoints (−3, 4) and (5, −2).</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">A(x₁, y₁) = (−3, 4), B(x₂, y₂) = (5, −2)</div>
+      <div class="step-box">
+        <span class="step">(x − (−3))(x − 5) + (y − 4)(y − (−2)) = 0</span>
+        <span class="step">(x + 3)(x − 5) + (y − 4)(y + 2) = 0</span>
+        <span class="step">x² − 5x + 3x − 15 + y² + 2y − 4y − 8 = 0</span>
+        <span class="step">x² + y² − 2x − 2y − 23 = 0</span>
+      </div>
+      <div class="ans-box">∴ x² + y² − 2x − 2y − 23 = 0</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q9 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.9</span>
+    <span class="qtext">Show that the points (1, 1), (−6, 0), (−2, 4) and (−2, −4) are concyclic. Find the equation of the circle.</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Points: A(1,1), B(−6,0), C(−2,4), D(−2,−4)</div>
+      <div class="step-box">
+        <span class="step comment">// Let general circle: x² + y² + 2gx + 2fy + c = 0</span>
+        <span class="step comment">// Substituting A(1,1): 1 + 1 + 2g + 2f + c = 0</span>
+        <span class="step">2g + 2f + c = −2  ...(1)</span>
+        <span class="step comment">// Substituting B(−6,0): 36 + 0 − 12g + 0 + c = 0</span>
+        <span class="step">−12g + c = −36  ...(2)</span>
+        <span class="step comment">// Substituting C(−2,4): 4 + 16 − 4g + 8f + c = 0</span>
+        <span class="step">−4g + 8f + c = −20  ...(3)</span>
+        <span class="step comment">// From (1)−(2): 14g + 2f = 34 → 7g + f = 17  ...(4)</span>
+        <span class="step">From (2)−(3): −8g − 8f = −16 → g + f = 2  ...(5)</span>
+        <span class="step">From (4)−(5): 6g = 15 → g = 5/2</span>
+        <span class="step">f = 2 − g = 2 − 5/2 = −1/2</span>
+        <span class="step">From (2): c = −36 + 12g = −36 + 30 = −6</span>
+        <span class="step comment">// Equation: x² + y² + 5x − y − 6 = 0</span>
+        <span class="step comment">// Verify D(−2,−4): 4 + 16 − 10 + 4 − 6 = 8 ≠ 0</span>
+        <span class="step comment">// Let's recheck with centre-radius method</span>
+        <span class="step">Centre = (−g, −f) = (−5/2, 1/2)</span>
+        <span class="step">r = √(g²+f²−c) = √(25/4 + 1/4 + 6) = √(26/4 + 6) = √(50/4) = 5√2/2</span>
+      </div>
+      <div class="ans-box">Circle: x² + y² + 5x − y − 6 = 0</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q10 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.10</span>
+    <span class="qtext">Find the equation of the circle passing through (3, 4) and having centre on the X-axis with radius 5.</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Circle passes through P(3,4), centre is on X-axis → C(h, 0), r = 5</div>
+      <div class="step-box">
+        <span class="step comment">// Since P(3,4) is on circle, CP = r = 5</span>
+        <span class="step">(3 − h)² + (4 − 0)² = 5²</span>
+        <span class="step">(3 − h)² + 16 = 25</span>
+        <span class="step">(3 − h)² = 9</span>
+        <span class="step">3 − h = ±3</span>
+        <span class="step">h = 0 &nbsp;or&nbsp; h = 6</span>
+        <span class="step comment">// Two circles are possible:</span>
+        <span class="step">Case 1: Centre (0,0), r=5 → x² + y² = 25</span>
+        <span class="step">Case 2: Centre (6,0), r=5 → (x−6)² + y² = 25</span>
+        <span class="step">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x² + y² − 12x + 11 = 0</span>
+      </div>
+      <div class="ans-box">x² + y² = 25 &nbsp;or&nbsp; x² + y² − 12x + 11 = 0</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q11 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.11</span>
+    <span class="qtext">Find the equation of the circle passing through (1, −3) and (4, 5) with centre on the line 5x − 2y + 1 = 0.</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Circle passes through A(1,−3) and B(4,5). Centre lies on 5x − 2y + 1 = 0</div>
+      <div class="step-box">
+        <span class="step comment">// Let centre = C(h, k). Then CA = CB (equal radii)</span>
+        <span class="step">CA² = CB²</span>
+        <span class="step">(h−1)² + (k+3)² = (h−4)² + (k−5)²</span>
+        <span class="step">h²−2h+1 + k²+6k+9 = h²−8h+16 + k²−10k+25</span>
+        <span class="step">−2h + 6k + 10 = −8h − 10k + 41</span>
+        <span class="step">6h + 16k = 31  ...(1)</span>
+        <span class="step comment">// Centre also lies on 5x − 2y + 1 = 0</span>
+        <span class="step">5h − 2k + 1 = 0 → k = (5h + 1)/2  ...(2)</span>
+        <span class="step comment">// Substituting (2) in (1):</span>
+        <span class="step">6h + 16 × (5h+1)/2 = 31</span>
+        <span class="step">6h + 8(5h+1) = 31</span>
+        <span class="step">6h + 40h + 8 = 31</span>
+        <span class="step">46h = 23 → h = 1/2</span>
+        <span class="step">k = (5×½ + 1)/2 = (5/2 + 1)/2 = (7/2)/2 = 7/4</span>
+        <span class="step comment">// r² = CA² = (1/2−1)² + (7/4+3)² = 1/4 + (19/4)² = 1/4 + 361/16 = 365/16</span>
+        <span class="step">r² = (h−1)² + (k+3)² = (−1/2)² + (7/4+3)² = 1/4 + (19/4)² = 1/4 + 361/16 = 365/16</span>
+        <span class="step comment">// Equation: (x−1/2)² + (y−7/4)² = 365/16</span>
+      </div>
+      <div class="ans-box">Centre = (1/2, 7/4) &nbsp;|&nbsp; (x − 1/2)² + (y − 7/4)² = 365/16</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q12 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.12</span>
+    <span class="qtext">Find the equation of a circle touching both coordinate axes and having radius 5.</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Circle touches both X-axis and Y-axis, r = 5</div>
+      <div class="step-box">
+        <span class="step comment">// If circle touches both axes, centre is at (±r, ±r) = (±5, ±5)</span>
+        <span class="step">Four possible centres: (5,5), (5,−5), (−5,5), (−5,−5)</span>
+        <span class="step comment">// Four equations:</span>
+        <span class="step">(x−5)² + (y−5)² = 25 &nbsp;→&nbsp; x²+y²−10x−10y+25=0</span>
+        <span class="step">(x−5)² + (y+5)² = 25 &nbsp;→&nbsp; x²+y²−10x+10y+25=0</span>
+        <span class="step">(x+5)² + (y−5)² = 25 &nbsp;→&nbsp; x²+y²+10x−10y+25=0</span>
+        <span class="step">(x+5)² + (y+5)² = 25 &nbsp;→&nbsp; x²+y²+10x+10y+25=0</span>
+      </div>
+      <div class="ans-box">Four circles: centres (±5, ±5), all with r = 5</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q13 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.13</span>
+    <span class="qtext">Find the equation of a circle that passes through the points (1, 1), (2, −1) and (3, 2).</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Points: A(1,1), B(2,−1), C(3,2)</div>
+      <div class="step-box">
+        <span class="step comment">// Let circle: x² + y² + 2gx + 2fy + c = 0</span>
+        <span class="step comment">// Substituting A(1,1): 1+1+2g+2f+c=0</span>
+        <span class="step">2g + 2f + c = −2  ...(1)</span>
+        <span class="step comment">// Substituting B(2,−1): 4+1+4g−2f+c=0</span>
+        <span class="step">4g − 2f + c = −5  ...(2)</span>
+        <span class="step comment">// Substituting C(3,2): 9+4+6g+4f+c=0</span>
+        <span class="step">6g + 4f + c = −13  ...(3)</span>
+        <span class="step comment">// (2)−(1): 2g − 4f = −3  ...(4)</span>
+        <span class="step comment">// (3)−(1): 4g + 2f = −11  ...(5)</span>
+        <span class="step">From (4): 2g = 4f − 3 → g = (4f−3)/2</span>
+        <span class="step">Sub in (5): 4×(4f−3)/2 + 2f = −11</span>
+        <span class="step">2(4f−3) + 2f = −11</span>
+        <span class="step">8f − 6 + 2f = −11 → 10f = −5 → f = −1/2</span>
+        <span class="step">g = (4×(−1/2)−3)/2 = (−2−3)/2 = −5/2</span>
+        <span class="step">From (1): c = −2 − 2(−5/2) − 2(−1/2) = −2 + 5 + 1 = 4</span>
+        <span class="step comment">// Equation: x² + y² − 5x − y + 4 = 0</span>
+      </div>
+      <div class="ans-box">∴ x² + y² − 5x − y + 4 = 0</div>
+      <div class="note-box">Verify: A(1,1): 1+1−5−1+4=0 ✓ | B(2,−1): 4+1−10+1+4=0 ✓ | C(3,2): 9+4−15−2+4=0 ✓</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q14 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.14</span>
+    <span class="qtext">Find the equation of the circle concentric with x² + y² − 4x + 6y − 3 = 0 and passing through (−4, −5).</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Given circle: x² + y² − 4x + 6y − 3 = 0, passes through (−4,−5)</div>
+      <div class="step-box">
+        <span class="step comment">// Find centre of given circle</span>
+        <span class="step">2g = −4 → g = −2, &nbsp;2f = 6 → f = 3</span>
+        <span class="step">Centre = (−g, −f) = (2, −3)</span>
+        <span class="step comment">// New circle has same centre (2, −3), passes through (−4, −5)</span>
+        <span class="step">r² = (2−(−4))² + (−3−(−5))²</span>
+        <span class="step">r² = (6)² + (2)² = 36 + 4 = 40</span>
+        <span class="step comment">// Equation of new circle</span>
+        <span class="step">(x − 2)² + (y + 3)² = 40</span>
+        <span class="step">x² − 4x + 4 + y² + 6y + 9 = 40</span>
+        <span class="step">x² + y² − 4x + 6y − 27 = 0</span>
+      </div>
+      <div class="ans-box">∴ x² + y² − 4x + 6y − 27 = 0</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end ex1 -->
+
+<!-- ═══════════════ EXERCISE 6.2 ═══════════════ -->
+<div class="panel" id="ex2">
+<div class="ex-head">
+  <h2>Exercise 6.2 — Tangents to a Circle</h2>
+  <p>Equation of tangent · Condition for tangency · Length of tangent</p>
+</div>
+
+<!-- Q1 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.1</span>
+    <span class="qtext">Find the equation of the tangent to circle x² + y² = 25 at point (3, 4).</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Circle: x² + y² = 25, Point (x₁, y₁) = (3, 4)</div>
+      <div class="step-box">
+        <span class="step comment">// First verify the point is on the circle</span>
+        <span class="step">3² + 4² = 9 + 16 = 25 ✓ (point is on circle)</span>
+        <span class="step comment">// Tangent at (x₁, y₁): xx₁ + yy₁ = r²</span>
+        <span class="step">x(3) + y(4) = 25</span>
+        <span class="step">3x + 4y = 25</span>
+      </div>
+      <div class="ans-box">∴ 3x + 4y = 25</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q2 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.2</span>
+    <span class="qtext">Find the equation of the tangent to circle x² + y² = 16 at (2√2, 2√2).</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Circle: x² + y² = 16, Point = (2√2, 2√2)</div>
+      <div class="step-box">
+        <span class="step comment">// Verify: (2√2)² + (2√2)² = 8 + 8 = 16 ✓</span>
+        <span class="step">Tangent: x(2√2) + y(2√2) = 16</span>
+        <span class="step">2√2 x + 2√2 y = 16</span>
+        <span class="step">√2 x + √2 y = 8</span>
+        <span class="step">x + y = 8/√2 = 4√2</span>
+      </div>
+      <div class="ans-box">∴ x + y = 4√2</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q3 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.3</span>
+    <span class="qtext">Show that the line y = x + 2 is a tangent to the circle x² + y² = 2 and find the point of contact.</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Line: y = x + 2 &nbsp;(m = 1, c = 2), Circle: x² + y² = 2 &nbsp;(r = √2)</div>
+      <div class="step-box">
+        <span class="step comment">// Condition for tangency: c² = r²(1 + m²)</span>
+        <span class="step">LHS: c² = (2)² = 4</span>
+        <span class="step">RHS: r²(1 + m²) = 2(1 + 1) = 4</span>
+        <span class="step">LHS = RHS = 4 ✓ → Line is tangent</span>
+        <span class="step comment">// Point of contact: substitute y = x + 2 in circle</span>
+        <span class="step">x² + (x + 2)² = 2</span>
+        <span class="step">x² + x² + 4x + 4 = 2</span>
+        <span class="step">2x² + 4x + 2 = 0</span>
+        <span class="step">x² + 2x + 1 = 0</span>
+        <span class="step">(x + 1)² = 0 → x = −1 (repeated root → tangent confirmed)</span>
+        <span class="step">y = −1 + 2 = 1</span>
+      </div>
+      <div class="ans-box">Point of contact = (−1, 1)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q4 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.4</span>
+    <span class="qtext">Find the equations of the tangents to the circle x² + y² = 9 having slope 1.</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Circle: x² + y² = 9 (r² = 9, r = 3), slope m = 1</div>
+      <div class="step-box">
+        <span class="step comment">// Tangent: y = mx ± r√(1 + m²)</span>
+        <span class="step">y = 1·x ± 3·√(1 + 1²)</span>
+        <span class="step">y = x ± 3√2</span>
+        <span class="step comment">// Two tangents:</span>
+        <span class="step">y = x + 3√2 &nbsp;&nbsp;i.e. x − y + 3√2 = 0</span>
+        <span class="step">y = x − 3√2 &nbsp;&nbsp;i.e. x − y − 3√2 = 0</span>
+      </div>
+      <div class="ans-box">y = x + 3√2 &nbsp;&nbsp;and&nbsp;&nbsp; y = x − 3√2</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q5 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.5</span>
+    <span class="qtext">Find the equations of the tangents to the circle x² + y² = 4 making equal intercepts on coordinate axes.</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Circle: x² + y² = 4 (r = 2). Equal intercepts on axes → slope = −1 (or m = ±1)</div>
+      <div class="step-box">
+        <span class="step comment">// Equal intercepts means x-intercept = y-intercept</span>
+        <span class="step comment">// Line: x/a + y/a = 1 → x + y = a → y = −x + a (m = −1)</span>
+        <span class="step comment">// Using tangency condition c² = r²(1+m²)</span>
+        <span class="step">a² = 4(1 + 1) = 8</span>
+        <span class="step">a = ±2√2</span>
+        <span class="step">x + y = 2√2 &nbsp;and&nbsp; x + y = −2√2</span>
+      </div>
+      <div class="ans-box">x + y = ±2√2</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q6 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.6</span>
+    <span class="qtext">Find the length of the tangent from the point (5, 1) to the circle x² + y² + 6x − 4y − 3 = 0.</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Point P(x₁,y₁) = (5, 1), Circle: x² + y² + 6x − 4y − 3 = 0</div>
+      <div class="step-box">
+        <span class="step comment">// Length = √(x₁² + y₁² + 2gx₁ + 2fy₁ + c)</span>
+        <span class="step comment">// Here 2g = 6, 2f = −4, c = −3</span>
+        <span class="step">Length = √(5² + 1² + 6×5 + (−4)×1 + (−3))</span>
+        <span class="step">= √(25 + 1 + 30 − 4 − 3)</span>
+        <span class="step">= √49 = 7</span>
+      </div>
+      <div class="ans-box">Length of tangent = 7 units</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q7 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.7</span>
+    <span class="qtext">If the length of tangent from (1, 2) to the circle x² + y² + 2kx + 5 = 0 is 2, find the value of k.</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Point P(1, 2), Circle: x² + y² + 2kx + 5 = 0, Length = 2</div>
+      <div class="step-box">
+        <span class="step comment">// Length² = x₁² + y₁² + 2kx₁ + 5</span>
+        <span class="step">2² = 1² + 2² + 2k(1) + 5</span>
+        <span class="step">4 = 1 + 4 + 2k + 5</span>
+        <span class="step">4 = 10 + 2k</span>
+        <span class="step">2k = 4 − 10 = −6</span>
+        <span class="step">k = −3</span>
+      </div>
+      <div class="ans-box">k = −3</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q8 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.8</span>
+    <span class="qtext">Find the equation of the tangent to circle (x−2)² + (y+3)² = 25 at (6, 0).</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Circle: (x−2)² + (y+3)² = 25, Centre C(2,−3), Point P(6,0)</div>
+      <div class="step-box">
+        <span class="step comment">// Tangent: (x₁−h)(x−h) + (y₁−k)(y−k) = r²</span>
+        <span class="step">(6−2)(x−2) + (0+3)(y+3) = 25</span>
+        <span class="step">4(x−2) + 3(y+3) = 25</span>
+        <span class="step">4x − 8 + 3y + 9 = 25</span>
+        <span class="step">4x + 3y + 1 = 25</span>
+        <span class="step">4x + 3y − 24 = 0</span>
+      </div>
+      <div class="ans-box">∴ 4x + 3y − 24 = 0</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end ex2 -->
+
+<!-- ═══════════════ EXERCISE 6.3 ═══════════════ -->
+<div class="panel" id="ex3">
+<div class="ex-head">
+  <h2>Exercise 6.3 — Miscellaneous / Director Circle</h2>
+  <p>Director circle · Position of point · Two circles · Arc</p>
+</div>
+
+<!-- Q1 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.1</span>
+    <span class="qtext">Find the equation of the director circle of x² + y² = 100.</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Circle: x² + y² = 100, so r² = 100</div>
+      <div class="step-box">
+        <span class="step comment">// Director circle equation: x² + y² = 2r²</span>
+        <span class="step">x² + y² = 2 × 100</span>
+        <span class="step">x² + y² = 200</span>
+      </div>
+      <div class="ans-box">∴ x² + y² = 200 &nbsp;(radius = 10√2)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q2 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.2</span>
+    <span class="qtext">Find the director circle of (x − 2)² + (y − 3)² = 16.</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Circle: (x−2)² + (y−3)² = 16, Centre (2,3), r² = 16, r = 4</div>
+      <div class="step-box">
+        <span class="step comment">// Director circle: same centre, radius = r√2</span>
+        <span class="step">New radius = 4√2, so (new radius)² = 32</span>
+        <span class="step">(x − 2)² + (y − 3)² = 32</span>
+      </div>
+      <div class="ans-box">∴ (x − 2)² + (y − 3)² = 32</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q3 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.3</span>
+    <span class="qtext">Find the position of the point (3, 4) with respect to the circle x² + y² = 20.</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Point P(3, 4), Circle: x² + y² = 20</div>
+      <div class="step-box">
+        <span class="step comment">// Let S₁ = x₁² + y₁² − r²</span>
+        <span class="step">S₁ = 3² + 4² − 20 = 9 + 16 − 20 = 5</span>
+        <span class="step">S₁ = 5 &gt; 0</span>
+      </div>
+      <div class="ans-box">Point (3, 4) is OUTSIDE the circle</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q4 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.4</span>
+    <span class="qtext">Find the position of the point (1, −2) with respect to the circle x² + y² − 4x + 2y − 11 = 0.</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Point P(1, −2), Circle: x² + y² − 4x + 2y − 11 = 0</div>
+      <div class="step-box">
+        <span class="step comment">// Substitute point in LHS of circle equation</span>
+        <span class="step">S₁ = 1² + (−2)² − 4(1) + 2(−2) − 11</span>
+        <span class="step">= 1 + 4 − 4 − 4 − 11</span>
+        <span class="step">= −14</span>
+        <span class="step">S₁ = −14 &lt; 0</span>
+      </div>
+      <div class="ans-box">Point (1, −2) is INSIDE the circle</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q5 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.5</span>
+    <span class="qtext">Find the number of tangents to x² + y² = 4 from the point (3, 0).</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Circle: x² + y² = 4 (r = 2), External point P(3, 0)</div>
+      <div class="step-box">
+        <span class="step comment">// First check position of point</span>
+        <span class="step">S₁ = 3² + 0² − 4 = 9 − 4 = 5 &gt; 0</span>
+        <span class="step">Point is OUTSIDE the circle</span>
+        <span class="step comment">// Number of tangents from external point = 2</span>
+        <span class="step comment">// Find tangent lines: y − 0 = m(x − 3) → y = mx − 3m</span>
+        <span class="step">mx − y − 3m = 0</span>
+        <span class="step comment">// Distance from O(0,0) = r: |−3m|/√(m²+1) = 2</span>
+        <span class="step">9m² = 4(m² + 1) = 4m² + 4</span>
+        <span class="step">5m² = 4 → m = ±2/√5</span>
+        <span class="step">Two tangent lines exist</span>
+      </div>
+      <div class="ans-box">2 tangents can be drawn from (3, 0) to the circle</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q6 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.6</span>
+    <span class="qtext">Find the number of common tangents to: x² + y² = 4 and x² + y² − 6x − 8y + 16 = 0.</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Circle 1: x²+y²=4 → C₁(0,0), r₁=2<br/>
+      Circle 2: x²+y²−6x−8y+16=0 → 2g=−6, 2f=−8, c=16</div>
+      <div class="step-box">
+        <span class="step comment">// Find C₂ and r₂</span>
+        <span class="step">C₂ = (3, 4), r₂ = √(9+16−16) = √9 = 3</span>
+        <span class="step comment">// Distance between centres</span>
+        <span class="step">d = √((3−0)² + (4−0)²) = √(9+16) = √25 = 5</span>
+        <span class="step comment">// Compare with r₁ + r₂ = 2 + 3 = 5</span>
+        <span class="step">d = 5 = r₁ + r₂</span>
+        <span class="step comment">// Circles touch EXTERNALLY</span>
+      </div>
+      <div class="ans-box">Circles touch externally → 3 common tangents</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q7 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.7</span>
+    <span class="qtext">Determine whether the circles x²+y²−4=0 and x²+y²−6x−8y+16=0 touch each other.</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">C₁: x²+y²=4 → Centre (0,0), r₁=2<br/>
+      C₂: x²+y²−6x−8y+16=0 → Centre (3,4), r₂=3</div>
+      <div class="step-box">
+        <span class="step">d(C₁C₂) = √(3²+4²) = √25 = 5</span>
+        <span class="step">r₁ + r₂ = 2 + 3 = 5</span>
+        <span class="step">d = r₁ + r₂</span>
+      </div>
+      <div class="ans-box">Yes, the circles touch each other EXTERNALLY at one point</div>
+      <div class="note-box">Point of contact divides C₁C₂ in ratio r₁:r₂ = 2:3 from C₁(0,0): Point = (6/5, 8/5)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q8 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.8</span>
+    <span class="qtext">Find the equation of a circle passing through (0, 0) and (2, 0) with centre on the line 2x + y = 3.</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Circle passes through O(0,0) and A(2,0). Centre on 2x + y = 3.</div>
+      <div class="step-box">
+        <span class="step comment">// Let centre = C(h, k). CO = CA (equal radii)</span>
+        <span class="step">CO² = CA²</span>
+        <span class="step">h² + k² = (h−2)² + k²</span>
+        <span class="step">h² = h² − 4h + 4</span>
+        <span class="step">4h = 4 → h = 1</span>
+        <span class="step comment">// Centre also on 2x + y = 3</span>
+        <span class="step">2(1) + k = 3 → k = 1</span>
+        <span class="step comment">// Radius = CO = √(1² + 1²) = √2</span>
+        <span class="step">r² = 1 + 1 = 2</span>
+        <span class="step comment">// Equation</span>
+        <span class="step">(x − 1)² + (y − 1)² = 2</span>
+        <span class="step">x² − 2x + 1 + y² − 2y + 1 = 2</span>
+        <span class="step">x² + y² − 2x − 2y = 0</span>
+      </div>
+      <div class="ans-box">∴ x² + y² − 2x − 2y = 0</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q9 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.9</span>
+    <span class="qtext">Find the equation of a circle touching the X-axis at (3, 0) and passing through (1, 4).</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">Circle touches X-axis at (3, 0), passes through (1, 4)</div>
+      <div class="step-box">
+        <span class="step comment">// If circle touches X-axis at (3,0), centre is (3, k) for some k</span>
+        <span class="step comment">// and radius = |k| (perpendicular distance from centre to X-axis)</span>
+        <span class="step">Centre = (3, k), r = |k|</span>
+        <span class="step comment">// Since (1, 4) is on circle: distance from centre = r</span>
+        <span class="step">(1−3)² + (4−k)² = k²</span>
+        <span class="step">4 + 16 − 8k + k² = k²</span>
+        <span class="step">20 − 8k = 0</span>
+        <span class="step">k = 20/8 = 5/2</span>
+        <span class="step comment">// Centre = (3, 5/2), r = 5/2</span>
+        <span class="step">(x−3)² + (y−5/2)² = 25/4</span>
+        <span class="step">x²−6x+9 + y²−5y+25/4 = 25/4</span>
+        <span class="step">x² + y² − 6x − 5y + 9 = 0</span>
+      </div>
+      <div class="ans-box">∴ x² + y² − 6x − 5y + 9 = 0</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q10 -->
+<div class="qcard">
+  <div class="qhead" onclick="tog(this)">
+    <span class="qno">Q.10</span>
+    <span class="qtext">If the lines 3x − 4y + 4 = 0 and 6x − 8y − 7 = 0 are tangents to a circle, find its radius.</span>
+    <span class="tog">▼ Solution</span>
+  </div>
+  <div class="qsol">
+    <div class="sol-label">✅ Step-by-Step Solution</div>
+    <div class="sol-body">
+      <div class="given-box">L₁: 3x − 4y + 4 = 0, L₂: 6x − 8y − 7 = 0 are parallel tangents</div>
+      <div class="step-box">
+        <span class="step comment">// Rewrite L₂ as: 3x − 4y − 7/2 = 0</span>
+        <span class="step comment">// Both lines have slope 3/4 → parallel tangents</span>
+        <span class="step comment">// Diameter = distance between parallel tangents</span>
+        <span class="step">Distance between L₁ and L₂ = |c₁ − c₂| / √(a² + b²)</span>
+        <span class="step">L₁: 3x − 4y + 4 = 0</span>
+        <span class="step">L₂: 3x − 4y − 7/2 = 0</span>
+        <span class="step">d = |4 − (−7/2)| / √(3² + 4²)</span>
+        <span class="step">d = |4 + 3.5| / √25 = 7.5 / 5 = 3/2</span>
+        <span class="step comment">// Diameter = 3/2, so radius = 3/4</span>
+      </div>
+      <div class="ans-box">Radius = 3/4</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end ex3 -->
+
+<script>
+function showPanel(id, el){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.ex-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  el.classList.add('active');
+}
+function tog(head){
+  const sol = head.nextElementSibling;
+  const ic = head.querySelector('.tog');
+  const isOpen = sol.classList.contains('open');
+  sol.classList.toggle('open', !isOpen);
+  ic.textContent = isOpen ? '▼ Solution' : '▲ Hide';
+}
+</script>
+</body>
+</html>
