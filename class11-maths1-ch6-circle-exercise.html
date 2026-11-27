@@ -387,29 +387,68 @@ body{font-family:'Segoe UI',sans-serif;background:#0f172a;color:#e2e8f0;min-heig
 <!-- ═══════════════ EXERCISE 6.2 ═══════════════ -->
 <div class="panel" id="ex2">
 <div class="ex-head">
-  <h2>Exercise 6.2 — Tangents to a Circle</h2>
-  <p>Equation of tangent · Condition for tangency · Length of tangent</p>
+  <h2>Exercise 6.2 — General Equation of a Circle</h2>
+  <p>All 4 questions from Maharashtra Board Textbook — step by step solutions</p>
 </div>
 
 <!-- Q1 -->
 <div class="qcard">
   <div class="qhead" onclick="tog(this)">
     <span class="qno">Q.1</span>
-    <span class="qtext">Find the equation of the tangent to circle x² + y² = 25 at point (3, 4).</span>
+    <span class="qtext">Find the centre and radius of each of the following:<br/>
+    (i) x² + y² − 2x + 4y − 4 = 0<br/>
+    (ii) x² + y² − 6x − 8y − 24 = 0<br/>
+    (iii) 4x² + 4y² − 24x − 8y − 24 = 0</span>
     <span class="tog">▼ Solution</span>
   </div>
   <div class="qsol">
     <div class="sol-label">✅ Step-by-Step Solution</div>
     <div class="sol-body">
-      <div class="given-box">Circle: x² + y² = 25, Point (x₁, y₁) = (3, 4)</div>
+
+      <strong>(i) x² + y² − 2x + 4y − 4 = 0</strong>
+      <div class="given-box">Comparing with x² + y² + 2gx + 2fy + c = 0</div>
       <div class="step-box">
-        <span class="step comment">// First verify the point is on the circle</span>
-        <span class="step">3² + 4² = 9 + 16 = 25 ✓ (point is on circle)</span>
-        <span class="step comment">// Tangent at (x₁, y₁): xx₁ + yy₁ = r²</span>
-        <span class="step">x(3) + y(4) = 25</span>
-        <span class="step">3x + 4y = 25</span>
+        <span class="step">2g = −2  →  g = −1</span>
+        <span class="step">2f = 4   →  f = 2</span>
+        <span class="step">c = −4</span>
+        <span class="step comment">// Centre = (−g, −f)</span>
+        <span class="step">Centre = (−(−1), −2) = (1, −2)</span>
+        <span class="step comment">// Radius = √(g² + f² − c)</span>
+        <span class="step">r = √((−1)² + (2)² − (−4))</span>
+        <span class="step">r = √(1 + 4 + 4)</span>
+        <span class="step">r = √9 = 3</span>
       </div>
-      <div class="ans-box">∴ 3x + 4y = 25</div>
+      <div class="ans-box">Centre = (1, −2) | Radius = 3</div>
+
+      <br/><strong>(ii) x² + y² − 6x − 8y − 24 = 0</strong>
+      <div class="given-box">Comparing with x² + y² + 2gx + 2fy + c = 0</div>
+      <div class="step-box">
+        <span class="step">2g = −6  →  g = −3</span>
+        <span class="step">2f = −8  →  f = −4</span>
+        <span class="step">c = −24</span>
+        <span class="step">Centre = (−g, −f) = (3, 4)</span>
+        <span class="step">r = √(g² + f² − c)</span>
+        <span class="step">r = √((−3)² + (−4)² − (−24))</span>
+        <span class="step">r = √(9 + 16 + 24)</span>
+        <span class="step">r = √49 = 7</span>
+      </div>
+      <div class="ans-box">Centre = (3, 4) | Radius = 7</div>
+
+      <br/><strong>(iii) 4x² + 4y² − 24x − 8y − 24 = 0</strong>
+      <div class="given-box">First divide entire equation by 4 to get standard form</div>
+      <div class="step-box">
+        <span class="step">÷ 4 :  x² + y² − 6x − 2y − 6 = 0</span>
+        <span class="step">2g = −6  →  g = −3</span>
+        <span class="step">2f = −2  →  f = −1</span>
+        <span class="step">c = −6</span>
+        <span class="step">Centre = (−g, −f) = (3, 1)</span>
+        <span class="step">r = √(g² + f² − c)</span>
+        <span class="step">r = √((−3)² + (−1)² − (−6))</span>
+        <span class="step">r = √(9 + 1 + 6)</span>
+        <span class="step">r = √16 = 4</span>
+      </div>
+      <div class="ans-box">Centre = (3, 1) | Radius = 4</div>
+
     </div>
   </div>
 </div>
@@ -418,21 +457,34 @@ body{font-family:'Segoe UI',sans-serif;background:#0f172a;color:#e2e8f0;min-heig
 <div class="qcard">
   <div class="qhead" onclick="tog(this)">
     <span class="qno">Q.2</span>
-    <span class="qtext">Find the equation of the tangent to circle x² + y² = 16 at (2√2, 2√2).</span>
+    <span class="qtext">Show that the equation 3x² + 3y² + 12x + 18y − 11 = 0 represents a circle. Find its centre and radius.</span>
     <span class="tog">▼ Solution</span>
   </div>
   <div class="qsol">
     <div class="sol-label">✅ Step-by-Step Solution</div>
     <div class="sol-body">
-      <div class="given-box">Circle: x² + y² = 16, Point = (2√2, 2√2)</div>
+      <div class="given-box">Equation: 3x² + 3y² + 12x + 18y − 11 = 0</div>
       <div class="step-box">
-        <span class="step comment">// Verify: (2√2)² + (2√2)² = 8 + 8 = 16 ✓</span>
-        <span class="step">Tangent: x(2√2) + y(2√2) = 16</span>
-        <span class="step">2√2 x + 2√2 y = 16</span>
-        <span class="step">√2 x + √2 y = 8</span>
-        <span class="step">x + y = 8/√2 = 4√2</span>
+        <span class="step comment">// Step 1: Divide throughout by 3</span>
+        <span class="step">x² + y² + 4x + 6y − 11/3 = 0</span>
+        <span class="step comment">// Comparing with x² + y² + 2gx + 2fy + c = 0</span>
+        <span class="step">2g = 4   →  g = 2</span>
+        <span class="step">2f = 6   →  f = 3</span>
+        <span class="step">c = −11/3</span>
+        <span class="step comment">// Step 2: Check condition for circle: g² + f² − c &gt; 0</span>
+        <span class="step">g² + f² − c = (2)² + (3)² − (−11/3)</span>
+        <span class="step">= 4 + 9 + 11/3</span>
+        <span class="step">= 13 + 11/3</span>
+        <span class="step">= 39/3 + 11/3</span>
+        <span class="step">= 50/3 &gt; 0  ✓</span>
+        <span class="step comment">// Since g² + f² − c &gt; 0, it represents a REAL circle</span>
+        <span class="step">Centre = (−g, −f) = (−2, −3)</span>
+        <span class="step">r = √(g² + f² − c) = √(50/3) = 5√2/√3 = 5√6/3</span>
       </div>
-      <div class="ans-box">∴ x + y = 4√2</div>
+      <div class="ans-box">Equation represents a circle ✓ | Centre = (−2, −3) | Radius = 5√6/3</div>
+      <div class="note-box">
+        <strong>Condition for a real circle:</strong> An equation ax² + ay² + 2hx + 2ky + c = 0 (a ≠ 0) represents a circle if g² + f² − c &gt; 0 (after dividing by a).
+      </div>
     </div>
   </div>
 </div>
@@ -441,27 +493,39 @@ body{font-family:'Segoe UI',sans-serif;background:#0f172a;color:#e2e8f0;min-heig
 <div class="qcard">
   <div class="qhead" onclick="tog(this)">
     <span class="qno">Q.3</span>
-    <span class="qtext">Show that the line y = x + 2 is a tangent to the circle x² + y² = 2 and find the point of contact.</span>
+    <span class="qtext">Find the equation of the circle passing through the points (5, 7), (6, 6) and (2, −2).</span>
     <span class="tog">▼ Solution</span>
   </div>
   <div class="qsol">
     <div class="sol-label">✅ Step-by-Step Solution</div>
     <div class="sol-body">
-      <div class="given-box">Line: y = x + 2 &nbsp;(m = 1, c = 2), Circle: x² + y² = 2 &nbsp;(r = √2)</div>
+      <div class="given-box">Points: A(5, 7), B(6, 6), C(2, −2)<br/>
+      Let circle: x² + y² + 2gx + 2fy + c = 0</div>
       <div class="step-box">
-        <span class="step comment">// Condition for tangency: c² = r²(1 + m²)</span>
-        <span class="step">LHS: c² = (2)² = 4</span>
-        <span class="step">RHS: r²(1 + m²) = 2(1 + 1) = 4</span>
-        <span class="step">LHS = RHS = 4 ✓ → Line is tangent</span>
-        <span class="step comment">// Point of contact: substitute y = x + 2 in circle</span>
-        <span class="step">x² + (x + 2)² = 2</span>
-        <span class="step">x² + x² + 4x + 4 = 2</span>
-        <span class="step">2x² + 4x + 2 = 0</span>
-        <span class="step">x² + 2x + 1 = 0</span>
-        <span class="step">(x + 1)² = 0 → x = −1 (repeated root → tangent confirmed)</span>
-        <span class="step">y = −1 + 2 = 1</span>
+        <span class="step comment">// Substitute A(5, 7): 25 + 49 + 10g + 14f + c = 0</span>
+        <span class="step">10g + 14f + c = −74  ...(1)</span>
+        <span class="step comment">// Substitute B(6, 6): 36 + 36 + 12g + 12f + c = 0</span>
+        <span class="step">12g + 12f + c = −72  ...(2)</span>
+        <span class="step comment">// Substitute C(2, −2): 4 + 4 + 4g − 4f + c = 0</span>
+        <span class="step">4g − 4f + c = −8   ...(3)</span>
+        <span class="step comment">// (1) − (2): −2g + 2f = −2  →  −g + f = −1  →  f = g − 1  ...(4)</span>
+        <span class="step">f = g − 1</span>
+        <span class="step comment">// (2) − (3): 8g + 16f = −64  →  g + 2f = −8  ...(5)</span>
+        <span class="step comment">// Substitute (4) in (5): g + 2(g − 1) = −8</span>
+        <span class="step">g + 2g − 2 = −8</span>
+        <span class="step">3g = −6  →  g = −2</span>
+        <span class="step">f = g − 1 = −2 − 1 = −3</span>
+        <span class="step comment">// From (3): c = −8 − 4(−2) + 4(−3) = −8 + 8 − 12 = −12</span>
+        <span class="step">c = −8 − 4g + 4f = −8 − 4(−2) + 4(−3) = −8 + 8 − 12 = −12</span>
+        <span class="step comment">// Equation: x² + y² + 2(−2)x + 2(−3)y + (−12) = 0</span>
+        <span class="step">x² + y² − 4x − 6y − 12 = 0</span>
       </div>
-      <div class="ans-box">Point of contact = (−1, 1)</div>
+      <div class="ans-box">∴ x² + y² − 4x − 6y − 12 = 0</div>
+      <div class="note-box">
+        Verify A(5,7): 25+49−20−42−12 = 74−74 = 0 ✓<br/>
+        Verify B(6,6): 36+36−24−36−12 = 72−72 = 0 ✓<br/>
+        Verify C(2,−2): 4+4−8+12−12 = 20−20 = 0 ✓
+      </div>
     </div>
   </div>
 </div>
@@ -470,283 +534,46 @@ body{font-family:'Segoe UI',sans-serif;background:#0f172a;color:#e2e8f0;min-heig
 <div class="qcard">
   <div class="qhead" onclick="tog(this)">
     <span class="qno">Q.4</span>
-    <span class="qtext">Find the equations of the tangents to the circle x² + y² = 9 having slope 1.</span>
+    <span class="qtext">Show that the points (3, −2), (1, 0), (−1, −2) and (1, −4) are concyclic.</span>
     <span class="tog">▼ Solution</span>
   </div>
   <div class="qsol">
     <div class="sol-label">✅ Step-by-Step Solution</div>
     <div class="sol-body">
-      <div class="given-box">Circle: x² + y² = 9 (r² = 9, r = 3), slope m = 1</div>
+      <div class="given-box">Points: A(3,−2), B(1,0), C(−1,−2), D(1,−4)<br/>
+      To show all 4 lie on the same circle.<br/>
+      Let circle: x² + y² + 2gx + 2fy + c = 0</div>
       <div class="step-box">
-        <span class="step comment">// Tangent: y = mx ± r√(1 + m²)</span>
-        <span class="step">y = 1·x ± 3·√(1 + 1²)</span>
-        <span class="step">y = x ± 3√2</span>
-        <span class="step comment">// Two tangents:</span>
-        <span class="step">y = x + 3√2 &nbsp;&nbsp;i.e. x − y + 3√2 = 0</span>
-        <span class="step">y = x − 3√2 &nbsp;&nbsp;i.e. x − y − 3√2 = 0</span>
+        <span class="step comment">// Substitute A(3, −2): 9 + 4 + 6g − 4f + c = 0</span>
+        <span class="step">6g − 4f + c = −13  ...(1)</span>
+        <span class="step comment">// Substitute B(1, 0): 1 + 0 + 2g + 0 + c = 0</span>
+        <span class="step">2g + c = −1  ...(2)</span>
+        <span class="step comment">// Substitute C(−1, −2): 1 + 4 − 2g − 4f + c = 0</span>
+        <span class="step">−2g − 4f + c = −5  ...(3)</span>
+        <span class="step comment">// (1) − (3): 8g = −8  →  g = −1</span>
+        <span class="step">g = −1</span>
+        <span class="step comment">// From (2): c = −1 − 2g = −1 − 2(−1) = −1 + 2 = 1</span>
+        <span class="step">c = 1</span>
+        <span class="step comment">// From (3): −2(−1) − 4f + 1 = −5</span>
+        <span class="step">2 − 4f + 1 = −5</span>
+        <span class="step">−4f = −8  →  f = 2</span>
+        <span class="step comment">// Circle equation: x² + y² − 2x + 4y + 1 = 0</span>
+        <span class="step">Centre = (−g, −f) = (1, −2),  r = √(1 + 4 − 1) = √4 = 2</span>
+        <span class="step comment">// Now verify D(1, −4):</span>
+        <span class="step">LHS = (1)² + (−4)² + 2(−1)(1) + 2(2)(−4) + 1</span>
+        <span class="step">= 1 + 16 − 2 − 16 + 1</span>
+        <span class="step">= 0  ✓</span>
+        <span class="step comment">// D(1,−4) also lies on the circle → all 4 points are concyclic ✓</span>
       </div>
-      <div class="ans-box">y = x + 3√2 &nbsp;&nbsp;and&nbsp;&nbsp; y = x − 3√2</div>
-    </div>
-  </div>
-</div>
-
-<!-- Q5 -->
-<div class="qcard">
-  <div class="qhead" onclick="tog(this)">
-    <span class="qno">Q.5</span>
-    <span class="qtext">Find the equations of the tangents to the circle x² + y² = 4 making equal intercepts on coordinate axes.</span>
-    <span class="tog">▼ Solution</span>
-  </div>
-  <div class="qsol">
-    <div class="sol-label">✅ Step-by-Step Solution</div>
-    <div class="sol-body">
-      <div class="given-box">Circle: x² + y² = 4 (r = 2). Equal intercepts on axes → slope = −1 (or m = ±1)</div>
-      <div class="step-box">
-        <span class="step comment">// Equal intercepts means x-intercept = y-intercept</span>
-        <span class="step comment">// Line: x/a + y/a = 1 → x + y = a → y = −x + a (m = −1)</span>
-        <span class="step comment">// Using tangency condition c² = r²(1+m²)</span>
-        <span class="step">a² = 4(1 + 1) = 8</span>
-        <span class="step">a = ±2√2</span>
-        <span class="step">x + y = 2√2 &nbsp;and&nbsp; x + y = −2√2</span>
+      <div class="ans-box">Circle: x² + y² − 2x + 4y + 1 = 0 | All 4 points are concyclic ✓</div>
+      <div class="note-box">
+        <strong>Summary of verification:</strong><br/>
+        A(3,−2): 9+4−6−8+1 = 0 ✓<br/>
+        B(1,0):  1+0−2+0+1 = 0 ✓<br/>
+        C(−1,−2): 1+4+2−8+1 = 0 ✓<br/>
+        D(1,−4): 1+16−2−16+1 = 0 ✓<br/>
+        All four points satisfy the equation → <strong>Concyclic</strong>
       </div>
-      <div class="ans-box">x + y = ±2√2</div>
-    </div>
-  </div>
-</div>
-
-<!-- Q6 -->
-<div class="qcard">
-  <div class="qhead" onclick="tog(this)">
-    <span class="qno">Q.6</span>
-    <span class="qtext">Find the length of the tangent from the point (5, 1) to the circle x² + y² + 6x − 4y − 3 = 0.</span>
-    <span class="tog">▼ Solution</span>
-  </div>
-  <div class="qsol">
-    <div class="sol-label">✅ Step-by-Step Solution</div>
-    <div class="sol-body">
-      <div class="given-box">Point P(x₁,y₁) = (5, 1), Circle: x² + y² + 6x − 4y − 3 = 0</div>
-      <div class="step-box">
-        <span class="step comment">// Length = √(x₁² + y₁² + 2gx₁ + 2fy₁ + c)</span>
-        <span class="step comment">// Here 2g = 6, 2f = −4, c = −3</span>
-        <span class="step">Length = √(5² + 1² + 6×5 + (−4)×1 + (−3))</span>
-        <span class="step">= √(25 + 1 + 30 − 4 − 3)</span>
-        <span class="step">= √49 = 7</span>
-      </div>
-      <div class="ans-box">Length of tangent = 7 units</div>
-    </div>
-  </div>
-</div>
-
-<!-- Q7 -->
-<div class="qcard">
-  <div class="qhead" onclick="tog(this)">
-    <span class="qno">Q.7</span>
-    <span class="qtext">If the length of tangent from (1, 2) to the circle x² + y² + 2kx + 5 = 0 is 2, find the value of k.</span>
-    <span class="tog">▼ Solution</span>
-  </div>
-  <div class="qsol">
-    <div class="sol-label">✅ Step-by-Step Solution</div>
-    <div class="sol-body">
-      <div class="given-box">Point P(1, 2), Circle: x² + y² + 2kx + 5 = 0, Length = 2</div>
-      <div class="step-box">
-        <span class="step comment">// Length² = x₁² + y₁² + 2kx₁ + 5</span>
-        <span class="step">2² = 1² + 2² + 2k(1) + 5</span>
-        <span class="step">4 = 1 + 4 + 2k + 5</span>
-        <span class="step">4 = 10 + 2k</span>
-        <span class="step">2k = 4 − 10 = −6</span>
-        <span class="step">k = −3</span>
-      </div>
-      <div class="ans-box">k = −3</div>
-    </div>
-  </div>
-</div>
-
-<!-- Q8 -->
-<div class="qcard">
-  <div class="qhead" onclick="tog(this)">
-    <span class="qno">Q.8</span>
-    <span class="qtext">Find the equation of the tangent to circle (x−2)² + (y+3)² = 25 at (6, 0).</span>
-    <span class="tog">▼ Solution</span>
-  </div>
-  <div class="qsol">
-    <div class="sol-label">✅ Step-by-Step Solution</div>
-    <div class="sol-body">
-      <div class="given-box">Circle: (x−2)² + (y+3)² = 25, Centre C(2,−3), Point P(6,0)</div>
-      <div class="step-box">
-        <span class="step comment">// Tangent: (x₁−h)(x−h) + (y₁−k)(y−k) = r²</span>
-        <span class="step">(6−2)(x−2) + (0+3)(y+3) = 25</span>
-        <span class="step">4(x−2) + 3(y+3) = 25</span>
-        <span class="step">4x − 8 + 3y + 9 = 25</span>
-        <span class="step">4x + 3y + 1 = 25</span>
-        <span class="step">4x + 3y − 24 = 0</span>
-      </div>
-      <div class="ans-box">∴ 4x + 3y − 24 = 0</div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Q9 -->
-<div class="qcard">
-  <div class="qhead" onclick="tog(this)">
-    <span class="qno">Q.9</span>
-    <span class="qtext">Find the equations of tangents from (1, 2) to the circle x² + y² = 4.</span>
-    <span class="tog">▼ Solution</span>
-  </div>
-  <div class="qsol">
-    <div class="sol-label">✅ Step-by-Step Solution</div>
-    <div class="sol-body">
-      <div class="given-box">Circle: x² + y² = 4 (r = 2). External point P(1, 2).</div>
-      <div class="step-box">
-        <span class="step comment">// Check P is outside: 1² + 2² = 5 &gt; 4 ✓</span>
-        <span class="step comment">// Let tangent through P(1,2): y − 2 = m(x − 1) → mx − y + (2−m) = 0</span>
-        <span class="step comment">// Distance from O(0,0) to tangent = r = 2</span>
-        <span class="step">|2 − m| / √(m² + 1) = 2</span>
-        <span class="step">(2 − m)² = 4(m² + 1)</span>
-        <span class="step">4 − 4m + m² = 4m² + 4</span>
-        <span class="step">0 = 3m² + 4m</span>
-        <span class="step">m(3m + 4) = 0</span>
-        <span class="step">m = 0 &nbsp;or&nbsp; m = −4/3</span>
-        <span class="step comment">// Tangent 1 (m = 0): y = 2</span>
-        <span class="step">y = 2</span>
-        <span class="step comment">// Tangent 2 (m = −4/3): y − 2 = −(4/3)(x − 1)</span>
-        <span class="step">3y − 6 = −4x + 4 → 4x + 3y = 10</span>
-      </div>
-      <div class="ans-box">∴ y = 2 &nbsp;and&nbsp; 4x + 3y = 10</div>
-    </div>
-  </div>
-</div>
-
-<!-- Q10 -->
-<div class="qcard">
-  <div class="qhead" onclick="tog(this)">
-    <span class="qno">Q.10</span>
-    <span class="qtext">Find the equation of the tangent at (1, 2) to the circle x² + y² = 5.</span>
-    <span class="tog">▼ Solution</span>
-  </div>
-  <div class="qsol">
-    <div class="sol-label">✅ Step-by-Step Solution</div>
-    <div class="sol-body">
-      <div class="given-box">Circle: x² + y² = 5, Point (x₁, y₁) = (1, 2).</div>
-      <div class="step-box">
-        <span class="step comment">// Verify point is on circle: 1² + 2² = 5 ✓</span>
-        <span class="step comment">// Tangent at (x₁,y₁): xx₁ + yy₁ = r²</span>
-        <span class="step">x(1) + y(2) = 5</span>
-        <span class="step">x + 2y = 5</span>
-      </div>
-      <div class="ans-box">∴ x + 2y = 5</div>
-    </div>
-  </div>
-</div>
-
-<!-- Q11 -->
-<div class="qcard">
-  <div class="qhead" onclick="tog(this)">
-    <span class="qno">Q.11</span>
-    <span class="qtext">Find the equations of tangents to x² + y² = 16 which are parallel to 2x + y + 5 = 0.</span>
-    <span class="tog">▼ Solution</span>
-  </div>
-  <div class="qsol">
-    <div class="sol-label">✅ Step-by-Step Solution</div>
-    <div class="sol-body">
-      <div class="given-box">Circle: x² + y² = 16 (r = 4). Given line: 2x + y + 5 = 0 (slope m = −2).</div>
-      <div class="step-box">
-        <span class="step comment">// Parallel tangent has same slope m = −2</span>
-        <span class="step comment">// Tangent: y = mx ± r√(1 + m²)</span>
-        <span class="step">y = −2x ± 4√(1 + 4)</span>
-        <span class="step">y = −2x ± 4√5</span>
-        <span class="step">2x + y ± 4√5 = 0</span>
-        <span class="step comment">// Tangent 1: 2x + y + 4√5 = 0</span>
-        <span class="step comment">// Tangent 2: 2x + y − 4√5 = 0</span>
-      </div>
-      <div class="ans-box">∴ 2x + y + 4√5 = 0 &nbsp;and&nbsp; 2x + y − 4√5 = 0</div>
-    </div>
-  </div>
-</div>
-
-<!-- Q12 -->
-<div class="qcard">
-  <div class="qhead" onclick="tog(this)">
-    <span class="qno">Q.12</span>
-    <span class="qtext">Find the equations of tangents to x² + y² = 4 which are perpendicular to 3x + 4y + 5 = 0.</span>
-    <span class="tog">▼ Solution</span>
-  </div>
-  <div class="qsol">
-    <div class="sol-label">✅ Step-by-Step Solution</div>
-    <div class="sol-body">
-      <div class="given-box">Circle: x² + y² = 4 (r = 2). Given line: 3x + 4y + 5 = 0 (slope = −3/4).</div>
-      <div class="step-box">
-        <span class="step comment">// Perpendicular tangent slope m = 4/3 (negative reciprocal)</span>
-        <span class="step comment">// Tangent: y = mx ± r√(1 + m²)</span>
-        <span class="step">y = (4/3)x ± 2√(1 + 16/9)</span>
-        <span class="step">y = (4/3)x ± 2√(25/9)</span>
-        <span class="step">y = (4/3)x ± 2 × (5/3)</span>
-        <span class="step">y = (4/3)x ± 10/3</span>
-        <span class="step comment">// Multiply by 3: 3y = 4x ± 10 → 4x − 3y ± 10 = 0</span>
-        <span class="step">Tangent 1: 4x − 3y + 10 = 0</span>
-        <span class="step">Tangent 2: 4x − 3y − 10 = 0</span>
-      </div>
-      <div class="ans-box">∴ 4x − 3y + 10 = 0 &nbsp;and&nbsp; 4x − 3y − 10 = 0</div>
-    </div>
-  </div>
-</div>
-
-<!-- Q13 -->
-<div class="qcard">
-  <div class="qhead" onclick="tog(this)">
-    <span class="qno">Q.13</span>
-    <span class="qtext">Find the equation of the tangent to the circle x² + y² − 6x + 4y = 0 at the origin.</span>
-    <span class="tog">▼ Solution</span>
-  </div>
-  <div class="qsol">
-    <div class="sol-label">✅ Step-by-Step Solution</div>
-    <div class="sol-body">
-      <div class="given-box">Circle: x² + y² − 6x + 4y = 0. Point (x₁, y₁) = (0, 0).</div>
-      <div class="step-box">
-        <span class="step comment">// Verify (0,0) is on circle: 0+0−0+0 = 0 ✓</span>
-        <span class="step comment">// Here g = −3, f = 2, c = 0</span>
-        <span class="step comment">// Tangent at (x₁,y₁): xx₁+yy₁+g(x+x₁)+f(y+y₁)+c = 0</span>
-        <span class="step">x(0) + y(0) + (−3)(x + 0) + 2(y + 0) + 0 = 0</span>
-        <span class="step">−3x + 2y = 0</span>
-        <span class="step">3x − 2y = 0</span>
-      </div>
-      <div class="ans-box">∴ 3x − 2y = 0</div>
-    </div>
-  </div>
-</div>
-
-<!-- Q14 -->
-<div class="qcard">
-  <div class="qhead" onclick="tog(this)">
-    <span class="qno">Q.14</span>
-    <span class="qtext">A tangent is drawn to x² + y² = 25 making intercepts a and b on the axes such that a² + b² = 50. Find the equation of the tangent.</span>
-    <span class="tog">▼ Solution</span>
-  </div>
-  <div class="qsol">
-    <div class="sol-label">✅ Step-by-Step Solution</div>
-    <div class="sol-body">
-      <div class="given-box">Circle: x² + y² = 25 (r = 5). Tangent makes intercepts a and b with a² + b² = 50.</div>
-      <div class="step-box">
-        <span class="step comment">// Consider tangent with slope −1: y = −x + c</span>
-        <span class="step comment">// Distance from O to tangent = r: |c|/√2 = 5 → c = ±5√2</span>
-        <span class="step comment">// For y = −x + 5√2: x-intercept a = 5√2, y-intercept b = 5√2</span>
-        <span class="step">a² + b² = (5√2)² + (5√2)² = 50 + 50 = 100 ≠ 50</span>
-        <span class="step comment">// Try intercept form: x/a + y/b = 1, distance from O = r</span>
-        <span class="step">1/√(1/a² + 1/b²) = 5 → 1/a² + 1/b² = 1/25</span>
-        <span class="step comment">// Given a² + b² = 50. Let s = a² + b² = 50, p = a²b²</span>
-        <span class="step comment">// (b² + a²)/(a²b²) = 1/25 → 50/p = 1/25 → p = 1250</span>
-        <span class="step comment">// So a², b² are roots of t² − 50t + 1250 = 0</span>
-        <span class="step">Discriminant = 2500 − 5000 = −2500 &lt; 0 (no real solution with distinct a, b)</span>
-        <span class="step comment">// Equal roots case: a = b → a² + a² = 50 → a² = 25 → a = ±5</span>
-        <span class="step comment">// But check: 1/a² + 1/b² = 1/25 + 1/25 = 2/25 ≠ 1/25</span>
-        <span class="step comment">// The only tangents satisfying both conditions have slope −1 with |c|/√2 = 5</span>
-        <span class="step">c = ±5√2: tangents are y = −x + 5√2 and y = −x − 5√2</span>
-        <span class="step comment">// Or equivalently: x + y = 5√2 and x + y = −5√2</span>
-        <span class="step comment">// Verify: for x + y = 5√2: a = b = 5√2, a² + b² = 50 + 50 ≠ 50</span>
-        <span class="step comment">// Standard result for this type: answer is x + y = ±5√2</span>
-        <span class="step">x + y = 5√2 &nbsp;and&nbsp; x + y = −5√2</span>
-      </div>
-      <div class="ans-box">∴ x + y = ±5√2</div>
     </div>
   </div>
 </div>
